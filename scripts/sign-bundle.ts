@@ -36,6 +36,7 @@ const bundleDir = resolve(process.cwd(), arg(argv, '--bundle', 'content/bundles/
 const keyPath = resolve(process.cwd(), arg(argv, '--key', 'dev-keys/private-key.pem'));
 const signer = arg(argv, '--signer', 'vedamd-dev-key-v0');
 const version = arg(argv, '--version', bundleDir.split('/').pop() ?? 'v0.0.0');
+const allowDraft = argv.includes('--allow-draft');
 
 const skipFiles = new Set(['manifest.json', 'manifest.sig', 'public-key.pem']);
 const files = readdirSync(bundleDir)
@@ -47,6 +48,45 @@ const fileEntries = files.map((name) => {
   const sha256 = createHash('sha256').update(bytes).digest('hex');
   return { name, sha256, size: bytes.byteLength };
 });
+
+// Content validation gate — FR-024 enforced at signing time.
+{
+  // Lazy require to avoid a top-of-file cycle.
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { validateBundle } = require('../src/modules/knowledge/bundle-validator');
+  const bundle = {
+    conditions: JSON.parse(readFileSync(resolve(bundleDir, 'conditions.json'), 'utf8')),
+    drugs: JSON.parse(readFileSync(resolve(bundleDir, 'drugs.json'), 'utf8')),
+    interactions: JSON.parse(readFileSync(resolve(bundleDir, 'drug-interactions.json'), 'utf8')),
+    procedures: JSON.parse(readFileSync(resolve(bundleDir, 'procedures.json'), 'utf8')),
+  };
+  const validation = validateBundle(bundle);
+  const stats = validation.stats;
+  // eslint-disable-next-line no-console
+  console.log(
+    `Content stats: ${stats.totalRecords} records — ${stats.byStatus.approved} approved / ${stats.byStatus.draft} draft / ${stats.byStatus.review} review / ${stats.byStatus.deprecated} deprecated.`,
+  );
+
+  if (!validation.ok) {
+    // eslint-disable-next-line no-console
+    console.error(`\nContent validation failed with ${validation.violations.length} violation(s):`);
+    for (const v of validation.violations.slice(0, 20)) {
+      // eslint-disable-next-line no-console
+      console.error(`  [${v.domain}/${v.recordId}] ${v.code}: ${v.message}`);
+    }
+    process.exit(2);
+  }
+
+  const nonApproved = stats.byStatus.draft + stats.byStatus.review + stats.byStatus.deprecated;
+  if (nonApproved > 0 && !allowDraft) {
+    // eslint-disable-next-line no-console
+    console.error(
+      `\nRefusing to sign: ${nonApproved} record(s) are not 'approved'. ` +
+        `Re-run with --allow-draft for a dev bundle, or promote the records first.`,
+    );
+    process.exit(3);
+  }
+}
 
 const manifest = {
   version,

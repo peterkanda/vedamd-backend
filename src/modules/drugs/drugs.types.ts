@@ -4,11 +4,17 @@
  * deliberately non-FHIR — content is content, not Medication resources.
  */
 
-export type EvidenceLevel = 'A' | 'B' | 'C' | 'D' | 'expert-consensus';
-export type ReviewStatus = 'draft' | 'reviewed' | 'approved';
+import type {
+  ContentReviewMetadata,
+  EvidenceLevel,
+  ReviewStatus,
+} from '../conditions/conditions.types';
+
 export type AwareCategory = 'Access' | 'Watch' | 'Reserve' | 'Not-classified';
 export type AdverseEffectFrequency = 'common' | 'uncommon' | 'rare' | 'serious';
 export type InteractionSeverity = 'severe' | 'major' | 'moderate' | 'minor';
+
+export type { EvidenceLevel, ReviewStatus };
 
 export interface PaediatricDosing {
   /** Standard mg/kg/dose. */
@@ -45,7 +51,7 @@ export interface DrugSummary {
   drugClass: string;
 }
 
-export interface DrugRecord extends DrugSummary {
+export interface DrugRecord extends DrugSummary, ContentReviewMetadata {
   rxnorm?: string;
   whoEml: boolean;
   indications: { icd10?: string; text: string }[];
@@ -72,10 +78,6 @@ export interface DrugRecord extends DrugSummary {
   adverseEffects: { frequency: AdverseEffectFrequency; effect: string }[];
   monitoring: string[];
   references: { label: string; url?: string }[];
-  ruleVersion: string;
-  reviewStatus: ReviewStatus;
-  evidenceLevel: EvidenceLevel;
-  lastReviewedAt?: string;
 }
 
 export interface DosingInput {
@@ -120,14 +122,11 @@ export interface DosingResult {
   reviewStatus: ReviewStatus;
 }
 
-export interface DrugInteraction {
+export interface DrugInteraction extends ContentReviewMetadata {
   slugA: string;
   slugB: string;
   severity: InteractionSeverity;
   mechanism: string;
   management: string;
   references: { label: string; url?: string }[];
-  ruleVersion: string;
-  reviewStatus: ReviewStatus;
-  evidenceLevel: EvidenceLevel;
 }

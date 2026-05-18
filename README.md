@@ -39,7 +39,7 @@ VedaMD persists **zero patient data**, ever. Any structured signals an integrato
 | Module | SRS section | v0.1 status |
 |---|---|---|
 | `cds` | 6.3.1 Core CDS API | Discovery + invoke; CapabilityStatement at `/metadata` (FR-093) |
-| `knowledge` | 6.3.2 Knowledge Content Service | Ed25519-signed bundle loader; verifies signature + per-file SHA-256 at boot |
+| `knowledge` | 6.3.2 Knowledge Content Service | Ed25519-signed bundle loader; signature + per-file SHA-256 + FR-024 multi-reviewer governance gate |
 | `conditions` | 6.3.18 Content-driven CDS | Structured guidance by slug — sourced from the signed bundle |
 | `procedures` | 6.3.19 Procedural guidance | Indications / steps with safety checks / red flags / complications — bundle-sourced |
 | `drugs` | 6.3.4 Drug Information Service | Search + record + interactions + dosing calculator — bundle-sourced |
@@ -52,6 +52,27 @@ VedaMD persists **zero patient data**, ever. Any structured signals an integrato
 | `analytics` | 6.3.15 Aggregate Analytics | Skeleton |
 | `developer` | 6.3.16 Developer Portal (backend) | API key CRUD (FR-313) |
 | `integration-log` | 6.3.17 Bounded Integration Log | In-memory ring buffer with field allow-list (FR-330–343) |
+
+## Content governance — FR-024 multi-reviewer approval
+
+Every record carries `reviewStatus`, `reviewers[]`, and `approvedAt`.
+The validator enforces two rules at signing time AND at runtime:
+
+| Rule | Applies to |
+|---|---|
+| `reviewStatus === 'approved'` ⇒ `reviewers.length ≥ 2` | Approved records (FR-024) |
+| `reviewStatus === 'approved'` ⇒ `approvedAt` present  | Approved records |
+
+The sign script refuses to sign a bundle that contains any
+`draft` / `review` / `deprecated` record unless invoked with
+`--allow-draft` (for dev sandboxes). The runtime refuses to boot
+when `CONTENT_REQUIRE_APPROVED=true` and the loaded bundle contains
+any non-approved record. Production sets `CONTENT_REQUIRE_APPROVED=true`
+by default.
+
+`GET /api/v1/knowledge/bundle` (public) returns the live tally of
+records by review status and domain so auditors can see what's
+loaded without authenticating.
 
 ## Clinical content lives in a signed bundle
 

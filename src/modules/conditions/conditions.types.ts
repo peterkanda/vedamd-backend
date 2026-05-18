@@ -9,7 +9,36 @@
 
 export type EvidenceLevel = 'A' | 'B' | 'C' | 'D' | 'expert-consensus';
 
-export type ReviewStatus = 'draft' | 'reviewed' | 'approved';
+export type ReviewStatus = 'draft' | 'review' | 'approved' | 'deprecated';
+
+export type ReviewerRole =
+  | 'clinical-lead'
+  | 'peer-reviewer'
+  | 'governance-committee'
+  | 'guideline-author';
+
+export interface ContentReviewer {
+  /** Display name or identifier of the reviewer. May be a real name, an
+   *  ORCID, or a pseudonymous handle — never a patient identifier. */
+  name: string;
+  role: ReviewerRole;
+  /** ISO-8601 timestamp of when this reviewer signed off. */
+  reviewedAt: string;
+}
+
+/**
+ * Shared review metadata embedded in every content record.
+ * Records marked `approved` MUST carry at least two reviewers and
+ * an `approvedAt` timestamp (FR-024).
+ */
+export interface ContentReviewMetadata {
+  ruleVersion: string;
+  reviewStatus: ReviewStatus;
+  evidenceLevel: EvidenceLevel;
+  reviewers?: ContentReviewer[];
+  approvedAt?: string;
+  lastReviewedAt?: string;
+}
 
 export interface ConditionSummary {
   slug: string;
@@ -18,7 +47,7 @@ export interface ConditionSummary {
   domains: string[];
 }
 
-export interface ConditionGuidance extends ConditionSummary {
+export interface ConditionGuidance extends ConditionSummary, ContentReviewMetadata {
   /** Cohort the guidance applies to. */
   population: {
     minAgeYears?: number;
@@ -36,8 +65,4 @@ export interface ConditionGuidance extends ConditionSummary {
   management: { step: string; detail: string }[];
   /** Citations the integrator can show their clinician. */
   references: { label: string; url?: string }[];
-  ruleVersion: string;
-  reviewStatus: ReviewStatus;
-  evidenceLevel: EvidenceLevel;
-  lastReviewedAt?: string;
 }

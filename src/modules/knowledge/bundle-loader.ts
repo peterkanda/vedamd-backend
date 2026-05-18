@@ -4,17 +4,24 @@ import { resolve } from 'node:path';
 import type { ConditionGuidance } from '../conditions/conditions.types';
 import type { DrugInteraction, DrugRecord } from '../drugs/drugs.types';
 import type { ProcedureGuidance } from '../procedures/procedures.types';
+import { nonApprovedCount, validateBundle } from './bundle-validator';
 import type {
   BundleInfo,
   BundleManifest,
   BundleManifestFile,
+  BundleVerificationStatus,
   LoadedBundle,
 } from './knowledge.types';
 
 export interface BundleLoadOptions {
   /** Refuse to load a bundle that fails verification. Production default. */
   strict: boolean;
+  /** When true, refuse to load if any record is not reviewStatus='approved'. */
+  requireApproved?: boolean;
 }
+
+/** Cap on how many violations the loader stuffs into BundleInfo. */
+const MAX_REPORTED_VIOLATIONS = 50;
 
 /**
  * Deterministic JSON serialisation: sort keys at every level. The
@@ -94,6 +101,43 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
     parsed[name] = JSON.parse(bytes.toString('utf8'));
   }
 
+  const bundleContent = {
+    conditions: parsed['conditions.json'] as ConditionGuidance[],
+    drugs: parsed['drugs.json'] as DrugRecord[],
+    interactions: parsed['drug-interactions.json'] as DrugInteraction[],
+    procedures: parsed['procedures.json'] as ProcedureGuidance[],
+  };
+
+  // Content validation — FR-024 governance rules.
+  const validation = validateBundle(bundleContent);
+
+  if (!validation.ok) {
+    return failOrReturn(
+      opts,
+      'content-validation-failed',
+      dir,
+      new Error(`${validation.violations.length} content validation violation(s)`),
+      manifestParsed,
+      validation.stats,
+      validation.violations,
+    );
+  }
+
+  // Approval gate — refuse non-approved content in approved-only mode.
+  if (opts.requireApproved && nonApprovedCount(validation.stats) > 0) {
+    return failOrReturn(
+      opts,
+      'non-approved-content',
+      dir,
+      new Error(
+        `Bundle contains ${nonApprovedCount(validation.stats)} non-approved record(s); requireApproved is on.`,
+      ),
+      manifestParsed,
+      validation.stats,
+      [],
+    );
+  }
+
   const info: BundleInfo = {
     version: manifestParsed.version,
     signedBy: manifestParsed.signedBy,
@@ -101,15 +145,11 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
     verified: true,
     verificationStatus: 'ok',
     files: manifestParsed.files,
+    contentStats: validation.stats,
+    requireApproved: opts.requireApproved,
   };
 
-  return {
-    info,
-    conditions: parsed['conditions.json'] as ConditionGuidance[],
-    drugs: parsed['drugs.json'] as DrugRecord[],
-    interactions: parsed['drug-interactions.json'] as DrugInteraction[],
-    procedures: parsed['procedures.json'] as ProcedureGuidance[],
-  };
+  return { info, ...bundleContent };
 }
 
 /**
@@ -134,10 +174,12 @@ export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBun
 
 function failOrReturn(
   opts: BundleLoadOptions,
-  status: BundleInfo['verificationStatus'],
+  status: BundleVerificationStatus,
   dir: string,
   cause: unknown,
   manifest?: BundleManifest,
+  stats?: import('./bundle-validator').ContentStats,
+  violations?: import('./bundle-validator').ValidationViolation[],
 ): LoadedBundle {
   if (opts.strict) {
     const msg = `Content bundle verification failed (${status}) at ${dir}`;
@@ -151,6 +193,9 @@ function failOrReturn(
       verified: false,
       verificationStatus: status,
       files: manifest?.files ?? [],
+      contentStats: stats,
+      contentViolations: violations?.slice(0, MAX_REPORTED_VIOLATIONS),
+      requireApproved: opts.requireApproved,
     },
     conditions: [],
     drugs: [],

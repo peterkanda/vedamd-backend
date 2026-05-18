@@ -1,4 +1,4 @@
-import type { EvidenceLevel, ReviewStatus } from '../conditions/conditions.types';
+import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
  * Procedure guidance schema. An integrator asks "how do I perform
@@ -17,7 +17,7 @@ export interface ProcedureSummary {
   cpt?: string[];
 }
 
-export interface ProcedureGuidance extends ProcedureSummary {
+export interface ProcedureGuidance extends ProcedureSummary, ContentReviewMetadata {
   /** Population the guidance applies to. */
   population: {
     minAgeYears?: number;
@@ -43,8 +43,4 @@ export interface ProcedureGuidance extends ProcedureSummary {
     management: string;
   }[];
   references: { label: string; url?: string }[];
-  ruleVersion: string;
-  reviewStatus: ReviewStatus;
-  evidenceLevel: EvidenceLevel;
-  lastReviewedAt?: string;
 }

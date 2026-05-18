@@ -16,6 +16,10 @@ export interface AppConfig {
     bundleDir: string;
     /** When true, any verification failure throws at boot (production default). */
     strictVerification: boolean;
+    /** When true, refuse to load a bundle that contains any non-approved
+     *  record. Production default; v0.1 dev bundle is all-draft, so this
+     *  defaults to false outside production. */
+    requireApproved: boolean;
   };
   apiKeys: {
     /**
@@ -78,6 +82,10 @@ export const configuration = (): AppConfig => ({
     strictVerification:
       process.env.CONTENT_STRICT_VERIFICATION !== undefined
         ? process.env.CONTENT_STRICT_VERIFICATION === 'true'
+        : process.env.NODE_ENV === 'production',
+    requireApproved:
+      process.env.CONTENT_REQUIRE_APPROVED !== undefined
+        ? process.env.CONTENT_REQUIRE_APPROVED === 'true'
         : process.env.NODE_ENV === 'production',
   },
   apiKeys: {

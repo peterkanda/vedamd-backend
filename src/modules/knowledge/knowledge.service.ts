@@ -39,10 +39,12 @@ export class KnowledgeService implements OnModuleInit {
   loadFromConfig(): void {
     const dir = this.config.get('content.bundleDir', { infer: true });
     const strict = this.config.get('content.strictVerification', { infer: true });
-    this.bundle = loadBundleFromDisk(dir, { strict });
+    const requireApproved = this.config.get('content.requireApproved', { infer: true });
+    this.bundle = loadBundleFromDisk(dir, { strict, requireApproved });
+    const stats = this.bundle.info.contentStats;
     if (this.bundle.info.verified) {
       this.nestLogger.log(
-        `Loaded signed content bundle ${this.bundle.info.version} (${this.bundle.info.files.length} files) signed by ${this.bundle.info.signedBy}.`,
+        `Loaded signed bundle ${this.bundle.info.version} (${this.bundle.info.files.length} files, ${stats?.totalRecords ?? 0} records: ${stats?.byStatus.approved ?? 0} approved / ${stats?.byStatus.draft ?? 0} draft / ${stats?.byStatus.review ?? 0} review / ${stats?.byStatus.deprecated ?? 0} deprecated) signed by ${this.bundle.info.signedBy}.`,
       );
     } else {
       this.nestLogger.warn(

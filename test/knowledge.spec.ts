@@ -87,13 +87,17 @@ describe('bundle loader — tamper detection', () => {
 });
 
 describe('KnowledgeService', () => {
-  it('reports bundle info via getInfo()', () => {
+  it('reports bundle info via getInfo() including content stats', () => {
     const ks = makeKnowledgeService();
     const info = ks.getInfo();
     expect(info.verified).toBe(true);
     expect(info.version).toBe('v0.1.0');
     expect(info.signedBy).toBe('vedamd-dev-key-v0');
     expect(info.files.length).toBe(4);
+    expect(info.contentStats).toBeDefined();
+    expect(info.contentStats!.totalRecords).toBeGreaterThan(0);
+    expect(info.contentStats!.byStatus.draft).toBeGreaterThan(0);
+    expect(info.contentStats!.byStatus.approved).toBe(0);
   });
 
   it('exposes every domain via its getter', () => {
@@ -102,6 +106,20 @@ describe('KnowledgeService', () => {
     expect(ks.getDrugs().length).toBeGreaterThan(0);
     expect(ks.getInteractions().length).toBeGreaterThan(0);
     expect(ks.getProcedures().length).toBeGreaterThan(0);
+  });
+
+  it('refuses to load the all-draft bundle when requireApproved is true (strict)', () => {
+    expect(() => makeKnowledgeService({ requireApproved: true, strict: true })).toThrow(
+      /non-approved-content/,
+    );
+  });
+
+  it('returns empty content with non-approved status in non-strict approved-required mode', () => {
+    const ks = makeKnowledgeService({ requireApproved: true, strict: false });
+    expect(ks.getInfo().verificationStatus).toBe('non-approved-content');
+    expect(ks.getInfo().verified).toBe(false);
+    expect(ks.getConditions().length).toBe(0);
+    expect(ks.getDrugs().length).toBe(0);
   });
 });
 
