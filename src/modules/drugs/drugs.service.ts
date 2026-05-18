@@ -1,12 +1,93 @@
 import { Injectable } from '@nestjs/common';
+import { SEED_DRUGS, SEED_INTERACTIONS } from './drugs.seed';
+import type {
+  AwareCategory,
+  DrugInteraction,
+  DrugRecord,
+  DrugSummary,
+} from './drugs.types';
+
+export interface ListFilters {
+  q?: string;
+  atc?: string;
+  aware?: AwareCategory;
+  kemlOnly?: boolean;
+}
 
 @Injectable()
 export class DrugsService {
-  async search(_q: string): Promise<unknown[]> {
-    return [];
+  private readonly bySlug = new Map<string, DrugRecord>(
+    SEED_DRUGS.map((d) => [d.slug, d]),
+  );
+
+  private readonly interactionsByPair = new Map<string, DrugInteraction>(
+    SEED_INTERACTIONS.map((i) => [pairKey(i.slugA, i.slugB), i]),
+  );
+
+  list(filters: ListFilters = {}): DrugSummary[] {
+    const q = filters.q?.toLowerCase();
+    return [...this.bySlug.values()]
+      .filter((d) => {
+        if (filters.atc && !d.atc.some((c) => c.toLowerCase() === filters.atc!.toLowerCase())) {
+          return false;
+        }
+        if (filters.aware && d.awareCategory !== filters.aware) return false;
+        if (filters.kemlOnly && !d.kemlLevel) return false;
+        if (q) {
+          const haystack = [
+            d.slug,
+            d.inn,
+            d.drugClass,
+            ...d.tradeNames,
+            ...d.atc,
+            d.rxnorm ?? '',
+          ]
+            .join(' ')
+            .toLowerCase();
+          if (!haystack.includes(q)) return false;
+        }
+        return true;
+      })
+      .map(({ slug, inn, tradeNames, atc, awareCategory, kemlLevel, drugClass }) => ({
+        slug,
+        inn,
+        tradeNames,
+        atc,
+        awareCategory,
+        kemlLevel,
+        drugClass,
+      }));
   }
 
-  async checkInteractions(_rxcuis: string[]): Promise<unknown[]> {
-    return [];
+  get(slug: string): DrugRecord | null {
+    return this.bySlug.get(slug) ?? null;
   }
+
+  /**
+   * Check every unordered pair of supplied slugs for a known interaction.
+   * Unknown slugs are reported separately so callers can surface them.
+   */
+  checkInteractions(slugs: string[]): {
+    interactions: DrugInteraction[];
+    unknownSlugs: string[];
+  } {
+    const unique = [...new Set(slugs.map((s) => s.trim().toLowerCase()).filter(Boolean))];
+    const unknown = unique.filter((s) => !this.bySlug.has(s));
+    const known = unique.filter((s) => this.bySlug.has(s));
+
+    const found: DrugInteraction[] = [];
+    for (let i = 0; i < known.length; i++) {
+      for (let j = i + 1; j < known.length; j++) {
+        const hit = this.interactionsByPair.get(pairKey(known[i], known[j]));
+        if (hit) found.push(hit);
+      }
+    }
+
+    return { interactions: found, unknownSlugs: unknown };
+  }
+}
+
+/** Order-independent key for an unordered pair of slugs. */
+function pairKey(a: string, b: string): string {
+  return [a.toLowerCase(), b.toLowerCase()].sort().join('::');
 }
