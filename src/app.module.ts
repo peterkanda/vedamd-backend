@@ -8,6 +8,7 @@ import { KnowledgeModule } from './modules/knowledge/knowledge.module';
 import { TerminologyModule } from './modules/terminology/terminology.module';
 import { DrugsModule } from './modules/drugs/drugs.module';
 import { ConditionsModule } from './modules/conditions/conditions.module';
+import { ProceduresModule } from './modules/procedures/procedures.module';
 import { LlmModule } from './modules/llm/llm.module';
 import { AuditModule } from './modules/audit/audit.module';
 import { BundlesModule } from './modules/bundles/bundles.module';
@@ -30,6 +31,7 @@ import { DeveloperModule } from './modules/developer/developer.module';
     TerminologyModule,
     DrugsModule,
     ConditionsModule,
+    ProceduresModule,
     LlmModule,
     AuditModule,
     BundlesModule,
