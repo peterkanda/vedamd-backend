@@ -11,39 +11,39 @@ function makeService(): IntegrationLogService {
       return undefined;
     },
   } as unknown as ConfigService<AppConfig, true>;
-  return new IntegrationLogService(config);
+  return new IntegrationLogService(config, null);
 }
 
-describe('IntegrationLogService', () => {
-  it('records and queries entries newest-first', () => {
+describe('IntegrationLogService (in-memory mode)', () => {
+  it('records and queries entries newest-first', async () => {
     const svc = makeService();
     const now = Date.now();
-    svc.record('int-1', baseEntry('req-1', new Date(now - 2000).toISOString()));
-    svc.record('int-1', baseEntry('req-2', new Date(now - 1000).toISOString()));
+    await svc.record('int-1', baseEntry('req-1', new Date(now - 2000).toISOString()));
+    await svc.record('int-1', baseEntry('req-2', new Date(now - 1000).toISOString()));
 
-    const out = svc.query('int-1');
+    const out = await svc.query('int-1');
     expect(out.map((e) => e.request_id)).toEqual(['req-2', 'req-1']);
   });
 
-  it('evicts FIFO when capacity is exceeded (FR-332)', () => {
+  it('evicts FIFO when capacity is exceeded (FR-332)', async () => {
     const svc = makeService(); // capacity 3
     for (let i = 0; i < 5; i += 1) {
-      svc.record('int-1', baseEntry(`req-${i}`, new Date(Date.now() + i).toISOString()));
+      await svc.record('int-1', baseEntry(`req-${i}`, new Date(Date.now() + i).toISOString()));
     }
-    const out = svc.query('int-1', { limit: 10 });
+    const out = await svc.query('int-1', { limit: 10 });
     expect(out.length).toBe(3);
     expect(out.map((e) => e.request_id)).toEqual(['req-4', 'req-3', 'req-2']);
   });
 
-  it('refuses entries with fields outside the allow-list (FR-335)', () => {
+  it('refuses entries with fields outside the allow-list (FR-335)', async () => {
     const svc = makeService();
-    expect(() =>
+    await expect(
       svc.record('int-1', {
         ...baseEntry('req-x'),
         // @ts-expect-error — intentionally forbidden field
         patient_id: 'leaked',
       }),
-    ).toThrow(/not on the allow-list/);
+    ).rejects.toThrow(/not on the allow-list/);
   });
 });
 

@@ -55,9 +55,13 @@ export const integrationLog = pgTable(
     cardSummaries: text('card_summaries').array().notNull().default([]),
     /** Citations as a JSON array of { label, url }. */
     citations: jsonb('citations').notNull().default([]),
+    /** Rules evaluated for this request as a JSON array of
+     *  { rule_id, rule_version, fired }. PHI-free by construction. */
+    rulesEvaluated: jsonb('rules_evaluated').notNull().default([]),
     llmInvoked: boolean('llm_invoked').notNull().default(false),
     llmProvider: text('llm_provider'),
     overrideReported: boolean('override_reported').notNull().default(false),
+    overrideReasonCode: text('override_reason_code'),
   },
   (t) => ({
     byIntegratorTimestamp: index('idx_integration_log_integrator_ts').on(
