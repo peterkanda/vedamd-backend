@@ -39,11 +39,11 @@ VedaMD persists **zero patient data**, ever. Any structured signals an integrato
 | Module | SRS section | v0.1 status |
 |---|---|---|
 | `cds` | 6.3.1 Core CDS API | Discovery + invoke; CapabilityStatement at `/metadata` (FR-093) |
-| `conditions` | 6.3.18 Content-driven CDS | Structured guidance by slug — malaria, hypertension, T2DM seeded |
-| `procedures` | 6.3.19 Procedural guidance | Indications / steps with safety checks / red flags / complications — 4 procedures seeded |
-| `knowledge` | 6.3.2 Knowledge Content Service | Skeleton |
+| `knowledge` | 6.3.2 Knowledge Content Service | Ed25519-signed bundle loader; verifies signature + per-file SHA-256 at boot |
+| `conditions` | 6.3.18 Content-driven CDS | Structured guidance by slug — sourced from the signed bundle |
+| `procedures` | 6.3.19 Procedural guidance | Indications / steps with safety checks / red flags / complications — bundle-sourced |
+| `drugs` | 6.3.4 Drug Information Service | Search + record + interactions + dosing calculator — bundle-sourced |
 | `terminology` | 6.3.3 Terminology Service | Skeleton |
-| `drugs` | 6.3.4 Drug Information Service | Search + record + interactions + dosing calculator; 6 KEML drugs seeded |
 | `llm` | 6.3.6 LLM Orchestration | Skeleton |
 | `audit` | 6.3.7 Audit & Traceability | HMAC-hashed identifiers (NFR-029) |
 | `bundles` | 6.3.8 Offline Rule Bundle Distribution | Catalog API skeleton |
@@ -52,6 +52,53 @@ VedaMD persists **zero patient data**, ever. Any structured signals an integrato
 | `analytics` | 6.3.15 Aggregate Analytics | Skeleton |
 | `developer` | 6.3.16 Developer Portal (backend) | API key CRUD (FR-313) |
 | `integration-log` | 6.3.17 Bounded Integration Log | In-memory ring buffer with field allow-list (FR-330–343) |
+
+## Clinical content lives in a signed bundle
+
+All clinical content (conditions, drugs, drug interactions, procedures)
+is loaded from a versioned, Ed25519-signed bundle at boot — not from
+TypeScript source. A bundle directory contains:
+
+```
+content/bundles/v0.1.0/
+  manifest.json        ← version, signer, signedAt, files[].sha256
+  manifest.sig         ← Ed25519 signature over canonical(manifest)
+  public-key.pem       ← matching public key (committed)
+  conditions.json
+  drugs.json
+  drug-interactions.json
+  procedures.json
+```
+
+At boot the `KnowledgeService`:
+
+1. Reads `manifest.json`, `manifest.sig`, and `public-key.pem`.
+2. Verifies the Ed25519 signature over the canonical-JSON manifest.
+3. For each file in the manifest, recomputes SHA-256 and compares to
+   the manifest entry.
+4. Refuses to load (in production / strict mode) on any failure.
+
+`GET /api/v1/knowledge/bundle` is public and returns the live bundle
+info (version, signer, signedAt, per-file SHA-256, verification
+status) so integrators and auditors can confirm what content the
+platform is serving.
+
+The development signing keypair lives under `dev-keys/` (private key
+gitignored; public key committed alongside the bundle). Production
+keys live in a key store and never touch the repo.
+
+```bash
+# Generate a fresh dev keypair
+npm run keys:generate -- --out ./dev-keys
+cp dev-keys/public-key.pem content/bundles/v0.1.0/
+
+# Sign the bundle
+npm run bundle:sign -- \
+  --bundle content/bundles/v0.1.0 \
+  --key dev-keys/private-key.pem \
+  --signer vedamd-dev-key-v0 \
+  --version v0.1.0
+```
 
 ## Authentication
 
@@ -71,6 +118,7 @@ Authorization: Bearer vmd_live_<secret>
 | `POST /api/v1/cds/evaluate` | Bearer + `cds:evaluate` scope |
 | `GET /api/v1/conditions[/:slug]` | Bearer + `content:read` scope |
 | `GET /api/v1/procedures[/:slug]` | Bearer + `content:read` scope |
+| `GET /api/v1/knowledge/bundle` | Public (auditors verify the loaded content) |
 | `GET /api/v1/drugs[/:slug]`, `POST /api/v1/drugs/interactions`, `POST /api/v1/drugs/:slug/dosing` | Bearer + `drug-info:read` scope |
 | `*/v1/developer/*` | Operator OIDC (forthcoming) — v0.1 stub via `x-integrator-id` |
 

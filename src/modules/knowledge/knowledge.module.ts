@@ -1,12 +1,14 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { KnowledgeController } from './knowledge.controller';
 import { KnowledgeService } from './knowledge.service';
 
 /**
  * SRS §6.3.2 — Knowledge Content Service.
- * Stores CQL/DMN rules, WHO SMART Guideline content packages, versioning,
- * multi-reviewer approval, cryptographic signing, regression test cases.
+ *
+ * Global so that Conditions / Drugs / Procedures can inject it
+ * without each domain module re-importing it.
  */
+@Global()
 @Module({
   controllers: [KnowledgeController],
   providers: [KnowledgeService],

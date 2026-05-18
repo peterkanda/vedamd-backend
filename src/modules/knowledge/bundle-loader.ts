@@ -1,0 +1,160 @@
+import { createHash, createPublicKey, verify } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import type { ConditionGuidance } from '../conditions/conditions.types';
+import type { DrugInteraction, DrugRecord } from '../drugs/drugs.types';
+import type { ProcedureGuidance } from '../procedures/procedures.types';
+import type {
+  BundleInfo,
+  BundleManifest,
+  BundleManifestFile,
+  LoadedBundle,
+} from './knowledge.types';
+
+export interface BundleLoadOptions {
+  /** Refuse to load a bundle that fails verification. Production default. */
+  strict: boolean;
+}
+
+/**
+ * Deterministic JSON serialisation: sort keys at every level. The
+ * signer uses the same function; verification must match byte-for-byte.
+ */
+export function canonicalJson(value: unknown): string {
+  if (value === null || typeof value !== 'object') return JSON.stringify(value);
+  if (Array.isArray(value)) return '[' + value.map(canonicalJson).join(',') + ']';
+  const obj = value as Record<string, unknown>;
+  const keys = Object.keys(obj).sort();
+  return '{' + keys.map((k) => JSON.stringify(k) + ':' + canonicalJson(obj[k])).join(',') + '}';
+}
+
+/**
+ * Load and (optionally) verify a content bundle from a directory.
+ *
+ * Returns the parsed records plus a BundleInfo describing what was
+ * verified. In strict mode any verification failure throws; in
+ * non-strict mode the bundle still loads but BundleInfo.verified is
+ * false and verificationStatus reports the cause.
+ *
+ * Verification has three layers:
+ *   1. Ed25519 signature of the canonical-JSON manifest.
+ *   2. SHA-256 of each content file matches the manifest entry.
+ *   3. All four expected content files are present.
+ */
+export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): LoadedBundle {
+  const manifestPath = resolve(dir, 'manifest.json');
+  const sigPath = resolve(dir, 'manifest.sig');
+  const pubKeyPath = resolve(dir, 'public-key.pem');
+
+  let manifestRaw: Buffer;
+  let manifestParsed: BundleManifest;
+  try {
+    manifestRaw = readFileSync(manifestPath);
+    manifestParsed = JSON.parse(manifestRaw.toString('utf8')) as BundleManifest;
+  } catch (e) {
+    return failOrReturn(opts, 'missing', dir, e);
+  }
+
+  // Verify signature against canonical manifest.
+  let signatureOk = false;
+  try {
+    const signature = readFileSync(sigPath);
+    const publicKey = createPublicKey(readFileSync(pubKeyPath));
+    signatureOk = verify(
+      null,
+      Buffer.from(canonicalJson(manifestParsed), 'utf8'),
+      publicKey,
+      signature,
+    );
+  } catch (e) {
+    return failOrReturn(opts, 'signature-invalid', dir, e, manifestParsed);
+  }
+  if (!signatureOk) {
+    return failOrReturn(opts, 'signature-invalid', dir, undefined, manifestParsed);
+  }
+
+  // Verify each file's hash and load it.
+  const filesByName = new Map<string, BundleManifestFile>(
+    manifestParsed.files.map((f) => [f.name, f]),
+  );
+  const required = ['conditions.json', 'drugs.json', 'drug-interactions.json', 'procedures.json'];
+  for (const name of required) {
+    if (!filesByName.has(name)) {
+      return failOrReturn(opts, 'missing', dir, new Error(`Manifest missing required file: ${name}`), manifestParsed);
+    }
+  }
+
+  const parsed: Record<string, unknown> = {};
+  for (const [name, entry] of filesByName) {
+    const bytes = readFileSync(resolve(dir, name));
+    const sha256 = createHash('sha256').update(bytes).digest('hex');
+    if (sha256 !== entry.sha256) {
+      return failOrReturn(opts, 'hash-mismatch', dir, new Error(`Hash mismatch for ${name}`), manifestParsed);
+    }
+    parsed[name] = JSON.parse(bytes.toString('utf8'));
+  }
+
+  const info: BundleInfo = {
+    version: manifestParsed.version,
+    signedBy: manifestParsed.signedBy,
+    signedAt: manifestParsed.signedAt,
+    verified: true,
+    verificationStatus: 'ok',
+    files: manifestParsed.files,
+  };
+
+  return {
+    info,
+    conditions: parsed['conditions.json'] as ConditionGuidance[],
+    drugs: parsed['drugs.json'] as DrugRecord[],
+    interactions: parsed['drug-interactions.json'] as DrugInteraction[],
+    procedures: parsed['procedures.json'] as ProcedureGuidance[],
+  };
+}
+
+/**
+ * Construct an empty / unverified bundle for tests and dev-mode fallbacks.
+ */
+export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBundle {
+  return {
+    info: {
+      version: 'unloaded',
+      signedBy: '',
+      signedAt: '',
+      verified: false,
+      verificationStatus: reason,
+      files: [],
+    },
+    conditions: [],
+    drugs: [],
+    interactions: [],
+    procedures: [],
+  };
+}
+
+function failOrReturn(
+  opts: BundleLoadOptions,
+  status: BundleInfo['verificationStatus'],
+  dir: string,
+  cause: unknown,
+  manifest?: BundleManifest,
+): LoadedBundle {
+  if (opts.strict) {
+    const msg = `Content bundle verification failed (${status}) at ${dir}`;
+    throw cause instanceof Error ? new Error(`${msg}: ${cause.message}`) : new Error(msg);
+  }
+  return {
+    info: {
+      version: manifest?.version ?? 'unloaded',
+      signedBy: manifest?.signedBy ?? '',
+      signedAt: manifest?.signedAt ?? '',
+      verified: false,
+      verificationStatus: status,
+      files: manifest?.files ?? [],
+    },
+    conditions: [],
+    drugs: [],
+    interactions: [],
+    procedures: [],
+  };
+}

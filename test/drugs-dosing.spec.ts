@@ -1,7 +1,12 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, beforeEach } from 'vitest';
 import { DrugsService } from '../src/modules/drugs/drugs.service';
+import { makeKnowledgeService } from './helpers/knowledge';
 
-const svc = new DrugsService();
+let svc: DrugsService;
+beforeEach(() => {
+  svc = new DrugsService(makeKnowledgeService());
+  svc.onModuleInit();
+});
 
 describe('DrugsService.calculateDose — paediatric mg/kg', () => {
   it('paracetamol for a 14 kg / 4 yo child → 210 mg per dose', () => {
@@ -13,15 +18,7 @@ describe('DrugsService.calculateDose — paediatric mg/kg', () => {
     expect(r.calculatedDose?.capsApplied).toEqual([]);
   });
 
-  it('paracetamol applies the 1000 mg single-dose cap for a heavy child', () => {
-    // 80 kg should trigger adult path; pick 35 kg / 10 yo to stay paediatric.
-    // 35 × 15 = 525, no cap. Push higher: 70 kg child is unrealistic but works
-    // for the algorithm boundary — but 70 kg trips the adult-weight branch.
-    // Use 49 kg / 10 yo → 49 × 15 = 735, still no cap. So construct a case
-    // that genuinely caps: a hypothetical mg-per-kg-only drug would need a
-    // higher mg/kg. For paracetamol, the only way is age < 12 and weight
-    // close to but below 50 kg. Test the explicit cap path with the
-    // synthetic 49 kg / 10 yo case to verify caps engage when threshold met.
+  it('paracetamol stays under the 1000 mg single-dose cap for boundary paediatric weights', () => {
     const r = svc.calculateDose('paracetamol', { weightKg: 49, ageYears: 10 })!;
     expect(r.protocol).toBe('paediatric');
     expect(r.calculatedDose?.mgPerDose).toBeLessThanOrEqual(1000);

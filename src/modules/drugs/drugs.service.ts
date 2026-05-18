@@ -1,6 +1,6 @@
-import { Injectable } from '@nestjs/common';
-import { SEED_DRUGS, SEED_INTERACTIONS } from './drugs.seed';
+import { Injectable, OnModuleInit } from '@nestjs/common';
 import { calculateDose } from './drugs.dosing';
+import { KnowledgeService } from '../knowledge/knowledge.service';
 import type {
   AwareCategory,
   DosingInput,
@@ -18,14 +18,18 @@ export interface ListFilters {
 }
 
 @Injectable()
-export class DrugsService {
-  private readonly bySlug = new Map<string, DrugRecord>(
-    SEED_DRUGS.map((d) => [d.slug, d]),
-  );
+export class DrugsService implements OnModuleInit {
+  private bySlug = new Map<string, DrugRecord>();
+  private interactionsByPair = new Map<string, DrugInteraction>();
 
-  private readonly interactionsByPair = new Map<string, DrugInteraction>(
-    SEED_INTERACTIONS.map((i) => [pairKey(i.slugA, i.slugB), i]),
-  );
+  constructor(private readonly knowledge: KnowledgeService) {}
+
+  onModuleInit(): void {
+    this.bySlug = new Map(this.knowledge.getDrugs().map((d) => [d.slug, d]));
+    this.interactionsByPair = new Map(
+      this.knowledge.getInteractions().map((i) => [pairKey(i.slugA, i.slugB), i]),
+    );
+  }
 
   list(filters: ListFilters = {}): DrugSummary[] {
     const q = filters.q?.toLowerCase();
@@ -72,10 +76,6 @@ export class DrugsService {
     return calculateDose(drug, input);
   }
 
-  /**
-   * Check every unordered pair of supplied slugs for a known interaction.
-   * Unknown slugs are reported separately so callers can surface them.
-   */
   checkInteractions(slugs: string[]): {
     interactions: DrugInteraction[];
     unknownSlugs: string[];
@@ -96,7 +96,6 @@ export class DrugsService {
   }
 }
 
-/** Order-independent key for an unordered pair of slugs. */
 function pairKey(a: string, b: string): string {
   return [a.toLowerCase(), b.toLowerCase()].sort().join('::');
 }

@@ -1,12 +1,19 @@
-import { Injectable } from '@nestjs/common';
-import { SEED_PROCEDURES } from './procedures.seed';
+import { Injectable, OnModuleInit } from '@nestjs/common';
+import { KnowledgeService } from '../knowledge/knowledge.service';
 import type { ProcedureGuidance, ProcedureSummary } from './procedures.types';
 
 @Injectable()
-export class ProceduresService {
-  private readonly bySlug = new Map<string, ProcedureGuidance>(
-    SEED_PROCEDURES.map((p) => [p.slug, p]),
-  );
+export class ProceduresService implements OnModuleInit {
+  private readonly bySlug = new Map<string, ProcedureGuidance>();
+
+  constructor(private readonly knowledge: KnowledgeService) {}
+
+  onModuleInit(): void {
+    this.bySlug.clear();
+    for (const p of this.knowledge.getProcedures()) {
+      this.bySlug.set(p.slug, p);
+    }
+  }
 
   list(filters?: { domain?: string; q?: string }): ProcedureSummary[] {
     const all = [...this.bySlug.values()];

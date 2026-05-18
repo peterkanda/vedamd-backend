@@ -11,6 +11,12 @@ export interface AppConfig {
     /** HMAC-SHA-256 secret for hashing identifiers before any write (NFR-029). */
     hashSecret: string;
   };
+  content: {
+    /** Directory of the active signed content bundle. */
+    bundleDir: string;
+    /** When true, any verification failure throws at boot (production default). */
+    strictVerification: boolean;
+  };
   apiKeys: {
     /**
      * HMAC-SHA-256 secret used to fingerprint API key secrets at issue time
@@ -66,6 +72,13 @@ export const configuration = (): AppConfig => ({
             throw new Error('AUDIT_HASH_SECRET must be set in production (NFR-029).');
           })()
         : 'dev-only-do-not-use-in-prod'),
+  },
+  content: {
+    bundleDir: process.env.CONTENT_BUNDLE_DIR ?? 'content/bundles/v0.1.0',
+    strictVerification:
+      process.env.CONTENT_STRICT_VERIFICATION !== undefined
+        ? process.env.CONTENT_STRICT_VERIFICATION === 'true'
+        : process.env.NODE_ENV === 'production',
   },
   apiKeys: {
     fingerprintSecret:

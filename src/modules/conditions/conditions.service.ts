@@ -1,12 +1,19 @@
-import { Injectable } from '@nestjs/common';
-import { SEED_CONDITIONS } from './conditions.seed';
+import { Injectable, OnModuleInit } from '@nestjs/common';
+import { KnowledgeService } from '../knowledge/knowledge.service';
 import type { ConditionGuidance, ConditionSummary } from './conditions.types';
 
 @Injectable()
-export class ConditionsService {
-  private readonly bySlug = new Map<string, ConditionGuidance>(
-    SEED_CONDITIONS.map((c) => [c.slug, c]),
-  );
+export class ConditionsService implements OnModuleInit {
+  private readonly bySlug = new Map<string, ConditionGuidance>();
+
+  constructor(private readonly knowledge: KnowledgeService) {}
+
+  onModuleInit(): void {
+    this.bySlug.clear();
+    for (const c of this.knowledge.getConditions()) {
+      this.bySlug.set(c.slug, c);
+    }
+  }
 
   list(filters?: { domain?: string; q?: string }): ConditionSummary[] {
     const all = [...this.bySlug.values()];

@@ -1,9 +1,15 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, beforeEach } from 'vitest';
 import { ProceduresService } from '../src/modules/procedures/procedures.service';
-
-const svc = new ProceduresService();
+import { makeKnowledgeService } from './helpers/knowledge';
 
 describe('ProceduresService', () => {
+  let svc: ProceduresService;
+
+  beforeEach(() => {
+    svc = new ProceduresService(makeKnowledgeService());
+    svc.onModuleInit();
+  });
+
   it('lists summaries without deep content fields', () => {
     const list = svc.list();
     expect(list.length).toBeGreaterThan(0);

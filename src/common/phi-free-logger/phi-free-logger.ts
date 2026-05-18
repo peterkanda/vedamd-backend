@@ -70,6 +70,9 @@ export const ALLOWED_FIELDS = new Set<string>([
   'component',
   'bundle_version',
   'bundle_signature',
+  'bundle_verified',
+  'bundle_status',
+  'bundle_files',
   // hashed identifier carriers (already hashed by the wrapper)
   'actor_hash',
   'subject_hash',
