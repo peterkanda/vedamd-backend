@@ -1,4 +1,4 @@
-import type { ConditionGuidance, ReviewStatus } from '../conditions/conditions.types';
+import type { CdsRule, ConditionGuidance, ReviewStatus } from '../conditions/conditions.types';
 import type { DrugInteraction, DrugRecord } from '../drugs/drugs.types';
 import type { ProcedureGuidance } from '../procedures/procedures.types';
 
@@ -19,7 +19,7 @@ export type ValidationCode =
 
 export interface ValidationViolation {
   code: ValidationCode;
-  domain: 'conditions' | 'drugs' | 'drug-interactions' | 'procedures';
+  domain: 'conditions' | 'drugs' | 'drug-interactions' | 'procedures' | 'cds-rules';
   /** Slug or other identifier of the offending record. */
   recordId: string;
   message: string;
@@ -42,6 +42,7 @@ interface Bundle {
   drugs: DrugRecord[];
   interactions: DrugInteraction[];
   procedures: ProcedureGuidance[];
+  cdsRules?: CdsRule[];
 }
 
 const KNOWN_STATUSES: readonly ReviewStatus[] = ['draft', 'review', 'approved', 'deprecated'];
@@ -88,12 +89,17 @@ export function validateBundle(bundle: Bundle): ValidationResult {
     tally(r.reviewStatus, r.domains);
     pushViolations(violations, 'procedures', r.slug, r);
   }
+  for (const r of bundle.cdsRules ?? []) {
+    tally(r.reviewStatus, ['cds-rules', r.hook]);
+    pushViolations(violations, 'cds-rules', r.id, r);
+  }
 
   const totalRecords =
     bundle.conditions.length +
     bundle.drugs.length +
     bundle.interactions.length +
-    bundle.procedures.length;
+    bundle.procedures.length +
+    (bundle.cdsRules?.length ?? 0);
 
   return {
     ok: violations.length === 0,

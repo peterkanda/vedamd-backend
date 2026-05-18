@@ -1,7 +1,7 @@
 import { createHash, createPublicKey, verify } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import type { ConditionGuidance } from '../conditions/conditions.types';
+import type { CdsRule, ConditionGuidance } from '../conditions/conditions.types';
 import type { DrugInteraction, DrugRecord } from '../drugs/drugs.types';
 import type { ProcedureGuidance } from '../procedures/procedures.types';
 import { nonApprovedCount, validateBundle } from './bundle-validator';
@@ -84,7 +84,13 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
   const filesByName = new Map<string, BundleManifestFile>(
     manifestParsed.files.map((f) => [f.name, f]),
   );
-  const required = ['conditions.json', 'drugs.json', 'drug-interactions.json', 'procedures.json'];
+  const required = [
+    'conditions.json',
+    'drugs.json',
+    'drug-interactions.json',
+    'procedures.json',
+    'cds-rules.json',
+  ];
   for (const name of required) {
     if (!filesByName.has(name)) {
       return failOrReturn(opts, 'missing', dir, new Error(`Manifest missing required file: ${name}`), manifestParsed);
@@ -106,6 +112,7 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
     drugs: parsed['drugs.json'] as DrugRecord[],
     interactions: parsed['drug-interactions.json'] as DrugInteraction[],
     procedures: parsed['procedures.json'] as ProcedureGuidance[],
+    cdsRules: parsed['cds-rules.json'] as CdsRule[],
   };
 
   // Content validation — FR-024 governance rules.
@@ -169,6 +176,7 @@ export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBun
     drugs: [],
     interactions: [],
     procedures: [],
+    cdsRules: [],
   };
 }
 
@@ -201,5 +209,6 @@ function failOrReturn(
     drugs: [],
     interactions: [],
     procedures: [],
+    cdsRules: [],
   };
 }

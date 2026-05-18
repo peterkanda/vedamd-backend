@@ -1,4 +1,4 @@
-import type { ConditionGuidance } from '../conditions/conditions.types';
+import type { CdsRule, ConditionGuidance } from '../conditions/conditions.types';
 import type { DrugInteraction, DrugRecord } from '../drugs/drugs.types';
 import type { ProcedureGuidance } from '../procedures/procedures.types';
 import type { ContentStats, ValidationViolation } from './bundle-validator';
@@ -47,4 +47,5 @@ export interface LoadedBundle {
   drugs: DrugRecord[];
   interactions: DrugInteraction[];
   procedures: ProcedureGuidance[];
+  cdsRules: CdsRule[];
 }

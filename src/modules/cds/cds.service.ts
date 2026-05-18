@@ -1,11 +1,14 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import type {
+  CdsCard,
   CdsHookRequest,
   CdsHookResponse,
   CdsServiceDescriptor,
   StatelessCapability,
 } from './cds.types';
+import { CdsStrategyRegistry } from './strategies/registry';
+import { KnowledgeService } from '../knowledge/knowledge.service';
 import { PHI_FREE_LOGGER, type PhiFreeLogger } from '../../common/phi-free-logger';
 import type { AppConfig } from '../../config/configuration';
 
@@ -14,17 +17,17 @@ import type { AppConfig } from '../../config/configuration';
  * is evaluated in memory, and is released when the response is sent.
  * No part of the inbound bundle is logged, cached, queued, or persisted
  * (FR-088, NFR-028).
+ *
+ * Rule logic is split into two halves:
+ *   - DECLARATION lives in content/bundles/v.../cds-rules.json (signed,
+ *     governed, versioned). Loaded via KnowledgeService.
+ *   - IMPLEMENTATION lives as a CdsRuleStrategy class per rule type,
+ *     wired into the CdsStrategyRegistry. The registry resolves
+ *     strategies by `type`.
  */
 @Injectable()
 export class CdsService {
   private readonly services: CdsServiceDescriptor[] = [
-    {
-      id: 'vedamd-patient-view',
-      hook: 'patient-view',
-      title: 'VedaMD patient overview alerts',
-      description:
-        'Surface overdue screening, abnormal labs, and chronic-disease gaps on chart open.',
-    },
     {
       id: 'vedamd-medication-prescribe',
       hook: 'medication-prescribe',
@@ -33,17 +36,19 @@ export class CdsService {
         'Drug-drug interactions, dose checking, pediatric/renal/hepatic adjustments, AWaRe stewardship.',
     },
     {
-      id: 'vedamd-imci-fever-under5',
+      id: 'vedamd-patient-view',
       hook: 'patient-view',
-      title: 'IMCI fever in children under 5',
+      title: 'VedaMD patient overview alerts',
       description:
-        'WHO IMCI 2014 — flags suspected febrile illness in children under 5 for full IMCI assessment.',
+        'Surface overdue screening, abnormal labs, and chronic-disease gaps on chart open.',
     },
   ];
 
   constructor(
     private readonly config: ConfigService<AppConfig, true>,
     @Inject(PHI_FREE_LOGGER) private readonly log: PhiFreeLogger,
+    private readonly knowledge: KnowledgeService,
+    private readonly registry: CdsStrategyRegistry,
   ) {}
 
   listServices(): CdsServiceDescriptor[] {
@@ -69,7 +74,40 @@ export class CdsService {
     const start = process.hrtime.bigint();
     const known = this.services.find((s) => s.id === serviceId);
 
-    const response: CdsHookResponse = known ? { cards: [] } : { cards: [] };
+    const cards: CdsCard[] = [];
+    let rulesEvaluated = 0;
+    let rulesFired = 0;
+
+    if (known) {
+      const applicableRules = this.knowledge
+        .getCdsRules()
+        .filter((rule) => rule.hook === known.hook);
+
+      for (const rule of applicableRules) {
+        const strategy = this.registry.get(rule.type);
+        if (!strategy) continue;
+        rulesEvaluated += 1;
+        try {
+          const ruleCards = await strategy.evaluate(rule, req);
+          if (ruleCards.length > 0) rulesFired += 1;
+          cards.push(...ruleCards);
+        } catch (e) {
+          // A failing rule must never bring down the whole evaluation.
+          // Log PHI-free and continue.
+          this.log.info('cds_hook_evaluated', {
+            endpoint: `POST /cds-services/${serviceId}`,
+            hook: req.hook,
+            rule_id: rule.id,
+            rule_version: rule.ruleVersion,
+            error_category: 'internal',
+            cards_returned_count: 0,
+            latency_ms: 0,
+            status_code: 500,
+            message: (e as Error).message,
+          });
+        }
+      }
+    }
 
     const latencyMs = Number((process.hrtime.bigint() - start) / 1_000_000n);
     this.log.info('cds_hook_evaluated', {
@@ -77,11 +115,13 @@ export class CdsService {
       hook: req.hook,
       rule_id: serviceId,
       rule_version: '0.0.0',
-      cards_returned_count: response.cards.length,
+      rules_evaluated: rulesEvaluated,
+      fired: rulesFired,
+      cards_returned_count: cards.length,
       latency_ms: latencyMs,
       status_code: known ? 200 : 404,
     });
-    return response;
+    return { cards };
   }
 
   async evaluateGeneric(_payload: unknown): Promise<{ recommendations: unknown[] }> {

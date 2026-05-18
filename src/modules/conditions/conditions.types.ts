@@ -40,6 +40,30 @@ export interface ContentReviewMetadata {
   lastReviewedAt?: string;
 }
 
+/**
+ * CDS Hooks rule declaration. Lives in the signed content bundle.
+ * Each rule's `type` is the name of a strategy implemented in
+ * src/modules/cds/strategies/ — the bundle declares what to fire and
+ * carries the citations; the strategy code implements how to fire it.
+ */
+export type CdsRuleType = 'drug-drug-interaction';
+
+export type CdsHook =
+  | 'patient-view'
+  | 'medication-prescribe'
+  | 'order-sign'
+  | 'appointment-book'
+  | 'encounter-discharge';
+
+export interface CdsRule extends ContentReviewMetadata {
+  id: string;
+  hook: CdsHook;
+  type: CdsRuleType;
+  title: string;
+  description: string;
+  references: { label: string; url?: string }[];
+}
+
 export interface ConditionSummary {
   slug: string;
   title: string;

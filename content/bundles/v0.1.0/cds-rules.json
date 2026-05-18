@@ -1,0 +1,15 @@
+[
+  {
+    "id": "ddi-check",
+    "hook": "medication-prescribe",
+    "type": "drug-drug-interaction",
+    "title": "Drug-drug interaction safety check",
+    "description": "Pairwise interaction check across the proposed medications and the patient's current medication list, using the VedaMD drug-interactions registry. Returns one card per known interaction with severity, mechanism, and management.",
+    "references": [
+      { "label": "WHO Model Formulary — interaction monographs" }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  }
+]

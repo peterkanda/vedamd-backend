@@ -59,6 +59,7 @@ const fileEntries = files.map((name) => {
     drugs: JSON.parse(readFileSync(resolve(bundleDir, 'drugs.json'), 'utf8')),
     interactions: JSON.parse(readFileSync(resolve(bundleDir, 'drug-interactions.json'), 'utf8')),
     procedures: JSON.parse(readFileSync(resolve(bundleDir, 'procedures.json'), 'utf8')),
+    cdsRules: JSON.parse(readFileSync(resolve(bundleDir, 'cds-rules.json'), 'utf8')),
   };
   const validation = validateBundle(bundle);
   const stats = validation.stats;

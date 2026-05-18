@@ -2,7 +2,7 @@ import { Inject, Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { emptyBundle, loadBundleFromDisk } from './bundle-loader';
 import type { BundleInfo, LoadedBundle } from './knowledge.types';
-import type { ConditionGuidance } from '../conditions/conditions.types';
+import type { CdsRule, ConditionGuidance } from '../conditions/conditions.types';
 import type { DrugInteraction, DrugRecord } from '../drugs/drugs.types';
 import type { ProcedureGuidance } from '../procedures/procedures.types';
 import type { AppConfig } from '../../config/configuration';
@@ -82,5 +82,9 @@ export class KnowledgeService implements OnModuleInit {
 
   getProcedures(): ProcedureGuidance[] {
     return this.bundle.procedures;
+  }
+
+  getCdsRules(): CdsRule[] {
+    return this.bundle.cdsRules;
   }
 }

@@ -17,6 +17,7 @@ function copyBundle(): string {
     'drugs.json',
     'drug-interactions.json',
     'procedures.json',
+    'cds-rules.json',
   ]) {
     copyFileSync(resolve(REAL_BUNDLE, f), resolve(dir, f));
   }
@@ -93,7 +94,7 @@ describe('KnowledgeService', () => {
     expect(info.verified).toBe(true);
     expect(info.version).toBe('v0.1.0');
     expect(info.signedBy).toBe('vedamd-dev-key-v0');
-    expect(info.files.length).toBe(4);
+    expect(info.files.length).toBe(5);
     expect(info.contentStats).toBeDefined();
     expect(info.contentStats!.totalRecords).toBeGreaterThan(0);
     expect(info.contentStats!.byStatus.draft).toBeGreaterThan(0);
