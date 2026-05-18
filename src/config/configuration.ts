@@ -11,6 +11,15 @@ export interface AppConfig {
     /** HMAC-SHA-256 secret for hashing identifiers before any write (NFR-029). */
     hashSecret: string;
   };
+  apiKeys: {
+    /**
+     * HMAC-SHA-256 secret used to fingerprint API key secrets at issue time
+     * and on every inbound request. Only the fingerprint is stored
+     * server-side; the secret itself is shown to the integrator exactly
+     * once (FR-313).
+     */
+    fingerprintSecret: string;
+  };
   identity: {
     /** OIDC issuer (e.g., https://id.vedamd.io). */
     issuer: string;
@@ -55,6 +64,15 @@ export const configuration = (): AppConfig => ({
       (process.env.NODE_ENV === 'production'
         ? (() => {
             throw new Error('AUDIT_HASH_SECRET must be set in production (NFR-029).');
+          })()
+        : 'dev-only-do-not-use-in-prod'),
+  },
+  apiKeys: {
+    fingerprintSecret:
+      process.env.API_KEY_FINGERPRINT_SECRET ??
+      (process.env.NODE_ENV === 'production'
+        ? (() => {
+            throw new Error('API_KEY_FINGERPRINT_SECRET must be set in production (FR-313).');
           })()
         : 'dev-only-do-not-use-in-prod'),
   },

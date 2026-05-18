@@ -41,6 +41,29 @@ VedaMD persists **zero patient data**, ever. Patient context arrives with each A
 | `developer` | 6.3.16 Developer Portal (backend) | API key CRUD (FR-313) |
 | `integration-log` | 6.3.17 Bounded Integration Log | In-memory ring buffer with field allow-list (FR-330–343) |
 
+## Authentication
+
+Integrators authenticate with an API key as a standard bearer token:
+
+```http
+Authorization: Bearer vmd_live_<secret>
+```
+
+| Route | Auth |
+|---|---|
+| `GET /health` | Public |
+| `GET /metadata` | Public (auditors verify the stateless promise) |
+| `GET /cds-services` | Public (CDS Hooks discovery convention) |
+| `GET /docs`, `GET /openapi.json` | Public |
+| `POST /cds-services/:serviceId` | Bearer + `cds:evaluate` scope |
+| `POST /api/v1/cds/evaluate` | Bearer + `cds:evaluate` scope |
+| `*/v1/developer/*` | Operator OIDC (forthcoming) — v0.1 stub via `x-integrator-id` |
+
+Keys are HMAC-fingerprinted (`API_KEY_FINGERPRINT_SECRET`); the secret is shown
+exactly once at creation and never persisted server-side (FR-313). The
+guard validates in constant time and records `lastUsedAt` on success.
+Revoked keys are rejected at the edge.
+
 ## What is NOT here, by design
 
 - No patient store, no patient table, no patient schema (Section 2.7)
