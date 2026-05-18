@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: build / typecheck / test
+    name: build / typecheck / unit tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,6 +18,8 @@ jobs:
       - run: npm install
       - run: npm run typecheck
       - run: npm run build
+      # Unit tests only — integration specs skip themselves when
+      # DATABASE_URL is absent.
       - run: npm test -- --run
 
   bundle-verify:
@@ -30,15 +32,46 @@ jobs:
           node-version: '22'
           cache: 'npm'
       - run: npm install
-      # Always verify signature, per-file hashes, and content structure.
-      # Fails on any tamper, hash mismatch, or structural violation
-      # (e.g. an approved record missing the required reviewers).
       - name: verify bundle (signature + structure)
         run: npm run bundle:verify -- --bundle content/bundles/v0.1.0
-      # Enforce the approval gate only on pushes to main. v0.1 dev bundle
-      # is intentionally all-draft; flipping this on across PRs would
-      # block the very PRs that move records into 'approved'.
       - name: require approved-only content (main branch)
         if: github.ref == 'refs/heads/main'
         run: npm run bundle:verify -- --bundle content/bundles/v0.1.0 --require-approved
         continue-on-error: true # v0.1 is still draft; flip to false once content is promoted.
+
+  integration-tests:
+    name: Drizzle / Postgres integration tests
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: vedamd_ci
+          POSTGRES_USER: vedamd
+          POSTGRES_PASSWORD: vedamd_ci_password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U vedamd -d vedamd_ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://vedamd:vedamd_ci_password@localhost:5432/vedamd_ci
+      DATABASE_SSL: 'false'
+      API_KEY_FINGERPRINT_SECRET: ci-only-fp
+      AUDIT_HASH_SECRET: ci-only-hmac
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm install
+      - name: apply migrations
+        run: npm run db:migrate
+      # The same suite runs as in `build` above — but with DATABASE_URL
+      # set, the .integration.spec.ts files unskip and exercise the
+      # real Drizzle code paths against the migrated schema.
+      - name: run full test suite (unit + integration)
+        run: npm test -- --run
