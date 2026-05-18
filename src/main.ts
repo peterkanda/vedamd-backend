@@ -34,13 +34,21 @@ async function bootstrap() {
   );
 
   app.setGlobalPrefix('api', {
-    exclude: ['/health', '/cds-services', '/cds-services/*splat', '/docs', '/openapi.json'],
+    exclude: [
+      '/health',
+      '/metadata',
+      '/cds-services',
+      '/cds-services/*splat',
+      '/docs',
+      '/openapi.json',
+    ],
   });
 
   const swaggerConfig = new DocumentBuilder()
     .setTitle('VedaMD API')
     .setDescription(
-      'Open-source Clinical Decision Support API. CDS Hooks + REST/JSON + FHIR R4.',
+      'Open-source, stateless Clinical Decision Support API. CDS Hooks + REST/JSON. ' +
+        'VedaMD never stores patient data — records remain with your EMR.',
     )
     .setVersion('0.1.0')
     .addBearerAuth()
