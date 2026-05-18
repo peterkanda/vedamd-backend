@@ -20,7 +20,8 @@
     "test:cov": "vitest run --coverage",
     "typecheck": "tsc --noEmit",
     "keys:generate": "ts-node --transpile-only scripts/generate-signing-keys.ts",
-    "bundle:sign": "ts-node --transpile-only scripts/sign-bundle.ts"
+    "bundle:sign": "ts-node --transpile-only scripts/sign-bundle.ts",
+    "bundle:verify": "ts-node --transpile-only scripts/verify-bundle.ts"
   },
   "dependencies": {
     "@fastify/helmet": "^13.0.0",

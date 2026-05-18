@@ -53,6 +53,25 @@ VedaMD persists **zero patient data**, ever. Any structured signals an integrato
 | `developer` | 6.3.16 Developer Portal (backend) | API key CRUD (FR-313) |
 | `integration-log` | 6.3.17 Bounded Integration Log | In-memory ring buffer with field allow-list (FR-330–343) |
 
+## CI bundle gate
+
+Every PR runs `npm run bundle:verify` against `content/bundles/v0.1.0`:
+
+| Check | Exit code on failure |
+|---|---|
+| Manifest present, signature parses | 4 |
+| Ed25519 signature verifies | 4 |
+| Per-file SHA-256 matches manifest | 4 |
+| All `approved` records have ≥2 reviewers and `approvedAt` | 2 |
+| `--require-approved` set AND any non-approved record present | 3 |
+
+The CI workflow runs the verify step on every PR (without
+`--require-approved`, so PRs that move records draft→approved are not
+self-blocked) and also a second step on `main` with
+`--require-approved`. Once content is promoted out of draft, flip
+`continue-on-error` to `false` in `.github/workflows/ci.yml` to make
+the approval gate enforcing.
+
 ## Content governance — FR-024 multi-reviewer approval
 
 Every record carries `reviewStatus`, `reviewers[]`, and `approvedAt`.

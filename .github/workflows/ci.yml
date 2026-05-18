@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    name: build / typecheck / test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,3 +19,26 @@ jobs:
       - run: npm run typecheck
       - run: npm run build
       - run: npm test -- --run
+
+  bundle-verify:
+    name: content bundle — signature + governance
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm install
+      # Always verify signature, per-file hashes, and content structure.
+      # Fails on any tamper, hash mismatch, or structural violation
+      # (e.g. an approved record missing the required reviewers).
+      - name: verify bundle (signature + structure)
+        run: npm run bundle:verify -- --bundle content/bundles/v0.1.0
+      # Enforce the approval gate only on pushes to main. v0.1 dev bundle
+      # is intentionally all-draft; flipping this on across PRs would
+      # block the very PRs that move records into 'approved'.
+      - name: require approved-only content (main branch)
+        if: github.ref == 'refs/heads/main'
+        run: npm run bundle:verify -- --bundle content/bundles/v0.1.0 --require-approved
+        continue-on-error: true # v0.1 is still draft; flip to false once content is promoted.
