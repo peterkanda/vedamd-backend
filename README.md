@@ -140,6 +140,46 @@ npm run bundle:sign -- \
   --version v0.1.0
 ```
 
+## Persistence — Supabase / any Postgres
+
+Operator state (API keys, integration log, audit events) lives in a
+real Postgres database. Supabase is supported as a managed host —
+we just need its connection string in `DATABASE_URL`. The same code
+runs against:
+
+- Supabase Cloud (`postgresql://postgres:[pw]@db.[project].supabase.co:5432/postgres`)
+- Self-hosted Supabase (Kenya residency, Safaricom Cloud, etc.)
+- Any Postgres 14+ (RDS, plain Postgres, docker-compose local)
+
+Drizzle ORM owns the schema. Three tables today:
+
+| Table | Purpose |
+|---|---|
+| `api_keys` | HMAC fingerprint (not the secret), scopes, env, lifecycle timestamps |
+| `integration_log` | Per-request entries with PHI-free fields only (FR-330–343) |
+| `audit_events` | Append-only with HMAC chain for tamper-evidence (FR-123) |
+
+When `DATABASE_URL` is unset, services fall back to in-memory storage
+with a loud `Logger.warn`. This is for unit tests and standalone
+dev only; production always sets `DATABASE_URL`.
+
+### Local dev
+
+```bash
+docker compose up -d            # starts Postgres on :5432
+npm run db:migrate              # applies drizzle/0000_init.sql
+npm run start:dev
+```
+
+### Migrations
+
+| Script | Purpose |
+|---|---|
+| `npm run db:generate` | Generate a new migration from schema changes |
+| `npm run db:migrate` | Apply pending migrations to `$DATABASE_URL` |
+| `npm run db:push` | Push schema directly (dev only, skips migrations) |
+| `npm run db:studio` | Drizzle Studio UI for inspecting the database |
+
 ## Authentication
 
 Integrators authenticate with an API key as a standard bearer token:

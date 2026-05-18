@@ -26,11 +26,11 @@ export class ApiKeyGuard implements CanActivate {
     private readonly reflector: Reflector,
   ) {}
 
-  canActivate(ctx: ExecutionContext): boolean {
+  async canActivate(ctx: ExecutionContext): Promise<boolean> {
     const req = ctx.switchToHttp().getRequest<FastifyRequest>();
 
     const token = extractBearer(req.headers.authorization);
-    const record = this.keys.validateBearer(token);
+    const record = await this.keys.validateBearer(token);
     if (!record) {
       throw new UnauthorizedException('Invalid or missing API key.');
     }
@@ -54,7 +54,8 @@ export class ApiKeyGuard implements CanActivate {
       environment: record.environment,
     };
     req.apiKey = authenticated;
-    this.keys.recordUsage(record.id);
+    // Fire-and-forget; failure is logged inside the service.
+    void this.keys.recordUsage(record.id);
 
     return true;
   }

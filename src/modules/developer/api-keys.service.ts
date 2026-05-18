@@ -1,6 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable, Logger, Optional } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
+import { and, eq, isNull } from 'drizzle-orm';
+import { DRIZZLE, type MaybeDrizzle } from '../../db/database.module';
+import { apiKeys } from '../../db/schema';
 import type { AppConfig } from '../../config/configuration';
 
 export type ApiKeyScope =
@@ -32,36 +35,54 @@ export interface ApiKeyCreatedOnce extends ApiKeyRecord {
 }
 
 /**
- * In-memory API key registry (FR-313).
+ * API key registry (FR-313).
  *
- * v0.1: in-process Map. Production replaces with a Postgres-backed
- * implementation that stores only the HMAC fingerprint, never the
- * secret. The HMAC secret comes from configuration so it can be
- * rotated and so dev/test/prod never share fingerprints.
- *
- * The presented secret is compared in constant time to prevent
- * lookup-timing leaks.
+ * Two backends, picked at boot:
+ *   - DATABASE_URL set: Drizzle / Postgres (Supabase or any Postgres).
+ *     The HMAC fingerprint is the stored secret; the raw key is shown
+ *     once at creation and never persisted.
+ *   - DATABASE_URL absent: in-process Map. Used by unit tests and
+ *     standalone dev runs; data is lost on restart. The runtime logs
+ *     a loud warning so this isn't mistaken for production.
  */
 @Injectable()
 export class ApiKeysService {
-  private readonly byId = new Map<string, ApiKeyRecord>();
-  private readonly byFingerprint = new Map<string, ApiKeyRecord>();
+  private readonly nestLogger = new Logger(ApiKeysService.name);
+  private readonly memoryById = new Map<string, ApiKeyRecord>();
+  private readonly memoryByFingerprint = new Map<string, ApiKeyRecord>();
 
-  constructor(private readonly config: ConfigService<AppConfig, true>) {}
-
-  list(integratorId: string): ApiKeyRecord[] {
-    return [...this.byId.values()].filter((k) => k.integratorId === integratorId);
+  constructor(
+    private readonly config: ConfigService<AppConfig, true>,
+    @Optional() @Inject(DRIZZLE) private readonly db: MaybeDrizzle,
+  ) {
+    if (!this.db) {
+      this.nestLogger.warn(
+        'ApiKeysService running with IN-MEMORY storage (no DATABASE_URL). Keys will not survive restart.',
+      );
+    }
   }
 
-  create(input: {
+  async list(integratorId: string): Promise<ApiKeyRecord[]> {
+    if (this.db) {
+      const rows = await this.db
+        .select()
+        .from(apiKeys)
+        .where(eq(apiKeys.integratorId, integratorId));
+      return rows.map(rowToRecord);
+    }
+    return [...this.memoryById.values()].filter((k) => k.integratorId === integratorId);
+  }
+
+  async create(input: {
     integratorId: string;
     name: string;
     scopes: ApiKeyScope[];
     environment: ApiKeyEnvironment;
-  }): ApiKeyCreatedOnce {
+  }): Promise<ApiKeyCreatedOnce> {
     const id = randomBytes(8).toString('hex');
     const secret = `vmd_${input.environment === 'production' ? 'live' : 'test'}_${randomBytes(24).toString('base64url')}`;
     const fingerprint = this.fingerprint(secret);
+    const createdAt = new Date();
 
     const record: ApiKeyRecord = {
       id,
@@ -70,19 +91,42 @@ export class ApiKeysService {
       fingerprint,
       scopes: input.scopes,
       environment: input.environment,
-      createdAt: new Date().toISOString(),
+      createdAt: createdAt.toISOString(),
     };
-    this.byId.set(id, record);
-    this.byFingerprint.set(fingerprint, record);
+
+    if (this.db) {
+      await this.db.insert(apiKeys).values({
+        id,
+        integratorId: input.integratorId,
+        name: input.name,
+        fingerprint,
+        scopes: input.scopes,
+        environment: input.environment,
+        createdAt,
+      });
+    } else {
+      this.memoryById.set(id, record);
+      this.memoryByFingerprint.set(fingerprint, record);
+    }
+
     return { ...record, secret };
   }
 
-  revoke(integratorId: string, id: string): ApiKeyRecord | null {
-    const k = this.byId.get(id);
+  async revoke(integratorId: string, id: string): Promise<ApiKeyRecord | null> {
+    const revokedAt = new Date();
+    if (this.db) {
+      const rows = await this.db
+        .update(apiKeys)
+        .set({ revokedAt })
+        .where(and(eq(apiKeys.id, id), eq(apiKeys.integratorId, integratorId)))
+        .returning();
+      return rows[0] ? rowToRecord(rows[0]) : null;
+    }
+    const k = this.memoryById.get(id);
     if (!k || k.integratorId !== integratorId) return null;
-    const updated: ApiKeyRecord = { ...k, revokedAt: new Date().toISOString() };
-    this.byId.set(id, updated);
-    this.byFingerprint.set(updated.fingerprint, updated);
+    const updated: ApiKeyRecord = { ...k, revokedAt: revokedAt.toISOString() };
+    this.memoryById.set(id, updated);
+    this.memoryByFingerprint.set(updated.fingerprint, updated);
     return updated;
   }
 
@@ -90,34 +134,66 @@ export class ApiKeysService {
    * Validate a bearer token. Returns the matching record on success,
    * null on any failure (missing, malformed, unknown, revoked).
    *
-   * The comparison is constant-time on the fingerprint to deny any
-   * leak about which keys exist server-side.
+   * The fingerprint comparison is constant-time to deny any leak
+   * about which keys exist server-side.
    */
-  validateBearer(token: string | undefined): ApiKeyRecord | null {
+  async validateBearer(token: string | undefined): Promise<ApiKeyRecord | null> {
     if (!token || !token.startsWith('vmd_')) return null;
     const fingerprint = this.fingerprint(token);
-    const candidate = this.byFingerprint.get(fingerprint);
+
+    let candidate: ApiKeyRecord | undefined;
+    if (this.db) {
+      const rows = await this.db
+        .select()
+        .from(apiKeys)
+        .where(and(eq(apiKeys.fingerprint, fingerprint), isNull(apiKeys.revokedAt)))
+        .limit(1);
+      candidate = rows[0] ? rowToRecord(rows[0]) : undefined;
+    } else {
+      const k = this.memoryByFingerprint.get(fingerprint);
+      candidate = k && !k.revokedAt ? k : undefined;
+    }
     if (!candidate) return null;
-    if (candidate.revokedAt) return null;
 
     const a = Buffer.from(candidate.fingerprint, 'hex');
     const b = Buffer.from(fingerprint, 'hex');
     if (a.length !== b.length || !timingSafeEqual(a, b)) return null;
-
     return candidate;
   }
 
-  /** Record usage on the in-memory record. */
-  recordUsage(id: string, when: Date = new Date()): void {
-    const k = this.byId.get(id);
-    if (!k) return;
-    const updated: ApiKeyRecord = { ...k, lastUsedAt: when.toISOString() };
-    this.byId.set(id, updated);
-    this.byFingerprint.set(updated.fingerprint, updated);
+  /** Record usage. Best-effort; failure is logged but not surfaced. */
+  async recordUsage(id: string, when: Date = new Date()): Promise<void> {
+    try {
+      if (this.db) {
+        await this.db.update(apiKeys).set({ lastUsedAt: when }).where(eq(apiKeys.id, id));
+        return;
+      }
+      const k = this.memoryById.get(id);
+      if (!k) return;
+      const updated: ApiKeyRecord = { ...k, lastUsedAt: when.toISOString() };
+      this.memoryById.set(id, updated);
+      this.memoryByFingerprint.set(updated.fingerprint, updated);
+    } catch (e) {
+      this.nestLogger.warn(`recordUsage failed for ${id}: ${(e as Error).message}`);
+    }
   }
 
   private fingerprint(secret: string): string {
     const hmacKey = this.config.get('apiKeys.fingerprintSecret', { infer: true });
     return createHmac('sha256', hmacKey).update(secret).digest('hex');
   }
+}
+
+function rowToRecord(r: typeof apiKeys.$inferSelect): ApiKeyRecord {
+  return {
+    id: r.id,
+    integratorId: r.integratorId,
+    name: r.name,
+    fingerprint: r.fingerprint,
+    scopes: r.scopes as ApiKeyScope[],
+    environment: r.environment as ApiKeyEnvironment,
+    createdAt: r.createdAt.toISOString(),
+    lastUsedAt: r.lastUsedAt?.toISOString(),
+    revokedAt: r.revokedAt?.toISOString(),
+  };
 }

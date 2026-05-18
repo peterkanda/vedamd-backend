@@ -11,6 +11,15 @@ export interface AppConfig {
     /** HMAC-SHA-256 secret for hashing identifiers before any write (NFR-029). */
     hashSecret: string;
   };
+  database: {
+    /** Postgres connection string. Empty in dev / unit tests; in-memory fallback used. */
+    url: string;
+    /** Max pool size. */
+    poolMax: number;
+    /** Require TLS to the database. Should be true for Supabase / any
+     *  managed Postgres. */
+    ssl: boolean;
+  };
   content: {
     /** Directory of the active signed content bundle. */
     bundleDir: string;
@@ -76,6 +85,14 @@ export const configuration = (): AppConfig => ({
             throw new Error('AUDIT_HASH_SECRET must be set in production (NFR-029).');
           })()
         : 'dev-only-do-not-use-in-prod'),
+  },
+  database: {
+    url: process.env.DATABASE_URL ?? '',
+    poolMax: Number(process.env.DATABASE_POOL_MAX ?? 10),
+    ssl:
+      process.env.DATABASE_SSL !== undefined
+        ? process.env.DATABASE_SSL === 'true'
+        : process.env.NODE_ENV === 'production',
   },
   content: {
     bundleDir: process.env.CONTENT_BUNDLE_DIR ?? 'content/bundles/v0.1.0',

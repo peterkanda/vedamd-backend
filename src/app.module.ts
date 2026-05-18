@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { configuration } from './config/configuration';
+import { DatabaseModule } from './db/database.module';
 import { PhiFreeLoggerModule } from './common/phi-free-logger';
 import { HealthModule } from './health/health.module';
 import { CdsModule } from './modules/cds/cds.module';
@@ -24,6 +25,7 @@ import { DeveloperModule } from './modules/developer/developer.module';
       isGlobal: true,
       load: [configuration],
     }),
+    DatabaseModule,
     PhiFreeLoggerModule,
     HealthModule,
     CdsModule,
