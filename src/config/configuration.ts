@@ -45,6 +45,14 @@ export interface AppConfig {
     /** JWKS URL for verifying access tokens (operator identity, FR-160). */
     jwksUrl: string;
     audience: string;
+    /** JWT claim that holds the integrator_id (configurable per IdP). */
+    integratorIdClaim: string;
+    /**
+     * Development-only bypass: when true AND NODE_ENV !== 'production',
+     * the operator guard accepts `x-integrator-id` headers as identity.
+     * Production refuses to honour this even if set.
+     */
+    devBypass: boolean;
   };
   integrationLog: {
     /** Hard ceiling per FR-331; cannot be raised above 50,000. */
@@ -118,6 +126,10 @@ export const configuration = (): AppConfig => ({
     issuer: process.env.OIDC_ISSUER ?? '',
     jwksUrl: process.env.OIDC_JWKS_URL ?? '',
     audience: process.env.OIDC_AUDIENCE ?? 'vedamd-api',
+    integratorIdClaim: process.env.OIDC_INTEGRATOR_ID_CLAIM ?? 'integrator_id',
+    devBypass:
+      process.env.NODE_ENV !== 'production' &&
+      process.env.OPERATOR_AUTH_DEV_BYPASS === 'true',
   },
   integrationLog: {
     maxEntriesPerIntegrator: cap(

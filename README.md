@@ -180,7 +180,27 @@ npm run start:dev
 | `npm run db:push` | Push schema directly (dev only, skips migrations) |
 | `npm run db:studio` | Drizzle Studio UI for inspecting the database |
 
-## Authentication
+## Operator authentication
+
+Developer-portal and integration-log endpoints authenticate the
+**operator** (a human admin acting on behalf of an integrator) via an
+OIDC JWT verified against `OIDC_JWKS_URL`:
+
+```http
+Authorization: Bearer <JWT>
+```
+
+The integratorId is extracted from a configurable claim
+(`OIDC_INTEGRATOR_ID_CLAIM`, default `integrator_id`). This replaces
+the v0.1 `x-integrator-id` header stub — that path is now closed in
+production.
+
+For local development before an IdP is wired, set
+`OPERATOR_AUTH_DEV_BYPASS=true` AND keep `NODE_ENV != production`.
+With both, the guard accepts `x-integrator-id` as identity. Production
+rejects the bypass even if the env var is somehow present.
+
+## Integrator authentication
 
 Integrators authenticate with an API key as a standard bearer token:
 
@@ -200,7 +220,7 @@ Authorization: Bearer vmd_live_<secret>
 | `GET /api/v1/procedures[/:slug]` | Bearer + `content:read` scope |
 | `GET /api/v1/knowledge/bundle` | Public (auditors verify the loaded content) |
 | `GET /api/v1/drugs[/:slug]`, `POST /api/v1/drugs/interactions`, `POST /api/v1/drugs/:slug/dosing` | Bearer + `drug-info:read` scope |
-| `*/v1/developer/*` | Operator OIDC (forthcoming) — v0.1 stub via `x-integrator-id` |
+| `*/v1/developer/*`, `GET /api/v1/integration-log` | Operator OIDC bearer (JWT verified against `OIDC_JWKS_URL`); integratorId pulled from `OIDC_INTEGRATOR_ID_CLAIM` |
 
 Keys are HMAC-fingerprinted (`API_KEY_FINGERPRINT_SECRET`); the secret is shown
 exactly once at creation and never persisted server-side (FR-313). The

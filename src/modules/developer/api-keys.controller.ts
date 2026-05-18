@@ -1,11 +1,22 @@
-import { Body, Controller, Delete, Get, Headers, Param, Post } from '@nestjs/common';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { IsArray, IsIn, IsString } from 'class-validator';
+import type { FastifyRequest } from 'fastify';
 import {
   ApiKeysService,
   type ApiKeyEnvironment,
   type ApiKeyScope,
 } from './api-keys.service';
+import { OperatorAuthGuard } from '../../common/operator-auth';
 
 class CreateApiKeyDto {
   @IsString()
@@ -20,13 +31,15 @@ class CreateApiKeyDto {
 
 @ApiTags('developer')
 @Controller('v1/developer/api-keys')
+@UseGuards(OperatorAuthGuard)
+@ApiBearerAuth()
 export class ApiKeysController {
   constructor(private readonly keys: ApiKeysService) {}
 
   @Get()
   @ApiOperation({ summary: 'List API keys for the calling integrator (fingerprints only)' })
-  list(@Headers('x-integrator-id') integratorId: string) {
-    return this.keys.list(integratorId);
+  list(@Req() req: FastifyRequest) {
+    return this.keys.list(req.operator!.integratorId);
   }
 
   @Post()
@@ -34,13 +47,13 @@ export class ApiKeysController {
     summary: 'Create an API key',
     description: 'FR-313 — secret returned once at creation; only fingerprints displayed thereafter.',
   })
-  create(@Headers('x-integrator-id') integratorId: string, @Body() body: CreateApiKeyDto) {
-    return this.keys.create({ integratorId, ...body });
+  create(@Req() req: FastifyRequest, @Body() body: CreateApiKeyDto) {
+    return this.keys.create({ integratorId: req.operator!.integratorId, ...body });
   }
 
   @Delete(':id')
   @ApiOperation({ summary: 'Revoke an API key' })
-  revoke(@Headers('x-integrator-id') integratorId: string, @Param('id') id: string) {
-    return this.keys.revoke(integratorId, id);
+  revoke(@Req() req: FastifyRequest, @Param('id') id: string) {
+    return this.keys.revoke(req.operator!.integratorId, id);
   }
 }
