@@ -6,6 +6,7 @@ import type { AppConfig } from '../../config/configuration';
 export type ApiKeyScope =
   | 'cds:evaluate'
   | 'cds:discover'
+  | 'content:read'
   | 'drug-info:read'
   | 'terminology:read'
   | 'bundles:read'

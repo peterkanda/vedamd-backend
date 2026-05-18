@@ -1,6 +1,11 @@
 /**
- * CDS Hooks 1.0 + VedaMD extensions.
+ * CDS Hooks 1.0 envelope + VedaMD recommendation metadata.
  * https://cds-hooks.org/specification/current/
+ *
+ * VedaMD is content-driven, not FHIR-coupled. Payloads are plain JSON;
+ * we never parse them as FHIR resources, never store them, never call
+ * back to any FHIR server. Callers may include any structure the spec
+ * permits — anything we don't use is ignored.
  */
 
 export interface CdsServiceDescriptor {
@@ -18,9 +23,9 @@ export interface CdsServicesResponse {
 export interface CdsHookRequest {
   hook: string;
   hookInstance: string;
-  fhirServer?: string;
-  fhirAuthorization?: Record<string, unknown>;
+  /** Anonymous structured context. We read only non-identifying clinical signals. */
   context: Record<string, unknown>;
+  /** Optional caller-supplied data. Treated as opaque JSON; never persisted. */
   prefetch?: Record<string, unknown>;
 }
 
@@ -60,8 +65,9 @@ export interface CdsHookResponse {
 
 /**
  * Minimal CapabilityStatement-shaped response used by VedaMD to
- * advertise its stateless posture (FR-093). Not a full FHIR
- * CapabilityStatement — we are not a FHIR server (FR-089).
+ * advertise its stateless, content-driven posture (FR-093).
+ * Not a full FHIR CapabilityStatement — we are not a FHIR server
+ * (FR-089) and do not require FHIR-shaped input.
  */
 export interface StatelessCapability {
   resourceType: 'CapabilityStatement';
