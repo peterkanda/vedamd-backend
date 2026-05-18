@@ -29,6 +29,10 @@ export interface RenalAdjustment {
   crClMinMlMin?: number;
   crClMaxMlMin?: number;
   adjustment: string;
+  /** If true, dosing in this CrCl range is contraindicated. The dosing
+   *  calculator refuses to return a calculated dose and surfaces the
+   *  adjustment text as a contraindication. */
+  prohibited?: boolean;
 }
 
 export interface DrugSummary {
@@ -57,6 +61,9 @@ export interface DrugRecord extends DrugSummary {
     paediatric?: PaediatricDosing;
     renal?: RenalAdjustment[];
     hepatic?: string;
+    /** True for drugs whose dosing must be individualised (e.g. INR-titrated
+     *  warfarin). The calculator returns narrative-only, no calculated mg. */
+    individualised?: boolean;
   };
   pregnancy: { category?: string; notes: string };
   lactation: string;
@@ -69,6 +76,48 @@ export interface DrugRecord extends DrugSummary {
   reviewStatus: ReviewStatus;
   evidenceLevel: EvidenceLevel;
   lastReviewedAt?: string;
+}
+
+export interface DosingInput {
+  weightKg: number;
+  ageYears?: number;
+  /** Free text — surfaced in the narrative when relevant (e.g. "otitis media"). */
+  indication?: string;
+  /** Estimated creatinine clearance, mL/min/1.73 m². */
+  crClMlMin?: number;
+  /** Preferred route. Defaults to the first adult regimen's route or 'oral'. */
+  route?: string;
+}
+
+export type DosingProtocol =
+  | 'adult'
+  | 'paediatric'
+  | 'weight-banded'
+  | 'individualised'
+  | 'not-applicable';
+
+export interface CalculatedDose {
+  mgPerDose: number;
+  route: string;
+  frequency: string;
+  maxMgPerDay?: number;
+  /** Human-readable list of any safety caps that bound the calculated dose. */
+  capsApplied: string[];
+}
+
+export interface DosingResult {
+  slug: string;
+  inputs: DosingInput;
+  protocol: DosingProtocol;
+  calculatedDose?: CalculatedDose;
+  /** Human-readable explanation. Always populated. */
+  narrative: string;
+  warnings: string[];
+  contraindications: string[];
+  references: { label: string; url?: string }[];
+  ruleVersion: string;
+  evidenceLevel: EvidenceLevel;
+  reviewStatus: ReviewStatus;
 }
 
 export interface DrugInteraction {

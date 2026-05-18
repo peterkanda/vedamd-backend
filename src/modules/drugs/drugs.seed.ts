@@ -252,6 +252,7 @@ export const SEED_DRUGS: DrugRecord[] = [
         {
           crClMaxMlMin: 30,
           adjustment: 'Contraindicated — risk of lactic acidosis.',
+          prohibited: true,
         },
       ],
     },
@@ -313,6 +314,7 @@ export const SEED_DRUGS: DrugRecord[] = [
         },
       ],
       hepatic: 'Reduce starting dose; titrate slowly and monitor INR.',
+      individualised: true,
     },
     pregnancy: {
       notes:

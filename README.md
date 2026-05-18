@@ -42,7 +42,7 @@ VedaMD persists **zero patient data**, ever. Any structured signals an integrato
 | `conditions` | 6.3.18 Content-driven CDS | Structured guidance by slug — malaria, hypertension, T2DM seeded |
 | `knowledge` | 6.3.2 Knowledge Content Service | Skeleton |
 | `terminology` | 6.3.3 Terminology Service | Skeleton |
-| `drugs` | 6.3.4 Drug Information Service | Search + record + interactions; 6 KEML drugs seeded |
+| `drugs` | 6.3.4 Drug Information Service | Search + record + interactions + dosing calculator; 6 KEML drugs seeded |
 | `llm` | 6.3.6 LLM Orchestration | Skeleton |
 | `audit` | 6.3.7 Audit & Traceability | HMAC-hashed identifiers (NFR-029) |
 | `bundles` | 6.3.8 Offline Rule Bundle Distribution | Catalog API skeleton |
@@ -69,7 +69,7 @@ Authorization: Bearer vmd_live_<secret>
 | `POST /cds-services/:serviceId` | Bearer + `cds:evaluate` scope |
 | `POST /api/v1/cds/evaluate` | Bearer + `cds:evaluate` scope |
 | `GET /api/v1/conditions[/:slug]` | Bearer + `content:read` scope |
-| `GET /api/v1/drugs[/:slug]`, `POST /api/v1/drugs/interactions` | Bearer + `drug-info:read` scope |
+| `GET /api/v1/drugs[/:slug]`, `POST /api/v1/drugs/interactions`, `POST /api/v1/drugs/:slug/dosing` | Bearer + `drug-info:read` scope |
 | `*/v1/developer/*` | Operator OIDC (forthcoming) — v0.1 stub via `x-integrator-id` |
 
 Keys are HMAC-fingerprinted (`API_KEY_FINGERPRINT_SECRET`); the secret is shown

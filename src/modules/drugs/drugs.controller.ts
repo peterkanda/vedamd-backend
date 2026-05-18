@@ -10,7 +10,15 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { ArrayMinSize, IsArray, IsString } from 'class-validator';
+import {
+  ArrayMinSize,
+  IsArray,
+  IsNumber,
+  IsOptional,
+  IsString,
+  Max,
+  Min,
+} from 'class-validator';
 import { DrugsService } from './drugs.service';
 import type { AwareCategory } from './drugs.types';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';
@@ -20,6 +28,33 @@ class InteractionsRequestDto {
   @ArrayMinSize(2)
   @IsString({ each: true })
   slugs!: string[];
+}
+
+class DosingRequestDto {
+  @IsNumber()
+  @Min(0.5)
+  @Max(300)
+  weightKg!: number;
+
+  @IsOptional()
+  @IsNumber()
+  @Min(0)
+  @Max(120)
+  ageYears?: number;
+
+  @IsOptional()
+  @IsString()
+  indication?: string;
+
+  @IsOptional()
+  @IsNumber()
+  @Min(0)
+  @Max(200)
+  crClMlMin?: number;
+
+  @IsOptional()
+  @IsString()
+  route?: string;
 }
 
 @ApiTags('drugs')
@@ -73,5 +108,18 @@ export class DrugsController {
   })
   interactions(@Body() body: InteractionsRequestDto) {
     return this.drugs.checkInteractions(body.slugs);
+  }
+
+  @Post(':slug/dosing')
+  @RequireScope('drug-info:read')
+  @ApiOperation({
+    summary: 'Calculate a dose for the drug given weight / age / renal function',
+    description:
+      'Deterministic algorithm over the structured drug record. Refuses to return a mg dose for individualised regimens (e.g. warfarin) or when CrCl falls in a contraindicated band. Always returns a narrative.',
+  })
+  dosing(@Param('slug') slug: string, @Body() body: DosingRequestDto) {
+    const result = this.drugs.calculateDose(slug, body);
+    if (!result) throw new NotFoundException(`Unknown drug: ${slug}`);
+    return result;
   }
 }

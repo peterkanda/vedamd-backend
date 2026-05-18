@@ -1,7 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { SEED_DRUGS, SEED_INTERACTIONS } from './drugs.seed';
+import { calculateDose } from './drugs.dosing';
 import type {
   AwareCategory,
+  DosingInput,
+  DosingResult,
   DrugInteraction,
   DrugRecord,
   DrugSummary,
@@ -61,6 +64,12 @@ export class DrugsService {
 
   get(slug: string): DrugRecord | null {
     return this.bySlug.get(slug) ?? null;
+  }
+
+  calculateDose(slug: string, input: DosingInput): DosingResult | null {
+    const drug = this.bySlug.get(slug);
+    if (!drug) return null;
+    return calculateDose(drug, input);
   }
 
   /**
