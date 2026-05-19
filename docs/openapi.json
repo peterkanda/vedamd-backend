@@ -1,0 +1,819 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/health": {
+      "get": {
+        "operationId": "HealthController_check",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "The Health Check is successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "info": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "error": {
+                      "type": "object",
+                      "example": {},
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "details": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The Health Check is not successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "info": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "error": {
+                      "type": "object",
+                      "example": {
+                        "redis": {
+                          "status": "down",
+                          "message": "Could not connect"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "details": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        },
+                        "redis": {
+                          "status": "down",
+                          "message": "Could not connect"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "health"
+        ]
+      }
+    },
+    "/cds-services": {
+      "get": {
+        "description": "Unauthenticated by design — discovery is public per CDS Hooks convention.",
+        "operationId": "CdsHooksController_discover",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "CDS Hooks 1.0 service discovery",
+        "tags": [
+          "cds-hooks"
+        ]
+      }
+    },
+    "/cds-services/{serviceId}": {
+      "post": {
+        "operationId": "CdsHooksController_invoke",
+        "parameters": [
+          {
+            "name": "serviceId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Invoke a CDS Hooks service (requires cds:evaluate scope)",
+        "tags": [
+          "cds-hooks"
+        ]
+      }
+    },
+    "/api/v1/cds/evaluate": {
+      "post": {
+        "description": "Accepts a structured patient context and returns recommendations. See FR-007. Requires the cds:evaluate scope.",
+        "operationId": "CdsEvaluateController_evaluate",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Non-CDS-Hooks evaluation endpoint",
+        "tags": [
+          "cds"
+        ]
+      }
+    },
+    "/metadata": {
+      "get": {
+        "description": "CapabilityStatement-shaped declaration of stateless operation (FR-093). Includes the http://vedamd.io/CapabilityStatement/stateless extension set to true.",
+        "operationId": "CdsCapabilityController_get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Stateless CapabilityStatement",
+        "tags": [
+          "capability"
+        ]
+      }
+    },
+    "/api/v1/developer/api-keys": {
+      "get": {
+        "operationId": "ApiKeysController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List API keys for the calling integrator (fingerprints only)",
+        "tags": [
+          "developer"
+        ]
+      },
+      "post": {
+        "description": "FR-313 — secret returned once at creation; only fingerprints displayed thereafter.",
+        "operationId": "ApiKeysController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateApiKeyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Create an API key",
+        "tags": [
+          "developer"
+        ]
+      }
+    },
+    "/api/v1/developer/api-keys/{id}": {
+      "delete": {
+        "operationId": "ApiKeysController_revoke",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Revoke an API key",
+        "tags": [
+          "developer"
+        ]
+      }
+    },
+    "/api/v1/drugs": {
+      "get": {
+        "description": "Filters: q (free text over slug/INN/class/trade/RxNorm/ATC), atc (exact ATC), aware (Access|Watch|Reserve), kemlOnly=true.",
+        "operationId": "DrugsController_list",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "atc",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "kemlOnly",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List or search drugs",
+        "tags": [
+          "drugs"
+        ]
+      }
+    },
+    "/api/v1/drugs/{slug}": {
+      "get": {
+        "operationId": "DrugsController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a full drug record by slug",
+        "tags": [
+          "drugs"
+        ]
+      }
+    },
+    "/api/v1/drugs/interactions": {
+      "post": {
+        "description": "Body: { slugs: [\"paracetamol\",\"warfarin\", …] }. Returns every known interaction across the unordered pairs, plus any slugs that did not resolve to a known drug.",
+        "operationId": "DrugsController_interactions",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InteractionsRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Check pairwise drug-drug interactions",
+        "tags": [
+          "drugs"
+        ]
+      }
+    },
+    "/api/v1/drugs/{slug}/dosing": {
+      "post": {
+        "description": "Deterministic algorithm over the structured drug record. Refuses to return a mg dose for individualised regimens (e.g. warfarin) or when CrCl falls in a contraindicated band. Always returns a narrative.",
+        "operationId": "DrugsController_dosing",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DosingRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Calculate a dose for the drug given weight / age / renal function",
+        "tags": [
+          "drugs"
+        ]
+      }
+    },
+    "/api/v1/knowledge/bundle": {
+      "get": {
+        "description": "Unauthenticated by design — auditors and integrators can verify which signed content bundle the platform is serving (version, signer, signedAt, per-file SHA-256, verification status). No clinical content is returned here.",
+        "operationId": "KnowledgeController_bundle",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Return the loaded content bundle metadata",
+        "tags": [
+          "knowledge"
+        ]
+      }
+    },
+    "/api/v1/terminology/lookup": {
+      "get": {
+        "operationId": "TerminologyController_lookup",
+        "parameters": [
+          {
+            "name": "system",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "terminology"
+        ]
+      }
+    },
+    "/api/v1/terminology/search": {
+      "get": {
+        "operationId": "TerminologyController_search",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "terminology"
+        ]
+      }
+    },
+    "/api/v1/conditions": {
+      "get": {
+        "description": "Discovery surface for content-driven CDS. Returns summaries; fetch full guidance by slug.",
+        "operationId": "ConditionsController_list",
+        "parameters": [
+          {
+            "name": "domain",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List condition slugs and titles",
+        "tags": [
+          "conditions"
+        ]
+      }
+    },
+    "/api/v1/conditions/{slug}": {
+      "get": {
+        "description": "Returns presentation, red flags, diagnostics, ordered management steps, and source citations. No patient data is required or accepted at this endpoint.",
+        "operationId": "ConditionsController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get structured clinical guidance for a condition",
+        "tags": [
+          "conditions"
+        ]
+      }
+    },
+    "/api/v1/procedures": {
+      "get": {
+        "description": "Filters: domain (e.g. emergency, paediatrics), q (free text over slug/title/CPT). Returns summaries; fetch full guidance by slug.",
+        "operationId": "ProceduresController_list",
+        "parameters": [
+          {
+            "name": "domain",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List procedures",
+        "tags": [
+          "procedures"
+        ]
+      }
+    },
+    "/api/v1/procedures/{slug}": {
+      "get": {
+        "description": "Returns indications, contraindications, equipment, consent notes, ordered steps with safety checks, red flags, post-procedure care, complications and management, and citations.",
+        "operationId": "ProceduresController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get structured procedural guidance by slug",
+        "tags": [
+          "procedures"
+        ]
+      }
+    },
+    "/api/v1/bundles": {
+      "get": {
+        "description": "FR-147 — filter by domain, locale, country applicability.",
+        "operationId": "BundlesController_catalog",
+        "parameters": [
+          {
+            "name": "domain",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "locale",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "country",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Catalog of signed knowledge bundles",
+        "tags": [
+          "bundles"
+        ]
+      }
+    },
+    "/api/v1/bundles/{id}/latest": {
+      "get": {
+        "operationId": "BundlesController_latest",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Latest bundle metadata for an id",
+        "tags": [
+          "bundles"
+        ]
+      }
+    },
+    "/api/v1/integration-log": {
+      "get": {
+        "description": "FR-336 — newest-first ring-buffer view of recent API calls. Bounded by FR-331 (50k entries) and FR-332 (30-day TTL). Field set per FR-333. Scoped to the calling operator's integratorId.",
+        "operationId": "IntegrationLogController_query",
+        "parameters": [
+          {
+            "name": "limit",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "since",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Query the bounded integration log",
+        "tags": [
+          "integration-log"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "VedaMD API",
+    "description": "Open-source, stateless Clinical Decision Support API. CDS Hooks + REST/JSON. VedaMD never stores patient data — records remain with your EMR.",
+    "version": "0.1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http"
+      }
+    },
+    "schemas": {
+      "CreateApiKeyDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "InteractionsRequestDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "DosingRequestDto": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+}

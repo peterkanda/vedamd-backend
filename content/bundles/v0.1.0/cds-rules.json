@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ddi-check",
+    "hook": "medication-prescribe",
+    "type": "drug-drug-interaction",
+    "title": "Drug-drug interaction safety check",
+    "description": "Pairwise interaction check across the proposed medications and the patient's current medication list, using the VedaMD drug-interactions registry. Returns one card per known interaction with severity, mechanism, and management.",
+    "references": [
+      { "label": "WHO Model Formulary — interaction monographs" }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "id": "renal-safety",
+    "hook": "medication-prescribe",
+    "type": "renal-safety",
+    "title": "Renal-function safety check on prescribing",
+    "description": "When the caller supplies a creatinine clearance (context.crClMlMin), refuse to recommend any proposed medication whose drug record has a renal band marked prohibited for that CrCl. Surfaces the structured renal-adjustment text from the drug record.",
+    "references": [
+      { "label": "WHO Model Formulary — renal dose adjustments" }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "id": "pregnancy-safety",
+    "hook": "medication-prescribe",
+    "type": "pregnancy-safety",
+    "title": "Pregnancy contraindication check on prescribing",
+    "description": "When the caller flags pregnancy (context.pregnant: true), fire a critical card for any proposed medication whose drug record carries pregnancy.contraindicated: true. The card surfaces the drug's pregnancy.notes narrative for the prescriber.",
+    "references": [
+      { "label": "WHO Model Formulary — pregnancy and lactation" }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "id": "aware-stewardship",
+    "hook": "medication-prescribe",
+    "type": "aware-stewardship",
+    "title": "WHO AWaRe antibiotic stewardship",
+    "description": "Fires when a proposed medication is classified Watch or Reserve in the WHO AWaRe 2023 framework. Surfaces the AWaRe category, the drug's own stewardship-relevant warnings, and lists same-class Access-tier alternatives present in the formulary. Supports the NFR-AMR target of >=60% Access-tier use.",
+    "references": [
+      { "label": "WHO AWaRe Classification 2023", "url": "https://www.who.int/publications/i/item/WHO-MHP-HPS-EML-2023.04" },
+      { "label": "Kenya National Action Plan on AMR" }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "id": "medication-monitoring-reminder",
+    "hook": "patient-view",
+    "type": "medication-monitoring",
+    "title": "Active-medication monitoring reminder",
+    "description": "On chart open, reminds the clinician of monitoring requirements (labs, intervals) for any of the patient's current medications that carry a non-empty monitoring list in the VedaMD drug record. One info card per medication. Reads context.currentMedications (or medications) — never patient identity.",
+    "references": [
+      { "label": "WHO Model Formulary — monitoring guidance" }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  }
+]

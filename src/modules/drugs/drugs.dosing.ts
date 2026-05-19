@@ -1,0 +1,212 @@
+import type {
+  CalculatedDose,
+  DosingInput,
+  DosingResult,
+  DrugRecord,
+  PaediatricDosing,
+  RenalAdjustment,
+} from './drugs.types';
+
+const ADULT_THRESHOLD_KG = 50;
+const ADULT_THRESHOLD_YEARS = 12;
+
+/**
+ * Deterministic dosing algorithm. Reads only from the structured drug
+ * record — no LLM, no free-text parsing of the regimen string. Always
+ * returns a result; the protocol field tells the caller what kind of
+ * answer they received.
+ *
+ * Safety posture: the calculator will refuse to return a calculated mg
+ * dose whenever (a) the drug is flagged individualised, (b) the drug
+ * has no applicable protocol for the supplied age/weight, or (c) the
+ * supplied CrCl falls in a renal-adjustment band marked prohibited.
+ * The narrative and warnings always reflect what was decided.
+ */
+export function calculateDose(drug: DrugRecord, inputs: DosingInput): DosingResult {
+  const baseResult: Omit<DosingResult, 'protocol' | 'narrative'> = {
+    slug: drug.slug,
+    inputs,
+    warnings: [],
+    contraindications: [],
+    references: drug.references,
+    ruleVersion: drug.ruleVersion,
+    evidenceLevel: drug.evidenceLevel,
+    reviewStatus: drug.reviewStatus,
+  };
+
+  // 1. Individualised drugs (e.g., warfarin) — never compute a mg dose.
+  if (drug.dosing.individualised) {
+    const regimen = drug.dosing.adult[0]?.regimen ?? '';
+    return {
+      ...baseResult,
+      protocol: 'individualised',
+      narrative:
+        `Dosing for ${drug.inn} is individualised and not safe to calculate from weight alone. ` +
+        `Adult guidance: ${regimen}`,
+      warnings: drug.warnings,
+    };
+  }
+
+  // 2. Renal contraindication beats any other branch.
+  const renalHit = matchRenal(drug.dosing.renal, inputs.crClMlMin);
+  if (renalHit?.prohibited) {
+    return {
+      ...baseResult,
+      protocol: 'not-applicable',
+      narrative: `Dosing refused: ${renalHit.adjustment}`,
+      contraindications: [renalHit.adjustment, ...drug.contraindications],
+    };
+  }
+
+  // 3. Choose adult vs paediatric path.
+  const useAdult =
+    (inputs.ageYears !== undefined && inputs.ageYears >= ADULT_THRESHOLD_YEARS) ||
+    inputs.weightKg >= ADULT_THRESHOLD_KG;
+
+  if (!useAdult) {
+    return paediatricResult(drug, inputs, baseResult, renalHit);
+  }
+
+  return adultResult(drug, inputs, baseResult, renalHit);
+}
+
+function paediatricResult(
+  drug: DrugRecord,
+  inputs: DosingInput,
+  base: Omit<DosingResult, 'protocol' | 'narrative'>,
+  renalHit: RenalAdjustment | null,
+): DosingResult {
+  const paed = drug.dosing.paediatric;
+  if (!paed) {
+    return {
+      ...base,
+      protocol: 'not-applicable',
+      narrative: `${drug.inn} has no paediatric dosing protocol on file in this content version.`,
+      warnings: [...base.warnings, 'No paediatric protocol available — consult a senior clinician.'],
+    };
+  }
+
+  // Weight-banded protocol (no mg/kg) — surface the narrative.
+  if (paed.mgPerKgPerDose === undefined) {
+    return {
+      ...base,
+      protocol: 'weight-banded',
+      narrative:
+        (paed.notes ?? '') +
+        (paed.minWeightKg !== undefined ? ` Minimum weight ${paed.minWeightKg} kg.` : ''),
+      warnings:
+        paed.minWeightKg !== undefined && inputs.weightKg < paed.minWeightKg
+          ? [...base.warnings, `Weight ${inputs.weightKg} kg is below the minimum ${paed.minWeightKg} kg for this regimen.`]
+          : base.warnings,
+    };
+  }
+
+  // mg/kg/dose path.
+  return computePaediatricMgPerKg(drug, inputs, base, paed, renalHit);
+}
+
+function computePaediatricMgPerKg(
+  drug: DrugRecord,
+  inputs: DosingInput,
+  base: Omit<DosingResult, 'protocol' | 'narrative'>,
+  paed: PaediatricDosing,
+  renalHit: RenalAdjustment | null,
+): DosingResult {
+  const raw = inputs.weightKg * (paed.mgPerKgPerDose as number);
+  const caps: string[] = [];
+
+  let mgPerDose = raw;
+  if (paed.maxMgPerDose !== undefined && mgPerDose > paed.maxMgPerDose) {
+    mgPerDose = paed.maxMgPerDose;
+    caps.push(`Single-dose cap of ${paed.maxMgPerDose} mg applied.`);
+  }
+
+  const maxMgPerDay = paed.maxMgPerKgPerDay
+    ? Math.round(paed.maxMgPerKgPerDay * inputs.weightKg)
+    : undefined;
+
+  const dose: CalculatedDose = {
+    mgPerDose: Math.round(mgPerDose),
+    route: paed.route,
+    frequency: renalHit?.adjustment ?? paed.frequency,
+    maxMgPerDay,
+    capsApplied: caps,
+  };
+
+  const indicationNote = matchIndicationNote(drug, inputs.indication);
+  const renalNote = renalHit && !renalHit.prohibited
+    ? ` Renal adjustment applied: ${renalHit.adjustment}`
+    : '';
+
+  return {
+    ...base,
+    protocol: 'paediatric',
+    calculatedDose: dose,
+    narrative:
+      `Paediatric dose: ${dose.mgPerDose} mg ${paed.route} ` +
+      `${renalHit?.adjustment ?? paed.frequency}` +
+      (maxMgPerDay ? `; do not exceed ${maxMgPerDay} mg in 24 h.` : '.') +
+      (indicationNote ? ` ${indicationNote}` : '') +
+      renalNote,
+    warnings: paed.minWeightKg !== undefined && inputs.weightKg < paed.minWeightKg
+      ? [...base.warnings, `Weight ${inputs.weightKg} kg is below the minimum ${paed.minWeightKg} kg for this regimen.`]
+      : base.warnings,
+  };
+}
+
+function adultResult(
+  drug: DrugRecord,
+  inputs: DosingInput,
+  base: Omit<DosingResult, 'protocol' | 'narrative'>,
+  renalHit: RenalAdjustment | null,
+): DosingResult {
+  const first = drug.dosing.adult[0];
+  if (!first) {
+    return {
+      ...base,
+      protocol: 'not-applicable',
+      narrative: `${drug.inn} has no adult dosing on file in this content version.`,
+    };
+  }
+
+  const renalNote = renalHit && !renalHit.prohibited
+    ? ` Renal adjustment applied: ${renalHit.adjustment}`
+    : '';
+  const indicationNote = matchIndicationNote(drug, inputs.indication);
+
+  return {
+    ...base,
+    protocol: 'adult',
+    narrative:
+      `Adult regimen: ${first.regimen}` +
+      (first.notes ? ` (${first.notes})` : '') +
+      renalNote +
+      (indicationNote ? ` ${indicationNote}` : ''),
+    warnings: drug.warnings,
+  };
+}
+
+function matchRenal(
+  bands: RenalAdjustment[] | undefined,
+  crClMlMin: number | undefined,
+): RenalAdjustment | null {
+  if (!bands || crClMlMin === undefined) return null;
+  for (const band of bands) {
+    const okLower = band.crClMinMlMin === undefined || crClMlMin >= band.crClMinMlMin;
+    const okUpper = band.crClMaxMlMin === undefined || crClMlMin < band.crClMaxMlMin;
+    if (okLower && okUpper) return band;
+  }
+  return null;
+}
+
+function matchIndicationNote(drug: DrugRecord, indication: string | undefined): string | null {
+  if (!indication) return null;
+  const needle = indication.toLowerCase();
+  // Surface the paediatric notes if they look indication-specific.
+  const note = drug.dosing.paediatric?.notes;
+  if (!note) return null;
+  if (note.toLowerCase().includes(needle.split(' ')[0])) {
+    return `Indication note: ${note}`;
+  }
+  return null;
+}
