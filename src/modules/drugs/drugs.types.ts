@@ -71,7 +71,14 @@ export interface DrugRecord extends DrugSummary, ContentReviewMetadata {
      *  warfarin). The calculator returns narrative-only, no calculated mg. */
     individualised?: boolean;
   };
-  pregnancy: { category?: string; notes: string };
+  pregnancy: {
+    category?: string;
+    notes: string;
+    /** Structured flag the pregnancy-safety rule reads. True when
+     *  the drug is broadly contraindicated in pregnancy (any trimester);
+     *  narrative-only nuance (e.g. "first trimester only") stays in notes. */
+    contraindicated?: boolean;
+  };
   lactation: string;
   contraindications: string[];
   warnings: string[];

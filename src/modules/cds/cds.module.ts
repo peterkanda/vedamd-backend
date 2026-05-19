@@ -5,13 +5,21 @@ import { CdsCapabilityController } from './cds-capability.controller';
 import { CdsService } from './cds.service';
 import { CdsStrategyRegistry } from './strategies/registry';
 import { DrugDrugInteractionStrategy } from './strategies/ddi.strategy';
+import { RenalSafetyStrategy } from './strategies/renal-safety.strategy';
+import { PregnancySafetyStrategy } from './strategies/pregnancy-safety.strategy';
 import { DeveloperModule } from '../developer/developer.module';
 import { DrugsModule } from '../drugs/drugs.module';
 
 @Module({
   imports: [DeveloperModule, DrugsModule],
   controllers: [CdsHooksController, CdsEvaluateController, CdsCapabilityController],
-  providers: [CdsService, CdsStrategyRegistry, DrugDrugInteractionStrategy],
+  providers: [
+    CdsService,
+    CdsStrategyRegistry,
+    DrugDrugInteractionStrategy,
+    RenalSafetyStrategy,
+    PregnancySafetyStrategy,
+  ],
   exports: [CdsService],
 })
 export class CdsModule {}

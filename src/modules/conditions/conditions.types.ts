@@ -46,7 +46,10 @@ export interface ContentReviewMetadata {
  * src/modules/cds/strategies/ — the bundle declares what to fire and
  * carries the citations; the strategy code implements how to fire it.
  */
-export type CdsRuleType = 'drug-drug-interaction';
+export type CdsRuleType =
+  | 'drug-drug-interaction'
+  | 'renal-safety'
+  | 'pregnancy-safety';
 
 export type CdsHook =
   | 'patient-view'

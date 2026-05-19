@@ -4,6 +4,8 @@ import { CdsService } from '../src/modules/cds/cds.service';
 import { DrugsService } from '../src/modules/drugs/drugs.service';
 import { CdsStrategyRegistry } from '../src/modules/cds/strategies/registry';
 import { DrugDrugInteractionStrategy } from '../src/modules/cds/strategies/ddi.strategy';
+import { RenalSafetyStrategy } from '../src/modules/cds/strategies/renal-safety.strategy';
+import { PregnancySafetyStrategy } from '../src/modules/cds/strategies/pregnancy-safety.strategy';
 import { PhiFreeLogger } from '../src/common/phi-free-logger';
 import type { AppConfig } from '../src/config/configuration';
 import { makeKnowledgeService } from './helpers/knowledge';
@@ -22,7 +24,11 @@ function makeService(): CdsService {
   const knowledge = makeKnowledgeService();
   const drugs = new DrugsService(knowledge);
   drugs.onModuleInit();
-  const registry = new CdsStrategyRegistry(new DrugDrugInteractionStrategy(drugs));
+  const registry = new CdsStrategyRegistry(
+    new DrugDrugInteractionStrategy(drugs),
+    new RenalSafetyStrategy(drugs),
+    new PregnancySafetyStrategy(drugs),
+  );
   return new CdsService(config, log, knowledge, registry);
 }
 
@@ -131,5 +137,122 @@ describe('CdsService.evaluateHook — drug-drug interaction rule (end-to-end)', 
     expect(meta!.ruleVersion).toBe('0.1.0-placeholder');
     expect(meta!.evidenceLevel).toBe('expert-consensus');
     expect(Date.parse(meta!.generatedAt)).not.toBeNaN();
+  });
+});
+
+describe('CdsService.evaluateHook — renal-safety rule', () => {
+  it('refuses prescribing metformin at CrCl 20 (prohibited renal band)', async () => {
+    const res = await makeService().evaluateHook('vedamd-medication-prescribe', {
+      hook: 'medication-prescribe',
+      hookInstance: 'r1',
+      context: { medications: ['metformin'], crClMlMin: 20 },
+    });
+    const renalCards = res.cards.filter(
+      (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'renal-safety',
+    );
+    expect(renalCards.length).toBe(1);
+    expect(renalCards[0].indicator).toBe('critical');
+    expect(renalCards[0].summary.toLowerCase()).toContain('metformin');
+    expect(renalCards[0].summary).toContain('20 mL/min');
+    expect(renalCards[0].detail).toContain('Contraindicated');
+  });
+
+  it('does not fire at CrCl 35 (matches a non-prohibited renal band)', async () => {
+    const res = await makeService().evaluateHook('vedamd-medication-prescribe', {
+      hook: 'medication-prescribe',
+      hookInstance: 'r2',
+      context: { medications: ['metformin'], crClMlMin: 35 },
+    });
+    const renalCards = res.cards.filter(
+      (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'renal-safety',
+    );
+    expect(renalCards.length).toBe(0);
+  });
+
+  it('does not fire when CrCl is not supplied at all', async () => {
+    const res = await makeService().evaluateHook('vedamd-medication-prescribe', {
+      hook: 'medication-prescribe',
+      hookInstance: 'r3',
+      context: { medications: ['metformin'] },
+    });
+    const renalCards = res.cards.filter(
+      (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'renal-safety',
+    );
+    expect(renalCards.length).toBe(0);
+  });
+
+  it('does not fire for drugs without prohibited renal bands at low CrCl', async () => {
+    const res = await makeService().evaluateHook('vedamd-medication-prescribe', {
+      hook: 'medication-prescribe',
+      hookInstance: 'r4',
+      context: { medications: ['paracetamol'], crClMlMin: 15 },
+    });
+    const renalCards = res.cards.filter(
+      (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'renal-safety',
+    );
+    expect(renalCards.length).toBe(0);
+  });
+});
+
+describe('CdsService.evaluateHook — pregnancy-safety rule', () => {
+  it('fires a critical card on warfarin when pregnant is true', async () => {
+    const res = await makeService().evaluateHook('vedamd-medication-prescribe', {
+      hook: 'medication-prescribe',
+      hookInstance: 'p1',
+      context: { medications: ['warfarin'], pregnant: true },
+    });
+    const cards = res.cards.filter(
+      (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'pregnancy-safety',
+    );
+    expect(cards.length).toBe(1);
+    expect(cards[0].indicator).toBe('critical');
+    expect(cards[0].summary.toLowerCase()).toContain('warfarin');
+    expect((cards[0].detail ?? '').toLowerCase()).toContain('teratogenic');
+  });
+
+  it('does not fire when pregnant is false', async () => {
+    const res = await makeService().evaluateHook('vedamd-medication-prescribe', {
+      hook: 'medication-prescribe',
+      hookInstance: 'p2',
+      context: { medications: ['warfarin'], pregnant: false },
+    });
+    const cards = res.cards.filter(
+      (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'pregnancy-safety',
+    );
+    expect(cards.length).toBe(0);
+  });
+
+  it('does not fire on drugs without the contraindicated flag (e.g. paracetamol)', async () => {
+    const res = await makeService().evaluateHook('vedamd-medication-prescribe', {
+      hook: 'medication-prescribe',
+      hookInstance: 'p3',
+      context: { medications: ['paracetamol'], pregnant: true },
+    });
+    const cards = res.cards.filter(
+      (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'pregnancy-safety',
+    );
+    expect(cards.length).toBe(0);
+  });
+});
+
+describe('CdsService.evaluateHook — multi-rule composition', () => {
+  it('fires DDI + renal + pregnancy in a single invocation when all apply', async () => {
+    const res = await makeService().evaluateHook('vedamd-medication-prescribe', {
+      hook: 'medication-prescribe',
+      hookInstance: 'multi-1',
+      context: {
+        medications: ['paracetamol', 'warfarin', 'metformin'],
+        crClMlMin: 20,
+        pregnant: true,
+      },
+    });
+    const byRule = (id: string) =>
+      res.cards.filter(
+        (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === id,
+      );
+    expect(byRule('ddi-check').length).toBe(1); // paracetamol + warfarin
+    expect(byRule('renal-safety').length).toBe(1); // metformin at CrCl 20
+    expect(byRule('pregnancy-safety').length).toBe(1); // warfarin
+    expect(res.cards.length).toBe(3);
   });
 });

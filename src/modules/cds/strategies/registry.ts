@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { DrugDrugInteractionStrategy } from './ddi.strategy';
+import { PregnancySafetyStrategy } from './pregnancy-safety.strategy';
+import { RenalSafetyStrategy } from './renal-safety.strategy';
 import type { CdsRuleStrategy } from './types';
 
 /**
@@ -11,8 +13,14 @@ import type { CdsRuleStrategy } from './types';
 export class CdsStrategyRegistry {
   private readonly byType = new Map<string, CdsRuleStrategy>();
 
-  constructor(ddi: DrugDrugInteractionStrategy) {
+  constructor(
+    ddi: DrugDrugInteractionStrategy,
+    renal: RenalSafetyStrategy,
+    pregnancy: PregnancySafetyStrategy,
+  ) {
     this.register(ddi);
+    this.register(renal);
+    this.register(pregnancy);
   }
 
   register(s: CdsRuleStrategy): void {
