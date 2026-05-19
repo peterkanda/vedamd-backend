@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { AwareStewardshipStrategy } from './aware-stewardship.strategy';
 import { DrugDrugInteractionStrategy } from './ddi.strategy';
+import { MedicationMonitoringStrategy } from './medication-monitoring.strategy';
 import { PregnancySafetyStrategy } from './pregnancy-safety.strategy';
 import { RenalSafetyStrategy } from './renal-safety.strategy';
 import type { CdsRuleStrategy } from './types';
@@ -19,11 +20,13 @@ export class CdsStrategyRegistry {
     renal: RenalSafetyStrategy,
     pregnancy: PregnancySafetyStrategy,
     aware: AwareStewardshipStrategy,
+    monitoring: MedicationMonitoringStrategy,
   ) {
     this.register(ddi);
     this.register(renal);
     this.register(pregnancy);
     this.register(aware);
+    this.register(monitoring);
   }
 
   register(s: CdsRuleStrategy): void {

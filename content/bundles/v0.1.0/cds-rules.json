@@ -51,5 +51,18 @@
     "ruleVersion": "0.1.0-placeholder",
     "reviewStatus": "draft",
     "evidenceLevel": "expert-consensus"
+  },
+  {
+    "id": "medication-monitoring-reminder",
+    "hook": "patient-view",
+    "type": "medication-monitoring",
+    "title": "Active-medication monitoring reminder",
+    "description": "On chart open, reminds the clinician of monitoring requirements (labs, intervals) for any of the patient's current medications that carry a non-empty monitoring list in the VedaMD drug record. One info card per medication. Reads context.currentMedications (or medications) — never patient identity.",
+    "references": [
+      { "label": "WHO Model Formulary — monitoring guidance" }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
   }
 ]

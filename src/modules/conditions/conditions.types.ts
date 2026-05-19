@@ -50,7 +50,8 @@ export type CdsRuleType =
   | 'drug-drug-interaction'
   | 'renal-safety'
   | 'pregnancy-safety'
-  | 'aware-stewardship';
+  | 'aware-stewardship'
+  | 'medication-monitoring';
 
 export type CdsHook =
   | 'patient-view'

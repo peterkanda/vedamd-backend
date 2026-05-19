@@ -8,6 +8,7 @@ import { DrugDrugInteractionStrategy } from './strategies/ddi.strategy';
 import { RenalSafetyStrategy } from './strategies/renal-safety.strategy';
 import { PregnancySafetyStrategy } from './strategies/pregnancy-safety.strategy';
 import { AwareStewardshipStrategy } from './strategies/aware-stewardship.strategy';
+import { MedicationMonitoringStrategy } from './strategies/medication-monitoring.strategy';
 import { DeveloperModule } from '../developer/developer.module';
 import { DrugsModule } from '../drugs/drugs.module';
 
@@ -21,6 +22,7 @@ import { DrugsModule } from '../drugs/drugs.module';
     RenalSafetyStrategy,
     PregnancySafetyStrategy,
     AwareStewardshipStrategy,
+    MedicationMonitoringStrategy,
   ],
   exports: [CdsService],
 })

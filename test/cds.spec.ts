@@ -7,6 +7,7 @@ import { DrugDrugInteractionStrategy } from '../src/modules/cds/strategies/ddi.s
 import { RenalSafetyStrategy } from '../src/modules/cds/strategies/renal-safety.strategy';
 import { PregnancySafetyStrategy } from '../src/modules/cds/strategies/pregnancy-safety.strategy';
 import { AwareStewardshipStrategy } from '../src/modules/cds/strategies/aware-stewardship.strategy';
+import { MedicationMonitoringStrategy } from '../src/modules/cds/strategies/medication-monitoring.strategy';
 import { PhiFreeLogger } from '../src/common/phi-free-logger';
 import type { AppConfig } from '../src/config/configuration';
 import { makeKnowledgeService } from './helpers/knowledge';
@@ -30,6 +31,7 @@ function makeService(): CdsService {
     new RenalSafetyStrategy(drugs),
     new PregnancySafetyStrategy(drugs),
     new AwareStewardshipStrategy(drugs),
+    new MedicationMonitoringStrategy(drugs),
   );
   return new CdsService(config, log, knowledge, registry);
 }
@@ -109,13 +111,16 @@ describe('CdsService.evaluateHook — drug-drug interaction rule (end-to-end)', 
     expect(res.cards.length).toBe(1);
   });
 
-  it('does not fire the rule on patient-view (hook mismatch)', async () => {
+  it('does not fire the DDI rule on patient-view (hook mismatch)', async () => {
     const res = await makeService().evaluateHook('vedamd-patient-view', {
       hook: 'patient-view',
       hookInstance: 'test-5',
       context: { medications: ['paracetamol', 'warfarin'] },
     });
-    expect(res.cards.length).toBe(0);
+    const ddi = res.cards.filter(
+      (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'ddi-check',
+    );
+    expect(ddi.length).toBe(0);
   });
 
   it('silently ignores unknown drug slugs', async () => {
@@ -313,5 +318,93 @@ describe('CdsService.evaluateHook — AWaRe stewardship rule', () => {
     );
     expect(aware?.detail).toContain('Stewardship warnings');
     expect((aware?.detail ?? '').toLowerCase()).toContain('tendinopathy');
+  });
+});
+
+describe('CdsService.evaluateHook — medication-monitoring rule (patient-view)', () => {
+  it('fires one info card per current medication with monitoring (e.g. warfarin)', async () => {
+    const res = await makeService().evaluateHook('vedamd-patient-view', {
+      hook: 'patient-view',
+      hookInstance: 'm1',
+      context: { currentMedications: ['warfarin'] },
+    });
+    const cards = res.cards.filter(
+      (c) =>
+        c.extension?.['http://vedamd.io/Card/recommendation'].ruleId ===
+        'medication-monitoring-reminder',
+    );
+    expect(cards.length).toBe(1);
+    expect(cards[0].indicator).toBe('info');
+    expect(cards[0].summary.toLowerCase()).toContain('warfarin');
+    expect((cards[0].detail ?? '').toLowerCase()).toContain('inr');
+  });
+
+  it('fires one card per drug for multiple current medications', async () => {
+    const res = await makeService().evaluateHook('vedamd-patient-view', {
+      hook: 'patient-view',
+      hookInstance: 'm2',
+      context: { currentMedications: ['warfarin', 'metformin', 'amlodipine'] },
+    });
+    const cards = res.cards.filter(
+      (c) =>
+        c.extension?.['http://vedamd.io/Card/recommendation'].ruleId ===
+        'medication-monitoring-reminder',
+    );
+    // warfarin and metformin have monitoring; amlodipine has monitoring too (BP at 4-week intervals).
+    expect(cards.length).toBeGreaterThanOrEqual(2);
+    const summaries = cards.map((c) => c.summary.toLowerCase()).join(' ');
+    expect(summaries).toContain('warfarin');
+    expect(summaries).toContain('metformin');
+  });
+
+  it('does not fire for drugs without a monitoring list (e.g. amoxicillin)', async () => {
+    const res = await makeService().evaluateHook('vedamd-patient-view', {
+      hook: 'patient-view',
+      hookInstance: 'm3',
+      context: { currentMedications: ['amoxicillin'] },
+    });
+    const cards = res.cards.filter(
+      (c) =>
+        c.extension?.['http://vedamd.io/Card/recommendation'].ruleId ===
+        'medication-monitoring-reminder',
+    );
+    expect(cards.length).toBe(0);
+  });
+
+  it('does not fire when no current medications are supplied', async () => {
+    const res = await makeService().evaluateHook('vedamd-patient-view', {
+      hook: 'patient-view',
+      hookInstance: 'm4',
+      context: {},
+    });
+    expect(res.cards.length).toBe(0);
+  });
+
+  it('does not fire on medication-prescribe (hook mismatch)', async () => {
+    const res = await makeService().evaluateHook('vedamd-medication-prescribe', {
+      hook: 'medication-prescribe',
+      hookInstance: 'm5',
+      context: { currentMedications: ['warfarin'] },
+    });
+    const cards = res.cards.filter(
+      (c) =>
+        c.extension?.['http://vedamd.io/Card/recommendation'].ruleId ===
+        'medication-monitoring-reminder',
+    );
+    expect(cards.length).toBe(0);
+  });
+
+  it('deduplicates when the same drug appears twice', async () => {
+    const res = await makeService().evaluateHook('vedamd-patient-view', {
+      hook: 'patient-view',
+      hookInstance: 'm6',
+      context: { currentMedications: ['warfarin'], medications: ['warfarin'] },
+    });
+    const cards = res.cards.filter(
+      (c) =>
+        c.extension?.['http://vedamd.io/Card/recommendation'].ruleId ===
+        'medication-monitoring-reminder',
+    );
+    expect(cards.length).toBe(1);
   });
 });
