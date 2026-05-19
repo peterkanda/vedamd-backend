@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { AwareStewardshipStrategy } from './aware-stewardship.strategy';
 import { DrugDrugInteractionStrategy } from './ddi.strategy';
 import { PregnancySafetyStrategy } from './pregnancy-safety.strategy';
 import { RenalSafetyStrategy } from './renal-safety.strategy';
@@ -17,10 +18,12 @@ export class CdsStrategyRegistry {
     ddi: DrugDrugInteractionStrategy,
     renal: RenalSafetyStrategy,
     pregnancy: PregnancySafetyStrategy,
+    aware: AwareStewardshipStrategy,
   ) {
     this.register(ddi);
     this.register(renal);
     this.register(pregnancy);
+    this.register(aware);
   }
 
   register(s: CdsRuleStrategy): void {

@@ -37,5 +37,19 @@
     "ruleVersion": "0.1.0-placeholder",
     "reviewStatus": "draft",
     "evidenceLevel": "expert-consensus"
+  },
+  {
+    "id": "aware-stewardship",
+    "hook": "medication-prescribe",
+    "type": "aware-stewardship",
+    "title": "WHO AWaRe antibiotic stewardship",
+    "description": "Fires when a proposed medication is classified Watch or Reserve in the WHO AWaRe 2023 framework. Surfaces the AWaRe category, the drug's own stewardship-relevant warnings, and lists same-class Access-tier alternatives present in the formulary. Supports the NFR-AMR target of >=60% Access-tier use.",
+    "references": [
+      { "label": "WHO AWaRe Classification 2023", "url": "https://www.who.int/publications/i/item/WHO-MHP-HPS-EML-2023.04" },
+      { "label": "Kenya National Action Plan on AMR" }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
   }
 ]

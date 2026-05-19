@@ -6,6 +6,7 @@ import { CdsStrategyRegistry } from '../src/modules/cds/strategies/registry';
 import { DrugDrugInteractionStrategy } from '../src/modules/cds/strategies/ddi.strategy';
 import { RenalSafetyStrategy } from '../src/modules/cds/strategies/renal-safety.strategy';
 import { PregnancySafetyStrategy } from '../src/modules/cds/strategies/pregnancy-safety.strategy';
+import { AwareStewardshipStrategy } from '../src/modules/cds/strategies/aware-stewardship.strategy';
 import { PhiFreeLogger } from '../src/common/phi-free-logger';
 import type { AppConfig } from '../src/config/configuration';
 import { makeKnowledgeService } from './helpers/knowledge';
@@ -28,6 +29,7 @@ function makeService(): CdsService {
     new DrugDrugInteractionStrategy(drugs),
     new RenalSafetyStrategy(drugs),
     new PregnancySafetyStrategy(drugs),
+    new AwareStewardshipStrategy(drugs),
   );
   return new CdsService(config, log, knowledge, registry);
 }
@@ -254,5 +256,62 @@ describe('CdsService.evaluateHook — multi-rule composition', () => {
     expect(byRule('renal-safety').length).toBe(1); // metformin at CrCl 20
     expect(byRule('pregnancy-safety').length).toBe(1); // warfarin
     expect(res.cards.length).toBe(3);
+  });
+});
+
+describe('CdsService.evaluateHook — AWaRe stewardship rule', () => {
+  it('fires a warning card for ciprofloxacin (Watch class)', async () => {
+    const res = await makeService().evaluateHook('vedamd-medication-prescribe', {
+      hook: 'medication-prescribe',
+      hookInstance: 'a1',
+      context: { medications: ['ciprofloxacin'] },
+    });
+    const aware = res.cards.filter(
+      (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'aware-stewardship',
+    );
+    expect(aware.length).toBe(1);
+    expect(aware[0].indicator).toBe('warning');
+    expect(aware[0].summary).toContain('Watch');
+    expect(aware[0].summary.toLowerCase()).toContain('ciprofloxacin');
+    // Fluoroquinolones (J01M) have no Access sibling in the seed; the
+    // formulary-specific list line is absent when the formulary holds none.
+    expect(aware[0].detail ?? '').not.toContain('alternatives in this formulary');
+  });
+
+  it('does not fire for amoxicillin (Access)', async () => {
+    const res = await makeService().evaluateHook('vedamd-medication-prescribe', {
+      hook: 'medication-prescribe',
+      hookInstance: 'a2',
+      context: { medications: ['amoxicillin'] },
+    });
+    const aware = res.cards.filter(
+      (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'aware-stewardship',
+    );
+    expect(aware.length).toBe(0);
+  });
+
+  it('does not fire for drugs without an AWaRe classification (e.g. paracetamol)', async () => {
+    const res = await makeService().evaluateHook('vedamd-medication-prescribe', {
+      hook: 'medication-prescribe',
+      hookInstance: 'a3',
+      context: { medications: ['paracetamol'] },
+    });
+    const aware = res.cards.filter(
+      (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'aware-stewardship',
+    );
+    expect(aware.length).toBe(0);
+  });
+
+  it('lifts the AWaRe stewardship warnings from the drug record into the card detail', async () => {
+    const res = await makeService().evaluateHook('vedamd-medication-prescribe', {
+      hook: 'medication-prescribe',
+      hookInstance: 'a4',
+      context: { medications: ['ciprofloxacin'] },
+    });
+    const aware = res.cards.find(
+      (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'aware-stewardship',
+    );
+    expect(aware?.detail).toContain('Stewardship warnings');
+    expect((aware?.detail ?? '').toLowerCase()).toContain('tendinopathy');
   });
 });

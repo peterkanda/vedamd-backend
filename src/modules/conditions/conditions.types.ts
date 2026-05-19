@@ -49,7 +49,8 @@ export interface ContentReviewMetadata {
 export type CdsRuleType =
   | 'drug-drug-interaction'
   | 'renal-safety'
-  | 'pregnancy-safety';
+  | 'pregnancy-safety'
+  | 'aware-stewardship';
 
 export type CdsHook =
   | 'patient-view'

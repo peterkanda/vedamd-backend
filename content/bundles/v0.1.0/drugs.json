@@ -487,5 +487,78 @@
     "ruleVersion": "0.1.0-placeholder",
     "reviewStatus": "draft",
     "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ciprofloxacin",
+    "inn": "ciprofloxacin",
+    "tradeNames": ["Cipro", "Ciproxin"],
+    "rxnorm": "2551",
+    "atc": ["J01MA02"],
+    "drugClass": "Fluoroquinolone antibacterial",
+    "kemlLevel": 2,
+    "whoEml": true,
+    "awareCategory": "Watch",
+    "indications": [
+      { "icd10": "N39", "text": "Complicated urinary tract infection / pyelonephritis (resistant or atypical pathogens)" },
+      { "icd10": "A09", "text": "Severe traveller's diarrhoea / shigellosis where stewardship permits" }
+    ],
+    "mechanism": "Inhibits bacterial DNA gyrase and topoisomerase IV.",
+    "pharmacokinetics": {
+      "halfLifeHours": 4,
+      "metabolism": "Partial hepatic; CYP1A2 inhibition.",
+      "excretion": "Predominantly renal (unchanged)."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "oral",
+          "regimen": "500 mg every 12 hours for 5–7 days (indication-dependent).",
+          "notes": "Avoid concomitant antacids and divalent cations within 2 hours of dose."
+        }
+      ],
+      "renal": [
+        {
+          "crClMinMlMin": 30,
+          "crClMaxMlMin": 50,
+          "adjustment": "Reduce to 250–500 mg every 12 hours."
+        },
+        {
+          "crClMaxMlMin": 30,
+          "adjustment": "Reduce to 250–500 mg every 18–24 hours."
+        }
+      ]
+    },
+    "pregnancy": {
+      "notes": "Generally avoid in pregnancy; safer alternatives usually available.",
+      "contraindicated": true
+    },
+    "lactation": "Avoid where alternatives exist (small infant exposure documented).",
+    "contraindications": [
+      "Pregnancy where an alternative is available.",
+      "Known fluoroquinolone hypersensitivity.",
+      "History of tendon disorder associated with fluoroquinolones."
+    ],
+    "warnings": [
+      "AWaRe Watch — restrict to confirmed indications and culture-driven therapy; do NOT use for uncomplicated URI, viral illness, or empiric outpatient broad-spectrum cover.",
+      "QT prolongation — avoid with other QT-prolonging agents.",
+      "Tendinopathy and tendon rupture risk, especially with concomitant corticosteroids and in patients > 60 years.",
+      "Avoid in children and adolescents where alternatives exist (cartilage toxicity in animal models)."
+    ],
+    "adverseEffects": [
+      { "frequency": "common", "effect": "Nausea, diarrhoea" },
+      { "frequency": "uncommon", "effect": "Photosensitivity, transaminase elevation" },
+      { "frequency": "serious", "effect": "Tendon rupture, peripheral neuropathy, QT prolongation, C. difficile colitis" }
+    ],
+    "monitoring": [
+      "Renal function at baseline and during prolonged therapy.",
+      "ECG when other QT-prolonging agents are co-prescribed."
+    ],
+    "references": [
+      { "label": "WHO AWaRe Classification 2023" },
+      { "label": "Kenya Clinical Guidelines — Antibiotic stewardship" }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
   }
 ]
