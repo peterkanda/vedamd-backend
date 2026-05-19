@@ -53,6 +53,21 @@ VedaMD persists **zero patient data**, ever. Any structured signals an integrato
 | `developer` | 6.3.16 Developer Portal (backend) | API key CRUD (FR-313) |
 | `integration-log` | 6.3.17 Bounded Integration Log | In-memory ring buffer with field allow-list (FR-330–343) |
 
+## OpenAPI snapshot
+
+`docs/openapi.json` is a committed snapshot of every endpoint the API
+exposes — fetched directly from the live `SwaggerModule.createDocument`
+output via `npm run openapi:generate`. Integrators can browse the
+spec without cloning + running.
+
+CI enforces snapshot freshness on every PR:
+
+```
+npm run openapi:check        # exit 1 if docs/openapi.json drifts from the API
+```
+
+Regenerate after any controller change with `npm run openapi:generate`.
+
 ## CI bundle gate
 
 Every PR runs `npm run bundle:verify` against `content/bundles/v0.1.0`:

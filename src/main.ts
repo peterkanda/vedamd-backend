@@ -5,10 +5,11 @@ import {
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
 import { ValidationPipe, Logger } from '@nestjs/common';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { SwaggerModule } from '@nestjs/swagger';
 import helmet from '@fastify/helmet';
 import rateLimit from '@fastify/rate-limit';
 import { AppModule } from './app.module';
+import { applyApiPrefix, swaggerConfig } from './openapi.config';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -33,26 +34,8 @@ async function bootstrap() {
     }),
   );
 
-  app.setGlobalPrefix('api', {
-    exclude: [
-      '/health',
-      '/metadata',
-      '/cds-services',
-      '/cds-services/*splat',
-      '/docs',
-      '/openapi.json',
-    ],
-  });
+  applyApiPrefix(app);
 
-  const swaggerConfig = new DocumentBuilder()
-    .setTitle('VedaMD API')
-    .setDescription(
-      'Open-source, stateless Clinical Decision Support API. CDS Hooks + REST/JSON. ' +
-        'VedaMD never stores patient data — records remain with your EMR.',
-    )
-    .setVersion('0.1.0')
-    .addBearerAuth()
-    .build();
   const doc = SwaggerModule.createDocument(app, swaggerConfig);
   SwaggerModule.setup('docs', app, doc, {
     jsonDocumentUrl: 'openapi.json',

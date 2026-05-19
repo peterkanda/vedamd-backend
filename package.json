@@ -25,7 +25,9 @@
     "db:studio": "drizzle-kit studio",
     "keys:generate": "ts-node --transpile-only scripts/generate-signing-keys.ts",
     "bundle:sign": "ts-node --transpile-only scripts/sign-bundle.ts",
-    "bundle:verify": "ts-node --transpile-only scripts/verify-bundle.ts"
+    "bundle:verify": "ts-node --transpile-only scripts/verify-bundle.ts",
+    "openapi:generate": "ts-node --transpile-only scripts/generate-openapi.ts",
+    "openapi:check": "ts-node --transpile-only scripts/generate-openapi.ts -- --check"
   },
   "dependencies": {
     "@fastify/helmet": "^13.0.0",
