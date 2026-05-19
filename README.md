@@ -165,11 +165,46 @@ dev only; production always sets `DATABASE_URL`.
 
 ### Local dev
 
+Pick whichever Postgres you already use; the code only cares about
+`DATABASE_URL`. Three common paths:
+
+**Option A — Supabase Cloud** (zero-install)
+
+1. Create a project at supabase.com.
+2. Copy the connection string from *Project Settings → Database → Connection string → URI*.
+3. `export DATABASE_URL='postgresql://postgres:[pw]@db.[project].supabase.co:5432/postgres'`
+4. `export DATABASE_SSL=true`
+
+**Option B — Native Postgres install**
+
 ```bash
-docker compose up -d            # starts Postgres on :5432
-npm run db:migrate              # applies drizzle/0000_init.sql
+# macOS
+brew install postgresql@16 && brew services start postgresql@16
+createdb vedamd_dev
+
+# Debian / Ubuntu
+sudo apt install postgresql-16 && sudo systemctl start postgresql
+sudo -u postgres createdb vedamd_dev
+
+export DATABASE_URL='postgresql://localhost:5432/vedamd_dev'
+```
+
+**Option C — Postgres.app** (macOS, no install)
+
+Download from postgresapp.com, click *Initialize*, then
+`export DATABASE_URL='postgresql://localhost:5432/postgres'`.
+
+Then in all three cases:
+
+```bash
+npm install
+npm run db:migrate
 npm run start:dev
 ```
+
+With `DATABASE_URL` unset, the operator services fall back to
+in-memory storage (loud warning at boot). Useful for quick API
+exploration without touching a database.
 
 ### Migrations
 
