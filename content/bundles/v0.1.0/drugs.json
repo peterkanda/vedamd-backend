@@ -33389,5 +33389,255 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "desferrioxamine",
+    "inn": "Desferrioxamine (deferoxamine)",
+    "tradeNames": [
+      "Desferal"
+    ],
+    "atc": [
+      "V03AC01"
+    ],
+    "rxnorm": "3290",
+    "snomed": "372534007",
+    "drugClass": "Iron-chelating agent (antidote)",
+    "awareCategory": "Not-classified",
+    "whoEml": true,
+    "indications": [
+      {
+        "icd10": "T45.4",
+        "text": "Acute iron poisoning"
+      },
+      {
+        "text": "Chronic iron overload (e.g. transfusion-dependent thalassaemia)"
+      }
+    ],
+    "mechanism": "Binds free ferric iron to form ferrioxamine, which is excreted renally, reducing tissue iron toxicity.",
+    "pharmacokinetics": {
+      "halfLifeHours": 1,
+      "metabolism": "plasma/hepatic",
+      "excretion": "renal (ferrioxamine, may turn urine reddish)",
+      "notes": "Short half-life — given by infusion in acute poisoning."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "IV",
+          "regimen": "Acute poisoning: IV infusion ~15 mg/kg/hour, titrated to severity; reduce rate after initial period; max ~80 mg/kg/24 h.",
+          "notes": "Rapid infusion causes hypotension."
+        }
+      ],
+      "paediatric": {
+        "mgPerKgPerDose": 15,
+        "route": "IV",
+        "frequency": "continuous infusion (mg/kg/hour)",
+        "notes": "Same weight-based infusion as adults; monitor for hypotension."
+      }
+    },
+    "pregnancy": {
+      "notes": "Use for severe iron poisoning when benefit outweighs risk."
+    },
+    "lactation": "Use if clearly indicated.",
+    "contraindications": [
+      "Severe renal failure/anuria unless dialysis available",
+      "Hypersensitivity"
+    ],
+    "warnings": [
+      "Hypotension with rapid infusion",
+      "ARDS with prolonged high-dose use",
+      "Yersinia infection risk",
+      "Rare ocular/auditory toxicity with chronic use"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "infusion-site reaction, reddish urine"
+      },
+      {
+        "frequency": "uncommon",
+        "effect": "hypotension"
+      },
+      {
+        "frequency": "serious",
+        "effect": "ARDS with prolonged infusion"
+      }
+    ],
+    "monitoring": [
+      "blood pressure during infusion",
+      "renal function and serum iron",
+      "vision/hearing with chronic therapy"
+    ],
+    "references": [
+      {
+        "label": "TOXBASE / national poisons guidance — desferrioxamine"
+      },
+      {
+        "label": "WHO Model Formulary"
+      }
+    ],
+    "kemlLevel": 4,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "digoxin-immune-fab",
+    "inn": "Digoxin-specific antibody fragments (Fab)",
+    "tradeNames": [
+      "DigiFab",
+      "Digibind"
+    ],
+    "atc": [
+      "V03AB24"
+    ],
+    "rxnorm": "203041",
+    "snomed": "116593003",
+    "drugClass": "Antidote (digoxin-binding antibody fragments)",
+    "awareCategory": "Not-classified",
+    "whoEml": false,
+    "indications": [
+      {
+        "icd10": "T46.0",
+        "text": "Life-threatening digoxin (digitalis) toxicity"
+      }
+    ],
+    "mechanism": "Ovine antibody fragments bind free digoxin, forming inert complexes that are renally excreted, reversing cardiac and systemic toxicity.",
+    "pharmacokinetics": {
+      "halfLifeHours": 16,
+      "metabolism": "n/a",
+      "excretion": "renal (Fab-digoxin complex)",
+      "notes": "Onset of effect within ~30 minutes."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "IV",
+          "regimen": "Dose by amount ingested or serum digoxin level/body weight; empirical dosing for acute or chronic toxicity per protocol when the level is unknown.",
+          "notes": "Give without delay in cardiac arrest/life-threatening arrhythmia."
+        }
+      ],
+      "paediatric": {
+        "route": "IV",
+        "frequency": "as a calculated total dose",
+        "notes": "Dose calculated from ingested amount or level; same principles as adults."
+      }
+    },
+    "pregnancy": {
+      "notes": "Use for life-threatening toxicity; benefit outweighs risk."
+    },
+    "lactation": "Use if clearly indicated.",
+    "contraindications": [
+      "Hypersensitivity to ovine proteins/papain (relative — weigh against life threat)"
+    ],
+    "warnings": [
+      "Serum digoxin assays become unreliable after administration (measures bound + free)",
+      "Watch for return of the condition treated by digoxin (e.g. AF rate, heart failure)",
+      "Hypokalaemia may emerge as toxicity reverses"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "uncommon",
+        "effect": "hypokalaemia, worsening of underlying cardiac condition"
+      },
+      {
+        "frequency": "rare",
+        "effect": "hypersensitivity reaction"
+      }
+    ],
+    "monitoring": [
+      "potassium",
+      "cardiac rhythm and haemodynamics",
+      "clinical (not assay) response"
+    ],
+    "references": [
+      {
+        "label": "TOXBASE / national poisons guidance — digoxin immune Fab"
+      }
+    ],
+    "kemlLevel": 4,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "intravenous-lipid-emulsion",
+    "inn": "Intravenous lipid emulsion 20%",
+    "tradeNames": [
+      "Intralipid"
+    ],
+    "atc": [
+      "B05BA02"
+    ],
+    "rxnorm": "252181",
+    "snomed": "116575004",
+    "drugClass": "Lipid emulsion (antidote in lipophilic-drug toxicity / parenteral nutrition)",
+    "awareCategory": "Not-classified",
+    "whoEml": false,
+    "indications": [
+      {
+        "text": "Local-anaesthetic systemic toxicity (LAST)"
+      },
+      {
+        "text": "Severe toxicity from lipophilic drugs (adjunct) refractory to standard care"
+      }
+    ],
+    "mechanism": "Provides a circulating lipid phase ('lipid sink') that sequesters lipophilic drugs and may improve cardiac energetics, reducing free drug at target tissues.",
+    "pharmacokinetics": {
+      "halfLifeHours": 0,
+      "metabolism": "lipoprotein lipase",
+      "excretion": "n/a",
+      "notes": "Used acutely as bolus + infusion in toxicity."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "IV",
+          "regimen": "LAST: 1.5 mL/kg 20% bolus over 1 minute, then 0.25 mL/kg/min infusion; repeat boluses and increase infusion for persistent collapse, observing maximum cumulative dose limits.",
+          "notes": "Continue standard resuscitation simultaneously."
+        }
+      ],
+      "paediatric": {
+        "mgPerKgPerDose": 0,
+        "route": "IV",
+        "frequency": "bolus then infusion (mL/kg)",
+        "notes": "Same weight-based regimen as adults."
+      }
+    },
+    "pregnancy": {
+      "notes": "Use in life-threatening toxicity."
+    },
+    "lactation": "Use if clearly indicated.",
+    "contraindications": [
+      "Known hypersensitivity to egg/soya/lipid components (relative in a life threat)"
+    ],
+    "warnings": [
+      "Observe cumulative dose limits",
+      "Fat overload syndrome, pancreatitis with excessive dosing",
+      "May interfere with some laboratory assays"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "uncommon",
+        "effect": "hypertriglyceridaemia, infusion reaction"
+      },
+      {
+        "frequency": "rare",
+        "effect": "fat overload syndrome, pancreatitis"
+      }
+    ],
+    "monitoring": [
+      "haemodynamic response",
+      "triglycerides with prolonged use"
+    ],
+    "references": [
+      {
+        "label": "AAGBI guidance on the management of severe local anaesthetic toxicity"
+      }
+    ],
+    "kemlLevel": 4,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]

@@ -28144,5 +28144,1612 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hypertensive-emergency",
+    "title": "Hypertensive emergency",
+    "icd10": [
+      "I16.1"
+    ],
+    "snomed": [
+      "70272006"
+    ],
+    "domains": [
+      "cardiology",
+      "emergency",
+      "critical-care",
+      "hypertension"
+    ],
+    "presentation": [
+      "Severely raised blood pressure (often >180/120 mmHg) WITH acute target-organ damage.",
+      "Encephalopathy (headache, confusion, seizures), chest pain, breathlessness, focal neurology or visual change.",
+      "Distinguish from hypertensive urgency (high BP without acute organ damage)."
+    ],
+    "redFlags": [
+      "Encephalopathy, stroke, acute coronary syndrome, pulmonary oedema, aortic dissection or AKI.",
+      "Papilloedema/retinal haemorrhages.",
+      "Pregnancy (pre-eclampsia/eclampsia) — different pathway."
+    ],
+    "diagnostics": [
+      {
+        "test": "Targeted assessment for end-organ damage",
+        "rationale": "ECG, troponin, renal function, urinalysis, fundoscopy, and imaging guided by symptoms (CT head, CT aorta)."
+      },
+      {
+        "test": "Repeat/confirm BP",
+        "rationale": "Confirm with an appropriate cuff in both arms."
+      }
+    ],
+    "management": [
+      {
+        "step": "Controlled BP reduction",
+        "detail": "Use titratable IV agents (e.g. labetalol, GTN, nicardipine/sodium nitroprusside) in a monitored setting; lower MAP by ~20–25% in the first hour (not to normal) to avoid hypoperfusion."
+      },
+      {
+        "step": "Tailor to the syndrome",
+        "detail": "Aortic dissection needs rapid HR/BP control (beta-blocker first); stroke and pregnancy have specific targets — avoid abrupt drops in ischaemic stroke."
+      },
+      {
+        "step": "Treat the cause and transition",
+        "detail": "Identify precipitants; switch to oral agents and arrange follow-up once stable."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC/ESH and ACC/AHA hypertension guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "complete-heart-block",
+    "title": "Complete (third-degree) atrioventricular block",
+    "icd10": [
+      "I44.2"
+    ],
+    "snomed": [
+      "27885002"
+    ],
+    "domains": [
+      "cardiology",
+      "emergency",
+      "critical-care"
+    ],
+    "presentation": [
+      "Bradycardia with syncope, presyncope, fatigue, breathlessness or chest pain.",
+      "ECG shows AV dissociation — P waves and QRS independent, with a slow escape rhythm.",
+      "May follow MI, drugs, fibrosis or electrolyte disturbance."
+    ],
+    "redFlags": [
+      "Haemodynamic instability: hypotension, reduced consciousness, ischaemia or heart failure.",
+      "Asystolic pauses / very slow escape.",
+      "Associated acute MI."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG and continuous monitoring",
+        "rationale": "Confirms AV dissociation and the escape rate."
+      },
+      {
+        "test": "Electrolytes, drug review, troponin",
+        "rationale": "Identify reversible causes (hyperkalaemia, beta-blockers/digoxin, ischaemia)."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat instability",
+        "detail": "Atropine (often limited benefit in infranodal block), then transcutaneous pacing and/or chronotropic infusions (adrenaline/isoprenaline) as a bridge."
+      },
+      {
+        "step": "Reverse causes",
+        "detail": "Stop offending drugs, correct electrolytes, treat ischaemia."
+      },
+      {
+        "step": "Pacemaker",
+        "detail": "Urgent temporary pacing if unstable; refer for permanent pacemaker in persistent/symptomatic high-grade block."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC guidelines on cardiac pacing"
+      },
+      {
+        "label": "Resuscitation Council — bradycardia algorithm"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "cardiac-tamponade",
+    "title": "Cardiac tamponade",
+    "icd10": [
+      "I31.4"
+    ],
+    "snomed": [
+      "35304003"
+    ],
+    "domains": [
+      "cardiology",
+      "emergency",
+      "critical-care"
+    ],
+    "presentation": [
+      "Breathlessness, tachycardia and hypotension with raised JVP and muffled heart sounds (Beck triad).",
+      "Pulsus paradoxus.",
+      "Causes: pericarditis, malignancy, uraemia, trauma, aortic dissection."
+    ],
+    "redFlags": [
+      "Obstructive shock / pulseless electrical activity.",
+      "Rapidly accumulating effusion (e.g. trauma, dissection).",
+      "Haemodynamic collapse."
+    ],
+    "diagnostics": [
+      {
+        "test": "Bedside echocardiography",
+        "rationale": "Confirms effusion with diastolic chamber collapse and respiratory variation in flows."
+      },
+      {
+        "test": "ECG and CXR",
+        "rationale": "Low voltages/electrical alternans; enlarged globular heart."
+      }
+    ],
+    "management": [
+      {
+        "step": "Pericardiocentesis",
+        "detail": "Urgent echo-guided pericardiocentesis (or surgical drainage) is the definitive treatment for unstable tamponade."
+      },
+      {
+        "step": "Temporise",
+        "detail": "Cautious IV fluids may briefly support filling; avoid measures that reduce preload."
+      },
+      {
+        "step": "Treat the cause",
+        "detail": "Manage the underlying aetiology; surgery for traumatic/aortic causes."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC guidelines on pericardial diseases"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "acute-myocarditis",
+    "title": "Acute myocarditis",
+    "icd10": [
+      "I40"
+    ],
+    "snomed": [
+      "50920009"
+    ],
+    "domains": [
+      "cardiology",
+      "infection",
+      "critical-care"
+    ],
+    "presentation": [
+      "Chest pain, breathlessness or palpitations, often after a viral illness.",
+      "May mimic acute coronary syndrome; can present with heart failure or arrhythmia.",
+      "Raised troponin with non-obstructed coronaries."
+    ],
+    "redFlags": [
+      "Cardiogenic shock or fulminant myocarditis.",
+      "Ventricular arrhythmia / high-grade AV block.",
+      "Rapidly worsening heart failure."
+    ],
+    "diagnostics": [
+      {
+        "test": "ECG, troponin, echocardiography",
+        "rationale": "Detect dysfunction, arrhythmia and raised biomarkers."
+      },
+      {
+        "test": "Cardiac MRI (and exclude coronary disease)",
+        "rationale": "Supports the diagnosis; exclude an ischaemic cause."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive heart-failure care",
+        "detail": "Treat heart failure and arrhythmia; haemodynamic/ICU support (including mechanical support) for fulminant cases."
+      },
+      {
+        "step": "Avoid exertion",
+        "detail": "Restrict strenuous activity during recovery; avoid NSAIDs."
+      },
+      {
+        "step": "Treat specific causes",
+        "detail": "Address identifiable causes; immunosuppression only for specific aetiologies under specialist care."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC position statement on myocarditis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "spontaneous-pneumothorax",
+    "title": "Spontaneous pneumothorax",
+    "icd10": [
+      "J93.1",
+      "J93.0"
+    ],
+    "snomed": [
+      "36118008"
+    ],
+    "domains": [
+      "respiratory",
+      "emergency",
+      "surgery"
+    ],
+    "presentation": [
+      "Sudden pleuritic chest pain and breathlessness, classically in a tall thin young person (primary) or with underlying lung disease (secondary).",
+      "Reduced breath sounds and hyper-resonance on the affected side.",
+      "Often sudden onset at rest."
+    ],
+    "redFlags": [
+      "Features of tension (severe distress, hypotension, tracheal deviation) — decompress immediately.",
+      "Secondary pneumothorax in COPD — poorly tolerated.",
+      "Bilateral or recurrent pneumothorax."
+    ],
+    "diagnostics": [
+      {
+        "test": "Chest X-ray (erect)",
+        "rationale": "Confirms and sizes the pneumothorax."
+      },
+      {
+        "test": "CT/ultrasound in selected cases",
+        "rationale": "Clarifies complex, loculated or uncertain cases."
+      }
+    ],
+    "management": [
+      {
+        "step": "Oxygen and assessment",
+        "detail": "Give oxygen; decide management by size, symptoms and primary vs secondary type per guideline."
+      },
+      {
+        "step": "Aspiration or drainage",
+        "detail": "Needle aspiration for many primary cases; intercostal chest drain for large/secondary/failed aspiration or breathless patients."
+      },
+      {
+        "step": "Prevent recurrence",
+        "detail": "Smoking cessation; refer for pleurodesis/surgery after recurrence or persistent air leak."
+      }
+    ],
+    "references": [
+      {
+        "label": "BTS pleural disease guideline — pneumothorax"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "pleural-effusion",
+    "title": "Pleural effusion",
+    "icd10": [
+      "J90",
+      "J91"
+    ],
+    "snomed": [
+      "60046008"
+    ],
+    "domains": [
+      "respiratory",
+      "acute-care"
+    ],
+    "presentation": [
+      "Progressive breathlessness with reduced breath sounds and stony dullness to percussion.",
+      "Reduced chest expansion on the affected side.",
+      "May have features of the underlying cause (heart failure, infection, malignancy)."
+    ],
+    "redFlags": [
+      "Empyema/complicated parapneumonic effusion (sepsis, pus) — needs drainage.",
+      "Large effusion causing respiratory compromise.",
+      "Suspected malignancy."
+    ],
+    "diagnostics": [
+      {
+        "test": "Chest X-ray and pleural ultrasound",
+        "rationale": "Confirm, size and guide safe aspiration."
+      },
+      {
+        "test": "Diagnostic pleural aspiration (Light criteria)",
+        "rationale": "Distinguishes transudate from exudate; send for biochemistry, microbiology, cytology and pH."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat the cause",
+        "detail": "Transudates (e.g. heart failure) — treat the underlying condition; diuresis often suffices."
+      },
+      {
+        "step": "Drain when indicated",
+        "detail": "Therapeutic aspiration for symptoms; chest drain for empyema/complicated parapneumonic effusion (pH <7.2 or pus) with antibiotics."
+      },
+      {
+        "step": "Investigate exudates",
+        "detail": "Pursue malignancy/TB workup; consider thoracoscopy for undiagnosed exudates."
+      }
+    ],
+    "references": [
+      {
+        "label": "BTS pleural disease guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "acute-mesenteric-ischaemia",
+    "title": "Acute mesenteric ischaemia",
+    "icd10": [
+      "K55.0"
+    ],
+    "snomed": [
+      "155747009"
+    ],
+    "domains": [
+      "surgery",
+      "gastroenterology",
+      "vascular",
+      "emergency",
+      "critical-care"
+    ],
+    "presentation": [
+      "Sudden severe abdominal pain that is OUT OF PROPORTION to examination findings.",
+      "Risk factors: atrial fibrillation, atherosclerosis, hypercoagulability, low-flow states.",
+      "Later: peritonism, bloody diarrhoea and shock as bowel infarcts."
+    ],
+    "redFlags": [
+      "Rising lactate with severe pain — impending bowel infarction.",
+      "Peritonitis and septic shock.",
+      "Atrial fibrillation (embolic source)."
+    ],
+    "diagnostics": [
+      {
+        "test": "CT angiography of the mesenteric vessels",
+        "rationale": "First-line to identify arterial/venous occlusion and bowel ischaemia."
+      },
+      {
+        "test": "Lactate and acid-base",
+        "rationale": "Raised lactate and metabolic acidosis indicate ischaemia; normal values do not exclude it early."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitate and anticoagulate",
+        "detail": "Aggressive fluids, broad-spectrum antibiotics, analgesia; systemic anticoagulation (heparin) for embolic/thrombotic disease."
+      },
+      {
+        "step": "Restore perfusion",
+        "detail": "Urgent revascularisation (embolectomy, endovascular or bypass) and surgical resection of non-viable bowel."
+      },
+      {
+        "step": "Critical care",
+        "detail": "ICU support; second-look laparotomy as needed; treat AF and other sources."
+      }
+    ],
+    "references": [
+      {
+        "label": "WSES guidelines on acute mesenteric ischaemia"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "acute-diverticulitis",
+    "title": "Acute diverticulitis",
+    "icd10": [
+      "K57.3",
+      "K57.9"
+    ],
+    "snomed": [
+      "7620006"
+    ],
+    "domains": [
+      "gastroenterology",
+      "surgery",
+      "infection"
+    ],
+    "presentation": [
+      "Left lower quadrant abdominal pain, fever and altered bowel habit, typically in older adults.",
+      "Localised tenderness; possible palpable mass.",
+      "Nausea; urinary symptoms if adjacent inflammation."
+    ],
+    "redFlags": [
+      "Generalised peritonitis (perforation), abscess, fistula or obstruction.",
+      "Sepsis.",
+      "Significant rectal bleeding (consider other causes)."
+    ],
+    "diagnostics": [
+      {
+        "test": "CT abdomen/pelvis with contrast",
+        "rationale": "Confirms diverticulitis and grades complications (abscess, perforation)."
+      },
+      {
+        "test": "FBC, CRP",
+        "rationale": "Assess inflammatory response and severity."
+      }
+    ],
+    "management": [
+      {
+        "step": "Uncomplicated disease",
+        "detail": "Many mild cases are managed with analgesia and observation; antibiotics selectively (e.g. systemic upset, comorbidity, immunosuppression)."
+      },
+      {
+        "step": "Complicated disease",
+        "detail": "IV antibiotics and admission; radiological drainage of abscesses; surgery for perforation/peritonitis or failure to improve."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Colonic evaluation after recovery to exclude malignancy; dietary advice."
+      }
+    ],
+    "references": [
+      {
+        "label": "ASCRS / WSES diverticulitis guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "nephrotic-syndrome",
+    "title": "Nephrotic syndrome",
+    "icd10": [
+      "N04"
+    ],
+    "snomed": [
+      "52254009"
+    ],
+    "domains": [
+      "nephrology",
+      "paediatrics"
+    ],
+    "presentation": [
+      "Heavy proteinuria, hypoalbuminaemia and peripheral/periorbital oedema.",
+      "Frothy urine, weight gain, ascites.",
+      "Common in children (minimal change disease); diverse causes in adults."
+    ],
+    "redFlags": [
+      "Venous thromboembolism (hypercoagulable state).",
+      "Severe infection (e.g. pneumococcal peritonitis).",
+      "Acute kidney injury or severe hypovolaemia."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urine protein quantification and serum albumin",
+        "rationale": "Confirms nephrotic-range proteinuria and hypoalbuminaemia."
+      },
+      {
+        "test": "Renal function, lipids and cause-specific tests",
+        "rationale": "Assess severity and identify secondary causes; renal biopsy in adults / atypical children."
+      }
+    ],
+    "management": [
+      {
+        "step": "Reduce oedema and proteinuria",
+        "detail": "Salt and fluid restriction, loop diuretics for oedema; ACE inhibitor/ARB to reduce proteinuria (mainly in adults)."
+      },
+      {
+        "step": "Treat the cause",
+        "detail": "Corticosteroids for steroid-sensitive minimal change disease (most children); immunosuppression guided by biopsy in others."
+      },
+      {
+        "step": "Prevent complications",
+        "detail": "Address thrombosis risk, infection prophylaxis/vaccination, and manage hyperlipidaemia."
+      }
+    ],
+    "references": [
+      {
+        "label": "KDIGO glomerular diseases guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "fournier-gangrene",
+    "title": "Fournier gangrene",
+    "icd10": [
+      "N49.3"
+    ],
+    "snomed": [
+      "63171007"
+    ],
+    "domains": [
+      "surgery",
+      "urology",
+      "infection",
+      "critical-care",
+      "emergency"
+    ],
+    "presentation": [
+      "Rapidly progressive necrotising infection of the perineal, genital or perianal region.",
+      "Severe pain (often out of proportion), swelling, erythema, crepitus and foul odour.",
+      "Systemic toxicity; diabetes and immunocompromise are risk factors."
+    ],
+    "redFlags": [
+      "Septic shock and rapid spread — surgical emergency.",
+      "Crepitus / gas in tissues.",
+      "Skin necrosis with systemic toxicity."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis",
+        "rationale": "Do not delay surgery for imaging in a toxic patient; CT may delineate extent if stable."
+      },
+      {
+        "test": "Bloods, lactate, cultures",
+        "rationale": "Assess sepsis severity and guide antibiotics."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immediate resuscitation",
+        "detail": "Sepsis six, broad-spectrum IV antibiotics (cover Gram-positive, Gram-negative and anaerobes; consider clindamycin for toxin suppression)."
+      },
+      {
+        "step": "Emergency surgical debridement",
+        "detail": "Urgent and aggressive debridement of all necrotic tissue is the definitive treatment; repeat as needed."
+      },
+      {
+        "step": "Critical care and reconstruction",
+        "detail": "ICU support, diversion if needed, later reconstruction; control diabetes and comorbidity."
+      }
+    ],
+    "references": [
+      {
+        "label": "WSES guidelines on necrotising soft-tissue infections"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "priapism",
+    "title": "Priapism",
+    "icd10": [
+      "N48.3"
+    ],
+    "snomed": [
+      "66002008"
+    ],
+    "domains": [
+      "urology",
+      "emergency"
+    ],
+    "population": {
+      "sex": "male",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Persistent painful erection lasting >4 hours, unrelated to sexual stimulation.",
+      "Ischaemic (low-flow) priapism is painful and rigid — a compartment-syndrome-like emergency.",
+      "Causes: sickle cell disease, drugs (including intracavernosal/erectile agents), malignancy."
+    ],
+    "redFlags": [
+      "Ischaemic priapism >4 hours — risk of permanent erectile dysfunction.",
+      "Underlying sickle cell crisis.",
+      "Delay to treatment."
+    ],
+    "diagnostics": [
+      {
+        "test": "Cavernosal blood gas",
+        "rationale": "Distinguishes ischaemic (hypoxic, acidotic) from non-ischaemic priapism."
+      },
+      {
+        "test": "FBC / sickle screen",
+        "rationale": "Identifies sickle cell disease as a precipitant."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat ischaemic priapism urgently",
+        "detail": "Aspirate cavernosal blood and inject a diluted alpha-agonist (e.g. phenylephrine) with monitoring; treat sickle cell crisis concurrently."
+      },
+      {
+        "step": "Escalate if refractory",
+        "detail": "Surgical shunt if aspiration/injection fails."
+      },
+      {
+        "step": "Non-ischaemic priapism",
+        "detail": "Often managed conservatively or with selective embolisation; refer to urology."
+      }
+    ],
+    "references": [
+      {
+        "label": "EAU / AUA guidelines on priapism"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "subarachnoid-haemorrhage",
+    "title": "Subarachnoid haemorrhage",
+    "icd10": [
+      "I60"
+    ],
+    "snomed": [
+      "21454007"
+    ],
+    "domains": [
+      "neurology",
+      "neurosurgery",
+      "emergency",
+      "critical-care",
+      "stroke"
+    ],
+    "presentation": [
+      "Sudden severe 'thunderclap' headache, maximal within seconds ('worst headache of life').",
+      "Neck stiffness, photophobia, vomiting, reduced consciousness.",
+      "May follow exertion; often from a ruptured berry aneurysm."
+    ],
+    "redFlags": [
+      "Reduced GCS, focal deficit, seizures.",
+      "Re-bleeding (high early mortality).",
+      "Hydrocephalus and raised ICP."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urgent non-contrast CT head",
+        "rationale": "Highly sensitive within 6 hours; shows blood in the subarachnoid space."
+      },
+      {
+        "test": "Lumbar puncture (if CT negative and clinical suspicion remains)",
+        "rationale": "Xanthochromia after ~12 hours supports the diagnosis."
+      }
+    ],
+    "management": [
+      {
+        "step": "Stabilise and refer",
+        "detail": "ABC, analgesia, control BP, bed rest; urgent neurosurgical/neuro-interventional referral."
+      },
+      {
+        "step": "Prevent complications",
+        "detail": "Nimodipine to reduce delayed cerebral ischaemia from vasospasm; manage hydrocephalus and seizures."
+      },
+      {
+        "step": "Secure the aneurysm",
+        "detail": "Early endovascular coiling or surgical clipping to prevent re-bleeding."
+      }
+    ],
+    "references": [
+      {
+        "label": "AHA/ASA guidelines for aneurysmal subarachnoid haemorrhage"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "transient-ischaemic-attack",
+    "title": "Transient ischaemic attack (TIA)",
+    "icd10": [
+      "G45.9"
+    ],
+    "snomed": [
+      "266257000"
+    ],
+    "domains": [
+      "neurology",
+      "stroke",
+      "vascular",
+      "emergency"
+    ],
+    "presentation": [
+      "Transient focal neurological deficit (e.g. unilateral weakness, speech disturbance, amaurosis fugax) that fully resolves, usually within an hour.",
+      "No acute infarction on imaging by definition.",
+      "A warning of high short-term stroke risk."
+    ],
+    "redFlags": [
+      "Crescendo TIAs or AF — high stroke risk.",
+      "Ongoing deficit (treat as stroke).",
+      "Carotid territory symptoms with a tight stenosis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urgent specialist assessment and brain imaging",
+        "rationale": "Confirm the diagnosis and exclude mimics/haemorrhage."
+      },
+      {
+        "test": "Carotid imaging and ECG",
+        "rationale": "Identify carotid stenosis and atrial fibrillation as treatable causes."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immediate antiplatelet",
+        "detail": "Give aspirin at once (unless contraindicated) and arrange urgent TIA-clinic review; short-term dual antiplatelet therapy in selected high-risk patients."
+      },
+      {
+        "step": "Treat the cause",
+        "detail": "Anticoagulate for AF; refer for carotid endarterectomy for significant symptomatic stenosis."
+      },
+      {
+        "step": "Risk-factor control",
+        "detail": "Statin, blood-pressure control, diabetes management, smoking cessation; driving advice."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE stroke and TIA guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "myasthenia-gravis",
+    "title": "Myasthenia gravis (and myasthenic crisis)",
+    "icd10": [
+      "G70.0",
+      "G70.01"
+    ],
+    "snomed": [
+      "91637004"
+    ],
+    "domains": [
+      "neurology",
+      "immunology",
+      "critical-care"
+    ],
+    "presentation": [
+      "Fatigable muscle weakness worsening with activity and improving with rest.",
+      "Ptosis, diplopia, bulbar symptoms (dysphagia, dysarthria) and limb weakness.",
+      "Crisis: respiratory muscle weakness with ventilatory failure."
+    ],
+    "redFlags": [
+      "Myasthenic crisis: breathlessness, weak cough, falling vital capacity — needs ventilatory support.",
+      "Bulbar weakness with aspiration risk.",
+      "Precipitants: infection, certain drugs (aminoglycosides, beta-blockers)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Acetylcholine-receptor (and MuSK) antibodies",
+        "rationale": "Confirm autoimmune myasthenia."
+      },
+      {
+        "test": "Forced vital capacity / NIF",
+        "rationale": "Monitors respiratory function in crisis (not SpO2, which falls late)."
+      }
+    ],
+    "management": [
+      {
+        "step": "Symptomatic therapy",
+        "detail": "Acetylcholinesterase inhibitor (pyridostigmine) for symptom control."
+      },
+      {
+        "step": "Immunotherapy",
+        "detail": "Corticosteroids and steroid-sparing immunosuppression; consider thymectomy in selected patients."
+      },
+      {
+        "step": "Treat crisis",
+        "detail": "Monitor respiration closely; IV immunoglobulin or plasma exchange and ventilatory support for crisis; treat precipitants and avoid offending drugs."
+      }
+    ],
+    "references": [
+      {
+        "label": "International consensus guidance for management of myasthenia gravis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "multiple-sclerosis",
+    "title": "Multiple sclerosis",
+    "icd10": [
+      "G35"
+    ],
+    "snomed": [
+      "24700007"
+    ],
+    "domains": [
+      "neurology",
+      "immunology"
+    ],
+    "presentation": [
+      "Episodes of CNS dysfunction separated in time and space: optic neuritis, sensory disturbance, weakness, ataxia, bladder symptoms.",
+      "Relapsing-remitting course most commonly; fatigue is prominent.",
+      "Symptoms may worsen with heat (Uhthoff phenomenon)."
+    ],
+    "redFlags": [
+      "Acute severe relapse with disability.",
+      "Spinal cord syndrome.",
+      "Differential of other demyelinating/structural disease."
+    ],
+    "diagnostics": [
+      {
+        "test": "MRI brain and spinal cord with contrast",
+        "rationale": "Demonstrates lesions disseminated in time and space (McDonald criteria)."
+      },
+      {
+        "test": "CSF oligoclonal bands",
+        "rationale": "Supports the diagnosis and helps exclude mimics."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat acute relapses",
+        "detail": "High-dose corticosteroids shorten relapse duration; plasma exchange for severe steroid-refractory relapses."
+      },
+      {
+        "step": "Disease-modifying therapy",
+        "detail": "Start a disease-modifying therapy in relapsing disease to reduce relapse rate and disability progression (specialist-led)."
+      },
+      {
+        "step": "Symptom and rehabilitation care",
+        "detail": "Manage spasticity, bladder dysfunction, fatigue, pain and mood; multidisciplinary rehabilitation."
+      }
+    ],
+    "references": [
+      {
+        "label": "ECTRIMS/EAN guideline on the treatment of multiple sclerosis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "mammalian-bite-wound",
+    "title": "Mammalian bite wound (dog/cat/human)",
+    "icd10": [
+      "W54",
+      "W55",
+      "T14.1"
+    ],
+    "snomed": [
+      "399912005"
+    ],
+    "domains": [
+      "infection",
+      "surgery",
+      "emergency",
+      "primary-care"
+    ],
+    "presentation": [
+      "A puncture, laceration or crush wound from an animal or human bite.",
+      "Cat bites cause deep puncture wounds with high infection risk (Pasteurella); human bites risk Eikenella and viral transmission.",
+      "Signs of infection (redness, swelling, discharge) may develop over 24–72 hours."
+    ],
+    "redFlags": [
+      "Spreading cellulitis, abscess, tenosynovitis or joint/bone involvement.",
+      "Rabies risk (assess exposure and need for post-exposure prophylaxis).",
+      "Clenched-fist 'fight-bite' injuries over the knuckles (joint penetration)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Wound assessment",
+        "rationale": "Assess depth, structures involved (tendon, joint, nerve) and contamination."
+      },
+      {
+        "test": "Imaging if deep/over a joint",
+        "rationale": "Detect fractures, retained teeth or joint involvement."
+      }
+    ],
+    "management": [
+      {
+        "step": "Wound care",
+        "detail": "Copious irrigation and debridement; generally leave high-risk bite wounds open or delay primary closure (especially cat/human bites and hands)."
+      },
+      {
+        "step": "Antibiotics and prophylaxis",
+        "detail": "Co-amoxiclav is first-line prophylaxis/treatment; assess tetanus status and rabies post-exposure prophylaxis based on the animal and region; consider hepatitis B/HIV risk for human bites."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Review for infection; refer hand/joint involvement to surgery."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO rabies guidance"
+      },
+      {
+        "label": "National antimicrobial guidelines — bites"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "iron-poisoning",
+    "title": "Iron poisoning",
+    "icd10": [
+      "T45.4"
+    ],
+    "snomed": [
+      "75183008"
+    ],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "paediatrics"
+    ],
+    "presentation": [
+      "Stages: early GI toxicity (vomiting, diarrhoea, GI bleeding), an apparent latent period, then shock and metabolic acidosis, hepatic failure and late strictures.",
+      "Common in young children ingesting iron tablets/supplements.",
+      "Severity relates to elemental iron dose (mg/kg)."
+    ],
+    "redFlags": [
+      "Shock, coma, severe metabolic acidosis or persistent vomiting.",
+      "High serum iron level or radio-opaque tablets on X-ray.",
+      "Hepatic failure."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serum iron level (peak ~4–6 h)",
+        "rationale": "Guides severity and need for chelation."
+      },
+      {
+        "test": "Abdominal X-ray, ABG, glucose, LFTs",
+        "rationale": "Radio-opaque tablets confirm ingestion; assess acidosis and organ injury."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitate and decontaminate",
+        "detail": "Aggressive IV fluids; whole-bowel irrigation for significant ingestions or visible tablets (activated charcoal does NOT bind iron)."
+      },
+      {
+        "step": "Chelation",
+        "detail": "IV desferrioxamine for severe toxicity (shock, acidosis, high iron level, significant symptoms)."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Manage acidosis, coagulopathy and hepatic failure; monitor for late GI strictures."
+      }
+    ],
+    "references": [
+      {
+        "label": "TOXBASE / national poisons guidance — iron"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "digoxin-toxicity",
+    "title": "Digoxin toxicity",
+    "icd10": [
+      "T46.0"
+    ],
+    "snomed": [
+      "12876009"
+    ],
+    "domains": [
+      "toxicology",
+      "cardiology",
+      "emergency",
+      "critical-care"
+    ],
+    "presentation": [
+      "Nausea, vomiting, anorexia, confusion and visual disturbance (yellow-green halos).",
+      "Bradyarrhythmias and almost any tachy/brady-arrhythmia (classically with AV block).",
+      "Acute overdose vs chronic toxicity (often older patients with renal impairment)."
+    ],
+    "redFlags": [
+      "Life-threatening arrhythmia or haemodynamic instability.",
+      "Hyperkalaemia in acute toxicity (marker of severity).",
+      "Bradycardia/high-grade block unresponsive to atropine."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serum digoxin level, potassium and renal function",
+        "rationale": "Confirm toxicity; potassium guides prognosis/treatment in acute overdose."
+      },
+      {
+        "test": "ECG / continuous monitoring",
+        "rationale": "Detect characteristic arrhythmias and conduction block."
+      }
+    ],
+    "management": [
+      {
+        "step": "Digoxin-specific antibody fragments",
+        "detail": "Give digoxin immune Fab for life-threatening arrhythmia, significant hyperkalaemia, or haemodynamic instability."
+      },
+      {
+        "step": "Supportive measures",
+        "detail": "Correct hypokalaemia/hypomagnesaemia; atropine and temporary pacing for bradycardia; treat ventricular arrhythmia (avoid calcium in hyperkalaemia from digoxin)."
+      },
+      {
+        "step": "Decontamination",
+        "detail": "Activated charcoal if early after acute ingestion with a protected airway."
+      }
+    ],
+    "references": [
+      {
+        "label": "TOXBASE / national poisons guidance — digoxin"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "beta-blocker-ccb-overdose",
+    "title": "Beta-blocker / calcium-channel-blocker overdose",
+    "icd10": [
+      "T44.7",
+      "T46.1"
+    ],
+    "snomed": [
+      "296933004"
+    ],
+    "domains": [
+      "toxicology",
+      "cardiology",
+      "emergency",
+      "critical-care"
+    ],
+    "presentation": [
+      "Bradycardia and hypotension after overdose of a beta-blocker or calcium-channel blocker.",
+      "Beta-blockers: bronchospasm, hypoglycaemia, seizures (especially lipophilic agents). CCBs: hyperglycaemia, preserved consciousness despite shock.",
+      "Conduction block and cardiogenic shock."
+    ],
+    "redFlags": [
+      "Refractory shock and bradyarrhythmia.",
+      "Cardiac arrest.",
+      "Sustained-release preparations (delayed, prolonged toxicity)."
+    ],
+    "diagnostics": [
+      {
+        "test": "ECG and continuous monitoring",
+        "rationale": "Detect bradycardia, conduction block and QRS/QT changes."
+      },
+      {
+        "test": "Glucose, electrolytes, ABG",
+        "rationale": "Hyperglycaemia suggests CCB toxicity; guides high-dose insulin therapy."
+      }
+    ],
+    "management": [
+      {
+        "step": "Initial measures",
+        "detail": "IV fluids, atropine, calcium (for CCB), and glucagon (for beta-blockers); decontamination/whole-bowel irrigation for sustained-release ingestions."
+      },
+      {
+        "step": "High-dose insulin euglycaemia therapy",
+        "detail": "High-dose insulin with glucose is a key inotropic therapy for significant CCB (and beta-blocker) toxicity; monitor glucose and potassium."
+      },
+      {
+        "step": "Escalate",
+        "detail": "Vasopressors, IV lipid emulsion for lipophilic agents, transvenous pacing and mechanical circulatory support for refractory shock."
+      }
+    ],
+    "references": [
+      {
+        "label": "TOXBASE / national poisons guidance — beta-blockers and calcium-channel blockers"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "high-altitude-illness",
+    "title": "High-altitude illness (AMS, HACE, HAPE)",
+    "icd10": [
+      "T70.2"
+    ],
+    "snomed": [
+      "95661001"
+    ],
+    "domains": [
+      "emergency",
+      "respiratory",
+      "neurology",
+      "critical-care"
+    ],
+    "presentation": [
+      "Acute mountain sickness: headache, nausea, fatigue and poor sleep after rapid ascent above ~2500 m.",
+      "High-altitude cerebral oedema (HACE): ataxia, confusion, reduced consciousness.",
+      "High-altitude pulmonary oedema (HAPE): breathlessness at rest, cough, reduced exercise tolerance, frothy sputum."
+    ],
+    "redFlags": [
+      "Ataxia or altered mental status (HACE).",
+      "Breathlessness at rest with hypoxia (HAPE).",
+      "Failure to improve or worsening despite rest."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis based on altitude and symptoms",
+        "rationale": "History of recent ascent with typical features is sufficient."
+      },
+      {
+        "test": "SpO2 and examination",
+        "rationale": "Detect hypoxia and pulmonary crackles (HAPE)."
+      }
+    ],
+    "management": [
+      {
+        "step": "Descend",
+        "detail": "Immediate descent is the definitive treatment for HACE and HAPE; stop further ascent for AMS."
+      },
+      {
+        "step": "Oxygen and pharmacotherapy",
+        "detail": "Oxygen/portable hyperbaric chamber; acetazolamide for AMS prevention/treatment, dexamethasone for HACE, nifedipine for HAPE."
+      },
+      {
+        "step": "Prevent recurrence",
+        "detail": "Gradual ascent, acclimatisation, and prophylaxis (acetazolamide) for susceptible individuals."
+      }
+    ],
+    "references": [
+      {
+        "label": "Wilderness Medical Society guidelines for acute altitude illness"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "electrical-injury",
+    "title": "Electrical injury",
+    "icd10": [
+      "T75.4"
+    ],
+    "snomed": [
+      "62561006"
+    ],
+    "domains": [
+      "trauma",
+      "emergency",
+      "critical-care",
+      "dermatology"
+    ],
+    "presentation": [
+      "Burns at entry and exit points after contact with an electrical source; deep tissue damage may exceed surface findings.",
+      "Cardiac arrhythmia, especially after high-voltage or lightning injury.",
+      "Possible loss of consciousness, falls and associated trauma."
+    ],
+    "redFlags": [
+      "Cardiac arrest / arrhythmia.",
+      "Compartment syndrome and rhabdomyolysis from deep muscle injury.",
+      "Airway/respiratory involvement; associated traumatic injuries."
+    ],
+    "diagnostics": [
+      {
+        "test": "ECG and cardiac monitoring",
+        "rationale": "Detect arrhythmia; monitor high-voltage/symptomatic patients."
+      },
+      {
+        "test": "CK, renal function and urinalysis",
+        "rationale": "Identify rhabdomyolysis and risk of pigment nephropathy."
+      }
+    ],
+    "management": [
+      {
+        "step": "Ensure scene safety and resuscitate",
+        "detail": "Isolate the power source before contact; ALS for arrest (prolonged resuscitation may be warranted in lightning)."
+      },
+      {
+        "step": "Fluids and renal protection",
+        "detail": "Generous IV fluids if significant tissue injury/rhabdomyolysis to maintain urine output."
+      },
+      {
+        "step": "Wound and injury care",
+        "detail": "Treat burns, watch for compartment syndrome, assess for occult deep injury and associated trauma; tetanus prophylaxis."
+      }
+    ],
+    "references": [
+      {
+        "label": "Burns and trauma guidance on electrical injuries"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "siadh",
+    "title": "Syndrome of inappropriate antidiuresis (SIADH)",
+    "icd10": [
+      "E22.2"
+    ],
+    "snomed": [
+      "33461007"
+    ],
+    "domains": [
+      "endocrinology",
+      "nephrology"
+    ],
+    "presentation": [
+      "Euvolaemic hyponatraemia with concentrated urine and inappropriately high urine sodium.",
+      "Often asymptomatic; nausea, confusion or seizures if severe/rapid.",
+      "Causes: CNS disease, lung pathology, malignancy, drugs (SSRIs, carbamazepine)."
+    ],
+    "redFlags": [
+      "Severe symptomatic hyponatraemia (seizures, reduced GCS).",
+      "Over-rapid correction risks osmotic demyelination.",
+      "Underlying malignancy."
+    ],
+    "diagnostics": [
+      {
+        "test": "Paired serum/urine osmolality and urine sodium",
+        "rationale": "Inappropriately concentrated urine with high urine sodium in a euvolaemic, hyponatraemic patient supports SIADH after excluding other causes."
+      },
+      {
+        "test": "Thyroid and adrenal function",
+        "rationale": "Exclude hypothyroidism and adrenal insufficiency, which mimic SIADH."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat severe symptoms",
+        "detail": "Hypertonic (3%) saline for seizures/coma, with strict limits on correction rate."
+      },
+      {
+        "step": "Fluid restriction",
+        "detail": "First-line for chronic SIADH; treat the underlying cause and stop offending drugs."
+      },
+      {
+        "step": "Second-line agents",
+        "detail": "Consider vasopressin-receptor antagonists (vaptans) or other agents under specialist guidance if restriction fails."
+      }
+    ],
+    "references": [
+      {
+        "label": "European hyponatraemia clinical practice guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "diabetes-insipidus",
+    "title": "Diabetes insipidus (arginine vasopressin deficiency/resistance)",
+    "icd10": [
+      "E23.2",
+      "N25.1"
+    ],
+    "snomed": [
+      "15771004"
+    ],
+    "domains": [
+      "endocrinology",
+      "nephrology"
+    ],
+    "presentation": [
+      "Polyuria with dilute urine and polydipsia; nocturia.",
+      "Central (AVP deficiency, e.g. post-pituitary surgery/trauma) or nephrogenic (AVP resistance, e.g. lithium, hypercalcaemia).",
+      "Risk of hypernatraemia if access to water is limited."
+    ],
+    "redFlags": [
+      "Hypernatraemia and dehydration, especially if unable to drink.",
+      "Postoperative pituitary patients.",
+      "Severe volume depletion."
+    ],
+    "diagnostics": [
+      {
+        "test": "Paired serum/urine osmolality (+/- water deprivation test)",
+        "rationale": "Demonstrates inability to concentrate urine; copeptin/desmopressin response distinguishes central from nephrogenic."
+      },
+      {
+        "test": "Calcium, potassium, glucose and drug review",
+        "rationale": "Identify reversible causes of nephrogenic DI and exclude osmotic diuresis."
+      }
+    ],
+    "management": [
+      {
+        "step": "Ensure access to water",
+        "detail": "Allow free access to fluids; in acute/inpatient settings replace water deficit and monitor sodium closely."
+      },
+      {
+        "step": "Central DI",
+        "detail": "Desmopressin replacement, titrated to symptoms and sodium."
+      },
+      {
+        "step": "Nephrogenic DI",
+        "detail": "Remove the cause (e.g. lithium), correct calcium/potassium; low-salt diet and thiazide +/- amiloride to reduce urine output."
+      }
+    ],
+    "references": [
+      {
+        "label": "Society for Endocrinology guidance on diabetes insipidus"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "primary-hyperaldosteronism",
+    "title": "Primary hyperaldosteronism (Conn syndrome)",
+    "icd10": [
+      "E26.0"
+    ],
+    "snomed": [
+      "59657007"
+    ],
+    "domains": [
+      "endocrinology",
+      "cardiology",
+      "hypertension",
+      "nephrology"
+    ],
+    "presentation": [
+      "Hypertension that is resistant to treatment, often with hypokalaemia.",
+      "May be normokalaemic; muscle weakness, cramps and polyuria when potassium is low.",
+      "An under-recognised, treatable cause of secondary hypertension."
+    ],
+    "redFlags": [
+      "Severe/resistant hypertension with end-organ damage.",
+      "Marked hypokalaemia.",
+      "Young patients with hypertension."
+    ],
+    "diagnostics": [
+      {
+        "test": "Aldosterone-to-renin ratio",
+        "rationale": "Screening test (raised aldosterone with suppressed renin); withdraw interfering drugs where possible."
+      },
+      {
+        "test": "Confirmatory testing and adrenal imaging +/- vein sampling",
+        "rationale": "Confirm autonomous secretion and distinguish unilateral adenoma from bilateral hyperplasia."
+      }
+    ],
+    "management": [
+      {
+        "step": "Mineralocorticoid-receptor antagonist",
+        "detail": "Spironolactone (or eplerenone) controls blood pressure and corrects hypokalaemia, especially in bilateral disease."
+      },
+      {
+        "step": "Surgery for unilateral disease",
+        "detail": "Laparoscopic adrenalectomy can cure or improve hypertension from a unilateral aldosterone-producing adenoma."
+      },
+      {
+        "step": "Monitor",
+        "detail": "Track blood pressure, potassium and renal function; manage cardiovascular risk."
+      }
+    ],
+    "references": [
+      {
+        "label": "Endocrine Society guideline on primary aldosteronism"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "cushing-syndrome",
+    "title": "Cushing syndrome",
+    "icd10": [
+      "E24"
+    ],
+    "snomed": [
+      "48818005"
+    ],
+    "domains": [
+      "endocrinology",
+      "metabolism"
+    ],
+    "presentation": [
+      "Weight gain with central obesity, moon face, dorsocervical fat pad and proximal myopathy.",
+      "Purple striae, easy bruising, hypertension, glucose intolerance and mood change.",
+      "Commonest cause is exogenous corticosteroids; endogenous causes include pituitary (Cushing disease), adrenal and ectopic ACTH."
+    ],
+    "redFlags": [
+      "Severe hypokalaemia and very high cortisol (ectopic ACTH/malignancy).",
+      "Opportunistic infection / poor wound healing.",
+      "Venous thromboembolism."
+    ],
+    "diagnostics": [
+      {
+        "test": "Screening for hypercortisolism",
+        "rationale": "Overnight dexamethasone suppression test, late-night salivary cortisol or 24-hour urinary free cortisol."
+      },
+      {
+        "test": "ACTH and localisation imaging",
+        "rationale": "Distinguishes ACTH-dependent from independent causes and localises the source."
+      }
+    ],
+    "management": [
+      {
+        "step": "Address the cause",
+        "detail": "Taper exogenous steroids where possible; surgery (transsphenoidal for pituitary, adrenalectomy for adrenal) for endogenous disease."
+      },
+      {
+        "step": "Medical control",
+        "detail": "Steroidogenesis inhibitors to lower cortisol while awaiting/if unsuitable for surgery (specialist-led)."
+      },
+      {
+        "step": "Manage complications",
+        "detail": "Treat hypertension, diabetes, osteoporosis, thromboprophylaxis and infection risk."
+      }
+    ],
+    "references": [
+      {
+        "label": "Endocrine Society guideline on Cushing syndrome"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "acromegaly",
+    "title": "Acromegaly",
+    "icd10": [
+      "E22.0"
+    ],
+    "snomed": [
+      "74107003"
+    ],
+    "domains": [
+      "endocrinology",
+      "metabolism"
+    ],
+    "presentation": [
+      "Insidious enlargement of the hands, feet and facial features (coarsening, prognathism); ring/shoe size increase.",
+      "Headache, visual field defects, sweating, arthralgia and obstructive sleep apnoea.",
+      "Usually from a growth-hormone-secreting pituitary adenoma."
+    ],
+    "redFlags": [
+      "Visual field loss from chiasmal compression.",
+      "Cardiovascular disease and diabetes.",
+      "Increased risk of colonic neoplasia."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serum IGF-1 and oral glucose tolerance test with GH",
+        "rationale": "Raised IGF-1 and failure of GH to suppress confirm the diagnosis."
+      },
+      {
+        "test": "Pituitary MRI and visual fields",
+        "rationale": "Localises the adenoma and assesses chiasmal compression."
+      }
+    ],
+    "management": [
+      {
+        "step": "Pituitary surgery",
+        "detail": "Transsphenoidal resection is first-line for most adenomas."
+      },
+      {
+        "step": "Medical therapy",
+        "detail": "Somatostatin analogues (e.g. octreotide/lanreotide), GH-receptor antagonist or dopamine agonists when surgery is incomplete or unsuitable."
+      },
+      {
+        "step": "Long-term care",
+        "detail": "Monitor for residual disease, hypopituitarism, cardiovascular risk, sleep apnoea and colonoscopy surveillance."
+      }
+    ],
+    "references": [
+      {
+        "label": "Endocrine Society guideline on acromegaly"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
   }
 ]
