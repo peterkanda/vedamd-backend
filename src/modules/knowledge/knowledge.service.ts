@@ -41,6 +41,9 @@ export class KnowledgeService implements OnModuleInit {
     const strict = this.config.get('content.strictVerification', { infer: true });
     const requireApproved = this.config.get('content.requireApproved', { infer: true });
     this.bundle = loadBundleFromDisk(dir, { strict, requireApproved });
+    if (!this.config.get('content.snomedEnabled', { infer: true })) {
+      this.hideSnomed();
+    }
     const stats = this.bundle.info.contentStats;
     if (this.bundle.info.verified) {
       this.nestLogger.log(
@@ -62,6 +65,28 @@ export class KnowledgeService implements OnModuleInit {
   /** Inject a pre-loaded bundle. Used by unit tests; not called in prod. */
   loadFromMemory(bundle: LoadedBundle): void {
     this.bundle = bundle;
+  }
+
+  /**
+   * Hide SNOMED CT from every runtime surface while keeping the data in
+   * the signed bundle as future provision. SNOMED CT redistribution
+   * requires an affiliate licence; until one is in place
+   * (`CONTENT_SNOMED_ENABLED=true`) we drop the SNOMED code system,
+   * the per-record `snomed` cross-references, and any SNOMED card
+   * codings. No other terminology is affected.
+   */
+  private hideSnomed(): void {
+    const SNOMED = 'http://snomed.info/sct';
+    const term = this.bundle.terminology;
+    if (term?.codeSystems) {
+      term.codeSystems = term.codeSystems.filter((cs) => cs.system !== SNOMED);
+    }
+    for (const c of this.bundle.conditions) delete (c as { snomed?: unknown }).snomed;
+    for (const d of this.bundle.drugs) delete (d as { snomed?: unknown }).snomed;
+    for (const r of this.bundle.cdsRules) {
+      if (r.codings) r.codings = r.codings.filter((co) => co.system !== SNOMED);
+    }
+    this.nestLogger.log('SNOMED CT hidden at runtime (CONTENT_SNOMED_ENABLED is not true).');
   }
 
   getInfo(): BundleInfo {
