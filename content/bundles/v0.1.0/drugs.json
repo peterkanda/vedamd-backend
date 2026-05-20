@@ -32427,5 +32427,710 @@
     "kemlLevel": 1,
     "rxnorm": "3306",
     "snomed": "387403007"
+  },
+  {
+    "slug": "ketorolac",
+    "inn": "Ketorolac trometamol",
+    "tradeNames": [
+      "Toradol"
+    ],
+    "atc": [
+      "M01AB15"
+    ],
+    "rxnorm": "35827",
+    "snomed": "373671000",
+    "drugClass": "NSAID (parenteral, potent analgesic)",
+    "awareCategory": "Not-classified",
+    "whoEml": false,
+    "indications": [
+      {
+        "text": "Short-term moderate-to-severe acute pain (e.g. renal colic, post-operative, trauma)"
+      }
+    ],
+    "mechanism": "Non-selective cyclo-oxygenase (COX-1/COX-2) inhibitor reducing prostaglandin synthesis; potent analgesic with anti-inflammatory action.",
+    "pharmacokinetics": {
+      "halfLifeHours": 5,
+      "metabolism": "hepatic",
+      "excretion": "renal",
+      "notes": "Total treatment (parenteral + oral) should not exceed 5 days."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "IV/IM",
+          "regimen": "10–30 mg every 6 hours as needed; max 90 mg/day (60 mg/day if elderly/<50 kg/renal impairment).",
+          "notes": "Limit to ≤5 days total to reduce GI/renal risk."
+        }
+      ],
+      "renal": [
+        {
+          "crClMinMlMin": 0,
+          "crClMaxMlMin": 30,
+          "adjustment": "Contraindicated in moderate-to-severe renal impairment.",
+          "prohibited": true
+        }
+      ],
+      "hepatic": "Use with caution; avoid in significant hepatic impairment."
+    },
+    "pregnancy": {
+      "category": "Avoid",
+      "notes": "Avoid, especially in the third trimester (premature ductus arteriosus closure, oligohydramnios).",
+      "contraindicated": true
+    },
+    "lactation": "Small amounts in milk; avoid where alternatives exist.",
+    "contraindications": [
+      "Active or history of peptic ulcer / GI bleeding",
+      "Moderate-to-severe renal impairment",
+      "Hypersensitivity to NSAIDs/aspirin",
+      "Bleeding disorders / high bleeding risk",
+      "Third-trimester pregnancy"
+    ],
+    "warnings": [
+      "GI bleeding and ulceration",
+      "Acute kidney injury, especially with hypovolaemia or other nephrotoxins",
+      "Increased bleeding risk; avoid with anticoagulants",
+      "Cardiovascular thrombotic risk"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "nausea, dyspepsia"
+      },
+      {
+        "frequency": "uncommon",
+        "effect": "GI bleeding"
+      },
+      {
+        "frequency": "serious",
+        "effect": "acute kidney injury"
+      },
+      {
+        "frequency": "serious",
+        "effect": "anaphylaxis / bronchospasm in NSAID-sensitive patients"
+      }
+    ],
+    "monitoring": [
+      "renal function and urine output",
+      "signs of GI bleeding",
+      "blood pressure"
+    ],
+    "references": [
+      {
+        "label": "BNF — ketorolac"
+      },
+      {
+        "label": "WHO Model Formulary — NSAIDs"
+      }
+    ],
+    "kemlLevel": 3,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "mefenamic-acid",
+    "inn": "Mefenamic acid",
+    "tradeNames": [
+      "Ponstan"
+    ],
+    "atc": [
+      "M01AG01"
+    ],
+    "rxnorm": "6925",
+    "snomed": "373530002",
+    "drugClass": "NSAID (fenamate)",
+    "awareCategory": "Not-classified",
+    "whoEml": false,
+    "indications": [
+      {
+        "text": "Mild-to-moderate pain, primary dysmenorrhoea, menorrhagia"
+      }
+    ],
+    "mechanism": "Non-selective COX inhibitor reducing prostaglandin synthesis; also some prostaglandin-receptor antagonism.",
+    "pharmacokinetics": {
+      "halfLifeHours": 2,
+      "metabolism": "hepatic",
+      "excretion": "renal/biliary"
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "oral",
+          "regimen": "500 mg three times daily, preferably with food.",
+          "notes": "Use the lowest effective dose for the shortest duration."
+        }
+      ],
+      "renal": [
+        {
+          "crClMinMlMin": 0,
+          "crClMaxMlMin": 30,
+          "adjustment": "Avoid in significant renal impairment.",
+          "prohibited": true
+        }
+      ]
+    },
+    "pregnancy": {
+      "category": "Avoid",
+      "notes": "Avoid, particularly in the third trimester.",
+      "contraindicated": true
+    },
+    "lactation": "Considered compatible in short courses; avoid prolonged use.",
+    "contraindications": [
+      "Active peptic ulcer / GI bleeding",
+      "Significant renal impairment",
+      "Inflammatory bowel disease",
+      "NSAID hypersensitivity"
+    ],
+    "warnings": [
+      "GI bleeding/ulceration",
+      "Diarrhoea (may require discontinuation)",
+      "Renal impairment",
+      "Seizures in overdose"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "diarrhoea, dyspepsia"
+      },
+      {
+        "frequency": "uncommon",
+        "effect": "GI bleeding"
+      },
+      {
+        "frequency": "serious",
+        "effect": "acute kidney injury"
+      }
+    ],
+    "monitoring": [
+      "renal function in at-risk patients",
+      "GI symptoms"
+    ],
+    "references": [
+      {
+        "label": "BNF — mefenamic acid"
+      }
+    ],
+    "kemlLevel": 3,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "benzylpenicillin",
+    "inn": "Benzylpenicillin (penicillin G)",
+    "tradeNames": [
+      "Crystapen"
+    ],
+    "atc": [
+      "J01CE01"
+    ],
+    "rxnorm": "7980",
+    "snomed": "764146007",
+    "drugClass": "Natural penicillin (parenteral, narrow-spectrum)",
+    "awareCategory": "Access",
+    "whoEml": true,
+    "indications": [
+      {
+        "icd10": "A33",
+        "text": "Neonatal tetanus, severe streptococcal and meningococcal infection"
+      },
+      {
+        "icd10": "A50",
+        "text": "Congenital syphilis"
+      },
+      {
+        "icd10": "A27",
+        "text": "Severe leptospirosis"
+      }
+    ],
+    "mechanism": "Inhibits bacterial cell-wall synthesis by binding penicillin-binding proteins; bactericidal.",
+    "pharmacokinetics": {
+      "halfLifeHours": 0.5,
+      "metabolism": "minimal",
+      "excretion": "renal",
+      "notes": "Short half-life — frequent dosing required."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "IV/IM",
+          "regimen": "0.6–2.4 g (1–4 MU) every 4–6 hours; up to 2.4 g every 4 hours in severe infection (e.g. meningococcal).",
+          "notes": "Doses expressed as benzylpenicillin sodium; 600 mg ≈ 1 mega-unit."
+        }
+      ],
+      "paediatric": {
+        "route": "IV/IM",
+        "frequency": "every 6 hours (every 4–6 h in severe sepsis)",
+        "notes": "Neonatal dosing is weight- and age-band specific (e.g. 50 mg/kg/dose); follow neonatal protocols."
+      },
+      "renal": [
+        {
+          "crClMinMlMin": 0,
+          "crClMaxMlMin": 10,
+          "adjustment": "Reduce dose / extend interval in severe renal impairment to avoid neurotoxicity."
+        }
+      ]
+    },
+    "pregnancy": {
+      "notes": "Safe and the treatment of choice for syphilis in pregnancy."
+    },
+    "lactation": "Compatible.",
+    "contraindications": [
+      "Penicillin hypersensitivity"
+    ],
+    "warnings": [
+      "Anaphylaxis — check allergy history",
+      "Jarisch-Herxheimer reaction when treating syphilis/leptospirosis",
+      "High doses or renal impairment → neurotoxicity/seizures",
+      "Large IV doses carry a significant sodium load"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "injection-site pain (IM)"
+      },
+      {
+        "frequency": "uncommon",
+        "effect": "rash, diarrhoea"
+      },
+      {
+        "frequency": "serious",
+        "effect": "anaphylaxis"
+      },
+      {
+        "frequency": "rare",
+        "effect": "seizures with very high doses"
+      }
+    ],
+    "monitoring": [
+      "renal function with high-dose/prolonged therapy",
+      "for hypersensitivity reactions"
+    ],
+    "references": [
+      {
+        "label": "WHO Model Formulary — benzylpenicillin"
+      },
+      {
+        "label": "BNF — benzylpenicillin"
+      }
+    ],
+    "kemlLevel": 1,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "procaine-benzylpenicillin",
+    "inn": "Procaine benzylpenicillin",
+    "tradeNames": [
+      "Procaine penicillin"
+    ],
+    "atc": [
+      "J01CE09"
+    ],
+    "rxnorm": "8986",
+    "snomed": "395998005",
+    "drugClass": "Long-acting parenteral penicillin (procaine salt)",
+    "awareCategory": "Access",
+    "whoEml": true,
+    "indications": [
+      {
+        "icd10": "A50",
+        "text": "Congenital syphilis (where IV benzylpenicillin is unavailable)"
+      },
+      {
+        "text": "Moderate streptococcal infections requiring sustained levels"
+      }
+    ],
+    "mechanism": "Depot penicillin formulation hydrolysed to benzylpenicillin; inhibits cell-wall synthesis, providing prolonged moderate serum levels after IM injection.",
+    "pharmacokinetics": {
+      "halfLifeHours": 0,
+      "metabolism": "minimal",
+      "excretion": "renal",
+      "notes": "Slow IM absorption gives sustained levels for ~24 hours."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "IM",
+          "regimen": "0.6–1.2 g once daily, deep IM; duration by indication.",
+          "notes": "NEVER give intravenously."
+        }
+      ],
+      "paediatric": {
+        "route": "IM",
+        "frequency": "once daily",
+        "notes": "Congenital syphilis: 50,000 units/kg IM once daily for 10 days per protocol."
+      }
+    },
+    "pregnancy": {
+      "notes": "Safe; used for syphilis in pregnancy."
+    },
+    "lactation": "Compatible.",
+    "contraindications": [
+      "Penicillin hypersensitivity",
+      "Procaine hypersensitivity"
+    ],
+    "warnings": [
+      "NEVER administer intravenously — risk of procaine toxicity/embolism",
+      "Anaphylaxis",
+      "Procaine reaction (transient anxiety, hallucinations)"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "injection-site pain"
+      },
+      {
+        "frequency": "serious",
+        "effect": "anaphylaxis"
+      }
+    ],
+    "monitoring": [
+      "for hypersensitivity and procaine reactions"
+    ],
+    "references": [
+      {
+        "label": "WHO Model Formulary — procaine benzylpenicillin"
+      }
+    ],
+    "kemlLevel": 1,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "pyrantel-pamoate",
+    "inn": "Pyrantel pamoate",
+    "tradeNames": [
+      "Combantrin"
+    ],
+    "atc": [
+      "P02CC01"
+    ],
+    "rxnorm": "9258",
+    "snomed": "373516008",
+    "drugClass": "Depolarising anthelmintic (neuromuscular blocker of worms)",
+    "awareCategory": "Not-classified",
+    "whoEml": true,
+    "indications": [
+      {
+        "icd10": "B80",
+        "text": "Enterobiasis (pinworm)"
+      },
+      {
+        "icd10": "B77",
+        "text": "Ascariasis"
+      },
+      {
+        "icd10": "B76",
+        "text": "Hookworm infection"
+      }
+    ],
+    "mechanism": "Depolarising neuromuscular blocker in nematodes — causes spastic paralysis of the worm, which is then expelled.",
+    "pharmacokinetics": {
+      "halfLifeHours": 0,
+      "metabolism": "partial hepatic",
+      "excretion": "mostly unabsorbed in faeces",
+      "notes": "Poorly absorbed — acts in the gut lumen."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "oral",
+          "regimen": "11 mg/kg (max 1 g) as a single dose; repeat after 2 weeks for enterobiasis.",
+          "notes": "Treat household contacts for pinworm."
+        }
+      ],
+      "paediatric": {
+        "mgPerKgPerDose": 11,
+        "maxMgPerDose": 1000,
+        "route": "oral",
+        "frequency": "single dose (repeat in 2 weeks for pinworm)",
+        "notes": "Suitable from 6 months/over 10 kg per local guidance."
+      }
+    },
+    "pregnancy": {
+      "notes": "Generally avoided in the first trimester; use if benefit outweighs risk."
+    },
+    "lactation": "Considered compatible (minimal absorption).",
+    "contraindications": [
+      "Hypersensitivity to pyrantel"
+    ],
+    "warnings": [
+      "Do not co-administer with piperazine (mutually antagonistic)",
+      "Use caution in hepatic impairment"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "mild GI upset (nausea, cramps, diarrhoea)"
+      },
+      {
+        "frequency": "uncommon",
+        "effect": "headache, dizziness, rash"
+      }
+    ],
+    "monitoring": [
+      "clinical response; repeat stool/tape test if symptoms persist"
+    ],
+    "references": [
+      {
+        "label": "WHO Model Formulary — pyrantel"
+      }
+    ],
+    "kemlLevel": 2,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tetanus-toxoid-vaccine",
+    "inn": "Tetanus toxoid-containing vaccine (Td/TT)",
+    "tradeNames": [
+      "Td",
+      "TT"
+    ],
+    "atc": [
+      "J07AM01"
+    ],
+    "rxnorm": "5811",
+    "snomed": "871751006",
+    "drugClass": "Toxoid vaccine (active immunisation)",
+    "awareCategory": "Not-classified",
+    "whoEml": true,
+    "indications": [
+      {
+        "icd10": "Z23",
+        "text": "Active immunisation against tetanus; wound prophylaxis; maternal/neonatal tetanus prevention"
+      }
+    ],
+    "mechanism": "Inactivated tetanus toxoid induces protective anti-toxin antibodies (active immunisation).",
+    "pharmacokinetics": {
+      "halfLifeHours": 0,
+      "metabolism": "n/a",
+      "excretion": "n/a",
+      "notes": "Protective immunity develops over ~2 weeks; boosters maintain titres."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "IM",
+          "regimen": "0.5 mL per dose; primary course and boosters per national schedule. Wound management: booster if >5–10 years since last dose.",
+          "notes": "Combine with tetanus immunoglobulin for high-risk wounds in inadequately immunised patients."
+        }
+      ],
+      "paediatric": {
+        "route": "IM",
+        "frequency": "per EPI schedule",
+        "notes": "Given as DTP/DT-containing vaccines in childhood."
+      }
+    },
+    "pregnancy": {
+      "notes": "Recommended in pregnancy to prevent maternal and neonatal tetanus."
+    },
+    "lactation": "Compatible.",
+    "contraindications": [
+      "Severe hypersensitivity to a previous dose"
+    ],
+    "warnings": [
+      "Defer in acute severe febrile illness",
+      "Local reactions more common with frequent boosting"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "injection-site pain, swelling, low-grade fever"
+      },
+      {
+        "frequency": "rare",
+        "effect": "hypersensitivity reaction"
+      }
+    ],
+    "monitoring": [
+      "observe briefly post-vaccination for hypersensitivity"
+    ],
+    "references": [
+      {
+        "label": "WHO Tetanus vaccines: position paper"
+      },
+      {
+        "label": "WHO MNTE"
+      }
+    ],
+    "kemlLevel": 1,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "mmr-vaccine",
+    "inn": "Measles, mumps and rubella vaccine",
+    "tradeNames": [
+      "MMR",
+      "Priorix",
+      "M-M-R II"
+    ],
+    "atc": [
+      "J07BD52"
+    ],
+    "rxnorm": "38398",
+    "snomed": "871895009",
+    "drugClass": "Live attenuated viral vaccine",
+    "awareCategory": "Not-classified",
+    "whoEml": true,
+    "indications": [
+      {
+        "icd10": "Z23",
+        "text": "Active immunisation against measles, mumps and rubella"
+      }
+    ],
+    "mechanism": "Live attenuated measles, mumps and rubella viruses stimulate protective humoral and cellular immunity.",
+    "pharmacokinetics": {
+      "halfLifeHours": 0,
+      "metabolism": "n/a",
+      "excretion": "n/a",
+      "notes": "Two doses give long-lasting immunity."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "subcutaneous/IM",
+          "regimen": "0.5 mL; non-immune adults given two doses ≥4 weeks apart.",
+          "notes": "Offer to non-immune women postpartum (not during pregnancy)."
+        }
+      ],
+      "paediatric": {
+        "route": "subcutaneous/IM",
+        "frequency": "two doses per national schedule",
+        "notes": "First dose typically at 9–12 months, second at 15–18 months / school entry."
+      }
+    },
+    "pregnancy": {
+      "category": "Contraindicated",
+      "notes": "Live vaccine — avoid in pregnancy; avoid pregnancy for 1 month after vaccination.",
+      "contraindicated": true
+    },
+    "lactation": "Compatible.",
+    "contraindications": [
+      "Pregnancy",
+      "Significant immunosuppression",
+      "Anaphylaxis to a previous dose or vaccine component",
+      "Severe febrile illness (defer)"
+    ],
+    "warnings": [
+      "Live vaccine — caution/contraindicated in immunocompromise",
+      "Defer for ~3 months after immunoglobulin/blood products"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "fever, transient rash, malaise 5–12 days later"
+      },
+      {
+        "frequency": "uncommon",
+        "effect": "transient arthralgia (rubella component, adult women)"
+      },
+      {
+        "frequency": "rare",
+        "effect": "transient thrombocytopenia"
+      }
+    ],
+    "monitoring": [
+      "observe post-vaccination for hypersensitivity"
+    ],
+    "references": [
+      {
+        "label": "WHO Measles, Mumps, Rubella vaccines: position papers"
+      }
+    ],
+    "kemlLevel": 1,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "chlorhexidine-topical",
+    "inn": "Chlorhexidine (digluconate)",
+    "tradeNames": [
+      "Hibiscrub",
+      "Hibitane"
+    ],
+    "atc": [
+      "D08AC02"
+    ],
+    "rxnorm": "2353",
+    "snomed": "373461007",
+    "drugClass": "Topical antiseptic (bisbiguanide)",
+    "awareCategory": "Not-classified",
+    "whoEml": true,
+    "indications": [
+      {
+        "text": "Skin antisepsis and surgical hand/skin preparation"
+      },
+      {
+        "icd10": "P38",
+        "text": "Umbilical cord care to prevent neonatal omphalitis/sepsis (7.1% solution/gel)"
+      }
+    ],
+    "mechanism": "Cationic bisbiguanide that disrupts microbial cell membranes; broad-spectrum antiseptic with residual activity.",
+    "pharmacokinetics": {
+      "halfLifeHours": 0,
+      "metabolism": "n/a (topical)",
+      "excretion": "n/a",
+      "notes": "Minimal systemic absorption from intact skin."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "topical",
+          "regimen": "Apply 0.5–4% solution for skin/hand antisepsis as directed; 2% alcoholic chlorhexidine for line/skin prep.",
+          "notes": "For external use only."
+        }
+      ],
+      "paediatric": {
+        "route": "topical",
+        "frequency": "once daily for ~7 days (cord care)",
+        "notes": "7.1% chlorhexidine digluconate (delivers 4% chlorhexidine) to the umbilical stump in high-mortality settings."
+      }
+    },
+    "pregnancy": {
+      "notes": "Topical use considered safe."
+    },
+    "lactation": "Topical use compatible; clean breast/nipple before feeds if applied nearby.",
+    "contraindications": [
+      "Hypersensitivity to chlorhexidine"
+    ],
+    "warnings": [
+      "Avoid contact with eyes, middle ear and meninges",
+      "Risk of chemical burns in preterm/low-birthweight neonates with alcoholic formulations",
+      "Rare but serious anaphylaxis"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "skin irritation"
+      },
+      {
+        "frequency": "rare",
+        "effect": "contact dermatitis"
+      },
+      {
+        "frequency": "serious",
+        "effect": "anaphylaxis"
+      }
+    ],
+    "monitoring": [
+      "for local irritation and hypersensitivity"
+    ],
+    "references": [
+      {
+        "label": "WHO recommendations on newborn health — chlorhexidine cord care"
+      }
+    ],
+    "kemlLevel": 1,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]

@@ -24687,5 +24687,1577 @@
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "tension-pneumothorax",
+    "title": "Tension pneumothorax",
+    "icd10": [
+      "J93.0",
+      "S27.0"
+    ],
+    "icd11": [
+      "CB21.0"
+    ],
+    "snomed": [
+      "233645002"
+    ],
+    "domains": [
+      "trauma",
+      "emergency",
+      "critical-care",
+      "respiratory"
+    ],
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Severe respiratory distress and tachypnoea, often after chest trauma or positive-pressure ventilation.",
+      "Tracheal deviation away from the affected side, absent breath sounds and hyper-resonance on that side.",
+      "Distended neck veins, hypotension and tachycardia (obstructive shock)."
+    ],
+    "redFlags": [
+      "Cardiovascular collapse / cardiac arrest — needle decompression must not wait for imaging.",
+      "Rapidly rising ventilation pressures in an intubated patient.",
+      "Severe hypoxia unresponsive to oxygen."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis",
+        "rationale": "Decompress on clinical grounds; do NOT delay for a chest X-ray in an unstable patient."
+      },
+      {
+        "test": "Bedside thoracic ultrasound (eFAST)",
+        "rationale": "Absent lung sliding supports the diagnosis when available and time permits."
+      },
+      {
+        "test": "Erect chest X-ray",
+        "rationale": "Confirmatory only AFTER decompression in a stabilised patient."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immediate needle decompression",
+        "detail": "Large-bore cannula in the 2nd intercostal space mid-clavicular line OR 4th/5th space anterior axillary line; a hiss of air confirms."
+      },
+      {
+        "step": "Definitive chest drain",
+        "detail": "Insert an intercostal drain (5th space, anterior axillary line) after decompression and connect to an underwater seal."
+      },
+      {
+        "step": "High-flow oxygen and resuscitation",
+        "detail": "Treat shock, give oxygen, and address the underlying cause (trauma, barotrauma)."
+      }
+    ],
+    "references": [
+      {
+        "label": "ATLS Advanced Trauma Life Support — thoracic trauma"
+      },
+      {
+        "label": "WHO Integrated Management for Emergency & Essential Surgical Care (IMEESC)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "open-fracture-management",
+    "title": "Open (compound) fracture",
+    "icd10": [
+      "S82.10",
+      "T79.A2"
+    ],
+    "snomed": [
+      "125605004"
+    ],
+    "domains": [
+      "trauma",
+      "orthopaedics",
+      "surgery",
+      "emergency"
+    ],
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Fracture with an overlying wound communicating with the bone or fracture haematoma.",
+      "Visible bone, exposed fat, or bleeding consistent with a deep wound over a fracture.",
+      "High-energy mechanism with significant soft-tissue injury."
+    ],
+    "redFlags": [
+      "Absent distal pulses or signs of vascular injury — surgical emergency.",
+      "Features of compartment syndrome.",
+      "Gross contamination, devitalised tissue or established infection."
+    ],
+    "diagnostics": [
+      {
+        "test": "Neurovascular examination",
+        "rationale": "Document distal pulses, capillary refill, sensation and motor function before and after any manipulation."
+      },
+      {
+        "test": "Plain radiographs (two views)",
+        "rationale": "Define fracture configuration and joint involvement."
+      },
+      {
+        "test": "Wound assessment / Gustilo-Anderson grading",
+        "rationale": "Guides antibiotic choice, debridement urgency and prognosis."
+      }
+    ],
+    "management": [
+      {
+        "step": "Early antibiotics",
+        "detail": "Give IV antibiotics within 1 hour (e.g. a first-generation cephalosporin; add gentamicin and metronidazole for higher-grade/contaminated wounds)."
+      },
+      {
+        "step": "Tetanus prophylaxis",
+        "detail": "Assess immunisation status; give tetanus toxoid +/- immunoglobulin per wound risk."
+      },
+      {
+        "step": "Wound care and splinting",
+        "detail": "Remove gross contamination, cover with a saline-soaked sterile dressing, photograph once, then splint and analgese; do not repeatedly expose."
+      },
+      {
+        "step": "Urgent surgical debridement",
+        "detail": "Refer for theatre debridement and skeletal stabilisation; timing depends on contamination and limb viability."
+      }
+    ],
+    "references": [
+      {
+        "label": "BOAST Open Fracture Management standards"
+      },
+      {
+        "label": "WHO IMEESC — fracture care"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "acute-compartment-syndrome",
+    "title": "Acute compartment syndrome",
+    "icd10": [
+      "T79.A2"
+    ],
+    "snomed": [
+      "111228006"
+    ],
+    "domains": [
+      "trauma",
+      "orthopaedics",
+      "emergency",
+      "surgery"
+    ],
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Pain out of proportion to the injury, worsening despite analgesia.",
+      "Pain on passive stretch of the muscles in the affected compartment.",
+      "Tense, swollen compartment, often after fracture, crush, reperfusion or tight casting."
+    ],
+    "redFlags": [
+      "Paraesthesia, paralysis and pulselessness are LATE signs — do not wait for them.",
+      "A tight cast or dressing — split/remove immediately.",
+      "Rising creatine kinase / myoglobinuria suggesting muscle necrosis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serial clinical assessment",
+        "rationale": "Diagnosis is primarily clinical; the earliest reliable sign is escalating pain and pain on passive stretch."
+      },
+      {
+        "test": "Intra-compartmental pressure measurement",
+        "rationale": "A delta pressure (diastolic BP − compartment pressure) < 30 mmHg supports the diagnosis where monitoring is available."
+      },
+      {
+        "test": "CK and renal function",
+        "rationale": "Detect rhabdomyolysis and acute kidney injury."
+      }
+    ],
+    "management": [
+      {
+        "step": "Relieve external compression",
+        "detail": "Split or remove any cast/dressing down to skin; keep the limb at heart level (not elevated)."
+      },
+      {
+        "step": "Emergency fasciotomy",
+        "detail": "Definitive treatment is urgent surgical fasciotomy of all involved compartments — do not delay for investigations."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Oxygen, analgesia, IV fluids to protect kidneys from myoglobinuria; correct hyperkalaemia."
+      }
+    ],
+    "references": [
+      {
+        "label": "BOAST Diagnosis & Management of Compartment Syndrome of the Limbs"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "blunt-splenic-injury",
+    "title": "Blunt splenic injury",
+    "icd10": [
+      "S36.0"
+    ],
+    "snomed": [
+      "262969004"
+    ],
+    "domains": [
+      "trauma",
+      "surgery",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Left upper quadrant pain and tenderness after blunt abdominal trauma; left lower rib fractures raise suspicion.",
+      "Referred left shoulder-tip pain (Kehr sign).",
+      "Signs of hypovolaemia: tachycardia, hypotension after a high-energy mechanism."
+    ],
+    "redFlags": [
+      "Haemodynamic instability not responding to resuscitation — needs immediate laparotomy.",
+      "Peritonitis or evisceration.",
+      "Ongoing transfusion requirement."
+    ],
+    "diagnostics": [
+      {
+        "test": "eFAST ultrasound",
+        "rationale": "Detects free intraperitoneal fluid at the bedside in the unstable patient."
+      },
+      {
+        "test": "CT abdomen with contrast",
+        "rationale": "Grades injury and identifies active extravasation in the stable patient."
+      },
+      {
+        "test": "Serial haemoglobin and observation",
+        "rationale": "Monitors for delayed bleeding during non-operative management."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitate",
+        "detail": "Two large-bore cannulae, balanced resuscitation, activate major haemorrhage protocol and crossmatch."
+      },
+      {
+        "step": "Decide operative vs non-operative",
+        "detail": "Haemodynamic instability → laparotomy (splenectomy/repair). Stable patients with lower-grade injury → non-operative management +/- angioembolisation."
+      },
+      {
+        "step": "Post-splenectomy precautions",
+        "detail": "If splenectomy performed, vaccinate against encapsulated organisms (pneumococcus, Hib, meningococcus) and counsel on overwhelming post-splenectomy infection."
+      }
+    ],
+    "references": [
+      {
+        "label": "WSES classification & guidelines for splenic trauma"
+      },
+      {
+        "label": "ATLS — abdominal trauma"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "pelvic-inflammatory-disease",
+    "title": "Pelvic inflammatory disease (PID)",
+    "icd10": [
+      "N70",
+      "N71",
+      "N73.9"
+    ],
+    "icd11": [
+      "GA05"
+    ],
+    "snomed": [
+      "198130006"
+    ],
+    "domains": [
+      "gynaecology",
+      "infection",
+      "sti",
+      "sexual-and-reproductive-health"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Lower abdominal/pelvic pain, often bilateral, in a sexually active woman.",
+      "Abnormal vaginal/cervical discharge, deep dyspareunia, intermenstrual or postcoital bleeding.",
+      "Cervical motion, adnexal or uterine tenderness on bimanual examination."
+    ],
+    "redFlags": [
+      "Fever, rigors, severe pain or signs of pelvic peritonitis (possible tubo-ovarian abscess).",
+      "Pregnancy — exclude ectopic, and treat as complicated.",
+      "Failure to improve at 72 hours on oral therapy."
+    ],
+    "diagnostics": [
+      {
+        "test": "Pregnancy test",
+        "rationale": "Always exclude ectopic pregnancy in a woman with pelvic pain."
+      },
+      {
+        "test": "NAAT for Neisseria gonorrhoeae and Chlamydia trachomatis",
+        "rationale": "Identifies the commonest causative organisms; do not delay treatment for results."
+      },
+      {
+        "test": "Pelvic ultrasound",
+        "rationale": "Indicated if a tubo-ovarian abscess is suspected or the patient is severely unwell."
+      }
+    ],
+    "management": [
+      {
+        "step": "Start empirical antibiotics early",
+        "detail": "Treat on clinical suspicion to preserve fertility, e.g. IM ceftriaxone plus oral doxycycline and metronidazole; tailor to local guidance."
+      },
+      {
+        "step": "Admit if severe",
+        "detail": "Admit for IV therapy if pregnant, severely unwell, tubo-ovarian abscess, or failed oral therapy."
+      },
+      {
+        "step": "Partner notification and STI care",
+        "detail": "Treat sexual partners, advise abstinence until both treated, offer HIV/syphilis screening and contraception review."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Guidelines for the management of STIs"
+      },
+      {
+        "label": "CDC STI Treatment Guidelines — PID"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "puerperal-postpartum-sepsis",
+    "title": "Puerperal (postpartum) sepsis",
+    "icd10": [
+      "O85",
+      "O86"
+    ],
+    "icd11": [
+      "JB42"
+    ],
+    "snomed": [
+      "59668006"
+    ],
+    "domains": [
+      "obstetrics",
+      "obstetric-emergency",
+      "infection",
+      "critical-care",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Fever, lower abdominal pain and offensive lochia within 6 weeks of delivery or abortion.",
+      "Uterine tenderness, sub-involution of the uterus.",
+      "Tachycardia, malaise, may progress to septic shock."
+    ],
+    "redFlags": [
+      "Hypotension, altered mental state, lactate ≥ 2 — manage as septic shock (sepsis six).",
+      "Severe abdominal pain or peritonism (retained products, uterine perforation, abscess).",
+      "Group A streptococcal infection — rapidly progressive, high mortality."
+    ],
+    "diagnostics": [
+      {
+        "test": "Blood cultures and lactate",
+        "rationale": "Take before antibiotics where possible; lactate guides resuscitation."
+      },
+      {
+        "test": "FBC, CRP, renal/liver function",
+        "rationale": "Assess severity and organ dysfunction."
+      },
+      {
+        "test": "Pelvic ultrasound",
+        "rationale": "Detects retained products of conception or pelvic collection."
+      }
+    ],
+    "management": [
+      {
+        "step": "Sepsis six within 1 hour",
+        "detail": "Broad-spectrum IV antibiotics, IV fluids, oxygen; take cultures, lactate and monitor urine output."
+      },
+      {
+        "step": "Source control",
+        "detail": "Evacuate retained products, drain collections; consider hysterectomy in life-threatening uterine infection."
+      },
+      {
+        "step": "Antibiotic choice",
+        "detail": "Cover Gram-negative, anaerobes and streptococci (e.g. broad-spectrum beta-lactam + metronidazole; add clindamycin if invasive GAS suspected for toxin suppression)."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO recommendations for prevention and treatment of maternal peripartum infections"
+      },
+      {
+        "label": "RCOG Green-top Guideline — sepsis in pregnancy/puerperium"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "obstructed-labour",
+    "title": "Obstructed labour",
+    "icd10": [
+      "O66.9",
+      "O64",
+      "O65"
+    ],
+    "icd11": [
+      "JB03"
+    ],
+    "snomed": [
+      "49850001"
+    ],
+    "domains": [
+      "obstetrics",
+      "obstetric-emergency",
+      "surgery",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Failure of labour to progress despite good contractions; prolonged labour.",
+      "Maternal exhaustion, dehydration, maternal tachycardia and pyrexia.",
+      "Excessive moulding, caput, a Bandl ring, or oedematous vulva/cervix."
+    ],
+    "redFlags": [
+      "Continuous lower abdominal pain with cessation of contractions and a tender abdomen — impending/actual uterine rupture.",
+      "Foetal distress or absent foetal heart.",
+      "Haematuria or signs suggesting fistula formation from prolonged pressure."
+    ],
+    "diagnostics": [
+      {
+        "test": "Partograph review",
+        "rationale": "Crossing the action line signals obstruction needing intervention."
+      },
+      {
+        "test": "Abdominal and vaginal examination",
+        "rationale": "Assess descent, presentation, moulding, caput and a possible Bandl ring."
+      },
+      {
+        "test": "Foetal heart monitoring",
+        "rationale": "Identifies foetal compromise requiring expedited delivery."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitate the mother",
+        "detail": "IV fluids, correct dehydration, analgesia, antibiotics; insert a urinary catheter."
+      },
+      {
+        "step": "Expedite delivery",
+        "detail": "Caesarean section is usually required; symphysiotomy or assisted delivery only where appropriate and CS is unavailable."
+      },
+      {
+        "step": "Prevent and treat complications",
+        "detail": "Active management of the third stage (PPH risk), monitor for fistula, sepsis and uterine rupture."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Managing Complications in Pregnancy and Childbirth (MCPC)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "umbilical-cord-prolapse",
+    "title": "Umbilical cord prolapse",
+    "icd10": [
+      "O69.0"
+    ],
+    "snomed": [
+      "55175000"
+    ],
+    "domains": [
+      "obstetrics",
+      "obstetric-emergency",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Cord palpable or visible below the presenting part after rupture of membranes.",
+      "Sudden foetal bradycardia or variable decelerations after membrane rupture.",
+      "Risk factors: malpresentation, prematurity, polyhydramnios, high presenting part."
+    ],
+    "redFlags": [
+      "Foetal bradycardia — obstetric emergency requiring immediate delivery.",
+      "Cord compression / vasospasm with deteriorating foetal heart trace."
+    ],
+    "diagnostics": [
+      {
+        "test": "Vaginal examination",
+        "rationale": "Confirms cord presentation and assesses cervical dilatation for mode of delivery."
+      },
+      {
+        "test": "Continuous foetal heart monitoring",
+        "rationale": "Guides urgency."
+      }
+    ],
+    "management": [
+      {
+        "step": "Relieve cord compression",
+        "detail": "Elevate the presenting part manually; place the mother knee-chest or in steep head-down/left-lateral position; consider bladder filling. Minimise cord handling and keep it warm."
+      },
+      {
+        "step": "Immediate delivery",
+        "detail": "Category-1 caesarean section unless vaginal delivery is imminent and faster."
+      },
+      {
+        "step": "Call for help",
+        "detail": "Summon obstetric, anaesthetic and neonatal teams immediately."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCOG Green-top Guideline No. 50 — Umbilical Cord Prolapse"
+      },
+      {
+        "label": "WHO MCPC"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "placental-abruption",
+    "title": "Placental abruption",
+    "icd10": [
+      "O45"
+    ],
+    "icd11": [
+      "JA86"
+    ],
+    "snomed": [
+      "415105001"
+    ],
+    "domains": [
+      "obstetrics",
+      "obstetric-emergency",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Sudden constant abdominal pain with or without vaginal bleeding after 20 weeks.",
+      "A tense, tender, 'woody-hard' uterus; uterine hypertonus.",
+      "Bleeding may be concealed — shock may be out of proportion to visible blood loss."
+    ],
+    "redFlags": [
+      "Maternal shock, foetal distress or absent foetal heart.",
+      "Disseminated intravascular coagulation.",
+      "Couvelaire uterus / ongoing concealed haemorrhage."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical assessment",
+        "rationale": "Diagnosis is clinical; ultrasound is insensitive and must not delay management."
+      },
+      {
+        "test": "FBC, coagulation screen, fibrinogen, crossmatch",
+        "rationale": "Detect anaemia and DIC; prepare for transfusion."
+      },
+      {
+        "test": "Kleihauer test (Rh-negative women)",
+        "rationale": "Quantifies feto-maternal haemorrhage to guide anti-D dosing."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitate",
+        "detail": "Large-bore IV access, balanced transfusion, activate major haemorrhage protocol, monitor closely."
+      },
+      {
+        "step": "Deliver",
+        "detail": "Foetal distress or maternal compromise → emergency caesarean. If foetus dead and mother stable, aim for vaginal delivery with close monitoring."
+      },
+      {
+        "step": "Manage complications",
+        "detail": "Correct coagulopathy, give anti-D to Rh-negative women, watch for PPH and renal failure."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCOG Green-top Guideline No. 63 — Antepartum Haemorrhage"
+      },
+      {
+        "label": "WHO MCPC"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "placenta-praevia",
+    "title": "Placenta praevia",
+    "icd10": [
+      "O44"
+    ],
+    "icd11": [
+      "JA85"
+    ],
+    "snomed": [
+      "62508004"
+    ],
+    "domains": [
+      "obstetrics",
+      "obstetric-emergency",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Painless bright-red vaginal bleeding after 20 weeks of gestation.",
+      "A soft, non-tender uterus; the presenting part is high or malpresenting.",
+      "Often diagnosed on a routine anomaly scan before bleeding occurs."
+    ],
+    "redFlags": [
+      "Heavy bleeding with maternal compromise or foetal distress.",
+      "Do NOT perform a digital vaginal examination until praevia is excluded — it can provoke torrential haemorrhage."
+    ],
+    "diagnostics": [
+      {
+        "test": "Transabdominal then transvaginal ultrasound",
+        "rationale": "Localises the placenta relative to the internal os; transvaginal is safe and more accurate."
+      },
+      {
+        "test": "FBC, group & save / crossmatch",
+        "rationale": "Anticipate transfusion."
+      }
+    ],
+    "management": [
+      {
+        "step": "Avoid vaginal examination",
+        "detail": "Manage with speculum only after praevia excluded; admit symptomatic women."
+      },
+      {
+        "step": "Expectant vs delivery",
+        "detail": "Stable, preterm → conservative with steroids for foetal lung maturity. Heavy bleeding or term → caesarean section."
+      },
+      {
+        "step": "Anticipate haemorrhage",
+        "detail": "Plan delivery in a facility with blood and surgical support; give anti-D if Rh-negative."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCOG Green-top Guideline No. 27a — Placenta Praevia"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hyperemesis-gravidarum",
+    "title": "Hyperemesis gravidarum",
+    "icd10": [
+      "O21.0",
+      "O21.1"
+    ],
+    "icd11": [
+      "JA80"
+    ],
+    "snomed": [
+      "14094001"
+    ],
+    "domains": [
+      "obstetrics",
+      "gastroenterology",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Persistent severe nausea and vomiting in early pregnancy with weight loss (>5% of pre-pregnancy weight).",
+      "Dehydration, ketonuria and electrolyte disturbance.",
+      "Inability to maintain adequate oral intake."
+    ],
+    "redFlags": [
+      "Confusion, ataxia or ophthalmoplegia — Wernicke encephalopathy from thiamine deficiency.",
+      "Haematemesis (Mallory-Weiss tear).",
+      "Severe electrolyte derangement or unremitting symptoms."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urine ketones and dipstick",
+        "rationale": "Quantifies severity; ketonuria indicates significant dehydration."
+      },
+      {
+        "test": "U&E, FBC, and assess for other causes",
+        "rationale": "Identify hypokalaemia/hyponatraemia; exclude UTI, thyroid disease, molar pregnancy."
+      },
+      {
+        "test": "PUQE score",
+        "rationale": "Standardised severity scoring to guide management."
+      }
+    ],
+    "management": [
+      {
+        "step": "Rehydrate and replace electrolytes",
+        "detail": "IV normal saline with potassium as needed; avoid dextrose-only fluids before thiamine."
+      },
+      {
+        "step": "Thiamine and antiemetics",
+        "detail": "Give thiamine to prevent Wernicke; first-line antiemetics include antihistamines (cyclizine) / doxylamine-pyridoxine, then metoclopramide or ondansetron per local guidance."
+      },
+      {
+        "step": "VTE prophylaxis and review",
+        "detail": "Consider thromboprophylaxis during admission; review nutrition; escalate refractory cases."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCOG Green-top Guideline No. 69 — Nausea and Vomiting of Pregnancy and Hyperemesis Gravidarum"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ovarian-torsion",
+    "title": "Ovarian (adnexal) torsion",
+    "icd10": [
+      "N83.5"
+    ],
+    "snomed": [
+      "36118008"
+    ],
+    "domains": [
+      "gynaecology",
+      "surgery",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 8,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Sudden severe unilateral lower abdominal/pelvic pain, often with nausea and vomiting.",
+      "May be intermittent (torsion-detorsion); often a palpable adnexal mass.",
+      "Frequently associated with an ovarian cyst or mass acting as a lead point."
+    ],
+    "redFlags": [
+      "Peritonism or signs of ovarian necrosis.",
+      "Haemodynamic instability suggesting an alternative diagnosis (ruptured ectopic)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Pelvic Doppler ultrasound",
+        "rationale": "Shows an enlarged oedematous ovary; absent flow supports torsion but present flow does NOT exclude it."
+      },
+      {
+        "test": "Pregnancy test",
+        "rationale": "Excludes ectopic pregnancy."
+      }
+    ],
+    "management": [
+      {
+        "step": "Urgent surgical referral",
+        "detail": "Diagnosis is surgical — laparoscopy for detorsion to preserve the ovary; delay risks necrosis."
+      },
+      {
+        "step": "Analgesia and supportive care",
+        "detail": "Adequate analgesia, antiemetics, keep nil by mouth pending theatre."
+      },
+      {
+        "step": "Ovarian conservation",
+        "detail": "Detorse and conserve where possible; cystectomy if a lead-point cyst; oophorectomy only if clearly necrotic."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCOG / ESHRE guidance on management of ovarian torsion"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "typhoid-intestinal-perforation",
+    "title": "Typhoid intestinal perforation",
+    "icd10": [
+      "A01.0",
+      "K63.1"
+    ],
+    "snomed": [
+      "95624009"
+    ],
+    "domains": [
+      "surgery",
+      "infectious-disease",
+      "tropical",
+      "emergency"
+    ],
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Worsening abdominal pain and distension in the 2nd–3rd week of untreated/partially treated typhoid fever.",
+      "Generalised peritonitis: guarding, rigidity, rebound tenderness.",
+      "Often a terminal-ileum perforation; may present with sepsis."
+    ],
+    "redFlags": [
+      "Septic shock and peritonitis — surgical emergency.",
+      "Free gas under the diaphragm.",
+      "Multiple perforations / heavy faecal contamination."
+    ],
+    "diagnostics": [
+      {
+        "test": "Erect chest / abdominal X-ray",
+        "rationale": "Free air under the diaphragm confirms perforation."
+      },
+      {
+        "test": "Blood culture and FBC",
+        "rationale": "Confirms Salmonella Typhi and assesses severity."
+      },
+      {
+        "test": "Abdominal ultrasound",
+        "rationale": "Detects free fluid and collections."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitate",
+        "detail": "IV fluids, correct electrolytes, nasogastric decompression, urinary catheter; treat sepsis."
+      },
+      {
+        "step": "Broad-spectrum antibiotics",
+        "detail": "Cover Salmonella and enteric flora (e.g. ceftriaxone plus metronidazole; tailor to local resistance)."
+      },
+      {
+        "step": "Emergency laparotomy",
+        "detail": "Identify and repair/resect perforation(s), peritoneal lavage; consider stoma if heavy contamination."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Background document: the diagnosis, treatment and prevention of typhoid fever"
+      },
+      {
+        "label": "WHO IMEESC"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "neonatal-tetanus",
+    "title": "Neonatal tetanus",
+    "icd10": [
+      "A33"
+    ],
+    "icd11": [
+      "1C13.0"
+    ],
+    "snomed": [
+      "240422004"
+    ],
+    "domains": [
+      "neonatology",
+      "infectious-disease",
+      "child-health",
+      "vaccine-preventable",
+      "mnch"
+    ],
+    "population": {
+      "maxAgeYears": 1,
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "A neonate who fed and cried normally for the first 2 days, then develops difficulty feeding (inability to suck) from days 3–28.",
+      "Generalised stiffness, spasms, trismus and opisthotonus.",
+      "History of unclean cord care or non-sterile delivery; mother not fully tetanus-immunised."
+    ],
+    "redFlags": [
+      "Apnoea during spasms, laryngospasm, autonomic instability.",
+      "Frequent prolonged spasms — high mortality."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis",
+        "rationale": "Based on the characteristic history and spasms; no confirmatory test should delay treatment."
+      },
+      {
+        "test": "Assess cord and birth history",
+        "rationale": "Identifies the portal of entry and prevention failures."
+      }
+    ],
+    "management": [
+      {
+        "step": "Neutralise toxin and treat the wound",
+        "detail": "Give human tetanus immunoglobulin (or antitoxin), antibiotics (metronidazole), and clean the umbilical stump."
+      },
+      {
+        "step": "Control spasms",
+        "detail": "Benzodiazepines (diazepam) titrated to control spasms; nurse in a quiet, dark environment; secure the airway and support ventilation as needed."
+      },
+      {
+        "step": "Supportive care and prevention",
+        "detail": "Nasogastric feeding, fluids; immunise the infant on recovery and the mother; promote maternal TT vaccination and clean delivery/cord care to prevent recurrence."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Maternal and neonatal tetanus elimination (MNTE)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "congenital-syphilis",
+    "title": "Congenital syphilis",
+    "icd10": [
+      "A50"
+    ],
+    "icd11": [
+      "1A62"
+    ],
+    "snomed": [
+      "28867007"
+    ],
+    "domains": [
+      "neonatology",
+      "infectious-disease",
+      "sti",
+      "child-health",
+      "mnch"
+    ],
+    "population": {
+      "maxAgeYears": 2,
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Early (<2 yrs): hepatosplenomegaly, rash (palms/soles), snuffles (rhinitis), jaundice, anaemia, bone lesions, failure to thrive.",
+      "Many infants are asymptomatic at birth — maternal serology drives detection.",
+      "Late stigmata: Hutchinson teeth, saddle nose, sabre shins, interstitial keratitis, deafness."
+    ],
+    "redFlags": [
+      "Hydrops fetalis or stillbirth.",
+      "Neurosyphilis (abnormal CSF).",
+      "Severe anaemia, respiratory distress."
+    ],
+    "diagnostics": [
+      {
+        "test": "Maternal and infant treponemal + non-treponemal serology (RPR/VDRL)",
+        "rationale": "Infant RPR ≥ 4× the maternal titre suggests infection; compare paired sera."
+      },
+      {
+        "test": "Long-bone radiographs and CSF examination",
+        "rationale": "Detect osteochondritis/periostitis and neurosyphilis."
+      },
+      {
+        "test": "FBC, LFTs",
+        "rationale": "Identify anaemia, thrombocytopenia and hepatitis."
+      }
+    ],
+    "management": [
+      {
+        "step": "Penicillin treatment",
+        "detail": "Treat proven/probable cases with IV benzylpenicillin (or procaine penicillin) for 10 days; single-dose benzathine penicillin only for low-risk infants with adequately treated mothers per protocol."
+      },
+      {
+        "step": "Prevention via antenatal screening",
+        "detail": "Screen and treat all pregnant women for syphilis early; treat partners — the key intervention to eliminate congenital syphilis."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Serial serology, ophthalmology, audiology and developmental follow-up."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Guideline on syphilis screening and treatment for pregnant women"
+      },
+      {
+        "label": "CDC STI Treatment Guidelines — Congenital Syphilis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "leptospirosis",
+    "title": "Leptospirosis",
+    "icd10": [
+      "A27"
+    ],
+    "icd11": [
+      "1B91"
+    ],
+    "snomed": [
+      "77377001"
+    ],
+    "domains": [
+      "infectious-disease",
+      "tropical",
+      "zoonosis"
+    ],
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Acute febrile illness with severe myalgia (especially calves), headache and conjunctival suffusion.",
+      "Exposure to fresh water, soil, rodents, or animals (farming, flooding, sewage).",
+      "Biphasic course; may progress to Weil disease (jaundice, renal failure, haemorrhage)."
+    ],
+    "redFlags": [
+      "Jaundice with acute kidney injury (Weil disease).",
+      "Pulmonary haemorrhage / respiratory failure.",
+      "Hypotension, oliguria, bleeding."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serology (MAT/ELISA) or PCR",
+        "rationale": "Confirms infection; PCR is useful early, serology later (paired titres)."
+      },
+      {
+        "test": "Renal and liver function, FBC",
+        "rationale": "Detect AKI, hyperbilirubinaemia and thrombocytopenia."
+      },
+      {
+        "test": "Clinical/epidemiological assessment",
+        "rationale": "Treat empirically on suspicion in endemic settings — do not wait for confirmation."
+      }
+    ],
+    "management": [
+      {
+        "step": "Antibiotics",
+        "detail": "Mild: oral doxycycline (or azithromycin). Severe: IV penicillin (benzylpenicillin) or ceftriaxone."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Fluids, renal support/dialysis for AKI, respiratory support for pulmonary haemorrhage."
+      },
+      {
+        "step": "Prevention",
+        "detail": "Avoid contaminated water, rodent control, protective clothing; doxycycline chemoprophylaxis for high-risk short-term exposure."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Human Leptospirosis: guidance for diagnosis, surveillance and control"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "mumps",
+    "title": "Mumps",
+    "icd10": [
+      "B26"
+    ],
+    "icd11": [
+      "1D80"
+    ],
+    "snomed": [
+      "36989005"
+    ],
+    "domains": [
+      "infectious-disease",
+      "child-health",
+      "vaccine-preventable",
+      "ent"
+    ],
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Painful swelling of one or both parotid glands, fever and malaise.",
+      "Earache and pain on chewing; angle-of-jaw swelling obscuring the mandibular angle.",
+      "Often a prodrome of low-grade fever and headache."
+    ],
+    "redFlags": [
+      "Severe headache, neck stiffness or photophobia (mumps meningitis/encephalitis).",
+      "Testicular pain/swelling (orchitis) — risk of subfertility.",
+      "Hearing loss; severe abdominal pain (pancreatitis)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis",
+        "rationale": "Typical parotitis in an unvaccinated person is usually sufficient."
+      },
+      {
+        "test": "Mumps IgM serology or RT-PCR (saliva/buccal swab)",
+        "rationale": "Confirms in atypical cases and for surveillance."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive care",
+        "detail": "Analgesia/antipyretics, hydration, soft diet; mumps is self-limiting in most cases."
+      },
+      {
+        "step": "Manage complications",
+        "detail": "Scrotal support and analgesia for orchitis; assess for meningitis/pancreatitis as needed."
+      },
+      {
+        "step": "Prevention and isolation",
+        "detail": "MMR vaccination is the key preventive measure; isolate for 5 days after parotid swelling onset; notify per local policy."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Mumps vaccines: position paper"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "rubella",
+    "title": "Rubella (German measles)",
+    "icd10": [
+      "B06"
+    ],
+    "icd11": [
+      "1F02"
+    ],
+    "snomed": [
+      "36653000"
+    ],
+    "domains": [
+      "infectious-disease",
+      "child-health",
+      "vaccine-preventable",
+      "mnch"
+    ],
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Mild fever with a fine pink maculopapular rash spreading from the face downward.",
+      "Tender post-auricular and suboccipital lymphadenopathy.",
+      "Arthralgia, especially in adult women; often subclinical."
+    ],
+    "redFlags": [
+      "Infection in early pregnancy — high risk of congenital rubella syndrome (deafness, cataracts, cardiac defects).",
+      "Encephalitis or thrombocytopenia (rare)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Rubella IgM serology / RT-PCR",
+        "rationale": "Confirms acute infection; essential when a pregnant woman is exposed."
+      },
+      {
+        "test": "Booking rubella immunity status",
+        "rationale": "Identifies susceptible pregnant women for postpartum vaccination."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive care",
+        "detail": "Antipyretics and rest; rubella is self-limiting in children and most adults."
+      },
+      {
+        "step": "Protect pregnant contacts",
+        "detail": "Avoid contact with pregnant women; counsel and test exposed pregnant women — vaccine cannot be given in pregnancy."
+      },
+      {
+        "step": "Prevention",
+        "detail": "MMR vaccination; offer to non-immune women postpartum; notify per local policy."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Rubella vaccines: position paper"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "varicella-chickenpox",
+    "title": "Varicella (chickenpox)",
+    "icd10": [
+      "B01"
+    ],
+    "icd11": [
+      "1E90"
+    ],
+    "snomed": [
+      "38907003"
+    ],
+    "domains": [
+      "infectious-disease",
+      "dermatology",
+      "child-health",
+      "vaccine-preventable"
+    ],
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Generalised pruritic vesicular rash in successive crops (macule → papule → vesicle → crust) with lesions at different stages.",
+      "Fever and malaise, often a mild prodrome.",
+      "Centripetal distribution; mucosal involvement."
+    ],
+    "redFlags": [
+      "Pneumonia, encephalitis, or haemorrhagic rash.",
+      "Immunocompromise, pregnancy, or neonatal exposure — high complication risk.",
+      "Secondary bacterial skin infection / necrotising fasciitis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis",
+        "rationale": "The polymorphic rash with lesions at different stages is characteristic."
+      },
+      {
+        "test": "PCR of vesicle fluid",
+        "rationale": "For atypical or severe cases and in the immunocompromised."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive care",
+        "detail": "Antipruritics, antipyretics (avoid aspirin in children — Reye syndrome), keep nails short, prevent scratching."
+      },
+      {
+        "step": "Antivirals for high-risk groups",
+        "detail": "Oral/IV aciclovir for adults, immunocompromised, pregnant women and severe disease, ideally within 24 hours of rash."
+      },
+      {
+        "step": "Prevention",
+        "detail": "Varicella vaccine; varicella-zoster immunoglobulin for susceptible high-risk contacts (pregnant, immunocompromised, neonates)."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Varicella and herpes zoster vaccines: position paper"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "enterobiasis-pinworm",
+    "title": "Enterobiasis (pinworm / threadworm)",
+    "icd10": [
+      "B80"
+    ],
+    "snomed": [
+      "35531004"
+    ],
+    "domains": [
+      "infectious-disease",
+      "child-health",
+      "ntd",
+      "tropical"
+    ],
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Perianal itching, worse at night, in a child (and often household members).",
+      "Disturbed sleep, irritability; sometimes vulvovaginitis in girls.",
+      "Visible thread-like white worms around the anus or in stool."
+    ],
+    "redFlags": [
+      "Secondary bacterial infection from scratching.",
+      "Rare ectopic migration (appendicitis-like, urogenital)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Adhesive tape (sticky-tape) test",
+        "rationale": "Applied to the perianal skin in the morning to collect eggs for microscopy."
+      },
+      {
+        "test": "Clinical/empirical diagnosis",
+        "rationale": "Typical nocturnal pruritus often warrants empirical treatment, especially in households."
+      }
+    ],
+    "management": [
+      {
+        "step": "Anthelmintic treatment",
+        "detail": "Single dose of mebendazole, albendazole or pyrantel pamoate, repeated after 2 weeks to catch reinfection."
+      },
+      {
+        "step": "Treat the whole household",
+        "detail": "Treat all household members simultaneously to break the reinfection cycle."
+      },
+      {
+        "step": "Hygiene measures",
+        "detail": "Hand-washing, short nails, wash bed linen and underwear in hot water, morning showering."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO guidance on soil-transmitted helminthiases"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "dental-abscess",
+    "title": "Dental (odontogenic) abscess",
+    "icd10": [
+      "K04.7",
+      "K12.2"
+    ],
+    "snomed": [
+      "109563002"
+    ],
+    "domains": [
+      "ent",
+      "infection",
+      "surgery",
+      "primary-care",
+      "pain"
+    ],
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Severe, throbbing, localised tooth pain with sensitivity to percussion.",
+      "Facial/gingival swelling, a tender fluctuant mass, possible discharge.",
+      "Fever and regional lymphadenopathy."
+    ],
+    "redFlags": [
+      "Difficulty breathing or swallowing, drooling, trismus, floor-of-mouth swelling — spreading deep-space infection (Ludwig angina) is a airway emergency.",
+      "Peri-orbital/orbital involvement, or signs of cavernous sinus thrombosis.",
+      "Systemic sepsis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical examination",
+        "rationale": "Identify the causative tooth, fluctuance, and spread to fascial spaces."
+      },
+      {
+        "test": "Dental/panoramic radiograph",
+        "rationale": "Localises periapical infection where available."
+      }
+    ],
+    "management": [
+      {
+        "step": "Drainage and dental source control",
+        "detail": "Definitive treatment is drainage and dental treatment (extraction or root-canal); refer to dental services."
+      },
+      {
+        "step": "Analgesia",
+        "detail": "Paracetamol and/or NSAIDs for pain."
+      },
+      {
+        "step": "Antibiotics if spreading/systemic",
+        "detail": "Amoxicillin (add metronidazole) or amoxicillin-clavulanate when there is spreading infection, systemic upset or immunocompromise; antibiotics are not a substitute for drainage."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Oral health guidance"
+      },
+      {
+        "label": "National antimicrobial guidelines — dental infections"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "maxillofacial-trauma",
+    "title": "Maxillofacial trauma",
+    "icd10": [
+      "S02.9",
+      "S02.6",
+      "S02.4"
+    ],
+    "snomed": [
+      "125593007"
+    ],
+    "domains": [
+      "trauma",
+      "surgery",
+      "ent",
+      "emergency"
+    ],
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Facial pain, swelling, deformity, malocclusion or trismus after facial trauma.",
+      "Epistaxis, periorbital bruising, diplopia, or numbness over the cheek (infraorbital nerve).",
+      "Mobile facial segments (Le Fort fractures), step deformities, or a flattened cheek."
+    ],
+    "redFlags": [
+      "Airway compromise from bleeding, displaced fractures or oedema — secure the airway first.",
+      "Associated cervical-spine and head injury.",
+      "Visual loss / retrobulbar haemorrhage — needs urgent decompression."
+    ],
+    "diagnostics": [
+      {
+        "test": "Primary survey (ABCDE) with C-spine control",
+        "rationale": "Airway and concurrent life-threatening injuries take priority over the facial injury."
+      },
+      {
+        "test": "CT facial bones",
+        "rationale": "Defines fracture pattern (orbital, zygoma, mandible, Le Fort) for surgical planning."
+      },
+      {
+        "test": "Eye examination",
+        "rationale": "Detects globe injury, diplopia and entrapment requiring urgent intervention."
+      }
+    ],
+    "management": [
+      {
+        "step": "Airway and haemorrhage control",
+        "detail": "Secure the airway (anticipate difficulty); control bleeding with packing/pressure; immobilise the C-spine."
+      },
+      {
+        "step": "Analgesia, antibiotics, tetanus",
+        "detail": "Provide analgesia; antibiotics for open/compound fractures and contaminated wounds; tetanus prophylaxis."
+      },
+      {
+        "step": "Specialist referral",
+        "detail": "Refer to maxillofacial/ophthalmology for definitive fixation; urgent referral for orbital compartment syndrome."
+      }
+    ],
+    "references": [
+      {
+        "label": "ATLS — maxillofacial trauma"
+      },
+      {
+        "label": "WHO IMEESC"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "flail-chest",
+    "title": "Flail chest and pulmonary contusion",
+    "icd10": [
+      "S22.5",
+      "S27.3"
+    ],
+    "snomed": [
+      "35531005"
+    ],
+    "domains": [
+      "trauma",
+      "respiratory",
+      "critical-care",
+      "emergency"
+    ],
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Paradoxical chest-wall movement after blunt chest trauma (a segment moving in on inspiration).",
+      "Severe chest pain, splinting and shallow breathing.",
+      "Hypoxia, often worsening over 24–48 hours as underlying lung contusion evolves."
+    ],
+    "redFlags": [
+      "Progressive respiratory failure requiring ventilation.",
+      "Associated tension/haemo-pneumothorax or great-vessel injury.",
+      "Worsening hypoxia despite oxygen — evolving contusion/ARDS."
+    ],
+    "diagnostics": [
+      {
+        "test": "Chest X-ray / CT chest",
+        "rationale": "Identifies multiple rib fractures, contusion, pneumothorax and haemothorax."
+      },
+      {
+        "test": "Arterial blood gas / SpO2 monitoring",
+        "rationale": "Tracks oxygenation and ventilation in evolving contusion."
+      }
+    ],
+    "management": [
+      {
+        "step": "Oxygen and analgesia",
+        "detail": "Effective analgesia (including regional/epidural) is central — it allows deep breathing and coughing, preventing atelectasis."
+      },
+      {
+        "step": "Respiratory support",
+        "detail": "Physiotherapy and, where needed, non-invasive or invasive ventilation; judicious fluids to avoid worsening contusion."
+      },
+      {
+        "step": "Consider surgical fixation",
+        "detail": "Rib fixation may benefit selected patients with significant flail; treat associated injuries."
+      }
+    ],
+    "references": [
+      {
+        "label": "ATLS — thoracic trauma"
+      },
+      {
+        "label": "EAST guidelines on rib fracture management"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
   }
 ]
