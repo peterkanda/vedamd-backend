@@ -33639,5 +33639,407 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "colchicine",
+    "inn": "Colchicine",
+    "tradeNames": [
+      "Colcrys"
+    ],
+    "atc": [
+      "M04AC01"
+    ],
+    "rxnorm": "2683",
+    "snomed": "73133000",
+    "drugClass": "Anti-gout / anti-inflammatory (microtubule inhibitor)",
+    "awareCategory": "Not-classified",
+    "whoEml": true,
+    "indications": [
+      {
+        "icd10": "M10",
+        "text": "Acute gout flare and prophylaxis"
+      },
+      {
+        "icd10": "I30",
+        "text": "Acute and recurrent pericarditis"
+      },
+      {
+        "text": "Familial Mediterranean fever"
+      }
+    ],
+    "mechanism": "Binds tubulin and inhibits microtubule polymerisation, impairing neutrophil migration and the inflammatory response to urate crystals.",
+    "pharmacokinetics": {
+      "halfLifeHours": 30,
+      "metabolism": "hepatic (CYP3A4); P-glycoprotein substrate",
+      "excretion": "biliary/renal",
+      "notes": "Narrow therapeutic index; toxicity rises with CYP3A4/P-gp inhibitors and renal/hepatic impairment."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "oral",
+          "regimen": "Acute gout: 500 micrograms 2–3 times daily until relief, max ~6 mg per course. Prophylaxis: 500 micrograms once–twice daily.",
+          "notes": "Reduce dose in renal/hepatic impairment and with interacting drugs."
+        }
+      ],
+      "renal": [
+        {
+          "crClMinMlMin": 0,
+          "crClMaxMlMin": 10,
+          "adjustment": "Avoid or substantially reduce dose; risk of accumulation and toxicity.",
+          "prohibited": true
+        }
+      ],
+      "hepatic": "Reduce dose; avoid in severe impairment."
+    },
+    "pregnancy": {
+      "notes": "Generally avoided unless indicated (e.g. FMF), where it may be continued under specialist advice."
+    },
+    "lactation": "Present in milk; use with caution.",
+    "contraindications": [
+      "Severe renal or hepatic impairment combined with P-gp/CYP3A4 inhibitor (risk of fatal toxicity)",
+      "Hypersensitivity"
+    ],
+    "warnings": [
+      "Narrow therapeutic index — overdose is potentially fatal with no specific antidote",
+      "Dose-related GI toxicity (diarrhoea, vomiting) is an early sign of toxicity",
+      "Myelosuppression and neuromyopathy with accumulation",
+      "Many serious interactions via CYP3A4/P-glycoprotein"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "diarrhoea, nausea, abdominal pain"
+      },
+      {
+        "frequency": "serious",
+        "effect": "myelosuppression, neuromyopathy, multi-organ toxicity in overdose"
+      }
+    ],
+    "monitoring": [
+      "GI symptoms (early toxicity)",
+      "FBC and renal/hepatic function with prolonged use or interacting drugs"
+    ],
+    "references": [
+      {
+        "label": "WHO Model Formulary — colchicine"
+      },
+      {
+        "label": "BNF — colchicine"
+      }
+    ],
+    "kemlLevel": 2,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "calcitonin-salmon",
+    "inn": "Calcitonin (salmon)",
+    "tradeNames": [
+      "Miacalcin"
+    ],
+    "atc": [
+      "H05BA01"
+    ],
+    "rxnorm": "1922",
+    "snomed": "116560005",
+    "drugClass": "Calcitonin (calcium-lowering hormone)",
+    "awareCategory": "Not-classified",
+    "whoEml": false,
+    "indications": [
+      {
+        "icd10": "E83.52",
+        "text": "Hypercalcaemia (rapid short-term reduction)"
+      },
+      {
+        "text": "Paget disease of bone; acute vertebral fracture pain (short-term)"
+      }
+    ],
+    "mechanism": "Inhibits osteoclastic bone resorption and increases renal calcium excretion, lowering serum calcium rapidly but transiently.",
+    "pharmacokinetics": {
+      "halfLifeHours": 1,
+      "metabolism": "renal/peptidase",
+      "excretion": "renal",
+      "notes": "Rapid onset but tachyphylaxis limits use beyond ~48 hours."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "SC/IM",
+          "regimen": "Hypercalcaemia: ~4 IU/kg every 12 hours, titrated; effect wanes after 48 hours (tachyphylaxis).",
+          "notes": "Use as a bridge while bisphosphonates take effect."
+        }
+      ]
+    },
+    "pregnancy": {
+      "notes": "Use only if clearly needed."
+    },
+    "lactation": "May inhibit lactation; use with caution.",
+    "contraindications": [
+      "Hypersensitivity to calcitonin"
+    ],
+    "warnings": [
+      "Tachyphylaxis limits duration of benefit",
+      "Possible small increased malignancy risk with long-term intranasal use (avoid prolonged use)",
+      "Hypersensitivity reactions"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "nausea, flushing, injection-site reaction"
+      },
+      {
+        "frequency": "uncommon",
+        "effect": "hypocalcaemia"
+      }
+    ],
+    "monitoring": [
+      "serum calcium",
+      "for hypersensitivity"
+    ],
+    "references": [
+      {
+        "label": "BNF — calcitonin (salmon)"
+      }
+    ],
+    "kemlLevel": 4,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hepatitis-a-vaccine",
+    "inn": "Hepatitis A vaccine (inactivated)",
+    "tradeNames": [
+      "Havrix",
+      "Vaqta"
+    ],
+    "atc": [
+      "J07BC02"
+    ],
+    "rxnorm": "73178",
+    "snomed": "429802002",
+    "drugClass": "Inactivated viral vaccine",
+    "awareCategory": "Not-classified",
+    "whoEml": true,
+    "indications": [
+      {
+        "icd10": "Z23",
+        "text": "Active immunisation against hepatitis A; pre-exposure and post-exposure prophylaxis"
+      }
+    ],
+    "mechanism": "Inactivated hepatitis A virus antigen induces protective neutralising antibodies.",
+    "pharmacokinetics": {
+      "halfLifeHours": 0,
+      "metabolism": "n/a",
+      "excretion": "n/a",
+      "notes": "Two doses give long-term protection."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "IM",
+          "regimen": "0.5–1 mL; second dose 6–12 months later for long-term immunity.",
+          "notes": "Post-exposure prophylaxis effective if given within 2 weeks of exposure."
+        }
+      ],
+      "paediatric": {
+        "route": "IM",
+        "frequency": "two-dose schedule",
+        "notes": "Paediatric formulation from 1 year of age."
+      }
+    },
+    "pregnancy": {
+      "notes": "Inactivated vaccine; use if indicated."
+    },
+    "lactation": "Compatible.",
+    "contraindications": [
+      "Severe hypersensitivity to a previous dose or component"
+    ],
+    "warnings": [
+      "Defer in acute severe febrile illness"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "injection-site soreness, headache, fatigue"
+      },
+      {
+        "frequency": "rare",
+        "effect": "hypersensitivity"
+      }
+    ],
+    "monitoring": [
+      "observe post-vaccination for hypersensitivity"
+    ],
+    "references": [
+      {
+        "label": "WHO Hepatitis A vaccines: position paper"
+      }
+    ],
+    "kemlLevel": 2,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "influenza-vaccine",
+    "inn": "Influenza vaccine (inactivated)",
+    "tradeNames": [
+      "Fluarix",
+      "Influvac"
+    ],
+    "atc": [
+      "J07BB02"
+    ],
+    "rxnorm": "88487",
+    "snomed": "46233009",
+    "drugClass": "Inactivated viral vaccine",
+    "awareCategory": "Not-classified",
+    "whoEml": false,
+    "indications": [
+      {
+        "icd10": "Z23",
+        "text": "Annual immunisation against seasonal influenza, especially in at-risk groups"
+      }
+    ],
+    "mechanism": "Inactivated influenza antigens (reformulated annually to match circulating strains) induce strain-specific antibodies.",
+    "pharmacokinetics": {
+      "halfLifeHours": 0,
+      "metabolism": "n/a",
+      "excretion": "n/a",
+      "notes": "Protection develops over ~2 weeks; annual revaccination needed."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "IM",
+          "regimen": "0.5 mL once each influenza season.",
+          "notes": "Prioritise the elderly, pregnant women, chronic disease and healthcare workers."
+        }
+      ],
+      "paediatric": {
+        "route": "IM",
+        "frequency": "annually (two doses in first year of vaccination for young children)",
+        "notes": "Live attenuated intranasal option available in some programmes."
+      }
+    },
+    "pregnancy": {
+      "notes": "Recommended in pregnancy (inactivated vaccine) — protects mother and infant."
+    },
+    "lactation": "Compatible.",
+    "contraindications": [
+      "Severe hypersensitivity to a previous dose or component"
+    ],
+    "warnings": [
+      "Defer in acute severe febrile illness",
+      "Egg allergy: most inactivated vaccines are safe; follow local guidance for severe egg allergy"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "injection-site soreness, low-grade fever, myalgia"
+      },
+      {
+        "frequency": "rare",
+        "effect": "hypersensitivity"
+      }
+    ],
+    "monitoring": [
+      "observe post-vaccination for hypersensitivity"
+    ],
+    "references": [
+      {
+        "label": "WHO Influenza vaccines: position paper"
+      }
+    ],
+    "kemlLevel": 2,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "nirmatrelvir-ritonavir",
+    "inn": "Nirmatrelvir/ritonavir",
+    "tradeNames": [
+      "Paxlovid"
+    ],
+    "atc": [
+      "J05AE30"
+    ],
+    "rxnorm": "2587892",
+    "snomed": "1208955001",
+    "drugClass": "SARS-CoV-2 protease inhibitor + CYP3A4 booster",
+    "awareCategory": "Not-classified",
+    "whoEml": false,
+    "indications": [
+      {
+        "icd10": "U07.1",
+        "text": "Mild-to-moderate COVID-19 in adults at high risk of severe disease"
+      }
+    ],
+    "mechanism": "Nirmatrelvir inhibits the SARS-CoV-2 main protease (3CLpro); ritonavir is a CYP3A4 inhibitor that boosts nirmatrelvir levels.",
+    "pharmacokinetics": {
+      "halfLifeHours": 6,
+      "metabolism": "CYP3A4 (ritonavir is a potent CYP3A4 inhibitor)",
+      "excretion": "renal/hepatic",
+      "notes": "The ritonavir component drives extensive drug interactions."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "oral",
+          "regimen": "Nirmatrelvir 300 mg + ritonavir 100 mg twice daily for 5 days; start within 5 days of symptom onset.",
+          "notes": "Reduce nirmatrelvir dose in moderate renal impairment; review all co-medications first."
+        }
+      ],
+      "renal": [
+        {
+          "crClMinMlMin": 0,
+          "crClMaxMlMin": 30,
+          "adjustment": "Not recommended in severe renal impairment.",
+          "prohibited": true
+        }
+      ],
+      "hepatic": "Avoid in severe hepatic impairment."
+    },
+    "pregnancy": {
+      "notes": "Limited data; use only if benefit outweighs risk after discussion."
+    },
+    "lactation": "Limited data; consider risks/benefits.",
+    "contraindications": [
+      "Co-administration with drugs highly dependent on CYP3A4 clearance with serious toxicity (e.g. certain statins, some antiarrhythmics, ergot derivatives)",
+      "Severe renal or hepatic impairment",
+      "Hypersensitivity"
+    ],
+    "warnings": [
+      "Extensive CYP3A4 drug interactions — perform a full interaction check before prescribing",
+      "Hepatotoxicity; HIV resistance risk if unrecognised untreated HIV",
+      "Rebound COVID-19 symptoms reported"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "dysgeusia (metallic taste), diarrhoea, hypertension"
+      },
+      {
+        "frequency": "uncommon",
+        "effect": "hepatic transaminase rise"
+      }
+    ],
+    "monitoring": [
+      "review concomitant medicines for interactions",
+      "renal/hepatic function as indicated"
+    ],
+    "references": [
+      {
+        "label": "WHO Therapeutics and COVID-19 living guideline"
+      }
+    ],
+    "kemlLevel": 4,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]

@@ -29812,5 +29812,1431 @@
     "icd11": [
       "5A60.0"
     ]
+  },
+  {
+    "slug": "covid-19",
+    "title": "COVID-19 (SARS-CoV-2 infection)",
+    "icd10": [
+      "U07.1"
+    ],
+    "icd11": [
+      "RA01.0"
+    ],
+    "snomed": [
+      "840539006"
+    ],
+    "domains": [
+      "infectious-disease",
+      "respiratory",
+      "outbreak"
+    ],
+    "presentation": [
+      "Fever, cough, fatigue, sore throat, anosmia/ageusia, myalgia; ranges from asymptomatic to severe pneumonia.",
+      "Breathlessness typically from day 5–7 in those who deteriorate.",
+      "Higher risk of severe disease in older adults and those with comorbidities."
+    ],
+    "redFlags": [
+      "Hypoxia (SpO2 <94% on air), severe breathlessness, confusion.",
+      "Signs of thromboembolism (PE, stroke).",
+      "Rapid deterioration / silent hypoxia."
+    ],
+    "diagnostics": [
+      {
+        "test": "SARS-CoV-2 antigen or PCR test",
+        "rationale": "Confirms infection; PCR is more sensitive."
+      },
+      {
+        "test": "SpO2 and clinical severity assessment",
+        "rationale": "Identifies hypoxia and need for oxygen/admission."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive care",
+        "detail": "Antipyretics, fluids and self-isolation for mild disease; safety-net advice on red flags."
+      },
+      {
+        "step": "Oxygen and steroids for severe disease",
+        "detail": "Target oxygen saturation; dexamethasone for patients needing oxygen; thromboprophylaxis on admission."
+      },
+      {
+        "step": "Antivirals for high-risk",
+        "detail": "Consider antivirals (e.g. nirmatrelvir-ritonavir) early in high-risk outpatients per local eligibility; vaccinate to prevent."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Clinical management of COVID-19 living guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "seasonal-influenza",
+    "title": "Seasonal influenza",
+    "icd10": [
+      "J11",
+      "J10"
+    ],
+    "snomed": [
+      "6142004"
+    ],
+    "domains": [
+      "infectious-disease",
+      "respiratory",
+      "vaccine-preventable"
+    ],
+    "presentation": [
+      "Abrupt onset of fever, myalgia, headache, dry cough and malaise.",
+      "Sore throat and rhinitis; prostration more marked than the common cold.",
+      "Self-limiting in most healthy adults over about a week."
+    ],
+    "redFlags": [
+      "Pneumonia (primary viral or secondary bacterial).",
+      "Exacerbation of chronic disease; dehydration in the elderly.",
+      "Breathlessness, hypoxia, confusion."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis during influenza season",
+        "rationale": "Often sufficient; PCR/antigen testing for severe, hospitalised or high-risk cases."
+      },
+      {
+        "test": "Chest assessment",
+        "rationale": "Detect complicating pneumonia."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive care",
+        "detail": "Rest, fluids, antipyretics; most cases need no antivirals."
+      },
+      {
+        "step": "Antivirals for high-risk/severe",
+        "detail": "Neuraminidase inhibitor (oseltamivir) within 48 hours for severe disease or high-risk groups."
+      },
+      {
+        "step": "Prevention",
+        "detail": "Annual influenza vaccination for at-risk groups; respiratory hygiene."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Influenza (seasonal) guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "hepatitis-a",
+    "title": "Hepatitis A",
+    "icd10": [
+      "B15"
+    ],
+    "icd11": [
+      "1E50.0"
+    ],
+    "snomed": [
+      "40468003"
+    ],
+    "domains": [
+      "infectious-disease",
+      "hepatology",
+      "vaccine-preventable"
+    ],
+    "presentation": [
+      "Acute onset of fever, malaise, anorexia, nausea and right-upper-quadrant discomfort, followed by jaundice and dark urine.",
+      "Faeco-oral transmission; outbreaks linked to contaminated food/water.",
+      "Usually self-limiting; does not cause chronic infection."
+    ],
+    "redFlags": [
+      "Features of acute liver failure (encephalopathy, coagulopathy) — rare but serious.",
+      "Prolonged cholestasis.",
+      "Dehydration."
+    ],
+    "diagnostics": [
+      {
+        "test": "Hepatitis A IgM serology",
+        "rationale": "Confirms acute infection."
+      },
+      {
+        "test": "Liver function tests and coagulation",
+        "rationale": "Assess hepatitis severity and detect liver failure."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive care",
+        "detail": "Rest, hydration, antiemetics; avoid hepatotoxins and alcohol; most recover fully."
+      },
+      {
+        "step": "Monitor for liver failure",
+        "detail": "Watch for encephalopathy/coagulopathy; refer if signs of acute liver failure."
+      },
+      {
+        "step": "Prevention",
+        "detail": "Hand hygiene, safe water/food; hepatitis A vaccine and post-exposure prophylaxis for contacts."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Hepatitis A guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "scarlet-fever",
+    "title": "Scarlet fever",
+    "icd10": [
+      "A38"
+    ],
+    "icd11": [
+      "1B50"
+    ],
+    "snomed": [
+      "30242009"
+    ],
+    "domains": [
+      "infectious-disease",
+      "child-health",
+      "dermatology",
+      "ent"
+    ],
+    "presentation": [
+      "Fever and sore throat followed by a fine, sandpaper-like erythematous rash sparing the perioral area.",
+      "Strawberry tongue, flushed cheeks, and rash accentuated in skin folds (Pastia lines).",
+      "Caused by toxin-producing group A streptococcus; mainly affects children."
+    ],
+    "redFlags": [
+      "Suppurative complications (peritonsillar abscess, otitis media).",
+      "Post-streptococcal glomerulonephritis or rheumatic fever.",
+      "Invasive streptococcal disease / toxic shock."
+    ],
+    "diagnostics": [
+      {
+        "test": "Throat swab / rapid antigen test for group A strep",
+        "rationale": "Confirms streptococcal infection."
+      },
+      {
+        "test": "Clinical assessment",
+        "rationale": "Characteristic rash and pharyngitis usually suffice to start treatment."
+      }
+    ],
+    "management": [
+      {
+        "step": "Antibiotics",
+        "detail": "Penicillin V (or amoxicillin; macrolide if penicillin-allergic) for 10 days to shorten illness and prevent complications."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Antipyretics, fluids; exclude from school until 24 hours of antibiotics."
+      },
+      {
+        "step": "Notify and monitor",
+        "detail": "Notifiable in many settings; watch for complications."
+      }
+    ],
+    "references": [
+      {
+        "label": "National guidance on group A streptococcal infection"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "toxic-shock-syndrome",
+    "title": "Toxic shock syndrome",
+    "icd10": [
+      "A48.3"
+    ],
+    "snomed": [
+      "18504008"
+    ],
+    "domains": [
+      "infectious-disease",
+      "critical-care",
+      "emergency",
+      "dermatology"
+    ],
+    "presentation": [
+      "Sudden high fever, diffuse macular erythroderma, hypotension and multi-organ involvement.",
+      "Associated with staphylococcal (tampon/wound) or streptococcal (soft-tissue) toxins.",
+      "Later desquamation, especially of palms and soles."
+    ],
+    "redFlags": [
+      "Shock and multi-organ dysfunction — life-threatening.",
+      "Necrotising soft-tissue infection (streptococcal).",
+      "Rapid deterioration."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical recognition + cultures",
+        "rationale": "Diagnosis is clinical; take blood and site cultures but do not delay treatment."
+      },
+      {
+        "test": "Bloods for organ function and lactate",
+        "rationale": "Assess severity and organ dysfunction."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitate",
+        "detail": "Aggressive fluids and vasopressors; ICU support; sepsis six."
+      },
+      {
+        "step": "Source control and antibiotics",
+        "detail": "Remove tampon/packing, debride infected tissue; combination antibiotics including a protein-synthesis inhibitor (clindamycin) to suppress toxin."
+      },
+      {
+        "step": "Adjuncts",
+        "detail": "Consider IV immunoglobulin in severe streptococcal TSS; supportive multi-organ care."
+      }
+    ],
+    "references": [
+      {
+        "label": "IDSA guidelines on skin and soft-tissue infections"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "urticaria-and-angioedema",
+    "title": "Urticaria and angioedema",
+    "icd10": [
+      "L50",
+      "T78.3"
+    ],
+    "snomed": [
+      "126485001"
+    ],
+    "domains": [
+      "dermatology",
+      "allergy",
+      "immunology"
+    ],
+    "presentation": [
+      "Transient itchy weals (hives) that come and go within 24 hours, with or without deeper swelling (angioedema).",
+      "Acute (<6 weeks) often post-infective or allergic; chronic when recurring >6 weeks.",
+      "Angioedema affects lips, eyelids, tongue and sometimes the airway."
+    ],
+    "redFlags": [
+      "Airway involvement (tongue/throat swelling, stridor) or anaphylaxis — emergency.",
+      "Angioedema without weals on ACE inhibitors or with C1-inhibitor deficiency.",
+      "Systemic features suggesting vasculitis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis",
+        "rationale": "History and examination are usually sufficient; identify and avoid triggers."
+      },
+      {
+        "test": "Targeted tests for chronic/atypical cases",
+        "rationale": "Consider FBC, inflammatory markers and specific allergy testing where indicated."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat airway emergencies first",
+        "detail": "Manage anaphylaxis/airway angioedema with adrenaline and resuscitation; stop ACE inhibitors in ACE-induced angioedema."
+      },
+      {
+        "step": "Antihistamines",
+        "detail": "Regular non-sedating H1 antihistamines, up-titrated as needed, are first-line for urticaria."
+      },
+      {
+        "step": "Escalate chronic disease",
+        "detail": "Add short corticosteroid courses for severe flares; refer chronic refractory urticaria for omalizumab/specialist care."
+      }
+    ],
+    "references": [
+      {
+        "label": "EAACI/GA2LEN guideline on urticaria"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "dermatophytosis-tinea",
+    "title": "Dermatophytosis (tinea / ringworm)",
+    "icd10": [
+      "B35"
+    ],
+    "snomed": [
+      "47382004"
+    ],
+    "domains": [
+      "dermatology",
+      "infectious-disease",
+      "primary-care"
+    ],
+    "presentation": [
+      "Itchy, scaly, annular plaques with central clearing and an active scaly edge (tinea corporis).",
+      "Site variants: tinea pedis (athlete's foot), cruris (groin), capitis (scalp, with hair loss), unguium (nails).",
+      "Spread by contact with people, animals or soil."
+    ],
+    "redFlags": [
+      "Tinea capitis with kerion (boggy inflamed mass) needing oral therapy.",
+      "Extensive or immunocompromised infection.",
+      "Secondary bacterial infection."
+    ],
+    "diagnostics": [
+      {
+        "test": "Skin scraping for microscopy and culture",
+        "rationale": "Confirms dermatophyte, especially before oral therapy or in nail/scalp disease."
+      },
+      {
+        "test": "Clinical examination +/- Wood lamp",
+        "rationale": "Typical morphology often suffices for skin infection."
+      }
+    ],
+    "management": [
+      {
+        "step": "Topical antifungals",
+        "detail": "Topical azole or terbinafine for localised skin infection."
+      },
+      {
+        "step": "Oral antifungals",
+        "detail": "Oral terbinafine or itraconazole/griseofulvin for scalp, nail or extensive disease; scalp infection always needs oral treatment."
+      },
+      {
+        "step": "Reduce reinfection",
+        "detail": "Treat fomites, keep skin dry, treat infected contacts/animals."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO/national dermatology guidance on superficial fungal infections"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "allergic-rhinitis",
+    "title": "Allergic rhinitis",
+    "icd10": [
+      "J30"
+    ],
+    "snomed": [
+      "61582004"
+    ],
+    "domains": [
+      "allergy",
+      "ent",
+      "respiratory",
+      "primary-care"
+    ],
+    "presentation": [
+      "Sneezing, nasal itch, watery rhinorrhoea and nasal congestion, often with itchy watery eyes.",
+      "Seasonal (pollen) or perennial (dust mite, animals); allergic 'shiners' and a nasal crease in children.",
+      "Frequently coexists with asthma."
+    ],
+    "redFlags": [
+      "Unilateral symptoms, bleeding or facial pain (suggest other pathology).",
+      "Poorly controlled coexisting asthma.",
+      "Nasal polyps."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis",
+        "rationale": "History of typical symptoms and triggers is usually sufficient."
+      },
+      {
+        "test": "Allergy testing (skin prick / specific IgE)",
+        "rationale": "Identifies triggers when diagnosis is unclear or immunotherapy is considered."
+      }
+    ],
+    "management": [
+      {
+        "step": "Allergen avoidance",
+        "detail": "Reduce exposure to identified triggers."
+      },
+      {
+        "step": "Pharmacotherapy",
+        "detail": "Intranasal corticosteroids (most effective for persistent symptoms) and non-sedating oral/intranasal antihistamines; saline rinses."
+      },
+      {
+        "step": "Escalate",
+        "detail": "Consider leukotriene antagonists or allergen immunotherapy for refractory disease; treat coexisting asthma."
+      }
+    ],
+    "references": [
+      {
+        "label": "ARIA allergic rhinitis guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "bppv",
+    "title": "Benign paroxysmal positional vertigo (BPPV)",
+    "icd10": [
+      "H81.1"
+    ],
+    "snomed": [
+      "111552003"
+    ],
+    "domains": [
+      "ent",
+      "neurology",
+      "primary-care"
+    ],
+    "presentation": [
+      "Brief (seconds) episodes of rotatory vertigo triggered by head-position changes (rolling over, looking up).",
+      "No persistent hearing loss or tinnitus.",
+      "Most commonly affects the posterior semicircular canal."
+    ],
+    "redFlags": [
+      "Central features: persistent vertigo, focal neurology, vertical/direction-changing nystagmus.",
+      "New severe headache or other posterior-circulation stroke signs.",
+      "Hearing loss (suggests other diagnosis)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Dix-Hallpike manoeuvre",
+        "rationale": "Provokes characteristic torsional/up-beating nystagmus, confirming posterior-canal BPPV."
+      },
+      {
+        "test": "Neurological examination",
+        "rationale": "Excludes central causes of positional vertigo."
+      }
+    ],
+    "management": [
+      {
+        "step": "Canalith repositioning",
+        "detail": "Epley manoeuvre is highly effective first-line treatment for posterior-canal BPPV."
+      },
+      {
+        "step": "Reassurance and review",
+        "detail": "Explain the benign nature; repeat manoeuvres if symptoms persist."
+      },
+      {
+        "step": "Limited medication",
+        "detail": "Vestibular sedatives are generally unhelpful and may delay recovery; avoid prolonged use."
+      }
+    ],
+    "references": [
+      {
+        "label": "AAO-HNS clinical practice guideline on BPPV"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "menieres-disease",
+    "title": "Ménière disease",
+    "icd10": [
+      "H81.0"
+    ],
+    "snomed": [
+      "41136008"
+    ],
+    "domains": [
+      "ent",
+      "neurology"
+    ],
+    "presentation": [
+      "Recurrent spontaneous episodes of vertigo lasting minutes to hours.",
+      "Fluctuating sensorineural hearing loss, tinnitus and a sensation of aural fullness.",
+      "Usually unilateral initially."
+    ],
+    "redFlags": [
+      "Sudden permanent hearing loss.",
+      "Neurological signs suggesting a central cause.",
+      "Drop attacks (Tumarkin crises)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Audiometry",
+        "rationale": "Documents fluctuating low-frequency sensorineural hearing loss."
+      },
+      {
+        "test": "MRI of the internal auditory meatus",
+        "rationale": "Excludes a vestibular schwannoma or central pathology."
+      }
+    ],
+    "management": [
+      {
+        "step": "Acute attacks",
+        "detail": "Vestibular sedatives/antiemetics for severe acute vertigo, used short-term."
+      },
+      {
+        "step": "Prophylaxis",
+        "detail": "Low-salt diet, reduce caffeine/alcohol; betahistine and/or diuretics to reduce attack frequency."
+      },
+      {
+        "step": "Refractory disease",
+        "detail": "Refer to ENT for intratympanic therapy or surgery; provide vestibular rehabilitation and hearing support."
+      }
+    ],
+    "references": [
+      {
+        "label": "AAO-HNS guidance on Ménière disease"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "tension-type-headache",
+    "title": "Tension-type headache",
+    "icd10": [
+      "G44.2"
+    ],
+    "snomed": [
+      "398057008"
+    ],
+    "domains": [
+      "neurology",
+      "primary-care",
+      "pain"
+    ],
+    "presentation": [
+      "Bilateral, pressing/tightening (band-like) headache of mild-to-moderate intensity.",
+      "Not aggravated by routine activity; no nausea (or only mild), and not both photophobia and phonophobia.",
+      "Often associated with stress, poor posture or fatigue."
+    ],
+    "redFlags": [
+      "Thunderclap onset, progressive headache, focal neurology, fever or features of raised intracranial pressure.",
+      "New headache in older adults (consider giant cell arteritis).",
+      "Headache worse on waking/Valsalva."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis",
+        "rationale": "Based on typical features and a normal examination; no imaging needed without red flags."
+      },
+      {
+        "test": "Headache diary",
+        "rationale": "Distinguishes from migraine and identifies medication-overuse headache."
+      }
+    ],
+    "management": [
+      {
+        "step": "Acute treatment",
+        "detail": "Simple analgesia (paracetamol or NSAID); limit use to avoid medication-overuse headache."
+      },
+      {
+        "step": "Address triggers",
+        "detail": "Manage stress, sleep, posture and hydration; physiotherapy where relevant."
+      },
+      {
+        "step": "Prophylaxis",
+        "detail": "Consider amitriptyline for frequent chronic tension-type headache."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE headaches in over-12s guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "cluster-headache",
+    "title": "Cluster headache",
+    "icd10": [
+      "G44.0"
+    ],
+    "snomed": [
+      "193031009"
+    ],
+    "domains": [
+      "neurology",
+      "pain"
+    ],
+    "presentation": [
+      "Attacks of severe strictly unilateral orbital/temporal pain lasting 15–180 minutes.",
+      "Ipsilateral autonomic features: lacrimation, conjunctival injection, nasal congestion, ptosis/miosis.",
+      "Restlessness/agitation during attacks; clustering over weeks with remissions."
+    ],
+    "redFlags": [
+      "First or atypical presentation — exclude secondary causes with imaging.",
+      "New neurological deficit.",
+      "Horner syndrome that persists between attacks."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis",
+        "rationale": "Characteristic attacks with autonomic features; MRI brain to exclude structural causes at first presentation."
+      },
+      {
+        "test": "Examination during/between attacks",
+        "rationale": "Identify autonomic signs and exclude persistent deficits."
+      }
+    ],
+    "management": [
+      {
+        "step": "Acute attack",
+        "detail": "High-flow 100% oxygen and subcutaneous/intranasal sumatriptan abort attacks; simple analgesia is ineffective."
+      },
+      {
+        "step": "Transitional therapy",
+        "detail": "Short corticosteroid course or greater occipital nerve block to bridge until prophylaxis works."
+      },
+      {
+        "step": "Prophylaxis",
+        "detail": "Verapamil is first-line preventive; refer to neurology for refractory cases."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE headaches guideline; international cluster headache guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "polymyalgia-rheumatica",
+    "title": "Polymyalgia rheumatica",
+    "icd10": [
+      "M35.3"
+    ],
+    "snomed": [
+      "54057000"
+    ],
+    "domains": [
+      "rheumatology",
+      "geriatrics"
+    ],
+    "presentation": [
+      "New bilateral shoulder and/or pelvic girdle pain and morning stiffness (>45 minutes) in a patient over 50.",
+      "Difficulty rising from a chair or raising arms; systemic symptoms (fatigue, low-grade fever).",
+      "Marked, rapid response to low-dose corticosteroids."
+    ],
+    "redFlags": [
+      "Symptoms of giant cell arteritis (headache, jaw claudication, visual loss) — urgent high-dose steroids.",
+      "Lack of steroid response (reconsider diagnosis).",
+      "Features of inflammatory arthritis or malignancy."
+    ],
+    "diagnostics": [
+      {
+        "test": "ESR/CRP",
+        "rationale": "Usually raised inflammatory markers support the diagnosis."
+      },
+      {
+        "test": "Exclude mimics",
+        "rationale": "Check for RA, myositis (CK), thyroid disease and malignancy where atypical."
+      }
+    ],
+    "management": [
+      {
+        "step": "Corticosteroids",
+        "detail": "Low-dose oral prednisolone with a dramatic response; taper slowly over months guided by symptoms and markers."
+      },
+      {
+        "step": "Monitor for GCA",
+        "detail": "Educate the patient to report cranial symptoms urgently."
+      },
+      {
+        "step": "Bone protection",
+        "detail": "Calcium/vitamin D and bisphosphonate to prevent steroid-induced osteoporosis."
+      }
+    ],
+    "references": [
+      {
+        "label": "BSR guideline on polymyalgia rheumatica"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "giant-cell-arteritis",
+    "title": "Giant cell arteritis (temporal arteritis)",
+    "icd10": [
+      "M31.6"
+    ],
+    "snomed": [
+      "54688003"
+    ],
+    "domains": [
+      "rheumatology",
+      "ophthalmology",
+      "emergency",
+      "geriatrics"
+    ],
+    "presentation": [
+      "New temporal headache, scalp tenderness and jaw claudication in a patient over 50.",
+      "Visual symptoms (amaurosis fugax, diplopia) — a medical emergency.",
+      "Often associated with polymyalgia rheumatica and raised inflammatory markers."
+    ],
+    "redFlags": [
+      "Any visual symptoms — risk of irreversible blindness; start steroids immediately.",
+      "Jaw/tongue claudication.",
+      "Stroke from large-vessel involvement."
+    ],
+    "diagnostics": [
+      {
+        "test": "ESR/CRP",
+        "rationale": "Markedly raised in most cases; do not delay steroids awaiting results."
+      },
+      {
+        "test": "Temporal artery biopsy or vascular ultrasound",
+        "rationale": "Confirms the diagnosis; biopsy can remain positive for ~2 weeks after starting steroids."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immediate high-dose corticosteroids",
+        "detail": "Start high-dose prednisolone at once (IV methylprednisolone if visual loss) — do NOT wait for biopsy."
+      },
+      {
+        "step": "Confirm and taper",
+        "detail": "Arrange biopsy/ultrasound promptly; taper steroids slowly over 1–2 years guided by symptoms/markers."
+      },
+      {
+        "step": "Adjuncts and protection",
+        "detail": "Low-dose aspirin in selected patients, bone and gastric protection; consider tocilizumab as a steroid-sparing agent."
+      }
+    ],
+    "references": [
+      {
+        "label": "BSR guideline on giant cell arteritis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "ankylosing-spondylitis",
+    "title": "Axial spondyloarthritis (ankylosing spondylitis)",
+    "icd10": [
+      "M45"
+    ],
+    "snomed": [
+      "9631008"
+    ],
+    "domains": [
+      "rheumatology",
+      "musculoskeletal"
+    ],
+    "presentation": [
+      "Chronic inflammatory back pain in a young adult: insidious onset, morning stiffness >30 minutes, improvement with exercise not rest, night pain.",
+      "Reduced spinal mobility and chest expansion over time.",
+      "Associated enthesitis, peripheral arthritis, uveitis, psoriasis or IBD."
+    ],
+    "redFlags": [
+      "Acute anterior uveitis (painful red eye) needing urgent ophthalmology.",
+      "Spinal fracture in a fused, rigid spine after minor trauma.",
+      "Cardiac/pulmonary involvement in advanced disease."
+    ],
+    "diagnostics": [
+      {
+        "test": "MRI of sacroiliac joints",
+        "rationale": "Detects early sacroiliitis before radiographic changes."
+      },
+      {
+        "test": "HLA-B27 and inflammatory markers",
+        "rationale": "Support the diagnosis in the right clinical context."
+      }
+    ],
+    "management": [
+      {
+        "step": "Exercise and physiotherapy",
+        "detail": "Regular exercise and physiotherapy are the cornerstone to maintain mobility and posture."
+      },
+      {
+        "step": "NSAIDs",
+        "detail": "First-line pharmacotherapy for pain and stiffness."
+      },
+      {
+        "step": "Biologic therapy",
+        "detail": "TNF or IL-17 inhibitors for active disease refractory to NSAIDs (specialist-led); treat extra-articular manifestations."
+      }
+    ],
+    "references": [
+      {
+        "label": "ASAS-EULAR recommendations for axial spondyloarthritis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "primary-hyperparathyroidism",
+    "title": "Primary hyperparathyroidism",
+    "icd10": [
+      "E21.0"
+    ],
+    "snomed": [
+      "36348003"
+    ],
+    "domains": [
+      "endocrinology",
+      "nephrology",
+      "metabolism"
+    ],
+    "presentation": [
+      "Often asymptomatic, found on finding hypercalcaemia on routine bloods.",
+      "Symptomatic: 'stones, bones, abdominal groans and psychic moans' — renal stones, bone pain, constipation, low mood.",
+      "Usually due to a parathyroid adenoma."
+    ],
+    "redFlags": [
+      "Severe hypercalcaemia / hypercalcaemic crisis (confusion, dehydration, arrhythmia).",
+      "Renal impairment or recurrent stones.",
+      "Fragility fractures."
+    ],
+    "diagnostics": [
+      {
+        "test": "Calcium, PTH, phosphate and vitamin D",
+        "rationale": "Raised calcium with an inappropriately normal/high PTH confirms the diagnosis."
+      },
+      {
+        "test": "Renal function, 24-h urine calcium, imaging",
+        "rationale": "Assess end-organ effects and localise an adenoma for surgery; exclude FHH."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat hypercalcaemic crisis",
+        "detail": "IV fluids and, if severe, bisphosphonate/calcitonin."
+      },
+      {
+        "step": "Parathyroidectomy",
+        "detail": "Surgery is curative and indicated for symptomatic disease or end-organ damage."
+      },
+      {
+        "step": "Conservative management",
+        "detail": "Monitor mild asymptomatic disease; ensure hydration, adequate vitamin D; cinacalcet if surgery unsuitable."
+      }
+    ],
+    "references": [
+      {
+        "label": "International workshop guidelines on asymptomatic primary hyperparathyroidism"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "hypercalcaemia",
+    "title": "Hypercalcaemia",
+    "icd10": [
+      "E83.52"
+    ],
+    "snomed": [
+      "66931009"
+    ],
+    "domains": [
+      "endocrinology",
+      "metabolism",
+      "nephrology",
+      "oncology"
+    ],
+    "presentation": [
+      "Polyuria, polydipsia, constipation, nausea, fatigue and confusion.",
+      "Severity-dependent; commonest causes are primary hyperparathyroidism and malignancy.",
+      "Short QT interval on ECG."
+    ],
+    "redFlags": [
+      "Severe hypercalcaemia (corrected calcium high) with confusion, dehydration or arrhythmia — emergency.",
+      "Underlying malignancy.",
+      "Acute kidney injury."
+    ],
+    "diagnostics": [
+      {
+        "test": "Corrected/ionised calcium and PTH",
+        "rationale": "Distinguishes PTH-dependent (hyperparathyroidism) from PTH-independent (malignancy) causes."
+      },
+      {
+        "test": "Renal function, phosphate, vitamin D, ECG",
+        "rationale": "Assess severity, cause and cardiac effect."
+      }
+    ],
+    "management": [
+      {
+        "step": "Rehydrate",
+        "detail": "Aggressive IV isotonic saline is the cornerstone of acute treatment."
+      },
+      {
+        "step": "Lower calcium",
+        "detail": "IV bisphosphonate (e.g. zoledronic acid) for malignancy; calcitonin for rapid short-term reduction; treat the underlying cause."
+      },
+      {
+        "step": "Monitor",
+        "detail": "Track calcium, renal function and fluid balance; avoid thiazides and calcium/vitamin D supplements."
+      }
+    ],
+    "references": [
+      {
+        "label": "Society for Endocrinology guidance on acute hypercalcaemia"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "hypokalaemia",
+    "title": "Hypokalaemia",
+    "icd10": [
+      "E87.6"
+    ],
+    "snomed": [
+      "43339004"
+    ],
+    "domains": [
+      "nephrology",
+      "endocrinology",
+      "acute-care",
+      "cardiology"
+    ],
+    "presentation": [
+      "Often asymptomatic; muscle weakness, cramps, fatigue and constipation as potassium falls.",
+      "Causes: diuretics, GI losses (vomiting/diarrhoea), hyperaldosteronism, refeeding.",
+      "Severe: arrhythmia and paralysis."
+    ],
+    "redFlags": [
+      "ECG changes (U waves, flattened T waves) and arrhythmia — life-threatening.",
+      "Coexisting hypomagnesaemia (refractory hypokalaemia).",
+      "Severe weakness/paralysis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serum potassium, magnesium and ECG",
+        "rationale": "Confirms hypokalaemia, detects cardiac effects; magnesium must be corrected for potassium to respond."
+      },
+      {
+        "test": "Assess cause (acid-base, urine K)",
+        "rationale": "Distinguishes renal from extrarenal losses."
+      }
+    ],
+    "management": [
+      {
+        "step": "Replace potassium",
+        "detail": "Oral replacement for mild cases; cautious IV potassium with cardiac monitoring for severe/symptomatic hypokalaemia."
+      },
+      {
+        "step": "Correct magnesium",
+        "detail": "Replace magnesium concurrently — hypokalaemia is refractory until this is corrected."
+      },
+      {
+        "step": "Treat the cause",
+        "detail": "Adjust diuretics, treat GI losses or hyperaldosteronism; recheck levels."
+      }
+    ],
+    "references": [
+      {
+        "label": "National guidance on potassium replacement"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "biliary-colic-cholelithiasis",
+    "title": "Biliary colic / symptomatic gallstones",
+    "icd10": [
+      "K80.2",
+      "K80.5"
+    ],
+    "snomed": [
+      "79604008"
+    ],
+    "domains": [
+      "gastroenterology",
+      "surgery",
+      "primary-care"
+    ],
+    "presentation": [
+      "Episodic severe right-upper-quadrant/epigastric pain, often after fatty meals, lasting up to a few hours.",
+      "Pain may radiate to the right scapula; associated nausea.",
+      "Between episodes the patient is well; no fever (distinguishes from cholecystitis)."
+    ],
+    "redFlags": [
+      "Fever and persistent RUQ pain (acute cholecystitis).",
+      "Jaundice with pain and fever (ascending cholangitis).",
+      "Epigastric pain radiating to the back (gallstone pancreatitis)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Abdominal ultrasound",
+        "rationale": "First-line to detect gallstones and assess the gallbladder wall and bile ducts."
+      },
+      {
+        "test": "LFTs and lipase",
+        "rationale": "Detect biliary obstruction and pancreatitis."
+      }
+    ],
+    "management": [
+      {
+        "step": "Analgesia and lifestyle",
+        "detail": "Analgesia for acute pain; advise a low-fat diet."
+      },
+      {
+        "step": "Elective cholecystectomy",
+        "detail": "Refer for laparoscopic cholecystectomy for recurrent symptomatic stones."
+      },
+      {
+        "step": "Recognise complications",
+        "detail": "Escalate promptly if features of cholecystitis, cholangitis or pancreatitis develop."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE gallstone disease guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "post-traumatic-stress-disorder",
+    "title": "Post-traumatic stress disorder (PTSD)",
+    "icd10": [
+      "F43.1"
+    ],
+    "icd11": [
+      "6B40"
+    ],
+    "snomed": [
+      "47505003"
+    ],
+    "domains": [
+      "mental-health",
+      "psychiatry"
+    ],
+    "presentation": [
+      "Re-experiencing a traumatic event (flashbacks, nightmares, intrusive memories).",
+      "Avoidance of reminders, hyperarousal (hypervigilance, startle, sleep disturbance) and negative mood/cognitions.",
+      "Symptoms persisting beyond a month after trauma."
+    ],
+    "redFlags": [
+      "Suicidal ideation or self-harm.",
+      "Comorbid depression or substance misuse.",
+      "Severe functional impairment / psychosis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical assessment +/- validated screen",
+        "rationale": "Diagnosis is clinical; screening tools support case finding."
+      },
+      {
+        "test": "Risk assessment",
+        "rationale": "Assess suicide risk and comorbidity."
+      }
+    ],
+    "management": [
+      {
+        "step": "Trauma-focused psychological therapy",
+        "detail": "Trauma-focused CBT or EMDR is first-line treatment."
+      },
+      {
+        "step": "Pharmacotherapy",
+        "detail": "An SSRI (or SNRI) where psychological therapy is declined, ineffective, or for comorbid depression."
+      },
+      {
+        "step": "Support and safety",
+        "detail": "Address sleep, substance use and social support; manage suicide risk."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE post-traumatic stress disorder guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "obsessive-compulsive-disorder",
+    "title": "Obsessive-compulsive disorder (OCD)",
+    "icd10": [
+      "F42"
+    ],
+    "icd11": [
+      "6B20"
+    ],
+    "snomed": [
+      "191736004"
+    ],
+    "domains": [
+      "mental-health",
+      "psychiatry"
+    ],
+    "presentation": [
+      "Recurrent intrusive obsessions (thoughts, images, urges) causing anxiety.",
+      "Compulsions (repetitive behaviours/mental acts) performed to reduce distress.",
+      "Time-consuming (>1 hour/day) and impairing; insight is usually retained."
+    ],
+    "redFlags": [
+      "Severe functional impairment or suicide risk.",
+      "Comorbid depression.",
+      "Symptoms masking another disorder (e.g. psychosis)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical assessment",
+        "rationale": "Diagnosis is clinical; assess severity and impact (e.g. Y-BOCS)."
+      },
+      {
+        "test": "Risk and comorbidity assessment",
+        "rationale": "Screen for depression and suicide risk."
+      }
+    ],
+    "management": [
+      {
+        "step": "Psychological therapy",
+        "detail": "CBT with exposure and response prevention is first-line."
+      },
+      {
+        "step": "Pharmacotherapy",
+        "detail": "An SSRI (often at higher doses and longer trials than for depression); clomipramine as an alternative."
+      },
+      {
+        "step": "Combine/escalate",
+        "detail": "Combine therapy and medication for moderate-severe disease; refer refractory cases for specialist augmentation."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE OCD and body dysmorphic disorder guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "henoch-schonlein-purpura",
+    "title": "IgA vasculitis (Henoch-Schönlein purpura)",
+    "icd10": [
+      "D69.0"
+    ],
+    "snomed": [
+      "191306005"
+    ],
+    "domains": [
+      "paediatrics",
+      "rheumatology",
+      "nephrology",
+      "dermatology",
+      "child-health"
+    ],
+    "population": {
+      "maxAgeYears": 16,
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Palpable purpura over the buttocks and extensor surfaces of the legs in a child.",
+      "Arthralgia/arthritis, colicky abdominal pain, and renal involvement (haematuria/proteinuria).",
+      "Often follows an upper respiratory infection."
+    ],
+    "redFlags": [
+      "Severe abdominal pain (intussusception, GI bleeding).",
+      "Significant renal involvement (nephritis, hypertension).",
+      "Scrotal involvement; rare pulmonary/CNS disease."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis",
+        "rationale": "Characteristic purpura with normal platelets in a well child usually suffices."
+      },
+      {
+        "test": "Urinalysis and blood pressure",
+        "rationale": "Detect and monitor renal involvement (the main determinant of long-term outcome)."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive care",
+        "detail": "Most cases are self-limiting; rest, hydration and simple analgesia."
+      },
+      {
+        "step": "Monitor the kidneys",
+        "detail": "Serial urinalysis and BP for weeks–months; refer significant nephritis to nephrology."
+      },
+      {
+        "step": "Steroids for selected cases",
+        "detail": "Corticosteroids for severe abdominal pain or significant renal/other organ involvement (specialist-guided)."
+      }
+    ],
+    "references": [
+      {
+        "label": "EULAR/PRINTO/PRES criteria and management guidance for IgA vasculitis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "abnormal-uterine-bleeding",
+    "title": "Abnormal uterine bleeding (heavy menstrual bleeding)",
+    "icd10": [
+      "N92",
+      "N93"
+    ],
+    "snomed": [
+      "27185003"
+    ],
+    "domains": [
+      "gynaecology",
+      "primary-care",
+      "sexual-and-reproductive-health"
+    ],
+    "population": {
+      "minAgeYears": 10,
+      "sex": "female",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Excessive menstrual blood loss affecting quality of life, with or without irregular bleeding.",
+      "Possible symptoms of anaemia (fatigue, breathlessness).",
+      "Causes structured by PALM-COEIN (structural vs non-structural)."
+    ],
+    "redFlags": [
+      "Postmenopausal bleeding (exclude endometrial cancer).",
+      "Severe anaemia or haemodynamic compromise.",
+      "Risk factors for endometrial cancer (obesity, unopposed oestrogen, age)."
+    ],
+    "diagnostics": [
+      {
+        "test": "FBC and pregnancy test",
+        "rationale": "Assess anaemia and exclude pregnancy-related bleeding."
+      },
+      {
+        "test": "Pelvic ultrasound +/- endometrial biopsy",
+        "rationale": "Identify structural causes and exclude malignancy in at-risk women."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat anaemia and exclude red flags",
+        "detail": "Iron for anaemia; investigate/refer postmenopausal or high-risk bleeding."
+      },
+      {
+        "step": "Medical therapy",
+        "detail": "Levonorgestrel intrauterine system is first-line; tranexamic acid/NSAIDs for acute heavy bleeding; hormonal options as alternatives."
+      },
+      {
+        "step": "Procedural options",
+        "detail": "Endometrial ablation or surgery (myomectomy/hysterectomy) for refractory disease or structural causes."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE heavy menstrual bleeding guideline; FIGO PALM-COEIN"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
   }
 ]
