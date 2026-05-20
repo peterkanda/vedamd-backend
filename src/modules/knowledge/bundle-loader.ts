@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import type { CdsRule, ConditionGuidance } from '../conditions/conditions.types';
 import type { DrugInteraction, DrugRecord } from '../drugs/drugs.types';
 import type { ProcedureGuidance } from '../procedures/procedures.types';
+import type { TerminologyBundle } from '../terminology/terminology.types';
 import { nonApprovedCount, validateBundle } from './bundle-validator';
 import type {
   BundleInfo,
@@ -93,7 +94,13 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
   ];
   for (const name of required) {
     if (!filesByName.has(name)) {
-      return failOrReturn(opts, 'missing', dir, new Error(`Manifest missing required file: ${name}`), manifestParsed);
+      return failOrReturn(
+        opts,
+        'missing',
+        dir,
+        new Error(`Manifest missing required file: ${name}`),
+        manifestParsed,
+      );
     }
   }
 
@@ -102,7 +109,13 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
     const bytes = readFileSync(resolve(dir, name));
     const sha256 = createHash('sha256').update(bytes).digest('hex');
     if (sha256 !== entry.sha256) {
-      return failOrReturn(opts, 'hash-mismatch', dir, new Error(`Hash mismatch for ${name}`), manifestParsed);
+      return failOrReturn(
+        opts,
+        'hash-mismatch',
+        dir,
+        new Error(`Hash mismatch for ${name}`),
+        manifestParsed,
+      );
     }
     parsed[name] = JSON.parse(bytes.toString('utf8'));
   }
@@ -113,6 +126,9 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
     interactions: parsed['drug-interactions.json'] as DrugInteraction[],
     procedures: parsed['procedures.json'] as ProcedureGuidance[],
     cdsRules: parsed['cds-rules.json'] as CdsRule[],
+    terminology:
+      (parsed['terminology.json'] as TerminologyBundle | undefined) ??
+      ({ version: '0.0.0-absent', codeSystems: [], valueSets: [] } as TerminologyBundle),
   };
 
   // Content validation — FR-024 governance rules.
@@ -177,6 +193,7 @@ export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBun
     interactions: [],
     procedures: [],
     cdsRules: [],
+    terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }
 
@@ -210,5 +227,6 @@ function failOrReturn(
     interactions: [],
     procedures: [],
     cdsRules: [],
+    terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }

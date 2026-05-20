@@ -5,7 +5,10 @@ import { hasDb, makeIntegrationHarness, type IntegrationHarness } from './harnes
 
 const d = hasDb ? describe : describe.skip;
 
-function entry(requestId: string, overrides: Partial<IntegrationLogEntry> = {}): IntegrationLogEntry {
+function entry(
+  requestId: string,
+  overrides: Partial<IntegrationLogEntry> = {},
+): IntegrationLogEntry {
   return {
     request_id: requestId,
     timestamp: new Date().toISOString(),
@@ -50,9 +53,7 @@ d('IntegrationLogService — Postgres integration', () => {
 
     const out = await svc.query('penda');
     expect(out.map((e) => e.request_id)).toEqual(['req-2', 'req-1']);
-    expect(out[0].card_summaries).toEqual([
-      'MODERATE interaction: paracetamol ↔ warfarin',
-    ]);
+    expect(out[0].card_summaries).toEqual(['MODERATE interaction: paracetamol ↔ warfarin']);
     expect(out[0].rules_evaluated).toEqual([
       { rule_id: 'ddi-check', rule_version: '0.1.0', fired: true },
     ]);

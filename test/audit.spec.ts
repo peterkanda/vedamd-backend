@@ -86,9 +86,22 @@ describe('AuditService (DB-backed HMAC chain)', () => {
   it('writes events with linked HMACs and verifyChain returns ok', async () => {
     const db = makeStubDb();
     const svc = new AuditService(makeLogger(), makeConfig(), db);
-    await svc.record({ type: 'api_key.created', actorId: 'op-1', occurredAt: '2026-05-18T00:00:00.000Z' });
-    await svc.record({ type: 'api_key.revoked', actorId: 'op-1', occurredAt: '2026-05-18T00:00:01.000Z' });
-    await svc.record({ type: 'cds.evaluated', ruleId: 'r1', ruleVersion: '1.0', occurredAt: '2026-05-18T00:00:02.000Z' });
+    await svc.record({
+      type: 'api_key.created',
+      actorId: 'op-1',
+      occurredAt: '2026-05-18T00:00:00.000Z',
+    });
+    await svc.record({
+      type: 'api_key.revoked',
+      actorId: 'op-1',
+      occurredAt: '2026-05-18T00:00:01.000Z',
+    });
+    await svc.record({
+      type: 'cds.evaluated',
+      ruleId: 'r1',
+      ruleVersion: '1.0',
+      occurredAt: '2026-05-18T00:00:02.000Z',
+    });
 
     const internalRows = (db as unknown as { __rows: Array<Record<string, unknown>> }).__rows;
     expect(internalRows.length).toBe(3);
@@ -107,8 +120,16 @@ describe('AuditService (DB-backed HMAC chain)', () => {
   it('verifyChain detects a tampered row', async () => {
     const db = makeStubDb();
     const svc = new AuditService(makeLogger(), makeConfig(), db);
-    await svc.record({ type: 'api_key.created', actorId: 'op-1', occurredAt: '2026-05-18T00:00:00.000Z' });
-    await svc.record({ type: 'api_key.revoked', actorId: 'op-1', occurredAt: '2026-05-18T00:00:01.000Z' });
+    await svc.record({
+      type: 'api_key.created',
+      actorId: 'op-1',
+      occurredAt: '2026-05-18T00:00:00.000Z',
+    });
+    await svc.record({
+      type: 'api_key.revoked',
+      actorId: 'op-1',
+      occurredAt: '2026-05-18T00:00:01.000Z',
+    });
 
     const internalRows = (db as unknown as { __rows: Array<Record<string, unknown>> }).__rows;
     for (const r of internalRows) {

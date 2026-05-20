@@ -70,9 +70,7 @@ const STATELESS_EXTENSION_URL = 'http://vedamd.io/CapabilityStatement/stateless'
 
 function cap(value: number, limit: number, label: string): number {
   if (value > limit) {
-    throw new Error(
-      `[config] ${label} cannot exceed ${limit} (SRS hard ceiling). Got: ${value}.`,
-    );
+    throw new Error(`[config] ${label} cannot exceed ${limit} (SRS hard ceiling). Got: ${value}.`);
   }
   return value;
 }
@@ -128,8 +126,7 @@ export const configuration = (): AppConfig => ({
     audience: process.env.OIDC_AUDIENCE ?? 'vedamd-api',
     integratorIdClaim: process.env.OIDC_INTEGRATOR_ID_CLAIM ?? 'integrator_id',
     devBypass:
-      process.env.NODE_ENV !== 'production' &&
-      process.env.OPERATOR_AUTH_DEV_BYPASS === 'true',
+      process.env.NODE_ENV !== 'production' && process.env.OPERATOR_AUTH_DEV_BYPASS === 'true',
   },
   integrationLog: {
     maxEntriesPerIntegrator: cap(
@@ -137,7 +134,11 @@ export const configuration = (): AppConfig => ({
       50_000,
       'INTEGRATION_LOG_MAX_ENTRIES',
     ),
-    ttlDays: cap(Number(process.env.INTEGRATION_LOG_TTL_DAYS ?? 30), 30, 'INTEGRATION_LOG_TTL_DAYS'),
+    ttlDays: cap(
+      Number(process.env.INTEGRATION_LOG_TTL_DAYS ?? 30),
+      30,
+      'INTEGRATION_LOG_TTL_DAYS',
+    ),
   },
   llm: {
     anthropicApiKey: process.env.ANTHROPIC_API_KEY ?? '',

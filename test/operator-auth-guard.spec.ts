@@ -14,7 +14,8 @@ interface ConfigOverrides {
 function makeConfig(overrides: ConfigOverrides = {}): ConfigService<AppConfig, true> {
   return {
     get: (key: string) => {
-      if (key === 'identity.integratorIdClaim') return overrides.integratorIdClaim ?? 'integrator_id';
+      if (key === 'identity.integratorIdClaim')
+        return overrides.integratorIdClaim ?? 'integrator_id';
       if (key === 'identity.devBypass') return overrides.devBypass ?? false;
       return undefined;
     },

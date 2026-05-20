@@ -45,7 +45,9 @@ describe('validateBundle', () => {
   });
 
   it('rejects an approved record with fewer than two reviewers', () => {
-    const c = approvedCondition({ reviewers: [{ name: 'Dr A', role: 'clinical-lead', reviewedAt: '2026-01-01' }] });
+    const c = approvedCondition({
+      reviewers: [{ name: 'Dr A', role: 'clinical-lead', reviewedAt: '2026-01-01' }],
+    });
     const r = validateBundle({ ...emptyBundle(), conditions: [c as never] });
     expect(r.ok).toBe(false);
     expect(r.violations.some((v) => v.code === 'approved-without-two-reviewers')).toBe(true);
@@ -67,7 +69,11 @@ describe('validateBundle', () => {
 
   it('does NOT require reviewers on draft / review / deprecated records', () => {
     for (const status of ['draft', 'review', 'deprecated'] as const) {
-      const c = approvedCondition({ reviewStatus: status, reviewers: undefined, approvedAt: undefined });
+      const c = approvedCondition({
+        reviewStatus: status,
+        reviewers: undefined,
+        approvedAt: undefined,
+      });
       const r = validateBundle({ ...emptyBundle(), conditions: [c as never] });
       expect(r.ok).toBe(true);
     }
@@ -97,10 +103,10 @@ describe('validateBundle', () => {
 
   it('tallies the v0.1 dev bundle as all-draft', () => {
     // Eagerly load the real bundle and validate it.
-    /* eslint-disable @typescript-eslint/no-require-imports */
+
     const fs = require('node:fs') as typeof import('node:fs');
     const path = require('node:path') as typeof import('node:path');
-    /* eslint-enable @typescript-eslint/no-require-imports */
+
     const dir = path.resolve(process.cwd(), 'content/bundles/v0.1.0');
     const read = (n: string) => JSON.parse(fs.readFileSync(path.resolve(dir, n), 'utf8'));
     const r = validateBundle({

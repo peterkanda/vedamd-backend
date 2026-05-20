@@ -32,12 +32,14 @@ export interface IntegrationHarness {
   close(): Promise<void>;
 }
 
-export function makeIntegrationHarness(options: {
-  fingerprintSecret?: string;
-  hashSecret?: string;
-  maxEntries?: number;
-  ttlDays?: number;
-} = {}): IntegrationHarness {
+export function makeIntegrationHarness(
+  options: {
+    fingerprintSecret?: string;
+    hashSecret?: string;
+    maxEntries?: number;
+    ttlDays?: number;
+  } = {},
+): IntegrationHarness {
   if (!DATABASE_URL) throw new Error('DATABASE_URL is required for the integration harness');
 
   const pg = postgres(DATABASE_URL, { max: 4 });

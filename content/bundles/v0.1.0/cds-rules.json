@@ -6,11 +6,27 @@
     "title": "Drug-drug interaction safety check",
     "description": "Pairwise interaction check across the proposed medications and the patient's current medication list, using the VedaMD drug-interactions registry. Returns one card per known interaction with severity, mechanism, and management.",
     "references": [
-      { "label": "WHO Model Formulary — interaction monographs" }
+      {
+        "label": "WHO Model Formulary — interaction monographs"
+      }
     ],
     "ruleVersion": "0.1.0-placeholder",
     "reviewStatus": "draft",
-    "evidenceLevel": "expert-consensus"
+    "evidenceLevel": "expert-consensus",
+    "codings": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "182843009",
+        "display": "Drug interaction (finding)",
+        "kind": "finding"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "*",
+        "display": "ATC drug classification (multiple)",
+        "kind": "drug"
+      }
+    ]
   },
   {
     "id": "renal-safety",
@@ -19,11 +35,33 @@
     "title": "Renal-function safety check on prescribing",
     "description": "When the caller supplies a creatinine clearance (context.crClMlMin), refuse to recommend any proposed medication whose drug record has a renal band marked prohibited for that CrCl. Surfaces the structured renal-adjustment text from the drug record.",
     "references": [
-      { "label": "WHO Model Formulary — renal dose adjustments" }
+      {
+        "label": "WHO Model Formulary — renal dose adjustments"
+      }
     ],
     "ruleVersion": "0.1.0-placeholder",
     "reviewStatus": "draft",
-    "evidenceLevel": "expert-consensus"
+    "evidenceLevel": "expert-consensus",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N18",
+        "display": "Chronic kidney disease",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "709044004",
+        "display": "Chronic kidney disease (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "33914-3",
+        "display": "Glomerular filtration rate, estimated (CKD-EPI)",
+        "kind": "lab"
+      }
+    ]
   },
   {
     "id": "pregnancy-safety",
@@ -32,11 +70,33 @@
     "title": "Pregnancy contraindication check on prescribing",
     "description": "When the caller flags pregnancy (context.pregnant: true), fire a critical card for any proposed medication whose drug record carries pregnancy.contraindicated: true. The card surfaces the drug's pregnancy.notes narrative for the prescriber.",
     "references": [
-      { "label": "WHO Model Formulary — pregnancy and lactation" }
+      {
+        "label": "WHO Model Formulary — pregnancy and lactation"
+      }
     ],
     "ruleVersion": "0.1.0-placeholder",
     "reviewStatus": "draft",
-    "evidenceLevel": "expert-consensus"
+    "evidenceLevel": "expert-consensus",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z33",
+        "display": "Pregnant state, incidental",
+        "kind": "finding"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "77386006",
+        "display": "Pregnancy (finding)",
+        "kind": "finding"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "163497009",
+        "display": "Teratogenic drug — contraindicated in pregnancy",
+        "kind": "finding"
+      }
+    ]
   },
   {
     "id": "aware-stewardship",
@@ -45,12 +105,37 @@
     "title": "WHO AWaRe antibiotic stewardship",
     "description": "Fires when a proposed medication is classified Watch or Reserve in the WHO AWaRe 2023 framework. Surfaces the AWaRe category, the drug's own stewardship-relevant warnings, and lists same-class Access-tier alternatives present in the formulary. Supports the NFR-AMR target of >=60% Access-tier use.",
     "references": [
-      { "label": "WHO AWaRe Classification 2023", "url": "https://www.who.int/publications/i/item/WHO-MHP-HPS-EML-2023.04" },
-      { "label": "Kenya National Action Plan on AMR" }
+      {
+        "label": "WHO AWaRe Classification 2023",
+        "url": "https://www.who.int/publications/i/item/WHO-MHP-HPS-EML-2023.04"
+      },
+      {
+        "label": "Kenya National Action Plan on AMR"
+      }
     ],
     "ruleVersion": "0.1.0-placeholder",
     "reviewStatus": "draft",
-    "evidenceLevel": "expert-consensus"
+    "evidenceLevel": "expert-consensus",
+    "codings": [
+      {
+        "system": "http://vedamd.io/codesystem/aware",
+        "code": "Watch",
+        "display": "AWaRe Watch tier",
+        "kind": "drug"
+      },
+      {
+        "system": "http://vedamd.io/codesystem/aware",
+        "code": "Reserve",
+        "display": "AWaRe Reserve tier",
+        "kind": "drug"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "281789004",
+        "display": "Antibiotic therapy (procedure)",
+        "kind": "procedure"
+      }
+    ]
   },
   {
     "id": "medication-monitoring-reminder",
@@ -59,10 +144,3494 @@
     "title": "Active-medication monitoring reminder",
     "description": "On chart open, reminds the clinician of monitoring requirements (labs, intervals) for any of the patient's current medications that carry a non-empty monitoring list in the VedaMD drug record. One info card per medication. Reads context.currentMedications (or medications) — never patient identity.",
     "references": [
-      { "label": "WHO Model Formulary — monitoring guidance" }
+      {
+        "label": "WHO Model Formulary — monitoring guidance"
+      }
     ],
     "ruleVersion": "0.1.0-placeholder",
     "reviewStatus": "draft",
-    "evidenceLevel": "expert-consensus"
+    "evidenceLevel": "expert-consensus",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z51.81",
+        "display": "Encounter for therapeutic drug level monitoring",
+        "kind": "procedure"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "182777000",
+        "display": "Monitoring of medication (regime/therapy)",
+        "kind": "procedure"
+      }
+    ]
+  },
+  {
+    "id": "imci-fever-under5",
+    "hook": "patient-view",
+    "type": "imci-fever-under5",
+    "services": [
+      "vedamd-imci-fever-under5"
+    ],
+    "title": "IMCI fever assessment in children under 5",
+    "description": "WHO IMCI 2014 — for any patient under 60 months old presenting with a temperature >=37.5 C in the last 14 days, the clinician must complete the full IMCI fever assessment before treatment. Escalates to critical when any IMCI general danger sign is reported. Reads context.ageMonths, context.recentTemperaturesC, optional context.dangerSigns — never patient identity.",
+    "references": [
+      {
+        "label": "WHO IMCI Chartbook 2014",
+        "url": "https://apps.who.int/iris/handle/10665/104772"
+      },
+      {
+        "label": "Kenya Clinical Guidelines 2018 — IMCI"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "R50",
+        "display": "Fever of other and unknown origin",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "386661006",
+        "display": "Fever (finding)",
+        "kind": "finding"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "8310-5",
+        "display": "Body temperature",
+        "kind": "lab"
+      }
+    ]
+  },
+  {
+    "id": "pen-hypertension-screen",
+    "hook": "patient-view",
+    "type": "pen-hypertension-screen",
+    "services": [
+      "vedamd-pen-hypertension-screen"
+    ],
+    "title": "WHO PEN — suspected new hypertension at chart open",
+    "description": "WHO PEN HEARTS — fires for any adult (>=18) not already carrying an active hypertension diagnosis whose last 90 days of BP readings include at least 2 measurements with systolic >=140 mmHg or diastolic >=90 mmHg. Reads context.ageYears, context.hasActiveHypertensionDx, context.recentBPmmHg — never patient identity.",
+    "references": [
+      {
+        "label": "WHO PEN — HEARTS technical package",
+        "url": "https://www.who.int/publications/i/item/9789241514613"
+      },
+      {
+        "label": "Kenya Clinical Guidelines 2018 — Hypertension"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I10",
+        "display": "Essential (primary) hypertension",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "BA00",
+        "display": "Essential hypertension",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "38341003",
+        "display": "Hypertensive disorder (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "85354-9",
+        "display": "Blood pressure panel",
+        "kind": "lab"
+      }
+    ]
+  },
+  {
+    "id": "pen-diabetes-screen",
+    "hook": "patient-view",
+    "type": "pen-diabetes-screen",
+    "services": [
+      "vedamd-pen-diabetes-screen"
+    ],
+    "title": "WHO PEN — suspected new diabetes at chart open",
+    "description": "WHO PEN 2020 — fires for any adult (>=18) not already carrying an active diabetes diagnosis whose last 180 days of results include a fasting plasma glucose >=7.0 mmol/L, a random plasma glucose >=11.1 mmol/L, or HbA1c >=6.5%. Reads context.ageYears, context.hasActiveDiabetesDx, context.recentGlucoseMmolL, context.recentHbA1cPercent — never patient identity.",
+    "references": [
+      {
+        "label": "WHO PEN — Package of essential NCD interventions (2020)",
+        "url": "https://www.who.int/publications/i/item/who-package-of-essential-noncommunicable-(pen)-disease-interventions-for-primary-health-care"
+      },
+      {
+        "label": "Kenya Clinical Guidelines 2018 — Diabetes mellitus"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E11",
+        "display": "Type 2 diabetes mellitus",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "5A11",
+        "display": "Type 2 diabetes mellitus",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "44054006",
+        "display": "Type 2 diabetes mellitus (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "4548-4",
+        "display": "Hemoglobin A1c/Hemoglobin.total in Blood",
+        "kind": "lab"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "1558-6",
+        "display": "Fasting glucose in Serum or Plasma",
+        "kind": "lab"
+      }
+    ]
+  },
+  {
+    "id": "paediatric-dosing",
+    "hook": "medication-prescribe",
+    "type": "paediatric-dosing",
+    "services": [
+      "vedamd-paediatric-dosing"
+    ],
+    "title": "Paediatric dose calculator with renal + weight safety checks",
+    "description": "On medication-prescribe with a child weight (<50 kg) in context, emits one card per proposed drug containing the calculated paediatric dose (mg/dose, max mg/day, capped if needed), plus structured warnings for sub-minimum weights, renal contraindications, or absence of a paediatric protocol. Reads context.childWeightKg, context.childAgeYears, context.crClMlMin, context.proposedMedications.",
+    "references": [
+      {
+        "label": "WHO Model Formulary for Children 2010"
+      },
+      {
+        "label": "Kenya Essential Medicines List 2023"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "182829005",
+        "display": "Paediatric drug dose adjustment (procedure)",
+        "kind": "procedure"
+      }
+    ]
+  },
+  {
+    "id": "anc-first-contact",
+    "hook": "patient-view",
+    "type": "anc-first-contact",
+    "services": [
+      "vedamd-anc-first-contact"
+    ],
+    "title": "WHO ANC SMART Guideline — first antenatal-contact screen",
+    "description": "WHO ANC SMART Guideline (2016) + Kenya MoH ANC profile. On the first antenatal contact, emits a critical card for any reported obstetric danger sign (severe headache, blurred vision, convulsions, fever, severe abdominal pain, severe vaginal bleeding, severe difficulty breathing), a warning card if booking is >12 weeks gestation, and an info card with the first-visit checklist (booking labs, immunisations, supplementation, ITN). Reads context.pregnant, context.firstAncContact, context.gestationalAgeWeeks, context.dangerSigns, context.malariaEndemic.",
+    "references": [
+      {
+        "label": "WHO ANC SMART Guideline (2016)",
+        "url": "https://www.who.int/publications/i/item/9789241549912"
+      },
+      {
+        "label": "Kenya Clinical Guidelines 2018 — Antenatal care"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z34",
+        "display": "Encounter for supervision of normal pregnancy",
+        "kind": "procedure"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "424619006",
+        "display": "Prenatal visit (procedure)",
+        "kind": "procedure"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "77386006",
+        "display": "Pregnancy (finding)",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "imci-diarrhoea-under5",
+    "hook": "patient-view",
+    "type": "imci-diarrhoea-under5",
+    "services": [
+      "vedamd-imci-diarrhoea-under5"
+    ],
+    "title": "WHO IMCI — diarrhoea + dehydration classification (under 5)",
+    "description": "WHO IMCI Chartbook 2014. For any patient under 60 months with diarrhoea, classifies dehydration (no/some/severe) using the IMCI signs and emits Plan A (home management with ORS + zinc), Plan B (facility-supervised ORS 75 mL/kg over 4 h), or Plan C (immediate IV fluids + urgent referral). Overlays additional warnings for persistent diarrhoea (>=14 days) and dysentery (blood in stool). Reads context.ageMonths, context.daysOfDiarrhoea, context.bloodInStool, context.dehydrationSigns.",
+    "references": [
+      {
+        "label": "WHO IMCI Chartbook 2014",
+        "url": "https://apps.who.int/iris/handle/10665/104772"
+      },
+      {
+        "label": "Kenya Clinical Guidelines 2018 — Child health (IMCI)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A09",
+        "display": "Diarrhoea and gastroenteritis of presumed infectious origin",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E86",
+        "display": "Volume depletion",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "62315008",
+        "display": "Diarrhoea (finding)",
+        "kind": "finding"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "34095006",
+        "display": "Dehydration (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "A07CA01",
+        "display": "Oral rehydration salt formulations",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "imci-pneumonia-under5",
+    "hook": "patient-view",
+    "type": "imci-pneumonia-under5",
+    "services": [
+      "vedamd-imci-pneumonia-under5"
+    ],
+    "title": "WHO IMCI — cough or difficult breathing (under 5)",
+    "description": "WHO IMCI Chartbook 2014. For any patient under 60 months with cough or difficult breathing, classifies into Severe pneumonia / very severe disease (urgent referral with first-dose injectable antibiotic), Pneumonia (oral amoxicillin + 3-day follow-up), or No pneumonia (cough/cold). Age-banded respiratory-rate thresholds: >=50/min for 2-11 mo, >=40/min for 12-59 mo. Severe-classification features: general danger sign, chest indrawing, stridor in calm child, SpO2 <90%. Reads context.ageMonths, context.respiratoryRatePerMin, context.chestIndrawing, context.stridorInCalmChild, context.generalDangerSign, context.oxygenSatPercent.",
+    "references": [
+      {
+        "label": "WHO IMCI Chartbook 2014",
+        "url": "https://apps.who.int/iris/handle/10665/104772"
+      },
+      {
+        "label": "Kenya Clinical Guidelines 2018 — Pneumonia in children"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J18",
+        "display": "Pneumonia, organism unspecified",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "CA40",
+        "display": "Pneumonia",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "233604007",
+        "display": "Pneumonia (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J01CA04",
+        "display": "Amoxicillin",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "pen-cvd-risk",
+    "hook": "patient-view",
+    "type": "pen-cvd-risk",
+    "services": [
+      "vedamd-pen-cvd-risk"
+    ],
+    "title": "WHO PEN HEARTS — total cardiovascular-risk assessment",
+    "description": "WHO PEN HEARTS technical package. Approximates the WHO/ISH 10-year fatal+non-fatal CVD risk band (low <10%, moderate 10-20%, high 20-30%, very high >=30%) from age, sex, systolic BP, smoking status, diabetes status and optional total cholesterol; bypasses scoring for patients with known atherosclerotic CVD (treated as very high). Emits PEN-aligned management per band. Reads context.ageYears, context.sex, context.systolicMmHg, context.smoker, context.diabetes, context.totalCholesterolMmolL, context.knownAtheroscleroticCvd.",
+    "references": [
+      {
+        "label": "WHO PEN — HEARTS technical package",
+        "url": "https://www.who.int/publications/i/item/9789241514613"
+      },
+      {
+        "label": "Kenya Clinical Guidelines 2018 — Cardiovascular disease"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z82.49",
+        "display": "Family history of ischaemic heart disease and other diseases of the circulatory system",
+        "kind": "finding"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "395100005",
+        "display": "Cardiovascular risk assessment (procedure)",
+        "kind": "procedure"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "13457-7",
+        "display": "LDL cholesterol (calculated) in Serum or Plasma",
+        "kind": "lab"
+      }
+    ]
+  },
+  {
+    "id": "anc-preeclampsia-screen",
+    "hook": "patient-view",
+    "type": "anc-preeclampsia-screen",
+    "services": [
+      "vedamd-anc-preeclampsia-screen"
+    ],
+    "title": "WHO ANC SMART — pre-eclampsia / gestational hypertension screen",
+    "description": "WHO ANC SMART Guideline + Kenya MoH ANC profile. For patients pregnant at >=20 weeks gestation: critical card for severe features (BP >=160/110, proteinuria +++, severe symptoms — magnesium sulphate per protocol + urgent referral); warning for pre-eclampsia (BP >=140/90 on >=2 readings + proteinuria 1+/2+); warning for gestational hypertension (BP >=140/90 without proteinuria). Reads context.pregnant, context.gestationalAgeWeeks, context.recentBPmmHg, context.urineProteinDipstick, context.symptoms.",
+    "references": [
+      {
+        "label": "WHO ANC SMART Guideline (2016)",
+        "url": "https://www.who.int/publications/i/item/9789241549912"
+      },
+      {
+        "label": "Kenya MoH — Pregnancy-induced hypertension protocol"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O14",
+        "display": "Pre-eclampsia",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O15",
+        "display": "Eclampsia",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "JA60",
+        "display": "Pre-eclampsia",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "398254007",
+        "display": "Pre-eclampsia (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "A12CC30",
+        "display": "Magnesium sulphate (intravenous)",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "tb-symptom-screen",
+    "hook": "patient-view",
+    "type": "tb-symptom-screen",
+    "services": [
+      "vedamd-tb-symptom-screen"
+    ],
+    "title": "WHO/Kenya NTP — TB symptom screen",
+    "description": "WHO Consolidated Guidelines on TB (2021) + Kenya National TB Programme. Fires when the screen is positive: cough >=14 days in the general population, OR two-or-more risk markers (unintentional weight loss, drenching night sweats, fever >=14 days, close TB contact). PLHIV use the four-symptom rule: ANY of current cough, weight loss, night sweats, fever fires. Recommends Xpert MTB/RIF Ultra and offers HIV testing where status is unknown. Reads context.ageYears, context.coughDays, context.weightLossUnintentional, context.nightSweatsDrenching, context.feverDays, context.closeContactWithTb, context.knownHivPositive.",
+    "references": [
+      {
+        "label": "WHO Consolidated Guidelines on TB (2021)",
+        "url": "https://www.who.int/publications/i/item/9789240013131"
+      },
+      {
+        "label": "Kenya National TB Programme — Tuberculosis Management Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A15",
+        "display": "Pulmonary tuberculosis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "1B10",
+        "display": "Tuberculosis (active)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "56717001",
+        "display": "Tuberculosis (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "75392-1",
+        "display": "Xpert MTB/RIF — Mycobacterium tuberculosis DNA in Sputum",
+        "kind": "lab"
+      }
+    ]
+  },
+  {
+    "id": "imci-malaria-under5",
+    "hook": "patient-view",
+    "type": "imci-malaria-under5",
+    "services": [
+      "vedamd-imci-malaria-under5"
+    ],
+    "title": "WHO IMCI + Kenya NMTG — malaria in children under 5",
+    "description": "WHO IMCI Chartbook 2014 + Kenya National Malaria Treatment Guidelines. Fires when malariaContextProvided is true: critical pre-referral artesunate for any severe feature (IMCI danger sign, severe anaemia sign, impaired consciousness, prostration, convulsions, respiratory distress); warning AL course for RDT-positive uncomplicated malaria; info when RDT-negative. Reads context.ageMonths, context.rdtPositive, context.malariaContextProvided, context.dangerSigns, severeAnaemiaSign, impairedConsciousness, prostration, convulsionsThisIllness, respiratoryDistress, weightKg.",
+    "references": [
+      {
+        "label": "WHO IMCI Chartbook 2014",
+        "url": "https://apps.who.int/iris/handle/10665/104772"
+      },
+      {
+        "label": "WHO Guidelines for Malaria (2023)",
+        "url": "https://www.who.int/publications/i/item/guidelines-for-malaria"
+      },
+      {
+        "label": "Kenya National Malaria Treatment Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B50",
+        "display": "Plasmodium falciparum malaria",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B54",
+        "display": "Unspecified malaria",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "1F40",
+        "display": "Malaria due to Plasmodium falciparum",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "61462000",
+        "display": "Malaria (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "240525004",
+        "display": "Severe malaria (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "P01BF01",
+        "display": "Artemether-lumefantrine (artemisinin-combination therapy)",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "imci-malnutrition-under5",
+    "hook": "patient-view",
+    "type": "imci-malnutrition-under5",
+    "services": [
+      "vedamd-imci-malnutrition-under5"
+    ],
+    "title": "WHO IMCI + Kenya IMAM — acute malnutrition (child <5)",
+    "description": "WHO IMCI + Kenya MoH Integrated Management of Acute Malnutrition (IMAM). Classifies complicated SAM (admit for F-75/F-100), uncomplicated SAM (OTP + RUTF + amoxicillin + vitamin A), MAM (SFP), or no acute malnutrition. Children <6 months get an infant-pathway info card (MUAC table differs). Reads context.ageMonths, context.muacMm, context.bilateralPittingOedema, context.weightForHeightZ, context.appetiteTestPass, context.dangerSigns, context.refusesToFeed, context.vomitsEverything.",
+    "references": [
+      {
+        "label": "WHO Guideline: Updates on the management of severe acute malnutrition in infants and children (2013)"
+      },
+      {
+        "label": "Kenya MoH — Integrated Management of Acute Malnutrition (IMAM)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E43",
+        "display": "Unspecified severe protein-energy malnutrition",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E44.0",
+        "display": "Moderate protein-energy malnutrition",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "238108007",
+        "display": "Severe acute malnutrition (disorder)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "adult-cap-crb65",
+    "hook": "patient-view",
+    "type": "adult-cap-crb65",
+    "services": [
+      "vedamd-adult-cap-crb65"
+    ],
+    "title": "Adult community-acquired pneumonia — CRB-65 severity",
+    "description": "CRB-65 score (Confusion, Respiratory rate >=30, BP <90 systolic or <=60 diastolic, Age >=65) tiers a suspected-pneumonia adult into low (outpatient amoxicillin), moderate (consider admission), or high risk (admit + IV antibiotics). SpO2 < 92% upgrades to at least moderate even when CRB-65 is 0. Fires only when context.suspectedPneumonia is true. Reads context.ageYears, context.suspectedPneumonia, context.confusion, context.respiratoryRatePerMin, context.systolicMmHg, context.diastolicMmHg, context.oxygenSatPercent.",
+    "references": [
+      {
+        "label": "BTS — Annotated BTS Guideline for the management of CAP in adults (2009 update + 2015 annotations)"
+      },
+      {
+        "label": "WHO Hospital Care for Adults"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J18",
+        "display": "Pneumonia, organism unspecified",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "CA40",
+        "display": "Pneumonia",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "385093006",
+        "display": "Community-acquired pneumonia (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J01CA04",
+        "display": "Amoxicillin",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "anc-pph-risk-screen",
+    "hook": "patient-view",
+    "type": "anc-pph-risk-screen",
+    "services": [
+      "vedamd-anc-pph-risk-screen"
+    ],
+    "title": "ANC: postpartum-haemorrhage (PPH) risk screen",
+    "description": "WHO 2022 PPH recommendations + Kenya MoH ANC profile. Weighted risk score sums previous PPH (+2), antepartum haemorrhage (+2), placenta praevia/accreta (+2), bleeding diathesis/anticoag (+2), severe anaemia (+1), grand multiparity (+1), multiple pregnancy (+1), polyhydramnios (+1), macrosomia (+1), prolonged labour (+1), pre-eclampsia (+1). Score >=3 routes the patient to comprehensive EmONC with cross-matched blood; 1-2 keeps facility birth + AMTSL; 0 keeps universal AMTSL. Fires for pregnant patients >=20 weeks. Reads context.pregnant, context.gestationalAgeWeeks and the boolean/parity flags above.",
+    "references": [
+      {
+        "label": "WHO Recommendations on Postpartum Haemorrhage (2022)",
+        "url": "https://www.who.int/publications/i/item/9789240062498"
+      },
+      {
+        "label": "Kenya MoH — Maternal and Newborn Health Quality of Care"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O72",
+        "display": "Postpartum haemorrhage",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "JB40",
+        "display": "Postpartum haemorrhage",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "47821001",
+        "display": "Postpartum haemorrhage (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "H01BB02",
+        "display": "Oxytocin",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "B02AA02",
+        "display": "Tranexamic acid",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "phq9-depression-screen",
+    "hook": "patient-view",
+    "type": "phq9-depression-screen",
+    "services": [
+      "vedamd-phq9-depression-screen"
+    ],
+    "title": "PHQ-9 depression screen with suicide-risk gate",
+    "description": "WHO mhGAP Intervention Guide + Kenya MoH mental-health guideline. Validates nine PHQ-9 responses (each 0..3), totals the score, and bands severity: minimal (0-4 info), mild (5-9 warning), moderate (10-14 warning), mod-severe (15-19 warning), severe (20-27 critical). A second critical card always fires when item 9 (thoughts of being better off dead) >=1, surfacing the WHO mhGAP suicide-risk pathway. Reads context.ageYears (>=12) and context.phq9Responses[9].",
+    "references": [
+      {
+        "label": "WHO mhGAP Intervention Guide (2.0)",
+        "url": "https://www.who.int/publications/i/item/9789241549790"
+      },
+      {
+        "label": "Kenya Ministry of Health — Mental Health Policy and Treatment Guidelines"
+      },
+      {
+        "label": "Kroenke K, Spitzer RL — The PHQ-9: validity of a brief depression severity measure (J Gen Intern Med 2001)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F32",
+        "display": "Depressive episode",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F33",
+        "display": "Recurrent depressive disorder",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "35489007",
+        "display": "Depressive disorder (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "44261-6",
+        "display": "PHQ-9 quick depression assessment panel",
+        "kind": "lab"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "44263-2",
+        "display": "PHQ-9 total score",
+        "kind": "lab"
+      }
+    ]
+  },
+  {
+    "id": "gad7-anxiety-screen",
+    "hook": "patient-view",
+    "type": "gad7-anxiety-screen",
+    "services": [
+      "vedamd-gad7-anxiety-screen"
+    ],
+    "title": "GAD-7 generalised anxiety disorder screen",
+    "description": "WHO mhGAP-aligned generalised anxiety screen. Validates seven 0..3 responses, totals the score, bands minimal (0-4 info), mild (5-9 warning), moderate (10-14 warning), severe (15-21 critical), and recommends supportive counselling, structured psychological therapy, or SSRI + specialist referral per band. Reads context.ageYears (>=12) and context.gad7Responses[7].",
+    "references": [
+      {
+        "label": "WHO mhGAP Intervention Guide (2.0)",
+        "url": "https://www.who.int/publications/i/item/9789241549790"
+      },
+      {
+        "label": "Spitzer RL et al — GAD-7 (Arch Intern Med 2006)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F41.1",
+        "display": "Generalised anxiety disorder",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "21897009",
+        "display": "Generalised anxiety disorder (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "69737-5",
+        "display": "GAD-7 Generalised anxiety disorder 7 item panel",
+        "kind": "lab"
+      }
+    ]
+  },
+  {
+    "id": "cage-aid-substance-screen",
+    "hook": "patient-view",
+    "type": "cage-aid-substance-screen",
+    "services": [
+      "vedamd-cage-aid-substance-screen"
+    ],
+    "title": "CAGE-AID alcohol and drug-use screen",
+    "description": "CAGE adapted to include drugs. Four yes/no items: Cut down, Annoyed, Guilty, Eye-opener. >=2 positive items triggers a brief motivational intervention (FRAMES) + AUDIT/ASSIST follow-up + HIV/HCV/TB screening. Critical-escalation gate when withdrawalSigns, recentInjectionUse, or recentOverdose is true (medical stabilisation + harm-reduction pathway). Reads context.ageYears (>=12), context.cageAidResponses[4] booleans, and optional acute-risk booleans.",
+    "references": [
+      {
+        "label": "WHO mhGAP Intervention Guide (2.0) — substance-use module",
+        "url": "https://www.who.int/publications/i/item/9789241549790"
+      },
+      {
+        "label": "Brown RL et al — Conjoint Screening Questionnaire for Alcohol and Other Drug Abuse (1995)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F10",
+        "display": "Mental and behavioural disorders due to use of alcohol",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F19",
+        "display": "Mental and behavioural disorders due to multiple drug use",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "66214007",
+        "display": "Substance abuse (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "75626-2",
+        "display": "CAGE-AID alcohol and drug screen",
+        "kind": "lab"
+      }
+    ]
+  },
+  {
+    "id": "hiv-pitc-trigger",
+    "hook": "patient-view",
+    "type": "hiv-pitc-trigger",
+    "services": [
+      "vedamd-hiv-pitc-trigger"
+    ],
+    "title": "HIV — provider-initiated testing trigger (PITC)",
+    "description": "WHO Consolidated Guidelines on HIV Testing Services (2019) + Kenya NASCOP. Fires when hivStatusUnknown is true. Critical-offer tier for pregnancy / TB / new STI / infant of HIV+ mother. Strong-offer tier for key populations (MSM, sex workers, PWID, transgender, prisoners), serodiscordant contacts, or clinical features suggestive of HIV. Routine-offer tier for adults >=15 not tested in the last 12 months.",
+    "references": [
+      {
+        "label": "WHO Consolidated Guidelines on HIV Testing Services (2019)",
+        "url": "https://www.who.int/publications/i/item/9789241550581"
+      },
+      {
+        "label": "Kenya NASCOP — HIV Testing Services Operational Manual"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z11.4",
+        "display": "Special screening examination for human immunodeficiency virus",
+        "kind": "procedure"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B20",
+        "display": "Human immunodeficiency virus (HIV) disease",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "1C62",
+        "display": "HIV disease",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "86406008",
+        "display": "Human immunodeficiency virus infection (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "5193-9",
+        "display": "HIV 1 + 2 Ab+p24 Ag rapid immunoassay",
+        "kind": "lab"
+      }
+    ]
+  },
+  {
+    "id": "adult-acs-recognition",
+    "hook": "patient-view",
+    "type": "adult-acs-recognition",
+    "services": [
+      "vedamd-adult-acs-recognition"
+    ],
+    "title": "Adult acute coronary syndrome — recognition + emergency bundle",
+    "description": "WHO PEN-HEARTS acute coronary care + Kenya MoH cardiology. Sentinel-gated by context.suspectedAcs. Critical for STEMI-pattern / high-risk NSTEACS: ongoing pain >=20 min + typical features, haemodynamic instability (SBP <90 OR HR >110 OR shock), reported ST-elevation, ongoing pain with prior MI/PCI, OR SpO2 <90%. Bundle: aspirin 300 chewed + clopidogrel 300 loading + sublingual GTN + morphine + statin load + STEMI-pathway activation. Warning tier: typical features without ongoing pain or atypical features with >=2 risk factors. Info tier: low-risk with ECG documentation.",
+    "references": [
+      {
+        "label": "WHO PEN — HEARTS technical package",
+        "url": "https://www.who.int/publications/i/item/9789241514613"
+      },
+      {
+        "label": "Kenya Clinical Guidelines 2018 — Cardiovascular emergencies"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I21",
+        "display": "Acute myocardial infarction",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I20.0",
+        "display": "Unstable angina",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "BA40",
+        "display": "Acute myocardial infarction",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "57054005",
+        "display": "Acute myocardial infarction (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "B01AC06",
+        "display": "Aspirin (antiplatelet)",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "B01AC04",
+        "display": "Clopidogrel",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "imci-young-infant",
+    "hook": "patient-view",
+    "type": "imci-young-infant",
+    "services": [
+      "vedamd-imci-young-infant"
+    ],
+    "title": "IMCI young-infant (0–59 days) — possible serious bacterial infection",
+    "description": "WHO IMCI Young-Infant Chart. Critical pre-referral first dose of IM ampicillin 50 mg/kg + IM gentamicin (5 mg/kg <7 days; 7.5 mg/kg >=7 days) for any severe feature: not feeding well, convulsing now or history, severe chest indrawing, fast breathing >=60 confirmed on recheck, movement only when stimulated, no movement, temperature >=37.5 or <35.5 C, severe jaundice (palms/soles), bulging fontanelle. Warning for local bacterial infection (umbilicus / pustules) — topical chlorhexidine + oral amoxicillin 5 days. Info for no-infection-signs counselling. Auto-computed mg doses when context.weightKg supplied.",
+    "references": [
+      {
+        "label": "WHO IMCI Chartbook 2014",
+        "url": "https://apps.who.int/iris/handle/10665/104772"
+      },
+      {
+        "label": "WHO Pocket Book of Hospital Care for Children (2013)"
+      },
+      {
+        "label": "Kenya MoH — Newborn Care Standards"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "P36",
+        "display": "Bacterial sepsis of newborn",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "P39",
+        "display": "Other infections specific to the perinatal period",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "KA60",
+        "display": "Bacterial sepsis of the newborn",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "206378007",
+        "display": "Sepsis of the newborn (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J01CA01",
+        "display": "Ampicillin",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J01GB03",
+        "display": "Gentamicin",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "stroke-fast-recognition",
+    "hook": "patient-view",
+    "type": "stroke-fast-recognition",
+    "services": [
+      "vedamd-stroke-fast-recognition"
+    ],
+    "title": "Adult stroke — FAST recognition + acute pathway",
+    "description": "WHO PEN-HEARTS stroke pathway. Sentinel-gated by context.suspectedStroke. Critical card whenever any FAST element (face droop, arm weakness, slurred speech / aphasia), focal sensory deficit, sudden severe headache, or low GCS is reported. Highlights the 270-minute IV thrombolysis window when minutesSinceOnset is supplied, flags hypoglycaemia mimics, and outputs the acute-stroke bundle (airway, glucose, permissive hypertension, NBM, urgent non-contrast CT, transfer to comprehensive stroke facility).",
+    "references": [
+      {
+        "label": "WHO PEN — HEARTS technical package",
+        "url": "https://www.who.int/publications/i/item/9789241514613"
+      },
+      {
+        "label": "AHA / ASA Guidelines for the Early Management of Patients With Acute Ischemic Stroke (2019 update)"
+      },
+      {
+        "label": "Kenya Clinical Guidelines 2018 — Stroke"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I63",
+        "display": "Cerebral infarction",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I64",
+        "display": "Stroke, not specified as haemorrhage or infarction",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "8B11",
+        "display": "Cerebral ischaemic stroke",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "230690007",
+        "display": "Cerebrovascular accident (disorder)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "sepsis-qsofa",
+    "hook": "patient-view",
+    "type": "sepsis-qsofa",
+    "services": [
+      "vedamd-sepsis-qsofa"
+    ],
+    "title": "Adult sepsis recognition — qSOFA + 1-hour bundle",
+    "description": "Sepsis-3 + Surviving Sepsis Campaign / WHO 1-hour bundle. Sentinel-gated by context.suspectedInfection. qSOFA >=2 emits a critical card with the 1-hour bundle. qSOFA 1 or organ-dysfunction features (SpO2 <92, lactate >=2, low urine output) → warning. Otherwise → info. Septic shock (refractory hypotension after fluids OR lactate >4) emits an additional critical card for vasopressor initiation.",
+    "references": [
+      {
+        "label": "Surviving Sepsis Campaign — 1-hour bundle",
+        "url": "https://www.sccm.org/SurvivingSepsisCampaign"
+      },
+      {
+        "label": "Singer M et al — Sepsis-3 Consensus Definitions (JAMA 2016)"
+      },
+      {
+        "label": "Kenya Clinical Guidelines 2018 — Severe infections and sepsis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A41",
+        "display": "Other sepsis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "R65",
+        "display": "Symptoms and signs specifically associated with systemic inflammation and infection",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "MA15",
+        "display": "Sepsis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "434381000124106",
+        "display": "Sepsis (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "76571007",
+        "display": "Septic shock (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "2524-7",
+        "display": "Lactate in Serum or Plasma",
+        "kind": "lab"
+      }
+    ]
+  },
+  {
+    "id": "copd-exacerbation",
+    "hook": "patient-view",
+    "type": "copd-exacerbation",
+    "services": [
+      "vedamd-copd-exacerbation"
+    ],
+    "title": "COPD exacerbation severity",
+    "description": "GOLD 2024 + WHO chronic-respiratory care. Sentinel-gated by context.knownCopd. Critical for severe exacerbation features (confusion / drowsiness, RR >=30, SpO2 <88, accessory-muscle use, SBP <90) — admit, controlled oxygen 88–92%, nebulised salbutamol + ipratropium, oral prednisolone, antibiotic if purulent, NIV if pH <7.35. Warning for moderate (>=2 Anthonisen cardinal symptoms). Info for symptoms below threshold.",
+    "references": [
+      {
+        "label": "GOLD — Global Initiative for Chronic Obstructive Lung Disease (2024)",
+        "url": "https://goldcopd.org/"
+      },
+      {
+        "label": "WHO — Chronic respiratory diseases programme"
+      },
+      {
+        "label": "Kenya Clinical Guidelines 2018 — Respiratory chapter"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J44",
+        "display": "Other chronic obstructive pulmonary disease",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "CA25",
+        "display": "Chronic obstructive pulmonary disease",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "13645005",
+        "display": "Chronic obstructive pulmonary disease (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "R03AC02",
+        "display": "Salbutamol",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "R03AK04",
+        "display": "Salbutamol + ipratropium bromide",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "H02AB06",
+        "display": "Prednisolone",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "adult-malaria",
+    "hook": "patient-view",
+    "type": "adult-malaria",
+    "services": [
+      "vedamd-adult-malaria"
+    ],
+    "title": "Adult malaria — uncomplicated + severe",
+    "description": "WHO Guidelines for Malaria 2023 + Kenya NMTG. Sentinel-gated by context.malariaContextProvided. Critical for severe-malaria features (impaired consciousness, prostration, multiple convulsions, respiratory distress, abnormal bleeding, jaundice with organ dysfunction, shock, hyperparasitaemia, hypoglycaemia <2.2 mmol/L, Hb <7 g/dL, AKI creatinine >=265 µmol/L, black-water urine, pulmonary oedema) — IV/IM artesunate 2.4 mg/kg + supportive care; auto-computed mg dose when context.weightKg supplied. Warning for RDT-positive uncomplicated — adult AL 4 tablets twice daily for 3 days with food. Info for RDT-negative. Overlays for pregnancy, HIV co-infection, G6PD deficiency.",
+    "references": [
+      {
+        "label": "WHO Guidelines for Malaria (2023)",
+        "url": "https://www.who.int/publications/i/item/guidelines-for-malaria"
+      },
+      {
+        "label": "Kenya National Malaria Treatment Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B50",
+        "display": "Plasmodium falciparum malaria",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B54",
+        "display": "Unspecified malaria",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "1F40",
+        "display": "Malaria due to Plasmodium falciparum",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "61462000",
+        "display": "Malaria (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "5902003",
+        "display": "Falciparum malaria (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "240525004",
+        "display": "Severe malaria (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "P01BF01",
+        "display": "Artemether-lumefantrine",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "mhgap-psychosis-screen",
+    "hook": "patient-view",
+    "type": "mhgap-psychosis-screen",
+    "services": [
+      "vedamd-mhgap-psychosis-screen"
+    ],
+    "title": "WHO mhGAP — psychosis assessment",
+    "description": "WHO mhGAP Intervention Guide 2.0 PSY module. Reads psychotic feature codes (delusions, hallucinations, disorganised-speech, grossly-disturbed-behaviour) and escalation flags (imminent harm risk, severe agitation, catatonia, refuses food/fluid) plus organic-mimic flags (fever, recent head injury, recent substance use). Critical when psychotic features coexist with any escalation or mimic feature — rule out delirium / substance-induced first. Warning for first-episode (onset <=4 weeks) or chronic pattern without escalation — start low-dose oral haloperidol or olanzapine, psychoeducation, family support, specialist review within 1–2 weeks.",
+    "references": [
+      {
+        "label": "WHO mhGAP Intervention Guide (2.0)",
+        "url": "https://www.who.int/publications/i/item/9789241549790"
+      },
+      {
+        "label": "Kenya Ministry of Health — Mental Health Policy and Treatment Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F23",
+        "display": "Acute and transient psychotic disorders",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F20",
+        "display": "Schizophrenia",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "69322001",
+        "display": "Psychotic disorder (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "N05AD01",
+        "display": "Haloperidol",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "N05AH03",
+        "display": "Olanzapine",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "anaphylaxis-recognition",
+    "hook": "patient-view",
+    "type": "anaphylaxis-recognition",
+    "services": [
+      "vedamd-anaphylaxis-recognition"
+    ],
+    "title": "Anaphylaxis recognition + IM adrenaline bundle",
+    "description": "WAO 2020 + Resus Council. Sentinel-gated by context.suspectedAllergicReaction. Critical when >=2 systems involved (skin/mucosal, respiratory, cardiovascular, GI) OR isolated cardiovascular collapse with documented allergen exposure — IM adrenaline (auto-computed paediatric 0.01 mg/kg capped at 0.5 mg when weightKg supplied) + supine + oxygen + IV crystalloid 20 mL/kg + airway monitoring + 6-hour observation; repeat IM adrenaline at 5–15 min if no improvement. Warning for single-system urticaria with documented exposure — antihistamine + 4-hour observation. Reads context.ageYears, context.suspectedAllergicReaction, context.weightKg, system-involvement booleans, context.allergenExposureDocumented, context.knownAdrenalineAllergy.",
+    "references": [
+      {
+        "label": "WAO Anaphylaxis Guidelines (2020)",
+        "url": "https://www.worldallergy.org/UserFiles/file/Anaphylaxis-Guidelines-2020.pdf"
+      },
+      {
+        "label": "Resus Council UK — Emergency Treatment of Anaphylaxis (2021)"
+      },
+      {
+        "label": "Kenya Clinical Guidelines 2018 — Allergic emergencies"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T78.2",
+        "display": "Anaphylactic shock, unspecified",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T78.0",
+        "display": "Anaphylactic shock due to adverse food reaction",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "MG40",
+        "display": "Anaphylaxis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "39579001",
+        "display": "Anaphylaxis (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "C01CA24",
+        "display": "Adrenaline (epinephrine)",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "dka-recognition",
+    "hook": "patient-view",
+    "type": "dka-recognition",
+    "services": [
+      "vedamd-dka-recognition"
+    ],
+    "title": "Diabetic ketoacidosis (DKA) recognition + bundle",
+    "description": "JBDS / ADA + WHO PEN. Sentinel-gated by context.suspectedDka. Critical when the diagnostic triad (plasma glucose >=11 mmol/L OR known diabetes, acidosis pH <7.30 OR HCO3 <15, ketonaemia >=3 mmol/L OR ketonuria >=2+) is met — IV NaCl 0.9 % staged + fixed-rate IV insulin 0.1 U/kg/h (auto-computed when weightKg supplied) + potassium replacement (40 mmol/L IV fluids when K 3.5–5.5; hold insulin if K <3.5 until corrected) + dextrose switch at glucose <14 + VTE prophylaxis + identify precipitant. Additional critical card for severe DKA (pH <7.0, HCO3 <5, ketones >6, GCS <=12, shock, low K). Warning for partial criteria.",
+    "references": [
+      {
+        "label": "JBDS Inpatient Care Group — DKA in adults",
+        "url": "https://abcd.care/joint-british-diabetes-societies-jbds-inpatient-care-group"
+      },
+      {
+        "label": "ADA — Standards of Medical Care in Diabetes (current edition)"
+      },
+      {
+        "label": "Kenya MoH — Standard Treatment Guidelines (Diabetes)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E10.1",
+        "display": "Type 1 diabetes mellitus with ketoacidosis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E11.1",
+        "display": "Type 2 diabetes mellitus with ketoacidosis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "5A22",
+        "display": "Diabetic ketoacidosis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "420422005",
+        "display": "Diabetic ketoacidosis (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "2345-7",
+        "display": "Glucose in Serum or Plasma",
+        "kind": "lab"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "75321-0",
+        "display": "Ketones in Capillary blood",
+        "kind": "lab"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "A10AB01",
+        "display": "Insulin human (short-acting)",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "severe-asthma-exacerbation",
+    "hook": "patient-view",
+    "type": "severe-asthma-exacerbation",
+    "services": [
+      "vedamd-severe-asthma-exacerbation"
+    ],
+    "title": "Severe asthma / status asthmaticus",
+    "description": "GINA 2024 + WHO PEN. Sentinel-gated by context.knownAsthma. Critical for life-threatening features (silent chest, exhaustion / altered consciousness, cyanosis, SpO2 <90, PEF <33%, SBP <90) — continuous nebulised salbutamol + ipratropium + IV magnesium sulphate 2 g over 20 min + IV hydrocortisone 200 mg + oxygen target 94–98% + prepare advanced airway. Critical for severe (unable to complete sentences, RR >=30, HR >=120, PEF 33–50%, SpO2 <95) — salbutamol 4–10 puffs via spacer every 20 min, ipratropium 500 µg, oral prednisolone 40–50 mg, reassess at 1 h. Warning for moderate exacerbation. Info for controlled asthma — reinforce action plan.",
+    "references": [
+      {
+        "label": "GINA — Global Strategy for Asthma Management (2024)",
+        "url": "https://ginasthma.org/"
+      },
+      {
+        "label": "Kenya Clinical Guidelines 2018 — Respiratory chapter"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J45",
+        "display": "Asthma",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J46",
+        "display": "Status asthmaticus",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "CA22",
+        "display": "Asthma",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "CA22.0",
+        "display": "Acute severe exacerbation of asthma",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "281794004",
+        "display": "Severe acute exacerbation of asthma (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "R03AC02",
+        "display": "Salbutamol",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "H02AB09",
+        "display": "Hydrocortisone",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "A12CC30",
+        "display": "Magnesium sulphate (intravenous)",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "snake-bite-triage",
+    "hook": "patient-view",
+    "type": "snake-bite-triage",
+    "services": [
+      "vedamd-snake-bite-triage"
+    ],
+    "title": "Snake-bite triage + antivenom bundle",
+    "description": "WHO 2016 snake-bite guidelines + Kenya MoH. Sentinel-gated by context.confirmedBite. Critical for envenomation features — polyvalent antivenom 10 vials IV with adrenaline pre-loaded for early reactions; manage neurotoxic envenomation with atropine 0.6 mg + neostigmine 0.5 mg IV trial repeated 4-hourly; treat coagulopathy AFTER antivenom; analgesia with paracetamol or opioid — AVOID NSAIDs (worsens coagulopathy). Warning for definite bite without envenomation features — 24-hour admission with serial 20-minute whole-blood clotting tests, splint, elevate, mark swelling; AVOID incision / suction / tourniquet / cold compresses. Info for suspected dry bite — 4-hour observation then re-assess.",
+    "references": [
+      {
+        "label": "WHO — Guidelines for the management of snakebites (2nd edition, 2016)",
+        "url": "https://www.who.int/publications/i/item/9789290225300"
+      },
+      {
+        "label": "Kenya MoH — Snake-bite Operational Guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T63.0",
+        "display": "Toxic effect of snake venom",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "417046000",
+        "display": "Snake bite (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "21927003",
+        "display": "Snake venom (substance)",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "syphilis-screen",
+    "hook": "patient-view",
+    "type": "syphilis-screen",
+    "services": [
+      "vedamd-syphilis-screen"
+    ],
+    "title": "Syphilis — screening + treatment trigger",
+    "description": "WHO STI Guidelines 2021 + Kenya MoH. Three pathways: (1) Critical mandatory antenatal offer when pregnant AND syphilisScreenStatus !== 'done' — treponemal RDT today + reflex RPR/VDRL titre, partner notification, infant follow-up. (2) Critical treatment trigger when syphilisTestPositive AND treatmentGiven !== true — early disease single-dose benzathine penicillin G 2.4 MU IM; late latent / unknown weekly x 3; neurosyphilis IV crystalline penicillin G 18–24 MU/day x 10–14 days; penicillin allergy → desensitisation in pregnancy / neurosyphilis, doxycycline alternative otherwise. (3) Warning targeted offer for new STI, key population, known partner positive, or recent genital ulcer. Reads context.pregnant, context.syphilisScreenStatus, context.syphilisTestPositive, context.treatmentGiven, context.suspectedNeurosyphilis, context.earlyVsLate, context.newStiDiagnosis, context.keyPopulation, context.knownPositiveContact, context.recentGenitalUlcer, context.penicillinAllergy.",
+    "references": [
+      {
+        "label": "WHO STI Guidelines for the management of T. pallidum (2021)",
+        "url": "https://www.who.int/publications/i/item/9789240029446"
+      },
+      {
+        "label": "Kenya NASCOP — STI Treatment Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A53",
+        "display": "Other and unspecified syphilis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A51",
+        "display": "Early syphilis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A52.3",
+        "display": "Neurosyphilis, unspecified",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "76272004",
+        "display": "Syphilis (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "20454-5",
+        "display": "RPR (rapid plasma reagin) Titer in Serum",
+        "kind": "lab"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "47238-2",
+        "display": "Treponema pallidum Ab rapid immunoassay",
+        "kind": "lab"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J01CE08",
+        "display": "Benzathine benzylpenicillin",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "heart-failure-decompensation",
+    "hook": "patient-view",
+    "type": "heart-failure-decompensation",
+    "services": [
+      "vedamd-heart-failure-decompensation"
+    ],
+    "title": "Heart-failure acute decompensation",
+    "description": "ESC 2023 focused update + WHO PEN-HEARTS. Sentinel-gated by context.suspectedHeartFailureDecompensation. Tier 1 CRITICAL — cardiogenic shock / acute pulmonary oedema (SBP <90 OR hypoperfusion signs OR SpO2 <90 OR RR >=30 OR pink frothy sputum): sit upright, high-flow O2 to SpO2 94–98%, CPAP / NIV for pulmonary oedema with respiratory distress, IV furosemide bolus 40–80 mg (or 2.5x usual oral dose) repeated 2–4 h, IV nitrate if SBP >110 (AVOID in known RV infarct), noradrenaline 0.05–0.5 µg/kg/min for shock, dobutamine 2.5–10 µg/kg/min for contractility, urgent ECG / troponin / CXR / ABG / point-of-care echo, ICU referral. Tier 2 CRITICAL — concerning decompensation (orthopnoea / PND, bilateral basal crackles, weight gain >=2 kg/3 d, raised JVP): admit, IV furosemide, salt + fluid restriction, investigate precipitant, optimise GDMT (LVEF-banded: HFrEF four pillars including SGLT2i; HFpEF volume control + SGLT2i; potassium >=5.5 holds ACE/MRA). Tier 3 WARNING — early decompensation (mild oedema or sub-2 kg weight gain): outpatient loop-diuretic step-up by 50% for 3 days, daily weights, yellow / red zone plan, review in 3–7 days. Tier 4 INFO — no decompensation: reinforce self-management, vaccinate.",
+    "references": [
+      {
+        "label": "ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure (2021, 2023 focused update)",
+        "url": "https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines/Heart-Failure-Guidelines"
+      },
+      {
+        "label": "WHO PEN HEARTS — Hypertension and Cardiovascular Disease Risk Management",
+        "url": "https://www.who.int/teams/noncommunicable-diseases/hearts"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I50.0",
+        "display": "Congestive heart failure",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I50.9",
+        "display": "Heart failure, unspecified",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "BD10",
+        "display": "Heart failure",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "84114007",
+        "display": "Heart failure (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "C03CA01",
+        "display": "Furosemide",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "C09AA02",
+        "display": "Enalapril",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "C07AG02",
+        "display": "Carvedilol",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "C03DA01",
+        "display": "Spironolactone",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "A10BK01",
+        "display": "Dapagliflozin (SGLT2 inhibitor)",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "viral-hepatitis-screen",
+    "hook": "patient-view",
+    "type": "viral-hepatitis-screen",
+    "services": [
+      "vedamd-viral-hepatitis-screen"
+    ],
+    "title": "Viral hepatitis B/C — screening + treatment linkage",
+    "description": "WHO 2024 hepatitis testing & treatment guidelines + Kenya MoH Viral Hepatitis Strategic Plan. Critical when context.hbsAgStatus === 'positive' AND treatment not yet initiated — confirmatory HBV DNA, ALT, APRI / FIB-4, ultrasound, HIV + HCV co-infection screen, start tenofovir if cirrhosis OR HBV DNA >20 000 IU/mL with raised ALT, or in pregnancy at >200 000 IU/mL from week 28 to prevent vertical transmission. Critical when HCV active (anti-HCV positive with HCV RNA detectable or RNA-positive standalone) — pan-genotypic DAA sofosbuvir-velpatasvir 12 weeks (cure >95%), stage fibrosis, SVR12 at week 12 post-treatment. Critical when pregnant + HBsAg unknown — universal antenatal HBsAg testing + infant birth-dose HBV vaccine within 24 h. Warning when high-risk + never tested (PLHIV, key populations, transfusion pre-screening era, healthcare-worker sharps, household contact, dialysis). Info routine one-time offer for adults in endemic setting.",
+    "references": [
+      {
+        "label": "WHO — Hepatitis B & C testing and treatment guidelines (2024)",
+        "url": "https://www.who.int/teams/global-hiv-hepatitis-and-stis-programmes/hepatitis"
+      },
+      {
+        "label": "Kenya MoH — National Strategic Plan for Viral Hepatitis 2021–2025"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B16",
+        "display": "Acute hepatitis B",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B18.1",
+        "display": "Chronic viral hepatitis B without delta agent",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B17.1",
+        "display": "Acute hepatitis C",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B18.2",
+        "display": "Chronic viral hepatitis C",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "1C11",
+        "display": "Viral hepatitis B",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "1C12",
+        "display": "Viral hepatitis C",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "66071002",
+        "display": "Type B viral hepatitis (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "50711007",
+        "display": "Viral hepatitis type C (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "5193-8",
+        "display": "HBsAg in Serum",
+        "kind": "lab"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "13955-0",
+        "display": "HCV Ab in Serum",
+        "kind": "lab"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J05AF07",
+        "display": "Tenofovir disoproxil fumarate",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J05AP55",
+        "display": "Sofosbuvir + velpatasvir",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "sti-syndromic",
+    "hook": "patient-view",
+    "type": "sti-syndromic",
+    "services": [
+      "vedamd-sti-syndromic"
+    ],
+    "title": "STI syndromic management",
+    "description": "WHO STI 2021 + Kenya MoH STI Guidelines (2018 syndromic algorithm). Integrator selects ONE syndrome via context.suspectedStiSyndrome: 'urethral-discharge' (male) — ceftriaxone 500 mg IM + doxycycline 100 mg BD x 7 d (cephalosporin-allergy → gentamicin 240 mg IM + azithromycin 2 g); 'vaginal-discharge' — cervicitis cover (ceftriaxone + doxycycline; pregnancy → azithromycin 1 g single dose) + vaginitis cover (metronidazole + clotrimazole; pregnancy avoid 2 g single dose); 'genital-ulcer' — benzathine penicillin 2.4 MU IM (penicillin allergy → doxycycline 100 mg BD x 14 d, desensitise in pregnancy) + aciclovir 400 mg TDS x 7 d + azithromycin 1 g for chancroid; 'lower-abdominal-pain' (PID) — ceftriaxone 500 mg IM + doxycycline + metronidazole x 14 d, severe PID (fever >=38.5, peritonism, pregnancy, IUD, vomiting, TOA) admit for IV; 'scrotal-swelling' — exclude torsion FIRST then dual cover. All syndromes: HIV / syphilis / HBsAg / anti-HCV testing, partner notification, abstinence 7 days.",
+    "references": [
+      {
+        "label": "WHO — Guidelines for the management of symptomatic sexually transmitted infections (2021)",
+        "url": "https://www.who.int/publications/i/item/9789240024168"
+      },
+      {
+        "label": "Kenya MoH — National Guidelines for the Management of STIs (2018)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A54",
+        "display": "Gonococcal infection",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A56",
+        "display": "Other sexually transmitted chlamydial diseases",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N73.9",
+        "display": "Female pelvic inflammatory disease, unspecified",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "76902006",
+        "display": "Gonorrhoea (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "240589008",
+        "display": "Chlamydial infection (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J01DD04",
+        "display": "Ceftriaxone",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J01AA02",
+        "display": "Doxycycline",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "P01AB01",
+        "display": "Metronidazole",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "gdm-screen",
+    "hook": "patient-view",
+    "type": "gdm-screen",
+    "services": [
+      "vedamd-gdm-screen"
+    ],
+    "title": "Gestational diabetes — screen, diagnose, manage",
+    "description": "WHO 2013 hyperglycaemia-in-pregnancy criteria + IADPSG + FIGO 2015 + Kenya MoH National Maternal Health Guidelines. Critical for overt diabetes in pregnancy (FPG >=7.0 OR random >=11.1 OR HbA1c >=6.5%): manage as type-2 diabetes — insulin, retinal + renal screen, aspirin 75–150 mg from week 12, combined obstetric + diabetes clinic, plan delivery 39–40 weeks. Critical for GDM by 75 g OGTT (fasting >=5.1 OR 1-h >=10.0 OR 2-h >=8.5 mmol/L): medical nutrition therapy + activity, SMBG 4 x/day targets fasting <5.3 and 1-h post-prandial <7.8, escalate to metformin then insulin if >=20% readings above target; aspirin from week 12; foetal-growth ultrasound 28–32 w; postnatal OGTT 6–12 w. Warning for risk factors (previous GDM, macrosomic infant, BMI >=30, FH diabetes, age >=35, PCOS, glycosuria, polyhydramnios) + 24–28 weeks reached without OGTT. Info universal-offer reminder for routine OGTT at 24–28 weeks in endemic regions (>=10% hyperglycaemia-in-pregnancy prevalence).",
+    "references": [
+      {
+        "label": "WHO — Diagnostic criteria and classification of hyperglycaemia first detected in pregnancy (2013)",
+        "url": "https://www.who.int/publications/i/item/WHO-NMH-MND-13.2"
+      },
+      {
+        "label": "FIGO Initiative on Gestational Diabetes Mellitus (2015)"
+      },
+      {
+        "label": "Kenya MoH — National Guidelines for Quality Obstetric and Perinatal Care"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O24",
+        "display": "Diabetes mellitus in pregnancy",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O24.4",
+        "display": "Gestational diabetes mellitus",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "JA64",
+        "display": "Gestational diabetes mellitus",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "11687002",
+        "display": "Gestational diabetes mellitus (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "4548-4",
+        "display": "Hemoglobin A1c",
+        "kind": "lab"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "1558-6",
+        "display": "Fasting glucose in Serum or Plasma",
+        "kind": "lab"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "A10BA02",
+        "display": "Metformin",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "status-epilepticus",
+    "hook": "patient-view",
+    "type": "status-epilepticus",
+    "services": [
+      "vedamd-status-epilepticus"
+    ],
+    "title": "Status epilepticus / seizure management",
+    "description": "WHO mhGAP 2.0 epilepsy / convulsive disorders module + ILAE 2015 operational definition + Kenya MoH Acute Care. Sentinel-gated by context.suspectedSeizure. Critical when active convulsion >=5 min OR recurrent without recovery of consciousness — ABCDE, glucose (50 mL 50% dextrose or 2 mL/kg 10% dextrose if <3 mmol/L; thiamine 100 mg IV in alcohol use), Stage 1 (0–5 min) lorazepam 0.1 mg/kg IV (max 4 mg) OR IM midazolam 10 mg (5 mg if 13–40 kg), repeat once at 10 min if still convulsing; Stage 2 (10–30 min) phenytoin 20 mg/kg IV at <=50 mg/min with cardiac monitoring OR sodium valproate 40 mg/kg IV OR levetiracetam 60 mg/kg IV; Stage 3 (>30 min refractory) intubate + midazolam infusion or thiopentone. Critical override for active seizure in pregnancy — eclampsia management: magnesium sulphate loading 4 g IV + 10 g IM, maintenance 5 g IM 4-hourly x 24 h; labetalol / hydralazine if BP >=160/110; urgent delivery. Critical for post-ictal hypoglycaemia (capillary <3 mmol/L) — dextrose now. Warning for first-ever seizure post-ictal — investigate (glucose, U&E, Ca, Mg, malaria, HIV, ECG, urgent CT if focal signs / age >40 / HIV+ / head injury), do not start AED reflexively. Info for break-through seizure in known epilepsy — assess adherence + triggers + AED dose review.",
+    "references": [
+      {
+        "label": "WHO mhGAP Intervention Guide v2.0 — Epilepsy / Convulsive Disorders",
+        "url": "https://www.who.int/publications/i/item/9789241549790"
+      },
+      {
+        "label": "ILAE — A definition and classification of status epilepticus (2015)"
+      },
+      {
+        "label": "Kenya MoH — National Acute Care Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G40",
+        "display": "Epilepsy",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G41",
+        "display": "Status epilepticus",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "8A66",
+        "display": "Status epilepticus",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "230456007",
+        "display": "Status epilepticus (finding)",
+        "kind": "finding"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "N05BA06",
+        "display": "Lorazepam",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "N05CD08",
+        "display": "Midazolam",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "N03AB02",
+        "display": "Phenytoin",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "A12CC30",
+        "display": "Magnesium sulphate (eclampsia override)",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "imci-measles",
+    "hook": "patient-view",
+    "type": "imci-measles",
+    "services": [
+      "vedamd-imci-measles"
+    ],
+    "title": "IMCI: measles in children under 5",
+    "description": "WHO IMCI Chart Booklet 2014 + WHO Measles Treatment Recommendations 2020 + Kenya MoH EPI. Sentinel-gated by context.suspectedMeasles AND ageMonths < 60. Critical for severe complicated measles: any IMCI general danger sign, corneal clouding (sight-threatening), deep / extensive mouth ulcers, severe pneumonia, severe dehydration, encephalitis (seizures or altered mental state), stridor in calm child — admit; vitamin A age-banded (50 000 IU < 6 m / 100 000 IU 6–11 m / 200 000 IU >= 12 m, today and tomorrow); tetracycline 1% eye ointment + urgent ophthalmology for corneal clouding; ceftriaxone 50 mg/kg IM/IV for severe pneumonia / encephalitis; manage seizures with diazepam PR / midazolam buccal; ORS / IV fluids; respiratory isolation; immunise non-immune contacts within 72 h. Critical for measles with eye / mouth / non-severe pneumonia — outpatient bundle: vitamin A, amoxicillin DT 25 mg/kg BD x 5 d for non-severe pneumonia, tetracycline eye ointment, GV paint or salicylate gel for mouth ulcers, soft feeds. Warning for uncomplicated measles — vitamin A, paracetamol, isolate 4 days post-rash, contact tracing. Info for prodrome with Koplik spots or known contact in last 21 days — vitamin A + isolation + review at 48 h.",
+    "references": [
+      {
+        "label": "WHO — IMCI Chart Booklet (2014)",
+        "url": "https://www.who.int/publications/i/item/9789241506823"
+      },
+      {
+        "label": "WHO — Measles vaccines: WHO position paper (2017)"
+      },
+      {
+        "label": "Kenya MoH — Expanded Programme on Immunization Policy Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B05",
+        "display": "Measles",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B05.4",
+        "display": "Measles with intestinal complications",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "1E50",
+        "display": "Measles",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "14189004",
+        "display": "Measles (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "A11CA01",
+        "display": "Retinol (vitamin A)",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J07BD01",
+        "display": "Measles vaccine (live attenuated)",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "pmtct",
+    "hook": "patient-view",
+    "type": "pmtct",
+    "services": [
+      "vedamd-pmtct"
+    ],
+    "title": "PMTCT — Prevention of mother-to-child HIV transmission",
+    "description": "WHO 2021 consolidated HIV prevention / treatment guidelines + Kenya NASCOP PMTCT Algorithm 2022. Critical when HIV-positive pregnant or breastfeeding AND not on ART — start tenofovir + lamivudine + dolutegravir (TLD) same day, baseline VL / creatinine / CD4 / HBsAg / syphilis, intensive adherence counselling, plan infant prophylaxis (dual NVP + AZT for high-risk maternal profile, NVP-only for lower risk). Critical when on ART but VL >= 1000 copies/mL — repeat VL after enhanced-adherence package (3 sessions / 4–8 weeks), drug-resistance testing where available, switch to TLD if on NNRTI-based regimen, dual infant prophylaxis 12 weeks. Critical when maternal HIV status unknown — provider-initiated HIV testing today + same-day TLD if positive; offer PrEP if negative with ongoing risk. Critical when HIV-exposed infant not yet on prophylaxis — start age-banded NVP today (15 mg birth–6 w, 20 mg 6 w–6 m), add AZT for high-risk profile, cotrimoxazole from 6 weeks. Warning when virally suppressed — continue TLD, trimester VL + 6-week post-partum VL + 6-monthly thereafter, infant NVP 6 weeks, EID PCR at 6 w / 6 m / 12 m, final antibody 18 m or 6 weeks after breastfeeding stops, exclusive-feeding counselling. Warning for HIV-negative with serodiscordant partner / ongoing exposure — offer PrEP (TDF/FTC), 3-monthly retesting.",
+    "references": [
+      {
+        "label": "WHO — Consolidated guidelines on HIV prevention, testing, treatment, service delivery and monitoring (2021)",
+        "url": "https://www.who.int/publications/i/item/9789240031593"
+      },
+      {
+        "label": "Kenya NASCOP — PMTCT Algorithm (2022)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B20",
+        "display": "Human immunodeficiency virus (HIV) disease",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z21",
+        "display": "Asymptomatic HIV infection status",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "1C62",
+        "display": "HIV disease",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "86406008",
+        "display": "Human immunodeficiency virus infection (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "75409-3",
+        "display": "HIV 1 RNA viral load in Plasma",
+        "kind": "lab"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J05AR13",
+        "display": "Lamivudine + tenofovir disoproxil + dolutegravir (TLD)",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J05AG01",
+        "display": "Nevirapine (infant prophylaxis)",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J05AR03",
+        "display": "Tenofovir disoproxil + emtricitabine (PrEP)",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "postpartum-care",
+    "hook": "patient-view",
+    "type": "postpartum-care",
+    "services": [
+      "vedamd-postpartum-care"
+    ],
+    "title": "Postpartum care — WHO 4-contact schedule + red flags",
+    "description": "WHO 2022 recommendations on maternal and newborn care for a positive postnatal experience + Kenya MoH Postnatal Care Guidelines. WHO mandates four PNC contacts in the first 6 weeks: < 24 h, day 3 (48–72 h), day 7–14, week 6. Critical for any red flag any time in the first 6 weeks: heavy bleeding / PPH (uterine massage + oxytocin 10 IU bolus + 20 IU/L infusion + TXA 1 g IV within 3 h + balloon tamponade if atony persists), fever >= 38 (puerperal sepsis — cultures + ampicillin + gentamicin + metronidazole within 1 h), foul lochia (endometritis), postpartum severe-range hypertension >=160/110 OR severe headache / visual disturbance (postpartum pre-eclampsia / eclampsia — MgSO4 4 g IV + 10 g IM, labetalol or hydralazine), calf pain / swelling (DVT — LMWH), dyspnoea (PE / cardiac), breast abscess + systemic features (incision + drainage + antibiotics), suicidal thoughts (mental-health crisis pathway). Warning when first / day-3 / day-7–14 contact overdue. Warning for postpartum anaemia (Hb < 9 g/dL) — ferrous sulphate 200 mg TDS + folic acid 5 mg daily for >=3 months, workup malaria / hookworm / HIV. Warning for EPDS >=13 — perinatal mental-health pathway (psychological therapy first; sertraline 50–100 mg daily if moderate-severe and safe in breastfeeding). Info for routine week-6 contact — contraception, infant immunisations (DTP-HepB-Hib-1, PCV-1, OPV-1, rotavirus-1, IPV-1), cervical-cancer screen offer, EPDS.",
+    "references": [
+      {
+        "label": "WHO — Recommendations on maternal and newborn care for a positive postnatal experience (2022)",
+        "url": "https://www.who.int/publications/i/item/9789240045989"
+      },
+      {
+        "label": "Kenya MoH — National Guidelines for Quality Obstetric and Perinatal Care"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z39",
+        "display": "Encounter for maternal postpartum care and examination",
+        "kind": "procedure"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O72",
+        "display": "Postpartum haemorrhage",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O85",
+        "display": "Puerperal sepsis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "127364007",
+        "display": "Postpartum state (finding)",
+        "kind": "finding"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "B03AA07",
+        "display": "Ferrous sulphate",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "B03BB01",
+        "display": "Folic acid",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "ckd-screen",
+    "hook": "patient-view",
+    "type": "ckd-screen",
+    "services": [
+      "vedamd-ckd-screen"
+    ],
+    "title": "Chronic kidney disease — screen, stage, manage",
+    "description": "KDIGO 2024 CKD Evaluation & Management + WHO PEN HEARTS + Kenya MoH NCD Guidelines. Critical when eGFR < 30 (KDIGO G4 / G5) OR acute features (AKI, refractory hyperkalaemia K >= 6, severe metabolic acidosis HCO3 < 15) — urgent nephrology referral, avoid nephrotoxins (NSAIDs / aminoglycosides / IV contrast / herbal), renal-dose every medication (metformin contraindicated at eGFR < 30), hyperkalaemia bundle (IV calcium gluconate if ECG changes + insulin / dextrose + salbutamol nebuliser + dialysis for definitive removal). Critical for heavy proteinuria (uACR >= 300 mg/g, uPCR >= 50 mg/mmol, dipstick +++) OR rapid eGFR decline (> 5 mL/min/year) — workup HIV / HBsAg / anti-HCV / ANA / SPEP, maximally tolerated ACE inhibitor or ARB, ADD SGLT2 inhibitor (dapagliflozin or empagliflozin) when eGFR >= 20 and uACR >= 200 regardless of diabetes, BP < 130 / 80, nephrology referral for biopsy if cause unclear. Warning for KDIGO G3a / G3b (eGFR 30–59) OR A2 albuminuria (uACR 30–300) — confirm chronicity, BP < 130/80, ACE/ARB, SGLT2i for diabetic kidney disease, moderate-intensity statin, avoid nephrotoxins, vaccinate (influenza / pneumococcal / hepatitis B), annual review. Warning for high-risk patient without recent eGFR / uACR — order both today (risk markers: known hypertension, diabetes, HIV, age >= 60, family history CKD, recurrent UTI, kidney stones, long-term NSAID / herbal use).",
+    "references": [
+      {
+        "label": "KDIGO — 2024 Clinical Practice Guideline for the Evaluation & Management of Chronic Kidney Disease",
+        "url": "https://kdigo.org/guidelines/ckd-evaluation-and-management/"
+      },
+      {
+        "label": "WHO PEN HEARTS — NCD interventions"
+      },
+      {
+        "label": "Kenya MoH — National Strategic Plan for Prevention and Control of NCDs"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N18",
+        "display": "Chronic kidney disease",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N18.3",
+        "display": "Chronic kidney disease, stage 3",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N18.4",
+        "display": "Chronic kidney disease, stage 4",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N18.5",
+        "display": "Chronic kidney disease, stage 5",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "GB61",
+        "display": "Chronic kidney disease",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "709044004",
+        "display": "Chronic kidney disease (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "33914-3",
+        "display": "eGFR (CKD-EPI)",
+        "kind": "lab"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "14959-1",
+        "display": "Microalbumin/Creatinine Ratio (uACR)",
+        "kind": "lab"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "C09AA02",
+        "display": "Enalapril (ACE inhibitor)",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "A10BK01",
+        "display": "Dapagliflozin (SGLT2i)",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "head-injury-triage",
+    "hook": "patient-view",
+    "type": "head-injury-triage",
+    "services": [
+      "vedamd-head-injury-triage"
+    ],
+    "title": "Severe head injury / traumatic brain injury triage",
+    "description": "NICE NG232 (2023) Head injury: assessment and early management + Brain Trauma Foundation Guidelines 4th edn + CRASH-3 trial + WHO Acute Care + Kenya MoH Acute Care. Sentinel-gated by context.suspectedHeadInjury. Critical for severe TBI (GCS <= 8) OR herniation features (unilateral fixed dilated pupil, motor posturing, Cushing's triad) — RSI for airway, target SpO2 >= 94 and SBP >= 110 (single episode of hypotension or hypoxia doubles mortality), 30 degree head-up, sedate, hypertonic saline 3% 250 mL OR mannitol 1 g/kg for herniation features, tranexamic acid 1 g IV + 1 g infusion 8 h if within 3 h of injury (CRASH-3), urgent CT, neurosurgical referral, reverse any anticoagulation. Critical for moderate TBI (GCS 9–12) OR any NICE high-risk feature (focal deficit, > 1 vomit, post-traumatic seizure, suspected open / depressed / basal skull fracture, age >= 65 + LOC / amnesia, anticoagulant + LOC / amnesia, dangerous mechanism + LOC / amnesia) — urgent CT brain within 1 hour, admit for neuro-obs every 30 min for 2 h then hourly for >= 24 h or until GCS 15 for 4 h, TXA if GCS <= 12 within 3 h. Warning for mild TBI (GCS 13–15) with intermediate feature (LOC / amnesia / single vomit / persistent headache / intoxication / suspected non-accidental injury in child) — 4-hour facility neuro-observation then discharge if asymptomatic with a written head-injury warning card to a responsible adult. Info for low-risk mild TBI — discharge with the written warning card and instruction to return immediately.",
+    "references": [
+      {
+        "label": "NICE NG232 — Head injury: assessment and early management (2023)",
+        "url": "https://www.nice.org.uk/guidance/ng232"
+      },
+      {
+        "label": "Brain Trauma Foundation — Guidelines for the management of severe TBI, 4th edition",
+        "url": "https://braintrauma.org/coma/guidelines/severe-tbi"
+      },
+      {
+        "label": "CRASH-3 trial — Effects of tranexamic acid on death, disability, and vascular occlusive events in TBI (Lancet 2019)",
+        "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(19)32233-0/fulltext"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "S06",
+        "display": "Intracranial injury",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "S06.0",
+        "display": "Concussion",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "NA07",
+        "display": "Traumatic brain injury",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "127295002",
+        "display": "Traumatic brain injury (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "B02AA02",
+        "display": "Tranexamic acid (CRASH-3)",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "hhs-recognition",
+    "hook": "patient-view",
+    "type": "hhs-recognition",
+    "services": [
+      "vedamd-hhs-recognition"
+    ],
+    "title": "Hyperosmolar Hyperglycaemic State (HHS) — recognition + bundle",
+    "description": "JBDS-IP HHS Guideline (2022) + ADA Standards of Care 2024 + WHO PEN HEARTS. Sentinel-gated by context.suspectedHhs. Diagnostic triad: hypovolaemia + plasma glucose >= 30 mmol/L + osmolality >= 320 mOsm/kg WITHOUT significant ketonaemia (< 3 mmol/L) or acidosis (pH > 7.30, HCO3 > 15 mmol/L). Critical bundle: 0.9 % NaCl 15 mL/kg over the first hour then ~1 L every 2 h, switch to 0.45 % NaCl only if osmolality does not fall despite positive balance AND corrected sodium is rising; add 5 % dextrose when glucose < 14 mmol/L; fixed-rate insulin 0.05 U/kg/h (lower than DKA) ONLY after 60 min of fluids AND glucose has stopped falling OR ketones rise; potassium 40 mmol/L when K 3.5–5.5, withhold when > 5.5 with ECG monitoring; prophylactic LMWH for very high VTE risk; investigate precipitant (infection, silent MI, stroke, missed therapy, steroid load). Severity overlay (osmolality >= 350, Na >= 160, K outside 3.5–6.0, GCS <= 12, SBP < 90 after fluids, SpO2 < 92) triggers ICU input. Mixed HHS/DKA picture (glucose >= 30 + ketones >= 3) returns a warning card recommending DKA-priority management with slow osmolality correction. Cards carry ICD-10 E14.0 / E11.0, ICD-11 5A21, SNOMED 421750000, LOINC 2345-7 + 2951-2.",
+    "references": [
+      {
+        "label": "JBDS-IP — The management of the hyperosmolar hyperglycaemic state (HHS) in adults with diabetes (2022)",
+        "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_the_Hyperosmolar_Hyperglycaemic_State_HHS_in_Adults_with_Diabetes_FINAL_28032022.pdf"
+      },
+      {
+        "label": "ADA Standards of Care in Diabetes — 2024",
+        "url": "https://diabetesjournals.org/care/issue/47/Supplement_1"
+      },
+      {
+        "label": "WHO PEN HEARTS — NCD interventions",
+        "url": "https://www.who.int/teams/noncommunicable-diseases/hearts"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E14.0",
+        "display": "Diabetes mellitus with coma (HHS)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E11.0",
+        "display": "Type 2 diabetes mellitus with hyperosmolarity",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "5A21",
+        "display": "Hyperosmolar hyperglycaemic state",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "421750000",
+        "display": "Hyperosmolar hyperglycaemic non-ketotic syndrome (disorder)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "tb-treatment",
+    "hook": "patient-view",
+    "type": "tb-treatment",
+    "services": [
+      "vedamd-tb-treatment"
+    ],
+    "title": "Tuberculosis treatment regimens (DS / RR / MDR / pre-XDR / XDR)",
+    "description": "WHO Consolidated Guidelines on Tuberculosis — Module 4: Treatment (2022 with 2024 update) + Kenya NTLD-P Treatment Protocol. Sentinel-gated by tbConfirmed. Critical (drug-susceptible pulmonary / extrapulmonary TB) — 2HRZE/4HR with weight-banded 4FDC tablets per WHO band (25–37 / 38–54 / 55–70 / >=71 kg), paediatric child-friendly dispersible RHZ + E for < 25 kg; CNS / bone / disseminated TB extended to 9–12 months with adjunctive prednisolone for TB meningitis / pericarditis; alternative WHO 4-month 2HPMZ/2HPM rifapentine-moxifloxacin regimen for pulmonary DS-TB >= 12 y >= 40 kg. HIV co-infection: ART within 2 weeks (CD4 < 50 or TB meningitis) or 8 weeks otherwise, rifampicin doubles dolutegravir clearance so DTG 50 mg twice daily during rifampicin + 2 weeks. Pyridoxine 25–50 mg daily to prevent isoniazid neuropathy. Pregnancy-safe regimen. Critical (rifampicin-resistant / MDR-TB) — refer to PMDT site within 48 h for WHO 6-month all-oral BPaL(M): bedaquiline + pretomanid + linezolid + moxifloxacin (drop moxifloxacin if fluoroquinolone resistance). Critical (pre-XDR / XDR) — national reference centre individualised regimen with bedaquiline + linezolid + clofazimine + cycloserine ± delamanid for 18–20 months. Monthly LFTs, full blood count (linezolid myelosuppression), ECG QTc (bedaquiline + moxifloxacin), visual acuity + colour vision (ethambutol + linezolid). Mandatory case notification within 24 h; trace household contacts; offer TPT (3HP / 6H / 1HP) to <5y + PLHIV contacts. Cards carry ICD-10 A15/A16, ICD-11 1B10/1B14, SNOMED 56717001/85729005, ATC J04AM06 (HRZE) / J04AK05 (bedaquiline) / J04AK08 (pretomanid).",
+    "references": [
+      {
+        "label": "WHO Consolidated Guidelines on Tuberculosis — Module 4: Treatment (Drug-susceptible TB, 2022)",
+        "url": "https://www.who.int/publications/i/item/9789240048126"
+      },
+      {
+        "label": "WHO Consolidated Guidelines on Tuberculosis — Module 4: Treatment (Drug-resistant TB, 2022 with 2024 update)",
+        "url": "https://www.who.int/publications/i/item/9789240063129"
+      },
+      {
+        "label": "Kenya National TB, Leprosy & Lung Disease Programme — Treatment Protocol",
+        "url": "https://nltp.co.ke/"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A15",
+        "display": "Pulmonary tuberculosis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A16",
+        "display": "Tuberculosis of other organs",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "1B10",
+        "display": "Tuberculosis (active)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "56717001",
+        "display": "Tuberculosis (disorder)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "rabies-pep",
+    "hook": "patient-view",
+    "type": "rabies-pep",
+    "services": [
+      "vedamd-rabies-pep"
+    ],
+    "title": "Rabies post-exposure prophylaxis (PEP)",
+    "description": "WHO position paper on rabies vaccines (April 2018) + CDC ACIP rabies prevention + Kenya MoH rabies elimination strategy. Sentinel-gated by context.suspectedRabiesExposure. Critical (WHO Category III: transdermal bite, scratch breaking skin, mucous-membrane / broken-skin contamination, ANY bat exposure) — (1) wound care: wash with soap and running water for >=15 min then virucidal (povidone-iodine / 70% alcohol / quaternary ammonium); (2) rabies immunoglobulin HRIG 20 IU/kg (or equine RIG 40 IU/kg) infiltrated AS MUCH AS ANATOMICALLY POSSIBLE into and around each wound with any remaining volume IM distant from the vaccine site; (3) start vaccine same day — WHO 4-dose IM Essen schedule (days 0/3/7/14–28) using purified Vero-cell vaccine, OR dose-sparing intradermal Updated Thai Red Cross (0.1 mL ID at two sites days 0/3/7/28). Critical (Category II: nibbling on uncovered skin or minor scratch without bleeding) — wound care + full vaccine course, NO RIG. Critical (re-exposure after prior full PEP / pre-exposure vaccination) — abbreviated 2-dose booster days 0+3, NO RIG. Info (Category I: touch / feed / intact-skin lick) — no PEP unless contact uncertain. Pregnancy / breastfeeding / immunocompromised state are NOT contraindications. Tetanus prophylaxis + reassure that PEP is never too late as long as symptoms have not started. Notify public-health surveillance. Cards carry ICD-10 Z20.3 / Z29.2, ICD-11 1G40, SNOMED 14168008 (rabies) / 313160007 (vaccination) / 417303002 (RIG administration), ATC J07BG01 + J06BB05.",
+    "references": [
+      {
+        "label": "WHO — Rabies vaccines: WHO position paper, April 2018",
+        "url": "https://www.who.int/publications/i/item/who-wer-9316-201-220"
+      },
+      {
+        "label": "CDC — Human Rabies Prevention (ACIP, MMWR Recommendations and Reports)",
+        "url": "https://www.cdc.gov/mmwr/volumes/71/rr/rr7102a1.htm"
+      },
+      {
+        "label": "Kenya MoH — Strategic Plan for the Elimination of Human Rabies (2014–2030)",
+        "url": "https://rr-africa.woah.org/wp-content/uploads/2019/05/strategic_plan_kenya.pdf"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z20.3",
+        "display": "Contact with and exposure to rabies",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "1G40",
+        "display": "Rabies",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "14168008",
+        "display": "Rabies (disorder)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "neonatal-jaundice",
+    "hook": "patient-view",
+    "type": "neonatal-jaundice",
+    "services": [
+      "vedamd-neonatal-jaundice"
+    ],
+    "title": "Neonatal jaundice — AAP 2022 thresholds + acute bilirubin encephalopathy",
+    "description": "AAP 2022 Clinical Practice Guideline Revision: Management of Hyperbilirubinaemia in the Newborn >= 35 Weeks Gestation + WHO Pocket Book of Hospital Care for Children (2nd edn) + Kenya MoH National Newborn Care Guidelines. Critical (acute bilirubin encephalopathy: lethargy progressing to hypertonia, retrocollis/opisthotonus, shrill cry, fever, seizures) — INTENSIVE phototherapy immediately (continuous LED panels >=30 µW/cm²/nm), prepare double-volume exchange transfusion 160 mL/kg, cross-match, NPO, monitor temperature/glucose/calcium/electrolytes, investigate cause (DAT, blood group, FBC + retics + film, G6PD, sepsis, TORCH). Critical (jaundice in the first 24 h of life — NEVER physiological) — admit, TSB + direct bilirubin, DAT + maternal antibody screen, G6PD, sepsis screen, phototherapy. Critical (TSB >= AAP exchange threshold for postnatal age + risk profile — gestational age < 38 wks OR DAT+/G6PD/ABO-Rh/sepsis/dusky pallor/poor feeding) — exchange transfusion + intensive phototherapy. Critical (TSB >= AAP phototherapy threshold) — intensive phototherapy + investigate cause if rapid rise. Warning (within 2 mg/dL of threshold OR rise > 0.2 mg/dL/h) — repeat TSB 6–12 h, optimise feeding (>=8 breastfeeds in 24 h), risk-factor review. Warning (prolonged jaundice >14 d term, >21 d preterm) — measure split bilirubin (must be < 1 mg/dL or < 20% total); conjugated hyperbilirubinaemia is biliary atresia until proven otherwise — URGENT abdominal ultrasound + Kasai window < 60 d. Cards carry ICD-10 P59/P57/P55, ICD-11 KA86/KA64, SNOMED 387731001 (neonatal jaundice) / 234468005 (severe hyperbilirubinaemia), LOINC 1975-2 + 6082-2.",
+    "references": [
+      {
+        "label": "AAP — Clinical Practice Guideline Revision: Management of Hyperbilirubinaemia in the Newborn Infant >= 35 Weeks (Kemper et al., Pediatrics 2022)",
+        "url": "https://publications.aap.org/pediatrics/article/150/3/e2022058859/188726"
+      },
+      {
+        "label": "WHO — Pocket Book of Hospital Care for Children (2nd edn, 2013)",
+        "url": "https://www.who.int/publications/i/item/978-92-4-154837-3"
+      },
+      {
+        "label": "Kenya MoH — National Newborn Care Guidelines (2014)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "P59",
+        "display": "Neonatal jaundice from other and unspecified causes",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "KA86",
+        "display": "Neonatal jaundice",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "387731001",
+        "display": "Neonatal jaundice (disorder)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "sickle-cell-crisis",
+    "hook": "patient-view",
+    "type": "sickle-cell-crisis",
+    "services": [
+      "vedamd-sickle-cell-crisis"
+    ],
+    "title": "Sickle-cell disease — vaso-occlusive crisis + complications",
+    "description": "American Society of Hematology 2020 Clinical Practice Guidelines for Sickle Cell Disease (Acute & Chronic Pain) + NHLBI 2014 Evidence-Based Management of Sickle Cell Disease + Kenya MoH Sickle Cell Disease Guidelines (2019). Sentinel-gated by sickleCellDisease. Critical (life-threatening SCD emergency: acute chest syndrome [new infiltrate or SpO2 < 92], stroke / focal neurology, priapism > 4 h, splenic sequestration with falling Hb, aplastic crisis Hb <6 with low retics, sepsis with fever >=38.5, severe anaemia Hb <5) — ABC + oxygen to SpO2 >=95, isotonic IV fluids at maintenance (AVOID over-hydration — risk of ACS), morphine 0.1 mg/kg IV every 10–20 min titrated, ceftriaxone 50 mg/kg + azithromycin for ACS, exchange transfusion for stroke / severe ACS / refractory priapism, urology for priapism, urgent neurology + CT/MRI for stroke (NO tPA). Critical (vaso-occlusive pain crisis NRS >=4) — analgesia within 30 min per ASH 2020, paracetamol + ibuprofen + opioid titrated, maintenance fluids, incentive spirometry, screen for precipitants, optimise hydroxyurea (15–20 mg/kg/day titrated to MCV 100–110, ANC > 2). Warning (chronic-care gaps): not on hydroxyurea (offer at >=9 months), missing penicillin V prophylaxis <5 y, missing PCV13/PPSV23/meningococcal/Hib/influenza, no annual transcranial Doppler 2–16 y, no retinal screen >=10 y, no folic-acid 5 mg daily. Cards carry ICD-10 D57/D57.0, ICD-11 3A51, SNOMED 237364002 (SCD) / 417847000 (vaso-occlusive crisis), LOINC 67881-8 (HbS%), ATC L01XX05 (hydroxyurea).",
+    "references": [
+      {
+        "label": "American Society of Hematology — 2020 Clinical Practice Guidelines for Sickle Cell Disease: Management of Acute and Chronic Pain (Brandow et al., Blood Adv 2020)",
+        "url": "https://ashpublications.org/bloodadvances/article/4/12/2656/461050"
+      },
+      {
+        "label": "NHLBI — Evidence-Based Management of Sickle Cell Disease (Expert Panel Report 2014)",
+        "url": "https://www.nhlbi.nih.gov/health-topics/evidence-based-management-sickle-cell-disease"
+      },
+      {
+        "label": "Kenya MoH — National Guidelines for the Diagnosis and Management of Sickle Cell Disease (2019)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D57",
+        "display": "Sickle-cell disorders",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "3A51",
+        "display": "Sickle-cell disease",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "237364002",
+        "display": "Sickle-cell disease (disorder)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "dengue-arboviral",
+    "hook": "patient-view",
+    "type": "dengue-arboviral",
+    "services": [
+      "vedamd-dengue-arboviral"
+    ],
+    "title": "Dengue / chikungunya / Zika — arboviral fever triage",
+    "description": "WHO Dengue Guidelines for Diagnosis, Treatment, Prevention and Control (2009 + 2024 update) + WHO Handbook for Clinical Management of Dengue (2012) + PAHO Guidelines (2022) + CDC Dengue Clinical Guidance. Sentinel-gated by context.suspectedArboviralFever. Critical (severe dengue, Group C): shock features (narrow pulse pressure <=20 mmHg, SBP <90), severe organ involvement (AST/ALT >=1000, GCS <=13, creatinine >200), or clinically-significant mucosal bleeding with platelets <20 — admit HDU/ICU, isotonic crystalloid 10–20 mL/kg over 1 h titrated down to 7-5-3 mL/kg/h, colloid bolus for refractory leakage with rising Hct, transfuse packed cells for occult bleeding (falling Hct despite fluids), STRICTLY NO NSAIDs / aspirin, paracetamol 15 mg/kg every 6 h (NOT every 4 h). Critical (warning signs, Group B): abdominal pain or tenderness, persistent vomiting, clinical fluid accumulation (ascites / pleural effusion), mucosal bleeding, lethargy or restlessness, hepatomegaly >2 cm, rapid platelet fall, haematocrit rise >=20% from baseline — admit IV fluids 5–7 mL/kg/h titrated, 4-hourly observations through critical phase (days 3–7). Critical override: suspected Zika in pregnancy — refer maternal-foetal medicine for serial foetal ultrasound + RT-PCR (serum + urine within 14 d). Warning (uncomplicated, Group A): outpatient supportive care + daily review during critical phase + oral fluids + paracetamol ONLY + mosquito-net protection. Chikungunya overlay (marked polyarthralgia) and Zika overlay (rash + conjunctivitis + safe-sex counselling) included.",
+    "references": [
+      {
+        "label": "WHO — Dengue: Guidelines for Diagnosis, Treatment, Prevention and Control (2009 with 2024 update)",
+        "url": "https://www.who.int/publications/i/item/9789241547871"
+      },
+      {
+        "label": "WHO — Handbook for Clinical Management of Dengue (2012)",
+        "url": "https://www.who.int/publications/i/item/handbook-for-clinical-management-of-dengue"
+      },
+      {
+        "label": "PAHO — Guidelines for the clinical diagnosis and treatment of dengue, chikungunya, and Zika (2022)",
+        "url": "https://iris.paho.org/handle/10665.2/55867"
+      },
+      {
+        "label": "CDC — Dengue Clinical Guidance",
+        "url": "https://www.cdc.gov/dengue/healthcare-providers/clinical-presentation.html"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A90",
+        "display": "Dengue fever (classical dengue)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "1D2Z",
+        "display": "Dengue, unspecified",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "38362002",
+        "display": "Dengue fever (disorder)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "schistosomiasis-treatment",
+    "hook": "patient-view",
+    "type": "schistosomiasis-treatment",
+    "services": [
+      "vedamd-schistosomiasis-treatment"
+    ],
+    "title": "Schistosomiasis — treatment + complications + MDA eligibility",
+    "description": "WHO Guideline on Control and Elimination of Human Schistosomiasis (2022) + CDC Schistosomiasis Clinical Guidance + Kenya MoH National Schistosomiasis & STH Strategic Plan. Sentinel-gated by context.suspectedSchistosomiasis. Critical (complicated disease: neuroschistosomiasis with myelitis / seizures / focal signs, portal hypertension with variceal bleed, massive haematuria with shock, obstructive uropathy) — admit + specialist referral + complication-specific resuscitation + prednisolone 1 mg/kg/day for neuroschistosomiasis BEFORE praziquantel + ultrasound + MRI spine/brain where indicated. Critical (Katayama fever / acute schistosomiasis 4–8 weeks post-exposure: fever + urticaria + eosinophilia + cough + hepatosplenomegaly) — prednisolone 1 mg/kg/day x 5–7 days FIRST, defer curative praziquantel 6–12 weeks. Critical (confirmed infection: positive egg / antigen / serology) — praziquantel 40 mg/kg single oral dose with food (S. mansoni / haematobium / intercalatum / guineensis), 60 mg/kg for S. japonicum / mekongi; split 20 mg/kg twice 4–6 h apart for tolerability. Pregnancy >=14 weeks safe per WHO 2006/2022. Recheck eggs / antigen at 8–12 weeks; second course if positive (efficacy ~85%). Warning (high suspicion without confirmation) — urine microscopy + stool ova + urine CCA + serology + empirical praziquantel reasonable in endemic settings. Info (MDA eligibility): yearly praziquantel 40 mg/kg for school-age (5–14 y) per WHO MDA; WHO 2022 expands to preschool + adults in high-prevalence (>=10%) settings.",
+    "references": [
+      {
+        "label": "WHO — Guideline on Control and Elimination of Human Schistosomiasis (2022)",
+        "url": "https://www.who.int/publications/i/item/9789240041608"
+      },
+      {
+        "label": "CDC — Schistosomiasis Clinical Guidance",
+        "url": "https://www.cdc.gov/parasites/schistosomiasis/health_professionals/index.html"
+      },
+      {
+        "label": "Kenya MoH — National Schistosomiasis & STH Strategic Plan"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B65",
+        "display": "Schistosomiasis (bilharziasis)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "1F86",
+        "display": "Schistosomiasis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "32517009",
+        "display": "Schistosomiasis (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "P02BA01",
+        "display": "Praziquantel",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "imci-ear-infection",
+    "hook": "patient-view",
+    "type": "imci-ear-infection",
+    "services": [
+      "vedamd-imci-ear-infection"
+    ],
+    "title": "IMCI: ear infection in children under 5 (AOM / CSOM / mastoiditis)",
+    "description": "WHO IMCI Chart Booklet (2014) + WHO Pocket Book of Hospital Care for Children (2nd edn) + AAP Clinical Practice Guideline: Diagnosis and Management of Acute Otitis Media (Lieberthal et al. 2013) + Kenya MoH IMCI. Sentinel-gated by context.suspectedEarProblem + ageMonths < 60. Critical (mastoiditis: tender swelling behind the ear with outward-pushed pinna) — admit, IV ceftriaxone 50 mg/kg once daily until improved + oral step-down for total 14 days; add metronidazole if suspected intracranial extension; contrast CT or MRI of the temporal bone; urgent ENT referral for myringotomy +/- mastoidectomy if not improving 48 h. Critical (AOM: pus <14 d OR bulging tympanic membrane + ear pain): amoxicillin 80–90 mg/kg/day divided twice daily for 5–10 days (10 days if <2 y or severe); co-amoxiclav for prior amoxicillin failure; macrolide for IgE-mediated penicillin allergy; AAP watchful-waiting allowed in age >=2 unilateral without otorrhoea if family can return; paracetamol + ibuprofen for analgesia. Warning (CSOM: pus >=14 days) — dry wicking >=3 times/day + topical ciprofloxacin 0.3% drops 5 drops BD for 2 weeks (or until 3 days after dryness); AVOID aminoglycoside drops (ototoxic) and oral antibiotics; safe-water practices; ENT referral if no response in 2 weeks or cholesteatoma suspected. Info (no infection) — reassure + return triggers + PCV / influenza vaccination.",
+    "references": [
+      {
+        "label": "WHO — IMCI Chart Booklet (2014)",
+        "url": "https://www.who.int/publications/i/item/9789241506823"
+      },
+      {
+        "label": "WHO — Pocket Book of Hospital Care for Children (2nd edn, 2013)",
+        "url": "https://www.who.int/publications/i/item/978-92-4-154837-3"
+      },
+      {
+        "label": "AAP — Clinical Practice Guideline: Diagnosis and Management of Acute Otitis Media (Lieberthal et al., Pediatrics 2013)",
+        "url": "https://publications.aap.org/pediatrics/article/131/3/e964/30912"
+      },
+      {
+        "label": "WHO — Chronic suppurative otitis media: burden of illness and management options (2004)",
+        "url": "https://www.who.int/publications/i/item/9241591587"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "H66.9",
+        "display": "Otitis media, unspecified",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "H70",
+        "display": "Mastoiditis and related conditions",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "3110003",
+        "display": "Acute suppurative otitis media (disorder)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "neonatal-sepsis",
+    "hook": "patient-view",
+    "type": "neonatal-sepsis",
+    "services": [
+      "vedamd-neonatal-sepsis"
+    ],
+    "title": "Neonatal sepsis / Possible Serious Bacterial Infection (PSBI)",
+    "description": "WHO Managing Possible Serious Bacterial Infection in Young Infants When Referral is Not Feasible (2015 simplified regimens) + WHO Pocket Book of Hospital Care for Children (2nd edn 2013) + WHO Sepsis 2020 + Kenya MoH National Newborn Care Guidelines (2014). Sentinel-gated by context.suspectedNeonatalSepsis (postnatal age 0–28 days). Critical (PSBI features: unable to feed since birth or stopped feeding, convulsions, movement only when stimulated, severe chest indrawing, grunting, RR >=60, temperature >=38 OR <35.5, bulging fontanelle, neck stiffness) — first-line within 1 hour: ampicillin 50 mg/kg IV/IM every 12 h (week 1) or every 8 h (week 2+) + gentamicin 5 mg/kg IM/IV once daily (4 mg/kg if <32 weeks) for 10–14 days; suspected meningitis adds ceftriaxone 50 mg/kg (or cefotaxime in jaundiced / premature) — LP when stable; full sepsis screen (blood culture >=1 mL, FBC, CRP, glucose, urine culture, CXR if respiratory features); refer to neonatal admission within 1 hour. When referral NOT possible, WHO 2015 simplified outpatient PSBI regimen: IM gentamicin once daily for 7 days + oral amoxicillin 50 mg/kg BD for 7 days with DAILY follow-up. Warning (risk-factor screen positive in a well infant: maternal chorioamnionitis, PROM >18 h, intrapartum fever, GBS+ without IAP, prematurity <35 wks) — admit 48 h observation + sepsis screen + culture-driven decision. Info (well infant): routine PNC + WHO danger-signs counselling + cord care + vitamin K 1 mg IM + BCG / OPV at birth + exclusive breastfeeding 8–12x/24 h.",
+    "references": [
+      {
+        "label": "WHO — Managing possible serious bacterial infection in young infants when referral is not feasible (2015)",
+        "url": "https://www.who.int/publications/i/item/9789241509268"
+      },
+      {
+        "label": "WHO — Pocket Book of Hospital Care for Children (2nd edn, 2013)",
+        "url": "https://www.who.int/publications/i/item/978-92-4-154837-3"
+      },
+      {
+        "label": "WHO — Improving the prevention, diagnosis and clinical management of sepsis (resolution 70.7, 2020)",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/sepsis"
+      },
+      {
+        "label": "Kenya MoH — National Newborn Care Guidelines (2014)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "P36",
+        "display": "Bacterial sepsis of newborn",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "KA60",
+        "display": "Bacterial sepsis of the newborn",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "206378007",
+        "display": "Sepsis of the newborn (disorder)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "heat-stroke",
+    "hook": "patient-view",
+    "type": "heat-stroke",
+    "services": [
+      "vedamd-heat-stroke"
+    ],
+    "title": "Heat stroke / heat-related illness",
+    "description": "CDC NIOSH Heat-Related Illness clinical guidance + WHO Heat and Health technical brief + Korey-Stringer Institute Exertional Heat Stroke Consensus + NEJM 2019 Heat-Related Illnesses review. Sentinel-gated by context.suspectedHeatIllness. Critical (heat stroke: rectal core temperature >=40 °C OR >=39 °C with CNS dysfunction — confusion, ataxia, seizures, coma): rapid cooling within 30 minutes is the primary survival determinant — EXERTIONAL heat stroke COLD-WATER IMMERSION (head out of water, continuous rectal-temp monitoring, target <=39 °C in 30 min; stop at 39 °C to avoid overshoot); CLASSIC heat stroke evaporative cooling (continuous fanning of wet patient + ice packs neck/axillae/groin); ABC support; IV 0.9% NaCl 20 mL/kg bolus titrated; AVOID antipyretics (paracetamol / aspirin do NOT lower hyperthermic body temperature); benzodiazepine for seizures; rhabdomyolysis bundle (target urine output 2 mL/kg/h, urinary alkalinisation if severe, recheck CK / K+ / creatinine 6-hourly); ICU admission. Critical (severe heat exhaustion with red flags: SBP <90, persistent vomiting, Na <=130 or >=150, creatinine >200, dark urine suggesting rhabdomyolysis, CK > 5x ULN) — admit + IV fluids + close monitoring + escalation to heat-stroke pathway if temperature climbs or any CNS dysfunction. Warning (heat exhaustion: heat-exposure symptoms with core temp <40 °C and no CNS dysfunction) — move to cool, oral ORS 1–1.5 L over 1 h (or IV 0.9% NaCl 1 L over 1 h in vulnerable groups), rest >=30 min, recheck temperature / pulse / orthostatic BP every 15 min. Info (heat-exposure risk) — WHO counselling (hydration ~200 mL every 20 min, work-rest cycles, light loose clothing, avoid 11 am–4 pm exertion, NEVER leave infants / pets in parked vehicles, twice-daily check on vulnerable household members during heat waves).",
+    "references": [
+      {
+        "label": "CDC NIOSH — Heat-Related Illness clinical guidance for healthcare workers",
+        "url": "https://www.cdc.gov/niosh/topics/heatstress/heatrelillness.html"
+      },
+      {
+        "label": "WHO — Heat and Health technical brief",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/climate-change-heat-and-health"
+      },
+      {
+        "label": "Korey-Stringer Institute / NATA — Exertional Heat Stroke Consensus"
+      },
+      {
+        "label": "Epstein Y, Yanovich R. — Heatstroke (NEJM 2019;380:2449–2459)",
+        "url": "https://www.nejm.org/doi/full/10.1056/NEJMra1810762"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T67.0",
+        "display": "Heatstroke and sunstroke",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "NF01.0",
+        "display": "Heatstroke and sunstroke",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "20262006",
+        "display": "Heatstroke (disorder)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "mdr-tb-regimen-builder",
+    "hook": "patient-view",
+    "type": "mdr-tb-regimen-builder",
+    "services": [
+      "vedamd-mdr-tb-regimen"
+    ],
+    "title": "MDR/RR-TB all-oral regimen builder (BPaL/M)",
+    "description": "Suggests WHO 2022-aligned all-oral 6-month MDR-TB regimen options (BPaL — bedaquiline + pretomanid + linezolid; or BPaLM with moxifloxacin) when context.drugResistance includes RIF-resistance or MDR. Outputs candidate regimen with mandatory baseline + monthly ECG (additive QT), monthly LFTs, weekly visual + neurological screen (linezolid). Reads context.drugResistance, context.weightKg, context.qtcMs.",
+    "references": [
+      {
+        "label": "WHO MDR-TB Operational Handbook 2022",
+        "url": "https://www.who.int/publications/i/item/9789240065116"
+      },
+      {
+        "label": "TB-PRACTECAL trial (NEJM 2022)",
+        "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2117166"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A15.0",
+        "display": "Tuberculosis of lung, confirmed by sputum microscopy",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "443398005",
+        "display": "Multidrug resistant tuberculosis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J04AK05",
+        "display": "Bedaquiline",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J04AK08",
+        "display": "Pretomanid",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J01XX08",
+        "display": "Linezolid",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "hiv-art-first-line-tld",
+    "hook": "patient-view",
+    "type": "hiv-art-first-line",
+    "services": [
+      "vedamd-hiv-first-line"
+    ],
+    "title": "HIV first-line ART recommendation (WHO 2024)",
+    "description": "On positive HIV diagnosis (context.hivStatus = 'positive') OR new ART initiation, recommends WHO-preferred first-line: TLD (TDF + 3TC + DTG) for adults + adolescents ≥ 30 kg. Adds rifampicin-overlap warning (extra DTG 50 mg 12 h after TLD), and HBV co-infection guidance. Reads context.weightKg, context.coMedications, context.hbsag.",
+    "references": [
+      {
+        "label": "WHO Consolidated HIV Guidelines 2024",
+        "url": "https://www.who.int/publications/i/item/9789240031593"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B20",
+        "display": "Human immunodeficiency virus [HIV] disease",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "86406008",
+        "display": "Human immunodeficiency virus infection",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J05AR23",
+        "display": "Tenofovir disoproxil/lamivudine/dolutegravir",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "cryptococcal-induction",
+    "hook": "patient-view",
+    "type": "cryptococcal-induction",
+    "services": [
+      "vedamd-cryptococcal-induction"
+    ],
+    "title": "Cryptococcal meningitis induction (WHO 2022)",
+    "description": "When CrAg-positive HIV patient with meningitis features, emits WHO-preferred single-dose liposomal amphotericin 10 mg/kg + flucytosine 100 mg/kg/day × 14 days + fluconazole 1200 mg/day × 14 days induction; falls back to amphotericin B deoxycholate 1 mg/kg/day + flucytosine × 7 days then fluconazole 1200 mg/day × 7 days. Includes electrolyte + creatinine + FBC monitoring. Reads context.crAg, context.csfOpeningPressure, context.eGFR.",
+    "references": [
+      {
+        "label": "WHO Cryptococcal Disease Guidelines 2022",
+        "url": "https://www.who.int/publications/i/item/9789240052178"
+      },
+      {
+        "label": "AMBITION-cm trial (NEJM 2022)",
+        "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2111904"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B45.1",
+        "display": "Cerebral cryptococcosis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "63491000119107",
+        "display": "Cryptococcal meningitis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J02AA01",
+        "display": "Amphotericin B",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J02AX01",
+        "display": "Flucytosine",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "snake-envenomation-treatment",
+    "hook": "patient-view",
+    "type": "snake-envenomation-treatment",
+    "services": [
+      "vedamd-snake-envenomation-treatment"
+    ],
+    "title": "Snake envenomation antivenom protocol",
+    "description": "On confirmed envenomation with systemic features (20-WBCT failure, neurotoxicity, shock, local necrosis crossing a joint), recommends polyvalent antivenom 50–100 mL IV over 30 min with adrenaline + steroid + chlorphenamine pre-mix ready. Re-infusion every 1–2 h until coagulopathy or neurotoxicity reverses. Reads context.envenomationFeatures, context.wbct20MinResult.",
+    "references": [
+      {
+        "label": "WHO Guidelines for the management of snakebites in Africa",
+        "url": "https://www.afro.who.int/publications/guidelines-prevention-and-clinical-management-snakebite-africa"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T63.0",
+        "display": "Toxic effect of snake venom",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "61458008",
+        "display": "Snake bite",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J06AA03",
+        "display": "Snake venom antiserum",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "stemi-fibrinolysis",
+    "hook": "patient-view",
+    "type": "stemi-fibrinolysis",
+    "services": [
+      "vedamd-stemi-fibrinolysis"
+    ],
+    "title": "STEMI — fibrinolysis vs PCI pathway",
+    "description": "On ECG-confirmed STEMI (context.stEcgFinding = 'stemi'), determines reperfusion strategy: PCI within 120 min preferred; otherwise fibrinolysis with tenecteplase / streptokinase within 12 h of symptom onset, then transfer for PCI within 24 h. Contraindication checklist (recent bleed, stroke, surgery, BP > 180/110). Reads context.symptomOnsetMin, context.transferToPciMin, context.bleedingRisk.",
+    "references": [
+      {
+        "label": "ESC STEMI Guidelines 2023",
+        "url": "https://academic.oup.com/eurheartj/article/44/38/3720/7243210"
+      },
+      {
+        "label": "AHA STEMI 2022 Update"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I21.9",
+        "display": "Acute myocardial infarction, unspecified",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "401303003",
+        "display": "Acute ST-segment elevation myocardial infarction",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "B01AD11",
+        "display": "Tenecteplase",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "afib-cha2ds2vasc-anticoag",
+    "hook": "patient-view",
+    "type": "afib-anticoagulation",
+    "services": [
+      "vedamd-afib-anticoag"
+    ],
+    "title": "Atrial fibrillation — CHA₂DS₂-VASc anticoagulation",
+    "description": "On context.diagnoses contains atrial fibrillation, computes CHA₂DS₂-VASc + HAS-BLED, recommends DOAC (apixaban/dabigatran/rivaroxaban/edoxaban) if non-valvular and CHA₂DS₂-VASc ≥ 2 (men) or ≥ 3 (women). Warfarin for valvular AF / mechanical valve. Adds dose adjustment for renal function + age + weight. Reads context.diagnoses, context.ageYears, context.sex, context.creatinineClearance.",
+    "references": [
+      {
+        "label": "ESC AF Guidelines 2024",
+        "url": "https://academic.oup.com/eurheartj/article/45/36/3314/7738779"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I48.91",
+        "display": "Unspecified atrial fibrillation",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "49436004",
+        "display": "Atrial fibrillation (disorder)",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "B01AF02",
+        "display": "Apixaban",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "vte-prophylaxis-padua",
+    "hook": "patient-view",
+    "type": "vte-prophylaxis",
+    "services": [
+      "vedamd-vte-prophylaxis"
+    ],
+    "title": "VTE prophylaxis — Padua score in medical inpatients",
+    "description": "Computes Padua score from context. Recommends LMWH (enoxaparin 40 mg SC OD; 20 mg if CrCl < 30) or fondaparinux if Padua ≥ 4 AND HAS-BLED < 3. Mechanical (IPC) prophylaxis if pharmacological contraindicated. Reads context.paduaItems (age ≥ 70, cancer, prior VTE, bedrest, etc.) + bleeding risk + CrCl.",
+    "references": [
+      {
+        "label": "ASH 2018 VTE Prophylaxis",
+        "url": "https://ashpublications.org/bloodadvances/article/2/22/3198/16107"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I82.40",
+        "display": "Acute embolism and thrombosis of unspecified deep veins of lower extremity",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "128053003",
+        "display": "Deep vein thrombosis",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "B01AB05",
+        "display": "Enoxaparin",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "upper-gi-bleed-glasgow-blatchford",
+    "hook": "patient-view",
+    "type": "upper-gi-bleed-blatchford",
+    "services": [
+      "vedamd-ugib-blatchford"
+    ],
+    "title": "Upper GI bleed — Glasgow-Blatchford triage",
+    "description": "Computes Glasgow-Blatchford Score from context.urea, context.hb, context.systolicBp, context.pulse, context.melaena, context.syncope. Score 0 → outpatient possible; ≥ 6 → urgent endoscopy + IV PPI 80 mg bolus then 8 mg/h + terlipressin if variceal suspected.",
+    "references": [
+      {
+        "label": "NICE CG141 UGIB",
+        "url": "https://www.nice.org.uk/guidance/cg141"
+      },
+      {
+        "label": "ESGE UGIB 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K92.2",
+        "display": "Gastrointestinal haemorrhage, unspecified",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "37372002",
+        "display": "Upper gastrointestinal haemorrhage",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "A02BC01",
+        "display": "Omeprazole",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "H01BA04",
+        "display": "Terlipressin",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "alcohol-withdrawal-ciwa",
+    "hook": "patient-view",
+    "type": "alcohol-withdrawal-ciwa",
+    "services": [
+      "vedamd-alcohol-withdrawal"
+    ],
+    "title": "Alcohol withdrawal — CIWA-Ar protocol",
+    "description": "Symptom-triggered diazepam / chlordiazepoxide based on CIWA-Ar score; thiamine 200 mg IV before glucose; folate; magnesium. Recognises delirium tremens needing ICU. Reads context.ciwaScore, context.heartRate, context.tremor, context.seizureHistory.",
+    "references": [
+      {
+        "label": "NICE CG100 Alcohol-use disorders"
+      },
+      {
+        "label": "ASAM Alcohol Withdrawal 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F10.23",
+        "display": "Alcohol dependence with withdrawal",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "26929004",
+        "display": "Alcohol withdrawal syndrome",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "N05BA01",
+        "display": "Diazepam",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "A11DA01",
+        "display": "Thiamine",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "pneumonia-curb65-treatment",
+    "hook": "patient-view",
+    "type": "pneumonia-curb65-treatment",
+    "services": [
+      "vedamd-pneumonia-curb65"
+    ],
+    "title": "Community-acquired pneumonia — CURB-65 + antibiotic choice",
+    "description": "Computes CURB-65 from context.confusion, context.urea, context.respiratoryRate, context.systolicBp, context.diastolicBp, context.ageYears. 0–1 outpatient amoxicillin; 2 ward amoxicillin + macrolide; ≥ 3 IV co-amoxiclav + macrolide / consider ICU. AWaRe-tagged choices.",
+    "references": [
+      {
+        "label": "BTS CAP Guideline 2009 + 2015 annotation",
+        "url": "https://www.brit-thoracic.org.uk/quality-improvement/guidelines/pneumonia-adults/"
+      },
+      {
+        "label": "IDSA CAP 2019"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J18.9",
+        "display": "Pneumonia, unspecified organism",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "385093006",
+        "display": "Community-acquired pneumonia",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J01CA04",
+        "display": "Amoxicillin",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "uti-treatment-trimethoprim-nitrofurantoin",
+    "hook": "medication-prescribe",
+    "type": "uti-treatment",
+    "services": [
+      "vedamd-uti-treatment"
+    ],
+    "title": "Uncomplicated UTI — empirical therapy",
+    "description": "For non-pregnant women with cystitis: nitrofurantoin 100 mg BD × 3 days (preferred where eGFR ≥ 45) OR trimethoprim 200 mg BD × 3 days (avoid if local E. coli resistance > 20 %). Pregnancy: nitrofurantoin 1st-2nd trimester only; cefalexin in 3rd. Men → 7-day course + investigate. Reads context.sex, context.pregnant, context.eGFR.",
+    "references": [
+      {
+        "label": "NICE NG109 UTI",
+        "url": "https://www.nice.org.uk/guidance/ng109"
+      },
+      {
+        "label": "WHO AWaRe — Access"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N39.0",
+        "display": "Urinary tract infection, site not specified",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "68566005",
+        "display": "Urinary tract infectious disease",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J01XE01",
+        "display": "Nitrofurantoin",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "asthma-step-up-gina",
+    "hook": "patient-view",
+    "type": "asthma-step-up",
+    "services": [
+      "vedamd-asthma-step-up"
+    ],
+    "title": "Asthma — GINA stepwise therapy",
+    "description": "On context.diagnoses contains asthma + context.gina.SABAUsePerWeek, recommends GINA-aligned step: Track 1 MART (budesonide-formoterol PRN ± low/medium maintenance). Steps up if SABA ≥ 3 days/week or night-waking. Triggers severe-asthma review if step 5. Reads context.gina, context.symptomControl.",
+    "references": [
+      {
+        "label": "GINA Global Strategy 2024",
+        "url": "https://ginasthma.org/"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J45.9",
+        "display": "Asthma, unspecified",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "195967001",
+        "display": "Asthma",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "R03AK07",
+        "display": "Formoterol/budesonide",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "anaemia-iron-replacement",
+    "hook": "patient-view",
+    "type": "anaemia-iron-replacement",
+    "services": [
+      "vedamd-anaemia-iron"
+    ],
+    "title": "Iron-deficiency anaemia — replacement pathway",
+    "description": "Calculates iron deficit using Ganzoni formula or simplified table. Prefers oral ferrous sulphate 200 mg OD (alternate days dosing supported by HEPCIDIN evidence). IV ferric carboxymaltose if intolerance, malabsorption, CKD-anaemia, IBD, pregnancy ≥ 14 weeks, or Hb < 70 with symptoms. Reads context.hb, context.ferritin, context.tsat, context.weightKg, context.pregnant.",
+    "references": [
+      {
+        "label": "BSH Iron Deficiency Guideline 2021",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1111/bjh.16221"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D50.9",
+        "display": "Iron deficiency anaemia, unspecified",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "87522002",
+        "display": "Iron deficiency anaemia",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "B03AA07",
+        "display": "Ferrous sulphate",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "hypothyroidism-levothyroxine-init",
+    "hook": "patient-view",
+    "type": "hypothyroidism-init",
+    "services": [
+      "vedamd-hypothyroidism-init"
+    ],
+    "title": "Hypothyroidism — levothyroxine initiation",
+    "description": "On TSH > 10 mU/L OR TSH 4–10 with symptoms / pregnancy / fertility planning, recommends levothyroxine 1.6 µg/kg/day (start full dose if young + no IHD; start 25 µg if elderly / IHD). Repeat TSH at 6–8 weeks. Pregnancy: aim TSH < 2.5 mU/L; increase dose by 30 % on confirmed pregnancy. Reads context.tsh, context.freeT4, context.ageYears, context.pregnant, context.ihd.",
+    "references": [
+      {
+        "label": "ATA Hypothyroidism 2014",
+        "url": "https://www.thyroid.org/professionals/ata-professional-guidelines/"
+      },
+      {
+        "label": "BSH Pregnancy Thyroid Disease"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E03.9",
+        "display": "Hypothyroidism, unspecified",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "40930008",
+        "display": "Hypothyroidism",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "H03AA01",
+        "display": "Levothyroxine sodium",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "post-exposure-hiv-pep",
+    "hook": "patient-view",
+    "type": "hiv-pep",
+    "services": [
+      "vedamd-hiv-pep"
+    ],
+    "title": "HIV post-exposure prophylaxis (PEP)",
+    "description": "For occupational / sexual / mother-to-child exposure within 72 h: recommends TDF + 3TC (or FTC) + DTG once daily × 28 days; alternative regimens for renal impairment. Baseline + 6-week + 3-month HIV testing. Counsels source-testing where possible. Reads context.exposureType, context.hoursSinceExposure, context.sourceHivStatus, context.eGFR.",
+    "references": [
+      {
+        "label": "WHO PEP Guidelines 2024"
+      },
+      {
+        "label": "CDC HIV PEP Guidelines",
+        "url": "https://stacks.cdc.gov/view/cdc/38856"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z20.6",
+        "display": "Contact with and (suspected) exposure to human immunodeficiency virus",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "434591000124102",
+        "display": "HIV post-exposure prophylaxis",
+        "kind": "procedure"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J05AR23",
+        "display": "TDF/3TC/DTG",
+        "kind": "drug"
+      }
+    ]
   }
 ]

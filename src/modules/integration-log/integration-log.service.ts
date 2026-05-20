@@ -1,10 +1,7 @@
 import { Inject, Injectable, Logger, Optional } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { and, desc, eq, gte, lt, count, sql } from 'drizzle-orm';
-import {
-  INTEGRATION_LOG_ALLOWED_KEYS,
-  type IntegrationLogEntry,
-} from './integration-log.types';
+import { INTEGRATION_LOG_ALLOWED_KEYS, type IntegrationLogEntry } from './integration-log.types';
 import { DRIZZLE, type MaybeDrizzle } from '../../db/database.module';
 import { integrationLog } from '../../db/schema';
 import type { AppConfig } from '../../config/configuration';
@@ -43,8 +40,7 @@ export class IntegrationLogService {
     @Optional() @Inject(DRIZZLE) private readonly db: MaybeDrizzle,
   ) {
     this.maxEntries = this.config.get('integrationLog.maxEntriesPerIntegrator', { infer: true });
-    this.ttlMs =
-      this.config.get('integrationLog.ttlDays', { infer: true }) * 24 * 60 * 60 * 1000;
+    this.ttlMs = this.config.get('integrationLog.ttlDays', { infer: true }) * 24 * 60 * 60 * 1000;
     if (!this.db) {
       this.logger.warn(
         'IntegrationLogService running with IN-MEMORY ring buffer (no DATABASE_URL). Entries lost on restart.',
@@ -179,7 +175,9 @@ export class IntegrationLogService {
 
   private assertAllowedKeysOnly(entry: Record<string, unknown>): void {
     for (const key of Object.keys(entry)) {
-      if (!INTEGRATION_LOG_ALLOWED_KEYS.includes(key as (typeof INTEGRATION_LOG_ALLOWED_KEYS)[number])) {
+      if (
+        !INTEGRATION_LOG_ALLOWED_KEYS.includes(key as (typeof INTEGRATION_LOG_ALLOWED_KEYS)[number])
+      ) {
         const message = `Integration Log: field '${key}' is not on the allow-list (FR-333/FR-335).`;
         this.logger.error(message);
         throw new Error(message);

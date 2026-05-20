@@ -53,6 +53,12 @@ export interface DrugSummary {
 
 export interface DrugRecord extends DrugSummary, ContentReviewMetadata {
   rxnorm?: string;
+  /**
+   * SNOMED CT International substance / product code (optional).
+   * Lets EHRs map the VedaMD drug record to their local pharmacy
+   * dictionary without text-matching on `inn`.
+   */
+  snomed?: string;
   whoEml: boolean;
   indications: { icd10?: string; text: string }[];
   mechanism: string;

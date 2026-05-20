@@ -1,21 +1,8 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Post,
-  Req,
-  UseGuards,
-} from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Req, UseGuards } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { IsArray, IsIn, IsString } from 'class-validator';
 import type { FastifyRequest } from 'fastify';
-import {
-  ApiKeysService,
-  type ApiKeyEnvironment,
-  type ApiKeyScope,
-} from './api-keys.service';
+import { ApiKeysService, type ApiKeyEnvironment, type ApiKeyScope } from './api-keys.service';
 import { OperatorAuthGuard } from '../../common/operator-auth';
 
 class CreateApiKeyDto {
@@ -45,7 +32,8 @@ export class ApiKeysController {
   @Post()
   @ApiOperation({
     summary: 'Create an API key',
-    description: 'FR-313 — secret returned once at creation; only fingerprints displayed thereafter.',
+    description:
+      'FR-313 — secret returned once at creation; only fingerprints displayed thereafter.',
   })
   create(@Req() req: FastifyRequest, @Body() body: CreateApiKeyDto) {
     return this.keys.create({ integratorId: req.operator!.integratorId, ...body });

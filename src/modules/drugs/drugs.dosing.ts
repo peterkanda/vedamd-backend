@@ -82,7 +82,10 @@ function paediatricResult(
       ...base,
       protocol: 'not-applicable',
       narrative: `${drug.inn} has no paediatric dosing protocol on file in this content version.`,
-      warnings: [...base.warnings, 'No paediatric protocol available — consult a senior clinician.'],
+      warnings: [
+        ...base.warnings,
+        'No paediatric protocol available — consult a senior clinician.',
+      ],
     };
   }
 
@@ -96,7 +99,10 @@ function paediatricResult(
         (paed.minWeightKg !== undefined ? ` Minimum weight ${paed.minWeightKg} kg.` : ''),
       warnings:
         paed.minWeightKg !== undefined && inputs.weightKg < paed.minWeightKg
-          ? [...base.warnings, `Weight ${inputs.weightKg} kg is below the minimum ${paed.minWeightKg} kg for this regimen.`]
+          ? [
+              ...base.warnings,
+              `Weight ${inputs.weightKg} kg is below the minimum ${paed.minWeightKg} kg for this regimen.`,
+            ]
           : base.warnings,
     };
   }
@@ -134,9 +140,8 @@ function computePaediatricMgPerKg(
   };
 
   const indicationNote = matchIndicationNote(drug, inputs.indication);
-  const renalNote = renalHit && !renalHit.prohibited
-    ? ` Renal adjustment applied: ${renalHit.adjustment}`
-    : '';
+  const renalNote =
+    renalHit && !renalHit.prohibited ? ` Renal adjustment applied: ${renalHit.adjustment}` : '';
 
   return {
     ...base,
@@ -148,9 +153,13 @@ function computePaediatricMgPerKg(
       (maxMgPerDay ? `; do not exceed ${maxMgPerDay} mg in 24 h.` : '.') +
       (indicationNote ? ` ${indicationNote}` : '') +
       renalNote,
-    warnings: paed.minWeightKg !== undefined && inputs.weightKg < paed.minWeightKg
-      ? [...base.warnings, `Weight ${inputs.weightKg} kg is below the minimum ${paed.minWeightKg} kg for this regimen.`]
-      : base.warnings,
+    warnings:
+      paed.minWeightKg !== undefined && inputs.weightKg < paed.minWeightKg
+        ? [
+            ...base.warnings,
+            `Weight ${inputs.weightKg} kg is below the minimum ${paed.minWeightKg} kg for this regimen.`,
+          ]
+        : base.warnings,
   };
 }
 
@@ -169,9 +178,8 @@ function adultResult(
     };
   }
 
-  const renalNote = renalHit && !renalHit.prohibited
-    ? ` Renal adjustment applied: ${renalHit.adjustment}`
-    : '';
+  const renalNote =
+    renalHit && !renalHit.prohibited ? ` Renal adjustment applied: ${renalHit.adjustment}` : '';
   const indicationNote = matchIndicationNote(drug, inputs.indication);
 
   return {

@@ -16,11 +16,13 @@ export interface BundleCatalogEntry {
 @Injectable()
 export class BundlesService {
   /** Catalog query (FR-147). */
-  async catalog(_filter: {
-    domain?: string;
-    locale?: string;
-    country?: string;
-  } = {}): Promise<BundleCatalogEntry[]> {
+  async catalog(
+    _filter: {
+      domain?: string;
+      locale?: string;
+      country?: string;
+    } = {},
+  ): Promise<BundleCatalogEntry[]> {
     return [];
   }
 

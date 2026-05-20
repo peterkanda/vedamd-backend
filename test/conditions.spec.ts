@@ -24,9 +24,12 @@ describe('ConditionsService', () => {
 
   it('filters by domain', () => {
     const ncds = svc.list({ domain: 'ncd' });
-    expect(ncds.every((c) => c.slug.includes('hypertension') || c.slug.includes('diabetes'))).toBe(
-      true,
-    );
+    expect(ncds.length).toBeGreaterThan(0);
+    // Every match must carry the ncd domain tag in its full record.
+    for (const summary of ncds) {
+      const full = svc.get(summary.slug);
+      expect(full?.domains).toContain('ncd');
+    }
   });
 
   it('returns full guidance by slug', () => {

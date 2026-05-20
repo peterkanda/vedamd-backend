@@ -128,10 +128,20 @@ function pushViolations(
   if (record.reviewers) {
     for (const r of record.reviewers) {
       if (!r.name) {
-        out.push({ code: 'reviewer-without-name', domain, recordId, message: 'Reviewer missing name.' });
+        out.push({
+          code: 'reviewer-without-name',
+          domain,
+          recordId,
+          message: 'Reviewer missing name.',
+        });
       }
       if (!r.role) {
-        out.push({ code: 'reviewer-without-role', domain, recordId, message: 'Reviewer missing role.' });
+        out.push({
+          code: 'reviewer-without-role',
+          domain,
+          recordId,
+          message: 'Reviewer missing role.',
+        });
       }
       if (!r.reviewedAt) {
         out.push({

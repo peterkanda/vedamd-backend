@@ -10,15 +10,7 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
-import {
-  ArrayMinSize,
-  IsArray,
-  IsNumber,
-  IsOptional,
-  IsString,
-  Max,
-  Min,
-} from 'class-validator';
+import { ArrayMinSize, IsArray, IsNumber, IsOptional, IsString, Max, Min } from 'class-validator';
 import { DrugsService } from './drugs.service';
 import type { AwareCategory } from './drugs.types';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';

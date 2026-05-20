@@ -7,6 +7,8 @@
  * optional cohort properties of the GUIDANCE, not the patient.
  */
 
+import type { CodedReference } from '../cds/cds.types';
+
 export type EvidenceLevel = 'A' | 'B' | 'C' | 'D' | 'expert-consensus';
 
 export type ReviewStatus = 'draft' | 'review' | 'approved' | 'deprecated';
@@ -51,7 +53,57 @@ export type CdsRuleType =
   | 'renal-safety'
   | 'pregnancy-safety'
   | 'aware-stewardship'
-  | 'medication-monitoring';
+  | 'medication-monitoring'
+  | 'imci-fever-under5'
+  | 'imci-diarrhoea-under5'
+  | 'imci-pneumonia-under5'
+  | 'imci-malaria-under5'
+  | 'imci-malnutrition-under5'
+  | 'imci-young-infant'
+  | 'pen-hypertension-screen'
+  | 'pen-diabetes-screen'
+  | 'pen-cvd-risk'
+  | 'paediatric-dosing'
+  | 'adult-cap-crb65'
+  | 'adult-acs-recognition'
+  | 'adult-malaria'
+  | 'anc-first-contact'
+  | 'anc-preeclampsia-screen'
+  | 'anc-pph-risk-screen'
+  | 'tb-symptom-screen'
+  | 'phq9-depression-screen'
+  | 'gad7-anxiety-screen'
+  | 'cage-aid-substance-screen'
+  | 'mhgap-psychosis-screen'
+  | 'hiv-pitc-trigger'
+  | 'stroke-fast-recognition'
+  | 'sepsis-qsofa'
+  | 'copd-exacerbation'
+  | 'anaphylaxis-recognition'
+  | 'dka-recognition'
+  | 'severe-asthma-exacerbation'
+  | 'snake-bite-triage'
+  | 'syphilis-screen'
+  | 'heart-failure-decompensation'
+  | 'viral-hepatitis-screen'
+  | 'sti-syndromic'
+  | 'gdm-screen'
+  | 'status-epilepticus'
+  | 'imci-measles'
+  | 'pmtct'
+  | 'postpartum-care'
+  | 'ckd-screen'
+  | 'head-injury-triage'
+  | 'hhs-recognition'
+  | 'tb-treatment'
+  | 'rabies-pep'
+  | 'neonatal-jaundice'
+  | 'sickle-cell-crisis'
+  | 'dengue-arboviral'
+  | 'schistosomiasis-treatment'
+  | 'imci-ear-infection'
+  | 'neonatal-sepsis'
+  | 'heat-stroke';
 
 export type CdsHook =
   | 'patient-view'
@@ -67,12 +119,61 @@ export interface CdsRule extends ContentReviewMetadata {
   title: string;
   description: string;
   references: { label: string; url?: string }[];
+  /**
+   * Optional whitelist of CDS service IDs this rule applies to.
+   * When absent the rule fires on any service matching `hook`
+   * (the original aggregate behaviour). When present the rule
+   * fires only on listed services — used by dedicated single-rule
+   * services like `vedamd-imci-fever-under5` that should not bleed
+   * into the generic `vedamd-patient-view` aggregator.
+   */
+  services?: string[];
+  /**
+   * Optional per-locale overrides for the card frame. When the
+   * incoming request's `context.lang` matches a key here, the
+   * strategy substitutes the localised summary/detail templates;
+   * otherwise it falls back to English (the strategy's own static
+   * strings).
+   *
+   * Templates may reference `{{key}}` placeholders that the
+   * strategy fills in at evaluation time (e.g. `{{maxTempC}}`).
+   * Strategies decide which keys to expose; missing keys render
+   * as empty strings so a missing translation never throws.
+   *
+   * v0.1 ships English-only content; this field is structural
+   * plumbing so adding Swahili later is a content change, not a
+   * code change.
+   */
+  localeMessages?: Record<
+    string,
+    {
+      summary?: string;
+      detail?: string;
+    }
+  >;
+  /**
+   * Canonical coded references that apply to every card this rule
+   * emits. The CdsService merges these into the card extension after
+   * strategy evaluation (deduplicated against any codings the
+   * strategy already attached for case-specific overrides).
+   *
+   * Lives in the signed content bundle so codings are versioned,
+   * governed, and clinically reviewed alongside the recommendation
+   * itself. Supported systems include — but are not limited to —
+   * ICD-10, ICD-11 MMS, SNOMED CT, LOINC, WHO ATC, RxNorm, WHO AWaRe,
+   * AMA CPT, and US NDC.
+   */
+  codings?: CodedReference[];
 }
 
 export interface ConditionSummary {
   slug: string;
   title: string;
   icd10: string[];
+  /** WHO ICD-11 MMS codes (optional — backfilled per bundle release). */
+  icd11?: string[];
+  /** SNOMED CT International disorder codes (optional). */
+  snomed?: string[];
   domains: string[];
 }
 

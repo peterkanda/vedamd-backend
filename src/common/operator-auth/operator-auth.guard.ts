@@ -89,9 +89,7 @@ export class OperatorAuthGuard implements CanActivate {
       return true;
     }
 
-    throw new UnauthorizedException(
-      'Operator identity required: Authorization: Bearer <JWT>.',
-    );
+    throw new UnauthorizedException('Operator identity required: Authorization: Bearer <JWT>.');
   }
 }
 

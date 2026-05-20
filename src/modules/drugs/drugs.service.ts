@@ -41,14 +41,7 @@ export class DrugsService implements OnModuleInit {
         if (filters.aware && d.awareCategory !== filters.aware) return false;
         if (filters.kemlOnly && !d.kemlLevel) return false;
         if (q) {
-          const haystack = [
-            d.slug,
-            d.inn,
-            d.drugClass,
-            ...d.tradeNames,
-            ...d.atc,
-            d.rxnorm ?? '',
-          ]
+          const haystack = [d.slug, d.inn, d.drugClass, ...d.tradeNames, ...d.atc, d.rxnorm ?? '']
             .join(' ')
             .toLowerCase();
           if (!haystack.includes(q)) return false;

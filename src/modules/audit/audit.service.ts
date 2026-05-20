@@ -159,10 +159,7 @@ export class AuditService {
    */
   async verifyChain(): Promise<{ ok: true } | { ok: false; brokenAt: number }> {
     if (!this.db) return { ok: true };
-    const rows = await this.db
-      .select()
-      .from(auditEvents)
-      .orderBy(auditEvents.id);
+    const rows = await this.db.select().from(auditEvents).orderBy(auditEvents.id);
     let prev: string | null = null;
     for (let i = 0; i < rows.length; i += 1) {
       const r = rows[i];

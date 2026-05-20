@@ -57,8 +57,20 @@ export const ALLOWED_FIELDS = new Set<string>([
   // LLM
   'llm_invoked',
   'llm_provider',
+  'llm_model',
   'llm_token_input',
   'llm_token_output',
+  // agentic engine (counts + config ids only — never PHI)
+  'agentic_card_count',
+  'deterministic_card_count',
+  'batch_item_count',
+  'batch_evaluated',
+  'batch_errored',
+  'batch_critical_cards',
+  'sql_dialect',
+  'connection_id',
+  'query_id',
+  'row_count',
   // overrides
   'override_reported',
   'override_reason_code',

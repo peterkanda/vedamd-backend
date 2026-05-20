@@ -87,4 +87,8 @@ export class KnowledgeService implements OnModuleInit {
   getCdsRules(): CdsRule[] {
     return this.bundle.cdsRules;
   }
+
+  getTerminology() {
+    return this.bundle.terminology;
+  }
 }
