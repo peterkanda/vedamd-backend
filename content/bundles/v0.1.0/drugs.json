@@ -34041,5 +34041,400 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "imatinib",
+    "inn": "Imatinib",
+    "tradeNames": [
+      "Glivec",
+      "Gleevec"
+    ],
+    "atc": [
+      "L01EA01"
+    ],
+    "rxnorm": "282388",
+    "snomed": "386908000",
+    "drugClass": "BCR-ABL / KIT tyrosine kinase inhibitor",
+    "awareCategory": "Not-classified",
+    "whoEml": true,
+    "indications": [
+      {
+        "icd10": "C92.1",
+        "text": "Philadelphia-positive chronic myeloid leukaemia"
+      },
+      {
+        "text": "Gastrointestinal stromal tumour (GIST); Ph+ ALL"
+      }
+    ],
+    "mechanism": "Inhibits the BCR-ABL1 tyrosine kinase (and KIT/PDGFR), blocking proliferation of the malignant clone.",
+    "pharmacokinetics": {
+      "halfLifeHours": 18,
+      "metabolism": "hepatic (CYP3A4)",
+      "excretion": "biliary/faecal",
+      "notes": "CYP3A4 substrate and inhibitor — many interactions."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "oral",
+          "regimen": "CML chronic phase: 400 mg once daily with food and a large glass of water; higher doses in advanced phases per protocol.",
+          "notes": "Adjust for cytopenias and toxicity; specialist-initiated."
+        }
+      ],
+      "hepatic": "Reduce dose in significant hepatic impairment."
+    },
+    "pregnancy": {
+      "category": "Avoid",
+      "notes": "Avoid in pregnancy (teratogenic in animals); effective contraception required.",
+      "contraindicated": true
+    },
+    "lactation": "Avoid breastfeeding.",
+    "contraindications": [
+      "Pregnancy (relative — weigh against disease)",
+      "Hypersensitivity"
+    ],
+    "warnings": [
+      "Fluid retention/oedema (periorbital, pleural, pulmonary)",
+      "Myelosuppression and hepatotoxicity",
+      "Many CYP3A4 interactions",
+      "QT considerations with interacting drugs"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "oedema, nausea, muscle cramps, rash, cytopenias"
+      },
+      {
+        "frequency": "serious",
+        "effect": "hepatotoxicity, severe fluid retention"
+      }
+    ],
+    "monitoring": [
+      "FBC, liver function, weight/oedema",
+      "BCR-ABL1 response (CML)"
+    ],
+    "references": [
+      {
+        "label": "WHO Model List of Essential Medicines — imatinib"
+      },
+      {
+        "label": "BNF — imatinib"
+      }
+    ],
+    "kemlLevel": 4,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ursodeoxycholic-acid",
+    "inn": "Ursodeoxycholic acid",
+    "tradeNames": [
+      "Ursofalk",
+      "Urso"
+    ],
+    "atc": [
+      "A05AA02"
+    ],
+    "rxnorm": "11048",
+    "snomed": "372574004",
+    "drugClass": "Bile acid (choleretic / hepatoprotective)",
+    "awareCategory": "Not-classified",
+    "whoEml": false,
+    "indications": [
+      {
+        "icd10": "K74.3",
+        "text": "Primary biliary cholangitis"
+      },
+      {
+        "text": "Dissolution of cholesterol gallstones; intrahepatic cholestasis of pregnancy"
+      }
+    ],
+    "mechanism": "A hydrophilic bile acid that replaces toxic hydrophobic bile acids, improving bile flow and protecting hepatocytes and cholangiocytes.",
+    "pharmacokinetics": {
+      "halfLifeHours": 100,
+      "metabolism": "hepatic (enterohepatic recycling)",
+      "excretion": "biliary/faecal"
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "oral",
+          "regimen": "Primary biliary cholangitis: 13–15 mg/kg/day in divided doses.",
+          "notes": "Take separately from bile-acid sequestrants and aluminium antacids."
+        }
+      ]
+    },
+    "pregnancy": {
+      "notes": "Used for intrahepatic cholestasis of pregnancy; considered acceptable."
+    },
+    "lactation": "Considered compatible.",
+    "contraindications": [
+      "Acute cholecystitis/biliary obstruction",
+      "Radio-opaque (calcified) gallstones",
+      "Hypersensitivity"
+    ],
+    "warnings": [
+      "Separate dosing from colestyramine/antacids (reduced absorption)",
+      "Diarrhoea is the commonest side effect"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "diarrhoea, nausea"
+      },
+      {
+        "frequency": "uncommon",
+        "effect": "pruritus worsening early in treatment"
+      }
+    ],
+    "monitoring": [
+      "liver function (treatment response in PBC)"
+    ],
+    "references": [
+      {
+        "label": "EASL primary biliary cholangitis guideline"
+      }
+    ],
+    "kemlLevel": 4,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "penicillamine",
+    "inn": "Penicillamine",
+    "tradeNames": [
+      "Cuprimine",
+      "Distamine"
+    ],
+    "atc": [
+      "M01CC01"
+    ],
+    "rxnorm": "7975",
+    "snomed": "372733002",
+    "drugClass": "Copper-chelating agent",
+    "awareCategory": "Not-classified",
+    "whoEml": true,
+    "indications": [
+      {
+        "icd10": "E83.0",
+        "text": "Wilson disease (copper chelation)"
+      },
+      {
+        "text": "Cystinuria; (historically) rheumatoid arthritis; heavy-metal poisoning"
+      }
+    ],
+    "mechanism": "Chelates copper (and other heavy metals), promoting urinary excretion; reduces tissue copper accumulation in Wilson disease.",
+    "pharmacokinetics": {
+      "halfLifeHours": 2,
+      "metabolism": "hepatic",
+      "excretion": "renal",
+      "notes": "Take on an empty stomach; food and iron reduce absorption."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "oral",
+          "regimen": "Wilson disease: typically 1–1.5 g/day in divided doses, titrated to urinary copper, then a maintenance dose; take well before food.",
+          "notes": "Introduce gradually; give pyridoxine supplementation."
+        }
+      ]
+    },
+    "pregnancy": {
+      "notes": "Use lowest effective dose if essential (e.g. Wilson disease); specialist supervision."
+    },
+    "lactation": "Avoid.",
+    "contraindications": [
+      "Penicillamine hypersensitivity",
+      "Significant renal impairment (relative)",
+      "Concurrent gold/immunosuppressant therapy (caution)"
+    ],
+    "warnings": [
+      "Initial neurological worsening in Wilson disease",
+      "Bone marrow suppression and proteinuria/nephrotic syndrome",
+      "Autoimmune phenomena (e.g. myasthenia, lupus-like)",
+      "Reduced absorption with food, iron and antacids"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "nausea, anorexia, taste disturbance, rash"
+      },
+      {
+        "frequency": "serious",
+        "effect": "marrow suppression, proteinuria/nephrotic syndrome, autoimmune reactions"
+      }
+    ],
+    "monitoring": [
+      "FBC and urinalysis (regularly)",
+      "24-h urinary copper (Wilson disease)"
+    ],
+    "references": [
+      {
+        "label": "BNF — penicillamine"
+      },
+      {
+        "label": "EASL Wilson disease guideline"
+      }
+    ],
+    "kemlLevel": 2,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyclopentolate",
+    "inn": "Cyclopentolate (ophthalmic)",
+    "tradeNames": [
+      "Mydrilate",
+      "Cyclogyl"
+    ],
+    "atc": [
+      "S01FA04"
+    ],
+    "rxnorm": "3197",
+    "snomed": "395836008",
+    "drugClass": "Antimuscarinic mydriatic / cycloplegic (ophthalmic)",
+    "awareCategory": "Not-classified",
+    "whoEml": true,
+    "indications": [
+      {
+        "icd10": "H20.0",
+        "text": "Cycloplegia/mydriasis in anterior uveitis (relieve ciliary spasm, prevent synechiae)"
+      },
+      {
+        "text": "Cycloplegic refraction and fundus examination"
+      }
+    ],
+    "mechanism": "Blocks muscarinic receptors in the iris sphincter and ciliary muscle, producing pupil dilation and cycloplegia.",
+    "pharmacokinetics": {
+      "halfLifeHours": 0,
+      "metabolism": "n/a (topical)",
+      "excretion": "n/a",
+      "notes": "Effect lasts up to ~24 hours."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "ophthalmic",
+          "regimen": "1 drop of 0.5–1% to the affected eye; repeat per indication.",
+          "notes": "Use the lowest concentration that achieves the effect."
+        }
+      ],
+      "paediatric": {
+        "route": "ophthalmic",
+        "frequency": "as directed",
+        "notes": "Use lower concentration (0.5%) in infants; risk of systemic anticholinergic effects."
+      }
+    },
+    "pregnancy": {
+      "notes": "Topical use; use if needed."
+    },
+    "lactation": "Topical use; brief punctal occlusion reduces systemic absorption.",
+    "contraindications": [
+      "Untreated narrow-angle (closed-angle) glaucoma",
+      "Hypersensitivity"
+    ],
+    "warnings": [
+      "Can precipitate acute angle-closure glaucoma in predisposed eyes",
+      "Systemic anticholinergic effects, especially in infants (flushing, tachycardia, CNS effects)",
+      "Transient blurred vision and photophobia"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "stinging, blurred vision, photophobia"
+      },
+      {
+        "frequency": "uncommon",
+        "effect": "systemic anticholinergic effects in children"
+      }
+    ],
+    "monitoring": [
+      "for angle-closure symptoms in at-risk patients"
+    ],
+    "references": [
+      {
+        "label": "WHO Model Formulary — cyclopentolate"
+      }
+    ],
+    "kemlLevel": 2,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "prednisolone-acetate-ophthalmic",
+    "inn": "Prednisolone acetate (ophthalmic)",
+    "tradeNames": [
+      "Pred Forte"
+    ],
+    "atc": [
+      "S01BA04"
+    ],
+    "rxnorm": "8638",
+    "snomed": "395807009",
+    "drugClass": "Topical ophthalmic corticosteroid",
+    "awareCategory": "Not-classified",
+    "whoEml": false,
+    "indications": [
+      {
+        "icd10": "H20.0",
+        "text": "Anterior uveitis and other steroid-responsive ocular inflammation"
+      }
+    ],
+    "mechanism": "Corticosteroid that suppresses ocular inflammation by reducing inflammatory mediator production and immune cell activity.",
+    "pharmacokinetics": {
+      "halfLifeHours": 0,
+      "metabolism": "local",
+      "excretion": "n/a",
+      "notes": "Topical; systemic absorption minimal at usual doses."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "ophthalmic",
+          "regimen": "1 drop to the affected eye, frequency by severity (e.g. hourly initially in uveitis), tapering as inflammation settles.",
+          "notes": "Specialist-directed; do not stop abruptly."
+        }
+      ]
+    },
+    "pregnancy": {
+      "notes": "Topical use; use if needed."
+    },
+    "lactation": "Topical use compatible.",
+    "contraindications": [
+      "Untreated ocular infection (bacterial, viral e.g. herpes simplex keratitis, fungal)",
+      "Hypersensitivity"
+    ],
+    "warnings": [
+      "Raised intraocular pressure / steroid-induced glaucoma with prolonged use",
+      "Cataract formation with long-term use",
+      "May worsen/mask ocular infection (especially herpes simplex)"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "transient blurred vision, stinging"
+      },
+      {
+        "frequency": "serious",
+        "effect": "raised intraocular pressure, cataract, exacerbation of infection"
+      }
+    ],
+    "monitoring": [
+      "intraocular pressure with prolonged use",
+      "for infection"
+    ],
+    "references": [
+      {
+        "label": "Royal College of Ophthalmologists — uveitis guidance"
+      }
+    ],
+    "kemlLevel": 3,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]
