@@ -33132,5 +33132,262 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "fomepizole",
+    "inn": "Fomepizole",
+    "tradeNames": [
+      "Antizol"
+    ],
+    "atc": [
+      "V03AB34"
+    ],
+    "rxnorm": "114212",
+    "snomed": "396458002",
+    "drugClass": "Alcohol dehydrogenase inhibitor (antidote)",
+    "awareCategory": "Not-classified",
+    "whoEml": false,
+    "indications": [
+      {
+        "icd10": "T51.1",
+        "text": "Methanol poisoning"
+      },
+      {
+        "icd10": "T52.3",
+        "text": "Ethylene glycol poisoning"
+      }
+    ],
+    "mechanism": "Competitively inhibits alcohol dehydrogenase, preventing metabolism of methanol/ethylene glycol to their toxic acids; the parent alcohol is then cleared renally or by dialysis.",
+    "pharmacokinetics": {
+      "halfLifeHours": 0,
+      "metabolism": "hepatic (saturable)",
+      "excretion": "renal",
+      "notes": "Dosing interval changes during haemodialysis."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "IV",
+          "regimen": "Loading dose 15 mg/kg, then 10 mg/kg every 12 hours x4, then 15 mg/kg every 12 hours; increase frequency during dialysis.",
+          "notes": "Continue until toxic alcohol level is low and acidosis resolved."
+        }
+      ],
+      "paediatric": {
+        "mgPerKgPerDose": 15,
+        "route": "IV",
+        "frequency": "loading then 10 mg/kg q12h",
+        "notes": "Same weight-based regimen as adults."
+      }
+    },
+    "pregnancy": {
+      "notes": "Limited data; use when clearly indicated for life-threatening poisoning."
+    },
+    "lactation": "Limited data; the underlying poisoning is life-threatening.",
+    "contraindications": [
+      "Hypersensitivity to fomepizole or other pyrazoles"
+    ],
+    "warnings": [
+      "Does not replace haemodialysis in severe poisoning",
+      "Give early — efficacy depends on blocking metabolism before toxic acids form"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "headache, nausea, dizziness"
+      },
+      {
+        "frequency": "uncommon",
+        "effect": "injection-site reaction, transient transaminase rise"
+      }
+    ],
+    "monitoring": [
+      "serial pH/anion gap, electrolytes, renal function and toxic alcohol levels"
+    ],
+    "references": [
+      {
+        "label": "TOXBASE / national poisons guidance — fomepizole"
+      }
+    ],
+    "kemlLevel": 4,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "intravenous-immunoglobulin",
+    "inn": "Human normal immunoglobulin (IVIG)",
+    "tradeNames": [
+      "Privigen",
+      "Octagam",
+      "Gammagard"
+    ],
+    "atc": [
+      "J06BA02"
+    ],
+    "rxnorm": "857349",
+    "snomed": "116600000",
+    "drugClass": "Pooled human polyclonal immunoglobulin (immunomodulator / replacement)",
+    "awareCategory": "Not-classified",
+    "whoEml": true,
+    "indications": [
+      {
+        "icd10": "M30.3",
+        "text": "Kawasaki disease"
+      },
+      {
+        "icd10": "D69.3",
+        "text": "Immune thrombocytopenia"
+      },
+      {
+        "icd10": "G61.0",
+        "text": "Guillain-Barre syndrome"
+      },
+      {
+        "text": "Primary/secondary immunodeficiency (replacement)"
+      }
+    ],
+    "mechanism": "Provides pooled polyclonal IgG; immunomodulatory in autoimmune disease (Fc-receptor blockade, antibody neutralisation) and replacement in immunodeficiency.",
+    "pharmacokinetics": {
+      "halfLifeHours": 720,
+      "metabolism": "reticuloendothelial catabolism",
+      "excretion": "n/a",
+      "notes": "Half-life ~3–4 weeks; varies by product and patient."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "IV",
+          "regimen": "Immunomodulatory: typically 1–2 g/kg total per course (e.g. 2 g/kg over 1–2 days for Kawasaki, or 0.4 g/kg/day x5 for GBS). Replacement: 0.4–0.6 g/kg every 3–4 weeks.",
+          "notes": "Infuse slowly, titrating rate; ensure adequate hydration."
+        }
+      ],
+      "paediatric": {
+        "route": "IV",
+        "frequency": "per indication",
+        "notes": "Kawasaki disease: 2 g/kg single infusion."
+      }
+    },
+    "pregnancy": {
+      "notes": "Considered safe; used in pregnancy when indicated."
+    },
+    "lactation": "Compatible.",
+    "contraindications": [
+      "IgA deficiency with anti-IgA antibodies (anaphylaxis risk)",
+      "Hypersensitivity to the product"
+    ],
+    "warnings": [
+      "Anaphylaxis/infusion reactions — infuse slowly and monitor",
+      "Thromboembolism (arterial/venous), especially with risk factors",
+      "Acute kidney injury, aseptic meningitis, haemolysis",
+      "Ensure hydration; slow the rate if reactions occur"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "headache, fever, chills, myalgia during infusion"
+      },
+      {
+        "frequency": "uncommon",
+        "effect": "aseptic meningitis, haemolysis"
+      },
+      {
+        "frequency": "serious",
+        "effect": "thromboembolism, anaphylaxis, acute kidney injury"
+      }
+    ],
+    "monitoring": [
+      "infusion-reaction observation",
+      "renal function and signs of thrombosis in at-risk patients"
+    ],
+    "references": [
+      {
+        "label": "WHO Model List of Essential Medicines — human immunoglobulin"
+      }
+    ],
+    "kemlLevel": 3,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hypertonic-saline-3",
+    "inn": "Sodium chloride 3% (hypertonic saline)",
+    "tradeNames": [
+      "3% NaCl"
+    ],
+    "atc": [
+      "B05XA03"
+    ],
+    "rxnorm": "313002",
+    "snomed": "387390002",
+    "drugClass": "Hypertonic crystalloid (osmotherapy / sodium replacement)",
+    "awareCategory": "Not-classified",
+    "whoEml": false,
+    "indications": [
+      {
+        "icd10": "E87.1",
+        "text": "Severe symptomatic hyponatraemia"
+      },
+      {
+        "text": "Raised intracranial pressure (osmotherapy)"
+      }
+    ],
+    "mechanism": "Raises serum sodium and plasma osmolality; in raised ICP it draws water across the intact blood-brain barrier to reduce cerebral oedema.",
+    "pharmacokinetics": {
+      "halfLifeHours": 0,
+      "metabolism": "n/a",
+      "excretion": "renal",
+      "notes": "Effect is osmotic and immediate."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "IV",
+          "regimen": "Severe symptomatic hyponatraemia: 100–150 mL boluses of 3% saline, repeated to control symptoms; ICP: 2–5 mL/kg per protocol.",
+          "notes": "Give via a reliable (ideally central) line for prolonged use; limit total daily sodium rise."
+        }
+      ]
+    },
+    "pregnancy": {
+      "notes": "Use when indicated for life-threatening hyponatraemia or raised ICP."
+    },
+    "lactation": "Compatible.",
+    "contraindications": [
+      "Hypernatraemia",
+      "Conditions where a sodium load is dangerous unless the indication is life-threatening"
+    ],
+    "warnings": [
+      "Over-rapid sodium correction risks osmotic demyelination syndrome — limit the rise to ~8–10 mmol/L in 24 h",
+      "Extravasation causes tissue injury",
+      "Fluid overload in heart/renal failure"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "injection-site irritation"
+      },
+      {
+        "frequency": "serious",
+        "effect": "osmotic demyelination from over-rapid correction"
+      },
+      {
+        "frequency": "uncommon",
+        "effect": "fluid overload"
+      }
+    ],
+    "monitoring": [
+      "serial serum sodium (every 2–4 h during active correction)",
+      "neurological status",
+      "fluid balance"
+    ],
+    "references": [
+      {
+        "label": "European hyponatraemia clinical practice guideline"
+      }
+    ],
+    "kemlLevel": 4,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]

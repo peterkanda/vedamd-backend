@@ -26259,5 +26259,1890 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "blunt-hepatic-injury",
+    "title": "Blunt hepatic (liver) injury",
+    "icd10": [
+      "S36.1"
+    ],
+    "snomed": [
+      "20262006"
+    ],
+    "domains": [
+      "trauma",
+      "surgery",
+      "emergency",
+      "critical-care"
+    ],
+    "presentation": [
+      "Right upper quadrant pain/tenderness after blunt abdominal trauma; right lower rib fractures raise suspicion.",
+      "Signs of hypovolaemia (tachycardia, hypotension) after a high-energy mechanism.",
+      "Referred right shoulder pain; abdominal distension."
+    ],
+    "redFlags": [
+      "Haemodynamic instability unresponsive to resuscitation — immediate laparotomy.",
+      "Peritonitis or ongoing transfusion requirement.",
+      "Expanding abdomen with rising lactate."
+    ],
+    "diagnostics": [
+      {
+        "test": "eFAST ultrasound",
+        "rationale": "Detects free intraperitoneal fluid at the bedside in unstable patients."
+      },
+      {
+        "test": "CT abdomen with contrast",
+        "rationale": "Grades injury and identifies active arterial extravasation (stable patients)."
+      },
+      {
+        "test": "Serial haemoglobin and observation",
+        "rationale": "Monitors for delayed bleeding during non-operative management."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitate",
+        "detail": "Large-bore access, balanced transfusion, activate major haemorrhage protocol, crossmatch, tranexamic acid early in trauma."
+      },
+      {
+        "step": "Operative vs non-operative",
+        "detail": "Instability -> laparotomy (packing, repair). Stable -> non-operative management +/- angioembolisation of active bleeding."
+      },
+      {
+        "step": "Monitor for complications",
+        "detail": "Watch for biliary leak, hepatic abscess, delayed haemorrhage and abdominal compartment syndrome."
+      }
+    ],
+    "references": [
+      {
+        "label": "WSES guidelines for liver trauma"
+      },
+      {
+        "label": "ATLS — abdominal trauma"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "traumatic-haemothorax",
+    "title": "Traumatic haemothorax",
+    "icd10": [
+      "S27.1"
+    ],
+    "snomed": [
+      "95548007"
+    ],
+    "domains": [
+      "trauma",
+      "respiratory",
+      "surgery",
+      "emergency"
+    ],
+    "presentation": [
+      "Respiratory distress and reduced breath sounds with dullness to percussion on the affected side after chest trauma.",
+      "Signs of blood loss: tachycardia, hypotension.",
+      "Often with rib fractures or penetrating injury."
+    ],
+    "redFlags": [
+      "Massive haemothorax (>1.5 L initial drainage or ongoing >200 mL/h) — needs thoracotomy.",
+      "Hypovolaemic shock.",
+      "Associated tension physiology."
+    ],
+    "diagnostics": [
+      {
+        "test": "Chest X-ray / eFAST",
+        "rationale": "Detects pleural fluid; ultrasound is rapid at the bedside."
+      },
+      {
+        "test": "CT chest (stable patients)",
+        "rationale": "Quantifies haemothorax and identifies source."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitate and drain",
+        "detail": "Oxygen, IV access, balanced transfusion; insert a large-bore intercostal chest drain and measure output."
+      },
+      {
+        "step": "Surgery for massive/ongoing bleeding",
+        "detail": "Urgent thoracotomy/VATS for massive initial loss or persistent high output."
+      },
+      {
+        "step": "Treat associated injuries",
+        "detail": "Manage rib fractures, pneumothorax and analgesia to enable ventilation."
+      }
+    ],
+    "references": [
+      {
+        "label": "ATLS — thoracic trauma"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "extradural-haematoma",
+    "title": "Extradural (epidural) haematoma",
+    "icd10": [
+      "S06.4"
+    ],
+    "snomed": [
+      "75250007"
+    ],
+    "domains": [
+      "trauma",
+      "neurology",
+      "neurosurgery",
+      "emergency",
+      "critical-care"
+    ],
+    "presentation": [
+      "Head trauma (often temporal) with a 'lucid interval' followed by rapid deterioration.",
+      "Headache, vomiting, declining GCS.",
+      "Ipsilateral fixed dilated pupil and contralateral weakness (late, herniation)."
+    ],
+    "redFlags": [
+      "Falling GCS, unequal pupils, Cushing response (hypertension + bradycardia) — impending herniation.",
+      "Any deterioration after head injury."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urgent non-contrast CT head",
+        "rationale": "Shows a biconvex (lentiform) hyperdense collection, classically from a middle meningeal artery tear."
+      },
+      {
+        "test": "Serial GCS and pupil assessment",
+        "rationale": "Detects deterioration requiring emergency intervention."
+      }
+    ],
+    "management": [
+      {
+        "step": "Neuroprotection",
+        "detail": "Secure airway, maintain oxygenation and normal CO2, avoid hypotension, head up 30 degrees; treat raised ICP (hypertonic saline/mannitol)."
+      },
+      {
+        "step": "Emergency neurosurgery",
+        "detail": "Urgent craniotomy and evacuation — outcomes are excellent if decompressed early."
+      },
+      {
+        "step": "Transfer",
+        "detail": "Immediate referral/transfer to a neurosurgical unit; reverse any anticoagulation."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE Head injury: assessment and early management"
+      },
+      {
+        "label": "Brain Trauma Foundation guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "acute-subdural-haematoma",
+    "title": "Acute subdural haematoma",
+    "icd10": [
+      "S06.5"
+    ],
+    "snomed": [
+      "95453001"
+    ],
+    "domains": [
+      "trauma",
+      "neurology",
+      "neurosurgery",
+      "emergency",
+      "critical-care"
+    ],
+    "presentation": [
+      "Head trauma (often elderly, anticoagulated, or alcohol use) with depressed or fluctuating consciousness.",
+      "Headache, confusion, focal neurology.",
+      "May present insidiously (chronic subdural) with gradual cognitive decline."
+    ],
+    "redFlags": [
+      "Declining GCS, anisocoria, focal deficit.",
+      "Anticoagulant or antiplatelet use.",
+      "Signs of raised intracranial pressure."
+    ],
+    "diagnostics": [
+      {
+        "test": "Non-contrast CT head",
+        "rationale": "Shows a crescentic collection over the convexity, crossing suture lines."
+      },
+      {
+        "test": "Coagulation screen",
+        "rationale": "Identifies and guides reversal of anticoagulation."
+      }
+    ],
+    "management": [
+      {
+        "step": "Neuroprotection and reversal",
+        "detail": "Airway/oxygenation, avoid hypotension/hypoxia; urgently reverse anticoagulation (e.g. PCC for warfarin)."
+      },
+      {
+        "step": "Neurosurgical referral",
+        "detail": "Evacuation for significant acute haematoma with mass effect; burr holes for symptomatic chronic subdural."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Manage raised ICP, seizures, and monitor neuro-observations."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE Head injury guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "traumatic-spinal-cord-injury",
+    "title": "Traumatic spinal cord injury",
+    "icd10": [
+      "S14",
+      "S24",
+      "S34"
+    ],
+    "snomed": [
+      "90584004"
+    ],
+    "domains": [
+      "trauma",
+      "neurology",
+      "orthopaedics",
+      "critical-care",
+      "emergency"
+    ],
+    "presentation": [
+      "Limb weakness, sensory loss or paralysis after trauma; a sensory level.",
+      "Neck/back pain, bony tenderness or deformity.",
+      "Priapism, urinary retention, loss of anal tone."
+    ],
+    "redFlags": [
+      "High cervical injury with respiratory compromise (diaphragmatic failure).",
+      "Neurogenic shock: hypotension with bradycardia.",
+      "Spinal shock with flaccid areflexia."
+    ],
+    "diagnostics": [
+      {
+        "test": "Full spinal immobilisation and examination",
+        "rationale": "Document motor/sensory level and sphincter function (ASIA assessment)."
+      },
+      {
+        "test": "CT (and MRI) of the spine",
+        "rationale": "Defines bony injury and cord/ligamentous damage."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immobilise and protect",
+        "detail": "Maintain in-line immobilisation, log-roll; airway with C-spine control; avoid secondary injury."
+      },
+      {
+        "step": "Support physiology",
+        "detail": "Treat neurogenic shock (fluids then vasopressors, atropine for bradycardia); maintain MAP for cord perfusion; ventilatory support for high lesions."
+      },
+      {
+        "step": "Specialist referral",
+        "detail": "Urgent spinal surgery referral; prevent pressure sores, VTE, bladder/bowel complications."
+      }
+    ],
+    "references": [
+      {
+        "label": "ATLS — spine and spinal cord trauma"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "pelvic-fracture-haemorrhage",
+    "title": "Pelvic fracture with haemorrhage",
+    "icd10": [
+      "S32.8",
+      "S37"
+    ],
+    "snomed": [
+      "263224003"
+    ],
+    "domains": [
+      "trauma",
+      "orthopaedics",
+      "surgery",
+      "emergency",
+      "critical-care"
+    ],
+    "presentation": [
+      "Pelvic pain and instability after a high-energy mechanism.",
+      "Hypovolaemic shock out of proportion to other injuries (massive retroperitoneal bleeding).",
+      "Perineal/scrotal bruising, leg-length discrepancy, blood at the urethral meatus."
+    ],
+    "redFlags": [
+      "Haemodynamic instability — life-threatening pelvic haemorrhage.",
+      "Open pelvic fracture / associated bowel or urogenital injury.",
+      "Do not 'spring' the pelvis repeatedly."
+    ],
+    "diagnostics": [
+      {
+        "test": "Pelvic X-ray and eFAST",
+        "rationale": "Identifies fracture pattern and excludes intraperitoneal bleeding."
+      },
+      {
+        "test": "CT with contrast (if stable)",
+        "rationale": "Localises arterial bleeding for embolisation."
+      }
+    ],
+    "management": [
+      {
+        "step": "Apply a pelvic binder",
+        "detail": "Bind at the level of the greater trochanters early to reduce volume and tamponade venous bleeding."
+      },
+      {
+        "step": "Resuscitate",
+        "detail": "Balanced transfusion, major haemorrhage protocol, tranexamic acid, crossmatch."
+      },
+      {
+        "step": "Definitive haemorrhage control",
+        "detail": "Angioembolisation, preperitoneal packing or external fixation per local pathway; urgent referral."
+      }
+    ],
+    "references": [
+      {
+        "label": "ATLS — pelvic trauma"
+      },
+      {
+        "label": "WSES pelvic trauma guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "crush-syndrome-rhabdomyolysis",
+    "title": "Crush syndrome / rhabdomyolysis",
+    "icd10": [
+      "T79.5",
+      "M62.82"
+    ],
+    "snomed": [
+      "240120004"
+    ],
+    "domains": [
+      "trauma",
+      "nephrology",
+      "critical-care",
+      "emergency"
+    ],
+    "presentation": [
+      "Muscle pain, weakness and swelling after prolonged compression, immobilisation, seizures or extreme exertion.",
+      "Dark (tea-coloured) urine from myoglobinuria.",
+      "Often after entrapment or a prolonged 'long lie'."
+    ],
+    "redFlags": [
+      "Hyperkalaemia with ECG changes / arrhythmia — life-threatening on reperfusion.",
+      "Acute kidney injury and oliguria.",
+      "Hypocalcaemia, metabolic acidosis, compartment syndrome."
+    ],
+    "diagnostics": [
+      {
+        "test": "Creatine kinase and urine myoglobin",
+        "rationale": "Markedly raised CK confirms rhabdomyolysis."
+      },
+      {
+        "test": "U&E, potassium, calcium, ECG",
+        "rationale": "Detect hyperkalaemia and AKI requiring urgent treatment."
+      }
+    ],
+    "management": [
+      {
+        "step": "Aggressive IV fluids",
+        "detail": "Early generous isotonic fluid resuscitation to maintain urine output and protect the kidneys; start before extrication where possible."
+      },
+      {
+        "step": "Treat hyperkalaemia",
+        "detail": "Calcium gluconate for cardioprotection, insulin-dextrose, and other measures; monitor ECG continuously."
+      },
+      {
+        "step": "Monitor and support",
+        "detail": "Watch for compartment syndrome, correct acidosis, renal replacement therapy for refractory hyperkalaemia/AKI."
+      }
+    ],
+    "references": [
+      {
+        "label": "Disaster medicine guidance on crush injury (WHO/ISN)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "open-globe-eye-injury",
+    "title": "Open globe (penetrating eye) injury",
+    "icd10": [
+      "S05.6"
+    ],
+    "snomed": [
+      "231911005"
+    ],
+    "domains": [
+      "trauma",
+      "ophthalmology",
+      "emergency"
+    ],
+    "presentation": [
+      "Eye pain and visual loss after penetrating or blunt trauma.",
+      "A teardrop/peaked pupil, prolapsed uveal tissue, shallow anterior chamber, or visible laceration.",
+      "Subconjunctival haemorrhage with reduced vision."
+    ],
+    "redFlags": [
+      "Any suspected open globe — do NOT apply pressure or topical drops.",
+      "Retained intraocular foreign body.",
+      "Endophthalmitis risk."
+    ],
+    "diagnostics": [
+      {
+        "test": "Gentle visual acuity and inspection",
+        "rationale": "Avoid manipulating the globe; document vision in each eye."
+      },
+      {
+        "test": "CT orbit (avoid MRI if metallic FB)",
+        "rationale": "Identifies globe rupture and intraocular foreign bodies."
+      }
+    ],
+    "management": [
+      {
+        "step": "Protect the eye",
+        "detail": "Apply a rigid eye shield (not a pad), keep nil by mouth, antiemetics to prevent Valsalva, avoid any pressure or drops."
+      },
+      {
+        "step": "Systemic measures",
+        "detail": "Analgesia, antiemetics, IV broad-spectrum antibiotics, tetanus prophylaxis."
+      },
+      {
+        "step": "Urgent ophthalmology",
+        "detail": "Emergency referral for surgical repair; avoid delays to reduce endophthalmitis and vision loss."
+      }
+    ],
+    "references": [
+      {
+        "label": "Royal College of Ophthalmologists — ocular trauma guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "drowning",
+    "title": "Drowning and submersion injury",
+    "icd10": [
+      "T75.1"
+    ],
+    "snomed": [
+      "87317003"
+    ],
+    "domains": [
+      "emergency",
+      "critical-care",
+      "respiratory",
+      "resuscitation"
+    ],
+    "presentation": [
+      "Respiratory distress, cough, hypoxia after a submersion event; may be asymptomatic initially.",
+      "Altered consciousness, vomiting, hypothermia.",
+      "Possible cardiac arrest."
+    ],
+    "redFlags": [
+      "Cardiac/respiratory arrest — prioritise rescue breaths/oxygenation.",
+      "Worsening respiratory failure over hours (delayed deterioration).",
+      "Hypothermia and associated trauma (e.g. cervical spine in diving)."
+    ],
+    "diagnostics": [
+      {
+        "test": "SpO2, ABG and chest X-ray",
+        "rationale": "Assess oxygenation and pulmonary oedema/aspiration."
+      },
+      {
+        "test": "Core temperature and observation",
+        "rationale": "Detect hypothermia; observe symptomatic patients for delayed deterioration."
+      }
+    ],
+    "management": [
+      {
+        "step": "Oxygenation first",
+        "detail": "Drowning is primarily a hypoxic insult — early rescue breaths and high-flow oxygen; ventilatory support/PEEP for respiratory failure."
+      },
+      {
+        "step": "Resuscitation",
+        "detail": "Standard ALS with attention to rewarming in hypothermia ('not dead until warm and dead'); protect the cervical spine if mechanism suggests."
+      },
+      {
+        "step": "Observe and support",
+        "detail": "Admit symptomatic patients; manage ARDS supportively; antibiotics only for established infection."
+      }
+    ],
+    "references": [
+      {
+        "label": "ILCOR/ERC guidelines on drowning"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "uterine-rupture",
+    "title": "Uterine rupture",
+    "icd10": [
+      "O71.0",
+      "O71.1"
+    ],
+    "snomed": [
+      "35966001"
+    ],
+    "domains": [
+      "obstetrics",
+      "obstetric-emergency",
+      "surgery",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Sudden severe abdominal pain, often with cessation of contractions, in labour (especially with a previous caesarean scar).",
+      "Maternal tachycardia/shock, abnormal foetal heart rate, vaginal bleeding.",
+      "Loss of station of the presenting part; palpable foetal parts abdominally."
+    ],
+    "redFlags": [
+      "Maternal collapse and foetal bradycardia/death — immediate laparotomy.",
+      "Scar dehiscence in a labouring VBAC.",
+      "Haemorrhagic shock."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical recognition",
+        "rationale": "Diagnosis is clinical and time-critical; do not delay for imaging."
+      },
+      {
+        "test": "FBC, crossmatch, coagulation",
+        "rationale": "Prepare for massive transfusion."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitate and call for help",
+        "detail": "Major haemorrhage protocol, large-bore access, balanced transfusion, summon obstetric/anaesthetic teams."
+      },
+      {
+        "step": "Immediate laparotomy",
+        "detail": "Deliver the foetus and repair the uterus; hysterectomy if repair impossible or bleeding uncontrolled."
+      },
+      {
+        "step": "Postoperative care",
+        "detail": "Monitor for ongoing bleeding, sepsis; counsel on future pregnancies and delivery mode."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO MCPC"
+      },
+      {
+        "label": "RCOG guidance — birth after previous caesarean"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "shoulder-dystocia",
+    "title": "Shoulder dystocia",
+    "icd10": [
+      "O66.0"
+    ],
+    "snomed": [
+      "46776005"
+    ],
+    "domains": [
+      "obstetrics",
+      "obstetric-emergency",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Failure of the shoulders to deliver after the head, with gentle downward traction (the 'turtle sign').",
+      "Head retracts against the perineum.",
+      "Risk factors: macrosomia, diabetes, previous dystocia, prolonged labour."
+    ],
+    "redFlags": [
+      "Delay to delivery — risk of hypoxic injury and death.",
+      "Brachial plexus injury / fracture from excessive traction.",
+      "Postpartum haemorrhage and perineal trauma."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical recognition",
+        "rationale": "Recognise immediately; call for help and start manoeuvres without delay."
+      }
+    ],
+    "management": [
+      {
+        "step": "Call for help and McRoberts",
+        "detail": "Summon help, hyperflex maternal hips (McRoberts), apply suprapubic pressure; discourage fundal pressure and excessive traction."
+      },
+      {
+        "step": "Second-line manoeuvres",
+        "detail": "Internal rotational manoeuvres (Rubin/Woods), deliver the posterior arm; consider all-fours position."
+      },
+      {
+        "step": "Document and review",
+        "detail": "Record times and manoeuvres; assess neonate for injury and mother for haemorrhage/trauma; debrief."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCOG Green-top Guideline No. 42 — Shoulder Dystocia"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "retained-placenta",
+    "title": "Retained placenta",
+    "icd10": [
+      "O72.0",
+      "O73.0"
+    ],
+    "snomed": [
+      "44558001"
+    ],
+    "domains": [
+      "obstetrics",
+      "obstetric-emergency",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Failure to deliver the placenta within 30 minutes of birth despite active management.",
+      "Ongoing or intermittent vaginal bleeding.",
+      "Risk of postpartum haemorrhage and infection."
+    ],
+    "redFlags": [
+      "Heavy bleeding with haemodynamic compromise.",
+      "Signs of placenta accreta (morbidly adherent placenta).",
+      "Uterine inversion during attempted removal."
+    ],
+    "diagnostics": [
+      {
+        "test": "Abdominal and vaginal examination",
+        "rationale": "Assess uterine tone, bleeding and whether the placenta is separated."
+      },
+      {
+        "test": "FBC, crossmatch",
+        "rationale": "Anticipate transfusion if bleeding."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitate and uterotonics",
+        "detail": "IV access, fluids; controlled cord traction with oxytocin; empty the bladder."
+      },
+      {
+        "step": "Manual removal",
+        "detail": "If not delivered or bleeding, perform manual removal under analgesia/anaesthesia with antibiotic cover."
+      },
+      {
+        "step": "Manage complications",
+        "detail": "Treat PPH, give antibiotics; suspect accreta if the plane cannot be developed — stop and seek senior/surgical help."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO MCPC"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "secondary-postpartum-haemorrhage",
+    "title": "Secondary postpartum haemorrhage",
+    "icd10": [
+      "O72.2"
+    ],
+    "snomed": [
+      "33168008"
+    ],
+    "domains": [
+      "obstetrics",
+      "obstetric-emergency",
+      "infection",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Abnormal/excessive vaginal bleeding from 24 hours to 6 weeks postpartum.",
+      "Often with offensive lochia, fever and uterine tenderness (endometritis).",
+      "Sub-involuted uterus."
+    ],
+    "redFlags": [
+      "Heavy bleeding with haemodynamic compromise.",
+      "Sepsis.",
+      "Retained products of conception."
+    ],
+    "diagnostics": [
+      {
+        "test": "Pelvic ultrasound",
+        "rationale": "Identifies retained products of conception."
+      },
+      {
+        "test": "FBC, CRP, vaginal/blood cultures",
+        "rationale": "Assess anaemia and infection."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitate as needed",
+        "detail": "IV access, fluids/transfusion if bleeding heavily; uterotonics and tranexamic acid."
+      },
+      {
+        "step": "Treat infection",
+        "detail": "Broad-spectrum antibiotics for suspected endometritis."
+      },
+      {
+        "step": "Source control",
+        "detail": "Surgical evacuation of retained products if present; senior obstetric input."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCOG Green-top Guideline No. 52 — Postpartum Haemorrhage"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "molar-pregnancy",
+    "title": "Molar pregnancy (hydatidiform mole)",
+    "icd10": [
+      "O01"
+    ],
+    "icd11": [
+      "JA02"
+    ],
+    "snomed": [
+      "237301006"
+    ],
+    "domains": [
+      "obstetrics",
+      "gynaecology",
+      "oncology",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Irregular vaginal bleeding in early pregnancy, often with a uterus large for dates.",
+      "Hyperemesis, exaggerated pregnancy symptoms; passage of grape-like vesicles.",
+      "Very high beta-hCG; absent foetal heart in a complete mole."
+    ],
+    "redFlags": [
+      "Early pre-eclampsia (<20 weeks).",
+      "Hyperthyroidism from very high hCG.",
+      "Heavy haemorrhage; signs of metastatic gestational trophoblastic neoplasia."
+    ],
+    "diagnostics": [
+      {
+        "test": "Pelvic ultrasound",
+        "rationale": "Shows a 'snowstorm'/cluster-of-grapes appearance with no foetus (complete mole)."
+      },
+      {
+        "test": "Serum beta-hCG",
+        "rationale": "Markedly elevated; used for diagnosis and post-evacuation monitoring."
+      }
+    ],
+    "management": [
+      {
+        "step": "Uterine evacuation",
+        "detail": "Suction curettage; send tissue for histology; give anti-D if Rh-negative."
+      },
+      {
+        "step": "hCG surveillance",
+        "detail": "Serial beta-hCG monitoring to detect persistent gestational trophoblastic neoplasia; register with a trophoblastic disease centre."
+      },
+      {
+        "step": "Contraception advice",
+        "detail": "Avoid pregnancy until hCG normalises; reliable contraception during follow-up."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCOG Green-top Guideline No. 38 — Gestational Trophoblastic Disease"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "amniotic-fluid-embolism",
+    "title": "Amniotic fluid embolism",
+    "icd10": [
+      "O88.1"
+    ],
+    "snomed": [
+      "19402003"
+    ],
+    "domains": [
+      "obstetrics",
+      "obstetric-emergency",
+      "critical-care",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Sudden cardiovascular collapse, hypoxia and seizures during labour, delivery or immediately postpartum.",
+      "Profound hypotension and respiratory failure.",
+      "Followed by disseminated intravascular coagulation and haemorrhage."
+    ],
+    "redFlags": [
+      "Cardiac arrest.",
+      "DIC with massive haemorrhage.",
+      "Refractory hypoxaemia."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis of exclusion",
+        "rationale": "Recognise the sudden triad of hypoxia, hypotension and coagulopathy; no confirmatory test should delay treatment."
+      },
+      {
+        "test": "Coagulation screen, fibrinogen",
+        "rationale": "Detect and guide treatment of DIC."
+      }
+    ],
+    "management": [
+      {
+        "step": "High-quality resuscitation",
+        "detail": "Call for help, ALS with left uterine displacement / perimortem caesarean within 5 minutes if arrest; oxygenation and circulatory support."
+      },
+      {
+        "step": "Treat coagulopathy and haemorrhage",
+        "detail": "Massive transfusion protocol, fibrinogen/cryoprecipitate, tranexamic acid; correct DIC."
+      },
+      {
+        "step": "Multidisciplinary critical care",
+        "detail": "ICU support, vasopressors/inotropes, consider advanced therapies (e.g. ECMO) where available."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCOG / UKOSS guidance on amniotic fluid embolism"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "carbon-monoxide-poisoning",
+    "title": "Carbon monoxide poisoning",
+    "icd10": [
+      "T58"
+    ],
+    "snomed": [
+      "1797008"
+    ],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
+    "presentation": [
+      "Headache, nausea, dizziness and confusion, often with multiple household members or co-exposed individuals affected.",
+      "Exposure to faulty heaters, smoke, or fumes in an enclosed space.",
+      "Normal SpO2 on pulse oximetry despite hypoxia (falsely reassuring)."
+    ],
+    "redFlags": [
+      "Loss of consciousness, seizures, chest pain or arrhythmia.",
+      "Pregnancy (foetal risk is higher).",
+      "Metabolic acidosis and high lactate."
+    ],
+    "diagnostics": [
+      {
+        "test": "Carboxyhaemoglobin (CO-oximetry)",
+        "rationale": "Confirms exposure; standard pulse oximetry is unreliable and reads falsely normal."
+      },
+      {
+        "test": "ECG and ABG with lactate",
+        "rationale": "Detect myocardial ischaemia and assess severity."
+      }
+    ],
+    "management": [
+      {
+        "step": "High-flow 100% oxygen",
+        "detail": "Give high-concentration oxygen via a non-rebreathe mask immediately to displace CO and shorten its half-life; continue until symptoms resolve and COHb normalises."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Monitor cardiac status, treat seizures and acidosis; remove from the source and assess co-exposed individuals."
+      },
+      {
+        "step": "Consider hyperbaric oxygen",
+        "detail": "Discuss hyperbaric oxygen for severe poisoning (loss of consciousness, neurological signs, pregnancy, ischaemia) where available."
+      }
+    ],
+    "references": [
+      {
+        "label": "TOXBASE / national poisons guidance — carbon monoxide"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "toxic-alcohol-poisoning",
+    "title": "Toxic alcohol poisoning (methanol / ethylene glycol)",
+    "icd10": [
+      "T51.1",
+      "T52.3"
+    ],
+    "snomed": [
+      "75614006"
+    ],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "nephrology"
+    ],
+    "presentation": [
+      "Inebriation followed by a latent period, then deterioration; history of ingesting non-beverage alcohol/antifreeze.",
+      "Methanol: visual disturbance ('snowstorm'/blindness). Ethylene glycol: flank pain, oxalate crystalluria, AKI.",
+      "Severe high-anion-gap metabolic acidosis."
+    ],
+    "redFlags": [
+      "Severe metabolic acidosis with raised osmolar gap.",
+      "Visual loss (methanol) or acute kidney injury (ethylene glycol).",
+      "Coma, seizures."
+    ],
+    "diagnostics": [
+      {
+        "test": "ABG/venous gas with anion and osmolar gap",
+        "rationale": "High-anion-gap metabolic acidosis with a raised osmolar gap supports toxic alcohol ingestion."
+      },
+      {
+        "test": "Serum methanol/ethylene glycol levels and renal function",
+        "rationale": "Confirm and quantify where available; assess AKI."
+      }
+    ],
+    "management": [
+      {
+        "step": "Block metabolism",
+        "detail": "Give fomepizole (preferred) or ethanol to inhibit alcohol dehydrogenase and prevent toxic metabolite formation — start early on suspicion."
+      },
+      {
+        "step": "Correct acidosis and cofactors",
+        "detail": "Sodium bicarbonate for severe acidosis; folinic acid/folate (methanol) and thiamine/pyridoxine (ethylene glycol) as adjuncts."
+      },
+      {
+        "step": "Haemodialysis",
+        "detail": "Indicated for severe acidosis, high levels, visual symptoms or renal failure to remove toxin and metabolites."
+      }
+    ],
+    "references": [
+      {
+        "label": "TOXBASE / national poisons guidance — toxic alcohols"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "tricyclic-antidepressant-overdose",
+    "title": "Tricyclic antidepressant overdose",
+    "icd10": [
+      "T43.0"
+    ],
+    "snomed": [
+      "290089002"
+    ],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "mental-health"
+    ],
+    "presentation": [
+      "Drowsiness, anticholinergic features (dry, dilated, tachycardic, agitated/confused) after TCA ingestion.",
+      "Seizures and rapid deterioration.",
+      "Hypotension and broad-complex arrhythmia."
+    ],
+    "redFlags": [
+      "QRS widening >100 ms — predicts seizures and arrhythmia.",
+      "Ventricular arrhythmia, hypotension, coma.",
+      "Recurrent seizures."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG (serial)",
+        "rationale": "QRS prolongation and a tall terminal R wave in aVR indicate cardiotoxicity and guide bicarbonate therapy."
+      },
+      {
+        "test": "ABG/electrolytes",
+        "rationale": "Assess acidosis and potassium; guide treatment."
+      }
+    ],
+    "management": [
+      {
+        "step": "Sodium bicarbonate",
+        "detail": "Give IV sodium bicarbonate boluses for QRS widening, arrhythmia or hypotension, targeting serum pH ~7.45–7.55."
+      },
+      {
+        "step": "Airway and seizures",
+        "detail": "Secure the airway; treat seizures with benzodiazepines; activated charcoal if early and airway protected."
+      },
+      {
+        "step": "Support circulation",
+        "detail": "IV fluids and vasopressors for hypotension; avoid class Ia/Ic and III antiarrhythmics; magnesium/lipid emulsion in refractory cases per toxicology advice."
+      }
+    ],
+    "references": [
+      {
+        "label": "TOXBASE / national poisons guidance — tricyclic antidepressants"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "salicylate-poisoning",
+    "title": "Salicylate (aspirin) poisoning",
+    "icd10": [
+      "T39.0"
+    ],
+    "snomed": [
+      "86406008"
+    ],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
+    "presentation": [
+      "Tinnitus, deafness, nausea/vomiting, sweating and hyperventilation after aspirin overdose.",
+      "Mixed acid-base picture: early respiratory alkalosis then high-anion-gap metabolic acidosis.",
+      "Agitation, confusion in severe cases."
+    ],
+    "redFlags": [
+      "Altered mental status, seizures, coma (CNS salicylate — needs dialysis).",
+      "Pulmonary or cerebral oedema.",
+      "High or rising salicylate level with acidosis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serial serum salicylate levels",
+        "rationale": "Confirm and trend; levels can keep rising with delayed-release preparations."
+      },
+      {
+        "test": "ABG and electrolytes",
+        "rationale": "Characterise the mixed acid-base disturbance and guide alkalinisation."
+      }
+    ],
+    "management": [
+      {
+        "step": "Fluids and urinary alkalinisation",
+        "detail": "IV fluids and sodium bicarbonate to alkalinise the urine (target urine pH 7.5–8.5), enhancing salicylate elimination; replace potassium."
+      },
+      {
+        "step": "Activated charcoal",
+        "detail": "Give if presenting early with a protected airway; consider repeat doses for large/sustained-release ingestions."
+      },
+      {
+        "step": "Haemodialysis",
+        "detail": "For severe poisoning: altered mental state, very high levels, acidosis refractory to treatment, renal failure or pulmonary oedema."
+      }
+    ],
+    "references": [
+      {
+        "label": "TOXBASE / national poisons guidance — salicylates"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "hyponatraemia",
+    "title": "Hyponatraemia",
+    "icd10": [
+      "E87.1"
+    ],
+    "snomed": [
+      "89627008"
+    ],
+    "domains": [
+      "nephrology",
+      "endocrinology",
+      "acute-care",
+      "critical-care"
+    ],
+    "presentation": [
+      "Often asymptomatic; nausea, headache, lethargy and confusion as sodium falls.",
+      "Severe/rapid falls: seizures, reduced consciousness, coma.",
+      "Assess volume status (hypo-, eu- or hypervolaemic)."
+    ],
+    "redFlags": [
+      "Seizures or reduced GCS — severe symptomatic hyponatraemia needs hypertonic saline.",
+      "Very rapid correction risks osmotic demyelination — limit the daily rise.",
+      "Acute (<48 h) drops are higher risk."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serum and urine sodium and osmolality",
+        "rationale": "Classifies the cause (e.g. SIADH, hypovolaemia, hypervolaemia) and guides treatment."
+      },
+      {
+        "test": "Volume status assessment",
+        "rationale": "Distinguishes hypovolaemic, euvolaemic and hypervolaemic hyponatraemia."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat severe symptoms urgently",
+        "detail": "For seizures/coma, give boluses of hypertonic (3%) saline to raise sodium by a few mmol/L until symptoms abate."
+      },
+      {
+        "step": "Correct the cause and control the rate",
+        "detail": "Fluid restriction for SIADH/hypervolaemia, saline for hypovolaemia; limit correction to ~8–10 mmol/L in 24 h to avoid osmotic demyelination."
+      },
+      {
+        "step": "Monitor closely",
+        "detail": "Frequent sodium checks; re-lower with dextrose/desmopressin if over-correcting."
+      }
+    ],
+    "references": [
+      {
+        "label": "European hyponatraemia clinical practice guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "hypocalcaemia",
+    "title": "Hypocalcaemia",
+    "icd10": [
+      "E83.51"
+    ],
+    "snomed": [
+      "5291005"
+    ],
+    "domains": [
+      "endocrinology",
+      "nephrology",
+      "acute-care",
+      "critical-care"
+    ],
+    "presentation": [
+      "Perioral and peripheral paraesthesia, muscle cramps, carpopedal spasm.",
+      "Chvostek and Trousseau signs.",
+      "Causes: hypoparathyroidism, vitamin D deficiency, CKD, post-thyroidectomy, hyperventilation."
+    ],
+    "redFlags": [
+      "Tetany, laryngospasm, seizures.",
+      "Prolonged QT interval / arrhythmia.",
+      "Severe symptomatic hypocalcaemia."
+    ],
+    "diagnostics": [
+      {
+        "test": "Corrected calcium / ionised calcium",
+        "rationale": "Confirm true hypocalcaemia (adjust for albumin)."
+      },
+      {
+        "test": "Magnesium, phosphate, PTH, vitamin D, ECG",
+        "rationale": "Identify the cause; magnesium must be corrected for calcium to respond; check QT."
+      }
+    ],
+    "management": [
+      {
+        "step": "IV calcium for severe/symptomatic cases",
+        "detail": "Give IV calcium gluconate (with cardiac monitoring) for tetany, seizures, laryngospasm or ECG changes."
+      },
+      {
+        "step": "Correct magnesium",
+        "detail": "Replace magnesium — hypocalcaemia is refractory until hypomagnesaemia is corrected."
+      },
+      {
+        "step": "Treat the cause",
+        "detail": "Oral calcium and vitamin D (alfacalcidol/calcitriol if hypoparathyroid or CKD) for ongoing replacement."
+      }
+    ],
+    "references": [
+      {
+        "label": "Society for Endocrinology — acute hypocalcaemia guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "immune-thrombocytopenia",
+    "title": "Immune thrombocytopenia (ITP)",
+    "icd10": [
+      "D69.3"
+    ],
+    "snomed": [
+      "32273002"
+    ],
+    "domains": [
+      "haematology",
+      "immunology"
+    ],
+    "presentation": [
+      "Isolated thrombocytopenia with mucocutaneous bleeding: petechiae, purpura, easy bruising, epistaxis.",
+      "Often follows a viral illness in children; more chronic in adults.",
+      "Otherwise well, with no anaemia or leucopenia."
+    ],
+    "redFlags": [
+      "Major bleeding (intracranial, GI) — medical emergency.",
+      "Very low platelets (<10–20 x10^9/L).",
+      "Wet purpura (mucosal bleeding)."
+    ],
+    "diagnostics": [
+      {
+        "test": "FBC and blood film",
+        "rationale": "Confirms isolated thrombocytopenia with otherwise normal counts and film (large platelets)."
+      },
+      {
+        "test": "Exclude secondary causes",
+        "rationale": "Consider HIV, hepatitis C, drugs, SLE and other causes of low platelets."
+      }
+    ],
+    "management": [
+      {
+        "step": "Observe if mild",
+        "detail": "Many children and asymptomatic adults with platelets >20–30 x10^9/L can be observed."
+      },
+      {
+        "step": "First-line therapy",
+        "detail": "Corticosteroids (prednisolone) +/- IV immunoglobulin for bleeding or very low counts; IVIG gives a faster rise."
+      },
+      {
+        "step": "Severe bleeding",
+        "detail": "Combine IVIG, high-dose steroids and platelet transfusion for life-threatening haemorrhage; refer to haematology; consider second-line agents (e.g. TPO agonists, rituximab) for chronic ITP."
+      }
+    ],
+    "references": [
+      {
+        "label": "ASH / international consensus guidelines on ITP"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "disseminated-intravascular-coagulation",
+    "title": "Disseminated intravascular coagulation (DIC)",
+    "icd10": [
+      "D65"
+    ],
+    "snomed": [
+      "67406007"
+    ],
+    "domains": [
+      "haematology",
+      "critical-care",
+      "emergency"
+    ],
+    "presentation": [
+      "Bleeding from multiple sites (venepuncture, mucosa, surgical wounds) and/or microvascular thrombosis.",
+      "Occurs secondary to sepsis, obstetric emergencies, trauma, malignancy or severe inflammation.",
+      "Organ dysfunction from microthrombi."
+    ],
+    "redFlags": [
+      "Severe haemorrhage or widespread thrombosis with organ failure.",
+      "Rapidly falling platelets and fibrinogen.",
+      "Underlying life-threatening trigger (sepsis, abruption)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Coagulation screen, platelets, fibrinogen, D-dimer",
+        "rationale": "Prolonged PT/APTT, low platelets and fibrinogen with high D-dimer support DIC; trend serially."
+      },
+      {
+        "test": "Blood film",
+        "rationale": "May show schistocytes (microangiopathy)."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat the underlying cause",
+        "detail": "The priority is aggressive treatment of the trigger (e.g. sepsis, evacuation of abruption) — DIC will not resolve otherwise."
+      },
+      {
+        "step": "Blood-product support for bleeding",
+        "detail": "Platelets, fresh frozen plasma, cryoprecipitate/fibrinogen guided by counts and bleeding; tranexamic acid is generally avoided unless directed by specialists."
+      },
+      {
+        "step": "Specialist input",
+        "detail": "Involve haematology/critical care; consider anticoagulation only in predominantly thrombotic DIC under specialist guidance."
+      }
+    ],
+    "references": [
+      {
+        "label": "ISTH / BSH guidelines on the diagnosis and management of DIC"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "peritonsillar-abscess-quinsy",
+    "title": "Peritonsillar abscess (quinsy)",
+    "icd10": [
+      "J36"
+    ],
+    "snomed": [
+      "15033003"
+    ],
+    "domains": [
+      "ent",
+      "infection",
+      "emergency"
+    ],
+    "presentation": [
+      "Severe unilateral sore throat with worsening odynophagia and trismus.",
+      "Muffled 'hot potato' voice, drooling, fever.",
+      "Uvular deviation away from a swollen, displaced tonsil with peritonsillar bulging."
+    ],
+    "redFlags": [
+      "Airway compromise (stridor, severe trismus, drooling).",
+      "Spread to deep neck spaces / mediastinitis.",
+      "Dehydration and sepsis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical examination",
+        "rationale": "Diagnosis is usually clinical from the characteristic asymmetric peritonsillar swelling."
+      },
+      {
+        "test": "Needle aspiration / CT for deep extension",
+        "rationale": "Aspiration is diagnostic and therapeutic; CT if deep-space spread is suspected."
+      }
+    ],
+    "management": [
+      {
+        "step": "Drainage",
+        "detail": "Needle aspiration or incision and drainage of the abscess — the key therapeutic step; ENT referral."
+      },
+      {
+        "step": "Antibiotics and steroids",
+        "detail": "IV antibiotics covering streptococci and oral anaerobes (e.g. benzylpenicillin + metronidazole, or amoxicillin-clavulanate); a single dose of corticosteroid may reduce symptoms."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Analgesia, IV fluids for dehydration; monitor the airway."
+      }
+    ],
+    "references": [
+      {
+        "label": "ENT UK guidance on peritonsillar abscess"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "acute-epiglottitis",
+    "title": "Acute epiglottitis (supraglottitis)",
+    "icd10": [
+      "J05.1"
+    ],
+    "snomed": [
+      "55355000"
+    ],
+    "domains": [
+      "ent",
+      "infection",
+      "emergency",
+      "critical-care",
+      "respiratory"
+    ],
+    "presentation": [
+      "Rapid-onset severe sore throat, odynophagia, drooling and fever.",
+      "Muffled voice, tripod/sniffing posture, stridor; the patient looks toxic.",
+      "Often Haemophilus influenzae type b in unimmunised individuals."
+    ],
+    "redFlags": [
+      "Impending airway obstruction — do NOT examine the throat or distress the patient (especially children).",
+      "Stridor, drooling and respiratory distress.",
+      "Toxic appearance."
+    ],
+    "diagnostics": [
+      {
+        "test": "Senior airway assessment",
+        "rationale": "Diagnosis is clinical; definitive examination (laryngoscopy) is done in a controlled setting prepared to secure the airway."
+      },
+      {
+        "test": "Lateral neck X-ray ('thumbprint sign')",
+        "rationale": "Only if the patient is stable and it will not delay airway management."
+      }
+    ],
+    "management": [
+      {
+        "step": "Protect the airway first",
+        "detail": "Keep the patient calm and upright; summon senior anaesthetic/ENT help; secure the airway in theatre with surgical airway backup before other interventions."
+      },
+      {
+        "step": "Antibiotics and oxygen",
+        "detail": "IV third-generation cephalosporin (e.g. ceftriaxone) once the airway is safe; humidified oxygen."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "ICU monitoring; treat close contacts/prophylaxis per local Hib guidance; promote Hib vaccination."
+      }
+    ],
+    "references": [
+      {
+        "label": "Difficult Airway Society / ENT UK guidance on epiglottitis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "stevens-johnson-toxic-epidermal-necrolysis",
+    "title": "Stevens-Johnson syndrome / toxic epidermal necrolysis",
+    "icd10": [
+      "L51.1",
+      "L51.2"
+    ],
+    "snomed": [
+      "73442001"
+    ],
+    "domains": [
+      "dermatology",
+      "immunology",
+      "critical-care",
+      "emergency"
+    ],
+    "presentation": [
+      "Prodrome of fever and malaise, then a painful erythematous/dusky rash with blistering and skin detachment.",
+      "Mucosal involvement (eyes, mouth, genitals) with erosions; positive Nikolsky sign.",
+      "Usually 1–3 weeks after a culprit drug (e.g. sulfonamides, antiepileptics, allopurinol, NSAIDs)."
+    ],
+    "redFlags": [
+      "Extensive skin detachment (TEN >30% body surface area) — high mortality.",
+      "Ocular, airway or genitourinary mucosal involvement.",
+      "Sepsis, fluid loss and organ dysfunction."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis +/- skin biopsy",
+        "rationale": "Recognise the pattern; biopsy confirms full-thickness epidermal necrosis."
+      },
+      {
+        "test": "SCORTEN severity score",
+        "rationale": "Estimates prognosis and guides level of care."
+      }
+    ],
+    "management": [
+      {
+        "step": "Stop the culprit drug immediately",
+        "detail": "Withdrawing the offending drug early is the single most important intervention; review all medications."
+      },
+      {
+        "step": "Supportive care (burns-type)",
+        "detail": "Manage in a burns/ICU setting: fluid and electrolyte replacement, temperature control, wound care, analgesia, nutrition, infection surveillance."
+      },
+      {
+        "step": "Specialist multidisciplinary care",
+        "detail": "Early ophthalmology, dermatology and intensive care; immunomodulation (e.g. ciclosporin/IVIG) is used in some centres."
+      }
+    ],
+    "references": [
+      {
+        "label": "UK guidelines for the management of SJS/TEN in adults"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "orbital-cellulitis",
+    "title": "Orbital cellulitis",
+    "icd10": [
+      "H05.0"
+    ],
+    "snomed": [
+      "194002008"
+    ],
+    "domains": [
+      "ophthalmology",
+      "ent",
+      "infection",
+      "emergency"
+    ],
+    "presentation": [
+      "Painful red swollen eye with proptosis, in a patient who is systemically unwell.",
+      "Painful and restricted eye movements (ophthalmoplegia), often with reduced vision.",
+      "Frequently complicates sinusitis, especially in children."
+    ],
+    "redFlags": [
+      "Reduced visual acuity, proptosis, painful ophthalmoplegia or a relative afferent pupillary defect — sight- and life-threatening.",
+      "Signs of intracranial spread (cavernous sinus thrombosis, meningitis, abscess).",
+      "Toxic appearance."
+    ],
+    "diagnostics": [
+      {
+        "test": "CT orbits and sinuses with contrast",
+        "rationale": "Distinguishes orbital (post-septal) from preseptal cellulitis and detects abscess/sinus source."
+      },
+      {
+        "test": "Visual acuity, pupils and colour vision",
+        "rationale": "Monitor optic nerve function; deterioration prompts urgent surgery."
+      }
+    ],
+    "management": [
+      {
+        "step": "Urgent IV antibiotics",
+        "detail": "Admit and start broad-spectrum IV antibiotics covering streptococci, staphylococci and anaerobes without delay."
+      },
+      {
+        "step": "Joint specialist care",
+        "detail": "Involve ophthalmology and ENT; serial visual assessments."
+      },
+      {
+        "step": "Surgical drainage",
+        "detail": "Drain orbital/subperiosteal abscess or sinus disease if there is an abscess, visual compromise or failure to improve."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCOphth / ENT UK guidance on orbital cellulitis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "central-retinal-artery-occlusion",
+    "title": "Central retinal artery occlusion",
+    "icd10": [
+      "H34.1"
+    ],
+    "snomed": [
+      "38742007"
+    ],
+    "domains": [
+      "ophthalmology",
+      "emergency",
+      "vascular"
+    ],
+    "presentation": [
+      "Sudden, painless, profound loss of vision in one eye.",
+      "A relative afferent pupillary defect; pale retina with a cherry-red spot at the macula.",
+      "Often older patients with vascular risk factors; consider giant cell arteritis."
+    ],
+    "redFlags": [
+      "This is a stroke of the eye — assess as a time-critical event.",
+      "Jaw claudication, scalp tenderness, headache (giant cell arteritis) — needs urgent steroids.",
+      "Concurrent neurological deficit (treat as stroke)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Fundoscopy",
+        "rationale": "Shows retinal pallor and a cherry-red spot."
+      },
+      {
+        "test": "ESR/CRP and temporal artery assessment",
+        "rationale": "Screen for giant cell arteritis, which requires immediate high-dose steroids to protect the other eye."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immediate ophthalmology referral",
+        "detail": "Refer emergently; ocular massage and measures to lower intraocular pressure may be attempted within the first hours, though evidence of benefit is limited."
+      },
+      {
+        "step": "Treat giant cell arteritis",
+        "detail": "If GCA is suspected, start high-dose corticosteroids immediately to protect the fellow eye — do not wait for biopsy."
+      },
+      {
+        "step": "Vascular risk and stroke pathway",
+        "detail": "Investigate as for a TIA/stroke (carotids, heart, risk factors) and refer to the stroke/TIA pathway."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCOphth guidance on retinal artery occlusion"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "intussusception",
+    "title": "Intussusception (paediatric)",
+    "icd10": [
+      "K56.1"
+    ],
+    "snomed": [
+      "31375006"
+    ],
+    "domains": [
+      "paediatrics",
+      "surgery",
+      "child-health",
+      "emergency"
+    ],
+    "population": {
+      "maxAgeYears": 5,
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Intermittent severe colicky abdominal pain with drawing-up of the legs, in an infant (typically 3 months–3 years).",
+      "Vomiting, lethargy between episodes, and 'redcurrant jelly' stool (late).",
+      "A sausage-shaped abdominal mass."
+    ],
+    "redFlags": [
+      "Bilious vomiting, peritonitis, shock — signs of bowel ischaemia/perforation.",
+      "Lethargy out of proportion (can mimic sepsis/encephalopathy).",
+      "Failed reduction."
+    ],
+    "diagnostics": [
+      {
+        "test": "Abdominal ultrasound",
+        "rationale": "First-line; shows a 'target'/'doughnut' sign."
+      },
+      {
+        "test": "Assess hydration and perfusion",
+        "rationale": "Resuscitate before any reduction attempt."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitate",
+        "detail": "IV fluids, nasogastric decompression, analgesia; involve paediatric surgery."
+      },
+      {
+        "step": "Non-operative reduction",
+        "detail": "Air (pneumatic) or contrast enema reduction in the stable child without peritonitis or perforation."
+      },
+      {
+        "step": "Surgery",
+        "detail": "Operative reduction/resection if enema fails, or if there is perforation, peritonitis or a pathological lead point."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO IMEESC / paediatric surgical guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "kawasaki-disease",
+    "title": "Kawasaki disease",
+    "icd10": [
+      "M30.3"
+    ],
+    "snomed": [
+      "75053002"
+    ],
+    "domains": [
+      "paediatrics",
+      "cardiology",
+      "immunology",
+      "child-health"
+    ],
+    "population": {
+      "maxAgeYears": 8,
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Fever ≥5 days in a young child plus: bilateral non-purulent conjunctivitis, mucosal changes (red cracked lips, strawberry tongue), polymorphous rash, extremity changes (oedema/desquamation), and cervical lymphadenopathy.",
+      "Marked irritability.",
+      "Incomplete forms occur, especially in infants."
+    ],
+    "redFlags": [
+      "Coronary artery aneurysms — the major complication.",
+      "Myocarditis, shock (Kawasaki disease shock syndrome).",
+      "Persistent fever despite first-line treatment."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical criteria + inflammatory markers",
+        "rationale": "Diagnosis is clinical; raised CRP/ESR, thrombocytosis (2nd week) support it."
+      },
+      {
+        "test": "Echocardiography",
+        "rationale": "Assess coronary arteries at diagnosis and on follow-up."
+      }
+    ],
+    "management": [
+      {
+        "step": "IV immunoglobulin",
+        "detail": "Give IVIG, ideally within 10 days of fever onset, to reduce the risk of coronary aneurysms."
+      },
+      {
+        "step": "Aspirin",
+        "detail": "Aspirin (anti-inflammatory then antiplatelet dose) per protocol — one of the few paediatric indications for aspirin."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Cardiology follow-up with echocardiography; consider additional therapy (e.g. steroids) for IVIG-resistant or high-risk cases."
+      }
+    ],
+    "references": [
+      {
+        "label": "AHA scientific statement on Kawasaki disease"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
   }
 ]
