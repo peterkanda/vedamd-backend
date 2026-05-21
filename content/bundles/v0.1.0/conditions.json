@@ -39181,5 +39181,740 @@
   "ruleVersion": "0.1.0",
   "reviewStatus": "draft",
   "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "hand-foot-mouth-disease",
+  "title": "Hand, foot and mouth disease",
+  "icd10": [
+   "B08.4"
+  ],
+  "icd11": [
+   "1F05.0"
+  ],
+  "domains": [
+   "infectious-disease",
+   "paediatrics",
+   "child-health",
+   "dermatology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Fever and sore mouth with vesicular lesions on hands, feet and mouth.",
+   "Common in young children; caused by coxsackievirus/enterovirus.",
+   "Usually self-limiting over 7-10 days."
+  ],
+  "redFlags": [
+   "Dehydration from painful oral ulcers.",
+   "Neurological signs (rare enterovirus complications).",
+   "High persistent fever."
+  ],
+  "diagnostics": [
+   {
+    "test": "Clinical diagnosis",
+    "rationale": "Characteristic distribution; testing rarely needed."
+   }
+  ],
+  "management": [
+   {
+    "step": "Supportive",
+    "detail": "Analgesia, hydration, soft diet."
+   },
+   {
+    "step": "Hygiene",
+    "detail": "Hand hygiene to reduce spread; exclude only if unwell."
+   },
+   {
+    "step": "Safety-net",
+    "detail": "Advise on dehydration and neurological warning signs."
+   }
+  ],
+  "references": [
+   {
+    "label": "WHO/CDC guidance on hand, foot and mouth disease"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "gas-gangrene",
+  "title": "Gas gangrene (clostridial myonecrosis)",
+  "icd10": [
+   "A48.0"
+  ],
+  "icd11": [
+   "1C13"
+  ],
+  "domains": [
+   "infectious-disease",
+   "surgery",
+   "emergency"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Rapidly progressive, severe wound pain out of proportion to findings.",
+   "Crepitus, skin discolouration, foul discharge and systemic toxicity.",
+   "Typically follows trauma/contaminated wounds (Clostridium perfringens)."
+  ],
+  "redFlags": [
+   "Septic shock and multi-organ failure.",
+   "Rapidly spreading crepitant cellulitis.",
+   "Any suspicion is a surgical emergency."
+  ],
+  "diagnostics": [
+   {
+    "test": "Urgent surgical exploration",
+    "rationale": "Diagnostic and therapeutic; do not delay for imaging."
+   },
+   {
+    "test": "Gram stain/culture and imaging for gas",
+    "rationale": "Confirms gas-forming infection."
+   }
+  ],
+  "management": [
+   {
+    "step": "Emergency surgical debridement",
+    "detail": "Aggressive, often repeated, debridement +/- amputation is life-saving."
+   },
+   {
+    "step": "Antibiotics",
+    "detail": "High-dose IV benzylpenicillin plus clindamycin."
+   },
+   {
+    "step": "Resuscitation",
+    "detail": "Aggressive sepsis management; hyperbaric oxygen if available."
+   }
+  ],
+  "references": [
+   {
+    "label": "IDSA guidelines for skin and soft tissue infections"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "q-fever",
+  "title": "Q fever",
+  "icd10": [
+   "A78"
+  ],
+  "icd11": [
+   "1C33"
+  ],
+  "domains": [
+   "infectious-disease",
+   "zoonosis"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Acute febrile illness with headache, myalgia and atypical pneumonia or hepatitis.",
+   "Exposure to livestock/birth products (Coxiella burnetii).",
+   "Chronic form: culture-negative endocarditis."
+  ],
+  "redFlags": [
+   "Endocarditis (chronic Q fever), especially with valve disease.",
+   "Hepatitis with jaundice.",
+   "Pregnancy (risk of obstetric complications)."
+  ],
+  "diagnostics": [
+   {
+    "test": "Coxiella serology (phase I/II)",
+    "rationale": "Confirms acute vs chronic infection."
+   },
+   {
+    "test": "Echocardiography if chronic suspected",
+    "rationale": "Detect endocarditis."
+   }
+  ],
+  "management": [
+   {
+    "step": "Acute",
+    "detail": "Doxycycline is first-line."
+   },
+   {
+    "step": "Chronic/endocarditis",
+    "detail": "Prolonged doxycycline plus hydroxychloroquine."
+   },
+   {
+    "step": "Pregnancy",
+    "detail": "Cotrimoxazole; specialist input."
+   }
+  ],
+  "references": [
+   {
+    "label": "CDC guidance on diagnosis and management of Q fever"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "melioidosis",
+  "title": "Melioidosis",
+  "icd10": [
+   "A24.1"
+  ],
+  "icd11": [
+   "1B91"
+  ],
+  "domains": [
+   "infectious-disease",
+   "tropical-medicine"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Variable: pneumonia, abscesses, sepsis or chronic infection.",
+   "Burkholderia pseudomallei from soil/water in endemic areas (SE Asia, N Australia; less common in sub-Saharan Africa).",
+   "Risk factors: diabetes, alcohol, renal disease."
+  ],
+  "redFlags": [
+   "Septic shock.",
+   "Disseminated abscesses (liver, spleen, prostate).",
+   "Neurological involvement."
+  ],
+  "diagnostics": [
+   {
+    "test": "Culture of blood/sputum/abscess",
+    "rationale": "Definitive; alert the laboratory (biohazard)."
+   },
+   {
+    "test": "Imaging for abscesses",
+    "rationale": "Identifies deep foci."
+   }
+  ],
+  "management": [
+   {
+    "step": "Intensive phase",
+    "detail": "IV ceftazidime or a carbapenem for at least 2 weeks."
+   },
+   {
+    "step": "Eradication phase",
+    "detail": "Oral cotrimoxazole for 3-6 months."
+   },
+   {
+    "step": "Source control",
+    "detail": "Drain abscesses; manage diabetes."
+   }
+  ],
+  "references": [
+   {
+    "label": "Darwin / international consensus guidelines on melioidosis therapy"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "nocardiosis",
+  "title": "Nocardiosis",
+  "icd10": [
+   "A43.9"
+  ],
+  "icd11": [
+   "1C1G"
+  ],
+  "domains": [
+   "infectious-disease"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Subacute pneumonia with cavitation, often in immunocompromised patients.",
+   "Brain abscess from haematogenous spread.",
+   "Cutaneous disease after soil inoculation."
+  ],
+  "redFlags": [
+   "CNS involvement (brain abscess).",
+   "Disseminated disease in immunosuppression.",
+   "Respiratory failure."
+  ],
+  "diagnostics": [
+   {
+    "test": "Culture and modified acid-fast stain",
+    "rationale": "Identifies branching filamentous Gram-positive rods."
+   },
+   {
+    "test": "CT brain",
+    "rationale": "Screen for disseminated CNS disease."
+   }
+  ],
+  "management": [
+   {
+    "step": "Cotrimoxazole",
+    "detail": "High-dose cotrimoxazole is the mainstay, often combined for severe disease."
+   },
+   {
+    "step": "Prolonged therapy",
+    "detail": "Months of treatment; longer with CNS disease or immunosuppression."
+   },
+   {
+    "step": "Source control",
+    "detail": "Drainage of abscesses; reduce immunosuppression if possible."
+   }
+  ],
+  "references": [
+   {
+    "label": "Guidance on the diagnosis and treatment of nocardiosis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "actinomycosis",
+  "title": "Actinomycosis",
+  "icd10": [
+   "A42.9"
+  ],
+  "icd11": [
+   "1C10"
+  ],
+  "domains": [
+   "infectious-disease"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Chronic, slowly progressive suppurative infection crossing tissue planes.",
+   "Cervicofacial ('lumpy jaw'), thoracic, abdominal or pelvic (IUD-associated).",
+   "Sinus tracts discharging sulphur granules."
+  ],
+  "redFlags": [
+   "Mass mimicking malignancy.",
+   "Extensive fistulation or organ involvement."
+  ],
+  "diagnostics": [
+   {
+    "test": "Culture/histology of pus or tissue",
+    "rationale": "Sulphur granules and filamentous Gram-positive organisms."
+   }
+  ],
+  "management": [
+   {
+    "step": "Prolonged penicillin",
+    "detail": "High-dose IV penicillin then prolonged oral therapy (often months)."
+   },
+   {
+    "step": "Source control",
+    "detail": "Drainage/excision of abscesses; remove IUD in pelvic disease."
+   }
+  ],
+  "references": [
+   {
+    "label": "Guidance on the management of actinomycosis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "histoplasmosis",
+  "title": "Histoplasmosis",
+  "icd10": [
+   "B39.9"
+  ],
+  "domains": [
+   "infectious-disease",
+   "tropical-medicine"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Often asymptomatic or self-limiting flu-like illness in immunocompetent hosts.",
+   "Disseminated disease in HIV/immunosuppression: fever, weight loss, hepatosplenomegaly.",
+   "Exposure to bird/bat droppings (caves)."
+  ],
+  "redFlags": [
+   "Disseminated disease with sepsis in advanced HIV.",
+   "Respiratory failure.",
+   "Adrenal involvement."
+  ],
+  "diagnostics": [
+   {
+    "test": "Histoplasma antigen (urine/serum) and culture",
+    "rationale": "Antigen testing useful in disseminated disease."
+   }
+  ],
+  "management": [
+   {
+    "step": "Mild disease",
+    "detail": "Often no treatment or itraconazole."
+   },
+   {
+    "step": "Severe/disseminated",
+    "detail": "Liposomal amphotericin B then itraconazole; treat underlying HIV."
+   }
+  ],
+  "references": [
+   {
+    "label": "IDSA clinical practice guidelines for the management of histoplasmosis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "candidaemia",
+  "title": "Candidaemia (invasive candidiasis)",
+  "icd10": [
+   "B37.7"
+  ],
+  "domains": [
+   "infectious-disease",
+   "critical-care"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Bloodstream infection in unwell/hospitalised patients.",
+   "Risk factors: central lines, broad-spectrum antibiotics, neutropenia, abdominal surgery, TPN.",
+   "Fever unresponsive to antibacterials."
+  ],
+  "redFlags": [
+   "Septic shock.",
+   "Endophthalmitis or endocarditis (metastatic seeding).",
+   "Persistent candidaemia despite therapy."
+  ],
+  "diagnostics": [
+   {
+    "test": "Blood cultures and species identification",
+    "rationale": "Confirms and guides antifungal choice (azole resistance)."
+   },
+   {
+    "test": "Dilated fundoscopy and echocardiography",
+    "rationale": "Assess for ocular/cardiac seeding."
+   }
+  ],
+  "management": [
+   {
+    "step": "Echinocandin",
+    "detail": "An echinocandin (e.g. caspofungin) is first-line empirical therapy."
+   },
+   {
+    "step": "Source control",
+    "detail": "Remove infected central lines."
+   },
+   {
+    "step": "Step-down/duration",
+    "detail": "Step down to fluconazole if susceptible; treat 14 days from first negative culture."
+   }
+  ],
+  "references": [
+   {
+    "label": "IDSA clinical practice guideline for the management of candidiasis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "invasive-aspergillosis",
+  "title": "Invasive aspergillosis",
+  "icd10": [
+   "B44.0"
+  ],
+  "domains": [
+   "infectious-disease",
+   "respiratory",
+   "critical-care"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Fever, cough, pleuritic pain and haemoptysis in immunocompromised patients.",
+   "Neutropenia or haematological malignancy is the classic setting.",
+   "Pulmonary nodules with halo sign on CT."
+  ],
+  "redFlags": [
+   "Massive haemoptysis.",
+   "Dissemination to brain.",
+   "Respiratory failure."
+  ],
+  "diagnostics": [
+   {
+    "test": "CT chest and galactomannan",
+    "rationale": "Halo/air-crescent signs; antigen supports diagnosis."
+   },
+   {
+    "test": "BAL/biopsy with culture",
+    "rationale": "Confirms invasive disease."
+   }
+  ],
+  "management": [
+   {
+    "step": "Voriconazole",
+    "detail": "Voriconazole (or isavuconazole) is first-line."
+   },
+   {
+    "step": "Reduce immunosuppression",
+    "detail": "Where possible; treat underlying disease."
+   },
+   {
+    "step": "Surgery",
+    "detail": "Consider for localised disease/massive haemoptysis."
+   }
+  ],
+  "references": [
+   {
+    "label": "IDSA practice guidelines for the diagnosis and management of aspergillosis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "mucormycosis",
+  "title": "Mucormycosis",
+  "icd10": [
+   "B46.5"
+  ],
+  "domains": [
+   "infectious-disease",
+   "ent",
+   "critical-care"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Aggressive angioinvasive fungal infection in diabetics (esp. DKA) and immunocompromised.",
+   "Rhino-orbital-cerebral form: facial pain, black nasal eschar, orbital signs.",
+   "Pulmonary and cutaneous forms also occur."
+  ],
+  "redFlags": [
+   "Orbital/cerebral extension.",
+   "Black necrotic eschar.",
+   "Rapid clinical deterioration."
+  ],
+  "diagnostics": [
+   {
+    "test": "Urgent biopsy and histology",
+    "rationale": "Broad non-septate hyphae with tissue invasion."
+   },
+   {
+    "test": "Imaging (CT/MRI sinuses/orbit/brain)",
+    "rationale": "Defines extent."
+   }
+  ],
+  "management": [
+   {
+    "step": "Emergency surgical debridement",
+    "detail": "Extensive debridement of necrotic tissue."
+   },
+   {
+    "step": "Liposomal amphotericin B",
+    "detail": "High-dose liposomal amphotericin is first-line antifungal."
+   },
+   {
+    "step": "Correct host factors",
+    "detail": "Reverse DKA/hyperglycaemia and reduce immunosuppression."
+   }
+  ],
+  "references": [
+   {
+    "label": "ECMM/MSGERC global guideline for the diagnosis and management of mucormycosis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "cmv-disease",
+  "title": "Cytomegalovirus disease (non-retinitis)",
+  "icd10": [
+   "B25.9"
+  ],
+  "icd11": [
+   "1D82"
+  ],
+  "domains": [
+   "infectious-disease",
+   "transplant"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Fever, cytopenias and end-organ disease (colitis, pneumonitis, hepatitis) in immunocompromised.",
+   "Mononucleosis-like illness in immunocompetent hosts.",
+   "Common after transplant or in advanced HIV."
+  ],
+  "redFlags": [
+   "Pneumonitis with respiratory failure.",
+   "Severe colitis with bleeding/perforation.",
+   "CNS disease."
+  ],
+  "diagnostics": [
+   {
+    "test": "CMV PCR (viral load)",
+    "rationale": "Diagnosis and monitoring of response."
+   },
+   {
+    "test": "Tissue biopsy for end-organ disease",
+    "rationale": "Confirms invasive disease (inclusion bodies)."
+   }
+  ],
+  "management": [
+   {
+    "step": "Antiviral therapy",
+    "detail": "IV ganciclovir or oral valganciclovir."
+   },
+   {
+    "step": "Reduce immunosuppression",
+    "detail": "Where feasible; treat underlying HIV."
+   },
+   {
+    "step": "Monitor",
+    "detail": "Viral load and neutrophils (myelosuppression)."
+   }
+  ],
+  "references": [
+   {
+    "label": "Guidelines on the management of CMV in transplant recipients"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "parvovirus-b19",
+  "title": "Parvovirus B19 infection",
+  "icd10": [
+   "B08.3"
+  ],
+  "icd11": [
+   "1F00"
+  ],
+  "domains": [
+   "infectious-disease",
+   "paediatrics",
+   "haematology"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Erythema infectiosum (fifth disease): 'slapped cheek' rash in children.",
+   "Arthralgia in adults.",
+   "Transient aplastic crisis in those with haemolytic anaemia."
+  ],
+  "redFlags": [
+   "Aplastic crisis in sickle cell/haemolytic disease.",
+   "Hydrops fetalis in pregnancy.",
+   "Chronic anaemia in immunocompromised."
+  ],
+  "diagnostics": [
+   {
+    "test": "Parvovirus B19 IgM/PCR",
+    "rationale": "Confirms acute infection where it matters (pregnancy, anaemia)."
+   }
+  ],
+  "management": [
+   {
+    "step": "Supportive",
+    "detail": "Most cases self-limiting; analgesia for arthralgia."
+   },
+   {
+    "step": "Aplastic crisis",
+    "detail": "Transfusion support; IVIG for chronic infection in immunocompromised."
+   },
+   {
+    "step": "Pregnancy",
+    "detail": "Monitor for fetal anaemia/hydrops; specialist referral."
+   }
+  ],
+  "references": [
+   {
+    "label": "Guidance on parvovirus B19 infection in pregnancy and haematological disease"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "sepsis-six",
+  "title": "Sepsis recognition and care bundle",
+  "icd10": [
+   "A41.9"
+  ],
+  "icd11": [
+   "1G40"
+  ],
+  "domains": [
+   "infectious-disease",
+   "emergency",
+   "critical-care"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Life-threatening organ dysfunction due to a dysregulated response to infection.",
+   "Fever or hypothermia, tachycardia, tachypnoea, confusion, hypotension.",
+   "Use a validated screening tool (e.g. NEWS2/qSOFA) to identify deterioration."
+  ],
+  "redFlags": [
+   "Hypotension/lactate >2 mmol/L (septic shock).",
+   "New confusion or reduced urine output.",
+   "Mottled/cold peripheries."
+  ],
+  "diagnostics": [
+   {
+    "test": "Blood cultures, lactate and source investigations",
+    "rationale": "Identify pathogen/source and severity."
+   },
+   {
+    "test": "Bloods (FBC, U&E, CRP, clotting)",
+    "rationale": "Assess organ dysfunction."
+   }
+  ],
+  "management": [
+   {
+    "step": "Sepsis Six within 1 hour",
+    "detail": "Give oxygen, IV fluids and broad-spectrum antibiotics; take blood cultures, lactate and measure urine output."
+   },
+   {
+    "step": "Source control",
+    "detail": "Drain/remove the source of infection."
+   },
+   {
+    "step": "Escalate",
+    "detail": "Senior/critical care review for shock or organ failure; reassess and de-escalate antibiotics."
+   }
+  ],
+  "references": [
+   {
+    "label": "Surviving Sepsis Campaign international guidelines"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
  }
 ]
