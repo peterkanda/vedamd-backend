@@ -37187,5 +37187,1099 @@
   "ruleVersion": "0.1.0",
   "reviewStatus": "draft",
   "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "essential-tremor",
+  "title": "Essential tremor",
+  "icd10": [
+   "G25.0"
+  ],
+  "icd11": [
+   "8A04.0"
+  ],
+  "domains": [
+   "neurology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Bilateral postural/action tremor of the hands, often with head/voice involvement.",
+   "Improves with alcohol; positive family history common.",
+   "No bradykinesia or rigidity (unlike Parkinson disease)."
+  ],
+  "redFlags": [
+   "Asymmetry, rest tremor or other parkinsonian features.",
+   "Acute onset or rapid progression.",
+   "Cerebellar signs."
+  ],
+  "diagnostics": [
+   {
+    "test": "Clinical assessment",
+    "rationale": "Diagnosis is clinical; exclude drugs/thyroid disease."
+   },
+   {
+    "test": "TFTs",
+    "rationale": "Exclude thyrotoxicosis as a mimic."
+   }
+  ],
+  "management": [
+   {
+    "step": "Reassure",
+    "detail": "No treatment if not bothersome."
+   },
+   {
+    "step": "First-line drugs",
+    "detail": "Propranolol or primidone."
+   },
+   {
+    "step": "Refractory",
+    "detail": "Consider DBS or focused ultrasound in specialist centres."
+   }
+  ],
+  "references": [
+   {
+    "label": "Movement Disorder Society consensus on tremor classification"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "restless-legs-syndrome",
+  "title": "Restless legs syndrome",
+  "icd10": [
+   "G25.81"
+  ],
+  "icd11": [
+   "7A80"
+  ],
+  "domains": [
+   "neurology",
+   "sleep-medicine"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Urge to move the legs with uncomfortable sensations, worse at rest and in the evening.",
+   "Relieved by movement; disrupts sleep.",
+   "Associations: iron deficiency, pregnancy, renal failure."
+  ],
+  "redFlags": [
+   "Severe sleep disruption or augmentation on dopaminergic therapy.",
+   "Focal neurological signs (consider alternative diagnosis)."
+  ],
+  "diagnostics": [
+   {
+    "test": "Serum ferritin",
+    "rationale": "Iron deficiency is a common, treatable contributor."
+   }
+  ],
+  "management": [
+   {
+    "step": "Treat iron deficiency",
+    "detail": "Iron replacement if ferritin low."
+   },
+   {
+    "step": "Lifestyle",
+    "detail": "Reduce caffeine/alcohol; review aggravating drugs."
+   },
+   {
+    "step": "Medication",
+    "detail": "Alpha-2-delta ligands (gabapentin/pregabalin) preferred; dopamine agonists with caution (augmentation risk)."
+   }
+  ],
+  "references": [
+   {
+    "label": "AASM clinical practice guideline for restless legs syndrome"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "normal-pressure-hydrocephalus",
+  "title": "Normal pressure hydrocephalus",
+  "icd10": [
+   "G91.2"
+  ],
+  "icd11": [
+   "8D64.1"
+  ],
+  "domains": [
+   "neurology",
+   "neurosurgery",
+   "geriatrics"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Triad of gait apraxia, urinary incontinence and cognitive decline.",
+   "Magnetic, broad-based shuffling gait often the earliest feature.",
+   "Ventriculomegaly out of proportion to atrophy."
+  ],
+  "redFlags": [
+   "Rapid deterioration.",
+   "Features suggesting alternative cause of dementia."
+  ],
+  "diagnostics": [
+   {
+    "test": "CT/MRI brain",
+    "rationale": "Shows ventriculomegaly without sulcal enlargement."
+   },
+   {
+    "test": "Large-volume lumbar puncture (tap test)",
+    "rationale": "Gait improvement predicts shunt response."
+   }
+  ],
+  "management": [
+   {
+    "step": "Confirm reversibility",
+    "detail": "CSF tap test or external drainage trial."
+   },
+   {
+    "step": "Shunting",
+    "detail": "Ventriculoperitoneal shunt can improve gait, especially when treated early."
+   }
+  ],
+  "references": [
+   {
+    "label": "Guidelines on the diagnosis and management of idiopathic normal pressure hydrocephalus"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "idiopathic-intracranial-hypertension",
+  "title": "Idiopathic intracranial hypertension",
+  "icd10": [
+   "G93.2"
+  ],
+  "icd11": [
+   "8D60.0"
+  ],
+  "domains": [
+   "neurology",
+   "ophthalmology"
+  ],
+  "population": {
+   "sex": "female",
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Headache with visual obscurations and pulsatile tinnitus.",
+   "Typically in young women with obesity.",
+   "Papilloedema; may have sixth nerve palsy."
+  ],
+  "redFlags": [
+   "Progressive visual field loss (sight-threatening).",
+   "Severe papilloedema."
+  ],
+  "diagnostics": [
+   {
+    "test": "Fundoscopy and visual fields",
+    "rationale": "Detect papilloedema and monitor for visual loss."
+   },
+   {
+    "test": "MRI/MRV brain then LP with opening pressure",
+    "rationale": "Exclude mass/venous thrombosis; confirm raised pressure with normal CSF."
+   }
+  ],
+  "management": [
+   {
+    "step": "Weight loss",
+    "detail": "Sustained weight reduction is disease-modifying."
+   },
+   {
+    "step": "Acetazolamide",
+    "detail": "Reduces CSF production; first-line medical therapy."
+   },
+   {
+    "step": "Protect vision",
+    "detail": "Urgent CSF diversion or optic nerve sheath fenestration for fulminant visual loss."
+   }
+  ],
+  "references": [
+   {
+    "label": "Consensus guidelines on the management of idiopathic intracranial hypertension"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "lumbar-radiculopathy",
+  "title": "Lumbar radiculopathy (sciatica)",
+  "icd10": [
+   "M54.3"
+  ],
+  "icd11": [
+   "ME84.2"
+  ],
+  "domains": [
+   "neurology",
+   "msk",
+   "orthopaedics"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Radiating leg pain in a dermatomal distribution, often from disc herniation.",
+   "May have sensory disturbance, weakness or reflex loss.",
+   "Pain often worse on coughing/straining; positive straight leg raise."
+  ],
+  "redFlags": [
+   "Cauda equina features (bilateral sciatica, saddle anaesthesia, bladder/bowel dysfunction).",
+   "Progressive motor weakness.",
+   "Features of malignancy/infection."
+  ],
+  "diagnostics": [
+   {
+    "test": "Clinical neurological exam",
+    "rationale": "Localises the affected root."
+   },
+   {
+    "test": "MRI lumbar spine",
+    "rationale": "For red flags or persistent/severe symptoms before intervention."
+   }
+  ],
+  "management": [
+   {
+    "step": "Exclude cauda equina",
+    "detail": "Emergency MRI and surgery if suspected."
+   },
+   {
+    "step": "Conservative",
+    "detail": "Stay active, analgesia, physiotherapy; most improve."
+   },
+   {
+    "step": "Escalation",
+    "detail": "Consider epidural injection or surgery for refractory/progressive deficit."
+   }
+  ],
+  "references": [
+   {
+    "label": "NICE guideline NG59: low back pain and sciatica"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "cervical-radiculopathy",
+  "title": "Cervical radiculopathy",
+  "icd10": [
+   "M54.12"
+  ],
+  "icd11": [
+   "ME84.1"
+  ],
+  "domains": [
+   "neurology",
+   "msk",
+   "orthopaedics"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Neck pain radiating into the arm in a dermatomal pattern.",
+   "Arm paraesthesia, weakness or reflex changes.",
+   "Often from disc herniation or spondylosis."
+  ],
+  "redFlags": [
+   "Myelopathy (gait disturbance, hand clumsiness, hyperreflexia).",
+   "Progressive weakness.",
+   "Bilateral symptoms."
+  ],
+  "diagnostics": [
+   {
+    "test": "Neurological examination",
+    "rationale": "Localises the root and screens for myelopathy."
+   },
+   {
+    "test": "MRI cervical spine",
+    "rationale": "For persistent/severe symptoms or myelopathy."
+   }
+  ],
+  "management": [
+   {
+    "step": "Conservative",
+    "detail": "Analgesia, physiotherapy; most resolve in weeks."
+   },
+   {
+    "step": "Refer",
+    "detail": "Surgery for myelopathy or progressive/refractory radiculopathy."
+   }
+  ],
+  "references": [
+   {
+    "label": "Guidelines on the management of cervical radiculopathy from degenerative disorders"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "carpal-tunnel-syndrome",
+  "title": "Carpal tunnel syndrome",
+  "icd10": [
+   "G56.0"
+  ],
+  "icd11": [
+   "8C10.0"
+  ],
+  "domains": [
+   "neurology",
+   "msk",
+   "hand-surgery"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Numbness/tingling in the thumb, index, middle and radial half of ring finger.",
+   "Worse at night; relieved by shaking the hand.",
+   "Thenar wasting in chronic cases."
+  ],
+  "redFlags": [
+   "Thenar muscle wasting/persistent weakness (consider urgent decompression).",
+   "Acute onset after trauma."
+  ],
+  "diagnostics": [
+   {
+    "test": "Clinical tests (Tinel/Phalen)",
+    "rationale": "Support diagnosis."
+   },
+   {
+    "test": "Nerve conduction studies",
+    "rationale": "Confirm and grade severity when uncertain or pre-surgery."
+   }
+  ],
+  "management": [
+   {
+    "step": "Conservative",
+    "detail": "Nocturnal wrist splints; treat contributing conditions."
+   },
+   {
+    "step": "Steroid injection",
+    "detail": "Local corticosteroid for moderate symptoms."
+   },
+   {
+    "step": "Surgery",
+    "detail": "Carpal tunnel release for severe/persistent symptoms or motor loss."
+   }
+  ],
+  "references": [
+   {
+    "label": "AAOS clinical practice guideline on carpal tunnel syndrome"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "viral-meningitis",
+  "title": "Viral meningitis",
+  "icd10": [
+   "A87.9"
+  ],
+  "icd11": [
+   "1C8Y"
+  ],
+  "domains": [
+   "neurology",
+   "infectious-disease"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Headache, fever, neck stiffness and photophobia, usually less toxic than bacterial.",
+   "Enteroviruses are the commonest cause.",
+   "Generally self-limiting."
+  ],
+  "redFlags": [
+   "Altered consciousness, seizures or focal signs (suspect encephalitis/bacterial cause).",
+   "Non-blanching rash.",
+   "Immunocompromise."
+  ],
+  "diagnostics": [
+   {
+    "test": "Lumbar puncture",
+    "rationale": "Lymphocytic pleocytosis, normal glucose, negative Gram stain."
+   },
+   {
+    "test": "CSF viral PCR",
+    "rationale": "Identifies enterovirus/HSV."
+   }
+  ],
+  "management": [
+   {
+    "step": "Exclude bacterial/HSV",
+    "detail": "Empirical antibiotics +/- aciclovir until excluded."
+   },
+   {
+    "step": "Supportive care",
+    "detail": "Analgesia, antipyretics, hydration; most recover fully."
+   },
+   {
+    "step": "Aciclovir",
+    "detail": "If HSV meningoencephalitis suspected."
+   }
+  ],
+  "references": [
+   {
+    "label": "UK joint specialist societies guideline on viral meningitis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "reactive-arthritis",
+  "title": "Reactive arthritis",
+  "icd10": [
+   "M02.9"
+  ],
+  "icd11": [
+   "FA12"
+  ],
+  "domains": [
+   "rheumatology",
+   "infectious-disease"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Asymmetrical oligoarthritis days to weeks after GI or genitourinary infection.",
+   "Classic triad: arthritis, urethritis, conjunctivitis.",
+   "Enthesitis, dactylitis; HLA-B27 associated."
+  ],
+  "redFlags": [
+   "Septic arthritis must be excluded.",
+   "Severe eye involvement (uveitis)."
+  ],
+  "diagnostics": [
+   {
+    "test": "Joint aspiration",
+    "rationale": "Excludes septic and crystal arthritis."
+   },
+   {
+    "test": "Screen for triggering infection",
+    "rationale": "Identify chlamydia/enteric pathogens."
+   }
+  ],
+  "management": [
+   {
+    "step": "NSAIDs",
+    "detail": "First-line for joint symptoms."
+   },
+   {
+    "step": "Treat infection",
+    "detail": "Antibiotics for ongoing chlamydial infection (and partner)."
+   },
+   {
+    "step": "Persistent disease",
+    "detail": "Intra-articular steroids; sulfasalazine/DMARD if chronic."
+   }
+  ],
+  "references": [
+   {
+    "label": "Rheumatology guidance on reactive arthritis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "pseudogout-cppd",
+  "title": "Pseudogout (CPPD)",
+  "icd10": [
+   "M11.2"
+  ],
+  "icd11": [
+   "FA25"
+  ],
+  "domains": [
+   "rheumatology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Acute mono/oligoarthritis, commonly the knee or wrist, in older adults.",
+   "Caused by calcium pyrophosphate crystal deposition.",
+   "Chondrocalcinosis on X-ray."
+  ],
+  "redFlags": [
+   "Septic arthritis must be excluded by aspiration.",
+   "Polyarticular flare with systemic upset."
+  ],
+  "diagnostics": [
+   {
+    "test": "Joint aspiration with polarised microscopy",
+    "rationale": "Positively birefringent rhomboid crystals; excludes infection."
+   },
+   {
+    "test": "X-ray",
+    "rationale": "Chondrocalcinosis."
+   }
+  ],
+  "management": [
+   {
+    "step": "Acute flare",
+    "detail": "NSAIDs, colchicine or intra-articular/oral corticosteroids."
+   },
+   {
+    "step": "Aspirate",
+    "detail": "Joint aspiration relieves symptoms and confirms diagnosis."
+   },
+   {
+    "step": "Investigate associations",
+    "detail": "Consider haemochromatosis, hyperparathyroidism in younger patients."
+   }
+  ],
+  "references": [
+   {
+    "label": "EULAR recommendations for calcium pyrophosphate deposition"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "sjogren-syndrome",
+  "title": "Sjogren syndrome",
+  "icd10": [
+   "M35.0"
+  ],
+  "icd11": [
+   "4A43.2"
+  ],
+  "domains": [
+   "rheumatology",
+   "immunology",
+   "ophthalmology"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Dry eyes and dry mouth (sicca symptoms).",
+   "Fatigue and arthralgia; parotid swelling.",
+   "May be primary or secondary to other autoimmune disease."
+  ],
+  "redFlags": [
+   "Persistent parotid swelling or lymphadenopathy (lymphoma risk).",
+   "Systemic involvement (renal, neurological, pulmonary)."
+  ],
+  "diagnostics": [
+   {
+    "test": "Anti-Ro/La antibodies, ANA, RF",
+    "rationale": "Support diagnosis."
+   },
+   {
+    "test": "Schirmer test / salivary gland assessment",
+    "rationale": "Objective measures of dryness."
+   }
+  ],
+  "management": [
+   {
+    "step": "Symptomatic",
+    "detail": "Artificial tears, saliva substitutes, good oral/dental care."
+   },
+   {
+    "step": "Sialogogues",
+    "detail": "Pilocarpine for severe dryness."
+   },
+   {
+    "step": "Systemic disease",
+    "detail": "Hydroxychloroquine/immunosuppression for extraglandular features; monitor for lymphoma."
+   }
+  ],
+  "references": [
+   {
+    "label": "EULAR recommendations for the management of Sjogren syndrome"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "systemic-sclerosis",
+  "title": "Systemic sclerosis (scleroderma)",
+  "icd10": [
+   "M34.9"
+  ],
+  "icd11": [
+   "4A42"
+  ],
+  "domains": [
+   "rheumatology",
+   "immunology"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Raynaud phenomenon, skin thickening (sclerodactyly), telangiectasia.",
+   "Limited (CREST) or diffuse cutaneous forms.",
+   "GI dysmotility, pulmonary and renal involvement."
+  ],
+  "redFlags": [
+   "Scleroderma renal crisis (accelerated hypertension, AKI).",
+   "Pulmonary arterial hypertension or interstitial lung disease.",
+   "Digital ulcers/critical ischaemia."
+  ],
+  "diagnostics": [
+   {
+    "test": "Autoantibodies (anti-centromere, anti-Scl-70, anti-RNA pol III)",
+    "rationale": "Define subtype and organ risk."
+   },
+   {
+    "test": "Echocardiography and PFTs/HRCT",
+    "rationale": "Screen for PAH and ILD."
+   }
+  ],
+  "management": [
+   {
+    "step": "Raynaud/digital ulcers",
+    "detail": "Calcium channel blockers, then PDE5 inhibitors/prostanoids."
+   },
+   {
+    "step": "Renal crisis",
+    "detail": "ACE inhibitors are first-line and life-saving."
+   },
+   {
+    "step": "Organ-specific therapy",
+    "detail": "Immunosuppression for ILD/skin; PAH-specific therapy."
+   }
+  ],
+  "references": [
+   {
+    "label": "EULAR recommendations for the treatment of systemic sclerosis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "inflammatory-myopathy",
+  "title": "Dermatomyositis and polymyositis",
+  "icd10": [
+   "M33.9"
+  ],
+  "icd11": [
+   "4A41"
+  ],
+  "domains": [
+   "rheumatology",
+   "neurology",
+   "immunology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Symmetrical proximal muscle weakness developing over weeks.",
+   "Dermatomyositis: heliotrope rash, Gottron papules.",
+   "Raised creatine kinase; risk of associated malignancy."
+  ],
+  "redFlags": [
+   "Respiratory muscle or pharyngeal weakness (aspiration/respiratory failure).",
+   "Interstitial lung disease.",
+   "Underlying malignancy."
+  ],
+  "diagnostics": [
+   {
+    "test": "Creatine kinase and myositis antibodies",
+    "rationale": "Confirm muscle inflammation and subtype."
+   },
+   {
+    "test": "EMG and muscle biopsy / MRI",
+    "rationale": "Confirm myopathy and pattern."
+   },
+   {
+    "test": "Malignancy screen",
+    "rationale": "Particularly in dermatomyositis."
+   }
+  ],
+  "management": [
+   {
+    "step": "Corticosteroids",
+    "detail": "High-dose steroids are first-line."
+   },
+   {
+    "step": "Steroid-sparing agents",
+    "detail": "Methotrexate, azathioprine, IVIG for refractory disease."
+   },
+   {
+    "step": "Screen and treat associations",
+    "detail": "Malignancy and ILD."
+   }
+  ],
+  "references": [
+   {
+    "label": "Guidelines on the management of idiopathic inflammatory myopathies"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "anca-vasculitis",
+  "title": "ANCA-associated vasculitis",
+  "icd10": [
+   "M31.3"
+  ],
+  "icd11": [
+   "4A44.A"
+  ],
+  "domains": [
+   "rheumatology",
+   "nephrology",
+   "immunology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Multisystem small-vessel vasculitis (GPA, MPA, EGPA).",
+   "ENT (sinusitis, epistaxis), pulmonary, renal and systemic features.",
+   "Constitutional symptoms with raised inflammatory markers."
+  ],
+  "redFlags": [
+   "Pulmonary haemorrhage.",
+   "Rapidly progressive glomerulonephritis.",
+   "Mononeuritis multiplex / critical organ ischaemia."
+  ],
+  "diagnostics": [
+   {
+    "test": "ANCA (PR3/MPO) testing",
+    "rationale": "Supports diagnosis."
+   },
+   {
+    "test": "Biopsy (kidney/lung/ENT)",
+    "rationale": "Histological confirmation."
+   }
+  ],
+  "management": [
+   {
+    "step": "Urgent referral",
+    "detail": "Specialist immunosuppression to prevent organ damage."
+   },
+   {
+    "step": "Induction",
+    "detail": "Corticosteroids with rituximab or cyclophosphamide; plasma exchange for severe disease."
+   },
+   {
+    "step": "Maintenance",
+    "detail": "Rituximab or azathioprine; monitor for relapse."
+   }
+  ],
+  "references": [
+   {
+    "label": "EULAR recommendations for the management of ANCA-associated vasculitis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "behcet-disease",
+  "title": "Behcet disease",
+  "icd10": [
+   "M35.2"
+  ],
+  "icd11": [
+   "4A62"
+  ],
+  "domains": [
+   "rheumatology",
+   "immunology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Recurrent oral and genital ulceration.",
+   "Uveitis, skin lesions (erythema nodosum, pathergy).",
+   "Can involve vessels, GI tract and CNS."
+  ],
+  "redFlags": [
+   "Posterior uveitis (sight-threatening).",
+   "Major vessel involvement / aneurysm.",
+   "Neuro-Behcet."
+  ],
+  "diagnostics": [
+   {
+    "test": "Clinical diagnosis (ISG criteria)",
+    "rationale": "No single confirmatory test."
+   },
+   {
+    "test": "Pathergy test",
+    "rationale": "Supportive when positive."
+   }
+  ],
+  "management": [
+   {
+    "step": "Mucocutaneous disease",
+    "detail": "Topical steroids, colchicine."
+   },
+   {
+    "step": "Major organ involvement",
+    "detail": "Systemic corticosteroids with immunosuppression (azathioprine, anti-TNF) for ocular/neuro/vascular disease."
+   }
+  ],
+  "references": [
+   {
+    "label": "EULAR recommendations for the management of Behcet syndrome"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "fibromyalgia",
+  "title": "Fibromyalgia",
+  "icd10": [
+   "M79.7"
+  ],
+  "icd11": [
+   "MG30.01"
+  ],
+  "domains": [
+   "rheumatology",
+   "pain-medicine"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Chronic widespread musculoskeletal pain.",
+   "Fatigue, unrefreshing sleep and cognitive difficulties ('fibro fog').",
+   "Normal examination and inflammatory markers."
+  ],
+  "redFlags": [
+   "Features suggesting inflammatory, endocrine or malignant disease (exclude before diagnosis)."
+  ],
+  "diagnostics": [
+   {
+    "test": "Clinical assessment with limited screening bloods",
+    "rationale": "Diagnosis is clinical; exclude mimics (TFTs, FBC, ESR/CRP)."
+   }
+  ],
+  "management": [
+   {
+    "step": "Education and exercise",
+    "detail": "Graded aerobic exercise and patient education are the foundation."
+   },
+   {
+    "step": "Non-pharmacological",
+    "detail": "CBT and good sleep hygiene."
+   },
+   {
+    "step": "Medication",
+    "detail": "Amitriptyline, duloxetine or pregabalin; avoid opioids."
+   }
+  ],
+  "references": [
+   {
+    "label": "EULAR revised recommendations for the management of fibromyalgia"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "frozen-shoulder",
+  "title": "Frozen shoulder (adhesive capsulitis)",
+  "icd10": [
+   "M75.0"
+  ],
+  "icd11": [
+   "FB52.0"
+  ],
+  "domains": [
+   "msk",
+   "orthopaedics",
+   "rheumatology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Progressive shoulder pain followed by stiffness and restricted movement.",
+   "Marked loss of passive and active external rotation.",
+   "Associated with diabetes; usually self-limiting over months to years."
+  ],
+  "redFlags": [
+   "History of trauma/dislocation, malignancy or infection.",
+   "Neurological deficit."
+  ],
+  "diagnostics": [
+   {
+    "test": "Clinical examination",
+    "rationale": "Global restriction, especially external rotation."
+   },
+   {
+    "test": "X-ray",
+    "rationale": "Excludes glenohumeral arthritis if diagnosis unclear."
+   }
+  ],
+  "management": [
+   {
+    "step": "Analgesia and physiotherapy",
+    "detail": "Maintain range of movement."
+   },
+   {
+    "step": "Corticosteroid injection",
+    "detail": "Intra-articular steroid for pain in the early phase."
+   },
+   {
+    "step": "Refractory",
+    "detail": "Hydrodilatation, manipulation under anaesthesia or arthroscopic release."
+   }
+  ],
+  "references": [
+   {
+    "label": "BESS/BOA guideline on frozen shoulder"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "rotator-cuff-disorder",
+  "title": "Rotator cuff disorder",
+  "icd10": [
+   "M75.1"
+  ],
+  "icd11": [
+   "FB52.1"
+  ],
+  "domains": [
+   "msk",
+   "orthopaedics"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Shoulder pain on overhead activity and at night.",
+   "Painful arc and weakness on resisted abduction/external rotation.",
+   "Spectrum from tendinopathy to full-thickness tear."
+  ],
+  "redFlags": [
+   "Acute traumatic tear with significant weakness (consider early surgery).",
+   "Mass or systemic features."
+  ],
+  "diagnostics": [
+   {
+    "test": "Clinical special tests",
+    "rationale": "Localise the affected tendon."
+   },
+   {
+    "test": "Ultrasound/MRI",
+    "rationale": "Characterise tear if surgery considered or diagnosis unclear."
+   }
+  ],
+  "management": [
+   {
+    "step": "Conservative",
+    "detail": "Analgesia, activity modification and physiotherapy."
+   },
+   {
+    "step": "Injection",
+    "detail": "Subacromial corticosteroid for persistent pain."
+   },
+   {
+    "step": "Surgery",
+    "detail": "Repair for significant tears unresponsive to conservative care or acute traumatic tears."
+   }
+  ],
+  "references": [
+   {
+    "label": "BESS/BOA guideline on subacromial shoulder pain"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "plantar-fasciitis",
+  "title": "Plantar fasciitis",
+  "icd10": [
+   "M72.2"
+  ],
+  "icd11": [
+   "FB40.3"
+  ],
+  "domains": [
+   "msk",
+   "orthopaedics",
+   "podiatry"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Sharp inferior heel pain, worst with first steps in the morning.",
+   "Tenderness over the medial calcaneal tubercle.",
+   "Associated with obesity, prolonged standing, tight calves."
+  ],
+  "redFlags": [
+   "Bilateral heel pain in a young person (consider seronegative spondyloarthropathy).",
+   "Numbness suggesting nerve entrapment.",
+   "Acute pain after trauma (exclude fracture/rupture)."
+  ],
+  "diagnostics": [
+   {
+    "test": "Clinical diagnosis",
+    "rationale": "History and focal tenderness are usually sufficient."
+   }
+  ],
+  "management": [
+   {
+    "step": "Conservative",
+    "detail": "Calf/plantar fascia stretching, supportive footwear, orthoses, activity modification."
+   },
+   {
+    "step": "Adjuncts",
+    "detail": "NSAIDs; corticosteroid injection or shockwave therapy for refractory cases."
+   }
+  ],
+  "references": [
+   {
+    "label": "Clinical guidance on the management of plantar heel pain"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
  }
 ]
