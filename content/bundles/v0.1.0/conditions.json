@@ -39916,5 +39916,585 @@
   "ruleVersion": "0.1.0",
   "reviewStatus": "draft",
   "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "bronchopulmonary-dysplasia",
+  "title": "Bronchopulmonary dysplasia",
+  "icd10": [
+   "P27.1"
+  ],
+  "domains": [
+   "paediatrics",
+   "neonatology",
+   "respiratory"
+  ],
+  "population": {
+   "maxAgeYears": 2,
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Chronic lung disease of prematurity with ongoing oxygen need beyond 28 days/36 weeks corrected.",
+   "Tachypnoea, increased work of breathing, poor weight gain.",
+   "Follows prolonged ventilation/oxygen in preterm infants."
+  ],
+  "redFlags": [
+   "Acute respiratory deterioration/intercurrent infection.",
+   "Pulmonary hypertension.",
+   "Failure to thrive."
+  ],
+  "diagnostics": [
+   {
+    "test": "Oxygen requirement assessment at 36 weeks corrected",
+    "rationale": "Defines severity."
+   },
+   {
+    "test": "Chest X-ray and echocardiography",
+    "rationale": "Assess lung disease and pulmonary hypertension."
+   }
+  ],
+  "management": [
+   {
+    "step": "Respiratory support",
+    "detail": "Wean oxygen to maintain target saturations; gentle ventilation strategies."
+   },
+   {
+    "step": "Nutrition",
+    "detail": "Optimise calories for growth and lung repair."
+   },
+   {
+    "step": "Prevent infection",
+    "detail": "RSV prophylaxis and immunisations; treat exacerbations; screen for pulmonary hypertension."
+   }
+  ],
+  "references": [
+   {
+    "label": "Guidance on the management of bronchopulmonary dysplasia"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "necrotising-enterocolitis",
+  "title": "Necrotising enterocolitis",
+  "icd10": [
+   "P77.9"
+  ],
+  "domains": [
+   "paediatrics",
+   "neonatology",
+   "surgery",
+   "emergency"
+  ],
+  "population": {
+   "maxAgeYears": 1,
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Feed intolerance, abdominal distension and bloody stools in a preterm neonate.",
+   "Lethargy, temperature instability and apnoea.",
+   "Pneumatosis intestinalis on abdominal X-ray."
+  ],
+  "redFlags": [
+   "Pneumoperitoneum (perforation).",
+   "Septic shock / DIC.",
+   "Abdominal wall erythema."
+  ],
+  "diagnostics": [
+   {
+    "test": "Abdominal X-ray",
+    "rationale": "Pneumatosis intestinalis, portal venous gas, or free air."
+   },
+   {
+    "test": "Bloods and blood culture",
+    "rationale": "Assess sepsis, acidosis, thrombocytopenia."
+   }
+  ],
+  "management": [
+   {
+    "step": "Bowel rest",
+    "detail": "Stop enteral feeds, NG decompression, IV fluids and TPN."
+   },
+   {
+    "step": "Antibiotics",
+    "detail": "Broad-spectrum IV antibiotics covering Gram-negatives and anaerobes."
+   },
+   {
+    "step": "Surgery",
+    "detail": "Laparotomy/drain for perforation or deterioration."
+   }
+  ],
+  "references": [
+   {
+    "label": "Neonatal guidance on the management of necrotising enterocolitis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "transient-tachypnoea-newborn",
+  "title": "Transient tachypnoea of the newborn",
+  "icd10": [
+   "P22.1"
+  ],
+  "domains": [
+   "paediatrics",
+   "neonatology",
+   "respiratory"
+  ],
+  "population": {
+   "maxAgeYears": 1,
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Tachypnoea shortly after birth, often after caesarean section.",
+   "Mild respiratory distress that resolves within 24-72 hours.",
+   "Caused by delayed clearance of fetal lung fluid."
+  ],
+  "redFlags": [
+   "Worsening or persistent distress (reconsider sepsis, pneumonia, RDS).",
+   "Hypoxia requiring high oxygen/ventilation.",
+   "Fever or risk factors for infection."
+  ],
+  "diagnostics": [
+   {
+    "test": "Chest X-ray",
+    "rationale": "Hyperinflation, fluid in fissures; excludes other causes."
+   },
+   {
+    "test": "Observation and oxygen saturation",
+    "rationale": "Monitor recovery."
+   }
+  ],
+  "management": [
+   {
+    "step": "Supportive",
+    "detail": "Oxygen as needed; monitor; usually self-resolving."
+   },
+   {
+    "step": "Feeding support",
+    "detail": "Withhold/limit oral feeds if tachypnoeic to reduce aspiration risk."
+   },
+   {
+    "step": "Exclude sepsis",
+    "detail": "Consider antibiotics if infection cannot be excluded."
+   }
+  ],
+  "references": [
+   {
+    "label": "Neonatal guidance on transient tachypnoea of the newborn"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "congenital-heart-disease",
+  "title": "Congenital heart disease (overview)",
+  "icd10": [
+   "Q24.9"
+  ],
+  "icd11": [
+   "LA8Z"
+  ],
+  "domains": [
+   "paediatrics",
+   "cardiology",
+   "neonatology"
+  ],
+  "population": {
+   "maxAgeYears": 18,
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Cyanosis, murmur, poor feeding, failure to thrive or breathlessness.",
+   "Duct-dependent lesions present with collapse as the duct closes.",
+   "Antenatal detection or detected on newborn examination/pulse oximetry."
+  ],
+  "redFlags": [
+   "Cyanosis or shock in a neonate (duct-dependent lesion).",
+   "Absent femoral pulses (coarctation).",
+   "Acute heart failure."
+  ],
+  "diagnostics": [
+   {
+    "test": "Pulse oximetry screening and four-limb BP",
+    "rationale": "Detects critical CHD."
+   },
+   {
+    "test": "Echocardiography",
+    "rationale": "Defines the anatomical lesion."
+   }
+  ],
+  "management": [
+   {
+    "step": "Stabilise duct-dependent lesions",
+    "detail": "Prostaglandin E1 infusion to maintain ductal patency; urgent transfer."
+   },
+   {
+    "step": "Specialist referral",
+    "detail": "Paediatric cardiology for definitive diagnosis and intervention."
+   },
+   {
+    "step": "Supportive",
+    "detail": "Treat heart failure; optimise nutrition; endocarditis prevention advice."
+   }
+  ],
+  "references": [
+   {
+    "label": "Guidance on the recognition and management of congenital heart disease"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "wilms-tumour",
+  "title": "Wilms tumour (nephroblastoma)",
+  "icd10": [
+   "C64"
+  ],
+  "icd11": [
+   "2C90.0"
+  ],
+  "domains": [
+   "paediatrics",
+   "oncology",
+   "urology"
+  ],
+  "population": {
+   "maxAgeYears": 10,
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Painless abdominal mass in a young child (typically under 5).",
+   "Sometimes haematuria, hypertension or abdominal pain.",
+   "Usually otherwise well at presentation."
+  ],
+  "redFlags": [
+   "Rapidly enlarging abdominal mass.",
+   "Haematuria or hypertension.",
+   "Respiratory symptoms (pulmonary metastases)."
+  ],
+  "diagnostics": [
+   {
+    "test": "Abdominal ultrasound then CT/MRI",
+    "rationale": "Characterises renal mass and stages disease."
+   },
+   {
+    "test": "Avoid biopsy initially",
+    "rationale": "Diagnosis often on imaging; biopsy may upstage."
+   }
+  ],
+  "management": [
+   {
+    "step": "Urgent referral",
+    "detail": "Paediatric oncology centre."
+   },
+   {
+    "step": "Multimodal therapy",
+    "detail": "Nephrectomy with chemotherapy +/- radiotherapy per protocol; high cure rates."
+   }
+  ],
+  "references": [
+   {
+    "label": "SIOP/Children's Oncology Group Wilms tumour protocols"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "neuroblastoma",
+  "title": "Neuroblastoma",
+  "icd10": [
+   "C74.9"
+  ],
+  "icd11": [
+   "2D11.0"
+  ],
+  "domains": [
+   "paediatrics",
+   "oncology"
+  ],
+  "population": {
+   "maxAgeYears": 10,
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Abdominal mass (often arising from adrenal/sympathetic chain) in a young child.",
+   "Systemic symptoms: weight loss, bone pain, periorbital bruising.",
+   "Paraneoplastic features (opsoclonus-myoclonus, secretory diarrhoea)."
+  ],
+  "redFlags": [
+   "Spinal cord compression from dumbbell tumour.",
+   "Widespread bone/marrow metastases.",
+   "Hypertension from catecholamines."
+  ],
+  "diagnostics": [
+   {
+    "test": "Urinary catecholamines (VMA/HVA)",
+    "rationale": "Elevated in most neuroblastomas."
+   },
+   {
+    "test": "Imaging (CT/MRI, MIBG)",
+    "rationale": "Stages disease and assesses spread."
+   }
+  ],
+  "management": [
+   {
+    "step": "Urgent referral",
+    "detail": "Paediatric oncology."
+   },
+   {
+    "step": "Risk-adapted treatment",
+    "detail": "Observation, surgery, chemotherapy, radiotherapy and immunotherapy by risk group."
+   }
+  ],
+  "references": [
+   {
+    "label": "SIOPEN/COG neuroblastoma guidance"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "juvenile-idiopathic-arthritis",
+  "title": "Juvenile idiopathic arthritis",
+  "icd10": [
+   "M08.9"
+  ],
+  "icd11": [
+   "FA24"
+  ],
+  "domains": [
+   "paediatrics",
+   "rheumatology"
+  ],
+  "population": {
+   "maxAgeYears": 16,
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Persistent joint swelling (>=6 weeks) in a child under 16, no other cause.",
+   "Morning stiffness, limp or reduced use of a limb.",
+   "Subtypes: oligoarticular, polyarticular, systemic, enthesitis-related, psoriatic."
+  ],
+  "redFlags": [
+   "Systemic JIA with macrophage activation syndrome (high fever, cytopenias, very high ferritin).",
+   "Uveitis (often asymptomatic - needs screening).",
+   "Septic arthritis must be excluded."
+  ],
+  "diagnostics": [
+   {
+    "test": "Clinical assessment with inflammatory markers and ANA",
+    "rationale": "ANA-positive oligoarticular JIA has high uveitis risk."
+   },
+   {
+    "test": "Ophthalmology screening",
+    "rationale": "Detects asymptomatic uveitis."
+   }
+  ],
+  "management": [
+   {
+    "step": "NSAIDs and intra-articular steroids",
+    "detail": "For oligoarticular disease."
+   },
+   {
+    "step": "DMARDs/biologics",
+    "detail": "Methotrexate then biologics for polyarticular/refractory disease."
+   },
+   {
+    "step": "Multidisciplinary care",
+    "detail": "Physiotherapy, ophthalmology screening, treat MAS as emergency."
+   }
+  ],
+  "references": [
+   {
+    "label": "Guidelines on the management of juvenile idiopathic arthritis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "perthes-disease",
+  "title": "Perthes disease",
+  "icd10": [
+   "M91.1"
+  ],
+  "icd11": [
+   "FB81.0"
+  ],
+  "domains": [
+   "paediatrics",
+   "orthopaedics"
+  ],
+  "population": {
+   "minAgeYears": 3,
+   "maxAgeYears": 12,
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Insidious hip pain or limp in a child (commonly boys aged 4-8).",
+   "Pain may be referred to the knee/thigh.",
+   "Reduced hip abduction and internal rotation; avascular necrosis of the femoral head."
+  ],
+  "redFlags": [
+   "Bilateral disease (consider skeletal dysplasia/endocrine cause).",
+   "Acute severe pain (exclude septic arthritis/SUFE)."
+  ],
+  "diagnostics": [
+   {
+    "test": "Hip X-ray (AP and frog-leg)",
+    "rationale": "Shows femoral head changes; may be normal early."
+   },
+   {
+    "test": "MRI",
+    "rationale": "Detects early disease if X-ray normal."
+   }
+  ],
+  "management": [
+   {
+    "step": "Conservative",
+    "detail": "Activity modification, analgesia and physiotherapy to maintain range of movement (containment)."
+   },
+   {
+    "step": "Orthopaedic referral",
+    "detail": "For containment bracing or surgery in selected cases."
+   },
+   {
+    "step": "Monitor",
+    "detail": "Most younger children do well; surveillance for femoral head deformity."
+   }
+  ],
+  "references": [
+   {
+    "label": "Paediatric orthopaedic guidance on Perthes disease"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "slipped-upper-femoral-epiphysis",
+  "title": "Slipped upper femoral epiphysis",
+  "icd10": [
+   "M93.0"
+  ],
+  "icd11": [
+   "FB81.1"
+  ],
+  "domains": [
+   "paediatrics",
+   "orthopaedics",
+   "emergency"
+  ],
+  "population": {
+   "minAgeYears": 8,
+   "maxAgeYears": 16,
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Hip, groin or knee pain and a limp in an adolescent, often overweight.",
+   "Affected leg held in external rotation; loss of internal rotation.",
+   "Knee pain can be the only symptom - examine the hip."
+  ],
+  "redFlags": [
+   "Inability to weight bear (unstable slip - high avascular necrosis risk).",
+   "Acute severe pain.",
+   "Bilateral involvement."
+  ],
+  "diagnostics": [
+   {
+    "test": "Hip X-ray (AP and frog-leg lateral)",
+    "rationale": "Shows posterior/inferior slip of the epiphysis."
+   }
+  ],
+  "management": [
+   {
+    "step": "Non-weight-bearing and urgent referral",
+    "detail": "Stop weight bearing; emergency orthopaedic referral."
+   },
+   {
+    "step": "Surgical fixation",
+    "detail": "In-situ pinning to prevent further slip."
+   },
+   {
+    "step": "Consider endocrine causes",
+    "detail": "In atypical age/bilateral cases."
+   }
+  ],
+  "references": [
+   {
+    "label": "Paediatric orthopaedic guidance on slipped upper femoral epiphysis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "transient-synovitis",
+  "title": "Transient synovitis of the hip",
+  "icd10": [
+   "M67.35"
+  ],
+  "domains": [
+   "paediatrics",
+   "orthopaedics"
+  ],
+  "population": {
+   "minAgeYears": 2,
+   "maxAgeYears": 10,
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Acute hip pain and limp in a young child, often after a viral illness.",
+   "Child is well or only mildly unwell; afebrile or low-grade fever.",
+   "Reduced hip movement; a diagnosis of exclusion."
+  ],
+  "redFlags": [
+   "Fever, inability to weight bear, raised inflammatory markers (use Kocher criteria - exclude septic arthritis).",
+   "Systemic toxicity."
+  ],
+  "diagnostics": [
+   {
+    "test": "Inflammatory markers and hip ultrasound",
+    "rationale": "Effusion present; helps exclude septic arthritis (consider aspiration if uncertain)."
+   }
+  ],
+  "management": [
+   {
+    "step": "Exclude septic arthritis",
+    "detail": "If concern, aspirate and treat as septic until proven otherwise."
+   },
+   {
+    "step": "Conservative",
+    "detail": "Rest and analgesia; symptoms typically resolve within 1-2 weeks."
+   },
+   {
+    "step": "Safety-net and review",
+    "detail": "Re-attend if fever or worsening."
+   }
+  ],
+  "references": [
+   {
+    "label": "Paediatric guidance on the limping child"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
  }
 ]
