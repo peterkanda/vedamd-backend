@@ -41384,5 +41384,615 @@
   "ruleVersion": "0.1.0",
   "reviewStatus": "draft",
   "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "polycythaemia-vera",
+  "title": "Polycythaemia vera",
+  "icd10": [
+   "D45"
+  ],
+  "domains": [
+   "haematology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Raised haemoglobin/haematocrit with thrombotic risk.",
+   "Aquagenic pruritus, plethora, erythromelalgia, headache.",
+   "Splenomegaly; usually JAK2 V617F positive."
+  ],
+  "redFlags": [
+   "Arterial or venous thrombosis.",
+   "Transformation to myelofibrosis or acute leukaemia.",
+   "Major bleeding."
+  ],
+  "diagnostics": [
+   {
+    "test": "FBC and JAK2 mutation",
+    "rationale": "Confirms clonal erythrocytosis."
+   },
+   {
+    "test": "Serum erythropoietin",
+    "rationale": "Low in PV; excludes secondary causes."
+   }
+  ],
+  "management": [
+   {
+    "step": "Venesection",
+    "detail": "Target haematocrit <0.45."
+   },
+   {
+    "step": "Aspirin",
+    "detail": "Low-dose aspirin to reduce thrombosis (unless contraindicated)."
+   },
+   {
+    "step": "Cytoreduction",
+    "detail": "Hydroxycarbamide for high-risk disease; manage cardiovascular risk."
+   }
+  ],
+  "references": [
+   {
+    "label": "BSH guideline for the management of polycythaemia vera"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "essential-thrombocythaemia",
+  "title": "Essential thrombocythaemia",
+  "icd10": [
+   "D47.3"
+  ],
+  "domains": [
+   "haematology"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Persistently raised platelet count, often incidental.",
+   "Vasomotor symptoms (headache, erythromelalgia), thrombosis or bleeding.",
+   "Driver mutations JAK2, CALR or MPL."
+  ],
+  "redFlags": [
+   "Thrombosis or major haemorrhage.",
+   "Transformation to myelofibrosis/leukaemia."
+  ],
+  "diagnostics": [
+   {
+    "test": "FBC and blood film",
+    "rationale": "Confirms thrombocytosis; exclude reactive causes."
+   },
+   {
+    "test": "Mutation analysis (JAK2/CALR/MPL)",
+    "rationale": "Confirms clonal disease."
+   }
+  ],
+  "management": [
+   {
+    "step": "Risk stratify",
+    "detail": "Age, prior thrombosis and mutation guide therapy."
+   },
+   {
+    "step": "Aspirin",
+    "detail": "For vasomotor symptoms and thrombotic risk."
+   },
+   {
+    "step": "Cytoreduction",
+    "detail": "Hydroxycarbamide for high-risk disease; manage cardiovascular risk."
+   }
+  ],
+  "references": [
+   {
+    "label": "BSH guideline for the management of essential thrombocythaemia"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "myelofibrosis",
+  "title": "Myelofibrosis",
+  "icd10": [
+   "D47.4"
+  ],
+  "domains": [
+   "haematology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Fatigue, weight loss and night sweats with massive splenomegaly.",
+   "Anaemia and a leucoerythroblastic blood film with teardrop cells.",
+   "Primary or following PV/ET."
+  ],
+  "redFlags": [
+   "Symptomatic splenomegaly/infarction.",
+   "Progressive cytopenias / leukaemic transformation.",
+   "Severe constitutional symptoms."
+  ],
+  "diagnostics": [
+   {
+    "test": "Blood film and bone marrow trephine",
+    "rationale": "Marrow fibrosis with teardrop poikilocytes."
+   },
+   {
+    "test": "Mutation analysis",
+    "rationale": "JAK2/CALR/MPL support diagnosis and prognosis."
+   }
+  ],
+  "management": [
+   {
+    "step": "Risk-adapted care",
+    "detail": "Observation for low-risk disease."
+   },
+   {
+    "step": "Symptom control",
+    "detail": "JAK inhibitor (ruxolitinib) for splenomegaly/symptoms; transfusion support."
+   },
+   {
+    "step": "Curative option",
+    "detail": "Allogeneic stem cell transplant for eligible high-risk patients."
+   }
+  ],
+  "references": [
+   {
+    "label": "BSH guideline for the management of myelofibrosis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "aplastic-anaemia",
+  "title": "Aplastic anaemia",
+  "icd10": [
+   "D61.9"
+  ],
+  "domains": [
+   "haematology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Pancytopenia with hypocellular bone marrow.",
+   "Fatigue (anaemia), infections (neutropenia), bleeding (thrombocytopenia).",
+   "Often immune-mediated; may follow drugs, viruses or be inherited."
+  ],
+  "redFlags": [
+   "Severe neutropenic sepsis.",
+   "Major haemorrhage.",
+   "Very severe disease (very low neutrophils)."
+  ],
+  "diagnostics": [
+   {
+    "test": "FBC, reticulocytes and blood film",
+    "rationale": "Pancytopenia with low reticulocytes."
+   },
+   {
+    "test": "Bone marrow biopsy",
+    "rationale": "Hypocellular marrow; excludes infiltration/leukaemia."
+   }
+  ],
+  "management": [
+   {
+    "step": "Supportive care",
+    "detail": "Transfusions and prompt management of neutropenic sepsis."
+   },
+   {
+    "step": "Definitive therapy",
+    "detail": "Allogeneic transplant for younger patients; immunosuppression (ATG + ciclosporin) +/- eltrombopag otherwise."
+   },
+   {
+    "step": "Remove triggers",
+    "detail": "Stop causative drugs."
+   }
+  ],
+  "references": [
+   {
+    "label": "BSH guidelines for the diagnosis and management of aplastic anaemia"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "thrombotic-thrombocytopenic-purpura",
+  "title": "Thrombotic thrombocytopenic purpura",
+  "icd10": [
+   "M31.1"
+  ],
+  "domains": [
+   "haematology",
+   "emergency"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Microangiopathic haemolytic anaemia and thrombocytopenia.",
+   "Neurological signs, fever and renal impairment (classic pentad).",
+   "Caused by severe ADAMTS13 deficiency; a medical emergency."
+  ],
+  "redFlags": [
+   "Any suspected TTP is an emergency (untreated mortality is high).",
+   "Neurological deterioration.",
+   "Cardiac involvement."
+  ],
+  "diagnostics": [
+   {
+    "test": "Blood film (schistocytes) and platelet count",
+    "rationale": "MAHA with thrombocytopenia and normal coagulation."
+   },
+   {
+    "test": "ADAMTS13 activity",
+    "rationale": "Severely reduced; do not delay treatment for the result."
+   }
+  ],
+  "management": [
+   {
+    "step": "Urgent plasma exchange",
+    "detail": "Life-saving; start immediately on clinical suspicion."
+   },
+   {
+    "step": "Immunosuppression",
+    "detail": "Corticosteroids and rituximab; caplacizumab where available."
+   },
+   {
+    "step": "Avoid platelet transfusion",
+    "detail": "Unless life-threatening bleeding (may worsen thrombosis)."
+   }
+  ],
+  "references": [
+   {
+    "label": "BSH guideline on the diagnosis and management of thrombotic thrombocytopenic purpura"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "hereditary-spherocytosis",
+  "title": "Hereditary spherocytosis",
+  "icd10": [
+   "D58.0"
+  ],
+  "domains": [
+   "haematology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Chronic haemolytic anaemia with jaundice and splenomegaly.",
+   "Spherocytes on blood film; usually autosomal dominant.",
+   "Gallstones and aplastic crises (parvovirus)."
+  ],
+  "redFlags": [
+   "Aplastic crisis (parvovirus B19).",
+   "Severe haemolytic crisis.",
+   "Symptomatic gallstones."
+  ],
+  "diagnostics": [
+   {
+    "test": "Blood film and reticulocytes",
+    "rationale": "Spherocytes with raised reticulocytes."
+   },
+   {
+    "test": "EMA binding test / osmotic fragility",
+    "rationale": "Confirms membrane defect."
+   }
+  ],
+  "management": [
+   {
+    "step": "Folic acid",
+    "detail": "Supplement to support erythropoiesis."
+   },
+   {
+    "step": "Transfusion support",
+    "detail": "For crises."
+   },
+   {
+    "step": "Splenectomy",
+    "detail": "For severe disease (with prior vaccination and prophylaxis); cholecystectomy for gallstones."
+   }
+  ],
+  "references": [
+   {
+    "label": "BSH guidelines for the diagnosis and management of hereditary spherocytosis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "antiphospholipid-syndrome",
+  "title": "Antiphospholipid syndrome",
+  "icd10": [
+   "D68.61"
+  ],
+  "domains": [
+   "haematology",
+   "rheumatology",
+   "immunology"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Arterial/venous thrombosis and/or pregnancy morbidity with persistent antiphospholipid antibodies.",
+   "Recurrent miscarriage, late fetal loss.",
+   "May be primary or secondary to lupus."
+  ],
+  "redFlags": [
+   "Catastrophic antiphospholipid syndrome (multi-organ thrombosis).",
+   "Stroke or major thromboembolism.",
+   "Severe thrombocytopenia."
+  ],
+  "diagnostics": [
+   {
+    "test": "Lupus anticoagulant, anticardiolipin, anti-beta2-glycoprotein I",
+    "rationale": "Confirm on two occasions 12 weeks apart."
+   }
+  ],
+  "management": [
+   {
+    "step": "Thrombosis",
+    "detail": "Long-term warfarin (avoid DOACs in triple-positive/arterial disease)."
+   },
+   {
+    "step": "Obstetric APS",
+    "detail": "Aspirin plus LMWH in pregnancy."
+   },
+   {
+    "step": "Catastrophic APS",
+    "detail": "Anticoagulation, steroids, plasma exchange/IVIG."
+   }
+  ],
+  "references": [
+   {
+    "label": "EULAR recommendations for the management of antiphospholipid syndrome in adults"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "amyloidosis",
+  "title": "Amyloidosis",
+  "icd10": [
+   "E85.9"
+  ],
+  "domains": [
+   "haematology",
+   "cardiology",
+   "nephrology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Multisystem deposition of misfolded protein (AL, AA or ATTR).",
+   "Nephrotic syndrome, restrictive cardiomyopathy, neuropathy, macroglossia.",
+   "Fatigue and weight loss."
+  ],
+  "redFlags": [
+   "Heart failure from cardiac amyloid.",
+   "Nephrotic-range proteinuria/renal failure.",
+   "Autonomic failure."
+  ],
+  "diagnostics": [
+   {
+    "test": "Biopsy with Congo red staining",
+    "rationale": "Apple-green birefringence confirms amyloid; type the protein."
+   },
+   {
+    "test": "Serum free light chains and cardiac imaging",
+    "rationale": "Identify AL and cardiac involvement."
+   }
+  ],
+  "management": [
+   {
+    "step": "Type-directed therapy",
+    "detail": "Treat plasma cell clone in AL (chemotherapy); treat underlying inflammation in AA; ATTR-specific drugs for ATTR."
+   },
+   {
+    "step": "Organ support",
+    "detail": "Heart failure and renal management."
+   },
+   {
+    "step": "Specialist referral",
+    "detail": "National amyloidosis centre."
+   }
+  ],
+  "references": [
+   {
+    "label": "Guidelines on the diagnosis and management of systemic amyloidosis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "neurofibromatosis-type-1",
+  "title": "Neurofibromatosis type 1",
+  "icd10": [
+   "Q85.0"
+  ],
+  "domains": [
+   "neurology",
+   "genetics",
+   "dermatology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Cafe-au-lait macules, axillary/inguinal freckling, neurofibromas.",
+   "Lisch nodules (iris hamartomas), optic glioma.",
+   "Autosomal dominant; learning difficulties common."
+  ],
+  "redFlags": [
+   "Rapidly growing/painful neurofibroma (malignant peripheral nerve sheath tumour).",
+   "New neurological deficit.",
+   "Hypertension (consider phaeochromocytoma/renal artery stenosis)."
+  ],
+  "diagnostics": [
+   {
+    "test": "Clinical diagnostic criteria",
+    "rationale": "Cafe-au-lait macules, freckling, neurofibromas, etc."
+   },
+   {
+    "test": "Ophthalmology and imaging",
+    "rationale": "Screen for optic glioma and complications."
+   }
+  ],
+  "management": [
+   {
+    "step": "Surveillance",
+    "detail": "Regular review for blood pressure, vision, skeletal and developmental complications."
+   },
+   {
+    "step": "Treat complications",
+    "detail": "Excise symptomatic/suspicious lesions; manage hypertension."
+   },
+   {
+    "step": "Genetic counselling",
+    "detail": "For the patient and family."
+   }
+  ],
+  "references": [
+   {
+    "label": "Guidelines on the diagnosis and management of neurofibromatosis type 1"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "tuberous-sclerosis",
+  "title": "Tuberous sclerosis complex",
+  "icd10": [
+   "Q85.1"
+  ],
+  "domains": [
+   "neurology",
+   "genetics",
+   "dermatology",
+   "nephrology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Seizures, developmental delay and skin lesions (angiofibromas, ash-leaf macules).",
+   "Hamartomas in brain, kidneys (angiomyolipoma), heart (rhabdomyoma) and lungs.",
+   "Autosomal dominant (TSC1/TSC2)."
+  ],
+  "redFlags": [
+   "Drug-resistant epilepsy/infantile spasms.",
+   "Bleeding renal angiomyolipoma.",
+   "Subependymal giant cell astrocytoma causing hydrocephalus."
+  ],
+  "diagnostics": [
+   {
+    "test": "Clinical criteria and genetic testing",
+    "rationale": "Confirms diagnosis."
+   },
+   {
+    "test": "MRI brain and renal imaging",
+    "rationale": "Identify and monitor hamartomas."
+   }
+  ],
+  "management": [
+   {
+    "step": "Seizure control",
+    "detail": "Antiepileptics; vigabatrin for infantile spasms."
+   },
+   {
+    "step": "mTOR inhibitors",
+    "detail": "Everolimus for SEGA and renal angiomyolipoma."
+   },
+   {
+    "step": "Surveillance",
+    "detail": "Multidisciplinary monitoring of brain, kidneys, heart, lungs and skin."
+   }
+  ],
+  "references": [
+   {
+    "label": "International Tuberous Sclerosis Complex consensus recommendations"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "addison-disease",
+  "title": "Addison disease (primary adrenal insufficiency)",
+  "icd10": [
+   "E27.1"
+  ],
+  "domains": [
+   "endocrine"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Fatigue, weight loss, anorexia and postural dizziness.",
+   "Hyperpigmentation, salt craving; nausea and abdominal pain.",
+   "Hyponatraemia and hyperkalaemia; often autoimmune."
+  ],
+  "redFlags": [
+   "Adrenal crisis (hypotension, shock, hyponatraemia) - emergency.",
+   "Intercurrent illness without stress dosing.",
+   "Severe electrolyte derangement."
+  ],
+  "diagnostics": [
+   {
+    "test": "9am cortisol and Short Synacthen test",
+    "rationale": "Inadequate cortisol response confirms insufficiency."
+   },
+   {
+    "test": "ACTH, renin and adrenal autoantibodies",
+    "rationale": "Confirm primary cause."
+   }
+  ],
+  "management": [
+   {
+    "step": "Replacement",
+    "detail": "Hydrocortisone (glucocorticoid) and fludrocortisone (mineralocorticoid)."
+   },
+   {
+    "step": "Sick-day rules",
+    "detail": "Double oral steroid in illness; emergency IM hydrocortisone and steroid card."
+   },
+   {
+    "step": "Crisis management",
+    "detail": "IV hydrocortisone and fluids for adrenal crisis."
+   }
+  ],
+  "references": [
+   {
+    "label": "Endocrine Society clinical practice guideline on primary adrenal insufficiency"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
  }
 ]
