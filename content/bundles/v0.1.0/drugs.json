@@ -34436,5 +34436,156 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "calcitriol",
+    "inn": "Calcitriol (1,25-dihydroxyvitamin D3)",
+    "tradeNames": [
+      "Rocaltrol"
+    ],
+    "atc": [
+      "A11CC04"
+    ],
+    "rxnorm": "2098",
+    "drugClass": "Active vitamin D analogue",
+    "awareCategory": "Not-classified",
+    "whoEml": false,
+    "indications": [
+      {
+        "icd10": "E20",
+        "text": "Hypoparathyroidism and hypocalcaemia"
+      },
+      {
+        "text": "CKD mineral and bone disorder; refractory rickets/osteomalacia"
+      }
+    ],
+    "mechanism": "The active form of vitamin D; binds the vitamin D receptor to increase intestinal calcium and phosphate absorption and support bone mineralisation, bypassing renal 1-alpha-hydroxylation.",
+    "pharmacokinetics": {
+      "halfLifeHours": 6,
+      "metabolism": "hepatic",
+      "excretion": "biliary",
+      "notes": "Rapid onset/offset compared with native vitamin D; useful when renal activation is impaired."
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "oral",
+          "regimen": "Typically 0.25–1 microgram daily, titrated to calcium; individualise.",
+          "notes": "Ensure adequate calcium intake; titrate carefully to avoid hypercalcaemia."
+        }
+      ]
+    },
+    "pregnancy": {
+      "notes": "Use if clearly needed; monitor calcium."
+    },
+    "lactation": "Use with monitoring of infant where high doses used.",
+    "contraindications": [
+      "Hypercalcaemia",
+      "Vitamin D toxicity",
+      "Hypersensitivity"
+    ],
+    "warnings": [
+      "Risk of hypercalcaemia and hypercalciuria — monitor calcium",
+      "Caution with calcium supplements and thiazides",
+      "Adjust dose as PTH/renal status changes"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "hypercalcaemia (nausea, thirst, confusion) if over-replaced"
+      },
+      {
+        "frequency": "uncommon",
+        "effect": "nephrocalcinosis with chronic hypercalciuria"
+      }
+    ],
+    "monitoring": [
+      "serum calcium and phosphate (regularly during titration)",
+      "renal function; urinary calcium"
+    ],
+    "references": [
+      {
+        "label": "BNF — calcitriol"
+      }
+    ],
+    "kemlLevel": 4,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "nintedanib",
+    "inn": "Nintedanib",
+    "tradeNames": [
+      "Ofev"
+    ],
+    "atc": [
+      "L01EX09"
+    ],
+    "rxnorm": "1594659",
+    "drugClass": "Antifibrotic tyrosine kinase inhibitor",
+    "awareCategory": "Not-classified",
+    "whoEml": false,
+    "indications": [
+      {
+        "icd10": "J84.1",
+        "text": "Idiopathic pulmonary fibrosis and other progressive fibrosing interstitial lung diseases"
+      }
+    ],
+    "mechanism": "Inhibits receptor tyrosine kinases (VEGFR, FGFR, PDGFR) involved in fibrogenesis, slowing the decline in lung function.",
+    "pharmacokinetics": {
+      "halfLifeHours": 10,
+      "metabolism": "hydrolysis then glucuronidation; P-glycoprotein substrate",
+      "excretion": "biliary/faecal"
+    },
+    "dosing": {
+      "adult": [
+        {
+          "route": "oral",
+          "regimen": "150 mg twice daily with food; 100 mg twice daily if not tolerated.",
+          "notes": "Specialist-initiated; manage GI side effects with dose reduction."
+        }
+      ],
+      "hepatic": "Avoid in moderate-to-severe hepatic impairment."
+    },
+    "pregnancy": {
+      "category": "Avoid",
+      "notes": "Avoid — teratogenic risk; effective contraception required.",
+      "contraindicated": true
+    },
+    "lactation": "Avoid breastfeeding.",
+    "contraindications": [
+      "Pregnancy",
+      "Significant hepatic impairment",
+      "Hypersensitivity"
+    ],
+    "warnings": [
+      "Diarrhoea (very common) — manage promptly to maintain therapy",
+      "Hepatotoxicity — monitor liver enzymes",
+      "Bleeding risk and arterial thromboembolic events; GI perforation (rare)"
+    ],
+    "adverseEffects": [
+      {
+        "frequency": "common",
+        "effect": "diarrhoea, nausea, abdominal pain, raised liver enzymes"
+      },
+      {
+        "frequency": "serious",
+        "effect": "hepatotoxicity, GI perforation, thromboembolism"
+      }
+    ],
+    "monitoring": [
+      "liver function (baseline and periodically)",
+      "GI tolerance and weight"
+    ],
+    "references": [
+      {
+        "label": "ATS/ERS IPF guidance; manufacturer prescribing information"
+      }
+    ],
+    "kemlLevel": 4,
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]

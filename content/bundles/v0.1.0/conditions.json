@@ -32704,5 +32704,1444 @@
       "sex": "any",
       "pregnancyApplicable": false
     }
+  },
+  {
+    "slug": "aortic-stenosis",
+    "title": "Aortic stenosis",
+    "icd10": [
+      "I35.0"
+    ],
+    "domains": [
+      "cardiology"
+    ],
+    "presentation": [
+      "Exertional dyspnoea, angina and syncope (the classic triad) as stenosis becomes severe.",
+      "An ejection systolic murmur radiating to the carotids, with a slow-rising pulse.",
+      "Often degenerative (elderly) or from a bicuspid valve (younger)."
+    ],
+    "redFlags": [
+      "Syncope, heart failure or angina — symptomatic severe AS has a poor prognosis without intervention.",
+      "Severe stenosis with low gradient and reduced ejection fraction.",
+      "Haemodynamic instability."
+    ],
+    "diagnostics": [
+      {
+        "test": "Transthoracic echocardiography",
+        "rationale": "Grades severity (valve area, gradient) and assesses LV function."
+      },
+      {
+        "test": "ECG and clinical assessment",
+        "rationale": "Detects LV hypertrophy and guides timing of referral."
+      }
+    ],
+    "management": [
+      {
+        "step": "Symptom assessment and referral",
+        "detail": "Refer symptomatic or severe AS to cardiology; avoid vasodilators that can cause hypotension."
+      },
+      {
+        "step": "Valve replacement",
+        "detail": "Surgical (SAVR) or transcatheter (TAVI) aortic valve replacement is the definitive treatment for severe symptomatic disease."
+      },
+      {
+        "step": "Monitor asymptomatic disease",
+        "detail": "Serial echocardiography; manage cardiovascular risk factors."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC/EACTS valvular heart disease guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "mitral-regurgitation",
+    "title": "Mitral regurgitation",
+    "icd10": [
+      "I34.0"
+    ],
+    "domains": [
+      "cardiology"
+    ],
+    "presentation": [
+      "Exertional dyspnoea, fatigue and palpitations; may be asymptomatic for years.",
+      "A pansystolic murmur at the apex radiating to the axilla.",
+      "Causes: degenerative (prolapse), functional, rheumatic, ischaemic, endocarditis."
+    ],
+    "redFlags": [
+      "Acute severe MR (e.g. papillary muscle rupture) with pulmonary oedema/shock — surgical emergency.",
+      "New atrial fibrillation.",
+      "Progressive heart failure / LV dysfunction."
+    ],
+    "diagnostics": [
+      {
+        "test": "Echocardiography",
+        "rationale": "Defines mechanism and severity and assesses LV size/function."
+      },
+      {
+        "test": "ECG (AF, LV strain)",
+        "rationale": "Detects arrhythmia and chamber enlargement."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat heart failure and AF",
+        "detail": "Standard heart-failure therapy and rate/rhythm and anticoagulation for AF."
+      },
+      {
+        "step": "Surgery/repair",
+        "detail": "Refer severe primary MR (especially with symptoms or LV dysfunction) for valve repair/replacement; transcatheter options in selected patients."
+      },
+      {
+        "step": "Monitor",
+        "detail": "Serial echocardiography to time intervention before irreversible LV damage."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC/EACTS valvular heart disease guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "dilated-cardiomyopathy",
+    "title": "Dilated cardiomyopathy",
+    "icd10": [
+      "I42.0"
+    ],
+    "domains": [
+      "cardiology",
+      "critical-care"
+    ],
+    "presentation": [
+      "Heart failure symptoms: breathlessness, orthopnoea, oedema and fatigue.",
+      "Left ventricular dilatation and systolic dysfunction not explained by loading/coronary disease.",
+      "Causes: genetic, viral, alcohol, peripartum, toxins."
+    ],
+    "redFlags": [
+      "Decompensated heart failure / cardiogenic shock.",
+      "Ventricular arrhythmia or syncope (sudden death risk).",
+      "Thromboembolism from mural thrombus."
+    ],
+    "diagnostics": [
+      {
+        "test": "Echocardiography",
+        "rationale": "Shows a dilated, poorly contracting left ventricle."
+      },
+      {
+        "test": "ECG, bloods and cause workup",
+        "rationale": "Identify reversible causes; cardiac MRI for aetiology."
+      }
+    ],
+    "management": [
+      {
+        "step": "Guideline heart-failure therapy",
+        "detail": "ACE inhibitor/ARNI, beta-blocker, MRA and SGLT2 inhibitor improve outcomes; diuretics for congestion."
+      },
+      {
+        "step": "Device therapy",
+        "detail": "Consider ICD/CRT for selected patients; treat arrhythmia and thromboembolism risk."
+      },
+      {
+        "step": "Treat the cause",
+        "detail": "Abstinence in alcoholic/peripartum types; manage reversible causes; advanced therapies for refractory disease."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC heart failure guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "hypertrophic-cardiomyopathy",
+    "title": "Hypertrophic cardiomyopathy",
+    "icd10": [
+      "I42.1",
+      "I42.2"
+    ],
+    "domains": [
+      "cardiology",
+      "genetics"
+    ],
+    "presentation": [
+      "Exertional breathlessness, chest pain, palpitations or syncope; may be asymptomatic.",
+      "An ejection murmur that increases with Valsalva (dynamic LV outflow obstruction).",
+      "Commonest cause of sudden cardiac death in young athletes; often autosomal dominant."
+    ],
+    "redFlags": [
+      "Exertional syncope or family history of sudden death.",
+      "Sustained ventricular arrhythmia.",
+      "Severe outflow obstruction / heart failure."
+    ],
+    "diagnostics": [
+      {
+        "test": "Echocardiography",
+        "rationale": "Demonstrates asymmetric LV hypertrophy and outflow obstruction."
+      },
+      {
+        "test": "ECG, Holter and risk stratification",
+        "rationale": "Detect arrhythmia and assess sudden-death risk; cardiac MRI and genetics as indicated."
+      }
+    ],
+    "management": [
+      {
+        "step": "Symptom control",
+        "detail": "Beta-blockers or rate-limiting calcium-channel blockers; avoid dehydration and vasodilators that worsen obstruction."
+      },
+      {
+        "step": "Prevent sudden death",
+        "detail": "ICD for high-risk patients; activity advice; family screening."
+      },
+      {
+        "step": "Refractory obstruction",
+        "detail": "Septal reduction (myectomy or alcohol ablation) for severe symptomatic obstruction; cardiac myosin inhibitors in selected patients."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC cardiomyopathy guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "atrial-flutter",
+    "title": "Atrial flutter",
+    "icd10": [
+      "I48.3",
+      "I48.4"
+    ],
+    "domains": [
+      "cardiology",
+      "emergency"
+    ],
+    "presentation": [
+      "Palpitations, breathlessness, chest discomfort or fatigue; may be asymptomatic.",
+      "Regular tachycardia, classically around 150 bpm (2:1 block) with sawtooth flutter waves.",
+      "Shares thromboembolic risk with atrial fibrillation."
+    ],
+    "redFlags": [
+      "Haemodynamic instability — needs urgent synchronised cardioversion.",
+      "1:1 conduction with very fast rates.",
+      "Stroke risk requiring anticoagulation."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG",
+        "rationale": "Sawtooth flutter waves, especially in the inferior leads."
+      },
+      {
+        "test": "Echocardiography and risk assessment",
+        "rationale": "Assess structural disease and stroke risk (CHA2DS2-VASc)."
+      }
+    ],
+    "management": [
+      {
+        "step": "Rate/rhythm control",
+        "detail": "Rate control (beta-blocker/diltiazem) or cardioversion; flutter often responds well to DC cardioversion."
+      },
+      {
+        "step": "Anticoagulation",
+        "detail": "Stroke prevention per CHA2DS2-VASc, as for atrial fibrillation."
+      },
+      {
+        "step": "Catheter ablation",
+        "detail": "Cavotricuspid isthmus ablation is highly effective and curative for typical flutter."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC supraventricular tachycardia / AF guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "ventricular-tachycardia",
+    "title": "Ventricular tachycardia",
+    "icd10": [
+      "I47.2"
+    ],
+    "domains": [
+      "cardiology",
+      "emergency",
+      "critical-care",
+      "resuscitation"
+    ],
+    "presentation": [
+      "Palpitations, presyncope, syncope, chest pain or cardiac arrest.",
+      "A broad-complex tachycardia; assume VT in any broad-complex tachycardia until proven otherwise, especially with structural heart disease.",
+      "May be monomorphic (scar-related) or polymorphic (ischaemia, long QT)."
+    ],
+    "redFlags": [
+      "Pulseless VT — cardiac arrest, defibrillate immediately.",
+      "Haemodynamic instability — synchronised cardioversion.",
+      "Polymorphic VT/torsades (correct QT and electrolytes)."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG / rhythm strip",
+        "rationale": "Confirms broad-complex tachycardia and morphology."
+      },
+      {
+        "test": "Electrolytes, troponin and assessment for structural/ischaemic cause",
+        "rationale": "Identify and correct reversible triggers."
+      }
+    ],
+    "management": [
+      {
+        "step": "Follow ALS algorithms",
+        "detail": "Pulseless VT → defibrillation and CPR. Unstable VT with a pulse → synchronised cardioversion."
+      },
+      {
+        "step": "Stable VT",
+        "detail": "Antiarrhythmic (e.g. amiodarone) and correct electrolytes/ischaemia; magnesium for torsades."
+      },
+      {
+        "step": "Prevent recurrence",
+        "detail": "Treat underlying disease; ICD and/or ablation for recurrent VT (specialist-led)."
+      }
+    ],
+    "references": [
+      {
+        "label": "Resuscitation Council ALS; ESC ventricular arrhythmia guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "bronchiectasis",
+    "title": "Bronchiectasis",
+    "icd10": [
+      "J47"
+    ],
+    "domains": [
+      "respiratory"
+    ],
+    "presentation": [
+      "Chronic productive cough with large volumes of purulent sputum.",
+      "Recurrent chest infections, breathlessness and sometimes haemoptysis.",
+      "Causes: post-infective, cystic fibrosis, immune deficiency, ABPA, idiopathic."
+    ],
+    "redFlags": [
+      "Massive haemoptysis.",
+      "Frequent exacerbations / declining lung function.",
+      "Pseudomonas or non-tuberculous mycobacterial colonisation."
+    ],
+    "diagnostics": [
+      {
+        "test": "High-resolution CT chest",
+        "rationale": "Diagnostic — shows dilated, thick-walled bronchi (signet-ring sign)."
+      },
+      {
+        "test": "Sputum culture and cause workup",
+        "rationale": "Guides antibiotics; investigate underlying cause."
+      }
+    ],
+    "management": [
+      {
+        "step": "Airway clearance",
+        "detail": "Daily chest physiotherapy and mucoactive measures are the cornerstone."
+      },
+      {
+        "step": "Treat exacerbations",
+        "detail": "Prolonged antibiotic courses targeted to sputum organisms; consider long-term macrolide for frequent exacerbations."
+      },
+      {
+        "step": "Treat the cause and complications",
+        "detail": "Address underlying cause, vaccinate, pulmonary rehabilitation; manage haemoptysis."
+      }
+    ],
+    "references": [
+      {
+        "label": "BTS/ERS bronchiectasis guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "obstructive-sleep-apnoea",
+    "title": "Obstructive sleep apnoea",
+    "icd10": [
+      "G47.33"
+    ],
+    "domains": [
+      "respiratory",
+      "ent",
+      "cardiology",
+      "primary-care"
+    ],
+    "presentation": [
+      "Loud snoring, witnessed apnoeas and daytime sleepiness.",
+      "Morning headaches, poor concentration, and refractory hypertension.",
+      "Risk factors: obesity, large neck circumference, retrognathia."
+    ],
+    "redFlags": [
+      "Severe daytime sleepiness affecting driving/occupation.",
+      "Coexisting cardiovascular disease / resistant hypertension.",
+      "Obesity hypoventilation with hypercapnia."
+    ],
+    "diagnostics": [
+      {
+        "test": "Sleep study (polysomnography or home study)",
+        "rationale": "Quantifies apnoea-hypopnoea index to confirm and grade severity."
+      },
+      {
+        "test": "Epworth Sleepiness Scale",
+        "rationale": "Assesses daytime sleepiness and treatment need."
+      }
+    ],
+    "management": [
+      {
+        "step": "Lifestyle and risk reduction",
+        "detail": "Weight loss, reduce alcohol/sedatives, sleep position; treat nasal obstruction."
+      },
+      {
+        "step": "CPAP",
+        "detail": "Continuous positive airway pressure is first-line for moderate-severe disease and improves symptoms and cardiovascular risk."
+      },
+      {
+        "step": "Alternatives and safety",
+        "detail": "Mandibular advancement devices for milder disease; advise on driving safety per regulations."
+      }
+    ],
+    "references": [
+      {
+        "label": "AASM obstructive sleep apnoea guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "idiopathic-pulmonary-fibrosis",
+    "title": "Idiopathic pulmonary fibrosis",
+    "icd10": [
+      "J84.1"
+    ],
+    "domains": [
+      "respiratory"
+    ],
+    "presentation": [
+      "Progressive exertional breathlessness and a persistent dry cough in an older adult.",
+      "Fine bibasal end-inspiratory 'velcro' crackles and finger clubbing.",
+      "A diagnosis of exclusion among the interstitial lung diseases."
+    ],
+    "redFlags": [
+      "Acute exacerbation with rapid respiratory deterioration (high mortality).",
+      "Severe hypoxia / respiratory failure.",
+      "Cor pulmonale."
+    ],
+    "diagnostics": [
+      {
+        "test": "High-resolution CT chest",
+        "rationale": "A usual interstitial pneumonia pattern (subpleural reticulation, honeycombing) supports the diagnosis."
+      },
+      {
+        "test": "Lung function tests",
+        "rationale": "Restrictive pattern with reduced transfer factor; track progression."
+      }
+    ],
+    "management": [
+      {
+        "step": "Antifibrotic therapy",
+        "detail": "Pirfenidone or nintedanib slow decline in lung function (specialist-initiated)."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Oxygen for hypoxia, pulmonary rehabilitation, vaccination, and treat reflux/comorbidities."
+      },
+      {
+        "step": "Advanced options",
+        "detail": "Lung transplantation in suitable patients; early palliative input for symptom control."
+      }
+    ],
+    "references": [
+      {
+        "label": "ATS/ERS/JRS/ALAT IPF guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "sarcoidosis",
+    "title": "Sarcoidosis",
+    "icd10": [
+      "D86"
+    ],
+    "domains": [
+      "respiratory",
+      "immunology",
+      "rheumatology"
+    ],
+    "presentation": [
+      "Often asymptomatic bilateral hilar lymphadenopathy on imaging; cough and breathlessness.",
+      "Extrapulmonary features: erythema nodosum, uveitis, arthralgia, skin lesions, hypercalcaemia.",
+      "Löfgren syndrome (fever, hilar nodes, erythema nodosum, arthralgia) has a good prognosis."
+    ],
+    "redFlags": [
+      "Cardiac sarcoidosis (arrhythmia, heart block).",
+      "Neurosarcoidosis.",
+      "Severe hypercalcaemia or progressive pulmonary fibrosis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Chest imaging and tissue biopsy",
+        "rationale": "Non-caseating granulomas confirm; exclude TB and lymphoma."
+      },
+      {
+        "test": "Calcium, ACE, organ-specific assessment",
+        "rationale": "Detect hypercalcaemia and organ involvement."
+      }
+    ],
+    "management": [
+      {
+        "step": "Observation",
+        "detail": "Many cases (e.g. Löfgren) resolve spontaneously and need only monitoring."
+      },
+      {
+        "step": "Corticosteroids",
+        "detail": "For significant pulmonary, cardiac, neurological, ocular or hypercalcaemic disease; steroid-sparing agents for chronic disease."
+      },
+      {
+        "step": "Organ-specific care",
+        "detail": "Cardiology/ophthalmology/neurology input for those organ involvements; monitor for relapse."
+      }
+    ],
+    "references": [
+      {
+        "label": "ATS/ERS sarcoidosis guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "lower-gastrointestinal-bleeding",
+    "title": "Lower gastrointestinal bleeding",
+    "icd10": [
+      "K92.2"
+    ],
+    "domains": [
+      "gastroenterology",
+      "surgery",
+      "emergency"
+    ],
+    "presentation": [
+      "Fresh red or maroon blood per rectum, or clots.",
+      "Causes: diverticular disease, angiodysplasia, haemorrhoids, colitis, malignancy.",
+      "Brisk upper GI bleeding can also present as rectal bleeding."
+    ],
+    "redFlags": [
+      "Haemodynamic instability or ongoing heavy bleeding.",
+      "Anticoagulant/antiplatelet use.",
+      "Features suggesting malignancy or ischaemic colitis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Resuscitation status and bloods",
+        "rationale": "FBC, coagulation, group & save/crossmatch; assess severity."
+      },
+      {
+        "test": "Colonoscopy +/- CT angiography",
+        "rationale": "Localises and may treat the source; CT angiography for active brisk bleeding."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitate and risk-stratify",
+        "detail": "IV access, fluids/transfusion as needed, correct coagulopathy; most lower GI bleeds settle spontaneously."
+      },
+      {
+        "step": "Localise and treat",
+        "detail": "Endoscopic therapy, angiographic embolisation, or surgery for refractory bleeding; exclude upper GI source if unstable."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Colonic evaluation to exclude malignancy; review antithrombotic drugs."
+      }
+    ],
+    "references": [
+      {
+        "label": "BSG lower GI bleeding guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "gastric-cancer-pathway",
+    "title": "Gastric cancer (diagnostic pathway)",
+    "icd10": [
+      "C16"
+    ],
+    "domains": [
+      "oncology",
+      "gastroenterology",
+      "surgery"
+    ],
+    "presentation": [
+      "Dyspepsia, early satiety, weight loss, anorexia and epigastric pain.",
+      "Iron-deficiency anaemia, dysphagia, or a palpable mass in advanced disease.",
+      "Risk factors: H. pylori, smoking, diet, atrophic gastritis."
+    ],
+    "redFlags": [
+      "Alarm features: weight loss, dysphagia, GI bleeding, vomiting, anaemia, mass — urgent referral.",
+      "Virchow node / metastatic signs.",
+      "Gastric outlet obstruction."
+    ],
+    "diagnostics": [
+      {
+        "test": "Upper GI endoscopy with biopsy",
+        "rationale": "Direct visualisation and histology for diagnosis."
+      },
+      {
+        "test": "CT staging (+/- EUS, laparoscopy)",
+        "rationale": "Determines resectability and metastatic spread."
+      }
+    ],
+    "management": [
+      {
+        "step": "Urgent referral",
+        "detail": "Refer alarm symptoms on a suspected-cancer pathway for prompt endoscopy."
+      },
+      {
+        "step": "Multidisciplinary treatment",
+        "detail": "Surgery with perioperative chemotherapy for resectable disease; chemotherapy/targeted therapy for advanced disease (MDT-led)."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Nutrition, manage obstruction/bleeding, palliative care as needed."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESMO gastric cancer guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "pancreatic-cancer-pathway",
+    "title": "Pancreatic cancer (diagnostic pathway)",
+    "icd10": [
+      "C25"
+    ],
+    "domains": [
+      "oncology",
+      "gastroenterology",
+      "surgery",
+      "palliative"
+    ],
+    "presentation": [
+      "Painless obstructive jaundice (head of pancreas), or epigastric/back pain and weight loss (body/tail).",
+      "New-onset diabetes, steatorrhoea, and non-specific symptoms causing late presentation.",
+      "Often advanced at diagnosis."
+    ],
+    "redFlags": [
+      "Obstructive jaundice with weight loss.",
+      "New diabetes with weight loss in an older adult.",
+      "Cholangitis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Pancreatic-protocol CT",
+        "rationale": "Assesses the primary tumour, vascular involvement and metastases."
+      },
+      {
+        "test": "CA 19-9 and EUS/biopsy",
+        "rationale": "Supports diagnosis and provides tissue; ERCP for biliary obstruction."
+      }
+    ],
+    "management": [
+      {
+        "step": "Urgent referral",
+        "detail": "Refer suspected cases promptly; relieve biliary obstruction (stenting) as needed."
+      },
+      {
+        "step": "Treatment by stage",
+        "detail": "Surgical resection (Whipple) for the minority with resectable disease; chemotherapy for advanced disease (MDT-led)."
+      },
+      {
+        "step": "Supportive/palliative care",
+        "detail": "Pancreatic enzyme replacement, pain control, nutrition and early palliative care."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESMO pancreatic cancer guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "bladder-cancer-pathway",
+    "title": "Bladder cancer (diagnostic pathway)",
+    "icd10": [
+      "C67"
+    ],
+    "domains": [
+      "oncology",
+      "urology"
+    ],
+    "presentation": [
+      "Painless visible haematuria is the hallmark presentation.",
+      "Irritative urinary symptoms; risk factors include smoking and occupational exposures.",
+      "Usually urothelial carcinoma."
+    ],
+    "redFlags": [
+      "Visible haematuria at any age (urgent referral).",
+      "Clot retention or obstruction.",
+      "Hydronephrosis / metastatic disease."
+    ],
+    "diagnostics": [
+      {
+        "test": "Cystoscopy",
+        "rationale": "Direct visualisation and biopsy of bladder lesions."
+      },
+      {
+        "test": "CT urogram and urine cytology",
+        "rationale": "Assess the upper tracts and stage disease."
+      }
+    ],
+    "management": [
+      {
+        "step": "Urgent haematuria referral",
+        "detail": "Refer visible (and unexplained non-visible) haematuria on a suspected-cancer pathway."
+      },
+      {
+        "step": "Non-muscle-invasive disease",
+        "detail": "Transurethral resection +/- intravesical BCG/chemotherapy with surveillance."
+      },
+      {
+        "step": "Muscle-invasive/advanced disease",
+        "detail": "Radical cystectomy or radiotherapy +/- chemotherapy; systemic therapy for metastatic disease (MDT-led)."
+      }
+    ],
+    "references": [
+      {
+        "label": "EAU bladder cancer guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "renal-cell-carcinoma",
+    "title": "Renal cell carcinoma",
+    "icd10": [
+      "C64"
+    ],
+    "domains": [
+      "oncology",
+      "urology",
+      "nephrology"
+    ],
+    "presentation": [
+      "Often incidental on imaging; the classic triad (flank pain, haematuria, mass) is uncommon and late.",
+      "Constitutional symptoms, anaemia or paraneoplastic features (hypercalcaemia, polycythaemia).",
+      "A left varicocele may indicate renal vein involvement."
+    ],
+    "redFlags": [
+      "Visible haematuria.",
+      "Symptomatic metastatic disease.",
+      "Paraneoplastic hypercalcaemia."
+    ],
+    "diagnostics": [
+      {
+        "test": "CT abdomen with contrast",
+        "rationale": "Characterises the renal mass and stages disease."
+      },
+      {
+        "test": "Staging imaging and bloods",
+        "rationale": "Assess metastases and renal function."
+      }
+    ],
+    "management": [
+      {
+        "step": "Surgery",
+        "detail": "Partial or radical nephrectomy for localised disease; active surveillance for small tumours in selected patients."
+      },
+      {
+        "step": "Advanced disease",
+        "detail": "Targeted therapy (TKIs) and immunotherapy for metastatic disease (MDT-led)."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Surveillance imaging; monitor renal function."
+      }
+    ],
+    "references": [
+      {
+        "label": "EAU renal cell carcinoma guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "iga-nephropathy",
+    "title": "IgA nephropathy",
+    "icd10": [
+      "N02.8"
+    ],
+    "domains": [
+      "nephrology"
+    ],
+    "presentation": [
+      "Episodic visible haematuria, classically within days of an upper respiratory infection ('synpharyngitic').",
+      "Often persistent microscopic haematuria and proteinuria found incidentally.",
+      "The commonest primary glomerulonephritis worldwide."
+    ],
+    "redFlags": [
+      "Rapidly progressive glomerulonephritis (rising creatinine, crescents).",
+      "Nephrotic-range proteinuria.",
+      "Uncontrolled hypertension."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urinalysis, protein quantification and renal function",
+        "rationale": "Detect haematuria/proteinuria and assess kidney function."
+      },
+      {
+        "test": "Renal biopsy",
+        "rationale": "Confirms mesangial IgA deposition and grades disease."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive nephroprotection",
+        "detail": "Blood-pressure control with ACE inhibitor/ARB and proteinuria reduction; lifestyle and cardiovascular risk management."
+      },
+      {
+        "step": "Immunosuppression in selected cases",
+        "detail": "Consider in progressive disease despite optimised supportive care (specialist-led)."
+      },
+      {
+        "step": "Monitor",
+        "detail": "Track proteinuria and renal function; treat rapidly progressive disease urgently."
+      }
+    ],
+    "references": [
+      {
+        "label": "KDIGO glomerular diseases guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "polycystic-kidney-disease",
+    "title": "Autosomal dominant polycystic kidney disease",
+    "icd10": [
+      "Q61.2"
+    ],
+    "domains": [
+      "nephrology",
+      "genetics"
+    ],
+    "presentation": [
+      "Progressive bilateral renal cysts causing flank/abdominal pain, haematuria and hypertension.",
+      "Family history of kidney disease; progression to chronic kidney failure.",
+      "Associated liver cysts and intracranial aneurysms."
+    ],
+    "redFlags": [
+      "Sudden severe headache (intracranial aneurysm rupture).",
+      "Cyst infection or haemorrhage.",
+      "Rapidly declining renal function."
+    ],
+    "diagnostics": [
+      {
+        "test": "Renal ultrasound (age-based cyst criteria)",
+        "rationale": "Confirms the diagnosis in an at-risk individual."
+      },
+      {
+        "test": "Blood pressure and renal function",
+        "rationale": "Monitor progression; consider aneurysm screening in selected patients."
+      }
+    ],
+    "management": [
+      {
+        "step": "Blood-pressure control",
+        "detail": "Rigorous BP control (ACE inhibitor/ARB) to slow progression."
+      },
+      {
+        "step": "Slow cyst growth",
+        "detail": "Tolvaptan for selected adults at risk of rapid progression; ensure adequate hydration."
+      },
+      {
+        "step": "Manage complications and plan",
+        "detail": "Treat cyst infection/haemorrhage and stones; prepare for renal replacement therapy; genetic counselling."
+      }
+    ],
+    "references": [
+      {
+        "label": "KDIGO ADPKD guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "motor-neurone-disease",
+    "title": "Motor neurone disease (amyotrophic lateral sclerosis)",
+    "icd10": [
+      "G12.2"
+    ],
+    "domains": [
+      "neurology",
+      "palliative"
+    ],
+    "presentation": [
+      "Progressive painless weakness with mixed upper and lower motor neurone signs.",
+      "Limb weakness, bulbar symptoms (dysarthria, dysphagia), fasciculations and wasting; cognition usually preserved.",
+      "No sensory loss."
+    ],
+    "redFlags": [
+      "Respiratory muscle weakness (breathlessness, orthopnoea) — needs ventilatory assessment.",
+      "Aspiration / unsafe swallow.",
+      "Rapid functional decline."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical assessment + electromyography",
+        "rationale": "Demonstrates widespread denervation; diagnosis is clinical with supportive EMG."
+      },
+      {
+        "test": "MRI and bloods to exclude mimics",
+        "rationale": "Rule out structural and treatable conditions."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary care",
+        "detail": "Specialist MND team: physiotherapy, OT, speech and language, dietitian and respiratory support."
+      },
+      {
+        "step": "Disease-modifying and symptomatic therapy",
+        "detail": "Riluzole modestly prolongs survival; manage spasticity, sialorrhoea, cramps and mood."
+      },
+      {
+        "step": "Respiratory and end-of-life care",
+        "detail": "Non-invasive ventilation for respiratory failure; nutrition (gastrostomy); early advance care planning and palliative care."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE motor neurone disease guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "peripheral-neuropathy",
+    "title": "Peripheral neuropathy",
+    "icd10": [
+      "G62.9"
+    ],
+    "domains": [
+      "neurology",
+      "endocrinology"
+    ],
+    "presentation": [
+      "Distal symmetrical sensory symptoms: numbness, tingling, burning pain in a 'glove and stocking' distribution.",
+      "Weakness and reduced reflexes in motor involvement; gait imbalance.",
+      "Common causes: diabetes, alcohol, B12 deficiency, drugs, renal failure."
+    ],
+    "redFlags": [
+      "Rapidly progressive or ascending weakness (consider Guillain-Barré).",
+      "Asymmetric/mononeuritis multiplex (vasculitis).",
+      "Autonomic involvement."
+    ],
+    "diagnostics": [
+      {
+        "test": "Targeted bloods",
+        "rationale": "Glucose/HbA1c, B12, renal/liver/thyroid function and others to find a treatable cause."
+      },
+      {
+        "test": "Nerve conduction studies if needed",
+        "rationale": "Characterise the neuropathy and guide further workup."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat the cause",
+        "detail": "Optimise glycaemic control, correct deficiencies, remove offending drugs/alcohol."
+      },
+      {
+        "step": "Neuropathic pain control",
+        "detail": "First-line agents include amitriptyline, duloxetine, gabapentin or pregabalin."
+      },
+      {
+        "step": "Protect and support",
+        "detail": "Foot care to prevent ulceration, falls prevention, physiotherapy."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE neuropathic pain guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "hypoparathyroidism",
+    "title": "Hypoparathyroidism",
+    "icd10": [
+      "E20"
+    ],
+    "domains": [
+      "endocrinology",
+      "metabolism"
+    ],
+    "presentation": [
+      "Symptoms of hypocalcaemia: paraesthesia, cramps, tetany and, if severe, seizures.",
+      "Commonest cause is post-surgical (after thyroid/parathyroid surgery).",
+      "Low calcium with inappropriately low/normal PTH and high phosphate."
+    ],
+    "redFlags": [
+      "Severe symptomatic hypocalcaemia (laryngospasm, seizures, arrhythmia).",
+      "Prolonged QT interval.",
+      "Acute post-operative drop in calcium."
+    ],
+    "diagnostics": [
+      {
+        "test": "Calcium, PTH, phosphate and magnesium",
+        "rationale": "Low calcium with low/normal PTH confirms; correct magnesium."
+      },
+      {
+        "test": "ECG",
+        "rationale": "Detect QT prolongation."
+      }
+    ],
+    "management": [
+      {
+        "step": "Acute hypocalcaemia",
+        "detail": "IV calcium gluconate for severe/symptomatic cases with cardiac monitoring."
+      },
+      {
+        "step": "Maintenance therapy",
+        "detail": "Oral calcium and active vitamin D (alfacalcidol/calcitriol); monitor to avoid hypercalciuria."
+      },
+      {
+        "step": "Monitor",
+        "detail": "Periodic calcium, phosphate and renal function; correct magnesium."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESE hypoparathyroidism guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "hypernatraemia",
+    "title": "Hypernatraemia",
+    "icd10": [
+      "E87.0"
+    ],
+    "domains": [
+      "nephrology",
+      "endocrinology",
+      "acute-care",
+      "geriatrics"
+    ],
+    "presentation": [
+      "Thirst, lethargy, irritability and confusion; seizures and coma if severe.",
+      "Usually reflects a water deficit (inadequate intake, GI/renal losses, diabetes insipidus).",
+      "Common in the elderly, infants and patients who cannot access water."
+    ],
+    "redFlags": [
+      "Altered mental status / seizures.",
+      "Severe dehydration and haemodynamic compromise.",
+      "Over-rapid correction risks cerebral oedema."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serum sodium, glucose and volume assessment",
+        "rationale": "Confirms hypernatraemia and guides cause/fluid choice."
+      },
+      {
+        "test": "Urine osmolality/output",
+        "rationale": "Distinguishes renal water loss (e.g. diabetes insipidus) from extrarenal losses."
+      }
+    ],
+    "management": [
+      {
+        "step": "Restore volume then water",
+        "detail": "Treat shock with isotonic fluid first, then correct the free-water deficit, usually orally or with hypotonic IV fluids."
+      },
+      {
+        "step": "Control the correction rate",
+        "detail": "Lower sodium gradually (about 10 mmol/L per 24 h) to avoid cerebral oedema."
+      },
+      {
+        "step": "Treat the cause",
+        "detail": "Address diabetes insipidus, GI losses or inadequate intake; monitor sodium frequently."
+      }
+    ],
+    "references": [
+      {
+        "label": "National guidance on sodium disorders"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "psoriatic-arthritis",
+    "title": "Psoriatic arthritis",
+    "icd10": [
+      "L40.5",
+      "M07.3"
+    ],
+    "domains": [
+      "rheumatology",
+      "dermatology",
+      "musculoskeletal"
+    ],
+    "presentation": [
+      "Inflammatory joint pain and stiffness in a person with psoriasis (skin/nail disease).",
+      "Patterns: oligoarticular, polyarticular, distal interphalangeal, spondylitis; dactylitis ('sausage digit') and enthesitis.",
+      "Nail pitting/onycholysis is a clue."
+    ],
+    "redFlags": [
+      "Rapidly progressive joint destruction (arthritis mutilans).",
+      "Significant functional loss.",
+      "Associated uveitis or IBD."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical assessment + inflammatory markers",
+        "rationale": "Diagnosis is clinical; markers may be normal or raised; rheumatoid factor usually negative."
+      },
+      {
+        "test": "Joint imaging",
+        "rationale": "Detects erosions, new bone formation and enthesitis."
+      }
+    ],
+    "management": [
+      {
+        "step": "NSAIDs and local therapy",
+        "detail": "For mild peripheral disease and symptom relief; treat skin disease."
+      },
+      {
+        "step": "Disease-modifying therapy",
+        "detail": "Methotrexate or other DMARDs for persistent disease; biologics (TNF/IL-17/IL-23 inhibitors) for inadequate response (specialist-led)."
+      },
+      {
+        "step": "Multidisciplinary care",
+        "detail": "Joint dermatology-rheumatology management; treat comorbidities and cardiovascular risk."
+      }
+    ],
+    "references": [
+      {
+        "label": "EULAR/GRAPPA psoriatic arthritis recommendations"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "cutaneous-melanoma",
+    "title": "Cutaneous melanoma",
+    "icd10": [
+      "C43"
+    ],
+    "domains": [
+      "oncology",
+      "dermatology"
+    ],
+    "presentation": [
+      "A new or changing pigmented lesion: Asymmetry, Border irregularity, Colour variation, Diameter >6 mm, Evolution (ABCDE).",
+      "An 'ugly duckling' lesion differing from the patient's other moles.",
+      "May arise de novo or in a pre-existing naevus."
+    ],
+    "redFlags": [
+      "Bleeding, ulceration or rapid change.",
+      "Regional lymphadenopathy or systemic symptoms (metastasis).",
+      "Thick lesions (high Breslow depth)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Dermoscopy and excision biopsy",
+        "rationale": "Full-thickness excision biopsy provides diagnosis and Breslow thickness (key prognostic factor)."
+      },
+      {
+        "test": "Staging for higher-risk disease",
+        "rationale": "Sentinel node biopsy/imaging guided by tumour thickness."
+      }
+    ],
+    "management": [
+      {
+        "step": "Urgent referral and wide excision",
+        "detail": "Refer suspicious lesions urgently; wide local excision with margins based on Breslow depth."
+      },
+      {
+        "step": "Nodal and advanced disease",
+        "detail": "Sentinel node biopsy in selected cases; immunotherapy/targeted therapy for advanced disease (MDT-led)."
+      },
+      {
+        "step": "Prevention and surveillance",
+        "detail": "Sun protection, skin self-examination and follow-up; screen for recurrence/new primaries."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESMO cutaneous melanoma guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "non-melanoma-skin-cancer",
+    "title": "Non-melanoma skin cancer (basal and squamous cell carcinoma)",
+    "icd10": [
+      "C44"
+    ],
+    "domains": [
+      "oncology",
+      "dermatology"
+    ],
+    "presentation": [
+      "Basal cell carcinoma: a slow-growing pearly papule with telangiectasia, sometimes with a rolled ulcerated edge, on sun-exposed skin.",
+      "Squamous cell carcinoma: a keratotic or ulcerated nodule that may grow rapidly; can metastasise.",
+      "Risk factors: cumulative sun exposure, fair skin, immunosuppression."
+    ],
+    "redFlags": [
+      "Rapid growth, ulceration or a lesion on the lip/ear (higher-risk SCC).",
+      "Perineural symptoms or lymphadenopathy.",
+      "Immunosuppressed patients (more aggressive disease)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Dermoscopy and biopsy",
+        "rationale": "Confirms type and guides treatment."
+      },
+      {
+        "test": "Assess high-risk features",
+        "rationale": "Site, size, differentiation and immune status determine management."
+      }
+    ],
+    "management": [
+      {
+        "step": "Surgical excision",
+        "detail": "Complete excision is the mainstay; Mohs surgery for high-risk/facial lesions."
+      },
+      {
+        "step": "Non-surgical options",
+        "detail": "Topical therapy/cryotherapy for superficial BCC; radiotherapy where surgery is unsuitable."
+      },
+      {
+        "step": "Prevention and follow-up",
+        "detail": "Sun protection and skin surveillance, especially in immunosuppressed patients."
+      }
+    ],
+    "references": [
+      {
+        "label": "Skin cancer management guidance (NICE/BAD)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": false
+    }
+  },
+  {
+    "slug": "undescended-testis",
+    "title": "Undescended testis (cryptorchidism)",
+    "icd10": [
+      "Q53"
+    ],
+    "domains": [
+      "paediatrics",
+      "urology",
+      "surgery",
+      "child-health"
+    ],
+    "population": {
+      "maxAgeYears": 16,
+      "sex": "male",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "An empty or poorly developed scrotum with a testis not palpable in the scrotum.",
+      "May be palpable in the inguinal canal or impalpable.",
+      "Identified at newborn or routine child health checks."
+    ],
+    "redFlags": [
+      "Bilateral impalpable testes (assess for disorder of sex development / endocrine evaluation).",
+      "Acutely painful groin/scrotum (exclude torsion of an undescended testis).",
+      "Associated hypospadias."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical examination",
+        "rationale": "Determines whether the testis is palpable, retractile or impalpable; imaging is generally unhelpful."
+      },
+      {
+        "test": "Specialist/endocrine assessment for bilateral impalpable testes",
+        "rationale": "Exclude DSD and assess gonadal function."
+      }
+    ],
+    "management": [
+      {
+        "step": "Review and refer",
+        "detail": "Many descend by 3–6 months; refer if still undescended to arrange surgery."
+      },
+      {
+        "step": "Orchidopexy",
+        "detail": "Surgical fixation, ideally by 12–18 months, to improve fertility potential and aid cancer surveillance."
+      },
+      {
+        "step": "Counsel and follow-up",
+        "detail": "Advise on the small increased risk of testicular cancer and importance of self-examination later in life."
+      }
+    ],
+    "references": [
+      {
+        "label": "Paediatric urology guidance on undescended testis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
   }
 ]
