@@ -29,6 +29,15 @@ export interface AppConfig {
      *  record. Production default; v0.1 dev bundle is all-draft, so this
      *  defaults to false outside production. */
     requireApproved: boolean;
+    /**
+     * When true, SNOMED CT codes are surfaced (terminology code system,
+     * record `snomed` fields, and SNOMED card codings). Defaults to
+     * FALSE: SNOMED CT redistribution requires an affiliate licence, so
+     * the data ships in the bundle as future provision but stays hidden
+     * at runtime until a licence is in place and this flag is enabled
+     * via CONTENT_SNOMED_ENABLED=true.
+     */
+    snomedEnabled: boolean;
   };
   apiKeys: {
     /**
@@ -110,6 +119,7 @@ export const configuration = (): AppConfig => ({
       process.env.CONTENT_REQUIRE_APPROVED !== undefined
         ? process.env.CONTENT_REQUIRE_APPROVED === 'true'
         : process.env.NODE_ENV === 'production',
+    snomedEnabled: process.env.CONTENT_SNOMED_ENABLED === 'true',
   },
   apiKeys: {
     fingerprintSecret:

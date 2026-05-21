@@ -8,6 +8,8 @@ export interface KnowledgeHarnessOptions {
   strict?: boolean;
   requireApproved?: boolean;
   bundleDir?: string;
+  /** Defaults to true so unit tests exercise the SNOMED-enabled path. */
+  snomedEnabled?: boolean;
 }
 
 /**
@@ -24,6 +26,9 @@ export function makeKnowledgeService(opts: KnowledgeHarnessOptions = {}): Knowle
       if (key === 'content.bundleDir') return bundleDir;
       if (key === 'content.strictVerification') return strict;
       if (key === 'content.requireApproved') return requireApproved;
+      // Unit tests exercise the SNOMED-enabled ("licensed") path by
+      // default; the production runtime defaults this to false.
+      if (key === 'content.snomedEnabled') return opts.snomedEnabled ?? true;
       return undefined;
     },
   } as unknown as ConfigService<AppConfig, true>;
