@@ -35222,5 +35222,991 @@
   "ruleVersion": "0.1.0",
   "reviewStatus": "draft",
   "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "occupational-asthma",
+  "title": "Occupational asthma",
+  "icd10": [
+   "J45.0"
+  ],
+  "domains": [
+   "respiratory",
+   "occupational-health"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Asthma symptoms (wheeze, cough, breathlessness) related to workplace exposures.",
+   "Improvement away from work (weekends, holidays).",
+   "Sensitisers include isocyanates, flour, latex, animal proteins."
+  ],
+  "redFlags": [
+   "Severe acute exacerbation with hypoxia.",
+   "Ongoing high-level exposure to a known sensitiser."
+  ],
+  "diagnostics": [
+   {
+    "test": "Serial peak flow at and away from work",
+    "rationale": "Demonstrates work-related variability."
+   },
+   {
+    "test": "Specific IgE / challenge testing",
+    "rationale": "Identifies sensitising agent."
+   }
+  ],
+  "management": [
+   {
+    "step": "Remove exposure",
+    "detail": "Avoidance of the causative agent is the key intervention; involve occupational health."
+   },
+   {
+    "step": "Standard asthma therapy",
+    "detail": "Inhaled corticosteroid +/- bronchodilator per asthma guidelines."
+   },
+   {
+    "step": "Report",
+    "detail": "Notify as an occupational disease where applicable."
+   }
+  ],
+  "references": [
+   {
+    "label": "BTS/SIGN British guideline on the management of asthma"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "hypersensitivity-pneumonitis",
+  "title": "Hypersensitivity pneumonitis",
+  "icd10": [
+   "J67.9"
+  ],
+  "icd11": [
+   "CA70.0"
+  ],
+  "domains": [
+   "respiratory",
+   "immunology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Cough and breathlessness after exposure to organic antigens (e.g. mouldy hay, birds).",
+   "Acute form: flu-like illness hours after exposure.",
+   "Chronic form: progressive fibrosis and weight loss."
+  ],
+  "redFlags": [
+   "Progressive hypoxaemic respiratory failure.",
+   "Established pulmonary fibrosis."
+  ],
+  "diagnostics": [
+   {
+    "test": "High-resolution CT chest",
+    "rationale": "Shows ground-glass, mosaic attenuation, fibrosis."
+   },
+   {
+    "test": "Exposure history and serum precipitins",
+    "rationale": "Identifies inciting antigen."
+   },
+   {
+    "test": "Bronchoalveolar lavage (lymphocytosis)",
+    "rationale": "Supports diagnosis."
+   }
+  ],
+  "management": [
+   {
+    "step": "Antigen avoidance",
+    "detail": "Cornerstone of management; remove from exposure."
+   },
+   {
+    "step": "Corticosteroids",
+    "detail": "For acute severe or progressive disease."
+   },
+   {
+    "step": "Manage fibrosis",
+    "detail": "Antifibrotic therapy and transplant assessment in progressive fibrotic phenotype."
+   }
+  ],
+  "references": [
+   {
+    "label": "ATS/JRS/ALAT clinical practice guideline: hypersensitivity pneumonitis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "pulmonary-hypertension",
+  "title": "Pulmonary hypertension",
+  "icd10": [
+   "I27.2"
+  ],
+  "icd11": [
+   "BB01"
+  ],
+  "domains": [
+   "respiratory",
+   "cardiology"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Progressive exertional dyspnoea and fatigue.",
+   "Exertional syncope, chest pain, signs of right heart failure.",
+   "Loud P2, raised JVP, peripheral oedema."
+  ],
+  "redFlags": [
+   "Syncope on exertion.",
+   "Right heart failure / cardiogenic shock.",
+   "Pregnancy (high maternal mortality)."
+  ],
+  "diagnostics": [
+   {
+    "test": "Echocardiography",
+    "rationale": "Estimates pulmonary pressures and RV function."
+   },
+   {
+    "test": "Right heart catheterisation",
+    "rationale": "Confirms diagnosis (mean PAP threshold) and classifies."
+   },
+   {
+    "test": "V/Q scan",
+    "rationale": "Excludes chronic thromboembolic disease."
+   }
+  ],
+  "management": [
+   {
+    "step": "Classify and treat cause",
+    "detail": "Group 1-5 classification directs therapy; treat left heart, lung disease, or CTEPH."
+   },
+   {
+    "step": "PAH-specific therapy",
+    "detail": "Endothelin antagonists, PDE5 inhibitors, prostacyclins in expert centres for group 1."
+   },
+   {
+    "step": "Supportive",
+    "detail": "Diuretics, oxygen, anticoagulation in selected patients; avoid pregnancy."
+   }
+  ],
+  "references": [
+   {
+    "label": "ESC/ERS guidelines for the diagnosis and treatment of pulmonary hypertension"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "lung-abscess",
+  "title": "Lung abscess",
+  "icd10": [
+   "J85.2"
+  ],
+  "icd11": [
+   "CA40.1"
+  ],
+  "domains": [
+   "respiratory",
+   "infectious-disease"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Subacute fever, productive cough with foul-smelling sputum, weight loss.",
+   "Risk factors: aspiration, poor dentition, alcohol, reduced consciousness.",
+   "Cavitating lesion with air-fluid level on imaging."
+  ],
+  "redFlags": [
+   "Haemoptysis.",
+   "Rupture into pleura causing empyema/pyopneumothorax.",
+   "Sepsis."
+  ],
+  "diagnostics": [
+   {
+    "test": "Chest X-ray / CT chest",
+    "rationale": "Shows cavity with air-fluid level."
+   },
+   {
+    "test": "Sputum and blood cultures",
+    "rationale": "Guide antimicrobial therapy."
+   }
+  ],
+  "management": [
+   {
+    "step": "Prolonged antibiotics",
+    "detail": "Cover anaerobes and oral flora (e.g. amoxicillin-clavulanate or clindamycin) for several weeks."
+   },
+   {
+    "step": "Drainage",
+    "detail": "Postural drainage; percutaneous/surgical drainage if no improvement."
+   },
+   {
+    "step": "Address aspiration risk",
+    "detail": "Dental care, swallow assessment."
+   }
+  ],
+  "references": [
+   {
+    "label": "BTS guidelines for the management of community acquired pneumonia / pleural infection"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "pleural-empyema",
+  "title": "Pleural empyema",
+  "icd10": [
+   "J86.9"
+  ],
+  "icd11": [
+   "CA43.1"
+  ],
+  "domains": [
+   "respiratory",
+   "infectious-disease"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Pleuritic chest pain, fever and dyspnoea, often complicating pneumonia.",
+   "Failure to improve on antibiotics for pneumonia.",
+   "Pus or organisms on pleural fluid sampling."
+  ],
+  "redFlags": [
+   "Sepsis with parapneumonic effusion.",
+   "Large effusion with respiratory compromise."
+  ],
+  "diagnostics": [
+   {
+    "test": "Pleural ultrasound and diagnostic aspiration",
+    "rationale": "Confirms infected fluid (low pH, pus, organisms)."
+   },
+   {
+    "test": "CT chest",
+    "rationale": "Defines loculation and guides drainage."
+   }
+  ],
+  "management": [
+   {
+    "step": "Antibiotics",
+    "detail": "Cover community/aspiration organisms; prolonged course."
+   },
+   {
+    "step": "Chest drainage",
+    "detail": "Intercostal drain for empyema/complicated effusion; consider intrapleural fibrinolytics."
+   },
+   {
+    "step": "Surgery",
+    "detail": "VATS/decortication if drainage fails."
+   }
+  ],
+  "references": [
+   {
+    "label": "BTS pleural disease guideline: management of pleural infection"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "pleural-mesothelioma",
+  "title": "Pleural mesothelioma",
+  "icd10": [
+   "C45.0"
+  ],
+  "icd11": [
+   "2C26"
+  ],
+  "domains": [
+   "respiratory",
+   "oncology",
+   "occupational-health"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Progressive breathlessness and chest pain, often with pleural effusion.",
+   "Weight loss; history of asbestos exposure (long latency).",
+   "Pleural thickening on imaging."
+  ],
+  "redFlags": [
+   "Large recurrent pleural effusion.",
+   "Chest wall invasion/pain."
+  ],
+  "diagnostics": [
+   {
+    "test": "CT chest with contrast",
+    "rationale": "Shows pleural thickening/effusion."
+   },
+   {
+    "test": "Pleural biopsy (image- or thoracoscopy-guided)",
+    "rationale": "Histological diagnosis."
+   }
+  ],
+  "management": [
+   {
+    "step": "Refer",
+    "detail": "Lung cancer/mesothelioma multidisciplinary team."
+   },
+   {
+    "step": "Symptom control",
+    "detail": "Pleurodesis or indwelling pleural catheter for effusion; analgesia."
+   },
+   {
+    "step": "Systemic therapy",
+    "detail": "Chemotherapy/immunotherapy; consider trials; advise on compensation."
+   }
+  ],
+  "references": [
+   {
+    "label": "NICE guideline NG12 / BTS mesothelioma statement"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "foreign-body-aspiration",
+  "title": "Foreign body aspiration",
+  "icd10": [
+   "T17.9"
+  ],
+  "icd11": [
+   "ND72"
+  ],
+  "domains": [
+   "respiratory",
+   "emergency",
+   "paediatrics"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Sudden choking, coughing or stridor, often in a young child.",
+   "Unilateral wheeze or reduced air entry.",
+   "May present late with persistent cough or recurrent pneumonia."
+  ],
+  "redFlags": [
+   "Complete airway obstruction (unable to speak/breathe).",
+   "Cyanosis or stridor at rest."
+  ],
+  "diagnostics": [
+   {
+    "test": "Chest X-ray (inspiratory/expiratory)",
+    "rationale": "May show air trapping or radio-opaque object; can be normal."
+   },
+   {
+    "test": "Bronchoscopy",
+    "rationale": "Diagnostic and therapeutic."
+   }
+  ],
+  "management": [
+   {
+    "step": "Acute obstruction",
+    "detail": "Back blows/abdominal thrusts (age-appropriate); call for help."
+   },
+   {
+    "step": "Remove foreign body",
+    "detail": "Rigid bronchoscopy for retrieval."
+   },
+   {
+    "step": "Treat complications",
+    "detail": "Antibiotics for post-obstructive infection."
+   }
+  ],
+  "references": [
+   {
+    "label": "Resuscitation Council guidelines: choking"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "ischaemic-colitis",
+  "title": "Ischaemic colitis",
+  "icd10": [
+   "K55.0"
+  ],
+  "icd11": [
+   "DA94.0"
+  ],
+  "domains": [
+   "gastroenterology",
+   "emergency"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Sudden crampy abdominal pain followed by bloody diarrhoea.",
+   "Typically older patients with vascular risk factors.",
+   "Often affects watershed areas (splenic flexure)."
+  ],
+  "redFlags": [
+   "Peritonism suggesting transmural infarction/perforation.",
+   "Sepsis, lactic acidosis.",
+   "Massive bleeding."
+  ],
+  "diagnostics": [
+   {
+    "test": "CT abdomen with contrast",
+    "rationale": "Shows colonic wall thickening/ischaemia and excludes other causes."
+   },
+   {
+    "test": "Colonoscopy",
+    "rationale": "Confirms mucosal ischaemia."
+   }
+  ],
+  "management": [
+   {
+    "step": "Supportive",
+    "detail": "Bowel rest, IV fluids, optimise perfusion; most mild cases resolve."
+   },
+   {
+    "step": "Antibiotics",
+    "detail": "For moderate-severe disease."
+   },
+   {
+    "step": "Surgery",
+    "detail": "Resection for gangrene, perforation or stricture."
+   }
+  ],
+  "references": [
+   {
+    "label": "ACG clinical guideline: epidemiology, risk factors, patterns of presentation, diagnosis, and management of colon ischemia"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "microscopic-colitis",
+  "title": "Microscopic colitis",
+  "icd10": [
+   "K52.8"
+  ],
+  "icd11": [
+   "DB33"
+  ],
+  "domains": [
+   "gastroenterology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Chronic watery non-bloody diarrhoea, often in middle-aged/older women.",
+   "Normal or near-normal colonoscopy appearance.",
+   "Associations: NSAIDs, PPIs, SSRIs, coeliac disease."
+  ],
+  "redFlags": [
+   "Weight loss or nocturnal symptoms prompting exclusion of other pathology.",
+   "Dehydration."
+  ],
+  "diagnostics": [
+   {
+    "test": "Colonoscopy with random biopsies",
+    "rationale": "Histology shows collagenous or lymphocytic colitis."
+   },
+   {
+    "test": "Coeliac serology",
+    "rationale": "Common association."
+   }
+  ],
+  "management": [
+   {
+    "step": "Stop precipitants",
+    "detail": "Review NSAIDs/PPIs/SSRIs."
+   },
+   {
+    "step": "Budesonide",
+    "detail": "Oral budesonide is first-line and effective."
+   },
+   {
+    "step": "Antidiarrhoeals",
+    "detail": "Loperamide for mild symptoms."
+   }
+  ],
+  "references": [
+   {
+    "label": "BSG guidelines on the management of microscopic colitis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "barretts-oesophagus",
+  "title": "Barrett's oesophagus",
+  "icd10": [
+   "K22.7"
+  ],
+  "icd11": [
+   "DA24"
+  ],
+  "domains": [
+   "gastroenterology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Often asymptomatic, found on endoscopy for chronic reflux.",
+   "Long-standing GORD symptoms.",
+   "Columnar-lined oesophagus on endoscopy with intestinal metaplasia."
+  ],
+  "redFlags": [
+   "Dysphagia, weight loss or anaemia (exclude adenocarcinoma).",
+   "High-grade dysplasia on biopsy."
+  ],
+  "diagnostics": [
+   {
+    "test": "Upper GI endoscopy with biopsies (Seattle protocol)",
+    "rationale": "Diagnoses metaplasia and grades dysplasia."
+   }
+  ],
+  "management": [
+   {
+    "step": "Acid suppression",
+    "detail": "Long-term PPI to control reflux."
+   },
+   {
+    "step": "Surveillance",
+    "detail": "Endoscopic surveillance at intervals based on segment length and dysplasia."
+   },
+   {
+    "step": "Treat dysplasia",
+    "detail": "Endoscopic eradication (RFA/EMR) for high-grade dysplasia or early cancer."
+   }
+  ],
+  "references": [
+   {
+    "label": "BSG guidelines on the diagnosis and management of Barrett's oesophagus"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "eosinophilic-oesophagitis",
+  "title": "Eosinophilic oesophagitis",
+  "icd10": [
+   "K20.0"
+  ],
+  "icd11": [
+   "DA23"
+  ],
+  "domains": [
+   "gastroenterology",
+   "immunology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Dysphagia for solids and food bolus impaction, often in young atopic males.",
+   "Heartburn unresponsive to PPI.",
+   "History of atopy (asthma, eczema, allergies)."
+  ],
+  "redFlags": [
+   "Acute food bolus obstruction.",
+   "Significant weight loss/failure to thrive in children."
+  ],
+  "diagnostics": [
+   {
+    "test": "Upper GI endoscopy with biopsies",
+    "rationale": "Shows rings/furrows; >=15 eosinophils/hpf confirms diagnosis."
+   }
+  ],
+  "management": [
+   {
+    "step": "PPI",
+    "detail": "Trial of high-dose PPI."
+   },
+   {
+    "step": "Topical steroids",
+    "detail": "Swallowed budesonide/fluticasone."
+   },
+   {
+    "step": "Diet and dilation",
+    "detail": "Elimination diet; endoscopic dilation for strictures."
+   }
+  ],
+  "references": [
+   {
+    "label": "AGA/joint task force guidelines on eosinophilic esophagitis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "intestinal-pseudo-obstruction",
+  "title": "Intestinal pseudo-obstruction (Ogilvie syndrome)",
+  "icd10": [
+   "K56.0"
+  ],
+  "icd11": [
+   "DA91.0"
+  ],
+  "domains": [
+   "gastroenterology",
+   "surgery"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Marked abdominal distension with features of obstruction but no mechanical cause.",
+   "Often in unwell, immobile or post-operative patients.",
+   "Massive colonic dilatation on imaging (acute colonic pseudo-obstruction)."
+  ],
+  "redFlags": [
+   "Caecal diameter >12 cm (perforation risk).",
+   "Peritonism / signs of ischaemia or perforation."
+  ],
+  "diagnostics": [
+   {
+    "test": "CT/contrast study",
+    "rationale": "Excludes a mechanical obstruction."
+   },
+   {
+    "test": "Electrolytes",
+    "rationale": "Identify reversible metabolic contributors."
+   }
+  ],
+  "management": [
+   {
+    "step": "Conservative",
+    "detail": "NG decompression, correct electrolytes, stop opioids/anticholinergics, mobilise."
+   },
+   {
+    "step": "Neostigmine",
+    "detail": "For acute colonic pseudo-obstruction not responding to conservative measures (with cardiac monitoring)."
+   },
+   {
+    "step": "Decompression",
+    "detail": "Colonoscopic decompression or surgery if refractory or ischaemic."
+   }
+  ],
+  "references": [
+   {
+    "label": "ASGE/ACG guidance on acute colonic pseudo-obstruction"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "nafld-nash",
+  "title": "Non-alcoholic fatty liver disease (NAFLD/NASH)",
+  "icd10": [
+   "K76.0"
+  ],
+  "icd11": [
+   "DB92"
+  ],
+  "domains": [
+   "gastroenterology",
+   "hepatology",
+   "endocrine"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Usually asymptomatic; incidental raised transaminases or fatty liver on imaging.",
+   "Associated with obesity, type 2 diabetes, metabolic syndrome.",
+   "May progress to steatohepatitis, fibrosis and cirrhosis."
+  ],
+  "redFlags": [
+   "Features of decompensated cirrhosis (ascites, varices, encephalopathy).",
+   "Advanced fibrosis on non-invasive scoring."
+  ],
+  "diagnostics": [
+   {
+    "test": "Liver ultrasound and LFTs",
+    "rationale": "Identifies steatosis."
+   },
+   {
+    "test": "Non-invasive fibrosis assessment (FIB-4, elastography)",
+    "rationale": "Stratifies fibrosis risk."
+   }
+  ],
+  "management": [
+   {
+    "step": "Lifestyle",
+    "detail": "Weight loss (>=7-10%), diet and exercise are the cornerstone."
+   },
+   {
+    "step": "Treat metabolic risk",
+    "detail": "Optimise diabetes, lipids and blood pressure; statins are safe."
+   },
+   {
+    "step": "Specialist referral",
+    "detail": "For advanced fibrosis; consider pharmacotherapy in NASH."
+   }
+  ],
+  "references": [
+   {
+    "label": "EASL-EASD-EASO clinical practice guidelines for the management of NAFLD"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "alcoholic-cirrhosis",
+  "title": "Alcohol-related cirrhosis",
+  "icd10": [
+   "K70.3"
+  ],
+  "icd11": [
+   "DB94.1"
+  ],
+  "domains": [
+   "hepatology",
+   "gastroenterology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Stigmata of chronic liver disease in a heavy alcohol user.",
+   "Jaundice, ascites, variceal bleeding or encephalopathy when decompensated.",
+   "Spider naevi, palmar erythema, gynaecomastia."
+  ],
+  "redFlags": [
+   "Variceal haemorrhage.",
+   "Hepatic encephalopathy.",
+   "Spontaneous bacterial peritonitis."
+  ],
+  "diagnostics": [
+   {
+    "test": "LFTs, clotting, ultrasound +/- elastography",
+    "rationale": "Assess synthetic function and fibrosis."
+   },
+   {
+    "test": "Endoscopy",
+    "rationale": "Screens for varices."
+   }
+  ],
+  "management": [
+   {
+    "step": "Alcohol abstinence",
+    "detail": "The single most important intervention; offer assisted withdrawal and support."
+   },
+   {
+    "step": "Manage complications",
+    "detail": "Beta-blocker/banding for varices, diuretics/paracentesis for ascites, lactulose for encephalopathy."
+   },
+   {
+    "step": "Surveillance",
+    "detail": "HCC surveillance ultrasound; nutrition; transplant assessment if abstinent."
+   }
+  ],
+  "references": [
+   {
+    "label": "EASL clinical practice guidelines: management of alcohol-related liver disease"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "portal-vein-thrombosis",
+  "title": "Portal vein thrombosis",
+  "icd10": [
+   "I81"
+  ],
+  "icd11": [
+   "BD71"
+  ],
+  "domains": [
+   "hepatology",
+   "haematology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Abdominal pain, distension; may be incidental.",
+   "Acute: pain, fever; chronic: portal hypertension with varices.",
+   "Associated with cirrhosis, malignancy or prothrombotic states."
+  ],
+  "redFlags": [
+   "Bowel ischaemia from mesenteric extension.",
+   "Variceal bleeding."
+  ],
+  "diagnostics": [
+   {
+    "test": "Doppler ultrasound / CT or MR venography",
+    "rationale": "Confirms thrombus and extent."
+   },
+   {
+    "test": "Thrombophilia and malignancy screen",
+    "rationale": "Identifies underlying cause in non-cirrhotics."
+   }
+  ],
+  "management": [
+   {
+    "step": "Anticoagulation",
+    "detail": "Anticoagulate acute non-cirrhotic PVT and selected cirrhotic patients to promote recanalisation."
+   },
+   {
+    "step": "Manage portal hypertension",
+    "detail": "Variceal screening and prophylaxis."
+   },
+   {
+    "step": "Treat cause",
+    "detail": "Address malignancy/prothrombotic disorder."
+   }
+  ],
+  "references": [
+   {
+    "label": "EASL clinical practice guidelines on vascular diseases of the liver"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "hepatic-hydrothorax",
+  "title": "Hepatic hydrothorax",
+  "icd10": [
+   "J94.8"
+  ],
+  "domains": [
+   "hepatology",
+   "respiratory"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Pleural effusion (usually right-sided) in a patient with cirrhosis and portal hypertension.",
+   "Dyspnoea; may occur with or without ascites.",
+   "Transudative fluid on sampling."
+  ],
+  "redFlags": [
+   "Spontaneous bacterial empyema.",
+   "Respiratory compromise from large effusion."
+  ],
+  "diagnostics": [
+   {
+    "test": "Diagnostic thoracocentesis",
+    "rationale": "Confirms transudate and excludes infection/other causes."
+   },
+   {
+    "test": "Echocardiography",
+    "rationale": "Excludes cardiac cause."
+   }
+  ],
+  "management": [
+   {
+    "step": "Sodium restriction and diuretics",
+    "detail": "As for ascites management."
+   },
+   {
+    "step": "Therapeutic thoracocentesis",
+    "detail": "For symptomatic relief; avoid chest drains (risk of complications)."
+   },
+   {
+    "step": "Definitive",
+    "detail": "TIPS or transplant assessment in refractory cases."
+   }
+  ],
+  "references": [
+   {
+    "label": "AASLD practice guidance on ascites and hepatic hydrothorax in cirrhosis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "small-bowel-obstruction",
+  "title": "Small bowel obstruction",
+  "icd10": [
+   "K56.6"
+  ],
+  "icd11": [
+   "DA91.0"
+  ],
+  "domains": [
+   "surgery",
+   "gastroenterology",
+   "emergency"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Colicky central abdominal pain, vomiting, distension and absolute constipation.",
+   "Adhesions (prior surgery) are the commonest cause; also hernias and tumours.",
+   "Tinkling or absent bowel sounds; dilated loops on imaging."
+  ],
+  "redFlags": [
+   "Signs of strangulation/ischaemia (constant pain, peritonism, fever, lactic acidosis).",
+   "Closed-loop obstruction."
+  ],
+  "diagnostics": [
+   {
+    "test": "CT abdomen/pelvis with contrast",
+    "rationale": "Confirms obstruction, level, cause and ischaemia."
+   },
+   {
+    "test": "Bloods including lactate",
+    "rationale": "Assess dehydration and ischaemia."
+   }
+  ],
+  "management": [
+   {
+    "step": "Drip and suck",
+    "detail": "NG decompression, IV fluids, correct electrolytes, analgesia."
+   },
+   {
+    "step": "Trial conservative management",
+    "detail": "For adhesional SBO without ischaemia; water-soluble contrast may be therapeutic/prognostic."
+   },
+   {
+    "step": "Surgery",
+    "detail": "For strangulation, closed loop, or failure to resolve."
+   }
+  ],
+  "references": [
+   {
+    "label": "WSES guidelines on adhesive small bowel obstruction"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
  }
 ]
