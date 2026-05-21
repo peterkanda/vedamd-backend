@@ -113,6 +113,10 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.cdsRules;
   }
 
+  getClinicalScores() {
+    return this.bundle.clinicalScores;
+  }
+
   getTerminology() {
     return this.bundle.terminology;
   }

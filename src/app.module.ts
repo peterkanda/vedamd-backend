@@ -10,6 +10,7 @@ import { TerminologyModule } from './modules/terminology/terminology.module';
 import { DrugsModule } from './modules/drugs/drugs.module';
 import { ConditionsModule } from './modules/conditions/conditions.module';
 import { ProceduresModule } from './modules/procedures/procedures.module';
+import { ClinicalScoresModule } from './modules/clinical-scores/clinical-scores.module';
 import { LlmModule } from './modules/llm/llm.module';
 import { AuditModule } from './modules/audit/audit.module';
 import { BundlesModule } from './modules/bundles/bundles.module';
@@ -36,6 +37,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     DrugsModule,
     ConditionsModule,
     ProceduresModule,
+    ClinicalScoresModule,
     LlmModule,
     AuditModule,
     BundlesModule,

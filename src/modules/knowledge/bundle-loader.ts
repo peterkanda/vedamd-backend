@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import type { CdsRule, ConditionGuidance } from '../conditions/conditions.types';
 import type { DrugInteraction, DrugRecord } from '../drugs/drugs.types';
 import type { ProcedureGuidance } from '../procedures/procedures.types';
+import type { ClinicalScore } from '../clinical-scores/clinical-scores.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import { nonApprovedCount, validateBundle } from './bundle-validator';
 import type {
@@ -126,6 +127,7 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
     interactions: parsed['drug-interactions.json'] as DrugInteraction[],
     procedures: parsed['procedures.json'] as ProcedureGuidance[],
     cdsRules: parsed['cds-rules.json'] as CdsRule[],
+    clinicalScores: (parsed['clinical-scores.json'] as ClinicalScore[] | undefined) ?? [],
     terminology:
       (parsed['terminology.json'] as TerminologyBundle | undefined) ??
       ({ version: '0.0.0-absent', codeSystems: [], valueSets: [] } as TerminologyBundle),
@@ -193,6 +195,7 @@ export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBun
     interactions: [],
     procedures: [],
     cdsRules: [],
+    clinicalScores: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }
@@ -227,6 +230,7 @@ function failOrReturn(
     interactions: [],
     procedures: [],
     cdsRules: [],
+    clinicalScores: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }

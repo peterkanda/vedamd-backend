@@ -1,6 +1,7 @@
 import type { CdsRule, ConditionGuidance } from '../conditions/conditions.types';
 import type { DrugInteraction, DrugRecord } from '../drugs/drugs.types';
 import type { ProcedureGuidance } from '../procedures/procedures.types';
+import type { ClinicalScore } from '../clinical-scores/clinical-scores.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import type { ContentStats, ValidationViolation } from './bundle-validator';
 
@@ -49,6 +50,8 @@ export interface LoadedBundle {
   interactions: DrugInteraction[];
   procedures: ProcedureGuidance[];
   cdsRules: CdsRule[];
+  /** Optional — bundles signed before clinical-scores.json existed return []. */
+  clinicalScores: ClinicalScore[];
   /** Optional — bundles signed before terminology.json existed return an empty TerminologyBundle. */
   terminology: TerminologyBundle;
 }

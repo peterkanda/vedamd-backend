@@ -1,0 +1,1085 @@
+[
+  {
+    "slug": "cha2ds2-vasc",
+    "title": "CHA2DS2-VASc score",
+    "abbrev": "CHA2DS2-VASc",
+    "purpose": "Estimate annual ischaemic stroke risk in non-valvular atrial fibrillation to guide oral anticoagulation.",
+    "domains": [
+      "cardiology"
+    ],
+    "items": [
+      {
+        "label": "Congestive heart failure / LV dysfunction",
+        "points": 1
+      },
+      {
+        "label": "Hypertension",
+        "points": 1
+      },
+      {
+        "label": "Age 65–74 years",
+        "points": 1
+      },
+      {
+        "label": "Age ≥75 years",
+        "points": 2
+      },
+      {
+        "label": "Diabetes mellitus",
+        "points": 1
+      },
+      {
+        "label": "Prior stroke / TIA / thromboembolism",
+        "points": 2
+      },
+      {
+        "label": "Vascular disease (prior MI, PAD, aortic plaque)",
+        "points": 1
+      },
+      {
+        "label": "Sex category female",
+        "points": 1
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 9,
+      "notes": "Age contributes either 1 (65–74) or 2 (≥75), not both."
+    },
+    "interpretation": [
+      {
+        "band": "0 (male) / 1 (female)",
+        "meaning": "Low risk",
+        "action": "Anticoagulation generally not recommended."
+      },
+      {
+        "band": "1 (male)",
+        "meaning": "Low-moderate risk",
+        "action": "Consider anticoagulation."
+      },
+      {
+        "band": "≥2 (male) / ≥3 (female)",
+        "meaning": "Elevated risk",
+        "action": "Oral anticoagulation recommended unless contraindicated."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC Guidelines for the management of atrial fibrillation"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "has-bled",
+    "title": "HAS-BLED bleeding risk score",
+    "abbrev": "HAS-BLED",
+    "purpose": "Estimate 1-year major bleeding risk in patients with atrial fibrillation on anticoagulation; flag modifiable risk factors.",
+    "domains": [
+      "cardiology",
+      "haematology"
+    ],
+    "items": [
+      {
+        "label": "Hypertension (uncontrolled, SBP >160 mmHg)",
+        "points": 1
+      },
+      {
+        "label": "Abnormal renal function",
+        "points": 1
+      },
+      {
+        "label": "Abnormal liver function",
+        "points": 1
+      },
+      {
+        "label": "Stroke history",
+        "points": 1
+      },
+      {
+        "label": "Bleeding history or predisposition",
+        "points": 1
+      },
+      {
+        "label": "Labile INR (if on warfarin)",
+        "points": 1
+      },
+      {
+        "label": "Elderly (age >65 years)",
+        "points": 1
+      },
+      {
+        "label": "Drugs predisposing to bleeding (antiplatelet/NSAID)",
+        "points": 1
+      },
+      {
+        "label": "Alcohol excess (≥8 units/week)",
+        "points": 1
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 9
+    },
+    "interpretation": [
+      {
+        "band": "0–2",
+        "meaning": "Lower bleeding risk",
+        "action": "Anticoagulation generally appropriate if indicated."
+      },
+      {
+        "band": "≥3",
+        "meaning": "High bleeding risk",
+        "action": "Caution and regular review; address modifiable factors. Not a reason to withhold anticoagulation alone."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC atrial fibrillation guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "wells-score-dvt",
+    "title": "Wells score for deep vein thrombosis",
+    "abbrev": "Wells DVT",
+    "purpose": "Estimate pre-test probability of lower-limb DVT to guide D-dimer and imaging.",
+    "domains": [
+      "vascular",
+      "haematology",
+      "emergency"
+    ],
+    "items": [
+      {
+        "label": "Active cancer (treatment within 6 months or palliative)",
+        "points": 1
+      },
+      {
+        "label": "Paralysis, paresis or recent plaster immobilisation of leg",
+        "points": 1
+      },
+      {
+        "label": "Recently bedridden ≥3 days or major surgery within 12 weeks",
+        "points": 1
+      },
+      {
+        "label": "Localised tenderness along deep venous system",
+        "points": 1
+      },
+      {
+        "label": "Entire leg swollen",
+        "points": 1
+      },
+      {
+        "label": "Calf swelling >3 cm vs asymptomatic side",
+        "points": 1
+      },
+      {
+        "label": "Pitting oedema confined to symptomatic leg",
+        "points": 1
+      },
+      {
+        "label": "Collateral superficial (non-varicose) veins",
+        "points": 1
+      },
+      {
+        "label": "Previously documented DVT",
+        "points": 1
+      },
+      {
+        "label": "Alternative diagnosis at least as likely as DVT",
+        "points": -2
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": -2,
+      "max": 9
+    },
+    "interpretation": [
+      {
+        "band": "≤1 (DVT unlikely)",
+        "meaning": "Low probability",
+        "action": "D-dimer; if negative, DVT excluded."
+      },
+      {
+        "band": "≥2 (DVT likely)",
+        "meaning": "Higher probability",
+        "action": "Proceed to compression ultrasound."
+      }
+    ],
+    "references": [
+      {
+        "label": "Wells PS et al.; NICE venous thromboembolic diseases guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "wells-score-pe",
+    "title": "Wells score for pulmonary embolism",
+    "abbrev": "Wells PE",
+    "purpose": "Estimate pre-test probability of pulmonary embolism to guide D-dimer and CT pulmonary angiography.",
+    "domains": [
+      "respiratory",
+      "vascular",
+      "emergency"
+    ],
+    "items": [
+      {
+        "label": "Clinical signs and symptoms of DVT",
+        "points": 3
+      },
+      {
+        "label": "PE is the most likely diagnosis",
+        "points": 3
+      },
+      {
+        "label": "Heart rate >100 bpm",
+        "points": 1.5
+      },
+      {
+        "label": "Immobilisation ≥3 days or surgery within 4 weeks",
+        "points": 1.5
+      },
+      {
+        "label": "Previous DVT/PE",
+        "points": 1.5
+      },
+      {
+        "label": "Haemoptysis",
+        "points": 1
+      },
+      {
+        "label": "Malignancy (treated within 6 months or palliative)",
+        "points": 1
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 12.5
+    },
+    "interpretation": [
+      {
+        "band": "≤4 (PE unlikely)",
+        "meaning": "Low/intermediate probability",
+        "action": "D-dimer; if negative, PE excluded (consider PERC in low-risk)."
+      },
+      {
+        "band": ">4 (PE likely)",
+        "meaning": "High probability",
+        "action": "Proceed to CT pulmonary angiography."
+      }
+    ],
+    "references": [
+      {
+        "label": "Wells PS et al.; NICE venous thromboembolic diseases guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "perc-rule",
+    "title": "PERC rule (Pulmonary Embolism Rule-out Criteria)",
+    "abbrev": "PERC",
+    "purpose": "In patients already assessed as low pre-test probability, exclude PE without D-dimer if all 8 criteria are negative.",
+    "domains": [
+      "respiratory",
+      "emergency"
+    ],
+    "items": [
+      {
+        "label": "Age <50 years",
+        "points": 0
+      },
+      {
+        "label": "Heart rate <100 bpm",
+        "points": 0
+      },
+      {
+        "label": "SpO2 ≥95% on room air",
+        "points": 0
+      },
+      {
+        "label": "No unilateral leg swelling",
+        "points": 0
+      },
+      {
+        "label": "No haemoptysis",
+        "points": 0
+      },
+      {
+        "label": "No recent trauma or surgery (within 4 weeks)",
+        "points": 0
+      },
+      {
+        "label": "No prior DVT/PE",
+        "points": 0
+      },
+      {
+        "label": "No oestrogen use",
+        "points": 0
+      }
+    ],
+    "scoring": {
+      "method": "all-criteria-met",
+      "notes": "PERC-negative = ALL 8 criteria satisfied. Only valid when clinical gestalt is already low-risk."
+    },
+    "interpretation": [
+      {
+        "band": "All 8 met (PERC negative)",
+        "meaning": "<2% PE risk",
+        "action": "PE can be excluded without D-dimer."
+      },
+      {
+        "band": "Any criterion failed",
+        "meaning": "PERC positive",
+        "action": "Cannot rule out PE on PERC; pursue D-dimer/imaging per pathway."
+      }
+    ],
+    "references": [
+      {
+        "label": "Kline JA et al. PERC rule"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "news2",
+    "title": "National Early Warning Score 2",
+    "abbrev": "NEWS2",
+    "purpose": "Standardised bedside track-and-trigger score to detect and respond to acute clinical deterioration in adults.",
+    "domains": [
+      "acute-care",
+      "emergency",
+      "critical-care"
+    ],
+    "items": [
+      {
+        "label": "Respiratory rate",
+        "points": 3
+      },
+      {
+        "label": "SpO2 (Scale 1 or Scale 2 for hypercapnic risk)",
+        "points": 3
+      },
+      {
+        "label": "Air or supplemental oxygen",
+        "points": 2
+      },
+      {
+        "label": "Systolic blood pressure",
+        "points": 3
+      },
+      {
+        "label": "Pulse rate",
+        "points": 3
+      },
+      {
+        "label": "Level of consciousness (ACVPU)",
+        "points": 3
+      },
+      {
+        "label": "Temperature",
+        "points": 3
+      }
+    ],
+    "scoring": {
+      "method": "weighted-sum",
+      "min": 0,
+      "max": 20,
+      "notes": "Each parameter scores 0–3 by physiological band; confusion/new ACVPU change scores 3."
+    },
+    "interpretation": [
+      {
+        "band": "0–4",
+        "meaning": "Low",
+        "action": "Routine monitoring; ward-based response."
+      },
+      {
+        "band": "3 in a single parameter",
+        "meaning": "Low-medium",
+        "action": "Urgent review by clinician."
+      },
+      {
+        "band": "5–6",
+        "meaning": "Medium",
+        "action": "Urgent review; consider escalation."
+      },
+      {
+        "band": "≥7",
+        "meaning": "High",
+        "action": "Emergency assessment by critical-care-competent team; consider transfer to higher care."
+      }
+    ],
+    "references": [
+      {
+        "label": "Royal College of Physicians, NEWS2"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "glasgow-coma-scale",
+    "title": "Glasgow Coma Scale",
+    "abbrev": "GCS",
+    "purpose": "Assess and track depth of impaired consciousness; component of trauma and neurological assessment.",
+    "domains": [
+      "neurology",
+      "emergency",
+      "critical-care",
+      "trauma"
+    ],
+    "items": [
+      {
+        "label": "Eye opening (E): spontaneous 4, to sound 3, to pressure 2, none 1",
+        "points": 4
+      },
+      {
+        "label": "Verbal response (V): orientated 5, confused 4, words 3, sounds 2, none 1",
+        "points": 5
+      },
+      {
+        "label": "Motor response (M): obeys 6, localises 5, normal flexion 4, abnormal flexion 3, extension 2, none 1",
+        "points": 6
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 3,
+      "max": 15,
+      "notes": "Report components (e.g. E3V4M5) as well as total; record best response and any untestable component."
+    },
+    "interpretation": [
+      {
+        "band": "13–15",
+        "meaning": "Mild impairment",
+        "action": "Observe; head-injury pathway as indicated."
+      },
+      {
+        "band": "9–12",
+        "meaning": "Moderate impairment",
+        "action": "Close monitoring; imaging and senior review."
+      },
+      {
+        "band": "≤8",
+        "meaning": "Severe (coma)",
+        "action": "Airway at risk — consider intubation; urgent critical-care/neurosurgical input."
+      }
+    ],
+    "references": [
+      {
+        "label": "Teasdale & Jennett; GCS structured assessment"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "centor-mcisaac",
+    "title": "Centor score (McIsaac modification)",
+    "abbrev": "Centor/McIsaac",
+    "purpose": "Estimate likelihood of group A streptococcal pharyngitis to guide testing and antibiotics.",
+    "domains": [
+      "ent",
+      "infection",
+      "primary-care"
+    ],
+    "items": [
+      {
+        "label": "Tonsillar exudate",
+        "points": 1
+      },
+      {
+        "label": "Tender anterior cervical lymphadenopathy",
+        "points": 1
+      },
+      {
+        "label": "Fever >38°C",
+        "points": 1
+      },
+      {
+        "label": "Absence of cough",
+        "points": 1
+      },
+      {
+        "label": "Age 3–14 years",
+        "points": 1
+      },
+      {
+        "label": "Age 15–44 years",
+        "points": 0
+      },
+      {
+        "label": "Age ≥45 years",
+        "points": -1
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": -1,
+      "max": 5
+    },
+    "interpretation": [
+      {
+        "band": "≤0",
+        "meaning": "Very low likelihood",
+        "action": "No testing or antibiotics."
+      },
+      {
+        "band": "1–2",
+        "meaning": "Low-moderate",
+        "action": "Consider rapid antigen test; antibiotics only if positive."
+      },
+      {
+        "band": "≥3",
+        "meaning": "Higher likelihood",
+        "action": "Test and treat if positive; FeverPAIN is an alternative tool."
+      }
+    ],
+    "references": [
+      {
+        "label": "McIsaac WJ et al.; national sore throat guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ottawa-ankle-rules",
+    "title": "Ottawa ankle rules",
+    "abbrev": "Ottawa ankle",
+    "purpose": "Identify which acute ankle/midfoot injuries require radiography, safely reducing unnecessary X-rays.",
+    "domains": [
+      "orthopaedics",
+      "emergency",
+      "trauma"
+    ],
+    "items": [
+      {
+        "label": "Bone tenderness at posterior edge/tip of lateral malleolus",
+        "points": 1
+      },
+      {
+        "label": "Bone tenderness at posterior edge/tip of medial malleolus",
+        "points": 1
+      },
+      {
+        "label": "Bone tenderness at base of 5th metatarsal",
+        "points": 1
+      },
+      {
+        "label": "Bone tenderness at navicular",
+        "points": 1
+      },
+      {
+        "label": "Inability to bear weight (4 steps) both immediately and in ED",
+        "points": 1
+      }
+    ],
+    "scoring": {
+      "method": "any-criterion",
+      "notes": "Ankle X-ray if malleolar-zone pain plus malleolar tenderness or inability to weight-bear; foot X-ray if midfoot pain plus navicular/5th-MT tenderness or inability to weight-bear."
+    },
+    "interpretation": [
+      {
+        "band": "No criteria met",
+        "meaning": "Fracture unlikely",
+        "action": "Radiography not required."
+      },
+      {
+        "band": "Any criterion met",
+        "meaning": "Fracture possible",
+        "action": "Obtain ankle and/or foot radiographs."
+      }
+    ],
+    "references": [
+      {
+        "label": "Stiell IG et al. Ottawa ankle rules"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ottawa-knee-rules",
+    "title": "Ottawa knee rules",
+    "abbrev": "Ottawa knee",
+    "purpose": "Identify which acute knee injuries require radiography.",
+    "domains": [
+      "orthopaedics",
+      "emergency",
+      "trauma"
+    ],
+    "items": [
+      {
+        "label": "Age ≥55 years",
+        "points": 1
+      },
+      {
+        "label": "Tenderness at head of fibula",
+        "points": 1
+      },
+      {
+        "label": "Isolated tenderness of patella",
+        "points": 1
+      },
+      {
+        "label": "Inability to flex knee to 90°",
+        "points": 1
+      },
+      {
+        "label": "Inability to bear weight (4 steps) both immediately and in ED",
+        "points": 1
+      }
+    ],
+    "scoring": {
+      "method": "any-criterion"
+    },
+    "interpretation": [
+      {
+        "band": "No criteria met",
+        "meaning": "Fracture unlikely",
+        "action": "Radiography not required."
+      },
+      {
+        "band": "Any criterion met",
+        "meaning": "Fracture possible",
+        "action": "Obtain knee radiographs."
+      }
+    ],
+    "references": [
+      {
+        "label": "Stiell IG et al. Ottawa knee rules"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "alvarado-score",
+    "title": "Alvarado score for acute appendicitis",
+    "abbrev": "Alvarado",
+    "purpose": "Estimate likelihood of acute appendicitis to support triage and imaging decisions.",
+    "domains": [
+      "surgery",
+      "emergency",
+      "gastroenterology"
+    ],
+    "items": [
+      {
+        "label": "Migratory right iliac fossa pain",
+        "points": 1
+      },
+      {
+        "label": "Anorexia",
+        "points": 1
+      },
+      {
+        "label": "Nausea or vomiting",
+        "points": 1
+      },
+      {
+        "label": "Tenderness in right iliac fossa",
+        "points": 2
+      },
+      {
+        "label": "Rebound tenderness",
+        "points": 1
+      },
+      {
+        "label": "Elevated temperature (≥37.3°C)",
+        "points": 1
+      },
+      {
+        "label": "Leucocytosis (WBC >10×10⁹/L)",
+        "points": 2
+      },
+      {
+        "label": "Left shift of neutrophils (>75%)",
+        "points": 1
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 10
+    },
+    "interpretation": [
+      {
+        "band": "1–4",
+        "meaning": "Appendicitis unlikely",
+        "action": "Consider discharge with review or alternative diagnosis."
+      },
+      {
+        "band": "5–6",
+        "meaning": "Compatible",
+        "action": "Observe and/or image."
+      },
+      {
+        "band": "7–10",
+        "meaning": "Probable appendicitis",
+        "action": "Surgical review; consider operative management."
+      }
+    ],
+    "references": [
+      {
+        "label": "Alvarado A. A practical score for the early diagnosis of acute appendicitis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "child-pugh",
+    "title": "Child-Pugh score for cirrhosis severity",
+    "abbrev": "Child-Pugh",
+    "purpose": "Grade severity of chronic liver disease and estimate prognosis; informs surgical risk and management.",
+    "domains": [
+      "hepatology",
+      "gastroenterology"
+    ],
+    "items": [
+      {
+        "label": "Total bilirubin (<34 / 34–50 / >50 µmol/L)",
+        "points": 3
+      },
+      {
+        "label": "Serum albumin (>35 / 28–35 / <28 g/L)",
+        "points": 3
+      },
+      {
+        "label": "INR (<1.7 / 1.7–2.3 / >2.3)",
+        "points": 3
+      },
+      {
+        "label": "Ascites (none / mild / moderate-severe)",
+        "points": 3
+      },
+      {
+        "label": "Hepatic encephalopathy (none / grade 1–2 / grade 3–4)",
+        "points": 3
+      }
+    ],
+    "scoring": {
+      "method": "weighted-sum",
+      "min": 5,
+      "max": 15,
+      "notes": "Each parameter scores 1–3."
+    },
+    "interpretation": [
+      {
+        "band": "5–6 (Class A)",
+        "meaning": "Well-compensated",
+        "action": "Best prognosis; ~100% 1-year survival."
+      },
+      {
+        "band": "7–9 (Class B)",
+        "meaning": "Significant compromise",
+        "action": "Intermediate prognosis."
+      },
+      {
+        "band": "10–15 (Class C)",
+        "meaning": "Decompensated",
+        "action": "Poor prognosis; consider transplant assessment."
+      }
+    ],
+    "references": [
+      {
+        "label": "Pugh RNH et al."
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "meld-score",
+    "title": "MELD score (Model for End-stage Liver Disease)",
+    "abbrev": "MELD",
+    "purpose": "Predict 3-month mortality in chronic liver disease; used for transplant prioritisation.",
+    "domains": [
+      "hepatology",
+      "critical-care"
+    ],
+    "items": [
+      {
+        "label": "Serum bilirubin",
+        "points": 0
+      },
+      {
+        "label": "Serum creatinine",
+        "points": 0
+      },
+      {
+        "label": "INR",
+        "points": 0
+      },
+      {
+        "label": "Serum sodium (MELD-Na)",
+        "points": 0
+      }
+    ],
+    "scoring": {
+      "method": "formula",
+      "min": 6,
+      "max": 40,
+      "notes": "Calculated from a logarithmic formula of bilirubin, creatinine, INR (and sodium for MELD-Na); not a simple sum."
+    },
+    "interpretation": [
+      {
+        "band": "<10",
+        "meaning": "Lower short-term mortality",
+        "action": "Routine hepatology follow-up."
+      },
+      {
+        "band": "10–19",
+        "meaning": "Intermediate",
+        "action": "Close monitoring; transplant discussion as indicated."
+      },
+      {
+        "band": "≥20",
+        "meaning": "High 3-month mortality",
+        "action": "Urgent transplant evaluation / specialist care."
+      }
+    ],
+    "references": [
+      {
+        "label": "Kamath PS et al.; UNOS allocation"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "padua-prediction-score",
+    "title": "Padua prediction score for VTE risk",
+    "abbrev": "Padua",
+    "purpose": "Stratify hospitalised medical patients for venous thromboembolism risk to guide thromboprophylaxis.",
+    "domains": [
+      "haematology",
+      "acute-care"
+    ],
+    "items": [
+      {
+        "label": "Active cancer",
+        "points": 3
+      },
+      {
+        "label": "Previous VTE (excluding superficial vein thrombosis)",
+        "points": 3
+      },
+      {
+        "label": "Reduced mobility (bedrest ≥3 days)",
+        "points": 3
+      },
+      {
+        "label": "Known thrombophilia",
+        "points": 3
+      },
+      {
+        "label": "Recent trauma or surgery (≤1 month)",
+        "points": 2
+      },
+      {
+        "label": "Age ≥70 years",
+        "points": 1
+      },
+      {
+        "label": "Heart and/or respiratory failure",
+        "points": 1
+      },
+      {
+        "label": "Acute MI or ischaemic stroke",
+        "points": 1
+      },
+      {
+        "label": "Acute infection or rheumatological disorder",
+        "points": 1
+      },
+      {
+        "label": "Obesity (BMI ≥30)",
+        "points": 1
+      },
+      {
+        "label": "Ongoing hormonal treatment",
+        "points": 1
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 20
+    },
+    "interpretation": [
+      {
+        "band": "<4",
+        "meaning": "Low VTE risk",
+        "action": "Pharmacological thromboprophylaxis generally not indicated."
+      },
+      {
+        "band": "≥4",
+        "meaning": "High VTE risk",
+        "action": "Offer pharmacological thromboprophylaxis unless contraindicated."
+      }
+    ],
+    "references": [
+      {
+        "label": "Barbar S et al. Padua prediction score"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "apgar-score",
+    "title": "Apgar score",
+    "abbrev": "Apgar",
+    "purpose": "Rapid assessment of newborn condition at 1 and 5 minutes after birth.",
+    "domains": [
+      "neonatology",
+      "obstetrics",
+      "paediatrics"
+    ],
+    "items": [
+      {
+        "label": "Appearance (skin colour): pink 2, acrocyanosis 1, blue/pale 0",
+        "points": 2
+      },
+      {
+        "label": "Pulse: ≥100 = 2, <100 = 1, absent 0",
+        "points": 2
+      },
+      {
+        "label": "Grimace (reflex irritability): cry/cough 2, grimace 1, none 0",
+        "points": 2
+      },
+      {
+        "label": "Activity (muscle tone): active 2, some flexion 1, limp 0",
+        "points": 2
+      },
+      {
+        "label": "Respiration: strong cry 2, irregular/slow 1, absent 0",
+        "points": 2
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 10,
+      "notes": "Assess at 1 and 5 minutes (and every 5 min if <7); not a predictor of long-term outcome and not used alone to guide resuscitation."
+    },
+    "interpretation": [
+      {
+        "band": "7–10",
+        "meaning": "Reassuring",
+        "action": "Routine care."
+      },
+      {
+        "band": "4–6",
+        "meaning": "Moderately depressed",
+        "action": "Stimulate, support; follow neonatal resuscitation algorithm."
+      },
+      {
+        "band": "0–3",
+        "meaning": "Severely depressed",
+        "action": "Immediate resuscitation per NRP/HBB."
+      }
+    ],
+    "references": [
+      {
+        "label": "Apgar V; AAP/AHA neonatal resuscitation"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "curb-65",
+    "title": "CURB-65 severity score for community-acquired pneumonia",
+    "abbrev": "CURB-65",
+    "purpose": "Assess severity of community-acquired pneumonia to guide site of care.",
+    "domains": [
+      "respiratory",
+      "infection",
+      "acute-care"
+    ],
+    "items": [
+      {
+        "label": "Confusion (new disorientation)",
+        "points": 1
+      },
+      {
+        "label": "Urea >7 mmol/L",
+        "points": 1
+      },
+      {
+        "label": "Respiratory rate ≥30/min",
+        "points": 1
+      },
+      {
+        "label": "Blood pressure (SBP <90 or DBP ≤60 mmHg)",
+        "points": 1
+      },
+      {
+        "label": "Age ≥65 years",
+        "points": 1
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 5,
+      "notes": "CRB-65 omits urea for community settings without bloods."
+    },
+    "interpretation": [
+      {
+        "band": "0–1",
+        "meaning": "Low severity",
+        "action": "Consider home treatment."
+      },
+      {
+        "band": "2",
+        "meaning": "Moderate severity",
+        "action": "Consider hospital admission / short-stay."
+      },
+      {
+        "band": "3–5",
+        "meaning": "High severity",
+        "action": "Admit; assess for critical care, especially score 4–5."
+      }
+    ],
+    "references": [
+      {
+        "label": "Lim WS et al.; BTS community-acquired pneumonia guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  }
+]
