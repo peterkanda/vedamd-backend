@@ -36208,5 +36208,984 @@
   "ruleVersion": "0.1.0",
   "reviewStatus": "draft",
   "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "rapidly-progressive-glomerulonephritis",
+  "title": "Rapidly progressive glomerulonephritis",
+  "icd10": [
+   "N01.7"
+  ],
+  "domains": [
+   "nephrology",
+   "emergency"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Rapid decline in renal function over days to weeks.",
+   "Haematuria, proteinuria, red cell casts, oliguria.",
+   "May have pulmonary haemorrhage (pulmonary-renal syndrome)."
+  ],
+  "redFlags": [
+   "Pulmonary haemorrhage / haemoptysis.",
+   "Severe AKI with hyperkalaemia or fluid overload.",
+   "Anuria."
+  ],
+  "diagnostics": [
+   {
+    "test": "Urgent renal biopsy",
+    "rationale": "Shows crescentic GN and guides immunosuppression."
+   },
+   {
+    "test": "ANCA, anti-GBM, ANA/complement",
+    "rationale": "Differentiates pauci-immune, anti-GBM and immune-complex disease."
+   }
+  ],
+  "management": [
+   {
+    "step": "Urgent nephrology referral",
+    "detail": "Treat as emergency to preserve renal function."
+   },
+   {
+    "step": "Immunosuppression",
+    "detail": "High-dose corticosteroids with cyclophosphamide or rituximab; plasma exchange for anti-GBM/severe disease."
+   },
+   {
+    "step": "Supportive",
+    "detail": "Manage AKI, hyperkalaemia, and dialysis if needed."
+   }
+  ],
+  "references": [
+   {
+    "label": "KDIGO clinical practice guideline for glomerular diseases"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "lupus-nephritis",
+  "title": "Lupus nephritis",
+  "icd10": [
+   "M32.14"
+  ],
+  "icd11": [
+   "4A40.0"
+  ],
+  "domains": [
+   "nephrology",
+   "rheumatology"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Renal involvement in systemic lupus erythematosus.",
+   "Proteinuria, haematuria, hypertension, renal impairment.",
+   "Other lupus features (rash, arthritis, serositis)."
+  ],
+  "redFlags": [
+   "Nephrotic-range proteinuria.",
+   "Rapidly declining renal function.",
+   "Active extrarenal lupus flare."
+  ],
+  "diagnostics": [
+   {
+    "test": "Renal biopsy",
+    "rationale": "Classifies ISN/RPS class and guides therapy."
+   },
+   {
+    "test": "Anti-dsDNA, complement (C3/C4), urine protein:creatinine",
+    "rationale": "Assess disease activity."
+   }
+  ],
+  "management": [
+   {
+    "step": "Induction",
+    "detail": "Corticosteroids plus mycophenolate or cyclophosphamide for proliferative classes."
+   },
+   {
+    "step": "Maintenance",
+    "detail": "Mycophenolate or azathioprine; hydroxychloroquine for all."
+   },
+   {
+    "step": "Supportive",
+    "detail": "RAAS blockade for proteinuria, blood pressure control."
+   }
+  ],
+  "references": [
+   {
+    "label": "KDIGO/EULAR guidelines for lupus nephritis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "diabetic-nephropathy",
+  "title": "Diabetic nephropathy",
+  "icd10": [
+   "E11.2"
+  ],
+  "icd11": [
+   "GB61.Z"
+  ],
+  "domains": [
+   "nephrology",
+   "endocrine"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Progressive albuminuria and declining eGFR in long-standing diabetes.",
+   "Often coexists with retinopathy.",
+   "May progress to nephrotic syndrome and ESRD."
+  ],
+  "redFlags": [
+   "Rapidly rising creatinine or active sediment (suggests alternative diagnosis).",
+   "Refractory hyperkalaemia.",
+   "Uraemic symptoms."
+  ],
+  "diagnostics": [
+   {
+    "test": "Urine albumin:creatinine ratio and eGFR",
+    "rationale": "Detects and monitors nephropathy."
+   },
+   {
+    "test": "Retinal screening",
+    "rationale": "Microvascular disease usually parallels nephropathy."
+   }
+  ],
+  "management": [
+   {
+    "step": "Glycaemic and BP control",
+    "detail": "Tight control slows progression."
+   },
+   {
+    "step": "RAAS blockade",
+    "detail": "ACE inhibitor or ARB for albuminuria."
+   },
+   {
+    "step": "SGLT2 inhibitor",
+    "detail": "Add for renal and cardiovascular protection; consider finerenone."
+   }
+  ],
+  "references": [
+   {
+    "label": "KDIGO clinical practice guideline for diabetes management in CKD"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "membranous-nephropathy",
+  "title": "Membranous nephropathy",
+  "icd10": [
+   "N04.2"
+  ],
+  "domains": [
+   "nephrology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Nephrotic syndrome: oedema, heavy proteinuria, hypoalbuminaemia.",
+   "Commonest cause of nephrotic syndrome in non-diabetic adults.",
+   "Primary (anti-PLA2R) or secondary (malignancy, infections, drugs, lupus)."
+  ],
+  "redFlags": [
+   "Venous thromboembolism (high risk in nephrotic syndrome).",
+   "Rapidly worsening renal function.",
+   "Features suggesting underlying malignancy."
+  ],
+  "diagnostics": [
+   {
+    "test": "Renal biopsy and anti-PLA2R antibodies",
+    "rationale": "Confirms diagnosis and distinguishes primary disease."
+   },
+   {
+    "test": "Secondary cause screen",
+    "rationale": "Exclude malignancy, hepatitis, lupus."
+   }
+  ],
+  "management": [
+   {
+    "step": "Supportive",
+    "detail": "RAAS blockade, salt restriction, diuretics, statin; anticoagulation if high thrombotic risk."
+   },
+   {
+    "step": "Immunosuppression",
+    "detail": "Rituximab or calcineurin inhibitor/cyclophosphamide for high-risk or progressive disease."
+   },
+   {
+    "step": "Treat secondary causes",
+    "detail": "Address malignancy/infection if identified."
+   }
+  ],
+  "references": [
+   {
+    "label": "KDIGO clinical practice guideline for glomerular diseases"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "acute-interstitial-nephritis",
+  "title": "Acute interstitial nephritis",
+  "icd10": [
+   "N10"
+  ],
+  "domains": [
+   "nephrology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "AKI with a temporal link to a drug, infection or autoimmune disease.",
+   "Classic triad (fever, rash, eosinophilia) is uncommon.",
+   "Drugs: NSAIDs, PPIs, antibiotics."
+  ],
+  "redFlags": [
+   "Severe AKI with uraemia or hyperkalaemia.",
+   "Oliguria."
+  ],
+  "diagnostics": [
+   {
+    "test": "Urinalysis (sterile pyuria, white cell casts)",
+    "rationale": "Suggests interstitial inflammation."
+   },
+   {
+    "test": "Renal biopsy",
+    "rationale": "Confirms interstitial infiltrate when diagnosis uncertain."
+   }
+  ],
+  "management": [
+   {
+    "step": "Stop the offending drug",
+    "detail": "Key intervention; review NSAIDs/PPIs/antibiotics."
+   },
+   {
+    "step": "Corticosteroids",
+    "detail": "Considered for drug-induced AIN with no recovery after withdrawal."
+   },
+   {
+    "step": "Supportive AKI care",
+    "detail": "Fluid balance, treat hyperkalaemia."
+   }
+  ],
+  "references": [
+   {
+    "label": "KDIGO clinical practice guideline for acute kidney injury"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "urinary-incontinence",
+  "title": "Urinary incontinence (stress and urge)",
+  "icd10": [
+   "N39.3"
+  ],
+  "icd11": [
+   "MF50.2"
+  ],
+  "domains": [
+   "urology",
+   "womens-health",
+   "geriatrics"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Stress: leakage on coughing, sneezing, exertion.",
+   "Urge: sudden compelling need to void with leakage (overactive bladder).",
+   "Mixed pictures common, especially in older women."
+  ],
+  "redFlags": [
+   "Visible haematuria (exclude malignancy).",
+   "Recurrent UTI or voiding difficulty/retention.",
+   "New neurological signs."
+  ],
+  "diagnostics": [
+   {
+    "test": "Bladder diary and urinalysis",
+    "rationale": "Characterises pattern and excludes infection/haematuria."
+   },
+   {
+    "test": "Post-void residual / urodynamics",
+    "rationale": "For complex or refractory cases."
+   }
+  ],
+  "management": [
+   {
+    "step": "Conservative",
+    "detail": "Pelvic floor exercises (stress), bladder training (urge), weight loss, caffeine reduction."
+   },
+   {
+    "step": "Medication",
+    "detail": "Antimuscarinic or mirabegron for urge incontinence."
+   },
+   {
+    "step": "Procedures",
+    "detail": "Surgery (e.g. mid-urethral sling) for refractory stress incontinence."
+   }
+  ],
+  "references": [
+   {
+    "label": "NICE guideline NG123: urinary incontinence and pelvic organ prolapse in women"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "urethral-stricture",
+  "title": "Urethral stricture",
+  "icd10": [
+   "N35.9"
+  ],
+  "icd11": [
+   "GC02"
+  ],
+  "domains": [
+   "urology"
+  ],
+  "population": {
+   "sex": "male",
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Weak/spraying urinary stream, straining, incomplete emptying.",
+   "Recurrent UTI; history of trauma, instrumentation or infection.",
+   "Mostly affects men."
+  ],
+  "redFlags": [
+   "Acute urinary retention.",
+   "Urosepsis.",
+   "Bladder stones or upper tract dilatation."
+  ],
+  "diagnostics": [
+   {
+    "test": "Uroflowmetry and post-void residual",
+    "rationale": "Demonstrates obstructive pattern."
+   },
+   {
+    "test": "Retrograde urethrogram / urethroscopy",
+    "rationale": "Localises and grades the stricture."
+   }
+  ],
+  "management": [
+   {
+    "step": "Relieve retention",
+    "detail": "Catheterise (suprapubic if urethral access fails)."
+   },
+   {
+    "step": "Dilation/urethrotomy",
+    "detail": "For short strictures; high recurrence."
+   },
+   {
+    "step": "Urethroplasty",
+    "detail": "Definitive reconstruction for recurrent/long strictures."
+   }
+  ],
+  "references": [
+   {
+    "label": "EAU guidelines on urethral strictures"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "hydrocele",
+  "title": "Hydrocele",
+  "icd10": [
+   "N43.3"
+  ],
+  "icd11": [
+   "GB04.0"
+  ],
+  "domains": [
+   "urology",
+   "paediatrics"
+  ],
+  "population": {
+   "sex": "male",
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Painless scrotal swelling that transilluminates.",
+   "May be congenital (communicating) in infants or acquired in adults.",
+   "Testis often impalpable within a tense hydrocele."
+  ],
+  "redFlags": [
+   "Underlying testicular tumour or infection (do scrotal ultrasound if testis not palpable).",
+   "Rapidly enlarging or painful swelling.",
+   "Filarial hydrocele in endemic regions."
+  ],
+  "diagnostics": [
+   {
+    "test": "Scrotal examination with transillumination",
+    "rationale": "Distinguishes fluid from solid mass."
+   },
+   {
+    "test": "Scrotal ultrasound",
+    "rationale": "Excludes tumour and confirms diagnosis when testis impalpable."
+   }
+  ],
+  "management": [
+   {
+    "step": "Reassure/observe",
+    "detail": "Most infantile hydroceles resolve by 1-2 years."
+   },
+   {
+    "step": "Surgery",
+    "detail": "Hydrocelectomy for persistent/symptomatic adult hydroceles; herniotomy approach for communicating type in children."
+   },
+   {
+    "step": "Treat cause",
+    "detail": "Address infection or filariasis where relevant."
+   }
+  ],
+  "references": [
+   {
+    "label": "EAU/paediatric urology guidance on hydrocele"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "varicocele",
+  "title": "Varicocele",
+  "icd10": [
+   "I86.1"
+  ],
+  "icd11": [
+   "GB05"
+  ],
+  "domains": [
+   "urology",
+   "mens-health"
+  ],
+  "population": {
+   "sex": "male",
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Scrotal 'bag of worms' swelling, usually left-sided, more prominent on standing.",
+   "Dull aching scrotal discomfort.",
+   "May be associated with subfertility."
+  ],
+  "redFlags": [
+   "Acute-onset, right-sided or non-reducing varicocele (consider retroperitoneal mass/IVC obstruction).",
+   "Testicular atrophy."
+  ],
+  "diagnostics": [
+   {
+    "test": "Examination standing and with Valsalva",
+    "rationale": "Demonstrates venous distension."
+   },
+   {
+    "test": "Scrotal Doppler ultrasound",
+    "rationale": "Confirms reflux and assesses testicular volume."
+   }
+  ],
+  "management": [
+   {
+    "step": "Conservative",
+    "detail": "Reassurance and scrotal support for mild symptoms."
+   },
+   {
+    "step": "Intervention",
+    "detail": "Varicocele repair (surgical or embolisation) for pain, testicular growth arrest, or selected subfertility."
+   }
+  ],
+  "references": [
+   {
+    "label": "EAU guidelines on male infertility (varicocele)"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "subacute-thyroiditis",
+  "title": "Subacute (de Quervain) thyroiditis",
+  "icd10": [
+   "E06.1"
+  ],
+  "icd11": [
+   "5A03.1"
+  ],
+  "domains": [
+   "endocrine"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Painful, tender thyroid following a viral upper respiratory infection.",
+   "Transient thyrotoxicosis then hypothyroidism, often self-limiting.",
+   "Fever and malaise; raised inflammatory markers."
+  ],
+  "redFlags": [
+   "Severe thyrotoxic symptoms.",
+   "Diagnostic uncertainty with infection/abscess."
+  ],
+  "diagnostics": [
+   {
+    "test": "TFTs, ESR/CRP",
+    "rationale": "Thyrotoxicosis with markedly raised ESR."
+   },
+   {
+    "test": "Radioactive iodine uptake (low)",
+    "rationale": "Distinguishes from Graves disease."
+   }
+  ],
+  "management": [
+   {
+    "step": "Analgesia",
+    "detail": "NSAIDs first-line; corticosteroids for severe pain."
+   },
+   {
+    "step": "Beta-blocker",
+    "detail": "For thyrotoxic symptoms (no antithyroid drugs needed)."
+   },
+   {
+    "step": "Monitor",
+    "detail": "Recheck TFTs as most recover; some develop permanent hypothyroidism."
+   }
+  ],
+  "references": [
+   {
+    "label": "ATA guidelines for the diagnosis and management of thyrotoxicosis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "hashimoto-thyroiditis",
+  "title": "Hashimoto thyroiditis",
+  "icd10": [
+   "E06.3"
+  ],
+  "icd11": [
+   "5A03.2"
+  ],
+  "domains": [
+   "endocrine",
+   "immunology"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Autoimmune hypothyroidism with a firm, painless goitre.",
+   "Fatigue, weight gain, cold intolerance, constipation.",
+   "Positive anti-TPO antibodies; commonest cause of hypothyroidism in iodine-replete areas."
+  ],
+  "redFlags": [
+   "Severe hypothyroidism / myxoedema.",
+   "Rapidly enlarging gland (rare lymphoma)."
+  ],
+  "diagnostics": [
+   {
+    "test": "TFTs and anti-TPO antibodies",
+    "rationale": "Confirms autoimmune hypothyroidism."
+   }
+  ],
+  "management": [
+   {
+    "step": "Levothyroxine",
+    "detail": "Replace to normalise TSH; titrate by symptoms and TSH."
+   },
+   {
+    "step": "Monitor in pregnancy",
+    "detail": "Higher requirements; check TFTs each trimester."
+   },
+   {
+    "step": "Screen associations",
+    "detail": "Other autoimmune disease (e.g. coeliac, T1DM)."
+   }
+  ],
+  "references": [
+   {
+    "label": "ATA guidelines for treatment of hypothyroidism"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "thyroid-nodule-goitre",
+  "title": "Thyroid nodule and goitre",
+  "icd10": [
+   "E04.9"
+  ],
+  "icd11": [
+   "5A00"
+  ],
+  "domains": [
+   "endocrine",
+   "ent"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Palpable thyroid nodule or diffuse/nodular goitre.",
+   "Usually euthyroid; may cause compressive symptoms.",
+   "Most nodules are benign."
+  ],
+  "redFlags": [
+   "Rapid growth, hard fixed nodule, hoarseness, cervical nodes (malignancy).",
+   "Stridor or dysphagia from compression.",
+   "Childhood neck irradiation."
+  ],
+  "diagnostics": [
+   {
+    "test": "TSH and thyroid ultrasound",
+    "rationale": "Assesses function and stratifies malignancy risk."
+   },
+   {
+    "test": "Fine-needle aspiration cytology",
+    "rationale": "For sonographically suspicious nodules."
+   }
+  ],
+  "management": [
+   {
+    "step": "Risk-stratify",
+    "detail": "Ultrasound risk scoring directs need for FNA."
+   },
+   {
+    "step": "Treat function",
+    "detail": "Manage hyper-/hypothyroidism if present."
+   },
+   {
+    "step": "Surgery",
+    "detail": "For malignancy, compressive goitre, or significant cosmetic concern."
+   }
+  ],
+  "references": [
+   {
+    "label": "ATA management guidelines for thyroid nodules"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "hypopituitarism",
+  "title": "Hypopituitarism",
+  "icd10": [
+   "E23.0"
+  ],
+  "icd11": [
+   "5A60"
+  ],
+  "domains": [
+   "endocrine"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Symptoms reflecting deficient pituitary hormones (fatigue, hypogonadism, growth failure, hypothyroid, adrenal insufficiency).",
+   "Causes: tumour, surgery, radiotherapy, Sheehan syndrome, trauma.",
+   "May present acutely with adrenal crisis."
+  ],
+  "redFlags": [
+   "Adrenal crisis (hypotension, hyponatraemia).",
+   "Visual field loss (mass effect).",
+   "Pituitary apoplexy."
+  ],
+  "diagnostics": [
+   {
+    "test": "Baseline pituitary hormone panel",
+    "rationale": "Identifies which axes are deficient."
+   },
+   {
+    "test": "Pituitary MRI",
+    "rationale": "Identifies structural cause."
+   }
+  ],
+  "management": [
+   {
+    "step": "Replace deficient hormones",
+    "detail": "Glucocorticoid first (before levothyroxine), then thyroid, sex steroids, growth hormone as indicated."
+   },
+   {
+    "step": "Sick-day rules",
+    "detail": "Educate on stress dosing of steroids and emergency card/injection."
+   },
+   {
+    "step": "Treat cause",
+    "detail": "Surgery/radiotherapy for tumours."
+   }
+  ],
+  "references": [
+   {
+    "label": "Endocrine Society clinical practice guideline on hormonal replacement in hypopituitarism"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "prolactinoma",
+  "title": "Prolactinoma",
+  "icd10": [
+   "D35.2"
+  ],
+  "icd11": [
+   "2F37.1"
+  ],
+  "domains": [
+   "endocrine",
+   "neurosurgery"
+  ],
+  "population": {
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Galactorrhoea, amenorrhoea/oligomenorrhoea, infertility in women.",
+   "Reduced libido and erectile dysfunction in men.",
+   "Macroadenomas: headache and visual field defects."
+  ],
+  "redFlags": [
+   "Bitemporal hemianopia (chiasmal compression).",
+   "Pituitary apoplexy.",
+   "Symptoms of other hormone deficiency."
+  ],
+  "diagnostics": [
+   {
+    "test": "Serum prolactin",
+    "rationale": "Markedly elevated (exclude macroprolactin, drugs, pregnancy)."
+   },
+   {
+    "test": "Pituitary MRI and visual fields",
+    "rationale": "Defines tumour size and mass effect."
+   }
+  ],
+  "management": [
+   {
+    "step": "Dopamine agonist",
+    "detail": "Cabergoline first-line; shrinks tumour and normalises prolactin."
+   },
+   {
+    "step": "Monitor",
+    "detail": "Prolactin and MRI; manage in pregnancy with specialist input."
+   },
+   {
+    "step": "Surgery",
+    "detail": "Trans-sphenoidal surgery if intolerant/resistant or for apoplexy."
+   }
+  ],
+  "references": [
+   {
+    "label": "Endocrine Society clinical practice guideline: diagnosis and treatment of hyperprolactinemia"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "carcinoid-syndrome",
+  "title": "Carcinoid syndrome",
+  "icd10": [
+   "E34.0"
+  ],
+  "icd11": [
+   "5A61"
+  ],
+  "domains": [
+   "endocrine",
+   "oncology",
+   "gastroenterology"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Episodic flushing, secretory diarrhoea, wheeze.",
+   "Usually from a metastatic neuroendocrine tumour (often small bowel).",
+   "Right-sided valvular heart disease in advanced disease."
+  ],
+  "redFlags": [
+   "Carcinoid crisis (profound flushing, hypotension, bronchospasm), often triggered by procedures.",
+   "Carcinoid heart disease.",
+   "Bowel obstruction."
+  ],
+  "diagnostics": [
+   {
+    "test": "24-hour urinary 5-HIAA / plasma chromogranin A",
+    "rationale": "Biochemical markers of serotonin secretion."
+   },
+   {
+    "test": "Cross-sectional and somatostatin receptor imaging",
+    "rationale": "Locates primary and metastases."
+   }
+  ],
+  "management": [
+   {
+    "step": "Somatostatin analogue",
+    "detail": "Octreotide/lanreotide controls symptoms and tumour growth; cover procedures to prevent crisis."
+   },
+   {
+    "step": "Treat tumour",
+    "detail": "Surgery, liver-directed therapy, PRRT in specialist centres."
+   },
+   {
+    "step": "Manage heart disease",
+    "detail": "Echocardiographic surveillance and valve surgery as needed."
+   }
+  ],
+  "references": [
+   {
+    "label": "ENETS consensus guidelines for neuroendocrine tumours"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "gynaecomastia",
+  "title": "Gynaecomastia",
+  "icd10": [
+   "N62"
+  ],
+  "icd11": [
+   "GB23"
+  ],
+  "domains": [
+   "endocrine",
+   "mens-health"
+  ],
+  "population": {
+   "sex": "male",
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Benign proliferation of glandular breast tissue in males.",
+   "Concentric, often tender, subareolar firmness.",
+   "Physiological in puberty/elderly; drugs and hormonal disorders are common causes."
+  ],
+  "redFlags": [
+   "Hard, eccentric, fixed mass or nipple discharge (exclude male breast cancer).",
+   "Rapid progression with systemic features (consider tumour)."
+  ],
+  "diagnostics": [
+   {
+    "test": "Examination and drug history",
+    "rationale": "Distinguishes true gynaecomastia from lipomastia/cancer."
+   },
+   {
+    "test": "Hormonal/liver/renal screen",
+    "rationale": "For pathological or persistent cases."
+   }
+  ],
+  "management": [
+   {
+    "step": "Treat cause",
+    "detail": "Stop offending drugs; manage hypogonadism/hyperthyroidism/liver disease."
+   },
+   {
+    "step": "Reassure",
+    "detail": "Physiological pubertal gynaecomastia usually resolves."
+   },
+   {
+    "step": "Refer",
+    "detail": "Persistent symptomatic cases for medical/surgical options."
+   }
+  ],
+  "references": [
+   {
+    "label": "Clinical practice guidance on evaluation and management of gynaecomastia"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "hirsutism",
+  "title": "Hirsutism",
+  "icd10": [
+   "L68.0"
+  ],
+  "icd11": [
+   "ED90"
+  ],
+  "domains": [
+   "endocrine",
+   "dermatology",
+   "womens-health"
+  ],
+  "population": {
+   "sex": "female",
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Excess terminal hair in a male pattern in women.",
+   "Most commonly due to polycystic ovary syndrome.",
+   "May be accompanied by acne and menstrual irregularity."
+  ],
+  "redFlags": [
+   "Rapid-onset/severe virilisation (clitoromegaly, voice deepening) suggesting androgen-secreting tumour.",
+   "Cushingoid features."
+  ],
+  "diagnostics": [
+   {
+    "test": "Testosterone +/- 17-OHP, and screen for PCOS",
+    "rationale": "Identifies hyperandrogenism and excludes tumour/CAH."
+   }
+  ],
+  "management": [
+   {
+    "step": "Cosmetic measures",
+    "detail": "Eflornithine, depilation, laser."
+   },
+   {
+    "step": "Hormonal therapy",
+    "detail": "Combined oral contraceptive +/- anti-androgen (e.g. spironolactone)."
+   },
+   {
+    "step": "Treat cause",
+    "detail": "Weight loss for PCOS; address underlying disorder."
+   }
+  ],
+  "references": [
+   {
+    "label": "Endocrine Society clinical practice guideline: evaluation and treatment of hirsutism in premenopausal women"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
  }
 ]
