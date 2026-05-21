@@ -40496,5 +40496,563 @@
   "ruleVersion": "0.1.0",
   "reviewStatus": "draft",
   "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "ovarian-cyst",
+  "title": "Ovarian cyst",
+  "icd10": [
+   "N83.2"
+  ],
+  "domains": [
+   "womens-health",
+   "gynaecology"
+  ],
+  "population": {
+   "sex": "female",
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Often asymptomatic, found incidentally; may cause pelvic pain or bloating.",
+   "Functional cysts common in reproductive years.",
+   "May cause menstrual disturbance or pressure symptoms."
+  ],
+  "redFlags": [
+   "Acute severe pain (torsion or rupture).",
+   "Features suggesting malignancy (solid/complex cyst, raised CA-125, ascites, postmenopausal).",
+   "Haemodynamic instability."
+  ],
+  "diagnostics": [
+   {
+    "test": "Pelvic ultrasound",
+    "rationale": "Characterises cyst morphology and size."
+   },
+   {
+    "test": "CA-125 (with RMI in postmenopausal women)",
+    "rationale": "Risk-stratifies for malignancy."
+   }
+  ],
+  "management": [
+   {
+    "step": "Observe simple cysts",
+    "detail": "Most functional cysts resolve; repeat ultrasound."
+   },
+   {
+    "step": "Manage pain/torsion",
+    "detail": "Surgery for suspected torsion, rupture with instability, or large/persistent cysts."
+   },
+   {
+    "step": "Refer suspicious cysts",
+    "detail": "Gynaecology/oncology for complex or high-RMI lesions."
+   }
+  ],
+  "references": [
+   {
+    "label": "RCOG/Green-top guideline on ovarian masses"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "uterine-fibroids",
+  "title": "Uterine fibroids",
+  "icd10": [
+   "D25.9"
+  ],
+  "domains": [
+   "womens-health",
+   "gynaecology"
+  ],
+  "population": {
+   "sex": "female",
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Heavy menstrual bleeding, pelvic pressure and bulk symptoms.",
+   "Subfertility or recurrent pregnancy loss in some cases.",
+   "Enlarged, irregular, firm uterus."
+  ],
+  "redFlags": [
+   "Severe anaemia from heavy bleeding.",
+   "Acute pain (fibroid degeneration/torsion).",
+   "Rapid growth, especially postmenopausal (rare sarcoma)."
+  ],
+  "diagnostics": [
+   {
+    "test": "Pelvic ultrasound",
+    "rationale": "Confirms number, size and location of fibroids."
+   },
+   {
+    "test": "Full blood count",
+    "rationale": "Detects anaemia from menorrhagia."
+   }
+  ],
+  "management": [
+   {
+    "step": "Medical",
+    "detail": "Tranexamic acid/NSAIDs for bleeding; hormonal options (LNG-IUS, COC); GnRH analogues to shrink before surgery."
+   },
+   {
+    "step": "Procedural",
+    "detail": "Uterine artery embolisation, myomectomy (fertility-sparing) or hysterectomy."
+   },
+   {
+    "step": "Correct anaemia",
+    "detail": "Iron replacement."
+   }
+  ],
+  "references": [
+   {
+    "label": "NICE guideline NG88: heavy menstrual bleeding"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "adenomyosis",
+  "title": "Adenomyosis",
+  "icd10": [
+   "N80.0"
+  ],
+  "domains": [
+   "womens-health",
+   "gynaecology"
+  ],
+  "population": {
+   "sex": "female",
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Heavy, painful periods and chronic pelvic pain.",
+   "Bulky, tender, globular uterus.",
+   "Often coexists with endometriosis/fibroids."
+  ],
+  "redFlags": [
+   "Severe anaemia.",
+   "Pain unresponsive to standard therapy."
+  ],
+  "diagnostics": [
+   {
+    "test": "Transvaginal ultrasound / MRI",
+    "rationale": "Shows myometrial features of adenomyosis."
+   }
+  ],
+  "management": [
+   {
+    "step": "Medical",
+    "detail": "LNG-IUS, hormonal contraception, tranexamic acid/NSAIDs."
+   },
+   {
+    "step": "Procedural",
+    "detail": "Uterine artery embolisation or hysterectomy for refractory symptoms (definitive)."
+   }
+  ],
+  "references": [
+   {
+    "label": "Guidance on the management of adenomyosis"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "infertility-workup",
+  "title": "Infertility (subfertility workup)",
+  "icd10": [
+   "N97.9"
+  ],
+  "domains": [
+   "womens-health",
+   "reproductive-medicine"
+  ],
+  "population": {
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Failure to conceive after 12 months of regular unprotected intercourse (6 months if >35).",
+   "Assess both partners; causes are male, ovulatory, tubal or unexplained.",
+   "History of menstrual irregularity, pelvic infection or surgery."
+  ],
+  "redFlags": [
+   "Amenorrhoea with very low/high gonadotrophins.",
+   "Significant systemic disease.",
+   "Severe oligospermia/azoospermia."
+  ],
+  "diagnostics": [
+   {
+    "test": "Mid-luteal progesterone",
+    "rationale": "Confirms ovulation."
+   },
+   {
+    "test": "Semen analysis",
+    "rationale": "Assesses male factor."
+   },
+   {
+    "test": "Tubal patency (HSG/laparoscopy)",
+    "rationale": "Assesses tubal factor."
+   }
+  ],
+  "management": [
+   {
+    "step": "Lifestyle and timing advice",
+    "detail": "Folic acid, smoking/alcohol/weight optimisation, intercourse timing."
+   },
+   {
+    "step": "Treat cause",
+    "detail": "Ovulation induction for anovulation; surgery for tubal disease."
+   },
+   {
+    "step": "Assisted reproduction",
+    "detail": "IUI/IVF/ICSI referral as indicated."
+   }
+  ],
+  "references": [
+   {
+    "label": "NICE guideline CG156: fertility problems"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "recurrent-pregnancy-loss",
+  "title": "Recurrent pregnancy loss",
+  "icd10": [
+   "N96"
+  ],
+  "domains": [
+   "womens-health",
+   "obstetrics",
+   "reproductive-medicine"
+  ],
+  "population": {
+   "sex": "female",
+   "pregnancyApplicable": true
+  },
+  "presentation": [
+   "Three or more consecutive miscarriages (or recurrent early losses).",
+   "Often no identifiable cause.",
+   "Causes: antiphospholipid syndrome, uterine anomaly, parental chromosomal, endocrine."
+  ],
+  "redFlags": [
+   "Second-trimester losses (cervical insufficiency/structural causes).",
+   "Features of thrombophilia/antiphospholipid syndrome."
+  ],
+  "diagnostics": [
+   {
+    "test": "Antiphospholipid antibodies",
+    "rationale": "Treatable cause (test twice, 12 weeks apart)."
+   },
+   {
+    "test": "Pelvic ultrasound +/- parental karyotype/thyroid",
+    "rationale": "Identifies structural/genetic/endocrine causes."
+   }
+  ],
+  "management": [
+   {
+    "step": "Treat identified cause",
+    "detail": "Aspirin + LMWH for antiphospholipid syndrome; correct thyroid/structural issues."
+   },
+   {
+    "step": "Supportive care",
+    "detail": "Early reassurance scans and emotional support."
+   },
+   {
+    "step": "Specialist referral",
+    "detail": "Recurrent miscarriage clinic."
+   }
+  ],
+  "references": [
+   {
+    "label": "RCOG Green-top guideline on recurrent miscarriage / ESHRE guideline"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "premature-ovarian-insufficiency",
+  "title": "Premature ovarian insufficiency",
+  "icd10": [
+   "E28.3"
+  ],
+  "domains": [
+   "womens-health",
+   "endocrine",
+   "reproductive-medicine"
+  ],
+  "population": {
+   "sex": "female",
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Amenorrhoea/oligomenorrhoea with menopausal symptoms before age 40.",
+   "Hot flushes, vaginal dryness, reduced fertility.",
+   "Raised FSH on two occasions with low oestradiol."
+  ],
+  "redFlags": [
+   "Associated autoimmune disease (e.g. adrenal insufficiency).",
+   "Significant bone loss/cardiovascular risk if untreated.",
+   "Turner syndrome features."
+  ],
+  "diagnostics": [
+   {
+    "test": "FSH (x2, 4-6 weeks apart) and oestradiol",
+    "rationale": "Confirms ovarian insufficiency."
+   },
+   {
+    "test": "Karyotype, FMR1 and autoantibodies",
+    "rationale": "Identifies cause in younger women."
+   }
+  ],
+  "management": [
+   {
+    "step": "Hormone replacement",
+    "detail": "Oestrogen (with progestogen if uterus present) until natural menopause age - bone/cardiovascular protection."
+   },
+   {
+    "step": "Fertility counselling",
+    "detail": "Discuss reduced fertility and oocyte donation options."
+   },
+   {
+    "step": "Screen associations",
+    "detail": "Bone density and autoimmune screening."
+   }
+  ],
+  "references": [
+   {
+    "label": "ESHRE guideline on the management of premature ovarian insufficiency"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "ashermans-syndrome",
+  "title": "Asherman syndrome",
+  "icd10": [
+   "N85.6"
+  ],
+  "domains": [
+   "womens-health",
+   "gynaecology",
+   "reproductive-medicine"
+  ],
+  "population": {
+   "sex": "female",
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Intrauterine adhesions causing light/absent periods after uterine instrumentation.",
+   "Subfertility or recurrent pregnancy loss.",
+   "Often follows dilatation and curettage, especially postpartum."
+  ],
+  "redFlags": [
+   "Cyclical pelvic pain with amenorrhoea (haematometra).",
+   "Significant subfertility."
+  ],
+  "diagnostics": [
+   {
+    "test": "Hysteroscopy",
+    "rationale": "Diagnostic gold standard; visualises and treats adhesions."
+   },
+   {
+    "test": "Saline sonohysterography/HSG",
+    "rationale": "Demonstrates adhesions."
+   }
+  ],
+  "management": [
+   {
+    "step": "Hysteroscopic adhesiolysis",
+    "detail": "Surgical division of adhesions."
+   },
+   {
+    "step": "Prevent re-adhesion",
+    "detail": "Oestrogen therapy +/- intrauterine barrier post-operatively."
+   },
+   {
+    "step": "Prevention",
+    "detail": "Minimise aggressive uterine instrumentation."
+   }
+  ],
+  "references": [
+   {
+    "label": "Guidance on the management of intrauterine adhesions"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "primary-dysmenorrhoea",
+  "title": "Primary dysmenorrhoea",
+  "icd10": [
+   "N94.4"
+  ],
+  "domains": [
+   "womens-health",
+   "gynaecology"
+  ],
+  "population": {
+   "sex": "female",
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Crampy lower abdominal pain with menstruation, no underlying pathology.",
+   "Onset soon after menarche; pain at or just before onset of bleeding.",
+   "May radiate to back/thighs with nausea."
+  ],
+  "redFlags": [
+   "Onset later in life or progressively worsening (consider secondary causes: endometriosis, fibroids, PID).",
+   "Pain unrelated to the cycle.",
+   "Abnormal bleeding/discharge."
+  ],
+  "diagnostics": [
+   {
+    "test": "Clinical assessment",
+    "rationale": "Diagnosis is clinical; exclude secondary causes if red flags."
+   }
+  ],
+  "management": [
+   {
+    "step": "NSAIDs",
+    "detail": "First-line analgesia, started at symptom onset."
+   },
+   {
+    "step": "Hormonal contraception",
+    "detail": "Combined pill or LNG-IUS to reduce pain."
+   },
+   {
+    "step": "Self-care",
+    "detail": "Heat, exercise; reassess if not responding."
+   }
+  ],
+  "references": [
+   {
+    "label": "NICE CKS on dysmenorrhoea"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "bartholin-cyst-abscess",
+  "title": "Bartholin cyst and abscess",
+  "icd10": [
+   "N75.1"
+  ],
+  "domains": [
+   "womens-health",
+   "gynaecology",
+   "emergency"
+  ],
+  "population": {
+   "sex": "female",
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Unilateral labial swelling; painless cyst or painful abscess.",
+   "Abscess: hot, tender, fluctuant mass at the posterior vestibule.",
+   "Difficulty sitting/walking when large."
+  ],
+  "redFlags": [
+   "Spreading cellulitis/sepsis.",
+   "Recurrent or solid mass in women over 40 (consider biopsy to exclude carcinoma)."
+  ],
+  "diagnostics": [
+   {
+    "test": "Clinical examination",
+    "rationale": "Diagnosis is clinical."
+   },
+   {
+    "test": "Swab for STI if abscess",
+    "rationale": "Consider gonorrhoea/chlamydia."
+   }
+  ],
+  "management": [
+   {
+    "step": "Asymptomatic cyst",
+    "detail": "No treatment needed."
+   },
+   {
+    "step": "Abscess drainage",
+    "detail": "Incision and drainage with Word catheter or marsupialisation to reduce recurrence."
+   },
+   {
+    "step": "Antibiotics",
+    "detail": "For surrounding cellulitis or systemic features; treat STI if identified."
+   }
+  ],
+  "references": [
+   {
+    "label": "Gynaecology guidance on Bartholin gland cyst and abscess"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slug": "pelvic-organ-prolapse",
+  "title": "Pelvic organ prolapse",
+  "icd10": [
+   "N81.9"
+  ],
+  "domains": [
+   "womens-health",
+   "gynaecology",
+   "urology"
+  ],
+  "population": {
+   "sex": "female",
+   "pregnancyApplicable": false
+  },
+  "presentation": [
+   "Sensation of a vaginal bulge or 'something coming down'.",
+   "Pelvic pressure, urinary, bowel or sexual dysfunction.",
+   "Worse on standing/straining; risk factors parity, ageing, obesity."
+  ],
+  "redFlags": [
+   "Ulcerated/bleeding prolapse.",
+   "Urinary retention or obstructed defecation.",
+   "Renal impairment from outflow obstruction (procidentia)."
+  ],
+  "diagnostics": [
+   {
+    "test": "Pelvic examination (POP-Q)",
+    "rationale": "Quantifies the compartment and degree of prolapse."
+   }
+  ],
+  "management": [
+   {
+    "step": "Conservative",
+    "detail": "Pelvic floor muscle training, weight loss, treat constipation."
+   },
+   {
+    "step": "Pessary",
+    "detail": "Vaginal pessary for support, especially if surgery unsuitable."
+   },
+   {
+    "step": "Surgery",
+    "detail": "Reconstructive or obliterative surgery for symptomatic prolapse."
+   }
+  ],
+  "references": [
+   {
+    "label": "NICE guideline NG123: urinary incontinence and pelvic organ prolapse in women"
+   }
+  ],
+  "ruleVersion": "0.1.0",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
  }
 ]
