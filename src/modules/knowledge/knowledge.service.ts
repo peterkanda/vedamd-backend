@@ -125,6 +125,10 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.drugDiseaseInteractions;
   }
 
+  getImmunizationSchedule() {
+    return this.bundle.immunizationSchedule;
+  }
+
   getTerminology() {
     return this.bundle.terminology;
   }
