@@ -8,6 +8,7 @@ import type { ClinicalScore } from '../clinical-scores/clinical-scores.types';
 import type { PgxGuideline } from '../pharmacogenomics/pharmacogenomics.types';
 import type { DrugDiseaseInteraction } from '../drug-disease/drug-disease.types';
 import type { ImmunizationScheduleEntry } from '../immunization/immunization.types';
+import type { AllergyCrossReactivity } from '../allergy/allergy.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import { nonApprovedCount, validateBundle } from './bundle-validator';
 import type {
@@ -136,6 +137,8 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
       (parsed['drug-disease-interactions.json'] as DrugDiseaseInteraction[] | undefined) ?? [],
     immunizationSchedule:
       (parsed['immunization-schedule.json'] as ImmunizationScheduleEntry[] | undefined) ?? [],
+    allergyCrossReactivity:
+      (parsed['allergy-cross-reactivity.json'] as AllergyCrossReactivity[] | undefined) ?? [],
     terminology:
       (parsed['terminology.json'] as TerminologyBundle | undefined) ??
       ({ version: '0.0.0-absent', codeSystems: [], valueSets: [] } as TerminologyBundle),
@@ -207,6 +210,7 @@ export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBun
     pgxGuidelines: [],
     drugDiseaseInteractions: [],
     immunizationSchedule: [],
+    allergyCrossReactivity: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }
@@ -245,6 +249,7 @@ function failOrReturn(
     pgxGuidelines: [],
     drugDiseaseInteractions: [],
     immunizationSchedule: [],
+    allergyCrossReactivity: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }

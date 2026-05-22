@@ -5,6 +5,7 @@ import type { ClinicalScore } from '../clinical-scores/clinical-scores.types';
 import type { PgxGuideline } from '../pharmacogenomics/pharmacogenomics.types';
 import type { DrugDiseaseInteraction } from '../drug-disease/drug-disease.types';
 import type { ImmunizationScheduleEntry } from '../immunization/immunization.types';
+import type { AllergyCrossReactivity } from '../allergy/allergy.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import type { ContentStats, ValidationViolation } from './bundle-validator';
 
@@ -61,6 +62,8 @@ export interface LoadedBundle {
   drugDiseaseInteractions: DrugDiseaseInteraction[];
   /** Optional — bundles signed before immunization-schedule.json existed return []. */
   immunizationSchedule: ImmunizationScheduleEntry[];
+  /** Optional — bundles signed before allergy-cross-reactivity.json existed return []. */
+  allergyCrossReactivity: AllergyCrossReactivity[];
   /** Optional — bundles signed before terminology.json existed return an empty TerminologyBundle. */
   terminology: TerminologyBundle;
 }

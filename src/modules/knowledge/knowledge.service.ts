@@ -129,6 +129,10 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.immunizationSchedule;
   }
 
+  getAllergyCrossReactivity() {
+    return this.bundle.allergyCrossReactivity;
+  }
+
   getTerminology() {
     return this.bundle.terminology;
   }

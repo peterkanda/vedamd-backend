@@ -39,6 +39,7 @@ function copyBundle(): string {
     'pharmacogenomics.json',
     'drug-disease-interactions.json',
     'immunization-schedule.json',
+    'allergy-cross-reactivity.json',
   ]) {
     copyFileSync(resolve(REAL_BUNDLE, f), resolve(dir, f));
   }
