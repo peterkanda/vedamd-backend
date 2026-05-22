@@ -117,6 +117,10 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.clinicalScores;
   }
 
+  getPgxGuidelines() {
+    return this.bundle.pgxGuidelines;
+  }
+
   getTerminology() {
     return this.bundle.terminology;
   }

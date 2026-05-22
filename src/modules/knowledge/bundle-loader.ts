@@ -5,6 +5,7 @@ import type { CdsRule, ConditionGuidance } from '../conditions/conditions.types'
 import type { DrugInteraction, DrugRecord } from '../drugs/drugs.types';
 import type { ProcedureGuidance } from '../procedures/procedures.types';
 import type { ClinicalScore } from '../clinical-scores/clinical-scores.types';
+import type { PgxGuideline } from '../pharmacogenomics/pharmacogenomics.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import { nonApprovedCount, validateBundle } from './bundle-validator';
 import type {
@@ -128,6 +129,7 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
     procedures: parsed['procedures.json'] as ProcedureGuidance[],
     cdsRules: parsed['cds-rules.json'] as CdsRule[],
     clinicalScores: (parsed['clinical-scores.json'] as ClinicalScore[] | undefined) ?? [],
+    pgxGuidelines: (parsed['pharmacogenomics.json'] as PgxGuideline[] | undefined) ?? [],
     terminology:
       (parsed['terminology.json'] as TerminologyBundle | undefined) ??
       ({ version: '0.0.0-absent', codeSystems: [], valueSets: [] } as TerminologyBundle),
@@ -196,6 +198,7 @@ export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBun
     procedures: [],
     cdsRules: [],
     clinicalScores: [],
+    pgxGuidelines: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }
@@ -231,6 +234,7 @@ function failOrReturn(
     procedures: [],
     cdsRules: [],
     clinicalScores: [],
+    pgxGuidelines: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }

@@ -1,0 +1,304 @@
+[
+  {
+    "slug": "hla-b5701-abacavir",
+    "gene": "HLA-B",
+    "variant": "HLA-B*57:01",
+    "drugSlug": "abacavir",
+    "drug": "Abacavir",
+    "domains": [
+      "hiv",
+      "pharmacogenomics",
+      "immunology"
+    ],
+    "summary": "HLA-B*57:01 positivity confers high risk of potentially fatal abacavir hypersensitivity reaction.",
+    "phenotypes": [
+      {
+        "phenotype": "HLA-B*57:01 negative",
+        "implication": "Low/normal risk of abacavir hypersensitivity.",
+        "recommendation": "Abacavir may be used per standard dosing."
+      },
+      {
+        "phenotype": "HLA-B*57:01 positive",
+        "implication": "Significantly increased risk of hypersensitivity.",
+        "recommendation": "Do NOT prescribe abacavir; choose an alternative agent.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Mandatory before starting abacavir.",
+    "references": [
+      {
+        "label": "CPIC Guideline for abacavir and HLA-B"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tpmt-nudt15-thiopurines",
+    "gene": "TPMT / NUDT15",
+    "variant": "TPMT and NUDT15 activity alleles",
+    "drugSlug": "azathioprine",
+    "drug": "Azathioprine (and mercaptopurine)",
+    "domains": [
+      "pharmacogenomics",
+      "haematology",
+      "gastroenterology",
+      "rheumatology"
+    ],
+    "summary": "Reduced TPMT or NUDT15 activity markedly increases the risk of life-threatening thiopurine-induced myelosuppression.",
+    "phenotypes": [
+      {
+        "phenotype": "Normal metaboliser (both genes)",
+        "implication": "Normal thiopurine inactivation.",
+        "recommendation": "Standard starting dose."
+      },
+      {
+        "phenotype": "Intermediate metaboliser",
+        "implication": "Increased active metabolite levels.",
+        "recommendation": "Reduce starting dose (e.g. 30–80%); titrate to tolerance with monitoring.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Poor metaboliser",
+        "implication": "Very high risk of severe myelosuppression.",
+        "recommendation": "Drastically reduce dose or use an alternative immunosuppressant.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Test TPMT and NUDT15 before initiating thiopurines; continue FBC monitoring regardless.",
+    "references": [
+      {
+        "label": "CPIC Guideline for thiopurines and TPMT/NUDT15"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2c19-clopidogrel",
+    "gene": "CYP2C19",
+    "variant": "CYP2C19 loss-of-function alleles (*2, *3)",
+    "drugSlug": "clopidogrel",
+    "drug": "Clopidogrel",
+    "domains": [
+      "pharmacogenomics",
+      "cardiology"
+    ],
+    "summary": "CYP2C19 loss-of-function reduces conversion of clopidogrel to its active metabolite, lowering antiplatelet effect and increasing thrombotic risk (notably after PCI/ACS).",
+    "phenotypes": [
+      {
+        "phenotype": "Normal/rapid metaboliser",
+        "implication": "Normal active metabolite formation.",
+        "recommendation": "Clopidogrel at standard dose."
+      },
+      {
+        "phenotype": "Intermediate metaboliser",
+        "implication": "Reduced active metabolite; possible diminished response.",
+        "recommendation": "Consider an alternative antiplatelet (e.g. prasugrel or ticagrelor) where appropriate.",
+        "strength": "Moderate"
+      },
+      {
+        "phenotype": "Poor metaboliser",
+        "implication": "Significantly reduced response; higher event risk after PCI/ACS.",
+        "recommendation": "Use an alternative antiplatelet (prasugrel/ticagrelor) unless contraindicated.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Consider in ACS/PCI where antiplatelet response is critical.",
+    "references": [
+      {
+        "label": "CPIC Guideline for clopidogrel and CYP2C19"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "dpyd-fluoropyrimidines",
+    "gene": "DPYD",
+    "variant": "DPYD no-function/decreased-function alleles",
+    "drugSlug": null,
+    "drug": "Fluoropyrimidines (5-fluorouracil, capecitabine)",
+    "domains": [
+      "pharmacogenomics",
+      "oncology"
+    ],
+    "summary": "DPYD deficiency impairs fluoropyrimidine catabolism, causing severe (potentially fatal) toxicity — mucositis, myelosuppression, diarrhoea, neurotoxicity.",
+    "phenotypes": [
+      {
+        "phenotype": "Normal metaboliser",
+        "implication": "Normal DPD activity.",
+        "recommendation": "Standard dosing."
+      },
+      {
+        "phenotype": "Intermediate metaboliser",
+        "implication": "Reduced DPD activity; increased toxicity risk.",
+        "recommendation": "Reduce starting dose (e.g. 50%) and titrate to toxicity/effect.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Poor metaboliser",
+        "implication": "Very high risk of severe toxicity.",
+        "recommendation": "Avoid fluoropyrimidines; select an alternative regimen.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "DPYD genotyping recommended before fluoropyrimidine chemotherapy in many guidelines.",
+    "references": [
+      {
+        "label": "CPIC Guideline for fluoropyrimidines and DPYD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "g6pd-oxidant-drugs",
+    "gene": "G6PD",
+    "variant": "G6PD deficiency variants (X-linked)",
+    "drugSlug": "primaquine",
+    "drug": "Oxidant drugs (primaquine, tafenoquine, dapsone, rasburicase, nitrofurantoin, sulfonamides)",
+    "domains": [
+      "pharmacogenomics",
+      "haematology",
+      "infectious-disease"
+    ],
+    "summary": "G6PD deficiency predisposes to acute haemolytic anaemia when exposed to oxidant drugs; severity varies with the deficiency class.",
+    "phenotypes": [
+      {
+        "phenotype": "Normal (G6PD replete)",
+        "implication": "Normal red-cell oxidative defence.",
+        "recommendation": "Oxidant drugs may be used per standard guidance."
+      },
+      {
+        "phenotype": "Deficient",
+        "implication": "High risk of acute haemolysis with oxidant exposure.",
+        "recommendation": "Avoid oxidant drugs, or use only with explicit dose adjustment and haemolysis monitoring per drug-specific guidance (e.g. primaquine/tafenoquine require documented normal G6PD).",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Quantitative G6PD testing before primaquine/tafenoquine and before rasburicase.",
+    "references": [
+      {
+        "label": "CPIC Guideline for rasburicase and G6PD; WHO malaria guidance on 8-aminoquinolines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hla-b1502-carbamazepine",
+    "gene": "HLA-B",
+    "variant": "HLA-B*15:02",
+    "drugSlug": "carbamazepine",
+    "drug": "Carbamazepine (and oxcarbazepine/phenytoin)",
+    "domains": [
+      "pharmacogenomics",
+      "neurology",
+      "dermatology"
+    ],
+    "summary": "HLA-B*15:02 (common in some Southeast/East Asian populations) confers markedly increased risk of carbamazepine-induced Stevens-Johnson syndrome / toxic epidermal necrolysis.",
+    "phenotypes": [
+      {
+        "phenotype": "HLA-B*15:02 negative",
+        "implication": "Lower SJS/TEN risk from this allele.",
+        "recommendation": "Carbamazepine may be used per standard guidance (HLA-A*31:01 separately modifies risk)."
+      },
+      {
+        "phenotype": "HLA-B*15:02 positive",
+        "implication": "High risk of SJS/TEN.",
+        "recommendation": "Do NOT use carbamazepine (or oxcarbazepine/phenytoin) in carbamazepine-naive patients; choose an alternative.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Screen in at-risk ancestries before starting carbamazepine.",
+    "references": [
+      {
+        "label": "CPIC Guideline for carbamazepine and HLA-B"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2c9-vkorc1-warfarin",
+    "gene": "CYP2C9 / VKORC1",
+    "variant": "CYP2C9 variants and VKORC1 -1639G>A",
+    "drugSlug": "warfarin",
+    "drug": "Warfarin",
+    "domains": [
+      "pharmacogenomics",
+      "haematology",
+      "cardiology"
+    ],
+    "summary": "CYP2C9 and VKORC1 genotype substantially influence warfarin dose requirements and bleeding risk during initiation.",
+    "phenotypes": [
+      {
+        "phenotype": "Normal sensitivity",
+        "implication": "Typical dose requirement.",
+        "recommendation": "Standard initiation with INR-guided titration."
+      },
+      {
+        "phenotype": "Increased sensitivity (variant CYP2C9 and/or VKORC1)",
+        "implication": "Lower dose requirement; higher early bleeding risk.",
+        "recommendation": "Use genotype-guided/lower starting dose where available; intensify INR monitoring.",
+        "strength": "Moderate"
+      }
+    ],
+    "testing": "Optional; genotype-guided dosing algorithms exist but warfarin remains INR-titrated regardless.",
+    "references": [
+      {
+        "label": "CPIC Guideline for warfarin and CYP2C9/VKORC1"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2d6-codeine-tramadol",
+    "gene": "CYP2D6",
+    "variant": "CYP2D6 activity (poor to ultrarapid metaboliser)",
+    "drugSlug": "codeine",
+    "drug": "Codeine (and tramadol)",
+    "domains": [
+      "pharmacogenomics",
+      "pain"
+    ],
+    "summary": "CYP2D6 converts codeine/tramadol to active opioid metabolites. Ultrarapid metabolisers risk life-threatening opioid toxicity; poor metabolisers get inadequate analgesia.",
+    "phenotypes": [
+      {
+        "phenotype": "Normal metaboliser",
+        "implication": "Expected analgesic response.",
+        "recommendation": "Standard dosing."
+      },
+      {
+        "phenotype": "Ultrarapid metaboliser",
+        "implication": "Excessive active metabolite; risk of respiratory depression (and in breastfeeding, neonatal toxicity).",
+        "recommendation": "Avoid codeine/tramadol; use an alternative analgesic.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Poor metaboliser",
+        "implication": "Reduced active metabolite; poor analgesia.",
+        "recommendation": "Avoid codeine/tramadol for analgesia; use an alternative.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Consider where opioid response is unexpected; codeine contraindicated in children and breastfeeding regardless.",
+    "references": [
+      {
+        "label": "CPIC Guideline for codeine and CYP2D6"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  }
+]
