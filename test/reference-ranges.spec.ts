@@ -20,13 +20,21 @@ describe('ReferenceRangesService', () => {
     expect(list.map((r) => r.slug)).toContain('potassium');
   });
 
-  it('returns full bounds and units from get()', () => {
+  it('returns full bounds, units and a property-matched LOINC code from get()', () => {
     const k = svc.get('potassium');
     expect(k).not.toBeNull();
     expect(k!.low).toBe(3.5);
     expect(k!.high).toBe(5.0);
     expect(k!.unit).toBe('mmol/L');
+    expect(k!.loinc).toBe('2823-3');
     expect(k!.references.length).toBeGreaterThan(0);
+  });
+
+  it('uses the moles/volume LOINC variant for SI-unit chemistry analytes', () => {
+    // Magnesium reported in mmol/L must use the substance-concentration code,
+    // not the mass-concentration variant.
+    expect(svc.get('magnesium')!.loinc).toBe('2601-3');
+    expect(svc.get('creatinine-male')!.loinc).toBe('14682-9');
   });
 
   it('filters by category', () => {

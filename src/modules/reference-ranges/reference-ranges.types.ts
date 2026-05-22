@@ -21,6 +21,12 @@ export interface ReferenceRange extends ReferenceRangeSummary, ContentReviewMeta
   high: number | null;
   /** UCUM unit string (e.g. "mmol/L", "10*9/L", "mm[Hg]"). */
   unit: string;
+  /**
+   * LOINC code for the analyte, property-matched to the unit (e.g. the
+   * moles/volume LOINC for SI-unit chemistry). Present only where a code
+   * has been verified; absent where no property-matched code was confirmed.
+   */
+  loinc?: string;
   notes?: string | null;
   references: { label: string; url?: string }[];
 }
