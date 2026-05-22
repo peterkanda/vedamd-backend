@@ -15,6 +15,7 @@ import { PharmacogenomicsModule } from './modules/pharmacogenomics/pharmacogenom
 import { DrugDiseaseModule } from './modules/drug-disease/drug-disease.module';
 import { ImmunizationModule } from './modules/immunization/immunization.module';
 import { AllergyModule } from './modules/allergy/allergy.module';
+import { NotifiableModule } from './modules/notifiable/notifiable.module';
 import { LlmModule } from './modules/llm/llm.module';
 import { AuditModule } from './modules/audit/audit.module';
 import { BundlesModule } from './modules/bundles/bundles.module';
@@ -46,6 +47,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     DrugDiseaseModule,
     ImmunizationModule,
     AllergyModule,
+    NotifiableModule,
     LlmModule,
     AuditModule,
     BundlesModule,
