@@ -1,0 +1,447 @@
+[
+  {
+    "slug": "nsaid--chronic-kidney-disease",
+    "drugSlug": "ibuprofen",
+    "drug": "NSAIDs (e.g. ibuprofen)",
+    "condition": "Chronic kidney disease",
+    "conditionSlug": "chronic-kidney-disease",
+    "severity": "caution",
+    "mechanism": "NSAIDs reduce prostaglandin-mediated renal perfusion, worsening GFR and causing fluid/sodium retention and hyperkalaemia.",
+    "recommendation": "Avoid in moderate-to-severe CKD; if unavoidable use the lowest dose briefly with renal monitoring.",
+    "references": [
+      {
+        "label": "KDIGO CKD guidance; BNF"
+      }
+    ],
+    "drugClass": "nsaid",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "nsaid--heart-failure-chronic",
+    "drugSlug": "ibuprofen",
+    "drug": "NSAIDs (e.g. ibuprofen)",
+    "condition": "Heart failure",
+    "conditionSlug": "heart-failure-chronic",
+    "severity": "caution",
+    "mechanism": "Sodium and fluid retention plus reduced renal perfusion can precipitate decompensation and blunt diuretic effect.",
+    "recommendation": "Avoid NSAIDs in heart failure; use paracetamol for analgesia.",
+    "references": [
+      {
+        "label": "ESC heart failure guidelines"
+      }
+    ],
+    "drugClass": "nsaid",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "nsaid--peptic-ulcer-disease-adult",
+    "drugSlug": "ibuprofen",
+    "drug": "NSAIDs (e.g. ibuprofen)",
+    "condition": "Peptic ulcer disease",
+    "conditionSlug": "peptic-ulcer-disease-adult",
+    "severity": "caution",
+    "mechanism": "COX-1 inhibition impairs gastroprotective prostaglandins, increasing ulceration and GI bleeding risk.",
+    "recommendation": "Avoid in active or prior peptic ulcer disease; if essential, co-prescribe a proton-pump inhibitor.",
+    "references": [
+      {
+        "label": "BNF; NICE dyspepsia/peptic ulcer guidance"
+      }
+    ],
+    "drugClass": "nsaid",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "metformin--acute-kidney-injury",
+    "drugSlug": "metformin",
+    "drug": "Metformin",
+    "condition": "Acute kidney injury",
+    "conditionSlug": "acute-kidney-injury",
+    "severity": "contraindicated",
+    "mechanism": "Reduced renal clearance causes metformin accumulation, raising the risk of lactic acidosis.",
+    "recommendation": "Withhold metformin in AKI and in severe CKD (eGFR <30); reassess before restarting.",
+    "references": [
+      {
+        "label": "BNF; KDIGO diabetes in CKD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "metformin--heart-failure-chronic",
+    "drugSlug": "metformin",
+    "drug": "Metformin",
+    "condition": "Decompensated heart failure",
+    "conditionSlug": "heart-failure-chronic",
+    "severity": "caution",
+    "mechanism": "Tissue hypoperfusion/hypoxia in acute decompensation increases lactic acidosis risk.",
+    "recommendation": "Avoid during acute decompensation/hypoxia; stable chronic heart failure with preserved renal function is not a contraindication.",
+    "references": [
+      {
+        "label": "BNF"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "non-selective-beta-blocker--asthma-chronic",
+    "drugSlug": "propranolol",
+    "drug": "Non-selective beta-blockers (e.g. propranolol)",
+    "condition": "Asthma",
+    "conditionSlug": "asthma-chronic",
+    "severity": "contraindicated",
+    "mechanism": "Beta-2 blockade can precipitate severe bronchospasm.",
+    "recommendation": "Avoid non-selective beta-blockers in asthma; a cardioselective agent may be used cautiously when strongly indicated.",
+    "references": [
+      {
+        "label": "BNF; GINA"
+      }
+    ],
+    "drugClass": "non-selective-beta-blocker",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ace-inhibitor-arb--pregnancy",
+    "drugSlug": "lisinopril",
+    "drug": "ACE inhibitors / ARBs",
+    "condition": "Pregnancy",
+    "conditionSlug": null,
+    "severity": "contraindicated",
+    "mechanism": "Foetotoxic in the 2nd/3rd trimester — oligohydramnios, renal dysgenesis, skull defects.",
+    "recommendation": "Stop ACE inhibitors/ARBs before or as soon as pregnancy is confirmed; switch to a pregnancy-safe antihypertensive (e.g. labetalol, methyldopa, nifedipine).",
+    "references": [
+      {
+        "label": "NICE hypertension in pregnancy"
+      }
+    ],
+    "drugClass": "ace-inhibitor-arb",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ace-inhibitor-arb--hyperkalaemia-emergency",
+    "drugSlug": "lisinopril",
+    "drug": "ACE inhibitors / ARBs",
+    "condition": "Hyperkalaemia",
+    "conditionSlug": "hyperkalaemia-emergency",
+    "severity": "caution",
+    "mechanism": "Reduced aldosterone lowers potassium excretion, worsening hyperkalaemia.",
+    "recommendation": "Avoid starting in significant hyperkalaemia; monitor potassium and renal function after initiation/dose change.",
+    "references": [
+      {
+        "label": "BNF"
+      }
+    ],
+    "drugClass": "ace-inhibitor-arb",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "spironolactone--hyperkalaemia-emergency",
+    "drugSlug": "spironolactone",
+    "drug": "Spironolactone (MRA)",
+    "condition": "Hyperkalaemia",
+    "conditionSlug": "hyperkalaemia-emergency",
+    "severity": "contraindicated",
+    "mechanism": "Aldosterone antagonism reduces potassium excretion, risking dangerous hyperkalaemia, especially with CKD or RAAS inhibitors.",
+    "recommendation": "Avoid in significant hyperkalaemia or severe renal impairment; monitor potassium closely.",
+    "references": [
+      {
+        "label": "ESC heart failure guidelines; BNF"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "nitrofurantoin--chronic-kidney-disease",
+    "drugSlug": "nitrofurantoin",
+    "drug": "Nitrofurantoin",
+    "condition": "Chronic kidney disease",
+    "conditionSlug": "chronic-kidney-disease",
+    "severity": "caution",
+    "mechanism": "Inadequate urinary concentration when eGFR is low reduces efficacy and increases systemic toxicity.",
+    "recommendation": "Avoid if eGFR <45 mL/min (short-course use with caution at 30–44 may be considered per local guidance).",
+    "references": [
+      {
+        "label": "BNF; SmPC"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "nitrofurantoin--g6pd-deficiency",
+    "drugSlug": "nitrofurantoin",
+    "drug": "Nitrofurantoin",
+    "condition": "G6PD deficiency",
+    "conditionSlug": "g6pd-deficiency",
+    "severity": "caution",
+    "mechanism": "Oxidant stress can precipitate acute haemolysis in G6PD-deficient patients.",
+    "recommendation": "Avoid in known G6PD deficiency; choose an alternative urinary antimicrobial.",
+    "references": [
+      {
+        "label": "BNF"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "pioglitazone--heart-failure-chronic",
+    "drugSlug": "pioglitazone",
+    "drug": "Pioglitazone (thiazolidinedione)",
+    "condition": "Heart failure",
+    "conditionSlug": "heart-failure-chronic",
+    "severity": "contraindicated",
+    "mechanism": "Causes fluid retention that can precipitate or worsen heart failure.",
+    "recommendation": "Do not use in heart failure or a history of heart failure.",
+    "references": [
+      {
+        "label": "BNF; SmPC"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "sumatriptan--stable-angina",
+    "drugSlug": "sumatriptan",
+    "drug": "Triptans (e.g. sumatriptan)",
+    "condition": "Ischaemic heart disease",
+    "conditionSlug": "stable-angina",
+    "severity": "contraindicated",
+    "mechanism": "5-HT1B-mediated vasoconstriction can provoke coronary spasm and ischaemia.",
+    "recommendation": "Avoid triptans in established ischaemic heart disease, uncontrolled hypertension or prior MI.",
+    "references": [
+      {
+        "label": "BNF; NICE headaches"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "metoclopramide--parkinson-disease",
+    "drugSlug": "metoclopramide",
+    "drug": "Metoclopramide",
+    "condition": "Parkinson disease",
+    "conditionSlug": "parkinson-disease",
+    "severity": "contraindicated",
+    "mechanism": "Central D2 antagonism worsens parkinsonian motor symptoms and antagonises dopaminergic therapy.",
+    "recommendation": "Avoid in Parkinson disease; use domperidone (peripheral D2 antagonist) or ondansetron for nausea.",
+    "references": [
+      {
+        "label": "BNF"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "antipsychotic--dementia-alzheimer",
+    "drugSlug": "haloperidol",
+    "drug": "Antipsychotics",
+    "condition": "Dementia (elderly)",
+    "conditionSlug": "dementia-alzheimer",
+    "severity": "caution",
+    "mechanism": "Associated with increased risk of stroke and all-cause mortality in older people with dementia.",
+    "recommendation": "Avoid routine use; reserve for severe distress/risk at the lowest dose for the shortest time after non-drug measures.",
+    "references": [
+      {
+        "label": "FDA/MHRA warnings; NICE dementia"
+      }
+    ],
+    "drugClass": "antipsychotic",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "non-dhp-ccb--heart-failure-chronic",
+    "drugSlug": "verapamil",
+    "drug": "Rate-limiting calcium-channel blockers (verapamil, diltiazem)",
+    "condition": "Heart failure with reduced ejection fraction",
+    "conditionSlug": "heart-failure-chronic",
+    "severity": "contraindicated",
+    "mechanism": "Negative inotropy can worsen systolic heart failure.",
+    "recommendation": "Avoid verapamil/diltiazem in HFrEF; use a heart-failure-indicated beta-blocker for rate control.",
+    "references": [
+      {
+        "label": "ESC heart failure guidelines"
+      }
+    ],
+    "drugClass": "non-dhp-ccb",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "combined-oral-contraceptive--migraine",
+    "drugSlug": "combined-oral-contraceptive",
+    "drug": "Combined hormonal contraceptives",
+    "condition": "Migraine with aura",
+    "conditionSlug": "migraine",
+    "severity": "contraindicated",
+    "mechanism": "Oestrogen further raises the already-increased ischaemic stroke risk in migraine with aura.",
+    "recommendation": "Avoid combined hormonal contraception; offer progestogen-only or non-hormonal methods.",
+    "references": [
+      {
+        "label": "UK/WHO Medical Eligibility Criteria for Contraceptive Use"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "combined-oral-contraceptive--deep-vein-thrombosis",
+    "drugSlug": "combined-oral-contraceptive",
+    "drug": "Combined hormonal contraceptives",
+    "condition": "Venous thromboembolism (history/active)",
+    "conditionSlug": "deep-vein-thrombosis",
+    "severity": "contraindicated",
+    "mechanism": "Oestrogen increases venous thromboembolism risk.",
+    "recommendation": "Avoid in current or prior VTE; use progestogen-only or non-hormonal contraception.",
+    "references": [
+      {
+        "label": "UK/WHO MEC"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "statin--active-liver-disease",
+    "drugSlug": "simvastatin",
+    "drug": "Statins",
+    "condition": "Active liver disease",
+    "conditionSlug": null,
+    "severity": "caution",
+    "mechanism": "Potential hepatotoxicity; transaminases may rise.",
+    "recommendation": "Avoid starting in active liver disease or unexplained persistent transaminase elevation >3x ULN; recheck LFTs.",
+    "references": [
+      {
+        "label": "BNF"
+      }
+    ],
+    "drugClass": "statin",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "allopurinol--gout",
+    "drugSlug": "allopurinol",
+    "drug": "Allopurinol",
+    "condition": "Acute gout flare",
+    "conditionSlug": "gout",
+    "severity": "caution",
+    "mechanism": "Starting urate-lowering therapy during a flare can prolong or worsen it by mobilising urate.",
+    "recommendation": "Do not start allopurinol during an acute flare; begin once settled, under anti-inflammatory cover. If already established, continue through the flare.",
+    "references": [
+      {
+        "label": "ACR/EULAR gout guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "beta-blocker--phaeochromocytoma",
+    "drugSlug": "propranolol",
+    "drug": "Beta-blockers",
+    "condition": "Phaeochromocytoma (without alpha-blockade)",
+    "conditionSlug": "phaeochromocytoma",
+    "severity": "contraindicated",
+    "mechanism": "Unopposed alpha-adrenergic stimulation can precipitate a hypertensive crisis.",
+    "recommendation": "Never give a beta-blocker before adequate alpha-blockade in phaeochromocytoma.",
+    "references": [
+      {
+        "label": "Endocrine Society phaeochromocytoma guideline"
+      }
+    ],
+    "drugClass": "beta-blocker",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "beta-blocker--complete-heart-block",
+    "drugSlug": "atenolol",
+    "drug": "Beta-blockers",
+    "condition": "High-grade AV block / severe bradycardia",
+    "conditionSlug": "complete-heart-block",
+    "severity": "contraindicated",
+    "mechanism": "Further suppression of AV conduction and heart rate can cause haemodynamic collapse.",
+    "recommendation": "Avoid in second/third-degree AV block (without pacemaker) or symptomatic bradycardia.",
+    "references": [
+      {
+        "label": "BNF; ESC"
+      }
+    ],
+    "drugClass": "beta-blocker",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "systemic-corticosteroid--systemic/serious-active-infection",
+    "drugSlug": "prednisolone",
+    "drug": "Systemic corticosteroids",
+    "condition": "Systemic/serious active infection",
+    "conditionSlug": null,
+    "severity": "caution",
+    "mechanism": "Immunosuppression can worsen or mask infection (including reactivation of TB or strongyloidiasis).",
+    "recommendation": "Use with caution; treat/exclude serious infection, screen for latent TB/strongyloides before prolonged high-dose therapy.",
+    "references": [
+      {
+        "label": "BNF"
+      }
+    ],
+    "drugClass": "systemic-corticosteroid",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "qt-prolonging--long-qt-syndrome",
+    "drugSlug": "ciprofloxacin",
+    "drug": "QT-prolonging drugs (e.g. fluoroquinolones, macrolides)",
+    "condition": "Long QT syndrome",
+    "conditionSlug": null,
+    "severity": "caution",
+    "mechanism": "Further QT prolongation increases the risk of torsades de pointes.",
+    "recommendation": "Avoid in congenital/acquired long QT; correct electrolytes and review concomitant QT-prolonging drugs.",
+    "references": [
+      {
+        "label": "BNF; CredibleMeds"
+      }
+    ],
+    "drugClass": "qt-prolonging",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  }
+]

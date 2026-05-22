@@ -113,6 +113,38 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.cdsRules;
   }
 
+  getClinicalScores() {
+    return this.bundle.clinicalScores;
+  }
+
+  getPgxGuidelines() {
+    return this.bundle.pgxGuidelines;
+  }
+
+  getDrugDiseaseInteractions() {
+    return this.bundle.drugDiseaseInteractions;
+  }
+
+  getImmunizationSchedule() {
+    return this.bundle.immunizationSchedule;
+  }
+
+  getAllergyCrossReactivity() {
+    return this.bundle.allergyCrossReactivity;
+  }
+
+  getNotifiableDiseases() {
+    return this.bundle.notifiableDiseases;
+  }
+
+  getReferenceRanges() {
+    return this.bundle.referenceRanges;
+  }
+
+  getAntidotes() {
+    return this.bundle.antidotes;
+  }
+
   getTerminology() {
     return this.bundle.terminology;
   }

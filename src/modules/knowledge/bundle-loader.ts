@@ -4,6 +4,14 @@ import { resolve } from 'node:path';
 import type { CdsRule, ConditionGuidance } from '../conditions/conditions.types';
 import type { DrugInteraction, DrugRecord } from '../drugs/drugs.types';
 import type { ProcedureGuidance } from '../procedures/procedures.types';
+import type { ClinicalScore } from '../clinical-scores/clinical-scores.types';
+import type { PgxGuideline } from '../pharmacogenomics/pharmacogenomics.types';
+import type { DrugDiseaseInteraction } from '../drug-disease/drug-disease.types';
+import type { ImmunizationScheduleEntry } from '../immunization/immunization.types';
+import type { AllergyCrossReactivity } from '../allergy/allergy.types';
+import type { NotifiableDisease } from '../notifiable/notifiable.types';
+import type { ReferenceRange } from '../reference-ranges/reference-ranges.types';
+import type { Antidote } from '../antidotes/antidotes.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import { nonApprovedCount, validateBundle } from './bundle-validator';
 import type {
@@ -126,6 +134,18 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
     interactions: parsed['drug-interactions.json'] as DrugInteraction[],
     procedures: parsed['procedures.json'] as ProcedureGuidance[],
     cdsRules: parsed['cds-rules.json'] as CdsRule[],
+    clinicalScores: (parsed['clinical-scores.json'] as ClinicalScore[] | undefined) ?? [],
+    pgxGuidelines: (parsed['pharmacogenomics.json'] as PgxGuideline[] | undefined) ?? [],
+    drugDiseaseInteractions:
+      (parsed['drug-disease-interactions.json'] as DrugDiseaseInteraction[] | undefined) ?? [],
+    immunizationSchedule:
+      (parsed['immunization-schedule.json'] as ImmunizationScheduleEntry[] | undefined) ?? [],
+    allergyCrossReactivity:
+      (parsed['allergy-cross-reactivity.json'] as AllergyCrossReactivity[] | undefined) ?? [],
+    notifiableDiseases:
+      (parsed['notifiable-diseases.json'] as NotifiableDisease[] | undefined) ?? [],
+    referenceRanges: (parsed['reference-ranges.json'] as ReferenceRange[] | undefined) ?? [],
+    antidotes: (parsed['antidotes.json'] as Antidote[] | undefined) ?? [],
     terminology:
       (parsed['terminology.json'] as TerminologyBundle | undefined) ??
       ({ version: '0.0.0-absent', codeSystems: [], valueSets: [] } as TerminologyBundle),
@@ -193,6 +213,14 @@ export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBun
     interactions: [],
     procedures: [],
     cdsRules: [],
+    clinicalScores: [],
+    pgxGuidelines: [],
+    drugDiseaseInteractions: [],
+    immunizationSchedule: [],
+    allergyCrossReactivity: [],
+    notifiableDiseases: [],
+    referenceRanges: [],
+    antidotes: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }
@@ -227,6 +255,14 @@ function failOrReturn(
     interactions: [],
     procedures: [],
     cdsRules: [],
+    clinicalScores: [],
+    pgxGuidelines: [],
+    drugDiseaseInteractions: [],
+    immunizationSchedule: [],
+    allergyCrossReactivity: [],
+    notifiableDiseases: [],
+    referenceRanges: [],
+    antidotes: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }

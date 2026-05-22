@@ -1,0 +1,309 @@
+[
+  {
+    "slug": "penicillin-cephalosporin",
+    "allergen": "Penicillins",
+    "crossReactsWith": "Cephalosporins",
+    "risk": "low",
+    "mechanism": "Shared beta-lactam ring, but clinically relevant cross-reactivity is low (~1–2%) and driven mainly by shared R1 side chains rather than the core ring.",
+    "recommendation": "Most patients with a penicillin allergy can receive a cephalosporin with a dissimilar side chain. Avoid agents sharing an R1 side chain; for severe/anaphylactic penicillin allergy, choose a structurally distinct cephalosporin or alternative class.",
+    "drugSlugs": [
+      "benzylpenicillin",
+      "amoxicillin",
+      "ceftriaxone",
+      "cefazolin",
+      "cefuroxime"
+    ],
+    "domains": [
+      "allergy",
+      "immunology"
+    ],
+    "references": [
+      {
+        "label": "Allergy/immunology consensus on beta-lactam cross-reactivity"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "penicillin-carbapenem",
+    "allergen": "Penicillins",
+    "crossReactsWith": "Carbapenems (meropenem, ertapenem)",
+    "risk": "low",
+    "mechanism": "Shared beta-lactam ring; cross-reactivity is <1% in studies.",
+    "recommendation": "Carbapenems can usually be used in penicillin-allergic patients with caution; avoid only in confirmed severe beta-lactam anaphylaxis without specialist input.",
+    "drugSlugs": [
+      "benzylpenicillin",
+      "meropenem",
+      "ertapenem"
+    ],
+    "domains": [
+      "allergy",
+      "immunology"
+    ],
+    "references": [
+      {
+        "label": "Allergy/immunology consensus on beta-lactam cross-reactivity"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "penicillin-aztreonam",
+    "allergen": "Penicillins",
+    "crossReactsWith": "Aztreonam (monobactam)",
+    "risk": "negligible",
+    "mechanism": "Monobactams do not share immunogenic side chains with most penicillins (exception: ceftazidime shares a side chain with aztreonam).",
+    "recommendation": "Aztreonam is generally safe in penicillin allergy; avoid combining with ceftazidime allergy due to shared side chain.",
+    "drugSlugs": [
+      "benzylpenicillin",
+      "ceftazidime"
+    ],
+    "domains": [
+      "allergy",
+      "immunology"
+    ],
+    "references": [
+      {
+        "label": "Allergy/immunology consensus on beta-lactam cross-reactivity"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "sulfonamide-antibiotic-nonantibiotic",
+    "allergen": "Sulfonamide antibiotics (e.g. co-trimoxazole)",
+    "crossReactsWith": "Non-antibiotic sulfonamides (furosemide, thiazides, sulfonylureas, acetazolamide)",
+    "risk": "negligible",
+    "mechanism": "True immunological cross-reactivity is not supported by evidence — the arylamine group responsible for sulfonamide-antibiotic allergy is absent from non-antibiotic sulfonamides.",
+    "recommendation": "A sulfonamide-antibiotic allergy is NOT a reason to withhold loop/thiazide diuretics, sulfonylureas or acetazolamide. Common myth to dispel.",
+    "drugSlugs": [
+      "cotrimoxazole",
+      "furosemide",
+      "hydrochlorothiazide",
+      "gliclazide",
+      "acetazolamide"
+    ],
+    "domains": [
+      "allergy",
+      "immunology"
+    ],
+    "references": [
+      {
+        "label": "Pharmacology/allergy literature on sulfonamide cross-reactivity"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "radiocontrast-iodine-seafood",
+    "allergen": "Iodinated radiocontrast media",
+    "crossReactsWith": "Seafood/shellfish or topical iodine",
+    "risk": "negligible",
+    "mechanism": "No true cross-reactivity — shellfish allergy is to tropomyosin, not iodine; contrast reactions are not IgE-to-iodine mediated.",
+    "recommendation": "Shellfish or iodine 'allergy' is NOT a contraindication to iodinated contrast and should not delay imaging. Assess prior contrast reactions instead. Common myth to dispel.",
+    "drugSlugs": [],
+    "domains": [
+      "allergy",
+      "immunology",
+      "ophthalmology"
+    ],
+    "references": [
+      {
+        "label": "ACR Manual on Contrast Media"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "local-anaesthetic-ester-amide",
+    "allergen": "Ester local anaesthetics (e.g. tetracaine, procaine, benzocaine)",
+    "crossReactsWith": "Amide local anaesthetics (lidocaine, bupivacaine)",
+    "risk": "negligible",
+    "mechanism": "Ester anaesthetics cross-react via the PABA metabolite; amides have a distinct structure and do NOT cross-react with esters or with each other appreciably.",
+    "recommendation": "A reaction to an ester local anaesthetic does not preclude an amide (e.g. lidocaine). True amide allergy is rare; many reactions are vasovagal or to additives.",
+    "drugSlugs": [
+      "tetracaine-ophthalmic",
+      "lidocaine",
+      "bupivacaine"
+    ],
+    "domains": [
+      "allergy",
+      "immunology"
+    ],
+    "references": [
+      {
+        "label": "Allergy/anaesthesia consensus on local anaesthetic allergy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "aromatic-antiepileptics",
+    "allergen": "Aromatic antiepileptic drugs (carbamazepine)",
+    "crossReactsWith": "Phenytoin, phenobarbital, oxcarbazepine, lamotrigine",
+    "risk": "high",
+    "mechanism": "Aromatic AEDs share an arene-oxide metabolite pathway; anticonvulsant hypersensitivity syndrome (and SJS/TEN) shows substantial cross-reactivity.",
+    "recommendation": "After a hypersensitivity reaction to one aromatic AED, avoid the others; choose a non-aromatic agent (e.g. valproate, levetiracetam, gabapentin). Consider HLA-B*15:02 risk for carbamazepine.",
+    "drugSlugs": [
+      "carbamazepine",
+      "phenytoin",
+      "phenobarbital",
+      "lamotrigine"
+    ],
+    "domains": [
+      "allergy",
+      "neurology",
+      "dermatology"
+    ],
+    "references": [
+      {
+        "label": "Neurology/allergy literature on anticonvulsant hypersensitivity syndrome"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "nsaid-cross-reactive-hypersensitivity",
+    "allergen": "NSAIDs / aspirin (COX-1 inhibitors)",
+    "crossReactsWith": "Other non-selective NSAIDs",
+    "risk": "high",
+    "mechanism": "In cross-reactive NSAID hypersensitivity (e.g. NSAID-exacerbated respiratory disease), reactions are pharmacological (COX-1 inhibition) and therefore cross-react across chemically unrelated NSAIDs.",
+    "recommendation": "Avoid all non-selective NSAIDs after a cross-reactive NSAID reaction; paracetamol and (often) selective COX-2 inhibitors are better tolerated under specialist guidance.",
+    "drugSlugs": [
+      "aspirin",
+      "ibuprofen",
+      "naproxen",
+      "ketorolac",
+      "mefenamic-acid"
+    ],
+    "domains": [
+      "allergy",
+      "respiratory",
+      "immunology"
+    ],
+    "references": [
+      {
+        "label": "EAACI guidance on NSAID hypersensitivity"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "opioid-phenanthrene",
+    "allergen": "Phenanthrene opioids (morphine, codeine)",
+    "crossReactsWith": "Other phenanthrenes (oxycodone, hydromorphone)",
+    "risk": "low",
+    "mechanism": "Most opioid 'reactions' are non-immune histamine release rather than true allergy; true IgE allergy may cross-react within structural classes (phenanthrenes vs phenylpiperidines vs diphenylheptanes).",
+    "recommendation": "Distinguish pseudoallergy/histamine release from true allergy. For true allergy, switch to a different structural class (e.g. fentanyl — phenylpiperidine; methadone — diphenylheptane).",
+    "drugSlugs": [
+      "morphine",
+      "codeine",
+      "oxycodone",
+      "fentanyl",
+      "methadone"
+    ],
+    "domains": [
+      "allergy",
+      "pain"
+    ],
+    "references": [
+      {
+        "label": "Allergy literature on opioid hypersensitivity"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "aminoglycoside-cross-reactivity",
+    "allergen": "Aminoglycosides (neomycin, gentamicin)",
+    "crossReactsWith": "Other aminoglycosides (tobramycin, amikacin, streptomycin)",
+    "risk": "moderate",
+    "mechanism": "Aminoglycosides share aminocyclitol/aminosugar structures, giving class cross-reactivity, particularly for delayed contact hypersensitivity (e.g. topical neomycin).",
+    "recommendation": "After an aminoglycoside hypersensitivity reaction, avoid the class where feasible; if essential, specialist assessment and cautious selection of a structurally distinct member.",
+    "drugSlugs": [
+      "gentamicin",
+      "amikacin",
+      "streptomycin",
+      "paromomycin"
+    ],
+    "domains": [
+      "allergy",
+      "immunology"
+    ],
+    "references": [
+      {
+        "label": "Allergy literature on aminoglycoside cross-reactivity"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "egg-allergy-vaccines",
+    "allergen": "Egg allergy",
+    "crossReactsWith": "Egg-cultured vaccines (yellow fever; influenza)",
+    "risk": "low",
+    "mechanism": "Most influenza vaccines contain only trace ovalbumin and are safe even in severe egg allergy; yellow fever vaccine is egg-derived and warrants caution.",
+    "recommendation": "Do NOT withhold influenza vaccination for egg allergy (give as routine). For yellow fever vaccine in egg-allergic patients, seek allergy advice (skin testing/graded dosing). MMR is safe in egg allergy.",
+    "drugSlugs": [
+      "influenza-vaccine",
+      "yellow-fever-vaccine",
+      "mmr-vaccine"
+    ],
+    "domains": [
+      "allergy",
+      "vaccine-preventable",
+      "immunology"
+    ],
+    "references": [
+      {
+        "label": "WHO/national immunization guidance on egg allergy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "vancomycin-infusion-reaction",
+    "allergen": "Vancomycin",
+    "crossReactsWith": "Other glycopeptides / red man syndrome",
+    "risk": "low",
+    "mechanism": "Vancomycin infusion reaction (formerly 'red man syndrome') is a rate-dependent direct mast-cell histamine release, NOT IgE allergy.",
+    "recommendation": "Slow the infusion and pre-treat with antihistamine rather than labelling a true allergy; this reaction does not preclude future vancomycin use.",
+    "drugSlugs": [
+      "vancomycin"
+    ],
+    "domains": [
+      "allergy",
+      "infection"
+    ],
+    "references": [
+      {
+        "label": "IDSA/allergy guidance on vancomycin infusion reaction"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  }
+]
