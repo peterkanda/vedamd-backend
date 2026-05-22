@@ -137,6 +137,10 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.notifiableDiseases;
   }
 
+  getReferenceRanges() {
+    return this.bundle.referenceRanges;
+  }
+
   getTerminology() {
     return this.bundle.terminology;
   }

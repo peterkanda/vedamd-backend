@@ -16,6 +16,7 @@ import { DrugDiseaseModule } from './modules/drug-disease/drug-disease.module';
 import { ImmunizationModule } from './modules/immunization/immunization.module';
 import { AllergyModule } from './modules/allergy/allergy.module';
 import { NotifiableModule } from './modules/notifiable/notifiable.module';
+import { ReferenceRangesModule } from './modules/reference-ranges/reference-ranges.module';
 import { LlmModule } from './modules/llm/llm.module';
 import { AuditModule } from './modules/audit/audit.module';
 import { BundlesModule } from './modules/bundles/bundles.module';
@@ -48,6 +49,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     ImmunizationModule,
     AllergyModule,
     NotifiableModule,
+    ReferenceRangesModule,
     LlmModule,
     AuditModule,
     BundlesModule,

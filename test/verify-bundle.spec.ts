@@ -41,6 +41,7 @@ function copyBundle(): string {
     'immunization-schedule.json',
     'allergy-cross-reactivity.json',
     'notifiable-diseases.json',
+    'reference-ranges.json',
   ]) {
     copyFileSync(resolve(REAL_BUNDLE, f), resolve(dir, f));
   }
