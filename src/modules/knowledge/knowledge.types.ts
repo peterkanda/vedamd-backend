@@ -8,6 +8,7 @@ import type { ImmunizationScheduleEntry } from '../immunization/immunization.typ
 import type { AllergyCrossReactivity } from '../allergy/allergy.types';
 import type { NotifiableDisease } from '../notifiable/notifiable.types';
 import type { ReferenceRange } from '../reference-ranges/reference-ranges.types';
+import type { Antidote } from '../antidotes/antidotes.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import type { ContentStats, ValidationViolation } from './bundle-validator';
 
@@ -70,6 +71,8 @@ export interface LoadedBundle {
   notifiableDiseases: NotifiableDisease[];
   /** Optional — bundles signed before reference-ranges.json existed return []. */
   referenceRanges: ReferenceRange[];
+  /** Optional — bundles signed before antidotes.json existed return []. */
+  antidotes: Antidote[];
   /** Optional — bundles signed before terminology.json existed return an empty TerminologyBundle. */
   terminology: TerminologyBundle;
 }

@@ -141,6 +141,10 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.referenceRanges;
   }
 
+  getAntidotes() {
+    return this.bundle.antidotes;
+  }
+
   getTerminology() {
     return this.bundle.terminology;
   }

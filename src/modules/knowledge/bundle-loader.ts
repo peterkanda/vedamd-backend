@@ -11,6 +11,7 @@ import type { ImmunizationScheduleEntry } from '../immunization/immunization.typ
 import type { AllergyCrossReactivity } from '../allergy/allergy.types';
 import type { NotifiableDisease } from '../notifiable/notifiable.types';
 import type { ReferenceRange } from '../reference-ranges/reference-ranges.types';
+import type { Antidote } from '../antidotes/antidotes.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import { nonApprovedCount, validateBundle } from './bundle-validator';
 import type {
@@ -144,6 +145,7 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
     notifiableDiseases:
       (parsed['notifiable-diseases.json'] as NotifiableDisease[] | undefined) ?? [],
     referenceRanges: (parsed['reference-ranges.json'] as ReferenceRange[] | undefined) ?? [],
+    antidotes: (parsed['antidotes.json'] as Antidote[] | undefined) ?? [],
     terminology:
       (parsed['terminology.json'] as TerminologyBundle | undefined) ??
       ({ version: '0.0.0-absent', codeSystems: [], valueSets: [] } as TerminologyBundle),
@@ -218,6 +220,7 @@ export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBun
     allergyCrossReactivity: [],
     notifiableDiseases: [],
     referenceRanges: [],
+    antidotes: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }
@@ -259,6 +262,7 @@ function failOrReturn(
     allergyCrossReactivity: [],
     notifiableDiseases: [],
     referenceRanges: [],
+    antidotes: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }

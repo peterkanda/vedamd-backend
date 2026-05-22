@@ -17,6 +17,7 @@ import { ImmunizationModule } from './modules/immunization/immunization.module';
 import { AllergyModule } from './modules/allergy/allergy.module';
 import { NotifiableModule } from './modules/notifiable/notifiable.module';
 import { ReferenceRangesModule } from './modules/reference-ranges/reference-ranges.module';
+import { AntidotesModule } from './modules/antidotes/antidotes.module';
 import { LlmModule } from './modules/llm/llm.module';
 import { AuditModule } from './modules/audit/audit.module';
 import { BundlesModule } from './modules/bundles/bundles.module';
@@ -50,6 +51,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     AllergyModule,
     NotifiableModule,
     ReferenceRangesModule,
+    AntidotesModule,
     LlmModule,
     AuditModule,
     BundlesModule,
