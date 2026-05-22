@@ -121,6 +121,10 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.pgxGuidelines;
   }
 
+  getDrugDiseaseInteractions() {
+    return this.bundle.drugDiseaseInteractions;
+  }
+
   getTerminology() {
     return this.bundle.terminology;
   }

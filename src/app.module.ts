@@ -12,6 +12,7 @@ import { ConditionsModule } from './modules/conditions/conditions.module';
 import { ProceduresModule } from './modules/procedures/procedures.module';
 import { ClinicalScoresModule } from './modules/clinical-scores/clinical-scores.module';
 import { PharmacogenomicsModule } from './modules/pharmacogenomics/pharmacogenomics.module';
+import { DrugDiseaseModule } from './modules/drug-disease/drug-disease.module';
 import { LlmModule } from './modules/llm/llm.module';
 import { AuditModule } from './modules/audit/audit.module';
 import { BundlesModule } from './modules/bundles/bundles.module';
@@ -40,6 +41,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     ProceduresModule,
     ClinicalScoresModule,
     PharmacogenomicsModule,
+    DrugDiseaseModule,
     LlmModule,
     AuditModule,
     BundlesModule,

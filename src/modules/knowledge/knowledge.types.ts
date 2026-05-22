@@ -3,6 +3,7 @@ import type { DrugInteraction, DrugRecord } from '../drugs/drugs.types';
 import type { ProcedureGuidance } from '../procedures/procedures.types';
 import type { ClinicalScore } from '../clinical-scores/clinical-scores.types';
 import type { PgxGuideline } from '../pharmacogenomics/pharmacogenomics.types';
+import type { DrugDiseaseInteraction } from '../drug-disease/drug-disease.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import type { ContentStats, ValidationViolation } from './bundle-validator';
 
@@ -55,6 +56,8 @@ export interface LoadedBundle {
   clinicalScores: ClinicalScore[];
   /** Optional — bundles signed before pharmacogenomics.json existed return []. */
   pgxGuidelines: PgxGuideline[];
+  /** Optional — bundles signed before drug-disease-interactions.json existed return []. */
+  drugDiseaseInteractions: DrugDiseaseInteraction[];
   /** Optional — bundles signed before terminology.json existed return an empty TerminologyBundle. */
   terminology: TerminologyBundle;
 }
