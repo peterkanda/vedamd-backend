@@ -45748,5 +45748,2075 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "sepsis-and-septic-shock-adult",
+    "title": "Sepsis and septic shock — adult (Surviving Sepsis Campaign)",
+    "icd10": [
+      "A41.9",
+      "R65.20",
+      "R65.21"
+    ],
+    "domains": [
+      "infectious-disease",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Suspected or confirmed infection PLUS organ dysfunction (Sepsis-3: SOFA increase ≥ 2).",
+      "Septic shock: persistent hypotension requiring vasopressor to maintain MAP ≥ 65 mmHg AND lactate > 2 mmol/L despite adequate volume resuscitation.",
+      "Common foci: chest, urinary, intra-abdominal, skin/soft tissue, CNS, line."
+    ],
+    "redFlags": [
+      "MAP < 65 mmHg after fluid bolus.",
+      "Lactate > 4 mmol/L.",
+      "GCS drop, oliguria, severe acidosis.",
+      "Suspected necrotising soft-tissue infection (urgent surgical debridement).",
+      "Neutropenic — see neutropenic-sepsis pathway.",
+      "Pregnancy / immediate postpartum — maternal sepsis pathway."
+    ],
+    "diagnostics": [
+      {
+        "test": "Lactate, FBC, U&E, LFT, coagulation, CRP, blood gas, glucose, blood cultures × 2 from different sites.",
+        "rationale": "Quantify organ dysfunction + identify pathogen."
+      },
+      {
+        "test": "Urine + sputum + wound + CSF / drain fluid cultures per suspected focus.",
+        "rationale": "Source identification."
+      },
+      {
+        "test": "Imaging per suspected source (CXR, CT abdomen, USS abscess).",
+        "rationale": "Identify source for drainage / surgery."
+      },
+      {
+        "test": "Continuous monitoring: BP, HR, SpO2, RR, urine output, mental state.",
+        "rationale": "Track resuscitation response."
+      }
+    ],
+    "management": [
+      {
+        "step": "Hour-1 bundle (Surviving Sepsis 2021)",
+        "detail": "Measure lactate; obtain blood cultures BEFORE antibiotics (do not delay > 45 min); broad-spectrum IV antibiotic; begin 30 mL/kg crystalloid for hypotension or lactate ≥ 4 within 3 h; vasopressor if hypotension persists during/after resuscitation to keep MAP ≥ 65."
+      },
+      {
+        "step": "Empirical broad-spectrum antibiotic — within 1 hour",
+        "detail": "Piperacillin-tazobactam 4.5 g IV (or meropenem 1 g if Pen-anaphylaxis / known ESBL); add vancomycin if MRSA risk; add clindamycin for necrotising soft tissue. De-escalate at 48–72 h per cultures."
+      },
+      {
+        "step": "Source control",
+        "detail": "Drain abscess, remove infected line, debride necrotic tissue, decompress urinary obstruction, surgical washout of intra-abdominal source — ideally within 6–12 h of recognition."
+      },
+      {
+        "step": "Vasopressor — first-line noradrenaline",
+        "detail": "Noradrenaline 0.05–0.5 microgram/kg/min via central line (peripheral acceptable < 6 h while CVC sourced). Add vasopressin 0.03 unit/min if persistent. Add adrenaline if myocardial dysfunction. Target MAP ≥ 65 mmHg."
+      },
+      {
+        "step": "Steroids if vasopressor-dependent",
+        "detail": "Hydrocortisone 200 mg/day IV (continuous infusion or 50 mg every 6 h) for septic shock requiring noradrenaline > 0.25 microgram/kg/min for > 4 h."
+      },
+      {
+        "step": "Lung-protective ventilation if ARDS",
+        "detail": "Low tidal volume 6 mL/kg IBW, plateau pressure < 30 cmH2O, prone positioning for PaO2/FiO2 < 150."
+      },
+      {
+        "step": "Glucose 7.8–10 mmol/L; VTE prophylaxis; stress-ulcer prophylaxis selectively",
+        "detail": "Avoid tight glycaemic control; LMWH unless contraindicated; PPI for high-risk patients only (ventilated > 48 h, coagulopathy)."
+      },
+      {
+        "step": "Daily reassessment",
+        "detail": "De-escalate antibiotics; assess for de-resuscitation (negative fluid balance after 48 h); spontaneous breathing trial daily; rehabilitation."
+      }
+    ],
+    "references": [
+      {
+        "label": "Surviving Sepsis Campaign 2021 international guidelines"
+      },
+      {
+        "label": "WHO Clinical management of sepsis"
+      },
+      {
+        "label": "Sepsis-3 (Singer et al. JAMA 2016)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "adrenal-crisis",
+    "title": "Acute adrenal crisis (Addisonian crisis)",
+    "icd10": [
+      "E27.2",
+      "E27.40"
+    ],
+    "domains": [
+      "endocrinology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Hypotension/shock disproportionate to clinical picture.",
+      "Severe vomiting, abdominal pain, fever.",
+      "Hypoglycaemia, hyponatraemia, hyperkalaemia, prerenal AKI.",
+      "Background of known Addison's, hypopituitarism, recent steroid withdrawal, or steroid stress in chronic glucocorticoid therapy.",
+      "Precipitants: infection, surgery, trauma, MI, missed doses, vomiting unable to take oral hydrocortisone."
+    ],
+    "redFlags": [
+      "Shock unresponsive to fluid + vasopressor — give empiric hydrocortisone.",
+      "Severe hyperkalaemia with arrhythmia.",
+      "Hypoglycaemia.",
+      "Coma / altered consciousness from hyponatraemia.",
+      "Concurrent severe infection (sepsis pathway as well)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Random cortisol + ACTH at presentation BEFORE first steroid dose (if rapidly available).",
+        "rationale": "Diagnostic confirmation later; do NOT delay treatment."
+      },
+      {
+        "test": "U&E, glucose, FBC, blood gas.",
+        "rationale": "Identify hyponatraemia, hyperkalaemia, hypoglycaemia, metabolic acidosis."
+      },
+      {
+        "test": "Septic screen (cultures, CXR, urinalysis).",
+        "rationale": "Identify precipitant."
+      },
+      {
+        "test": "ECG.",
+        "rationale": "Hyperkalaemia changes."
+      }
+    ],
+    "management": [
+      {
+        "step": "IMMEDIATE hydrocortisone 100 mg IV bolus",
+        "detail": "Do NOT delay for confirmatory tests. Repeat 100 mg IV every 6 h for first 24 h (or continuous infusion 200 mg/24 h)."
+      },
+      {
+        "step": "Fluid resuscitation",
+        "detail": "1 L 0.9% NaCl over the first hour, then titrate to volume status. Add dextrose if hypoglycaemic. Avoid hypotonic fluids — risk worsening hyponatraemia."
+      },
+      {
+        "step": "Treat hyperkalaemia",
+        "detail": "Calcium gluconate for cardiac protection if K+ > 6.5 with ECG changes; insulin/dextrose; β2-agonist; will improve with hydrocortisone + saline."
+      },
+      {
+        "step": "Treat hypoglycaemia",
+        "detail": "10% dextrose IV; monitor glucose every 1–2 h initially."
+      },
+      {
+        "step": "Identify and treat precipitant",
+        "detail": "Antibiotics for infection; analgesia + surgical input if trauma/abdomen."
+      },
+      {
+        "step": "Wean steroid + transition to oral",
+        "detail": "After 24–48 h stability, reduce hydrocortisone to 50 mg every 6 h IV, then 20 mg morning / 10 mg evening oral (or pre-illness dose if known)."
+      },
+      {
+        "step": "Add fludrocortisone once on oral hydrocortisone ≤ 50 mg/day",
+        "detail": "Fludrocortisone 0.05–0.1 mg daily (for Addison's; not needed in secondary adrenal insufficiency)."
+      },
+      {
+        "step": "Education + emergency kit",
+        "detail": "All patients with adrenal insufficiency need a medic-alert bracelet, hydrocortisone emergency injection kit, sick-day rules (double oral steroid dose for febrile illness; switch to IM/IV hydrocortisone if vomiting)."
+      }
+    ],
+    "references": [
+      {
+        "label": "Endocrine Society Clinical Practice Guideline — Primary Adrenal Insufficiency (2016)"
+      },
+      {
+        "label": "NICE NG243 — Adrenal insufficiency"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-hyperkalaemia-emergency",
+    "title": "Severe hyperkalaemia — emergency management",
+    "icd10": [
+      "E87.5"
+    ],
+    "domains": [
+      "nephrology",
+      "emergency",
+      "critical-care",
+      "cardiology"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Serum K+ > 6.0 mmol/L with ECG changes (peaked T, widened QRS, loss of P wave, sine wave) OR K+ > 6.5 regardless of ECG.",
+      "Often asymptomatic; muscle weakness, paraesthesia, palpitations at higher levels; cardiac arrest at very high levels.",
+      "Causes: AKI / CKD, drugs (ACEi/ARB, NSAID, spironolactone, K-sparing diuretic, trimethoprim, heparin), rhabdomyolysis, tumour lysis, haemolysis, Addison's, acidosis."
+    ],
+    "redFlags": [
+      "Peaked T waves, widened QRS, loss of P, sine wave on ECG — IMMEDIATE calcium.",
+      "Bradycardia or any arrhythmia with hyperkalaemia.",
+      "Haemodynamic instability.",
+      "Anuria (urgent dialysis if AKI).",
+      "Pseudo-hyperkalaemia (haemolysed sample) — recheck non-tourniquet sample."
+    ],
+    "diagnostics": [
+      {
+        "test": "Repeat K+ urgently (venous, ideally non-haemolysed).",
+        "rationale": "Exclude spurious result."
+      },
+      {
+        "test": "12-lead ECG.",
+        "rationale": "Severity assessment + treatment decision."
+      },
+      {
+        "test": "U&E, creatinine, glucose, blood gas, CK if rhabdomyolysis suspected.",
+        "rationale": "Identify cause + acidosis."
+      },
+      {
+        "test": "Review all medications.",
+        "rationale": "Stop nephrotoxic / K-sparing drugs."
+      }
+    ],
+    "management": [
+      {
+        "step": "Cardiac protection — calcium FIRST if any ECG change",
+        "detail": "10% calcium gluconate 10 mL IV over 5–10 min (or 10% calcium chloride 5 mL via central line). Onset within 1–3 min; lasts 30–60 min. Repeat if ECG changes persist after 10 min."
+      },
+      {
+        "step": "Shift K+ intracellularly (lowers serum K+ over 15–30 min)",
+        "detail": "Insulin-dextrose: 10 units soluble insulin in 250 mL 10% dextrose IV over 30 min (or 50 mL 50% dextrose + 10 units actrapid push). Check glucose hourly × 6 h — hypoglycaemia risk. Nebulised salbutamol 10–20 mg additive effect. Sodium bicarbonate ONLY in severe metabolic acidosis (additive to insulin in some protocols)."
+      },
+      {
+        "step": "Remove K+ from the body (slower onset)",
+        "detail": "Potassium binders: patiromer 8.4 g or sodium zirconium cyclosilicate 10 g (faster onset, 1 h). Diuresis if euvolaemic (IV furosemide 40–80 mg). Polystyrene sulfonate (Resonium / Kayexalate) — slower, GI side effects."
+      },
+      {
+        "step": "Haemodialysis — definitive treatment when other measures inadequate or in established renal failure",
+        "detail": "Indications: K+ > 6.5 unresponsive, AKI/CKD with oliguria, severe acidosis, fluid overload. Most effective single intervention; arrange urgently."
+      },
+      {
+        "step": "Stop contributing medications",
+        "detail": "ACEi/ARB, spironolactone, NSAID, trimethoprim, K supplements; review other contributors."
+      },
+      {
+        "step": "Restrict dietary K+; identify and treat cause",
+        "detail": "Treat AKI; address rhabdomyolysis (IV fluids + alkalinisation); address acidosis."
+      },
+      {
+        "step": "Re-measure K+ every 30–60 min until stable",
+        "detail": "Continuous cardiac monitoring; expect K+ fall over 30–60 min with insulin/dextrose."
+      }
+    ],
+    "references": [
+      {
+        "label": "UK Renal Association — Treatment of acute hyperkalaemia in adults (2020)"
+      },
+      {
+        "label": "KDIGO + ASN consensus on potassium management"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-hyponatraemia-emergency",
+    "title": "Severe symptomatic hyponatraemia",
+    "icd10": [
+      "E87.1"
+    ],
+    "domains": [
+      "nephrology",
+      "endocrinology",
+      "neurology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Serum Na+ < 125 mmol/L with severe symptoms — seizures, coma, respiratory arrest, vomiting.",
+      "Moderate symptoms: headache, nausea, confusion, falls.",
+      "Common causes: SIADH, thiazide diuretic, hypovolaemic (vomiting, diarrhoea, Addison's), hypervolaemic (heart failure, cirrhosis, nephrotic), psychogenic polydipsia, MDMA, exercise-associated hyponatraemia."
+    ],
+    "redFlags": [
+      "Seizure / coma / brainstem herniation signs → urgent hypertonic saline.",
+      "Acute onset (< 48 h) hyponatraemia — higher risk of cerebral oedema.",
+      "Chronic hyponatraemia (> 48 h or unknown duration) — risk of osmotic demyelination if corrected too fast.",
+      "Concurrent hypokalaemia — replacing K+ raises Na+, increases ODS risk.",
+      "Hypothyroidism / adrenal insufficiency — treat the cause."
+    ],
+    "diagnostics": [
+      {
+        "test": "Repeat serum Na+ + plasma osmolality + paired urine Na+ and osmolality.",
+        "rationale": "Classify as hypotonic (true) vs pseudo / translocational; identify SIADH (urine osmolality > 100, urine Na+ > 30 in euvolaemic patient)."
+      },
+      {
+        "test": "Clinical volume assessment — JVP, skin turgor, oedema, BP, postural drop.",
+        "rationale": "Distinguish hypovolaemic / euvolaemic / hypervolaemic."
+      },
+      {
+        "test": "TSH, morning cortisol.",
+        "rationale": "Exclude hypothyroidism and adrenal insufficiency."
+      },
+      {
+        "test": "Glucose; calculate corrected Na+ in hyperglycaemia.",
+        "rationale": "Pseudo-hyponatraemia."
+      },
+      {
+        "test": "Review all medications.",
+        "rationale": "Thiazides, SSRIs, carbamazepine, DDAVP, MDMA."
+      }
+    ],
+    "management": [
+      {
+        "step": "Severe symptoms (seizure, coma) — hypertonic saline",
+        "detail": "3% NaCl 150 mL IV over 10 min (or 2 mL/kg). Repeat × 2 if symptoms persist (max 3 doses). Target Na+ rise of 5 mmol/L acutely. STOP hypertonic saline once symptoms resolve."
+      },
+      {
+        "step": "Subsequent correction — slow and controlled",
+        "detail": "Total rise: max 10 mmol/L in 24 h (8 mmol/L if high ODS risk: chronic, hypokalaemia, malnutrition, alcoholism, liver disease). Re-check Na+ every 2–4 h."
+      },
+      {
+        "step": "If over-correction occurs, RE-LOWER",
+        "detail": "Give 5% dextrose 10 mL/kg over 1 h or DDAVP 2 microgram SC every 8 h to drop Na+ back to target rate. This prevents osmotic demyelination."
+      },
+      {
+        "step": "Treat the underlying cause",
+        "detail": "Stop thiazide / SSRI / carbamazepine. SIADH: fluid restriction 500–1000 mL/day; consider tolvaptan (vaptan) or oral urea. Hypovolaemic: 0.9% NaCl cautiously. Hypervolaemic: salt + fluid restrict + loop diuretic; treat underlying HF/cirrhosis."
+      },
+      {
+        "step": "Replace any K+ deficit slowly",
+        "detail": "K+ replacement raises Na+; combine carefully into the daily correction target."
+      },
+      {
+        "step": "Specialist input for SIADH workup",
+        "detail": "Identify malignancy, CNS / pulmonary disease, drugs."
+      }
+    ],
+    "references": [
+      {
+        "label": "European Society of Endocrinology / ERA-EDTA / ESICM clinical practice guideline on diagnosis and treatment of hyponatraemia (2014)"
+      },
+      {
+        "label": "Spasovski G et al. EJE 2014 — Hyponatraemia diagnosis and treatment"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "refractory-status-epilepticus",
+    "title": "Refractory / super-refractory status epilepticus",
+    "icd10": [
+      "G41.0",
+      "G41.9"
+    ],
+    "domains": [
+      "neurology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Continuous seizure activity (clinical or electrographic) > 5 min, or repeated seizures without recovery between, that fails two adequately-dosed antiseizure drugs (refractory) or persists > 24 h on anaesthetic infusion (super-refractory)."
+    ],
+    "redFlags": [
+      "Non-convulsive status epilepticus in altered consciousness — EEG essential.",
+      "Hypoxia, severe acidosis, hyperthermia from prolonged convulsion.",
+      "Posterior reversible encephalopathy syndrome, autoimmune encephalitis, CNS infection — treatable underlying cause.",
+      "New-onset refractory status epilepticus (NORSE) — autoimmune workup.",
+      "Pregnancy: maternal + fetal compromise; consider eclampsia (Mg + delivery planning)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Capillary glucose; venous blood gas; U&E; calcium; magnesium; FBC; LFT; CK; toxicology screen.",
+        "rationale": "Identify reversible cause."
+      },
+      {
+        "test": "Anti-epileptic drug levels.",
+        "rationale": "Confirm therapeutic levels and adherence."
+      },
+      {
+        "test": "CT head (urgent) ± MRI.",
+        "rationale": "Exclude haemorrhage, infarct, mass, encephalitis."
+      },
+      {
+        "test": "LP if encephalitis / meningitis suspected and no contraindication.",
+        "rationale": "HSV PCR + autoimmune workup (NMDAR Ab, LGI1, GABA-B)."
+      },
+      {
+        "test": "Continuous EEG monitoring once on anaesthetic.",
+        "rationale": "Confirm seizure suppression / burst-suppression target."
+      }
+    ],
+    "management": [
+      {
+        "step": "Stage 1 (0–5 min) — supportive + first benzodiazepine",
+        "detail": "ABC; protect airway; high-flow O2; check glucose (give 10% dextrose if hypoglycaemic). IV/IM/buccal: lorazepam 4 mg IV, OR midazolam 10 mg IM/buccal, OR diazepam 10 mg IV. Give thiamine 200 mg IV if alcohol use suspected (before glucose)."
+      },
+      {
+        "step": "Stage 2 (5–20 min) — second benzodiazepine",
+        "detail": "If still seizing at 5 min, repeat benzodiazepine once."
+      },
+      {
+        "step": "Stage 3 (20–40 min) — second-line antiseizure drug (established status)",
+        "detail": "ONE of (per ESETT trial — equivalent efficacy): IV levetiracetam 60 mg/kg (max 4.5 g) over 5 min; IV valproate 40 mg/kg (max 3 g) over 10 min — AVOID in young women + pregnancy + valproate-naive without PPP; IV fosphenytoin 20 mg PE/kg (max 1.5 g) over 10 min, OR phenytoin 20 mg/kg (max 1 g) at ≤ 50 mg/min with cardiac monitor."
+      },
+      {
+        "step": "Stage 4 (refractory, > 40 min) — anaesthetic-induced burst-suppression",
+        "detail": "Intubate. ICU. IV propofol bolus 2 mg/kg then infusion 5–10 mg/kg/h titrated to EEG burst-suppression. OR midazolam loading 0.2 mg/kg then 0.1–0.5 mg/kg/h. OR thiopental / ketamine combinations. Continue for 24–48 h then attempt wean."
+      },
+      {
+        "step": "Stage 5 (super-refractory, > 24 h on anaesthetic)",
+        "detail": "Specialist neurology + ICU. Consider: ketamine infusion, magnesium infusion (pre-eclampsia), high-dose pyridoxine (INH toxicity), corticosteroids + IVIG / plasma exchange (autoimmune NORSE), ketogenic diet, hypothermia, surgery."
+      },
+      {
+        "step": "Treat reversible cause concurrently",
+        "detail": "Antiviral (aciclovir) for HSV; antibiotics for bacterial meningitis; magnesium for eclampsia; pyridoxine for INH; correct electrolytes; immunotherapy for autoimmune."
+      },
+      {
+        "step": "Maintenance after control",
+        "detail": "Continue at least 2 antiseizure drugs (e.g. levetiracetam + valproate); aim for 24 h seizure-free on EEG before weaning anaesthetic."
+      }
+    ],
+    "references": [
+      {
+        "label": "Neurocritical Care Society Guideline for the Evaluation and Management of Status Epilepticus (2012, with updates)"
+      },
+      {
+        "label": "ESETT trial NEJM 2019 — levetiracetam, valproate, fosphenytoin equivalent"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "viral-encephalitis-acute",
+    "title": "Acute viral encephalitis (focus HSV)",
+    "icd10": [
+      "B00.4",
+      "G05.1",
+      "G04.9"
+    ],
+    "domains": [
+      "neurology",
+      "infectious-disease",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Fever + acute or subacute alteration of mental status / personality change / confusion.",
+      "New-onset seizures, especially focal.",
+      "Focal neurological deficits — dysphasia, hemiparesis (HSV often temporal).",
+      "Headache, nausea, vomiting; signs of meningeal irritation may be subtle."
+    ],
+    "redFlags": [
+      "GCS ≤ 8 / status epilepticus — ICU.",
+      "Focal neurology with raised ICP — neurosurgery review, defer LP until imaging.",
+      "Immunocompromised — consider CMV, VZV, JC virus, toxoplasma, cryptococcus.",
+      "Pregnant — risk to fetus (VZV, HSV); manage with obstetric input."
+    ],
+    "diagnostics": [
+      {
+        "test": "MRI brain (T2/FLAIR + DWI) — preferred; CT if MRI unavailable.",
+        "rationale": "Temporal lobe oedema highly suggestive of HSV encephalitis."
+      },
+      {
+        "test": "LP — opening pressure, cell count, protein, glucose, HSV-1/2 + VZV + enterovirus PCR; bacterial cultures; oligoclonal bands.",
+        "rationale": "Definitive diagnosis; lymphocytic pleocytosis + raised protein typical."
+      },
+      {
+        "test": "EEG — temporal periodic discharges support HSV.",
+        "rationale": "Adjunctive."
+      },
+      {
+        "test": "Blood cultures, HIV test, autoimmune encephalitis panel if PCR negative.",
+        "rationale": "Differential diagnosis."
+      },
+      {
+        "test": "Pregnancy test in women of childbearing potential.",
+        "rationale": "Therapy adjustment."
+      }
+    ],
+    "management": [
+      {
+        "step": "Empirical aciclovir IMMEDIATELY",
+        "detail": "IV aciclovir 10 mg/kg (lean body weight) every 8 h for 14–21 days. Start empirically while waiting for LP / PCR if clinical suspicion — early treatment dramatically reduces mortality and morbidity for HSV encephalitis."
+      },
+      {
+        "step": "Cover empirical bacterial meningitis as well",
+        "detail": "IV ceftriaxone 2 g BID + amoxicillin 2 g 4-hourly (≥ 50 yrs / immunocompromised — Listeria cover). Stop when bacterial cultures negative."
+      },
+      {
+        "step": "Manage seizures",
+        "detail": "Benzodiazepine then second-line per status epilepticus pathway. Consider prophylactic levetiracetam in acute encephalitis with focal MRI changes."
+      },
+      {
+        "step": "Cerebral oedema management",
+        "detail": "Head elevation 30°; control fever (paracetamol, cooling); avoid hypotonic fluids; mannitol or 3% NaCl for impending herniation; monitor ICP if available."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Airway protection if GCS ≤ 8; DVT prophylaxis; nutritional support; pressure-area care."
+      },
+      {
+        "step": "Renal monitoring on aciclovir",
+        "detail": "Aciclovir crystal nephropathy risk — keep well hydrated, monitor U&E daily, adjust dose for renal impairment."
+      },
+      {
+        "step": "Treat alternative diagnoses based on PCR/serology",
+        "detail": "VZV: continue aciclovir + steroid if vasculitis. CMV: ganciclovir. JC: reduce immunosuppression. Autoimmune (NMDAR Ab): high-dose steroids + IVIG / plasma exchange + tumour search (ovarian teratoma)."
+      },
+      {
+        "step": "Rehabilitation + cognitive screening on discharge",
+        "detail": "Post-encephalitis cognitive deficits, behavioural change, epilepsy common; multidisciplinary rehabilitation."
+      }
+    ],
+    "references": [
+      {
+        "label": "IDSA — Management of Encephalitis (2008)"
+      },
+      {
+        "label": "BIA + ABN — UK national guidelines for the management of viral encephalitis in adults (2012)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "myasthenic-crisis",
+    "title": "Myasthenic crisis (acute neuromuscular respiratory failure)",
+    "icd10": [
+      "G70.0",
+      "G70.01"
+    ],
+    "domains": [
+      "neurology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Severe weakness with respiratory failure in known or suspected myasthenia gravis.",
+      "Often precipitated by infection, surgery, medication change, missed pyridostigmine, certain drugs (aminoglycosides, fluoroquinolones, beta-blockers, magnesium, neuromuscular blockers, ICI immunotherapy).",
+      "Bulbar weakness (dysphagia, dysarthria), dyspnoea worse on exertion / lying flat, reduced FVC < 1 L or 20 mL/kg, single-breath count < 25."
+    ],
+    "redFlags": [
+      "FVC < 15 mL/kg or falling rapidly → intubate.",
+      "Single-breath count < 15.",
+      "Severe bulbar weakness with secretion pooling → high aspiration risk.",
+      "Cholinergic crisis (over-treatment with anticholinesterase) — pinpoint pupils, salivation, lacrimation, fasciculation, diarrhoea — distinguish carefully."
+    ],
+    "diagnostics": [
+      {
+        "test": "FVC, single-breath count (count to 25 on one breath in English ≈ FVC 2 L), negative inspiratory force.",
+        "rationale": "Quantify respiratory muscle strength and trend."
+      },
+      {
+        "test": "Arterial blood gas.",
+        "rationale": "Hypercapnia is a LATE sign — do NOT wait for it before intubating."
+      },
+      {
+        "test": "Acetylcholine receptor + MuSK antibodies.",
+        "rationale": "Diagnostic confirmation (if not already known)."
+      },
+      {
+        "test": "CT chest for thymoma.",
+        "rationale": "Indicates thymectomy after stabilisation."
+      },
+      {
+        "test": "Cultures + CXR + COVID test.",
+        "rationale": "Identify infective precipitant."
+      }
+    ],
+    "management": [
+      {
+        "step": "Airway + breathing assessment",
+        "detail": "Sit upright; monitor FVC and SpO2; nasal cannula O2 to keep SpO2 ≥ 94%. Intubate ELECTIVELY (don't wait for crash) for FVC < 15 mL/kg, hypoxia, bulbar weakness with aspiration, or rapid trajectory decline. Avoid succinylcholine and aminoglycoside-class neuromuscular relaxants — use rocuronium with reduced dose under careful TOF monitoring."
+      },
+      {
+        "step": "Stop offending medications",
+        "detail": "Aminoglycosides, fluoroquinolones, telithromycin, beta-blockers, magnesium IV, iodinated contrast, statins (review), ICI immunotherapy."
+      },
+      {
+        "step": "Disease-modifying immunomodulation",
+        "detail": "Plasma exchange (PLEX) 5 sessions over 7–14 days OR IVIG 2 g/kg over 2–5 days. Both equivalent in efficacy; PLEX may be slightly faster. Specialist input."
+      },
+      {
+        "step": "Corticosteroids — initiate cautiously",
+        "detail": "Prednisolone 1 mg/kg daily can transiently worsen weakness in first 1–2 weeks (treatment-induced exacerbation); start AFTER PLEX/IVIG given to prevent worsening crisis."
+      },
+      {
+        "step": "Continue / restart pyridostigmine — but recognise cholinergic crisis",
+        "detail": "Resume pyridostigmine 60 mg 4–6-hourly once oral feeding safe. If history suggests over-treatment (recent dose escalation, cholinergic symptoms): WITHDRAW pyridostigmine for 48 h and reassess."
+      },
+      {
+        "step": "Long-term immunosuppression review",
+        "detail": "Azathioprine, mycophenolate, rituximab, eculizumab (refractory), efgartigimod, rozanolixizumab — specialist outpatient plan."
+      },
+      {
+        "step": "Thymectomy when stable",
+        "detail": "Thymectomy indicated for thymoma; consider for non-thymomatous generalised AChR-positive MG age < 65 (MGTX trial)."
+      },
+      {
+        "step": "Outpatient + crisis plan",
+        "detail": "Educate patient on drugs to avoid (printed list), early symptoms of crisis, emergency contact pathway, vaccination (especially pneumococcal, influenza)."
+      }
+    ],
+    "references": [
+      {
+        "label": "International Consensus Guidance for Management of Myasthenia Gravis (Sanders et al. Neurology 2016, 2020 update)"
+      },
+      {
+        "label": "EAN/ENS guideline on myasthenia gravis"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-acute-pancreatitis",
+    "title": "Severe acute pancreatitis — adult",
+    "icd10": [
+      "K85.0",
+      "K85.1",
+      "K85.2",
+      "K85.3",
+      "K85.8",
+      "K85.9"
+    ],
+    "domains": [
+      "gastroenterology",
+      "emergency",
+      "critical-care",
+      "surgery"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Severe constant epigastric pain radiating to back, nausea, vomiting.",
+      "Diagnosis (2 of 3): characteristic pain, amylase / lipase ≥ 3× ULN, characteristic imaging.",
+      "Severity: Atlanta classification — mild (no organ failure), moderately severe (transient OF < 48 h, local complications), severe (persistent organ failure > 48 h).",
+      "Causes: gallstones, alcohol (top 2), hypertriglyceridaemia, ERCP, drugs (azathioprine, valproate, GLP-1, oestrogens), trauma, idiopathic."
+    ],
+    "redFlags": [
+      "Persistent SIRS / organ failure (SBP < 90, RR > 20, AKI, ARDS).",
+      "Necrotising pancreatitis with infection (often after first week — fever, sepsis, deterioration).",
+      "Severe ARDS (need invasive ventilation).",
+      "Compartment syndrome (intra-abdominal pressure > 20 mmHg).",
+      "GI haemorrhage (pseudoaneurysm)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serum lipase (more specific than amylase); ALT > 150 supports gallstone aetiology.",
+        "rationale": "Diagnosis + aetiology screening."
+      },
+      {
+        "test": "USS abdomen — gallstones / CBD dilation.",
+        "rationale": "Aetiology + identify need for ERCP."
+      },
+      {
+        "test": "Contrast CT abdomen at 72–96 h if severe / no improvement — modified CT severity index.",
+        "rationale": "Identify necrosis + collections; do NOT do CT in first 24 h (underestimates necrosis)."
+      },
+      {
+        "test": "FBC, U&E, calcium, glucose, triglycerides, blood gas, lactate, CRP at 48 h.",
+        "rationale": "Severity scoring (Glasgow-Imrie, BISAP, APACHE-II); calcium / triglyceride aetiology."
+      },
+      {
+        "test": "MRCP / EUS if biliary cause + jaundice / cholangitis.",
+        "rationale": "Identify obstructing stone."
+      }
+    ],
+    "management": [
+      {
+        "step": "Early aggressive fluid resuscitation — but goal-directed, not blanket large volumes",
+        "detail": "Lactated Ringer's 5–10 mL/kg/h for the first 12–24 h, reassessing every 4–6 h to euvolaemia (HR < 120, MAP > 65, urine output 0.5–1 mL/kg/h, lactate falling). Avoid OVER-resuscitation (WATERFALL trial — moderate volume superior to aggressive)."
+      },
+      {
+        "step": "Pain control",
+        "detail": "IV opioid (morphine, fentanyl); avoid pethidine (poorly evidenced 'Oddi sphincter' claim is outdated). Epidural analgesia in severe cases."
+      },
+      {
+        "step": "Early enteral nutrition (within 24–72 h)",
+        "detail": "NG or NJ feeding is preferred to NPO if patient can tolerate. Reduces infectious complications and bacterial translocation. TPN only if enteral truly impossible."
+      },
+      {
+        "step": "Treat the cause",
+        "detail": "Gallstone + cholangitis or persistent biliary obstruction → urgent ERCP within 24–48 h. Alcohol → IV thiamine, treat withdrawal, brief intervention. Hypertriglyceridaemia → insulin infusion ± plasmapheresis. Drug-induced → stop drug. Cholecystectomy during the same admission for mild gallstone pancreatitis; after recovery for severe."
+      },
+      {
+        "step": "Antibiotics ONLY for suspected infected necrosis",
+        "detail": "Do NOT routinely prophylactically antibiotic. If clinical deterioration > 7–10 days with fever / sepsis: CT-guided FNA + start meropenem or piperacillin-tazobactam. Image-guided drainage / minimally-invasive necrosectomy (step-up) preferred over open."
+      },
+      {
+        "step": "ICU support",
+        "detail": "Respiratory support (NIV / IMV with lung-protective ventilation for ARDS); renal replacement therapy for AKI; vasopressors for septic / distributive shock; monitor intra-abdominal pressure."
+      },
+      {
+        "step": "Long-term — recurrence prevention + complications",
+        "detail": "Alcohol cessation. Cholecystectomy. Manage diabetes (often new onset after severe pancreatitis). Pseudocyst surveillance / drainage if symptomatic > 6 weeks. Pancreatic exocrine replacement if steatorrhoea."
+      }
+    ],
+    "references": [
+      {
+        "label": "AGA Institute Guideline for the Initial Management of Acute Pancreatitis (2018, updated)"
+      },
+      {
+        "label": "IAP/APA evidence-based guidelines for the management of acute pancreatitis"
+      },
+      {
+        "label": "WATERFALL trial NEJM 2022 — moderate vs aggressive fluid"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "acute-variceal-haemorrhage",
+    "title": "Acute variceal haemorrhage (oesophageal / gastric)",
+    "icd10": [
+      "I85.01",
+      "I86.4"
+    ],
+    "domains": [
+      "gastroenterology",
+      "hepatology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Haematemesis (bright red) / melaena in patient with cirrhosis / portal hypertension.",
+      "Often haemodynamically unstable; encephalopathy may worsen.",
+      "Mortality remains 15–25% in first episode despite modern care."
+    ],
+    "redFlags": [
+      "Shock, ongoing brisk bleeding.",
+      "Altered consciousness (encephalopathy / hypovolaemia).",
+      "Suspected aspiration.",
+      "Active alcohol withdrawal / DT risk.",
+      "Concurrent infection (SBP, cellulitis) — drives rebleeding and mortality."
+    ],
+    "diagnostics": [
+      {
+        "test": "FBC, urgent crossmatch 4 units, coagulation, fibrinogen, U&E, LFT, lactate, blood gas.",
+        "rationale": "Quantify severity + prepare for transfusion."
+      },
+      {
+        "test": "Lactate / Glasgow-Blatchford score, AIMS65 — risk stratification.",
+        "rationale": "Predict need for intervention + mortality."
+      },
+      {
+        "test": "Urgent upper GI endoscopy within 12 hours.",
+        "rationale": "Diagnose + intervene (band ligation / sclerotherapy / glue)."
+      }
+    ],
+    "management": [
+      {
+        "step": "ABCDE; airway protection",
+        "detail": "Intubate for GCS ≤ 8, ongoing massive haematemesis, or for safe endoscopy. Two large-bore IVs, monitoring."
+      },
+      {
+        "step": "Restrictive transfusion strategy",
+        "detail": "Aim Hb 70–80 g/L — over-transfusion increases portal pressure and rebleeding (Villanueva et al. NEJM 2013). Use platelet > 50, fibrinogen > 1.5, INR target < 2.5 (avoid over-correction)."
+      },
+      {
+        "step": "Splanchnic vasoconstrictor",
+        "detail": "Terlipressin 2 mg IV every 4 h (preferred where available — reduces mortality), OR octreotide 50 microgram IV bolus + 25–50 microgram/h infusion × 2–5 days, OR somatostatin. Continue for 2–5 days."
+      },
+      {
+        "step": "Antibiotic prophylaxis",
+        "detail": "IV ceftriaxone 1 g daily for 5–7 days — reduces mortality, rebleeding, SBP, and bacterial infection. Give to ALL patients with cirrhosis and upper GI bleed regardless of ascites."
+      },
+      {
+        "step": "Urgent endoscopy within 12 hours",
+        "detail": "Variceal band ligation for oesophageal varices; tissue adhesive (cyanoacrylate glue) for gastric varices. Pre-procedural IV erythromycin 250 mg 30 min before improves view."
+      },
+      {
+        "step": "Rescue therapies for uncontrolled bleeding",
+        "detail": "Balloon tamponade (Sengstaken-Blakemore / Minnesota tube) as bridge — protect airway; max 24 h. Self-expanding metal stent (SX-Ella Danis). TIPS (transjugular intrahepatic portosystemic shunt) — definitive for refractory bleeding."
+      },
+      {
+        "step": "Manage encephalopathy",
+        "detail": "Lactulose 30 mL every 1–2 h to 3–4 soft stools/day; rifaximin 550 mg BD adjunct. Treat precipitants (infection, electrolyte, sedatives, GI bleed itself)."
+      },
+      {
+        "step": "Secondary prevention after acute episode",
+        "detail": "Non-selective β-blocker (carvedilol 6.25 mg BD or propranolol 20–40 mg BD titrated to HR 55) + repeat endoscopic band ligation every 2–4 weeks until eradication, then surveillance every 6–12 months. Consider TIPS if rebleeding despite combination therapy."
+      }
+    ],
+    "references": [
+      {
+        "label": "Baveno VII Consensus Workshop on Portal Hypertension (2022)"
+      },
+      {
+        "label": "AASLD Practice Guidance on Portal Hypertensive Bleeding in Cirrhosis"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "hepatorenal-syndrome",
+    "title": "Hepatorenal syndrome (HRS-AKI)",
+    "icd10": [
+      "K76.7"
+    ],
+    "domains": [
+      "hepatology",
+      "nephrology",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Acute kidney injury in cirrhosis with ascites, without other identifiable cause after volume challenge.",
+      "Updated 2015 ICA criteria: AKI in cirrhosis + no improvement after 2 days off diuretics and with albumin 1 g/kg, no shock, no nephrotoxin, no parenchymal kidney disease (proteinuria < 0.5 g/day, no haematuria, normal USS).",
+      "HRS-AKI replaces older 'HRS type 1'; HRS-NAKI replaces 'type 2'."
+    ],
+    "redFlags": [
+      "Anuria, severe AKI (creatinine > 350 micromol/L).",
+      "Concomitant SBP (high mortality combination).",
+      "Acute-on-chronic liver failure with multi-organ failure.",
+      "Bleeding precluding terlipressin / albumin use."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serial creatinine + KDIGO AKI staging.",
+        "rationale": "Confirm AKI; assess severity."
+      },
+      {
+        "test": "Urine albumin / sodium / sediment + USS kidneys.",
+        "rationale": "Exclude parenchymal renal disease and obstruction; urine Na often < 10 mmol/L in HRS."
+      },
+      {
+        "test": "Septic screen (blood / urine / ascites cultures).",
+        "rationale": "Identify and treat SBP / other infection (common precipitant)."
+      },
+      {
+        "test": "FBC, coag, LFT, blood gas.",
+        "rationale": "Coagulopathy / acidosis."
+      }
+    ],
+    "management": [
+      {
+        "step": "Withhold nephrotoxins, diuretics, NSAID, lactulose adjustment",
+        "detail": "Stop ACEi/ARB, NSAIDs, aminoglycosides, IV contrast. Pause diuretics."
+      },
+      {
+        "step": "Albumin volume expansion — 2-day trial",
+        "detail": "Human albumin 20% 1 g/kg/day (max 100 g) × 2 days. If creatinine improves, HRS excluded; treat as pre-renal."
+      },
+      {
+        "step": "Vasoconstrictor therapy for confirmed HRS-AKI",
+        "detail": "Terlipressin 0.5–1 mg IV every 4–6 h (titrate to MAP rise + diuresis; max 12 mg/day) × up to 14 days OR continuous infusion 2 mg/24 h escalating to 12 mg/24 h. Combine with albumin 20–40 g/day. Alternative: noradrenaline infusion (ICU only) targeting MAP rise 10 mmHg; or midodrine + octreotide + albumin (less effective)."
+      },
+      {
+        "step": "Monitor for terlipressin adverse effects",
+        "detail": "Stop if respiratory failure (terlipressin can cause acute respiratory distress — CONFIRM trial signal), severe ischaemia (digital, mesenteric, cardiac), or hyponatraemia."
+      },
+      {
+        "step": "Treat precipitating cause",
+        "detail": "SBP: IV cefotaxime + albumin 1.5 g/kg day 1 + 1 g/kg day 3. Variceal bleed treatment per variceal pathway. Avoid further hits."
+      },
+      {
+        "step": "Renal replacement therapy if needed",
+        "detail": "RRT as bridge to liver transplantation; not for HRS without transplant prospect (poor outcomes). Continuous modalities preferred for haemodynamic stability."
+      },
+      {
+        "step": "Liver transplantation is the definitive treatment",
+        "detail": "Refer urgently to transplant centre. Combined liver-kidney transplant considered for prolonged HRS or pre-existing CKD."
+      }
+    ],
+    "references": [
+      {
+        "label": "International Club of Ascites consensus criteria (2015, updated 2019)"
+      },
+      {
+        "label": "EASL Clinical Practice Guidelines for management of decompensated cirrhosis (2018)"
+      },
+      {
+        "label": "AASLD Practice Guidance on hepatorenal syndrome"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "massive-pulmonary-embolism",
+    "title": "Massive pulmonary embolism (high-risk PE)",
+    "icd10": [
+      "I26.0",
+      "I26.99"
+    ],
+    "domains": [
+      "respiratory",
+      "cardiology",
+      "vascular",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden cardiovascular collapse / shock / cardiac arrest in patient with PE risk factors (immobility, malignancy, recent surgery, OCP/pregnancy, prior VTE).",
+      "Dyspnoea, pleuritic chest pain, syncope, haemoptysis.",
+      "ECG: sinus tachycardia, S1Q3T3, right heart strain (T inversion V1–V3); raised troponin / BNP.",
+      "Echo: right ventricular dilatation / hypokinesis, McConnell sign, septal flattening."
+    ],
+    "redFlags": [
+      "Persistent hypotension (SBP < 90 mmHg or drop > 40) — massive PE, immediate thrombolysis indication.",
+      "Cardiac arrest with suspected PE — consider intra-arrest thrombolysis.",
+      "Pregnant — increased PE risk; careful imaging choice (V/Q vs CTPA).",
+      "Active bleeding — contraindication to thrombolysis; consider catheter-directed therapy or surgical embolectomy."
+    ],
+    "diagnostics": [
+      {
+        "test": "CT pulmonary angiogram (CTPA) — first-line if stable.",
+        "rationale": "Confirmatory imaging."
+      },
+      {
+        "test": "Bedside echo if too unstable for CT.",
+        "rationale": "RV strain supports diagnosis in collapsed patient."
+      },
+      {
+        "test": "ABG, troponin, BNP, lactate.",
+        "rationale": "Severity stratification."
+      },
+      {
+        "test": "D-dimer NOT useful when high pre-test probability + instability — proceed direct to imaging.",
+        "rationale": "Diagnostic algorithm."
+      },
+      {
+        "test": "V/Q scan if CTPA contraindicated (severe renal impairment, contrast allergy, pregnancy).",
+        "rationale": "Alternative imaging."
+      }
+    ],
+    "management": [
+      {
+        "step": "ABCDE + ICU activation",
+        "detail": "High-flow O2; cautious IV fluid (500 mL bolus then reassess — RV failure worsens with excess fluid); central + arterial line."
+      },
+      {
+        "step": "Vasopressor + inotrope for haemodynamic support",
+        "detail": "Noradrenaline first-line; add dobutamine 2.5–10 microgram/kg/min if RV dysfunction with adequate MAP. AVOID inhaled NO without ICU experience."
+      },
+      {
+        "step": "Systemic thrombolysis — first-line for massive PE without bleeding contraindications",
+        "detail": "IV alteplase 100 mg over 2 h (or 50 mg over 1–2 h if higher bleed risk); follow with unfractionated heparin once aPTT < 2× normal post-lysis."
+      },
+      {
+        "step": "Catheter-directed thrombolysis ± mechanical thrombectomy",
+        "detail": "For high-risk PE with relative contraindication to systemic lysis, or post-lysis failure. Specialist interventional radiology / cardiology centres."
+      },
+      {
+        "step": "Surgical embolectomy",
+        "detail": "Massive PE with absolute lysis contraindication or failure; specialist cardiothoracic centre."
+      },
+      {
+        "step": "Anticoagulation",
+        "detail": "Unfractionated heparin infusion during resuscitation / lysis; transition to LMWH then DOAC (rivaroxaban, apixaban) for at least 3 months — lifelong if unprovoked, malignancy, persistent risk factor."
+      },
+      {
+        "step": "Cardiac arrest — modified ACLS",
+        "detail": "Consider intra-arrest 50 mg alteplase bolus; continue CPR ≥ 60 min after lysis."
+      },
+      {
+        "step": "Post-acute care",
+        "detail": "Echocardiography at 3–6 months for chronic thromboembolic pulmonary hypertension (CTEPH) screen; if persistent dyspnoea, V/Q scan; specialist PH referral."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC Guidelines for the diagnosis and management of acute pulmonary embolism (2019, updated 2024)"
+      },
+      {
+        "label": "AHA Scientific Statement on Management of Massive and Submassive Pulmonary Embolism"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "thyroid-storm-thyroid-emergency",
+    "title": "Thyroid storm (thyrotoxic crisis)",
+    "icd10": [
+      "E05.5"
+    ],
+    "domains": [
+      "endocrinology",
+      "emergency",
+      "critical-care",
+      "cardiology"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Severe thyrotoxicosis precipitated by infection, surgery, trauma, RAI, iodine load (contrast), childbirth, withdrawal of antithyroid drug, DKA.",
+      "Hyperpyrexia > 38.5°C, agitation / delirium / coma, tachycardia > 130, AF, heart failure, vomiting / diarrhoea, jaundice.",
+      "Burch-Wartofsky score ≥ 45 supports diagnosis; ≥ 25–44 impending."
+    ],
+    "redFlags": [
+      "Coma / seizure.",
+      "High-output cardiac failure / pulmonary oedema.",
+      "Severe hyperpyrexia.",
+      "DIC / liver failure.",
+      "Pregnancy — fetal compromise; obstetric input."
+    ],
+    "diagnostics": [
+      {
+        "test": "TSH (suppressed), free T4 + T3 (markedly raised).",
+        "rationale": "Confirm thyrotoxicosis; treatment urgency does not wait for results."
+      },
+      {
+        "test": "FBC, U&E, glucose, LFT, calcium, blood culture, CXR, ECG.",
+        "rationale": "Identify precipitant + organ involvement."
+      },
+      {
+        "test": "Clinical scoring (Burch-Wartofsky).",
+        "rationale": "Severity grading."
+      }
+    ],
+    "management": [
+      {
+        "step": "ABCDE + supportive care",
+        "detail": "Cooling (sponging, cold IV fluids, paracetamol). AVOID aspirin (displaces T4 from binding proteins). IV fluids; correct electrolytes."
+      },
+      {
+        "step": "Block synthesis (within first hour)",
+        "detail": "Propylthiouracil (PTU) 500–1000 mg PO/NG loading then 200 mg every 4 h (preferred — also blocks T4→T3); OR carbimazole 60–80 mg/day. Both via NG if unable to swallow."
+      },
+      {
+        "step": "Block release — wait at least 1 hour after thionamide",
+        "detail": "Lugol's iodine 8 drops every 6 h (or potassium iodide 5 drops every 6 h) — at least 1 h after thionamide to avoid further hormone synthesis."
+      },
+      {
+        "step": "Block peripheral conversion + symptomatic",
+        "detail": "Hydrocortisone 100 mg IV every 6 h (also covers possible adrenal insufficiency). Propranolol 60–80 mg every 4 h PO/NG OR esmolol infusion 50–200 microgram/kg/min IV — controls tachycardia and conversion. AVOID propranolol in decompensated HF — use digoxin / cautious esmolol."
+      },
+      {
+        "step": "Treat precipitant",
+        "detail": "Antibiotics if infection, treat DKA, obstetric input for pregnancy."
+      },
+      {
+        "step": "Plasmapheresis / RRT for refractory cases",
+        "detail": "Removes circulating thyroid hormone; consider in failure of medical therapy."
+      },
+      {
+        "step": "Definitive treatment after stabilisation",
+        "detail": "Total thyroidectomy or RAI ablation after euthyroid state achieved. Continue antithyroid therapy in meantime."
+      }
+    ],
+    "references": [
+      {
+        "label": "American Thyroid Association Guidelines for Diagnosis and Management of Hyperthyroidism (2016)"
+      },
+      {
+        "label": "Burch HB, Wartofsky L — Life-threatening thyrotoxicosis: thyroid storm (1993)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "paracetamol-overdose-adult",
+    "title": "Paracetamol overdose — adult emergency management",
+    "icd10": [
+      "T39.1",
+      "T39.1X1"
+    ],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "hepatology"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Single acute overdose (within 1 h ingestion) or staggered (multiple doses > 1 h apart).",
+      "First 24 h: often asymptomatic; nausea, vomiting, pallor, lethargy.",
+      "24–72 h: hepatic damage emerges — RUQ pain, deranged LFT, INR rise, encephalopathy.",
+      "72–96 h: fulminant hepatic failure peak; jaundice, encephalopathy, AKI, lactic acidosis.",
+      "≥ 7.5 g (or > 150 mg/kg, whichever is lower) acute is potentially hepatotoxic; staggered > 4 g/24 h needs treatment if symptomatic."
+    ],
+    "redFlags": [
+      "Late presentation (> 8 h post-ingestion) — start NAC empirically.",
+      "King's College criteria (pH < 7.3 at 24 h OR INR > 6.5 / creatinine > 300 / encephalopathy grade III/IV) — transplant referral.",
+      "Co-ingestion of other hepatotoxins or staggered overdose — higher risk regardless of nomogram.",
+      "Pregnancy — maternal + fetal NAC is safe and effective.",
+      "Suicidal ideation — mental health pathway after medical stabilisation."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serum paracetamol level at 4 hours post-ingestion (no earlier) — plot on Rumack-Matthew nomogram (UK 100 mg/L line; some countries use 150 line).",
+        "rationale": "Determines whether NAC is needed for acute overdose."
+      },
+      {
+        "test": "LFT (ALT), INR, creatinine, venous blood gas + lactate, glucose.",
+        "rationale": "Baseline + risk stratification."
+      },
+      {
+        "test": "Salicylate level + urine drug screen.",
+        "rationale": "Identify co-ingestion."
+      },
+      {
+        "test": "Pregnancy test in women.",
+        "rationale": "NAC dosing same; obstetric input."
+      }
+    ],
+    "management": [
+      {
+        "step": "If presented within 1 h of acute ingestion → consider activated charcoal",
+        "detail": "Charcoal 50 g PO if airway protected and ingestion < 1 h. Do NOT delay NAC for this."
+      },
+      {
+        "step": "Acute single ingestion < 8 h: take level at ≥ 4 h, treat based on nomogram",
+        "detail": "If above treatment line → IV N-acetylcysteine. If below → no treatment but observe."
+      },
+      {
+        "step": "Acute single ingestion 8–24 h post: START NAC IMMEDIATELY, await level (treat unless clearly below line + ALT normal)",
+        "detail": "Time-criticalness rises sharply after 8 h."
+      },
+      {
+        "step": "Staggered ingestion / unknown timing: START NAC EMPIRICALLY if dose > 75 mg/kg (or > 150 mg/kg / 24 h)",
+        "detail": "Nomogram not valid; treat regardless."
+      },
+      {
+        "step": "N-acetylcysteine IV regimen (21-hour 'SNAP' or standard 3-bag)",
+        "detail": "STANDARD: bag 1 — 150 mg/kg in 200 mL 5% dextrose over 1 h; bag 2 — 50 mg/kg in 500 mL over 4 h; bag 3 — 100 mg/kg in 1000 mL over 16 h. Max body weight 110 kg for dose calculation. SNAP 12-hour alternative: 100 mg/kg over 2 h then 200 mg/kg over 10 h (less reaction, equivalent efficacy)."
+      },
+      {
+        "step": "Manage anaphylactoid reactions to NAC",
+        "detail": "Common (10–15%) — flushing, urticaria, wheeze; usually first hour. Pause infusion, give chlorphenamine ± nebulised salbutamol, then RESTART at slower rate."
+      },
+      {
+        "step": "Re-check ALT, INR, creatinine at end of NAC (21 h) — continue NAC if abnormal",
+        "detail": "Continue NAC if ALT > 2× ULN, INR > 1.3, paracetamol still detectable, or symptomatic. King's College criteria → liver transplant referral."
+      },
+      {
+        "step": "Mental health assessment ALWAYS for intentional self-poisoning",
+        "detail": "See mhgap-self-harm pathway; do not discharge without psychiatric review and safety plan."
+      }
+    ],
+    "references": [
+      {
+        "label": "MHRA / UK Toxbase paracetamol overdose treatment nomogram and protocol"
+      },
+      {
+        "label": "American Association of Poison Control Centres consensus"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "opioid-overdose-emergency",
+    "title": "Opioid overdose — emergency management",
+    "icd10": [
+      "T40.0",
+      "T40.1",
+      "T40.2",
+      "T40.3",
+      "T40.4",
+      "T40.6"
+    ],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "addiction"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Reduced consciousness, respiratory depression (RR < 12, often slow shallow), pinpoint pupils (miosis).",
+      "Cyanosis, bradycardia, hypotension.",
+      "Suggestive history / setting (paraphernalia, methadone, fentanyl patches), or known opioid prescription / use.",
+      "Pulmonary oedema can occur (especially with heroin / fentanyl)."
+    ],
+    "redFlags": [
+      "Apnoea, no spontaneous breathing — immediate naloxone + bag-mask ventilation.",
+      "Cardiac arrest — full ACLS with naloxone push.",
+      "Body-packer (drug mule) — risk of catastrophic OD if package ruptures; surgical opinion.",
+      "Fentanyl / carfentanil — much higher doses of naloxone needed; risk of recurrent toxicity.",
+      "Sympathomimetic features (mydriasis, tachycardia, hypertension) — consider co-ingestion (cocaine, stimulant)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis from triad of reduced consciousness + miosis + respiratory depression.",
+        "rationale": "Treat empirically with naloxone."
+      },
+      {
+        "test": "Capillary glucose, ECG (QT prolongation methadone), ABG.",
+        "rationale": "Identify reversible cause + co-ingestion."
+      },
+      {
+        "test": "Urine drug screen.",
+        "rationale": "Identify opioid + co-ingestants (will not identify fentanyl on standard panel)."
+      },
+      {
+        "test": "CXR if hypoxia / persistent symptoms (non-cardiogenic pulmonary oedema).",
+        "rationale": "Identify aspiration / pulmonary oedema."
+      },
+      {
+        "test": "Acetaminophen + salicylate level in unknown overdose.",
+        "rationale": "Co-ingestion screen."
+      }
+    ],
+    "management": [
+      {
+        "step": "Airway + breathing — bag-mask ventilation if apnoeic / hypoventilation",
+        "detail": "Position, jaw thrust, OPA / NPA. Pre-oxygenate before naloxone."
+      },
+      {
+        "step": "Naloxone — titrate to ventilation, not to consciousness",
+        "detail": "IV naloxone 0.04–0.4 mg (start low — 40–100 microgram in suspected opioid-dependent patient to avoid precipitated withdrawal), repeat every 2–3 min up to 2 mg or until adequate ventilation. IM 0.4–2 mg if no IV access. Intranasal 2–4 mg via atomiser. Higher doses (up to 10 mg) for fentanyl / carfentanil."
+      },
+      {
+        "step": "Naloxone infusion if long-acting opioid (methadone, sustained-release, fentanyl patch)",
+        "detail": "Hourly infusion at 2/3 of the bolus dose that restored breathing. Continue at least 12–24 h. Watch for resedation."
+      },
+      {
+        "step": "Remove fentanyl patches; gastric decontamination only for body-packers",
+        "detail": "Whole-bowel irrigation with PEG for body-packers; surgical removal if package rupture suspected."
+      },
+      {
+        "step": "Manage non-cardiogenic pulmonary oedema",
+        "detail": "Supportive O2 / CPAP / IMV; usually resolves over 12–24 h without specific therapy."
+      },
+      {
+        "step": "Observe at least 4–6 h after last naloxone dose",
+        "detail": "Discharge only when fully alert, ambulating, normal vital signs sustained without further naloxone. Longer observation (24 h) for long-acting opioids (methadone)."
+      },
+      {
+        "step": "Harm-reduction + brief intervention",
+        "detail": "Take-home naloxone training for patient + household; refer to opioid agonist therapy (methadone / buprenorphine — see opioid-use-disorder-treatment); HIV / HCV testing; safe injection counselling; mental health referral if intentional."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Community management of opioid overdose (2014)"
+      },
+      {
+        "label": "ACMT position statement on opioid overdose management"
+      },
+      {
+        "label": "SAMHSA Opioid Overdose Prevention Toolkit"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "benzodiazepine-overdose",
+    "title": "Benzodiazepine overdose",
+    "icd10": [
+      "T42.4",
+      "T42.4X1"
+    ],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "addiction"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Reduced consciousness, ataxia, dysarthria, nystagmus.",
+      "Pure benzodiazepine OD rarely causes severe respiratory depression unless co-ingested with opioid, alcohol, TCA, antihistamine.",
+      "Onset: ~30 min oral; minutes IV."
+    ],
+    "redFlags": [
+      "Co-ingestion suspected (mixed OD is the norm).",
+      "Hypotension, bradycardia, hypothermia (severe or combined OD).",
+      "Long-acting benzodiazepine (diazepam) — prolonged sedation.",
+      "Body-packer — surgical / WBI."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical assessment + Glasgow Coma Scale.",
+        "rationale": "Severity grading."
+      },
+      {
+        "test": "Urine drug screen — note false negatives common (clonazepam, alprazolam, lorazepam, midazolam often not detected on basic panels).",
+        "rationale": "Confirmation; absence does not exclude."
+      },
+      {
+        "test": "Paracetamol + salicylate level if intentional / unknown.",
+        "rationale": "Co-ingestion screen."
+      },
+      {
+        "test": "ECG, glucose, electrolytes.",
+        "rationale": "Identify reversible cause."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive care — airway, breathing, circulation",
+        "detail": "Most pure benzodiazepine OD recover with observation only. Position for airway, supplemental O2, IV access, monitoring."
+      },
+      {
+        "step": "Flumazenil — USE WITH GREAT CAUTION",
+        "detail": "0.2 mg IV over 30 sec, repeat 0.3 mg then 0.5 mg at 1-min intervals (max 3 mg). ONLY consider for: iatrogenic procedural sedation reversal, OR isolated benzodiazepine OD in a non-dependent patient with severe respiratory depression. CONTRAINDICATED in chronic benzodiazepine use (seizure precipitation), TCA / pro-convulsant co-ingestion, status epilepticus / seizure history, raised ICP. Effects last 30–60 min, may need re-dosing."
+      },
+      {
+        "step": "Activated charcoal only if presented < 1 h and airway protected",
+        "detail": "Not routinely indicated for isolated benzodiazepine OD due to airway risk."
+      },
+      {
+        "step": "Observation 4–6 h (longer for diazepam / clonazepam)",
+        "detail": "Discharge home when alert, ambulatory, hemodynamically stable."
+      },
+      {
+        "step": "Manage co-ingestion (TCA, opioid, alcohol, paracetamol)",
+        "detail": "Follow specific antidote pathways."
+      },
+      {
+        "step": "Mental health + substance use referral",
+        "detail": "Intentional OD → psychiatric assessment. Iatrogenic dependence → controlled tapering plan (10% per 1–2 weeks)."
+      }
+    ],
+    "references": [
+      {
+        "label": "Goldfrank's Toxicologic Emergencies"
+      },
+      {
+        "label": "UK TOXBASE benzodiazepine overdose"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "cyanide-poisoning",
+    "title": "Cyanide poisoning (smoke inhalation, occupational, intentional)",
+    "icd10": [
+      "T57.3",
+      "T65.0"
+    ],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Rapid onset (minutes) after inhalation of fire smoke (closed-space fire), occupational exposure (mining, electroplating), or intentional ingestion.",
+      "Headache, dizziness, anxiety, dyspnoea, seizures, loss of consciousness, cardiovascular collapse.",
+      "Cherry-red skin classical but unreliable; venous blood may appear bright red (high venous PaO2 — tissues cannot use O2).",
+      "Severe lactic acidosis (lactate > 8 mmol/L in smoke-inhalation victim is virtually diagnostic)."
+    ],
+    "redFlags": [
+      "Loss of consciousness, seizure, cardiac arrest in smoke-inhalation context.",
+      "Severe metabolic acidosis with elevated venous O2 saturation (narrowed AV oxygen gap).",
+      "Concurrent CO poisoning (often coexists) — treat both.",
+      "Burns + airway compromise — early intubation."
+    ],
+    "diagnostics": [
+      {
+        "test": "Lactate (> 8 mmol/L in smoke-inhalation 90% sensitive for cyanide toxicity).",
+        "rationale": "Rapid surrogate; cyanide assay slow."
+      },
+      {
+        "test": "Arterial + venous blood gas (narrowed AV oxygen gap, severe metabolic acidosis).",
+        "rationale": "Tissue inability to extract O2."
+      },
+      {
+        "test": "COHb (carboxyhaemoglobin) — usually co-occurs with cyanide in fire victims.",
+        "rationale": "Treat both."
+      },
+      {
+        "test": "Cyanide blood level (specialist, results too slow for acute management).",
+        "rationale": "Retrospective confirmation."
+      }
+    ],
+    "management": [
+      {
+        "step": "ABCDE — remove from exposure, 100% oxygen",
+        "detail": "High-flow O2 via non-rebreather. Intubate if reduced consciousness, severe acidosis, airway burns."
+      },
+      {
+        "step": "Empirical antidote IMMEDIATELY for severe presentation",
+        "detail": "Hydroxocobalamin (Cyanokit) 5 g IV over 15 min — preferred (safer, can give while waiting confirmation). Paediatric: 70 mg/kg up to 5 g. Repeat dose if persistent / re-deterioration."
+      },
+      {
+        "step": "Alternative antidote — sodium thiosulfate",
+        "detail": "Sodium thiosulfate 12.5 g IV (paediatric 400 mg/kg, max 12.5 g) over 10 min — can combine with hydroxocobalamin or use alone in resource-limited setting."
+      },
+      {
+        "step": "Sodium nitrite + amyl nitrite — older regimen",
+        "detail": "AVOID in smoke-inhalation victim with concurrent CO poisoning (induces methaemoglobinaemia, worsens O2 delivery). Reserve for isolated cyanide ingestion when hydroxocobalamin unavailable."
+      },
+      {
+        "step": "Treat co-existing CO poisoning",
+        "detail": "100% O2 ± hyperbaric per CO-poisoning pathway."
+      },
+      {
+        "step": "Supportive — fluids, vasopressors, treat acidosis",
+        "detail": "Aggressive resuscitation; vasopressor for hypotension; bicarbonate for severe acidosis."
+      },
+      {
+        "step": "Decontamination",
+        "detail": "Skin: remove clothing, irrigate. Ingestion: activated charcoal if < 1 h ingestion AND airway protected."
+      }
+    ],
+    "references": [
+      {
+        "label": "American Association of Poison Control Centres / ACMT consensus on cyanide poisoning"
+      },
+      {
+        "label": "UK TOXBASE cyanide"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "methanol-ethylene-glycol-poisoning",
+    "title": "Toxic alcohol (methanol / ethylene glycol) poisoning",
+    "icd10": [
+      "T51.1",
+      "T52.3"
+    ],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "nephrology",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Suspect in any unexplained severe metabolic acidosis with raised anion gap AND raised osmolal gap.",
+      "Methanol: 12–24 h latent period then nausea, abdominal pain, visual symptoms (blurred vision, scotomata, blindness from optic nerve damage); 'snowstorm' visual disturbance.",
+      "Ethylene glycol: stage 1 (0–12 h) intoxication 'drunk' without alcohol; stage 2 (12–24 h) cardiopulmonary (tachycardia, hypertension, pulmonary oedema); stage 3 (24–72 h) AKI with calcium oxalate crystalluria.",
+      "Sources: methanol — fortified moonshine, antifreeze, windscreen wash; ethylene glycol — antifreeze, brake fluid."
+    ],
+    "redFlags": [
+      "Coma, seizure, severe acidosis (pH < 7.2).",
+      "Visual changes — methanol-induced blindness can be permanent if delayed treatment.",
+      "Anuria — ethylene glycol AKI; needs urgent dialysis.",
+      "Concurrent ethanol — affects timing of toxicity (ethanol competes for ADH; symptoms delayed but eventually appear)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Blood gas, lactate, glucose, U&E, calcium, anion gap, osmolal gap.",
+        "rationale": "Raised anion gap acidosis (HAGMA) + raised osmolal gap (> 10 mOsm/kg) classical."
+      },
+      {
+        "test": "Methanol / ethylene glycol levels.",
+        "rationale": "Confirmatory but slow — treat empirically while awaiting."
+      },
+      {
+        "test": "Urinalysis (calcium oxalate crystals in ethylene glycol — variable).",
+        "rationale": "Supports ethylene glycol diagnosis."
+      },
+      {
+        "test": "Fluorescein examination under Wood's lamp (ethylene glycol antifreeze contains fluorescein).",
+        "rationale": "Adjunct evidence."
+      },
+      {
+        "test": "Co-ingestion screen (paracetamol, salicylate, ethanol).",
+        "rationale": "Common."
+      }
+    ],
+    "management": [
+      {
+        "step": "Block alcohol dehydrogenase — fomepizole (first line)",
+        "detail": "Fomepizole 15 mg/kg IV loading over 30 min then 10 mg/kg every 12 h × 4 doses, then 15 mg/kg every 12 h until level < 3.2 mmol/L AND no acidosis. Continue throughout dialysis."
+      },
+      {
+        "step": "Alternative — IV ethanol if fomepizole unavailable",
+        "detail": "Loading 0.8 g/kg as 10% ethanol IV over 30 min, then 100 mg/kg/h infusion. Target serum ethanol 1–1.5 g/L (100–150 mg/dL). Frequent level monitoring; high complication rate; not preferred where fomepizole exists."
+      },
+      {
+        "step": "Haemodialysis — definitive removal",
+        "detail": "Indications: severe acidosis (pH < 7.25 or HCO3 < 15), visual symptoms (methanol), AKI / oliguria, level > 50 mg/dL (15 mmol/L methanol; 50 mg/dL = 8 mmol/L ethylene glycol), failure to respond to fomepizole. Continue until level < 20 mg/dL and no acidosis."
+      },
+      {
+        "step": "Co-factor / antidote support",
+        "detail": "Methanol: folinic acid 1 mg/kg IV every 4 h (max 50 mg) — accelerates formate metabolism. Ethylene glycol: pyridoxine 50 mg IV every 6 h + thiamine 100 mg IV every 6 h — co-factors that convert glycolate to non-toxic metabolites."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "IV fluids; bicarbonate for severe acidosis; calcium replacement (ethylene glycol chelates calcium); vasopressor; intubation if severe."
+      },
+      {
+        "step": "Specialist input",
+        "detail": "Poisons centre + nephrology / ICU. Ophthalmology for methanol visual changes (urgent fundoscopy)."
+      }
+    ],
+    "references": [
+      {
+        "label": "AACT / EAPCCT position statement on fomepizole"
+      },
+      {
+        "label": "EXTRIP recommendations for methanol + ethylene glycol"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "lithium-toxicity-emergency",
+    "title": "Lithium toxicity — acute, acute-on-chronic, chronic",
+    "icd10": [
+      "T43.595",
+      "T43.591"
+    ],
+    "domains": [
+      "toxicology",
+      "psychiatry",
+      "nephrology",
+      "neurology",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Acute (large overdose, naive patient): early GI predominant — vomiting, diarrhoea; neurological symptoms develop over hours-days.",
+      "Acute-on-chronic (overdose on chronic therapy): combined GI + neuro from the outset; higher morbidity.",
+      "Chronic (excess dosing, drug interaction, dehydration, AKI): neurological predominates — tremor, hyperreflexia, ataxia, confusion, dysarthria, seizures, coma. Permanent cerebellar damage possible (SILENT syndrome).",
+      "Lithium-induced nephrogenic diabetes insipidus, hypothyroidism, hypercalcaemia."
+    ],
+    "redFlags": [
+      "Coma, seizures, severe encephalopathy.",
+      "Lithium level > 4.0 mmol/L — almost always need haemodialysis.",
+      "Persistent neurological signs after correction — SILENT syndrome.",
+      "AKI with oliguria.",
+      "Concurrent NSAID, ACEi/ARB, thiazide, dehydration — accentuate toxicity."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serum lithium level (immediate + 4 h + every 4 h until falling).",
+        "rationale": "Diagnostic + monitor."
+      },
+      {
+        "test": "U&E, creatinine, calcium, TSH, glucose, ECG (QT prolongation).",
+        "rationale": "Identify renal failure, hypercalcaemia, hypothyroidism."
+      },
+      {
+        "test": "Review medications (concurrent NSAID, ACEi, ARB, thiazide, fluconazole).",
+        "rationale": "Identify precipitant."
+      },
+      {
+        "test": "Mental state + neurological exam.",
+        "rationale": "Assess for encephalopathy / focal signs."
+      }
+    ],
+    "management": [
+      {
+        "step": "Stop lithium IMMEDIATELY",
+        "detail": "And any nephrotoxic / interacting drug (NSAID, ACEi, ARB, thiazide)."
+      },
+      {
+        "step": "Vigorous IV hydration with 0.9% NaCl",
+        "detail": "Restore intravascular volume; target urine output 100–300 mL/h. AVOID inducing diuresis with loop / thiazide — these worsen toxicity."
+      },
+      {
+        "step": "Gastric decontamination",
+        "detail": "Activated charcoal NOT effective (does not bind lithium). Whole-bowel irrigation (PEG 1–2 L/h) for sustained-release ingestion within 1–2 h."
+      },
+      {
+        "step": "Haemodialysis",
+        "detail": "EXTRIP indications: lithium > 4.0 mmol/L; level 2.5–4.0 + severe symptoms (seizures, coma, life-threatening arrhythmia, renal failure); chronic toxicity with neurological symptoms; impaired renal function. Continue until lithium < 1.0 mmol/L AND no rebound after 6 h off dialysis."
+      },
+      {
+        "step": "Treat complications",
+        "detail": "Seizures: benzodiazepine then second-line. Cardiac arrhythmia: avoid additional QT-prolonging drugs. Diabetes insipidus: cautious correction of sodium; consider amiloride."
+      },
+      {
+        "step": "Psychiatric review after stabilisation",
+        "detail": "Consider alternative mood stabiliser (valproate, lamotrigine) especially after severe / SILENT presentation. If continuing lithium, lower dose + closer monitoring + lithium-safe co-prescription review."
+      }
+    ],
+    "references": [
+      {
+        "label": "EXTRIP recommendations for lithium poisoning (2015)"
+      },
+      {
+        "label": "AACT / EAPCCT position paper"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "beta-blocker-overdose",
+    "title": "Beta-blocker overdose",
+    "icd10": [
+      "T44.7"
+    ],
+    "domains": [
+      "toxicology",
+      "cardiology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Hypotension, bradycardia, decreased cardiac output.",
+      "Conduction abnormalities — AV block, prolonged QRS (especially with propranolol, sotalol).",
+      "Bronchospasm, hypoglycaemia (lipophilic agents — propranolol).",
+      "Seizures, coma (lipophilic agents).",
+      "Sotalol overdose — torsades de pointes (potassium channel blockade)."
+    ],
+    "redFlags": [
+      "HR < 40, SBP < 90.",
+      "Wide QRS (> 120 ms), heart block.",
+      "Cardiogenic shock, pulmonary oedema.",
+      "Cardiac arrest with PEA / asystole.",
+      "Co-ingestion of calcium channel blocker, digoxin, TCA — additive cardiotoxicity."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG (bradycardia, conduction delays, QT).",
+        "rationale": "Severity + identify agent class."
+      },
+      {
+        "test": "Glucose, U&E, blood gas, lactate.",
+        "rationale": "Hypoglycaemia, acidosis."
+      },
+      {
+        "test": "Echo if shock (assess LV function for inotrope choice).",
+        "rationale": "Optimise haemodynamic support."
+      }
+    ],
+    "management": [
+      {
+        "step": "ABCDE — IV access × 2, monitoring",
+        "detail": "Atropine 0.5–1 mg IV first-line for bradycardia. Glucose for hypoglycaemia."
+      },
+      {
+        "step": "Activated charcoal if < 1 h ingestion + airway protected",
+        "detail": "Consider whole-bowel irrigation for sustained-release."
+      },
+      {
+        "step": "Glucagon — antidote of choice",
+        "detail": "5–10 mg IV bolus over 1–2 min, repeat once if no response, then infusion 1–10 mg/h (warning: vomiting — protect airway). Acts via cAMP independently of β-receptors."
+      },
+      {
+        "step": "High-dose insulin euglycaemia (HIE) therapy — for refractory shock",
+        "detail": "Insulin 1 unit/kg bolus then 0.5–1 unit/kg/h infusion; co-infuse dextrose 0.5 g/kg/h to maintain glucose 5–11 mmol/L; replace potassium. Onset 20–30 min; superior inotropy + insulin resistance in cardiogenic shock."
+      },
+      {
+        "step": "IV lipid emulsion for severely lipophilic agent + cardiac arrest / refractory shock",
+        "detail": "20% Intralipid 1.5 mL/kg bolus then 0.25 mL/kg/min infusion for 30–60 min. Acts as 'lipid sink'."
+      },
+      {
+        "step": "Catecholamines + pacing as needed",
+        "detail": "Noradrenaline / adrenaline / dopamine for shock; isoproterenol if available. Transcutaneous or transvenous pacing for refractory bradycardia."
+      },
+      {
+        "step": "Refractory shock — VA-ECMO",
+        "detail": "Specialist centre; bridges through the toxin metabolism window."
+      },
+      {
+        "step": "Sotalol — additional considerations",
+        "detail": "Treat torsades with magnesium sulphate 2 g IV; consider isoprenaline + overdrive pacing. Haemodialysis effective for sotalol (water-soluble)."
+      }
+    ],
+    "references": [
+      {
+        "label": "AACT / ACMT consensus on β-blocker / CCB overdose"
+      },
+      {
+        "label": "UK TOXBASE β-blocker overdose"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "calcium-channel-blocker-overdose",
+    "title": "Calcium channel blocker overdose",
+    "icd10": [
+      "T46.1"
+    ],
+    "domains": [
+      "toxicology",
+      "cardiology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Non-dihydropyridine (verapamil, diltiazem): bradycardia, AV block, hypotension, cardiogenic shock — typically more severe.",
+      "Dihydropyridine (amlodipine, nifedipine): pronounced peripheral vasodilation, reflex tachycardia (lost in severe OD), hypotension.",
+      "Hyperglycaemia (CCBs impair insulin release), metabolic acidosis (poor perfusion).",
+      "Sustained-release preparations cause delayed (4–18 h) presentation."
+    ],
+    "redFlags": [
+      "HR < 50 with hypotension; AV block.",
+      "Cardiogenic shock unresponsive to fluid + atropine.",
+      "Refractory hyperglycaemia despite insulin (severe poisoning marker).",
+      "Sustained-release preparation — delayed peak; admit even if asymptomatic.",
+      "Co-ingestion of β-blocker, digoxin — additive."
+    ],
+    "diagnostics": [
+      {
+        "test": "ECG, glucose (often elevated), U&E, lactate, blood gas, calcium.",
+        "rationale": "Severity assessment + identify hyperglycaemia (key marker)."
+      },
+      {
+        "test": "Continuous cardiac monitoring.",
+        "rationale": "Track conduction / rhythm."
+      },
+      {
+        "test": "Echo if shock.",
+        "rationale": "Assess LV function for inotrope selection."
+      }
+    ],
+    "management": [
+      {
+        "step": "ABCDE; cardiac monitor; IV access × 2",
+        "detail": "Atropine 0.5–1 mg IV first-line for bradycardia (often ineffective). Fluid resuscitation (10–20 mL/kg crystalloid) for hypotension."
+      },
+      {
+        "step": "Activated charcoal + whole-bowel irrigation for sustained-release within 1–2 h",
+        "detail": "PEG 1–2 L/h for up to 24 h if sustained-release."
+      },
+      {
+        "step": "IV calcium",
+        "detail": "Calcium chloride 10% 10–20 mL via CVC OR calcium gluconate 10% 30–60 mL peripheral; repeat every 10–20 min × 3; then infusion of calcium gluconate 0.2–0.4 mL/kg/h. Aim for ionised Ca 1.5–2× normal."
+      },
+      {
+        "step": "Glucagon — adjunct (less effective than for β-blocker)",
+        "detail": "5–10 mg IV bolus, repeat once."
+      },
+      {
+        "step": "High-dose insulin euglycaemia therapy (HIE) — first-line for shock",
+        "detail": "Insulin 1 unit/kg bolus then 0.5–10 units/kg/h infusion (can escalate higher in CCB OD than β-blocker), dextrose 0.5 g/kg/h titrated to glucose 5–11 mmol/L; replace K+. ICU monitoring. Improves inotropy + reverses metabolic effects."
+      },
+      {
+        "step": "Catecholamine vasopressors",
+        "detail": "Noradrenaline first; add adrenaline / dobutamine if needed."
+      },
+      {
+        "step": "Methylene blue / lipid emulsion for refractory cases",
+        "detail": "Methylene blue 1–2 mg/kg IV for vasoplegic shock (dihydropyridines). Lipid emulsion 1.5 mL/kg bolus + 0.25 mL/kg/min infusion for severe refractory toxicity."
+      },
+      {
+        "step": "ECMO (VA) for refractory cardiogenic shock",
+        "detail": "Specialist centre — bridges through metabolism (24–48 h)."
+      },
+      {
+        "step": "Transvenous pacing for symptomatic bradyarrhythmia not responsive to drugs",
+        "detail": "Capture often difficult; mechanical support more reliable."
+      }
+    ],
+    "references": [
+      {
+        "label": "AACT / ACMT consensus on CCB overdose"
+      },
+      {
+        "label": "UK TOXBASE CCB"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "iron-overdose-severe",
+    "title": "Iron overdose (severe) — adult / paediatric",
+    "icd10": [
+      "T45.4"
+    ],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "haematology",
+      "gastroenterology",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Stage 1 (0–6 h): GI — vomiting, diarrhoea, haematemesis, abdominal pain.",
+      "Stage 2 (6–24 h): apparent improvement (latent stage — may falsely reassure).",
+      "Stage 3 (12–24 h): systemic toxicity — metabolic acidosis, shock, hepatic failure, coagulopathy, AKI.",
+      "Stage 4 (2–4 days): hepatic necrosis.",
+      "Stage 5 (4–6 weeks): late GI strictures (gastric outlet obstruction).",
+      "Toxic ingested elemental iron > 20 mg/kg; severe > 60 mg/kg."
+    ],
+    "redFlags": [
+      "Repeated vomiting / haematemesis with shock.",
+      "Severe metabolic acidosis (pH < 7.2).",
+      "Serum iron > 90 micromol/L (500 microgram/dL) — severe toxicity likely.",
+      "Coma, seizures.",
+      "Hepatic failure (rising INR, encephalopathy)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serum iron level at 4 h post-ingestion (peak).",
+        "rationale": "Severity assessment; > 90 micromol/L (500 microgram/dL) needs chelation."
+      },
+      {
+        "test": "Abdominal X-ray for radiopaque tablets.",
+        "rationale": "Guides decontamination (whole-bowel irrigation if tablets visible)."
+      },
+      {
+        "test": "FBC, U&E, LFT, coag, blood gas, glucose, lactate.",
+        "rationale": "Multi-organ involvement."
+      },
+      {
+        "test": "Group + crossmatch in active GI bleeding.",
+        "rationale": "Prepare transfusion."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive ABCDE + aggressive IV fluid resuscitation",
+        "detail": "Crystalloid 20 mL/kg bolus; treat hypotension; correct acidosis with bicarbonate if severe."
+      },
+      {
+        "step": "Whole-bowel irrigation if radiopaque tablets visible / large ingestion within 1–2 h",
+        "detail": "PEG 25 mL/kg/h via NG for paediatric (1–2 L/h adult) until rectal effluent clear. AVOID activated charcoal — does not bind iron."
+      },
+      {
+        "step": "Desferrioxamine (deferoxamine) IV — chelation",
+        "detail": "Indications: serum iron > 90 micromol/L (500 microgram/dL), severe symptoms (shock, severe acidosis, coma), or ingested > 60 mg/kg elemental iron. Dose: 15 mg/kg/h IV infusion (max 6 g/day; some sources allow more in life-threatening). Continue until: serum iron < 90, urine clear (no 'vin rose' colour), patient asymptomatic, acidosis resolved. Limit ≤ 24 h to avoid ARDS / yersiniosis."
+      },
+      {
+        "step": "Monitor for desferrioxamine ARDS",
+        "detail": "Pulmonary toxicity if > 24 h — stop earlier when criteria met."
+      },
+      {
+        "step": "Treat AKI, coagulopathy, hepatic failure",
+        "detail": "RRT for AKI; vitamin K + FFP for coagulopathy; NAC for hepatic injury; supportive ICU care."
+      },
+      {
+        "step": "Late strictures — endoscopic dilatation",
+        "detail": "Outpatient follow-up at 4–6 weeks for gastric outlet symptoms."
+      },
+      {
+        "step": "Mental health pathway for intentional overdose",
+        "detail": "Psychiatric assessment before discharge."
+      }
+    ],
+    "references": [
+      {
+        "label": "AACT / EAPCCT position paper on iron overdose"
+      },
+      {
+        "label": "UK TOXBASE iron"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "lead-poisoning-adult-child",
+    "title": "Lead poisoning (adult and paediatric)",
+    "icd10": [
+      "T56.0"
+    ],
+    "domains": [
+      "toxicology",
+      "paediatrics",
+      "occupational-medicine",
+      "haematology"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Children: developmental delay, behavioural / cognitive impairment, anaemia, abdominal pain, anorexia, irritability. Severe: encephalopathy (vomiting, ataxia, seizures, coma).",
+      "Adults: fatigue, anaemia, abdominal pain, peripheral motor neuropathy (wrist drop), hypertension, renal impairment, infertility, gingival lead line (Burton's line).",
+      "Common exposures: leaded paint, soil, water (lead pipes / solder), cosmetics (kohl, surma, sindoor), traditional remedies, occupational (battery, smelter, demolition), pottery glaze, leaded gasoline (historical)."
+    ],
+    "redFlags": [
+      "Encephalopathy (seizures, coma, altered consciousness) — medical emergency, chelation IMMEDIATELY.",
+      "Blood lead > 70 microgram/dL child / > 100 adult — severe.",
+      "Pregnancy — fetal exposure, miscarriage risk.",
+      "Persistent occupational / environmental exposure — public-health notification."
+    ],
+    "diagnostics": [
+      {
+        "test": "Whole-blood lead level (venous, NOT capillary — capillary often false elevated from contamination).",
+        "rationale": "Diagnostic and severity grading."
+      },
+      {
+        "test": "FBC + blood film (basophilic stippling, microcytic anaemia).",
+        "rationale": "Suggests chronic lead exposure."
+      },
+      {
+        "test": "U&E, creatinine, urinalysis (proteinuria).",
+        "rationale": "Identify renal involvement."
+      },
+      {
+        "test": "X-ray abdomen if recent ingestion suspected (lead chips / paint).",
+        "rationale": "Identify retained lead in GI tract."
+      },
+      {
+        "test": "X-ray long bones in children (lead lines at metaphysis).",
+        "rationale": "Indicates chronic exposure."
+      },
+      {
+        "test": "Environmental + occupational history; public-health notification.",
+        "rationale": "Source identification + secondary prevention."
+      }
+    ],
+    "management": [
+      {
+        "step": "REMOVE from source — paramount",
+        "detail": "Without removal from exposure, chelation is futile. Engage public health, occupational health, environmental services."
+      },
+      {
+        "step": "Decontaminate gut if recent ingestion / lead visible on X-ray",
+        "detail": "Whole-bowel irrigation (PEG) to remove retained lead. Consider endoscopy if large foreign body."
+      },
+      {
+        "step": "Chelation indications + agents",
+        "detail": "Children: blood lead ≥ 45 microgram/dL — DMSA (succimer) 10 mg/kg PO every 8 h × 5 days then every 12 h × 14 days. Blood lead ≥ 70 OR encephalopathy: dimercaprol (BAL) 3–5 mg/kg IM every 4 h + CaNa2EDTA 1500 mg/m²/day IV. Adults: blood lead > 80 (or > 50 with symptoms) — DMSA or CaNa2EDTA."
+      },
+      {
+        "step": "Encephalopathy management",
+        "detail": "Dimercaprol (BAL) IM 4–6-hourly + CaNa2EDTA infusion; ICU monitoring; treat seizures (benzodiazepine), cerebral oedema."
+      },
+      {
+        "step": "Supportive — anaemia correction (iron deficiency commonly coexists)",
+        "detail": "Iron + folate replacement; transfusion if severe symptomatic anaemia."
+      },
+      {
+        "step": "Long-term follow-up + cognitive assessment in children",
+        "detail": "Repeat blood lead level 2 weeks after chelation, then monthly until < 10 microgram/dL. Educational support, behavioural intervention for children with cognitive deficits."
+      },
+      {
+        "step": "Public-health + occupational engagement",
+        "detail": "Notify (notifiable disease in many jurisdictions). Workplace exposure assessment + control; home + soil testing; secondary prevention for siblings / coworkers."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Lead poisoning guidance + Global elimination of leaded paint"
+      },
+      {
+        "label": "CDC Childhood Lead Poisoning Prevention Program"
+      },
+      {
+        "label": "AAP Policy Statement on Prevention of Childhood Lead Toxicity"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]

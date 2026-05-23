@@ -34959,5 +34959,164 @@
   "reviewStatus": "draft",
   "evidenceLevel": "A",
   "snomed": []
+ },
+ {
+  "slug": "noradrenaline-vasopressin-fixed-combo",
+  "inn": "esmolol",
+  "tradeNames": [
+   "Brevibloc"
+  ],
+  "rxnorm": "4154",
+  "atc": [
+   "C07AB09"
+  ],
+  "drugClass": "Ultra-short-acting cardioselective β1-blocker",
+  "kemlLevel": 3,
+  "whoEml": false,
+  "indications": [
+   {
+    "icd10": "I47",
+    "text": "Supraventricular tachyarrhythmia (acute control)"
+   },
+   {
+    "icd10": "I71",
+    "text": "Aortic dissection (BP and HR control)"
+   },
+   {
+    "icd10": "E05.5",
+    "text": "Thyroid storm (HR control)"
+   },
+   {
+    "icd10": "I20.0",
+    "text": "Perioperative hypertension / tachycardia"
+   }
+  ],
+  "mechanism": "Selective β1-adrenoceptor antagonism with rapid onset (~1 min) and very short half-life (~9 min) — allows titration.",
+  "pharmacokinetics": {
+   "halfLifeHours": 0.15,
+   "metabolism": "Esterase in red cells.",
+   "excretion": "Renal (metabolite)."
+  },
+  "dosing": {
+   "adult": [
+    {
+     "route": "intravenous",
+     "regimen": "Loading 500 microgram/kg over 1 min, then 50 microgram/kg/min infusion; titrate by 50 microgram/kg/min every 4 min to max 300 microgram/kg/min; re-load with 500 microgram/kg between titrations"
+    }
+   ]
+  },
+  "pregnancy": {
+   "notes": "Acceptable in maternal critical care; fetal bradycardia possible."
+  },
+  "lactation": "Brief use acceptable in critical care.",
+  "contraindications": [
+   "Bradycardia < 50.",
+   "2nd or 3rd degree heart block (without pacing).",
+   "Cardiogenic shock.",
+   "Decompensated heart failure.",
+   "Severe bronchospasm."
+  ],
+  "warnings": [
+   "Hypotension — most common dose-limiting.",
+   "Bradycardia, heart block.",
+   "Bronchospasm in asthma.",
+   "Mask hypoglycaemic symptoms in diabetes."
+  ],
+  "adverseEffects": [
+   {
+    "frequency": "common",
+    "effect": "Hypotension, bradycardia, infusion-site phlebitis"
+   }
+  ],
+  "monitoring": [
+   "Continuous BP + HR; titrate every 4 min."
+  ],
+  "references": [
+   {
+    "label": "BNF"
+   },
+   {
+    "label": "ESC ACS 2023"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A",
+  "snomed": []
+ },
+ {
+  "slug": "naloxone-detail",
+  "inn": "naloxone",
+  "tradeNames": [
+   "Narcan"
+  ],
+  "rxnorm": "7242",
+  "atc": [
+   "V03AB15"
+  ],
+  "drugClass": "Pure opioid receptor antagonist (μ, κ, δ)",
+  "kemlLevel": 1,
+  "whoEml": true,
+  "indications": [
+   {
+    "icd10": "T40",
+    "text": "Opioid overdose"
+   }
+  ],
+  "mechanism": "Competitive antagonism at μ-opioid receptor (and κ, δ) — rapid reversal of respiratory depression and consciousness.",
+  "pharmacokinetics": {
+   "halfLifeHours": 1,
+   "metabolism": "Hepatic glucuronidation.",
+   "excretion": "Renal."
+  },
+  "dosing": {
+   "adult": [
+    {
+     "route": "intravenous",
+     "regimen": "Suspect dependence: start 40–100 microgram IV titrated every 2–3 min to ventilation. Naive: 0.4 mg IV initial, titrate. IM/IO 0.4–2 mg if no IV; intranasal 2–4 mg via atomiser. Infusion for long-acting opioid: 2/3 of effective bolus per hour"
+    }
+   ],
+   "paediatric": {
+    "mgPerKgPerDose": 0.01,
+    "notes": "10 microgram/kg IV, titrate to effect"
+   }
+  },
+  "pregnancy": {
+   "notes": "Use in maternal opioid OD — better than maternal death; may precipitate neonatal withdrawal."
+  },
+  "lactation": "Acceptable in opioid OD.",
+  "contraindications": [
+   "Known hypersensitivity (rare)."
+  ],
+  "warnings": [
+   "Precipitated opioid withdrawal in dependent users — agitation, vomiting, hypertension, occasional acute pulmonary oedema.",
+   "Re-sedation when short-acting naloxone wears off before opioid is metabolised (especially methadone / fentanyl) — observe ≥ 4–6 h post-last-dose, infusion for long-acting opioid.",
+   "Risk of seizure / arrhythmia in mixed overdose."
+  ],
+  "adverseEffects": [
+   {
+    "frequency": "common",
+    "effect": "Withdrawal symptoms (in dependent users): agitation, sweating, nausea, vomiting"
+   },
+   {
+    "frequency": "uncommon",
+    "effect": "Pulmonary oedema, arrhythmia"
+   }
+  ],
+  "monitoring": [
+   "Respiratory rate, SpO2, GCS hourly post-administration; observation 4–6 h after last dose."
+  ],
+  "references": [
+   {
+    "label": "WHO Community management of opioid overdose (2014)"
+   },
+   {
+    "label": "SAMHSA Opioid Overdose Toolkit"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A",
+  "snomed": []
  }
 ]

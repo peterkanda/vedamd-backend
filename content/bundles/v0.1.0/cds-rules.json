@@ -3994,5 +3994,387 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "sepsis-hour1-bundle",
+    "hook": "patient-view",
+    "type": "sepsis-hour1-bundle",
+    "services": [
+      "vedamd-sepsis-hour1"
+    ],
+    "title": "Surviving Sepsis Hour-1 bundle",
+    "description": "Fires when patient meets sepsis screening criteria (qSOFA ≥ 2 OR suspected infection + organ dysfunction). Reminds: lactate, blood cultures BEFORE antibiotics (don't delay > 45 min), broad-spectrum antibiotic, 30 mL/kg crystalloid for hypotension or lactate ≥ 4, vasopressor (noradrenaline) for MAP < 65. Reads context.qsofa, context.suspectedInfection, context.lactate, context.systolicMmHg, context.recentAntibiotic — never patient identity.",
+    "references": [
+      {
+        "label": "Surviving Sepsis Campaign 2021"
+      },
+      {
+        "label": "Sepsis-3 JAMA 2016"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A41.9",
+        "display": "Sepsis unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "hyperkalaemia-emergency",
+    "hook": "patient-view",
+    "type": "hyperkalaemia-emergency",
+    "services": [
+      "vedamd-hyperkalaemia"
+    ],
+    "title": "Severe hyperkalaemia — calcium first, then shift, then remove",
+    "description": "Fires when serum K+ ≥ 6.5 OR ≥ 6.0 with ECG changes. Recommends calcium gluconate IV (cardiac protection), insulin-dextrose + nebulised salbutamol (shift), potassium binder + furosemide + haemodialysis assessment (remove). Stops contributing drugs. Reads context.potassium, context.ecgChanges, context.creatinine, context.medications — never patient identity.",
+    "references": [
+      {
+        "label": "UK Renal Association — Treatment of acute hyperkalaemia in adults (2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E87.5",
+        "display": "Hyperkalaemia",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "hyponatraemia-correction-rate",
+    "hook": "patient-view",
+    "type": "hyponatraemia-correction-rate",
+    "services": [
+      "vedamd-hyponatraemia"
+    ],
+    "title": "Hyponatraemia correction rate + osmotic demyelination prevention",
+    "description": "Fires for serum Na+ < 130. Severe symptomatic (Na+ < 125 + seizure/coma): hypertonic saline 3% 150 mL IV with 5 mmol/L target rise acutely. Calculates total 24 h correction max (10 mmol/L; 8 if high ODS risk) and warns if exceeding. Detects over-correction and recommends DDAVP / dextrose to re-lower. Reads context.serumSodium, context.symptoms, context.hypokalaemia, context.alcohol, context.malnutrition, context.liverDisease — never patient identity.",
+    "references": [
+      {
+        "label": "ESE/ERA-EDTA/ESICM hyponatraemia guideline 2014"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E87.1",
+        "display": "Hyponatraemia",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "adrenal-crisis-stress-dose",
+    "hook": "patient-view",
+    "type": "adrenal-crisis-stress-dose",
+    "services": [
+      "vedamd-adrenal-crisis"
+    ],
+    "title": "Adrenal crisis recognition + stress-dose steroid",
+    "description": "Fires for shock unresponsive to fluids in patient with known adrenal insufficiency / chronic glucocorticoid use, OR with hyponatraemia + hyperkalaemia + hypoglycaemia. Recommends IMMEDIATE hydrocortisone 100 mg IV bolus then 200 mg/24 h, with saline + dextrose. Reads context.knownAdrenalInsufficiency, context.chronicSteroid, context.sodium, context.potassium, context.glucose, context.systolicMmHg — never patient identity.",
+    "references": [
+      {
+        "label": "Endocrine Society Clinical Practice Guideline (2016)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E27.2",
+        "display": "Addisonian crisis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "variceal-bleed-bundle",
+    "hook": "patient-view",
+    "type": "variceal-bleed-bundle",
+    "services": [
+      "vedamd-variceal-bleed"
+    ],
+    "title": "Acute variceal haemorrhage care bundle",
+    "description": "Fires for upper GI bleed in cirrhosis. Recommends: airway protection, restrictive transfusion (Hb 70–80), terlipressin / octreotide, IV ceftriaxone prophylaxis 1 g daily, urgent endoscopy < 12 h, balloon tamponade if uncontrolled, TIPS pathway. Reads context.cirrhosis, context.haematemesis, context.melaena, context.hb — never patient identity.",
+    "references": [
+      {
+        "label": "Baveno VII consensus 2022"
+      },
+      {
+        "label": "AASLD Practice Guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I85.01",
+        "display": "Oesophageal varices with bleeding",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "massive-pe-thrombolysis",
+    "hook": "patient-view",
+    "type": "massive-pe-thrombolysis",
+    "services": [
+      "vedamd-massive-pe"
+    ],
+    "title": "Massive PE — systemic thrombolysis decision support",
+    "description": "Fires for high-risk PE (haemodynamic instability + confirmed PE) without absolute bleeding contraindications. Recommends alteplase 100 mg over 2 h (or 50 mg over 1–2 h higher bleed risk) + UFH post-lysis. Lists alternatives (catheter-directed lysis, surgical embolectomy) for contraindications. Reads context.peDiagnosis, context.systolicMmHg, context.bleedingContraindication — never patient identity.",
+    "references": [
+      {
+        "label": "ESC PE guideline 2019 (2024 update)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I26.0",
+        "display": "PE with cor pulmonale",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "paracetamol-overdose-nomogram",
+    "hook": "patient-view",
+    "type": "paracetamol-overdose-nomogram",
+    "services": [
+      "vedamd-paracetamol-overdose"
+    ],
+    "title": "Paracetamol overdose — nomogram + NAC initiation",
+    "description": "Fires for any paracetamol ingestion. Calculates dose / kg, time since ingestion. Recommends NAC if: level above Rumack-Matthew 100 mg/L line at 4–24 h post-acute single ingestion; OR staggered ingestion > 75 mg/kg; OR late presentation (> 8 h) empirically. Provides 21-h or SNAP 12-h regimen calculator. Reads context.paracetamolDose, context.weightKg, context.timeOfIngestionHours, context.serumParacetamolLevel, context.alt, context.inr — never patient identity.",
+    "references": [
+      {
+        "label": "MHRA / UK Toxbase paracetamol overdose protocol"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T39.1",
+        "display": "Paracetamol poisoning",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "opioid-overdose-naloxone",
+    "hook": "patient-view",
+    "type": "opioid-overdose-naloxone",
+    "services": [
+      "vedamd-opioid-overdose"
+    ],
+    "title": "Opioid overdose — titrated naloxone + observation",
+    "description": "Fires for opioid-overdose presentation (reduced consciousness + miosis + RR < 12). Recommends bag-mask ventilation, titrated IV naloxone starting 40–100 microgram (low to avoid precipitated withdrawal), repeat every 2–3 min to ventilation. Naloxone infusion for long-acting opioid. Observation ≥ 4–6 h post-last-dose. Refer to opioid agonist therapy + take-home naloxone. Reads context.respiratoryRate, context.gcs, context.pupilSize, context.suspectedOpioid — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Community management of opioid overdose 2014"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T40.2",
+        "display": "Opioid poisoning",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "lithium-toxicity-recognition",
+    "hook": "patient-view",
+    "type": "lithium-toxicity-recognition",
+    "services": [
+      "vedamd-lithium-toxicity"
+    ],
+    "title": "Lithium toxicity — recognition + dialysis criteria",
+    "description": "Fires for lithium-treated patient with new tremor, ataxia, confusion, GI symptoms, or serum lithium > 1.5 mmol/L. EXTRIP haemodialysis criteria: lithium > 4.0 mmol/L; 2.5–4.0 with severe symptoms or renal failure; chronic toxicity with neurological symptoms. Stop lithium + interacting drugs (NSAID, ACEi, thiazide, diuretic). IV 0.9% NaCl rehydration. Reads context.lithiumLevel, context.creatinine, context.symptoms, context.medications — never patient identity.",
+    "references": [
+      {
+        "label": "EXTRIP lithium recommendations 2015"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T43.595",
+        "display": "Adverse effect of lithium",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "beta-blocker-ccb-overdose-hie",
+    "hook": "patient-view",
+    "type": "beta-blocker-ccb-overdose-hie",
+    "services": [
+      "vedamd-bb-ccb-overdose"
+    ],
+    "title": "Beta-blocker / calcium channel blocker overdose — high-dose insulin euglycaemia",
+    "description": "Fires for suspected β-blocker or CCB overdose with hypotension / bradycardia / cardiogenic shock. Recommends: atropine + fluid first, then IV calcium (CCB), glucagon (β-blocker), high-dose insulin euglycaemia (HIE) 1 unit/kg bolus then 0.5–10 units/kg/h with dextrose, lipid emulsion for refractory, VA-ECMO. Reads context.suspectedToxin, context.heartRate, context.systolicMmHg, context.glucose, context.medications — never patient identity.",
+    "references": [
+      {
+        "label": "AACT / ACMT consensus on BB / CCB overdose"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T44.7",
+        "display": "Beta-blocker poisoning",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T46.1",
+        "display": "CCB poisoning",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "toxic-alcohol-fomepizole",
+    "hook": "patient-view",
+    "type": "toxic-alcohol-fomepizole",
+    "services": [
+      "vedamd-toxic-alcohol"
+    ],
+    "title": "Methanol / ethylene glycol poisoning — fomepizole + dialysis criteria",
+    "description": "Fires for HAGMA + raised osmolal gap, especially with visual changes (methanol) or AKI/calcium oxalate crystals (ethylene glycol). Recommends fomepizole 15 mg/kg IV loading then 10 mg/kg every 12 h (alternative IV ethanol). Haemodialysis for severe acidosis, visual symptoms, AKI, or level > 50 mg/dL. Adjuncts: folinic acid for methanol; pyridoxine + thiamine for ethylene glycol. Reads context.anionGap, context.osmolalGap, context.visualSymptoms, context.creatinine, context.suspectedIngestion — never patient identity.",
+    "references": [
+      {
+        "label": "AACT fomepizole position; EXTRIP toxic-alcohol recommendations"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T51.1",
+        "display": "Methanol poisoning",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T52.3",
+        "display": "Ethylene glycol poisoning",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "myasthenic-crisis-pathway",
+    "hook": "patient-view",
+    "type": "myasthenic-crisis-pathway",
+    "services": [
+      "vedamd-myasthenic-crisis"
+    ],
+    "title": "Myasthenic crisis recognition + treatment pathway",
+    "description": "Fires for myasthenia gravis with FVC < 20 mL/kg or single-breath count < 25 or bulbar symptoms. Recommends elective intubation, plasma exchange OR IVIG, stop offending drugs (aminoglycoside, fluoroquinolone, β-blocker, magnesium, telithromycin), cautious steroid initiation (avoid worsening), thymectomy if thymoma. Reads context.knownMyasthenia, context.fvc, context.singleBreathCount, context.bulbarSymptoms, context.medications — never patient identity.",
+    "references": [
+      {
+        "label": "International Consensus Guidance for MG (Sanders et al. Neurology 2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G70.0",
+        "display": "Myasthenia gravis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "viral-encephalitis-empirical-aciclovir",
+    "hook": "patient-view",
+    "type": "viral-encephalitis-empirical-aciclovir",
+    "services": [
+      "vedamd-viral-encephalitis"
+    ],
+    "title": "Suspected viral encephalitis — empirical aciclovir + LP within 6 h",
+    "description": "Fires for fever + new altered mental state / personality / focal seizure / new focal neurology. Recommends MRI (CT if not available), urgent LP unless contraindicated, EMPIRICAL IV aciclovir 10 mg/kg every 8 h immediately + ceftriaxone (+ amoxicillin if ≥ 50/immunocompromised). Continue 14–21 days for HSV-positive PCR. Reads context.fever, context.alteredConsciousness, context.seizureNewOnset, context.focalNeurology — never patient identity.",
+    "references": [
+      {
+        "label": "IDSA encephalitis 2008; BIA/ABN 2012"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G04.9",
+        "display": "Encephalitis unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "thyroid-storm-bundle",
+    "hook": "patient-view",
+    "type": "thyroid-storm-bundle",
+    "services": [
+      "vedamd-thyroid-storm"
+    ],
+    "title": "Thyroid storm — Burch-Wartofsky + bundled therapy",
+    "description": "Fires for severe thyrotoxicosis with hyperpyrexia / arrhythmia / cardiac failure / altered consciousness. Calculates Burch-Wartofsky score; recommends bundled therapy: PTU 500–1000 mg load then 200 mg every 4 h, Lugol's iodine 1 h after thionamide, propranolol or esmolol, hydrocortisone 100 mg every 6 h, supportive cooling. Treat precipitant. Reads context.knownHyperthyroidism, context.temperature, context.heartRate, context.atrialFibrillation, context.gcs — never patient identity.",
+    "references": [
+      {
+        "label": "American Thyroid Association Hyperthyroidism Guidelines 2016"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E05.5",
+        "display": "Thyroid storm",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]
