@@ -5604,5 +5604,213 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "vhf-suspected-isolation",
+    "hook": "patient-view",
+    "type": "vhf-suspected-isolation",
+    "services": [
+      "vedamd-vhf-suspected"
+    ],
+    "title": "Suspected viral haemorrhagic fever — isolation + public health",
+    "description": "Fires for fever + travel from / residence in VHF-endemic area (Ebola, Marburg, Lassa, CCHF, Yellow Fever) ± bleeding / multi-organ involvement. Recommends IMMEDIATE single-room isolation with PPE (gown, FFP3, double gloves, eye protection); NOTIFY public health before sample collection; supportive care; specific antivirals (ribavirin for Lassa / CCHF; monoclonals for Ebola / Marburg). Reads context.travelEndemicArea, context.fever, context.bleeding, context.contactWithCase — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Clinical management of VHF"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A98.4",
+        "display": "Ebola virus disease",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pjp-empirical-trimethoprim",
+    "hook": "patient-view",
+    "type": "pjp-empirical-trimethoprim",
+    "services": [
+      "vedamd-pjp"
+    ],
+    "title": "Pneumocystis pneumonia — high-dose co-trimoxazole + adjunctive steroid",
+    "description": "Fires for hypoxia + bilateral interstitial CXR + immunocompromise (HIV CD4 < 200, transplant, chemotherapy, high-dose steroid). Recommends high-dose co-trimoxazole 90–120 mg/kg/day × 21 days; adjunctive prednisolone 40 mg BD × 5 days then taper if PaO2 < 70 / A-a > 35. Secondary + primary prophylaxis. Reads context.cd4, context.spO2, context.paO2, context.aAgradient, context.immunocompromised — never patient identity.",
+    "references": [
+      {
+        "label": "IDSA OI Guidelines; WHO HIV"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B59",
+        "display": "Pneumocystis pneumonia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "candidaemia-echinocandin",
+    "hook": "patient-view",
+    "type": "candidaemia-echinocandin",
+    "services": [
+      "vedamd-candidaemia"
+    ],
+    "title": "Candidaemia — echinocandin first-line + remove CVC + eye exam",
+    "description": "Fires for positive Candida blood culture / suspected candidaemia in critically ill. Recommends echinocandin first-line (caspofungin 70 mg loading then 50 mg daily); de-escalate to fluconazole if susceptible; REMOVE all central venous catheters; dilated ophthalmology exam within 1 week; treat 14 days from first negative culture (longer for endocarditis / osteo / CNS). Reads context.candidaSpecies, context.centralLine, context.haemodynamicStability — never patient identity.",
+    "references": [
+      {
+        "label": "IDSA Candidiasis Guideline 2016"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B37.7",
+        "display": "Candidal sepsis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "delirium-pinchme",
+    "hook": "patient-view",
+    "type": "delirium-pinchme",
+    "services": [
+      "vedamd-delirium"
+    ],
+    "title": "Acute delirium older adult — PINCH-ME + non-pharmacological first",
+    "description": "Fires for acute confusion / fluctuating cognition / inattention in older adult (4AT ≥ 4). Recommends address PINCH-ME (Pain, Infection, Nutrition, Constipation, Hydration, Medication, Environment), non-pharmacological measures, antipsychotic LAST RESORT (haloperidol / olanzapine / quetiapine in Parkinson). AVOID benzodiazepines except for alcohol/benzodiazepine withdrawal. Thiamine BEFORE glucose for at-risk. Reads context.ageYears, context.fourAtScore, context.recentMedicationChange, context.suspectedInfection — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG103 Delirium; BGS Guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F05",
+        "display": "Delirium not induced by alcohol",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "frailty-cga-pathway",
+    "hook": "patient-view",
+    "type": "frailty-cga-pathway",
+    "services": [
+      "vedamd-frailty"
+    ],
+    "title": "Frailty — Comprehensive Geriatric Assessment trigger",
+    "description": "Fires for Clinical Frailty Scale ≥ 5 OR Rockwood phenotype frailty. Recommends CGA across medical / mental / functional / social / environmental / medication domains; STOPP/START medication review; exercise + nutrition; falls prevention; advance care planning. CFS ≥ 7 — consider end-of-life planning. Reads context.ageYears, context.clinicalFrailtyScale, context.recentFall, context.polypharmacy — never patient identity.",
+    "references": [
+      {
+        "label": "BGS Fit for Frailty; WHO ICOPE"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "R54",
+        "display": "Age-related frailty",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "primary-hiv-rapid-art",
+    "hook": "patient-view",
+    "type": "primary-hiv-rapid-art",
+    "services": [
+      "vedamd-primary-hiv"
+    ],
+    "title": "Acute / primary HIV infection — same-day ART",
+    "description": "Fires for confirmed acute HIV (positive 4th-gen Ag/Ab + high viral load) ± seroconversion illness. Recommends same-day ART (preferred TLD = tenofovir + lamivudine + dolutegravir or B/F/TAF); CD4 + resistance testing; co-trimoxazole if CD4 < 350; TB symptom screen + TPT once cleared; STI + hepatitis screen; mental health screen; partner notification + PEP for contacts < 72 h. Reads context.hivStatus, context.acutePresentation, context.cd4 — never patient identity.",
+    "references": [
+      {
+        "label": "WHO HIV 2021; DHHS ARV"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B23.0",
+        "display": "Acute HIV infection syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "postpartum-psychosis-mother-baby-unit",
+    "hook": "patient-view",
+    "type": "postpartum-psychosis-mother-baby-unit",
+    "services": [
+      "vedamd-postpartum-psychosis"
+    ],
+    "title": "Postpartum psychosis — safety + mother-baby unit admission",
+    "description": "Fires for new-onset psychotic symptoms / mania within 2–6 weeks postpartum. Recommends URGENT psychiatric assessment, safety screen (suicide + infanticide), exclude organic cause (sepsis, eclampsia, electrolytes, thyroid storm), admit mother-baby unit, antipsychotic + mood stabiliser, ECT for severe / refractory. Reads context.postpartumWeeks, context.psychoticSymptoms, context.suicideIdeation, context.infanticideRisk — never patient identity.",
+    "references": [
+      {
+        "label": "RCPsych perinatal psychiatry; NICE CG192"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F53.1",
+        "display": "Severe puerperal psychosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-anorexia-refeeding",
+    "hook": "patient-view",
+    "type": "severe-anorexia-refeeding",
+    "services": [
+      "vedamd-severe-eating-disorder"
+    ],
+    "title": "Severe eating disorder — MARSIPAN refeeding + electrolyte monitoring",
+    "description": "Fires for eating disorder with BMI < 14, HR < 40, SBP < 90, severe electrolyte derangement. Recommends specialist unit admission, START refeeding at 20–30 kcal/kg/day, monitor phosphate / K+ / Mg / glucose 2× daily, thiamine BEFORE refeeding, cardiac monitoring. FBT for adolescents; CBT-E for adults. Consider compulsory treatment if life-threatening. Reads context.bmi, context.heartRate, context.systolicMmHg, context.potassium, context.phosphate, context.suicidalIdeation — never patient identity.",
+    "references": [
+      {
+        "label": "MARSIPAN + Junior MARSIPAN; NICE NG69"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F50.0",
+        "display": "Anorexia nervosa",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]

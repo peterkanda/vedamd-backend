@@ -53383,5 +53383,1024 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "chagas-disease",
+    "title": "Chagas disease (American trypanosomiasis)",
+    "icd10": [
+      "B57.0",
+      "B57.1",
+      "B57.2",
+      "B57.3",
+      "B57.4",
+      "B57.5"
+    ],
+    "domains": [
+      "infectious-disease",
+      "tropical",
+      "cardiology",
+      "gastroenterology"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Acute: 7–14 days post-exposure; Romaña sign (unilateral painless palpebral oedema at vector inoculation site), chagoma at skin entry, fever, lymphadenopathy, hepatosplenomegaly, mild myocarditis.",
+      "Indeterminate (latent): asymptomatic, positive serology, normal cardiac + GI tests; lifelong risk of progression.",
+      "Chronic (after years-decades): chagasic cardiomyopathy (cardiomegaly, conduction defects, arrhythmia, heart failure, sudden death), megaoesophagus (dysphagia, regurgitation), megacolon (chronic constipation).",
+      "Transmission: triatomine vector (Latin America), congenital, transfusion, organ transplant, oral (food contamination)."
+    ],
+    "redFlags": [
+      "Acute meningoencephalitis (severe, especially HIV-AIDS reactivation).",
+      "Severe chagasic cardiomyopathy with LV dysfunction or ventricular arrhythmia.",
+      "Congenital Chagas (newborn of seropositive mother).",
+      "Pregnancy + Chagas — congenital transmission risk; treat after delivery + breastfeeding.",
+      "Transplant + Chagas — reactivation high-risk."
+    ],
+    "diagnostics": [
+      {
+        "test": "Acute: PCR / direct microscopy of blood / Strout method.",
+        "rationale": "Identify parasitaemia."
+      },
+      {
+        "test": "Chronic / indeterminate: 2 serology tests (ELISA + IFA, different antigens).",
+        "rationale": "Confirmation requires 2 positive."
+      },
+      {
+        "test": "ECG + echocardiography for cardiomyopathy.",
+        "rationale": "Cardiac involvement screening."
+      },
+      {
+        "test": "Barium studies / manometry for GI form.",
+        "rationale": "Megaoesophagus / megacolon."
+      },
+      {
+        "test": "Newborn of seropositive mother: serial PCR + serology to 9 months.",
+        "rationale": "Congenital diagnosis."
+      }
+    ],
+    "management": [
+      {
+        "step": "Antiparasitic — benznidazole or nifurtimox",
+        "detail": "Benznidazole 5–7 mg/kg/day in 2 divided doses × 60 days (adult); paediatric 5–10 mg/kg/day. Nifurtimox 8–10 mg/kg/day × 60–90 days (adult). Indications: acute infection, congenital, reactivation (immunosuppression), children + adolescents with chronic infection, women of childbearing age before pregnancy, indeterminate-form adults < 50."
+      },
+      {
+        "step": "Adverse-effect monitoring",
+        "detail": "Benznidazole: rash, peripheral neuropathy, bone marrow suppression — monthly FBC, LFT. Nifurtimox: anorexia, weight loss, peripheral neuropathy, psychiatric symptoms. Discontinue if severe."
+      },
+      {
+        "step": "Cardiomyopathy management",
+        "detail": "ACEi / ARB + β-blocker (cautious — bradycardia common) + spironolactone + diuretic per HF guidelines. ICD for sustained VT / aborted sudden death. Pacemaker for symptomatic bradycardia / heart block. Amiodarone for arrhythmia. Cardiac transplantation for end-stage."
+      },
+      {
+        "step": "GI form",
+        "detail": "Megaoesophagus: pneumatic dilation; Heller myotomy + Dor fundoplication. Megacolon: bowel rest, manual disimpaction, sigmoidectomy for severe."
+      },
+      {
+        "step": "Pregnancy + Chagas",
+        "detail": "Do NOT treat in pregnancy (teratogenic — benznidazole pregnancy category C; nifurtimox D). Plan treatment between pregnancies + before next conception. Screen all newborns of seropositive mothers; treat congenital infection promptly (excellent cure rate in infants)."
+      },
+      {
+        "step": "Public health",
+        "detail": "Vector control (insecticide spraying, housing improvement). Universal blood + organ donor screening in endemic + non-endemic regions with immigrant populations. Education + screening of immigrants from endemic regions."
+      }
+    ],
+    "references": [
+      {
+        "label": "PAHO/WHO Guidelines for the diagnosis and treatment of Chagas disease (2018)"
+      },
+      {
+        "label": "CDC Chagas"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "viral-haemorrhagic-fever-non-ebola",
+    "title": "Viral haemorrhagic fever (Marburg, CCHF, Lassa, yellow fever) — recognition + containment",
+    "icd10": [
+      "A98.4",
+      "A98.0",
+      "A96.2",
+      "A95.0"
+    ],
+    "domains": [
+      "infectious-disease",
+      "tropical",
+      "outbreak",
+      "emergency",
+      "critical-care",
+      "infection"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Fever > 38°C with travel from / residence in endemic area (incubation 2–21 days).",
+      "Initial nonspecific: fever, headache, myalgia, fatigue, sore throat.",
+      "Day 4–7: nausea/vomiting/diarrhoea/abdominal pain.",
+      "Late: petechiae, gum bleeding, GI bleed, conjunctival injection, hypotension, DIC, ARDS, multi-organ failure.",
+      "Specific clues: Crimean-Congo (tick bite, severe haemorrhage + thrombocytopenia), Marburg (Ugandan / Angolan outbreak; bat exposure cave), Lassa (West Africa; rodent contact; pharyngitis), Yellow fever (jaundice + Faget sign + black vomit)."
+    ],
+    "redFlags": [
+      "Shock + bleeding (DIC).",
+      "ARDS / respiratory failure.",
+      "Cluster of cases / healthcare worker exposure.",
+      "Pregnancy + VHF — very high maternal + fetal mortality.",
+      "ANY suspected VHF — IMMEDIATE infection control + public health notification."
+    ],
+    "diagnostics": [
+      {
+        "test": "ISOLATE patient + alert public health BEFORE any sample taken (BSL-4 lab handling).",
+        "rationale": "Healthcare worker infection control is paramount."
+      },
+      {
+        "test": "RT-PCR for specific virus at reference laboratory (CDC, PHE, BNITM).",
+        "rationale": "Definitive diagnosis."
+      },
+      {
+        "test": "FBC, U&E, coag, LFT — thrombocytopenia, transaminitis, AKI common.",
+        "rationale": "Severity tracking."
+      },
+      {
+        "test": "Blood culture (exclude bacterial cause).",
+        "rationale": "Differential — typhoid, leptospirosis, severe malaria, severe dengue can mimic."
+      },
+      {
+        "test": "Malaria RDT + smear.",
+        "rationale": "Common co-infection / mimic."
+      }
+    ],
+    "management": [
+      {
+        "step": "Strict infection-prevention precautions",
+        "detail": "Single negative-pressure room (or isolated area). PPE: hood, N95/FFP3 or PAPR, double gloves, gown, eye protection. Trained dedicated staff; minimise number of staff + procedures. Aerosol-generating procedures avoid unless essential."
+      },
+      {
+        "step": "Notify public health IMMEDIATELY",
+        "detail": "Mandatory notification (notifiable disease). Contact tracing + monitoring of contacts × 21 days."
+      },
+      {
+        "step": "Supportive care — mainstay",
+        "detail": "Aggressive fluid resuscitation, electrolyte correction, blood products for bleeding, ICU support for organ failure. Avoid IM injections + sharps where possible."
+      },
+      {
+        "step": "Specific antiviral therapy",
+        "detail": "Lassa: ribavirin IV 30 mg/kg loading then 16 mg/kg every 6 h × 4 days then 8 mg/kg every 8 h × 6 days. Effective if started within 6 days. Crimean-Congo: ribavirin (controversial; meta-analyses uncertain — give where local protocol). Marburg / Ebola: REGN-EB3 / mAb114 monoclonal antibodies — Marburg now has approved monoclonals."
+      },
+      {
+        "step": "Yellow fever",
+        "detail": "Supportive — no specific antiviral. Vaccination is the cornerstone of prevention."
+      },
+      {
+        "step": "Pregnancy + VHF",
+        "detail": "VERY high mortality + fetal loss. Avoid termination unless maternal life-threatening; supportive care. Specialist input."
+      },
+      {
+        "step": "Convalescence + survivor follow-up",
+        "detail": "Long-term sequelae (joint pain, fatigue, ocular — uveitis common in Ebola survivors). Sexual transmission persistence (Ebola, Marburg in semen for months) — counsel + sexual-health follow-up."
+      },
+      {
+        "step": "Healthcare-worker post-exposure prophylaxis",
+        "detail": "Per WHO + local protocol; ribavirin for Lassa exposure; vaccination consideration for Marburg / Ebola exposure (rVSV)."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Clinical management of patients with viral haemorrhagic fever"
+      },
+      {
+        "label": "CDC viral haemorrhagic fever pages"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "leptospirosis-severe-weil-disease",
+    "title": "Severe leptospirosis (Weil disease)",
+    "icd10": [
+      "A27.0",
+      "A27.9"
+    ],
+    "domains": [
+      "infectious-disease",
+      "tropical",
+      "hepatology",
+      "nephrology",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Biphasic illness: initial septicaemic phase (3–7 days) — fever, headache, myalgia (calf pain), conjunctival suffusion, GI symptoms.",
+      "Severe (Weil): high fever, jaundice, AKI, haemorrhage (pulmonary, GI), myocarditis.",
+      "Exposure: contact with water / soil contaminated by rodent urine (farmers, sewer workers, soldiers, triathletes, post-flood, plantation workers).",
+      "Pulmonary haemorrhage syndrome — high mortality."
+    ],
+    "redFlags": [
+      "Pulmonary haemorrhage syndrome (haemoptysis, hypoxia, infiltrates).",
+      "AKI requiring RRT.",
+      "Severe jaundice + AKI (Weil).",
+      "Cardiac involvement (myocarditis with hypotension).",
+      "Suspected co-infection with malaria / dengue / typhoid."
+    ],
+    "diagnostics": [
+      {
+        "test": "Microagglutination test (MAT) — gold standard; ELISA IgM for early.",
+        "rationale": "Serology; takes 7–10 days for IgM rise."
+      },
+      {
+        "test": "PCR (early phase < 7 days) — blood / urine / CSF.",
+        "rationale": "Earlier diagnosis."
+      },
+      {
+        "test": "FBC (thrombocytopenia common), U&E, LFT (elevated bilirubin disproportionate to transaminases), CK (rhabdomyolysis), urinalysis.",
+        "rationale": "Multi-organ involvement."
+      },
+      {
+        "test": "CXR (haemorrhagic pneumonitis), ECG (myocarditis).",
+        "rationale": "Pulmonary + cardiac."
+      },
+      {
+        "test": "Co-infection screen (malaria + dengue + typhoid + hepatitis).",
+        "rationale": "Endemic area co-infection common."
+      }
+    ],
+    "management": [
+      {
+        "step": "Empirical antibiotic — IMMEDIATELY",
+        "detail": "Mild: doxycycline 100 mg BD × 7 days OR azithromycin 500 mg daily × 3 days. Severe: IV penicillin G 1.5 MU 6-hourly × 7 days OR IV ceftriaxone 1 g daily × 7 days OR IV doxycycline."
+      },
+      {
+        "step": "Resuscitation",
+        "detail": "IV fluid; vasopressor for shock; respiratory support for pulmonary haemorrhage / ARDS."
+      },
+      {
+        "step": "Renal replacement therapy",
+        "detail": "Early haemodialysis improves outcomes in oliguric AKI."
+      },
+      {
+        "step": "Manage haemorrhage",
+        "detail": "Pulmonary haemorrhage: protective ventilation, transfusion, methylprednisolone 1 g IV daily × 3 days (controversial — some evidence in severe pulmonary haemorrhage). DIC / coagulopathy: FFP, platelets."
+      },
+      {
+        "step": "Jarisch-Herxheimer reaction",
+        "detail": "Fever + hypotension on antibiotic initiation — supportive; brief; antibiotic should not be stopped."
+      },
+      {
+        "step": "Public health + prevention",
+        "detail": "Notifiable in many jurisdictions. Occupational exposure prophylaxis (doxycycline 200 mg weekly for known exposure). Rodent control, protective footwear, water-source treatment."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Leptospirosis Burden Epidemiology Reference Group"
+      },
+      {
+        "label": "Faine WHO guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "rickettsial-disease-typhus-spotted-fever",
+    "title": "Rickettsial disease (typhus + spotted fever group)",
+    "icd10": [
+      "A75",
+      "A77"
+    ],
+    "domains": [
+      "infectious-disease",
+      "tropical",
+      "travel-medicine",
+      "dermatology"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Spotted fever group: tick-borne (Rocky Mountain spotted fever, African tick-bite fever, Mediterranean spotted fever).",
+      "Typhus group: louse-borne (epidemic typhus), flea-borne (murine typhus), mite-borne (scrub typhus).",
+      "Triad: fever + headache + rash. Eschar at tick / mite bite (esp. African + scrub).",
+      "Severe: encephalopathy, ARDS, AKI, vasculitic complications, multi-organ failure."
+    ],
+    "redFlags": [
+      "Delay > 5 days from symptom onset to antibiotic — significantly worse outcome.",
+      "ARDS, AKI, encephalopathy.",
+      "Suspected Rocky Mountain spotted fever — high mortality without treatment.",
+      "Pregnancy — alternative antibiotic (azithromycin) for second / third trimester.",
+      "Children < 8 years — short doxycycline course now considered acceptable in severe rickettsial."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical recognition + epidemiological history is key — DO NOT delay treatment for confirmation.",
+        "rationale": "Time-critical."
+      },
+      {
+        "test": "Indirect immunofluorescence assay (IFA) — gold standard; paired acute + convalescent (3–6 weeks).",
+        "rationale": "Retrospective confirmation."
+      },
+      {
+        "test": "PCR of blood / eschar swab.",
+        "rationale": "Earlier diagnosis."
+      },
+      {
+        "test": "FBC, U&E, LFT (transaminitis often), CRP.",
+        "rationale": "Multi-organ involvement."
+      }
+    ],
+    "management": [
+      {
+        "step": "Empirical doxycycline IMMEDIATELY",
+        "detail": "Adult: 100 mg PO/IV BD × 7–10 days (continue until afebrile + 3 days). Children: 2.2 mg/kg BD (max 100 mg BD) — short courses now considered acceptable even in < 8 years for severe rickettsial. Pregnancy second / third trimester: azithromycin 500 mg daily × 7 days alternative (chloramphenicol historically used)."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Antipyretic, IV fluids, organ support as needed. Vasculitic / encephalopathic complications may need ICU."
+      },
+      {
+        "step": "Identify + treat co-existing tropical illness",
+        "detail": "Often co-infection or differential — malaria, dengue, typhoid, leptospirosis."
+      },
+      {
+        "step": "Prevention",
+        "detail": "Insecticide-treated clothing (permethrin); DEET repellent; tick checks; rodent + arthropod control. Travel-medicine counselling."
+      }
+    ],
+    "references": [
+      {
+        "label": "CDC Rickettsial Diseases Guideline; WHO scrub typhus"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "candidaemia-management",
+    "title": "Candidaemia and invasive candidiasis",
+    "icd10": [
+      "B37.7"
+    ],
+    "domains": [
+      "infectious-disease",
+      "critical-care",
+      "haematology"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Fever + sepsis in patient with central venous catheter, broad-spectrum antibiotic exposure, abdominal surgery, parenteral nutrition, immunocompromise.",
+      "Hospital-acquired candidaemia (3rd-5th most common bloodstream infection in ICU).",
+      "Species shift to non-albicans Candida (C. glabrata fluconazole-resistant; C. auris emerging globally with multi-drug resistance).",
+      "Complications: endocarditis, endophthalmitis, hepatosplenic, CNS, vertebral osteomyelitis."
+    ],
+    "redFlags": [
+      "Septic shock — empirical antifungal in high-risk.",
+      "Candida auris — strict isolation + infection control.",
+      "Endophthalmitis (vision loss) — all candidaemia need ophthalmology screen.",
+      "Endocarditis with prosthetic valve — surgical removal often needed."
+    ],
+    "diagnostics": [
+      {
+        "test": "Blood culture × 2 sets from different sites + each lumen of CVC.",
+        "rationale": "Identify species + susceptibility."
+      },
+      {
+        "test": "MALDI-TOF or molecular for rapid species identification.",
+        "rationale": "Treatment choice — C. glabrata / C. krusei often fluconazole-resistant."
+      },
+      {
+        "test": "Dilated ophthalmology exam within 1 week.",
+        "rationale": "Endophthalmitis screening — recommended for ALL candidaemia."
+      },
+      {
+        "test": "Echocardiography if persistent candidaemia.",
+        "rationale": "Endocarditis."
+      },
+      {
+        "test": "Repeat blood cultures every 24–48 h until 2 consecutive negative.",
+        "rationale": "Track clearance + duration of therapy."
+      }
+    ],
+    "management": [
+      {
+        "step": "Empirical antifungal in suspected candidaemia + septic shock",
+        "detail": "Echinocandin (caspofungin 70 mg loading then 50 mg daily; anidulafungin 200 mg loading then 100 mg daily; micafungin 100 mg daily) — first-line for any critically ill / azole-exposed / unknown species."
+      },
+      {
+        "step": "De-escalate based on species + susceptibility",
+        "detail": "C. albicans (susceptible): switch to fluconazole 800 mg loading then 400 mg daily. C. glabrata: continue echinocandin or voriconazole. C. krusei (intrinsically fluconazole-R): echinocandin / voriconazole / liposomal amphotericin. C. auris: echinocandin first; isavuconazole / posaconazole / amphotericin per susceptibility."
+      },
+      {
+        "step": "REMOVE all central venous catheters",
+        "detail": "Catheter removal reduces mortality + accelerates clearance. Insert new line on opposite side once cultures negative."
+      },
+      {
+        "step": "Search for + treat metastatic sites",
+        "detail": "Ophthalmology screen, echocardiography for endocarditis, abdominal imaging for hepatosplenic, MRI brain / spine if focal."
+      },
+      {
+        "step": "Duration",
+        "detail": "14 days from first negative blood culture for uncomplicated candidaemia. 6–12 weeks for endocarditis, osteomyelitis, CNS."
+      },
+      {
+        "step": "Prevention",
+        "detail": "Antibiotic stewardship; bundle for CVC care; selective fluconazole prophylaxis (high-risk ICU, neutropenic). Active surveillance for C. auris in outbreak settings."
+      }
+    ],
+    "references": [
+      {
+        "label": "IDSA Clinical Practice Guideline for the Management of Candidiasis (2016)"
+      },
+      {
+        "label": "ESCMID Candida guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "primary-hiv-infection-acute",
+    "title": "Acute / primary HIV infection (HIV seroconversion illness)",
+    "icd10": [
+      "B23.0",
+      "Z21"
+    ],
+    "domains": [
+      "hiv",
+      "infectious-disease",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Within 2–4 weeks of HIV exposure: 'flu-like' or 'mononucleosis-like' illness in 40–90%.",
+      "Fever (96%), lymphadenopathy (75%), pharyngitis (70%), rash (50% — maculopapular trunk/face), myalgia / arthralgia, headache, oral / genital ulcers (mucocutaneous).",
+      "Less commonly: severe presentations with opportunistic infection (PJP, Candida, oesophageal ulceration), meningoencephalitis.",
+      "High viral load + extreme infectivity during seroconversion — public-health priority."
+    ],
+    "redFlags": [
+      "Severe OI at seroconversion (rare but indicates severe immunosuppression — often progresses rapidly).",
+      "HIV encephalopathy.",
+      "Pregnancy + acute HIV — very high mother-to-child transmission risk.",
+      "Suspected post-exposure scenario — calculate window + offer PEP if within 72 h."
+    ],
+    "diagnostics": [
+      {
+        "test": "4th-generation HIV antigen / antibody combination test (Ab + p24 antigen).",
+        "rationale": "Window 2–4 weeks (vs 6–12 weeks for 3rd generation Ab-only)."
+      },
+      {
+        "test": "HIV RNA viral load — positive within 1–2 weeks (very high level, often > 10⁶).",
+        "rationale": "Earliest diagnostic; confirms acute infection."
+      },
+      {
+        "test": "CD4 count + genotypic resistance testing.",
+        "rationale": "Baseline + ART regimen choice."
+      },
+      {
+        "test": "Co-infection screen: hepatitis B + C, syphilis, gonorrhoea, chlamydia.",
+        "rationale": "Coexisting STI."
+      },
+      {
+        "test": "Pregnancy test (women); contraception review.",
+        "rationale": "Pregnancy planning + family planning."
+      }
+    ],
+    "management": [
+      {
+        "step": "Confirm + counsel sensitively",
+        "detail": "Disclose privately + with adequate time. Provide written information + signposting to peer support. Confidentiality, partner-notification process explained."
+      },
+      {
+        "step": "Start ART rapidly (test-and-treat — same-day where possible)",
+        "detail": "Preferred regimen: dolutegravir + (tenofovir alafenamide OR tenofovir disoproxil fumarate) + emtricitabine OR lamivudine (DTG + TAF/F or DTG + TDF/3TC — formulated as TLD or B/F/TAF). Bictegravir / TAF / FTC also first-line. Continue lifelong."
+      },
+      {
+        "step": "Manage symptoms",
+        "detail": "Antipyretic, analgesia, oral care for ulcers, antiemetic. Most seroconversion symptoms resolve in 2–4 weeks."
+      },
+      {
+        "step": "Co-trimoxazole prophylaxis if CD4 < 350 at presentation",
+        "detail": "480 mg daily — covers PJP / toxoplasmosis / bacterial."
+      },
+      {
+        "step": "Screen + treat opportunistic infection",
+        "detail": "TB symptom screen + LAM if available; CrAg in advanced HIV; viral hepatitis treatment if co-infected; syphilis treatment."
+      },
+      {
+        "step": "Partner-notification + sexual health",
+        "detail": "Encourage disclosure to current + recent (3–6 months) partners; partner testing + PEP within 72 h of exposure; counsel on U=U (undetectable = untransmittable) once viral load suppressed."
+      },
+      {
+        "step": "Mental health + adherence support",
+        "detail": "Depression / suicide risk screen at diagnosis; counselling; peer-support referral. ART adherence is critical; treat as chronic-disease management."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO consolidated guidelines on HIV (2021)"
+      },
+      {
+        "label": "DHHS Adult + Adolescent ARV Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-postpartum-psychosis",
+    "title": "Postpartum psychosis (puerperal psychosis)",
+    "icd10": [
+      "F53.1"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "obstetrics",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "maxAgeYears": 49,
+      "sex": "female"
+    },
+    "presentation": [
+      "Acute onset within 2 weeks of childbirth (usually 1–4 days postpartum).",
+      "Severe mood disturbance (mania or depression), psychotic symptoms (delusions often baby-related, hallucinations), confusion, perplexity.",
+      "Risk: history of bipolar disorder (recurrence ~50%), prior puerperal psychosis (recurrence ~50%), first pregnancy, family history."
+    ],
+    "redFlags": [
+      "Suicide / infanticide risk — emergency.",
+      "Severe agitation / unable to care for baby.",
+      "Confusion + altered consciousness — exclude delirium (infection, electrolyte, medication, eclampsia).",
+      "Thyroid storm postpartum can mimic.",
+      "Baby's safety paramount — do NOT leave baby alone with severely unwell mother."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urgent psychiatric assessment; suicide + infanticide risk.",
+        "rationale": "Safety triage."
+      },
+      {
+        "test": "Septic workup, U&E, glucose, calcium, TSH, urinalysis, neurological exam.",
+        "rationale": "Exclude organic causes (delirium, eclampsia, thyroid storm, vitamin deficiency)."
+      },
+      {
+        "test": "Drug screen.",
+        "rationale": "Substance-induced exclusion."
+      },
+      {
+        "test": "CT head if focal neurology / suspicion of CVA / cortical venous sinus thrombosis.",
+        "rationale": "Delirium / vascular cause."
+      }
+    ],
+    "management": [
+      {
+        "step": "Safety + admission to specialist mother + baby unit if available",
+        "detail": "Ideally joint admission with infant in mother-baby psychiatric unit. Otherwise mother admission with arranged infant care + access for breastfeeding."
+      },
+      {
+        "step": "Antipsychotic + mood stabiliser",
+        "detail": "Olanzapine 5–20 mg/day OR risperidone 2–6 mg/day OR haloperidol 5–10 mg/day. Add valproate / lithium for prominent manic features (lithium preferred in absence of breastfeeding; valproate avoid in childbearing without PPP). Benzodiazepine adjunct for severe agitation / sleep."
+      },
+      {
+        "step": "ECT for severe / refractory / catatonic / suicidal",
+        "detail": "Very effective in postpartum psychosis — rapid response, safe in breastfeeding mother."
+      },
+      {
+        "step": "Breastfeeding considerations",
+        "detail": "Most antipsychotics compatible with breastfeeding (olanzapine, quetiapine, risperidone — moderate evidence). Lithium typically AVOIDED in breastfeeding (infant toxicity reported). Plan with specialist + counsel mother."
+      },
+      {
+        "step": "Manage mother-infant bonding + safeguarding",
+        "detail": "Risk-assess infant safety + arrange care + safeguarding referral if indicated. Multidisciplinary involvement (health visitor, social work, perinatal psychiatry, obstetrics)."
+      },
+      {
+        "step": "Long-term follow-up + future-pregnancy planning",
+        "detail": "Perinatal psychiatry follow-up minimum 12 months. Bipolar disorder follow-up if confirmed. Prenatal prophylaxis (lithium or other mood stabiliser) in future pregnancies — high recurrence."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCPsych perinatal psychiatry guidance; NICE CG192 antenatal + postnatal mental health"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-eating-disorder-medical-emergency",
+    "title": "Severe eating disorder — medical emergency (anorexia / bulimia)",
+    "icd10": [
+      "F50.0",
+      "F50.2",
+      "F50.9"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "paediatrics",
+      "endocrinology",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 8,
+      "sex": "any"
+    },
+    "presentation": [
+      "Severe restriction / purging: BMI < 14 (or rapid weight loss > 1 kg/week), bradycardia HR < 40, hypotension SBP < 90, hypothermia < 35°C, electrolyte derangement, cardiac arrhythmia.",
+      "Bulimia: severe electrolyte / metabolic disturbance from vomiting / laxative / diuretic abuse.",
+      "Refeeding syndrome risk: hypophosphataemia, hypokalaemia, hypomagnesaemia, thiamine deficiency.",
+      "Children + adolescents: growth retardation, delayed puberty, osteoporosis."
+    ],
+    "redFlags": [
+      "Severe bradycardia HR < 40 or arrhythmia.",
+      "Hypotension SBP < 90, prolonged QTc.",
+      "Severe electrolyte derangement (K+ < 2.5, phosphate < 0.5).",
+      "BMI < 14 (or < 70% expected for age).",
+      "Suicidal ideation.",
+      "Inability to maintain weight / nutritional intake at home."
+    ],
+    "diagnostics": [
+      {
+        "test": "Vital signs + weight + height + BMI percentile (peads).",
+        "rationale": "Severity grading (MARSIPAN, Junior MARSIPAN)."
+      },
+      {
+        "test": "FBC, U&E (including phosphate + magnesium), glucose, LFT, calcium, TFT, ECG.",
+        "rationale": "Identify electrolyte / cardiac / liver / endocrine complications."
+      },
+      {
+        "test": "Bone density DEXA if chronic.",
+        "rationale": "Osteoporosis."
+      },
+      {
+        "test": "Mental health assessment + suicide risk.",
+        "rationale": "Psychiatric severity."
+      }
+    ],
+    "management": [
+      {
+        "step": "Specialist eating-disorder unit admission for severe",
+        "detail": "Multi-disciplinary team: psychiatry + dietitian + nursing + physician. Outpatient family-based therapy for children where not severe."
+      },
+      {
+        "step": "Refeeding — START LOW, GO SLOW",
+        "detail": "Start at 20–30 kcal/kg/day (or 1000 kcal/day) and increase by 200 kcal every 24–48 h. Watch for refeeding syndrome FIRST 7–10 DAYS. Monitor phosphate, K+, Mg, glucose 2-times daily initially. Replace electrolytes proactively. Thiamine 200–300 mg/day IV / PO before refeeding."
+      },
+      {
+        "step": "Cardiac monitoring",
+        "detail": "ECG monitoring during refeeding for high-risk; cardiac rhythm monitoring if severe bradycardia or QTc prolongation."
+      },
+      {
+        "step": "Psychological + behavioural therapy",
+        "detail": "Family-based therapy (FBT) for adolescents with anorexia (preferred). Cognitive-behavioural therapy (CBT-E) for bulimia + adults. Specialist treatment — Maudsley, FREED, MANTRA, SSCM."
+      },
+      {
+        "step": "Manage co-morbidity",
+        "detail": "Depression, anxiety, OCD, PTSD common. SSRI for bulimia (fluoxetine 60 mg). Cautious psychotropic use in low-BMI patients (cardiac effects)."
+      },
+      {
+        "step": "Bone protection",
+        "detail": "Calcium 1500 mg + vitamin D 800 IU daily; consider transdermal oestrogen (NOT oral COC — does not protect bone) in adolescents with amenorrhoea > 6 months."
+      },
+      {
+        "step": "Compulsory treatment when indicated",
+        "detail": "Mental Health Act / Mental Capacity Act when life-threatening + patient refuses; senior psychiatric + legal review."
+      },
+      {
+        "step": "Long-term recovery",
+        "detail": "Treatment-resistance + relapsing course common; persistence + multidisciplinary outpatient follow-up. Mortality ~5% (anorexia)."
+      }
+    ],
+    "references": [
+      {
+        "label": "MARSIPAN + Junior MARSIPAN guidance; NICE NG69 Eating disorders"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "delirium-acute-elderly",
+    "title": "Acute delirium in older adults",
+    "icd10": [
+      "F05"
+    ],
+    "domains": [
+      "geriatrics",
+      "psychiatry",
+      "neurology",
+      "emergency",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 65,
+      "sex": "any"
+    },
+    "presentation": [
+      "Acute onset (hours-days) + fluctuating course + inattention + disorganised thinking / altered consciousness.",
+      "Hyperactive: agitation, hallucinations, restlessness, removing lines.",
+      "Hypoactive: lethargy, withdrawal — often missed; worse prognosis.",
+      "Mixed: alternating.",
+      "Common precipitants: infection (UTI, chest), pain, drug side-effects (anticholinergic, opioid, benzodiazepine, steroid), constipation, urinary retention, electrolyte / glucose disturbance, hypoxia, post-operative, stroke, alcohol withdrawal, dementia / Parkinson disease."
+    ],
+    "redFlags": [
+      "Reduced consciousness — exclude stroke, intracranial event, hypoglycaemia.",
+      "Wernicke encephalopathy (alcohol, malnutrition, hyperemesis).",
+      "Serotonin syndrome / neuroleptic malignant syndrome.",
+      "Sepsis.",
+      "Severe metabolic disturbance."
+    ],
+    "diagnostics": [
+      {
+        "test": "4AT or CAM-ICU bedside screen for delirium.",
+        "rationale": "Standardised diagnosis."
+      },
+      {
+        "test": "FBC, U&E, glucose, calcium, CRP, urinalysis, blood culture, CXR if respiratory signs.",
+        "rationale": "Identify infective / metabolic cause."
+      },
+      {
+        "test": "Medication review (anticholinergic burden — STOPP/START criteria).",
+        "rationale": "Drug-induced delirium."
+      },
+      {
+        "test": "ECG, glucose, oxygen saturation, capillary glucose.",
+        "rationale": "Hypoxia, hypoglycaemia."
+      },
+      {
+        "test": "CT head if focal neurology, head trauma, persistent unexplained.",
+        "rationale": "Exclude stroke, haemorrhage, abscess."
+      }
+    ],
+    "management": [
+      {
+        "step": "Identify + treat underlying cause",
+        "detail": "Address PINCH-ME (Pain, Infection, Nutrition / dehydration, Constipation, Hydration, Medications, Environment)."
+      },
+      {
+        "step": "Non-pharmacological management — first-line",
+        "detail": "Re-orientation, familiar objects + family presence, day-night cycle (window, clock, sleep hygiene), single-occupancy room, hearing aids + glasses on, ambulation when safe, hydration, nutrition. Avoid restraints + multiple bed moves."
+      },
+      {
+        "step": "Address pain",
+        "detail": "Untreated pain is common cause; regular paracetamol; cautious opioid; avoid NSAID in renal failure / older."
+      },
+      {
+        "step": "Antipsychotic — last resort + lowest dose",
+        "detail": "ONLY for severe agitation endangering self / others / interfering with essential care; or for distressing psychotic symptoms. Haloperidol 0.5–1 mg PO/IM (peak 4–6 h); olanzapine 2.5–5 mg; risperidone 0.25–0.5 mg. AVOID in Parkinson disease / dementia with Lewy bodies (use quetiapine 12.5–25 mg). AVOID benzodiazepines except for alcohol / benzodiazepine withdrawal or specific indications (catatonia, NMS)."
+      },
+      {
+        "step": "Manage Wernicke encephalopathy",
+        "detail": "IV thiamine 200–500 mg TDS × 3 days then 100 mg TDS oral; treat hypoglycaemia AFTER giving thiamine."
+      },
+      {
+        "step": "Discharge planning + follow-up",
+        "detail": "Delirium often persists weeks–months. Cognitive screen (MMSE / MoCA) at 4–6 weeks (delirium associated with new diagnosis of dementia in many). Education for family on recognising recurrence. Avoid further inpatient stays where possible."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE CG103 Delirium; BGS / ESCMID delirium guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "frailty-comprehensive-geriatric-assessment",
+    "title": "Frailty — Comprehensive Geriatric Assessment + tailored intervention",
+    "icd10": [
+      "R54",
+      "Z73.6"
+    ],
+    "domains": [
+      "geriatrics",
+      "primary-care",
+      "rehabilitation"
+    ],
+    "population": {
+      "minAgeYears": 65,
+      "sex": "any"
+    },
+    "presentation": [
+      "Clinical syndrome with reduced physiological reserve + vulnerability to stressors.",
+      "Phenotype (Fried): weight loss, exhaustion, weakness (low grip), slow gait, low activity (≥ 3 of 5 = frail; 1–2 = pre-frail).",
+      "Accumulation (Rockwood): clinical frailty scale 1–9 (1 very fit, 9 terminally ill); ≥ 5 = mild frailty.",
+      "Functional decline; falls; incontinence; delirium on minor illness; polypharmacy harm; hospitalisation cascade."
+    ],
+    "redFlags": [
+      "Severe / advanced frailty (CFS ≥ 7) — consider end-of-life planning.",
+      "Falls with fracture, head injury, recurrent.",
+      "Suspected abuse (financial, physical, neglect).",
+      "Polypharmacy with potentially inappropriate medications (PIMs).",
+      "Carer burden — risk of placement."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical Frailty Scale (Rockwood); grip strength; Timed Up and Go; gait speed.",
+        "rationale": "Quantify frailty."
+      },
+      {
+        "test": "Comprehensive geriatric assessment domains: medical, mental health, functional (ADL/IADL), social, environmental, medication.",
+        "rationale": "Holistic baseline."
+      },
+      {
+        "test": "FBC, U&E, glucose, TFT, B12, folate, vitamin D, calcium, ferritin, CRP, urinalysis.",
+        "rationale": "Reversible contributors."
+      },
+      {
+        "test": "MMSE / MoCA cognitive screen + PHQ-9 / GAD-7 / GDS-15.",
+        "rationale": "Cognitive / mood screening."
+      },
+      {
+        "test": "DEXA if osteoporosis risk; falls assessment.",
+        "rationale": "Bone health + fall risk."
+      }
+    ],
+    "management": [
+      {
+        "step": "Comprehensive Geriatric Assessment + multidisciplinary care plan",
+        "detail": "Geriatrician + GP + nurse + physio + OT + dietitian + pharmacist + social work + carer."
+      },
+      {
+        "step": "Address reversible causes",
+        "detail": "Polypharmacy review (STOPP/START, Beers, OncoBeers); correct anaemia, B12, vitamin D, thyroid, depression; optimise comorbidities; pain management."
+      },
+      {
+        "step": "Exercise + rehabilitation — central intervention",
+        "detail": "Resistance + balance training (e.g. Otago programme) 3 times/week; improves muscle mass + falls + functional capacity. Tai chi reduces falls."
+      },
+      {
+        "step": "Nutrition optimisation",
+        "detail": "1.2 g/kg/day protein (higher than non-frail); calorie supplementation if undernutrition; treat dental issues + swallowing problems; vitamin D 800 IU + calcium 1000 mg daily if deficient."
+      },
+      {
+        "step": "Falls prevention",
+        "detail": "Identify fall risk (Timed Up and Go > 12 s, recent falls); home assessment for hazards; vision + hearing review; medication review; falls clinic + balance training; alarm system."
+      },
+      {
+        "step": "Continence care",
+        "detail": "Pelvic floor exercises; bladder retraining; treat UTI; review anticholinergic burden; consider mirabegron over oxybutynin."
+      },
+      {
+        "step": "Advance care planning + cessation of futile intervention",
+        "detail": "Discuss goals of care, ceiling of treatment, ReSPECT / POLST equivalent. Consider de-prescribing of preventive medications with low remaining benefit (e.g. statin in last 6–12 months of life). Hospice / palliative care referral when appropriate."
+      },
+      {
+        "step": "Carer support + community",
+        "detail": "Carer assessment + respite + financial benefits; befriending / day-centre; technology-enabled care (telecare)."
+      }
+    ],
+    "references": [
+      {
+        "label": "British Geriatrics Society Fit for Frailty; WHO Integrated Care for Older People (ICOPE)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-obstructive-sleep-apnoea-pathway",
+    "title": "Severe obstructive sleep apnoea — CPAP + co-morbidity pathway",
+    "icd10": [
+      "G47.33"
+    ],
+    "domains": [
+      "respiratory",
+      "sleep-medicine",
+      "cardiology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Severe OSA: apnoea-hypopnoea index (AHI) ≥ 30/h on polysomnography or home sleep study.",
+      "Symptoms: excessive daytime sleepiness (Epworth ≥ 15), witnessed apnoea / loud snoring, choking at night, morning headache, unrefreshing sleep.",
+      "Risk: obesity (BMI > 30), male, age, neck circumference > 43 cm, retrognathia, alcohol / sedative use, hypothyroidism, menopause.",
+      "Complications: hypertension, arrhythmia, MI, stroke, T2DM, MVA, cognitive impairment."
+    ],
+    "redFlags": [
+      "Severe sleepiness in driver / safety-critical occupation — driving counselling + restriction.",
+      "Pulmonary hypertension / right heart failure (overlap with COPD / obesity hypoventilation syndrome).",
+      "Resistant hypertension (often OSA-driven).",
+      "Recent CVA / MI.",
+      "Pregnancy + severe OSA — maternal + fetal compromise."
+    ],
+    "diagnostics": [
+      {
+        "test": "STOP-BANG questionnaire (pre-test probability).",
+        "rationale": "Screening."
+      },
+      {
+        "test": "Polysomnography (PSG) — gold standard; home sleep test (HST) acceptable for high-pretest probability.",
+        "rationale": "AHI quantification + severity."
+      },
+      {
+        "test": "Epworth Sleepiness Scale ≥ 15 = severe daytime sleepiness.",
+        "rationale": "Symptom burden."
+      },
+      {
+        "test": "TSH, ECG, echo (if heart failure / arrhythmia), HbA1c.",
+        "rationale": "Identify reversible / co-morbidity."
+      }
+    ],
+    "management": [
+      {
+        "step": "Continuous positive airway pressure (CPAP) — first-line",
+        "detail": "Auto-CPAP titration (4–20 cmH2O) or fixed CPAP after laboratory titration. Heated humidification. Mask fitting + education vital. Improves daytime sleepiness, BP, cardiovascular outcomes."
+      },
+      {
+        "step": "Bilevel (BiPAP) for CPAP intolerance / obesity hypoventilation",
+        "detail": "Switch if CPAP not tolerated or coexistent hypoventilation (BMI > 40, daytime hypercapnia)."
+      },
+      {
+        "step": "Mandibular advancement device — moderate OSA",
+        "detail": "Custom-made for adequately dentate patients with mild-moderate OSA; less effective than CPAP for severe."
+      },
+      {
+        "step": "Lifestyle optimisation",
+        "detail": "Weight loss (10% reduction reduces AHI by 20–30%); avoid alcohol / sedatives; positional therapy if supine-only; smoking cessation; sleep hygiene."
+      },
+      {
+        "step": "Bariatric surgery for obesity",
+        "detail": "Sustained weight loss substantially improves / resolves OSA in many morbidly obese."
+      },
+      {
+        "step": "Surgical OSA treatments — selected",
+        "detail": "Uvulopalatopharyngoplasty (modest effect); maxillomandibular advancement (effective in selected); hypoglossal-nerve stimulator (Inspire) for CPAP-intolerant moderate-severe."
+      },
+      {
+        "step": "Co-morbidity management",
+        "detail": "BP control (CPAP itself reduces BP); diabetes optimisation; CV-risk modification; treat reflux. Driving restriction until adequate CPAP adherence (4 h/night minimum > 70% nights)."
+      },
+      {
+        "step": "Pregnancy + OSA",
+        "detail": "Specialist obstetric input; CPAP safe in pregnancy."
+      },
+      {
+        "step": "Adherence + follow-up",
+        "detail": "CPAP compliance reviewed at 1 month + 3 months + annually; download data; adjust pressure + mask + education for non-adherence."
+      }
+    ],
+    "references": [
+      {
+        "label": "AASM Clinical Practice Guideline on Diagnosis + Treatment of OSA"
+      },
+      {
+        "label": "NICE NG202 Obstructive sleep apnoea"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]
