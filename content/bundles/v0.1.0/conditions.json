@@ -52303,5 +52303,1085 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "ruptured-ectopic-pregnancy",
+    "title": "Ruptured ectopic pregnancy",
+    "icd10": [
+      "O00.1",
+      "O00.9"
+    ],
+    "domains": [
+      "obstetrics",
+      "gynaecology",
+      "surgery",
+      "emergency",
+      "obstetric-emergency"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "maxAgeYears": 49,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Woman of reproductive age with abdominal pain ± vaginal bleeding ± positive pregnancy test + shock.",
+      "Often history of amenorrhea 6–8 weeks; sometimes assumed period.",
+      "Shoulder tip pain (referred from diaphragmatic irritation).",
+      "Risk: prior ectopic, tubal surgery / damage (PID, salpingitis), IVF, IUD failure, smoking, pregnancy of unknown location (PUL)."
+    ],
+    "redFlags": [
+      "Hypotension, tachycardia, peritonism — surgical emergency.",
+      "Reduced consciousness from haemorrhagic shock.",
+      "Persistent severe pain even without confirmed bleeding.",
+      "Heterotopic pregnancy (rare; assisted reproduction)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urine + serum beta-hCG (qualitative + quantitative).",
+        "rationale": "Confirm pregnancy."
+      },
+      {
+        "test": "Transvaginal ultrasound — empty uterus, adnexal mass / sac, free fluid in pouch of Douglas.",
+        "rationale": "Confirm location."
+      },
+      {
+        "test": "FBC, group + crossmatch ≥ 4 units, lactate, coagulation.",
+        "rationale": "Resuscitation prep."
+      },
+      {
+        "test": "Bedside FAST scan in unstable patient.",
+        "rationale": "Identify free fluid quickly."
+      },
+      {
+        "test": "Rh status.",
+        "rationale": "Anti-D prophylaxis if RhD negative."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitation + activate massive transfusion if shocked",
+        "detail": "ABCDE; two large-bore IV; permissive hypotension SBP 80–90 until source control; PRBC/FFP/platelet 1:1:1; tranexamic acid 1 g IV within 3 h."
+      },
+      {
+        "step": "Theatre — emergency laparotomy or laparoscopy",
+        "detail": "Laparotomy if unstable; laparoscopy if stable. Salpingectomy preferred over salpingostomy unless contralateral tube damaged + fertility desired. Treat haemoperitoneum."
+      },
+      {
+        "step": "Anti-D 250 IU IM for RhD-negative women",
+        "detail": "Within 72 h of bleeding event."
+      },
+      {
+        "step": "Post-operative care",
+        "detail": "Monitor recovery; psychological support for pregnancy loss; counsel future-pregnancy risk (recurrence 10%); next pregnancy early scan at 6 weeks."
+      },
+      {
+        "step": "Methotrexate medical management — only stable, asymptomatic, hCG < 5000",
+        "detail": "Single-dose methotrexate 50 mg/m² IM with strict follow-up; not appropriate in ruptured presentation."
+      },
+      {
+        "step": "Future-pregnancy counselling + contraception",
+        "detail": "Pre-conception fertility assessment; IVF consideration if both tubes affected; avoid IUD-failure scenarios with discussion."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCOG Green-top Guideline No. 21 Ectopic pregnancy"
+      },
+      {
+        "label": "NICE Ectopic pregnancy and miscarriage"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-pelvic-inflammatory-disease",
+    "title": "Severe pelvic inflammatory disease (PID) / tubo-ovarian abscess",
+    "icd10": [
+      "N73.0",
+      "N73.9"
+    ],
+    "domains": [
+      "gynaecology",
+      "infectious-disease",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "maxAgeYears": 60,
+      "sex": "female"
+    },
+    "presentation": [
+      "Lower abdominal pain + cervical motion tenderness + fever ± vaginal discharge ± dyspareunia.",
+      "Risk: chlamydia, gonorrhoea, mixed anaerobic (especially with IUD); bacterial vaginosis; recent termination / instrumentation; multiple partners.",
+      "Severe: high fever, peritonism, tubo-ovarian abscess on imaging."
+    ],
+    "redFlags": [
+      "Septic shock from TOA rupture.",
+      "Suspected ruptured tubo-ovarian abscess — emergency.",
+      "Pregnancy with PID (rare; uterine ectopic).",
+      "HIV / immunocompromise — atypical organisms."
+    ],
+    "diagnostics": [
+      {
+        "test": "Endocervical NAAT for chlamydia + gonorrhoea; high vaginal swab.",
+        "rationale": "Identify pathogens."
+      },
+      {
+        "test": "Pregnancy test (exclude ectopic).",
+        "rationale": "Critical pre-treatment."
+      },
+      {
+        "test": "Transvaginal USS — TOA, free fluid.",
+        "rationale": "Detect abscess."
+      },
+      {
+        "test": "FBC, CRP, lactate, blood culture if febrile.",
+        "rationale": "Severity."
+      },
+      {
+        "test": "HIV + syphilis + hepatitis screen.",
+        "rationale": "Wider STI assessment."
+      }
+    ],
+    "management": [
+      {
+        "step": "Outpatient (mild PID, no TOA, can take oral)",
+        "detail": "Ceftriaxone 500 mg IM single dose + doxycycline 100 mg BD × 14 days + metronidazole 400 mg BD × 14 days. Avoid intercourse + treat partner."
+      },
+      {
+        "step": "Inpatient (severe / TOA / pregnancy / failed outpatient / immunocompromise)",
+        "detail": "IV ceftriaxone 2 g daily + doxycycline 100 mg IV/PO BD + metronidazole 500 mg IV TDS. Switch to oral when afebrile 24 h + improving (continue total 14 days)."
+      },
+      {
+        "step": "Tubo-ovarian abscess drainage",
+        "detail": "Image-guided drainage (USS or CT) for TOA > 4–8 cm or failing antibiotics 48–72 h. Salpingectomy + drainage if rupture / septic shock."
+      },
+      {
+        "step": "IUD removal — selectively",
+        "detail": "Modern evidence: do NOT routinely remove IUD if mild-moderate PID; remove if severe / not improving by 48 h / TOA / actinomyces."
+      },
+      {
+        "step": "Partner notification + treatment",
+        "detail": "Sexual contacts in past 6 months treated for chlamydia + gonorrhoea; partner notification per public-health pathway."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Review at 72 h then 2 weeks; counsel future-fertility risk (ectopic, infertility, chronic pelvic pain). Long-term contraception planning."
+      }
+    ],
+    "references": [
+      {
+        "label": "CDC STI Treatment Guidelines 2021; WHO STI guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-hyperemesis-gravidarum",
+    "title": "Severe hyperemesis gravidarum (HG)",
+    "icd10": [
+      "O21.1"
+    ],
+    "domains": [
+      "obstetrics",
+      "gastroenterology",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "maxAgeYears": 49,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Persistent vomiting in pregnancy with ≥ 5% pre-pregnancy weight loss + ketonuria + electrolyte disturbance.",
+      "PUQE score ≥ 13 (Pregnancy-Unique Quantification of Emesis) = severe.",
+      "Peak first trimester (8–12 weeks); usually resolves by 20 weeks.",
+      "Risk: previous HG, multiple pregnancy, molar pregnancy, female fetus, family history."
+    ],
+    "redFlags": [
+      "Severe dehydration / hypotension.",
+      "Wernicke encephalopathy — confusion + ataxia + ophthalmoplegia (give thiamine BEFORE dextrose).",
+      "Mallory-Weiss tear / haematemesis.",
+      "Suspected molar / multiple pregnancy.",
+      "Persistent vomiting beyond 20 weeks — exclude alternative cause."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urinalysis (ketonuria), U&E, glucose, FBC, LFT, TFT, calcium, phosphate, magnesium.",
+        "rationale": "Severity + identify hyperthyroidism (beta-hCG cross-reactivity)."
+      },
+      {
+        "test": "USS pregnancy + dating.",
+        "rationale": "Exclude multiple / molar."
+      },
+      {
+        "test": "Helicobacter pylori serology in persistent.",
+        "rationale": "Identify treatable contributor."
+      }
+    ],
+    "management": [
+      {
+        "step": "Rehydration + electrolyte correction",
+        "detail": "IV 0.9% NaCl + KCl per deficit (typically 1 L over 1 h then maintenance + replacement). AVOID dextrose-containing fluids until thiamine given (Wernicke risk)."
+      },
+      {
+        "step": "Thiamine — give BEFORE any glucose-containing fluid",
+        "detail": "IV thiamine 100–200 mg before dextrose. Pabrinex IV pairs ampoules I + II daily × 3 days when refeeding."
+      },
+      {
+        "step": "Antiemetic step-wise (UK RCOG ladder)",
+        "detail": "First-line: cyclizine 50 mg or promethazine 25 mg or doxylamine + pyridoxine (B6) — well-evidenced and safe. Second: prochlorperazine, metoclopramide, ondansetron (use after 10 weeks where possible — modest cleft-palate signal but benefit usually outweighs). Third: methylprednisolone 16 mg TDS for 3 days then taper (only refractory, after 10 weeks)."
+      },
+      {
+        "step": "Nutritional support",
+        "detail": "Oral diet as tolerated; multivitamin (avoid retinol > 8000 IU); NG / NJ enteral feeding if not improving; parenteral nutrition only for severe + refractory."
+      },
+      {
+        "step": "Thromboprophylaxis",
+        "detail": "LMWH for hospitalised HG with dehydration (high VTE risk during pregnancy + immobilisation)."
+      },
+      {
+        "step": "Psychological support",
+        "detail": "HG is associated with depression / PTSD; offer counselling; address concerns about pregnancy termination decision."
+      },
+      {
+        "step": "Follow-up + birth planning",
+        "detail": "Symptom review weekly; usually resolves 2nd trimester. Plan with obstetric team for pre-labour and postpartum (recurrence risk 75% next pregnancy)."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCOG Green-top Guideline No. 69 — Nausea and vomiting in pregnancy and HG"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "urosepsis-obstructed-kidney",
+    "title": "Urosepsis with obstructive uropathy",
+    "icd10": [
+      "N13.6",
+      "A41.51"
+    ],
+    "domains": [
+      "urology",
+      "infectious-disease",
+      "nephrology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Urinary tract infection (UTI) with systemic inflammation + sepsis criteria.",
+      "Obstruction by ureteric stone, malignancy, retroperitoneal fibrosis, post-op stricture, BPH retention.",
+      "Severe: high fever, rigors, flank pain, AKI, septic shock.",
+      "Risk: diabetes, immunosuppression, recurrent UTI, indwelling catheter, recent urological instrumentation."
+    ],
+    "redFlags": [
+      "Septic shock (MAP < 65, lactate > 4) — emergency.",
+      "Anuria / oliguria.",
+      "Resistant organisms (ESBL, CPE).",
+      "Pyonephrosis (pus in obstructed renal pelvis) — needs urgent drainage.",
+      "Pregnancy + urosepsis — high morbidity."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urinalysis + urine culture (mid-stream / catheter sample).",
+        "rationale": "Identify organism."
+      },
+      {
+        "test": "FBC, U&E, creatinine, lactate, blood culture × 2, CRP.",
+        "rationale": "Severity + bacteraemia."
+      },
+      {
+        "test": "USS renal tract — hydronephrosis from obstruction.",
+        "rationale": "Identify obstruction at bedside."
+      },
+      {
+        "test": "Non-contrast CT KUB — gold standard for stones + obstruction.",
+        "rationale": "Definitive imaging."
+      }
+    ],
+    "management": [
+      {
+        "step": "Hour-1 sepsis bundle",
+        "detail": "Cultures BEFORE antibiotics; lactate; IV antibiotic; 30 mL/kg crystalloid; vasopressor for shock."
+      },
+      {
+        "step": "Empirical IV antibiotics — pseudomonas-active broad-spectrum",
+        "detail": "Piperacillin-tazobactam 4.5 g 6-hourly OR meropenem 1 g 8-hourly (severe / known ESBL). Add aminoglycoside (gentamicin 5–7 mg/kg) for first 48 h in septic shock. Adjust per culture."
+      },
+      {
+        "step": "URGENT decompression of obstructed kidney",
+        "detail": "Percutaneous nephrostomy (preferred for proximal obstruction / unstable patient) OR retrograde ureteric stent (preferred for distal obstruction / stable). Definitive stone management (lithotripsy / ureteroscopy) AFTER sepsis resolved."
+      },
+      {
+        "step": "Source control + supportive ICU",
+        "detail": "Vasopressor; renal replacement therapy for severe AKI / hyperkalaemia; respiratory support."
+      },
+      {
+        "step": "Antibiotic stewardship",
+        "detail": "De-escalate at 48–72 h based on cultures; total 7–14 days for complicated UTI with sepsis."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Repeat imaging at 6–12 weeks; definitive stone management; nephrology follow-up if persistent CKD; investigate underlying cause + recurrence prevention."
+      }
+    ],
+    "references": [
+      {
+        "label": "EAU Guidelines on Urological Infections; IDSA UTI guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "acute-urinary-retention-male",
+    "title": "Acute urinary retention — male",
+    "icd10": [
+      "R33.0"
+    ],
+    "domains": [
+      "urology",
+      "emergency",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 40,
+      "sex": "male"
+    },
+    "presentation": [
+      "Sudden inability to void with painful palpable suprapubic bladder.",
+      "Often elderly; precipitants: BPH, constipation, anticholinergic / decongestant / opioid medications, alcohol intoxication, urinary tract infection, post-operative.",
+      "Less commonly: prostate cancer, urethral stricture, neurological causes (cauda equina), bladder calculus."
+    ],
+    "redFlags": [
+      "Suspected cauda equina (bilateral leg weakness, saddle anaesthesia, painless retention).",
+      "Concurrent AKI from obstructive uropathy + uraemia.",
+      "Post-obstructive diuresis after catheterisation — replace fluid + electrolytes.",
+      "Pyonephrosis if febrile."
+    ],
+    "diagnostics": [
+      {
+        "test": "Bedside bladder ultrasound for retention volume.",
+        "rationale": "Confirm retention; measure volume."
+      },
+      {
+        "test": "Urinalysis + urine culture.",
+        "rationale": "Identify UTI as precipitant."
+      },
+      {
+        "test": "U&E, creatinine + USS renal tract if creatinine raised.",
+        "rationale": "Identify post-renal AKI + hydronephrosis."
+      },
+      {
+        "test": "PR exam (BPH size; prostate cancer signs).",
+        "rationale": "Identify underlying cause."
+      },
+      {
+        "test": "Medication review.",
+        "rationale": "Identify precipitating drug (anticholinergic, opioid, decongestant)."
+      }
+    ],
+    "management": [
+      {
+        "step": "Urethral catheter — slow drainage (clamp every 500 mL × 5 min)",
+        "detail": "Standard 14–16 Fr; bigger if blood clots. Avoid haematuria + hypotension from rapid decompression in chronic-on-acute. Suprapubic catheter if urethral access difficult / contraindicated."
+      },
+      {
+        "step": "Identify + treat trigger",
+        "detail": "Stop offending medications; treat UTI; treat constipation. Tamsulosin 400 microgram daily helps trial without catheter (TWOC) in BPH."
+      },
+      {
+        "step": "Monitor for post-obstructive diuresis",
+        "detail": "Hourly urine output; if > 200 mL/h, replace IV fluid with 0.45% NaCl ~75% of urine output; monitor electrolytes (K+, Na+, Mg, phosphate)."
+      },
+      {
+        "step": "TWOC (trial without catheter) at 24–72 h",
+        "detail": "TWOC success rate higher if pre-treated with tamsulosin × 48 h + treat underlying cause. Failed TWOC: re-catheterise + urology follow-up."
+      },
+      {
+        "step": "Outpatient urology referral",
+        "detail": "BPH: medical therapy (alpha-blocker + 5-ARI), TURP if recurrent / large prostate / complications. Prostate cancer pathway. Bladder calculus management."
+      }
+    ],
+    "references": [
+      {
+        "label": "EAU Guidelines on Non-neurogenic Male LUTS"
+      },
+      {
+        "label": "AUA BPH guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "stevens-johnson-syndrome-ten",
+    "title": "Stevens-Johnson syndrome / toxic epidermal necrolysis (SJS/TEN)",
+    "icd10": [
+      "L51.1",
+      "L51.2"
+    ],
+    "domains": [
+      "dermatology",
+      "emergency",
+      "critical-care",
+      "burns"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Painful rapidly evolving skin pain + erythema → atypical targets / macular eruption → bullae → epidermal detachment.",
+      "Mucosal involvement (≥ 2 sites): oral, ocular, genital, anal.",
+      "SJS < 10% BSA detachment; SJS/TEN overlap 10–30%; TEN > 30%.",
+      "Drug cause in 90% — onset typically 1–4 weeks after starting: sulphonamides, allopurinol (HLA-B*58:01), aromatic anticonvulsants (carbamazepine, phenytoin, lamotrigine — HLA-B*15:02 / A*31:01), NSAIDs, nevirapine, antiretrovirals.",
+      "Infection (Mycoplasma) more common SJS cause in children."
+    ],
+    "redFlags": [
+      "Rapid progression > 30% BSA — TEN.",
+      "Severe mucosal involvement (oral feeding impaired, ocular surface damage).",
+      "Septic shock from skin barrier loss.",
+      "Pneumonia from mucosal sloughing of airway.",
+      "SCORTEN score ≥ 3 — high mortality."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical recognition — Nikolsky sign positive.",
+        "rationale": "Diagnosis."
+      },
+      {
+        "test": "Skin biopsy (frozen section + paraffin) for histology.",
+        "rationale": "Differentiate from autoimmune bullous + erythema multiforme."
+      },
+      {
+        "test": "FBC, U&E, glucose, LFT, blood gas, lactate.",
+        "rationale": "SCORTEN scoring + severity."
+      },
+      {
+        "test": "Cultures (blood, skin, urine).",
+        "rationale": "Identify sepsis."
+      },
+      {
+        "test": "Photograph + map skin involvement.",
+        "rationale": "Track progression."
+      },
+      {
+        "test": "Drug history — onset within 4 weeks of starting culprit; HLA testing in some populations.",
+        "rationale": "Causative agent identification."
+      }
+    ],
+    "management": [
+      {
+        "step": "STOP the suspected drug IMMEDIATELY",
+        "detail": "Most important intervention — improves outcome. Document on chart and patient record forever."
+      },
+      {
+        "step": "Transfer to burns / specialist ICU",
+        "detail": "Multidisciplinary care: dermatology + intensive care + ophthalmology + dietetics + plastics. Mortality lower in specialist centres."
+      },
+      {
+        "step": "Supportive care — burn-style",
+        "detail": "Warm environment; non-adherent dressings; minimal handling. Fluid resuscitation per Parkland-style (less than thermal burn typically). Nutritional support — high calorie + protein; NG feeding."
+      },
+      {
+        "step": "Wound care",
+        "detail": "Specialist dressings (e.g. mepilex, biological); avoid silver sulfadiazine (sulfa cross-reactivity); analgesia."
+      },
+      {
+        "step": "Ophthalmology daily review",
+        "detail": "Eye drops (lubricant, antibiotic, steroid); amniotic membrane transplantation for severe ocular surface disease (prevents long-term blindness)."
+      },
+      {
+        "step": "Pharmacological therapy — controversial; case-by-case",
+        "detail": "Ciclosporin 3–5 mg/kg/day (most evidence; START EARLY); IVIG 2–3 g/kg (mixed evidence); systemic steroid (controversial — may increase mortality); etanercept / infliximab (emerging). Withhold all if active infection."
+      },
+      {
+        "step": "Sepsis surveillance + antibiotic if confirmed",
+        "detail": "Routine prophylactic antibiotic NOT recommended; treat documented infection."
+      },
+      {
+        "step": "VTE + GI prophylaxis",
+        "detail": "LMWH; PPI."
+      },
+      {
+        "step": "Long-term follow-up",
+        "detail": "Ophthalmology lifelong; dermatology long-term skin care; psychological support; document medication allergy + cross-reactivities (e.g. all aromatic anticonvulsants after one)."
+      }
+    ],
+    "references": [
+      {
+        "label": "British Association of Dermatologists guideline on management of SJS/TEN"
+      },
+      {
+        "label": "WHO Drug Safety guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "erythroderma-exfoliative-dermatitis",
+    "title": "Erythroderma / exfoliative dermatitis",
+    "icd10": [
+      "L26"
+    ],
+    "domains": [
+      "dermatology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Generalised erythema involving ≥ 90% BSA + scaling, often with pruritus, heat / fluid loss, lymphadenopathy, peripheral oedema.",
+      "Aetiology: drug reaction (most common), pre-existing dermatosis flare (atopic eczema, psoriasis, contact dermatitis), cutaneous T-cell lymphoma (Sezary syndrome), idiopathic.",
+      "Systemic: hypothermia (heat loss), hypoalbuminaemia, high-output cardiac failure, AKI from dehydration."
+    ],
+    "redFlags": [
+      "Septic shock from skin-barrier loss.",
+      "Hypothermia, severe hypoalbuminaemia, dehydration.",
+      "Suspected Sezary syndrome — abnormal lymphocyte count, lymphadenopathy → urgent dermatology biopsy + flow cytometry.",
+      "Pregnancy with erythroderma."
+    ],
+    "diagnostics": [
+      {
+        "test": "Skin biopsy (× 2–3 sites) — distinguish drug, dermatosis, lymphoma.",
+        "rationale": "Aetiology."
+      },
+      {
+        "test": "FBC + film, U&E, LFT, albumin, glucose, calcium, ferritin.",
+        "rationale": "Severity + complications."
+      },
+      {
+        "test": "Peripheral flow cytometry for Sezary cells.",
+        "rationale": "Exclude CTCL."
+      },
+      {
+        "test": "Cultures (skin + blood) if febrile.",
+        "rationale": "Sepsis."
+      },
+      {
+        "test": "Drug history — meticulous review of all new drugs over preceding 1–8 weeks.",
+        "rationale": "Identify culprit."
+      }
+    ],
+    "management": [
+      {
+        "step": "Admission for severe / unstable",
+        "detail": "Warm environment, fluid + electrolyte correction, nutritional support, gentle skin care with emollients, monitoring for sepsis."
+      },
+      {
+        "step": "STOP all non-essential drugs",
+        "detail": "Many cases drug-induced; rationalise medication list."
+      },
+      {
+        "step": "Skin care — emollients + topical steroid",
+        "detail": "Liberal greasy emollient hourly; topical moderate-potency steroid; wet wraps (cool / tepid) for relief."
+      },
+      {
+        "step": "Identify + treat underlying cause",
+        "detail": "Eczema / psoriasis flare: systemic therapy (methotrexate, ciclosporin, biologic). Drug: stop + supportive. CTCL: refer haematology / dermatology oncology — specific staging + therapy."
+      },
+      {
+        "step": "Systemic therapy",
+        "detail": "Severe / atopic background: ciclosporin 3–5 mg/kg/day OR methotrexate 7.5–15 mg/week. Psoriasis: avoid sudden steroid withdrawal (precipitates pustular form); use methotrexate or ciclosporin. Biologic (dupilumab, secukinumab) as indicated."
+      },
+      {
+        "step": "Antibiotic if confirmed infection",
+        "detail": "Routine antibiotic NOT recommended; treat sepsis when present."
+      },
+      {
+        "step": "Long-term + follow-up",
+        "detail": "Dermatology long-term care; document trigger + avoidance; psychological support."
+      }
+    ],
+    "references": [
+      {
+        "label": "British Association of Dermatologists guideline on erythroderma"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "generalised-pustular-psoriasis-flare",
+    "title": "Generalised pustular psoriasis (von Zumbusch) flare",
+    "icd10": [
+      "L40.1"
+    ],
+    "domains": [
+      "dermatology",
+      "emergency",
+      "rheumatology",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Acute onset of widespread sterile pustules on erythematous background — generalised distribution.",
+      "Fever, malaise, leukocytosis, severe systemic illness.",
+      "Triggers: abrupt withdrawal of systemic / topical steroids, infection, hypocalcaemia, pregnancy (impetigo herpetiformis), drugs (lithium, beta-blockers, terbinafine, NSAIDs, ICI)."
+    ],
+    "redFlags": [
+      "Septic shock from skin-barrier loss.",
+      "High-output cardiac failure.",
+      "Hypocalcaemia (especially with calcipotriol exposure).",
+      "Pregnancy form (impetigo herpetiformis) — high fetal mortality."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical + skin biopsy.",
+        "rationale": "Confirm GPP."
+      },
+      {
+        "test": "FBC, U&E, LFT, calcium, magnesium, blood culture, swab pustules.",
+        "rationale": "Severity + exclude infection / hypocalcaemia."
+      },
+      {
+        "test": "ECG.",
+        "rationale": "Calcium-related arrhythmia."
+      },
+      {
+        "test": "Identify trigger (recent steroid taper, new drug, infection).",
+        "rationale": "Treat cause."
+      }
+    ],
+    "management": [
+      {
+        "step": "Stop trigger + correct precipitant",
+        "detail": "Reinstate systemic steroid if abrupt withdrawal trigger (slow taper). Correct calcium. Treat infection."
+      },
+      {
+        "step": "Acute systemic therapy",
+        "detail": "Cyclosporine 3–5 mg/kg/day (fast onset) OR acitretin 0.5–1 mg/kg/day OR infliximab 5 mg/kg (fastest onset — preferred severe). Methotrexate 15–25 mg/week (slower)."
+      },
+      {
+        "step": "Targeted IL-36 receptor antagonist for von Zumbusch",
+        "detail": "Spesolimab 900 mg IV single dose — rapid resolution (within 1 week) per EFFISAYIL trial; dramatic effect for GPP flare; specialist initiation."
+      },
+      {
+        "step": "Topical care",
+        "detail": "Liberal emollient; mild topical steroid (potent topical agents can rebound)."
+      },
+      {
+        "step": "Supportive — burn-style care for severe",
+        "detail": "IV fluids; nutrition; calcium replacement; analgesia; sepsis surveillance."
+      },
+      {
+        "step": "Long-term",
+        "detail": "Maintenance biologic (IL-17, IL-23) for chronic psoriasis prevention; avoid known triggers (oral steroids unless absolutely necessary); pregnancy planning under specialist care."
+      }
+    ],
+    "references": [
+      {
+        "label": "British Association of Dermatologists guidelines on psoriasis; ERASURE / EFFISAYIL trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "disseminated-herpes-zoster",
+    "title": "Disseminated herpes zoster — immunocompromised host",
+    "icd10": [
+      "B02.7"
+    ],
+    "domains": [
+      "infectious-disease",
+      "dermatology",
+      "haematology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "≥ 20 vesicles outside primary + adjacent dermatomes, OR multidermatomal involvement, OR visceral involvement (CNS, lung, liver) in an immunocompromised patient.",
+      "Risk: HIV, haematological malignancy, transplant, immunosuppressive drugs.",
+      "Visceral: encephalitis, pneumonitis, hepatitis, myelitis.",
+      "Trigeminal herpes zoster ophthalmicus + ear (Ramsay Hunt) — special considerations."
+    ],
+    "redFlags": [
+      "Visceral involvement (pneumonia, encephalitis, hepatitis, myelitis).",
+      "Trigeminal (V1) involvement + Hutchinson sign (nose tip) → ophthalmology urgent.",
+      "Ramsay Hunt syndrome (geniculate ganglion) → facial palsy + ear vesicles.",
+      "Acute pain with later post-herpetic neuralgia.",
+      "Pregnant + immunocompromised — high-risk; specialist input."
+    ],
+    "diagnostics": [
+      {
+        "test": "PCR of vesicle fluid (preferred) OR direct fluorescent antibody.",
+        "rationale": "Confirm VZV vs HSV."
+      },
+      {
+        "test": "LP if neurological involvement; CXR if respiratory; LFT.",
+        "rationale": "Identify visceral disease."
+      },
+      {
+        "test": "FBC, CD4 count if HIV+, immune status review.",
+        "rationale": "Immunocompromise severity."
+      },
+      {
+        "test": "Ophthalmology slit-lamp + fundoscopy if V1 / suspected eye involvement.",
+        "rationale": "Acute retinal necrosis / keratitis."
+      }
+    ],
+    "management": [
+      {
+        "step": "IV aciclovir 10 mg/kg every 8 h — IMMEDIATELY",
+        "detail": "Within 72 h of rash onset for best outcome (but treat after 72 h if new lesions, complications). Renal-adjusted dose; ensure hydration to avoid crystal nephropathy. Duration 7–14 days (longer for visceral / CNS)."
+      },
+      {
+        "step": "Alternative if aciclovir resistance — foscarnet",
+        "detail": "Aciclovir-resistant VZV (TK-deficient strains in advanced HIV / transplant) — foscarnet 60 mg/kg IV 8-hourly with renal monitoring."
+      },
+      {
+        "step": "Steroid for specific indications",
+        "detail": "Ramsay Hunt + Bell-like facial palsy: oral prednisolone 60 mg/day × 5 days then taper. Acute retinal necrosis: high-dose steroid after aciclovir. Pneumonitis: consider steroid. Avoid in immunocompromised generally — case-by-case."
+      },
+      {
+        "step": "Analgesia + post-herpetic neuralgia prophylaxis",
+        "detail": "Acute: paracetamol + opioid + gabapentin or pregabalin. PHN prevention: amitriptyline 10–25 mg nocte + gabapentin titration."
+      },
+      {
+        "step": "Visceral / CNS involvement",
+        "detail": "Encephalitis: IV aciclovir 14–21 days + supportive. Pneumonitis: aciclovir + supportive O2. Acute retinal necrosis: IV aciclovir + intravitreal foscarnet + later oral valaciclovir."
+      },
+      {
+        "step": "Manage immunocompromise",
+        "detail": "HIV: start / optimise ART after acute infection controlled. Transplant: reduce immunosuppression if possible. Malignancy: balance chemo with infection control."
+      },
+      {
+        "step": "Vaccination prevention",
+        "detail": "Post-recovery + immune reconstitution: recombinant zoster vaccine recommended ≥ 18 in immunocompromised; live vaccine NOT to be given."
+      }
+    ],
+    "references": [
+      {
+        "label": "IDSA Guidelines for the Management of VZV in HIV; AAO ophthalmic herpes zoster"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-cellulitis-soft-tissue-infection",
+    "title": "Severe cellulitis / complicated soft-tissue infection",
+    "icd10": [
+      "L03.90"
+    ],
+    "domains": [
+      "dermatology",
+      "infectious-disease",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Erythema, warmth, swelling, tenderness — usually lower limb in adults.",
+      "Severe: systemic features (fever, tachycardia, hypotension), rapid spread, blistering, lymphangitis, lymphadenopathy.",
+      "Distinguish: erysipelas (well-demarcated, more streptococcal, raised), cellulitis (less defined, can be staph), necrotising fasciitis (pain disproportionate, crepitus, anaesthesia — see NSTI pathway).",
+      "Predisposing: lymphoedema, diabetes, IV drug use, venous insufficiency, immunocompromise, fungal interdigital infection (tinea pedis)."
+    ],
+    "redFlags": [
+      "Pain disproportionate to clinical signs — consider necrotising fasciitis.",
+      "Crepitus, anaesthesia over lesion, rapid spread (cm/h) — NSTI.",
+      "Septic shock.",
+      "Periorbital / orbital — see orbital cellulitis pathway.",
+      "Penetrating injury / animal / human bite + immunocompromise."
+    ],
+    "diagnostics": [
+      {
+        "test": "Mark and date the erythema border.",
+        "rationale": "Monitor progression."
+      },
+      {
+        "test": "Wound swab + blood cultures if febrile.",
+        "rationale": "Identify pathogen."
+      },
+      {
+        "test": "FBC, CRP, U&E, glucose, lactate.",
+        "rationale": "Severity."
+      },
+      {
+        "test": "Imaging (USS / CT) for suspected abscess.",
+        "rationale": "Identify drainable collection."
+      },
+      {
+        "test": "Doppler if DVT differential.",
+        "rationale": "Exclude alternative."
+      }
+    ],
+    "management": [
+      {
+        "step": "Severity classification (Eron / Dundee / CREST)",
+        "detail": "Class I: oral antibiotic + outpatient. Class II: oral / IV + observed outpatient. Class III/IV: IV inpatient — sepsis or organ dysfunction."
+      },
+      {
+        "step": "Empirical antibiotic — Class I/II",
+        "detail": "Oral: flucloxacillin 500 mg–1 g 6-hourly × 7 days. Clarithromycin / doxycycline if penicillin allergy. Add metronidazole if anaerobic suspected."
+      },
+      {
+        "step": "Empirical antibiotic — Class III/IV (IV)",
+        "detail": "IV flucloxacillin 1–2 g 6-hourly + IV benzylpenicillin 1.2 g 4-hourly. OR co-amoxiclav 1.2 g 8-hourly. OR clindamycin if penicillin-anaphylactic. ADD IV vancomycin / teicoplanin if MRSA risk. Switch oral when afebrile + improving (CRP falling, demarcation clear)."
+      },
+      {
+        "step": "Source control — drainage of any abscess; debridement of necrotic tissue",
+        "detail": "Image-guided or surgical."
+      },
+      {
+        "step": "Supportive",
+        "detail": "Elevation of affected limb; analgesia; cool compress; identify + treat tinea pedis (terbinafine cream) as a portal of entry."
+      },
+      {
+        "step": "If not improving 48–72 h — escalate",
+        "detail": "Consider resistant organism, deeper infection, NSTI, alternative diagnosis (DVT, erysipeloid, pyoderma gangrenosum, lipodermatosclerosis, contact dermatitis)."
+      },
+      {
+        "step": "Long-term — recurrence prevention",
+        "detail": "Skin care of affected limb; treat lymphoedema (compression); antifungal of toe-webs; benzathine penicillin 1.2 MU monthly for ≥ 3 episodes recurrent cellulitis (PATCH trials)."
+      }
+    ],
+    "references": [
+      {
+        "label": "IDSA Diagnosis and Management of Skin and Soft Tissue Infections"
+      },
+      {
+        "label": "NICE CG191 cellulitis"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "polycystic-ovary-syndrome-management",
+    "title": "Polycystic ovary syndrome (PCOS) — diagnosis + chronic management",
+    "icd10": [
+      "E28.2"
+    ],
+    "domains": [
+      "endocrinology",
+      "gynaecology",
+      "primary-care",
+      "reproductive-medicine"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "maxAgeYears": 50,
+      "sex": "female"
+    },
+    "presentation": [
+      "Rotterdam criteria (2/3): oligo/anovulation; clinical or biochemical hyperandrogenism; polycystic ovaries on USS — after exclusion of other causes.",
+      "Common features: oligomenorrhoea / amenorrhoea; hirsutism (Ferriman-Gallwey ≥ 8); acne; alopecia; subfertility; weight gain; insulin resistance; metabolic syndrome.",
+      "Long-term risks: T2DM (40% by age 40), CVD, endometrial hyperplasia / cancer, OSA, NAFLD, depression."
+    ],
+    "redFlags": [
+      "Virilisation (clitoromegaly, voice deepening, severe hirsutism) — exclude androgen-secreting tumour.",
+      "Sudden symptom onset — exclude tumour.",
+      "Severe insulin resistance with acanthosis nigricans + obesity — HAIR-AN syndrome.",
+      "Postmenopausal androgen excess — exclude tumour."
+    ],
+    "diagnostics": [
+      {
+        "test": "Day 2–5 cycle: LH, FSH, oestradiol, free testosterone, SHBG (calculate FAI), DHEAS, 17-OHP, prolactin, TSH.",
+        "rationale": "Confirm hyperandrogenism + exclude alternative cause."
+      },
+      {
+        "test": "Transvaginal USS — antral follicle count ≥ 20 per ovary OR ovarian volume > 10 mL.",
+        "rationale": "Rotterdam ovary criterion."
+      },
+      {
+        "test": "Metabolic screen: fasting glucose / OGTT / HbA1c, lipid profile, ALT, BP, waist circumference.",
+        "rationale": "Long-term risk."
+      },
+      {
+        "test": "Mental health screen (PHQ-9 / GAD-7).",
+        "rationale": "Depression / anxiety screening."
+      }
+    ],
+    "management": [
+      {
+        "step": "Lifestyle — first-line for all",
+        "detail": "Weight reduction 5–10% restores ovulation in many. Mediterranean / low-glycaemic diet + 150 min/week activity. Smoking cessation."
+      },
+      {
+        "step": "Menstrual regulation + endometrial protection",
+        "detail": "Combined oral contraceptive (preferred — also reduces hyperandrogenism), OR progesterone (cyclical or continuous: micronised progesterone, levonorgestrel IUS, MPA). Avoid amenorrhoea > 3 months (endometrial hyperplasia risk)."
+      },
+      {
+        "step": "Hyperandrogenism — symptom-directed",
+        "detail": "COC first-line (combined oestrogen + progestin reduces ovarian + adrenal androgens). Add anti-androgen (spironolactone 100–200 mg/day; cyproterone acetate) for refractory hirsutism + acne. Topical eflornithine for facial hirsutism. Laser / electrolysis for definitive."
+      },
+      {
+        "step": "Infertility — induce ovulation",
+        "detail": "Letrozole 2.5 mg days 2–6 cycle (now first-line — superior to clomiphene). Metformin 500 mg TDS adjunct, especially in obese / glucose intolerant. Gonadotropins for letrozole-resistant; IVF if needed."
+      },
+      {
+        "step": "Insulin resistance + T2DM",
+        "detail": "Metformin 500 mg–2 g daily for insulin resistance / IGT (off-label outside diabetes). Annual fasting glucose / HbA1c. GLP-1 agonist or SGLT2 inhibitor if T2DM."
+      },
+      {
+        "step": "Long-term surveillance + mental health",
+        "detail": "Annual BMI, BP, lipid, glucose; biennial OSA screen (STOP-BANG); endometrial USS if amenorrhoea + obesity; PHQ-9 + GAD-7. Address body image + fertility distress."
+      }
+    ],
+    "references": [
+      {
+        "label": "International PCOS Guideline 2023 (Monash + ESHRE + ASRM)"
+      },
+      {
+        "label": "NICE CKS PCOS"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "erectile-dysfunction-evaluation",
+    "title": "Erectile dysfunction — evaluation and treatment",
+    "icd10": [
+      "N52",
+      "F52.21"
+    ],
+    "domains": [
+      "urology",
+      "andrology",
+      "endocrinology",
+      "cardiology",
+      "psychiatry",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "male"
+    },
+    "presentation": [
+      "Persistent or recurrent inability to achieve or maintain erection sufficient for satisfactory sexual performance.",
+      "Common causes: vasculogenic (most), endocrine (hypogonadism, diabetes, thyroid), neurogenic, drug-induced (antihypertensives, SSRIs, antiandrogens, opioids, alcohol, cannabis), psychogenic, post-prostatectomy.",
+      "Indicator of cardiovascular disease in many men — often precedes overt CAD by 3–5 years."
+    ],
+    "redFlags": [
+      "Sudden onset / persistent priapism (> 4 h — emergency).",
+      "Concurrent angina / unstable cardiovascular disease — assess cardiovascular fitness for sex.",
+      "Peyronie disease with severe deformity.",
+      "Bilateral perineal trauma / pelvic fracture history.",
+      "Pituitary symptoms (visual change, headache, galactorrhoea — exclude prolactinoma)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Sexual + medication + psychological history; IIEF-5 questionnaire.",
+        "rationale": "Severity grading + identify cause."
+      },
+      {
+        "test": "Fasting glucose, HbA1c, lipid profile, BP, waist circumference.",
+        "rationale": "Cardiovascular + diabetes screen."
+      },
+      {
+        "test": "Morning total testosterone × 2 (confirmatory + repeat if low); LH, prolactin, TSH, SHBG (calculate free testosterone).",
+        "rationale": "Endocrine cause."
+      },
+      {
+        "test": "Cardiovascular risk score; consider further cardiac testing in high-risk.",
+        "rationale": "Pre-PDE5i + general cardiovascular health."
+      },
+      {
+        "test": "Penile Doppler / nocturnal tumescence ONLY in selected cases (e.g. medico-legal, vascular surgery candidate).",
+        "rationale": "Detailed evaluation."
+      }
+    ],
+    "management": [
+      {
+        "step": "Address lifestyle + reversible factors",
+        "detail": "Smoking cessation (single most useful lifestyle change), weight loss, regular exercise, reduce alcohol, treat OSA. Review and adjust offending medications (switch SSRI / antihypertensive class)."
+      },
+      {
+        "step": "PDE5 inhibitor — first-line",
+        "detail": "Sildenafil 25–100 mg, tadalafil 5–20 mg (or 2.5–5 mg daily for chronic + concomitant BPH symptoms), vardenafil, avanafil. Counsel on timing, fat-meal interaction (sildenafil), nitrate contraindication. Try 4–6 doses at maximum dose before declaring failure."
+      },
+      {
+        "step": "Address testosterone deficiency if confirmed",
+        "detail": "Replace testosterone (gel, IM injection, oral undecanoate) if symptomatic + repeated low morning testosterone < 8 nmol/L. Monitor PSA + haematocrit + lipids; do NOT replace in prostate cancer / severe LUTS / haematocrit > 0.50."
+      },
+      {
+        "step": "Second-line — vacuum erection device, intracavernosal alprostadil, intraurethral alprostadil",
+        "detail": "Combination therapy for PDE5i failure or contraindication."
+      },
+      {
+        "step": "Surgical — penile prosthesis",
+        "detail": "For refractory ED; high satisfaction. Specialist andrology centre."
+      },
+      {
+        "step": "Psychosexual therapy",
+        "detail": "Particularly for psychogenic ED, performance anxiety, relationship issues."
+      },
+      {
+        "step": "Cardiovascular risk modification",
+        "detail": "ED often early sign of CAD — full cardiovascular risk assessment + management."
+      }
+    ],
+    "references": [
+      {
+        "label": "EAU Guidelines on Male Sexual + Reproductive Health 2024"
+      },
+      {
+        "label": "AUA ED Guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]

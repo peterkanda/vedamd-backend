@@ -5396,5 +5396,213 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "ruptured-ectopic-emergency",
+    "hook": "patient-view",
+    "type": "ruptured-ectopic-emergency",
+    "services": [
+      "vedamd-ruptured-ectopic"
+    ],
+    "title": "Ruptured ectopic pregnancy — surgical emergency",
+    "description": "Fires for woman of reproductive age + positive pregnancy test + abdominal pain + haemodynamic instability or free fluid on USS. Recommends emergency laparotomy / laparoscopy + massive transfusion 1:1:1 + tranexamic acid. Anti-D for RhD-negative. Reads context.pregnancyTest, context.ageYears, context.abdominalPain, context.systolicMmHg, context.freeFluidUSS — never patient identity.",
+    "references": [
+      {
+        "label": "RCOG Green-top 21 Ectopic pregnancy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O00.1",
+        "display": "Ectopic tubal pregnancy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ovarian-torsion-urgent-laparoscopy",
+    "hook": "patient-view",
+    "type": "ovarian-torsion-urgent-laparoscopy",
+    "services": [
+      "vedamd-ovarian-torsion"
+    ],
+    "title": "Ovarian torsion — urgent laparoscopy + ovarian conservation",
+    "description": "Fires for sudden severe unilateral pelvic pain with adnexal mass / absent flow on Doppler. Recommends urgent laparoscopy; detorsion + conservation (do NOT assume non-viability from appearance); cystectomy if cyst > 5 cm. Reads context.suddenPelvicPain, context.adnexalMass, context.dopplerFlow, context.pregnant — never patient identity.",
+    "references": [
+      {
+        "label": "RCOG / SGS adnexal torsion guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N83.5",
+        "display": "Torsion of ovary",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "urosepsis-decompression",
+    "hook": "patient-view",
+    "type": "urosepsis-decompression",
+    "services": [
+      "vedamd-urosepsis"
+    ],
+    "title": "Urosepsis + obstruction — antibiotic + URGENT decompression",
+    "description": "Fires for UTI / pyelonephritis features + hydronephrosis on imaging + sepsis criteria. Recommends Hour-1 bundle, broad-spectrum antibiotic (pip-tazo or meropenem), URGENT nephrostomy / ureteric stent within 6 h. Definitive stone treatment after sepsis resolved. Reads context.fever, context.flankPain, context.hydronephrosis, context.lactate, context.knownStone — never patient identity.",
+    "references": [
+      {
+        "label": "EAU Urological Infections; SSC 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N13.6",
+        "display": "Pyonephrosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "sjs-ten-emergency",
+    "hook": "patient-view",
+    "type": "sjs-ten-emergency",
+    "services": [
+      "vedamd-sjs-ten"
+    ],
+    "title": "SJS / TEN — stop drug + transfer to burns unit",
+    "description": "Fires for painful skin + mucosal involvement + recent drug exposure (allopurinol, sulpha, aromatic anticonvulsants, NSAID, nevirapine). Recommends IMMEDIATE drug cessation + transfer to burns / specialist ICU + SCORTEN + supportive burn-style care + ciclosporin (preferred over IVIG / steroid). Reads context.recentDrug, context.bsaInvolvement, context.mucosalInvolvement, context.scorten — never patient identity.",
+    "references": [
+      {
+        "label": "British Association of Dermatologists SJS/TEN guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "L51.2",
+        "display": "Toxic epidermal necrolysis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "disseminated-zoster-iv-aciclovir",
+    "hook": "patient-view",
+    "type": "disseminated-zoster-iv-aciclovir",
+    "services": [
+      "vedamd-disseminated-zoster"
+    ],
+    "title": "Disseminated zoster — IV aciclovir + ophthalmology",
+    "description": "Fires for VZV vesicles in immunocompromised patient with >= 20 lesions outside primary dermatome OR visceral involvement. Recommends IV aciclovir 10 mg/kg every 8 h × 7–14 days (renal-adjusted), foscarnet if resistance, ophthalmology if V1 / Hutchinson sign / Ramsay Hunt, post-recovery RZV vaccine. Reads context.immunocompromised, context.vesicleDistribution, context.cn5Involvement, context.cnsSymptoms — never patient identity.",
+    "references": [
+      {
+        "label": "IDSA VZV in HIV; AAO HZO guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B02.7",
+        "display": "Disseminated zoster",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "salicylate-poisoning-alkalinisation",
+    "hook": "patient-view",
+    "type": "salicylate-poisoning-alkalinisation",
+    "services": [
+      "vedamd-salicylate-poisoning"
+    ],
+    "title": "Salicylate poisoning — urinary alkalinisation + dialysis criteria",
+    "description": "Fires for aspirin / methyl salicylate ingestion with HAGMA + raised salicylate level. Recommends activated charcoal if early, urinary alkalinisation with sodium bicarbonate targeting urine pH 7.5–8.0, replace K+ aggressively, dialysis for level > 100 mg/dL acute / > 60 chronic / severe features / AKI. WARNS against intubation without maintaining hyperventilation. Reads context.salicylateLevel, context.anionGap, context.pH, context.gcs, context.pulmonaryOedema — never patient identity.",
+    "references": [
+      {
+        "label": "EXTRIP salicylate; AACT urinary alkalinisation"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T39.0",
+        "display": "Salicylate poisoning",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "hyperemesis-thiamine-first",
+    "hook": "patient-view",
+    "type": "hyperemesis-thiamine-first",
+    "services": [
+      "vedamd-hyperemesis"
+    ],
+    "title": "Severe hyperemesis gravidarum — thiamine BEFORE dextrose",
+    "description": "Fires for pregnant patient with PUQE ≥ 13 / dehydration / electrolyte derangement / >= 5% weight loss. Recommends IV thiamine BEFORE any dextrose-containing fluid (Wernicke prevention), saline + KCl, step-wise antiemetic (cyclizine/promethazine → ondansetron after 10 weeks → steroids refractory), LMWH thromboprophylaxis, psychological support. Reads context.pregnancyWeeks, context.puqeScore, context.dehydration, context.weightLossPercent, context.thiamineGiven — never patient identity.",
+    "references": [
+      {
+        "label": "RCOG Green-top 69 HG"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O21.1",
+        "display": "Hyperemesis gravidarum with metabolic disturbance",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pcos-chronic-care",
+    "hook": "patient-view",
+    "type": "pcos-chronic-care",
+    "services": [
+      "vedamd-pcos"
+    ],
+    "title": "PCOS — Rotterdam + metabolic surveillance pathway",
+    "description": "Fires for woman with menstrual irregularity + hyperandrogenism. Recommends Rotterdam screen, exclude alternatives (CAH, prolactinoma, thyroid, Cushing); lifestyle first-line; COC for menstrual + hyperandrogenism; letrozole for fertility; metformin for IR; annual metabolic + endometrial surveillance. Reads context.ageYears, context.oligomenorrhoea, context.hirsutism, context.bmi, context.fastingGlucose — never patient identity.",
+    "references": [
+      {
+        "label": "International PCOS Guideline 2023"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E28.2",
+        "display": "PCOS",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]
