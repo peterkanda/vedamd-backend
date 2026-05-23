@@ -5188,5 +5188,213 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "svcs-stenting",
+    "hook": "patient-view",
+    "type": "svcs-stenting",
+    "services": [
+      "vedamd-svcs"
+    ],
+    "title": "Superior vena cava syndrome — biopsy then stent / definitive treatment",
+    "description": "Fires for facial / arm swelling + neck-vein distension + dyspnoea with suspected mediastinal mass. Recommends CT chest + tissue biopsy BEFORE empirical steroid (alters lymphoma histology); endovascular stent for severe symptoms; type-specific chemoradiotherapy. Reads context.facialSwelling, context.dyspnoea, context.knownMalignancy, context.airwayCompromise — never patient identity.",
+    "references": [
+      {
+        "label": "ESMO cancer-emergency guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I87.1",
+        "display": "Vena cava compression",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "malignant-hypercalcaemia-bisphosphonate",
+    "hook": "patient-view",
+    "type": "malignant-hypercalcaemia-bisphosphonate",
+    "services": [
+      "vedamd-hypercalcaemia"
+    ],
+    "title": "Malignant hypercalcaemia — fluids + bisphosphonate (+ calcitonin if severe)",
+    "description": "Fires for adjusted Ca > 2.8 mmol/L with malignancy. Recommends IV 0.9% NaCl 3–6 L/24 h + IV zoledronate 4 mg (dose-reduce for eGFR < 60); calcitonin 4 IU/kg every 12 h for rapid temporary lowering; haemodialysis if Ca > 4 with severe symptoms. WARNS against thiazide. Reads context.adjustedCalcium, context.ionisedCalcium, context.creatinine, context.symptoms — never patient identity.",
+    "references": [
+      {
+        "label": "Endocrine Society Hypercalcaemia 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E83.52",
+        "display": "Hypercalcaemia",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "ici-toxicity-steroid",
+    "hook": "patient-view",
+    "type": "ici-toxicity-steroid",
+    "services": [
+      "vedamd-ici-toxicity"
+    ],
+    "title": "Immune checkpoint inhibitor toxicity — grade + steroid pathway",
+    "description": "Fires for any patient on ICI (anti-PD-1, anti-PD-L1, anti-CTLA-4) with new symptoms. Grades CTCAE 1–4. Recommends hold ICI for ≥ grade 2, prednisolone 0.5–2 mg/kg/day for grade 2–3, IV methylpred 1 g daily × 3 days for grade 4. Lifelong hormone replacement for endocrinopathies. WARNS about myocarditis (high mortality). Reads context.iciAgent, context.symptomSystem, context.severity, context.cardiacSymptoms — never patient identity.",
+    "references": [
+      {
+        "label": "ESMO / ASCO management of immunotherapy toxicities"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T78.4",
+        "display": "Adverse drug reaction",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "dic-treat-cause",
+    "hook": "patient-view",
+    "type": "dic-treat-cause",
+    "services": [
+      "vedamd-dic"
+    ],
+    "title": "Disseminated intravascular coagulation — source control + selective products",
+    "description": "Fires for ISTH overt-DIC score ≥ 5. Recommends treating underlying cause; selective component therapy GUIDED BY CLINICAL BLEEDING (not labs alone) — platelet < 50 + bleeding; FFP 15 mL/kg if INR > 1.5 + bleeding; cryoprecipitate if fibrinogen < 1.5. AVOID routine antifibrinolytics. APL emergency — start ATRA + arsenic IMMEDIATELY. Reads context.platelet, context.inr, context.fibrinogen, context.dDimer, context.bleeding, context.suspectedAPL — never patient identity.",
+    "references": [
+      {
+        "label": "ISTH DIC scoring; BSH DIC guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D65",
+        "display": "DIC",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "hit-stop-heparin",
+    "hook": "patient-view",
+    "type": "hit-stop-heparin",
+    "services": [
+      "vedamd-hit"
+    ],
+    "title": "Heparin-induced thrombocytopenia — STOP heparin + alternative anticoag",
+    "description": "Fires for platelet drop ≥ 30–50% from baseline on heparin OR new thrombosis on heparin. Calculates 4Ts score; orders anti-PF4 antibody + SRA. Recommends STOP all heparin (UFH, LMWH, flushes); start argatroban / fondaparinux / DOAC; AVOID warfarin alone (skin necrosis); AVOID platelet transfusion. Reads context.heparinExposureDays, context.plateletDropPercent, context.thrombosisNew, context.fourTsScore — never patient identity.",
+    "references": [
+      {
+        "label": "ASH HIT Guidelines 2018"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D75.82",
+        "display": "HIT",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "sickle-vaso-occlusive-analgesia",
+    "hook": "patient-view",
+    "type": "sickle-vaso-occlusive-analgesia",
+    "services": [
+      "vedamd-sickle-voc"
+    ],
+    "title": "Sickle cell vaso-occlusive crisis — analgesia within 30 min + chest crisis screen",
+    "description": "Fires for known SCD with acute severe pain. Recommends IV opioid within 30 min of presentation + PCA early; supplemental O2 if SpO2 < 95%; CXR + ABG if chest pain / cough / hypoxia (acute chest syndrome → ceftriaxone + macrolide + transfusion). Reads context.knownSCD, context.painScore, context.chestPain, context.spO2, context.fever — never patient identity.",
+    "references": [
+      {
+        "label": "ASH SCD Pocket Guide 2020; BSH acute pain in SCD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D57.00",
+        "display": "Sickle-cell crisis with crisis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "lupus-nephritis-induction",
+    "hook": "patient-view",
+    "type": "lupus-nephritis-induction",
+    "services": [
+      "vedamd-lupus-nephritis"
+    ],
+    "title": "Lupus nephritis (class III/IV) — induction immunosuppression",
+    "description": "Fires for SLE with proteinuria > 0.5 g/24 h + active sediment + AKI. Recommends renal biopsy; for class III/IV: IV methylprednisolone 250–1000 mg × 3 days + oral prednisolone + cyclophosphamide (Euro-Lupus 500 mg every 2 weeks × 6 OR NIH 750 mg/m² monthly × 6) OR MMF 2–3 g/day. Add belimumab. Always hydroxychloroquine. Reads context.knownSLE, context.proteinuria, context.urineSediment, context.creatinine, context.renalBiopsy — never patient identity.",
+    "references": [
+      {
+        "label": "EULAR/ACR SLE 2024; KDIGO Lupus Nephritis 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M32.14",
+        "display": "Glomerular disease in SLE",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "anca-vasculitis-induction-pjp",
+    "hook": "patient-view",
+    "type": "anca-vasculitis-induction-pjp",
+    "services": [
+      "vedamd-anca-vasculitis"
+    ],
+    "title": "ANCA-associated vasculitis — induction therapy + PJP prophylaxis",
+    "description": "Fires for AAV with organ-threatening features (RPGN, alveolar haemorrhage). Recommends IV methylpred 500–1000 mg × 3 days + oral prednisolone 1 mg/kg + rituximab 375 mg/m² weekly × 4 OR cyclophosphamide 15 mg/kg every 2–3 weeks × 6. PJP prophylaxis with co-trimoxazole 480 mg daily during induction. PLEX reserved for severe alveolar haemorrhage / dialysis-dependent AKI per PEXIVAS. Reads context.ancaSubtype, context.organInvolvement, context.creatinine, context.alveolarHaemorrhage — never patient identity.",
+    "references": [
+      {
+        "label": "EULAR AAV 2024; PEXIVAS NEJM 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M31.30",
+        "display": "Wegener granulomatosis",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]

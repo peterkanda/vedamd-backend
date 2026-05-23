@@ -50988,5 +50988,1320 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "superior-vena-cava-syndrome",
+    "title": "Superior vena cava syndrome (SVCS)",
+    "icd10": [
+      "I87.1"
+    ],
+    "domains": [
+      "oncology",
+      "emergency",
+      "vascular",
+      "respiratory"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Facial / neck / arm swelling, plethora, distended neck veins, dyspnoea, cough, hoarseness.",
+      "Worsening over weeks; often presenting feature of mediastinal malignancy (lung cancer, lymphoma, mediastinal germ cell tumour, thymic).",
+      "Less commonly thrombosis around central venous catheter / pacemaker lead, or fibrosing mediastinitis."
+    ],
+    "redFlags": [
+      "Stridor + airway compromise (large endobronchial tumour).",
+      "Reduced consciousness — cerebral oedema.",
+      "Haemodynamic compromise — rare.",
+      "Imminent superior orbital fissure syndrome (severe head swelling)."
+    ],
+    "diagnostics": [
+      {
+        "test": "CT chest with contrast — first-line.",
+        "rationale": "Identify mass + thrombosis + collaterals."
+      },
+      {
+        "test": "Tissue biopsy — bronchoscopy, mediastinoscopy, percutaneous — BEFORE empirical steroid where feasible.",
+        "rationale": "Steroid changes histology of lymphoma."
+      },
+      {
+        "test": "FBC, LDH, beta-HCG, AFP, uric acid, urate.",
+        "rationale": "Tumour markers + TLS risk."
+      },
+      {
+        "test": "Doppler ultrasound upper-limb if catheter-related.",
+        "rationale": "Thrombosis confirmation."
+      }
+    ],
+    "management": [
+      {
+        "step": "Airway + breathing assessment",
+        "detail": "Head-up positioning, supplemental O2. Avoid lying flat. Avoid upper-limb IV cannulation (use femoral). Anaesthetic input if airway compromise — careful with sedation."
+      },
+      {
+        "step": "Endovascular stenting — definitive symptom relief in 24–48 h",
+        "detail": "First-line for severe / rapidly progressive symptoms regardless of cause; interventional radiology. Allows time for tissue diagnosis without delay in oncology workup."
+      },
+      {
+        "step": "Tissue diagnosis BEFORE empirical chemo/radiotherapy",
+        "detail": "Steroids alter lymphoma pathology — get diagnostic biopsy first if patient stable. If true emergency airway threat: empirical dexamethasone 4–8 mg IV every 6 h until biopsy."
+      },
+      {
+        "step": "Treat underlying cause",
+        "detail": "Lymphoma: chemotherapy (R-CHOP / ABVD) urgently; usually rapid response. Small-cell lung cancer: chemotherapy. NSCLC: stenting + radiotherapy + targeted therapy / immunotherapy per molecular profile. Germ cell tumour: BEP chemotherapy. Catheter-related thrombosis: anticoagulate + consider catheter removal."
+      },
+      {
+        "step": "Supportive — diuretic + steroid + analgesia",
+        "detail": "Furosemide — modest relief of facial / arm oedema. Dexamethasone — reduces tumour oedema (especially lymphoma). Analgesia for headache."
+      },
+      {
+        "step": "Anticoagulation if thrombotic",
+        "detail": "LMWH then DOAC (DOAC well-evidenced in cancer-associated thrombosis), with consideration for thrombolysis if recent (< 14 d) extensive thrombus."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESMO Clinical Practice Guidelines for management of cancer-related emergencies; NCCN Distress Management / Supportive Care"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "malignant-hypercalcaemia",
+    "title": "Malignant hypercalcaemia",
+    "icd10": [
+      "E83.52"
+    ],
+    "domains": [
+      "oncology",
+      "endocrinology",
+      "nephrology",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Adjusted calcium > 2.8 mmol/L with malignancy.",
+      "'Stones, bones, abdominal moans, psychic groans': renal stones, bone pain / pathological fracture, abdominal pain / constipation / pancreatitis, confusion / depression.",
+      "Severe (Ca > 3.5): vomiting, polyuria-polydipsia, dehydration, AKI, lethargy, coma, arrhythmia.",
+      "Mechanisms: PTHrP (squamous lung, head + neck, renal), osteolytic metastases (myeloma, breast), vitamin D production (lymphoma), ectopic PTH (rare)."
+    ],
+    "redFlags": [
+      "Adjusted Ca > 3.5 mmol/L — emergency.",
+      "Severe altered consciousness / seizure / coma.",
+      "Arrhythmia (short QT, bradyarrhythmia).",
+      "AKI / oliguria.",
+      "Severe dehydration."
+    ],
+    "diagnostics": [
+      {
+        "test": "Adjusted (corrected) calcium = total Ca + 0.02 × (40 – albumin g/L); OR ionised Ca preferred.",
+        "rationale": "Avoid misclassification by hypoalbuminaemia."
+      },
+      {
+        "test": "U&E, creatinine, phosphate, magnesium, PTH (low in malignant), PTHrP, vitamin D, urine Ca:Cr.",
+        "rationale": "Identify mechanism; PTH suppression confirms malignant or non-PTH cause."
+      },
+      {
+        "test": "ECG (short QT).",
+        "rationale": "Cardiac complications."
+      },
+      {
+        "test": "Imaging for primary malignancy if unknown (CXR, mammography, CT chest/abdomen, myeloma screen).",
+        "rationale": "Source identification."
+      }
+    ],
+    "management": [
+      {
+        "step": "Aggressive IV fluid rehydration — first-line",
+        "detail": "0.9% NaCl 200–500 mL/h titrated to euvolaemia + urine output 100–150 mL/h. Total 3–6 L over first 24 h. AVOID thiazide diuretic (reduces Ca excretion); furosemide ONLY after volume restored if hypervolaemic."
+      },
+      {
+        "step": "IV bisphosphonate — mainstay for malignant hypercalcaemia",
+        "detail": "Zoledronate 4 mg IV over 15 min (reduce dose if eGFR < 60); pamidronate 60–90 mg IV over 2–4 h alternative. Onset 24–48 h; peak effect 4–7 days; duration 2–4 weeks. Renal adjustment essential."
+      },
+      {
+        "step": "Calcitonin for rapid temporary lowering",
+        "detail": "Calcitonin 4 IU/kg SC every 12 h for 24–48 h — onset 2–4 h. Used as adjunct while waiting for bisphosphonate effect. Tachyphylaxis limits to short course."
+      },
+      {
+        "step": "Denosumab for bisphosphonate-refractory or renal failure",
+        "detail": "120 mg SC for refractory cases or when bisphosphonate contraindicated (eGFR < 30). Onset slower; risk of severe rebound hypocalcaemia."
+      },
+      {
+        "step": "Glucocorticoid for haematological / vitamin-D-mediated",
+        "detail": "Prednisolone 40–60 mg/day for myeloma, lymphoma, sarcoidosis, lymphoma-associated calcitriol; ineffective for solid-tumour bone metastasis."
+      },
+      {
+        "step": "Treat underlying cancer",
+        "detail": "Definitive oncological treatment is the best long-term control."
+      },
+      {
+        "step": "Haemodialysis for life-threatening level / renal failure",
+        "detail": "Low-calcium dialysate; for Ca > 4 with severe symptoms / cardiac arrhythmia / AKI not responding to medical therapy."
+      }
+    ],
+    "references": [
+      {
+        "label": "Endocrine Society Clinical Practice Guideline on Hypercalcemia (2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "immune-checkpoint-inhibitor-toxicity",
+    "title": "Immune checkpoint inhibitor (ICI) toxicity — immune-related adverse events",
+    "icd10": [
+      "T78.4",
+      "T88.7"
+    ],
+    "domains": [
+      "oncology",
+      "rheumatology",
+      "endocrinology",
+      "immunology",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Patient on anti-PD-1 (nivolumab, pembrolizumab), anti-PD-L1 (atezolizumab, durvalumab), anti-CTLA-4 (ipilimumab), or combination.",
+      "Onset usually 4–12 weeks but can occur ANY TIME during or after therapy (months).",
+      "Common irAEs by system:",
+      "Skin: rash, pruritus, vitiligo, severe SJS/TEN.",
+      "GI: diarrhoea, colitis, hepatitis (transaminitis).",
+      "Endocrine: thyroiditis (transient thyrotoxicosis → hypothyroidism), hypophysitis, adrenalitis (adrenal insufficiency), type 1 diabetes (often DKA at presentation).",
+      "Pulmonary: pneumonitis (dyspnoea, cough, hypoxia).",
+      "Neurologic: myasthenia gravis-like, encephalitis, Guillain-Barré, transverse myelitis.",
+      "Cardiac: myocarditis (high mortality, rare).",
+      "Renal: interstitial nephritis."
+    ],
+    "redFlags": [
+      "Grade 3–4 toxicity in any system — admit, hold ICI, urgent steroid.",
+      "Myocarditis (raised troponin, ECG changes, dyspnoea) — high mortality; multidisciplinary urgent management.",
+      "Pneumonitis with hypoxia.",
+      "Suspected adrenal crisis (often hyperpigmentation absent — secondary).",
+      "Severe diabetes — euglycaemic / classical DKA.",
+      "Neurological — encephalitis, GBS-like, myasthenia."
+    ],
+    "diagnostics": [
+      {
+        "test": "Routine baseline before each cycle: FBC, U&E, LFT, TSH, glucose, cortisol if symptomatic.",
+        "rationale": "Baseline + screening."
+      },
+      {
+        "test": "Symptomatic-specific: CT chest pneumonitis; troponin + ECG + echo myocarditis; flexible sigmoidoscopy + biopsy colitis; cortisol + ACTH adrenal; pituitary MRI + hormone panel hypophysitis.",
+        "rationale": "Confirm + grade."
+      },
+      {
+        "test": "Exclude infection / progression of disease.",
+        "rationale": "Treatment depends on aetiology."
+      },
+      {
+        "test": "Auto-antibodies for differential (NMDAR, AChR, anti-striated, etc.).",
+        "rationale": "Confirm immune mechanism."
+      }
+    ],
+    "management": [
+      {
+        "step": "Grade by CTCAE; hold ICI for ≥ grade 2",
+        "detail": "Grade 1 (mild): observe; continue ICI. Grade 2 (moderate): hold ICI; corticosteroid 0.5–1 mg/kg/day. Grade 3 (severe): hold + admit + prednisolone 1–2 mg/kg/day or IV methylprednisolone 1–2 mg/kg/day. Grade 4 (life-threatening): IV methylprednisolone 1 g daily × 3 days."
+      },
+      {
+        "step": "Steroid first-line",
+        "detail": "Taper over 4–8 weeks once symptoms grade ≤ 1. Faster taper risks relapse."
+      },
+      {
+        "step": "Second-line immunosuppression for steroid-refractory",
+        "detail": "Infliximab 5 mg/kg for colitis / IO arthritis; mycophenolate mofetil for hepatitis; rituximab; tocilizumab; tacrolimus — under specialist multidisciplinary (oncology + organ specialist) guidance."
+      },
+      {
+        "step": "Organ-specific specifics",
+        "detail": "Pneumonitis: oxygen + steroid; severe → infliximab / MMF. Colitis: IV steroid then infliximab if no response 72 h. Hepatitis: hold ICI; AST/ALT > 5x ULN → steroid. Endocrine: usually permanent — replace hormone (levothyroxine, hydrocortisone, insulin). Myocarditis: high-dose steroid + early mycophenolate / ATG / abatacept. T1DM with DKA: standard DKA management."
+      },
+      {
+        "step": "Hormone replacement is LIFELONG",
+        "detail": "Hypothyroidism, hypocortisolism, hypogonadism, T1DM — do not stop replacement; counsel sick-day rules for hypocortisolism."
+      },
+      {
+        "step": "ICI re-challenge",
+        "detail": "Possible for grade 1–2 toxicity once resolved with low-dose steroid; AVOID re-challenge for grade 3 cardiac, neurological, pulmonary. Re-challenge with different class (anti-PD-1 if Grade 3 anti-CTLA-4)."
+      },
+      {
+        "step": "Patient education + emergency card",
+        "detail": "Symptoms requiring urgent review; medic-alert; sick-day rules; immunisation review (avoid live vaccines)."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESMO Clinical Practice Guidelines: Management of toxicities from immunotherapy"
+      },
+      {
+        "label": "ASCO Guideline: Management of irAEs"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "head-and-neck-cancer-pathway",
+    "title": "Head and neck cancer — diagnosis and treatment pathway",
+    "icd10": [
+      "C00",
+      "C01",
+      "C02",
+      "C09",
+      "C10",
+      "C13",
+      "C14",
+      "C32"
+    ],
+    "domains": [
+      "oncology",
+      "ent",
+      "surgery",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 30,
+      "sex": "any"
+    },
+    "presentation": [
+      "Persistent (≥ 3 weeks): non-healing oral ulcer, neck mass, hoarseness, dysphagia, otalgia (referred), epistaxis, nasal obstruction.",
+      "Risk factors: tobacco (smoke + chew), alcohol, HPV (oropharyngeal — rising incidence), poor oral hygiene, EBV (nasopharyngeal — endemic SE Asia, North Africa), betel nut, immunosuppression.",
+      "Specific anatomical sites: oral cavity, oropharynx, hypopharynx, larynx, nasopharynx, nasal cavity + paranasal sinuses, salivary gland."
+    ],
+    "redFlags": [
+      "Stridor / airway compromise (laryngeal).",
+      "Hot potato voice, drooling, dysphagia, fixed neck mass.",
+      "Cranial neuropathies — nasopharyngeal extension.",
+      "Massive haemoptysis (rare); pre-emptive risk in advanced laryngeal.",
+      "Suspected paraneoplastic dermatomyositis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Flexible fibre-optic nasendoscopy by ENT.",
+        "rationale": "Visualise tumour location + extent."
+      },
+      {
+        "test": "Biopsy (panendoscopy + EUA) for histology + HPV (p16) + EBV testing.",
+        "rationale": "Confirm + risk-stratify."
+      },
+      {
+        "test": "FNA cytology of neck mass.",
+        "rationale": "Identify SCC; HPV / EBV testing of FNA."
+      },
+      {
+        "test": "CT / MRI head + neck + chest.",
+        "rationale": "Staging (TNM, AJCC 8th)."
+      },
+      {
+        "test": "PET-CT for advanced disease.",
+        "rationale": "Distant metastasis + recurrence surveillance."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary team (MDT)",
+        "detail": "ENT surgery + oncology + radiation oncology + dental + speech-language therapy + dietitian + clinical nurse specialist + palliative care."
+      },
+      {
+        "step": "Early-stage (T1–T2 N0)",
+        "detail": "Single-modality: surgery (selective neck dissection + primary excision) OR radiotherapy. Choose based on functional outcome + location."
+      },
+      {
+        "step": "Locally-advanced (T3–T4 / N+)",
+        "detail": "Concurrent chemoradiotherapy (cisplatin 100 mg/m² × 3 cycles + 70 Gy radiation in 35 fractions) OR surgery + adjuvant chemoradiotherapy. HPV+ oropharyngeal — may de-escalate (active research)."
+      },
+      {
+        "step": "Recurrent / metastatic",
+        "detail": "Platinum-based chemotherapy + cetuximab (EXTREME); pembrolizumab single-agent or combination (KEYNOTE-048) for PD-L1 high; nivolumab for platinum-refractory."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Dental assessment + pre-radiotherapy extractions; PEG / NG feeding tube; speech + swallow therapy; xerostomia management; trismus prevention exercises; smoking + alcohol cessation."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Years 1–2: every 1–3 months. Years 3–5: every 3–6 months. After 5 years: annually. PET-CT at 12 weeks post-treatment + as clinically indicated."
+      },
+      {
+        "step": "Survivorship",
+        "detail": "Manage long-term toxicities: dysphagia, xerostomia, dental decay, hearing loss (cisplatin), neuropathy, hypothyroidism. Psychological support; vocational + cosmetic rehabilitation."
+      }
+    ],
+    "references": [
+      {
+        "label": "NCCN Clinical Practice Guidelines in Head and Neck Cancers"
+      },
+      {
+        "label": "ESMO Clinical Practice Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "oesophageal-cancer-pathway",
+    "title": "Oesophageal cancer — diagnosis and management pathway",
+    "icd10": [
+      "C15.9"
+    ],
+    "domains": [
+      "oncology",
+      "gastroenterology",
+      "surgery"
+    ],
+    "population": {
+      "minAgeYears": 40,
+      "sex": "any"
+    },
+    "presentation": [
+      "Progressive dysphagia (solids → liquids), weight loss, retrosternal pain, regurgitation.",
+      "Adenocarcinoma (rising — lower 1/3, GOJ, Barrett's, GORD, obesity) vs squamous cell carcinoma (upper 2/3, smoking, alcohol, hot beverages, achalasia).",
+      "Late: hoarseness (recurrent laryngeal), haematemesis, pneumonia (fistula), supraclavicular node, hepatomegaly."
+    ],
+    "redFlags": [
+      "Dysphagia + weight loss in any adult ≥ 40 — urgent OGD.",
+      "Suspected tracheo-oesophageal fistula (cough on swallowing).",
+      "Variceal-like bleeding from tumour.",
+      "Severe malnutrition."
+    ],
+    "diagnostics": [
+      {
+        "test": "Upper GI endoscopy with biopsy — first-line diagnostic.",
+        "rationale": "Tissue + location."
+      },
+      {
+        "test": "CT chest + abdomen + pelvis with contrast.",
+        "rationale": "Staging (TNM 8th)."
+      },
+      {
+        "test": "PET-CT.",
+        "rationale": "Distant disease."
+      },
+      {
+        "test": "Endoscopic ultrasound (EUS).",
+        "rationale": "T stage + N stage + EUS-FNA."
+      },
+      {
+        "test": "Laparoscopy + peritoneal washings for adenocarcinoma GOJ.",
+        "rationale": "Peritoneal metastasis."
+      },
+      {
+        "test": "MDT discussion; nutritional assessment; cardiopulmonary fitness.",
+        "rationale": "Treatment planning."
+      }
+    ],
+    "management": [
+      {
+        "step": "Early-stage (T1a — superficial)",
+        "detail": "Endoscopic mucosal resection (EMR) or endoscopic submucosal dissection (ESD) for selected T1a; high-grade dysplasia in Barrett's: ablation + EMR. Surveillance ± completion oesophagectomy if high-risk features."
+      },
+      {
+        "step": "Locally-advanced operable",
+        "detail": "Neoadjuvant chemoradiotherapy (CROSS regimen — carboplatin + paclitaxel + 41.4 Gy) → oesophagectomy at 6–8 weeks. OR perioperative chemotherapy (FLOT or MAGIC for adenocarcinoma)."
+      },
+      {
+        "step": "Definitive chemoradiotherapy",
+        "detail": "For surgically unfit / squamous cell with good response. Cisplatin + 5-FU + 50.4 Gy."
+      },
+      {
+        "step": "Palliative",
+        "detail": "Stenting (self-expanding metal stent) for dysphagia in irresectable / metastatic. Palliative chemotherapy (oxaliplatin + capecitabine for adenocarcinoma; chemoradiotherapy for SCC). Trastuzumab for HER2+ adenocarcinoma. Pembrolizumab + chemotherapy for PD-L1 CPS ≥ 10."
+      },
+      {
+        "step": "Supportive",
+        "detail": "Nutritional support — pre-op feeding via jejunostomy or NG; post-op enteral nutrition. Smoking + alcohol cessation. Pain management. Palliative care input from diagnosis in advanced disease."
+      },
+      {
+        "step": "Survivorship",
+        "detail": "Annual surveillance (CT 6-monthly × 2 years then annually). Long-term: anastomotic stricture (endoscopic dilatation), reflux, dumping syndrome, vitamin B12 / iron deficiency."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESMO oesophageal cancer guidelines; NCCN Esophageal and Esophagogastric Junction Cancers"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "myelodysplastic-syndrome",
+    "title": "Myelodysplastic syndrome (MDS)",
+    "icd10": [
+      "D46"
+    ],
+    "domains": [
+      "haematology",
+      "oncology"
+    ],
+    "population": {
+      "minAgeYears": 50,
+      "sex": "any"
+    },
+    "presentation": [
+      "Persistent cytopenia (Hb < 10, neutrophils < 1.8, platelets < 100) in older adult.",
+      "Often asymptomatic — discovered on routine FBC.",
+      "Symptoms: fatigue, dyspnoea, infections, bruising.",
+      "Spectrum: refractory cytopenia → MDS with excess blasts (5–19%) → AML (blasts ≥ 20%).",
+      "Risk factors: age, prior chemotherapy / radiotherapy (therapy-related MDS), benzene exposure."
+    ],
+    "redFlags": [
+      "Severe pancytopenia with infection / haemorrhage.",
+      "Transformation to AML (rising blast percentage).",
+      "Iron overload from chronic transfusion (ferritin > 1000) — start chelation.",
+      "Symptomatic anaemia requiring transfusion."
+    ],
+    "diagnostics": [
+      {
+        "test": "FBC + blood film + reticulocyte count.",
+        "rationale": "Cytopenia + dysplastic features."
+      },
+      {
+        "test": "Bone marrow aspirate + biopsy + cytogenetics + FISH + molecular (SF3B1, TP53, ASXL1, U2AF1).",
+        "rationale": "Definitive diagnosis + risk stratification."
+      },
+      {
+        "test": "B12, folate, iron studies, thyroid, EPO, viral hepatitis.",
+        "rationale": "Exclude reversible cytopenia."
+      },
+      {
+        "test": "IPSS-R / IPSS-M risk score.",
+        "rationale": "Risk-adapted management."
+      }
+    ],
+    "management": [
+      {
+        "step": "Risk stratification with IPSS-R / IPSS-M",
+        "detail": "Low / very low risk: focus on symptom relief. Intermediate-high: disease-modifying therapy."
+      },
+      {
+        "step": "Lower-risk MDS — supportive + selective therapy",
+        "detail": "Erythropoietin-stimulating agent (epoetin or darbepoetin) for anaemia with EPO < 500. Lenalidomide for del(5q). Luspatercept for ring-sideroblast subtypes. Transfusion + iron chelation when ferritin > 1000."
+      },
+      {
+        "step": "Higher-risk MDS — hypomethylating agent",
+        "detail": "Azacitidine 75 mg/m² SC daily × 7 days every 4 weeks OR decitabine 20 mg/m² IV × 5 days every 4 weeks. Continue until progression / toxicity. Median overall survival improved vs supportive care."
+      },
+      {
+        "step": "Allogeneic stem cell transplant — only curative option",
+        "detail": "Higher-risk patients, age < 70 (selected up to 75), good performance status, matched donor available. Conditioning intensity adjusted for age + comorbidity."
+      },
+      {
+        "step": "Transfusion + supportive care",
+        "detail": "Red cell transfusion for symptomatic anaemia (target Hb > 80, individualised). Platelet transfusion for active bleeding or prophylaxis < 10. Antibiotic prophylaxis selectively in neutropenic patients. Iron chelation (deferasirox) when transfusion-dependent."
+      },
+      {
+        "step": "AML transformation",
+        "detail": "Standard AML chemotherapy if fit; venetoclax + azacitidine for unfit; allogeneic transplant if responding."
+      },
+      {
+        "step": "Quality of life + palliative care",
+        "detail": "Symptom management (fatigue, infection, bleeding); shared decision-making; advance care planning."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESMO Guidelines on MDS"
+      },
+      {
+        "label": "NCCN MDS guidelines"
+      },
+      {
+        "label": "IPSS-M Bernard E et al. NEJM Evid 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "heparin-induced-thrombocytopenia-clinical",
+    "title": "Heparin-induced thrombocytopenia (HIT)",
+    "icd10": [
+      "D75.82"
+    ],
+    "domains": [
+      "haematology",
+      "critical-care",
+      "vascular"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Platelet drop ≥ 30–50% from baseline, typically 5–10 days after heparin exposure (faster in re-exposure within last 100 days).",
+      "PARADOXICAL thrombosis: limb, mesenteric, pulmonary, intracardiac, adrenal — venous AND arterial.",
+      "Skin necrosis at injection site, anaphylactoid reaction with IV bolus.",
+      "Risk: post-cardiac surgery (3%), orthopaedic surgery (1%), medical (<0.5%); unfractionated > LMWH risk."
+    ],
+    "redFlags": [
+      "Any new thrombosis on heparin — assume HIT until disproved.",
+      "Acute limb ischaemia / mesenteric ischaemia / pulmonary embolism on heparin.",
+      "Severe thrombocytopenia (< 20) with active bleeding (rare but reported).",
+      "Atypical: < 4 days from heparin (re-exposure within 100 days)."
+    ],
+    "diagnostics": [
+      {
+        "test": "4Ts score (Thrombocytopenia, Timing, Thrombosis, oTher causes).",
+        "rationale": "Pre-test probability; score 0–3 low (rule out without serology), 4–5 intermediate, 6–8 high."
+      },
+      {
+        "test": "Anti-PF4 / heparin IgG ELISA (immunoassay) — screen.",
+        "rationale": "Sensitive but not specific (positive in many without clinical HIT)."
+      },
+      {
+        "test": "Confirmatory functional assay — SRA (serotonin release assay) or HIPA.",
+        "rationale": "More specific — definitive diagnosis."
+      },
+      {
+        "test": "Imaging for thrombosis based on symptoms (Doppler, CTPA, abdominal imaging).",
+        "rationale": "Identify clot location."
+      }
+    ],
+    "management": [
+      {
+        "step": "STOP ALL HEPARIN IMMEDIATELY",
+        "detail": "Including unfractionated heparin (bolus, infusion, flushes), LMWH, heparin-coated catheters. Replace with non-heparin anticoagulant."
+      },
+      {
+        "step": "Start non-heparin anticoagulant",
+        "detail": "Direct thrombin inhibitor: argatroban (preferred — renal-independent) infusion adjusted to aPTT 1.5–3× control. OR fondaparinux 7.5 mg SC daily (off-label but well-evidenced). OR DOAC (rivaroxaban, apixaban) for stable patients without active major bleeding. Bivalirudin in cardiac surgery."
+      },
+      {
+        "step": "DO NOT use",
+        "detail": "Warfarin alone — risk of microvascular thrombosis (skin necrosis, venous limb gangrene) when initiated during acute HIT. Wait until platelet count > 150 × 10⁹/L before adding warfarin to argatroban / fondaparinux."
+      },
+      {
+        "step": "Avoid platelet transfusion",
+        "detail": "Risk of further thrombosis; reserve only for active major bleeding."
+      },
+      {
+        "step": "Treat HIT-associated thrombosis",
+        "detail": "Therapeutic non-heparin anticoagulation × at least 3 months (longer if persistent risk). Surgical embolectomy / thrombectomy if limb-threatening."
+      },
+      {
+        "step": "Long-term avoidance",
+        "detail": "Document HIT in medical record + allergy alert; avoid heparin lifelong (rare exception: cardiac surgery > 100 days after HIT when antibodies negative — bolus heparin during bypass only, with bivalirudin pre/post). Counsel patient + medic-alert."
+      }
+    ],
+    "references": [
+      {
+        "label": "ASH 2018 Guidelines on management of HIT"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "acute-sickle-cell-vaso-occlusive-crisis-adult",
+    "title": "Acute sickle cell vaso-occlusive crisis — adult",
+    "icd10": [
+      "D57.00",
+      "D57.01",
+      "D57.02"
+    ],
+    "domains": [
+      "haematology",
+      "emergency",
+      "pain"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "sex": "any"
+    },
+    "presentation": [
+      "Severe pain — typically bone, back, chest, abdomen.",
+      "Often preceded by dehydration, infection, cold, altitude, stress.",
+      "May progress to chest crisis (cough, hypoxia, infiltrate), splenic sequestration, stroke, priapism, AKI."
+    ],
+    "redFlags": [
+      "Acute chest syndrome (new infiltrate + hypoxia + fever + chest pain).",
+      "Stroke / focal neurology.",
+      "Priapism > 4 hours.",
+      "Severe sepsis (functionally asplenic — encapsulated organisms).",
+      "Severe pre-existing pulmonary hypertension / heart failure."
+    ],
+    "diagnostics": [
+      {
+        "test": "FBC + reticulocyte + comparison to baseline.",
+        "rationale": "Severity + sequestration evidence."
+      },
+      {
+        "test": "U&E, LFT, LDH, bilirubin, blood culture, urinalysis.",
+        "rationale": "Trigger + complication."
+      },
+      {
+        "test": "CXR + SpO2.",
+        "rationale": "Identify chest crisis."
+      },
+      {
+        "test": "Reticulocyte (low in aplastic crisis — parvovirus B19).",
+        "rationale": "Aplastic crisis differential."
+      }
+    ],
+    "management": [
+      {
+        "step": "Aggressive pain control within 30 min of presentation",
+        "detail": "IV opioid (morphine 0.1 mg/kg or hydromorphone) titrated to pain score; patient-controlled analgesia early. Paracetamol + NSAID adjunct (caution NSAID in AKI). Reassess every 15–30 min until pain controlled."
+      },
+      {
+        "step": "IV hydration",
+        "detail": "Maintenance + correct deficit; avoid over-hydration (heart failure, pulmonary oedema risk). 0.9% NaCl or balanced crystalloid."
+      },
+      {
+        "step": "Supplemental oxygen if SpO2 < 95%",
+        "detail": "Maintain SpO2 ≥ 95% — hypoxia worsens sickling."
+      },
+      {
+        "step": "Antibiotics if febrile / signs of infection",
+        "detail": "IV ceftriaxone 2 g + macrolide (covers atypical pneumonia in chest crisis); add vancomycin if MRSA risk."
+      },
+      {
+        "step": "Acute chest syndrome — escalate",
+        "detail": "Oxygen + ceftriaxone + macrolide + incentive spirometry; simple or exchange transfusion if hypoxia / multi-lobar disease; bronchodilator if wheeze. Avoid over-transfusion (target Hb 100 g/L max in non-emergency)."
+      },
+      {
+        "step": "Stroke — emergency exchange transfusion",
+        "detail": "Target HbS < 30% via red cell exchange; tPA for ischaemic stroke per stroke pathway (caveat: case-by-case)."
+      },
+      {
+        "step": "Priapism > 4 h — emergency",
+        "detail": "IV hydration + analgesia; aspiration / phenylephrine injection by urology; exchange transfusion."
+      },
+      {
+        "step": "Disease-modifying therapy long-term",
+        "detail": "Hydroxyurea 15–35 mg/kg/day — reduces crisis frequency, mortality. L-glutamine, voxelotor, crizanlizumab for additional control. Allogeneic stem cell transplant — curative option for selected. Vaccinations (pneumococcal, meningococcal, influenza); penicillin prophylaxis in children."
+      }
+    ],
+    "references": [
+      {
+        "label": "ASH Pocket Guide on Sickle Cell Disease (2020)"
+      },
+      {
+        "label": "BSH guideline for the management of acute painful crisis in sickle cell disease"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "sle-acute-flare-severe",
+    "title": "Systemic lupus erythematosus — severe acute flare (lupus nephritis, CNS, haematological, cardiopulmonary)",
+    "icd10": [
+      "M32.10",
+      "M32.11",
+      "M32.12",
+      "M32.13",
+      "M32.14",
+      "M32.15"
+    ],
+    "domains": [
+      "rheumatology",
+      "nephrology",
+      "neurology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "sex": "any"
+    },
+    "presentation": [
+      "Lupus nephritis: proteinuria > 0.5 g/24 h, active urinary sediment, AKI, hypertension — class III/IV needs aggressive therapy.",
+      "Neuropsychiatric: seizure, psychosis, stroke, transverse myelitis, demyelination, severe headache.",
+      "Haematological: severe autoimmune haemolytic anaemia (Hb < 7), severe thrombocytopenia (< 20).",
+      "Cardiopulmonary: severe pleuropericarditis with tamponade, pulmonary haemorrhage, severe Libman-Sacks endocarditis.",
+      "Triggers: infection, sun exposure, drug withdrawal, pregnancy, stress."
+    ],
+    "redFlags": [
+      "Rapidly progressive AKI / nephritic syndrome → urgent renal biopsy.",
+      "Diffuse alveolar haemorrhage (haemoptysis + hypoxia + falling Hb).",
+      "Catastrophic antiphospholipid syndrome.",
+      "Macrophage activation syndrome (cytopenias + very high ferritin + hepatitis + splenomegaly).",
+      "Pregnancy with active SLE — high-risk maternal + fetal outcomes."
+    ],
+    "diagnostics": [
+      {
+        "test": "ANA, anti-dsDNA, complement (C3/C4 — falling in flare), anti-Smith, anti-Ro/La, antiphospholipid antibodies.",
+        "rationale": "Confirm SLE + identify subset."
+      },
+      {
+        "test": "FBC, U&E, creatinine, urinalysis (UPCR or 24 h protein), CRP (usually low; high suggests infection), ESR, ferritin, LDH, complement.",
+        "rationale": "Disease activity + organ involvement."
+      },
+      {
+        "test": "Renal biopsy for lupus nephritis class (III/IV proliferative needs aggressive Rx).",
+        "rationale": "Treatment-defining."
+      },
+      {
+        "test": "MRI brain + LP for NPSLE.",
+        "rationale": "Differential."
+      },
+      {
+        "test": "Echo for pericardial effusion / Libman-Sacks.",
+        "rationale": "Cardiac involvement."
+      },
+      {
+        "test": "Septic workup — flares and infection cause similar presentation.",
+        "rationale": "Distinguish from infection."
+      }
+    ],
+    "management": [
+      {
+        "step": "Identify + treat triggers",
+        "detail": "Stop offending drugs (procainamide, hydralazine drug-induced lupus); treat infection; UV protection."
+      },
+      {
+        "step": "Induction immunosuppression for severe flare",
+        "detail": "Lupus nephritis class III/IV: IV cyclophosphamide (NIH 750 mg/m² monthly × 6, OR Euro-Lupus 500 mg every 2 weeks × 6) OR mycophenolate mofetil 2–3 g/day × 6 months. ADD IV methylprednisolone 250–1000 mg daily × 3 days then oral prednisolone 0.5–1 mg/kg/day tapered over 6 months. ADD belimumab 200 mg SC weekly for moderate-severe."
+      },
+      {
+        "step": "Hydroxychloroquine for ALL SLE patients",
+        "detail": "400 mg/day (200 mg if low weight or eGFR < 60) — reduces flares, mortality, thromboembolism, organ damage. Annual ophthalmology screen for retinal toxicity."
+      },
+      {
+        "step": "Maintenance immunosuppression",
+        "detail": "MMF 1–2 g/day OR azathioprine 1–2 mg/kg/day × ≥ 3 years; consider belimumab as add-on; voclosporin or anifrolumab for refractory class III/IV (LN); rituximab for refractory haematological / mucocutaneous."
+      },
+      {
+        "step": "Severe-specific",
+        "detail": "Diffuse alveolar haemorrhage: IVMP + plasma exchange + cyclophosphamide. CAPS: anticoagulation + steroid + plasma exchange + IVIG. Severe AIHA: IVMP + rituximab. Severe NPSLE: IVMP + cyclophosphamide; anticoagulate for thrombotic events."
+      },
+      {
+        "step": "Long-term cardiovascular + renal surveillance",
+        "detail": "Aggressive CV risk-factor management (statin, BP), antiplatelet for aPL+, contraception counselling (avoid oestrogen-containing in aPL+; copper IUD or progesterone only), pregnancy planning at SLE remission only."
+      },
+      {
+        "step": "Pregnancy + SLE",
+        "detail": "Stable SLE × 6 months before conception; continue hydroxychloroquine; switch to pregnancy-compatible immunosuppression (azathioprine, tacrolimus); aspirin 75–150 mg from 12 weeks; specialist obstetric MDT."
+      }
+    ],
+    "references": [
+      {
+        "label": "EULAR/ACR criteria for SLE; KDIGO Lupus Nephritis 2024"
+      },
+      {
+        "label": "BSR/BHPR Guideline for the management of SLE"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "anca-associated-vasculitis-active",
+    "title": "ANCA-associated vasculitis — acute / active disease",
+    "icd10": [
+      "M31.30",
+      "M31.31",
+      "M30.1"
+    ],
+    "domains": [
+      "rheumatology",
+      "nephrology",
+      "respiratory",
+      "ent",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Constitutional: fever, weight loss, malaise.",
+      "Granulomatosis with polyangiitis (GPA): upper + lower respiratory + renal; saddle nose, sinusitis, hearing loss, subglottic stenosis, nodules + cavities.",
+      "Microscopic polyangiitis (MPA): glomerulonephritis + alveolar haemorrhage; less granulomatous / ENT.",
+      "Eosinophilic granulomatosis with polyangiitis (EGPA): asthma + eosinophilia + small-vessel vasculitis; cardiomyopathy.",
+      "Rapidly progressive glomerulonephritis: crescentic GN; AKI.",
+      "Diffuse alveolar haemorrhage: haemoptysis + hypoxia + bilateral infiltrates + falling Hb."
+    ],
+    "redFlags": [
+      "Diffuse alveolar haemorrhage — life-threatening.",
+      "Acute kidney injury (RPGN).",
+      "Sinusitis / subglottic stenosis with airway compromise.",
+      "Mononeuritis multiplex with motor weakness.",
+      "Severe cardiac involvement (EGPA)."
+    ],
+    "diagnostics": [
+      {
+        "test": "ANCA: c-ANCA / PR3 (GPA), p-ANCA / MPO (MPA, EGPA, also drug-induced).",
+        "rationale": "Confirm vasculitis subset."
+      },
+      {
+        "test": "Urinalysis (haematuria + RBC casts + proteinuria), UPCR, creatinine.",
+        "rationale": "Renal involvement."
+      },
+      {
+        "test": "Renal biopsy — gold standard (pauci-immune crescentic GN).",
+        "rationale": "Confirmation + class."
+      },
+      {
+        "test": "CT chest (nodules, cavities, infiltrates, alveolar haemorrhage).",
+        "rationale": "Pulmonary involvement."
+      },
+      {
+        "test": "FBC, eosinophils, CRP, ESR, IgE (EGPA).",
+        "rationale": "Disease activity + subset clue."
+      },
+      {
+        "test": "Nerve conduction + EMG for mononeuritis.",
+        "rationale": "Identify neuropathy."
+      }
+    ],
+    "management": [
+      {
+        "step": "Severity-stratified induction therapy",
+        "detail": "Organ-threatening / severe: high-dose IV methylprednisolone 500–1000 mg daily × 3 days + oral prednisolone 1 mg/kg/day tapered + (cyclophosphamide 15 mg/kg every 2–3 weeks × 6 doses OR rituximab 375 mg/m²/week × 4 doses)."
+      },
+      {
+        "step": "Plasma exchange — selective",
+        "detail": "PEXIVAS trial: PLEX no longer routine in all AAV. Reserve for severe alveolar haemorrhage (selective) and dialysis-dependent AKI (creatinine > 350 with crescentic GN). Adjunctive immunosuppression remains essential."
+      },
+      {
+        "step": "Pneumocystis jirovecii prophylaxis",
+        "detail": "Co-trimoxazole 480 mg daily during induction + first 6 months of maintenance — prevents PJP in cyclophosphamide / high-dose steroid."
+      },
+      {
+        "step": "Maintenance therapy",
+        "detail": "Rituximab 1 g every 6 months × 4–5 years (MAINRITSAN) OR azathioprine 2 mg/kg/day OR methotrexate 20–25 mg/week — for ≥ 2–4 years."
+      },
+      {
+        "step": "EGPA-specific",
+        "detail": "Mepolizumab 300 mg SC every 4 weeks for steroid-dependent / refractory eosinophilic disease."
+      },
+      {
+        "step": "Refractory disease",
+        "detail": "Switch class (rituximab → cyclophosphamide or vice versa); IVIG; emerging — avacopan oral C5a receptor inhibitor reduces steroid exposure (ADVOCATE trial)."
+      },
+      {
+        "step": "Long-term surveillance",
+        "detail": "Monthly review during induction; quarterly maintenance. Bone protection (DEXA, bisphosphonate). Cardiovascular risk. Vaccinations (avoid live; influenza + pneumococcal). Cancer surveillance (cyclophosphamide cumulative dose < 25 g lifetime — bladder + haematological)."
+      }
+    ],
+    "references": [
+      {
+        "label": "EULAR/ERA-EDTA recommendations for the management of ANCA-associated vasculitis (2024 update); PEXIVAS trial NEJM 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "dermatomyositis-polymyositis-flare",
+    "title": "Dermatomyositis / polymyositis — diagnosis + acute management",
+    "icd10": [
+      "M33.0",
+      "M33.1",
+      "M33.2"
+    ],
+    "domains": [
+      "rheumatology",
+      "neurology",
+      "dermatology"
+    ],
+    "population": {
+      "minAgeYears": 5,
+      "sex": "any"
+    },
+    "presentation": [
+      "Symmetrical proximal muscle weakness over weeks-months — difficulty rising from chair / climbing stairs / lifting arms.",
+      "Dermatomyositis: heliotrope rash, Gottron papules over MCP/PIP knuckles, shawl sign, mechanic's hands, calcinosis (juvenile).",
+      "Constitutional: fatigue, fever, weight loss, dysphagia, dysphonia.",
+      "Lung involvement (anti-MDA5, anti-Jo-1): rapidly progressive interstitial lung disease.",
+      "Cardiac: arrhythmia, myocarditis.",
+      "Cancer association in adult-onset (especially anti-TIF1γ, anti-NXP2) — workup mandatory."
+    ],
+    "redFlags": [
+      "Rapidly progressive ILD (anti-MDA5+) — high mortality, urgent immunosuppression.",
+      "Respiratory failure from muscle weakness / aspiration.",
+      "Severe dysphagia — aspiration risk.",
+      "Cardiac involvement.",
+      "Underlying malignancy (within 3 years pre/post diagnosis)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Creatine kinase (markedly raised typically); ALT, AST, LDH, aldolase.",
+        "rationale": "Muscle damage."
+      },
+      {
+        "test": "Myositis-specific antibodies (Jo-1, MDA5, NXP2, TIF1γ, Mi-2, SAE, HMGCR, SRP).",
+        "rationale": "Subtype + prognosis."
+      },
+      {
+        "test": "EMG (myopathic features), MRI muscle (oedema), muscle biopsy.",
+        "rationale": "Confirm diagnosis."
+      },
+      {
+        "test": "CT chest / HRCT — ILD screening for all.",
+        "rationale": "Pulmonary involvement."
+      },
+      {
+        "test": "Echo + ECG.",
+        "rationale": "Cardiac involvement."
+      },
+      {
+        "test": "Cancer screen — age-appropriate (mammogram, CT chest/abdomen/pelvis, OGD/colonoscopy, gynae/urology) in adult DM.",
+        "rationale": "Paraneoplastic association."
+      }
+    ],
+    "management": [
+      {
+        "step": "Initial high-dose corticosteroid",
+        "detail": "Prednisolone 1 mg/kg/day (max 80 mg) until CK improves + clinical improvement; taper over 6–12 months. IV methylprednisolone 1 g × 3 days for severe / rapidly progressive ILD."
+      },
+      {
+        "step": "Steroid-sparing immunosuppression",
+        "detail": "Methotrexate 15–25 mg/week (caution if ILD) OR azathioprine 2 mg/kg/day OR mycophenolate 2–3 g/day. Add early for rapid steroid taper."
+      },
+      {
+        "step": "Rapidly progressive ILD (anti-MDA5)",
+        "detail": "Aggressive combination: high-dose pulsed steroid + cyclophosphamide + calcineurin inhibitor (tacrolimus); plasma exchange + tofacitinib emerging. Specialist ILD-rheumatology MDT."
+      },
+      {
+        "step": "IVIG for refractory disease or severe dysphagia",
+        "detail": "IVIG 2 g/kg over 2–5 days; can repeat monthly. Useful adjunct, especially with skin / dysphagia / pregnancy."
+      },
+      {
+        "step": "Rituximab for refractory disease",
+        "detail": "375 mg/m² weekly × 4 or 1 g every 6 months — RIM trial; benefit emerges over 6 months."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Physiotherapy + occupational therapy; SALT for dysphagia; sun protection (DM rash); calcium / vitamin D + bisphosphonate. Dietary intervention; gentle resistance exercise once stable."
+      },
+      {
+        "step": "Cancer surveillance",
+        "detail": "Adult-onset DM: cancer screen at diagnosis + every 1–2 years × 3 years (ovarian, breast, lung, colon, lymphoma). Treat occult cancer rather than DM in paraneoplastic cases — myositis often improves."
+      }
+    ],
+    "references": [
+      {
+        "label": "EULAR/ACR Classification Criteria for Adult and Juvenile Idiopathic Inflammatory Myopathies"
+      },
+      {
+        "label": "Bohan-Peter criteria"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "osteosarcoma-paediatric",
+    "title": "Paediatric osteosarcoma",
+    "icd10": [
+      "C40",
+      "C41"
+    ],
+    "domains": [
+      "oncology",
+      "paediatrics",
+      "orthopaedics",
+      "surgery"
+    ],
+    "population": {
+      "minAgeYears": 10,
+      "maxAgeYears": 25,
+      "sex": "any"
+    },
+    "presentation": [
+      "Persistent localised bone pain at site of long-bone metaphysis (distal femur > proximal tibia > proximal humerus); often worse at night.",
+      "Soft-tissue mass over the bone; pathological fracture rarely first presentation.",
+      "Adolescent growth-spurt age peak.",
+      "Risk: prior radiotherapy, Li-Fraumeni, hereditary retinoblastoma, Paget's disease (older)."
+    ],
+    "redFlags": [
+      "Pathological fracture — must not delay biopsy.",
+      "Pulmonary metastases at diagnosis (30%).",
+      "Suspected joint involvement → limb salvage planning critical.",
+      "Tumour lysis at start of chemotherapy."
+    ],
+    "diagnostics": [
+      {
+        "test": "Plain X-ray of affected bone (sunburst, Codman triangle, mixed lytic / sclerotic).",
+        "rationale": "First imaging; characteristic features."
+      },
+      {
+        "test": "MRI primary tumour (defines soft-tissue + intramedullary extent).",
+        "rationale": "Surgical + reconstructive planning."
+      },
+      {
+        "test": "CT chest (pulmonary metastases) + bone scan / PET-CT for skip lesions.",
+        "rationale": "Staging."
+      },
+      {
+        "test": "Biopsy by specialist sarcoma surgeon along planned resection tract.",
+        "rationale": "Avoid biopsy contamination."
+      },
+      {
+        "test": "FBC, U&E, LFT, LDH, ALP, CRP, echo (baseline before doxorubicin).",
+        "rationale": "Baseline."
+      }
+    ],
+    "management": [
+      {
+        "step": "Specialist paediatric / sarcoma centre referral immediately",
+        "detail": "Outcomes correlate with high-volume centre treatment + adherence to international protocols (EURAMOS, MAP)."
+      },
+      {
+        "step": "Neoadjuvant chemotherapy — MAP regimen",
+        "detail": "Methotrexate (high-dose with folinic acid rescue) + Adriamycin (doxorubicin) + Platinum (cisplatin) — 2–3 cycles before surgery."
+      },
+      {
+        "step": "Surgical resection — limb-sparing where possible",
+        "detail": "Wide margins; limb salvage with endoprosthesis / allograft / rotation plasty; amputation for unsalvageable / invading vessels / nerves. Specialist orthopaedic surgeon."
+      },
+      {
+        "step": "Adjuvant chemotherapy",
+        "detail": "Continue MAP × 3–4 more cycles after surgery (total 6 months); intensify regimen for poor histological response (< 90% necrosis)."
+      },
+      {
+        "step": "Pulmonary metastases",
+        "detail": "Pulmonary metastasectomy + chemotherapy. Outcomes much better than other paediatric sarcomas with pulmonary mets."
+      },
+      {
+        "step": "Recurrent / refractory",
+        "detail": "Salvage chemotherapy (ifosfamide + etoposide); MAPK / mTOR / multi-kinase inhibitors in clinical trials; reTreatment of metastases."
+      },
+      {
+        "step": "Long-term follow-up",
+        "detail": "Years 1–2 every 3 months CXR + clinical; years 3–5 every 6 months; then annual × 10 years. Surveillance for late-effects: cardiotoxicity (doxorubicin), nephrotoxicity (platinum), hearing loss (cisplatin), infertility, secondary malignancy. Psychosocial support; rehabilitation."
+      }
+    ],
+    "references": [
+      {
+        "label": "EURAMOS-1 trial; NCCN Bone Cancer Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "ewing-sarcoma-paediatric",
+    "title": "Paediatric Ewing sarcoma",
+    "icd10": [
+      "C40.9",
+      "C41.9"
+    ],
+    "domains": [
+      "oncology",
+      "paediatrics",
+      "orthopaedics",
+      "radiation-oncology",
+      "surgery"
+    ],
+    "population": {
+      "minAgeYears": 5,
+      "maxAgeYears": 25,
+      "sex": "any"
+    },
+    "presentation": [
+      "Bone or soft-tissue mass in children / adolescents — pelvis, femur, chest wall, humerus common.",
+      "Pain (often nocturnal), swelling, systemic features (fever, weight loss — distinguishes from osteosarcoma).",
+      "Characteristic EWSR1-FLI1 fusion (or variant) on molecular testing.",
+      "Metastatic at diagnosis in 25% (lungs > bone > marrow)."
+    ],
+    "redFlags": [
+      "Bone marrow infiltration — pancytopenia.",
+      "Spinal cord compression from vertebral / paraspinal Ewing.",
+      "Tumour lysis at start of chemotherapy.",
+      "Pulmonary metastases at presentation."
+    ],
+    "diagnostics": [
+      {
+        "test": "X-ray (lamellated 'onion-skin' periosteal reaction).",
+        "rationale": "Characteristic imaging."
+      },
+      {
+        "test": "MRI primary tumour + whole-body MRI / bone scan / PET-CT for staging.",
+        "rationale": "Surgical + radiation planning."
+      },
+      {
+        "test": "CT chest, bone marrow biopsy (bilateral).",
+        "rationale": "Staging — marrow infiltration."
+      },
+      {
+        "test": "Biopsy with molecular confirmation (EWSR1 rearrangement by FISH or sequencing).",
+        "rationale": "Diagnosis."
+      },
+      {
+        "test": "Baseline echo + GFR + audiometry + reproductive counselling.",
+        "rationale": "Pre-chemo workup."
+      }
+    ],
+    "management": [
+      {
+        "step": "Specialist sarcoma centre — multidisciplinary",
+        "detail": "Outcomes substantially better at specialist centres with international protocols (Euro Ewing 2012 / AEWS1031)."
+      },
+      {
+        "step": "Induction chemotherapy (VDC/IE)",
+        "detail": "Vincristine + Doxorubicin + Cyclophosphamide alternating with Ifosfamide + Etoposide, given every 2 weeks (interval-compressed) for 6 cycles."
+      },
+      {
+        "step": "Local control — surgery + radiotherapy",
+        "detail": "Surgery for resectable lesions (preferred); radiation alone for unresectable; combined for close margins or large unresectable primary. Specialist sarcoma surgical + radiation expertise."
+      },
+      {
+        "step": "Continue chemotherapy post local control",
+        "detail": "Additional 8 cycles VDC/IE → total ~11 months therapy."
+      },
+      {
+        "step": "Metastatic disease",
+        "detail": "Lung metastasectomy + whole-lung radiation 15–18 Gy; bone metastases — local radiotherapy; intensification chemotherapy / high-dose with stem cell rescue in selected."
+      },
+      {
+        "step": "Tumour lysis prophylaxis",
+        "detail": "Hyperhydration + rasburicase / allopurinol from start of chemo — high tumour burden + responsive."
+      },
+      {
+        "step": "Late effects + survivorship",
+        "detail": "Cardiotoxicity (doxorubicin), nephrotoxicity (ifosfamide — also encephalopathy + Fanconi), infertility (ifosfamide / cyclophosphamide — fertility preservation BEFORE), second malignancy (radiotherapy + alkylating), hearing, neuropathy. Lifelong surveillance."
+      }
+    ],
+    "references": [
+      {
+        "label": "Euro Ewing 2012 trial; AEWS1031; ESMO Bone Sarcoma Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "rhabdomyosarcoma-paediatric",
+    "title": "Paediatric rhabdomyosarcoma",
+    "icd10": [
+      "C49.9",
+      "C76.0"
+    ],
+    "domains": [
+      "oncology",
+      "paediatrics",
+      "surgery",
+      "radiation-oncology"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Painless soft-tissue mass — head + neck (incl orbit, parameningeal), genitourinary (bladder, prostate, vagina), extremity, trunk.",
+      "Orbit RMS: proptosis, eyelid swelling, painless.",
+      "Parameningeal: cranial-nerve palsies, headache.",
+      "GU: haematuria, urinary retention, vaginal mass (sarcoma botryoides — 'grape-like').",
+      "Subtypes: embryonal (favourable; younger), alveolar (PAX-FOXO1 fusion+ — adverse), pleomorphic (adult)."
+    ],
+    "redFlags": [
+      "Cranial-nerve involvement / meningeal extension.",
+      "Bone marrow involvement / pancytopenia.",
+      "Disseminated disease.",
+      "Tumour lysis at start of chemotherapy."
+    ],
+    "diagnostics": [
+      {
+        "test": "MRI primary tumour + regional nodes.",
+        "rationale": "Anatomy + surgical planning."
+      },
+      {
+        "test": "Biopsy with histology + immunohistochemistry (desmin, myogenin, MyoD1) + PAX3/7-FOXO1 fusion testing.",
+        "rationale": "Confirm subtype + risk."
+      },
+      {
+        "test": "CT chest + bone scan + bone marrow biopsy + LP (parameningeal sites).",
+        "rationale": "Staging."
+      },
+      {
+        "test": "Echo, GFR, audiometry, fertility counselling (older adolescent).",
+        "rationale": "Pre-treatment baselines."
+      }
+    ],
+    "management": [
+      {
+        "step": "Specialist paediatric oncology centre",
+        "detail": "International protocols (COG / EpSSG)."
+      },
+      {
+        "step": "Multimodal treatment",
+        "detail": "Risk-adapted: chemotherapy (VAC — vincristine + actinomycin-D + cyclophosphamide standard backbone) + local control (surgery and/or radiation)."
+      },
+      {
+        "step": "Risk groups + corresponding therapy",
+        "detail": "Low risk (embryonal, completely resected): VA × 22 weeks. Intermediate: VAC + RT × 42 weeks. High (metastatic): intensified VAC ± ivosidenib / vinorelbine / temsirolimus / temozolomide; consider HDC + stem cell rescue in selected."
+      },
+      {
+        "step": "Local control",
+        "detail": "Surgery first if function-preserving; otherwise after chemotherapy. Radiotherapy at week 13 if needed (avoid in orbital RMS where possible). Brachytherapy for vaginal / bladder RMS — preserves function."
+      },
+      {
+        "step": "Parameningeal RMS",
+        "detail": "Intrathecal chemotherapy + whole-brain RT for meningeal involvement; aggressive systemic chemo."
+      },
+      {
+        "step": "Tumour lysis prevention",
+        "detail": "Hyperhydration + allopurinol or rasburicase."
+      },
+      {
+        "step": "Late effects",
+        "detail": "Growth, endocrine (especially orbital / parameningeal RT), cardiotoxicity, infertility, secondary malignancy. Long-term multidisciplinary follow-up."
+      }
+    ],
+    "references": [
+      {
+        "label": "COG / IRSG protocols; EpSSG Soft Tissue Sarcoma Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]
