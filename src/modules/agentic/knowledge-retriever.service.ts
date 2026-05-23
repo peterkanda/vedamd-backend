@@ -27,7 +27,15 @@ export class KnowledgeRetrieverService {
       this.knowledge.getInteractions().length +
       this.knowledge.getConditions().length +
       this.knowledge.getProcedures().length +
-      this.knowledge.getCdsRules().length
+      this.knowledge.getCdsRules().length +
+      this.knowledge.getClinicalScores().length +
+      this.knowledge.getPgxGuidelines().length +
+      this.knowledge.getDrugDiseaseInteractions().length +
+      this.knowledge.getImmunizationSchedule().length +
+      this.knowledge.getAllergyCrossReactivity().length +
+      this.knowledge.getNotifiableDiseases().length +
+      this.knowledge.getReferenceRanges().length +
+      this.knowledge.getAntidotes().length
     );
   }
 

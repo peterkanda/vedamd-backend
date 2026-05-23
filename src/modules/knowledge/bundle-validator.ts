@@ -37,12 +37,25 @@ interface ReviewableRecord {
   approvedAt?: string;
 }
 
+interface ExtendedRecord {
+  reviewStatus: ReviewStatus;
+  domains?: string[];
+}
+
 interface Bundle {
   conditions: ConditionGuidance[];
   drugs: DrugRecord[];
   interactions: DrugInteraction[];
   procedures: ProcedureGuidance[];
   cdsRules?: CdsRule[];
+  clinicalScores?: ExtendedRecord[];
+  pgxGuidelines?: ExtendedRecord[];
+  drugDiseaseInteractions?: ExtendedRecord[];
+  immunizationSchedule?: ExtendedRecord[];
+  allergyCrossReactivity?: ExtendedRecord[];
+  notifiableDiseases?: ExtendedRecord[];
+  referenceRanges?: ExtendedRecord[];
+  antidotes?: ExtendedRecord[];
 }
 
 const KNOWN_STATUSES: readonly ReviewStatus[] = ['draft', 'review', 'approved', 'deprecated'];
@@ -94,12 +107,31 @@ export function validateBundle(bundle: Bundle): ValidationResult {
     pushViolations(violations, 'cds-rules', r.id, r);
   }
 
+  const extendedSets: Array<[string, ExtendedRecord[] | undefined]> = [
+    ['clinical-scores', bundle.clinicalScores],
+    ['pharmacogenomics', bundle.pgxGuidelines],
+    ['drug-disease-interactions', bundle.drugDiseaseInteractions],
+    ['immunization-schedule', bundle.immunizationSchedule],
+    ['allergy-cross-reactivity', bundle.allergyCrossReactivity],
+    ['notifiable-diseases', bundle.notifiableDiseases],
+    ['reference-ranges', bundle.referenceRanges],
+    ['antidotes', bundle.antidotes],
+  ];
+  let extendedCount = 0;
+  for (const [domain, set] of extendedSets) {
+    for (const r of set ?? []) {
+      tally(r.reviewStatus, [domain, ...(r.domains ?? [])]);
+      extendedCount++;
+    }
+  }
+
   const totalRecords =
     bundle.conditions.length +
     bundle.drugs.length +
     bundle.interactions.length +
     bundle.procedures.length +
-    (bundle.cdsRules?.length ?? 0);
+    (bundle.cdsRules?.length ?? 0) +
+    extendedCount;
 
   return {
     ok: violations.length === 0,
