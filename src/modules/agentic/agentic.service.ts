@@ -55,12 +55,18 @@ export class AgenticService {
     // --- 2b. Policy retrieval (per-integrator standards / SOPs) ---
     let policyMatches: PolicyMatch[] = [];
     if (this.policies && ctx.integratorId) {
-      policyMatches = this.policies.findRelevant(ctx.integratorId, {
-        question: ctx.question,
-        medications: ctx.medications,
-        diagnoses: ctx.diagnoses,
-        allergies: ctx.allergies,
-      });
+      try {
+        policyMatches = await this.policies.findRelevant(ctx.integratorId, {
+          question: ctx.question,
+          medications: ctx.medications,
+          diagnoses: ctx.diagnoses,
+          allergies: ctx.allergies,
+        });
+      } catch (err) {
+        this.log.warn('policies_lookup_failed', {
+          error_category: err instanceof Error ? err.name : 'unknown',
+        });
+      }
     }
 
     // --- 3. Agentic layer (graceful degrade if unconfigured) ---

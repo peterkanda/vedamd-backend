@@ -36,14 +36,14 @@ export class PoliciesController {
     description:
       'Returns summaries (no full body). Each policy is a clinical SOP or external standard (JCI, ISO, WHO, NICE, company). Policies are integrator-scoped and used by the agentic engine to align recommendations.',
   })
-  list(@Req() req: OperatorRequest) {
-    return { policies: this.policies.list(req.operator!.integratorId) };
+  async list(@Req() req: OperatorRequest) {
+    return { policies: await this.policies.list(req.operator!.integratorId) };
   }
 
   @Get(':id')
   @ApiOperation({ summary: 'Get a single policy with its sections' })
-  get(@Req() req: OperatorRequest, @Param('id') id: string) {
-    const found = this.policies.get(req.operator!.integratorId, id);
+  async get(@Req() req: OperatorRequest, @Param('id') id: string) {
+    const found = await this.policies.get(req.operator!.integratorId, id);
     if (!found) throw new NotFoundException(`Unknown policy: ${id}`);
     return found;
   }
@@ -52,9 +52,9 @@ export class PoliciesController {
   @ApiOperation({
     summary: 'Upload a policy / standard (JSON body)',
     description:
-      'Accepts either an array of structured `sections` ({title?, body}) or a single `text` body. Source identifies the standard family (JCI, ISO, WHO, NICE, company, other).',
+      "Accepts either an array of structured `sections` ({title?, body}) or a single `text` body. Source identifies the standard family (JCI, ISO, WHO, NICE, company, other). The body must contain ONLY the integrator's own policy text — never patient identifiers or clinical data.",
   })
-  create(@Req() req: OperatorRequest, @Body() dto: PolicyCreateDto) {
+  async create(@Req() req: OperatorRequest, @Body() dto: PolicyCreateDto) {
     if (!dto?.name?.trim()) throw new BadRequestException('name is required');
     if (!dto?.source?.trim()) throw new BadRequestException('source is required');
     if ((!dto.sections || !dto.sections.length) && !dto.text?.trim()) {
@@ -65,8 +65,8 @@ export class PoliciesController {
 
   @Delete(':id')
   @ApiOperation({ summary: 'Delete a policy by id' })
-  remove(@Req() req: OperatorRequest, @Param('id') id: string) {
-    const ok = this.policies.remove(req.operator!.integratorId, id);
+  async remove(@Req() req: OperatorRequest, @Param('id') id: string) {
+    const ok = await this.policies.remove(req.operator!.integratorId, id);
     if (!ok) throw new NotFoundException(`Unknown policy: ${id}`);
     return { ok: true };
   }

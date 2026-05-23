@@ -1,14 +1,8 @@
-import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
+import { Inject, Injectable, Logger, OnModuleInit, Optional } from '@nestjs/common';
 import { randomUUID } from 'node:crypto';
-import {
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  readdirSync,
-  writeFileSync,
-  unlinkSync,
-} from 'node:fs';
-import { resolve } from 'node:path';
+import { and, desc, eq } from 'drizzle-orm';
+import { DRIZZLE, type MaybeDrizzle } from '../../db/database.module';
+import { policies as policiesTable } from '../../db/schema';
 import type {
   Policy,
   PolicyCreateDto,
@@ -25,9 +19,14 @@ interface RelevanceSignals {
 }
 
 /**
- * Per-integrator policy store. In-memory + JSON-on-disk persistence
- * (under `data/policies/<integratorId>.json`). No database migration
- * required; the file is the source of truth for dev/sandbox.
+ * Per-integrator policy store.
+ *
+ * Storage backend:
+ *   - When `DATABASE_URL` is configured (production / Supabase),
+ *     policies are stored in the Postgres `policies` table via drizzle.
+ *   - In dev / unit tests with no DATABASE_URL, an in-memory store is
+ *     used. There is NO disk persistence — durable state lives in the
+ *     database only, by design.
  *
  * Policies are integrator-scoped clinical SOPs / standards (JCI, ISO,
  * WHO position papers, NICE summaries, company guidelines). They are
@@ -36,52 +35,52 @@ interface RelevanceSignals {
 @Injectable()
 export class PoliciesService implements OnModuleInit {
   private readonly nestLogger = new Logger(PoliciesService.name);
-  private readonly byIntegrator = new Map<string, Policy[]>();
-  private readonly dataDir = resolve(process.cwd(), 'data', 'policies');
+  private readonly memByIntegrator = new Map<string, Policy[]>();
+
+  constructor(@Optional() @Inject(DRIZZLE) private readonly db: MaybeDrizzle = null) {}
 
   onModuleInit(): void {
-    this.loadFromDisk();
-  }
-
-  private loadFromDisk(): void {
-    if (!existsSync(this.dataDir)) return;
-    const files = readdirSync(this.dataDir).filter((f) => f.endsWith('.json'));
-    for (const f of files) {
-      try {
-        const integratorId = f.replace(/\.json$/, '');
-        const arr = JSON.parse(readFileSync(resolve(this.dataDir, f), 'utf8')) as Policy[];
-        this.byIntegrator.set(integratorId, arr);
-      } catch (err) {
-        this.nestLogger.warn(`Failed to load policies file ${f}: ${(err as Error).message}`);
-      }
-    }
-    const total = [...this.byIntegrator.values()].reduce((n, a) => n + a.length, 0);
-    if (total)
-      this.nestLogger.log(
-        `Loaded ${total} policy/-ies across ${this.byIntegrator.size} integrator(s).`,
+    if (this.db) {
+      this.nestLogger.log('PoliciesService using Postgres (drizzle) storage.');
+    } else {
+      this.nestLogger.warn(
+        'PoliciesService running with IN-MEMORY store (no DATABASE_URL). Entries are lost on restart.',
       );
+    }
   }
 
-  private persist(integratorId: string): void {
-    if (!existsSync(this.dataDir)) mkdirSync(this.dataDir, { recursive: true });
-    const arr = this.byIntegrator.get(integratorId) ?? [];
-    writeFileSync(resolve(this.dataDir, `${integratorId}.json`), JSON.stringify(arr, null, 2));
+  async list(integratorId: string): Promise<PolicySummary[]> {
+    if (this.db) {
+      const rows = await this.db
+        .select()
+        .from(policiesTable)
+        .where(eq(policiesTable.integratorId, integratorId))
+        .orderBy(desc(policiesTable.uploadedAt));
+      return rows.map(rowToSummary);
+    }
+    return (this.memByIntegrator.get(integratorId) ?? []).map(toSummary);
   }
 
-  list(integratorId: string): PolicySummary[] {
-    const arr = this.byIntegrator.get(integratorId) ?? [];
-    return arr.map(toSummary);
+  async get(integratorId: string, id: string): Promise<Policy | null> {
+    if (this.db) {
+      const rows = await this.db
+        .select()
+        .from(policiesTable)
+        .where(and(eq(policiesTable.integratorId, integratorId), eq(policiesTable.id, id)))
+        .limit(1);
+      if (!rows.length) return null;
+      return rowToPolicy(rows[0]);
+    }
+    return (this.memByIntegrator.get(integratorId) ?? []).find((p) => p.id === id) ?? null;
   }
 
-  get(integratorId: string, id: string): Policy | null {
-    return (this.byIntegrator.get(integratorId) ?? []).find((p) => p.id === id) ?? null;
-  }
-
-  create(integratorId: string, dto: PolicyCreateDto, uploadedBy?: string): Policy {
+  async create(integratorId: string, dto: PolicyCreateDto, uploadedBy?: string): Promise<Policy> {
     const sections = normaliseSections(dto);
     const sizeBytes = sections.reduce((n, s) => n + s.body.length, 0);
+    const id = randomUUID();
+    const uploadedAt = new Date().toISOString();
     const policy: Policy = {
-      id: randomUUID(),
+      id,
       integratorId,
       name: dto.name.trim(),
       source: dto.source.trim(),
@@ -90,32 +89,44 @@ export class PoliciesService implements OnModuleInit {
       sections,
       sectionCount: sections.length,
       sizeBytes,
-      uploadedAt: new Date().toISOString(),
+      uploadedAt,
       uploadedBy,
     };
-    const arr = this.byIntegrator.get(integratorId) ?? [];
-    arr.push(policy);
-    this.byIntegrator.set(integratorId, arr);
-    this.persist(integratorId);
+
+    if (this.db) {
+      await this.db.insert(policiesTable).values({
+        id,
+        integratorId,
+        name: policy.name,
+        source: policy.source,
+        version: policy.version ?? null,
+        scope: policy.scope ?? null,
+        sections,
+        sizeBytes,
+        uploadedAt: new Date(uploadedAt),
+        uploadedBy: uploadedBy ?? null,
+      });
+    } else {
+      const arr = this.memByIntegrator.get(integratorId) ?? [];
+      arr.push(policy);
+      this.memByIntegrator.set(integratorId, arr);
+    }
     return policy;
   }
 
-  remove(integratorId: string, id: string): boolean {
-    const arr = this.byIntegrator.get(integratorId) ?? [];
+  async remove(integratorId: string, id: string): Promise<boolean> {
+    if (this.db) {
+      const result = await this.db
+        .delete(policiesTable)
+        .where(and(eq(policiesTable.integratorId, integratorId), eq(policiesTable.id, id)))
+        .returning({ id: policiesTable.id });
+      return result.length > 0;
+    }
+    const arr = this.memByIntegrator.get(integratorId) ?? [];
     const idx = arr.findIndex((p) => p.id === id);
     if (idx < 0) return false;
     arr.splice(idx, 1);
-    this.byIntegrator.set(integratorId, arr);
-    try {
-      this.persist(integratorId);
-      if (arr.length === 0) {
-        // Tidy up: remove the empty file.
-        const path = resolve(this.dataDir, `${integratorId}.json`);
-        if (existsSync(path)) unlinkSync(path);
-      }
-    } catch {
-      /* fall through */
-    }
+    this.memByIntegrator.set(integratorId, arr);
     return true;
   }
 
@@ -123,16 +134,31 @@ export class PoliciesService implements OnModuleInit {
    * Score each policy section by token overlap with the query signals
    * and return the top matches with a short snippet, for the agentic
    * engine to cite. Pure keyword overlap — deliberately simple,
-   * deterministic, and CPU-only (no embeddings, no PHI).
+   * deterministic and CPU-only (no embeddings, no PHI). Runs in memory
+   * over the integrator's policies (small list, larger per-section text).
    */
-  findRelevant(integratorId: string, signals: RelevanceSignals, limit = 3): PolicyMatch[] {
-    const arr = this.byIntegrator.get(integratorId) ?? [];
-    if (!arr.length) return [];
+  async findRelevant(
+    integratorId: string,
+    signals: RelevanceSignals,
+    limit = 3,
+  ): Promise<PolicyMatch[]> {
     const terms = tokeniseQuery(signals);
     if (!terms.length) return [];
 
+    let policies: Policy[] = [];
+    if (this.db) {
+      const rows = await this.db
+        .select()
+        .from(policiesTable)
+        .where(eq(policiesTable.integratorId, integratorId));
+      policies = rows.map(rowToPolicy);
+    } else {
+      policies = this.memByIntegrator.get(integratorId) ?? [];
+    }
+    if (!policies.length) return [];
+
     const matches: PolicyMatch[] = [];
-    for (const policy of arr) {
+    for (const policy of policies) {
       for (const section of policy.sections) {
         const score = scoreSection(section.body, terms);
         if (score <= 0) continue;
@@ -158,6 +184,37 @@ function toSummary(p: Policy): PolicySummary {
   void _u;
   void _s;
   return rest;
+}
+
+function rowToPolicy(row: typeof policiesTable.$inferSelect): Policy {
+  const sections = (row.sections as PolicySection[] | null) ?? [];
+  return {
+    id: row.id,
+    integratorId: row.integratorId,
+    name: row.name,
+    source: row.source,
+    version: row.version ?? undefined,
+    scope: row.scope ?? undefined,
+    sections,
+    sectionCount: sections.length,
+    sizeBytes: row.sizeBytes,
+    uploadedAt: row.uploadedAt.toISOString(),
+    uploadedBy: row.uploadedBy ?? undefined,
+  };
+}
+
+function rowToSummary(row: typeof policiesTable.$inferSelect): PolicySummary {
+  const sections = (row.sections as PolicySection[] | null) ?? [];
+  return {
+    id: row.id,
+    name: row.name,
+    source: row.source,
+    version: row.version ?? undefined,
+    scope: row.scope ?? undefined,
+    sectionCount: sections.length,
+    sizeBytes: row.sizeBytes,
+    uploadedAt: row.uploadedAt.toISOString(),
+  };
 }
 
 function normaliseSections(dto: PolicyCreateDto): PolicySection[] {
