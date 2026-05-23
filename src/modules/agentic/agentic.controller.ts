@@ -1,4 +1,4 @@
-import { BadRequestException, Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AgenticService } from './agentic.service';
 import { SqlIngestionService } from './connectors/sql-ingestion.service';
@@ -36,7 +36,9 @@ export class AgenticController {
   ) {}
 
   @Get('capabilities')
-  @ApiOperation({ summary: 'Agentic engine capabilities — LLM provider + SQL connector availability' })
+  @ApiOperation({
+    summary: 'Agentic engine capabilities — LLM provider + SQL connector availability',
+  })
   capabilities() {
     return {
       agenticEnabled: this.router.anyConfigured(),
@@ -61,9 +63,12 @@ export class AgenticController {
   @RequireScope('cds:evaluate')
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Agentic CDS evaluation from a structured JSON clinical context' })
-  async evaluate(@Body() dto: AgenticEvaluateDto): Promise<AgenticEvaluationResponse> {
+  async evaluate(
+    @Body() dto: AgenticEvaluateDto,
+    @Req() req: { apiKey?: { integratorId?: string } },
+  ): Promise<AgenticEvaluationResponse> {
     try {
-      return await this.agentic.evaluate(dto);
+      return await this.agentic.evaluate({ ...dto, integratorId: req.apiKey?.integratorId });
     } catch (err) {
       throw mapConfigError(err);
     }
@@ -86,10 +91,14 @@ export class AgenticController {
   @RequireScope('cds:evaluate')
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Agentic CDS evaluation from a FHIR R4 Bundle or resource' })
-  async evaluateFhir(@Body() dto: AgenticFhirEvaluateDto): Promise<AgenticEvaluationResponse> {
+  async evaluateFhir(
+    @Body() dto: AgenticFhirEvaluateDto,
+    @Req() req: { apiKey?: { integratorId?: string } },
+  ): Promise<AgenticEvaluationResponse> {
     const ctx = fhirToContext(dto.resource, dto.hook, dto.question);
     ctx.mode = dto.mode;
     ctx.minConfidence = dto.minConfidence;
+    ctx.integratorId = req.apiKey?.integratorId;
     try {
       return await this.agentic.evaluate(ctx);
     } catch (err) {
@@ -101,8 +110,13 @@ export class AgenticController {
   @UseGuards(ApiKeyGuard)
   @RequireScope('cds:evaluate')
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Agentic CDS evaluation pulling patient data from a configured EHR database' })
-  async evaluateSql(@Body() dto: AgenticSqlEvaluateDto): Promise<AgenticEvaluationResponse> {
+  @ApiOperation({
+    summary: 'Agentic CDS evaluation pulling patient data from a configured EHR database',
+  })
+  async evaluateSql(
+    @Body() dto: AgenticSqlEvaluateDto,
+    @Req() req: { apiKey?: { integratorId?: string } },
+  ): Promise<AgenticEvaluationResponse> {
     let ctx;
     try {
       ctx = await this.sql.buildContext(
@@ -114,6 +128,7 @@ export class AgenticController {
       );
       ctx.mode = dto.mode;
       ctx.minConfidence = dto.minConfidence;
+      ctx.integratorId = req.apiKey?.integratorId;
     } catch (err) {
       // Configuration / query errors are the caller's to fix — return 400
       // with the specific reason (never leaks row data; messages are

@@ -68,6 +68,13 @@ export interface AgenticClinicalContext {
   }>;
   /** Open-ended structured signals — vitals, scores, flags. */
   signals?: Record<string, unknown>;
+  /**
+   * Internal: integrator id forwarded by the controller. Lets the
+   * engine retrieve the calling integrator's uploaded policies /
+   * standards so its recommendations can be checked against — and
+   * cited to — them. Never echoed in logs.
+   */
+  integratorId?: string;
 }
 
 /**
@@ -94,6 +101,19 @@ export interface AgenticEvaluationResponse {
     citedRecords: Array<{ kind: string; id: string }>;
     /** Time spent in agentic reasoning (ms). */
     agenticLatencyMs: number;
+    /**
+     * Per-integrator policy / standards sections matched to the query
+     * and passed to the agentic prompt. Surfaced so the UI can show
+     * "Per [policy] §[section]" provenance alongside each card.
+     */
+    policyCitations?: Array<{
+      policyId: string;
+      name: string;
+      source: string;
+      version?: string;
+      sectionTitle?: string;
+      snippet: string;
+    }>;
   };
 }
 

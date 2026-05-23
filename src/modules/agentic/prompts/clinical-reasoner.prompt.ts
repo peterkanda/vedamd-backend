@@ -1,4 +1,5 @@
 import type { AgenticClinicalContext, RetrievedKnowledge } from '../agentic.types';
+import type { PolicyMatch } from '../../policies/policies.types';
 
 /**
  * The clinical-reasoner system prompt. This is the heart of the
@@ -60,6 +61,7 @@ CARD RULES:
 export function buildUserMessage(
   ctx: AgenticClinicalContext,
   knowledge: RetrievedKnowledge,
+  policies: PolicyMatch[] = [],
 ): string {
   const k: string[] = ['## VEDAMD KNOWLEDGE (ground truth — reason only over this)'];
 
@@ -76,11 +78,13 @@ export function buildUserMessage(
   }
   if (knowledge.conditions.length) {
     k.push('\n### Conditions');
-    for (const c of knowledge.conditions) k.push(`- [condition:${c.slug}] ${c.title} — ${c.summary}`);
+    for (const c of knowledge.conditions)
+      k.push(`- [condition:${c.slug}] ${c.title} — ${c.summary}`);
   }
   if (knowledge.procedures.length) {
     k.push('\n### Procedures');
-    for (const p of knowledge.procedures) k.push(`- [procedure:${p.slug}] ${p.title} — ${p.summary}`);
+    for (const p of knowledge.procedures)
+      k.push(`- [procedure:${p.slug}] ${p.title} — ${p.summary}`);
   }
   if (knowledge.rules.length) {
     k.push('\n### CDS rules');
@@ -105,9 +109,26 @@ export function buildUserMessage(
   if (ctx.diagnoses?.length) c.push(`- diagnoses: ${ctx.diagnoses.join(', ')}`);
   if (ctx.allergies?.length) c.push(`- allergies: ${ctx.allergies.join(', ')}`);
   if (ctx.labs?.length)
-    c.push(`- labs: ${ctx.labs.map((l) => `${l.name ?? l.code}=${l.value}${l.unit ?? ''}`).join(', ')}`);
+    c.push(
+      `- labs: ${ctx.labs.map((l) => `${l.name ?? l.code}=${l.value}${l.unit ?? ''}`).join(', ')}`,
+    );
   if (ctx.signals && Object.keys(ctx.signals).length)
     c.push(`- signals: ${JSON.stringify(ctx.signals)}`);
+
+  const policySection: string[] = [];
+  if (policies.length) {
+    policySection.push(
+      '\n## LOCAL POLICIES & STANDARDS (per-integrator — align recommendations with these)',
+      'For each card you emit, also note in the rationale how the recommendation aligns with these local policy sections, and cite them as "Per [policy name] §[section title]". If a policy contradicts a deterministic safety check, surface the conflict — do not silently override safety.',
+    );
+    for (const p of policies) {
+      policySection.push(
+        `- [policy:${p.policyId}] ${p.name} (${p.source}${p.version ? ` ${p.version}` : ''})${
+          p.sectionTitle ? ` §${p.sectionTitle}` : ''
+        }: ${p.snippet}`,
+      );
+    }
+  }
 
   const task = [
     '\n## TASK',
@@ -117,5 +138,5 @@ export function buildUserMessage(
     'Return ONLY the JSON object specified in your instructions.',
   ];
 
-  return [...k, ...c, ...task].join('\n');
+  return [...k, ...c, ...policySection, ...task].join('\n');
 }
