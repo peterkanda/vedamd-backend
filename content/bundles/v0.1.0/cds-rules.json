@@ -4824,5 +4824,369 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "acute-cholangitis-tokyo-bundle",
+    "hook": "patient-view",
+    "type": "acute-cholangitis-tokyo-bundle",
+    "services": [
+      "vedamd-acute-cholangitis"
+    ],
+    "title": "Acute cholangitis — Tokyo Grade + biliary drainage timing",
+    "description": "Fires for Charcot triad (RUQ pain + fever + jaundice) or biliary obstruction with sepsis. Calculates Tokyo grade I/II/III. Recommends IV antibiotic (pip-tazo or ceftriaxone+metronidazole), urgent ERCP drainage timing: Grade I within 48 h, Grade II within 24 h, Grade III within 12 h after stabilisation. Reads context.fever, context.bilirubin, context.alp, context.lactate, context.organDysfunction — never patient identity.",
+    "references": [
+      {
+        "label": "Tokyo Guidelines 2018"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K83.0",
+        "display": "Cholangitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "perforated-viscus-surgery",
+    "hook": "patient-view",
+    "type": "perforated-viscus-surgery",
+    "services": [
+      "vedamd-perforated-viscus"
+    ],
+    "title": "Perforated viscus — antibiotic + urgent surgery",
+    "description": "Fires for free intraperitoneal air on imaging with peritonitic abdomen. Recommends: NG decompression, IV pip-tazo + metronidazole, resuscitation, theatre within 6 h. Reads context.freeAirOnImaging, context.peritonism, context.lactate, context.systolicMmHg — never patient identity.",
+    "references": [
+      {
+        "label": "WSES Consensus on intra-abdominal infection"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K65.0",
+        "display": "Acute peritonitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "sigmoid-volvulus-decompression",
+    "hook": "patient-view",
+    "type": "sigmoid-volvulus-decompression",
+    "services": [
+      "vedamd-sigmoid-volvulus"
+    ],
+    "title": "Sigmoid volvulus — endoscopic decompression vs surgery",
+    "description": "Fires for distended abdomen with coffee-bean sign / whirl sign on CT. Recommends sigmoidoscopic detorsion if no peritonism; emergency colectomy for peritonism / gangrene / failed endoscopic. Reads context.coffeeBeanSignAxr, context.peritonism, context.lactate — never patient identity.",
+    "references": [
+      {
+        "label": "ASCRS Practice Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K56.2",
+        "display": "Sigmoid volvulus",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "asuc-day3-rescue",
+    "hook": "patient-view",
+    "type": "asuc-day3-rescue",
+    "services": [
+      "vedamd-asuc-rescue"
+    ],
+    "title": "Acute severe ulcerative colitis — day-3 rescue therapy decision",
+    "description": "Fires on day 3 of IV steroid therapy for acute severe UC. If failure (≥ 8 stools/day OR 3–8 with CRP > 45): recommend ciclosporin 2 mg/kg/day IV OR infliximab 5 mg/kg IV; failure of rescue at day 5–7 → colectomy. Reads context.dayOfTreatment, context.stoolsPerDay, context.crp, context.transverseColonDiameter — never patient identity.",
+    "references": [
+      {
+        "label": "ECCO UC Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K51.9",
+        "display": "Ulcerative colitis unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cauda-equina-urgent-mri",
+    "hook": "patient-view",
+    "type": "cauda-equina-urgent-mri",
+    "services": [
+      "vedamd-cauda-equina"
+    ],
+    "title": "Cauda equina syndrome — urgent MRI + surgery within 48 h",
+    "description": "Fires for back pain with new bilateral leg symptoms OR saddle anaesthesia OR urinary retention (post-void residual > 200 mL) OR reduced anal tone. Recommends URGENT MRI lumbar spine + neurosurgical referral; decompression within 24–48 h preserves function. Reads context.bilateralLegWeakness, context.saddleAnaesthesia, context.urinaryRetention, context.bowelDysfunction, context.postVoidResidual — never patient identity.",
+    "references": [
+      {
+        "label": "BASS UK consensus on CES"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G83.4",
+        "display": "Cauda equina syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "spinal-epidural-abscess-pathway",
+    "hook": "patient-view",
+    "type": "spinal-epidural-abscess-pathway",
+    "services": [
+      "vedamd-spinal-abscess"
+    ],
+    "title": "Spinal epidural abscess — urgent MRI + decompression",
+    "description": "Fires for back pain + fever + neurology in IVDU / immunocompromised / spinal instrumentation. Recommends urgent MRI whole spine, blood cultures, IV vancomycin + ceftriaxone empirically, surgical decompression for any neurological deficit within 24 h. Reads context.backPain, context.fever, context.neurologicalDeficit, context.ivdu, context.immunocompromised — never patient identity.",
+    "references": [
+      {
+        "label": "Darouiche NEJM 2006; IDSA vertebral osteomyelitis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G06.1",
+        "display": "Spinal epidural abscess",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "tbi-severe-bundle",
+    "hook": "patient-view",
+    "type": "tbi-severe-bundle",
+    "services": [
+      "vedamd-severe-tbi"
+    ],
+    "title": "Severe TBI — secondary-injury prevention bundle",
+    "description": "Fires for head injury with GCS ≤ 8. Recommends: intubation, SpO2 > 92%, MAP ≥ 80 / CPP ≥ 60, normocapnia, head up 30°, hypertonic saline or mannitol for raised ICP signs, levetiracetam prophylaxis × 7 days, tranexamic acid 1 g IV within 3 h (CRASH-3). Reverse anticoagulation. Reads context.gcs, context.pupilSize, context.anticoagulant, context.injuryTimeHours, context.intubated — never patient identity.",
+    "references": [
+      {
+        "label": "Brain Trauma Foundation 4th ed; CRASH-3 Lancet 2019"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "S06.9",
+        "display": "Intracranial injury",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "unstable-pelvic-fracture-binder",
+    "hook": "patient-view",
+    "type": "unstable-pelvic-fracture-binder",
+    "services": [
+      "vedamd-pelvic-fracture"
+    ],
+    "title": "Unstable pelvic fracture — binder + massive transfusion",
+    "description": "Fires for trauma with pelvic instability + hypotension. Recommends pelvic binder at greater trochanter level (do not remove for X-ray), massive transfusion 1:1:1, tranexamic acid 1 g, urgent IR embolisation or pre-peritoneal packing, urology consult before catheterising if urethral injury suspected. Reads context.suspectedPelvicFracture, context.systolicMmHg, context.haematuria, context.bloodAtMeatus, context.injuryTimeHours — never patient identity.",
+    "references": [
+      {
+        "label": "WSES pelvic fracture guidelines; ATLS"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "S32.5",
+        "display": "Fracture of pubis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "crao-stroke-equivalent",
+    "hook": "patient-view",
+    "type": "crao-stroke-equivalent",
+    "services": [
+      "vedamd-crao"
+    ],
+    "title": "Central retinal artery occlusion — stroke-equivalent workup",
+    "description": "Fires for sudden painless monocular vision loss with RAPD. Recommends URGENT ESR + CRP (GCA — if suspected start IV methylpred 1 g daily × 3 days); treat as TIA/stroke equivalent with carotid + cardiac workup + secondary prevention; consider tPA within 4.5 h or anterior chamber paracentesis. Reads context.suddenVisionLoss, context.painlessVisionLoss, context.unilateral, context.ageYears, context.gcaFeatures — never patient identity.",
+    "references": [
+      {
+        "label": "AAO Preferred Practice Pattern; AHA CRAO statement 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "H34.1",
+        "display": "Central retinal artery occlusion",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ssnhl-systemic-steroid",
+    "hook": "patient-view",
+    "type": "ssnhl-systemic-steroid",
+    "services": [
+      "vedamd-ssnhl"
+    ],
+    "title": "Sudden sensorineural hearing loss — high-dose steroid + MRI",
+    "description": "Fires for new sudden hearing loss ≥ 30 dB across 3 frequencies developing < 72 h. Recommends prednisolone 1 mg/kg/day × 7–14 days then taper; intratympanic steroid as adjunct/salvage; MRI within weeks for vestibular schwannoma exclusion. Reads context.hearingLossSudden, context.audiogram, context.daysSinceOnset — never patient identity.",
+    "references": [
+      {
+        "label": "AAO-HNS SSNHL CPG 2019"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "H91.2",
+        "display": "Sudden idiopathic hearing loss",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "necrotising-fasciitis-surgical-emergency",
+    "hook": "patient-view",
+    "type": "necrotising-fasciitis-surgical-emergency",
+    "services": [
+      "vedamd-necrotising-fasciitis"
+    ],
+    "title": "Necrotising soft tissue infection — urgent debridement",
+    "description": "Fires for skin/soft-tissue infection with pain out of proportion, rapid spread, anaesthesia over advancing margin, crepitus, or LRINEC ≥ 6. Recommends URGENT surgical debridement within hours, IV meropenem + clindamycin + vancomycin, IVIG for streptococcal toxic shock, sepsis bundle. Reads context.painOutOfProportion, context.crepitus, context.skinAnaesthesia, context.lrinecScore, context.systolicMmHg — never patient identity.",
+    "references": [
+      {
+        "label": "WSES NSTI Guidelines 2018; IDSA SSTI Guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M72.6",
+        "display": "Necrotising fasciitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "acute-aortic-dissection-anti-impulse",
+    "hook": "patient-view",
+    "type": "acute-aortic-dissection-anti-impulse",
+    "services": [
+      "vedamd-aortic-dissection"
+    ],
+    "title": "Acute aortic dissection — anti-impulse + cardiothoracic referral",
+    "description": "Fires for sudden severe chest/back/abdominal pain + BP discrepancy or pulse deficit. Recommends CT angio aorta; for confirmed dissection: HR 60–80, SBP 100–120 with IV esmolol/labetalol then nitroprusside; Type A → immediate cardiothoracic surgery; Type B → medical first-line, TEVAR for complications. Reads context.suddenTearingChestPain, context.bpDiscrepancyArms, context.pulseDeficit, context.ctaConfirmedDissection, context.dissectionType — never patient identity.",
+    "references": [
+      {
+        "label": "ACC/AHA/ESC Aortic Disease 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I71.0",
+        "display": "Dissection of aorta",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "endophthalmitis-intravitreal",
+    "hook": "patient-view",
+    "type": "endophthalmitis-intravitreal",
+    "services": [
+      "vedamd-endophthalmitis"
+    ],
+    "title": "Endophthalmitis — immediate intravitreal antibiotic",
+    "description": "Fires for sudden vision loss / pain / hypopyon within weeks of intraocular procedure. Recommends URGENT vitreous tap + intravitreal vancomycin 1 mg + ceftazidime 2.25 mg; vitrectomy if vision ≤ light perception (EVS); blood cultures if endogenous. Reads context.recentIntraocularProcedure, context.visionLevel, context.hypopyon, context.systemicSourceSuspected — never patient identity.",
+    "references": [
+      {
+        "label": "EVS; AAO endophthalmitis guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "H44.0",
+        "display": "Endophthalmitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cavernous-sinus-thrombosis-anticoag",
+    "hook": "patient-view",
+    "type": "cavernous-sinus-thrombosis-anticoag",
+    "services": [
+      "vedamd-cavernous-sinus"
+    ],
+    "title": "Cavernous sinus thrombosis — antibiotics + anticoagulation",
+    "description": "Fires for headache + fever + cranial nerve palsies III/IV/V1/V2/VI + proptosis. Recommends IMMEDIATE IV vancomycin + ceftriaxone + metronidazole × 3–4 weeks; LMWH anticoagulation; source control (sinus / dental); MR venography. Reads context.cranialNervePalsy, context.proptosis, context.facialInfection, context.fever — never patient identity.",
+    "references": [
+      {
+        "label": "Plewa StatPearls; case-series literature"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G08",
+        "display": "Intracranial phlebitis and thrombophlebitis",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]

@@ -49531,5 +49531,1462 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "acute-cholangitis-tokyo",
+    "title": "Acute cholangitis (Tokyo criteria) — adult",
+    "icd10": [
+      "K83.0"
+    ],
+    "domains": [
+      "gastroenterology",
+      "surgery",
+      "infectious-disease",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Charcot triad: RUQ pain + fever + jaundice (in 50–70%).",
+      "Reynolds pentad: triad + hypotension + altered consciousness — severe form.",
+      "Risk: gallstones (most common), biliary stricture, post-ERCP, malignancy obstruction, indwelling biliary stent."
+    ],
+    "redFlags": [
+      "Severe (Tokyo Grade III): organ dysfunction (cardiovascular, neurological, respiratory, hepatic, renal, haematological).",
+      "Septic shock requiring vasopressor.",
+      "Anuria, severe acidosis.",
+      "Failed initial drainage."
+    ],
+    "diagnostics": [
+      {
+        "test": "FBC, U&E, LFT (high ALP + GGT + bilirubin), lactate, blood culture, CRP.",
+        "rationale": "Severity grading per Tokyo 2018."
+      },
+      {
+        "test": "USS abdomen — first-line bedside (dilated CBD, stones).",
+        "rationale": "Identify obstruction."
+      },
+      {
+        "test": "MRCP or EUS for non-conclusive USS.",
+        "rationale": "Anatomy + cause."
+      },
+      {
+        "test": "CT abdomen if perforation / abscess / atypical.",
+        "rationale": "Exclude alternative."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitation + Hour-1 sepsis bundle",
+        "detail": "IV fluids; vasopressor for shock; cultures BEFORE antibiotics; lactate."
+      },
+      {
+        "step": "Empirical antibiotics",
+        "detail": "Piperacillin-tazobactam 4.5 g 6-hourly OR ceftriaxone 2 g + metronidazole 500 mg 8-hourly (community-acquired); meropenem + vancomycin for healthcare-associated. Cover Enterococcus in healthcare-associated."
+      },
+      {
+        "step": "Biliary drainage — definitive treatment, timing per severity",
+        "detail": "Grade I (mild): early ERCP within 48 h. Grade II (moderate): ERCP within 24 h. Grade III (severe): URGENT ERCP within 12 h after stabilisation. If ERCP fails: percutaneous transhepatic biliary drainage (PTBD) or surgery."
+      },
+      {
+        "step": "Definitive treatment of underlying cause",
+        "detail": "Stone: ERCP + sphincterotomy + stone extraction; cholecystectomy after resolution. Malignant stricture: stent (plastic or metal). Benign stricture: balloon dilatation."
+      },
+      {
+        "step": "ICU support for severe disease",
+        "detail": "Mechanical ventilation, vasopressor, RRT as needed."
+      },
+      {
+        "step": "Discharge + follow-up",
+        "detail": "Cholecystectomy within same admission for gallstone cholangitis (delaying increases recurrence). Surveillance for stent occlusion if malignant."
+      }
+    ],
+    "references": [
+      {
+        "label": "Tokyo Guidelines 2018 for acute cholangitis and cholecystitis"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "perforated-viscus-acute-abdomen",
+    "title": "Perforated viscus (acute abdomen with free intraperitoneal air)",
+    "icd10": [
+      "K65.0",
+      "K27.1"
+    ],
+    "domains": [
+      "surgery",
+      "emergency",
+      "critical-care",
+      "gastroenterology"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden onset severe diffuse abdominal pain ± peritonism (rigidity, rebound, guarding, percussion tenderness).",
+      "Often preceded by pre-existing peptic ulcer, diverticulitis, malignancy, IBD, foreign body, trauma.",
+      "Tachycardia, fever, hypotension as peritonitis evolves.",
+      "Iatrogenic: post-colonoscopy, post-ERCP, post-laparoscopy."
+    ],
+    "redFlags": [
+      "Septic shock (haemodynamic instability + lactate ≥ 4).",
+      "Faeculent peritonitis — high mortality.",
+      "Elderly + frailty + multiple comorbidities — careful goals-of-care discussion.",
+      "Free air on erect CXR / CT — surgical emergency."
+    ],
+    "diagnostics": [
+      {
+        "test": "Erect CXR (free sub-diaphragmatic air, may miss small perforations).",
+        "rationale": "First-line; sensitive ~70%."
+      },
+      {
+        "test": "CT abdomen + pelvis with contrast (or non-contrast if AKI) — gold standard.",
+        "rationale": "Locate perforation + identify cause."
+      },
+      {
+        "test": "FBC, U&E, LFT, CRP, lactate, blood gas, group + crossmatch.",
+        "rationale": "Severity + perioperative."
+      },
+      {
+        "test": "Blood cultures × 2.",
+        "rationale": "Identify pathogen."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitation + sepsis bundle",
+        "detail": "ABCDE; IV fluid 30 mL/kg; vasopressor if shocked; oxygen; analgesia (morphine titrated); NG decompression."
+      },
+      {
+        "step": "Broad-spectrum IV antibiotics — within 1 hour",
+        "detail": "Piperacillin-tazobactam 4.5 g + metronidazole if not already; OR meropenem in severely ill / healthcare-associated. Cover gut anaerobes."
+      },
+      {
+        "step": "Urgent surgical assessment + theatre",
+        "detail": "Most perforations need surgery within 6 h (Hartmann's procedure for diverticular perforation, omental patch for duodenal ulcer perforation, primary repair / resection per cause). Non-operative management of contained / sealed perforation in selected stable patients."
+      },
+      {
+        "step": "Pre-operative",
+        "detail": "Optimise resuscitation but do not delay > 6 h for stable perforation; cross-match blood; antibiotics; analgesia; NG; catheter; consent including stoma possibility."
+      },
+      {
+        "step": "Damage-control surgery for unstable",
+        "detail": "Source control + temporary closure; planned return for definitive surgery after physiological stabilisation."
+      },
+      {
+        "step": "Post-op ICU + recovery",
+        "detail": "Antibiotics 5–7 days (longer if abscess); enteral nutrition early; DVT prophylaxis; surveillance for anastomotic leak / collection."
+      }
+    ],
+    "references": [
+      {
+        "label": "WSES Consensus Conferences on management of complicated intra-abdominal infections"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "toxic-megacolon-acute-severe-uc",
+    "title": "Toxic megacolon / severe acute ulcerative colitis flare",
+    "icd10": [
+      "K51.9",
+      "K59.3"
+    ],
+    "domains": [
+      "gastroenterology",
+      "surgery",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "sex": "any"
+    },
+    "presentation": [
+      "Acute severe UC: ≥ 6 bloody stools/day + at least one systemic sign (HR > 90, temp > 37.8°C, Hb < 105, ESR > 30) — Truelove-Witts severe criteria.",
+      "Toxic megacolon: transverse colon diameter > 6 cm on imaging + systemic toxicity.",
+      "Risk factors: opioid / anticholinergic use, hypokalaemia, antimotility agents, C. difficile co-infection, CMV in immunocompromised."
+    ],
+    "redFlags": [
+      "Colonic dilation > 6 cm with worsening.",
+      "Sepsis / shock.",
+      "Perforation — immediate surgery.",
+      "Failure to improve on day 3 of IV steroid — escalate / surgical input.",
+      "Massive haemorrhage."
+    ],
+    "diagnostics": [
+      {
+        "test": "AXR daily — measure transverse colon diameter; mucosal islands / thumbprinting.",
+        "rationale": "Track dilation."
+      },
+      {
+        "test": "FBC, CRP, ESR, U&E, albumin, ferritin.",
+        "rationale": "Severity scoring."
+      },
+      {
+        "test": "C. difficile stool toxin + cultures.",
+        "rationale": "Exclude superinfection."
+      },
+      {
+        "test": "CMV PCR / sigmoidoscopy + biopsy.",
+        "rationale": "Identify CMV in steroid-refractory disease."
+      },
+      {
+        "test": "Avoid total colonoscopy — perforation risk; flexible sigmoidoscopy minimum.",
+        "rationale": "Safety."
+      }
+    ],
+    "management": [
+      {
+        "step": "Admit to gastroenterology + surgery joint care",
+        "detail": "Daily ward round with both teams; consent for colectomy from day 1."
+      },
+      {
+        "step": "STOP precipitants",
+        "detail": "Opioids, anticholinergics, antimotility agents (loperamide), NSAIDs."
+      },
+      {
+        "step": "IV steroid — first-line",
+        "detail": "Hydrocortisone 100 mg IV every 6 h OR methylprednisolone 60 mg/day."
+      },
+      {
+        "step": "VTE prophylaxis from admission",
+        "detail": "LMWH — UC carries very high VTE risk during flare, even with bleeding (paradoxical)."
+      },
+      {
+        "step": "Antibiotics — only if perforation / sepsis / megacolon",
+        "detail": "Routine antibiotics not indicated. Cover with piperacillin-tazobactam + metronidazole if toxic megacolon, perforation, or septic."
+      },
+      {
+        "step": "Rescue therapy at day 3 if not responding",
+        "detail": "Choose ciclosporin 2 mg/kg/day IV OR infliximab 5 mg/kg IV. Failure of rescue at day 5–7 — colectomy. Surgery should not be delayed for failed second-line."
+      },
+      {
+        "step": "Surgery — emergency colectomy",
+        "detail": "Indications: perforation, massive haemorrhage, toxic megacolon not improving in 24 h, failed medical therapy. Operation: subtotal colectomy + end ileostomy + preserved rectum (definitive proctectomy + IPAA later)."
+      },
+      {
+        "step": "Post-acute care",
+        "detail": "Maintain steroid taper + start steroid-sparing immunomodulator (azathioprine, biologic). Outpatient gastroenterology within 2 weeks; colonoscopy in 3–6 months."
+      }
+    ],
+    "references": [
+      {
+        "label": "ECCO Guidelines on UC; Truelove SC, Witts LJ. BMJ 1955"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "pyogenic-liver-abscess",
+    "title": "Pyogenic liver abscess",
+    "icd10": [
+      "K75.0"
+    ],
+    "domains": [
+      "infectious-disease",
+      "gastroenterology",
+      "surgery",
+      "hepatology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Fever + RUQ pain + hepatomegaly; raised inflammatory markers, deranged LFTs.",
+      "Often subacute (weeks); 50% diabetic; biliary tract, portal pyaemia, or haematogenous spread.",
+      "Common organisms: E. coli, Klebsiella (especially in SE Asia + diabetes), Streptococcus anginosus group, anaerobes."
+    ],
+    "redFlags": [
+      "Sepsis / shock.",
+      "Ruptured abscess into peritoneum / pleural cavity / pericardium.",
+      "Klebsiella pneumoniae invasive syndrome — endophthalmitis, meningitis, septic emboli.",
+      "Amoebic abscess differential — serology mandatory in endemic / travel."
+    ],
+    "diagnostics": [
+      {
+        "test": "Contrast CT abdomen (preferred) or USS abdomen.",
+        "rationale": "Confirm + delineate."
+      },
+      {
+        "test": "FBC, CRP, LFT, blood culture × 2, lactate.",
+        "rationale": "Sepsis + organism."
+      },
+      {
+        "test": "Aspiration / drainage of pus — Gram + culture.",
+        "rationale": "Definitive microbiology."
+      },
+      {
+        "test": "Amoebic serology + stool E. histolytica antigen in endemic / travel.",
+        "rationale": "Distinguish amoebic (drainage usually unnecessary) from pyogenic."
+      },
+      {
+        "test": "Echocardiography if suspected endocarditis source.",
+        "rationale": "Identify primary source."
+      }
+    ],
+    "management": [
+      {
+        "step": "IV broad-spectrum antibiotics — empirical",
+        "detail": "Piperacillin-tazobactam 4.5 g 6-hourly OR ceftriaxone 2 g daily + metronidazole 500 mg 8-hourly × 4–6 weeks total. Streamline to culture-directed."
+      },
+      {
+        "step": "Drainage — image-guided percutaneous catheter for abscess > 3–5 cm",
+        "detail": "USS or CT-guided drain; leave in until output minimal + clinical improvement. Aspiration alone for smaller (< 5 cm); repeat aspiration if needed."
+      },
+      {
+        "step": "Surgical drainage for failed percutaneous / multiple / ruptured abscess",
+        "detail": "Laparotomy or laparoscopic drainage."
+      },
+      {
+        "step": "Identify and treat underlying source",
+        "detail": "Biliary tract obstruction → ERCP. Diabetes optimisation. Colonoscopy in cryptogenic abscess (often Streptococcus anginosus colorectal source). Exclude immunocompromise."
+      },
+      {
+        "step": "Klebsiella invasive syndrome screen",
+        "detail": "Ophthalmology assessment (endophthalmitis), CT head, urinalysis, blood cultures — antibiotics extended duration; serotype K1/K2 hypervirulence."
+      },
+      {
+        "step": "Outpatient long-term antibiotic",
+        "detail": "Often need long oral course (4–6 weeks total) — co-amoxiclav, ciprofloxacin + metronidazole; OPAT for IV continuation."
+      }
+    ],
+    "references": [
+      {
+        "label": "IDSA / WSES guidance on liver abscess"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "retropharyngeal-abscess",
+    "title": "Retropharyngeal abscess (children + adults)",
+    "icd10": [
+      "J39.0"
+    ],
+    "domains": [
+      "ent",
+      "paediatrics",
+      "emergency",
+      "infectious-disease"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Children (peak 2–4 years): fever, drooling, neck stiffness, refusal to feed, hot-potato voice, hyperextension of neck, torticollis.",
+      "Adults: fever, neck pain, dysphagia, often post-instrumentation / fishbone foreign body / IV drug user.",
+      "Stridor + airway compromise in advanced."
+    ],
+    "redFlags": [
+      "Airway compromise — early intubation in operating theatre with ENT.",
+      "Mediastinitis (descending necrotising mediastinitis) — high mortality.",
+      "Internal jugular vein thrombophlebitis (Lemierre syndrome).",
+      "Carotid artery erosion."
+    ],
+    "diagnostics": [
+      {
+        "test": "Lateral neck X-ray (widened prevertebral soft tissue > 7 mm at C2 / > 14 mm at C6 in adult).",
+        "rationale": "Screening."
+      },
+      {
+        "test": "CT neck with contrast — diagnostic + delineates abscess + mediastinal extension.",
+        "rationale": "Definitive imaging."
+      },
+      {
+        "test": "FBC, CRP, blood culture, throat / pus cultures.",
+        "rationale": "Sepsis + organism."
+      }
+    ],
+    "management": [
+      {
+        "step": "Airway protection — paramount",
+        "detail": "Senior anaesthetist + ENT immediately. Avoid distressing examination in children. Plan intubation in theatre with surgical airway backup."
+      },
+      {
+        "step": "IV broad-spectrum antibiotics",
+        "detail": "Cefotaxime 50 mg/kg every 8 h + clindamycin 10 mg/kg every 6 h (adults: ceftriaxone 2 g + metronidazole + IV vancomycin if MRSA suspected). Cover polymicrobial + anaerobes."
+      },
+      {
+        "step": "Surgical drainage",
+        "detail": "Indications: abscess > 2 cm, airway compromise, failed conservative trial 24–48 h, suspected gas-forming infection. Transoral incision and drainage; external approach for large / mediastinal extension."
+      },
+      {
+        "step": "Supportive",
+        "detail": "Analgesia; antipyretic; IV fluids; nutritional support; consider NG / parenteral feeding if dysphagia."
+      },
+      {
+        "step": "Post-drainage",
+        "detail": "Continue IV antibiotics 2–4 weeks total; switch to oral once afebrile + improving; ENT follow-up. Surveillance for complications (mediastinitis, Lemierre)."
+      }
+    ],
+    "references": [
+      {
+        "label": "AAO-HNS Clinical Indicators on Deep Neck Infections"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "ludwig-angina",
+    "title": "Ludwig angina (submandibular fascial space infection)",
+    "icd10": [
+      "K12.2"
+    ],
+    "domains": [
+      "ent",
+      "dental",
+      "emergency",
+      "infectious-disease"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Rapidly progressive bilateral submandibular + sublingual + submental swelling.",
+      "Floor of mouth oedema with tongue elevation; trismus; drooling; muffled 'hot potato' voice.",
+      "Usually odontogenic (2nd / 3rd molar root abscess); also post-extraction, mandibular fracture, sialadenitis."
+    ],
+    "redFlags": [
+      "Stridor / impending airway obstruction — IMMEDIATE secured airway.",
+      "Descending necrotising mediastinitis.",
+      "Aspiration of purulent material.",
+      "Septic shock."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis primarily; do NOT delay airway management.",
+        "rationale": "Time-critical."
+      },
+      {
+        "test": "CT neck with contrast once airway secured.",
+        "rationale": "Defines extent, gas-forming infection, mediastinal extension."
+      },
+      {
+        "test": "FBC, CRP, blood culture, intraoperative cultures.",
+        "rationale": "Polymicrobial: Streptococcus viridans, Staph aureus, Bacteroides, Prevotella, Fusobacterium."
+      },
+      {
+        "test": "Dental panoramic radiograph.",
+        "rationale": "Identify dental source."
+      }
+    ],
+    "management": [
+      {
+        "step": "AIRWAY FIRST — awake fibre-optic intubation OR surgical airway",
+        "detail": "Conventional laryngoscopy + supraglottic devices often impossible due to floor-of-mouth oedema and trismus. Surgical airway (tracheostomy) below the suprasternal notch is the safest in severe Ludwig's. Avoid succinylcholine + RSI — high failure rate."
+      },
+      {
+        "step": "IV broad-spectrum antibiotics",
+        "detail": "Penicillin G 4 MU IV every 4 h + metronidazole 500 mg every 8 h OR ampicillin-sulbactam 3 g every 6 h OR clindamycin 600 mg every 6 h (if penicillin allergic). Add vancomycin if MRSA risk."
+      },
+      {
+        "step": "Surgical drainage + dental source eradication",
+        "detail": "Extra-oral incision and drainage of all involved fascial spaces; dental extraction / endodontic treatment of source tooth. Avoid intra-oral drainage in unsecured airway."
+      },
+      {
+        "step": "ICU monitoring + supportive care",
+        "detail": "Maintain secured airway; analgesia; nutrition (likely NG / parenteral × days); DVT prophylaxis."
+      },
+      {
+        "step": "Step-down + follow-up",
+        "detail": "Decannulate tracheostomy when oedema resolved + swallowing safe. Continue IV antibiotics 2–4 weeks total; oral 6 weeks. Maxillofacial / ENT follow-up."
+      }
+    ],
+    "references": [
+      {
+        "label": "AAO-HNS guidance on deep neck infection management"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "epiglottitis-adult",
+    "title": "Acute supraglottitis / epiglottitis in adults",
+    "icd10": [
+      "J05.10"
+    ],
+    "domains": [
+      "ent",
+      "emergency",
+      "respiratory",
+      "infectious-disease",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 16,
+      "sex": "any"
+    },
+    "presentation": [
+      "Rapid-onset severe sore throat with disproportionate pain on swallowing, dysphagia, drooling, muffled / hot-potato voice.",
+      "Tripod position, fever, tachycardia, stridor, respiratory distress at presentation.",
+      "Decline of Hib vaccination has shifted demographics to adults; Streptococcus, Staphylococcus, atypicals also common."
+    ],
+    "redFlags": [
+      "Stridor at rest / drooling — airway obstruction imminent.",
+      "Toxic appearance.",
+      "Posterior pharyngeal abscess / supraglottic abscess complication.",
+      "Pregnancy + epiglottitis — maternal + fetal high risk."
+    ],
+    "diagnostics": [
+      {
+        "test": "Do NOT examine throat with tongue depressor — risk laryngospasm.",
+        "rationale": "Safety; rely on history + visual inspection."
+      },
+      {
+        "test": "Lateral neck X-ray — 'thumbprint sign' on swollen epiglottis.",
+        "rationale": "Supportive but not always available; delay must not occur."
+      },
+      {
+        "test": "Flexible nasendoscopy by ENT — definitive bedside diagnosis.",
+        "rationale": "Visualises epiglottis directly."
+      },
+      {
+        "test": "FBC, CRP, blood culture, throat swab.",
+        "rationale": "Severity + organism."
+      }
+    ],
+    "management": [
+      {
+        "step": "Calm environment + minimal handling",
+        "detail": "Avoid agitation; keep patient sitting; senior anaesthetic + ENT activation."
+      },
+      {
+        "step": "Secure the airway PROACTIVELY — operating theatre",
+        "detail": "Awake fibre-optic OR gas induction with spontaneous breathing; ENT scrubbed for surgical airway backup. AVOID muscle relaxant induction in suspected supraglottic obstruction."
+      },
+      {
+        "step": "IV broad-spectrum antibiotic",
+        "detail": "Ceftriaxone 2 g daily + (clindamycin OR vancomycin if MRSA risk) for 7–14 days. Adjust to cultures."
+      },
+      {
+        "step": "Steroid + nebulised adrenaline — adjuncts",
+        "detail": "Dexamethasone 10 mg IV every 6 h × 24 h reduces airway oedema. Nebulised adrenaline 5 mg can temporise."
+      },
+      {
+        "step": "ICU support post-intubation",
+        "detail": "Sedation; ventilator support; daily ENT assessment of supraglottic swelling before extubation."
+      },
+      {
+        "step": "Discharge + follow-up",
+        "detail": "Antibiotic course; ENT review; consider Hib vaccination if not done."
+      }
+    ],
+    "references": [
+      {
+        "label": "AAO-HNS Clinical Indicators; UpToDate adult epiglottitis"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "central-retinal-artery-occlusion-emergency",
+    "title": "Central retinal artery occlusion — sudden painless vision loss emergency",
+    "icd10": [
+      "H34.1"
+    ],
+    "domains": [
+      "ophthalmology",
+      "neurology",
+      "stroke",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 50,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden painless monocular vision loss (count fingers or worse).",
+      "Pale retina with cherry-red spot (preserved choroidal flow); relative afferent pupillary defect.",
+      "Often atherosclerotic / embolic — TIA / stroke / carotid stenosis equivalent.",
+      "Giant cell arteritis must be excluded (age > 50, headache, jaw claudication, scalp tenderness, raised ESR)."
+    ],
+    "redFlags": [
+      "Time < 4–6 h from onset — potential window for intervention.",
+      "Bilateral / sequential — strongly suggests GCA.",
+      "Concurrent stroke symptoms — same workup as ischaemic stroke.",
+      "Pregnancy — antiphospholipid, paradoxical embolus."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urgent ESR + CRP (rule out GCA) + FBC.",
+        "rationale": "If GCA suspected: high-dose steroid pending biopsy."
+      },
+      {
+        "test": "Carotid Doppler + cardiac assessment (ECG, echo) + CT/MR angiography brain + neck.",
+        "rationale": "Same workup as TIA / stroke — identify source."
+      },
+      {
+        "test": "FBC, glucose, lipids, coag, ECG.",
+        "rationale": "Cardiovascular risk factors."
+      },
+      {
+        "test": "OCT, fundus photography.",
+        "rationale": "Ophthalmology documentation + monitoring."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat as stroke equivalent — admit to stroke unit",
+        "detail": "Vision recovery rare regardless of intervention, but stroke risk in following days substantially elevated — same secondary prevention as TIA."
+      },
+      {
+        "step": "Consider ocular massage + AC paracentesis if within 4 h",
+        "detail": "Ocular digital massage; anterior chamber paracentesis to lower IOP; carbogen inhalation (5% CO2 / 95% O2); IV acetazolamide 500 mg — evidence weak but minimally invasive."
+      },
+      {
+        "step": "Tissue plasminogen activator (tPA) — only in clinical trial or stroke pathway < 4.5 h",
+        "detail": "Limited evidence; risk of haemorrhage. Some centres use stroke fibrinolysis pathway for CRAO < 4.5 h with similar contraindications."
+      },
+      {
+        "step": "IF GCA suspected — high-dose IV methylprednisolone IMMEDIATELY",
+        "detail": "1 g IV daily × 3 days then oral prednisolone 60–80 mg/day. DO NOT wait for biopsy; protects second eye + stroke risk. Refer rheumatology + temporal artery biopsy within 2 weeks."
+      },
+      {
+        "step": "Secondary prevention same as stroke",
+        "detail": "Antiplatelet (aspirin / clopidogrel), statin, BP control, smoking cessation. Anticoagulant if AF identified. Carotid endarterectomy if symptomatic stenosis 50–99%."
+      },
+      {
+        "step": "Counsel patient",
+        "detail": "Vision loss usually permanent; focus on second-eye protection + stroke prevention. Driving + work implications. Low-vision support."
+      }
+    ],
+    "references": [
+      {
+        "label": "AAO Preferred Practice Pattern — CRAO; American Heart Association scientific statement on CRAO as a stroke equivalent (2021)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "cauda-equina-syndrome",
+    "title": "Cauda equina syndrome",
+    "icd10": [
+      "G83.4"
+    ],
+    "domains": [
+      "neurology",
+      "neurosurgery",
+      "orthopaedics",
+      "emergency",
+      "urology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Bilateral or unilateral lower-limb radicular pain + sensory disturbance.",
+      "Saddle (perineal) anaesthesia / paraesthesia.",
+      "Bladder dysfunction — retention with overflow, painless retention, reduced anal sphincter tone.",
+      "Bowel dysfunction — faecal incontinence, reduced sensation.",
+      "Sexual dysfunction — erectile dysfunction, reduced vaginal sensation.",
+      "Causes: large central disc herniation (most common), tumour (primary or metastatic), epidural abscess, haematoma, spinal stenosis, trauma."
+    ],
+    "redFlags": [
+      "Urinary retention with post-void residual > 200 mL — sensitive for CES.",
+      "Saddle anaesthesia.",
+      "Bilateral leg weakness / sciatica.",
+      "Suspected epidural abscess (fever, focal back tenderness, IVDU, immunocompromise)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urgent MRI lumbar spine — within hours.",
+        "rationale": "Definitive imaging; identify compressive lesion."
+      },
+      {
+        "test": "Bladder ultrasound for post-void residual.",
+        "rationale": "Objective bladder dysfunction."
+      },
+      {
+        "test": "Neurological + per-rectal examination (anal tone + perianal sensation).",
+        "rationale": "Clinical CES findings."
+      },
+      {
+        "test": "FBC, CRP, blood culture if abscess suspected.",
+        "rationale": "Identify infective cause."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immediate analgesia + catheterise + neurosurgery referral",
+        "detail": "Bladder retention is harmful; catheterise. Refer urgently to spinal / neurosurgery — surgical decompression within 24–48 h of CES onset preserves function."
+      },
+      {
+        "step": "Urgent surgical decompression",
+        "detail": "Microdiscectomy for disc; laminectomy + drainage for abscess (also IV antibiotic); resection for tumour; haematoma evacuation. Timing — within 48 h of CES symptoms (some advocate < 24 h for incomplete CES with retention)."
+      },
+      {
+        "step": "Antibiotic if epidural abscess",
+        "detail": "Empirical IV vancomycin + ceftriaxone 6 weeks (longer if vertebral osteomyelitis); blood + abscess cultures."
+      },
+      {
+        "step": "Steroid for malignant cord compression",
+        "detail": "Dexamethasone 16 mg IV/PO loading then 4–8 mg every 6 h pending radiotherapy / surgery."
+      },
+      {
+        "step": "Rehabilitation",
+        "detail": "Physiotherapy, occupational therapy, urology / continence specialist (intermittent self-catheterisation), psychological support. Sexual / fertility counselling. Bladder + bowel programmes."
+      },
+      {
+        "step": "Medico-legal documentation",
+        "detail": "Time of CES symptoms onset + investigations + intervention is critical evidence; document exhaustively as CES is a frequent litigation source."
+      }
+    ],
+    "references": [
+      {
+        "label": "British Association of Spine Surgeons consensus on CES (2018, with updates)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "spinal-epidural-abscess",
+    "title": "Spinal epidural abscess",
+    "icd10": [
+      "G06.1"
+    ],
+    "domains": [
+      "infectious-disease",
+      "neurosurgery",
+      "spinal",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Classic triad (40%): back pain + fever + neurological deficit.",
+      "Local back tenderness with progressive neurology over hours-days (radiculopathy → weakness → paralysis).",
+      "Risk: IVDU, immunocompromise (diabetes, HIV, steroid), prior spinal surgery / instrumentation, distant infection (skin, UTI, endocarditis).",
+      "Most common organism: Staphylococcus aureus (MSSA / MRSA); also Streptococcus, gram-negatives, anaerobes, mycobacteria."
+    ],
+    "redFlags": [
+      "Bilateral leg weakness or progressive deficit — neurosurgical emergency.",
+      "Cauda equina features.",
+      "Sepsis / shock.",
+      "Suspected cervical level — risk of rapid quadriparesis + respiratory compromise."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urgent MRI whole spine with contrast.",
+        "rationale": "Definitive imaging; defines level + skip lesions."
+      },
+      {
+        "test": "FBC, CRP (usually high), ESR, procalcitonin.",
+        "rationale": "Inflammatory markers — CRP > 100 supportive."
+      },
+      {
+        "test": "Blood cultures × 2; CT-guided aspiration for culture.",
+        "rationale": "Identify organism."
+      },
+      {
+        "test": "Echocardiography (endocarditis source); search for primary source.",
+        "rationale": "Underlying focus."
+      }
+    ],
+    "management": [
+      {
+        "step": "Surgical decompression + drainage — for ANY neurological deficit",
+        "detail": "Laminectomy + decompression within 24–48 h of neurological deficit. Sample for culture. Non-surgical management only in patients without deficit AND organism + susceptibility known + clinical stability."
+      },
+      {
+        "step": "Empirical IV antibiotics",
+        "detail": "Vancomycin + ceftriaxone or piperacillin-tazobactam pending cultures; tailor to organism. Duration: 4 weeks minimum after source control, 6–8 weeks if vertebral osteomyelitis."
+      },
+      {
+        "step": "Identify + treat source",
+        "detail": "IVDU harm reduction; endocarditis workup; skin / soft tissue infection."
+      },
+      {
+        "step": "Spinal stabilisation",
+        "detail": "Orthosis if instability post-laminectomy or due to vertebral involvement."
+      },
+      {
+        "step": "Rehabilitation",
+        "detail": "Multidisciplinary spinal rehabilitation; psychological support; addressing IVDU / chronic illness."
+      }
+    ],
+    "references": [
+      {
+        "label": "Darouiche RO. Spinal epidural abscess. NEJM 2006; IDSA guidelines on native vertebral osteomyelitis"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "acute-spinal-cord-injury",
+    "title": "Acute traumatic spinal cord injury",
+    "icd10": [
+      "S14.1",
+      "S24.1",
+      "S34.1"
+    ],
+    "domains": [
+      "trauma",
+      "neurosurgery",
+      "orthopaedics",
+      "emergency",
+      "critical-care",
+      "rehabilitation"
+    ],
+    "population": {
+      "minAgeYears": 10,
+      "sex": "any"
+    },
+    "presentation": [
+      "High-energy mechanism: RTA, fall from height, diving injury, gunshot.",
+      "Acute neurological deficit — sensory + motor — at and below level of injury.",
+      "Neurogenic shock: bradycardia + hypotension (loss of sympathetic outflow, especially T6 and above).",
+      "Spinal shock: temporary loss of all reflexes (including bulbocavernosus) below injury — recovers over days-weeks."
+    ],
+    "redFlags": [
+      "High cervical (above C5) — respiratory failure (phrenic).",
+      "Neurogenic + hypovolaemic shock — distinguish + treat.",
+      "Concurrent traumatic brain injury, polytrauma.",
+      "Penetrating injury — risk vascular + infective complications.",
+      "Pregnancy — ATLS in left lateral tilt."
+    ],
+    "diagnostics": [
+      {
+        "test": "ATLS primary survey + ASIA neurological exam.",
+        "rationale": "Severity grading (ASIA A-E)."
+      },
+      {
+        "test": "CT whole spine — primary imaging.",
+        "rationale": "Fracture, dislocation, canal compromise."
+      },
+      {
+        "test": "MRI spine — definitive for cord injury + ligamentous injury.",
+        "rationale": "Soft tissue + cord oedema; surgical planning."
+      },
+      {
+        "test": "Pan-CT for polytrauma if mechanism + GCS impaired.",
+        "rationale": "Concurrent injury."
+      }
+    ],
+    "management": [
+      {
+        "step": "Primary survey + spinal immobilisation",
+        "detail": "Cervical collar + log roll until imaging cleared. Maintain in-line immobilisation during airway management."
+      },
+      {
+        "step": "Airway management",
+        "detail": "High-cervical: intubate early (respiratory failure imminent). Use manual in-line stabilisation, video laryngoscopy, awake fibre-optic for unstable injury."
+      },
+      {
+        "step": "Haemodynamic management",
+        "detail": "Distinguish neurogenic (bradycardia + hypotension) from hypovolaemic (tachycardia + hypotension). Neurogenic: noradrenaline or low-dose adrenaline to target MAP 85–90 mmHg × 7 days (improves spinal cord perfusion + outcomes per ASIA / Consortium for Spinal Cord Medicine)."
+      },
+      {
+        "step": "Steroid — controversial",
+        "detail": "NASCIS II / III high-dose methylprednisolone showed marginal benefit at cost of complications; current consensus: NOT recommended routinely; discuss carefully if within 8 h penetrating injury without contraindications."
+      },
+      {
+        "step": "Surgery — timely decompression + stabilisation",
+        "detail": "STASCIS trial: surgical decompression < 24 h improves neurological outcome. Closed reduction for cervical facet dislocations; surgical fusion for unstable injuries."
+      },
+      {
+        "step": "Prevent secondary injury",
+        "detail": "Maintain SpO2 > 92%, normocapnia, normothermia, normoglycaemia, MAP 85–90 mmHg × 7 days. DVT prophylaxis (LMWH from 72 h post-injury once haemodynamically stable). Pressure-area care; bladder programme; bowel programme."
+      },
+      {
+        "step": "Rehabilitation",
+        "detail": "Specialist spinal centre — multidisciplinary rehabilitation (physio, OT, neuropsychology, social work, peer support). Long-term: bladder, bowel, skin, sexual, vocational programmes. Mental-health screening (depression + PTSD common)."
+      }
+    ],
+    "references": [
+      {
+        "label": "ATLS Manual; ASIA International Standards; AANS/CNS Spine Section guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-traumatic-brain-injury",
+    "title": "Severe traumatic brain injury (GCS ≤ 8)",
+    "icd10": [
+      "S06.2",
+      "S06.5",
+      "S06.6"
+    ],
+    "domains": [
+      "trauma",
+      "neurosurgery",
+      "critical-care",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 5,
+      "sex": "any"
+    },
+    "presentation": [
+      "Head trauma with GCS ≤ 8 (severe), 9–12 (moderate), 13–15 (mild).",
+      "Mechanisms: RTA, fall, assault, sports, blast.",
+      "Primary injury: contusion, diffuse axonal injury, haematoma (extradural, subdural, intracerebral).",
+      "Secondary injury: hypoxia, hypotension, ICP rise, seizure, hyperthermia."
+    ],
+    "redFlags": [
+      "Pupillary asymmetry / fixed dilated — impending herniation.",
+      "Cushing triad (HTN + bradycardia + irregular breathing).",
+      "Open / penetrating head injury.",
+      "Focal neurology, vomiting > 3 episodes, seizure post-TBI, anticoagulation.",
+      "Polytrauma with concurrent hypovolaemia / chest / abdominal injury."
+    ],
+    "diagnostics": [
+      {
+        "test": "GCS + pupil exam serial; FOUR score in intubated.",
+        "rationale": "Severity + trend."
+      },
+      {
+        "test": "Non-contrast CT head + cervical spine within 30 min.",
+        "rationale": "Definitive imaging."
+      },
+      {
+        "test": "ABG, glucose, electrolytes, coag, FBC, group + crossmatch.",
+        "rationale": "Resuscitation + reversal needs."
+      },
+      {
+        "test": "Toxicology + ethanol level.",
+        "rationale": "Distinguish intoxication vs TBI; both common."
+      }
+    ],
+    "management": [
+      {
+        "step": "ABCDE — prevent secondary injury",
+        "detail": "SpO2 > 92% (intubate if GCS ≤ 8); MAP ≥ 80 mmHg / CPP ≥ 60 mmHg; normocapnia (PaCO2 35–40 mmHg); avoid hypotension; head-up 30°. Hypotonic fluids contraindicated."
+      },
+      {
+        "step": "Intubation for GCS ≤ 8 / impending respiratory failure",
+        "detail": "RSI with cervical immobilisation; ketamine 1.5 mg/kg + rocuronium 1.2 mg/kg preferred (ketamine no longer contraindicated in TBI). Avoid succinylcholine in established TBI with hyperkalaemia risk."
+      },
+      {
+        "step": "Reverse anticoagulation immediately if on warfarin / DOAC / antiplatelet",
+        "detail": "Per ICH pathway: vit K + 4F-PCC for warfarin; idarucizumab for dabigatran; andexanet/4F-PCC for FXa; tranexamic acid 1 g IV within 3 h per CRASH-3."
+      },
+      {
+        "step": "ICP management",
+        "detail": "Hyperosmolar therapy: hypertonic saline 3% 5 mL/kg or 23.4% bolus; or mannitol 1 g/kg. Drain CSF via EVD. Cooling to 35°C (avoid prophylactic hypothermia). Maintain CPP ≥ 60. Surgical decompression for haematoma or refractory ICP (decompressive craniectomy)."
+      },
+      {
+        "step": "Seizure prophylaxis — first 7 days",
+        "detail": "Levetiracetam 1 g BD × 7 days reduces early post-traumatic seizure incidence; no benefit beyond 7 days."
+      },
+      {
+        "step": "Maintain physiology",
+        "detail": "Normothermia (treat fever aggressively), normoglycaemia, no hyponatraemia, DVT prophylaxis with mechanical immediately + LMWH after 24–48 h once haematoma stable, nutritional support."
+      },
+      {
+        "step": "Surgery — haematoma evacuation, decompressive craniectomy",
+        "detail": "Extradural / acute subdural / large intracerebral with mass effect / midline shift > 5 mm. Decompressive craniectomy for refractory ICP per RESCUEicp."
+      },
+      {
+        "step": "Rehabilitation",
+        "detail": "Early specialist rehabilitation; cognitive + behavioural support; family + psychological care; vocational rehabilitation; return-to-driving + return-to-work assessments."
+      }
+    ],
+    "references": [
+      {
+        "label": "Brain Trauma Foundation Guidelines for the Management of Severe TBI (4th edition); CRASH-3 trial Lancet 2019"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "unstable-pelvic-fracture-trauma",
+    "title": "Unstable pelvic fracture with haemorrhage",
+    "icd10": [
+      "S32.5",
+      "S32.8"
+    ],
+    "domains": [
+      "trauma",
+      "orthopaedics",
+      "surgery",
+      "critical-care",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "sex": "any"
+    },
+    "presentation": [
+      "High-energy mechanism (RTA, fall from height, crush).",
+      "Pelvic pain, deformity, instability on examination (assess once during ATLS, not repeatedly).",
+      "Haemodynamic instability — retroperitoneal haemorrhage from venous plexus + arterial branches.",
+      "Open pelvic fracture (vaginal, rectal, perineal wound) — high mortality."
+    ],
+    "redFlags": [
+      "Haemodynamic instability with confirmed pelvic fracture — pelvic binder + theatre / IR.",
+      "Combined pelvic + thoracic / abdominal injury.",
+      "Urogenital injury — blood at meatus, scrotal haematoma, high-riding prostate (consult before catheterising).",
+      "Pregnancy."
+    ],
+    "diagnostics": [
+      {
+        "test": "Pelvic X-ray AP during primary survey.",
+        "rationale": "Rapid identification of unstable pattern."
+      },
+      {
+        "test": "FAST scan / DPL for concurrent abdominal source.",
+        "rationale": "Identify thoracic or abdominal bleed."
+      },
+      {
+        "test": "CT angiogram pelvis once stable (or going to IR).",
+        "rationale": "Identify arterial bleeding for embolisation."
+      },
+      {
+        "test": "FBC, lactate, coag, group + crossmatch ≥ 10 units.",
+        "rationale": "Massive transfusion likely."
+      },
+      {
+        "test": "Retrograde urethrogram + cystogram before catheter if urogenital injury.",
+        "rationale": "Identify urethral disruption."
+      }
+    ],
+    "management": [
+      {
+        "step": "Pelvic binder at the level of greater trochanters",
+        "detail": "Reduces pelvic volume + venous bleeding; apply early during primary survey for any suspected unstable fracture. Do NOT remove for X-ray."
+      },
+      {
+        "step": "Massive transfusion protocol",
+        "detail": "PRBC:FFP:platelets 1:1:1; tranexamic acid 1 g IV (CRASH-2) within 3 h; warmed products; cell salvage if available; permissive hypotension target SBP 80–90."
+      },
+      {
+        "step": "Haemorrhage control — IR-first or surgical packing",
+        "detail": "Hybrid theatre / dedicated IR — angiography + embolisation for arterial bleeding. Pre-peritoneal pelvic packing as alternative or adjunct in centres without IR. REBOA in highly selected cases."
+      },
+      {
+        "step": "Definitive orthopaedic fixation",
+        "detail": "After resuscitation: external fixation immediate; definitive plate / screw fixation as physiology allows."
+      },
+      {
+        "step": "Open pelvic fracture",
+        "detail": "Defunctioning colostomy for perineal contamination; debridement; antibiotics; tetanus."
+      },
+      {
+        "step": "Urogenital injury",
+        "detail": "Suprapubic catheter for urethral injury; urology consult; cystogram for bladder rupture (intraperitoneal → surgical; extraperitoneal → conservative)."
+      },
+      {
+        "step": "Rehabilitation + VTE prophylaxis",
+        "detail": "DVT very high risk — mechanical immediately, LMWH from 24–48 h once stable. Early mobilisation; orthopaedic + physiotherapy rehabilitation. Mental-health screen."
+      }
+    ],
+    "references": [
+      {
+        "label": "WSES guidelines on pelvic fracture trauma; ATLS Manual; AAST classification"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "endophthalmitis-acute",
+    "title": "Acute endophthalmitis — post-procedural or endogenous",
+    "icd10": [
+      "H44.0",
+      "H44.1"
+    ],
+    "domains": [
+      "ophthalmology",
+      "infectious-disease",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden severe pain, vision loss, hypopyon, conjunctival injection within days-weeks of intraocular procedure (cataract surgery, intravitreal injection, trauma).",
+      "Endogenous: bloodstream seeding (IVDU, hospital, immunocompromised) — often bilateral.",
+      "Acute (< 6 weeks post-op) most commonly bacterial (coagulase-negative Staph, Strep, gram-negative); chronic — Propionibacterium acnes, fungal."
+    ],
+    "redFlags": [
+      "Complete loss of red reflex, severe pain.",
+      "Bilateral disease — endogenous source — septicaemia.",
+      "Filtering bleb-related — high virulence Streptococcus, gram-negatives.",
+      "Diabetes, immunosuppression — atypical organisms."
+    ],
+    "diagnostics": [
+      {
+        "test": "Slit-lamp + indirect ophthalmoscopy.",
+        "rationale": "Confirm hypopyon, vitritis, retinal involvement."
+      },
+      {
+        "test": "B-scan ultrasound if media opacification.",
+        "rationale": "Identify vitreous involvement, posterior segment."
+      },
+      {
+        "test": "Vitreous + aqueous tap for culture / PCR — preferably at time of intervention.",
+        "rationale": "Identify organism; sensitivity ~70%."
+      },
+      {
+        "test": "Blood cultures + septic workup if endogenous.",
+        "rationale": "Primary source."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immediate intravitreal antibiotic injection",
+        "detail": "Vancomycin 1 mg + ceftazidime 2.25 mg (or amikacin 0.4 mg) in 0.1 mL each — covers Gram-positive + Gram-negative. Within hours of presentation."
+      },
+      {
+        "step": "Vitrectomy for severe presentation",
+        "detail": "EVS criteria: vision ≤ light perception or worse → consider vitrectomy (improves outcome). For better vision, vitrectomy not consistently better than tap alone in EVS but practice trending toward early vitrectomy."
+      },
+      {
+        "step": "Adjunctive topical / oral antibiotic",
+        "detail": "Topical vancomycin + ceftazidime hourly; oral moxifloxacin 400 mg daily (penetrates intraocular fluid)."
+      },
+      {
+        "step": "Adjunctive steroid — controversial",
+        "detail": "Intravitreal dexamethasone 400 microgram considered to reduce inflammation but may worsen if undiagnosed fungal; topical / oral steroid typically given after antibiotic established."
+      },
+      {
+        "step": "Treat endogenous source",
+        "detail": "IV antibiotics for bacteraemia; endocarditis workup; remove infected line; treat candidaemia (echinocandin)."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Daily review until improving; repeat tap / vitrectomy if no improvement at 48 h. Long-term: cataract / IOL retention vs explantation; visual rehabilitation; counselling on guarded prognosis."
+      }
+    ],
+    "references": [
+      {
+        "label": "Endophthalmitis Vitrectomy Study (EVS); ESCRS / AAO guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "necrotising-soft-tissue-infection-detail",
+    "title": "Necrotising soft tissue infection (Fournier, fasciitis, myositis)",
+    "icd10": [
+      "M72.6",
+      "N49.3"
+    ],
+    "domains": [
+      "surgery",
+      "infectious-disease",
+      "emergency",
+      "critical-care",
+      "urology",
+      "dermatology"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Pain out of proportion to clinical signs; rapidly progressing erythema, skin discolouration, blistering, bullae, crepitus (gas-forming).",
+      "Systemic toxicity disproportionate to local appearance: fever, tachycardia, hypotension.",
+      "Subtype Fournier gangrene: perineal / scrotal — diabetic + immunocompromised men commonly.",
+      "Polymicrobial (type I) vs monomicrobial (type II — group A strep, Staph aureus)."
+    ],
+    "redFlags": [
+      "Pain out of proportion + rapid spread (cm/h).",
+      "Skin anaesthesia over advancing margin.",
+      "Crepitus + soft-tissue gas on imaging.",
+      "Streptococcal / staphylococcal toxic shock — DIC, multi-organ failure.",
+      "Delay to surgical debridement > 12 h significantly worsens mortality."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis takes priority — DO NOT delay surgery for imaging if classical features.",
+        "rationale": "Time-critical."
+      },
+      {
+        "test": "LRINEC score (CRP, WBC, Hb, Na, creatinine, glucose) ≥ 6 suggests NSTI.",
+        "rationale": "Decision support; not 100% sensitive."
+      },
+      {
+        "test": "CT / MRI — gas, fascial involvement (use if diagnosis uncertain + patient stable).",
+        "rationale": "Identify extent."
+      },
+      {
+        "test": "FBC, U&E, lactate, creatinine, CK, coag, blood culture, intra-operative tissue culture.",
+        "rationale": "Severity + organism."
+      }
+    ],
+    "management": [
+      {
+        "step": "URGENT surgical debridement — within hours of recognition",
+        "detail": "Wide excision of all non-viable tissue beyond visible margin; repeat 'second look' at 24 h. Mortality directly correlates with surgical delay. Defunctioning colostomy for Fournier with perineal contamination."
+      },
+      {
+        "step": "Broad-spectrum IV antibiotics — within 1 hour",
+        "detail": "Meropenem 1 g 8-hourly + clindamycin 1.2 g 6-hourly (clindamycin suppresses streptococcal toxin) ± vancomycin (MRSA). Tailor to cultures. Continue 48 h after last debridement + sepsis resolution."
+      },
+      {
+        "step": "Resuscitation + sepsis bundle",
+        "detail": "Aggressive IV fluid; vasopressor noradrenaline; blood products; correct coagulopathy."
+      },
+      {
+        "step": "IVIG for streptococcal toxic shock",
+        "detail": "IVIG 1–2 g/kg if confirmed group A strep with TSS features."
+      },
+      {
+        "step": "Hyperbaric oxygen",
+        "detail": "Adjunctive role in centres with rapid access (mainly for clostridial myonecrosis); should never delay surgery."
+      },
+      {
+        "step": "Reconstruction + rehabilitation",
+        "detail": "Skin grafting / flap reconstruction once disease controlled. Wound care nurse; physiotherapy; psychological + functional rehabilitation."
+      },
+      {
+        "step": "Outpatient follow-up",
+        "detail": "Long-term surveillance for adhesions, hernia, sexual + urinary dysfunction (Fournier); colostomy reversal in selected patients."
+      }
+    ],
+    "references": [
+      {
+        "label": "WSES Guidelines on NSTI (2018); IDSA Diagnosis and Management of Skin and Soft Tissue Infections"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "cavernous-sinus-thrombosis",
+    "title": "Cavernous sinus thrombosis",
+    "icd10": [
+      "G08",
+      "I67.6"
+    ],
+    "domains": [
+      "neurology",
+      "ent",
+      "infectious-disease",
+      "emergency",
+      "ophthalmology"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Headache + fever + cranial nerve palsies (III, IV, V1+V2, VI) + proptosis + chemosis.",
+      "Often spread from facial infection (mid-face triangle: 'danger zone' — nasal furuncle, sinusitis, dental, orbital cellulitis).",
+      "Pre-thrombotic / septic state."
+    ],
+    "redFlags": [
+      "Rapid progression to bilateral cranial nerve involvement.",
+      "Vision loss.",
+      "Altered consciousness.",
+      "Septic shock.",
+      "Pituitary involvement (panhypopituitarism)."
+    ],
+    "diagnostics": [
+      {
+        "test": "MRI brain + MR venography (or CT venography).",
+        "rationale": "Definitive imaging — cavernous sinus filling defect."
+      },
+      {
+        "test": "FBC, CRP, blood culture, coag, lactate.",
+        "rationale": "Infection severity."
+      },
+      {
+        "test": "LP if no contraindication.",
+        "rationale": "Exclude meningitis."
+      },
+      {
+        "test": "Identify primary source — facial / dental / sinus.",
+        "rationale": "Definitive source control."
+      }
+    ],
+    "management": [
+      {
+        "step": "Broad-spectrum IV antibiotics — IMMEDIATELY",
+        "detail": "Cover Staph aureus (including MRSA), Streptococcus, anaerobes, gram-negatives: vancomycin + ceftriaxone 2 g BD + metronidazole 500 mg 8-hourly × 3–4 weeks (longer if abscess)."
+      },
+      {
+        "step": "Anticoagulation — controversial but increasingly favoured",
+        "detail": "LMWH (enoxaparin 1 mg/kg BD) or unfractionated heparin — reduces clot propagation; case series suggest mortality benefit despite haemorrhagic risk. Continue 3–6 months."
+      },
+      {
+        "step": "Corticosteroid for cranial nerve preservation",
+        "detail": "Dexamethasone 4 mg every 6 h may reduce inflammation + cranial nerve injury — limited evidence."
+      },
+      {
+        "step": "Source control",
+        "detail": "Surgical drainage of sphenoid sinus / sinusitis / dental abscess; nasal / dental specialty consultation."
+      },
+      {
+        "step": "Supportive critical care",
+        "detail": "Airway protection if reduced consciousness; manage seizures; ICP monitoring if needed; eye care for proptosis (lubrication, tarsorrhaphy)."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Endocrine evaluation for pituitary function 6 weeks later; ophthalmology for residual deficits; long-term anticoagulation review based on thrombophilia screen."
+      }
+    ],
+    "references": [
+      {
+        "label": "Plewa MC, Tadi P. Cavernous sinus thrombosis (StatPearls)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "acute-aortic-dissection",
+    "title": "Acute aortic dissection (Stanford A + B)",
+    "icd10": [
+      "I71.0"
+    ],
+    "domains": [
+      "cardiology",
+      "vascular",
+      "surgery",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 40,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden severe ('tearing', 'ripping') chest / back / abdominal pain — pain location migrates with dissection progression.",
+      "BP discrepancy between arms (≥ 20 mmHg systolic); pulse deficit; new aortic regurgitation murmur.",
+      "Neurology (stroke, syncope, paraplegia), abdominal pain (mesenteric), AKI, leg ischaemia depending on branch involvement.",
+      "Risk: hypertension (>70%), connective-tissue disorders (Marfan, Ehlers-Danlos), bicuspid aortic valve, pregnancy, cocaine."
+    ],
+    "redFlags": [
+      "Cardiac tamponade — beck triad, pulsus paradoxus, distended JVP.",
+      "Acute aortic regurgitation with HF.",
+      "Stroke / paraplegia.",
+      "Mesenteric / limb ischaemia.",
+      "Pre-tamponade or rupture — surgical emergency."
+    ],
+    "diagnostics": [
+      {
+        "test": "Bedside echocardiography — TTE / TOE.",
+        "rationale": "Identify intimal flap (Type A); aortic regurg; effusion; tamponade."
+      },
+      {
+        "test": "CT angiography aorta — first-line if stable.",
+        "rationale": "Definitive diagnosis + classification + branch involvement."
+      },
+      {
+        "test": "ECG — exclude STEMI; may show inferior changes if coronary involvement.",
+        "rationale": "Differential / coronary involvement."
+      },
+      {
+        "test": "D-dimer can rule out (high NPV).",
+        "rationale": "Not specific; do not delay imaging."
+      },
+      {
+        "test": "FBC, U&E, lactate, troponin, group + crossmatch.",
+        "rationale": "Severity + pre-operative."
+      }
+    ],
+    "management": [
+      {
+        "step": "Anti-impulse therapy — reduce dP/dt + BP",
+        "detail": "Target HR 60–80, SBP 100–120 mmHg. IV labetalol or esmolol infusion (esmolol preferred — titratable). Add IV nitroprusside / GTN if BP still high AFTER β-blocker (vasodilator-first risks reflex tachycardia worsening dissection). Pain control with morphine."
+      },
+      {
+        "step": "Type A dissection (ascending) — SURGICAL EMERGENCY",
+        "detail": "Open cardiothoracic surgical repair (replacement of ascending aorta + aortic root / valve as needed) — mortality 1–2% per hour untreated. Arrange immediate cardiothoracic transfer."
+      },
+      {
+        "step": "Type B dissection (descending) — medical first-line",
+        "detail": "BP + HR control as above × at least 3 days in HDU/ICU. Endovascular repair (TEVAR) for complicated Type B: malperfusion, refractory pain, expansion, rupture. Open surgery rarely needed."
+      },
+      {
+        "step": "Complications management",
+        "detail": "Stroke — supportive (no thrombolysis — propagates dissection). Mesenteric ischaemia — fenestration / branch stenting. Acute renal failure — RRT. Aortic regurg / tamponade — emergency repair."
+      },
+      {
+        "step": "Long-term surveillance",
+        "detail": "Lifelong CT angiography every 3, 6, 12 months then annually. Strict BP control < 120/80. Connective-tissue disorder genetic screening + family screen. Avoid heavy isometric exercise. Pregnancy counselling in Marfan + dissection history."
+      },
+      {
+        "step": "Genetic + family screen",
+        "detail": "Marfan, Loeys-Dietz, vascular Ehlers-Danlos, bicuspid aortic valve. First-degree relatives — screening echocardiography."
+      }
+    ],
+    "references": [
+      {
+        "label": "ACC/AHA/ESC Aortic Disease Guideline 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]
