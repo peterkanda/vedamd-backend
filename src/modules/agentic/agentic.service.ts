@@ -1,8 +1,10 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, Optional } from '@nestjs/common';
 import { KnowledgeRetrieverService } from './knowledge-retriever.service';
 import { ProviderRouter } from './providers/provider-router';
 import { CdsService } from '../cds/cds.service';
 import { PHI_FREE_LOGGER, type PhiFreeLogger } from '../../common/phi-free-logger';
+import { PoliciesService } from '../policies/policies.service';
+import type { PolicyMatch } from '../policies/policies.types';
 import { CLINICAL_REASONER_SYSTEM, buildUserMessage } from './prompts/clinical-reasoner.prompt';
 import { extractCards } from './card-extractor';
 import type {
@@ -37,6 +39,7 @@ export class AgenticService {
     private readonly router: ProviderRouter,
     private readonly cds: CdsService,
     @Inject(PHI_FREE_LOGGER) private readonly log: PhiFreeLogger,
+    @Optional() private readonly policies?: PoliciesService,
   ) {}
 
   async evaluate(ctx: AgenticClinicalContext): Promise<AgenticEvaluationResponse> {
@@ -48,6 +51,23 @@ export class AgenticService {
     // --- 2. Retrieval ---
     const knowledge = this.retriever.retrieve(ctx);
     const bundleRecordsConsidered = this.retriever.totalRecords();
+
+    // --- 2b. Policy retrieval (per-integrator standards / SOPs) ---
+    let policyMatches: PolicyMatch[] = [];
+    if (this.policies && ctx.integratorId) {
+      try {
+        policyMatches = await this.policies.findRelevant(ctx.integratorId, {
+          question: ctx.question,
+          medications: ctx.medications,
+          diagnoses: ctx.diagnoses,
+          allergies: ctx.allergies,
+        });
+      } catch (err) {
+        this.log.warn('policies_lookup_failed', {
+          error_category: err instanceof Error ? err.name : 'unknown',
+        });
+      }
+    }
 
     // --- 3. Agentic layer (graceful degrade if unconfigured) ---
     let agenticCards: CdsCard[] = [];
@@ -66,7 +86,7 @@ export class AgenticService {
       try {
         const result = await this.router.complete({
           system: CLINICAL_REASONER_SYSTEM,
-          user: buildUserMessage(ctx, knowledge),
+          user: buildUserMessage(ctx, knowledge, policyMatches),
           maxTokens: 2048,
           temperature: 0.1,
         });
@@ -109,6 +129,16 @@ export class AgenticService {
         bundleRecordsConsidered,
         citedRecords,
         agenticLatencyMs: Date.now() - started,
+        policyCitations: policyMatches.length
+          ? policyMatches.map((m) => ({
+              policyId: m.policyId,
+              name: m.name,
+              source: m.source,
+              version: m.version,
+              sectionTitle: m.sectionTitle,
+              snippet: m.snippet,
+            }))
+          : undefined,
       },
     };
   }
@@ -254,8 +284,18 @@ function mergeCards(deterministic: CdsCard[], agentic: CdsCard[]): CdsCard[] {
 }
 
 function summaryOverlap(a: string, b: string): number {
-  const ta = new Set(a.toLowerCase().split(/\s+/).filter((t) => t.length > 3));
-  const tb = new Set(b.toLowerCase().split(/\s+/).filter((t) => t.length > 3));
+  const ta = new Set(
+    a
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((t) => t.length > 3),
+  );
+  const tb = new Set(
+    b
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((t) => t.length > 3),
+  );
   if (ta.size === 0 || tb.size === 0) return 0;
   let common = 0;
   for (const t of ta) if (tb.has(t)) common++;

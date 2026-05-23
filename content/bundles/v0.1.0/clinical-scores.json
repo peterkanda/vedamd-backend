@@ -1873,5 +1873,812 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "phq-9",
+    "title": "Patient Health Questionnaire-9",
+    "abbrev": "PHQ-9",
+    "purpose": "Screen for and grade severity of depressive disorder over the past 2 weeks; can also track treatment response.",
+    "domains": [
+      "psychiatry",
+      "primary-care"
+    ],
+    "items": [
+      {
+        "label": "Little interest or pleasure in doing things (anhedonia)",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Feeling down, depressed or hopeless",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Trouble falling/staying asleep, or sleeping too much",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Feeling tired or having little energy",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Poor appetite or overeating",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Feeling bad about yourself / a failure / let family down",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Trouble concentrating",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Moving or speaking noticeably slowly, or restlessness/agitation",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Thoughts that you would be better off dead or of self-harm",
+        "points": 3,
+        "max": 3
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 27,
+      "notes": "Each item scored 0=not at all, 1=several days, 2=more than half the days, 3=nearly every day."
+    },
+    "interpretation": [
+      {
+        "band": "0–4",
+        "meaning": "Minimal / none",
+        "action": "Reassure; reassess if symptoms persist."
+      },
+      {
+        "band": "5–9",
+        "meaning": "Mild depression",
+        "action": "Watchful waiting, sleep hygiene, low-intensity psychological intervention; reassess in 2–4 weeks."
+      },
+      {
+        "band": "10–14",
+        "meaning": "Moderate depression",
+        "action": "Offer psychological therapy ± SSRI; safety-net for suicide risk."
+      },
+      {
+        "band": "15–19",
+        "meaning": "Moderately severe depression",
+        "action": "Combine pharmacotherapy and psychological therapy; review weekly initially."
+      },
+      {
+        "band": "20–27",
+        "meaning": "Severe depression",
+        "action": "Urgent combined treatment; consider specialist referral or hospital admission if active suicidal ideation."
+      }
+    ],
+    "references": [
+      {
+        "label": "Kroenke et al. JGIM 2001; NICE Depression guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "gad-7",
+    "title": "Generalized Anxiety Disorder-7",
+    "abbrev": "GAD-7",
+    "purpose": "Screen for and grade severity of generalised anxiety disorder over the past 2 weeks.",
+    "domains": [
+      "psychiatry",
+      "primary-care"
+    ],
+    "items": [
+      {
+        "label": "Feeling nervous, anxious or on edge",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Not being able to stop or control worrying",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Worrying too much about different things",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Trouble relaxing",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Being so restless it's hard to sit still",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Becoming easily annoyed or irritable",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Feeling afraid as if something awful might happen",
+        "points": 3,
+        "max": 3
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 21,
+      "notes": "Each item scored 0–3 over past 2 weeks."
+    },
+    "interpretation": [
+      {
+        "band": "0–4",
+        "meaning": "Minimal anxiety",
+        "action": "Reassure; reassess if symptoms emerge."
+      },
+      {
+        "band": "5–9",
+        "meaning": "Mild anxiety",
+        "action": "Self-help / low-intensity CBT."
+      },
+      {
+        "band": "10–14",
+        "meaning": "Moderate anxiety",
+        "action": "Offer high-intensity CBT or SSRI."
+      },
+      {
+        "band": "15–21",
+        "meaning": "Severe anxiety",
+        "action": "Combined pharmacotherapy + psychological therapy; consider specialist input."
+      }
+    ],
+    "references": [
+      {
+        "label": "Spitzer et al. Arch Intern Med 2006; NICE Anxiety guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ciwa-ar",
+    "title": "Clinical Institute Withdrawal Assessment for Alcohol — revised",
+    "abbrev": "CIWA-Ar",
+    "purpose": "Quantify alcohol withdrawal severity and guide symptom-triggered benzodiazepine dosing.",
+    "domains": [
+      "addiction",
+      "psychiatry",
+      "emergency"
+    ],
+    "items": [
+      {
+        "label": "Nausea and vomiting",
+        "points": 7,
+        "max": 7
+      },
+      {
+        "label": "Tremor (arms extended, fingers spread)",
+        "points": 7,
+        "max": 7
+      },
+      {
+        "label": "Paroxysmal sweats",
+        "points": 7,
+        "max": 7
+      },
+      {
+        "label": "Anxiety",
+        "points": 7,
+        "max": 7
+      },
+      {
+        "label": "Agitation",
+        "points": 7,
+        "max": 7
+      },
+      {
+        "label": "Tactile disturbances (paraesthesia, formication)",
+        "points": 7,
+        "max": 7
+      },
+      {
+        "label": "Auditory disturbances",
+        "points": 7,
+        "max": 7
+      },
+      {
+        "label": "Visual disturbances",
+        "points": 7,
+        "max": 7
+      },
+      {
+        "label": "Headache, fullness in head",
+        "points": 7,
+        "max": 7
+      },
+      {
+        "label": "Orientation / clouding of sensorium",
+        "points": 4,
+        "max": 4
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 67,
+      "notes": "Reassess every 1–4 h; trend more important than absolute single score."
+    },
+    "interpretation": [
+      {
+        "band": "0–9",
+        "meaning": "Minimal withdrawal",
+        "action": "Supportive only; reassess at 2–4 h intervals."
+      },
+      {
+        "band": "10–19",
+        "meaning": "Moderate withdrawal",
+        "action": "Symptom-triggered benzodiazepine (e.g. diazepam 10 mg or lorazepam 2 mg per CIWA score)."
+      },
+      {
+        "band": "≥20",
+        "meaning": "Severe withdrawal — risk of seizures and DTs",
+        "action": "Aggressive benzodiazepine loading; consider HDU; treat hypomagnesaemia, hypokalaemia; thiamine 200–500 mg IV; CT brain if focal signs."
+      }
+    ],
+    "references": [
+      {
+        "label": "Sullivan et al. Br J Addiction 1989; NICE alcohol use disorders guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cows",
+    "title": "Clinical Opiate Withdrawal Scale",
+    "abbrev": "COWS",
+    "purpose": "Grade opioid withdrawal severity to guide induction onto buprenorphine and supportive treatment.",
+    "domains": [
+      "addiction",
+      "psychiatry",
+      "emergency"
+    ],
+    "items": [
+      {
+        "label": "Resting pulse rate",
+        "points": 4,
+        "max": 4
+      },
+      {
+        "label": "Sweating",
+        "points": 4,
+        "max": 4
+      },
+      {
+        "label": "Restlessness",
+        "points": 5,
+        "max": 5
+      },
+      {
+        "label": "Pupil size",
+        "points": 5,
+        "max": 5
+      },
+      {
+        "label": "Bone or joint aches",
+        "points": 4,
+        "max": 4
+      },
+      {
+        "label": "Runny nose or tearing",
+        "points": 4,
+        "max": 4
+      },
+      {
+        "label": "GI upset",
+        "points": 5,
+        "max": 5
+      },
+      {
+        "label": "Tremor",
+        "points": 4,
+        "max": 4
+      },
+      {
+        "label": "Yawning",
+        "points": 4,
+        "max": 4
+      },
+      {
+        "label": "Anxiety or irritability",
+        "points": 4,
+        "max": 4
+      },
+      {
+        "label": "Gooseflesh skin",
+        "points": 5,
+        "max": 5
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 48,
+      "notes": "Score before each buprenorphine induction dose."
+    },
+    "interpretation": [
+      {
+        "band": "5–12",
+        "meaning": "Mild withdrawal",
+        "action": "Symptomatic care; consider induction when ≥12 to avoid precipitated withdrawal."
+      },
+      {
+        "band": "13–24",
+        "meaning": "Moderate withdrawal",
+        "action": "Buprenorphine induction safe — start 2–4 mg sublingual and titrate."
+      },
+      {
+        "band": "25–36",
+        "meaning": "Moderately severe withdrawal",
+        "action": "Higher induction dose; supportive treatment."
+      },
+      {
+        "band": "≥37",
+        "meaning": "Severe withdrawal",
+        "action": "Urgent induction + supportive management."
+      }
+    ],
+    "references": [
+      {
+        "label": "Wesson DR, Ling W. J Psychoactive Drugs 2003; SAMHSA TIP 63"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "stop-bang",
+    "title": "STOP-BANG questionnaire",
+    "abbrev": "STOP-BANG",
+    "purpose": "Pre-test probability of obstructive sleep apnoea (especially before surgery / sedation).",
+    "domains": [
+      "respiratory",
+      "anaesthesia",
+      "primary-care"
+    ],
+    "items": [
+      {
+        "label": "Snore loudly",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Tired during day",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Observed apnoea",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Pressure (treated hypertension)",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "BMI > 35",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Age > 50",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Neck circumference > 40 cm",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Male sex (Gender)",
+        "points": 1,
+        "max": 1
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 8
+    },
+    "interpretation": [
+      {
+        "band": "0–2",
+        "meaning": "Low risk",
+        "action": "No further OSA evaluation needed unless symptomatic."
+      },
+      {
+        "band": "3–4",
+        "meaning": "Intermediate risk",
+        "action": "Consider sleep study; perioperative caution."
+      },
+      {
+        "band": "≥5",
+        "meaning": "High risk",
+        "action": "Refer for sleep study; consider postoperative monitored bed and avoid long-acting opioid sedation."
+      }
+    ],
+    "references": [
+      {
+        "label": "Chung et al. Anesthesiology 2008; ASA OSA practice guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "rcri-lee",
+    "title": "Revised Cardiac Risk Index (Lee)",
+    "abbrev": "RCRI",
+    "purpose": "Estimate risk of major adverse cardiac events after non-cardiac surgery.",
+    "domains": [
+      "cardiology",
+      "surgery",
+      "anaesthesia"
+    ],
+    "items": [
+      {
+        "label": "High-risk surgery (intraperitoneal, intrathoracic or suprainguinal vascular)",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Ischaemic heart disease",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Congestive heart failure",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Cerebrovascular disease (TIA or stroke)",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Insulin-treated diabetes mellitus",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Preoperative creatinine > 177 micromol/L (2 mg/dL)",
+        "points": 1,
+        "max": 1
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 6
+    },
+    "interpretation": [
+      {
+        "band": "0",
+        "meaning": "~0.4% risk",
+        "action": "Proceed with routine perioperative care."
+      },
+      {
+        "band": "1",
+        "meaning": "~1% risk",
+        "action": "Routine care; optimise modifiable factors."
+      },
+      {
+        "band": "2",
+        "meaning": "~2.4% risk",
+        "action": "Consider functional capacity, biomarker testing, anaesthetic plan."
+      },
+      {
+        "band": "≥3",
+        "meaning": "≥5.4% risk (high)",
+        "action": "Cardiology consult; consider further testing; high-dependency / ICU postoperatively."
+      }
+    ],
+    "references": [
+      {
+        "label": "Lee et al. Circulation 1999; ACC/AHA Perioperative guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "qsofa",
+    "title": "Quick Sepsis-related Organ Failure Assessment",
+    "abbrev": "qSOFA",
+    "purpose": "Bedside identification of patients with suspected infection at risk of poor outcomes outside ICU.",
+    "domains": [
+      "emergency",
+      "infectious-disease",
+      "critical-care"
+    ],
+    "items": [
+      {
+        "label": "Respiratory rate ≥ 22 / min",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Altered mentation (GCS < 15)",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Systolic blood pressure ≤ 100 mmHg",
+        "points": 1,
+        "max": 1
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 3
+    },
+    "interpretation": [
+      {
+        "band": "0–1",
+        "meaning": "Lower mortality risk",
+        "action": "Continue assessment; not a rule-out for sepsis."
+      },
+      {
+        "band": "≥2",
+        "meaning": "Higher in-hospital mortality risk (~10%)",
+        "action": "Activate sepsis pathway (Sepsis Six); senior review; consider HDU."
+      }
+    ],
+    "references": [
+      {
+        "label": "Sepsis-3 — Singer et al. JAMA 2016"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "mmse",
+    "title": "Mini-Mental State Examination",
+    "abbrev": "MMSE",
+    "purpose": "Bedside screen for cognitive impairment.",
+    "domains": [
+      "geriatrics",
+      "neurology",
+      "primary-care"
+    ],
+    "items": [
+      {
+        "label": "Orientation to time",
+        "points": 5,
+        "max": 5
+      },
+      {
+        "label": "Orientation to place",
+        "points": 5,
+        "max": 5
+      },
+      {
+        "label": "Registration (3 words)",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Attention and calculation (serial 7s or spelling WORLD backwards)",
+        "points": 5,
+        "max": 5
+      },
+      {
+        "label": "Recall (3 words)",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Language (naming, repetition, comprehension, reading, writing)",
+        "points": 8,
+        "max": 8
+      },
+      {
+        "label": "Visuospatial (copying intersecting pentagons)",
+        "points": 1,
+        "max": 1
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 30,
+      "notes": "Adjust interpretation for age and education."
+    },
+    "interpretation": [
+      {
+        "band": "≥27",
+        "meaning": "Normal cognition (in average-education adult)",
+        "action": "Reassure; if clinical suspicion persists use MoCA."
+      },
+      {
+        "band": "21–26",
+        "meaning": "Mild cognitive impairment",
+        "action": "Further evaluation (MoCA, blood screen, neuroimaging)."
+      },
+      {
+        "band": "10–20",
+        "meaning": "Moderate cognitive impairment",
+        "action": "Dementia workup; support and safety planning."
+      },
+      {
+        "band": "<10",
+        "meaning": "Severe cognitive impairment",
+        "action": "Comprehensive geriatric / psychiatric assessment; capacity considerations."
+      }
+    ],
+    "references": [
+      {
+        "label": "Folstein et al. J Psychiatr Res 1975; NICE dementia guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "bishop-score",
+    "title": "Modified Bishop score",
+    "abbrev": "Bishop",
+    "purpose": "Assess cervical favourability for induction of labour.",
+    "domains": [
+      "obstetrics"
+    ],
+    "items": [
+      {
+        "label": "Cervical dilation",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Effacement",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Station of presenting part",
+        "points": 3,
+        "max": 3
+      },
+      {
+        "label": "Consistency of cervix",
+        "points": 2,
+        "max": 2
+      },
+      {
+        "label": "Position of cervix",
+        "points": 2,
+        "max": 2
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 13
+    },
+    "interpretation": [
+      {
+        "band": "≤6",
+        "meaning": "Unfavourable cervix",
+        "action": "Use cervical ripening (PGE2, misoprostol, or balloon catheter) before oxytocin."
+      },
+      {
+        "band": "7–8",
+        "meaning": "Intermediate",
+        "action": "Either ripening or direct oxytocin induction acceptable."
+      },
+      {
+        "band": "≥9",
+        "meaning": "Favourable cervix",
+        "action": "Amniotomy ± oxytocin likely successful."
+      }
+    ],
+    "references": [
+      {
+        "label": "Bishop EH. Obstet Gynecol 1964; ACOG induction guidance; WHO Recommendations on Induction of Labour"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "four-score",
+    "title": "Full Outline of UnResponsiveness",
+    "abbrev": "FOUR",
+    "purpose": "Coma assessment in intubated patients; complements / replaces GCS in ICU.",
+    "domains": [
+      "critical-care",
+      "neurology",
+      "emergency"
+    ],
+    "items": [
+      {
+        "label": "Eye response (E)",
+        "points": 4,
+        "max": 4
+      },
+      {
+        "label": "Motor response (M)",
+        "points": 4,
+        "max": 4
+      },
+      {
+        "label": "Brainstem reflexes (B)",
+        "points": 4,
+        "max": 4
+      },
+      {
+        "label": "Respiration pattern (R)",
+        "points": 4,
+        "max": 4
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 16,
+      "notes": "Captures key brainstem reflexes and respiratory pattern that GCS does not."
+    },
+    "interpretation": [
+      {
+        "band": "0",
+        "meaning": "Probably brain dead",
+        "action": "Initiate brain death protocol per local criteria."
+      },
+      {
+        "band": "Low scores",
+        "meaning": "Severe impairment",
+        "action": "ICU level care, neuroimaging, address reversible causes."
+      },
+      {
+        "band": "16",
+        "meaning": "Normal level of consciousness",
+        "action": "—"
+      }
+    ],
+    "references": [
+      {
+        "label": "Wijdicks et al. Ann Neurol 2005"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]

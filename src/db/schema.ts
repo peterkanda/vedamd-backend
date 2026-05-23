@@ -107,5 +107,38 @@ export type ApiKeyRow = typeof apiKeys.$inferSelect;
 export type NewApiKeyRow = typeof apiKeys.$inferInsert;
 export type IntegrationLogRow = typeof integrationLog.$inferSelect;
 export type NewIntegrationLogRow = typeof integrationLog.$inferInsert;
+
+/**
+ * Per-integrator uploaded clinical policies / standards (JCI, ISO, WHO,
+ * NICE, company SOPs). The agentic engine retrieves relevant sections
+ * at evaluation time and cites them on returned CDS cards.
+ *
+ * NEVER carries patient data — only the integrator's own policy text.
+ * The PHI-free logger allow-list and the PoliciesController contract
+ * make this structural: the create DTO has no patient fields at all.
+ */
+export const policies = pgTable(
+  'policies',
+  {
+    id: text('id').primaryKey(),
+    integratorId: text('integrator_id').notNull(),
+    name: text('name').notNull(),
+    /** Standard family: 'JCI' | 'ISO' | 'WHO' | 'NICE' | 'company' | 'other'. */
+    source: text('source').notNull(),
+    version: text('version'),
+    scope: text('scope'),
+    /** Array of { title?: string; body: string } objects. */
+    sections: jsonb('sections').notNull(),
+    sizeBytes: integer('size_bytes').notNull(),
+    uploadedAt: timestamp('uploaded_at', { withTimezone: true }).notNull().defaultNow(),
+    uploadedBy: text('uploaded_by'),
+  },
+  (t) => ({
+    byIntegrator: index('idx_policies_integrator').on(t.integratorId),
+  }),
+);
+
+export type PolicyRow = typeof policies.$inferSelect;
+export type NewPolicyRow = typeof policies.$inferInsert;
 export type AuditEventRow = typeof auditEvents.$inferSelect;
 export type NewAuditEventRow = typeof auditEvents.$inferInsert;

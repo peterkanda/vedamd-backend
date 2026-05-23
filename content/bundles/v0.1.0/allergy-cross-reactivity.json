@@ -305,5 +305,118 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "vancomycin-procaine-derivative",
+    "allergen": "Vancomycin (rapid infusion)",
+    "crossReactsWith": "Other glycopeptides (teicoplanin) and direct mast-cell degranulators (rapid quinolones, codeine)",
+    "risk": "low",
+    "mechanism": "Vancomycin infusion reaction ('red man syndrome') is non-IgE mast cell degranulation triggered by rapid infusion, not true allergy. Patients may still tolerate slower vancomycin infusion or alternative glycopeptides.",
+    "recommendation": "Slow infusion (≤10 mg/min, ≤1 g/h), pre-medicate with antihistamine. Switch only for true IgE-mediated reaction (rash >24h, anaphylaxis) — consider teicoplanin (cross-reactivity ~10%) or daptomycin/linezolid per indication.",
+    "drugSlugs": [
+      "vancomycin"
+    ],
+    "domains": [
+      "allergy",
+      "infectious-disease"
+    ],
+    "references": [
+      {
+        "label": "BSAC vancomycin therapeutic monitoring; SIDP infusion-reaction guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "latex-fruit-syndrome",
+    "allergen": "Natural rubber latex",
+    "crossReactsWith": "Bananas, avocados, kiwi, chestnuts, passion fruit",
+    "risk": "moderate",
+    "mechanism": "Shared chitinase / hevein epitopes between latex and certain fruit proteins (latex-fruit syndrome) — 30–50% of latex-allergic patients react to at least one fruit, and ~10% of fruit-allergic patients react to latex.",
+    "recommendation": "Document latex allergy on every chart; use latex-free PPE, urinary catheters, IV lines, anaesthetic equipment. Counsel patients about avoidance of cross-reactive fruits.",
+    "drugSlugs": [],
+    "domains": [
+      "allergy",
+      "anaesthesia",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "EAACI latex allergy position paper"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "heparin-lmwh-fondaparinux",
+    "allergen": "Unfractionated heparin (UFH) — heparin-induced thrombocytopenia (HIT)",
+    "crossReactsWith": "Low-molecular-weight heparins (LMWH) — high cross-reactivity; fondaparinux — minimal cross-reactivity",
+    "risk": "high",
+    "mechanism": "HIT antibodies recognise platelet factor 4 + heparin complexes. LMWH shares the antigenic epitope; fondaparinux (synthetic pentasaccharide) does not bind PF4 in vivo to a clinically significant extent.",
+    "recommendation": "If HIT is suspected: STOP all heparin including LMWH and line flushes. Anticoagulate with a non-heparin agent (argatroban, danaparoid, bivalirudin, or fondaparinux per local availability). Do NOT use warfarin alone until platelets recover (skin necrosis risk).",
+    "drugSlugs": [
+      "unfractionated-heparin",
+      "enoxaparin",
+      "fondaparinux"
+    ],
+    "domains": [
+      "haematology",
+      "allergy",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "ASH 2018 guidelines on management of HIT"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "iodinated-contrast-shellfish-myth",
+    "allergen": "Iodinated radiocontrast media",
+    "crossReactsWith": "Topical iodine, shellfish, povidone-iodine — NO meaningful cross-reactivity",
+    "risk": "low",
+    "mechanism": "Reactions to iodinated contrast are primarily non-IgE pseudoallergy (direct mast cell degranulation, osmolar effects); the iodine atom itself is not allergenic. Shellfish allergy is to tropomyosin, not iodine.",
+    "recommendation": "Do NOT withhold needed iodinated contrast for shellfish or povidone-iodine 'allergy'. For genuine previous contrast reaction, use non-ionic iso-osmolar contrast and consider corticosteroid + antihistamine premedication; consult radiology / allergy.",
+    "drugSlugs": [],
+    "domains": [
+      "radiology",
+      "allergy"
+    ],
+    "references": [
+      {
+        "label": "ACR Manual on Contrast Media (2023)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "platinum-chemotherapy",
+    "allergen": "Carboplatin / oxaliplatin / cisplatin",
+    "crossReactsWith": "Other platinum agents",
+    "risk": "moderate",
+    "mechanism": "True IgE-mediated allergy emerges after several cycles (commonly cycle 6–8 of carboplatin). Cross-reactivity within the platinum class is high; skin testing may identify cross-tolerance to an alternate platinum.",
+    "recommendation": "Refer to oncology allergy service. Consider rapid desensitisation protocol (12-step Castells protocol) to continue therapy; intradermal skin testing to choose an alternate platinum.",
+    "drugSlugs": [],
+    "domains": [
+      "oncology",
+      "allergy"
+    ],
+    "references": [
+      {
+        "label": "Castells et al. JACI 2008; ESMO/ASCO hypersensitivity guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
   }
 ]

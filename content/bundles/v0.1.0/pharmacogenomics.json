@@ -300,5 +300,799 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2c19-ppi",
+    "gene": "CYP2C19",
+    "variant": "CYP2C19 *2/*3 (loss-of-function) and *17 (gain-of-function)",
+    "drugSlug": "omeprazole",
+    "drug": "Proton pump inhibitors (omeprazole, esomeprazole, lansoprazole, pantoprazole)",
+    "domains": [
+      "gastroenterology",
+      "pharmacogenomics"
+    ],
+    "summary": "CYP2C19 metaboliser status alters PPI plasma exposure; ultra-rapid metabolisers may fail H. pylori eradication or maintenance acid suppression at standard doses, poor metabolisers may have higher exposure / interactions.",
+    "phenotypes": [
+      {
+        "phenotype": "Poor metaboliser (PM, *2/*2 or *2/*3 etc.)",
+        "implication": "Higher PPI exposure; effective acid suppression at standard doses.",
+        "recommendation": "Use standard dosing; consider lower dose for very long-term therapy.",
+        "strength": "Moderate"
+      },
+      {
+        "phenotype": "Intermediate metaboliser (IM)",
+        "implication": "Slightly higher PPI exposure.",
+        "recommendation": "Standard dosing.",
+        "strength": "Optional"
+      },
+      {
+        "phenotype": "Normal metaboliser (NM)",
+        "implication": "Standard PPI exposure.",
+        "recommendation": "Standard dosing.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Rapid / Ultra-rapid metaboliser (RM/UM, *17 carriers)",
+        "implication": "Lower PPI exposure; risk of treatment failure (H. pylori eradication, refractory reflux).",
+        "recommendation": "Use higher dose or longer course; for H. pylori, prefer a PPI less affected by CYP2C19 (rabeprazole, esomeprazole) or add bismuth quadruple therapy.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Pre-emptive PGx panel includes CYP2C19; reactive testing useful when H. pylori eradication fails or reflux is refractory to standard PPI.",
+    "references": [
+      {
+        "label": "CPIC Guideline — CYP2C19 and proton pump inhibitor dosing (2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2c19-ssri",
+    "gene": "CYP2C19",
+    "variant": "CYP2C19 metaboliser status",
+    "drugSlug": "citalopram",
+    "drug": "SSRIs primarily metabolised by CYP2C19 (citalopram, escitalopram, sertraline)",
+    "domains": [
+      "psychiatry",
+      "pharmacogenomics"
+    ],
+    "summary": "CYP2C19 phenotype alters exposure of citalopram/escitalopram (and to lesser extent sertraline). Poor metabolisers risk QT prolongation; ultra-rapid metabolisers risk treatment failure.",
+    "phenotypes": [
+      {
+        "phenotype": "Poor metaboliser (PM)",
+        "implication": "Markedly increased citalopram/escitalopram exposure; QT prolongation risk.",
+        "recommendation": "Reduce citalopram/escitalopram dose by 50%; or choose an SSRI not primarily metabolised by CYP2C19 (e.g. fluoxetine, paroxetine — but consider their own pharmacology).",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Intermediate metaboliser (IM)",
+        "implication": "Modestly increased exposure.",
+        "recommendation": "Initiate at standard dose, titrate with awareness of higher exposure.",
+        "strength": "Moderate"
+      },
+      {
+        "phenotype": "Normal metaboliser (NM)",
+        "implication": "Expected exposure.",
+        "recommendation": "Standard dosing.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Rapid / Ultra-rapid metaboliser (RM/UM)",
+        "implication": "Lower exposure → higher risk of treatment failure for citalopram/escitalopram.",
+        "recommendation": "Consider alternative SSRI not primarily metabolised by CYP2C19, or higher dose with close monitoring.",
+        "strength": "Moderate"
+      }
+    ],
+    "testing": "Reactive testing after SSRI failure or intolerance; pre-emptive in panel-based PGx.",
+    "references": [
+      {
+        "label": "CPIC Guideline — CYP2C19 and CYP2D6 with SSRIs (2023 update)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2d6-ssri",
+    "gene": "CYP2D6",
+    "variant": "CYP2D6 metaboliser status",
+    "drugSlug": "fluoxetine",
+    "drug": "SSRIs metabolised by CYP2D6 (fluoxetine, paroxetine, fluvoxamine partially)",
+    "domains": [
+      "psychiatry",
+      "pharmacogenomics"
+    ],
+    "summary": "CYP2D6 phenotype alters fluoxetine/paroxetine exposure. Poor metabolisers may have higher exposure and adverse effects; ultra-rapid metabolisers may have treatment failure.",
+    "phenotypes": [
+      {
+        "phenotype": "Poor metaboliser (PM)",
+        "implication": "Higher exposure; more adverse effects.",
+        "recommendation": "Consider 50% dose reduction OR alternative SSRI not primarily CYP2D6-dependent.",
+        "strength": "Moderate"
+      },
+      {
+        "phenotype": "Normal metaboliser (NM)",
+        "implication": "Expected exposure.",
+        "recommendation": "Standard dosing.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Ultra-rapid metaboliser (UM)",
+        "implication": "Lower exposure; higher risk of failure.",
+        "recommendation": "Consider alternative SSRI; if continuing, titrate to clinical response with awareness of higher dose requirement.",
+        "strength": "Moderate"
+      }
+    ],
+    "testing": "Reactive after poor response/intolerance, or pre-emptive panel.",
+    "references": [
+      {
+        "label": "CPIC Guideline — CYP2D6 and CYP2C19 with SSRIs (2023 update)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2d6-tca",
+    "gene": "CYP2D6",
+    "variant": "CYP2D6 metaboliser status",
+    "drugSlug": "amitriptyline",
+    "drug": "Tricyclic antidepressants (amitriptyline, nortriptyline, imipramine, desipramine, clomipramine, doxepin)",
+    "domains": [
+      "psychiatry",
+      "pharmacogenomics",
+      "pain"
+    ],
+    "summary": "CYP2D6 (and CYP2C19 for tertiary amines) alter TCA exposure. Poor metabolisers risk cardiotoxicity and anticholinergic toxicity; ultra-rapid metabolisers may fail therapy.",
+    "phenotypes": [
+      {
+        "phenotype": "Poor metaboliser (PM)",
+        "implication": "Risk of higher TCA / metabolite exposure → anticholinergic, sedation, QT prolongation.",
+        "recommendation": "Reduce starting dose by 50%; use therapeutic drug monitoring (TDM) or choose a non-TCA.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Normal metaboliser (NM)",
+        "implication": "Expected exposure.",
+        "recommendation": "Standard dosing.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Ultra-rapid metaboliser (UM)",
+        "implication": "Lower exposure → higher risk of treatment failure.",
+        "recommendation": "Consider alternative; if continuing, TDM is essential.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Useful when TDM unavailable or there has been intolerance / non-response at standard doses.",
+    "references": [
+      {
+        "label": "CPIC Guideline — CYP2D6 and CYP2C19 with TCAs (2016, updated)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2d6-tamoxifen",
+    "gene": "CYP2D6",
+    "variant": "CYP2D6 metaboliser status",
+    "drugSlug": "tamoxifen",
+    "drug": "Tamoxifen",
+    "domains": [
+      "oncology",
+      "pharmacogenomics"
+    ],
+    "summary": "Tamoxifen is bioactivated by CYP2D6 to endoxifen (the active anti-oestrogen). Poor metabolisers and those on strong CYP2D6 inhibitors (paroxetine, fluoxetine, bupropion) generate less endoxifen and may have reduced breast cancer recurrence-free survival.",
+    "phenotypes": [
+      {
+        "phenotype": "Poor metaboliser (PM)",
+        "implication": "Substantially lower endoxifen exposure; possibly reduced efficacy.",
+        "recommendation": "Consider an alternative endocrine therapy (aromatase inhibitor in postmenopausal women); avoid concomitant strong CYP2D6 inhibitors.",
+        "strength": "Moderate"
+      },
+      {
+        "phenotype": "Intermediate metaboliser (IM)",
+        "implication": "Reduced endoxifen exposure.",
+        "recommendation": "Standard dose; avoid CYP2D6 inhibitors; consider higher dose (40 mg) if continuing tamoxifen.",
+        "strength": "Optional"
+      },
+      {
+        "phenotype": "Normal / Ultra-rapid metaboliser",
+        "implication": "Adequate endoxifen exposure.",
+        "recommendation": "Standard 20 mg daily.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Consider in premenopausal women starting adjuvant tamoxifen; helpful before adding a strong CYP2D6-inhibitor antidepressant.",
+    "references": [
+      {
+        "label": "CPIC Guideline — CYP2D6 and tamoxifen (2018)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cyp2d6-ondansetron",
+    "gene": "CYP2D6",
+    "variant": "CYP2D6 ultra-rapid metaboliser",
+    "drugSlug": "ondansetron",
+    "drug": "Ondansetron, tropisetron",
+    "domains": [
+      "oncology",
+      "pharmacogenomics",
+      "anaesthesia"
+    ],
+    "summary": "CYP2D6 ultra-rapid metabolisers have lower ondansetron/tropisetron exposure and higher antiemetic failure for chemotherapy-induced nausea/vomiting.",
+    "phenotypes": [
+      {
+        "phenotype": "Ultra-rapid metaboliser (UM)",
+        "implication": "Lower exposure; antiemetic failure more likely.",
+        "recommendation": "Select an alternative 5-HT3 antagonist not primarily CYP2D6-cleared (granisetron, palonosetron).",
+        "strength": "Moderate"
+      },
+      {
+        "phenotype": "Other phenotypes",
+        "implication": "Expected response.",
+        "recommendation": "Standard dosing.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Useful in oncology patients with ondansetron failure.",
+    "references": [
+      {
+        "label": "CPIC Guideline — CYP2D6 and ondansetron/tropisetron (2017)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2d6-atomoxetine",
+    "gene": "CYP2D6",
+    "variant": "CYP2D6 metaboliser status",
+    "drugSlug": "atomoxetine",
+    "drug": "Atomoxetine",
+    "domains": [
+      "psychiatry",
+      "pharmacogenomics",
+      "paediatrics"
+    ],
+    "summary": "CYP2D6 poor metabolisers have 5- to 10-fold higher atomoxetine exposure and more adverse effects (sleep disturbance, decreased appetite, cardiovascular).",
+    "phenotypes": [
+      {
+        "phenotype": "Poor metaboliser (PM)",
+        "implication": "Markedly higher exposure; more adverse effects.",
+        "recommendation": "Start at reduced dose (0.5 mg/kg/day) and titrate slowly; review after 4 weeks.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Normal metaboliser (NM)",
+        "implication": "Standard exposure.",
+        "recommendation": "Standard dosing per label.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Ultra-rapid metaboliser (UM)",
+        "implication": "Lower exposure; potential under-treatment.",
+        "recommendation": "Titrate to higher dose if needed for response; consider alternative if no benefit.",
+        "strength": "Optional"
+      }
+    ],
+    "testing": "Helpful pre-treatment in children/adolescents starting atomoxetine.",
+    "references": [
+      {
+        "label": "CPIC Guideline — CYP2D6 and atomoxetine (2019)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2d6-aripiprazole",
+    "gene": "CYP2D6",
+    "variant": "CYP2D6 poor metaboliser",
+    "drugSlug": "aripiprazole",
+    "drug": "Aripiprazole",
+    "domains": [
+      "psychiatry",
+      "pharmacogenomics"
+    ],
+    "summary": "Aripiprazole is metabolised by CYP2D6 and CYP3A4; CYP2D6 poor metabolisers have higher exposure and the label recommends dose reduction.",
+    "phenotypes": [
+      {
+        "phenotype": "CYP2D6 poor metaboliser",
+        "implication": "Higher aripiprazole exposure; more sedation, akathisia.",
+        "recommendation": "Halve the recommended dose. Also halve when given with a strong CYP3A4 inhibitor.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Other phenotypes",
+        "implication": "Standard exposure.",
+        "recommendation": "Standard dosing.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Useful in patients with intolerance to low doses.",
+    "references": [
+      {
+        "label": "FDA label for aripiprazole — CYP2D6 dosing guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2d6-haloperidol",
+    "gene": "CYP2D6",
+    "variant": "CYP2D6 metaboliser status",
+    "drugSlug": "haloperidol",
+    "drug": "Haloperidol",
+    "domains": [
+      "psychiatry",
+      "pharmacogenomics"
+    ],
+    "summary": "CYP2D6 poor metabolisers have higher haloperidol exposure and greater risk of extrapyramidal symptoms and QT prolongation.",
+    "phenotypes": [
+      {
+        "phenotype": "Poor metaboliser (PM)",
+        "implication": "Higher exposure; EPS, QT prolongation.",
+        "recommendation": "Use lowest effective dose; monitor ECG; consider alternative.",
+        "strength": "Moderate"
+      },
+      {
+        "phenotype": "Ultra-rapid metaboliser (UM)",
+        "implication": "Lower exposure; treatment failure possible.",
+        "recommendation": "Titrate to response; if no benefit at higher dose, change agent.",
+        "strength": "Optional"
+      },
+      {
+        "phenotype": "Other",
+        "implication": "Standard exposure.",
+        "recommendation": "Standard dosing.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Helpful in EPS at low doses or treatment failure.",
+    "references": [
+      {
+        "label": "DPWG (Dutch Pharmacogenetics Working Group) — haloperidol guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cyp3a5-tacrolimus",
+    "gene": "CYP3A5",
+    "variant": "CYP3A5 *1 (expresser) vs *3 (non-expresser)",
+    "drugSlug": "tacrolimus",
+    "drug": "Tacrolimus",
+    "domains": [
+      "transplant",
+      "pharmacogenomics",
+      "immunology"
+    ],
+    "summary": "CYP3A5 expressers (carriers of *1 allele) clear tacrolimus faster and need higher starting doses to reach target trough concentrations after transplant.",
+    "phenotypes": [
+      {
+        "phenotype": "CYP3A5 expresser (*1/*1, *1/*3)",
+        "implication": "Higher clearance; standard doses give sub-therapeutic trough.",
+        "recommendation": "Start at 1.5–2× the standard mg/kg dose; titrate with TDM to target trough.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "CYP3A5 non-expresser (*3/*3, common in Caucasians)",
+        "implication": "Lower clearance.",
+        "recommendation": "Standard mg/kg starting dose; titrate with TDM.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Pre-transplant CYP3A5 genotyping accelerates achievement of target trough and reduces acute rejection in renal transplant.",
+    "references": [
+      {
+        "label": "CPIC Guideline — CYP3A5 genotype and tacrolimus dosing (2015)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "slco1b1-simvastatin",
+    "gene": "SLCO1B1",
+    "variant": "SLCO1B1 c.521T>C (rs4149056)",
+    "drugSlug": "simvastatin",
+    "drug": "Simvastatin (and to a lesser extent atorvastatin, pravastatin, rosuvastatin)",
+    "domains": [
+      "cardiology",
+      "pharmacogenomics"
+    ],
+    "summary": "SLCO1B1 decreased-function variants reduce hepatic uptake of statins (especially simvastatin), raising plasma levels and the risk of myopathy / rhabdomyolysis.",
+    "phenotypes": [
+      {
+        "phenotype": "Decreased function (one or two T521C alleles)",
+        "implication": "Higher plasma simvastatin exposure; increased myopathy risk.",
+        "recommendation": "Avoid simvastatin doses > 20 mg; prefer rosuvastatin, pravastatin, or pitavastatin at standard doses.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Normal function",
+        "implication": "Standard exposure.",
+        "recommendation": "Standard dosing per cardiovascular risk.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Useful pre-emptively (panel) or after statin-associated muscle symptoms.",
+    "references": [
+      {
+        "label": "CPIC Guideline — SLCO1B1, ABCG2, CYP2C9 and statin-associated musculoskeletal symptoms (2022)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ugt1a1-irinotecan",
+    "gene": "UGT1A1",
+    "variant": "UGT1A1*28 (TA7 repeat, rs8175347) and *6 (Asian)",
+    "drugSlug": null,
+    "drug": "Irinotecan",
+    "domains": [
+      "oncology",
+      "pharmacogenomics"
+    ],
+    "summary": "UGT1A1 reduced-function variants impair glucuronidation of irinotecan's active metabolite SN-38, causing severe neutropenia and diarrhoea at standard doses.",
+    "phenotypes": [
+      {
+        "phenotype": "*28/*28 (homozygous) or *6/*28 or *6/*6",
+        "implication": "Markedly increased SN-38 exposure; severe neutropenia / diarrhoea risk.",
+        "recommendation": "Reduce irinotecan starting dose by ~30% and re-escalate based on tolerance (FDA label); avoid in severe organ dysfunction.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "*1/*28 (heterozygous)",
+        "implication": "Modestly elevated risk.",
+        "recommendation": "Standard dose with vigilant monitoring; reduce if grade ≥3 toxicity.",
+        "strength": "Moderate"
+      },
+      {
+        "phenotype": "Normal",
+        "implication": "Standard tolerability.",
+        "recommendation": "Standard dosing per regimen.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Pre-treatment testing recommended in many guidelines for high-dose irinotecan (>180 mg/m²).",
+    "references": [
+      {
+        "label": "FDA label for irinotecan; DPWG guideline; ESMO recommendation"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ugt1a1-atazanavir",
+    "gene": "UGT1A1",
+    "variant": "UGT1A1*28",
+    "drugSlug": null,
+    "drug": "Atazanavir",
+    "domains": [
+      "hiv",
+      "pharmacogenomics"
+    ],
+    "summary": "Atazanavir inhibits UGT1A1, and UGT1A1*28 carriers have elevated bilirubin glucuronidation impairment, resulting in clinically significant hyperbilirubinaemia (jaundice, scleral icterus). Not dangerous but cosmetically distressing.",
+    "phenotypes": [
+      {
+        "phenotype": "*28/*28",
+        "implication": "Very high risk of clinical jaundice.",
+        "recommendation": "Counsel patient or choose an alternative protease inhibitor / integrase strand transfer inhibitor.",
+        "strength": "Moderate"
+      },
+      {
+        "phenotype": "*1/*28 or *1/*1",
+        "implication": "Lower risk.",
+        "recommendation": "Standard atazanavir use; warn about possible jaundice.",
+        "strength": "Optional"
+      }
+    ],
+    "testing": "Useful when atazanavir is preferred and patient wants risk estimate.",
+    "references": [
+      {
+        "label": "CPIC Guideline — UGT1A1 and atazanavir (2015)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hla-b5801-allopurinol",
+    "gene": "HLA-B",
+    "variant": "HLA-B*58:01",
+    "drugSlug": "allopurinol",
+    "drug": "Allopurinol",
+    "domains": [
+      "rheumatology",
+      "pharmacogenomics",
+      "dermatology"
+    ],
+    "summary": "HLA-B*58:01 confers >100-fold risk of allopurinol-induced severe cutaneous adverse reaction (SCAR — SJS/TEN, DRESS). Prevalence is high in Han Chinese, Thai, Korean populations.",
+    "phenotypes": [
+      {
+        "phenotype": "HLA-B*58:01 positive",
+        "implication": "Very high risk of SJS/TEN/DRESS with allopurinol.",
+        "recommendation": "Do NOT prescribe allopurinol. Use febuxostat or another urate-lowering therapy.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "HLA-B*58:01 negative",
+        "implication": "Low (baseline) risk.",
+        "recommendation": "Standard allopurinol dosing per renal function; start low (50–100 mg) and titrate.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Mandatory before allopurinol initiation in Han Chinese, Korean and Thai patients (American College of Rheumatology, Taiwan FDA).",
+    "references": [
+      {
+        "label": "CPIC Guideline — HLA-B and allopurinol (2015, updated)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hla-a3101-carbamazepine",
+    "gene": "HLA-A",
+    "variant": "HLA-A*31:01",
+    "drugSlug": "carbamazepine",
+    "drug": "Carbamazepine, oxcarbazepine",
+    "domains": [
+      "neurology",
+      "pharmacogenomics",
+      "dermatology"
+    ],
+    "summary": "HLA-A*31:01 carriers (more common in Northern European and Japanese populations) have ~10-fold increased risk of carbamazepine hypersensitivity spectrum reactions (maculopapular rash, SJS/TEN, DRESS).",
+    "phenotypes": [
+      {
+        "phenotype": "HLA-A*31:01 positive",
+        "implication": "Increased risk of carbamazepine hypersensitivity (any severity).",
+        "recommendation": "Avoid carbamazepine/oxcarbazepine where possible; choose levetiracetam, lamotrigine (caution titration), or valproate per indication.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Negative",
+        "implication": "Baseline risk.",
+        "recommendation": "Standard use; combine with HLA-B*15:02 testing in Asian patients.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Recommended in patients of European or Japanese ancestry before carbamazepine.",
+    "references": [
+      {
+        "label": "CPIC Guideline — HLA-A, HLA-B and carbamazepine/oxcarbazepine (2017)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hla-b1301-dapsone",
+    "gene": "HLA-B",
+    "variant": "HLA-B*13:01",
+    "drugSlug": "dapsone",
+    "drug": "Dapsone",
+    "domains": [
+      "dermatology",
+      "pharmacogenomics",
+      "infectious-disease"
+    ],
+    "summary": "HLA-B*13:01 is strongly associated with dapsone hypersensitivity syndrome (DHS, a DRESS-like reaction) in Han Chinese, South-East Asian and some African populations.",
+    "phenotypes": [
+      {
+        "phenotype": "HLA-B*13:01 positive",
+        "implication": "High risk of DHS within 4–8 weeks of dapsone start.",
+        "recommendation": "Avoid dapsone; use alternative therapy for leprosy or PCP prophylaxis (e.g. atovaquone, pentamidine, clofazimine-based regimens).",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Negative",
+        "implication": "Lower (baseline) risk; still possible.",
+        "recommendation": "Standard dapsone use with monitoring during first 8 weeks.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Recommended pre-treatment in Han Chinese and South-East Asian populations; some leprosy programmes test routinely.",
+    "references": [
+      {
+        "label": "WHO leprosy programme guidance; CPIC informational annotation"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2b6-efavirenz",
+    "gene": "CYP2B6",
+    "variant": "CYP2B6 *6 (516G>T) / *18",
+    "drugSlug": "efavirenz",
+    "drug": "Efavirenz",
+    "domains": [
+      "hiv",
+      "pharmacogenomics"
+    ],
+    "summary": "CYP2B6 poor metabolisers have 2- to 3-fold higher efavirenz plasma concentrations and more central nervous system adverse effects (vivid dreams, dizziness, depression).",
+    "phenotypes": [
+      {
+        "phenotype": "Poor metaboliser (PM)",
+        "implication": "Higher efavirenz exposure; more CNS toxicity.",
+        "recommendation": "Reduce efavirenz dose to 400 mg/day (or switch to dolutegravir-based regimen).",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Intermediate metaboliser (IM)",
+        "implication": "Slightly higher exposure.",
+        "recommendation": "Consider 400 mg/day if CNS symptoms persist.",
+        "strength": "Moderate"
+      },
+      {
+        "phenotype": "Extensive (normal) metaboliser",
+        "implication": "Expected exposure.",
+        "recommendation": "Standard 600 mg/day.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Ultra-rapid metaboliser",
+        "implication": "Sub-therapeutic exposure; virological failure / resistance risk.",
+        "recommendation": "Consider alternative ARV regimen.",
+        "strength": "Moderate"
+      }
+    ],
+    "testing": "Useful where efavirenz remains first-line and CNS toxicity is limiting tolerance.",
+    "references": [
+      {
+        "label": "CPIC Guideline — CYP2B6 and efavirenz (2019)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "nat2-isoniazid",
+    "gene": "NAT2",
+    "variant": "NAT2 acetylator status (slow vs rapid)",
+    "drugSlug": "isoniazid",
+    "drug": "Isoniazid",
+    "domains": [
+      "tuberculosis",
+      "pharmacogenomics",
+      "hepatology"
+    ],
+    "summary": "NAT2 slow acetylators have higher isoniazid exposure and increased risk of hepatotoxicity and peripheral neuropathy; rapid acetylators may be at risk of treatment failure / acquired resistance at standard doses.",
+    "phenotypes": [
+      {
+        "phenotype": "Slow acetylator",
+        "implication": "Higher exposure; increased hepatotoxicity and neuropathy risk.",
+        "recommendation": "Use standard dose with pyridoxine 25–50 mg daily; monitor LFTs in first 2 months. Consider dose reduction if intolerance.",
+        "strength": "Moderate"
+      },
+      {
+        "phenotype": "Intermediate acetylator",
+        "implication": "Standard exposure.",
+        "recommendation": "Standard dose with pyridoxine prophylaxis as per WHO.",
+        "strength": "Moderate"
+      },
+      {
+        "phenotype": "Rapid acetylator",
+        "implication": "Lower exposure; potentially lower efficacy.",
+        "recommendation": "Standard dose; ensure adherence; do not increase dose empirically.",
+        "strength": "Optional"
+      }
+    ],
+    "testing": "Currently not routine; useful where INH-induced hepatitis recurs or in pharmacokinetic-guided TB regimens.",
+    "references": [
+      {
+        "label": "WHO TB Programmatic Management of Drug-Resistant TB; CPIC informational annotation"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cyp2c9-phenytoin-hlab1502",
+    "gene": "CYP2C9 / HLA-B",
+    "variant": "CYP2C9 *2/*3 (poor metaboliser); HLA-B*15:02",
+    "drugSlug": "phenytoin",
+    "drug": "Phenytoin",
+    "domains": [
+      "neurology",
+      "pharmacogenomics",
+      "dermatology"
+    ],
+    "summary": "Phenytoin is metabolised by CYP2C9; reduced-function variants raise the risk of toxicity (nystagmus, ataxia, confusion). HLA-B*15:02 confers high risk of SJS/TEN, especially in patients of Han Chinese / South-East Asian descent.",
+    "phenotypes": [
+      {
+        "phenotype": "CYP2C9 intermediate / poor metaboliser",
+        "implication": "Higher phenytoin exposure; toxicity risk at standard doses.",
+        "recommendation": "Reduce starting maintenance dose by 25–50%; use therapeutic drug monitoring; adjust to free phenytoin if available.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "HLA-B*15:02 positive (Han Chinese, SE Asian)",
+        "implication": "High risk of SJS/TEN with phenytoin.",
+        "recommendation": "Do NOT use phenytoin; choose levetiracetam or valproate.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "Both negative / normal",
+        "implication": "Standard risk.",
+        "recommendation": "Standard dosing with TDM.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "HLA-B*15:02 in Han Chinese / SE Asian patients before phenytoin or carbamazepine.",
+    "references": [
+      {
+        "label": "CPIC Guideline — CYP2C9 and HLA-B and phenytoin (2014, updated 2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ryr1-cacna1s-malignant-hyperthermia",
+    "gene": "RYR1 / CACNA1S",
+    "variant": "Pathogenic variants in RYR1 or CACNA1S",
+    "drugSlug": null,
+    "drug": "Volatile inhaled anaesthetics (sevoflurane, isoflurane, desflurane, halothane) and depolarising muscle relaxant suxamethonium (succinylcholine)",
+    "domains": [
+      "anaesthesia",
+      "pharmacogenomics",
+      "emergency"
+    ],
+    "summary": "Pathogenic RYR1 or CACNA1S variants confer susceptibility to malignant hyperthermia (MH), a life-threatening hypermetabolic crisis triggered by volatile anaesthetics or suxamethonium.",
+    "phenotypes": [
+      {
+        "phenotype": "MH-susceptible (pathogenic RYR1/CACNA1S variant or prior in vitro contracture test positive)",
+        "implication": "Risk of fulminant MH on exposure.",
+        "recommendation": "AVOID all volatile anaesthetics and suxamethonium. Use total intravenous anaesthesia (TIVA) with propofol and non-depolarising relaxants. Dantrolene must be readily available.",
+        "strength": "Strong"
+      },
+      {
+        "phenotype": "MH-non-susceptible",
+        "implication": "Standard risk.",
+        "recommendation": "Routine anaesthesia.",
+        "strength": "Strong"
+      }
+    ],
+    "testing": "Testing indicated in patients with personal/family history of MH or unexplained masseter spasm under anaesthesia.",
+    "references": [
+      {
+        "label": "CPIC Guideline — RYR1 and CACNA1S and volatile anaesthetics and suxamethonium (2018)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]

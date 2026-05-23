@@ -394,5 +394,334 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "methotrexate-folinic-acid",
+    "poison": "Methotrexate toxicity / overdose (oral or intrathecal)",
+    "antidote": "Folinic acid (leucovorin / calcium folinate)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Bypasses dihydrofolate reductase inhibition by providing reduced folate (5-formyl-tetrahydrofolate), rescuing normal cells from methotrexate-induced one-carbon block.",
+    "dosing": "Standard rescue: folinic acid 15 mg PO/IV every 6 hours starting 24h after high-dose MTX, continued until MTX level <0.05 micromol/L. For inadvertent overdose: start within 1 hour; dose proportional to MTX exposure and renal function.",
+    "domains": [
+      "oncology",
+      "toxicology",
+      "rheumatology"
+    ],
+    "references": [
+      {
+        "label": "FDA label for leucovorin; ASCO and ESMO MTX rescue protocols"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "methotrexate-glucarpidase",
+    "poison": "High-dose methotrexate with delayed clearance and renal failure",
+    "antidote": "Glucarpidase (carboxypeptidase G2)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Recombinant bacterial enzyme that hydrolyses extracellular methotrexate to inactive metabolites (DAMPA + glutamate), rapidly reducing plasma MTX by >95% within 15 minutes.",
+    "dosing": "Single IV dose 50 units/kg over 5 minutes. Continue folinic acid (do not give within 2h of glucarpidase). Specialist (oncology / poisons) use only.",
+    "domains": [
+      "oncology",
+      "toxicology",
+      "nephrology"
+    ],
+    "references": [
+      {
+        "label": "EMA / FDA label for glucarpidase; ASCO HDMTX delayed-clearance guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "anticholinergic-physostigmine",
+    "poison": "Severe anticholinergic toxicity (Datura, atropine, antihistamine, TCA — restricted, antimuscarinic antiparkinsonian)",
+    "antidote": "Physostigmine",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Tertiary-amine acetylcholinesterase inhibitor that crosses the BBB, restoring central cholinergic transmission and reversing the central anticholinergic syndrome (agitated delirium, hallucinations, hyperthermia).",
+    "dosing": "Adult: 1–2 mg slow IV over 5 minutes; may repeat every 10–15 min to a total of 4 mg. Cardiac monitoring mandatory; do NOT give in TCA overdose with QRS widening (asystole risk).",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "psychiatry"
+    ],
+    "references": [
+      {
+        "label": "American Academy of Clinical Toxicology / EAPCCT position paper"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "isoniazid-pyridoxine",
+    "poison": "Isoniazid overdose (seizures, lactic acidosis, coma)",
+    "antidote": "Pyridoxine (vitamin B6)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Isoniazid depletes pyridoxal-5-phosphate, halting GABA synthesis and triggering refractory seizures. High-dose pyridoxine restores GABA synthesis and terminates seizures unresponsive to benzodiazepines.",
+    "dosing": "Adult: pyridoxine 1 g IV per gram of isoniazid ingested (estimate 5 g if unknown amount). Paediatric: 70 mg/kg up to 5 g. Repeat as needed. Give benzodiazepines concurrently.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "tuberculosis"
+    ],
+    "references": [
+      {
+        "label": "Goldfrank's Toxicologic Emergencies; WHO TB chapter"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tca-sodium-bicarbonate",
+    "poison": "Tricyclic antidepressant overdose with QRS prolongation, hypotension, ventricular arrhythmia",
+    "antidote": "Sodium bicarbonate",
+    "antidoteDrugSlug": null,
+    "conditionSlug": "tricyclic-antidepressant-overdose",
+    "mechanism": "Combines sodium loading (which overcomes fast sodium channel blockade) with alkalinisation (which reduces free drug by increasing protein binding and shifts cardiac membrane potential).",
+    "dosing": "Adult: 1–2 mmol/kg IV bolus of 8.4% sodium bicarbonate when QRS > 100 ms, hypotensive, or in ventricular arrhythmia; repeat boluses until QRS narrows or pH 7.50–7.55; consider infusion.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "psychiatry"
+    ],
+    "references": [
+      {
+        "label": "American College of Medical Toxicology consensus; UK Toxbase"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "amatoxin-silibinin-nac",
+    "poison": "Amatoxin (Amanita phalloides, A. virosa) mushroom poisoning",
+    "antidote": "IV silibinin (Legalon SIL) + N-acetylcysteine; supportive penicillin G in some protocols",
+    "antidoteDrugSlug": "n-acetylcysteine",
+    "conditionSlug": null,
+    "mechanism": "Silibinin competitively inhibits hepatic OATP1B3-mediated amatoxin uptake; NAC supplements glutathione; penicillin G displaces amatoxin from albumin (modest benefit).",
+    "dosing": "Silibinin 5 mg/kg IV bolus then 20 mg/kg/24h infusion until liver function recovers or transplantation. Start as soon as Amanita exposure is suspected — toxicity peaks 24–48h after ingestion.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "hepatology"
+    ],
+    "references": [
+      {
+        "label": "European Association for the Study of the Liver — acute liver failure guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "co-poisoning-oxygen",
+    "poison": "Carbon monoxide poisoning",
+    "antidote": "100% normobaric oxygen (and hyperbaric oxygen if severe)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Increasing alveolar PO2 displaces CO from haemoglobin (reducing half-life of carboxyhaemoglobin from ~5h on room air to ~80 min on 100% O2 and ~20 min in hyperbaric chamber) and prevents delayed neurological sequelae.",
+    "dosing": "100% O2 via tight-fitting non-rebreather mask or endotracheal tube for at least 6 hours, or until COHb < 5%. Consider hyperbaric O2 (2.5–3 ATA) for: loss of consciousness, neurological deficit, cardiac ischaemia, pregnancy with COHb > 15%, or COHb > 25%.",
+    "domains": [
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "Undersea & Hyperbaric Medical Society CO poisoning guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "salicylate-bicarbonate-dialysis",
+    "poison": "Salicylate (aspirin) overdose",
+    "antidote": "Sodium bicarbonate (urinary alkalinisation) ± haemodialysis",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Urinary alkalinisation (urine pH ≥7.5) traps salicylate in ionised form in the renal tubule, dramatically increasing clearance. Haemodialysis is highly effective for severe poisoning.",
+    "dosing": "Loading: 1–2 mmol/kg sodium bicarbonate IV, then infuse 150 mmol in 1 L 5% dextrose at 1.5–2× maintenance, targeting urine pH 7.5–8.0. Replace potassium aggressively (hypokalaemia prevents alkalinisation). Haemodialysis if level >100 mg/dL (acute), >60 mg/dL with acidosis, AKI, pulmonary oedema, altered mental status, or any level after chronic ingestion with severe features.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "nephrology"
+    ],
+    "references": [
+      {
+        "label": "EXTRIP recommendations for salicylate; AACT/EAPCCT urinary alkalinisation"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "lithium-haemodialysis",
+    "poison": "Lithium toxicity (acute, acute-on-chronic, chronic)",
+    "antidote": "Haemodialysis (no chemical antidote)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Lithium is a small unbound ion freely cleared by dialysis. No chelator exists. Stop lithium, fluid-replete, and dialyse for severe toxicity.",
+    "dosing": "Haemodialysis indicated if: lithium > 4.0 mmol/L; lithium 2.5–4.0 mmol/L with severe symptoms (seizures, coma, life-threatening arrhythmia, renal failure); chronic toxicity with neurological symptoms. Continue until lithium < 1.0 mmol/L and no rebound after 6h.",
+    "domains": [
+      "toxicology",
+      "psychiatry",
+      "nephrology"
+    ],
+    "references": [
+      {
+        "label": "EXTRIP recommendations for lithium poisoning (2015)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "anticoagulant-rodenticide-vitk-prolonged",
+    "poison": "Long-acting (superwarfarin) anticoagulant rodenticide poisoning (brodifacoum, difenacoum)",
+    "antidote": "Vitamin K1 (phytomenadione) — prolonged oral therapy",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Reverses vitamin K epoxide reductase inhibition, restoring synthesis of factors II, VII, IX, X.",
+    "dosing": "Acute bleeding: vitamin K1 10 mg slow IV + 4-factor PCC. Maintenance: oral vitamin K1 50–100 mg/day, titrated to INR; may need weeks to months because of brodifacoum's terminal half-life (~24 days). Monitor INR weekly for 6 months.",
+    "domains": [
+      "toxicology",
+      "haematology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "AACT clinical management; UK Toxbase"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "factor-xa-andexanet",
+    "poison": "Life-threatening bleeding on rivaroxaban or apixaban",
+    "antidote": "Andexanet alfa (preferred where available) or 4-factor prothrombin complex concentrate (PCC, 25–50 IU/kg)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Andexanet alfa is a modified recombinant factor Xa decoy that binds and sequesters direct Xa inhibitors. 4-factor PCC bypasses the inhibited factor by raising other vitamin K-dependent factor levels.",
+    "dosing": "Andexanet alfa: low dose (400 mg bolus then 480 mg infusion over 2h) for low-dose / >8h since last apixaban or rivaroxaban; high dose (800 mg bolus then 960 mg infusion) for high-dose or recent ingestion. 4F-PCC (alternative): 25–50 IU/kg IV.",
+    "domains": [
+      "toxicology",
+      "haematology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "ANNEXA-4 trial (andexanet); ACC expert consensus on anticoagulation reversal (2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "heavy-metal-dmsa",
+    "poison": "Lead, arsenic, mercury (inorganic and organic) poisoning",
+    "antidote": "DMSA (succimer) — oral chelator (or BAL / dimercaprol IM for severe/unable-to-take-oral)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Water-soluble dithiol chelator that forms a stable, excretable complex with lead, arsenic and mercury, mobilising them from soft tissue and increasing urinary excretion.",
+    "dosing": "DMSA (succimer) 10 mg/kg PO 8-hourly for 5 days, then 12-hourly for 14 days. For severe poisoning or encephalopathy: dimercaprol (BAL) 3–5 mg/kg IM every 4h + CaNa2EDTA. Lead encephalopathy in children always requires hospital chelation.",
+    "domains": [
+      "toxicology",
+      "paediatrics",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "WHO lead poisoning guidance; CDC childhood lead surveillance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cesium-radioactive-prussian-blue",
+    "poison": "Internal contamination with radioactive caesium-137 or thallium",
+    "antidote": "Prussian blue (ferric hexacyanoferrate)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Ion-exchange resin that binds caesium and thallium in the gut, interrupting their entero-enteric circulation and accelerating faecal excretion.",
+    "dosing": "Adults: 3 g PO 3-times daily; children: 1 g 3-times daily. Continue at least 30 days, longer based on whole-body counting / urinary excretion.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "radiation-medicine"
+    ],
+    "references": [
+      {
+        "label": "FDA emergency-use guidance; IAEA radiation emergency response"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "neuroleptic-malignant-bromocriptine-dantrolene",
+    "poison": "Neuroleptic malignant syndrome (severe)",
+    "antidote": "Bromocriptine + dantrolene (with cessation of offending drug, cooling, supportive care)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Bromocriptine is a dopamine agonist that reverses the central dopaminergic blockade of NMS. Dantrolene inhibits sarcoplasmic reticulum calcium release, breaking the muscle rigidity → hyperthermia cycle.",
+    "dosing": "Bromocriptine 2.5 mg PO/NG 8-hourly, titrated up to 5 mg every 4h. Dantrolene 1–2.5 mg/kg IV initially, repeat to a maximum 10 mg/kg/day. Aggressive cooling, fluids, treat rhabdomyolysis; specialist input.",
+    "domains": [
+      "psychiatry",
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "Strawn et al. — Neuroleptic Malignant Syndrome (2007); UpToDate (clinical synthesis)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "serotonin-syndrome-cyproheptadine",
+    "poison": "Severe serotonin syndrome (precipitated by SSRI/SNRI + MAOI / linezolid / tramadol / MDMA)",
+    "antidote": "Cyproheptadine (5-HT2A antagonist) + cessation of serotonergic drugs + supportive cooling and benzodiazepines",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Cyproheptadine non-specifically blocks central 5-HT2A receptors, reducing the autonomic instability, clonus, hyperthermia and agitation.",
+    "dosing": "Cyproheptadine 12 mg PO loading dose, then 2 mg every 2h until clinical response; maintenance 8 mg every 6h. Stop offending drug; treat agitation/seizure with benzodiazepines; cool aggressively (target <38.5°C). Intubate and paralyse with non-depolarising relaxant if hyperthermia >41°C.",
+    "domains": [
+      "psychiatry",
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "Boyer & Shannon — Serotonin Syndrome NEJM (2005); UK Toxbase"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
   }
 ]

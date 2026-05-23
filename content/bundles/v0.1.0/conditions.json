@@ -42377,5 +42377,1007 @@
     "icd11": [
       "5A74.0"
     ]
+  },
+  {
+    "slug": "mhgap-acute-psychosis-primary-care",
+    "title": "Acute psychosis (mhGAP primary-care pathway)",
+    "icd10": [
+      "F23",
+      "F29"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "primary-care",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Recent onset (days to weeks) of disorganised speech or behaviour.",
+      "Delusions (fixed false beliefs) or hallucinations.",
+      "Marked agitation, aggression or social withdrawal.",
+      "Loss of insight; impaired self-care."
+    ],
+    "redFlags": [
+      "Suicidal or homicidal ideation with plan or intent.",
+      "Severe agitation endangering self or others.",
+      "Catatonia, mutism, or refusal to eat / drink.",
+      "Suspected underlying medical cause (fever, confusion fluctuating with consciousness, focal neurology, recent head injury, intoxication, withdrawal).",
+      "Fever > 38.5°C with rigidity → consider neuroleptic malignant syndrome if on antipsychotic."
+    ],
+    "diagnostics": [
+      {
+        "test": "Brief structured mental state exam (mhGAP-IG MNS quick assessment)",
+        "rationale": "Differentiate acute psychosis from delirium and substance-induced state."
+      },
+      {
+        "test": "Random blood glucose, urea + electrolytes, urinalysis",
+        "rationale": "Rule out hypoglycaemia, uraemia, UTI-precipitated delirium."
+      },
+      {
+        "test": "Urine drug screen if available",
+        "rationale": "Identify amphetamine/cocaine/cannabis-induced psychosis."
+      },
+      {
+        "test": "Pulse, BP, temperature, SpO2",
+        "rationale": "Identify medical mimics."
+      }
+    ],
+    "management": [
+      {
+        "step": "Safety first — calm environment, remove harmful objects",
+        "detail": "1 person at a time; reassure; do NOT physically restrain except as last resort. If transport needed, accompany the patient."
+      },
+      {
+        "step": "Rapid tranquillisation only if agitation endangers patient or others",
+        "detail": "First line: oral haloperidol 2–5 mg + lorazepam 1–2 mg (or diazepam 5–10 mg) IM if oral refused. Re-assess after 30–60 min."
+      },
+      {
+        "step": "Antipsychotic for the acute episode",
+        "detail": "Oral haloperidol 1.5–5 mg twice daily, OR risperidone 1–2 mg twice daily. Start LOW in older adults. Avoid in dementia (stroke risk; if essential, lowest dose, shortest duration)."
+      },
+      {
+        "step": "Identify and treat reversible causes",
+        "detail": "Correct hypoglycaemia, electrolytes, infection. Treat substance withdrawal per CIWA-Ar / COWS protocol."
+      },
+      {
+        "step": "Family / carer engagement",
+        "detail": "Explain that psychosis is a treatable illness; counter stigma; involve family in monitoring."
+      },
+      {
+        "step": "Follow-up and referral",
+        "detail": "Review at 24–72 h, then weekly. Refer to mental-health specialist within 1 week. Continue antipsychotic 6–12 months minimum after first episode."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO mhGAP Intervention Guide v2.0 — Psychosis (PSY) module",
+        "url": "https://www.who.int/publications/i/item/9789241549790"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "mhgap-self-harm-suicide-pathway",
+    "title": "Self-harm / suicide risk (mhGAP SUI pathway)",
+    "icd10": [
+      "X60",
+      "X84",
+      "T14.91",
+      "R45.851",
+      "Z91.5"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "emergency",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 5,
+      "sex": "any"
+    },
+    "presentation": [
+      "Recent act of self-harm (cutting, overdose, hanging attempt).",
+      "Expressed suicidal ideation, plan or intent.",
+      "Withdrawal, hopelessness, giving away possessions.",
+      "Persistent severe depression, psychosis, alcohol/drug intoxication, recent major loss."
+    ],
+    "redFlags": [
+      "Active suicidal plan with means and intent → emergency.",
+      "Recent serious self-harm act (overdose, hanging, drowning).",
+      "Severe agitation; refusal to discuss safety.",
+      "Acute toxicity (paracetamol > 7.5 g, organophosphate ingestion, TCA, anything haemodynamically unstable).",
+      "Psychotic features driving the act."
+    ],
+    "diagnostics": [
+      {
+        "test": "Direct clinical interview using mhGAP SUI assessment",
+        "rationale": "Ask DIRECTLY about suicidal thoughts — asking does not increase risk."
+      },
+      {
+        "test": "Medical assessment of any injury / overdose",
+        "rationale": "Treat the medical sequelae first (e.g. paracetamol → NAC per nomogram; organophosphate → atropine + PAM; benzodiazepine → supportive)."
+      },
+      {
+        "test": "Screen for treatable psychiatric drivers",
+        "rationale": "PHQ-9 for depression, AUDIT for alcohol, brief psychosis screen."
+      }
+    ],
+    "management": [
+      {
+        "step": "Ensure SAFETY first",
+        "detail": "Do NOT leave the patient alone. Remove access to means (medications, sharps, firearms, ropes, pesticides). Move to a safe space."
+      },
+      {
+        "step": "Treat the medical consequences",
+        "detail": "Resuscitate per ABCDE. Apply antidote protocols (see antidote registry: paracetamol-nac, organophosphate-atropine, tca-sodium-bicarbonate, opioid-naloxone, etc.)."
+      },
+      {
+        "step": "Compassionate empathic engagement",
+        "detail": "Listen non-judgementally; do not minimise. Identify supports. Validate distress."
+      },
+      {
+        "step": "Treat the underlying psychiatric drivers",
+        "detail": "Initiate / optimise antidepressant for moderate–severe depression (SSRI first line); antipsychotic for command hallucinations; benzodiazepine SHORT term for severe agitation."
+      },
+      {
+        "step": "Safety plan and follow-up",
+        "detail": "Co-create a written safety plan: warning signs, internal coping, social contacts, professionals, crisis hotline. Schedule follow-up within 24–72 h after discharge. Engage family or trusted person to monitor."
+      },
+      {
+        "step": "Mobilise community resources",
+        "detail": "Refer to mental-health specialist for ALL who self-harmed or have suicide plan. Where unavailable, weekly primary-care review."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO mhGAP Intervention Guide v2.0 — Self-harm/Suicide (SUI) module",
+        "url": "https://www.who.int/publications/i/item/9789241549790"
+      },
+      {
+        "label": "WHO Preventing Suicide: A Global Imperative (2014)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "mhgap-child-adolescent-behavioural-disorder",
+    "title": "Child & adolescent emotional / behavioural disorder (mhGAP CMH)",
+    "icd10": [
+      "F90",
+      "F91",
+      "F92",
+      "F93",
+      "F94",
+      "F98"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "paediatrics",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 4,
+      "maxAgeYears": 17,
+      "sex": "any"
+    },
+    "presentation": [
+      "Persistent (>6 months) developmentally inappropriate behaviour: aggression, defiance, lying, stealing.",
+      "Inattention, hyperactivity, impulsivity disrupting school and home (ADHD spectrum).",
+      "Pervasive sadness, anhedonia, somatic complaints, school avoidance.",
+      "Excessive worry, separation anxiety, social withdrawal.",
+      "Developmental difficulties: delay in language, social communication or learning."
+    ],
+    "redFlags": [
+      "Suicidal ideation or self-harm — assess urgently.",
+      "Severe aggression endangering siblings/peers.",
+      "Suspected abuse, neglect, or exploitation.",
+      "Acute behavioural change with fever, headache or focal neurology — exclude organic cause."
+    ],
+    "diagnostics": [
+      {
+        "test": "Developmental history with caregiver(s)",
+        "rationale": "Differentiate developmentally appropriate vs disordered behaviour."
+      },
+      {
+        "test": "School / teacher report (e.g. SDQ — Strengths & Difficulties Questionnaire)",
+        "rationale": "Cross-setting symptom confirmation; required for ADHD per DSM/ICD criteria."
+      },
+      {
+        "test": "Hearing & vision screen",
+        "rationale": "Sensory deficits can present as inattention or behavioural problems."
+      },
+      {
+        "test": "Thyroid function, FBC, lead level (where exposure suspected)",
+        "rationale": "Exclude treatable medical mimics."
+      }
+    ],
+    "management": [
+      {
+        "step": "Parent / caregiver psychoeducation",
+        "detail": "Explain normal child development, behaviour-modification basics (praise positive, ignore minor negative, time-out for severe). First-line for most behavioural problems in low-resource settings."
+      },
+      {
+        "step": "School-based supports",
+        "detail": "Liaise with school; environmental adjustments (seating, structured breaks, clear expectations)."
+      },
+      {
+        "step": "Brief psychological interventions",
+        "detail": "Where available, parent training programmes; CBT for anxiety/depression in adolescents."
+      },
+      {
+        "step": "Medication only after non-pharmacological measures and specialist input",
+        "detail": "ADHD: methylphenidate where available + specialist supervision. SSRI for moderate–severe adolescent depression (fluoxetine first line — only SSRI with paediatric efficacy + safety evidence) with close monitoring for emergent suicidal ideation."
+      },
+      {
+        "step": "Safeguarding",
+        "detail": "Ask about abuse / neglect / school bullying; involve child-protection pathway where suspected."
+      },
+      {
+        "step": "Engage families compassionately and review regularly",
+        "detail": "Monthly review during titration; quarterly when stable."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO mhGAP Intervention Guide v2.0 — Child & adolescent mental & behavioural disorders (CMH)",
+        "url": "https://www.who.int/publications/i/item/9789241549790"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "mhgap-substance-use-disorder-general",
+    "title": "Disorders due to substance use (mhGAP SUB pathway, excluding alcohol & opioids)",
+    "icd10": [
+      "F12",
+      "F13",
+      "F14",
+      "F15",
+      "F16",
+      "F19"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "addiction",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Recurrent substance use despite harm (work, relationships, health).",
+      "Tolerance or withdrawal symptoms.",
+      "Failed attempts to cut down or stop.",
+      "Substantial time spent obtaining or using the substance.",
+      "Common substances: cannabis, sedative-hypnotics (benzodiazepines), stimulants (cocaine, amphetamines, methamphetamine), hallucinogens, inhalants, multiple drugs."
+    ],
+    "redFlags": [
+      "Acute intoxication with reduced GCS / respiratory depression — resuscitate.",
+      "Stimulant chest pain → ACS workup; hypertensive emergency.",
+      "Severe benzodiazepine withdrawal — risk of seizures (treat as alcohol withdrawal: long-acting benzodiazepine taper).",
+      "Suicidal ideation, command hallucinations (stimulant or hallucinogen).",
+      "Pregnancy with substance use — refer urgently."
+    ],
+    "diagnostics": [
+      {
+        "test": "ASSIST or DUDIT screening",
+        "rationale": "Standardised brief screening for non-alcohol substances."
+      },
+      {
+        "test": "Urine drug screen",
+        "rationale": "Identify substances when patient denies use or in acute presentations."
+      },
+      {
+        "test": "ECG, electrolytes for stimulant users",
+        "rationale": "Rule out cardiac toxicity and QT prolongation."
+      },
+      {
+        "test": "BBV screen (HIV, hep B, hep C)",
+        "rationale": "Especially for any injecting drug use."
+      }
+    ],
+    "management": [
+      {
+        "step": "Brief intervention based on FRAMES / motivational interviewing",
+        "detail": "Feedback on risk, emphasise personal Responsibility, give Advice to cut down/stop, offer a Menu of options, Empathy, support Self-efficacy. Effective even in single 10–15 min primary-care visit for at-risk use."
+      },
+      {
+        "step": "Acute intoxication management",
+        "detail": "Supportive; treat agitation with low-dose benzodiazepine (avoid antipsychotic alone in stimulant toxicity). Refer if respiratory depression."
+      },
+      {
+        "step": "Withdrawal management",
+        "detail": "Benzodiazepine taper for sedative-hypnotic and benzodiazepine withdrawal (diazepam 20–40 mg/day initially, reducing by 10% every 1–2 weeks). Symptomatic for cannabis/stimulant withdrawal (no specific pharmacotherapy proven)."
+      },
+      {
+        "step": "Pharmacological aids",
+        "detail": "Stimulant use disorder: no consistently effective pharmacotherapy; intensive psychosocial intervention is mainstay. Cannabis use disorder: psychological intervention first line."
+      },
+      {
+        "step": "Psychosocial support",
+        "detail": "Refer to community-based recovery programmes; assess and treat comorbid mental health conditions; consider harm reduction (needle exchange, naloxone training for any injecting user)."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Weekly to monthly with progress monitoring; treat as a chronic relapsing condition — relapse is part of recovery, not failure."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO mhGAP Intervention Guide v2.0 — Substance use disorders (SUB)",
+        "url": "https://www.who.int/publications/i/item/9789241549790"
+      },
+      {
+        "label": "WHO/UNODC Stop overdose safely (S-O-S) initiative"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "mhgap-acute-mania-bipolar",
+    "title": "Acute mania (mhGAP-aligned)",
+    "icd10": [
+      "F30",
+      "F31.1",
+      "F31.2"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Elevated, expansive or irritable mood for ≥1 week.",
+      "Decreased need for sleep, increased energy.",
+      "Pressured speech, flight of ideas, racing thoughts.",
+      "Grandiosity, distractibility, risk-taking behaviour (spending, sexual, driving).",
+      "Psychotic features may be mood-congruent (grandiose delusions, hallucinations)."
+    ],
+    "redFlags": [
+      "Severe agitation or aggression; harm to self/others.",
+      "Catatonic features.",
+      "Significant weight loss, dehydration.",
+      "Psychotic features endangering safety.",
+      "Comorbid substance / stimulant use precipitating mania."
+    ],
+    "diagnostics": [
+      {
+        "test": "Brief mental state exam ± Young Mania Rating Scale (YMRS)",
+        "rationale": "Differentiate mania from schizophrenia / stimulant intoxication."
+      },
+      {
+        "test": "TSH, FBC, U&E, urine drug screen",
+        "rationale": "Exclude thyrotoxicosis and substance-induced state."
+      },
+      {
+        "test": "ECG if antipsychotic / mood stabiliser planned",
+        "rationale": "Baseline QTc."
+      }
+    ],
+    "management": [
+      {
+        "step": "Reduce stimulation; provide safe quiet environment",
+        "detail": "Limit visitors; remove valuables / car keys to protect from impulsive harm."
+      },
+      {
+        "step": "Stop any antidepressant",
+        "detail": "Continuation of antidepressant may sustain mania; specialist may continue if mood stabiliser cover is robust."
+      },
+      {
+        "step": "First-line antimanic agent",
+        "detail": "Lithium 600–1200 mg/day (target trough 0.6–1.0 mmol/L; titrate by level) OR sodium valproate 500–1000 mg/day in divided doses (NOT in women of childbearing potential without PPP). OR olanzapine 10–20 mg/day, risperidone 2–4 mg/day, or haloperidol 5–10 mg/day for rapid effect."
+      },
+      {
+        "step": "Adjunctive sedation",
+        "detail": "Lorazepam 1–2 mg PRN for severe agitation / insomnia; restrict to short courses."
+      },
+      {
+        "step": "Specialist referral within 24–72 h",
+        "detail": "All first-episode mania needs psychiatric assessment; consider inpatient admission for severe mania, psychotic features, or harm risk."
+      },
+      {
+        "step": "Monitoring",
+        "detail": "Daily mental state, weight, food/fluid intake. Lithium level on day 5 of stable dose; renal function and thyroid 6-monthly long term."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO mhGAP — Bipolar disorder (BIP) module"
+      },
+      {
+        "label": "NICE CG185 — Bipolar disorder: assessment and management"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "mhgap-generalised-anxiety-disorder",
+    "title": "Generalised anxiety disorder (mhGAP / GAD pathway)",
+    "icd10": [
+      "F41.1"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Excessive worry on most days for ≥6 months across multiple domains.",
+      "Difficulty controlling the worry.",
+      "Restlessness, easily fatigued, poor concentration, irritability, muscle tension, sleep disturbance.",
+      "GAD-7 score ≥10."
+    ],
+    "redFlags": [
+      "Suicidal ideation.",
+      "Severe functional impairment (cannot work or care for self).",
+      "Marked weight loss.",
+      "Symptoms suggesting alternative diagnosis (panic disorder, OCD, PTSD, depression, hyperthyroidism, phaeochromocytoma)."
+    ],
+    "diagnostics": [
+      {
+        "test": "GAD-7 questionnaire",
+        "rationale": "Quantify severity and track response."
+      },
+      {
+        "test": "PHQ-9",
+        "rationale": "Comorbid depression is common; treatment may need to address both."
+      },
+      {
+        "test": "TSH, FBC",
+        "rationale": "Exclude hyperthyroidism, anaemia."
+      }
+    ],
+    "management": [
+      {
+        "step": "Psychoeducation + lifestyle",
+        "detail": "Explain GAD as a treatable condition; sleep hygiene, regular exercise, reduce caffeine/alcohol/cannabis."
+      },
+      {
+        "step": "Low-intensity psychological intervention (first line for mild)",
+        "detail": "Self-help CBT materials, applied relaxation, or guided self-help where available."
+      },
+      {
+        "step": "High-intensity psychological intervention (CBT) for moderate–severe",
+        "detail": "12–16 sessions of cognitive-behavioural therapy is first-line evidence-based treatment."
+      },
+      {
+        "step": "Pharmacotherapy when psychological therapy unavailable / declined or in moderate–severe",
+        "detail": "First line: SSRI (sertraline 50–200 mg, escitalopram 10–20 mg, paroxetine 20–50 mg). Second line: SNRI (venlafaxine, duloxetine). Avoid benzodiazepines except for short-term crisis (≤2–4 weeks)."
+      },
+      {
+        "step": "Review and titrate",
+        "detail": "Review at 1–2 weeks (warn about initial worsening), then every 2–4 weeks. Continue effective antidepressant ≥12 months after remission to reduce relapse."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO mhGAP Intervention Guide — Other Significant Mental Health Complaints (OTH)"
+      },
+      {
+        "label": "NICE CG113 — Generalised anxiety disorder"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "mhgap-acute-stress-and-adjustment",
+    "title": "Acute stress reaction and adjustment disorder (mhGAP-aligned)",
+    "icd10": [
+      "F43.0",
+      "F43.2"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 5,
+      "sex": "any"
+    },
+    "presentation": [
+      "Onset within days of a clearly identifiable major stressor (assault, accident, disaster, bereavement, displacement).",
+      "Anxiety, irritability, intrusive thoughts of the event, difficulty sleeping.",
+      "Acute stress reaction resolves within days–weeks; adjustment disorder up to 6 months (longer if chronic stressor)."
+    ],
+    "redFlags": [
+      "Suicidal or self-harm thoughts.",
+      "Symptoms persisting > 1 month with re-experiencing, avoidance and hyperarousal → consider PTSD.",
+      "Inability to care for self / children.",
+      "Acute psychotic features."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical interview focused on the precipitant and current symptoms.",
+        "rationale": "Differentiate acute stress vs PTSD vs adjustment disorder vs depression."
+      }
+    ],
+    "management": [
+      {
+        "step": "Psychological first aid (WHO model)",
+        "detail": "Listen — Look — Link. Provide a safe environment, validate distress, connect to family / social support, address basic needs (food, shelter, security)."
+      },
+      {
+        "step": "Brief practical advice",
+        "detail": "Encourage normal activities, sleep, social contact. Avoid alcohol/sedatives. Explain that distress is a normal reaction and usually subsides within weeks."
+      },
+      {
+        "step": "Do NOT routinely use medication",
+        "detail": "Benzodiazepines may impair natural recovery and risk dependence; reserve for short-term crisis."
+      },
+      {
+        "step": "Brief structured psychological intervention",
+        "detail": "Problem-solving counselling (4–6 sessions) for adjustment disorder."
+      },
+      {
+        "step": "Review at 2 and 6 weeks",
+        "detail": "Refer if symptoms persist, suicidal ideation emerges, or PTSD develops."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Psychological first aid: guide for field workers (2011)"
+      },
+      {
+        "label": "WHO mhGAP — Other significant mental health complaints (OTH)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "mhgap-dementia-primary-care-pathway",
+    "title": "Dementia (mhGAP DEM pathway, primary-care management)",
+    "icd10": [
+      "F00",
+      "F01",
+      "F02",
+      "F03",
+      "G30"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "neurology",
+      "geriatrics",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 50,
+      "sex": "any"
+    },
+    "presentation": [
+      "Progressive (≥6 months) decline in memory, language, executive function or visuospatial skills.",
+      "Functional decline: instrumental ADLs (finance, cooking, medication) then basic ADLs.",
+      "Behavioural and psychological symptoms (apathy, irritability, wandering, hallucinations) common as the disease progresses.",
+      "Insight often reduced; informant history is essential."
+    ],
+    "redFlags": [
+      "Sudden onset / stepwise progression → vascular dementia or stroke.",
+      "Rapidly progressive cognitive decline → consider Creutzfeldt-Jakob, autoimmune encephalitis, normal pressure hydrocephalus, B12 deficiency.",
+      "Acute confusion in known dementia → delirium (treat reversible cause).",
+      "Suicide risk or severe behavioural disturbance.",
+      "Caregiver burnout / suspected elder abuse."
+    ],
+    "diagnostics": [
+      {
+        "test": "Brief cognitive screen (MMSE, MoCA, or 10-CS)",
+        "rationale": "Quantify cognition; track over time."
+      },
+      {
+        "test": "Informant interview (e.g. IQCODE)",
+        "rationale": "Independent assessment of decline."
+      },
+      {
+        "test": "TSH, B12, folate, U&E, calcium, glucose, syphilis serology where indicated",
+        "rationale": "Identify reversible causes."
+      },
+      {
+        "test": "Neuroimaging (CT or MRI) when available",
+        "rationale": "Detect vascular disease, tumours, hydrocephalus; not always available in LMIC."
+      }
+    ],
+    "management": [
+      {
+        "step": "Explain the diagnosis sensitively to patient and family",
+        "detail": "Plan for the future: advance directives, lasting power of attorney, driving safety, financial planning."
+      },
+      {
+        "step": "Treat reversible contributors",
+        "detail": "B12 / folate / thyroid replacement, optimise vascular risk factors (BP, glycaemia, lipids, smoking)."
+      },
+      {
+        "step": "Non-pharmacological first line for behavioural symptoms",
+        "detail": "Structured routines, orientation cues, addressing pain/discomfort, music therapy, social stimulation."
+      },
+      {
+        "step": "Pharmacotherapy",
+        "detail": "Cholinesterase inhibitors (donepezil, rivastigmine, galantamine) for mild–moderate Alzheimer's where available; memantine for moderate–severe. Antipsychotics ONLY for severe distress / risk; lowest dose, shortest duration — high stroke and death risk in dementia."
+      },
+      {
+        "step": "Carer support",
+        "detail": "Psychoeducation, respite, peer-support groups; assess for carer depression."
+      },
+      {
+        "step": "Plan end-of-life care early",
+        "detail": "Palliative approach in advanced dementia; avoid hospital admissions, focus on comfort."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO mhGAP Intervention Guide v2.0 — Dementia (DEM)"
+      },
+      {
+        "label": "WHO Global action plan on the public health response to dementia 2017–2025"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "hearts-bp-lowering-protocol",
+    "title": "WHO HEARTS — stepwise blood-pressure-lowering protocol",
+    "icd10": [
+      "I10",
+      "I11",
+      "I12",
+      "I13",
+      "I15"
+    ],
+    "domains": [
+      "cardiology",
+      "primary-care",
+      "ncd",
+      "hypertension"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Adult with confirmed hypertension (mean BP ≥140/90 mmHg on two visits, or ≥135/85 mmHg on home/ambulatory readings).",
+      "Asymptomatic in most; symptoms (headache, vision change, chest pain) occur with severe hypertension or end-organ damage."
+    ],
+    "redFlags": [
+      "BP ≥180/120 mmHg with new symptoms (chest pain, neurological deficit, severe headache, breathlessness) → hypertensive emergency, refer urgently.",
+      "BP ≥180/120 mmHg without symptoms but with new end-organ damage on tests → hypertensive urgency.",
+      "Suspected secondary hypertension: young patient (<30) with severe HT, very high resistant BP, hypokalaemia (consider Conn's), abdominal bruit (renal artery stenosis), paroxysms (phaeochromocytoma)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Confirm BP with calibrated upper-arm device, 2 readings 1 min apart, on 2 separate visits.",
+        "rationale": "Avoid white-coat hypertension and isolated readings."
+      },
+      {
+        "test": "Urine dipstick (protein, blood) and urine albumin-creatinine ratio (UACR).",
+        "rationale": "Detect kidney involvement."
+      },
+      {
+        "test": "Serum creatinine + eGFR, electrolytes, fasting lipids, fasting glucose / HbA1c.",
+        "rationale": "Baseline organ function, comorbid risk, baseline before ACEi/ARB and diuretic."
+      },
+      {
+        "test": "ECG.",
+        "rationale": "Identify LVH, ischaemia, conduction abnormality."
+      },
+      {
+        "test": "Total CVD risk (WHO/ISH chart or HEARTS app) — see pen-cvd-risk rule.",
+        "rationale": "Decide statin and aspirin eligibility."
+      }
+    ],
+    "management": [
+      {
+        "step": "Lifestyle for ALL (and continue alongside medication)",
+        "detail": "Reduce salt to <5 g/day; DASH-style diet rich in fruit, vegetables, whole grain; weight loss to BMI 20–25; ≥150 min/week moderate activity; smoking cessation; alcohol ≤2 standard drinks/day men, ≤1 women."
+      },
+      {
+        "step": "Initiate pharmacotherapy in fixed-dose combination where available",
+        "detail": "STEP 1: Either (a) ACE inhibitor / ARB at standard dose (enalapril 10 mg or losartan 50 mg) OR (b) dihydropyridine CCB (amlodipine 5 mg). Many guidelines now recommend STARTING with a low-dose combination (ACEi/ARB + CCB) for faster control."
+      },
+      {
+        "step": "STEP 2 at 4 weeks if BP not at target",
+        "detail": "Combine ACEi/ARB + CCB (if not already)."
+      },
+      {
+        "step": "STEP 3 at 4–8 weeks if still uncontrolled",
+        "detail": "Add thiazide-like diuretic (hydrochlorothiazide 12.5–25 mg, or indapamide 1.5 mg)."
+      },
+      {
+        "step": "STEP 4 — resistant hypertension",
+        "detail": "Add spironolactone 25 mg (check potassium and eGFR first; avoid if K >5.0 or eGFR <30). Consider referral for secondary hypertension workup."
+      },
+      {
+        "step": "Targets",
+        "detail": "General adult: <140/90; <130/80 in diabetes, CKD, post-stroke if tolerated; aim for <130/80 if high CV risk."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Every 4 weeks during titration; every 3–6 months once at target. Annual review of CV risk, ACR, lipids, renal function."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO HEARTS technical package — Healthy-lifestyle counselling, Evidence-based protocols, Access to medicines, Risk-based management, Team-based care, Systems",
+        "url": "https://www.who.int/publications/i/item/9789241514613"
+      },
+      {
+        "label": "WHO 2021 guideline on the pharmacological treatment of hypertension in adults"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "hearts-statin-primary-prevention",
+    "title": "WHO HEARTS — statin therapy for primary CVD prevention",
+    "icd10": [
+      "E78.5",
+      "Z82.49"
+    ],
+    "domains": [
+      "cardiology",
+      "primary-care",
+      "ncd"
+    ],
+    "population": {
+      "minAgeYears": 40,
+      "sex": "any"
+    },
+    "presentation": [
+      "Adult ≥40 years undergoing total cardiovascular-risk assessment (WHO/ISH or other validated tool).",
+      "Adult with diabetes mellitus ≥40 years.",
+      "Adult with established CKD (eGFR <60) or albuminuria."
+    ],
+    "redFlags": [
+      "Active liver disease (ALT > 3×ULN, decompensated cirrhosis) — defer statin.",
+      "Pregnancy or planning pregnancy — contraindicated.",
+      "Statin-related severe muscle pain or rhabdomyolysis history."
+    ],
+    "diagnostics": [
+      {
+        "test": "Total CVD risk via HEARTS / WHO-ISH chart.",
+        "rationale": "Decide eligibility — primary prevention if 10-year CVD risk ≥20% (some programmes ≥10% with diabetes / CKD)."
+      },
+      {
+        "test": "Baseline ALT, creatinine, CK if symptoms.",
+        "rationale": "Identify hepatic / muscle contraindications."
+      },
+      {
+        "test": "Fasting lipid profile.",
+        "rationale": "Baseline cholesterol; non-fasting acceptable for risk estimation."
+      }
+    ],
+    "management": [
+      {
+        "step": "Counsel on absolute benefit",
+        "detail": "Statin reduces 10-year CV event risk by ~25–30%; over 5 years, treating ~50–100 high-risk people prevents 1 major event."
+      },
+      {
+        "step": "Initiate moderate-intensity statin",
+        "detail": "Atorvastatin 10–20 mg daily OR simvastatin 20–40 mg daily (avoid simvastatin > 20 mg with SLCO1B1 risk allele or strong CYP3A4 inhibitor)."
+      },
+      {
+        "step": "Counsel on muscle symptoms and persist",
+        "detail": "Most muscle symptoms are not true intolerance — try a dose reduction or different statin before abandoning therapy."
+      },
+      {
+        "step": "Monitor",
+        "detail": "Lipid response and ALT at 8–12 weeks; tolerability annually. CK only if symptoms (do not screen)."
+      },
+      {
+        "step": "Combine with HEARTS lifestyle intervention and BP control",
+        "detail": "Statin is one prong; reinforce smoking cessation, BP target, glycaemic control."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO HEARTS — Evidence-based protocols (statin guidance)"
+      },
+      {
+        "label": "WHO Package of essential noncommunicable disease interventions (PEN) 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "hearts-aspirin-primary-prevention",
+    "title": "WHO HEARTS — aspirin for primary prevention (RESTRICTED indications)",
+    "icd10": [
+      "Z82.49"
+    ],
+    "domains": [
+      "cardiology",
+      "primary-care",
+      "ncd"
+    ],
+    "population": {
+      "minAgeYears": 40,
+      "maxAgeYears": 70,
+      "sex": "any"
+    },
+    "presentation": [
+      "Adult 40–70 with high CVD risk being considered for primary-prevention aspirin."
+    ],
+    "redFlags": [
+      "Age > 70 years — bleeding risk outweighs benefit (do NOT routinely initiate).",
+      "Active or recent peptic ulcer, GI bleeding, intracranial bleeding.",
+      "Bleeding diathesis, uncontrolled hypertension (>180/110).",
+      "Concomitant anticoagulation."
+    ],
+    "diagnostics": [
+      {
+        "test": "Total CVD risk via WHO/ISH HEARTS chart.",
+        "rationale": "Estimate benefit."
+      },
+      {
+        "test": "Bleeding risk assessment (history of GI bleed, PUD, anticoagulant use, BP control).",
+        "rationale": "Aspirin's net benefit hinges on bleeding risk being low."
+      }
+    ],
+    "management": [
+      {
+        "step": "Primary prevention — RARELY use aspirin",
+        "detail": "Recent evidence (ASPREE, ASCEND, ARRIVE) shows little net benefit in primary prevention. Most current guidance now advises AGAINST routine primary-prevention aspirin in older adults. Discuss carefully with patient if 10-year CV risk ≥10% AND bleeding risk low AND age 40–70."
+      },
+      {
+        "step": "Secondary prevention — strongly recommend",
+        "detail": "After MI, ischaemic stroke/TIA, peripheral arterial disease, coronary or peripheral revascularisation: aspirin 75–150 mg daily lifelong (unless contraindicated). Add P2Y12 inhibitor per indication."
+      },
+      {
+        "step": "If using aspirin — minimise risk",
+        "detail": "Lowest effective dose 75–100 mg daily; co-prescribe PPI if any GI risk; eradicate H. pylori where indicated."
+      },
+      {
+        "step": "Reassess yearly",
+        "detail": "Especially as patient ages or develops bleeding-risk factors — stop if balance shifts."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO HEARTS — Evidence-based protocols (aspirin)"
+      },
+      {
+        "label": "USPSTF Aspirin Use to Prevent Cardiovascular Disease (2022)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "hearts-healthy-lifestyle-counselling",
+    "title": "WHO HEARTS — healthy-lifestyle counselling for NCD prevention",
+    "icd10": [
+      "Z71.3",
+      "Z71.8",
+      "Z72.0",
+      "Z72.4"
+    ],
+    "domains": [
+      "primary-care",
+      "ncd",
+      "preventive",
+      "cardiology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Any adult attending primary care, regardless of presenting complaint, with at least one modifiable CV risk factor (smoking, low physical activity, unhealthy diet, harmful alcohol use, overweight/obesity)."
+    ],
+    "redFlags": [],
+    "diagnostics": [
+      {
+        "test": "Brief lifestyle assessment (4 questions: tobacco, alcohol, diet, activity).",
+        "rationale": "Identify modifiable risks at every encounter."
+      },
+      {
+        "test": "Anthropometry: weight, height, BMI, waist circumference.",
+        "rationale": "Track over time."
+      },
+      {
+        "test": "Blood pressure at every visit ≥40 years.",
+        "rationale": "Opportunistic case-finding for hypertension."
+      }
+    ],
+    "management": [
+      {
+        "step": "Tobacco — Ask, Advise, Assist, Arrange (5A)",
+        "detail": "Brief advice (1–3 min) doubles quit rates. Offer nicotine-replacement therapy (NRT), bupropion or varenicline where available; refer to quitline."
+      },
+      {
+        "step": "Diet — promote DASH-style",
+        "detail": "≥5 servings fruit + vegetables/day; whole grains; reduce ultra-processed foods, salt to <5 g/day, free sugar to <10% energy; emphasise locally available healthy foods."
+      },
+      {
+        "step": "Physical activity",
+        "detail": "≥150 min/week moderate-intensity OR ≥75 min/week vigorous, plus muscle-strengthening on 2 days. Older adults add balance training."
+      },
+      {
+        "step": "Alcohol",
+        "detail": "Reduce to ≤2 standard drinks/day (men) or ≤1 (women); 2 alcohol-free days/week. AUDIT-C ≥4 men or ≥3 women — offer brief intervention."
+      },
+      {
+        "step": "Weight",
+        "detail": "Aim for BMI 20–25 (lower for South Asian / Chinese populations); 5–10% weight loss substantially reduces CV risk."
+      },
+      {
+        "step": "Stress, sleep, mental health",
+        "detail": "Screen for depression (PHQ-9) and anxiety (GAD-7); address sleep apnoea risk (STOP-BANG)."
+      },
+      {
+        "step": "Document, follow up, repeat",
+        "detail": "Brief intervention at every visit; reinforce small wins; team-based care multiplies impact."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO HEARTS Healthy-lifestyle counselling (H module)"
+      },
+      {
+        "label": "WHO Global action plan on physical activity 2018–2030"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]

@@ -25,7 +25,9 @@ export class DrugDiseaseService implements OnModuleInit {
     const filtered = all.filter((i) => {
       if (filters?.drug) {
         const d = filters.drug.toLowerCase();
-        if (i.drugSlug.toLowerCase() !== d && !i.drug.toLowerCase().includes(d)) return false;
+        const slugMatch = (i.drugSlug ?? '').toLowerCase() === d;
+        const nameMatch = (i.drug ?? '').toLowerCase().includes(d);
+        if (!slugMatch && !nameMatch) return false;
       }
       if (filters?.condition) {
         const c = filters.condition.toLowerCase();

@@ -10,6 +10,7 @@ import { TerminologyModule } from './modules/terminology/terminology.module';
 import { DrugsModule } from './modules/drugs/drugs.module';
 import { ConditionsModule } from './modules/conditions/conditions.module';
 import { ProceduresModule } from './modules/procedures/procedures.module';
+import { PoliciesModule } from './modules/policies/policies.module';
 import { ClinicalScoresModule } from './modules/clinical-scores/clinical-scores.module';
 import { PharmacogenomicsModule } from './modules/pharmacogenomics/pharmacogenomics.module';
 import { DrugDiseaseModule } from './modules/drug-disease/drug-disease.module';
@@ -44,6 +45,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     DrugsModule,
     ConditionsModule,
     ProceduresModule,
+    PoliciesModule,
     ClinicalScoresModule,
     PharmacogenomicsModule,
     DrugDiseaseModule,

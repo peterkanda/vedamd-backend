@@ -54,12 +54,27 @@ const fileEntries = files.map((name) => {
   // Lazy require to avoid a top-of-file cycle.
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { validateBundle } = require('../src/modules/knowledge/bundle-validator');
+  const readOptional = (name: string): unknown[] => {
+    try {
+      return JSON.parse(readFileSync(resolve(bundleDir, name), 'utf8'));
+    } catch {
+      return [];
+    }
+  };
   const bundle = {
     conditions: JSON.parse(readFileSync(resolve(bundleDir, 'conditions.json'), 'utf8')),
     drugs: JSON.parse(readFileSync(resolve(bundleDir, 'drugs.json'), 'utf8')),
     interactions: JSON.parse(readFileSync(resolve(bundleDir, 'drug-interactions.json'), 'utf8')),
     procedures: JSON.parse(readFileSync(resolve(bundleDir, 'procedures.json'), 'utf8')),
     cdsRules: JSON.parse(readFileSync(resolve(bundleDir, 'cds-rules.json'), 'utf8')),
+    clinicalScores: readOptional('clinical-scores.json'),
+    pgxGuidelines: readOptional('pharmacogenomics.json'),
+    drugDiseaseInteractions: readOptional('drug-disease-interactions.json'),
+    immunizationSchedule: readOptional('immunization-schedule.json'),
+    allergyCrossReactivity: readOptional('allergy-cross-reactivity.json'),
+    notifiableDiseases: readOptional('notifiable-diseases.json'),
+    referenceRanges: readOptional('reference-ranges.json'),
+    antidotes: readOptional('antidotes.json'),
   };
   const validation = validateBundle(bundle);
   const stats = validation.stats;

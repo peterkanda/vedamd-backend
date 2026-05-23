@@ -564,5 +564,403 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "hepatitis-a",
+    "vaccine": "Hepatitis A vaccine (inactivated)",
+    "abbrev": "HepA",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Hepatitis A virus infection"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "hepatology",
+      "travel-medicine"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "From 12 months of age (paediatric formulation) or any age (adult formulation for travel/occupational)",
+        "route": "intramuscular"
+      },
+      {
+        "dose": "Dose 2",
+        "timing": "6–12 months after dose 1 (gives ≥20 years protection)",
+        "route": "intramuscular"
+      }
+    ],
+    "population": {
+      "notes": "Routine childhood vaccine in many countries with rising endemicity; otherwise targeted (travellers to endemic areas, MSM, IDU, chronic liver disease, occupational exposure)."
+    },
+    "catchUp": "Single dose offers short-term (1–2 year) protection if travel is imminent; complete the second dose to confer long-term immunity.",
+    "notes": "Post-exposure prophylaxis: vaccine within 14 days of exposure in healthy contacts ≥1 year (immunoglobulin for infants, immunocompromised, elderly).",
+    "references": [
+      {
+        "label": "WHO hepatitis A vaccines: position paper (2022)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "varicella",
+    "vaccine": "Varicella vaccine (live attenuated, Oka strain)",
+    "abbrev": "VAR",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Varicella (chickenpox)"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "child-health",
+      "dermatology"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "12–15 months (or any age if not previously vaccinated/exposed)",
+        "route": "subcutaneous"
+      },
+      {
+        "dose": "Dose 2",
+        "timing": "4–6 years (or ≥3 months later in catch-up)",
+        "route": "subcutaneous"
+      }
+    ],
+    "population": {
+      "notes": "Routine in many high-income schedules; targeted for susceptible adolescents/adults, healthcare workers, household contacts of immunocompromised."
+    },
+    "catchUp": "Two doses ≥3 months apart for susceptible individuals ≥13 years.",
+    "notes": "Contraindicated in pregnancy and severe immunocompromise; avoid pregnancy for 1 month after vaccination. Can be given as MMRV combination for first dose 12–47 months (small febrile-seizure signal, avoid second dose as MMRV).",
+    "references": [
+      {
+        "label": "WHO varicella and herpes zoster vaccines: position paper (2014)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "mmr",
+    "vaccine": "Measles-mumps-rubella vaccine (live attenuated)",
+    "abbrev": "MMR",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Measles",
+      "Mumps",
+      "Rubella"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "child-health"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "12–15 months (9 months in measles-endemic settings, then a second dose 3–6 months later)",
+        "route": "subcutaneous"
+      },
+      {
+        "dose": "Dose 2",
+        "timing": "4–6 years (or any time ≥1 month after dose 1 for catch-up)",
+        "route": "subcutaneous"
+      }
+    ],
+    "population": {
+      "notes": "Routine paediatric schedule; required to confirm immunity in healthcare workers and women of childbearing age (rubella)."
+    },
+    "catchUp": "Susceptible adolescents/adults: two doses ≥4 weeks apart. Outbreak control: dose to infants 6–11 months (does not count toward routine schedule).",
+    "notes": "Contraindicated in pregnancy and severe immunocompromise. Post-exposure: MMR within 72 hours of measles exposure or immunoglobulin within 6 days for high-risk contacts.",
+    "references": [
+      {
+        "label": "WHO measles vaccines: position paper (2017); rubella position paper (2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "rabies-prep-pep",
+    "vaccine": "Rabies vaccine (inactivated, cell-culture)",
+    "abbrev": "RABV",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Rabies"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "travel-medicine",
+      "emergency"
+    ],
+    "doses": [
+      {
+        "dose": "Pre-exposure",
+        "timing": "WHO 2-dose intradermal or intramuscular schedule: days 0 and 7",
+        "route": "intramuscular or intradermal"
+      },
+      {
+        "dose": "Post-exposure (no prior PrEP)",
+        "timing": "WHO IPC regimen (4-site intradermal day 0, then 2-site days 3, 7) or IM Essen regimen (days 0, 3, 7, 14, optionally 28)",
+        "route": "intramuscular or intradermal"
+      },
+      {
+        "dose": "Post-exposure (prior PrEP)",
+        "timing": "2 doses days 0 and 3 (no immunoglobulin required)",
+        "route": "intramuscular or intradermal"
+      }
+    ],
+    "population": {
+      "notes": "Pre-exposure: high-risk occupational, travellers to endemic areas with limited access to PEP, children in highly endemic areas. Post-exposure: any category II/III animal exposure in endemic area."
+    },
+    "catchUp": "Boost as needed by serology in high-risk occupational groups.",
+    "notes": "Category III exposure (bite, scratch breaking skin, mucosal contact with saliva from rabid/suspect animal) ALSO requires rabies immunoglobulin (human RIG 20 IU/kg or equine 40 IU/kg) infiltrated around wound — unless patient previously fully vaccinated.",
+    "references": [
+      {
+        "label": "WHO rabies vaccines: position paper (2018) and WHO TRS 1012"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "malaria-rts-s",
+    "vaccine": "RTS,S/AS01 (Mosquirix) and R21/Matrix-M malaria vaccines",
+    "abbrev": "RTS,S / R21",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Plasmodium falciparum malaria"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "malaria",
+      "child-health"
+    ],
+    "doses": [
+      {
+        "dose": "Primary series (3 doses)",
+        "timing": "At 5, 6 and 7 months of age (or staggered with EPI: 6, 7, 9 months)",
+        "route": "intramuscular"
+      },
+      {
+        "dose": "Booster dose",
+        "timing": "~12–18 months after dose 3",
+        "route": "intramuscular"
+      }
+    ],
+    "population": {
+      "notes": "WHO-recommended for children in regions of moderate-to-high P. falciparum transmission. R21 (Matrix-M) approved more recently with improved supply."
+    },
+    "catchUp": "Not used as catch-up beyond age window; complements (does NOT replace) insecticide-treated nets, prompt treatment, IPTp, and SMC.",
+    "notes": "Reduces severe malaria by ~30% with primary series; impact larger when combined with seasonal malaria chemoprevention.",
+    "references": [
+      {
+        "label": "WHO recommendation on malaria vaccine for prevention of P. falciparum (2021, updated 2023)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ebola-rvsv",
+    "vaccine": "rVSVΔG-ZEBOV-GP (Ervebo) Ebola vaccine",
+    "abbrev": "Ebola (rVSV)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Ebola virus disease (Zaire ebolavirus species)"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "infection-control",
+      "emergency"
+    ],
+    "doses": [
+      {
+        "dose": "Single dose",
+        "timing": "As soon as possible during ring-vaccination of contacts and contacts-of-contacts of an Ebola case; pre-exposure for healthcare and frontline workers in outbreaks",
+        "route": "intramuscular"
+      }
+    ],
+    "population": {
+      "notes": "Deployed in ring-vaccination strategy during Ebola outbreaks; pre-exposure use for at-risk frontline workers per WHO."
+    },
+    "catchUp": null,
+    "notes": "Protects against Zaire ebolavirus only; does not cover Sudan or Bundibugyo species. Avoid in pregnancy unless benefits outweigh risk (live vaccine).",
+    "references": [
+      {
+        "label": "WHO Ebola vaccines: position paper (2021)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "zoster-recombinant",
+    "vaccine": "Recombinant zoster vaccine (Shingrix)",
+    "abbrev": "RZV",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Herpes zoster",
+      "Post-herpetic neuralgia"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "geriatrics",
+      "dermatology"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "Adults ≥50 years (or ≥18 years if immunocompromised)",
+        "route": "intramuscular"
+      },
+      {
+        "dose": "Dose 2",
+        "timing": "2–6 months after dose 1 (1–2 months in immunocompromised to ensure rapid coverage)",
+        "route": "intramuscular"
+      }
+    ],
+    "population": {
+      "notes": "Recommended for adults ≥50 regardless of prior herpes zoster or live zoster vaccine; also for immunocompromised adults ≥18."
+    },
+    "catchUp": "Resume with second dose if interval exceeded; no need to restart series.",
+    "notes": "Reactogenic — counsel about transient injection-site pain, fever, myalgia. >90% efficacy in preventing herpes zoster across age groups.",
+    "references": [
+      {
+        "label": "WHO position paper on varicella and herpes zoster (2014, updated 2023)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "meningococcal-acwy",
+    "vaccine": "Meningococcal ACWY conjugate vaccine (MenACWY)",
+    "abbrev": "MenACWY",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Neisseria meningitidis serogroups A, C, W, Y"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "infectious-disease",
+      "travel-medicine"
+    ],
+    "doses": [
+      {
+        "dose": "Routine adolescent dose",
+        "timing": "11–12 years with booster at 16 (US) or single adolescent dose (UK, others)",
+        "route": "intramuscular"
+      },
+      {
+        "dose": "Targeted populations",
+        "timing": "Asplenia, complement deficiency, eculizumab use, lab workers handling meningococcus, travellers to outbreak regions / Hajj pilgrims, university freshmen in dormitories",
+        "route": "intramuscular"
+      }
+    ],
+    "population": {
+      "notes": "Required for Hajj/Umrah pilgrims by Saudi Arabia. MenB vaccine separately for B serogroup disease."
+    },
+    "catchUp": "Single dose for susceptible adolescents/adults entering risk group.",
+    "notes": "Conjugate vaccines provide herd immunity and durable protection compared with polysaccharide vaccines, which are now largely obsolete except where conjugate unavailable.",
+    "references": [
+      {
+        "label": "WHO meningococcal vaccines: position paper (2011, updated)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "mpox-jynneos",
+    "vaccine": "MVA-BN modified vaccinia Ankara vaccine (JYNNEOS / Imvanex / Imvamune)",
+    "abbrev": "MPX",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Mpox (formerly monkeypox)",
+      "Smallpox"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "infectious-disease"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "Pre- or post-exposure (ideally within 4 days, up to 14 days post-exposure for mpox)",
+        "route": "subcutaneous (or intradermal at lower dose for supply preservation)"
+      },
+      {
+        "dose": "Dose 2",
+        "timing": "28 days after dose 1",
+        "route": "subcutaneous"
+      }
+    ],
+    "population": {
+      "notes": "Targeted to at-risk groups during outbreaks (e.g. MSM with multiple partners, healthcare workers managing mpox), and to laboratory / orthopoxvirus workers pre-exposure."
+    },
+    "catchUp": "Complete the second dose to confer durable immunity.",
+    "notes": "Non-replicating; safe in immunocompromised. Compared with first-generation smallpox vaccine (ACAM2000), there is no risk of myopericarditis or progressive vaccinia.",
+    "references": [
+      {
+        "label": "WHO interim guidance on mpox vaccination (2022, updated)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "rsv-maternal-and-elderly",
+    "vaccine": "Respiratory syncytial virus prefusion-F vaccine (e.g. Abrysvo, Arexvy) and nirsevimab monoclonal antibody",
+    "abbrev": "RSV",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "RSV lower respiratory tract infection in infants and older adults"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "respiratory",
+      "neonatology",
+      "geriatrics"
+    ],
+    "doses": [
+      {
+        "dose": "Maternal RSV vaccine",
+        "timing": "Single dose between 24 and 36 weeks gestation (seasonal)",
+        "route": "intramuscular"
+      },
+      {
+        "dose": "Adult RSV vaccine",
+        "timing": "Single dose for adults ≥60 (or ≥75 in some recommendations) entering RSV season",
+        "route": "intramuscular"
+      },
+      {
+        "dose": "Nirsevimab monoclonal antibody",
+        "timing": "Single 50 mg (or 100 mg ≥5 kg) IM dose for infants entering first RSV season; second-season dose for high-risk infants",
+        "route": "intramuscular"
+      }
+    ],
+    "population": {
+      "notes": "Either maternal RSV vaccine OR infant nirsevimab is given (not both) to protect young infants."
+    },
+    "catchUp": "Nirsevimab can be given to qualifying infants at any time during the RSV season they are eligible.",
+    "notes": "Maternal vaccine confers passive immunity for the first ~6 months; nirsevimab gives ~5 months of monoclonal protection. RSV vaccines for adults are highly effective at preventing lower-tract disease and hospitalisation.",
+    "references": [
+      {
+        "label": "WHO interim recommendations on RSV products (2024); CDC ACIP guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]

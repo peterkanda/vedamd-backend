@@ -443,5 +443,480 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "aspirin--peptic-ulcer-disease-adult",
+    "drugSlug": "aspirin",
+    "drug": "Aspirin (and other NSAIDs)",
+    "condition": "Peptic ulcer disease (active or recent)",
+    "conditionSlug": "peptic-ulcer-disease-adult",
+    "severity": "contraindicated",
+    "mechanism": "COX-1 inhibition impairs gastric mucosal defence (prostaglandin-mediated mucus and bicarbonate secretion) and adds an antiplatelet bleeding effect; precipitates ulcer recurrence and bleeding.",
+    "recommendation": "Avoid aspirin in active or recent peptic ulcer disease. If antiplatelet therapy is required for vascular indication, eradicate H. pylori, use a PPI, and consider clopidogrel only after specialist review.",
+    "references": [
+      {
+        "label": "ACG Guideline — peptic ulcer disease; BNF"
+      }
+    ],
+    "drugClass": "antiplatelet",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "aspirin--asthma-chronic",
+    "drugSlug": "aspirin",
+    "drug": "Aspirin (and non-selective NSAIDs)",
+    "condition": "Aspirin-exacerbated respiratory disease (Samter triad) / known NSAID-sensitive asthma",
+    "conditionSlug": "asthma-chronic",
+    "severity": "contraindicated",
+    "mechanism": "COX-1 inhibition shifts arachidonic acid metabolism toward cysteinyl leukotrienes, precipitating bronchospasm in susceptible asthmatics (especially with nasal polyposis).",
+    "recommendation": "Avoid aspirin and non-selective NSAIDs. Use paracetamol; if NSAID essential, consider a selective COX-2 inhibitor under specialist guidance with desensitisation if vascular indication.",
+    "references": [
+      {
+        "label": "GINA Asthma guidance; EAACI position paper on AERD"
+      }
+    ],
+    "drugClass": "antiplatelet",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "macrolide--long-qt-syndrome",
+    "drugSlug": "erythromycin",
+    "drug": "Macrolide antibiotics (erythromycin, clarithromycin, azithromycin to a lesser degree)",
+    "condition": "Long QT syndrome (congenital or acquired)",
+    "conditionSlug": "long-qt-syndrome",
+    "severity": "contraindicated",
+    "mechanism": "hERG (Ikr) potassium channel blockade prolongs cardiac repolarisation; risk of torsades de pointes amplified by congenital LQTS, hypokalaemia, hypomagnesaemia, bradycardia or other QT-prolonging agents.",
+    "recommendation": "Avoid macrolides (especially erythromycin and clarithromycin). Choose a non-QT-prolonging alternative (doxycycline, amoxicillin, β-lactam per indication).",
+    "references": [
+      {
+        "label": "CredibleMeds QT drug list; ESC LQTS management"
+      }
+    ],
+    "drugClass": "macrolide",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "fluoroquinolone--g6pd-deficiency",
+    "drugSlug": "ciprofloxacin",
+    "drug": "Fluoroquinolones (ciprofloxacin, levofloxacin, moxifloxacin)",
+    "condition": "G6PD deficiency",
+    "conditionSlug": "g6pd-deficiency",
+    "severity": "caution",
+    "mechanism": "Oxidative stress can precipitate acute haemolysis in G6PD-deficient red cells, particularly during infection.",
+    "recommendation": "Use with caution; prefer a non-oxidant antibiotic where appropriate. If used, monitor haemoglobin and haptoglobin and advise patient to seek care for jaundice, dark urine or pallor.",
+    "references": [
+      {
+        "label": "WHO Guide to G6PD deficiency in drug prescribing"
+      }
+    ],
+    "drugClass": "fluoroquinolone",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "sulfonamide--g6pd-deficiency",
+    "drugSlug": "co-trimoxazole",
+    "drug": "Sulfonamides (co-trimoxazole, dapsone, sulfasalazine)",
+    "condition": "G6PD deficiency",
+    "conditionSlug": "g6pd-deficiency",
+    "severity": "contraindicated",
+    "mechanism": "Strong oxidants — predictable haemolysis in G6PD-deficient erythrocytes, sometimes severe enough to require transfusion.",
+    "recommendation": "Avoid in G6PD deficiency. Choose a non-oxidant alternative (e.g. pentamidine or atovaquone for PCP; macrolide or β-lactam for UTI per local susceptibility).",
+    "references": [
+      {
+        "label": "WHO G6PD deficiency drug list"
+      }
+    ],
+    "drugClass": "sulfonamide",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "beta-blocker--hypoglycaemia-on-insulin",
+    "drugSlug": "propranolol",
+    "drug": "Non-cardioselective beta-blockers (propranolol)",
+    "condition": "Insulin-treated diabetes with hypoglycaemia awareness reliance",
+    "conditionSlug": "acute-hypoglycaemia",
+    "severity": "caution",
+    "mechanism": "Blunts adrenergic warning symptoms of hypoglycaemia (tremor, tachycardia, palpitations) and inhibits gluconeogenesis; prolongs and masks hypoglycaemia.",
+    "recommendation": "Prefer cardioselective β1-blockers (bisoprolol, metoprolol) at the lowest effective dose in insulin-treated diabetes; counsel patient about altered symptoms.",
+    "references": [
+      {
+        "label": "ADA Standards of Care; BNF"
+      }
+    ],
+    "drugClass": "beta-blocker",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "bupropion--epilepsy-chronic-management-adult",
+    "drugSlug": "bupropion",
+    "drug": "Bupropion",
+    "condition": "Epilepsy / lowered seizure threshold (eating disorders, alcohol withdrawal)",
+    "conditionSlug": "epilepsy-chronic-management-adult",
+    "severity": "contraindicated",
+    "mechanism": "Dose-dependent reduction in seizure threshold (incidence 0.1–0.4% at therapeutic doses, much higher above maximum recommended dose).",
+    "recommendation": "Do NOT prescribe in seizure disorders, current/past anorexia or bulimia, or during alcohol/benzodiazepine withdrawal. Choose an alternative antidepressant or smoking-cessation aid.",
+    "references": [
+      {
+        "label": "FDA label for bupropion; NICE depression guideline"
+      }
+    ],
+    "drugClass": "antidepressant",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "lithium--chronic-kidney-disease",
+    "drugSlug": "lithium",
+    "drug": "Lithium",
+    "condition": "Chronic kidney disease (eGFR < 60 mL/min) or AKI",
+    "conditionSlug": "chronic-kidney-disease",
+    "severity": "caution",
+    "mechanism": "Renally excreted with narrow therapeutic index; reduced clearance precipitates lithium toxicity. Long-term lithium itself can cause nephrogenic diabetes insipidus and progressive CKD.",
+    "recommendation": "Avoid initiating in significant CKD; if already established, reduce dose and monitor lithium level + U&E every 1–3 months. Hold during AKI or dehydration.",
+    "references": [
+      {
+        "label": "NICE Bipolar disorder guideline; BNF"
+      }
+    ],
+    "drugClass": "mood-stabiliser",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "valproate--pregnancy",
+    "drugSlug": "valproate",
+    "drug": "Sodium valproate",
+    "condition": "Pregnancy / women of childbearing potential without effective contraception",
+    "conditionSlug": "epilepsy-chronic-management-adult",
+    "severity": "contraindicated",
+    "mechanism": "Major teratogen — neural tube defects (1–2%), cardiac and craniofacial malformations, plus long-term neurodevelopmental disability (autism, lower IQ) in up to 30–40% of exposed children.",
+    "recommendation": "Do NOT prescribe to women of childbearing potential unless no alternative AND a pregnancy-prevention programme is in place (MHRA Valproate PPP). Switch to lamotrigine or levetiracetam when planning pregnancy.",
+    "references": [
+      {
+        "label": "MHRA Valproate Pregnancy Prevention Programme (2018); WHO Essential Medicines warnings"
+      }
+    ],
+    "drugClass": "antiepileptic",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "lithium--pregnancy",
+    "drugSlug": "lithium",
+    "drug": "Lithium",
+    "condition": "Pregnancy (first trimester)",
+    "conditionSlug": "bipolar-disorder-adult",
+    "severity": "caution",
+    "mechanism": "Lithium use in the first trimester is associated with cardiac malformations (Ebstein anomaly) — historically estimated ~1:1000 absolute risk above baseline; later trimesters risk neonatal toxicity and floppy-baby.",
+    "recommendation": "Avoid where possible in the first trimester. If essential for severe bipolar disorder, use the lowest effective dose, monitor levels closely, perform fetal echocardiography at 16–20 weeks, plan delivery with neonatal/maternal teams.",
+    "references": [
+      {
+        "label": "NICE Bipolar disorder in pregnancy guideline; BNF"
+      }
+    ],
+    "drugClass": "mood-stabiliser",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "carbamazepine--pregnancy",
+    "drugSlug": "carbamazepine",
+    "drug": "Carbamazepine",
+    "condition": "Pregnancy",
+    "conditionSlug": "epilepsy-chronic-management-adult",
+    "severity": "caution",
+    "mechanism": "Modest teratogenicity — neural tube defects (~1%), craniofacial and cardiac malformations; vitamin K-dependent factor deficiency in the neonate.",
+    "recommendation": "Prefer lamotrigine or levetiracetam in women of childbearing potential. If carbamazepine remains essential, give high-dose folate (5 mg/day) pre-conception, monitor closely, and give vitamin K 10 mg PO to mother in the last month + 1 mg IM to neonate at birth.",
+    "references": [
+      {
+        "label": "NICE Epilepsy in pregnancy; UK Epilepsy and Pregnancy Register"
+      }
+    ],
+    "drugClass": "antiepileptic",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "methotrexate--pregnancy",
+    "drugSlug": "methotrexate",
+    "drug": "Methotrexate",
+    "condition": "Pregnancy",
+    "conditionSlug": "ectopic-pregnancy",
+    "severity": "contraindicated",
+    "mechanism": "Major teratogen and abortifacient — folate antagonism causes craniofacial, limb and CNS malformations (methotrexate embryopathy).",
+    "recommendation": "Absolute contraindication. Stop at least 3 months before attempting conception (longer per some guidance) in both women and men. Use effective contraception during therapy. Therapeutic use in pregnancy is restricted to ectopic pregnancy and termination protocols.",
+    "references": [
+      {
+        "label": "EULAR points to consider for prescribing in pregnancy (2016); FDA label"
+      }
+    ],
+    "drugClass": "antimetabolite",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "methotrexate--chronic-kidney-disease",
+    "drugSlug": "methotrexate",
+    "drug": "Methotrexate",
+    "condition": "Chronic kidney disease (eGFR < 30 mL/min/1.73m²)",
+    "conditionSlug": "chronic-kidney-disease",
+    "severity": "contraindicated",
+    "mechanism": "Renal elimination is the dominant clearance route; reduced clearance produces myelosuppression, mucositis and hepatotoxicity, and impairs subsequent folinic acid rescue if needed.",
+    "recommendation": "Avoid methotrexate in eGFR < 30. In eGFR 30–60 use reduced dose, monitor FBC and LFT weekly initially, ensure folate 5 mg weekly (taken on a different day).",
+    "references": [
+      {
+        "label": "BSR Methotrexate prescribing guideline; KDIGO"
+      }
+    ],
+    "drugClass": "antimetabolite",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "statin--pregnancy",
+    "drugSlug": "atorvastatin",
+    "drug": "HMG-CoA reductase inhibitors (statins)",
+    "condition": "Pregnancy and breastfeeding",
+    "conditionSlug": null,
+    "severity": "contraindicated",
+    "mechanism": "Statins block cholesterol biosynthesis required for fetal development (steroidogenesis, neural tissue); animal teratogenicity, limited human safety data.",
+    "recommendation": "Discontinue at least 1 month before conception or as soon as pregnancy is confirmed; avoid during breastfeeding. Focus on lifestyle until delivery and end of breastfeeding, then resume.",
+    "references": [
+      {
+        "label": "FDA pregnancy labelling; NICE familial hypercholesterolaemia guideline"
+      }
+    ],
+    "drugClass": "statin",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "doxycycline--paediatric-under-8",
+    "drugSlug": "doxycycline",
+    "drug": "Tetracyclines (doxycycline, tetracycline)",
+    "condition": "Children under 8 years (and 2nd–3rd trimester pregnancy)",
+    "conditionSlug": null,
+    "severity": "caution",
+    "mechanism": "Tetracyclines chelate calcium in developing teeth and bone, causing permanent tooth discolouration and (less commonly) transient bone-growth depression with prolonged courses.",
+    "recommendation": "Avoid prolonged courses in children < 8 years and in pregnancy after the first trimester. Short courses (≤21 days) of doxycycline are now considered acceptable in younger children for life-threatening rickettsial disease and severe respiratory infection per CDC (2018 update).",
+    "references": [
+      {
+        "label": "CDC Yellow Book; AAP Red Book"
+      }
+    ],
+    "drugClass": "tetracycline",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "fluoroquinolone--paediatric-under-18",
+    "drugSlug": "ciprofloxacin",
+    "drug": "Fluoroquinolones (ciprofloxacin, levofloxacin, moxifloxacin)",
+    "condition": "Children and adolescents (< 18 years)",
+    "conditionSlug": null,
+    "severity": "caution",
+    "mechanism": "Cartilage and tendon toxicity in juvenile animal models; rare tendinitis / tendon rupture in humans (Achilles tendon, especially with corticosteroid co-treatment).",
+    "recommendation": "Reserve for serious infections (complicated UTI / pyelonephritis, multidrug-resistant TB second-line, pseudomonas-coverage in cystic fibrosis) when no safer alternative exists. Counsel about tendon symptoms and avoid concomitant systemic steroids.",
+    "references": [
+      {
+        "label": "FDA fluoroquinolone safety communications; AAP Red Book"
+      }
+    ],
+    "drugClass": "fluoroquinolone",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "codeine--paediatric-under-12",
+    "drugSlug": "codeine",
+    "drug": "Codeine (and tramadol)",
+    "condition": "Children under 12 years (and 12–18 years post-tonsillectomy/adenoidectomy or with OSA / obesity)",
+    "conditionSlug": null,
+    "severity": "contraindicated",
+    "mechanism": "Codeine is bioactivated to morphine by CYP2D6. Ultra-rapid metabolisers (1–7% of European, up to 30% of North African ancestry) produce excess morphine, with reports of fatal respiratory depression in children.",
+    "recommendation": "Do NOT use codeine or tramadol in children <12 years for any indication, and in any child after tonsillectomy/adenoidectomy. Choose paracetamol/ibuprofen first, then weight-appropriate morphine if needed.",
+    "references": [
+      {
+        "label": "FDA Drug Safety Communication (2017); EMA recommendation (2013); WHO Pain Ladder review"
+      }
+    ],
+    "drugClass": "opioid",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "codeine--breastfeeding",
+    "drugSlug": "codeine",
+    "drug": "Codeine and tramadol",
+    "condition": "Breastfeeding",
+    "conditionSlug": null,
+    "severity": "contraindicated",
+    "mechanism": "Maternal CYP2D6 ultra-rapid metabolism can yield high morphine concentrations in breast milk; reports of neonatal apnoea and death.",
+    "recommendation": "Avoid codeine and tramadol while breastfeeding. Use paracetamol ± ibuprofen; if opioid required, low-dose morphine or fentanyl is preferred and the infant should be observed for sedation.",
+    "references": [
+      {
+        "label": "FDA Drug Safety Communication (2017); UK Specialist Pharmacy Service"
+      }
+    ],
+    "drugClass": "opioid",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "nsaid--pregnancy-third-trimester",
+    "drugSlug": "ibuprofen",
+    "drug": "NSAIDs (ibuprofen, diclofenac, naproxen, indomethacin)",
+    "condition": "Pregnancy (≥ 20 weeks gestation)",
+    "conditionSlug": null,
+    "severity": "contraindicated",
+    "mechanism": "Prostaglandin inhibition causes oligohydramnios, premature closure of the ductus arteriosus and fetal renal impairment after 20 weeks. Risk increases after 30 weeks.",
+    "recommendation": "Avoid NSAIDs after 20 weeks. Use paracetamol; if anti-inflammatory required (severe inflammatory arthritis), specialist-supervised low-dose short course only.",
+    "references": [
+      {
+        "label": "FDA Drug Safety Communication (2020); NICE Antenatal Care"
+      }
+    ],
+    "drugClass": "nsaid",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "bisphosphonate--severe-renal-impairment",
+    "drugSlug": "alendronate",
+    "drug": "Bisphosphonates (alendronate, zoledronate)",
+    "condition": "Severe renal impairment (eGFR < 30–35 mL/min)",
+    "conditionSlug": "chronic-kidney-disease",
+    "severity": "contraindicated",
+    "mechanism": "Renal elimination of unchanged bisphosphonate; IV zoledronate in renal impairment is associated with acute tubular necrosis. Oral bisphosphonates lack efficacy and safety data in advanced CKD.",
+    "recommendation": "Avoid bisphosphonates when eGFR < 30–35 mL/min. Treat CKD-MBD per KDIGO; in CKD G4–5 use denosumab with vigilant calcium monitoring or refer to nephrology / metabolic bone.",
+    "references": [
+      {
+        "label": "KDIGO CKD-MBD guideline; FDA prescribing information for zoledronate"
+      }
+    ],
+    "drugClass": "bisphosphonate",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "anticholinergic--benign-prostatic-hyperplasia",
+    "drugSlug": "amitriptyline",
+    "drug": "Anticholinergic / antimuscarinic agents (oxybutynin, tolterodine, amitriptyline, first-generation antihistamines)",
+    "condition": "Benign prostatic hyperplasia with bladder outflow obstruction",
+    "conditionSlug": "benign-prostatic-hyperplasia",
+    "severity": "caution",
+    "mechanism": "Blockade of bladder detrusor muscarinic (M3) receptors reduces contractility; in significant outflow obstruction this precipitates acute urinary retention.",
+    "recommendation": "Avoid where bladder outflow obstruction is suspected (high IPSS, large residual volume). If overactive bladder symptoms must be treated, consider mirabegron (β3-agonist) or refer urology.",
+    "references": [
+      {
+        "label": "BNF; EAU Non-neurogenic Male LUTS guideline"
+      }
+    ],
+    "drugClass": "anticholinergic",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "anticholinergic--glaucoma-angle-closure",
+    "drugSlug": "amitriptyline",
+    "drug": "Anticholinergic / antimuscarinic agents, tricyclic antidepressants, certain antiemetics (cyclizine), first-generation antihistamines",
+    "condition": "Acute / narrow angle-closure glaucoma",
+    "conditionSlug": "acute-angle-closure-glaucoma",
+    "severity": "contraindicated",
+    "mechanism": "Pupillary dilatation crowds the iridocorneal angle in eyes with anatomically narrow angles, precipitating acute angle-closure with rapid intraocular pressure rise and visual loss.",
+    "recommendation": "Avoid in narrow-angle glaucoma. Open-angle glaucoma is not a contraindication.",
+    "references": [
+      {
+        "label": "BNF cautions; American Academy of Ophthalmology Primary Angle Closure PPP"
+      }
+    ],
+    "drugClass": "anticholinergic",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "decongestant-sympathomimetic--hypertension-ihd",
+    "drugSlug": "phenylephrine",
+    "drug": "Systemic sympathomimetic decongestants (pseudoephedrine, phenylephrine)",
+    "condition": "Uncontrolled hypertension, ischaemic heart disease, severe coronary artery disease",
+    "conditionSlug": null,
+    "severity": "caution",
+    "mechanism": "α-adrenergic vasoconstriction raises blood pressure and afterload; reported myocardial infarction and hypertensive crisis in susceptible patients.",
+    "recommendation": "Avoid systemic decongestants; advise saline nasal irrigation, topical decongestant (≤3 days) or intranasal steroid. Counsel patients on warfarin / MAOI about specific interactions.",
+    "references": [
+      {
+        "label": "FDA OTC labelling; BNF"
+      }
+    ],
+    "drugClass": "sympathomimetic",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "metoclopramide--children-and-young-adults",
+    "drugSlug": "metoclopramide",
+    "drug": "Metoclopramide",
+    "condition": "Children < 1 year (all uses) and routine use in young adults (extrapyramidal risk)",
+    "conditionSlug": null,
+    "severity": "caution",
+    "mechanism": "Dopamine D2 blockade crosses the immature BBB readily, increasing the risk of acute dystonic reactions and tardive dyskinesia, particularly with prolonged or repeated use.",
+    "recommendation": "Do NOT use in children < 1 year. In children 1–18 years and young adults, limit to short courses (≤5 days), use 0.1–0.15 mg/kg/dose to a maximum of 30 mg/day, and only for nausea/vomiting refractory to first-line treatment.",
+    "references": [
+      {
+        "label": "EMA review of metoclopramide (2013); BNF for Children"
+      }
+    ],
+    "drugClass": "antiemetic",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ergot-alkaloid--ischaemic-heart-disease",
+    "drugSlug": "ergometrine",
+    "drug": "Ergot alkaloids (ergotamine, dihydroergotamine, methylergometrine, bromocriptine)",
+    "condition": "Ischaemic heart disease, uncontrolled hypertension, peripheral vascular disease, sepsis",
+    "conditionSlug": null,
+    "severity": "contraindicated",
+    "mechanism": "Potent vasoconstriction (α-adrenergic and 5-HT1) can precipitate coronary or peripheral vascular ischaemia; ergotism with prolonged or co-administered CYP3A4 inhibitor use.",
+    "recommendation": "Avoid in ischaemic / vascular disease. For migraine, prefer triptans (with their own cardiovascular cautions) or non-vasoconstrictive options (gepants where available, paracetamol/NSAID). For postpartum haemorrhage, use oxytocin first-line; reserve methylergometrine where appropriate, monitoring BP.",
+    "references": [
+      {
+        "label": "BNF; ACOG Postpartum Haemorrhage; WHO recommendations on prevention and treatment of PPH"
+      }
+    ],
+    "drugClass": "ergot-alkaloid",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]
