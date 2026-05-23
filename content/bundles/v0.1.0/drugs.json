@@ -34587,5 +34587,536 @@
   "ruleVersion": "0.1.0",
   "reviewStatus": "draft",
   "evidenceLevel": "A"
+ },
+ {
+  "slug": "tenofovir-alafenamide",
+  "inn": "tenofovir alafenamide",
+  "tradeNames": [
+   "Vemlidy"
+  ],
+  "rxnorm": "1772737",
+  "atc": [
+   "J05AF13"
+  ],
+  "drugClass": "Nucleotide reverse-transcriptase inhibitor (TAF prodrug, kidney + bone friendlier than TDF)",
+  "kemlLevel": 2,
+  "whoEml": true,
+  "indications": [
+   {
+    "icd10": "B20",
+    "text": "HIV-1 infection"
+   },
+   {
+    "icd10": "B18.1",
+    "text": "Chronic hepatitis B"
+   }
+  ],
+  "mechanism": "Intracellular prodrug of tenofovir — lower plasma levels than TDF but higher intracellular concentration, reducing renal and bone toxicity.",
+  "pharmacokinetics": {
+   "halfLifeHours": 0.5,
+   "metabolism": "Hydrolysis by cathepsin A to active tenofovir.",
+   "excretion": "Renal (minor)."
+  },
+  "dosing": {
+   "adult": [
+    {
+     "route": "oral",
+     "regimen": "25 mg once daily (HIV: 10 mg if cobicistat boost; HBV: 25 mg daily)"
+    }
+   ],
+   "renal": "No adjustment needed down to eGFR 15; data limited below.",
+   "hepatic": "No adjustment in mild-moderate."
+  },
+  "pregnancy": {
+   "notes": "Limited data; tenofovir disoproxil preferred in pregnancy when alternative needed."
+  },
+  "lactation": "Limited data; TAF is excreted in small amounts.",
+  "contraindications": [
+   "Hypersensitivity."
+  ],
+  "warnings": [
+   "Lactic acidosis (rare).",
+   "Severe hepatitis flare on stopping in HBV (continue or close monitoring).",
+   "Weight gain (less than DTG/INSTI but reported)."
+  ],
+  "adverseEffects": [
+   {
+    "frequency": "common",
+    "effect": "Headache, nausea, fatigue"
+   },
+   {
+    "frequency": "uncommon",
+    "effect": "Hypophosphataemia (less than TDF)"
+   }
+  ],
+  "monitoring": [
+   "Baseline + every 6 months: U&E, urinary phosphate, ALT.",
+   "HBV viral load every 6–12 months."
+  ],
+  "references": [
+   {
+    "label": "WHO HIV ARV guidelines 2021"
+   },
+   {
+    "label": "AASLD HBV guidance"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A",
+  "snomed": []
+ },
+ {
+  "slug": "rasburicase",
+  "inn": "rasburicase",
+  "tradeNames": [
+   "Elitek",
+   "Fasturtec"
+  ],
+  "rxnorm": "284604",
+  "atc": [
+   "V03AF07"
+  ],
+  "drugClass": "Recombinant urate oxidase",
+  "kemlLevel": 3,
+  "whoEml": false,
+  "indications": [
+   {
+    "icd10": "E88.3",
+    "text": "Tumour lysis syndrome prophylaxis / treatment in high-risk haematological malignancy"
+   }
+  ],
+  "mechanism": "Recombinant Aspergillus urate oxidase converts uric acid to allantoin (more soluble, easily excreted).",
+  "pharmacokinetics": {
+   "halfLifeHours": 18,
+   "metabolism": "Proteolysis.",
+   "excretion": "—"
+  },
+  "dosing": {
+   "adult": [
+    {
+     "route": "intravenous",
+     "regimen": "0.2 mg/kg IV daily for 1–5 days (often single dose effective)"
+    }
+   ],
+   "paediatric": {
+    "mgPerKgPerDose": 0.2,
+    "route": "intravenous",
+    "frequency": "once daily"
+   }
+  },
+  "pregnancy": {
+   "notes": "Limited data; benefit usually outweighs risk in oncology emergency."
+  },
+  "lactation": "Avoid breastfeeding for 24 h after dose.",
+  "contraindications": [
+   "G6PD deficiency (haemolysis risk — TEST G6PD BEFORE USE).",
+   "Methaemoglobinaemia history.",
+   "Hypersensitivity."
+  ],
+  "warnings": [
+   "Haemolysis in G6PD deficiency.",
+   "Hypersensitivity / anaphylaxis (have resuscitation ready).",
+   "False-low uric acid measurement post-dose — collect samples in pre-chilled tube and transport on ice."
+  ],
+  "adverseEffects": [
+   {
+    "frequency": "common",
+    "effect": "Headache, abdominal pain, vomiting"
+   },
+   {
+    "frequency": "serious",
+    "effect": "Anaphylaxis, methaemoglobinaemia, haemolytic anaemia"
+   }
+  ],
+  "monitoring": [
+   "G6PD status (pre-treatment).",
+   "U&E and uric acid 4–6-hourly during therapy."
+  ],
+  "references": [
+   {
+    "label": "TLS guidelines (Coiffier 2008); EMA / FDA labels"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A",
+  "snomed": []
+ },
+ {
+  "slug": "tenecteplase",
+  "inn": "tenecteplase",
+  "tradeNames": [
+   "Metalyse",
+   "TNKase"
+  ],
+  "rxnorm": "204293",
+  "atc": [
+   "B01AD11"
+  ],
+  "drugClass": "Recombinant tissue plasminogen activator (single bolus)",
+  "kemlLevel": 3,
+  "whoEml": false,
+  "indications": [
+   {
+    "icd10": "I21",
+    "text": "ST-elevation myocardial infarction (fibrinolysis)"
+   },
+   {
+    "icd10": "I63",
+    "text": "Acute ischaemic stroke (off-label / increasing evidence)"
+   }
+  ],
+  "mechanism": "Fibrin-specific plasminogen activator — converts fibrin-bound plasminogen to plasmin, dissolving thrombus.",
+  "pharmacokinetics": {
+   "halfLifeHours": 0.6,
+   "metabolism": "Hepatic.",
+   "excretion": "—"
+  },
+  "dosing": {
+   "adult": [
+    {
+     "route": "intravenous",
+     "regimen": "Single bolus by weight: <60 kg 30 mg; 60–69 30 mg; 70–79 35 mg; 80–89 40 mg; ≥90 50 mg over 5 sec. For ischaemic stroke 0.25 mg/kg single bolus (max 25 mg)"
+    }
+   ]
+  },
+  "pregnancy": {
+   "notes": "Relative contraindication unless life-threatening; weigh against haemorrhage risk."
+  },
+  "lactation": "Brief interruption after a single dose acceptable.",
+  "contraindications": [
+   "Active bleeding, recent intracranial bleed/stroke, recent major surgery, severe uncontrolled HTN, aortic dissection, severe coagulopathy, intracranial neoplasm/AVM."
+  ],
+  "warnings": [
+   "Bleeding — intracranial (1–2%), GI, GU, oropharyngeal.",
+   "Reperfusion arrhythmias.",
+   "Allergic reactions (rare)."
+  ],
+  "adverseEffects": [
+   {
+    "frequency": "common",
+    "effect": "Bleeding (minor)"
+   },
+   {
+    "frequency": "serious",
+    "effect": "Intracranial haemorrhage, major bleed"
+   }
+  ],
+  "monitoring": [
+   "Pre-dose: BP, neuro exam, coag, FBC.",
+   "Post-dose: BP every 15 min × 2 h then hourly; neuro obs; bleeding sites."
+  ],
+  "references": [
+   {
+    "label": "ESC ACS 2023; AHA/ASA Stroke; TIMI-25 ENTIRE; STREAM trial"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A",
+  "snomed": []
+ },
+ {
+  "slug": "remdesivir",
+  "inn": "remdesivir",
+  "tradeNames": [
+   "Veklury"
+  ],
+  "rxnorm": "2284718",
+  "atc": [
+   "J05AB16"
+  ],
+  "drugClass": "Nucleotide-analogue RNA-polymerase inhibitor (antiviral)",
+  "kemlLevel": 3,
+  "whoEml": false,
+  "indications": [
+   {
+    "icd10": "U07.1",
+    "text": "COVID-19 (early treatment in high-risk outpatients; hospitalised patients requiring oxygen)"
+   }
+  ],
+  "mechanism": "Adenosine analogue — phosphorylated intracellularly to active triphosphate that competes for incorporation by viral RNA-dependent RNA polymerase, causing chain termination.",
+  "pharmacokinetics": {
+   "halfLifeHours": 1,
+   "metabolism": "Hepatic + plasma esterases.",
+   "excretion": "Urine (74% as metabolites)."
+  },
+  "dosing": {
+   "adult": [
+    {
+     "route": "intravenous",
+     "regimen": "Outpatient (early COVID): 200 mg IV day 1, then 100 mg daily on days 2 + 3. Hospitalised on oxygen: 200 mg day 1 then 100 mg daily × 5 days (10 days if ECMO/IMV)."
+    }
+   ]
+  },
+  "pregnancy": {
+   "notes": "Use when benefits outweigh risks (severe COVID)."
+  },
+  "lactation": "Acceptable in severe disease.",
+  "contraindications": [
+   "Severe hypersensitivity."
+  ],
+  "warnings": [
+   "Hepatotoxicity — discontinue if ALT > 10× ULN.",
+   "Infusion reactions.",
+   "Renal impairment — historically eGFR < 30 caution, recent evidence shows safe (no cyclodextrin accumulation risk at therapeutic doses)."
+  ],
+  "adverseEffects": [
+   {
+    "frequency": "common",
+    "effect": "Nausea, raised ALT, infusion reaction"
+   },
+   {
+    "frequency": "uncommon",
+    "effect": "Bradycardia"
+   }
+  ],
+  "monitoring": [
+   "Baseline + daily ALT, AST, creatinine.",
+   "Pulse rate during infusion."
+  ],
+  "references": [
+   {
+    "label": "ACTT-1; PINETREE; IDSA COVID-19 guideline; WHO Therapeutics + COVID-19 living guideline"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A",
+  "snomed": []
+ },
+ {
+  "slug": "rifapentine",
+  "inn": "rifapentine",
+  "tradeNames": [
+   "Priftin"
+  ],
+  "rxnorm": "35617",
+  "atc": [
+   "J04AB05"
+  ],
+  "drugClass": "Rifamycin antimycobacterial (long-acting)",
+  "kemlLevel": 2,
+  "whoEml": true,
+  "indications": [
+   {
+    "icd10": "Z20.1",
+    "text": "TB preventive therapy (latent TB infection)"
+   },
+   {
+    "icd10": "A15",
+    "text": "Active TB (continuation phase)"
+   }
+  ],
+  "mechanism": "Inhibits DNA-dependent RNA polymerase of M. tuberculosis.",
+  "pharmacokinetics": {
+   "halfLifeHours": 13,
+   "metabolism": "Hepatic; potent CYP3A4 inducer.",
+   "excretion": "Faecal."
+  },
+  "dosing": {
+   "adult": [
+    {
+     "route": "oral",
+     "regimen": "3HP (LTBI): isoniazid 15 mg/kg (max 900 mg) + rifapentine 900 mg WEEKLY for 12 weeks; or 1HP: 600 mg + isoniazid 300 mg daily × 28 days"
+    }
+   ]
+  },
+  "pregnancy": {
+   "notes": "Limited safety data — generally deferred unless high TB risk."
+  },
+  "lactation": "Limited data; if needed, monitor infant.",
+  "contraindications": [
+   "Hypersensitivity to rifamycins."
+  ],
+  "warnings": [
+   "Hepatotoxicity — monitor LFT.",
+   "Drug interactions: induces CYP3A4 → reduces effectiveness of hormonal contraceptives, dolutegravir, methadone, warfarin.",
+   "Orange discolouration of body fluids.",
+   "Hypersensitivity / flu-like syndrome — more common with intermittent dosing."
+  ],
+  "adverseEffects": [
+   {
+    "frequency": "common",
+    "effect": "Flu-like reaction, headache, raised ALT"
+   },
+   {
+    "frequency": "uncommon",
+    "effect": "Rash, hypotension"
+   }
+  ],
+  "monitoring": [
+   "LFT baseline + every 4 weeks during course.",
+   "Counsel on body-fluid orange colour and contraceptive impact."
+  ],
+  "references": [
+   {
+    "label": "WHO consolidated guidelines on TB Module 1: Prevention (2020)"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A",
+  "snomed": []
+ },
+ {
+  "slug": "noradrenaline-vasopressin-fixed-combo",
+  "inn": "esmolol",
+  "tradeNames": [
+   "Brevibloc"
+  ],
+  "rxnorm": "4154",
+  "atc": [
+   "C07AB09"
+  ],
+  "drugClass": "Ultra-short-acting cardioselective β1-blocker",
+  "kemlLevel": 3,
+  "whoEml": false,
+  "indications": [
+   {
+    "icd10": "I47",
+    "text": "Supraventricular tachyarrhythmia (acute control)"
+   },
+   {
+    "icd10": "I71",
+    "text": "Aortic dissection (BP and HR control)"
+   },
+   {
+    "icd10": "E05.5",
+    "text": "Thyroid storm (HR control)"
+   },
+   {
+    "icd10": "I20.0",
+    "text": "Perioperative hypertension / tachycardia"
+   }
+  ],
+  "mechanism": "Selective β1-adrenoceptor antagonism with rapid onset (~1 min) and very short half-life (~9 min) — allows titration.",
+  "pharmacokinetics": {
+   "halfLifeHours": 0.15,
+   "metabolism": "Esterase in red cells.",
+   "excretion": "Renal (metabolite)."
+  },
+  "dosing": {
+   "adult": [
+    {
+     "route": "intravenous",
+     "regimen": "Loading 500 microgram/kg over 1 min, then 50 microgram/kg/min infusion; titrate by 50 microgram/kg/min every 4 min to max 300 microgram/kg/min; re-load with 500 microgram/kg between titrations"
+    }
+   ]
+  },
+  "pregnancy": {
+   "notes": "Acceptable in maternal critical care; fetal bradycardia possible."
+  },
+  "lactation": "Brief use acceptable in critical care.",
+  "contraindications": [
+   "Bradycardia < 50.",
+   "2nd or 3rd degree heart block (without pacing).",
+   "Cardiogenic shock.",
+   "Decompensated heart failure.",
+   "Severe bronchospasm."
+  ],
+  "warnings": [
+   "Hypotension — most common dose-limiting.",
+   "Bradycardia, heart block.",
+   "Bronchospasm in asthma.",
+   "Mask hypoglycaemic symptoms in diabetes."
+  ],
+  "adverseEffects": [
+   {
+    "frequency": "common",
+    "effect": "Hypotension, bradycardia, infusion-site phlebitis"
+   }
+  ],
+  "monitoring": [
+   "Continuous BP + HR; titrate every 4 min."
+  ],
+  "references": [
+   {
+    "label": "BNF"
+   },
+   {
+    "label": "ESC ACS 2023"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A",
+  "snomed": []
+ },
+ {
+  "slug": "naloxone-detail",
+  "inn": "naloxone",
+  "tradeNames": [
+   "Narcan"
+  ],
+  "rxnorm": "7242",
+  "atc": [
+   "V03AB15"
+  ],
+  "drugClass": "Pure opioid receptor antagonist (μ, κ, δ)",
+  "kemlLevel": 1,
+  "whoEml": true,
+  "indications": [
+   {
+    "icd10": "T40",
+    "text": "Opioid overdose"
+   }
+  ],
+  "mechanism": "Competitive antagonism at μ-opioid receptor (and κ, δ) — rapid reversal of respiratory depression and consciousness.",
+  "pharmacokinetics": {
+   "halfLifeHours": 1,
+   "metabolism": "Hepatic glucuronidation.",
+   "excretion": "Renal."
+  },
+  "dosing": {
+   "adult": [
+    {
+     "route": "intravenous",
+     "regimen": "Suspect dependence: start 40–100 microgram IV titrated every 2–3 min to ventilation. Naive: 0.4 mg IV initial, titrate. IM/IO 0.4–2 mg if no IV; intranasal 2–4 mg via atomiser. Infusion for long-acting opioid: 2/3 of effective bolus per hour"
+    }
+   ],
+   "paediatric": {
+    "mgPerKgPerDose": 0.01,
+    "notes": "10 microgram/kg IV, titrate to effect"
+   }
+  },
+  "pregnancy": {
+   "notes": "Use in maternal opioid OD — better than maternal death; may precipitate neonatal withdrawal."
+  },
+  "lactation": "Acceptable in opioid OD.",
+  "contraindications": [
+   "Known hypersensitivity (rare)."
+  ],
+  "warnings": [
+   "Precipitated opioid withdrawal in dependent users — agitation, vomiting, hypertension, occasional acute pulmonary oedema.",
+   "Re-sedation when short-acting naloxone wears off before opioid is metabolised (especially methadone / fentanyl) — observe ≥ 4–6 h post-last-dose, infusion for long-acting opioid.",
+   "Risk of seizure / arrhythmia in mixed overdose."
+  ],
+  "adverseEffects": [
+   {
+    "frequency": "common",
+    "effect": "Withdrawal symptoms (in dependent users): agitation, sweating, nausea, vomiting"
+   },
+   {
+    "frequency": "uncommon",
+    "effect": "Pulmonary oedema, arrhythmia"
+   }
+  ],
+  "monitoring": [
+   "Respiratory rate, SpO2, GCS hourly post-administration; observation 4–6 h after last dose."
+  ],
+  "references": [
+   {
+    "label": "WHO Community management of opioid overdose (2014)"
+   },
+   {
+    "label": "SAMHSA Opioid Overdose Toolkit"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A",
+  "snomed": []
  }
 ]

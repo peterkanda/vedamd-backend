@@ -4870,5 +4870,260 @@
   "ruleVersion": "0.1.0",
   "reviewStatus": "draft",
   "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slugA": "rifapentine",
+  "slugB": "dolutegravir",
+  "severity": "moderate",
+  "mechanism": "Rifapentine is a potent CYP3A4 / UGT1A1 inducer reducing dolutegravir plasma concentrations.",
+  "management": "For 3HP regimen with dolutegravir, no dose adjustment of DTG needed (data supports unchanged efficacy); for 1HP daily regimen consider doubling DTG to 50 mg BID per WHO. Avoid with non-INSTI ARTs that have wider PK susceptibility.",
+  "references": [
+   {
+    "label": "WHO HIV ARV guidelines (2021) — drug interactions"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A"
+ },
+ {
+  "slugA": "sacubitril-valsartan",
+  "slugB": "lisinopril",
+  "severity": "contraindicated",
+  "mechanism": "Concomitant ACE inhibitor and neprilysin inhibitor markedly increase angioedema risk.",
+  "management": "ABSOLUTE contraindication. Wash out ACE inhibitor at least 36 hours before starting sacubitril-valsartan.",
+  "references": [
+   {
+    "label": "PARADIGM-HF; ESC HF 2021; FDA label"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A"
+ },
+ {
+  "slugA": "empagliflozin",
+  "slugB": "furosemide",
+  "severity": "moderate",
+  "mechanism": "Additive diuresis and natriuresis can cause volume depletion / hypotension, especially on initiation.",
+  "management": "When initiating SGLT2 inhibitor in heart failure, consider reducing loop diuretic dose by 25–50% if euvolaemic; monitor BP, U&E and clinical volume status; adjust to maintain euvolaemia.",
+  "references": [
+   {
+    "label": "ESC HF 2021; EMPULSE trial"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A"
+ },
+ {
+  "slugA": "semaglutide",
+  "slugB": "insulin",
+  "severity": "moderate",
+  "mechanism": "Additive glucose-lowering effect — hypoglycaemia risk.",
+  "management": "Reduce insulin dose by 15–20% on starting GLP-1 agonist (especially basal insulin); titrate further per glucose response. Counsel patient on hypoglycaemia recognition.",
+  "references": [
+   {
+    "label": "ADA Standards of Care; SUSTAIN trials"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A"
+ },
+ {
+  "slugA": "tenofovir-alafenamide",
+  "slugB": "rifampicin",
+  "severity": "contraindicated",
+  "mechanism": "Rifampicin (strong P-gp inducer) reduces TAF intracellular concentrations substantially.",
+  "management": "Do NOT co-administer TAF with rifampicin. Switch to tenofovir disoproxil fumarate or use a non-rifamycin TB regimen.",
+  "references": [
+   {
+    "label": "WHO HIV ARV guidelines (2021)"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A"
+ },
+ {
+  "slugA": "ivermectin",
+  "slugB": "warfarin",
+  "severity": "moderate",
+  "mechanism": "Reported isolated case reports of INR rise with ivermectin co-administration (uncertain mechanism, possibly competition for albumin or CYP).",
+  "management": "Check INR within 3–5 days of ivermectin administration in patients on warfarin; adjust warfarin if needed.",
+  "references": [
+   {
+    "label": "BNF; case reports literature"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slugA": "tranexamic-acid",
+  "slugB": "combined-oral-contraceptive",
+  "severity": "moderate",
+  "mechanism": "Additive prothrombotic effect — venous thromboembolism risk slightly increased.",
+  "management": "Avoid systemic tranexamic acid in women on combined hormonal contraception with additional VTE risk factors (smoking ≥35, BMI >35, family history). Topical / oral menorrhagia use considered acceptable per BNF.",
+  "references": [
+   {
+    "label": "BNF; FSRH UKMEC"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "B"
+ },
+ {
+  "slugA": "idarucizumab",
+  "slugB": "dabigatran",
+  "severity": "moderate",
+  "mechanism": "Idarucizumab is a SPECIFIC reversal agent for dabigatran — therapeutic 'interaction' (reversal of effect).",
+  "management": "Use specifically to reverse life-threatening bleeding or for urgent surgery on dabigatran. Reanticoagulate as soon as clinically safe — usually 24 h after idarucizumab and once bleeding controlled.",
+  "references": [
+   {
+    "label": "RE-VERSE AD; FDA Praxbind label"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A"
+ },
+ {
+  "slugA": "tenecteplase",
+  "slugB": "aspirin",
+  "severity": "moderate",
+  "mechanism": "Combined antifibrinolysis + antiplatelet effect — additive bleeding risk; clinically necessary for STEMI fibrinolysis pathway.",
+  "management": "Co-administer aspirin 300 mg loading per STEMI protocol; monitor for bleeding and add PPI if GI risk.",
+  "references": [
+   {
+    "label": "ESC ACS 2023; STREAM trial"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A"
+ },
+ {
+  "slugA": "rasburicase",
+  "slugB": "allopurinol",
+  "severity": "moderate",
+  "mechanism": "Allopurinol blocks xanthine oxidase; rasburicase converts urate to allantoin — minor interaction but may slow rasburicase substrate availability.",
+  "management": "In TLS high-risk patients started on rasburicase, hold allopurinol (no proven additional benefit and may reduce rasburicase action). Use either / or, not both.",
+  "references": [
+   {
+    "label": "TLS guidelines Coiffier 2008; FDA Elitek label"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slugA": "noradrenaline",
+  "slugB": "monoamine-oxidase-inhibitor",
+  "severity": "major",
+  "mechanism": "MAOI prevents metabolism of noradrenaline → hypertensive crisis.",
+  "management": "Avoid noradrenaline in patients on non-selective MAOIs (within 14 days); use alternative pressor (vasopressin, phenylephrine cautiously) under specialist guidance.",
+  "references": [
+   {
+    "label": "BNF"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slugA": "ketamine",
+  "slugB": "selective-serotonin-reuptake-inhibitor",
+  "severity": "moderate",
+  "mechanism": "Theoretical serotonin syndrome risk via NMDA antagonism + SSRI; clinically rare at usual doses.",
+  "management": "Use ketamine at standard procedural doses with SSRI; monitor for autonomic instability. Specialist input for low-dose ketamine for treatment-resistant depression with concurrent SSRI.",
+  "references": [
+   {
+    "label": "APA Treatment-Resistant Depression guidance"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slugA": "fomepizole",
+  "slugB": "ethanol",
+  "severity": "moderate",
+  "mechanism": "Ethanol also competes for ADH — both reduce toxic alcohol metabolism but combination not necessary.",
+  "management": "Stop ethanol therapy if fomepizole started; both not needed simultaneously.",
+  "references": [
+   {
+    "label": "AACT fomepizole guidance"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slugA": "terlipressin",
+  "slugB": "verapamil",
+  "severity": "moderate",
+  "mechanism": "Both can cause bradycardia and depress AV conduction; additive haemodynamic depression.",
+  "management": "Monitor BP and ECG closely in cirrhotic patient on non-DHP calcium-channel blocker receiving terlipressin; consider alternative HRS therapy if intolerant.",
+  "references": [
+   {
+    "label": "BNF"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "expert-consensus"
+ },
+ {
+  "slugA": "naloxone-detail",
+  "slugB": "buprenorphine",
+  "severity": "major",
+  "mechanism": "Buprenorphine has high opioid receptor affinity — standard naloxone doses often insufficient; precipitated withdrawal may be severe.",
+  "management": "Use higher naloxone doses (2 mg IV initial, titrate up to 10 mg) for buprenorphine overdose with respiratory failure; may need continuous naloxone infusion and prolonged observation.",
+  "references": [
+   {
+    "label": "ACMT position statement on opioid overdose"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A"
+ },
+ {
+  "slugA": "vasopressin",
+  "slugB": "ergometrine",
+  "severity": "major",
+  "mechanism": "Additive vasoconstriction — severe hypertension, coronary spasm.",
+  "management": "Avoid combination. If both required in postpartum context, use one then the other with careful BP monitoring and 30-min washout.",
+  "references": [
+   {
+    "label": "BNF; WHO PPH guidelines"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "B"
+ },
+ {
+  "slugA": "hydroxocobalamin",
+  "slugB": "sodium-thiosulfate",
+  "severity": "moderate",
+  "mechanism": "Both are cyanide antidotes; concurrent administration causes precipitation if mixed in same line.",
+  "management": "Give via SEPARATE IV lines or sequentially (hydroxocobalamin first, then thiosulfate). Both can be used together for severe cyanide poisoning — sequence them.",
+  "references": [
+   {
+    "label": "AACT cyanide consensus"
+   }
+  ],
+  "ruleVersion": "0.1.0-placeholder",
+  "reviewStatus": "draft",
+  "evidenceLevel": "A"
  }
 ]

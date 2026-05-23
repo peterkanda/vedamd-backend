@@ -6747,5 +6747,832 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "B"
+  },
+  {
+    "slug": "endotracheal-intubation-adult-rsi",
+    "title": "Endotracheal intubation with rapid-sequence induction (adult)",
+    "domains": [
+      "anaesthesia",
+      "emergency",
+      "critical-care",
+      "resuscitation"
+    ],
+    "indications": [
+      "Airway protection (reduced GCS, expanding airway oedema, anticipated deterioration).",
+      "Respiratory failure failing NIV (type I or II).",
+      "Cardiopulmonary arrest with ROSC requiring controlled ventilation.",
+      "Therapeutic hyperventilation in raised ICP.",
+      "Surgical anaesthesia / sedation for procedures (planned)."
+    ],
+    "contraindications": {
+      "absolute": [],
+      "relative": [
+        "No absolute contraindication in emergency airway compromise.",
+        "Relative: predicted difficult intubation without senior support / awake intubation alternative; severely haemodynamically unstable patient (consider ketamine; have resuscitation drugs ready)."
+      ]
+    },
+    "equipment": [
+      "Pre-oxygenation 100% O2 via tight-fitting mask for ≥ 3 minutes (apnoeic oxygenation by nasal cannula 15 L/min during attempt).",
+      "Suction (Yankauer) tested.",
+      "Self-inflating bag-valve-mask + PEEP valve + reservoir bag.",
+      "Two laryngoscopes (Macintosh + video laryngoscope), bougie, range of ETT sizes (6.5–8.5), syringe to inflate cuff, capnograph (mandatory for confirmation).",
+      "Drugs drawn up and labelled: sedative (ketamine 1–2 mg/kg, propofol 1–2 mg/kg, etomidate 0.3 mg/kg, midazolam 0.1–0.3 mg/kg); neuromuscular blocker (rocuronium 1–1.2 mg/kg, suxamethonium 1–1.5 mg/kg); push-dose vasopressor (metaraminol 0.5 mg or phenylephrine 100 microgram); atropine 600 microgram.",
+      "Failed-intubation kit: supraglottic airway (LMA), surgical airway tray."
+    ],
+    "complications": [
+      "Failed intubation — declare 'can't intubate, can't oxygenate' if SpO2 falling, proceed to supraglottic airway, then front-of-neck access (FONA / cricothyroidotomy) per DAS guidelines.",
+      "Oesophageal intubation (capnography excludes).",
+      "Right main bronchus intubation (advance too far — withdraw under bilateral auscultation).",
+      "Hypotension post-induction (induction agent vasodilation + reduced venous return) — fluid bolus + push-dose vasopressor.",
+      "Aspiration (more risk in non-fasted, pregnancy, GI bleeding).",
+      "Dental injury, oropharyngeal trauma, vocal cord injury.",
+      "Tube cuff leak, accidental extubation."
+    ],
+    "postProcedureCare": [
+      "Continuous capnography during transfer; continue sedation + analgesia ± paralysis.",
+      "Ventilator settings: tidal volume 6–8 mL/kg ideal body weight, PEEP 5 cmH2O minimum, FiO2 to target SpO2 92–96%, RR titrated to PaCO2 35–45 mmHg.",
+      "Daily sedation hold + spontaneous breathing trial when haemodynamically stable.",
+      "DVT prophylaxis, stress ulcer prophylaxis, head-of-bed elevation 30°."
+    ],
+    "references": [
+      {
+        "label": "Difficult Airway Society (DAS) Guidelines 2015"
+      },
+      {
+        "label": "WHO surgical care at the district hospital"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "steps": [
+      {
+        "step": "Prepare",
+        "detail": "brief team, role allocation; check equipment with mnemonic SOAPME (Suction, Oxygen, Airway, Pharmacology, Monitor, End-tidal CO2)."
+      },
+      {
+        "step": "Position",
+        "detail": "optimise — head + neck in sniffing position; in obese / pregnant use ramped position; in children use shoulder roll.",
+        "safetyCheck": "Optimise position BEFORE drugs — failed positioning is the most common cause of difficulty."
+      },
+      {
+        "step": "Pre-oxygenate to FiO2 1",
+        "detail": "0 via tight-fitting mask × 3 min; nasal cannula 15 L/min apnoeic oxygenation during attempt.",
+        "safetyCheck": "STOP and reassess if SpO2 < 95% on FiO2 1.0 — predict difficult oxygenation."
+      },
+      {
+        "step": "RSI cricoid pressure (Sellick) is now optional — abandon if",
+        "detail": "RSI cricoid pressure (Sellick) is now optional — abandon if it impairs view."
+      },
+      {
+        "step": "Induce",
+        "detail": "push sedative followed immediately by paralytic (e.g. ketamine 1.5 mg/kg + rocuronium 1.2 mg/kg).",
+        "safetyCheck": "Have push-dose vasopressor and IV fluids drawn up — post-induction hypotension is common."
+      },
+      {
+        "step": "Apnoea period 45–60 sec (rocuronium) or 30 sec (suxamethoniu",
+        "detail": "Apnoea period 45–60 sec (rocuronium) or 30 sec (suxamethonium) — do NOT bag mask in standard RSI unless hypoxic."
+      },
+      {
+        "step": "Laryngoscopy",
+        "detail": "insert blade right side of tongue, sweep left, visualise epiglottis, gentle traction without leverage; consider external laryngeal manipulation (BURP); pass ETT through cords under direct vision."
+      },
+      {
+        "step": "Inflate cuff with minimum-occlusive volume",
+        "detail": "Inflate cuff with minimum-occlusive volume."
+      },
+      {
+        "step": "Confirm",
+        "detail": "continuous waveform capnography (gold standard — sustained CO2 for 6 breaths), bilateral air entry, no epigastric sounds, chest rise, mist in tube. CXR to confirm depth (tip 3–4 cm above carina).",
+        "safetyCheck": "Pre-oxygenate ≥ 3 minutes; reduce desaturation risk during apnoea."
+      },
+      {
+        "step": "Secure tube; sedate + paralyse for transfer if required (do",
+        "detail": "Secure tube; sedate + paralyse for transfer if required (do not let patient wake paralysed)."
+      }
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "consentNotes": "In emergency, intubation proceeds under doctrine of necessity. For planned procedures, counsel on indication, common effects (sore throat, hoarseness), serious risks (failed intubation, dental injury, aspiration, awareness, post-induction hypotension, death) and alternatives (NIV, supraglottic airway, awake fibre-optic). Document explicit consent or capacity assessment.",
+    "redFlags": [
+      "SpO2 falling despite optimisation — declare CICO and proceed to FONA.",
+      "Capnography flat after 6 breaths — re-intubate.",
+      "Sudden hypotension — push-dose vasopressor + fluid."
+    ]
+  },
+  {
+    "slug": "advanced-cardiac-life-support-adult",
+    "title": "Advanced cardiac life support (ACLS) — adult",
+    "domains": [
+      "resuscitation",
+      "emergency",
+      "critical-care",
+      "cardiology"
+    ],
+    "indications": [
+      "Cardiac arrest (pulseless ventricular tachycardia, ventricular fibrillation, asystole, pulseless electrical activity).",
+      "Peri-arrest arrhythmia management (tachy-/bradyarrhythmia with shock)."
+    ],
+    "contraindications": {
+      "absolute": [
+        "Documented advance directive limiting resuscitation; futility (e.g. terminal illness with DNACPR)."
+      ],
+      "relative": []
+    },
+    "equipment": [
+      "BLS equipment: chest-compression backboard, BVM with PEEP valve, suction.",
+      "Defibrillator with monitoring + AED pads (anteroapical or anteroposterior).",
+      "Airway management equipment (oropharyngeal airway, supraglottic airway, ETT).",
+      "IV / IO access kit.",
+      "ACLS drug box: adrenaline 1 mg ampoules, amiodarone 300 mg, lidocaine, atropine 0.6 mg, magnesium sulphate 2 g, calcium chloride 10 mL of 10%, sodium bicarbonate 8.4%, dextrose 50% 50 mL, isotonic fluids.",
+      "End-tidal CO2 capnograph (gold standard for ROSC and CPR quality)."
+    ],
+    "complications": [
+      "Rib / sternal fractures (very common with effective CPR; do not pause).",
+      "Pneumothorax, haemothorax.",
+      "Hepatic / splenic injury.",
+      "Aspiration.",
+      "Vascular access complications (arterial puncture, infiltration).",
+      "Post-arrest hypoxic-ischaemic brain injury — leading cause of mortality / disability."
+    ],
+    "postProcedureCare": [
+      "ICU admission for all post-ROSC patients.",
+      "Targeted temperature management (TTM).",
+      "Coronary angiography for suspected ACS aetiology.",
+      "Neuroprognostication delayed ≥ 72 h post-ROSC and after rewarming + sedation cleared (per ERC algorithm).",
+      "Family + team debrief."
+    ],
+    "references": [
+      {
+        "label": "European Resuscitation Council Guidelines 2021 — Adult advanced life support"
+      },
+      {
+        "label": "AHA 2020 Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "steps": [
+      {
+        "step": "Confirm cardiac arrest (no pulse, no signs of life in 10 sec",
+        "detail": "Confirm cardiac arrest (no pulse, no signs of life in 10 sec); call for help and defibrillator.",
+        "safetyCheck": "No pulse + no signs of life in 10 seconds maximum — do not delay compressions."
+      },
+      {
+        "step": "Start high-quality CPR",
+        "detail": "30:2 compressions:ventilations (or continuous compressions if advanced airway); depth 5–6 cm, rate 100–120/min, allow full chest recoil, minimise pauses < 10 sec.",
+        "safetyCheck": "Minimise interruptions (< 10 sec); ensure FULL chest recoil; rotate compressor every 2 min."
+      },
+      {
+        "step": "Apply pads, analyse rhythm. SHOCKABLE (VF / pVT)",
+        "detail": "defibrillate (biphasic 150–200 J or per device manual); resume CPR immediately for 2 min before pulse check. NON-SHOCKABLE (asystole / PEA): continue CPR 2 min before pulse check."
+      },
+      {
+        "step": "IV/IO access. After 2nd shock or as soon as feasible in non-shockable",
+        "detail": "adrenaline 1 mg IV/IO every 3–5 min (every other CPR cycle)."
+      },
+      {
+        "step": "After 3rd shock in shockable rhythm",
+        "detail": "amiodarone 300 mg IV/IO bolus (consider 150 mg for refractory VF after 5th shock)."
+      },
+      {
+        "step": "Treat reversible causes — 4 Hs (Hypoxia, Hypovolaemia, Hypo/",
+        "detail": "Treat reversible causes — 4 Hs (Hypoxia, Hypovolaemia, Hypo/hyperkalaemia, Hypothermia) + 4 Ts (Tension pneumothorax, Tamponade, Toxins, Thrombosis — PE or MI).",
+        "safetyCheck": "Check 4 Hs + 4 Ts at each rhythm check — reversible causes are the path to ROSC."
+      },
+      {
+        "step": "Consider advanced airway insertion once rhythm controlled; v",
+        "detail": "Consider advanced airway insertion once rhythm controlled; ventilate 10/min asynchronous to compressions; aim ETCO2 > 10 mmHg (1.3 kPa) reflects adequate CPR."
+      },
+      {
+        "step": "Post-ROSC bundle",
+        "detail": "12-lead ECG (PCI if STEMI), targeted temperature management 32–36 °C × 24 h, controlled ventilation (avoid hypocapnia, target normoxia 92–96%), euglycaemia, treat seizures, prognostication delayed > 72 h."
+      },
+      {
+        "step": "Stop only after team-based decision based on irreversibility",
+        "detail": "Stop only after team-based decision based on irreversibility, prolonged asystole, no reversible cause, low ETCO2 < 10 mmHg sustained 20 min in intubated patient — multidisciplinary decision.",
+        "safetyCheck": "Multidisciplinary team decision; document ETCO2 trend and reversible-cause search."
+      }
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "consentNotes": "Cardiac arrest proceeds without explicit consent under doctrine of necessity unless DNACPR documented. Discuss outcomes + post-arrest realities with family early. Honour advance directives.",
+    "redFlags": [
+      "ETCO2 < 10 mmHg sustained 20 min in intubated patient — poor prognosis.",
+      "Asystole > 20 min with no reversible cause — consider stopping.",
+      "New ROSC — immediate post-arrest bundle."
+    ]
+  },
+  {
+    "slug": "laryngeal-mask-airway-insertion",
+    "title": "Laryngeal mask airway (LMA / supraglottic airway) insertion",
+    "domains": [
+      "anaesthesia",
+      "emergency",
+      "resuscitation",
+      "critical-care"
+    ],
+    "indications": [
+      "Rescue airway in failed intubation (can't intubate, can ventilate).",
+      "Routine airway for short anaesthetic procedures.",
+      "Cardiac arrest / CPR when intubation skill unavailable or delayed.",
+      "Difficult airway as conduit for fibre-optic intubation."
+    ],
+    "contraindications": {
+      "absolute": [
+        "Conscious / partially conscious patient with intact gag reflex.",
+        "Anticipated high airway pressures (severe bronchospasm, ARDS — LMA leaks > 20 cmH2O often).",
+        "Pharyngeal abscess, airway obstruction below the larynx, fixed reduced mouth opening.",
+        "High aspiration risk (full stomach, bowel obstruction, pregnancy — relative; use second-generation LMA with gastric port if necessary)."
+      ],
+      "relative": []
+    },
+    "equipment": [
+      "Appropriate size LMA (size 3 small adult / paediatric > 30 kg, 4 normal adult, 5 large adult, 6 very large). Second-generation (e.g. iGel, LMA Supreme) preferred for emergency use.",
+      "Water-based lubricant.",
+      "10–30 mL syringe for cuff inflation (not iGel).",
+      "Bag-valve circuit + oxygen, capnograph, suction, monitoring."
+    ],
+    "complications": [
+      "Aspiration (lower risk with second-generation LMA + gastric port but still possible).",
+      "Failed seating (try smaller / larger size, jaw lift, different head position).",
+      "Airway trauma, tongue cyanosis from over-inflated cuff.",
+      "Bronchospasm, laryngospasm.",
+      "Inadequate ventilation in high-pressure ventilation needs — convert to ETT."
+    ],
+    "postProcedureCare": [
+      "Continue capnography during use.",
+      "Plan for definitive airway (ETT) if prolonged ventilation needed or aspiration risk.",
+      "Remove with cuff deflated; check pharynx for foreign body / mucus."
+    ],
+    "references": [
+      {
+        "label": "Difficult Airway Society 2015 Guidelines"
+      },
+      {
+        "label": "ERC ALS 2021 guidance on supraglottic airways"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "steps": [
+      {
+        "step": "Pre-oxygenate; optimise position (sniffing position)",
+        "detail": "Pre-oxygenate; optimise position (sniffing position).",
+        "safetyCheck": "Verify gag absent / patient deeply sedated — LMA in semi-conscious patient causes laryngospasm."
+      },
+      {
+        "step": "Lubricate posterior surface of cuff (avoid front to prevent",
+        "detail": "Lubricate posterior surface of cuff (avoid front to prevent obstructing aperture).",
+        "safetyCheck": "Lubricate posterior only — front-cuff lubricant can obstruct the aperture."
+      },
+      {
+        "step": "Open mouth; introduce LMA with cuff deflated and posterior s",
+        "detail": "Open mouth; introduce LMA with cuff deflated and posterior surface against hard palate; advance with index finger pressed against tube-cuff junction until resistance felt (LMA seats in hypopharynx)."
+      },
+      {
+        "step": "Inflate cuff (if applicable) to recommended volume; iGel nee",
+        "detail": "Inflate cuff (if applicable) to recommended volume; iGel needs no inflation."
+      },
+      {
+        "step": "Connect circuit; verify ventilation",
+        "detail": "bilateral chest rise, ETCO2 trace, breath sounds, minimal leak at < 20 cmH2O.",
+        "safetyCheck": "STOP if leak > 20 cmH2O or inadequate ventilation — try different size or convert to ETT."
+      },
+      {
+        "step": "Secure with tape / tie",
+        "detail": "Insert gastric tube via gastric port if second-generation LMA in unfasted patient."
+      }
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "consentNotes": "For planned use, counsel on sore throat, hoarseness, dental damage, aspiration risk. For rescue airway, proceeds under doctrine of necessity.",
+    "redFlags": [
+      "Persistent leak > 20 cmH2O — convert to ETT.",
+      "Aspiration during use — suction, head down, consider conversion.",
+      "Failed seating after 2 attempts — try different size or definitive airway."
+    ]
+  },
+  {
+    "slug": "transcutaneous-pacing-emergency",
+    "title": "Transcutaneous pacing — emergency bradycardia",
+    "domains": [
+      "cardiology",
+      "emergency",
+      "resuscitation"
+    ],
+    "indications": [
+      "Symptomatic bradycardia unresponsive to atropine (HR < 50 with hypotension, syncope, chest pain, heart failure, altered consciousness).",
+      "High-grade AV block (Mobitz II, complete heart block) with haemodynamic compromise.",
+      "Bridge to transvenous pacing or pacemaker implantation.",
+      "Asystolic cardiac arrest with witnessed sudden onset (selected — uncommon)."
+    ],
+    "contraindications": {
+      "absolute": [
+        "Severe hypothermia (rewarm first).",
+        "Cardiac transplant denervation (response variable)."
+      ],
+      "relative": []
+    },
+    "equipment": [
+      "Defibrillator / monitor with pacing mode (most modern combination devices).",
+      "Multi-function pacing pads (anteroposterior placement: anterior over apex, posterior between scapulae — preferred for capture).",
+      "Sedative + analgesic (midazolam 1–2 mg IV + fentanyl 50–100 microgram IV) — pacing is painful in conscious patients.",
+      "ECG monitoring with all 12 leads if possible."
+    ],
+    "complications": [
+      "Failure to capture (try repositioning pads, increasing current, anteroposterior placement, smaller patient size).",
+      "Pain / muscle twitching — analgesia + sedation.",
+      "Skin burns at high outputs > 1 h.",
+      "Misinterpretation of electrical capture without mechanical capture — always palpate pulse.",
+      "Induction of VT/VF (very rare)."
+    ],
+    "postProcedureCare": [
+      "Cardiology consult for definitive transvenous pacing wire or pacemaker.",
+      "Treat reversible bradycardia causes (hyperkalaemia, AV-nodal blocker overdose, inferior MI, hypothermia, hypothyroidism, raised ICP).",
+      "Document threshold + ECG changes; reassess every 30–60 min until taken off."
+    ],
+    "references": [
+      {
+        "label": "ESC Guidelines on cardiac pacing 2021"
+      },
+      {
+        "label": "ACLS provider manual — bradycardia algorithm"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "steps": [
+      {
+        "step": "Confirm symptomatic bradycardia / unstable AV block requirin",
+        "detail": "Confirm symptomatic bradycardia / unstable AV block requiring intervention.",
+        "safetyCheck": "Verify true symptomatic bradycardia + atropine failure / contraindication — pacing has risks."
+      },
+      {
+        "step": "Place pads in anteroposterior configuration",
+        "detail": "Place pads in anteroposterior configuration."
+      },
+      {
+        "step": "Set rate 60–80 bpm initially (target HR resolving symptoms /",
+        "detail": "Set rate 60–80 bpm initially (target HR resolving symptoms / hypotension)."
+      },
+      {
+        "step": "Start output at 0 mA, increase by 10 mA until consistent ele",
+        "detail": "Start output at 0 mA, increase by 10 mA until consistent electrical capture (visible pacing spike followed by widened QRS) — usually 50–100 mA.",
+        "safetyCheck": "Increase by 10 mA increments — gradual escalation reduces sudden capture-induced arrhythmia."
+      },
+      {
+        "step": "Verify MECHANICAL capture by palpating pulse — femoral arter",
+        "detail": "Verify MECHANICAL capture by palpating pulse — femoral artery (not carotid, which may pulsate from chest-wall muscle contraction).",
+        "safetyCheck": "ALWAYS palpate femoral pulse — electrical capture alone does not confirm cardiac output."
+      },
+      {
+        "step": "Add 10% extra current above threshold for stability",
+        "detail": "Add 10% extra current above threshold for stability."
+      },
+      {
+        "step": "Provide sedation + analgesia; reassure conscious patient",
+        "detail": "Provide sedation + analgesia; reassure conscious patient.",
+        "safetyCheck": "Pacing is painful at threshold; sedate adequately to prevent patient pulling pads."
+      },
+      {
+        "step": "Continue while preparing transvenous pacing or pacemaker ins",
+        "detail": "Continue while preparing transvenous pacing or pacemaker insertion within hours."
+      }
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "consentNotes": "Counsel on temporary pacing as bridge to definitive treatment; sensations of muscle twitching and chest discomfort. Sedation given to mitigate.",
+    "redFlags": [
+      "No mechanical capture despite 130 mA — escalate to transvenous wire.",
+      "Patient agitation with pads off — sedate before retry.",
+      "New ventricular arrhythmia — defibrillate if pulseless, antiarrhythmic if stable."
+    ]
+  },
+  {
+    "slug": "blood-transfusion-administration",
+    "title": "Blood transfusion administration and acute reaction management",
+    "domains": [
+      "haematology",
+      "critical-care",
+      "emergency",
+      "nursing"
+    ],
+    "indications": [
+      "Symptomatic anaemia with Hb < 7 g/dL (general medical), < 8 g/dL (cardiovascular comorbidity, post-op).",
+      "Major haemorrhage (massive transfusion protocol).",
+      "Sickle cell crisis with severe anaemia or stroke.",
+      "Thalassaemia chronic transfusion programme."
+    ],
+    "contraindications": {
+      "absolute": [
+        "Asymptomatic anaemia where Hb may be optimised by iron / B12 / folate / erythropoietin.",
+        "Religious / personal refusal (document; explore alternatives)."
+      ],
+      "relative": []
+    },
+    "equipment": [
+      "Blood product (packed red cells, fresh frozen plasma, platelets, cryoprecipitate).",
+      "Wide-bore IV cannula (≥ 18 G; intraosseous if cannot place).",
+      "Blood-administration set with 170-micron filter.",
+      "Normal saline (NOT dextrose or Ringer's — causes haemolysis or clotting).",
+      "Vital sign monitoring equipment.",
+      "Blood-warmer for rapid infusion."
+    ],
+    "complications": [
+      "Acute haemolytic reaction (ABO incompatibility — fever, flank pain, hypotension, haemoglobinuria, DIC) — STOP transfusion, save bag, supportive treatment, urgent specialist input.",
+      "Anaphylaxis (especially IgA-deficient recipient with anti-IgA antibodies) — adrenaline + supportive.",
+      "Febrile non-haemolytic reaction (1°C rise, no other signs) — slow / pause; paracetamol; not always need to stop.",
+      "Mild allergic / urticaria — slow infusion + antihistamine.",
+      "Transfusion-associated circulatory overload (TACO) — pulmonary oedema, raised BP; treat with furosemide, slow / stop.",
+      "Transfusion-related acute lung injury (TRALI) — bilateral pulmonary infiltrates within 6 h, hypoxia, hypotension; supportive intensive care, mortality up to 10%.",
+      "Bacterial contamination (especially platelets) — sepsis pattern.",
+      "Delayed haemolytic / alloimmunisation — Hb drop 5–10 days later."
+    ],
+    "postProcedureCare": [
+      "Post-transfusion Hb in 30 min (rapid haemorrhage) or 4–24 h (elective).",
+      "Document product, batch, time, response, any reaction.",
+      "Report serious reactions to haemovigilance system + blood bank.",
+      "Iron, B12, folate replacement to reduce future transfusion need."
+    ],
+    "references": [
+      {
+        "label": "BSH guidelines on the administration of blood components (2017)"
+      },
+      {
+        "label": "WHO Blood transfusion safety"
+      },
+      {
+        "label": "SHOT — Serious Hazards of Transfusion annual report"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "steps": [
+      {
+        "step": "Pre-transfusion",
+        "detail": "informed consent + reason documented; group + cross-match.",
+        "safetyCheck": "Document indication and explicit consent — transfusion error is a NEVER event."
+      },
+      {
+        "step": "Two-nurse positive patient identification at bedside against",
+        "detail": "Two-nurse positive patient identification at bedside against the blood-bank-labelled product (patient details on wristband match the compatibility label — three-point identification).",
+        "safetyCheck": "Two-person independent ID check at bedside is the cornerstone of preventing wrong-patient transfusion."
+      },
+      {
+        "step": "Inspect product for clots, discolouration, leakage",
+        "detail": "Inspect product for clots, discolouration, leakage.",
+        "safetyCheck": "STOP if clots, discolouration, or compromised bag integrity — bacterial contamination risk."
+      },
+      {
+        "step": "Set up giving set primed with saline; start transfusion with",
+        "detail": "Set up giving set primed with saline; start transfusion within 30 min of collection from blood bank.",
+        "safetyCheck": "Use saline (not dextrose or Ringer's) — dextrose causes RBC aggregation; calcium in Ringer's causes clotting."
+      },
+      {
+        "step": "Infuse",
+        "detail": "PRBC standard 1 unit over 2–4 h (max 4 h from spike); platelets / cryoprecipitate over 30 min; FFP over 30 min."
+      },
+      {
+        "step": "Vital signs (BP, HR, temp, RR, SpO2) before, 15 min after st",
+        "detail": "Vital signs (BP, HR, temp, RR, SpO2) before, 15 min after start, mid-transfusion, end, and 1 h after.",
+        "safetyCheck": "Vital signs before, 15 min in, and end of unit — reactions cluster in first 15 min."
+      },
+      {
+        "step": "Recognise reaction",
+        "detail": "fever, rigors, urticaria, bronchospasm, hypotension, hypertension, pain at IV site or chest/back, dyspnoea, oliguria, dark urine."
+      }
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "consentNotes": "Written informed consent BEFORE non-emergency transfusion. Counsel on benefits, risks (febrile / allergic reactions, haemolysis, TRALI, TACO, infection (very rare), iron overload with chronic), and alternatives (iron / B12 / EPO). Document.",
+    "redFlags": [
+      "Fever > 1°C rise + flank pain → STOP — possible acute haemolytic reaction.",
+      "Hypoxia + bilateral infiltrates within 6 h → TRALI.",
+      "Dyspnoea + raised JVP → TACO.",
+      "Bronchospasm + hypotension → anaphylaxis."
+    ]
+  },
+  {
+    "slug": "intravenous-fluid-resuscitation-adult",
+    "title": "IV fluid resuscitation — adult (per NICE / Sepsis-3 / FEAST)",
+    "domains": [
+      "emergency",
+      "critical-care",
+      "nursing",
+      "primary-care"
+    ],
+    "indications": [
+      "Hypovolaemic shock (haemorrhage, GI losses, burns, third-spacing).",
+      "Septic shock (initial 30 mL/kg crystalloid bolus within first hour per Sepsis-3 recommendation, then reassess).",
+      "Severe dehydration unable to take oral fluids.",
+      "Hypotension with poor perfusion in critically ill."
+    ],
+    "contraindications": {
+      "absolute": [
+        "Cardiogenic / obstructive shock with pulmonary oedema (use inotropes / vasopressors).",
+        "Severe heart failure with congestion.",
+        "Children with severe febrile illness without shock (FEAST — aggressive fluid harm in non-shocked children with severe febrile disease in resource-limited settings)."
+      ],
+      "relative": []
+    },
+    "equipment": [
+      "Two large-bore IV (≥ 18 G) or intraosseous access.",
+      "Crystalloid fluid (balanced — Hartmann's / Plasma-Lyte / Ringer's lactate preferred for resuscitation; 0.9% NaCl for specific indications).",
+      "Pressure bag / rapid infuser if massive transfusion.",
+      "Monitor (HR, BP, SpO2, urine output, mental status, capillary refill, lactate)."
+    ],
+    "complications": [
+      "Fluid overload — pulmonary oedema, peripheral oedema, abdominal compartment syndrome.",
+      "Hyperchloraemic metabolic acidosis (with large-volume 0.9% NaCl).",
+      "Coagulopathy / dilutional anaemia (massive crystalloid resuscitation).",
+      "Hyponatraemia (excess hypotonic fluid in unwell adults).",
+      "Site complications: phlebitis, infiltration, infection."
+    ],
+    "postProcedureCare": [
+      "Document inputs and outputs hourly in critical care.",
+      "Daily weight if continued resuscitation.",
+      "De-resuscitate (target negative fluid balance after stabilisation if oedematous).",
+      "Wean vasopressor once euvolaemic and BP stable."
+    ],
+    "references": [
+      {
+        "label": "Surviving Sepsis Campaign Guidelines 2021"
+      },
+      {
+        "label": "NICE CG174 — IV fluid therapy in adults in hospital"
+      },
+      {
+        "label": "FEAST trial (NEJM 2011) — caution in non-shocked African children"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "steps": [
+      {
+        "step": "Assess shock severity",
+        "detail": "capillary refill, peripheral perfusion, mental state, urine output, lactate, BP/HR.",
+        "safetyCheck": "Distinguish hypovolaemia (treat with fluid) from cardiogenic shock (worsens with fluid) BEFORE bolus."
+      },
+      {
+        "step": "Give initial bolus 500 mL of crystalloid over 15 min (or 250",
+        "detail": "Give initial bolus 500 mL of crystalloid over 15 min (or 250 mL in elderly / cardiac history).",
+        "safetyCheck": "Use 250 mL bolus in elderly / cardiac history — even modest excess can precipitate pulmonary oedema."
+      },
+      {
+        "step": "Reassess after each bolus",
+        "detail": "pulse, BP, RR, mental status, urine output, lactate (consider non-invasive cardiac output if available).",
+        "safetyCheck": "Reassess after every 500 mL — fluid is a drug with a therapeutic window."
+      },
+      {
+        "step": "Repeat boluses up to 2 L (30 mL/kg) in septic shock as neede",
+        "detail": "Repeat boluses up to 2 L (30 mL/kg) in septic shock as needed, monitoring for fluid responsiveness (passive leg raise; pulse pressure variation if mechanically ventilated)."
+      },
+      {
+        "step": "If poor response after 30 mL/kg",
+        "detail": "start vasopressor (noradrenaline first-line, target MAP ≥ 65 mmHg).",
+        "safetyCheck": "Do NOT continue large-volume crystalloid past 30 mL/kg without vasopressor consideration — risk of dilutional coagulopathy + ARDS."
+      },
+      {
+        "step": "If responsive but persistent oliguria",
+        "detail": "consider colloid or further crystalloid bolus 250–500 mL; reassess."
+      },
+      {
+        "step": "Massive haemorrhage",
+        "detail": "switch to blood products in 1:1:1 ratio (PRBC : FFP : platelets); minimise crystalloid (< 1.5 L)."
+      },
+      {
+        "step": "Routine maintenance after resuscitation",
+        "detail": "25–30 mL/kg/day (e.g. 0.18% saline + 4% dextrose with KCl 20 mmol/L for an adult)."
+      }
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "consentNotes": "Inform patient of indication where conscious; explain volume status assessment + goals. Continuous monitoring with reassessment.",
+    "redFlags": [
+      "New crackles + rising oxygen requirement — pulmonary oedema, stop fluids.",
+      "Persistent shock after 30 mL/kg — start vasopressor.",
+      "Rising lactate despite fluid — reassess diagnosis (consider cardiogenic, obstructive, septic with vasopressor need)."
+    ]
+  },
+  {
+    "slug": "burn-fluid-resuscitation-parkland",
+    "title": "Major burn — Parkland fluid resuscitation",
+    "domains": [
+      "emergency",
+      "critical-care",
+      "surgery",
+      "trauma"
+    ],
+    "indications": [
+      "Adult with full / partial thickness burn ≥ 20% total body surface area (TBSA).",
+      "Child with burn ≥ 10% TBSA.",
+      "Inhalation injury (independent of % TBSA).",
+      "Electrical burns (high voltage — internal damage often exceeds visible)."
+    ],
+    "contraindications": {
+      "absolute": [
+        "Comorbid cardiogenic / valvular disease — adjust target endpoint, avoid blanket Parkland excess.",
+        "Use lower-volume strategy in well-resourced burns centres per recent evidence (avoid over-resuscitation, 'fluid creep')."
+      ],
+      "relative": []
+    },
+    "equipment": [
+      "Two large-bore IVs (avoid burned skin; intraosseous if necessary).",
+      "Hartmann's / Ringer's lactate (preferred isotonic crystalloid).",
+      "Urinary catheter to monitor output strictly.",
+      "Burn assessment chart (Lund-Browder for paediatric, rule of 9s adult).",
+      "Cling-film for dressing en route; analgesia (IV morphine + ketamine)."
+    ],
+    "complications": [
+      "Over-resuscitation ('fluid creep') → compartment syndromes (abdominal, ocular, extremity), pulmonary oedema, ARDS.",
+      "Under-resuscitation → AKI, shock, multi-organ failure.",
+      "Hypothermia (large burns lose heat).",
+      "Inhalation injury — early intubation for stridor, soot in nostrils, voice change, facial burns; carbon monoxide toxicity (treat with 100% O2; carboxyhaemoglobin level).",
+      "Hyperkalaemia from tissue necrosis (especially electrical burns).",
+      "Infection — burn wound + ICU-acquired."
+    ],
+    "postProcedureCare": [
+      "Burns centre referral for major burns (per local criteria).",
+      "Nutrition — early enteral feeding, high-calorie / high-protein (catabolic state); supplement micronutrients (zinc, copper, selenium, vitamin C + D).",
+      "Definitive wound care: tangential excision + skin grafting for deep partial / full thickness.",
+      "Rehabilitation: physiotherapy, splints, pressure garments for hypertrophic scarring.",
+      "Mental-health screen (PTSD, depression common)."
+    ],
+    "references": [
+      {
+        "label": "American Burn Association ABLS provider manual"
+      },
+      {
+        "label": "WHO Burn prevention and emergency care guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "steps": [
+      {
+        "step": "Estimate burn TBSA — exclude erythema (1st degree); use Lund",
+        "detail": "Estimate burn TBSA — exclude erythema (1st degree); use Lund-Browder for children (more accurate per age).",
+        "safetyCheck": "EXCLUDE erythema (1st degree) — over-estimation drives over-resuscitation."
+      },
+      {
+        "step": "Parkland formula",
+        "detail": "total volume = 4 mL × weight (kg) × % TBSA over 24 h from time of burn. Give half in first 8 h, remainder over next 16 h.",
+        "safetyCheck": "Time zero is at burn, NOT at hospital arrival — adjust calculation for delays."
+      },
+      {
+        "step": "Example",
+        "detail": "70 kg adult with 40% burn → 4 × 70 × 40 = 11,200 mL over 24 h. First 8 h = 5,600 mL = 700 mL/h."
+      },
+      {
+        "step": "Adjust per urine output",
+        "detail": "target 0.5 mL/kg/h adult, 1 mL/kg/h paediatric. Reduce volume if exceeding; increase if low.",
+        "safetyCheck": "Re-calibrate hourly to urine output 0.5 mL/kg/h adult — both under- and over-resuscitation harm."
+      },
+      {
+        "step": "Add maintenance fluid for children (Holliday-Segar) in addit",
+        "detail": "Add maintenance fluid for children (Holliday-Segar) in addition to resuscitation."
+      },
+      {
+        "step": "Switch to colloid (5% albumin) typically at hour 8–24 in mod",
+        "detail": "Switch to colloid (5% albumin) typically at hour 8–24 in modified protocols (Modified Brooke / restrictive strategies)."
+      },
+      {
+        "step": "Analgesia",
+        "detail": "IV morphine titrated; avoid IM in shocked patient (absorption unreliable)."
+      },
+      {
+        "step": "Cover burns with cling-film (clear, single layer, not constr",
+        "detail": "Cover burns with cling-film (clear, single layer, not constricting) until definitive dressing.",
+        "safetyCheck": "No constricting dressings; circumferential burns need escharotomy assessment."
+      },
+      {
+        "step": "Tetanus prophylaxis; consider escharotomy for circumferentia",
+        "detail": "Tetanus prophylaxis; consider escharotomy for circumferential burns of limb / chest."
+      }
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "consentNotes": "Counsel patient / family on indication, monitoring, escalation pathway, possible complications (compartment syndromes, ARDS, AKI, infection). Photographs may be needed for surgical planning — explain and consent.",
+    "redFlags": [
+      "Urine output > 1 mL/kg/h — reduce rate (over-resuscitation).",
+      "New abdominal distension — consider abdominal compartment syndrome, urgent decompression.",
+      "Stridor / soot in nostrils — early intubation."
+    ]
+  },
+  {
+    "slug": "kangaroo-mother-care-stable-preterm",
+    "title": "Kangaroo Mother Care (KMC) for stable preterm / low-birthweight neonate",
+    "domains": [
+      "neonatology",
+      "paediatrics",
+      "primary-care",
+      "nursing"
+    ],
+    "indications": [
+      "Preterm infant ≥ 32 weeks or birthweight ≥ 1500 g, clinically stable (no respiratory distress, no apnoea).",
+      "WHO 2022 recommends IMMEDIATE KMC for preterm and low-birthweight infants — even those clinically unstable — initiated right after birth (rather than waiting for stability).",
+      "Recovery / step-down from neonatal unit to ward."
+    ],
+    "contraindications": {
+      "absolute": [
+        "Very few absolute contraindications — only if infant requires immediate complex intervention (mechanical ventilation in a setting that does not allow KMC).",
+        "Maternal severe illness preventing safe holding — engage father / family member."
+      ],
+      "relative": []
+    },
+    "equipment": [
+      "Trained mother / family member.",
+      "Privacy and quiet environment.",
+      "KMC garment / cloth wrap (close-fitting binder).",
+      "Temperature monitoring; weighing scale."
+    ],
+    "complications": [
+      "Hypothermia if KMC interrupted prematurely (more risk than benefit).",
+      "Hyperthermia in over-warm room.",
+      "Maternal exhaustion — rotate with family.",
+      "Difficult to identify clinical deterioration if not regularly assessed — formal observation schedule essential."
+    ],
+    "postProcedureCare": [
+      "Daily weight; growth chart.",
+      "Vitamin K, vaccinations per schedule.",
+      "Continue at home — community follow-up at 1 week post-discharge then monthly.",
+      "Counsel on danger signs (poor feeding, lethargy, fever, cyanosis, jaundice)."
+    ],
+    "references": [
+      {
+        "label": "WHO recommendations for care of the preterm or low-birth-weight infant (2022)"
+      },
+      {
+        "label": "Lawn JE et al. Lancet — Kangaroo Mother Care meta-analysis"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "steps": [
+      {
+        "step": "Educate mother / family on benefits + technique BEFORE deliv",
+        "detail": "Educate mother / family on benefits + technique BEFORE delivery if possible.",
+        "safetyCheck": "Verify maternal capacity (no severe illness, pain control adequate) BEFORE prolonged KMC."
+      },
+      {
+        "step": "Place infant skin-to-skin between mother's breasts in uprigh",
+        "detail": "Place infant skin-to-skin between mother's breasts in upright position; head turned to side, neck slightly extended, hips and knees flexed (frog position).",
+        "safetyCheck": "Head turned to side and slightly extended — flexed neck obstructs airway in preterm infants."
+      },
+      {
+        "step": "Cover with cloth wrap securing infant against mother's chest",
+        "detail": "Cover with cloth wrap securing infant against mother's chest; mother's clothing or shawl over the top."
+      },
+      {
+        "step": "Continue for as long as possible — ideally continuous 24 h w",
+        "detail": "Continue for as long as possible — ideally continuous 24 h with brief breaks for hygiene. Even intermittent KMC (≥ 1 h sessions) has benefit.",
+        "safetyCheck": "Monitor temperature (target 36.5–37.5°C axillary) every 4 h — hypothermia and hyperthermia are both risks."
+      },
+      {
+        "step": "Monitor temperature (target 36",
+        "detail": "5–37.5°C axillary), SpO2 if available, breathing pattern."
+      },
+      {
+        "step": "Promote exclusive breastfeeding — every 1–3 h on demand; exp",
+        "detail": "Promote exclusive breastfeeding — every 1–3 h on demand; express milk into infant's mouth if too small to suck."
+      },
+      {
+        "step": "Discharge criteria",
+        "detail": "weight gain > 15 g/kg/day, exclusive breastfeeding established, temperature stable in KMC, mother confident in care."
+      }
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 0,
+      "sex": "any"
+    },
+    "consentNotes": "Counsel mother and family on benefits (improved survival, breastfeeding, bonding, thermoregulation) and method. Reassure that intermittent breaks are acceptable. Address any cultural concerns sensitively.",
+    "redFlags": [
+      "Infant temperature < 36.5°C — increase environmental warmth + check KMC technique.",
+      "Apnoea / cyanosis — full neonatal assessment.",
+      "Poor feeding / lethargy — sepsis workup."
+    ]
   }
 ]
