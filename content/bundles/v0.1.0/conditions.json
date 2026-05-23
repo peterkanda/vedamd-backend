@@ -43379,5 +43379,2374 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "diabetic-ketoacidosis-adult",
+    "title": "Diabetic ketoacidosis (adult)",
+    "icd10": [
+      "E10.10",
+      "E11.10",
+      "E13.10"
+    ],
+    "domains": [
+      "endocrinology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 16,
+      "sex": "any"
+    },
+    "presentation": [
+      "Polyuria, polydipsia, weight loss, vomiting, abdominal pain.",
+      "Kussmaul breathing (deep sighing) with ketotic (acetone) breath.",
+      "Dehydration (dry mucous membranes, tachycardia, hypotension).",
+      "Altered mental state from drowsiness to coma in severe disease.",
+      "Common precipitants: infection, insulin omission, new-onset T1DM, MI, pancreatitis, drugs (SGLT2i — euDKA, steroids, antipsychotics)."
+    ],
+    "redFlags": [
+      "GCS ≤ 12 / coma → critical care.",
+      "Severe acidosis pH < 7.0 or HCO3 < 5 mmol/L.",
+      "Hypokalaemia (K+ < 3.5 mmol/L) BEFORE insulin — must replace potassium first.",
+      "Haemodynamic instability (SBP < 90 mmHg).",
+      "Suspected cerebral oedema (paediatric > adult, but possible — headache, focal signs, falling GCS in first 24h).",
+      "Pregnancy with DKA → maternal/fetal high-risk, urgent obstetric input."
+    ],
+    "diagnostics": [
+      {
+        "test": "Capillary blood glucose + capillary ketones (β-hydroxybutyrate ≥ 3.0 mmol/L diagnostic) or urine ketones (≥ 2+).",
+        "rationale": "Bedside confirmation of ketosis with hyperglycaemia."
+      },
+      {
+        "test": "Venous blood gas — pH, bicarbonate, anion gap.",
+        "rationale": "Confirm metabolic acidosis (pH < 7.30 or HCO3 < 15 with raised anion gap)."
+      },
+      {
+        "test": "U&E (K+ critically), creatinine, glucose.",
+        "rationale": "Guide IV fluid and potassium replacement; identify AKI."
+      },
+      {
+        "test": "FBC, CRP, urine dip, blood and urine culture; CXR; ECG; troponin where indicated.",
+        "rationale": "Identify precipitant (infection, MI)."
+      },
+      {
+        "test": "Lipase/amylase if abdominal pain.",
+        "rationale": "Exclude pancreatitis as both precipitant and mimic."
+      }
+    ],
+    "management": [
+      {
+        "step": "ABCDE; high-flow O2 if hypoxic; large-bore IV access; cardiac monitoring",
+        "detail": "Catheterise if reduced consciousness, oliguria, or hourly urine output needed."
+      },
+      {
+        "step": "IV fluid resuscitation",
+        "detail": "0.9% NaCl 1 L over the first hour (give faster if shocked). Then 1 L over 2 h, 1 L over 2 h, 1 L over 4 h, 1 L over 4 h, 1 L over 6 h (adjust for elderly / cardiac/renal disease — slower). Switch to 0.45% NaCl if corrected sodium rises."
+      },
+      {
+        "step": "Fixed-rate IV insulin infusion (FRII)",
+        "detail": "0.1 unit/kg/hour of soluble (regular) insulin. Continue patient's long-acting insulin at usual dose. Target: capillary ketones falling by ≥ 0.5 mmol/L/h AND bicarbonate rising by ≥ 3 mmol/L/h AND glucose falling by ≥ 3 mmol/L/h. If not on target, increase FRII by 1 unit/h."
+      },
+      {
+        "step": "Potassium replacement",
+        "detail": "Withhold IV K+ in 1st L (and ALL insulin) if K+ < 3.5 mmol/L until K+ replaced. K+ 3.5–5.5: add 40 mmol KCl per L. K+ > 5.5: no K+ in fluids and recheck hourly. Re-check K+ at 1 h then 2-hourly."
+      },
+      {
+        "step": "Glucose < 14 mmol/L — add 10% dextrose",
+        "detail": "Run 10% dextrose 125 mL/h alongside saline to allow continued insulin (to clear ketones) without hypoglycaemia."
+      },
+      {
+        "step": "Treat the precipitant",
+        "detail": "Antibiotics if infection suspected; antiplatelet/troponin pathway if MI; obstetric input if pregnant."
+      },
+      {
+        "step": "Resolution criteria",
+        "detail": "pH > 7.30, bicarbonate > 18, ketones < 0.6, patient eating/drinking. Switch to subcutaneous insulin (give short-acting 30 min BEFORE stopping infusion to avoid rebound DKA). Diabetes specialist nurse / endocrine review."
+      },
+      {
+        "step": "Monitor for complications",
+        "detail": "Hypokalaemia, hypoglycaemia, fluid overload (especially elderly), cerebral oedema (rare but devastating)."
+      }
+    ],
+    "references": [
+      {
+        "label": "JBDS-IP The Management of Diabetic Ketoacidosis in Adults (2023)"
+      },
+      {
+        "label": "ADA Standards of Care — Diabetic ketoacidosis"
+      },
+      {
+        "label": "WHO Package of essential noncommunicable disease interventions — Diabetes"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "diabetic-ketoacidosis-paediatric",
+    "title": "Diabetic ketoacidosis (paediatric / adolescent)",
+    "icd10": [
+      "E10.10"
+    ],
+    "domains": [
+      "paediatrics",
+      "endocrinology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 17,
+      "sex": "any"
+    },
+    "presentation": [
+      "Polyuria (often as new-onset bedwetting), polydipsia, weight loss.",
+      "Vomiting, abdominal pain, lethargy, deep sighing (Kussmaul) breathing.",
+      "First presentation of type 1 diabetes in ~25 % of children.",
+      "May be precipitated by infection, insulin omission, insulin-pump failure."
+    ],
+    "redFlags": [
+      "Severe DKA: pH < 7.1, drowsiness, severe dehydration ≥ 10%.",
+      "Cerebral oedema warning signs: headache, agitation/irritability, falling GCS, focal neurology, bradycardia with hypertension, abnormal posturing — RAPID action required.",
+      "Shock (cold peripheries, weak pulses, hypotension).",
+      "Hypokalaemia or hyperkalaemia."
+    ],
+    "diagnostics": [
+      {
+        "test": "Capillary glucose (> 11 mmol/L) + capillary ketones ≥ 3.0 mmol/L or urine ketones ≥ 2+.",
+        "rationale": "Confirm hyperglycaemic ketosis."
+      },
+      {
+        "test": "Venous blood gas (pH and bicarbonate) for severity.",
+        "rationale": "Mild DKA: pH 7.20–7.29 or HCO3 10–17. Moderate: pH 7.1–7.19 or HCO3 5–9. Severe: pH < 7.1 or HCO3 < 5."
+      },
+      {
+        "test": "Weight (essential — guides fluid + insulin dose) and clinical dehydration estimate.",
+        "rationale": "Use 5% deficit for moderate, 7% for severe — DO NOT exceed 8% deficit assumption (cerebral oedema risk)."
+      },
+      {
+        "test": "U&E, FBC, glucose, blood/urine culture, CXR if respiratory signs.",
+        "rationale": "Identify precipitant; baseline K+ critical."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitation: only if shocked",
+        "detail": "0.9% NaCl 10 mL/kg bolus over 15 min, repeat once if still shocked. Do NOT subtract from deficit. AVOID large bolus volumes — cerebral oedema risk."
+      },
+      {
+        "step": "Calculate fluids: maintenance + deficit over 48 h",
+        "detail": "Use 0.9% NaCl. Maintenance: 100/50/20 mL/kg/day rule (or Holliday-Segar). Deficit: assume 5% in mild–moderate DKA, 7% in severe; replace evenly over 48 h. Total hourly rate = (maintenance + deficit − any bolus given) ÷ 48."
+      },
+      {
+        "step": "Insulin infusion 1–2 h AFTER fluids started",
+        "detail": "0.05–0.1 unit/kg/h soluble insulin. Do NOT bolus. Lower-end 0.05 in young children, post-cardiac-arrest, or already drowsy. Continue any long-acting insulin (glargine, degludec) at usual dose."
+      },
+      {
+        "step": "Potassium",
+        "detail": "Add KCl 40 mmol/L to fluids once urinating, K+ < 5.5, and not anuric. Continuous ECG if K+ abnormal."
+      },
+      {
+        "step": "Add glucose when blood glucose < 14 mmol/L",
+        "detail": "Switch to 0.9% NaCl + 5% dextrose ± 0.45% NaCl + 5% dextrose. Continue insulin to clear ketones."
+      },
+      {
+        "step": "Cerebral oedema — RECOGNISE EARLY, treat IMMEDIATELY",
+        "detail": "If signs (headache, drowsiness, bradycardia + hypertension): 3% NaCl 5 mL/kg over 10–15 min OR mannitol 1 g/kg over 10 min. Reduce fluids by 1/3, head up 30°, intubate if needed. Urgent transfer to PICU; CT head AFTER treatment."
+      },
+      {
+        "step": "Transition to SC insulin",
+        "detail": "When ketones < 1.0, pH > 7.30, child eating: SC short-acting before stopping infusion (give 30 min overlap). Educate family on diabetes and sick-day rules."
+      }
+    ],
+    "references": [
+      {
+        "label": "ISPAD Clinical Practice Consensus Guidelines 2022 — DKA in children"
+      },
+      {
+        "label": "BSPED DKA guideline (UK)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "hyperosmolar-hyperglycaemic-state",
+    "title": "Hyperosmolar hyperglycaemic state (HHS)",
+    "icd10": [
+      "E11.00",
+      "E13.00"
+    ],
+    "domains": [
+      "endocrinology",
+      "emergency",
+      "critical-care",
+      "geriatrics"
+    ],
+    "population": {
+      "minAgeYears": 50,
+      "sex": "any"
+    },
+    "presentation": [
+      "Profound dehydration (often days of polyuria + reduced intake).",
+      "Altered consciousness, confusion, focal seizures.",
+      "Marked hyperglycaemia (usually > 30 mmol/L), serum osmolality > 320 mOsm/kg.",
+      "Minimal or absent ketosis (pH > 7.30, HCO3 > 15, ketones < 3 mmol/L) — distinguishes from DKA.",
+      "Older adults with T2DM; often precipitated by infection, MI, CVA, or steroid therapy."
+    ],
+    "redFlags": [
+      "Coma or severe altered consciousness.",
+      "Sodium > 160 mmol/L or osmolality > 350 mOsm/kg.",
+      "Concomitant DKA (mixed picture — pH < 7.30, ketones > 3).",
+      "Acute kidney injury, MI, sepsis as precipitant.",
+      "Lower-limb venous thromboembolism (HHS is highly prothrombotic — VTE prophylaxis essential)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Calculate osmolality: 2×(Na+) + glucose + urea (all in mmol/L).",
+        "rationale": "Guides severity; HHS osmolality usually > 320; aim to fall by < 5 mOsm/kg/h."
+      },
+      {
+        "test": "Capillary glucose + ketones; venous blood gas; U&E.",
+        "rationale": "Distinguish HHS from DKA and monitor."
+      },
+      {
+        "test": "FBC, CRP, blood + urine culture, ECG, troponin, CXR.",
+        "rationale": "Identify precipitant (sepsis, MI, stroke)."
+      },
+      {
+        "test": "CT head if persistent neurology after correction.",
+        "rationale": "Exclude stroke / haemorrhage."
+      }
+    ],
+    "management": [
+      {
+        "step": "IV fluids — SLOWER and more cautious than DKA",
+        "detail": "0.9% NaCl, aim for 3–6 L positive balance over the first 12 h. Avoid rapid osmolality changes (target < 5 mOsm/kg/h fall, < 10 mmol/L Na+ fall per 24 h) — central pontine myelinolysis and cerebral oedema risk."
+      },
+      {
+        "step": "Insulin — start LOW and LATE",
+        "detail": "Withhold insulin until glucose stops falling with fluids alone, OR if ketones > 1 mmol/L (mixed picture). Then 0.05 unit/kg/h. Target glucose fall 4–6 mmol/L/h."
+      },
+      {
+        "step": "Potassium",
+        "detail": "Often less depleted than DKA but still replace as needed (40 mmol/L if K+ 3.5–5.5)."
+      },
+      {
+        "step": "VTE prophylaxis from admission",
+        "detail": "LMWH at prophylactic dose unless contraindicated — HHS confers very high thrombotic risk."
+      },
+      {
+        "step": "Treat precipitant",
+        "detail": "Antibiotics for infection, reperfusion for MI, stroke pathway, manage cause of insulin discontinuation."
+      },
+      {
+        "step": "Foot care + pressure-area care",
+        "detail": "Often immobile elderly with neuropathy and dehydration — pressure ulcer prevention from admission."
+      },
+      {
+        "step": "Transition + secondary prevention",
+        "detail": "Switch to SC insulin once eating; many HHS patients can subsequently be controlled on oral agents but insulin often continued. Diabetes education + structured follow-up."
+      }
+    ],
+    "references": [
+      {
+        "label": "JBDS-IP The management of Hyperosmolar Hyperglycaemic State (HHS) in adults (2022)"
+      },
+      {
+        "label": "ADA Standards of Care — Hyperglycaemic crises"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "gestational-diabetes-mellitus",
+    "title": "Gestational diabetes mellitus (GDM)",
+    "icd10": [
+      "O24.4",
+      "O24.9"
+    ],
+    "domains": [
+      "obstetrics",
+      "endocrinology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "maxAgeYears": 49,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Mostly asymptomatic — detected by routine screening.",
+      "Risk factors: BMI ≥ 30, previous GDM, previous large-for-gestational-age baby (≥ 4.5 kg), 1st-degree relative with diabetes, ethnic background (South Asian, African Caribbean, Middle Eastern), PCOS.",
+      "Polyhydramnios, fetal macrosomia or accelerated growth on antenatal scan."
+    ],
+    "redFlags": [
+      "Pre-existing (overt) diabetes detected in early pregnancy (HbA1c ≥ 6.5% before 20 weeks) — manage as type 2 diabetes in pregnancy.",
+      "DKA in pregnancy — emergency, maternal + fetal mortality high.",
+      "Severe hyperglycaemia (FPG > 7, RPG > 11) with symptoms.",
+      "Pre-eclampsia, sustained hypertension, fetal distress on monitoring."
+    ],
+    "diagnostics": [
+      {
+        "test": "Screening: 75 g oral glucose tolerance test (OGTT) at 24–28 weeks for at-risk women (WHO / IADPSG criteria).",
+        "rationale": "Diagnostic if any of: FPG ≥ 5.1, 1-h ≥ 10.0, 2-h ≥ 8.5 mmol/L."
+      },
+      {
+        "test": "Early OGTT or HbA1c at booking if high risk.",
+        "rationale": "Detect undiagnosed overt diabetes."
+      },
+      {
+        "test": "Self-monitoring of blood glucose 4 times daily after diagnosis (fasting + 1 h postprandial).",
+        "rationale": "Target fasting < 5.3, 1-h postprandial < 7.8 mmol/L."
+      },
+      {
+        "test": "Fetal growth + amniotic fluid scan every 4 weeks from 28 weeks.",
+        "rationale": "Detect macrosomia, polyhydramnios."
+      }
+    ],
+    "management": [
+      {
+        "step": "Lifestyle first line for all",
+        "detail": "Dietitian referral; low-glycaemic-index diet, regular physical activity (30 min walking daily), weight management within pregnancy recommendations."
+      },
+      {
+        "step": "Pharmacotherapy if targets not met in 1–2 weeks",
+        "detail": "Metformin first line (start 500 mg with evening meal, titrate weekly to max 2 g/day) — well-tolerated and safe in pregnancy. Add or substitute insulin if metformin insufficient or contraindicated. Glibenclamide is a second-line option in some guidelines but less preferred."
+      },
+      {
+        "step": "Insulin regimen if required",
+        "detail": "Isophane (NPH) at bedtime for raised fasting; rapid-acting (aspart, lispro) with meals for postprandial. Detemir is also accepted in pregnancy."
+      },
+      {
+        "step": "Antenatal monitoring",
+        "detail": "Joint diabetes-antenatal clinic. Fortnightly visits from 28 weeks. Aspirin 75–150 mg/day from 12 weeks for pre-eclampsia prophylaxis."
+      },
+      {
+        "step": "Delivery",
+        "detail": "Plan delivery by 40+6 weeks; offer induction or LSCS by 37–38+6 weeks if macrosomia or other risk. Continue glucose monitoring intrapartum; insulin sliding scale if glucose > 7 mmol/L."
+      },
+      {
+        "step": "Postpartum",
+        "detail": "Stop GDM-specific therapy after delivery. Encourage breastfeeding (reduces type 2 risk for mother and infant). Repeat fasting glucose or HbA1c at 6–13 weeks postpartum, then annually — 50% develop type 2 diabetes within 10 years."
+      },
+      {
+        "step": "Counsel about future risk",
+        "detail": "Plan future pregnancies preconceptually; lifestyle modification reduces type 2 incidence."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Diagnostic criteria and classification of hyperglycaemia first detected in pregnancy (2013)"
+      },
+      {
+        "label": "NICE NG3 — Diabetes in pregnancy"
+      },
+      {
+        "label": "FIGO initiative on gestational diabetes (2015)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "hearts-d-type2-diabetes-step-protocol",
+    "title": "WHO HEARTS-D — stepwise type 2 diabetes management protocol (adult)",
+    "icd10": [
+      "E11"
+    ],
+    "domains": [
+      "endocrinology",
+      "primary-care",
+      "ncd"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Adult with confirmed type 2 diabetes (FPG ≥ 7.0, 2-h PG ≥ 11.1 on OGTT, HbA1c ≥ 6.5%, or random PG ≥ 11.1 with classic symptoms).",
+      "Initial assessment: symptoms, complications (eye, foot, renal, cardiovascular), comorbid cardiovascular risk factors."
+    ],
+    "redFlags": [
+      "DKA / HHS at presentation → admit and treat as emergency.",
+      "HbA1c > 10% or fasting glucose > 16 → consider starting insulin immediately.",
+      "Severe hypoglycaemia (any episode requiring third-party assistance) — review regimen.",
+      "Pregnancy — switch to insulin-based regimen.",
+      "Symptomatic infection (especially foot, urinary, dental) — treat early."
+    ],
+    "diagnostics": [
+      {
+        "test": "Baseline + annual HbA1c, fasting lipids, U&E + eGFR, urine ACR, ALT.",
+        "rationale": "Track glycaemic control, lipid status, kidney function, hepatic steatosis."
+      },
+      {
+        "test": "Annual foot examination (monofilament, pulses, deformities) + annual retinal screening.",
+        "rationale": "Early detection of preventable complications."
+      },
+      {
+        "test": "10-year cardiovascular-risk assessment.",
+        "rationale": "Decide on statin and aspirin per HEARTS protocol."
+      }
+    ],
+    "management": [
+      {
+        "step": "Set individualised HbA1c target",
+        "detail": "Most: < 7.0% (53 mmol/mol). Frail elderly or limited life expectancy: 7.5–8.5%. Recent diagnosis, motivated, no comorbidity: < 6.5% if achievable without hypoglycaemia."
+      },
+      {
+        "step": "STEP 1 — Lifestyle + metformin",
+        "detail": "Diet (low refined carbohydrate, weight loss 5–10%), 150 min/week activity. Start metformin 500 mg with meal, titrate to 1 g twice daily over 4 weeks. Reduce dose if eGFR 30–44; stop if eGFR < 30. Continue lifelong if tolerated."
+      },
+      {
+        "step": "STEP 2 — Add second agent at 3 months if HbA1c above target",
+        "detail": "Choose based on comorbidity: SGLT2 inhibitor (empagliflozin, dapagliflozin) if heart failure or CKD; GLP-1 agonist (liraglutide, semaglutide) if obesity / atherosclerotic CVD; sulfonylurea (gliclazide) if cost-limited and no hypo concern; DPP-4 inhibitor (sitagliptin) if hypo concern and no CVD/CKD indication."
+      },
+      {
+        "step": "STEP 3 — Add third agent at 3–6 months if still above target",
+        "detail": "Combine classes; avoid duplicating mechanism. Consider basal insulin (NPH bedtime or analogue) when oral options exhausted."
+      },
+      {
+        "step": "STEP 4 — Intensify insulin",
+        "detail": "Add prandial insulin (basal-plus then basal-bolus); or switch to premixed BID. Continue metformin lifelong."
+      },
+      {
+        "step": "Concurrent cardiovascular risk management",
+        "detail": "Statin (atorvastatin 20 mg) for primary prevention if ≥ 40 years. ACEi/ARB if hypertension, albuminuria, or CKD. Aspirin ONLY for secondary prevention."
+      },
+      {
+        "step": "Education and self-management",
+        "detail": "Structured group education at diagnosis. Sick-day rules (continue medication, hydrate, check glucose more often, seek help if vomiting or ketones positive). Smoking cessation. Annual review of complications and goals."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO HEARTS-D: Diagnosis and management of type 2 diabetes (HEARTS-D module, 2020)",
+        "url": "https://www.who.int/publications/i/item/who-ucn-ncd-20.1"
+      },
+      {
+        "label": "ADA / EASD Consensus Report 2022 — Management of hyperglycaemia in type 2 diabetes"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "imci-very-severe-febrile-disease-child",
+    "title": "IMCI — very severe febrile disease (child 2–59 months)",
+    "icd10": [
+      "R50.9",
+      "A41.9",
+      "G03.9"
+    ],
+    "domains": [
+      "paediatrics",
+      "child-health",
+      "imci",
+      "infectious-disease",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 4,
+      "sex": "any"
+    },
+    "presentation": [
+      "Child 2–59 months with fever (axillary ≥ 37.5°C or history of fever in past 3 days).",
+      "WITH any general danger sign: unable to drink/breastfeed, vomiting everything, recent or current convulsions, lethargic or unconscious.",
+      "OR stiff neck.",
+      "OR bulging fontanelle in infants."
+    ],
+    "redFlags": [
+      "Coma (AVPU = U or GCS ≤ 8).",
+      "Repeated or prolonged seizures.",
+      "Severe respiratory distress, SpO2 < 90 %.",
+      "Shock (cold peripheries, weak pulse, capillary refill > 3 s).",
+      "Petechial / purpuric rash with fever — suspect meningococcal disease.",
+      "Severe pallor with fever (suspect severe malaria)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Malaria RDT and thick + thin blood smear if endemic area.",
+        "rationale": "Severe malaria common cause; needs IV artesunate."
+      },
+      {
+        "test": "Capillary blood glucose.",
+        "rationale": "Treat hypoglycaemia immediately."
+      },
+      {
+        "test": "Haemoglobin (severe anaemia in severe malaria common).",
+        "rationale": "Decide transfusion threshold per WHO."
+      },
+      {
+        "test": "Blood culture, FBC, CRP where available; lumbar puncture if signs of meningitis (and no contraindication).",
+        "rationale": "Identify bacterial cause; guide antibiotics."
+      }
+    ],
+    "management": [
+      {
+        "step": "Pre-referral treatment (any setting — start within minutes)",
+        "detail": "Give a single dose of: (a) IM/IV ceftriaxone 80 mg/kg (or IM benzylpenicillin + IM gentamicin if ceftriaxone unavailable), AND (b) for suspected severe malaria: IM/IV artesunate 2.4 mg/kg (preferred) or IM artemether 3.2 mg/kg, AND (c) treat hypoglycaemia (10% dextrose 5 mL/kg IV), AND (d) treat convulsion (rectal diazepam 0.5 mg/kg or IV/IM midazolam 0.2 mg/kg)."
+      },
+      {
+        "step": "Ensure airway, breathing, oxygenation",
+        "detail": "Oxygen if SpO2 < 90 % or severe respiratory distress. Recovery position if unconscious; suction secretions."
+      },
+      {
+        "step": "IV fluids only for shock or severe dehydration",
+        "detail": "FEAST trial showed routine bolus harmful in non-shocked African children. Give 10–20 mL/kg crystalloid ONLY if shocked, then reassess; otherwise maintenance only via NG or oral if tolerating."
+      },
+      {
+        "step": "Refer urgently to hospital",
+        "detail": "Continue pre-referral antibiotic + antimalarial. Keep warm; check glucose en route."
+      },
+      {
+        "step": "At hospital — definitive treatment",
+        "detail": "Continue IV ceftriaxone 80 mg/kg/day. IV artesunate 2.4 mg/kg at 0, 12, 24 h then daily for severe malaria, transitioning to oral ACT for 3 days once tolerating. Manage convulsions with phenobarbital/phenytoin if recurrent. Treat anaemia (transfuse if Hb < 4 g/dL or 4–6 with respiratory distress)."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO IMCI chart booklet (2014, updated)"
+      },
+      {
+        "label": "WHO Pocket book of hospital care for children (2nd ed.)"
+      },
+      {
+        "label": "WHO Guidelines for the treatment of malaria (3rd ed., 2015)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "imci-severe-pneumonia-child",
+    "title": "IMCI — severe pneumonia (child 2–59 months, chest indrawing or general danger sign)",
+    "icd10": [
+      "J18.9",
+      "J15.9"
+    ],
+    "domains": [
+      "paediatrics",
+      "child-health",
+      "imci",
+      "respiratory",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 4,
+      "sex": "any"
+    },
+    "presentation": [
+      "Cough or difficulty breathing for any duration.",
+      "AND lower chest-wall indrawing (severe pneumonia) OR any IMCI general danger sign (very severe pneumonia).",
+      "Fast breathing thresholds (count for 60 s): age 2–11 m ≥ 50/min; age 12–59 m ≥ 40/min."
+    ],
+    "redFlags": [
+      "SpO2 < 90 % on room air.",
+      "Central cyanosis.",
+      "Grunting, head nodding, severe chest indrawing.",
+      "Inability to drink or breastfeed.",
+      "Stridor at rest, severe acute malnutrition."
+    ],
+    "diagnostics": [
+      {
+        "test": "Pulse oximetry — SpO2 essential bedside test.",
+        "rationale": "Hypoxaemia is a key marker of severity and need for oxygen."
+      },
+      {
+        "test": "Respiratory rate count over 60 s when child quiet.",
+        "rationale": "WHO age-specific thresholds."
+      },
+      {
+        "test": "Chest examination (indrawing, auscultation, percussion).",
+        "rationale": "Identify effusion, empyema, atelectasis."
+      },
+      {
+        "test": "Where available: CXR, FBC, blood culture, HIV test if status unknown.",
+        "rationale": "Identify complications and pathogens."
+      }
+    ],
+    "management": [
+      {
+        "step": "Oxygen for SpO2 < 90 %",
+        "detail": "Nasal prongs 0.5–2 L/min for infants, up to 4 L/min for older children. Target SpO2 ≥ 90 %. Escalate to CPAP / HFNC if available for impending failure."
+      },
+      {
+        "step": "First-line antibiotic — IV ampicillin + gentamicin",
+        "detail": "IV ampicillin 50 mg/kg every 6 h + IM/IV gentamicin 7.5 mg/kg once daily for 5 days. Add cloxacillin if Staph aureus suspected (post-measles, abscess, pneumatocoele, empyema)."
+      },
+      {
+        "step": "Alternative — IV ceftriaxone for severe presentation or in high-resistance settings",
+        "detail": "Ceftriaxone 80 mg/kg IM/IV once daily, especially if meningitis cannot be excluded clinically."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Maintain hydration (oral preferred, NG if cannot drink, IV at 75% maintenance if cannot tolerate). Antipyretic (paracetamol 15 mg/kg every 6 h). Continue feeding."
+      },
+      {
+        "step": "Treat associated conditions",
+        "detail": "Severe malaria, severe acute malnutrition, anaemia, HIV — coordinate management."
+      },
+      {
+        "step": "Switch to oral and discharge planning",
+        "detail": "Once afebrile 48 h, eating/drinking, SpO2 ≥ 90 %, RR returning to normal — switch to oral amoxicillin 40 mg/kg twice daily to complete 5–7 days total."
+      },
+      {
+        "step": "Counsel caregiver on danger signs for re-presentation",
+        "detail": "Fast breathing, indrawing, inability to drink, fever > 3 days, convulsion, child becomes sicker."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Pocket book of hospital care for children, 2nd ed. — Pneumonia chapters"
+      },
+      {
+        "label": "WHO Revised classification and treatment of pneumonia in children (2014)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "imci-psbi-young-infant",
+    "title": "IMCI — possible serious bacterial infection (PSBI) in young infant < 2 months",
+    "icd10": [
+      "P36.9",
+      "A41.9"
+    ],
+    "domains": [
+      "paediatrics",
+      "neonatology",
+      "child-health",
+      "imci",
+      "infectious-disease",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Infant < 60 days with ANY of: fast breathing (RR ≥ 60/min), severe chest indrawing, fever (≥ 37.5°C axillary), hypothermia (< 35.5°C), no movement on stimulation, not feeding well, convulsions, umbilical redness extending to skin, or pus draining from ear.",
+      "Critical illness (clinical severe infection):  any sign of CSI — not feeding, lethargic/unconscious, convulsions, severe chest indrawing."
+    ],
+    "redFlags": [
+      "ALL young infants with any PSBI sign are at high risk — neonatal sepsis carries mortality > 20 % if untreated.",
+      "Critical illness (CSI) — refer ALWAYS to hospital.",
+      "Hypoglycaemia (< 2.6 mmol/L) — treat immediately.",
+      "Apnoea, cyanosis, bradycardia."
+    ],
+    "diagnostics": [
+      {
+        "test": "Vital signs (RR, HR, temperature axillary, SpO2 if available).",
+        "rationale": "Quantify severity."
+      },
+      {
+        "test": "Bedside glucose.",
+        "rationale": "Treat hypoglycaemia before referral."
+      },
+      {
+        "test": "Weight (essential for dosing).",
+        "rationale": "Weight-banded antibiotics."
+      },
+      {
+        "test": "At hospital: blood culture, FBC, CRP, LP (if no contraindication), urine culture (clean catch or SPA).",
+        "rationale": "Identify pathogen and source."
+      }
+    ],
+    "management": [
+      {
+        "step": "Refer to hospital ALWAYS if critical illness, OR home referral declined PSBI sign",
+        "detail": "Begin pre-referral antibiotic immediately."
+      },
+      {
+        "step": "Pre-referral antibiotic (single dose) at health facility",
+        "detail": "IM ampicillin 50 mg/kg + IM gentamicin (age < 7 days: 5 mg/kg if ≥ 2 kg; 3 mg/kg if < 2 kg; age 7 days–2 m: 7.5 mg/kg). Give vitamin K 1 mg IM if not given at birth. Treat hypoglycaemia with 10% dextrose 2 mL/kg IV bolus then maintenance."
+      },
+      {
+        "step": "Hospital-based treatment — first 7 days IV antibiotics",
+        "detail": "IV ampicillin + gentamicin for 7 days (extend to 10–14 days if meningitis confirmed). Reassess at 48–72 h based on cultures and clinical response. Add cefotaxime if late-onset meningitis suspected."
+      },
+      {
+        "step": "Outpatient simplified regimen — for non-critical PSBI when referral not possible",
+        "detail": "WHO simplified regimens (research-supported): IM gentamicin once daily for 7 days + oral amoxicillin twice daily for 7 days (PSBI with fast breathing alone in 7–59-day-olds may use oral amoxicillin alone in some programmes). Use only in supervised home-management programmes where referral truly impossible."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Maintain warmth (kangaroo mother care, especially preterm/low birthweight). Encourage exclusive breastfeeding; expressed breast-milk via NG/cup if cannot suckle. Treat seizures (phenobarbital 20 mg/kg loading). Oxygen if hypoxic."
+      },
+      {
+        "step": "Discharge and follow-up",
+        "detail": "Counsel mother on danger signs, exclusive breastfeeding, immunisation. Schedule community follow-up at 2–3 days then weekly until 8 weeks."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO IMCI Chart booklet for young infants 0–2 months"
+      },
+      {
+        "label": "WHO Managing possible serious bacterial infection in young infants when referral is not feasible (2015)"
+      },
+      {
+        "label": "WHO Pocket book of hospital care for children — Newborn chapter"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "acute-coronary-syndrome-stemi-adult",
+    "title": "ST-elevation myocardial infarction (STEMI) — adult",
+    "icd10": [
+      "I21.0",
+      "I21.1",
+      "I21.2",
+      "I21.3"
+    ],
+    "domains": [
+      "cardiology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden central or left-sided crushing chest pain ≥ 20 min duration, often radiating to jaw, neck or left arm.",
+      "Associated diaphoresis, dyspnoea, nausea, syncope.",
+      "Anterior infarct: LAD territory — risk of cardiogenic shock, large area at risk.",
+      "Inferior infarct: RCA / LCx territory — bradycardia, hypotension, possible RV involvement.",
+      "Atypical presentations more common in elderly, women, diabetics: dyspnoea, fatigue, epigastric pain, syncope."
+    ],
+    "redFlags": [
+      "Cardiogenic shock (SBP < 90, cold peripheries, pulmonary oedema).",
+      "Mechanical complications: acute mitral regurgitation, VSD, free-wall rupture.",
+      "Sustained ventricular tachycardia, ventricular fibrillation, complete heart block.",
+      "Aortic dissection mimics — sudden tearing pain to the back, BP discrepancy, widened mediastinum on CXR."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG within 10 minutes of first medical contact — and repeat every 15 min if non-diagnostic but ongoing pain.",
+        "rationale": "STEMI criteria: ≥ 1 mm ST elevation in ≥ 2 contiguous limb leads, or ≥ 2 mm in V1–V3 men (≥ 1.5 mm women); new LBBB; posterior infarct (ST depression V1–V3 with tall R)."
+      },
+      {
+        "test": "High-sensitivity troponin (hs-cTnT/I) at 0 and 1–3 h.",
+        "rationale": "Confirm myocardial injury; not required to commence reperfusion."
+      },
+      {
+        "test": "FBC, U&E, glucose, lipids, coagulation, CXR (mediastinum).",
+        "rationale": "Baseline + exclude dissection and other mimics."
+      },
+      {
+        "test": "Bedside echocardiography if available.",
+        "rationale": "Identify regional wall-motion abnormality, mechanical complications."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immediate measures",
+        "detail": "ABCDE; supplemental O2 ONLY if SpO2 < 90 %; large-bore IV access; cardiac monitor; aspirin 300 mg chewed; sublingual GTN if SBP > 90 (NOT in inferior MI with RV involvement). Analgesia: morphine 2–4 mg IV (or fentanyl) titrated to pain."
+      },
+      {
+        "step": "Reperfusion — TIME IS MUSCLE",
+        "detail": "Primary PCI (preferred): if PCI-capable centre and door-to-balloon time can be < 90 min (or < 120 min if transferred). Otherwise fibrinolysis within 30 min of arrival ('door-to-needle')."
+      },
+      {
+        "step": "Fibrinolytic therapy (if PCI not available within 120 min)",
+        "detail": "Tenecteplase weight-banded IV bolus (preferred), OR alteplase (15 mg bolus + 0.75 mg/kg over 30 min + 0.5 mg/kg over 60 min, max 100 mg), OR streptokinase 1.5 MU over 60 min. Co-administer enoxaparin (or unfractionated heparin), aspirin + clopidogrel 300 mg loading (75 mg if > 75 y). Plan rescue PCI if no resolution at 60–90 min or any deterioration."
+      },
+      {
+        "step": "Dual antiplatelet therapy (DAPT)",
+        "detail": "Aspirin 75 mg daily + ticagrelor 90 mg twice daily (or prasugrel) — preferred over clopidogrel post-PCI; clopidogrel 75 mg daily if fibrinolysis given or bleeding risk."
+      },
+      {
+        "step": "Anticoagulation",
+        "detail": "Unfractionated heparin or enoxaparin during PCI; bivalirudin alternative."
+      },
+      {
+        "step": "Adjunctive secondary-prevention drugs (start in hospital)",
+        "detail": "High-intensity statin (atorvastatin 80 mg). ACE inhibitor (or ARB) — within 24 h. β-blocker (oral within 24 h if no shock / CHF / heart block). Aldosterone antagonist (eplerenone) if EF ≤ 40% with HF or diabetes."
+      },
+      {
+        "step": "Cardiac rehabilitation and lifestyle",
+        "detail": "Refer to cardiac rehab; smoking cessation, structured exercise, weight control, dietitian, mental health screen."
+      },
+      {
+        "step": "Long-term DAPT, statin, ACEi, β-blocker indefinitely (statin and antiplatelet)",
+        "detail": "DAPT 12 months post-ACS standard (longer if very high ischaemic risk). Annual review of LV function and risk factors."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC 2023 Guidelines for the management of acute coronary syndromes"
+      },
+      {
+        "label": "ACC/AHA Guideline for the management of patients with STEMI (2013, with updates)"
+      },
+      {
+        "label": "WHO Package of essential noncommunicable disease interventions (PEN) — Acute coronary events"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "non-st-elevation-acute-coronary-syndrome-adult",
+    "title": "Non-ST-elevation acute coronary syndrome (NSTE-ACS / NSTEMI / unstable angina) — adult",
+    "icd10": [
+      "I21.4",
+      "I20.0"
+    ],
+    "domains": [
+      "cardiology",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "New-onset, crescendo, or rest angina (unstable angina) — pain at rest > 20 min, or accelerating exertional angina.",
+      "Chest discomfort with autonomic symptoms; may be atypical in elderly / women / diabetic.",
+      "Often preserved LV function; risk-stratify based on troponin trajectory and ischaemic ECG changes."
+    ],
+    "redFlags": [
+      "Haemodynamic instability, ongoing chest pain despite therapy, malignant arrhythmia, mechanical complication.",
+      "Acute heart failure, cardiogenic shock.",
+      "Refractory ischaemic ECG changes (dynamic ST depression or T inversion).",
+      "Very high troponin trajectory."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serial 12-lead ECG (admission + at 3 and 6 h, or with any pain change).",
+        "rationale": "Look for ST depression, T inversion, transient ST elevation."
+      },
+      {
+        "test": "High-sensitivity troponin at 0 + 1–3 h (use ESC 0/1-h algorithm if available).",
+        "rationale": "Rule-in / rule-out NSTEMI; troponin rise + fall pattern."
+      },
+      {
+        "test": "FBC, U&E, glucose, lipids, coagulation, CXR.",
+        "rationale": "Identify comorbidity; rule out alternative diagnoses."
+      },
+      {
+        "test": "Echocardiography (regional wall-motion abnormality; LV function).",
+        "rationale": "Risk stratification."
+      },
+      {
+        "test": "GRACE risk score.",
+        "rationale": "Stratify low / intermediate / high risk → timing of invasive coronary angiography."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immediate care",
+        "detail": "ABCDE; O2 only if SpO2 < 90 %; aspirin 300 mg loading; analgesia (morphine 2–4 mg IV titrated); sublingual GTN; cardiac monitor; large-bore IV access."
+      },
+      {
+        "step": "Dual antiplatelet therapy",
+        "detail": "Aspirin 75 mg daily indefinitely + a P2Y12 inhibitor: ticagrelor 180 mg load then 90 mg twice daily (preferred), OR prasugrel (only post-known coronary anatomy), OR clopidogrel 300 mg load then 75 mg daily (if ticagrelor/prasugrel contraindicated)."
+      },
+      {
+        "step": "Anticoagulation",
+        "detail": "Fondaparinux 2.5 mg SC daily (preferred — best safety profile) OR enoxaparin 1 mg/kg SC twice daily OR unfractionated heparin."
+      },
+      {
+        "step": "Adjunctive anti-anginal / antihypertensive",
+        "detail": "β-blocker (start oral within 24 h if no shock / acute HF / heart block). High-intensity statin (atorvastatin 80 mg). ACE inhibitor if HTN, HF, LV dysfunction, diabetes."
+      },
+      {
+        "step": "Timing of invasive coronary angiography (per risk)",
+        "detail": "Very high risk (haemodynamic instability, life-threatening arrhythmia, mechanical complication, refractory ischaemia): IMMEDIATE (< 2 h). High risk (rise/fall troponin consistent with NSTEMI, dynamic ECG changes, GRACE > 140): EARLY (< 24 h). Intermediate (diabetes, CKD, prior MI, LVEF < 40, GRACE 109–140): within 72 h. Low risk: non-invasive testing first."
+      },
+      {
+        "step": "Secondary prevention (lifelong unless contraindicated)",
+        "detail": "Aspirin + P2Y12 (DAPT) for 12 months; aspirin indefinitely. High-intensity statin. ACEi/ARB. β-blocker. Cardiac rehabilitation. Smoking cessation, BP and diabetes control."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC 2023 Guidelines for the management of acute coronary syndromes"
+      },
+      {
+        "label": "ACC/AHA NSTE-ACS Guideline (2014, with updates)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "anaphylaxis-adult-emergency-pathway",
+    "title": "Anaphylaxis — adult emergency pathway (adrenaline-first)",
+    "icd10": [
+      "T78.2",
+      "T88.6",
+      "T80.59"
+    ],
+    "domains": [
+      "allergy",
+      "emergency",
+      "resuscitation",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden (minutes–hours) onset of life-threatening Airway, Breathing or Circulation problem in the presence of likely allergen exposure.",
+      "Airway: throat tightness, stridor, hoarseness, tongue swelling.",
+      "Breathing: severe shortness of breath, wheeze, SpO2 < 92%, cyanosis, exhaustion.",
+      "Circulation: hypotension (SBP < 90), tachycardia, syncope, pale clammy.",
+      "Skin/mucosa (in 80–90% but absence does NOT exclude anaphylaxis): urticaria, angioedema, flushing, pruritus.",
+      "GI: cramping abdominal pain, vomiting, incontinence."
+    ],
+    "redFlags": [
+      "Cardiorespiratory arrest.",
+      "Stridor with rapid progression.",
+      "Severe bronchospasm not responding to adrenaline.",
+      "Hypotension refractory to fluids and adrenaline (consider biphasic reaction, beta-blocker effect → use glucagon).",
+      "Pregnancy — left lateral tilt, lower threshold for early delivery if maternal compromise."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis — do NOT delay adrenaline for tests.",
+        "rationale": "Time-critical."
+      },
+      {
+        "test": "Serum tryptase: baseline + 1–2 h + 24 h post-event.",
+        "rationale": "Confirm mast-cell activation retrospectively; helps clarify uncertain cases."
+      },
+      {
+        "test": "Allergen-specific IgE / skin prick testing in allergy clinic later.",
+        "rationale": "Identify trigger to prevent recurrence."
+      }
+    ],
+    "management": [
+      {
+        "step": "Recognise + remove trigger",
+        "detail": "Stop any IV drug / blood product. Remove insect sting (scrape, do not squeeze). Lie flat with legs elevated (pregnant: left lateral). Do NOT stand or sit if hypotensive — risk of empty-ventricle arrest."
+      },
+      {
+        "step": "IM ADRENALINE — first-line drug, give without delay",
+        "detail": "Adult: 0.5 mg (0.5 mL of 1:1000) IM into anterolateral thigh. Repeat every 5 min as needed. ALWAYS use IM (not subcut, not first-line IV). IV adrenaline ONLY in critical-care setting with cardiac monitoring (50–100 microgram IV bolus or 1–10 microgram/min infusion)."
+      },
+      {
+        "step": "ABCDE + high-flow oxygen",
+        "detail": "100% O2 via non-rebreather mask. Position by ABCs: lay flat if hypotensive, sit up if respiratory distress dominates."
+      },
+      {
+        "step": "Large-bore IV access + crystalloid bolus",
+        "detail": "1–2 L 0.9% NaCl or balanced crystalloid wide-open if hypotensive; repeat as needed (often 4–6 L required)."
+      },
+      {
+        "step": "Inhaled bronchodilator for persistent wheeze",
+        "detail": "Salbutamol 5 mg nebulised (+ ipratropium 0.5 mg) — adjunct only; does NOT replace adrenaline."
+      },
+      {
+        "step": "Second-line drugs (after adrenaline)",
+        "detail": "Chlorphenamine 10 mg IV (or oral if mild) — for cutaneous symptoms. Hydrocortisone 200 mg IV — no proven benefit in acute event but commonly given; do NOT delay adrenaline. Glucagon 1–2 mg IV if on β-blocker and refractory hypotension."
+      },
+      {
+        "step": "Observe for biphasic reaction",
+        "detail": "20% recur within 1–72 h (most within 8 h). Monitor at least 6 h after symptom resolution if uncomplicated; 12–24 h if severe / hypotension / >1 dose adrenaline / asthma / known biphasic history."
+      },
+      {
+        "step": "Discharge plan",
+        "detail": "Prescribe 2 adrenaline auto-injectors (e.g. EpiPen 0.3 mg) and demonstrate use. Action plan + medic-alert ID. Refer to allergy clinic. Counsel on trigger avoidance. Document the event clearly. Continue any oral antihistamine + steroid 3 days."
+      }
+    ],
+    "references": [
+      {
+        "label": "Resuscitation Council UK — Emergency treatment of anaphylactic reactions (2021)"
+      },
+      {
+        "label": "WAO Anaphylaxis Guidance 2020 update"
+      },
+      {
+        "label": "EAACI guideline on anaphylaxis (2021)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "status-asthmaticus-adult",
+    "title": "Status asthmaticus / life-threatening acute asthma — adult",
+    "icd10": [
+      "J46"
+    ],
+    "domains": [
+      "respiratory",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Severe asthma exacerbation not responding to initial bronchodilator therapy.",
+      "Inability to complete sentences, RR > 25, HR > 110, PEF 33–50% best/predicted (acute severe).",
+      "Life-threatening features: SpO2 < 92%, PEF < 33%, silent chest, cyanosis, poor respiratory effort, exhaustion, arrhythmia, hypotension, altered consciousness.",
+      "Near-fatal: rising PaCO2 or need for IMV."
+    ],
+    "redFlags": [
+      "Silent chest, cyanosis, exhaustion.",
+      "Rising PaCO2 on ABG (asthmatics normally hyperventilate; normal/high CO2 = pre-arrest).",
+      "Bradycardia, hypotension.",
+      "Altered consciousness.",
+      "Previous near-fatal asthma, ICU admission, intubation, or rapid deterioration."
+    ],
+    "diagnostics": [
+      {
+        "test": "PEF before and after each treatment.",
+        "rationale": "Quantify severity and response."
+      },
+      {
+        "test": "SpO2 — keep ≥ 94%.",
+        "rationale": "Guide oxygen."
+      },
+      {
+        "test": "ABG if SpO2 < 92% or life-threatening features.",
+        "rationale": "Detect rising CO2 (impending failure)."
+      },
+      {
+        "test": "CXR if suspect pneumothorax, pneumonia, lobar collapse, or no improvement.",
+        "rationale": "Identify complication."
+      }
+    ],
+    "management": [
+      {
+        "step": "Oxygen — target SpO2 94–98%",
+        "detail": "High-flow via non-rebreather initially; titrate down as SpO2 stabilises."
+      },
+      {
+        "step": "Inhaled β2-agonist + ipratropium continuously or every 15 min",
+        "detail": "Salbutamol 5 mg nebulised driven by oxygen, every 15 min or continuous. Add ipratropium 0.5 mg nebulised every 4–6 h."
+      },
+      {
+        "step": "Systemic corticosteroid — give early to ALL",
+        "detail": "Oral prednisolone 40–50 mg (continue 5–7 days) OR IV hydrocortisone 100 mg every 6 h if cannot swallow. No taper needed unless > 14 days."
+      },
+      {
+        "step": "IV magnesium sulphate 2 g over 20 min — life-threatening or no response",
+        "detail": "Bronchodilator effect; consider in severe / life-threatening asthma not responding to nebulised therapy."
+      },
+      {
+        "step": "IV salbutamol or aminophylline — specialist only",
+        "detail": "Consider IV salbutamol or IV aminophylline (loading 5 mg/kg over 20 min) under specialist supervision if not responding."
+      },
+      {
+        "step": "Refer to ICU / consider intubation",
+        "detail": "Indications: exhaustion, rising CO2, falling SpO2 despite treatment, altered consciousness, cardiorespiratory arrest. Use ketamine for induction (bronchodilator). Permissive hypercapnia ventilation — long expiratory time, low rate, careful for breath-stacking and pneumothorax."
+      },
+      {
+        "step": "Identify and treat triggers",
+        "detail": "Infection (often viral), allergen, NSAID/β-blocker exposure, smoking, non-adherence."
+      },
+      {
+        "step": "Discharge planning",
+        "detail": "Continue oral prednisolone 5–7 days. Step-up controller therapy (inhaled corticosteroid + LABA). Inhaler-technique check. Written personalised asthma action plan. Smoking cessation. Follow-up within 2 working days."
+      }
+    ],
+    "references": [
+      {
+        "label": "GINA — Global Strategy for Asthma Management and Prevention (2024)"
+      },
+      {
+        "label": "BTS/SIGN British guideline on the management of asthma"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-copd-exacerbation-adult",
+    "title": "Severe acute exacerbation of COPD — adult",
+    "icd10": [
+      "J44.0",
+      "J44.1"
+    ],
+    "domains": [
+      "respiratory",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 35,
+      "sex": "any"
+    },
+    "presentation": [
+      "Acute increase in dyspnoea, sputum volume or purulence beyond day-to-day variation.",
+      "Severe: SpO2 < 88% or worsening type-II respiratory failure (pH < 7.35, PaCO2 > 6.0 kPa).",
+      "Often precipitated by infection (viral or bacterial) or air pollution."
+    ],
+    "redFlags": [
+      "Acute confusion, drowsiness — hypercapnia.",
+      "Cyanosis, peripheral oedema (cor pulmonale).",
+      "Haemodynamic instability.",
+      "Respiratory acidosis on ABG (pH < 7.35) — needs NIV.",
+      "Pneumothorax, large effusion, pulmonary embolism — exclude on CXR ± imaging."
+    ],
+    "diagnostics": [
+      {
+        "test": "ABG on room air or controlled oxygen (target SpO2 88–92%).",
+        "rationale": "Detect hypercapnia + acidosis; decide NIV need."
+      },
+      {
+        "test": "CXR.",
+        "rationale": "Exclude pneumonia, pneumothorax, effusion, heart failure."
+      },
+      {
+        "test": "FBC, U&E, CRP, ECG.",
+        "rationale": "Identify infection, electrolyte disturbance, ischaemia."
+      },
+      {
+        "test": "Sputum culture if purulent / not responding.",
+        "rationale": "Identify resistant organism."
+      }
+    ],
+    "management": [
+      {
+        "step": "Controlled oxygen — target SpO2 88–92% via Venturi mask",
+        "detail": "Excess O2 → worsened hypercapnia. Start 24–28% O2 and titrate via SpO2; check ABG within 30–60 min."
+      },
+      {
+        "step": "Nebulised bronchodilators",
+        "detail": "Salbutamol 5 mg + ipratropium 0.5 mg nebulised every 4–6 h (more frequent if severe)."
+      },
+      {
+        "step": "Systemic corticosteroid",
+        "detail": "Oral prednisolone 30–40 mg for 5 days (IV hydrocortisone 100 mg every 6 h only if cannot swallow)."
+      },
+      {
+        "step": "Antibiotic for purulent sputum / consolidation / NIV need",
+        "detail": "Amoxicillin 500 mg TDS or doxycycline 200 mg loading then 100 mg daily for 5 days. Co-amoxiclav or per local guidelines if severe / inpatient."
+      },
+      {
+        "step": "Non-invasive ventilation (NIV — BiPAP) for type II respiratory failure",
+        "detail": "Indications: pH < 7.35 with PaCO2 > 6 kPa after 1 h of optimal medical therapy. Start IPAP 12 cmH2O, EPAP 4 cmH2O; titrate IPAP up by 2–5 cmH2O every 10 min to target. Plan ceiling of care BEFORE escalation (NIV may be the ceiling for severe COPD without intubation candidacy)."
+      },
+      {
+        "step": "Intubation/mechanical ventilation",
+        "detail": "If NIV fails, severe acidosis (pH < 7.25), exhaustion, agitation precluding NIV, or coexistent acute pulmonary oedema/sepsis with appropriate goals of care."
+      },
+      {
+        "step": "Treat reversible cause",
+        "detail": "Antibiotics for infection, diuretic for fluid overload, anticoagulation for PE, drain pneumothorax."
+      },
+      {
+        "step": "Discharge planning",
+        "detail": "Optimise inhalers (technique check + step up to triple therapy if frequent exacerbations). Pulmonary rehab referral. Smoking cessation. Vaccinations (influenza, pneumococcal). Long-term oxygen assessment if persistent hypoxaemia."
+      }
+    ],
+    "references": [
+      {
+        "label": "GOLD 2024 — Global Strategy for Prevention, Diagnosis and Management of COPD"
+      },
+      {
+        "label": "BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-pre-eclampsia-eclampsia",
+    "title": "Severe pre-eclampsia and eclampsia",
+    "icd10": [
+      "O14.1",
+      "O14.2",
+      "O15.0",
+      "O15.1"
+    ],
+    "domains": [
+      "obstetrics",
+      "emergency",
+      "obstetric-emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "maxAgeYears": 49,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Pregnancy ≥ 20 weeks (or post-partum) with BP ≥ 160/110 mmHg on two occasions ≥ 4 h apart, OR severe features at lower BP.",
+      "Severe features: severe headache, visual disturbance, epigastric / RUQ pain, vomiting, hyperreflexia, clonus, oliguria, pulmonary oedema.",
+      "Laboratory: proteinuria ≥ 5 g/24 h or +++ dipstick; platelets < 100; AST/ALT > 2× ULN; creatinine > 90; haemolysis.",
+      "Eclampsia: tonic-clonic seizure not attributable to other cause in pre-eclampsia."
+    ],
+    "redFlags": [
+      "Tonic-clonic seizure — eclampsia.",
+      "BP ≥ 160/110 with severe features.",
+      "Pulmonary oedema, oliguria (<30 mL/h), HELLP syndrome.",
+      "Severe headache unresponsive to paracetamol, visual disturbance.",
+      "Fetal distress, abruption, IUGR."
+    ],
+    "diagnostics": [
+      {
+        "test": "BP repeated 4 h apart (or immediately if severe features).",
+        "rationale": "Confirm severe-range hypertension."
+      },
+      {
+        "test": "Urinalysis (dipstick + protein-creatinine ratio or 24 h urine).",
+        "rationale": "Quantify proteinuria."
+      },
+      {
+        "test": "FBC, U&E, LFT, LDH, blood film, coagulation, group + save.",
+        "rationale": "Identify HELLP and DIC; prepare for transfusion."
+      },
+      {
+        "test": "Fetal CTG, umbilical artery Doppler, growth assessment.",
+        "rationale": "Assess fetal wellbeing."
+      }
+    ],
+    "management": [
+      {
+        "step": "Magnesium sulphate — for ALL severe pre-eclampsia and ALL eclampsia",
+        "detail": "Loading: 4 g IV over 5–15 min (or 5 g IM each buttock — Pritchard regimen). Maintenance: 1 g/h IV (or 5 g IM every 4 h). Continue 24 h after last seizure or delivery. Monitor reflexes (lost reflexes = toxicity), respiratory rate (> 12), urine output (> 100 mL in 4 h)."
+      },
+      {
+        "step": "Treat magnesium toxicity with calcium gluconate",
+        "detail": "1 g IV slowly if respiratory depression or absent reflexes; stop magnesium."
+      },
+      {
+        "step": "Antihypertensive — first line: oral nifedipine OR IV labetalol",
+        "detail": "Oral nifedipine 10 mg, may repeat after 30 min × 3; OR IV labetalol 20 mg bolus, double every 10 min (max 300 mg total); OR IV hydralazine 5 mg bolus (10 min onset, repeat every 20 min). Target BP < 160/110 acutely, < 150/100 sustained — avoid sudden drop."
+      },
+      {
+        "step": "Delivery is the only definitive treatment",
+        "detail": "Eclampsia or severe pre-eclampsia at ≥ 34 weeks: deliver after maternal stabilisation. < 34 weeks: corticosteroid course (betamethasone 12 mg × 2 doses 24 h apart) for fetal lung maturity; deliver if maternal/fetal compromise."
+      },
+      {
+        "step": "Mode of delivery — individualised",
+        "detail": "Vaginal birth often achievable; expedited via induction or LSCS as clinically indicated. Avoid prolonged labour."
+      },
+      {
+        "step": "Postpartum",
+        "detail": "Continue magnesium 24 h after delivery / last seizure. BP can WORSEN postpartum — review BP every 4 h × 24 h, then daily for 5–7 days. Antihypertensives may be needed for weeks. Counsel about future cardiovascular risk."
+      },
+      {
+        "step": "Future pregnancy",
+        "detail": "Aspirin 75–150 mg daily from 12 weeks for prophylaxis; high-risk planning. Recurrence risk ~15–25%."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Recommendations for prevention and treatment of pre-eclampsia and eclampsia (2011)"
+      },
+      {
+        "label": "NICE NG133 — Hypertension in pregnancy: diagnosis and management"
+      },
+      {
+        "label": "FIGO Pre-eclampsia (2019)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "postpartum-haemorrhage-emergency",
+    "title": "Postpartum haemorrhage (PPH) — emergency management",
+    "icd10": [
+      "O72.0",
+      "O72.1"
+    ],
+    "domains": [
+      "obstetrics",
+      "emergency",
+      "obstetric-emergency",
+      "haematology"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "maxAgeYears": 49,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Primary PPH: blood loss ≥ 500 mL after vaginal birth or ≥ 1000 mL after LSCS within 24 h of delivery (major if ≥ 1000 mL or any haemodynamic compromise).",
+      "Secondary PPH: abnormal bleeding from 24 h to 12 weeks postpartum.",
+      "Causes — '4 Ts': Tone (uterine atony, 70%), Trauma (laceration, rupture), Tissue (retained products), Thrombin (coagulopathy)."
+    ],
+    "redFlags": [
+      "Estimated blood loss > 1500 mL or ongoing brisk bleeding.",
+      "Maternal shock — SBP < 90, HR > 120, oliguria, altered consciousness.",
+      "Uterine rupture (sudden cessation of contractions, fetal distress before delivery, presenting part recedes).",
+      "Concealed bleeding (placental abruption, broad ligament haematoma).",
+      "Suspected amniotic fluid embolism (sudden collapse, cyanosis, coagulopathy)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Estimated and measured blood loss (weigh swabs, calibrated drape).",
+        "rationale": "Visual estimates under-call by 30–50%."
+      },
+      {
+        "test": "Vital signs, SpO2, urine output (catheterise).",
+        "rationale": "Detect early shock."
+      },
+      {
+        "test": "FBC, group + crossmatch 4 units, coagulation, fibrinogen, U&E, LFT.",
+        "rationale": "Guide transfusion; fibrinogen < 2 g/L is independent predictor of severity."
+      },
+      {
+        "test": "ROTEM/TEG if available.",
+        "rationale": "Real-time clot quality."
+      }
+    ],
+    "management": [
+      {
+        "step": "Call for help; ABCDE; high-flow O2",
+        "detail": "Activate massive haemorrhage protocol if > 1500 mL or ongoing brisk loss. Two large-bore IVs. Crystalloid bolus."
+      },
+      {
+        "step": "Uterine massage and bimanual compression",
+        "detail": "Empty the uterus and bladder. Continuous bimanual compression if atony — buys time."
+      },
+      {
+        "step": "Uterotonics — escalate stepwise",
+        "detail": "1) Oxytocin 5–10 IU slow IV bolus + 40 IU in 500 mL crystalloid infusion. 2) Ergometrine 0.5 mg IM (avoid in hypertension / pre-eclampsia / cardiac disease). 3) Carboprost (PGF2α) 250 microgram IM every 15 min (max 8 doses; avoid in asthma). 4) Misoprostol 800 microgram sublingual / rectal (especially where injectables unavailable)."
+      },
+      {
+        "step": "Tranexamic acid 1 g IV within 3 h of bleeding onset",
+        "detail": "WOMAN trial — reduces maternal mortality from PPH; repeat 1 g if continued bleeding at 30 min."
+      },
+      {
+        "step": "Examine and repair trauma",
+        "detail": "Genital tract inspection under anaesthesia if active bleeding despite uterotonics. Repair laceration. Manual removal of placenta / curettage for retained tissue."
+      },
+      {
+        "step": "Mechanical / surgical interventions",
+        "detail": "Intrauterine balloon tamponade (Bakri or condom catheter). If still bleeding → laparotomy: B-Lynch suture, bilateral uterine artery ligation, internal iliac artery ligation, or hysterectomy. Interventional radiology if available."
+      },
+      {
+        "step": "Massive transfusion in 1:1:1 ratio",
+        "detail": "Activate protocol: PRBC : FFP : platelets in 1:1:1. Cryoprecipitate if fibrinogen < 2 g/L. Replace calcium (every 4 units PRBC). Keep warm. Recombinant factor VIIa specialist last resort."
+      },
+      {
+        "step": "Postpartum care",
+        "detail": "ICU/HDU monitoring. Watch for further bleeding, postpartum eclampsia, AKI, Sheehan syndrome, DVT (LMWH once bleeding controlled). Iron replacement; debrief and counsel."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Recommendations for the prevention and treatment of postpartum haemorrhage (2012, updated)"
+      },
+      {
+        "label": "FIGO PPH initiative — non-pneumatic anti-shock garment; misoprostol"
+      },
+      {
+        "label": "RCOG Green-top Guideline No. 52 — Prevention and management of PPH"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-malaria-adult-complete-pathway",
+    "title": "Severe falciparum malaria — adult complete management pathway",
+    "icd10": [
+      "B50.0",
+      "B50.8",
+      "B50.9"
+    ],
+    "domains": [
+      "infectious-disease",
+      "tropical",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Falciparum parasitaemia (any density in non-immune; > 2% may suggest severity in semi-immune) with one or more of:",
+      "Impaired consciousness (GCS < 11), prostration, multiple seizures, severe anaemia (Hb < 7 g/dL adult), jaundice, respiratory distress (ARDS), shock, AKI (creatinine > 265 micromol/L), hypoglycaemia (< 2.2 mmol/L), acidosis (HCO3 < 15), abnormal bleeding, parasitaemia > 10%."
+    ],
+    "redFlags": [
+      "Coma (cerebral malaria) — high mortality even with treatment.",
+      "Pulmonary oedema / ARDS — can develop after starting treatment.",
+      "Severe acidosis, hypoglycaemia (especially in pregnant women, children, on quinine).",
+      "Acute renal failure — common; may require dialysis.",
+      "Co-infection with bacterial sepsis (Salmonella in particular) — broad-spectrum antibiotic."
+    ],
+    "diagnostics": [
+      {
+        "test": "Thick + thin blood smear (parasitaemia + species).",
+        "rationale": "Gold standard."
+      },
+      {
+        "test": "Malaria RDT.",
+        "rationale": "Bedside; HRP-2 may be falsely negative if deletion."
+      },
+      {
+        "test": "Capillary glucose hourly.",
+        "rationale": "Hypoglycaemia common, especially on quinine, in children, in pregnancy."
+      },
+      {
+        "test": "FBC, U&E, creatinine, glucose, lactate, ABG, coag, LFT, blood culture.",
+        "rationale": "Quantify organ dysfunction; rule out bacterial co-infection."
+      },
+      {
+        "test": "Daily monitoring of haematocrit, parasitaemia, lactate.",
+        "rationale": "Track response."
+      }
+    ],
+    "management": [
+      {
+        "step": "IV artesunate — first-line",
+        "detail": "2.4 mg/kg IV at 0, 12, 24 h then daily for at least 24 h and until oral therapy possible (minimum 3 doses). Switch to a full 3-day course of oral artemisinin-based combination therapy (AL, AS-AQ, DHA-PPQ) once tolerating."
+      },
+      {
+        "step": "If artesunate unavailable — IM artemether (second line) or IV quinine (third line)",
+        "detail": "Artemether 3.2 mg/kg IM loading then 1.6 mg/kg daily. Quinine: loading 20 mg/kg IV over 4 h, then 10 mg/kg every 8 h (cardiac monitor; hypoglycaemia risk). Switch to oral when able."
+      },
+      {
+        "step": "Empirical antibiotic for adult with severe malaria + shock/AKI/severe disease",
+        "detail": "IV ceftriaxone 2 g daily — Salmonella bacteraemia in 5–10% of severe malaria adults."
+      },
+      {
+        "step": "Fluid management — RESTRICTIVE",
+        "detail": "Avoid aggressive fluid resuscitation in non-shocked patients (FEAST in children, similar adult concerns) — risk of pulmonary oedema. Maintenance only with cautious assessment of perfusion."
+      },
+      {
+        "step": "Manage complications",
+        "detail": "Hypoglycaemia: 10% dextrose 5 mL/kg bolus then maintenance. Severe anaemia: transfuse if Hb < 7 g/dL or symptomatic. AKI: avoid nephrotoxins; haemodialysis if uraemic, fluid-overloaded, K+ > 6.5. Seizures: benzodiazepine + phenytoin/phenobarbital. ARDS: low-tidal-volume ventilation."
+      },
+      {
+        "step": "Special populations — pregnancy and children",
+        "detail": "Artesunate safe in all trimesters in severe malaria. Children: weight-based dosing; minimum 3 mg/kg artesunate if < 20 kg. Strict glucose and Hb monitoring."
+      },
+      {
+        "step": "Convalescence",
+        "detail": "Post-artesunate delayed haemolytic anaemia: monitor Hb weekly for 4 weeks. Cognitive sequelae in children — neurodevelopmental follow-up after cerebral malaria. Vector control + chemoprophylaxis counselling."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Guidelines for the treatment of malaria, 3rd ed. (2015) and 2021 update"
+      },
+      {
+        "label": "WHO Severe malaria (Trop Med Int Health supplement, 2014)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "tuberculosis-pulmonary-drug-sensitive-adult",
+    "title": "Pulmonary tuberculosis — drug-sensitive, adult treatment",
+    "icd10": [
+      "A15.0",
+      "A15.5",
+      "A15.9"
+    ],
+    "domains": [
+      "tb",
+      "infectious-disease",
+      "respiratory",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Cough ≥ 2 weeks (often productive ± haemoptysis), fever, night sweats, weight loss, fatigue.",
+      "Risk factors: HIV, prior TB, household TB contact, prison, healthcare worker, malnutrition, diabetes, smoking, alcohol use.",
+      "Extrapulmonary involvement in up to 20% — lymph node, pleural, miliary, CNS, spinal (Pott's), abdominal, genitourinary."
+    ],
+    "redFlags": [
+      "Haemoptysis (massive — risk of asphyxiation).",
+      "Suspected TB meningitis (headache, neck stiffness, cranial nerve palsies, altered consciousness).",
+      "Severe respiratory failure.",
+      "Pregnancy or breastfeeding (specialist regimen).",
+      "Pre-existing liver disease (modified regimen, increased hepatotoxicity risk).",
+      "Suspected drug-resistant TB (history of treatment failure, contact with known DR-TB)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Sputum molecular test (Xpert MTB/RIF or Ultra) — preferred first test.",
+        "rationale": "Rapid (2 h) detection of M. tuberculosis with rifampicin resistance."
+      },
+      {
+        "test": "Sputum microscopy (Ziehl-Neelsen) ± culture.",
+        "rationale": "Where molecular unavailable; culture for DST."
+      },
+      {
+        "test": "CXR.",
+        "rationale": "Pattern suggests TB (upper-lobe cavities, miliary nodules, hilar lymphadenopathy)."
+      },
+      {
+        "test": "HIV test, blood glucose, hepatitis B + C, baseline LFT, creatinine, FBC.",
+        "rationale": "Identify co-morbidities affecting management."
+      }
+    ],
+    "management": [
+      {
+        "step": "Standard 6-month regimen (2HRZE / 4HR)",
+        "detail": "Intensive phase: 2 months of isoniazid (H) + rifampicin (R) + pyrazinamide (Z) + ethambutol (E), weight-banded daily. Continuation phase: 4 months of HR daily."
+      },
+      {
+        "step": "Fixed-dose combinations preferred",
+        "detail": "Standardised FDC tablets simplify adherence; use weight-banded per WHO."
+      },
+      {
+        "step": "Add pyridoxine 25 mg daily for all (50 mg if HIV / pregnancy / alcohol use)",
+        "detail": "Prevents INH-induced peripheral neuropathy."
+      },
+      {
+        "step": "DOT or video-DOT and adherence support",
+        "detail": "Directly-observed therapy or video DOT for patients at risk of non-adherence; education + patient-centred support package."
+      },
+      {
+        "step": "Monitor monthly",
+        "detail": "Clinical review, sputum smear/Xpert at month 2 (and month 5 if positive at month 2 → assess for failure). Monitor weight; adjust dose if weight band changes. LFT if symptoms (anorexia, jaundice) — stop drugs if ALT > 5× ULN."
+      },
+      {
+        "step": "HIV co-infection",
+        "detail": "Start ART within 2 weeks of TB treatment if CD4 < 50; within 8 weeks otherwise. Preferred ART: dolutegravir-based (efavirenz alternative if interaction issues with rifampicin)."
+      },
+      {
+        "step": "Hepatotoxicity management",
+        "detail": "Stop all hepatotoxic anti-TB drugs (HRZ); use ethambutol + streptomycin/levofloxacin temporarily. Re-challenge sequentially with R, then H, then Z; permanent withdrawal of Z if recurrent."
+      },
+      {
+        "step": "Contact tracing + preventive therapy",
+        "detail": "Screen household and close contacts; offer TB preventive therapy (3HP, 6H, 4R) to eligible contacts."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO consolidated guidelines on tuberculosis — Module 4: Drug-susceptible TB treatment (2022)"
+      },
+      {
+        "label": "WHO Operational handbook on tuberculosis — Module 5: Management of TB in children and adolescents"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "multidrug-resistant-tuberculosis-adult",
+    "title": "Multidrug-resistant tuberculosis (MDR/RR-TB) — adult, WHO BPaLM/BPaL pathway",
+    "icd10": [
+      "A15.9",
+      "U84.3"
+    ],
+    "domains": [
+      "tb",
+      "infectious-disease",
+      "respiratory",
+      "infection"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "sex": "any"
+    },
+    "presentation": [
+      "TB with resistance to at least rifampicin (RR-TB), with or without isoniazid resistance.",
+      "Risk factors: prior TB treatment failure, default, relapse, contact with known DR-TB, residence in high-MDR settings.",
+      "Often more advanced disease at diagnosis; longer infectivity."
+    ],
+    "redFlags": [
+      "XDR-TB (rifampicin + fluoroquinolone resistance ± other Group A) — limited options, specialist management.",
+      "Concurrent advanced HIV, liver disease, pregnancy, paediatric age — specialist regimen modifications.",
+      "QT prolongation risk (baseline ECG + monthly QTc; many DR-TB drugs prolong QT).",
+      "Hepatotoxicity, peripheral neuropathy, optic neuritis (linezolid), psychiatric symptoms (cycloserine)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Drug-susceptibility testing — molecular (Xpert MTB/XDR) for fluoroquinolone + injectable resistance; phenotypic DST for all Group A + B drugs.",
+        "rationale": "Tailor regimen to resistance profile."
+      },
+      {
+        "test": "Baseline ECG, LFT, U&E, FBC, TSH, visual acuity + colour vision, audiometry.",
+        "rationale": "Establish baseline before nephrotoxic / ototoxic / hepatotoxic drugs."
+      },
+      {
+        "test": "HIV, hepatitis B + C, pregnancy test, diabetes screen.",
+        "rationale": "Manage co-morbidities."
+      }
+    ],
+    "management": [
+      {
+        "step": "All-oral BPaL or BPaLM regimen (WHO 2022) — 6 months for most RR-TB / MDR-TB",
+        "detail": "BPaLM: bedaquiline 400 mg daily × 2 weeks then 200 mg 3× weekly + pretomanid 200 mg daily + linezolid 600 mg daily + moxifloxacin 400 mg daily — for 6 months (extend to 9 if culture not converted by month 4). BPaL (without moxifloxacin) for pre-XDR/XDR or moxifloxacin contraindicated."
+      },
+      {
+        "step": "Longer (9–20 month) individualised regimens — when BPaLM unsuitable",
+        "detail": "Use Group A (bedaquiline, linezolid, levofloxacin/moxifloxacin) + Group B (clofazimine, cycloserine) ± Group C drugs (ethambutol, delamanid, pyrazinamide, imipenem, amikacin, ethionamide, p-aminosalicylic acid) per resistance profile."
+      },
+      {
+        "step": "Adverse-effect monitoring schedule",
+        "detail": "Monthly: clinical review, weight, ECG (QTc), FBC, LFT, U&E, glucose; every 2 months: TSH (ethionamide), visual acuity (linezolid). Daily symptom check by patient + DOT supporter."
+      },
+      {
+        "step": "Adherence support — patient-centred",
+        "detail": "Daily DOT or video-DOT; psychosocial counselling; nutritional support; transport vouchers; treatment of mental health and substance use comorbidity."
+      },
+      {
+        "step": "Manage adverse effects",
+        "detail": "Linezolid: stop if peripheral neuropathy / optic neuritis / cytopenia; dose reduce 300 mg if early. Clofazimine: skin pigmentation, QT. Cycloserine: psychiatric — coadminister pyridoxine 100 mg/day. Bedaquiline + delamanid: QT monitoring (ECG monthly)."
+      },
+      {
+        "step": "Infection prevention and control",
+        "detail": "Single-room isolation with N95 respirator (HCW) until 2 negative smears; airborne precautions; counsel patient and household."
+      },
+      {
+        "step": "Outcome monitoring + post-treatment surveillance",
+        "detail": "Sputum culture monthly. Post-treatment follow-up every 6 months for 2 years to detect relapse."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO consolidated guidelines on tuberculosis — Module 4: Drug-resistant TB treatment (2022 update)"
+      },
+      {
+        "label": "WHO Operational handbook on TB — MDR/RR-TB Treatment regimens"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "advanced-hiv-disease-adult",
+    "title": "Advanced HIV disease (AHD) — adult care package",
+    "icd10": [
+      "B20",
+      "B24"
+    ],
+    "domains": [
+      "hiv",
+      "infectious-disease",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 10,
+      "sex": "any"
+    },
+    "presentation": [
+      "Adult living with HIV with CD4 < 200 cells/microL OR WHO clinical stage 3 or 4 disease.",
+      "Often presents with weight loss, chronic diarrhoea, oral candidiasis, recurrent infections, or AIDS-defining illness (PCP, cryptococcal meningitis, TB, oesophageal candidiasis, Kaposi sarcoma, severe wasting).",
+      "Newly diagnosed, re-engaging after treatment interruption, or experiencing virological failure."
+    ],
+    "redFlags": [
+      "Suspected cryptococcal meningitis (headache, fever, vomiting, neck stiffness, altered consciousness).",
+      "Suspected TB (cough, fever, night sweats, weight loss).",
+      "Severe wasting (BMI < 18.5 with progressive weight loss).",
+      "Oesophageal candidiasis (dysphagia, retrosternal pain).",
+      "Disseminated Kaposi sarcoma with visceral involvement.",
+      "Severe anaemia, neutropenia.",
+      "IRIS within first 6 months of starting ART."
+    ],
+    "diagnostics": [
+      {
+        "test": "CD4 count.",
+        "rationale": "Defines AHD; guides OI prophylaxis."
+      },
+      {
+        "test": "Cryptococcal antigen (serum or LP CSF if symptoms).",
+        "rationale": "Routine CrAg screening when CD4 < 200; pre-empt cryptococcal meningitis."
+      },
+      {
+        "test": "Urinary lipoarabinomannan (LAM-TB) + sputum Xpert.",
+        "rationale": "TB screening; LAM has high yield in AHD."
+      },
+      {
+        "test": "HIV viral load.",
+        "rationale": "Confirm treatment failure if on ART; baseline if new."
+      },
+      {
+        "test": "FBC, creatinine, LFT, hepatitis B + C screen, syphilis serology.",
+        "rationale": "Comorbidity and pre-ART safety."
+      }
+    ],
+    "management": [
+      {
+        "step": "WHO AHD package — screen, treat, prevent",
+        "detail": "Systematic implementation of: rapid ART initiation, OI screening (CrAg, TB-LAM), OI prophylaxis (co-trimoxazole, isoniazid preventive therapy or 3HP), pre-emptive treatment for CrAg-positive."
+      },
+      {
+        "step": "ART regimen",
+        "detail": "First line: tenofovir + lamivudine (or emtricitabine) + dolutegravir (TLD). Start within 7 days of HIV diagnosis (same-day initiation) UNLESS untreated cryptococcal meningitis or TB meningitis (defer ART 4–8 weeks)."
+      },
+      {
+        "step": "Co-trimoxazole preventive therapy",
+        "detail": "960 mg daily for ALL with CD4 < 350 (or all in high TB/malaria settings regardless of CD4) — prevents PCP, toxoplasmosis, bacterial pneumonia, malaria, isosporiasis. Continue until CD4 > 350 sustained for ≥ 6 months."
+      },
+      {
+        "step": "TB preventive therapy (TPT)",
+        "detail": "After active TB excluded: 3HP (isoniazid + rifapentine weekly × 12 weeks) preferred; 6H or 9H alternatives. Strongly recommended for ALL PLHIV regardless of CD4."
+      },
+      {
+        "step": "Cryptococcal antigen pre-emptive treatment",
+        "detail": "If serum CrAg positive without symptoms: fluconazole 800 mg/day × 2 weeks → 400 mg/day × 8 weeks → 200 mg/day maintenance until CD4 > 200 × 6 months. If symptomatic (LP needed) — full cryptococcal meningitis induction (amphotericin B + flucytosine or oral fluconazole high-dose per WHO 2022 guidance)."
+      },
+      {
+        "step": "Nutrition + psychosocial support",
+        "detail": "Nutritional assessment; therapeutic feeds if BMI < 18.5. Disclosure support, peer counsellors, mental health screen."
+      },
+      {
+        "step": "IRIS recognition + management",
+        "detail": "Paradoxical worsening of existing OI within 4–8 weeks of ART — continue ART; treat the unmasked / paradoxical OI; corticosteroids (prednisolone 1 mg/kg) for severe TB-IRIS / KS-IRIS."
+      },
+      {
+        "step": "Follow-up and intensive case management",
+        "detail": "Visit at 2 weeks, 4 weeks, then monthly until stable. Viral load at 6 months and annually."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Guidelines for managing advanced HIV disease and rapid initiation of antiretroviral therapy (2017, 2022 update)"
+      },
+      {
+        "label": "WHO consolidated guidelines on HIV prevention, testing, treatment, service delivery and monitoring (2021)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "cholera-severe-adult-and-child",
+    "title": "Cholera — severe dehydration management (adult and child)",
+    "icd10": [
+      "A00.0",
+      "A00.1",
+      "A00.9"
+    ],
+    "domains": [
+      "infectious-disease",
+      "outbreak",
+      "emergency",
+      "tropical",
+      "child-health"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Profuse painless watery (\"rice water\") diarrhoea of sudden onset, often with vomiting.",
+      "Rapid dehydration; loss of skin turgor, sunken eyes, dry mucous membranes, weak pulse, hypotension, oliguria.",
+      "Outbreak context — strong epidemiological link in endemic / outbreak areas."
+    ],
+    "redFlags": [
+      "Severe dehydration: lethargy, sunken eyes, drinks poorly or not at all, very slow skin pinch retraction → IV fluids urgently.",
+      "Shock, oliguria/anuria.",
+      "Children, elderly, pregnant — higher mortality; closer monitoring.",
+      "Co-infection (severe malnutrition, comorbidities)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical dehydration assessment (WHO 'A/B/C' classification).",
+        "rationale": "Plan A — no signs; Plan B — some signs (ORS); Plan C — severe signs (IV)."
+      },
+      {
+        "test": "Stool dark-field microscopy or RDT during outbreak.",
+        "rationale": "Confirm Vibrio cholerae — supports public-health response."
+      },
+      {
+        "test": "Stool culture (selected cases).",
+        "rationale": "Antibiotic susceptibility surveillance."
+      },
+      {
+        "test": "Capillary glucose; serum electrolytes if severe / atypical / elderly.",
+        "rationale": "Detect hypoglycaemia, hypokalaemia."
+      }
+    ],
+    "management": [
+      {
+        "step": "Plan A — No dehydration",
+        "detail": "Increased fluids and continued feeding at home. Give ORS after each loose stool: children < 2 y 50–100 mL; 2–10 y 100–200 mL; ≥ 10 y as much as wants. Zinc 20 mg daily × 10–14 days for children 2 months–5 years."
+      },
+      {
+        "step": "Plan B — Some dehydration",
+        "detail": "Oral rehydration in health facility: 75 mL/kg ORS over 4 h. Reassess at 4 h; switch to Plan C if not improving; or Plan A continuation."
+      },
+      {
+        "step": "Plan C — Severe dehydration",
+        "detail": "Ringer's lactate (or Hartmann's) IV immediately. Child < 12 m: 30 mL/kg in 1 h then 70 mL/kg over 5 h. Older + adult: 30 mL/kg over 30 min then 70 mL/kg over 2.5 h. Reassess every 15–30 min; insert NG tube and give ORS 20 mL/kg/h while establishing IV if available."
+      },
+      {
+        "step": "Antibiotic — for severe dehydration only",
+        "detail": "Single-dose doxycycline 300 mg PO adults (or azithromycin 1 g if pregnant or paediatric). Reduces stool volume, duration, and bacterial shedding. NOT a substitute for rehydration."
+      },
+      {
+        "step": "Continue ORS even on IV",
+        "detail": "Once able to drink, start ORS and reduce IV rate. Match losses with ORS."
+      },
+      {
+        "step": "Hypoglycaemia and electrolyte correction",
+        "detail": "Children especially: 10% dextrose 5 mL/kg if hypoglycaemic. Hypokalaemia after rehydration — bananas, ORS contains K+; rarely need IV KCl."
+      },
+      {
+        "step": "Infection prevention",
+        "detail": "Strict hand hygiene; chlorinated water; safe disposal of vomit / stool; barrier nursing if cluster. Notify public-health authorities (notifiable disease)."
+      },
+      {
+        "step": "Vaccination + community response",
+        "detail": "Oral cholera vaccine for outbreak control and high-risk populations; WASH interventions; community engagement."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Cholera technical guidance + WHO/UNICEF Diarrhoea treatment Plans A/B/C"
+      },
+      {
+        "label": "Global Task Force on Cholera Control — Ending Cholera roadmap"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "snake-envenomation-adult-child",
+    "title": "Venomous snakebite — initial and antivenom management (adult and child)",
+    "icd10": [
+      "T63.0",
+      "T63.1"
+    ],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "tropical",
+      "ntd"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Recent bite, sometimes unwitnessed (early morning, sleeping on floor in endemic areas).",
+      "Local: pain, swelling, ecchymosis, blistering, necrosis (cytotoxic vipers — common in Africa, Asia, Americas).",
+      "Haematotoxic (vipers, some elapids): coagulopathy with epistaxis, gum bleeding, haematuria, intracerebral haemorrhage.",
+      "Neurotoxic (elapids — cobra, krait, mamba, sea snake): ptosis, ophthalmoplegia, dysarthria, descending paralysis, respiratory failure.",
+      "Myotoxic (sea snake, some Australian elapids): muscle pain, dark urine (myoglobinuria), AKI, hyperkalaemia."
+    ],
+    "redFlags": [
+      "Drowsiness or paralysis — neurotoxic envenomation, risk of respiratory failure.",
+      "Spontaneous systemic bleeding — coagulopathy.",
+      "Shock, oliguria.",
+      "Whole-blood clotting test (20WBCT) ≥ 20 min — abnormal coagulation, indication for antivenom.",
+      "Children — higher venom dose per kg, more severe outcomes."
+    ],
+    "diagnostics": [
+      {
+        "test": "20-minute whole blood clotting test (20WBCT) — bedside.",
+        "rationale": "Sensitive marker of systemic envenomation needing antivenom."
+      },
+      {
+        "test": "FBC, INR/PT, fibrinogen, U&E, creatine kinase, urine for blood/myoglobin, ECG.",
+        "rationale": "Quantify haemotoxic, nephrotoxic, myotoxic effects."
+      },
+      {
+        "test": "Identify snake if safe and possible (photo, description).",
+        "rationale": "Helps select monovalent vs polyvalent antivenom."
+      }
+    ],
+    "management": [
+      {
+        "step": "First aid — what NOT to do",
+        "detail": "Do NOT: apply tourniquet, cut, suck, apply ice, use traditional remedies. DO: reassure, immobilise bitten limb with splint at heart level, remove rings/watches, transport rapidly to hospital. Pressure immobilisation (crepe bandage from bite up the limb) IF a clearly neurotoxic Australasian elapid; otherwise discouraged."
+      },
+      {
+        "step": "ABCDE + IV access + monitor",
+        "detail": "Intubate early if neurotoxic paralysis (do not wait for SpO2 fall). Two large-bore IVs; mark progress of swelling; observe for at least 24 h even if asymptomatic."
+      },
+      {
+        "step": "Antivenom — for systemic envenomation",
+        "detail": "Indications: 20WBCT abnormal, systemic bleeding, neurotoxicity, shock, severe local swelling extending fast. Give species-appropriate polyvalent or monovalent antivenom per region. Start dose 5–10 vials (paediatric same as adult — venom is not weight-based). Premedicate with hydrocortisone 100 mg IV + chlorphenamine 10 mg IV ONLY where pyrogenic reactions common; have adrenaline ready for anaphylaxis."
+      },
+      {
+        "step": "Re-dose antivenom",
+        "detail": "Repeat 20WBCT at 6 h; if still > 20 min give a second dose. Continue every 6 h until coagulation normalises or clinical improvement."
+      },
+      {
+        "step": "Atropine + neostigmine — neurotoxic envenomation adjunct",
+        "detail": "If ptosis / weakness from postsynaptic elapid (cobra, sea snake) — test dose neostigmine 0.04 mg/kg IV (children 0.04 mg/kg) preceded by atropine 0.6 mg IV; if improvement, repeat 2–4-hourly."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Tetanus prophylaxis (after coagulopathy controlled). Wound care; debride necrosis at 5–7 days when demarcation complete. Antibiotics ONLY if obvious infection. Renal replacement if AKI."
+      },
+      {
+        "step": "Discharge counselling",
+        "detail": "Prevention: protective footwear, sleep above ground level, vector control, community education. Snake-bite is a WHO neglected tropical disease — link to programme reporting."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Guidelines for the management of snakebites, 2nd ed. (SEARO 2016)"
+      },
+      {
+        "label": "WHO Snakebite envenoming — A strategy for prevention and control (2019)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "neutropenic-sepsis-oncology",
+    "title": "Neutropenic sepsis — oncology emergency",
+    "icd10": [
+      "D70",
+      "T80.29"
+    ],
+    "domains": [
+      "oncology",
+      "infectious-disease",
+      "emergency",
+      "haematology"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Patient receiving cancer treatment (typically 7–10 days post-chemotherapy) with neutrophil count < 0.5 × 10⁹/L (or < 1.0 and predicted to fall).",
+      "Fever ≥ 38°C (single) or ≥ 37.5°C sustained for 1 h.",
+      "May be afebrile but unwell — high index of suspicion."
+    ],
+    "redFlags": [
+      "Sepsis or septic shock (raised lactate, hypotension, organ dysfunction).",
+      "Respiratory failure, decreased consciousness.",
+      "Anaerobic infection signs — necrotising perineal infection, typhlitis (abdominal pain, fever, neutropenia).",
+      "Central venous catheter infection — line removal often needed.",
+      "Mucositis with bleeding / inability to swallow."
+    ],
+    "diagnostics": [
+      {
+        "test": "FBC, U&E, LFT, lactate, glucose, CRP, blood cultures (peripheral + each lumen of CVC) — within 1 h.",
+        "rationale": "Quantify severity; identify pathogen."
+      },
+      {
+        "test": "Urinalysis + culture, sputum culture, CXR, stool culture if diarrhoea.",
+        "rationale": "Identify source."
+      },
+      {
+        "test": "Skin examination of all sites including perineum + IV/CVC sites.",
+        "rationale": "Identify focus + cellulitis."
+      },
+      {
+        "test": "CT chest/abdomen/pelvis if persistent fever > 96 h on broad-spectrum therapy.",
+        "rationale": "Look for fungal infection / abscess."
+      }
+    ],
+    "management": [
+      {
+        "step": "Sepsis 6 within 1 hour",
+        "detail": "Give: high-flow O2 if hypoxic, blood cultures + lactate, IV fluid 30 mL/kg crystalloid, BROAD-SPECTRUM IV antibiotic, measure urine output, repeat lactate."
+      },
+      {
+        "step": "First-line empirical antibiotic",
+        "detail": "IV piperacillin-tazobactam 4.5 g every 6 h (or meropenem 1 g every 8 h if penicillin-anaphylaxis or local pattern). Add IV vancomycin or teicoplanin if MRSA risk / suspected line infection / severe mucositis / shock."
+      },
+      {
+        "step": "Source control",
+        "detail": "Remove infected IV catheters if persistent positive cultures or unstable; drain abscesses; surgical consult for typhlitis or necrotising soft-tissue infection."
+      },
+      {
+        "step": "Risk-stratify with MASCC score",
+        "detail": "Score ≥ 21 = low risk: may step down to oral therapy (co-amoxiclav + ciprofloxacin) after 48 h if stable and afebrile. Score < 21 = high risk: continue IV broad-spectrum."
+      },
+      {
+        "step": "Persistent fever > 96 h",
+        "detail": "Reassess: add empirical antifungal (fluconazole if low risk for mould, voriconazole / liposomal amphotericin for mould risk). CT chest for fungal pneumonia."
+      },
+      {
+        "step": "Granulocyte colony-stimulating factor (G-CSF)",
+        "detail": "Not routine in established neutropenic sepsis; consider in severe infection, prolonged neutropenia, sepsis with comorbidity (per local protocols)."
+      },
+      {
+        "step": "De-escalation and follow-up",
+        "detail": "De-escalate at 48–72 h based on culture results. Continue until afebrile + neutrophil count > 0.5 × 10⁹/L. Refer to oncology for chemotherapy dose modification or addition of prophylactic G-CSF for next cycle."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE CG151 — Neutropenic sepsis: prevention and management"
+      },
+      {
+        "label": "ESMO Clinical Practice Guidelines: management of febrile neutropenia (2016)"
+      },
+      {
+        "label": "IDSA Clinical Practice Guideline for Use of Antimicrobial Agents in Febrile Neutropenic Cancer Patients"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "ischaemic-stroke-acute-thrombolysis-pathway",
+    "title": "Acute ischaemic stroke — thrombolysis / thrombectomy pathway",
+    "icd10": [
+      "I63"
+    ],
+    "domains": [
+      "neurology",
+      "stroke",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden focal neurological deficit (limb weakness, dysphasia, dysarthria, facial droop, hemianopia, cerebellar signs).",
+      "FAST recognition (Face, Arm, Speech, Time) — pre-hospital triage.",
+      "Time-window critical: thrombolysis ≤ 4.5 h (with strict criteria up to 9 h for wake-up stroke + perfusion imaging); thrombectomy ≤ 24 h for large-vessel occlusion with favourable imaging."
+    ],
+    "redFlags": [
+      "Suspected intracerebral haemorrhage (sudden severe headache, vomiting, very high BP, reduced consciousness) — CT mandatory before thrombolysis.",
+      "Posterior circulation stroke — basilar occlusion can present with vertigo, dysarthria, ataxia, then coma; thrombectomy time window often longer (specialist).",
+      "Stroke mimics: hypoglycaemia, seizure with Todd paresis, migraine.",
+      "Active bleeding, recent major surgery, recent intracranial / spinal surgery — thrombolysis contraindicated.",
+      "Anticoagulant use (INR > 1.7, or DOAC within 48 h) — thrombolysis usually contraindicated."
+    ],
+    "diagnostics": [
+      {
+        "test": "Non-contrast CT head WITHIN 25 minutes of arrival.",
+        "rationale": "Exclude haemorrhage; identify early ischaemic changes (ASPECTS); identify hyperdense vessel sign."
+      },
+      {
+        "test": "CT angiography head and neck.",
+        "rationale": "Identify large-vessel occlusion eligible for thrombectomy."
+      },
+      {
+        "test": "CT perfusion (where available) for late-window (4.5–9 h, or wake-up).",
+        "rationale": "Identify salvageable penumbra (mismatch)."
+      },
+      {
+        "test": "Capillary glucose, BP, ECG, FBC, U&E, coag, troponin.",
+        "rationale": "Exclude hypoglycaemia mimic; identify atrial fibrillation; baseline."
+      }
+    ],
+    "management": [
+      {
+        "step": "Pre-hospital + arrival — door-to-needle target ≤ 60 min",
+        "detail": "ABCDE; manage airway; supplemental O2 only if SpO2 < 94%; large-bore IV; treat hypoglycaemia; do not aggressively lower BP unless > 185/110 (thrombolysis) or > 220/120 (no thrombolysis) — use labetalol IV."
+      },
+      {
+        "step": "IV alteplase (tPA) 0.9 mg/kg",
+        "detail": "10% bolus over 1 min then 90% infusion over 60 min (max 90 mg total). Within 4.5 h of symptom onset. Tenecteplase 0.25 mg/kg single bolus is non-inferior alternative becoming more common."
+      },
+      {
+        "step": "Endovascular thrombectomy for large-vessel occlusion",
+        "detail": "≤ 6 h symptom onset for all LVO; 6–24 h with favourable CT perfusion (DEFUSE-3, DAWN criteria). Specialist comprehensive stroke centre."
+      },
+      {
+        "step": "Post-thrombolysis monitoring",
+        "detail": "Stroke unit; neurological observations every 15 min × 2 h, then every 30 min × 6 h, then hourly. BP < 180/105. No antiplatelet / anticoagulant for 24 h. Repeat CT at 24 h before starting antiplatelet."
+      },
+      {
+        "step": "Secondary prevention",
+        "detail": "Antiplatelet: aspirin 300 mg × 2 weeks then 75 mg lifelong (or clopidogrel 75 mg). DAPT (aspirin + clopidogrel) for 21 days for minor stroke / high-risk TIA, then single agent. Anticoagulant for AF: DOAC after 5–14 days (sooner for small infarct, later for large). Statin (atorvastatin 80 mg). BP control < 130/80 (start within 24 h if BP > 140/90 and stable). Diabetes management. Carotid endarterectomy if symptomatic stenosis 50–99%."
+      },
+      {
+        "step": "Early rehabilitation",
+        "detail": "Multidisciplinary team (physiotherapy, occupational therapy, speech and language therapy) within 24 h. Swallow assessment before oral intake. Mood screen at 4–6 weeks."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESO Guidelines on intravenous thrombolysis for acute ischaemic stroke (2021)"
+      },
+      {
+        "label": "AHA/ASA Guidelines for the Early Management of Patients With Acute Ischemic Stroke (2019, with updates)"
+      },
+      {
+        "label": "WHO Package of essential noncommunicable disease interventions (PEN) — Stroke"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "intracerebral-haemorrhage-acute",
+    "title": "Acute intracerebral haemorrhage (ICH)",
+    "icd10": [
+      "I61"
+    ],
+    "domains": [
+      "neurology",
+      "stroke",
+      "neurosurgery",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden severe headache, vomiting, focal neurology and rapid deterioration in level of consciousness (more so than ischaemic stroke).",
+      "Often known hypertension; or anticoagulant / antiplatelet use.",
+      "Pupillary changes, posturing, Cushing reflex (bradycardia + hypertension) signal raised ICP."
+    ],
+    "redFlags": [
+      "GCS ≤ 8, fixed dilated pupil — impending tentorial herniation.",
+      "Cerebellar haematoma > 3 cm — surgical emergency, risk of brainstem compression.",
+      "Intraventricular extension with hydrocephalus.",
+      "Coagulopathy (warfarin, DOAC, thrombocytopenia, liver disease).",
+      "Aneurysmal subarachnoid haemorrhage (suspect if 'thunderclap' headache; mostly subarachnoid blood pattern on CT)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Non-contrast CT head — confirms ICH.",
+        "rationale": "Volume and location predict outcome; ICH score."
+      },
+      {
+        "test": "CT angiography ± venography.",
+        "rationale": "Identify aneurysm, AVM, dural sinus thrombosis underlying."
+      },
+      {
+        "test": "FBC, coag (INR, APTT), platelet count, U&E, glucose, group + save.",
+        "rationale": "Identify reversible coagulopathy; prepare for surgery."
+      },
+      {
+        "test": "Drug-level if DOAC (especially dabigatran).",
+        "rationale": "Inform reversal."
+      }
+    ],
+    "management": [
+      {
+        "step": "ABC + airway protection",
+        "detail": "Intubate for GCS ≤ 8, depressed gag, vomiting. Elevate head of bed 30°. Avoid hypotonic fluids."
+      },
+      {
+        "step": "Blood-pressure control",
+        "detail": "Acute lowering to systolic 130–140 mmHg within first hour — IV labetalol 10–20 mg bolus, then infusion 1–2 mg/min OR nicardipine. INTERACT-2 + ATACH-2 trials: SBP target 140 mmHg safe + may reduce haematoma expansion."
+      },
+      {
+        "step": "Reverse anticoagulation IMMEDIATELY",
+        "detail": "Warfarin: vitamin K 10 mg IV + 4-factor PCC 50 IU/kg. Dabigatran: idarucizumab 5 g IV. Factor Xa DOAC: andexanet alfa OR 4-factor PCC 50 IU/kg. Heparin: protamine 1 mg per 100 IU heparin given in past 2–3 h. Antiplatelet: platelet transfusion ONLY if neurosurgery imminent (PATCH trial — harmful otherwise)."
+      },
+      {
+        "step": "ICP management",
+        "detail": "Elevation, hypertonic saline (3% 5 mL/kg bolus) or mannitol 1 g/kg IV; reverse hypotonic states; sedate and target normocapnia. Avoid steroids."
+      },
+      {
+        "step": "Seizure prophylaxis ONLY if seizure occurs",
+        "detail": "Not routine. Treat seizures with IV levetiracetam or phenytoin."
+      },
+      {
+        "step": "Neurosurgical consultation",
+        "detail": "Indications for surgery: cerebellar haematoma > 3 cm with deterioration or brainstem compression; superficial lobar haematoma > 30 mL with mass effect; hydrocephalus from IVH (EVD); selected supratentorial cases (STITCH II, MISTIE III for minimally-invasive evacuation)."
+      },
+      {
+        "step": "Stroke-unit admission + supportive care",
+        "detail": "Glucose control, fever management, DVT prophylaxis (mechanical immediately; LMWH after 24–48 h if haematoma stable), aspiration precautions, nutritional support."
+      },
+      {
+        "step": "Secondary prevention",
+        "detail": "Aggressive BP control < 130/80 (most important intervention). Address underlying cause (CAA, hypertensive vasculopathy, anticoagulant indication review). Statin generally continued — no clear benefit but withholding not justified."
+      }
+    ],
+    "references": [
+      {
+        "label": "AHA/ASA Guideline for the Management of Patients With Spontaneous Intracerebral Hemorrhage (2022)"
+      },
+      {
+        "label": "European Stroke Organisation (ESO) ICH guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "diabetic-foot-ulcer-and-infection",
+    "title": "Diabetic foot ulcer and infection — IWGDF integrated management",
+    "icd10": [
+      "E10.621",
+      "E11.621",
+      "E13.621"
+    ],
+    "domains": [
+      "endocrinology",
+      "infectious-disease",
+      "orthopaedics",
+      "vascular",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Ulcer or wound on foot of person with diabetes.",
+      "Often painless (sensory neuropathy); may have surrounding cellulitis, sloughy base, exposed deep structures.",
+      "Risk factors: peripheral neuropathy, peripheral arterial disease (PAD), foot deformity (Charcot, hammer toes), prior ulcer/amputation, smoking, poor glycaemic control."
+    ],
+    "redFlags": [
+      "Severe infection: systemic features (fever, tachycardia, raised WBC/CRP), extensive cellulitis (> 2 cm beyond ulcer), abscess, gangrene, deep tissue involvement.",
+      "Acute Charcot foot: red, warm, swollen foot without obvious infection in a neuropathic patient (skin temp > 2°C contralateral; rocker-bottom deformity if untreated).",
+      "Critical limb ischaemia (rest pain, gangrene, non-healing wound, ABI < 0.4 or absent pedal pulses).",
+      "Sepsis.",
+      "Necrotising fasciitis (rapid progression, pain disproportionate, crepitus, dusky skin) — surgical emergency."
+    ],
+    "diagnostics": [
+      {
+        "test": "Wagner / UT classification + IDSA infection severity grading.",
+        "rationale": "Standard description; guides therapy intensity."
+      },
+      {
+        "test": "Probe-to-bone test; X-ray foot.",
+        "rationale": "Detect osteomyelitis (positive PTB or X-ray changes after 2 weeks)."
+      },
+      {
+        "test": "MRI foot if deep infection / osteomyelitis suspected and X-ray equivocal.",
+        "rationale": "Most accurate."
+      },
+      {
+        "test": "Deep tissue swab or curettage after debridement (NOT superficial swab).",
+        "rationale": "Identify pathogens; superficial swab unreliable."
+      },
+      {
+        "test": "ABI / toe-brachial index; arterial duplex if PAD suspected.",
+        "rationale": "Identify ischaemia; revascularisation may be needed."
+      },
+      {
+        "test": "FBC, CRP, U&E, HbA1c, ESR.",
+        "rationale": "Severity, comorbidity."
+      }
+    ],
+    "management": [
+      {
+        "step": "MDT involvement from outset",
+        "detail": "Diabetes specialist, vascular, orthopaedic, infectious disease, podiatry, microbiology, nursing — diabetic foot clinic significantly reduces amputation."
+      },
+      {
+        "step": "Offloading is essential — non-removable total-contact cast or removable knee-high walker",
+        "detail": "Plantar ulcers will not heal without effective pressure relief. Offloading is the most-evidence-based intervention after revascularisation."
+      },
+      {
+        "step": "Debridement",
+        "detail": "Sharp surgical debridement of necrotic tissue and callus at each visit; gentle saline cleansing; appropriate dressing (foam, hydrocolloid, alginate per exudate)."
+      },
+      {
+        "step": "Antibiotic for infected ulcer (DON'T treat colonised but non-infected)",
+        "detail": "Mild (IDSA 2 — local cellulitis < 2 cm): oral flucloxacillin or co-amoxiclav 7–14 days. Moderate (IDSA 3 — deeper / systemic mild): IV co-amoxiclav OR ceftriaxone + metronidazole 14–21 days. Severe (IDSA 4 — sepsis): IV broad-spectrum (piperacillin-tazobactam, meropenem) + cover MRSA with vancomycin in high-risk areas. Adjust to deep tissue culture results."
+      },
+      {
+        "step": "Osteomyelitis",
+        "detail": "4–6 weeks of bone-active antibiotic following surgical debridement; longer if residual bone infection. Some chronic cases require resection."
+      },
+      {
+        "step": "Revascularisation for ischaemia",
+        "detail": "Endovascular or surgical bypass for PAD with non-healing ulcer or critical limb ischaemia."
+      },
+      {
+        "step": "Charcot foot management",
+        "detail": "Strict immobilisation in total-contact cast for 8–12 weeks until temperature normalises; bisphosphonate role debated. Bracing after."
+      },
+      {
+        "step": "Glycaemic + cardiovascular control + lifestyle",
+        "detail": "Aim HbA1c 7–8% during healing. Smoking cessation. Statin, ACEi/ARB per CVD risk. Daily foot inspection + protective footwear lifelong."
+      },
+      {
+        "step": "Amputation as last resort + rehabilitation",
+        "detail": "Spare limb where possible. If amputation needed, plan optimal level for prosthetic rehabilitation; psychological support."
+      }
+    ],
+    "references": [
+      {
+        "label": "IWGDF Guidelines on the prevention and management of diabetic foot disease (2023)"
+      },
+      {
+        "label": "IDSA Clinical Practice Guideline for the Diagnosis and Treatment of Diabetic Foot Infections"
+      },
+      {
+        "label": "WHO HEARTS-D — Diabetes module"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]

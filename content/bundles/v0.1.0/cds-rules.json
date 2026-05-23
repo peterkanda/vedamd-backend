@@ -3633,5 +3633,366 @@
         "kind": "drug"
       }
     ]
+  },
+  {
+    "id": "tls-risk-prophylaxis",
+    "hook": "patient-view",
+    "type": "tls-risk-prophylaxis",
+    "services": [
+      "vedamd-tls-risk-prophylaxis"
+    ],
+    "title": "Tumour lysis syndrome risk recognition + prophylaxis",
+    "description": "Fires for oncology patients about to receive cytolytic therapy in high-risk haematological malignancy (Burkitt, ALL with WBC > 100, AML with WBC > 50, bulky high-grade lymphoma). Recommends pre-emptive hydration + hypouricaemic therapy (allopurinol / rasburicase) and electrolyte monitoring per Coiffier 2008 / ESMO. Reads context.cancerType, context.WBC, context.LDH, context.uricAcid, context.creatinine, context.phosphate, context.potassium — never patient identity.",
+    "references": [
+      {
+        "label": "Coiffier B et al. JCO 2008",
+        "url": "https://ascopubs.org/doi/10.1200/JCO.2008.16.0890"
+      },
+      {
+        "label": "ESMO Clinical Practice Guidelines on TLS"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E88.3",
+        "display": "Tumour lysis syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "neutropenic-sepsis-sepsis6",
+    "hook": "patient-view",
+    "type": "neutropenic-sepsis-sepsis6",
+    "services": [
+      "vedamd-neutropenic-sepsis"
+    ],
+    "title": "Neutropenic sepsis emergency — Sepsis-6 within 1 hour",
+    "description": "Fires for any patient with neutrophil count < 0.5 (or < 1.0 with falling trend) AND fever ≥ 38°C single OR ≥ 37.5°C sustained 1 h. Recommends immediate broad-spectrum antibiotic (piperacillin-tazobactam OR meropenem per local policy + vancomycin if line / shock / MRSA risk), blood + line cultures, lactate, fluids, urine output. References NICE CG151. Reads context.neutrophilCount, context.temperature, context.cancerTherapyStartDays, context.suspectedFocus — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG151 — Neutropenic sepsis"
+      },
+      {
+        "label": "IDSA Clinical Practice Guideline for Antimicrobial Agents in Febrile Neutropenic Cancer Patients (2010)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D70",
+        "display": "Agranulocytosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ich-acute-bp-reversal",
+    "hook": "patient-view",
+    "type": "ich-acute-bp-reversal",
+    "services": [
+      "vedamd-ich-acute"
+    ],
+    "title": "Acute intracerebral haemorrhage — BP control + anticoagulant reversal",
+    "description": "Fires for any patient with imaging-confirmed ICH. Recommends acute SBP lowering to 130–140 mmHg with IV labetalol / nicardipine (INTERACT-2 / ATACH-2 targets) and immediate reversal of any anticoagulant: warfarin → vit K + 4F-PCC; dabigatran → idarucizumab; FXa DOAC → andexanet OR 4F-PCC; heparin → protamine. Antiplatelet platelet transfusion NOT recommended unless neurosurgery imminent (PATCH). Reads context.ichDiagnosis, context.systolicMmHg, context.anticoagulant, context.gcs — never patient identity.",
+    "references": [
+      {
+        "label": "AHA/ASA 2022 Spontaneous ICH Guideline"
+      },
+      {
+        "label": "PATCH trial Lancet 2016"
+      },
+      {
+        "label": "INTERACT-2 NEJM 2013; ATACH-2 NEJM 2016"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I61",
+        "display": "Intracerebral haemorrhage",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "mhgap-self-harm-emergent",
+    "hook": "patient-view",
+    "type": "mhgap-self-harm-emergent",
+    "services": [
+      "vedamd-mhgap-self-harm"
+    ],
+    "title": "mhGAP — Self-harm / acute suicide-risk pathway",
+    "description": "Fires when patient has documented suicidal ideation with plan / intent OR recent self-harm act. Recommends safety-first (do not leave alone, restrict means), medical treatment of any overdose / injury (link to antidote registry: paracetamol-nac, organophosphate-atropine, tca-sodium-bicarbonate), empathic interview, treat underlying psychiatric drivers, written safety plan, follow-up within 24–72 h, mental-health specialist referral. Reads context.suicideIdeationPresent, context.suicidePlanPresent, context.recentSelfHarmAct, context.suspectedIngestion — never patient identity.",
+    "references": [
+      {
+        "label": "WHO mhGAP Intervention Guide v2.0 — Self-harm/Suicide (SUI)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "R45.851",
+        "display": "Suicidal ideation",
+        "kind": "finding"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T14.91",
+        "display": "Suicide attempt",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "nsaid-pregnancy-third-trimester-block",
+    "hook": "medication-prescribe",
+    "type": "nsaid-pregnancy-third-trimester-block",
+    "services": [
+      "vedamd-nsaid-pregnancy-block"
+    ],
+    "title": "NSAID at ≥ 20 weeks gestation — contraindicated",
+    "description": "Blocks NSAID prescribing (ibuprofen, diclofenac, naproxen, indomethacin) for pregnant patients at ≥ 20 weeks gestation due to oligohydramnios and premature ductus arteriosus closure (FDA 2020 Drug Safety Communication). Recommends paracetamol as alternative. Reads context.pregnant, context.gestationWeeks, context.medications — never patient identity.",
+    "references": [
+      {
+        "label": "FDA Drug Safety Communication 2020 — NSAID at ≥ 20 weeks gestation"
+      },
+      {
+        "label": "NICE Antenatal Care guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://whocc.no/atc",
+        "code": "M01A",
+        "display": "NSAIDs",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "codeine-paediatric-under-12-block",
+    "hook": "medication-prescribe",
+    "type": "codeine-paediatric-under-12-block",
+    "services": [
+      "vedamd-codeine-paeds-block"
+    ],
+    "title": "Codeine and tramadol in children < 12 — contraindicated",
+    "description": "Blocks codeine and tramadol prescribing in children under 12 years (and post-tonsillectomy / adenoidectomy at any age 12–18, and in children with OSA / obesity 12–18) per FDA 2017 and EMA recommendations following deaths from ultra-rapid CYP2D6 metaboliser children. Recommends paracetamol + ibuprofen first, then weight-appropriate morphine if opioid needed. Reads context.ageYears, context.recentTonsillectomy, context.obstructiveSleepApnoea, context.medications — never patient identity.",
+    "references": [
+      {
+        "label": "FDA Drug Safety Communication 2017 — codeine + tramadol in children"
+      },
+      {
+        "label": "EMA 2013 codeine restrictions"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://whocc.no/atc",
+        "code": "R05DA04",
+        "display": "Codeine",
+        "kind": "drug"
+      },
+      {
+        "system": "http://whocc.no/atc",
+        "code": "N02AX02",
+        "display": "Tramadol",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "paxlovid-interaction-pre-prescribe",
+    "hook": "medication-prescribe",
+    "type": "paxlovid-interaction-pre-prescribe",
+    "services": [
+      "vedamd-paxlovid-interaction"
+    ],
+    "title": "Nirmatrelvir-ritonavir (Paxlovid) — major interaction screen",
+    "description": "Fires when nirmatrelvir-ritonavir is about to be prescribed. Screens current medications for major / contraindicated interactions via ritonavir CYP3A4 + P-gp inhibition: simvastatin, lovastatin (contraindicated), amiodarone, ergot alkaloids, rivaroxaban / apixaban, sildenafil for PAH, midazolam oral, triazolam, salmeterol, fluticasone, alfuzosin, drospirenone-containing COCs, rifampicin, carbamazepine, phenytoin, St John's wort. Recommends Liverpool COVID interactions database (covid19-druginteractions.org) and alternative COVID therapy where contraindicated. Reads context.medications, context.creatinineUmolL, context.hepaticChildPugh — never patient identity.",
+    "references": [
+      {
+        "label": "Liverpool COVID-19 Interactions database — University of Liverpool"
+      },
+      {
+        "label": "FDA Paxlovid label"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J05AE30",
+        "display": "Nirmatrelvir-ritonavir",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "sacubitril-acei-angioedema-block",
+    "hook": "medication-prescribe",
+    "type": "sacubitril-acei-angioedema-block",
+    "services": [
+      "vedamd-sacubitril-acei-block"
+    ],
+    "title": "Sacubitril-valsartan + ACE inhibitor — contraindicated (angioedema)",
+    "description": "Blocks concomitant sacubitril-valsartan and ACE inhibitor prescribing — markedly raises angioedema risk. Requires at least 36 hours' ACEi washout before initiating sacubitril-valsartan. Also blocks if patient has prior history of angioedema with ACEi or ARB. Reads context.medications, context.angiooedemaHistory — never patient identity.",
+    "references": [
+      {
+        "label": "PARADIGM-HF NEJM 2014"
+      },
+      {
+        "label": "ESC Heart Failure Guideline 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://whocc.no/atc",
+        "code": "C09DX04",
+        "display": "Sacubitril-valsartan",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "linezolid-serotonergic-interaction",
+    "hook": "medication-prescribe",
+    "type": "linezolid-serotonergic-interaction",
+    "services": [
+      "vedamd-linezolid-serotonergic"
+    ],
+    "title": "Linezolid + serotonergic agent — serotonin syndrome",
+    "description": "Fires when linezolid (weak MAOI) is prescribed alongside SSRI, SNRI, TCA, MAOI, tramadol, fentanyl, triptan, methylene blue, pethidine, or St John's wort. Recommends stopping the serotonergic agent (2 weeks washout for most, 5 weeks for fluoxetine) BEFORE linezolid, or selecting alternative antibiotic. Includes monitoring guidance if combination unavoidable. Reads context.medications — never patient identity.",
+    "references": [
+      {
+        "label": "FDA Drug Safety Communication on linezolid + serotonergics 2011"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://whocc.no/atc",
+        "code": "J01XX08",
+        "display": "Linezolid",
+        "kind": "drug"
+      }
+    ]
+  },
+  {
+    "id": "hearts-bp-step-protocol",
+    "hook": "patient-view",
+    "type": "hearts-bp-step-protocol",
+    "services": [
+      "vedamd-hearts-bp-step"
+    ],
+    "title": "WHO HEARTS — stepwise BP-lowering protocol prompt",
+    "description": "Fires for adults with confirmed hypertension whose BP remains above target on the current step. Suggests the next step: lifestyle + monotherapy → dual (ACEi/ARB + CCB) → triple (add thiazide-like diuretic) → quadruple (add spironolactone). Includes individual target (140/90 default; 130/80 in diabetes/CKD/post-stroke). Reads context.ageYears, context.systolicMmHg, context.diastolicMmHg, context.currentAntihypertensives, context.diabetes, context.ckd, context.postStroke, context.potassium, context.egfr — never patient identity.",
+    "references": [
+      {
+        "label": "WHO 2021 guideline on the pharmacological treatment of hypertension in adults"
+      },
+      {
+        "label": "WHO HEARTS technical package — Evidence-based protocols module"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I10",
+        "display": "Essential hypertension",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "burn-parkland-fluid-resuscitation",
+    "hook": "patient-view",
+    "type": "burn-parkland-fluid-resuscitation",
+    "services": [
+      "vedamd-burn-parkland"
+    ],
+    "title": "Major burn — Parkland fluid resuscitation calculator",
+    "description": "Fires for patient with adult burn ≥ 20% TBSA (or paeds ≥ 10%). Calculates Parkland formula (4 mL × kg × %TBSA) with half over first 8 h and remainder over next 16 h, titrated to urine output 0.5 mL/kg/h adult / 1 mL/kg/h paediatric. Includes burns-centre referral criteria, escharotomy considerations, inhalation-injury triage. Reads context.tbsaPercent, context.weightKg, context.ageYears, context.timeOfBurnHoursAgo — never patient identity.",
+    "references": [
+      {
+        "label": "American Burn Association ABLS provider manual"
+      },
+      {
+        "label": "WHO Burn prevention and emergency care guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T31",
+        "display": "Burns classified by extent of body surface involved",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ckd-acei-arb-uacr",
+    "hook": "patient-view",
+    "type": "ckd-acei-arb-uacr",
+    "services": [
+      "vedamd-ckd-acei-arb-uacr"
+    ],
+    "title": "CKD with albuminuria — ACE inhibitor / ARB recommended",
+    "description": "Fires when patient has eGFR < 60 OR urine ACR ≥ 30 mg/g (≥ 3 mg/mmol) AND not currently on ACE inhibitor or ARB. Recommends initiation of ACEi or ARB (with K+ ≤ 5.0 and stable eGFR) and SGLT2 inhibitor co-prescription per KDIGO 2024 (dapagliflozin or empagliflozin) for additional cardio-renal protection. Reads context.egfr, context.urineACR, context.medications, context.potassium — never patient identity.",
+    "references": [
+      {
+        "label": "KDIGO 2024 CKD Guideline"
+      },
+      {
+        "label": "ADA Standards of Care — Chronic kidney disease in diabetes"
+      },
+      {
+        "label": "DAPA-CKD / EMPA-KIDNEY trials"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N18",
+        "display": "Chronic kidney disease",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]
