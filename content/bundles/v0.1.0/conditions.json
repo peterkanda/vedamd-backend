@@ -47818,5 +47818,1718 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "maternal-sepsis",
+    "title": "Maternal sepsis (antepartum, intrapartum, postpartum)",
+    "icd10": [
+      "O85",
+      "O86.0",
+      "O75.3"
+    ],
+    "domains": [
+      "obstetrics",
+      "infectious-disease",
+      "emergency",
+      "obstetric-emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "maxAgeYears": 49,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Fever (>38°C) or hypothermia (<36°C) with suspected/confirmed infection during pregnancy or up to 42 days postpartum.",
+      "Tachycardia, tachypnoea, raised WBC, lactate ≥ 2.",
+      "Common foci: chorioamnionitis, endometritis, septic abortion, UTI/pyelonephritis, mastitis, wound infection (LSCS, episiotomy), pneumonia."
+    ],
+    "redFlags": [
+      "Hypotension MAP < 65, lactate > 4 — septic shock.",
+      "Group A streptococcal sepsis — rapid deterioration.",
+      "Necrotising fasciitis of perineum / abdominal wound.",
+      "Suspected septic abortion (recent termination, retained products).",
+      "Foul-smelling lochia + uterine tenderness — endometritis.",
+      "DIC, AKI, ARDS."
+    ],
+    "diagnostics": [
+      {
+        "test": "Vital signs incl temperature; modified obstetric early warning score.",
+        "rationale": "Detect deterioration early."
+      },
+      {
+        "test": "Lactate, blood cultures × 2, FBC, CRP, U&E, LFT, coag, group + save.",
+        "rationale": "Quantify severity + identify pathogen."
+      },
+      {
+        "test": "Urine + high vaginal/cervical swabs + placenta culture; CXR; USS pelvis if retained products suspected.",
+        "rationale": "Source identification."
+      },
+      {
+        "test": "Fetal heart monitoring if antepartum / intrapartum.",
+        "rationale": "Fetal compromise."
+      }
+    ],
+    "management": [
+      {
+        "step": "Surviving Sepsis Hour-1 bundle PLUS obstetric considerations",
+        "detail": "Cultures BEFORE antibiotics (don't delay > 45 min); lactate; broad-spectrum IV antibiotic; 30 mL/kg crystalloid for hypotension; noradrenaline for MAP < 65."
+      },
+      {
+        "step": "Broad-spectrum antibiotic — pregnancy-compatible regimen",
+        "detail": "IV piperacillin-tazobactam 4.5 g 6-hourly + IV clindamycin 600–900 mg 8-hourly (clindamycin covers GAS toxin + anaerobes) ± gentamicin for severe sepsis. Avoid tetracyclines, fluoroquinolones in pregnancy."
+      },
+      {
+        "step": "Deliver the source",
+        "detail": "Septic abortion / chorioamnionitis / retained products → expedite delivery + ERPC. Endometritis postpartum → uterine evacuation if retained POC."
+      },
+      {
+        "step": "Surgical source control",
+        "detail": "Wound debridement; drain abscess; hysterectomy if life-threatening sepsis from uterine source unresponsive to antibiotics."
+      },
+      {
+        "step": "Treat group A streptococcal sepsis specifically",
+        "detail": "Add clindamycin to penicillin (toxin suppression); consider IVIG 1–2 g/kg if toxic shock features."
+      },
+      {
+        "step": "Anticipate complications + multidisciplinary team",
+        "detail": "DIC management; AKI / RRT; ARDS support; neonatal team if delivered preterm. Discuss with anaesthetics, obstetrics, neonatology, microbiology, ICU."
+      },
+      {
+        "step": "Postpartum follow-up + future-pregnancy counselling",
+        "detail": "Identify and treat sequelae (DVT/PE risk high — give LMWH prophylaxis); psychological support; debrief; future pregnancy plan."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Statement on Maternal Sepsis 2017"
+      },
+      {
+        "label": "RCOG Green-top Guideline No. 64a + 64b — Bacterial sepsis in pregnancy and following pregnancy"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "tetralogy-of-fallot-hypercyanotic-spell",
+    "title": "Tetralogy of Fallot — hypercyanotic 'Tet' spell",
+    "icd10": [
+      "Q21.3"
+    ],
+    "domains": [
+      "paediatrics",
+      "cardiology",
+      "emergency",
+      "child-health"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 5,
+      "sex": "any"
+    },
+    "presentation": [
+      "Infant or young child with known TOF (or undiagnosed cyanotic CHD) develops sudden cyanosis, hyperpnoea, distress.",
+      "Triggered by crying, feeding, defaecation, dehydration, infection, anaesthesia.",
+      "Loss of murmur (right-to-left shunt increased; less flow across RVOT)."
+    ],
+    "redFlags": [
+      "Loss of consciousness / seizure / cardiac arrest.",
+      "Persistent cyanosis after positioning and oxygen.",
+      "Severe metabolic acidosis.",
+      "Recurrent spells — accelerated need for definitive repair."
+    ],
+    "diagnostics": [
+      {
+        "test": "SpO2, blood gas, glucose.",
+        "rationale": "Quantify hypoxia + acidosis."
+      },
+      {
+        "test": "Bedside echocardiography if available.",
+        "rationale": "Confirm anatomy / function."
+      },
+      {
+        "test": "ECG; CXR (boot-shaped heart).",
+        "rationale": "Confirm diagnosis."
+      }
+    ],
+    "management": [
+      {
+        "step": "Knee-to-chest position",
+        "detail": "Increases systemic vascular resistance, reduces R→L shunt; comfort parent holding infant in knee-chest position."
+      },
+      {
+        "step": "Calm child + supplemental oxygen",
+        "detail": "Minimal handling; oxygen via mask (caution — too much may close PDA in ductal-dependent lesions; in pure TOF the duct usually not relied upon)."
+      },
+      {
+        "step": "Morphine 0.1–0.2 mg/kg IM or SC (or fentanyl IN 1–2 microgram/kg)",
+        "detail": "Reduces hyperpnoea + agitation, breaking the spell cycle."
+      },
+      {
+        "step": "IV fluid bolus 10–20 mL/kg crystalloid",
+        "detail": "Reverses dehydration + raises preload + reduces R→L shunt magnitude."
+      },
+      {
+        "step": "Phenylephrine 5–20 microgram/kg IV bolus or 0.1–0.5 microgram/kg/min infusion",
+        "detail": "Raises SVR, reduces R→L shunt — only if other measures fail."
+      },
+      {
+        "step": "Propranolol 0.05–0.1 mg/kg IV (or 1–4 mg/kg/day PO maintenance)",
+        "detail": "Reduces infundibular spasm; long-term prophylaxis between spells while awaiting surgery."
+      },
+      {
+        "step": "Sodium bicarbonate if severe metabolic acidosis",
+        "detail": "1–2 mmol/kg IV for pH < 7.2."
+      },
+      {
+        "step": "AVOID inotropes that increase contractility (digoxin, dopamine, adrenaline)",
+        "detail": "Worsen RVOT obstruction by increasing infundibular spasm."
+      },
+      {
+        "step": "Refer urgently to paediatric cardiology for definitive repair",
+        "detail": "Recurrent spells are an indication to accelerate surgical correction."
+      }
+    ],
+    "references": [
+      {
+        "label": "AHA Guidelines for the Management of Congenital Heart Disease"
+      },
+      {
+        "label": "Park's Pediatric Cardiology for Practitioners — Cyanotic spell management"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "ductal-dependent-cyanotic-newborn",
+    "title": "Ductal-dependent congenital heart disease — newborn presentation",
+    "icd10": [
+      "Q24.9",
+      "Q22.0",
+      "Q23.4",
+      "Q25.1"
+    ],
+    "domains": [
+      "neonatology",
+      "paediatrics",
+      "cardiology",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Newborn 1–14 days old presenting with cyanosis, tachypnoea, poor feeding, shock as ductus arteriosus closes.",
+      "Two patterns: (a) ductal-dependent pulmonary blood flow (pulmonary atresia, severe pulmonary stenosis, tricuspid atresia) — cyanosis predominant; (b) ductal-dependent systemic blood flow (hypoplastic left heart, critical aortic stenosis, coarctation, interrupted arch) — shock, weak femoral pulses, lactic acidosis.",
+      "SpO2 differential (right arm vs lower limb) suggests coarctation."
+    ],
+    "redFlags": [
+      "Shock with poor femoral pulses — ductal-dependent systemic circulation.",
+      "Severe cyanosis with normal lung exam — cyanotic CHD until proven otherwise.",
+      "Heart failure with hepatomegaly + tachycardia + cool peripheries.",
+      "Acidosis with normal SpO2 but lactate > 4 — suggests inadequate systemic flow."
+    ],
+    "diagnostics": [
+      {
+        "test": "Pulse oximetry pre-ductal (right arm) + post-ductal (any foot) — 'critical CHD screen'.",
+        "rationale": "Detects coarctation / interrupted arch."
+      },
+      {
+        "test": "Hyperoxia test (10 min 100% O2) — PaO2 rise < 100 mmHg suggests cyanotic CHD.",
+        "rationale": "Differentiates cardiac from pulmonary cause."
+      },
+      {
+        "test": "Urgent echocardiography (within hours).",
+        "rationale": "Definitive diagnosis; guides intervention."
+      },
+      {
+        "test": "CXR, ECG, blood gas, lactate, glucose, FBC, U&E.",
+        "rationale": "Severity + co-morbidity."
+      }
+    ],
+    "management": [
+      {
+        "step": "OPEN THE DUCT — prostaglandin E1 IMMEDIATELY",
+        "detail": "Alprostadil (PGE1) IV 0.05–0.1 microgram/kg/min via central or large peripheral line, starting as soon as ductal-dependent lesion suspected — DO NOT wait for echo. Reduce to 0.01–0.02 microgram/kg/min once ductus open. Side effects: apnoea (be ready to intubate), fever, hypotension, hyperexcitability."
+      },
+      {
+        "step": "Airway + breathing",
+        "detail": "Most newborns on prostaglandin need intubation electively for transport (apnoea risk). Lung-protective ventilation. Avoid hyperoxia in ductal-dependent SYSTEMIC circulation (excessive PVR drop diverts flow from systemic)."
+      },
+      {
+        "step": "Circulation",
+        "detail": "Avoid large fluid boluses (may worsen pulmonary overcirculation). Inotrope (dopamine 5–10 microgram/kg/min OR low-dose adrenaline) for shock. Correct metabolic acidosis."
+      },
+      {
+        "step": "Manage Qp:Qs in single-ventricle physiology",
+        "detail": "For HLHS / single ventricle, target SpO2 75–85% — too high SpO2 = pulmonary overcirculation + systemic underperfusion. Aim for balanced flow."
+      },
+      {
+        "step": "Avoid",
+        "detail": "Routine high FiO2 in pre-operative ductal-dependent SYSTEMIC lesions. Sudden ductal closure (e.g. stopping PGE1)."
+      },
+      {
+        "step": "Transfer to tertiary paediatric cardiac centre",
+        "detail": "Specialist neonatal cardiac transport team. Continue PGE1, ventilation, glucose monitoring en route."
+      },
+      {
+        "step": "Definitive intervention",
+        "detail": "Surgical or catheter-based palliation / repair — Norwood (HLHS), arch repair (coarctation/IAA), BT shunt (cyanotic with low pulmonary flow), septostomy (TGA)."
+      }
+    ],
+    "references": [
+      {
+        "label": "AHA/AAP Pulse Oximetry Critical CHD Screening Guidelines"
+      },
+      {
+        "label": "WHO Care of the newborn — congenital heart disease module"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "paediatric-supraventricular-tachycardia",
+    "title": "Paediatric supraventricular tachycardia (SVT)",
+    "icd10": [
+      "I47.1"
+    ],
+    "domains": [
+      "paediatrics",
+      "cardiology",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 17,
+      "sex": "any"
+    },
+    "presentation": [
+      "Infant: poor feeding, irritability, pallor, sweating, tachypnoea — heart failure can develop within 24–48 h.",
+      "Older child: palpitations, chest discomfort, lightheadedness, syncope.",
+      "Heart rate: infant typically > 220/min; child > 180/min; adolescent > 150/min, NARROW QRS, regular, minimal beat-to-beat variability."
+    ],
+    "redFlags": [
+      "Haemodynamic instability — hypotension, altered consciousness, severe heart failure.",
+      "Wide-complex tachycardia — assume VT until proven otherwise.",
+      "Pre-excitation (WPW) on baseline ECG — avoid AV-nodal-blocking agents long-term unless specialist guided.",
+      "Underlying structural heart disease."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG during and after termination.",
+        "rationale": "Distinguish SVT from VT and sinus tachycardia; identify accessory pathway."
+      },
+      {
+        "test": "Continuous cardiac monitoring; print rhythm strip during interventions.",
+        "rationale": "Document response."
+      },
+      {
+        "test": "Glucose, electrolytes, FBC.",
+        "rationale": "Identify metabolic precipitants."
+      },
+      {
+        "test": "Echocardiography (post-stabilisation).",
+        "rationale": "Identify structural heart disease."
+      }
+    ],
+    "management": [
+      {
+        "step": "Unstable (shock, severe heart failure) — synchronised DC cardioversion",
+        "detail": "0.5–1 J/kg synchronised, escalate to 2 J/kg. Sedate if conscious; do NOT delay if peri-arrest."
+      },
+      {
+        "step": "Stable — vagal manoeuvres first",
+        "detail": "Infant: ice/water bag to face for 15 sec (Diving reflex). Child: Valsalva (blow into syringe for 15 sec). Modified Valsalva (postural change after Valsalva) superior in older child."
+      },
+      {
+        "step": "IV adenosine if vagal manoeuvres fail",
+        "detail": "0.1 mg/kg IV rapid push (close to heart) followed by 5 mL saline flush; escalate to 0.2 mg/kg, max 12 mg single dose. Record rhythm strip during administration. Effects last seconds — very short half-life."
+      },
+      {
+        "step": "Refractory or recurrent SVT — second-line",
+        "detail": "IV amiodarone 5 mg/kg over 30–60 min (consider cardiology consult), OR procainamide 15 mg/kg over 30 min, OR flecainide (under specialist guidance), OR overdrive pacing (transoesophageal in infant)."
+      },
+      {
+        "step": "AVOID verapamil in infants < 1 year",
+        "detail": "Severe hypotension / cardiac arrest reported. Use only in older children under specialist guidance."
+      },
+      {
+        "step": "Investigate trigger + structural cause",
+        "detail": "Fever, electrolytes, drugs, congenital accessory pathway (WPW). Echo for structural disease."
+      },
+      {
+        "step": "Long-term management",
+        "detail": "Catheter ablation curative for accessory pathway (preferred ≥ 5 years). Beta-blocker or flecainide prophylaxis for recurrent SVT. Refer paediatric electrophysiology."
+      }
+    ],
+    "references": [
+      {
+        "label": "PALS provider manual — Tachyarrhythmia algorithm"
+      },
+      {
+        "label": "European Heart Rhythm Association consensus on paediatric arrhythmia management"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-bronchiolitis-infant",
+    "title": "Severe bronchiolitis — infant (RSV + non-RSV)",
+    "icd10": [
+      "J21.0",
+      "J21.1",
+      "J21.8",
+      "J21.9"
+    ],
+    "domains": [
+      "paediatrics",
+      "respiratory",
+      "child-health",
+      "neonatology"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 1,
+      "sex": "any"
+    },
+    "presentation": [
+      "Infant < 1 year (peak 2–6 months) with 1–3 days of coryzal symptoms followed by cough, tachypnoea, wheeze, crackles, increased work of breathing.",
+      "Feeding difficulty, apnoea (especially preterm and < 2 months).",
+      "Risk factors for severe disease: < 3 months, preterm, congenital heart disease, immunosuppression, chronic lung disease."
+    ],
+    "redFlags": [
+      "Apnoea, cyanosis.",
+      "SpO2 < 92% on room air.",
+      "Severe respiratory distress (head-bobbing, grunting, severe recession, RR > 70).",
+      "Feeding < 50% normal volumes.",
+      "Lethargy / floppy / dehydration."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical — no routine investigations needed.",
+        "rationale": "Diagnosis on history + exam."
+      },
+      {
+        "test": "Pulse oximetry; capillary blood gas if respiratory failure.",
+        "rationale": "Hypoxia + hypercapnia."
+      },
+      {
+        "test": "Respiratory virus PCR (RSV + others) — selectively for cohorting.",
+        "rationale": "Infection control + epidemiology."
+      },
+      {
+        "test": "CXR ONLY if focal signs / no improvement / suspected complication.",
+        "rationale": "Routine CXR not indicated; can be misleading."
+      },
+      {
+        "test": "FBC + CRP — only if suspected superinfection.",
+        "rationale": "Antibiotic decisions."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive care is the mainstay",
+        "detail": "Minimal handling; quiet environment; head elevation."
+      },
+      {
+        "step": "Oxygen for SpO2 < 92%",
+        "detail": "Nasal prong 1–4 L/min; target 92–96%. Avoid hyperoxia."
+      },
+      {
+        "step": "Feeding support",
+        "detail": "Small frequent feeds; NG feed if cannot maintain oral intake; IV maintenance fluid (2/3 maintenance to avoid SIADH-related hyponatraemia)."
+      },
+      {
+        "step": "High-flow nasal cannula (HFNC) for moderate-severe distress",
+        "detail": "1–2 L/kg/min humidified heated O2 + air mix. Reduces work of breathing and intubation rate. CPAP or BiPAP for further escalation."
+      },
+      {
+        "step": "Intubation + IMV for respiratory failure / apnoea / exhaustion",
+        "detail": "PICU level. Permissive hypercapnia; PEEP; bronchodilator NOT routinely beneficial."
+      },
+      {
+        "step": "DO NOT routinely use",
+        "detail": "Antibiotics (no benefit unless documented bacterial superinfection — secondary AOM, pneumonia). Bronchodilators (no proven benefit; trial then stop if no response). Inhaled or systemic corticosteroids (no benefit in bronchiolitis — distinct from asthma). Hypertonic saline routinely (modest evidence, not currently recommended in UK / Australasia)."
+      },
+      {
+        "step": "Apnoea monitoring < 2 months / preterm",
+        "detail": "Continuous monitoring; consider CPAP / intubation if apnoeic episodes."
+      },
+      {
+        "step": "Discharge criteria + follow-up",
+        "detail": "SpO2 ≥ 94% room air sustained; feeding > 75% normal; no significant distress for 4 h. Safety-net for re-presentation. RSV vaccination/nirsevimab consideration for at-risk siblings + next season."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE NG9 — Bronchiolitis in children"
+      },
+      {
+        "label": "AAP Bronchiolitis Clinical Practice Guideline"
+      },
+      {
+        "label": "WHO Acute respiratory infection guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-viral-croup",
+    "title": "Severe viral croup (laryngotracheobronchitis)",
+    "icd10": [
+      "J05.0"
+    ],
+    "domains": [
+      "paediatrics",
+      "respiratory",
+      "child-health",
+      "ent",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 5,
+      "sex": "any"
+    },
+    "presentation": [
+      "Child 6 months–5 years with sudden onset of barking cough, hoarse voice, stridor, often worse at night.",
+      "Mild: occasional cough, no stridor at rest. Moderate: stridor at rest, recession, normal mental state. Severe: marked stridor at rest, severe recession, agitated / drowsy, cyanosis, exhaustion. Impending respiratory failure: silence, sternal indrawing, drowsiness, falling SpO2."
+    ],
+    "redFlags": [
+      "Drooling, dysphagia, tripod position — consider epiglottitis instead.",
+      "Toxic appearance, high fever — consider bacterial tracheitis.",
+      "Severe distress / exhaustion / silent chest.",
+      "Failure to respond to nebulised adrenaline within 30 min.",
+      "Recurrent or atypical croup — anatomical abnormality."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical — Westley croup score.",
+        "rationale": "Grade severity; guide treatment."
+      },
+      {
+        "test": "DO NOT examine throat with tongue depressor if epiglottitis possible.",
+        "rationale": "Risk of laryngospasm."
+      },
+      {
+        "test": "Avoid distressing investigations; SpO2 may underestimate severity.",
+        "rationale": "Crying worsens obstruction."
+      }
+    ],
+    "management": [
+      {
+        "step": "Minimal handling; parent in arms; calm environment",
+        "detail": "Agitation worsens upper airway obstruction. Avoid IV cannulation, throat examination, NG tube unless essential."
+      },
+      {
+        "step": "Single dose dexamethasone for ALL except mildest",
+        "detail": "0.15 mg/kg PO (max 10 mg). Higher dose 0.6 mg/kg if cannot tolerate oral / vomiting / severe. Onset 6 h; duration 24–48 h. IV or IM same dose if cannot swallow. Prednisolone 1 mg/kg less evidence."
+      },
+      {
+        "step": "Nebulised adrenaline for moderate-severe stridor at rest",
+        "detail": "5 mL of 1:1000 (5 mg) nebulised, can repeat every 20–30 min. Effects: rapid onset (~10 min), duration 1–2 h — observe ≥ 2–4 h after for 'rebound' before discharge."
+      },
+      {
+        "step": "Oxygen if SpO2 < 92%",
+        "detail": "Blow-by mask in arms; avoid mask trauma. CAUTION: oxygen can mask deterioration; use clinical scoring alongside."
+      },
+      {
+        "step": "Refer to ICU / consider intubation if",
+        "detail": "Recurrent / no response to adrenaline + steroid; exhaustion; falling consciousness; severe air entry reduction. Senior anaesthetic / ENT involvement. Use smaller-than-usual ETT (1 size below age-predicted)."
+      },
+      {
+        "step": "Heliox in selected refractory",
+        "detail": "Mixed 70:30 helium:oxygen reduces work of breathing; specialist centre."
+      },
+      {
+        "step": "Discharge criteria",
+        "detail": "Improvement sustained ≥ 2–4 h after last adrenaline; no stridor at rest; normal feeding; carers can return if worse. Safety-netting essential."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCH Melbourne croup guideline"
+      },
+      {
+        "label": "NICE Clinical Knowledge Summary — Croup"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "kawasaki-disease-clinical-and-ivig",
+    "title": "Kawasaki disease — diagnosis + IVIG treatment",
+    "icd10": [
+      "M30.3"
+    ],
+    "domains": [
+      "paediatrics",
+      "cardiology",
+      "rheumatology",
+      "infectious-disease",
+      "child-health"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 8,
+      "sex": "any"
+    },
+    "presentation": [
+      "Fever > 38°C for ≥ 5 days AND at least 4 of: bilateral non-purulent conjunctivitis; polymorphous rash; mucositis (strawberry tongue, cracked lips, pharyngeal injection); extremity changes (palmar/sole erythema, induration, peri-ungual desquamation); cervical lymphadenopathy ≥ 1.5 cm (often unilateral).",
+      "Incomplete KD: fewer criteria but echocardiographic features (coronary artery dilatation).",
+      "Atypical: < 6 m and > 9 y often present incompletely; very high coronary aneurysm risk."
+    ],
+    "redFlags": [
+      "Coronary artery aneurysm on echo — Z-score ≥ 2.5 dilation.",
+      "Macrophage activation syndrome (cytopenias, very high ferritin, hepatitis, splenomegaly).",
+      "Shock state (Kawasaki disease shock syndrome — rare, more severe outcomes).",
+      "Refractory disease (persistent fever 36 h after first IVIG)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Echocardiography at diagnosis + 1–2 weeks + 4–6 weeks.",
+        "rationale": "Detect coronary artery dilatation / aneurysm."
+      },
+      {
+        "test": "FBC, CRP, ESR, ALT, sodium, urinalysis.",
+        "rationale": "Inflammation + sterile pyuria support diagnosis."
+      },
+      {
+        "test": "BNP, troponin if myocarditis suspected.",
+        "rationale": "Cardiac involvement."
+      },
+      {
+        "test": "Exclude alternatives (viral, scarlet fever, drug reaction, JIA-SoJIA).",
+        "rationale": "Differential diagnosis."
+      }
+    ],
+    "management": [
+      {
+        "step": "Initial therapy — IVIG + high-dose aspirin",
+        "detail": "IVIG 2 g/kg single dose over 8–12 h. PLUS aspirin 30–50 mg/kg/day (American 80–100 mg/kg/day) divided 6-hourly until afebrile 48 h, then 3–5 mg/kg/day antiplatelet × 6–8 weeks (longer if coronary aneurysm)."
+      },
+      {
+        "step": "High-risk patients — add adjunctive steroids upfront",
+        "detail": "Infants < 1 year, severe coronary dilatation, KDSS, RAISE / Kobayashi high score: IV methylprednisolone 30 mg/kg/day × 3 days OR oral prednisolone 2 mg/kg/day with taper."
+      },
+      {
+        "step": "Refractory KD (fever > 36 h after first IVIG)",
+        "detail": "Second IVIG dose 2 g/kg OR pulsed steroid OR infliximab 5 mg/kg IV OR ciclosporin OR anakinra — under paediatric rheumatology / cardiology guidance."
+      },
+      {
+        "step": "Long-term cardiology follow-up",
+        "detail": "Echo at 6 weeks, then per coronary status. Large or giant aneurysm: dual antiplatelet + warfarin; lifelong cardiology follow-up; stress testing in adulthood."
+      },
+      {
+        "step": "Avoid live vaccines × 11 months after IVIG",
+        "detail": "MMR + varicella delay due to passive antibody interference."
+      },
+      {
+        "step": "Counsel family",
+        "detail": "Recurrence risk ~1–3%; lifelong cardiovascular monitoring even if normal coronaries (subclinical endothelial dysfunction)."
+      }
+    ],
+    "references": [
+      {
+        "label": "AHA Scientific Statement: Diagnosis, Treatment, and Long-Term Management of Kawasaki Disease (2017)"
+      },
+      {
+        "label": "EULAR/PRES recommendations for paediatric KD"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "multisystem-inflammatory-syndrome-children-mis-c",
+    "title": "Multisystem inflammatory syndrome in children (MIS-C)",
+    "icd10": [
+      "M35.81"
+    ],
+    "domains": [
+      "paediatrics",
+      "infectious-disease",
+      "rheumatology",
+      "cardiology",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 19,
+      "sex": "any"
+    },
+    "presentation": [
+      "Child / adolescent < 21 years with persistent fever ≥ 3 days, raised inflammatory markers, multi-organ involvement (≥ 2 systems), and recent SARS-CoV-2 infection or exposure (positive PCR / antigen / antibody, or known contact 4–6 weeks prior).",
+      "Common features: GI (severe abdominal pain, vomiting, diarrhoea — may mimic appendicitis), mucocutaneous (rash, conjunctivitis, swollen lips — overlap with KD), cardiac (myocarditis, coronary dilation, shock), neurological (irritability, headache), haematological."
+    ],
+    "redFlags": [
+      "Cardiogenic shock or distributive shock.",
+      "Severe myocarditis with arrhythmia.",
+      "Coronary aneurysm.",
+      "ARDS, AKI, DIC.",
+      "Macrophage activation features (very high ferritin, cytopenias)."
+    ],
+    "diagnostics": [
+      {
+        "test": "SARS-CoV-2 PCR + antibody, FBC, CRP, ferritin, troponin, BNP, D-dimer, fibrinogen, LFT, U&E, urinalysis.",
+        "rationale": "Confirm post-COVID-19 inflammatory state + identify organ involvement."
+      },
+      {
+        "test": "Echocardiography on admission + serial.",
+        "rationale": "Detect myocarditis, coronary dilation, ventricular dysfunction."
+      },
+      {
+        "test": "ECG.",
+        "rationale": "Arrhythmia, conduction delay."
+      },
+      {
+        "test": "Imaging (CXR, abdominal USS) per organ involvement.",
+        "rationale": "Exclude appendicitis; identify pneumonia, hepatosplenomegaly."
+      },
+      {
+        "test": "Exclude alternative diagnoses (sepsis, KD, JIA-SoJIA, toxic shock).",
+        "rationale": "Diagnostic specificity."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive + ICU level care",
+        "detail": "Manage shock (fluids cautiously; vasopressor noradrenaline first; inotrope if myocardial dysfunction). Lung-protective ventilation if ARDS."
+      },
+      {
+        "step": "IVIG 2 g/kg as first-line immunomodulation",
+        "detail": "Reduces inflammation + cardiac involvement (overlap with Kawasaki regimen). Single dose; may repeat in refractory cases."
+      },
+      {
+        "step": "Methylprednisolone 1–2 mg/kg/day (or pulsed 10–30 mg/kg for severe)",
+        "detail": "Added to IVIG in moderate-severe MIS-C; combination superior to IVIG alone in outcomes (RECOVERY-MISC, Best Available Treatment Study)."
+      },
+      {
+        "step": "Biologic for refractory disease",
+        "detail": "Anakinra 2–10 mg/kg/day (IL-1 antagonist) OR infliximab 5–10 mg/kg OR tocilizumab — under paediatric rheumatology guidance."
+      },
+      {
+        "step": "Anticoagulation",
+        "detail": "Prophylactic enoxaparin for ALL admitted MIS-C; therapeutic dosing if confirmed thrombosis, large coronary aneurysm, or significant LV dysfunction."
+      },
+      {
+        "step": "Aspirin 3–5 mg/kg/day until coronary normal + platelets normal × 4 weeks",
+        "detail": "Antiplatelet for coronary protection."
+      },
+      {
+        "step": "Cardiology + rheumatology + ID follow-up",
+        "detail": "Echo at 2 weeks, 6 weeks, 6 months. Long-term cardiology if coronary involvement. Vaccination guidance + return-to-sport screening."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Multisystem inflammatory syndrome in children and adolescents temporally related to COVID-19 (2020)"
+      },
+      {
+        "label": "ACR Clinical Guidance for the Multisystem Inflammatory Syndrome in Children Associated With SARS-CoV-2"
+      },
+      {
+        "label": "RCPCH MIS-C/PIMS-TS guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-hypothermia",
+    "title": "Severe accidental hypothermia (core temperature < 28°C)",
+    "icd10": [
+      "T68",
+      "T69.9"
+    ],
+    "domains": [
+      "emergency",
+      "critical-care",
+      "trauma",
+      "resuscitation"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Core temperature < 28°C (severe), 28–32°C (moderate), 32–35°C (mild).",
+      "Severe: coma, fixed pupils, severe bradycardia / asystole, no detectable signs of life.",
+      "Increased risk: elderly, alcohol intoxication, drugs (sedatives), hypothyroidism, sepsis, immersion, exposure, homelessness."
+    ],
+    "redFlags": [
+      "Cardiac arrhythmia (J wave, AF, bradycardia, VF) at low temperatures.",
+      "Apparent death — 'NOT DEAD UNTIL WARM AND DEAD' — continue resuscitation until core temp > 32°C.",
+      "Hypoglycaemia (depleted glycogen).",
+      "Acidosis, coagulopathy, rhabdomyolysis.",
+      "Concurrent trauma — secondary survey when stable."
+    ],
+    "diagnostics": [
+      {
+        "test": "Core temperature (oesophageal, rectal, bladder — not tympanic if peripheral).",
+        "rationale": "Accurate severity grading."
+      },
+      {
+        "test": "ECG, ABG, glucose, electrolytes, FBC, coag, CK, ethanol level.",
+        "rationale": "Identify complications."
+      },
+      {
+        "test": "CXR, FAST scan if trauma suspected.",
+        "rationale": "Concurrent injury / aspiration."
+      },
+      {
+        "test": "TSH if elderly / no obvious exposure history.",
+        "rationale": "Hypothyroid myxoedema."
+      }
+    ],
+    "management": [
+      {
+        "step": "ABCDE with GENTLE handling",
+        "detail": "Rough handling can precipitate VF in cold heart. Remove wet clothing; insulate; horizontal position. Avoid hot baths / vigorous rubbing."
+      },
+      {
+        "step": "Cardiopulmonary resuscitation if no signs of life",
+        "detail": "Continuous chest compressions; intubate cautiously (laryngeal stimulation may trigger VF). Withhold drugs and defibrillation initially if core temp < 30°C — generally ineffective."
+      },
+      {
+        "step": "Rewarming — passive then active",
+        "detail": "Mild (32–35°C): passive — remove wet clothing + blankets in warm environment. Moderate (28–32°C): active external — forced-air warming (Bair Hugger), warmed IV fluids 40–42°C, warmed humidified O2 42°C. Severe (< 28°C): active internal — body cavity lavage, haemodialysis, OR extracorporeal life support (ECLS, ECMO) which is the standard of care for haemodynamically unstable hypothermic patients."
+      },
+      {
+        "step": "Defibrillation — single shock then resume CPR",
+        "detail": "If VF persists despite rewarming to 30°C, single shock then continue rewarming + CPR. Multiple shocks generally ineffective < 30°C."
+      },
+      {
+        "step": "Drug therapy — modified",
+        "detail": "Withhold adrenaline, lidocaine, amiodarone < 30°C. > 30°C give standard ACLS doses but consider doubling interval (every 6–10 min instead of 3–5)."
+      },
+      {
+        "step": "Manage rewarming complications",
+        "detail": "Rewarming shock (peripheral vasodilation): fluid bolus. Afterdrop: monitor for paradoxical cooling from peripheral cold blood return. Acidosis, hyperkalaemia — predict outcome; K+ > 12 in adults / > 20 in children suggests irreversibility."
+      },
+      {
+        "step": "Identify and treat cause",
+        "detail": "Sepsis (hypothermia may be sepsis); hypoglycaemia (give 10% dextrose); hypothyroidism (T4 + steroid); alcohol / drug toxicity; underlying trauma."
+      },
+      {
+        "step": "Aftercare",
+        "detail": "ICU monitoring; rewarming injury surveillance; psychological / social support if homeless / addiction; family debrief especially after prolonged resuscitation."
+      }
+    ],
+    "references": [
+      {
+        "label": "ERC Guidelines 2021 — Hypothermia"
+      },
+      {
+        "label": "Wilderness Medical Society Practice Guidelines for the Out-of-Hospital Evaluation and Treatment of Accidental Hypothermia"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "heat-stroke-severe",
+    "title": "Severe heat stroke (classical and exertional)",
+    "icd10": [
+      "T67.0"
+    ],
+    "domains": [
+      "emergency",
+      "critical-care",
+      "sports-medicine"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Core temperature > 40°C with CNS dysfunction (altered consciousness, seizure, coma, ataxia).",
+      "Classical: elderly / chronically ill in heat wave; minimal sweating, hot dry skin.",
+      "Exertional: young athlete / military / labourer during exertion in heat; usually sweating, lactic acidosis, rhabdomyolysis.",
+      "Multi-organ failure: AKI, DIC, hepatic failure, ARDS."
+    ],
+    "redFlags": [
+      "Core temperature > 42°C.",
+      "Coma, seizures.",
+      "DIC, severe rhabdomyolysis (CK > 50 000), AKI.",
+      "Hepatic failure with INR > 2.",
+      "Children, elderly, comorbid cardiac/renal — higher mortality."
+    ],
+    "diagnostics": [
+      {
+        "test": "Continuous core temperature (rectal or oesophageal).",
+        "rationale": "Track cooling."
+      },
+      {
+        "test": "FBC, U&E, glucose, LFT (ALT often 5000+), CK, coag, lactate, ABG.",
+        "rationale": "Multi-organ assessment."
+      },
+      {
+        "test": "ECG.",
+        "rationale": "Arrhythmia, MI, electrolyte changes."
+      },
+      {
+        "test": "Urinalysis for myoglobin; urine output.",
+        "rationale": "Rhabdomyolysis + renal function."
+      }
+    ],
+    "management": [
+      {
+        "step": "Rapid cooling — 'cool first, transport second' for exertional heat stroke",
+        "detail": "Cold-water immersion (2–14°C tub) — gold standard for exertional; cool by ~0.2°C/min, stop at 38.5–39.0°C. Alternative for classical / unstable: evaporative cooling (mist + fan), ice packs to groin / axillae / neck, cold IV fluids. Avoid antipyretics (paracetamol / NSAID) — ineffective + hepatic / renal toxicity."
+      },
+      {
+        "step": "ABC support",
+        "detail": "Intubate if unconscious / convulsing. IV fluid resuscitation (caution — avoid overload; goal urine output 0.5–1 mL/kg/h). Vasopressor if hypotensive after fluids."
+      },
+      {
+        "step": "Manage seizures + rhabdomyolysis",
+        "detail": "Benzodiazepine for seizures; treat rhabdomyolysis (IV fluid, maintain urine output, alkalinise urine if myoglobinuric); RRT for severe AKI / hyperkalaemia."
+      },
+      {
+        "step": "Treat DIC, hepatic failure, ARDS",
+        "detail": "FFP, cryoprecipitate, platelets per coag; NAC for hepatic injury; lung-protective ventilation."
+      },
+      {
+        "step": "STOP cooling at 38.5–39°C",
+        "detail": "Continue cooling causes hypothermia; reassess every 5 min."
+      },
+      {
+        "step": "Avoid",
+        "detail": "Dantrolene (proven not effective — different mechanism to malignant hyperthermia). Antibiotics (unless co-existing sepsis). Antipyretics."
+      },
+      {
+        "step": "Post-acute rehabilitation",
+        "detail": "Many patients have persistent thermoregulatory dysfunction for months; avoid heat exposure × 6–12 months; gradual return to activity under guidance."
+      }
+    ],
+    "references": [
+      {
+        "label": "Korey Stringer Institute Best Practice on Exertional Heat Stroke"
+      },
+      {
+        "label": "Wilderness Medical Society Practice Guidelines for Heat-Related Illness"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "drowning-submersion-injury",
+    "title": "Drowning and submersion injury",
+    "icd10": [
+      "T75.1",
+      "W74"
+    ],
+    "domains": [
+      "emergency",
+      "critical-care",
+      "trauma",
+      "paediatrics",
+      "resuscitation"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Submersion in water (fresh or salt) with associated hypoxia and aspiration.",
+      "Spectrum: minimal aspiration (transient hypoxia) → severe hypoxic injury → cardiac arrest.",
+      "Often hypothermic concurrently; cervical injury if diving."
+    ],
+    "redFlags": [
+      "Cardiac arrest at scene — start resuscitation; outcomes can be excellent with prompt high-quality CPR.",
+      "GCS ≤ 8, severe hypoxia, ARDS.",
+      "Suspected cervical spine injury (dive into shallow water, surf).",
+      "Concomitant alcohol / drug intoxication.",
+      "Children in lukewarm water (bathtub) — child protection screen."
+    ],
+    "diagnostics": [
+      {
+        "test": "ABG, lactate, glucose, electrolytes, FBC, coag.",
+        "rationale": "Quantify hypoxia + identify aspiration / electrolyte changes."
+      },
+      {
+        "test": "Core temperature.",
+        "rationale": "Often coexistent hypothermia changes management."
+      },
+      {
+        "test": "CXR (initial often normal; aspirate evolves over 24 h); CT head + C-spine if dive / trauma.",
+        "rationale": "Pulmonary injury + concurrent trauma."
+      },
+      {
+        "test": "ECG.",
+        "rationale": "Identify primary cause (e.g. LQTS triggering drowning in swimmers)."
+      },
+      {
+        "test": "Toxicology screen, BAC.",
+        "rationale": "Identify intoxication."
+      }
+    ],
+    "management": [
+      {
+        "step": "On scene + transport",
+        "detail": "Rescuer safety FIRST. Standard BLS — emphasise 5 initial rescue breaths (hypoxia is the driving injury). Cervical-spine precautions ONLY if diving / surf or clear signs of injury."
+      },
+      {
+        "step": "Hospital — airway + ventilation",
+        "detail": "Intubate if GCS ≤ 8, severe hypoxia, exhaustion. Lung-protective ventilation; PEEP for hypoxaemia (often need higher PEEP). HFNC / CPAP for milder cases."
+      },
+      {
+        "step": "Manage hypoxic brain injury",
+        "detail": "Avoid hyper / hypocapnia, maintain normoxia, head elevation, treat seizures. Targeted temperature management 32–36°C × 24 h for post-arrest CPR — beneficial in cardiac-arrest drowning."
+      },
+      {
+        "step": "Treat hypothermia concurrently",
+        "detail": "Per hypothermia pathway; rewarm to 36°C; avoid hyperthermia."
+      },
+      {
+        "step": "Pulmonary management",
+        "detail": "No prophylactic antibiotics or steroids. Treat aspiration pneumonia later if infection develops (CXR change + clinical). ARDS supportive."
+      },
+      {
+        "step": "Discharge or observation",
+        "detail": "Asymptomatic, normal CXR, normal SpO2 — observe 4–8 h then discharge with safety-netting. ANY symptomatic patient — admit for at least 24 h."
+      },
+      {
+        "step": "Prevent recurrence",
+        "detail": "Swimming education; pool fencing; supervision of children; CPR training for caregivers; alcohol-and-water counselling."
+      }
+    ],
+    "references": [
+      {
+        "label": "ILCOR Drowning Recommendations 2020"
+      },
+      {
+        "label": "WHO Global Report on Drowning"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "ruptured-abdominal-aortic-aneurysm",
+    "title": "Ruptured abdominal aortic aneurysm (rAAA)",
+    "icd10": [
+      "I71.3"
+    ],
+    "domains": [
+      "vascular",
+      "surgery",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 50,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden severe abdominal / back / flank pain, often with collapse / hypotension.",
+      "Pulsatile abdominal mass; sometimes Cullen / Grey-Turner sign.",
+      "Risk factors: male, age > 65, smoking, hypertension, family history, atherosclerotic disease.",
+      "Classic triad (pain, hypotension, pulsatile mass) in ~50%."
+    ],
+    "redFlags": [
+      "Haemodynamic instability — to theatre IMMEDIATELY.",
+      "Loss of consciousness, cardiac arrest.",
+      "Ureteric colic / 'renal stone' in older male — consider rAAA mimic.",
+      "Coagulopathy from massive transfusion / DIC."
+    ],
+    "diagnostics": [
+      {
+        "test": "Bedside USS (FAST) — first line; identifies aneurysm + free fluid.",
+        "rationale": "Rapid bedside diagnosis; sensitive for aneurysm but less for rupture."
+      },
+      {
+        "test": "CT angiogram if haemodynamically stable enough.",
+        "rationale": "Defines anatomy + EVAR suitability."
+      },
+      {
+        "test": "Group + crossmatch ≥ 10 units; activate massive transfusion protocol.",
+        "rationale": "Prepare for massive haemorrhage."
+      },
+      {
+        "test": "FBC, U&E, coag, blood gas, lactate, troponin.",
+        "rationale": "Severity + comorbid disease screen."
+      }
+    ],
+    "management": [
+      {
+        "step": "Permissive hypotension",
+        "detail": "Target SBP 70–90 mmHg / palpable radial pulse (mental status preserved) — over-resuscitation worsens bleeding by raising intraluminal pressure and disrupting clot."
+      },
+      {
+        "step": "Two large-bore IVs + central + arterial line in theatre",
+        "detail": "Massive transfusion 1:1:1 ratio. Avoid crystalloid where possible — use blood + FFP + platelets."
+      },
+      {
+        "step": "Open vs endovascular repair (EVAR)",
+        "detail": "EVAR — first-line where anatomy suitable + centre experienced; lower 30-day mortality. Open repair for hostile neck anatomy / EVAR unsuitable. IMPROVE trial: EVAR-first strategy associated with better long-term outcome."
+      },
+      {
+        "step": "Anaesthesia + theatre",
+        "detail": "Permissive hypotension until aortic clamp; rapid sequence induction; have surgeon ready to clamp BEFORE induction in unstable patient. Cell salvage."
+      },
+      {
+        "step": "Post-op ICU",
+        "detail": "Manage compartment syndrome (abdominal — IAP monitoring), MI, AKI (often pre-existing + ischaemia/reperfusion), bowel ischaemia (look for lactic acidosis day 1–3)."
+      },
+      {
+        "step": "Long-term + secondary prevention",
+        "detail": "Smoking cessation; BP control; statin; aspirin; AAA surveillance for contralateral aneurysm. Family screening of first-degree relatives."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESVS Clinical Practice Guidelines on the Management of Abdominal Aorto-Iliac Artery Aneurysms (2024)"
+      },
+      {
+        "label": "IMPROVE trial Lancet 2014 — endovascular vs open"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "acute-limb-ischaemia",
+    "title": "Acute limb ischaemia",
+    "icd10": [
+      "I74.3",
+      "I74.2"
+    ],
+    "domains": [
+      "vascular",
+      "surgery",
+      "emergency",
+      "cardiology"
+    ],
+    "population": {
+      "minAgeYears": 30,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden onset of '6 Ps': Pain, Pallor, Pulselessness, Paraesthesia, Paralysis, Perishing cold.",
+      "Causes: embolus (60% — cardiac AF, mural thrombus, endocarditis), in-situ thrombosis (40% — on PAD), trauma, dissection, graft occlusion.",
+      "Rutherford classification: I viable; IIa marginally threatened (rest pain, mild sensory loss); IIb immediately threatened (paralysis, severe pain); III irreversible (anaesthesia, paralysis, mottling)."
+    ],
+    "redFlags": [
+      "Rutherford IIb — surgical emergency within 4–6 hours to save limb.",
+      "Rutherford III (irreversible) — primary amputation; revascularisation futile.",
+      "Compartment syndrome post-revascularisation — prophylactic fasciotomy if > 6 h ischaemia.",
+      "Reperfusion injury — rhabdomyolysis, hyperkalaemia, lactic acidosis, AKI."
+    ],
+    "diagnostics": [
+      {
+        "test": "Bedside Doppler ankle + foot signals.",
+        "rationale": "Confirm absence + level."
+      },
+      {
+        "test": "CT angiogram (or MRA, conventional angiogram) if stable.",
+        "rationale": "Define anatomy."
+      },
+      {
+        "test": "ECG (AF), echo (cardiac source).",
+        "rationale": "Identify embolic source."
+      },
+      {
+        "test": "FBC, U&E, CK, coagulation, group + save.",
+        "rationale": "Baseline + screen for thrombophilia / prepare for surgery."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immediate IV heparin",
+        "detail": "Bolus 80 units/kg (max 5000) IV then infusion targeting aPTT 1.5–2.5× control. Reduces propagation of thrombus."
+      },
+      {
+        "step": "Analgesia + supportive",
+        "detail": "IV opioid; keep limb at heart level (NOT elevated — increases ischaemia); warmth without direct heat."
+      },
+      {
+        "step": "Definitive revascularisation",
+        "detail": "Embolic: surgical embolectomy with Fogarty catheter (most embolectomies done < 12 h ischaemia). Thrombotic in-situ: catheter-directed thrombolysis (CDT) over 12–24 h, then treat underlying lesion (angioplasty / bypass). Combined surgical + endovascular common."
+      },
+      {
+        "step": "Fasciotomy after long ischaemia",
+        "detail": "Consider prophylactic four-compartment fasciotomy when revascularising > 6 h ischaemia, or for clinical compartment syndrome."
+      },
+      {
+        "step": "Manage reperfusion injury",
+        "detail": "Aggressive IV fluid resuscitation; alkalinise urine if myoglobinuric; correct hyperkalaemia; RRT if AKI."
+      },
+      {
+        "step": "Identify and treat cause",
+        "detail": "Cardiac embolism: anticoagulate (DOAC / warfarin); manage AF. PAD: statin, antiplatelet, smoking cessation, structured exercise, future surveillance."
+      },
+      {
+        "step": "Amputation when limb non-salvageable",
+        "detail": "Rutherford III; ongoing necrosis with sepsis; functional outcome poor with delayed revascularisation. Multidisciplinary decision with patient + family."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESVS Clinical Practice Guideline on Acute Limb Ischaemia (2020)"
+      },
+      {
+        "label": "Society for Vascular Surgery clinical guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "cerebral-malaria-child-adult",
+    "title": "Cerebral malaria — child + adult",
+    "icd10": [
+      "B50.0"
+    ],
+    "domains": [
+      "infectious-disease",
+      "tropical",
+      "neurology",
+      "emergency",
+      "critical-care",
+      "child-health"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Confirmed P. falciparum parasitaemia (RDT or microscopy) WITH unrousable coma (GCS < 11 / Blantyre coma score < 3 in children) not attributable to other cause.",
+      "Often preceded by fever, headache, vomiting, repeated seizures.",
+      "Children: rapid progression to coma over hours-days; mortality 15–25%.",
+      "Adults: typically slower onset, more multi-organ failure."
+    ],
+    "redFlags": [
+      "Status epilepticus.",
+      "Severe anaemia (Hb < 5), shock, ARDS, AKI, jaundice, lactic acidosis (lactate > 5 mmol/L), hypoglycaemia, hyperparasitaemia (> 10%).",
+      "Pregnancy — maternal + fetal high-risk.",
+      "Co-infection (bacterial sepsis — Salmonella common in Africa).",
+      "Long-term neurodevelopmental sequelae in surviving children (25–35%)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Blood smear + RDT (HRP-2 / pLDH).",
+        "rationale": "Confirm + quantify parasitaemia."
+      },
+      {
+        "test": "Capillary glucose hourly (hypoglycaemia very common, especially on quinine + in children).",
+        "rationale": "Reversible coma cause."
+      },
+      {
+        "test": "FBC, U&E, blood gas, lactate, glucose, LFT, coag, urine output.",
+        "rationale": "Severity organ-by-organ."
+      },
+      {
+        "test": "LP if no contraindication — exclude bacterial meningitis as concurrent.",
+        "rationale": "Differential / co-infection."
+      },
+      {
+        "test": "Blood culture — Salmonella co-bacteraemia common in African children with severe malaria.",
+        "rationale": "Add empirical antibiotic."
+      }
+    ],
+    "management": [
+      {
+        "step": "IV artesunate IMMEDIATELY — first-line parenteral antimalarial",
+        "detail": "2.4 mg/kg IV at 0, 12, 24 h then daily until oral therapy possible (minimum 3 doses + once eating). Paediatric < 20 kg: 3 mg/kg per dose. Switch to full 3-day course of oral ACT once tolerating."
+      },
+      {
+        "step": "If artesunate unavailable — IM artemether or IV quinine",
+        "detail": "Artemether 3.2 mg/kg IM loading then 1.6 mg/kg daily. Quinine loading 20 mg/kg IV over 4 h then 10 mg/kg every 8 h with cardiac monitor — hypoglycaemia risk."
+      },
+      {
+        "step": "Empirical antibiotic for severe paediatric malaria",
+        "detail": "IV ceftriaxone 80 mg/kg/day — Salmonella co-bacteraemia. Adults with severe disease + shock / AKI: also cover empirically."
+      },
+      {
+        "step": "Treat hypoglycaemia",
+        "detail": "10% dextrose 5 mL/kg bolus then maintenance — recheck glucose hourly."
+      },
+      {
+        "step": "Manage seizures",
+        "detail": "Benzodiazepine then phenobarbital / levetiracetam. AVOID prophylactic phenobarbital (PEMC trial — increased mortality)."
+      },
+      {
+        "step": "Severe anaemia management",
+        "detail": "Transfuse if Hb < 5 g/dL OR Hb 5–6 with respiratory distress / cardiac failure / parasitaemia > 10%. Use whole blood or packed cells."
+      },
+      {
+        "step": "Fluid resuscitation — RESTRICTIVE",
+        "detail": "Avoid aggressive boluses (FEAST trial in non-shocked African children showed harm). Cautious maintenance only; specific small boluses if truly shocked."
+      },
+      {
+        "step": "AKI / dialysis",
+        "detail": "AKI common in adults; haemodialysis indicated for uraemia / hyperkalaemia / fluid overload."
+      },
+      {
+        "step": "Convalescent care",
+        "detail": "Watch for post-artesunate delayed haemolytic anaemia (check Hb weekly × 4 weeks). Neurodevelopmental follow-up for child survivors. Vector control + chemoprophylaxis counselling."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Guidelines for the treatment of malaria 3rd ed. (2015, 2021 update)"
+      },
+      {
+        "label": "WHO Severe malaria (Trop Med Int Health supplement)"
+      },
+      {
+        "label": "AQUAMAT trial Lancet 2010"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-dengue-shock-syndrome",
+    "title": "Severe dengue (dengue with severe plasma leak / haemorrhage / organ involvement)",
+    "icd10": [
+      "A91"
+    ],
+    "domains": [
+      "infectious-disease",
+      "tropical",
+      "outbreak",
+      "emergency",
+      "critical-care",
+      "paediatrics"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Day 4–7 of febrile illness in dengue-endemic area: 'critical phase' begins as fever defervesces; plasma leak peaks.",
+      "Severe plasma leak: rapid pulse pressure narrowing < 20 mmHg, hypotension, ascites, pleural effusion.",
+      "Severe bleeding: GI, intracerebral; thrombocytopenia (typically < 50, often < 20).",
+      "Severe organ impairment: liver (AST/ALT > 1000), CNS (encephalopathy), heart (myocarditis), AKI."
+    ],
+    "redFlags": [
+      "Warning signs (WHO): abdominal pain, persistent vomiting, fluid accumulation, mucosal bleed, lethargy / restlessness, liver > 2 cm, rising HCT with rapid platelet fall.",
+      "Compensated shock → decompensated shock progression.",
+      "Massive bleeding.",
+      "Pregnancy — higher maternal + fetal risk.",
+      "Multi-organ failure."
+    ],
+    "diagnostics": [
+      {
+        "test": "Dengue NS1 antigen (day 1–5), IgM/IgG (day 5+), dengue PCR (day 0–4).",
+        "rationale": "Confirm aetiology + serotype."
+      },
+      {
+        "test": "Daily FBC — track HCT + platelet trend.",
+        "rationale": "Rising HCT + falling platelets predict plasma leak."
+      },
+      {
+        "test": "U&E, LFT, blood gas, lactate, coagulation.",
+        "rationale": "Severity stratification."
+      },
+      {
+        "test": "USS chest + abdomen for plasma leak signs.",
+        "rationale": "Identify pleural effusion + ascites."
+      },
+      {
+        "test": "ECG if myocarditis suspected.",
+        "rationale": "Rare but reported."
+      }
+    ],
+    "management": [
+      {
+        "step": "Phase-based management (WHO 2009 classification)",
+        "detail": "Febrile phase: paracetamol (AVOID aspirin, NSAID, IM injections, steroids). Critical phase (day 4–7): close monitoring of HCT + vital signs every 2–4 h. Recovery phase (day 7+): reabsorption of leaked fluid — restrict fluids to avoid overload."
+      },
+      {
+        "step": "Group A (no warning signs): outpatient ORS + monitoring",
+        "detail": "Encourage oral fluids; daily FBC; safety-net for warning signs."
+      },
+      {
+        "step": "Group B (warning signs): IV isotonic fluid in hospital",
+        "detail": "0.9% NaCl OR Hartmann's 5–7 mL/kg/h × 1–2 h, reduce to 3–5 then 2–3 mL/kg/h, titrate to HCT + vital signs + urine output 0.5 mL/kg/h. Reassess every 2 h."
+      },
+      {
+        "step": "Group C (severe dengue with shock): aggressive resuscitation",
+        "detail": "Compensated shock: 10–20 mL/kg isotonic over 1 h, reassess; if responding reduce rate as above. Decompensated: 20 mL/kg over 15 min, repeat; if still in shock consider colloid (gelofusin / albumin) and search for occult bleed."
+      },
+      {
+        "step": "Severe bleeding",
+        "detail": "Packed red cells 5–10 mL/kg (don't wait for low Hb if active bleed + shock). FFP / cryoprecipitate / platelet only for actively bleeding patient — NOT prophylactic at any platelet level."
+      },
+      {
+        "step": "Avoid",
+        "detail": "Prophylactic platelet transfusion (no evidence benefit; cost + transfusion reaction). Aspirin / NSAIDs (bleeding). IM injections (haematoma). Routine steroids (no benefit; may worsen)."
+      },
+      {
+        "step": "Recovery phase fluid management",
+        "detail": "Reabsorption of leaked fluid → risk pulmonary oedema. Reduce IV fluids when HCT drops to baseline; consider furosemide for overload."
+      },
+      {
+        "step": "Public-health response",
+        "detail": "Vector control (Aedes aegypti); community education; outbreak surveillance; notifiable disease."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Dengue: Guidelines for diagnosis, treatment, prevention and control (2009)"
+      },
+      {
+        "label": "WHO Handbook for clinical management of dengue (2012)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "acute-rheumatic-fever",
+    "title": "Acute rheumatic fever",
+    "icd10": [
+      "I00",
+      "I01.0",
+      "I01.1",
+      "I01.2"
+    ],
+    "domains": [
+      "paediatrics",
+      "cardiology",
+      "rheumatology",
+      "infectious-disease"
+    ],
+    "population": {
+      "minAgeYears": 4,
+      "maxAgeYears": 25,
+      "sex": "any"
+    },
+    "presentation": [
+      "Onset 2–4 weeks after group A streptococcal pharyngitis (or skin infection in some regions).",
+      "Jones criteria (revised 2015) — moderate-high-risk populations:",
+      "Major: carditis (clinical OR subclinical on echo), polyarthritis or aseptic monoarthritis or polyarthralgia (in high-risk), chorea (Sydenham), erythema marginatum, subcutaneous nodules.",
+      "Minor: monoarthralgia, fever ≥ 38°C, ESR ≥ 30 / CRP ≥ 30, prolonged PR.",
+      "Diagnosis: 2 major + evidence of preceding GAS OR 1 major + 2 minor + evidence of preceding GAS."
+    ],
+    "redFlags": [
+      "Heart failure from carditis — admit, treat with diuretic / ACEi / steroid for severe.",
+      "Severe chorea — risk of self-injury.",
+      "Recurrent ARF — accelerated valve damage.",
+      "Pregnancy with rheumatic heart disease — high maternal mortality, multidisciplinary plan."
+    ],
+    "diagnostics": [
+      {
+        "test": "ASO + anti-DNase B titres (rising or high).",
+        "rationale": "Evidence of preceding GAS infection."
+      },
+      {
+        "test": "Throat swab for GAS culture / rapid antigen.",
+        "rationale": "Often negative by the time ARF presents but worth attempting."
+      },
+      {
+        "test": "ECG (prolonged PR, AV block); CXR (cardiomegaly, pulmonary congestion).",
+        "rationale": "Cardiac involvement."
+      },
+      {
+        "test": "Echocardiography — Doppler — for subclinical valvulitis.",
+        "rationale": "Even when clinical exam unremarkable; especially required by revised Jones criteria."
+      },
+      {
+        "test": "FBC, ESR, CRP.",
+        "rationale": "Minor criteria."
+      }
+    ],
+    "management": [
+      {
+        "step": "Antibiotic to eradicate GAS",
+        "detail": "Single IM benzathine benzylpenicillin 1.2 million units (600 000 if < 27 kg). Alternative: oral phenoxymethylpenicillin 500 mg BID × 10 days. Macrolide if penicillin allergy."
+      },
+      {
+        "step": "Anti-inflammatory for arthritis + carditis",
+        "detail": "Aspirin 80–100 mg/kg/day in 4 divided doses (max 4 g/day) — taper over 6 weeks; OR naproxen 10–20 mg/kg/day. For severe carditis with heart failure: prednisolone 1–2 mg/kg/day (max 60 mg) for 2 weeks then taper."
+      },
+      {
+        "step": "Manage chorea",
+        "detail": "Bed rest + reassurance; pharmacotherapy only for severe (carbamazepine 7–20 mg/kg/day or sodium valproate 15–20 mg/kg/day); IVIG / steroid for refractory."
+      },
+      {
+        "step": "Manage heart failure",
+        "detail": "Diuretic, ACEi, beta-blocker per HF guidelines; valve surgery for severe regurgitation."
+      },
+      {
+        "step": "Secondary prophylaxis — LIFELONG OR EXTENDED",
+        "detail": "IM benzathine benzylpenicillin 1.2 million units every 21–28 days (or 4-weekly). Duration: 5 years OR until age 21 (no carditis); 10 years OR until age 21 (carditis without persistent valve disease); LIFELONG (persistent valve disease, valve surgery)."
+      },
+      {
+        "step": "Echocardiographic follow-up",
+        "detail": "Annual echo for those with subclinical or clinical carditis. Specialist cardiology + cardiothoracic for valve surgery."
+      },
+      {
+        "step": "Public-health programme participation",
+        "detail": "Register patient with rheumatic heart disease control programme; community health worker delivery of benzathine; family screening."
+      }
+    ],
+    "references": [
+      {
+        "label": "AHA Revision of the Jones Criteria for the Diagnosis of Acute Rheumatic Fever (2015)"
+      },
+      {
+        "label": "WHO Rheumatic fever and rheumatic heart disease — Technical report series"
+      },
+      {
+        "label": "Australian guideline for prevention, diagnosis and management of acute rheumatic fever and rheumatic heart disease"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "haemolytic-uraemic-syndrome",
+    "title": "Haemolytic uraemic syndrome (HUS)",
+    "icd10": [
+      "D59.3"
+    ],
+    "domains": [
+      "paediatrics",
+      "nephrology",
+      "haematology",
+      "infectious-disease"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Classic triad: microangiopathic haemolytic anaemia + thrombocytopenia + AKI.",
+      "Typical (STEC-HUS): preceded by bloody diarrhoea from Shiga-toxin-producing E. coli O157:H7 (or non-O157), Shigella, Salmonella — peak 1–10 days after onset of diarrhoea.",
+      "Atypical HUS (aHUS): complement-mediated, no preceding diarrhoea, often familial / recurrent — eculizumab treatable.",
+      "Children typically 6 months – 5 years."
+    ],
+    "redFlags": [
+      "Anuria — severe AKI; may need RRT.",
+      "Encephalopathy / seizures — CNS thrombotic microangiopathy.",
+      "Severe hypertension.",
+      "Severe pancreatitis, intestinal necrosis.",
+      "aHUS suspected (no diarrhoea, recurrence, family history) — specialist evaluation for eculizumab."
+    ],
+    "diagnostics": [
+      {
+        "test": "FBC + blood film (schistocytes, low platelets, microangiopathic haemolytic anaemia).",
+        "rationale": "Diagnostic triad."
+      },
+      {
+        "test": "LDH (high), bilirubin (indirect raised), haptoglobin (low), direct antiglobulin (negative — distinguishes from autoimmune).",
+        "rationale": "Confirm haemolysis."
+      },
+      {
+        "test": "U&E, creatinine; urinalysis.",
+        "rationale": "AKI severity."
+      },
+      {
+        "test": "Stool culture for STEC + Shiga-toxin EIA + PCR; stool for Shigella.",
+        "rationale": "Identify cause (typical)."
+      },
+      {
+        "test": "Complement testing (CH50, C3, C4, ADAMTS13 activity) — distinguish aHUS from TTP.",
+        "rationale": "If atypical / no diarrhoea / recurrent."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive care — mainstay for STEC-HUS",
+        "detail": "Strict fluid balance; correct electrolytes (especially K+); pain control; antiemetic; bowel rest if severe colitis."
+      },
+      {
+        "step": "Renal replacement therapy when indicated",
+        "detail": "Indications: uraemia, fluid overload, severe metabolic acidosis, hyperkalaemia, anuria > 24 h. Peritoneal dialysis often used in children."
+      },
+      {
+        "step": "Transfusion for severe anaemia / bleeding",
+        "detail": "Packed red cells for Hb < 6 g/dL or symptomatic. Platelet transfusion ONLY for active bleeding or invasive procedure (may worsen thrombosis)."
+      },
+      {
+        "step": "AVOID in STEC-HUS",
+        "detail": "Antibiotics for STEC enteric infection (may worsen HUS risk by increasing Shiga-toxin release — controversial but generally avoided in O157:H7). Antimotility agents. Routine prophylactic platelet transfusion."
+      },
+      {
+        "step": "Eculizumab — for atypical HUS or severe / refractory STEC-HUS with CNS involvement",
+        "detail": "Anti-C5 monoclonal antibody — give meningococcal vaccine 2 weeks before (or peri-administration with prophylactic antibiotics). Continued lifelong in aHUS unless transplant + complement-uninvolved donor."
+      },
+      {
+        "step": "Long-term follow-up",
+        "detail": "All STEC-HUS survivors need nephrology follow-up — chronic CKD develops in 25–30% over years (proteinuria, hypertension, declining GFR). Annual BP, urinalysis, eGFR."
+      },
+      {
+        "step": "Public-health response",
+        "detail": "Notifiable disease. Trace E. coli outbreak source; food safety; hand hygiene. Family / nursery contact screening."
+      }
+    ],
+    "references": [
+      {
+        "label": "KDIGO Clinical Practice Guideline on Glomerular Diseases (2021) — Thrombotic microangiopathy"
+      },
+      {
+        "label": "European Paediatric STEC-HUS guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "botulism-foodborne-wound-infant",
+    "title": "Botulism (foodborne, wound, infant) — clinical recognition + antitoxin",
+    "icd10": [
+      "A05.1"
+    ],
+    "domains": [
+      "infectious-disease",
+      "neurology",
+      "emergency",
+      "critical-care",
+      "paediatrics"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Symmetric descending flaccid paralysis — cranial nerves first (diplopia, dysarthria, dysphagia, ptosis) → respiratory → limb.",
+      "PRESERVED sensation, no fever (unless wound infection), pupils may be fixed dilated.",
+      "Foodborne: 12–36 h after home-canned vegetables, fermented fish, honey (infant).",
+      "Wound: IV drug users (black tar heroin), trauma.",
+      "Infant (< 12 months): constipation, weak cry, poor feeding, floppy ('floppy infant'); often honey or environmental spores."
+    ],
+    "redFlags": [
+      "Respiratory failure — may develop rapidly.",
+      "Severe bulbar weakness with secretion pooling — aspiration.",
+      "Suspected outbreak (multiple cases) — public-health emergency.",
+      "Differential: Guillain-Barré (ascending; preserved cranial nerves often), myasthenia gravis (asymmetric / fatigue), Lambert-Eaton, stroke."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis — DO NOT delay antitoxin for tests.",
+        "rationale": "Time-critical."
+      },
+      {
+        "test": "Serum + stool + wound + food samples to public-health laboratory for toxin detection (mouse bioassay).",
+        "rationale": "Confirmatory + outbreak investigation."
+      },
+      {
+        "test": "Electromyography (EMG) with repetitive stimulation (incremental response).",
+        "rationale": "Pre-synaptic neuromuscular junction failure pattern."
+      },
+      {
+        "test": "Serial FVC, single-breath count.",
+        "rationale": "Track respiratory function."
+      },
+      {
+        "test": "Stool culture for C. botulinum + Shiga toxin (infant botulism).",
+        "rationale": "Aetiology + differential."
+      }
+    ],
+    "management": [
+      {
+        "step": "Notify public health IMMEDIATELY",
+        "detail": "Botulism is a public-health emergency in most jurisdictions — outbreak investigation + antitoxin sourced via public-health laboratory."
+      },
+      {
+        "step": "Equine heptavalent antitoxin (foodborne / wound) — adult + children > 1 year",
+        "detail": "Single vial IV — neutralises circulating toxin (does NOT reverse paralysis already established). Skin test for hypersensitivity per local protocol. Give as soon as suspected — do not wait for lab confirmation."
+      },
+      {
+        "step": "Human botulism immune globulin (BabyBIG) — infant botulism",
+        "detail": "Specific human-derived; rapid IV. Reduces hospitalisation duration significantly. Source through national infant botulism programme."
+      },
+      {
+        "step": "Respiratory support",
+        "detail": "Intubate ELECTIVELY for FVC < 30%, declining trajectory, or bulbar weakness. May need ventilation weeks-months. Tracheostomy when prolonged."
+      },
+      {
+        "step": "Wound source control",
+        "detail": "Wound botulism: surgical debridement + IV penicillin G or metronidazole (NOT aminoglycoside — worsens NM blockade)."
+      },
+      {
+        "step": "AVOID aminoglycoside antibiotics",
+        "detail": "Worsen neuromuscular blockade. If antibiotic needed, use β-lactams or metronidazole."
+      },
+      {
+        "step": "Supportive ICU + rehabilitation",
+        "detail": "DVT prophylaxis; nutritional support; pressure-area care; eye lubricants for fixed eye opening; psychological support. Slow recovery (weeks-months); near-full neurological recovery typical with supportive care."
+      },
+      {
+        "step": "Prevention + family education",
+        "detail": "Avoid honey < 12 months. Safe home-canning (pressure cook at 116°C × 30 min). Address IV drug-use harm reduction. Outbreak response: trace source, recall food, identify other exposed."
+      }
+    ],
+    "references": [
+      {
+        "label": "CDC botulism guidance"
+      },
+      {
+        "label": "WHO Botulism fact sheet"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]

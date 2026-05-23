@@ -4376,5 +4376,453 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "tof-hypercyanotic-spell",
+    "hook": "patient-view",
+    "type": "tof-hypercyanotic-spell",
+    "services": [
+      "vedamd-tof-spell"
+    ],
+    "title": "TOF hypercyanotic spell management",
+    "description": "Fires for known TOF or undiagnosed cyanotic CHD with acute SpO2 fall + hyperpnoea. Recommends knee-chest position, calm + O2, morphine, fluid bolus, phenylephrine, propranolol. WARNS against inotropes that worsen RVOT obstruction. Reads context.knownTof, context.suspectedCyanoticCHD, context.spO2, context.heartRate — never patient identity.",
+    "references": [
+      {
+        "label": "AHA Guidelines for CHD; Park's Pediatric Cardiology"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q21.3",
+        "display": "Tetralogy of Fallot",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ductal-dependent-prostaglandin",
+    "hook": "patient-view",
+    "type": "ductal-dependent-prostaglandin",
+    "services": [
+      "vedamd-ductal-dependent"
+    ],
+    "title": "Suspected ductal-dependent CHD — start prostaglandin",
+    "description": "Fires for newborn (≤ 28 days) presenting with cyanosis OR shock + weak femoral pulses OR pre/post-ductal SpO2 differential > 3%. Recommends IV alprostadil (PGE1) 0.05 microgram/kg/min IMMEDIATELY pending echo; prepare for intubation (apnoea risk); avoid hyperoxia in ductal-dependent systemic lesion. Reads context.ageDays, context.spO2PreDuctal, context.spO2PostDuctal, context.femoralPulse, context.shock — never patient identity.",
+    "references": [
+      {
+        "label": "AHA/AAP Critical CHD pulse-oximetry screening"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q24.9",
+        "display": "Congenital heart disease unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "paediatric-svt-adenosine",
+    "hook": "patient-view",
+    "type": "paediatric-svt-adenosine",
+    "services": [
+      "vedamd-paeds-svt"
+    ],
+    "title": "Paediatric SVT — vagal then adenosine pathway",
+    "description": "Fires for narrow-complex tachycardia: infant > 220, child > 180, adolescent > 150. Recommends vagal manoeuvres first; adenosine 0.1 mg/kg rapid IV (escalate 0.2; max 12 mg single dose); synchronised cardioversion 0.5–1 J/kg if unstable. WARNS against verapamil in infants. Reads context.ageYears, context.heartRate, context.systolicMmHg, context.gcs — never patient identity.",
+    "references": [
+      {
+        "label": "PALS Tachyarrhythmia algorithm"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I47.1",
+        "display": "Supraventricular tachycardia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-bronchiolitis-supportive",
+    "hook": "patient-view",
+    "type": "severe-bronchiolitis-supportive",
+    "services": [
+      "vedamd-severe-bronchiolitis"
+    ],
+    "title": "Severe bronchiolitis — supportive-only pathway",
+    "description": "Fires for infant < 1 year with bronchiolitis + SpO2 < 92% / apnoea / severe distress / feeding < 50%. Recommends O2 / HFNC / NIV, NG or IV feeds, minimal handling. WARNS against bronchodilator, corticosteroid, antibiotic, hypertonic saline routinely. Reads context.ageMonths, context.spO2, context.respiratoryRate, context.feedingTolerance, context.apnoea — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG9 Bronchiolitis"
+      },
+      {
+        "label": "AAP Bronchiolitis CPG"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J21.9",
+        "display": "Bronchiolitis unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-croup-dexamethasone-adrenaline",
+    "hook": "patient-view",
+    "type": "severe-croup-dexamethasone-adrenaline",
+    "services": [
+      "vedamd-severe-croup"
+    ],
+    "title": "Severe croup — dexamethasone + nebulised adrenaline",
+    "description": "Fires for moderate-severe croup (stridor at rest, recession). Recommends dexamethasone 0.15 mg/kg PO (or 0.6 mg/kg if severe / cannot tolerate oral), nebulised adrenaline 5 mg for stridor at rest, observe ≥ 2–4 h post-adrenaline. WARNS against tongue depressor examination if epiglottitis possible. Reads context.ageYears, context.westleyScore, context.spO2, context.drooling, context.toxicAppearance — never patient identity.",
+    "references": [
+      {
+        "label": "RCH Melbourne croup guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J05.0",
+        "display": "Acute laryngotracheitis (croup)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "kawasaki-ivig-aspirin",
+    "hook": "patient-view",
+    "type": "kawasaki-ivig-aspirin",
+    "services": [
+      "vedamd-kawasaki"
+    ],
+    "title": "Kawasaki disease — IVIG + aspirin + coronary echo",
+    "description": "Fires for child with fever ≥ 5 days + Kawasaki criteria OR coronary aneurysm on echo. Recommends IVIG 2 g/kg single dose + high-dose aspirin (30–50 mg/kg/day) until afebrile 48 h then 3–5 mg/kg/day × 6–8 weeks. Adjunctive steroids for high-risk (< 1 year, coronary dilation, KDSS). Echo at diagnosis + 1–2 weeks + 4–6 weeks. Reads context.ageYears, context.feverDays, context.kawasakiCriteria, context.coronaryDilation — never patient identity.",
+    "references": [
+      {
+        "label": "AHA Scientific Statement: KD diagnosis + management 2017"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M30.3",
+        "display": "Mucocutaneous lymph node syndrome (Kawasaki)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-hypothermia-ecmo",
+    "hook": "patient-view",
+    "type": "severe-hypothermia-ecmo",
+    "services": [
+      "vedamd-severe-hypothermia"
+    ],
+    "title": "Severe hypothermia — ECMO rewarming criteria",
+    "description": "Fires for core temperature < 28°C with cardiac instability / arrest. Recommends gentle handling; CPR if no signs of life; minimal drug administration < 30°C; active rewarming (ECMO preferred for unstable; warmed IV, body cavity lavage second-line). DO NOT PRONOUNCE DEAD until warm and dead (core > 32°C). K+ > 12 adult / > 20 child suggests irreversibility. Reads context.coreTemperature, context.cardiacRhythm, context.potassium — never patient identity.",
+    "references": [
+      {
+        "label": "ERC Guidelines 2021 Hypothermia"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T68",
+        "display": "Hypothermia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "heat-stroke-rapid-cooling",
+    "hook": "patient-view",
+    "type": "heat-stroke-rapid-cooling",
+    "services": [
+      "vedamd-heat-stroke"
+    ],
+    "title": "Severe heat stroke — rapid cooling protocol",
+    "description": "Fires for core temperature > 40°C with CNS dysfunction. Recommends cold-water immersion (preferred for exertional), evaporative + ice packs (classical / unstable); IV fluid resuscitation; STOP cooling at 38.5–39°C. WARNS against paracetamol / NSAID / dantrolene. Reads context.coreTemperature, context.gcs, context.seizure, context.creatineKinase — never patient identity.",
+    "references": [
+      {
+        "label": "Korey Stringer Institute; Wilderness Medical Society"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T67.0",
+        "display": "Heatstroke and sunstroke",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "raaa-permissive-hypotension",
+    "hook": "patient-view",
+    "type": "raaa-permissive-hypotension",
+    "services": [
+      "vedamd-raaa"
+    ],
+    "title": "Ruptured AAA — permissive hypotension + EVAR-first",
+    "description": "Fires for sudden severe abdominal/back pain + hypotension + (pulsatile mass OR known AAA OR USS evidence). Recommends permissive hypotension SBP 70–90 / palpable radial; massive transfusion 1:1:1; activate vascular team for EVAR (preferred) or open repair. Reads context.suspectedRaaa, context.knownAaa, context.systolicMmHg — never patient identity.",
+    "references": [
+      {
+        "label": "ESVS AAA Guideline 2024; IMPROVE trial"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I71.3",
+        "display": "Ruptured AAA",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "acute-limb-ischaemia-heparin",
+    "hook": "patient-view",
+    "type": "acute-limb-ischaemia-heparin",
+    "services": [
+      "vedamd-acute-limb"
+    ],
+    "title": "Acute limb ischaemia — heparin + Rutherford classification",
+    "description": "Fires for 6 Ps (pain, pallor, pulselessness, paraesthesia, paralysis, perishing cold). Classifies Rutherford I/IIa/IIb/III. Recommends immediate IV heparin (80 units/kg bolus); urgent vascular consult; surgical embolectomy / catheter-directed thrombolysis for IIa-IIb. Primary amputation for III. Reads context.painOnset, context.pulses, context.sensation, context.motor — never patient identity.",
+    "references": [
+      {
+        "label": "ESVS Acute Limb Ischaemia Guideline 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I74.3",
+        "display": "Acute limb ischaemia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-dengue-fluid-management",
+    "hook": "patient-view",
+    "type": "severe-dengue-fluid-management",
+    "services": [
+      "vedamd-severe-dengue"
+    ],
+    "title": "Severe dengue — phase-based fluid management",
+    "description": "Fires for dengue patient with warning signs OR severe plasma leak / shock / bleeding. Recommends Group A/B/C WHO classification + matched fluid regimen (5–7 mL/kg/h reducing; aggressive bolus for shock; colloid if refractory). WARNS against prophylactic platelet transfusion + aspirin/NSAID. Recovery phase: reduce fluids. Reads context.dengueDayOfIllness, context.hct, context.platelet, context.warningSign, context.shock — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Dengue Guidelines 2009"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A91",
+        "display": "Dengue haemorrhagic fever",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cerebral-malaria-artesunate",
+    "hook": "patient-view",
+    "type": "cerebral-malaria-artesunate",
+    "services": [
+      "vedamd-cerebral-malaria"
+    ],
+    "title": "Cerebral malaria — IV artesunate + supportive care",
+    "description": "Fires for confirmed P. falciparum parasitaemia with GCS < 11 / coma / repeated seizures. Recommends IV artesunate 2.4 mg/kg at 0, 12, 24 h then daily; empirical IV ceftriaxone (Salmonella cover); RESTRICTIVE fluid resuscitation (FEAST); glucose monitoring; transfusion if Hb < 5 g/dL. Reads context.parasitaemiaConfirmed, context.gcs, context.seizureNew, context.hb, context.glucose — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Malaria treatment guidelines 2015/2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B50.0",
+        "display": "Cerebral falciparum malaria",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "rheumatic-fever-jones-prophylaxis",
+    "hook": "patient-view",
+    "type": "rheumatic-fever-jones-prophylaxis",
+    "services": [
+      "vedamd-acute-rheumatic-fever"
+    ],
+    "title": "Acute rheumatic fever — Jones criteria + secondary prophylaxis",
+    "description": "Fires for child with possible ARF features (carditis, arthritis, chorea, erythema marginatum, nodules + minor criteria). Recommends IM benzathine penicillin G; aspirin / NSAID for arthritis; steroid for severe carditis; echocardiography. SECONDARY PROPHYLAXIS lifelong / extended per carditis status. Reads context.ageYears, context.feverDuration, context.jonesMajor, context.jonesMinor, context.asoTitre, context.echoFindings — never patient identity.",
+    "references": [
+      {
+        "label": "AHA Jones Criteria revision 2015"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I00",
+        "display": "Rheumatic fever without heart involvement",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "hus-supportive-no-antibiotics",
+    "hook": "patient-view",
+    "type": "hus-supportive-no-antibiotics",
+    "services": [
+      "vedamd-hus"
+    ],
+    "title": "HUS — supportive care; AVOID antibiotics in STEC",
+    "description": "Fires for child with diarrhoea (often bloody) + microangiopathic haemolytic anaemia + thrombocytopenia + AKI. Recommends supportive care, careful fluid balance, RRT criteria, packed cells for severe anaemia. WARNS against antibiotics for STEC enteritis (may worsen HUS) + against prophylactic platelet transfusion. Refer for eculizumab assessment if atypical / refractory. Reads context.ageYears, context.diarrhoeaBloody, context.hb, context.platelet, context.creatinine, context.urineOutput — never patient identity.",
+    "references": [
+      {
+        "label": "KDIGO Glomerular Diseases 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D59.3",
+        "display": "Haemolytic-uraemic syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "botulism-antitoxin-public-health",
+    "hook": "patient-view",
+    "type": "botulism-antitoxin-public-health",
+    "services": [
+      "vedamd-botulism"
+    ],
+    "title": "Botulism — antitoxin + public-health notification",
+    "description": "Fires for symmetric descending flaccid paralysis (cranial nerves first) without sensory deficit. Recommends IMMEDIATE public-health notification, equine heptavalent antitoxin (adult/child > 1 year) or BabyBIG (infant). Respiratory monitoring + elective intubation for FVC < 30%. WARNS against aminoglycoside antibiotics. Reads context.cranialNerveWeakness, context.descendingParalysis, context.fvc, context.ageMonths — never patient identity.",
+    "references": [
+      {
+        "label": "CDC botulism guidance; WHO botulism"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A05.1",
+        "display": "Foodborne botulism",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "mis-c-ivig-steroids",
+    "hook": "patient-view",
+    "type": "mis-c-ivig-steroids",
+    "services": [
+      "vedamd-mis-c"
+    ],
+    "title": "MIS-C — IVIG + steroids combination therapy",
+    "description": "Fires for child / adolescent with fever ≥ 3 days + raised inflammatory markers + multi-organ involvement (≥ 2 systems) + recent SARS-CoV-2 exposure. Recommends IVIG 2 g/kg + methylprednisolone 1–2 mg/kg/day combined therapy (superior to IVIG alone). Aspirin 3–5 mg/kg/day for coronary protection. Anakinra / infliximab for refractory. Reads context.ageYears, context.feverDays, context.crp, context.ferritin, context.troponin, context.echoFindings, context.covidExposure — never patient identity.",
+    "references": [
+      {
+        "label": "WHO MIS-C scientific brief; ACR clinical guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M35.81",
+        "display": "MIS-C",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "maternal-sepsis-bundle",
+    "hook": "patient-view",
+    "type": "maternal-sepsis-bundle",
+    "services": [
+      "vedamd-maternal-sepsis"
+    ],
+    "title": "Maternal sepsis — Hour-1 bundle with pregnancy-compatible antibiotics",
+    "description": "Fires for pregnant / postpartum woman (≤ 42 days) with sepsis criteria. Recommends Hour-1 bundle modified: cultures + lactate + IV piperacillin-tazobactam + clindamycin (covers GAS toxin + anaerobes) ± gentamicin; expedite delivery for chorioamnionitis / septic abortion / retained products; IVIG for streptococcal toxic shock. Reads context.pregnant, context.daysPostpartum, context.suspectedChorioamnionitis, context.lactate — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Maternal Sepsis Statement 2017"
+      },
+      {
+        "label": "RCOG Green-top 64a/64b"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O85",
+        "display": "Puerperal sepsis",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]
