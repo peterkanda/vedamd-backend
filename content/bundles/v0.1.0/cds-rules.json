@@ -5812,5 +5812,265 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "pah-specialist-pathway",
+    "hook": "patient-view",
+    "type": "pah-specialist-pathway",
+    "services": [
+      "vedamd-pah"
+    ],
+    "title": "PAH suspected — specialist referral + RHC pathway",
+    "description": "Fires for unexplained dyspnoea + RV strain pattern / raised PAP on echo. Recommends specialist PH centre referral, RHC for confirmation, V/Q scan to exclude CTEPH (Group 4), Group 1 workup (CTD / HIV / portal / drug); combination therapy ERA + PDE5 ± prostacyclin pathway. Pregnancy contraindicated. Reads context.dyspnoea, context.echoRvStrain, context.suspectedCtd — never patient identity.",
+    "references": [
+      {
+        "label": "ESC/ERS PH 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I27.0",
+        "display": "PAH",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-cdi-fidaxomicin",
+    "hook": "patient-view",
+    "type": "severe-cdi-fidaxomicin",
+    "services": [
+      "vedamd-severe-cdi"
+    ],
+    "title": "Severe / recurrent C. difficile — fidaxomicin first + FMT for recurrence",
+    "description": "Fires for confirmed CDI + severity markers (WBC > 15 / albumin < 30 / creatinine > 1.5x baseline). Recommends fidaxomicin 200 mg BD × 10 days (or vancomycin 125 mg QDS); stop offending antibiotic; isolate + soap-and-water hand hygiene; FMT for second + further recurrence; surgical input for fulminant. Reads context.cdiSeverity, context.wbc, context.albumin, context.creatinine, context.recurrenceNumber — never patient identity.",
+    "references": [
+      {
+        "label": "IDSA/SHEA CDI 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A04.7",
+        "display": "C. difficile enterocolitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "hae-c1-inhibitor-first",
+    "hook": "patient-view",
+    "type": "hae-c1-inhibitor-first",
+    "services": [
+      "vedamd-hae"
+    ],
+    "title": "Hereditary angioedema attack — C1-INH / icatibant (NOT adrenaline/steroid)",
+    "description": "Fires for non-pruritic non-pitting swelling without urticaria in known / suspected HAE patient. Recommends C1-INH concentrate 20 IU/kg IV OR icatibant 30 mg SC OR ecallantide. AVOID antihistamine/steroid/adrenaline as primary therapy (bradykinin not histamine-mediated). Airway secure if laryngeal. Reads context.hae, context.swellingDistribution, context.urticaria, context.laryngealInvolvement, context.aceiUse — never patient identity.",
+    "references": [
+      {
+        "label": "WAO/EAACI HAE 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D84.1",
+        "display": "Deficiency of complement",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-eosinophilic-asthma-biologic",
+    "hook": "patient-view",
+    "type": "severe-eosinophilic-asthma-biologic",
+    "services": [
+      "vedamd-severe-asthma"
+    ],
+    "title": "Severe asthma — phenotype-guided biologic",
+    "description": "Fires for step-5 asthma with exacerbations / OCS dependence despite optimised inhaled therapy + adherence. Recommends phenotyping (eosinophils, FeNO, IgE, sensitisation); biologic selection: anti-IgE (omalizumab) for allergic; anti-IL-5/5R (mepolizumab/benralizumab) for eosinophilic; anti-TSLP (tezepelumab) for T2-low; dupilumab for atopic / CRS / EGPA overlap. Reads context.eosinophils, context.feno, context.totalIge, context.exacerbationFrequency, context.ocsDependence — never patient identity.",
+    "references": [
+      {
+        "label": "GINA 2024; ATS/ERS Severe Asthma"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J45.50",
+        "display": "Severe persistent asthma",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "wilson-disease-acute-pathway",
+    "hook": "patient-view",
+    "type": "wilson-disease-acute-pathway",
+    "services": [
+      "vedamd-wilson-disease"
+    ],
+    "title": "Wilson disease — diagnosis + chelation pathway",
+    "description": "Fires for unexplained hepatitis / cirrhosis / neuro-psychiatric features in patient 5–45 y. Recommends ceruloplasmin + 24-h urinary copper + Kayser-Fleischer rings + brain MRI; chelation (trientine preferred for neuro; penicillamine alternative; zinc maintenance); transplant referral for acute liver failure (Wilson type — high mortality). Reads context.ageYears, context.unexplainedHepatitis, context.movementDisorder, context.kayserFleischer — never patient identity.",
+    "references": [
+      {
+        "label": "EASL / AASLD Wilson disease guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E83.01",
+        "display": "Wilson disease",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pjp-prosthetic-joint-infection",
+    "hook": "patient-view",
+    "type": "pjp-prosthetic-joint-infection",
+    "services": [
+      "vedamd-prosthetic-joint"
+    ],
+    "title": "Prosthetic joint infection — MDT + strategy by chronicity",
+    "description": "Fires for pain / sinus / raised inflammatory markers at site of joint prosthesis. Recommends synovial aspiration BEFORE antibiotics, multidisciplinary team, surgical strategy: DAIR (early < 3 weeks + stable + susceptible) vs one-stage (chronic + known) vs two-stage exchange (chronic + unknown / resistant). Targeted antibiotics 3 months with rifampicin for Staph. Reads context.timeFromArthroplasty, context.suspectedOrganism, context.prosthesisStability, context.sinusTract — never patient identity.",
+    "references": [
+      {
+        "label": "IDSA PJI 2013; MSIS criteria"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T84.5",
+        "display": "Infection due to internal joint prosthesis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "sah-aneurysm-secure-nimodipine",
+    "hook": "patient-view",
+    "type": "sah-aneurysm-secure-nimodipine",
+    "services": [
+      "vedamd-sah"
+    ],
+    "title": "Aneurysmal SAH — secure within 24-48 h + nimodipine + vasospasm prophylaxis",
+    "description": "Fires for sudden thunderclap headache + CT SAH or xanthochromia. Recommends BP < 160 mmHg pre-aneurysm-securing; coil / clip within 24-48 h; nimodipine 60 mg every 4 h × 21 days for vasospasm prevention; EVD for hydrocephalus; cerebral salt wasting / SIADH management. Reads context.thunderclapHeadache, context.ctSah, context.gcs, context.wfnsGrade — never patient identity.",
+    "references": [
+      {
+        "label": "AHA/ASA SAH 2023; ISAT"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I60",
+        "display": "Subarachnoid haemorrhage",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "acute-gout-flare-treatment",
+    "hook": "patient-view",
+    "type": "acute-gout-flare-treatment",
+    "services": [
+      "vedamd-acute-gout"
+    ],
+    "title": "Acute gout flare — colchicine / NSAID / steroid + DON'T STOP allopurinol",
+    "description": "Fires for acute monoarthritis with podagra / known gout. Recommends synovial aspirate (exclude septic), colchicine OR NSAID OR oral prednisolone OR intra-articular steroid; HLA-B*58:01 screen in Asian populations before allopurinol initiation; continue allopurinol if already on it; initiate urate-lowering therapy with prophylactic anti-inflammatory cover for 3–6 months. Reads context.acuteMonoarthritis, context.serumUrate, context.allopurinolUse, context.creatinine — never patient identity.",
+    "references": [
+      {
+        "label": "EULAR Gout 2016; ACR Gout 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M10.9",
+        "display": "Gout unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pemphigus-rituximab-first-line",
+    "hook": "patient-view",
+    "type": "pemphigus-rituximab-first-line",
+    "services": [
+      "vedamd-pemphigus"
+    ],
+    "title": "Pemphigus vulgaris — rituximab + steroid (PEMPHIX-aligned)",
+    "description": "Fires for biopsy-confirmed pemphigus vulgaris with severe / extensive disease. Recommends rituximab 1 g × 2 doses + oral prednisolone with rapid taper (PEMPHIX trial superior to mycophenolate); PJP prophylaxis with co-trimoxazole; bone protection; topical wound care; nutritional support. Reads context.pemphigusConfirmed, context.bsaInvolvement, context.mucosalInvolvement — never patient identity.",
+    "references": [
+      {
+        "label": "PEMPHIX trial Lancet 2017; EADV/BAD pemphigus guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "L10.0",
+        "display": "Pemphigus vulgaris",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ipf-antifibrotic-transplant",
+    "hook": "patient-view",
+    "type": "ipf-antifibrotic-transplant",
+    "services": [
+      "vedamd-ipf"
+    ],
+    "title": "Idiopathic pulmonary fibrosis — antifibrotic + transplant referral",
+    "description": "Fires for HRCT UIP pattern + MDD-confirmed IPF. Recommends antifibrotic (pirfenidone OR nintedanib); pulmonary rehab; long-term oxygen for hypoxia; lung-transplant referral at diagnosis for moderate-severe; GERD management; acute exacerbation supportive. Reads context.uipPattern, context.fvc, context.dlco, context.spO2 — never patient identity.",
+    "references": [
+      {
+        "label": "ATS/ERS/JRS/ALAT IPF 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J84.112",
+        "display": "Idiopathic pulmonary fibrosis",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]

@@ -54402,5 +54402,863 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "pulmonary-arterial-hypertension",
+    "title": "Pulmonary arterial hypertension (PAH) — diagnosis and treatment",
+    "icd10": [
+      "I27.0",
+      "I27.20"
+    ],
+    "domains": [
+      "respiratory",
+      "cardiology",
+      "vascular"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Progressive exertional dyspnoea, fatigue, chest discomfort, syncope, palpitations.",
+      "Signs: loud P2, RV heave, pansystolic murmur (TR), raised JVP, peripheral oedema, hepatomegaly.",
+      "Groups (WHO classification): Group 1 PAH (idiopathic, heritable, drug-induced, connective tissue, HIV, portal hypertension, congenital heart), Group 2 (left heart disease), Group 3 (lung disease + hypoxia), Group 4 (CTEPH — chronic thromboembolic), Group 5 (multifactorial)."
+    ],
+    "redFlags": [
+      "Functional class III/IV (WHO FC III: symptoms with less than ordinary activity; IV: at rest).",
+      "Right heart failure (peripheral oedema, ascites, raised JVP).",
+      "Syncope on exertion — high mortality marker.",
+      "Pregnancy + PAH — 30–50% mortality; pregnancy is contraindicated.",
+      "Suspected pulmonary veno-occlusive disease (poor response to vasodilators, pulmonary oedema on therapy)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Transthoracic echocardiography — estimate PA systolic pressure + RV size/function.",
+        "rationale": "Screening + monitoring."
+      },
+      {
+        "test": "Right heart catheterisation — gold standard for diagnosis. PAH = mean PAP > 20 mmHg + PCWP ≤ 15 + PVR > 2 WU.",
+        "rationale": "Definitive haemodynamics."
+      },
+      {
+        "test": "Pulmonary function tests + DLCO; HRCT chest (Group 3 vs 4).",
+        "rationale": "Identify lung disease."
+      },
+      {
+        "test": "V/Q scan — to exclude CTEPH (Group 4); pulmonary angiography if positive.",
+        "rationale": "Exclude treatable CTEPH (pulmonary endarterectomy)."
+      },
+      {
+        "test": "Autoimmune screen (ANA, anti-dsDNA, scleroderma antibodies); HIV; liver biochemistry + USS.",
+        "rationale": "Identify Group 1 subset."
+      },
+      {
+        "test": "BNP / NT-proBNP — prognostic.",
+        "rationale": "Risk stratification."
+      },
+      {
+        "test": "6-minute walk test (6MWT).",
+        "rationale": "Functional capacity + prognosis."
+      }
+    ],
+    "management": [
+      {
+        "step": "Refer all suspected PAH to specialist PH centre",
+        "detail": "Phenotyping + risk stratification (REVEAL 2.0, ESC/ERS 4-strata) drive therapy."
+      },
+      {
+        "step": "General measures",
+        "detail": "Diuretics for congestion. Oxygen for hypoxia. Anticoagulation: routine for CTEPH; selected for idiopathic PAH. Avoid pregnancy (contraception counselling). Vaccinations. Cardiac rehabilitation."
+      },
+      {
+        "step": "Vasoreactivity testing (Group 1 idiopathic only)",
+        "detail": "Positive responders (< 10% of idiopathic): high-dose calcium-channel blocker (nifedipine, diltiazem); long-term survival benefit. Most do NOT respond."
+      },
+      {
+        "step": "PAH-specific therapy (Group 1)",
+        "detail": "Combination therapy increasingly used UP-FRONT: ERA (ambrisentan, bosentan, macitentan) + PDE-5 inhibitor (sildenafil, tadalafil) ± soluble guanylate cyclase stimulator (riociguat). Add prostacyclin pathway (selexipag oral, treprostinil IV/SC/inhaled, epoprostenol IV) for severe / high-risk. Goal-directed therapy by risk strata."
+      },
+      {
+        "step": "CTEPH (Group 4) — surgical",
+        "detail": "Pulmonary endarterectomy — potentially curative; refer specialist centre. Riociguat + balloon pulmonary angioplasty for inoperable / persistent."
+      },
+      {
+        "step": "Lung transplantation",
+        "detail": "For functional class III/IV with worsening despite triple therapy."
+      },
+      {
+        "step": "Pregnancy",
+        "detail": "Pregnancy contraindicated; effective contraception (not oestrogen — thrombosis); termination considered if pregnant; specialist multidisciplinary care."
+      },
+      {
+        "step": "Surveillance",
+        "detail": "3-monthly review with WHO FC, 6MWT, BNP, echo; right heart catheter at 12 months + as needed."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC/ERS Guidelines for the diagnosis and treatment of pulmonary hypertension (2022)"
+      },
+      {
+        "label": "PROVE / SERAPHIN / GRIPHON trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-clostridioides-difficile-infection",
+    "title": "Severe Clostridioides difficile infection (CDI)",
+    "icd10": [
+      "A04.7"
+    ],
+    "domains": [
+      "gastroenterology",
+      "infectious-disease",
+      "infection-control"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Watery diarrhoea (≥ 3 stools / 24 h) after recent (within 12 weeks) antibiotic exposure, hospitalisation, or PPI.",
+      "Severe: WBC > 15, albumin < 30, creatinine > 1.5× baseline.",
+      "Fulminant: hypotension, ileus, megacolon, perforation, multi-organ failure.",
+      "Recurrence common (15–30% after first episode; 40–60% after recurrence)."
+    ],
+    "redFlags": [
+      "Fulminant CDI — hypotension / shock, ileus, megacolon — surgical assessment.",
+      "Toxic megacolon (transverse colon > 6 cm).",
+      "Severe leucocytosis (> 30) — independent severity marker.",
+      "Severe hypoalbuminaemia.",
+      "Concurrent severe IBD."
+    ],
+    "diagnostics": [
+      {
+        "test": "Stool C. difficile testing: enzyme immunoassay (EIA) for toxin A/B + GDH antigen + nucleic-acid amplification (NAAT).",
+        "rationale": "Multi-step algorithm preferred to avoid over-diagnosis (colonised carriers)."
+      },
+      {
+        "test": "FBC, CRP, U&E, albumin, lactate.",
+        "rationale": "Severity scoring."
+      },
+      {
+        "test": "Abdominal X-ray + CT if suspected ileus / megacolon / perforation.",
+        "rationale": "Complication imaging."
+      },
+      {
+        "test": "Flexible sigmoidoscopy — pseudomembranes diagnostic (not routinely needed).",
+        "rationale": "Direct visualisation if diagnostic uncertainty."
+      }
+    ],
+    "management": [
+      {
+        "step": "Stop offending antibiotic + isolate patient",
+        "detail": "Where clinically possible, switch / stop offending broad-spectrum antibiotic. Single-room isolation with strict hand hygiene (soap + water — alcohol gel ineffective for spores)."
+      },
+      {
+        "step": "First-episode non-severe / severe",
+        "detail": "Fidaxomicin 200 mg BD × 10 days OR vancomycin 125 mg QDS × 10 days (oral; not IV). Avoid metronidazole as first-line (less effective, more recurrence)."
+      },
+      {
+        "step": "Fulminant CDI",
+        "detail": "Vancomycin 500 mg QDS PO/NG + vancomycin 500 mg in 100 mL saline rectal every 6 h (if ileus) + IV metronidazole 500 mg every 8 h. Surgical consult for colectomy / loop ileostomy + vancomycin lavage."
+      },
+      {
+        "step": "Recurrent CDI",
+        "detail": "First recurrence: fidaxomicin 10-day course OR vancomycin tapered/pulsed regimen (125 mg QDS × 14 days → BD × 7 → daily × 7 → every 2 days × 8 → every 3 days × 15). Second + further: faecal microbiota transplant (FMT) — 90% cure rate."
+      },
+      {
+        "step": "Bezlotoxumab adjunct",
+        "detail": "Monoclonal anti-toxin B antibody — 10 mg/kg IV single dose; reduces recurrence by ~10% in high-risk."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "IV fluids; electrolyte correction; antipyretic; AVOID antimotility (loperamide). Stop PPI if not strictly indicated."
+      },
+      {
+        "step": "Infection control",
+        "detail": "Contact precautions + dedicated equipment for duration of diarrhoea + 48 h afterwards. Bleach-based environmental cleaning. Antimicrobial stewardship."
+      }
+    ],
+    "references": [
+      {
+        "label": "IDSA/SHEA Clinical Practice Guidelines for C. difficile (2021)"
+      },
+      {
+        "label": "ESCMID CDI Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "hereditary-angioedema",
+    "title": "Hereditary angioedema (HAE) — C1 inhibitor deficiency",
+    "icd10": [
+      "D84.1"
+    ],
+    "domains": [
+      "allergy",
+      "immunology",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Recurrent episodes of non-pruritic, non-pitting subcutaneous OR submucosal swelling lasting 2–5 days.",
+      "Common sites: face, extremities, GI tract (severe colicky pain, vomiting — often mistaken for surgical abdomen), genitals, AIRWAY (laryngeal — life-threatening).",
+      "No urticaria (distinguishes from histamine-mediated).",
+      "Triggers: trauma, surgery / dental work, infection, oestrogens (OCP, pregnancy, menstruation), stress, ACE inhibitors.",
+      "Family history (autosomal dominant — SERPING1 gene); but 25% de novo."
+    ],
+    "redFlags": [
+      "Laryngeal oedema — airway compromise; death within hours.",
+      "Severe abdominal attack — mistaken for surgical abdomen, can lead to unnecessary laparotomy.",
+      "Pregnancy — attack frequency variable (often worse).",
+      "ACE inhibitor co-administration — adds bradykinin pathway burden."
+    ],
+    "diagnostics": [
+      {
+        "test": "C4 level (low between + during attacks — sensitive screening).",
+        "rationale": "Suggests HAE."
+      },
+      {
+        "test": "C1 inhibitor level + function.",
+        "rationale": "Type I (low quantity), Type II (normal quantity, low function), Type III (normal — XII gene)."
+      },
+      {
+        "test": "SERPING1 / F12 / PLG / ANGPT1 / KNG1 genetic testing.",
+        "rationale": "Confirms diagnosis + family screening."
+      },
+      {
+        "test": "FBC + LFT.",
+        "rationale": "Baseline before androgens / treatment."
+      }
+    ],
+    "management": [
+      {
+        "step": "Acute attack — on-demand therapy",
+        "detail": "C1 inhibitor concentrate (Berinert, Cinryze) 20 IU/kg IV (preferred). OR icatibant 30 mg SC (bradykinin B2 antagonist). OR ecallantide 30 mg SC (kallikrein inhibitor). All effective within 1–4 h. AVOID antihistamines, steroids, adrenaline — these target histamine pathway, ineffective for bradykinin-mediated HAE."
+      },
+      {
+        "step": "Airway management",
+        "detail": "Laryngeal attack: SECURE AIRWAY proactively — awake fibre-optic OR surgical airway; cancellable in time once C1-INH given. Adrenaline IM may provide brief temporising effect (not curative)."
+      },
+      {
+        "step": "Long-term prophylaxis — indicated for severe / frequent attacks",
+        "detail": "Berotralstat (oral plasma kallikrein inhibitor — newer); OR lanadelumab SC every 2 weeks; OR C1-INH concentrate IV twice-weekly; OR attenuated androgens (danazol 200 mg/day — less preferred long-term due to androgenic + hepatic effects)."
+      },
+      {
+        "step": "Short-term prophylaxis pre-procedure",
+        "detail": "C1-INH 1000 IU IV 1–6 h before dental / surgical procedure. Have rescue C1-INH available."
+      },
+      {
+        "step": "Avoid triggers",
+        "detail": "STOP ACE inhibitors. Avoid oestrogen-containing contraception (use copper IUD, progesterone-only, levonorgestrel IUS). Counsel on pregnancy planning + delivery (C1-INH cover)."
+      },
+      {
+        "step": "Genetic counselling + family screening",
+        "detail": "First-degree relatives — C4 + C1-INH testing; affected individuals need rescue therapy available + emergency action plan."
+      },
+      {
+        "step": "Education + emergency action plan",
+        "detail": "Patient + family training to inject C1-INH / icatibant at home. Medic-alert bracelet. Emergency-department alert card."
+      }
+    ],
+    "references": [
+      {
+        "label": "WAO/EAACI International Guideline for the Management of HAE (2021 update)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-asthma-eosinophilic-biologic-pathway",
+    "title": "Severe asthma — eosinophilic phenotype + biologic pathway",
+    "icd10": [
+      "J45.50",
+      "J45.51",
+      "J45.52"
+    ],
+    "domains": [
+      "respiratory",
+      "allergy",
+      "immunology"
+    ],
+    "population": {
+      "minAgeYears": 6,
+      "sex": "any"
+    },
+    "presentation": [
+      "Persistent symptoms / frequent exacerbations / dependence on systemic corticosteroids despite high-dose inhaled steroid + LABA + adherence + technique optimised.",
+      "Phenotyping critical: eosinophilic (blood eosinophils ≥ 300, FeNO ≥ 25), T2-high vs T2-low.",
+      "Common in severe asthma: nasal polyps, AERD (Samter triad), allergic bronchopulmonary aspergillosis."
+    ],
+    "redFlags": [
+      "Frequent oral corticosteroid courses (≥ 2 per year) — cumulative toxicity.",
+      "Steroid-dependent (cannot reduce below maintenance prednisolone).",
+      "Recent ICU / intubation for asthma.",
+      "Comorbid bronchiectasis / fungal disease."
+    ],
+    "diagnostics": [
+      {
+        "test": "Confirm asthma diagnosis (spirometry, reversibility, peak flow variability, methacholine challenge).",
+        "rationale": "Distinguish from COPD / mimics."
+      },
+      {
+        "test": "Optimise inhaler technique + adherence.",
+        "rationale": "Pseudo-resistance from poor technique + non-adherence."
+      },
+      {
+        "test": "Trigger investigation: skin-prick / IgE for aeroallergens; specific Aspergillus IgE / IgG for ABPA; eosinophilic vasculitis (EGPA) workup.",
+        "rationale": "Identify treatable factors."
+      },
+      {
+        "test": "Biomarkers: blood eosinophils, FeNO, total IgE, sputum eosinophils.",
+        "rationale": "Phenotyping + biologic selection."
+      },
+      {
+        "test": "ENT review for nasal polyposis.",
+        "rationale": "Common comorbidity."
+      },
+      {
+        "test": "CT chest if recurrent infection / bronchiectasis suspected.",
+        "rationale": "Differential / complication."
+      }
+    ],
+    "management": [
+      {
+        "step": "Optimise step-5 inhaled therapy",
+        "detail": "High-dose ICS + LABA + add LAMA (tiotropium) ± LTRA (montelukast — counsel on neuropsychiatric warnings)."
+      },
+      {
+        "step": "Identify + treat reversible / comorbid factors",
+        "detail": "Smoking cessation; allergen avoidance; obesity; OSA; GERD; chronic rhinosinusitis / nasal polyps (intranasal steroid; FESS in selected); anxiety / depression."
+      },
+      {
+        "step": "Eosinophilic asthma — biologic therapy",
+        "detail": "Anti-IL-5 / anti-IL-5R (mepolizumab 100 mg SC every 4 weeks; reslizumab 3 mg/kg IV every 4 weeks; benralizumab 30 mg SC every 4 weeks × 3 then every 8 weeks). Eligibility typically eosinophils ≥ 300 + exacerbations / OCS dependence."
+      },
+      {
+        "step": "Anti-IgE for severe allergic asthma",
+        "detail": "Omalizumab SC every 2–4 weeks (weight + IgE-dose calculated); eligibility allergic + IgE 30–1500 + sensitisation."
+      },
+      {
+        "step": "Anti-TSLP / anti-IL-4Rα for T2-high",
+        "detail": "Tezepelumab 210 mg SC every 4 weeks — works for both T2-high + T2-low (broader). Dupilumab 200/300 mg SC every 2 weeks — eosinophils ≥ 150 OR FeNO ≥ 25; also covers atopic dermatitis, CRS with nasal polyps, EGPA."
+      },
+      {
+        "step": "Bronchial thermoplasty",
+        "detail": "Selected severe non-eosinophilic / biologic-failure cases at specialist centre."
+      },
+      {
+        "step": "ABPA — itraconazole + steroid",
+        "detail": "Confirmed ABPA (raised IgE + Aspergillus-specific): oral prednisolone 0.5 mg/kg/day × 2 weeks then taper + itraconazole 200 mg BD × 16 weeks (monitor LFT + level)."
+      },
+      {
+        "step": "Specialist asthma centre follow-up",
+        "detail": "Multidisciplinary clinic; structured patient education; written personalised asthma action plan."
+      }
+    ],
+    "references": [
+      {
+        "label": "GINA 2024; ATS/ERS Severe Asthma Guideline"
+      },
+      {
+        "label": "ERS / ATS task force statements on biologics"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "wilson-disease-acute",
+    "title": "Wilson disease — acute liver failure / neurological presentation",
+    "icd10": [
+      "E83.01"
+    ],
+    "domains": [
+      "hepatology",
+      "neurology",
+      "genetics",
+      "psychiatry"
+    ],
+    "population": {
+      "minAgeYears": 5,
+      "maxAgeYears": 45,
+      "sex": "any"
+    },
+    "presentation": [
+      "Autosomal recessive copper-accumulation disorder (ATP7B mutations).",
+      "Hepatic: childhood-adolescent age — acute hepatitis, chronic cirrhosis, acute-on-chronic liver failure (highest copper + bilirubin / ALP < 4 ratio + Coombs-negative haemolytic anaemia).",
+      "Neurological: adolescent-young adult — tremor (wing-beating), dysarthria, dystonia, ataxia, parkinsonism, dysphagia.",
+      "Psychiatric: personality change, depression, psychosis, cognitive decline.",
+      "Kayser-Fleischer rings (slit-lamp) in 95% with neurological + 50% hepatic."
+    ],
+    "redFlags": [
+      "Acute liver failure (Wilson type) — HIGH MORTALITY without urgent transplantation.",
+      "Coombs-negative haemolytic anaemia + acute liver failure pattern — classical Wilson ALF.",
+      "Severe encephalopathy.",
+      "Pregnancy + Wilson — continue therapy with zinc / trientine (avoid penicillamine doses > 1 g).",
+      "Suspected ESRD with copper accumulation — adjust chelator dosing."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serum ceruloplasmin (low < 20 mg/dL) + 24-h urinary copper (high > 100 microgram).",
+        "rationale": "Screening."
+      },
+      {
+        "test": "Slit-lamp examination for Kayser-Fleischer rings.",
+        "rationale": "Supportive diagnosis."
+      },
+      {
+        "test": "Liver biopsy with copper quantification > 250 microgram/g dry weight.",
+        "rationale": "Definitive in atypical cases."
+      },
+      {
+        "test": "Genetic testing (ATP7B sequencing).",
+        "rationale": "Confirmation + family screening."
+      },
+      {
+        "test": "Brain MRI — basal ganglia + thalamus + brainstem T2 hyperintensities.",
+        "rationale": "Neurological involvement."
+      },
+      {
+        "test": "FBC (haemolysis), reticulocytes, LDH, haptoglobin, Coombs.",
+        "rationale": "Identify Wilson ALF haemolytic component."
+      }
+    ],
+    "management": [
+      {
+        "step": "Chelation therapy (life-long)",
+        "detail": "Penicillamine 1–1.5 g/day in 4 divided doses (with pyridoxine 25 mg/day); titrate to urinary copper. Trientine 1–1.6 g/day in 3 divided doses — better tolerated, especially neurological worsening risk (10–25% on penicillamine). Both during pregnancy at reduced dose."
+      },
+      {
+        "step": "Maintenance — zinc",
+        "detail": "Zinc acetate 50 mg TDS (separate from food + chelator by 1 h); blocks intestinal copper absorption + induces metallothionein. Once stable + asymptomatic; preferred for asymptomatic / pre-symptomatic siblings."
+      },
+      {
+        "step": "Low-copper diet",
+        "detail": "Avoid shellfish, organ meats, nuts, chocolate, mushrooms, dried fruit. Demineralised water if copper plumbing."
+      },
+      {
+        "step": "Acute liver failure — liver transplantation",
+        "detail": "New Wilson index score ≥ 11 (bilirubin + INR + ALT + WBC + albumin) — high mortality without transplant; urgent listing. Outcomes excellent post-transplant (cures Wilson; no need for further chelation)."
+      },
+      {
+        "step": "Neurological deterioration on penicillamine",
+        "detail": "Switch to trientine + zinc. Symptomatic treatment of movement disorders (anticholinergic, dopaminergic per Parkinsonian features)."
+      },
+      {
+        "step": "Monitoring",
+        "detail": "Quarterly: LFT, FBC, U&E, urinary copper (target 200–500 microgram on therapy). 6-monthly: ceruloplasmin, free copper, slit-lamp. Annual neurological + psychiatric review. Compliance is critical — non-adherence relapse risk."
+      },
+      {
+        "step": "Family screening",
+        "detail": "First-degree relatives — biochemical + genetic; pre-symptomatic siblings benefit greatly from prophylactic zinc."
+      }
+    ],
+    "references": [
+      {
+        "label": "EASL Clinical Practice Guidelines: Wilson disease (2012, updated)"
+      },
+      {
+        "label": "AASLD Wilson disease"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "pemphigus-vulgaris-severe",
+    "title": "Pemphigus vulgaris — severe / acute",
+    "icd10": [
+      "L10.0",
+      "L10.9"
+    ],
+    "domains": [
+      "dermatology",
+      "immunology"
+    ],
+    "population": {
+      "minAgeYears": 30,
+      "sex": "any"
+    },
+    "presentation": [
+      "Painful flaccid intra-epidermal blisters + erosions on skin + mucous membranes (oral 50% as presenting feature).",
+      "Nikolsky sign positive (lateral pressure produces blister).",
+      "Autoimmune — anti-desmoglein 3 (mucosal) + 1 (cutaneous) IgG antibodies.",
+      "Severe: > 10% BSA involvement, mucosal involvement preventing eating, secondary infection, electrolyte / fluid loss."
+    ],
+    "redFlags": [
+      "Severe mucosal involvement — impaired feeding + hydration.",
+      "Secondary sepsis from extensive erosions.",
+      "Treatment-induced complications (steroid hyperglycaemia, infection, osteoporosis).",
+      "Paraneoplastic pemphigus (rare, severe — lymphoproliferative malignancy)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Skin biopsy — perilesional for histology (suprabasal acantholysis); H&E.",
+        "rationale": "Confirmation."
+      },
+      {
+        "test": "Direct immunofluorescence (DIF) — intercellular IgG + C3 staining in epidermis.",
+        "rationale": "Specific."
+      },
+      {
+        "test": "Indirect IF + ELISA for anti-desmoglein 1 + 3 antibodies.",
+        "rationale": "Distinguish PV (Dsg3 ± Dsg1) from foliaceus (Dsg1 only)."
+      },
+      {
+        "test": "Paraneoplastic screen for atypical / treatment-resistant.",
+        "rationale": "Underlying malignancy."
+      },
+      {
+        "test": "Baseline + serial: FBC, U&E, glucose, lipid, vitamin D, DEXA, hepatitis B + TB screen before immunosuppression.",
+        "rationale": "Pre-treatment baseline."
+      }
+    ],
+    "management": [
+      {
+        "step": "First-line: rituximab + oral prednisolone",
+        "detail": "Rituximab 1 g IV every 2 weeks × 2 doses, then maintenance every 6 months (PEMPHIX trial: superior to mycophenolate for sustained remission). Concomitant prednisolone 0.5–1 mg/kg/day with planned rapid taper 4–6 months."
+      },
+      {
+        "step": "Alternative steroid-sparing — azathioprine / mycophenolate",
+        "detail": "Azathioprine 2 mg/kg/day OR mycophenolate 2–3 g/day (TPMT testing before azathioprine). Steroid taper depends on disease control."
+      },
+      {
+        "step": "Wound care",
+        "detail": "Specialist dressings; oral hygiene + topical analgesia (lidocaine viscous, sucralfate suspension); pain management."
+      },
+      {
+        "step": "Infection prevention + management",
+        "detail": "Bath / shower with antiseptic; topical antibiotic; PJP prophylaxis with co-trimoxazole if on rituximab + steroid (480 mg daily). Treat documented infection — staphylococcal common."
+      },
+      {
+        "step": "Nutritional support",
+        "detail": "Soft / liquid diet; NG / parenteral if severe oral involvement; vitamin / mineral supplementation."
+      },
+      {
+        "step": "Bone protection + glucose monitoring",
+        "detail": "Calcium + vitamin D + bisphosphonate during prolonged steroid; diabetes screening + management."
+      },
+      {
+        "step": "Long-term follow-up",
+        "detail": "Quarterly clinical + serial antibody titres (anti-Dsg correlate with activity); CD19 monitoring on rituximab; relapse with antibody rise often precedes clinical."
+      }
+    ],
+    "references": [
+      {
+        "label": "International Pemphigus Foundation / EADV / BAD guidelines on pemphigus management; PEMPHIX trial Lancet 2017"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "septic-prosthetic-joint-infection",
+    "title": "Prosthetic joint infection (periprosthetic joint infection)",
+    "icd10": [
+      "T84.5",
+      "T84.7"
+    ],
+    "domains": [
+      "orthopaedics",
+      "infectious-disease",
+      "surgery"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Pain at site of prosthetic joint with one of: sinus / fistula communicating with joint, purulence on aspiration, raised inflammatory markers + 2 positive cultures, raised synovial WBC + neutrophil %.",
+      "Early (< 3 months post-op): often Staph aureus, gram-negatives, polymicrobial.",
+      "Delayed (3–12 months): coagulase-negative Staph, P. acnes — indolent.",
+      "Late (> 12 months): haematogenous — Staph aureus, Strep, dental / GU source.",
+      "Increasing problem with multi-drug resistant organisms."
+    ],
+    "redFlags": [
+      "Septic shock.",
+      "Synovial fluid cell count > 4200 with > 70% neutrophils — specific.",
+      "Sinus tract — definitive infection.",
+      "Loosening of prosthesis on imaging — chronic infection.",
+      "Co-existing native joint infection or osteomyelitis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Synovial fluid aspiration: cell count + differential + Gram + culture + alpha-defensin.",
+        "rationale": "Mainstay of diagnosis; aspirate BEFORE antibiotic."
+      },
+      {
+        "test": "FBC, CRP, ESR (chronic indolent often elevated only modestly).",
+        "rationale": "Severity + chronic activity."
+      },
+      {
+        "test": "Multiple intraoperative tissue samples (≥ 3–5) at debridement / revision.",
+        "rationale": "Higher culture yield + identify polymicrobial."
+      },
+      {
+        "test": "Sonication of explanted prosthesis (mechanically removes biofilm).",
+        "rationale": "Improves microbiological yield."
+      },
+      {
+        "test": "Imaging: X-ray (loosening); CT / MRI; bone scan; PET-CT.",
+        "rationale": "Anatomy + assess loosening."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary team — orthopaedics + infection + plastics + microbiology",
+        "detail": "Specialist centre with joint-revision capability."
+      },
+      {
+        "step": "Surgical strategy depends on chronicity + prosthesis stability + organism",
+        "detail": "DAIR (debridement + antibiotics + implant retention) — early infection < 3 weeks duration, stable prosthesis, susceptible organism. One-stage exchange — chronic with known sensitive organism. Two-stage exchange — chronic with unknown / resistant organism (gold standard for complex)."
+      },
+      {
+        "step": "Empirical antibiotic — broad-spectrum WHILE awaiting cultures",
+        "detail": "IV vancomycin + ceftriaxone (or piperacillin-tazobactam if pseudomonas risk). Hold empirical antibiotic UNTIL after intraoperative samples wherever feasible."
+      },
+      {
+        "step": "Targeted antibiotic — long course",
+        "detail": "After culture: 4–6 weeks IV (or oral with high bioavailability) + 2–3 months oral. DAIR retention requires longer (12 months minimum + lifelong suppression in some). Add rifampicin for Staph (biofilm-active) — never as monotherapy."
+      },
+      {
+        "step": "Specific organism strategies",
+        "detail": "MRSA: vancomycin / daptomycin. Pseudomonas: ceftazidime / ciprofloxacin. Mycobacterium: prolonged combination per ATB sensitivity. Fungal: amphotericin B / azole."
+      },
+      {
+        "step": "Functional rehabilitation",
+        "detail": "Multidisciplinary physiotherapy + occupational therapy; revision surgery + prosthesis design; pain management; psychological support."
+      },
+      {
+        "step": "Outcome + long-term suppression",
+        "detail": "Eradication rates DAIR 50–80%, one-stage 80–90%, two-stage 85–95%. Suppressive antibiotic therapy (oral) for selected (elderly / unfit / poor revision candidates)."
+      }
+    ],
+    "references": [
+      {
+        "label": "IDSA Diagnosis and Management of Prosthetic Joint Infection (2013); MSIS Diagnostic Criteria for PJI"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "haemorrhagic-stroke-aneurysmal-sah",
+    "title": "Aneurysmal subarachnoid haemorrhage (SAH)",
+    "icd10": [
+      "I60"
+    ],
+    "domains": [
+      "neurosurgery",
+      "neurology",
+      "stroke",
+      "critical-care",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 30,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden severe ('thunderclap') headache — worst-ever in life; often peaks within seconds.",
+      "± Loss of consciousness, vomiting, photophobia, neck stiffness (meningism develops over hours).",
+      "Focal neurology depending on aneurysm location.",
+      "Sentinel headache in 30–50% (preceding rupture days-weeks earlier) — missed diagnosis common.",
+      "Risk: hypertension, smoking, alcohol, family history, polycystic kidney disease, connective-tissue disorders."
+    ],
+    "redFlags": [
+      "Hunt-Hess / WFNS grades IV-V — high mortality.",
+      "Rebleeding (15% in first 24 h, peak risk) — secure aneurysm urgently.",
+      "Vasospasm-induced delayed cerebral ischaemia (days 4–14) — preventable.",
+      "Hydrocephalus (acute communicating — EVD).",
+      "Cardiogenic shock from neurogenic stunned myocardium / Takotsubo.",
+      "Hyponatraemia from cerebral salt wasting / SIADH."
+    ],
+    "diagnostics": [
+      {
+        "test": "Non-contrast CT head — sensitive > 99% within first 6 h.",
+        "rationale": "First-line; identifies subarachnoid blood pattern."
+      },
+      {
+        "test": "LP if CT negative + clinical suspicion + > 12 h symptom onset (xanthochromia in CSF supernatant).",
+        "rationale": "Detects late presentation when CT may be negative."
+      },
+      {
+        "test": "CT angiogram (CTA) or digital subtraction angiogram (DSA).",
+        "rationale": "Identify aneurysm location + size for planning."
+      },
+      {
+        "test": "FBC, U&E, coag, glucose, troponin, ECG.",
+        "rationale": "Identify reversible factors + cardiac involvement."
+      },
+      {
+        "test": "Daily transcranial Doppler from day 3.",
+        "rationale": "Detect vasospasm."
+      }
+    ],
+    "management": [
+      {
+        "step": "ABCDE + bed-rest + analgesia + antiemetic",
+        "detail": "Intubate if GCS ≤ 8. Head-up 30°. Stool softener (avoid Valsalva). Severe pain control."
+      },
+      {
+        "step": "Blood-pressure target SBP < 160 mmHg pre-aneurysm-securing",
+        "detail": "Labetalol / nicardipine IV. Avoid over-treatment (cerebral perfusion). Treat acute hypertensive surge."
+      },
+      {
+        "step": "Securing the aneurysm — within 24–48 h",
+        "detail": "Endovascular coiling (preferred where anatomy suitable per ISAT trial) OR neurosurgical clipping. Decision in specialist neurovascular centre."
+      },
+      {
+        "step": "Nimodipine 60 mg PO/NG every 4 h × 21 days",
+        "detail": "Calcium-channel blocker — reduces vasospasm-related ischaemia + improves outcomes. Hypotension can be limiting — reduce dose / frequency rather than stop."
+      },
+      {
+        "step": "Vasospasm + delayed cerebral ischaemia prevention",
+        "detail": "Maintain euvolaemia + normo-tension (avoid hypovolaemia). 'Triple-H' (hypertension + hypervolaemia + haemodilution) — superseded by simple induced hypertension when DCI develops. Endovascular intra-arterial nimodipine / angioplasty for refractory vasospasm."
+      },
+      {
+        "step": "Hydrocephalus + ICP management",
+        "detail": "EVD for acute hydrocephalus; ICP monitoring; CSF drainage. VP shunt for persistent (15–20%)."
+      },
+      {
+        "step": "Manage SAH complications",
+        "detail": "Seizures: levetiracetam prophylaxis × 7 days for poor-grade or aneurysm at risk areas. Hyponatraemia: fluid + salt replacement (cerebral salt wasting > SIADH in SAH context). Cardiac dysfunction: supportive; usually reversible. DVT prophylaxis with mechanical immediately + LMWH from 24 h post-securing."
+      },
+      {
+        "step": "Rehabilitation + long-term follow-up",
+        "detail": "Multidisciplinary rehab; cognitive screening; psychological care (anxiety / depression common). Annual surveillance for recurrent aneurysm in selected; first-degree relative screening (> 2 affected first-degree)."
+      }
+    ],
+    "references": [
+      {
+        "label": "AHA/ASA Guidelines for the Management of Aneurysmal Subarachnoid Hemorrhage (2023)"
+      },
+      {
+        "label": "ISAT trial Lancet 2002"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "acute-gout-flare-severe",
+    "title": "Acute gout flare — severe / refractory",
+    "icd10": [
+      "M10.9"
+    ],
+    "domains": [
+      "rheumatology",
+      "primary-care",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 30,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden onset severe monoarticular arthritis (often 1st MTP joint — podagra; ankle, knee, wrist, finger).",
+      "Joint exquisitely tender, red, warm, swollen.",
+      "Polyarticular in chronic tophaceous + transplant + diuretic patients.",
+      "Risk: men, age, hyperuricaemia, diuretic, alcohol, purine-rich diet, renal impairment, metabolic syndrome.",
+      "Triggers: trauma, surgery, dehydration, alcohol, starting / changing urate-lowering therapy."
+    ],
+    "redFlags": [
+      "Septic arthritis differential — aspirate + culture + microscopy MANDATORY in any acute monoarthritis.",
+      "Polyarticular gout — often missed; mistaken for RA / cellulitis.",
+      "Renal impairment limiting NSAID + colchicine use.",
+      "Concurrent cardiovascular disease limiting NSAID.",
+      "Pregnancy — gout very rare; consider underlying cause."
+    ],
+    "diagnostics": [
+      {
+        "test": "Joint aspiration with Gram stain + culture + crystal microscopy.",
+        "rationale": "Negatively birefringent needle-shaped crystals = MSU; rule out sepsis."
+      },
+      {
+        "test": "Serum urate — variable in acute flare (can be normal); recheck at 4–6 weeks.",
+        "rationale": "Baseline urate for treatment goal."
+      },
+      {
+        "test": "FBC, U&E, CRP.",
+        "rationale": "Severity + identify renal / treatment-limiting factor."
+      },
+      {
+        "test": "Dual-energy CT (DECT) — visualises tophi without aspiration.",
+        "rationale": "Alternative imaging when aspiration not feasible."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat acute flare — first-line options",
+        "detail": "NSAID: naproxen 500 mg BD × 5 days (or alternative). Colchicine: 1 mg loading then 500 microgram 1 h later, then 500 microgram BD until improvement (lower dose if eGFR 30–60). Glucocorticoid: prednisolone 30–40 mg/day × 5 days. Intra-articular steroid for monoarticular."
+      },
+      {
+        "step": "Second-line for refractory / contraindications",
+        "detail": "IL-1 antagonist: canakinumab 150 mg SC single dose (high cost; reserve for refractory / multiple comorbidity). Anakinra 100 mg SC daily × 3 days alternative."
+      },
+      {
+        "step": "Continue urate-lowering therapy through flare",
+        "detail": "Do NOT stop allopurinol / febuxostat during flare — increases flare duration. If newly starting urate-lowering: pre-treat with NSAID / colchicine / low-dose steroid prophylaxis for 3–6 months."
+      },
+      {
+        "step": "Initiate / optimise urate-lowering therapy",
+        "detail": "Target serum urate < 360 micromol/L (< 300 if tophi). Allopurinol 100 mg start, titrate by 100 mg every 4 weeks to target (max 900 mg). HLA-B*58:01 screening in Han Chinese / Korean / Thai before allopurinol. Febuxostat 80 mg daily for allopurinol-intolerant / failure (cardiovascular caution). Pegloticase IV every 2 weeks for refractory tophaceous."
+      },
+      {
+        "step": "Lifestyle + comorbidity management",
+        "detail": "Weight reduction; reduce alcohol (especially beer); reduce sugary drinks; Mediterranean diet; avoid offal / shellfish. Treat hypertension (losartan or amlodipine — modestly uricosuric). Treat metabolic syndrome."
+      },
+      {
+        "step": "Long-term follow-up",
+        "detail": "Quarterly during titration of urate-lowering; then annually. Recheck urate + tophi shrinkage. Stop colchicine prophylaxis after 3–6 months once urate at target + no flares."
+      }
+    ],
+    "references": [
+      {
+        "label": "EULAR Recommendations for management of gout (2016, with updates)"
+      },
+      {
+        "label": "ACR Guideline for the Management of Gout (2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]
