@@ -8,6 +8,8 @@ import type { AppConfig } from '../../config/configuration';
 import { PHI_FREE_LOGGER, type PhiFreeLogger } from '../../common/phi-free-logger';
 import { PoliciesService } from '../policies/policies.service';
 import type { PolicyMatch } from '../policies/policies.types';
+import { CustomRulesService } from '../custom-rules/custom-rules.service';
+import type { CustomRuleEvaluation } from '../custom-rules/custom-rules.types';
 import { CLINICAL_REASONER_SYSTEM, buildUserMessage } from './prompts/clinical-reasoner.prompt';
 import { extractCards } from './card-extractor';
 import type {
@@ -45,6 +47,7 @@ export class AgenticService {
     private readonly config: ConfigService<AppConfig, true>,
     @Inject(PHI_FREE_LOGGER) private readonly log: PhiFreeLogger,
     @Optional() private readonly policies?: PoliciesService,
+    @Optional() private readonly customRules?: CustomRulesService,
   ) {}
 
   async evaluate(ctx: AgenticClinicalContext): Promise<AgenticEvaluationResponse> {
@@ -73,6 +76,32 @@ export class AgenticService {
         });
       }
     }
+
+    // --- 2c. Custom CDS rules (per-integrator, developer-defined) ---
+    let customMatches: CustomRuleEvaluation[] = [];
+    if (this.customRules && ctx.integratorId) {
+      try {
+        customMatches = await this.customRules.evaluate(ctx.integratorId, {
+          hook: ctx.hook,
+          medications: ctx.medications,
+          diagnoses: ctx.diagnoses,
+          allergies: ctx.allergies,
+          patient: ctx.patient
+            ? {
+                ageYears: ctx.patient.ageYears,
+                pregnant: ctx.patient.pregnant,
+                eGFR: ctx.patient.eGFR,
+              }
+            : undefined,
+          labs: ctx.labs,
+        });
+      } catch (err) {
+        this.log.warn('custom_rules_lookup_failed', {
+          error_category: err instanceof Error ? err.name : 'unknown',
+        });
+      }
+    }
+    const customCards = customMatches.map((m) => m.card);
 
     // --- 3. Agentic layer (graceful degrade if unconfigured) ---
     let agenticCards: CdsCard[] = [];
@@ -121,13 +150,15 @@ export class AgenticService {
       }
     }
 
-    // --- 4. Merge (deterministic never dropped) ---
-    const cards = mergeCards(deterministicCards, agenticCards);
+    // --- 4. Merge (deterministic + custom rules never dropped;
+    //          agentic cards deduped against either) ---
+    const cards = mergeCards([...deterministicCards, ...customCards], agenticCards);
 
     return {
       cards,
       meta: {
         deterministicStrategies: strategies,
+        customRuleCount: customMatches.length,
         llmModel,
         llmProvider,
         agenticInvoked,
@@ -142,6 +173,13 @@ export class AgenticService {
               version: m.version,
               sectionTitle: m.sectionTitle,
               snippet: m.snippet,
+            }))
+          : undefined,
+        customRuleCitations: customMatches.length
+          ? customMatches.map((m) => ({
+              ruleId: m.rule.id,
+              ruleName: m.rule.name,
+              indicator: m.rule.indicator,
             }))
           : undefined,
       },

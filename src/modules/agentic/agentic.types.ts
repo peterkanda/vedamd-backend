@@ -89,6 +89,8 @@ export interface AgenticEvaluationResponse {
   meta: {
     /** Which deterministic strategies fired. */
     deterministicStrategies: string[];
+    /** Number of integrator-defined custom CDS rules that fired. */
+    customRuleCount?: number;
     /** LLM model used by the agentic layer (if any). */
     llmModel?: string;
     /** LLM provider used. */
@@ -113,6 +115,12 @@ export interface AgenticEvaluationResponse {
       version?: string;
       sectionTitle?: string;
       snippet: string;
+    }>;
+    /** Custom CDS rules that fired (provenance for the UI). */
+    customRuleCitations?: Array<{
+      ruleId: string;
+      ruleName: string;
+      indicator: 'critical' | 'warning' | 'info';
     }>;
   };
 }

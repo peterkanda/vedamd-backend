@@ -16,6 +16,7 @@ import { CdsModule } from '../cds/cds.module';
 import { KnowledgeModule } from '../knowledge/knowledge.module';
 import { DeveloperModule } from '../developer/developer.module';
 import { PoliciesModule } from '../policies/policies.module';
+import { CustomRulesModule } from '../custom-rules/custom-rules.module';
 
 /**
  * Agentic CDS module — the LLM reasoning layer that sits on top of the
@@ -24,7 +25,7 @@ import { PoliciesModule } from '../policies/policies.module';
  * (API-key guard).
  */
 @Module({
-  imports: [CdsModule, KnowledgeModule, DeveloperModule, PoliciesModule],
+  imports: [CdsModule, KnowledgeModule, DeveloperModule, PoliciesModule, CustomRulesModule],
   controllers: [AgenticController],
   providers: [
     AgenticService,

@@ -1820,6 +1820,158 @@
         ]
       }
     },
+    "/api/v1/custom-rules": {
+      "get": {
+        "description": "Returns summaries (no match/card body). Each rule fires at evaluation time when the match block holds.",
+        "operationId": "CustomRulesController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List custom CDS rules for the current integrator",
+        "tags": [
+          "custom-rules"
+        ]
+      },
+      "post": {
+        "description": "Define a match block (medications / diagnoses / allergies / labs / patient signals) and a card. The agentic engine merges the resulting cards with the signed bundle + policies.",
+        "operationId": "CustomRulesController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCustomRuleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Create a custom rule",
+        "tags": [
+          "custom-rules"
+        ]
+      }
+    },
+    "/api/v1/custom-rules/{id}": {
+      "get": {
+        "operationId": "CustomRulesController_get",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "404": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a single rule with its full match + card body",
+        "tags": [
+          "custom-rules"
+        ]
+      },
+      "patch": {
+        "operationId": "CustomRulesController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCustomRuleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "404": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Update a custom rule (partial)",
+        "tags": [
+          "custom-rules"
+        ]
+      },
+      "delete": {
+        "operationId": "CustomRulesController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "404": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Delete a custom rule by id",
+        "tags": [
+          "custom-rules"
+        ]
+      }
+    },
     "/api/v1/reference/summary": {
       "get": {
         "operationId": "ReferenceController_summary",
@@ -2604,6 +2756,174 @@
           "connectionId",
           "queryId"
         ]
+      },
+      "CustomRuleMatchDto": {
+        "type": "object",
+        "properties": {
+          "medications": {
+            "example": [
+              "metformin"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "diagnoses": {
+            "example": [
+              "ckd",
+              "chronic kidney"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "allergies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "hooks": {
+            "example": [
+              "medication-prescribe"
+            ],
+            "description": "Restrict the rule to specific CDS hooks. Empty = all hooks.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ageMinYears": {
+            "type": "number",
+            "example": 0
+          },
+          "ageMaxYears": {
+            "type": "number",
+            "example": 18
+          },
+          "pregnant": {
+            "type": "boolean"
+          },
+          "eGFRBelow": {
+            "type": "number",
+            "example": 30,
+            "description": "Rule matches if eGFR < this threshold."
+          },
+          "labs": {
+            "description": "Array of lab-value clauses (all must hold).",
+            "type": "array",
+            "items": {
+              "type": "array"
+            }
+          }
+        }
+      },
+      "CustomRuleCardDto": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string",
+            "example": "Hold metformin if eGFR < 30 — local renal protocol.",
+            "minLength": 4,
+            "maxLength": 240
+          },
+          "detail": {
+            "type": "string",
+            "description": "Markdown-rendered detail body."
+          },
+          "sourceLabel": {
+            "type": "string",
+            "example": "Acme Hospital Pharmacy SOP v3.1"
+          },
+          "sourceUrl": {
+            "type": "string",
+            "example": "https://intranet.acme/sops/renal"
+          },
+          "suggestions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "summary"
+        ]
+      },
+      "CreateCustomRuleDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Hold metformin in CKD 4/5",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "indicator": {
+            "type": "string",
+            "enum": [
+              "critical",
+              "warning",
+              "info"
+            ]
+          },
+          "enabled": {
+            "type": "boolean",
+            "default": true
+          },
+          "match": {
+            "$ref": "#/components/schemas/CustomRuleMatchDto"
+          },
+          "card": {
+            "$ref": "#/components/schemas/CustomRuleCardDto"
+          }
+        },
+        "required": [
+          "name",
+          "indicator",
+          "match",
+          "card"
+        ]
+      },
+      "UpdateCustomRuleDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "indicator": {
+            "type": "string",
+            "enum": [
+              "critical",
+              "warning",
+              "info"
+            ]
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "match": {
+            "$ref": "#/components/schemas/CustomRuleMatchDto"
+          },
+          "card": {
+            "$ref": "#/components/schemas/CustomRuleCardDto"
+          }
+        }
       },
       "InteractionNetworkDto": {
         "type": "object",

@@ -29,6 +29,7 @@ import { AnalyticsModule } from './modules/analytics/analytics.module';
 import { IntegrationLogModule } from './modules/integration-log/integration-log.module';
 import { DeveloperModule } from './modules/developer/developer.module';
 import { AgenticModule } from './modules/agentic/agentic.module';
+import { CustomRulesModule } from './modules/custom-rules/custom-rules.module';
 import { ReferenceModule } from './modules/reference/reference.module';
 
 @Module({
@@ -65,6 +66,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     IntegrationLogModule,
     DeveloperModule,
     AgenticModule,
+    CustomRulesModule,
     ReferenceModule,
   ],
 })

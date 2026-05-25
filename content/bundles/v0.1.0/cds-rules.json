@@ -9348,5 +9348,205 @@
     "rationale": "WHO Rabies Position Paper 2018 + Kenya National Rabies Elimination Strategy 2014–2030.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "anthrax-cutaneous-systemic-ssa-r1",
+    "title": "Suspected anthrax — start ciprofloxacin + combination therapy if systemic",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "anthrax-cutaneous-systemic-ssa"
+    },
+    "indicators": [
+      "painless eschar with surrounding oedema after livestock/hide contact",
+      "widened mediastinum",
+      "haemorrhagic meningitis in endemic area"
+    ],
+    "recommendation": "Cutaneous uncomplicated: ciprofloxacin 500 mg PO BD × 7–10 days (or doxycycline). Systemic / inhalational / extensive cutaneous: IV ciprofloxacin + clindamycin + meropenem; add antitoxin (raxibacumab / obiltoxaximab) where available. Do NOT excise lesion. Notify IDSR within 24h + county veterinary. PEP for contacts: ciprofloxacin 500 mg BD × 60 days + 3-dose vaccine.",
+    "rationale": "WHO Anthrax 4th ed + Kenya IDSR + CDC 2014.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "brucellosis-ssa-pastoralist-r1",
+    "title": "Brucellosis — doxycycline + rifampicin × 6 weeks (WHO regimen)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "brucellosis-ssa-pastoralist"
+    },
+    "indicators": [
+      "undulant fever + raw-milk / livestock exposure",
+      "SAT titre ≥ 1:160"
+    ],
+    "recommendation": "Adult: doxycycline 100 mg PO BD + rifampicin 600–900 mg daily × 6 weeks (or doxy 6w + streptomycin 1 g IM × 14–21d). Neurobrucellosis / endocarditis / spondylitis: add ceftriaxone, treat ≥ 3–6 months, surgery if abscess/valve. Children ≤ 8 yrs: rifampicin + cotrimoxazole. Pregnancy: rifampicin ± cotrimoxazole (no doxy / strep). Counsel: complete full course, avoid raw milk.",
+    "rationale": "WHO Brucellosis Guidelines + Kenya One Health plan.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "rift-valley-fever-ssa-outbreak-r1",
+    "title": "Suspected RVF — supportive care + outbreak notification",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "rift-valley-fever-ssa-outbreak"
+    },
+    "indicators": [
+      "acute febrile illness + livestock abortions in area",
+      "raised AST/ALT + thrombocytopaenia"
+    ],
+    "recommendation": "No specific antiviral — supportive (blood products, AKI dialysis, ICU). Notify IDSR + WHO IHR within 24h. Standard precautions sufficient (no documented human-human). Coordinate with county vet for livestock ring vaccination + animal movement restriction. Refer survivors with visual symptoms to ophthalmology.",
+    "rationale": "WHO RVF + Kenya RVF Contingency Plan.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "leptospirosis-ssa-flood-occupational-r1",
+    "title": "Leptospirosis — doxycycline (mild) / penicillin G (severe) + IDSR notify",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "leptospirosis-ssa-flood-occupational"
+    },
+    "indicators": [
+      "febrile illness + conjunctival suffusion + calf myalgia + floodwater/sewer exposure"
+    ],
+    "recommendation": "Mild: doxycycline 100 mg BD × 7 d (amoxicillin in children / pregnancy). Severe (Weil's, pulmonary haemorrhage, AKI): IV penicillin G 1.5 MU q6h or ceftriaxone 1 g daily × 7 d; ICU support; consider methylprednisolone for pulmonary haemorrhage. Watch for Jarisch-Herxheimer. Doxycycline 200 mg weekly chemoprophylaxis for short-term high-risk exposure. Notify IDSR.",
+    "rationale": "WHO Leptospirosis Guidance + PAHO manual.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "organophosphate-poisoning-ssa-agricultural-r1",
+    "title": "OP poisoning — atropinise to clear chest, add pralidoxime, watch for intermediate syndrome",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "organophosphate-poisoning-ssa-agricultural"
+    },
+    "indicators": [
+      "cholinergic toxidrome + pesticide exposure"
+    ],
+    "recommendation": "ABCDE; early intubation if GCS drop or severe secretions; decontaminate skin; activated charcoal if < 1h + airway protected. ATROPINE doubling-dose IV (start 2–5 mg) every 5 min until atropinised (clear chest, HR>80, dry axillae); then infusion 10–20%/h of cumulative. PRALIDOXIME 30 mg/kg IV bolus then 8 mg/kg/h × 7 d. Diazepam for seizures. Avoid suxamethonium. Watch INTERMEDIATE SYNDROME days 1–4 (proximal weakness, respiratory paralysis). Mental health assessment if intentional. Paraquat: NO antidote, AVOID supplemental O2.",
+    "rationale": "WHO Pesticide Intoxication Guidelines 2008 + Eddleston Lancet 2008.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "adolescent-friendly-health-services-kenya-r1",
+    "title": "Adolescent contact — HEEADSSS + confidentiality + WHO AA-HA! standards",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "adolescent-friendly-health-services-kenya"
+    },
+    "indicators": [
+      "age 10–19 contact"
+    ],
+    "recommendation": "Confidential HEEADSSS interview; screen for depression (PHQ-A) + substance use (CRAFFT) + sexual health + safety. SRH: full method-mix contraception (LARC), EC, STI syndromic, HIV test (opt-out 15+ with maturity), PrEP if eligible. HPV vaccine 10 yrs (catch-up 14). Mental health per mhGAP adolescent module. Defilement reporting per Sexual Offences Act if < 18 with partner > 18. School re-entry support after pregnancy. DREAMS bundle for AGYW.",
+    "rationale": "WHO AA-HA! 2nd ed + Kenya ASRH Policy + DREAMS.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "burns-comprehensive-care-ssa-r1",
+    "title": "Major burn — Parkland fluids + early airway + transfer if criteria",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "burns-comprehensive-care-ssa"
+    },
+    "indicators": [
+      "TBSA ≥ 10% paeds / ≥ 15% adult",
+      "facial/inhalational injury"
+    ],
+    "recommendation": "Stop burning + cool with running water × 20 min; high-flow O2; INTUBATE EARLY if inhalational suspected. Parkland: 4 ml/kg × %TBSA RL over 24h (half in first 8h from burn); titrate to UOP 0.5 ml/kg/h adult, 1 ml/kg/h paeds. IV opioid analgesia. Silver sulfadiazine or honey dressings; tetanus prophylaxis; NG feeds within 6h. Refer per ABA criteria (face/hands/feet/perineum/inhalational/>10% paeds/>15% adult/electrical/chemical). Screen for NAI in children + IPV in women.",
+    "rationale": "WHO Burn Guidelines 2018 + ISBI 2018 + Kenya KNH Burn Guidelines.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "tungiasis-jigger-flea-ssa-r1",
+    "title": "Tungiasis — dimeticone topical + footwear + community treatment",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "tungiasis-jigger-flea-ssa"
+    },
+    "indicators": [
+      "embedded jigger lesion(s) on foot"
+    ],
+    "recommendation": "Topical dimeticone two-oil mixture, repeat at 7 days; avoid kerosene/petrol home remedies. Wound care + tetanus prophylaxis; antibiotic if secondary cellulitis. PREVENTION: closed-toe shoes, concrete floors, animal reservoir treatment, CHV-led community case-finding. Heavy infestation: refer + treat household / community concurrently per Kenya jigger policy.",
+    "rationale": "WHO NTD Roadmap + Kenya National Jigger Policy 2014 + Heukelbach Lancet ID 2006.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "podoconiosis-non-filarial-elephantiasis-ssa-r1",
+    "title": "Podoconiosis — daily hygiene + footwear + community programme",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "podoconiosis-non-filarial-elephantiasis-ssa"
+    },
+    "indicators": [
+      "bilateral ascending leg lymphoedema in highland barefoot agricultural worker"
+    ],
+    "recommendation": "WHO morbidity-management package: daily foot wash + dry + emollient + elevation + exercise + compression + closed footwear. Treat acute adenolymphangitis (ADL) attacks with rest + antibiotic (penicillin/flucloxacillin). Surgical nodulectomy for severe nodular disease (specialist). Address stigma + livelihood. Primary prevention: shoes + cement floors from childhood in endemic highland areas.",
+    "rationale": "WHO Podoconiosis NTD 2011 + Davey et al + WHO NTD Roadmap 2021–2030.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "sickle-cell-disease-ssa-comprehensive-r1",
+    "title": "SCD — penicillin V + hydroxyurea + TCD screen + pneumococcal vaccine",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "sickle-cell-disease-ssa-comprehensive"
+    },
+    "indicators": [
+      "confirmed HbSS / HbSβ0 / HbSC"
+    ],
+    "recommendation": "Penicillin V prophylaxis to age 5 (longer if past pneumococcal sepsis), PCV13 + PPSV23, meningococcal, annual flu, folic acid 5 mg, ITN + malaria prophylaxis. HYDROXYUREA in ALL children HbSS from 9 months (start 20 mg/kg/day, titrate to MTD). Annual TCD age 2–16. Acute pain: IV opioid within 30 min + IV fluids 1.5× maint + incentive spirometry. ACS: ceftriaxone + macrolide + simple/exchange transfusion. Stroke: urgent exchange transfusion. Fever = sepsis until proven otherwise.",
+    "rationale": "WHO SCD strategy + REACH NEJM 2019 + NHLBI 2014.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "obstetric-fistula-comprehensive-care-ssa-r1",
+    "title": "Obstetric fistula — early catheter + refer fistula centre + comprehensive rehab",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "obstetric-fistula-comprehensive-care-ssa"
+    },
+    "indicators": [
+      "continuous incontinence after obstructed labour"
+    ],
+    "recommendation": "Continuous Foley catheterisation early (within 6 weeks of delivery may close some — 15–20% spontaneous closure). Skin barrier care, treat UTI, screen + treat depression. Refer to fistula surgical centre (KNH / Jamaa / Fistula Foundation network). Post-repair: catheter 14–21 d, no PV intercourse 3 m, elective C-section future pregnancies. Address prevention: skilled birth attendance, partogram, EmONC access, delay child marriage.",
+    "rationale": "WHO Obstetric Fistula 2006 + Kenya Fistula Elimination Framework + UNFPA Campaign.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "school-health-deworming-vitamin-a-ssa-r1",
+    "title": "School-based deworming + vitamin A + adolescent iron-folate (Kenya NSBDP)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "school-health-deworming-vitamin-a-ssa"
+    },
+    "indicators": [
+      "school-based programme contact in endemic area"
+    ],
+    "recommendation": "Pre-school (12–59 mo): vitamin A 100k–200k IU 6-monthly + albendazole 200–400 mg 6-monthly. School-age (5–14): albendazole 400 mg or mebendazole 500 mg single dose annually (twice yearly if STH > 50%) + praziquantel 40 mg/kg if schisto > 10%. Adolescent girls (10–19): weekly iron-folate 60+2.8 mg + HPV vaccine + menstrual hygiene + comprehensive sexuality education. Universal: vision + hearing + oral health + WASH + ITN + IPTsc per WHO 2022 where indicated.",
+    "rationale": "WHO Preventive Chemotherapy 2022 + WHO Vitamin A 2011 + Kenya NSBDP + WHO IPTsc 2022.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "noma-cancrum-oris-ssa-r1",
+    "title": "Suspected noma — emergency antibiotics + nutritional rehabilitation + refer reconstructive",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "noma-cancrum-oris-ssa"
+    },
+    "indicators": [
+      "necrotising orofacial gangrene in malnourished child"
+    ],
+    "recommendation": "URGENT — 90% mortality untreated. IV amoxicillin-clavulanate OR ampicillin + metronidazole + gentamicin × 7–14 days. Aggressive nutritional rehab per IMAM (F-75 → F-100/RUTF). Treat malaria/measles/HIV/dehydration concurrently. Mouth care chlorhexidine 4×/day, gentle debridement only after antibiotic response. Vitamin A 200k IU, folate, zinc. Refer to reconstructive surgery (Noma Hospital network) at 3–6 months. PREVENTION: address SAM, measles immunisation, oral health education.",
+    "rationale": "WHO Noma NTD designation 2023 + WHO Noma brochure + MSF Sokoto protocol.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
