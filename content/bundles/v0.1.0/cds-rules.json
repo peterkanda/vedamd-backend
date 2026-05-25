@@ -10208,5 +10208,155 @@
     "rationale": "ESC Aortic 2014/2024 + ACC/AHA 2022 + INSTEAD.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "type-2-diabetes-modern-glp1-sglt2-2024-r1",
+    "title": "T2DM 2024 — GLP-1 RA / SGLT2i first-line by comorbidity (not just A1c)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "type-2-diabetes-modern-glp1-sglt2-2024"
+    },
+    "indicators": [
+      "T2DM diagnosis / management decision"
+    ],
+    "recommendation": "Individualised HbA1c (53 most, 48 young, 58 elderly, 64 frail). Therapy by comorbidity: ASCVD/high-CV → GLP-1 RA (semaglutide/liraglutide) ± SGLT2i; HF/CKD with albuminuria → SGLT2i (dapa/empa) first; no comorbidity → metformin then add. Combine for multiple targets. Tirzepatide most potent A1c + weight. CONTRAINDICATIONS: GLP-1RA in MEN2/MTC; SGLT2i hold for surgery 3 d (euglycaemic DKA). BP < 130/80 (ACE-i/ARB if ACR > 3), statin (atorva 20 if > 40 + DM), aspirin secondary prevention. Annual: HbA1c, BP, lipids, eGFR + ACR, retina, foot, depression. Remission possible with > 10–15% weight loss; bariatric if BMI ≥ 35 + DM.",
+    "rationale": "ADA 2024/2025 + EASD 2022 + LEADER/REWIND/EMPA-REG/DECLARE/FLOW.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "obesity-comprehensive-glp1-bariatric-2024-r1",
+    "title": "Obesity — chronic disease + GLP-1 RA / tirzepatide / bariatric",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "obesity-comprehensive-glp1-bariatric-2024"
+    },
+    "indicators": [
+      "BMI ≥ 30 (or ≥ 27 with comorbidity)"
+    ],
+    "recommendation": "Chronic relapsing disease framing — long-term treatment. EOSS stage. Foundation: nutrition + exercise ≥ 200 min/wk + behavioural CBT + sleep. Pharmacotherapy: semaglutide 2.4 mg SC weekly (~15% wt loss STEP) or tirzepatide 15 mg SC weekly (~22% SURMOUNT-1, superior in SURMOUNT-5). Liraglutide 3 mg, phentermine/topiramate, naltrexone/bupropion alternatives. Bariatric for BMI ≥ 35 + comorbidity / ≥ 40 (sleeve / RYGB / BPD) — multidisciplinary prep, lifelong micronutrient. Paeds: liraglutide / semaglutide ≥ 12 yr (STEP TEENS). SELECT 2023 — semaglutide reduces MACE in obesity without DM. Address stigma; advocate for affordable access in SSA.",
+    "rationale": "ADA/Obesity Soc 2024 + WHO 2022 + SURMOUNT/STEP/SELECT.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "ckd-modern-care-finerenone-sglt2-r1",
+    "title": "CKD 2024 — ACE-i/ARB + SGLT2i + finerenone + GLP-1 RA (4 pillars)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "ckd-modern-care-finerenone-sglt2"
+    },
+    "indicators": [
+      "eGFR < 60 / ACR > 30"
+    ],
+    "recommendation": "BP < 130/80; salt < 5 g/d; avoid NSAIDs. 4 PILLARS: ACE-i/ARB max tolerated (monitor K + Cr); SGLT2i (dapa 10 / empa 10) for ACR > 200 + eGFR > 20 (DAPA-CKD/EMPA-KIDNEY without diabetes); FINERENONE 10–20 mg if T2DM + albuminuria (FIDELIO/FIGARO); GLP-1 RA semaglutide for T2DM+CKD (FLOW 2024). Anaemia: IV iron then ESA target Hb 100–115. CKD-MBD: phosphate binder + active vit D + cinacalcet. Acidosis: NaHCO3 if HCO3 < 22. Hyperkalaemia: diet + patiromer/SZC to maintain RAAS. REFER eGFR < 30 / ACR > 700 / rapidly progressive. Statin from age 50.",
+    "rationale": "KDIGO 2024 + DAPA-CKD + EMPA-KIDNEY + FIDELIO/FIGARO + FLOW.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "dka-comprehensive-protocol-2024-r1",
+    "title": "DKA — fluid + FRIII insulin + continue basal + KCl per level",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "dka-comprehensive-protocol-2024"
+    },
+    "indicators": [
+      "hyperglycaemia + ketones + acidosis"
+    ],
+    "recommendation": "0.9% saline 1L/1h, 1L/2h, 1L/4h, 1L/8h (slower elderly/cardiac). Switch to 0.45% + 5% dex when glucose < 14. FRIII 0.1 U/kg/h capped 50 kg max 5 U/h; CONTINUE long-acting basal from start (reduces rebound). Target: ketones fall 0.5/h, HCO3 rise 3/h, glucose fall 3/h. K+: > 5.5 none, 3.5–5.5 add 40 mmol KCl/L, < 3.5 HOLD insulin until replaced. NO routine bicarb (only pH < 7 + shock). Switch SC when ketones < 0.3, pH > 7.3, eating + overlap 1h. Euglycaemic DKA (SGLT2i): start dex early. PAEDIATRIC: slower fluid (cerebral oedema risk), no rapid bolus > 10 ml/kg unless shock, monitor GCS, mannitol if cerebral oedema. Treat trigger.",
+    "rationale": "JBDS 2023 + ADA 2024 + ISPAD 2022 + PECARN.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "thyroid-storm-thyrotoxic-crisis-r1",
+    "title": "Thyroid storm — multidrug (β-blocker + PTU + iodine + steroid + cholestyramine)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "thyroid-storm-thyrotoxic-crisis"
+    },
+    "indicators": [
+      "BWPS ≥ 45 / decompensated thyrotoxicosis"
+    ],
+    "recommendation": "ICU. Fluids + active cooling (NOT aspirin). Multidrug IN SEQUENCE: 1) Propranolol 60–120 mg PO q4–6h (or IV slow); 2) PTU 600 mg load then 200–300 mg q4–6h (preferred over methimazole — blocks T4→T3 peripherally); 3) Iodine (Lugol's / SSKI / NaI IV) ≥ 1 HOUR AFTER thionamide (avoids organification); 4) Hydrocortisone 100 mg IV q8h; 5) Cholestyramine 4 g QDS. Treat precipitant. Plasmapheresis for refractory. Definitive after acute: RAI ablation / thyroidectomy / long-term thionamide. PREGNANCY: PTU 1st trim, methimazole 2nd/3rd. AVOID iodine contrast in Graves'.",
+    "rationale": "ATA 2016/2023 + Burch-Wartofsky + JES 2024.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "addisonian-crisis-adrenal-insufficiency-r1",
+    "title": "Adrenal crisis — IMMEDIATE hydrocortisone 100 mg IV (do not delay)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "addisonian-crisis-adrenal-insufficiency"
+    },
+    "indicators": [
+      "hypotension + hyperK + hypoNa + AI suspicion"
+    ],
+    "recommendation": "Hydrocortisone 100 mg IV bolus IMMEDIATELY (do not await cortisol). Aggressive 0.9% saline + dextrose if hypoglycaemic. Treat hyperkalaemia (Ca/insulin-dextrose if > 6.5). Identify precipitant (sepsis/surgery/missed dose/withdrawal of long-term steroid). Hydrocortisone 50 mg IV q6h × 24h then taper. Fludrocortisone 50–200 mcg/d only when on lower hydrocortisone (primary AI). EDUCATION CRITICAL: sick day rule (double dose for fever), emergency injectable hydrocortisone, MedicAlert, surgical stress dosing, NEVER stop chronic steroid abruptly.",
+    "rationale": "Endocrine Society 2016/2024 + ATA/Pituitary 2020.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "pituitary-apoplexy-emergency-r1",
+    "title": "Pituitary apoplexy — hydrocortisone + urgent MRI + neurosurgical MDT",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "pituitary-apoplexy-emergency"
+    },
+    "indicators": [
+      "sudden headache + visual deficit + reduced consciousness"
+    ],
+    "recommendation": "Hydrocortisone 100 mg IV bolus + 50 mg q6h (secondary AI common). IV fluids for hypotension. Glucose for hypoglycaemia. URGENT MRI pituitary. Hormonal panel (cortisol, ACTH, TSH/T4, prolactin, LH/FSH, IGF-1, GH). Formal visual fields. Neurosurgical MDT: trans-sphenoidal decompression if deteriorating vision/ophthalmoplegia/GCS reduction; conservative if stable. Hormone replacement: hydrocortisone before levothyroxine (reverse precipitates crisis); testosterone/estrogen; DDAVP if DI; GH specialist. Lifelong endocrine review.",
+    "rationale": "Endocrine Society 2017 + Society for Endocrinology UK.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "hyperkalaemia-emergency-r1",
+    "title": "Hyperkalaemia — Ca protect + insulin/dex shift + binder/loop/dialysis",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hyperkalaemia-emergency"
+    },
+    "indicators": [
+      "K > 6.5 with ECG changes / K > 7"
+    ],
+    "recommendation": "ECG monitor. 1) Ca gluconate 10% 10 ml IV (stabilise membrane, 1–3 min, lasts 30–60); 2) Insulin 10 U IV + 25 g dextrose (50 ml 50% or 250 ml 10%) over 30 min — monitor glucose q1h × 6h; 3) Salbutamol 10–20 mg neb; 4) Bicarb 50 mmol if acidotic only; 5) Patiromer 8.4 g or SZC 10 g for sustained removal; 6) Furosemide 40 mg IV if hypervolaemic + functioning kidney; 7) DIALYSIS if AKI / refractory / severe acidosis. Stop offending drugs (RAAS / K+ supp / spiro / NSAID / TMP); diet K < 2 g/d; AVOID K-substitute salt. Chronic CKD/HF on RAAS: patiromer/SZC to maintain RAAS rather than stop permanently.",
+    "rationale": "ERA-EDTA 2022 + UK Renal Assoc 2023 + KDIGO 2024.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "hyponatraemia-acute-chronic-r1",
+    "title": "Hyponatraemia — 3% NaCl 150 ml for severe symptoms; max rise 10/24h",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hyponatraemia-acute-chronic"
+    },
+    "indicators": [
+      "Na < 130 with symptoms"
+    ],
+    "recommendation": "Severe symptoms (seizure/coma): 3% NaCl 150 ml IV over 20 min, repeat × 2 if needed; aim Na rise 5 mmol/L in 1h to resolve neuro; then SLOW — max rise 8–10 mmol/L in first 24h (avoid osmotic demyelination). Volume status assessment: hypovolaemic → 0.9% NaCl; euvolaemic SIADH → fluid restrict 800–1000 ml/d + salt + urea / tolvaptan refractory; hypervolaemic → fluid + salt restrict + loop diuretic. Treat cause (drugs, malignancy, hypothyroid, adrenal). Pseudo (lipid/protein) + hypertonic (hyperglycaemia) — no treatment. Overcorrection > 10 mmol/L/24h: D5W + DDAVP to re-lower.",
+    "rationale": "ESE 2014 + AHA/ASN + Sterns NEJM 2015.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "diabetic-foot-ulcer-charcot-r1",
+    "title": "Diabetic foot — IWGDF 5 pillars + offloading TCC + MDT",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "diabetic-foot-ulcer-charcot"
+    },
+    "indicators": [
+      "DFU / acute Charcot / suspected osteomyelitis"
+    ],
+    "recommendation": "Classify (Wagner/IWGDF). Vascular: ABI/toe pressure/CTA, revasc if CLI. Neuro: 10 g monofilament. Probe-to-bone + X-ray ± MRI for OM. Tissue/bone culture (NOT superficial). 5 PILLARS: control INFECTION (oral mild flucloxacillin/cephalexin 7–14 d; IV broad-spectrum severe — pip-tazo / meropenem ± vanc; OM 6 wk antibiotic + debride), control ISCHAEMIA (revasc), control PRESSURE (TCC gold standard plantar; removable cast walker), WOUND care (sharp debride + moist + honey LMIC; NPWT selected; avoid H2O2/iodine routine), GLUCOSE/risk factor. CHARCOT: hot swollen foot + neuropathy = high index of suspicion; immediate TCC + non-weight-bearing 8–12 wk; reconstruct selected. Multidisciplinary foot clinic reduces amputation. Annual screen + education.",
+    "rationale": "IWGDF 2023 + IDSA 2024 + NICE NG19.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
