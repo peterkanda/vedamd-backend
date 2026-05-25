@@ -11258,5 +11258,155 @@
     "rationale": "GINA 2024 paeds + BTS/SIGN + ERS/ATS Severe + NICE NG80 + PRACTALL.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "rheumatoid-arthritis-treat-to-target-2024-r1",
+    "title": "RA — early treat-to-target with MTX + add bDMARD/JAK if not at target at 3-6 mo",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "rheumatoid-arthritis-treat-to-target-2024"
+    },
+    "indicators": [
+      "symmetric polyarthritis + anti-CCP / RF / ACR EULAR 2010 criteria"
+    ],
+    "recommendation": "Treat-to-target DAS28 < 2.6. Start MTX 7.5-25 mg/wk + folate + bridge low-dose pred 5-15 mg taper. If not at target by 3-6 mo: add another csDMARD (triple = MTX+SSZ+HCQ) OR add bDMARD/tsDMARD. bDMARDs: anti-TNF (etan/ada/infl/golim/cert), anti-IL-6 (tocilizumab/sarilumab), rituximab, abatacept. JAK inhibitors (tofa/bari/upa) — BOXED WARNINGS (VTE/MACE/cancer especially > 65 + CV/smoker) — reserve. Combine bDMARD with MTX. SCREEN before bDMARD: hepatitis B/C, HIV, TB (IGRA + CXR), pregnancy. Pneumococcal + flu + COVID BEFORE bDMARD. NO LIVE on bDMARD/JAK/MTX. Pregnancy: AVOID MTX (3 mo washout both partners) + leflunomide (cholestyramine washout); HCQ + SSZ safe; certolizumab preferred TNF. Monitor: DAS28 + FBC + LFT + Cr; HCQ retinal screen annual > 5 yr. Address CV risk (RA doubles); bone (steroid + RA).",
+    "rationale": "EULAR 2024 + ACR 2024 + NICE NG100 + Treat-to-Target Task Force.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "systemic-lupus-erythematosus-sle-modern-r1",
+    "title": "SLE — HCQ for ALL + MMF/CYC + steroid for lupus nephritis",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "systemic-lupus-erythematosus-sle-modern"
+    },
+    "indicators": [
+      "ANA + anti-dsDNA / anti-Sm + multi-system involvement"
+    ],
+    "recommendation": "HCQ 200-400 mg/d for ALMOST ALL (reduces flares + mortality + organ damage; continue pregnancy). Sun protection + vitamin D + smoking cessation + vaccinations (no live on immunosuppression). MILD-MODERATE: HCQ + topical/short pred + AZA/MTX/MMF if persistent; belimumab or anifrolumab refractory. LUPUS NEPHRITIS PROLIFERATIVE (Class III/IV): IV pulse methylpred 500-1000 mg × 3 d then pred 0.5-1 mg/kg taper + MMF 2-3 g/d (or low-dose IV CYC 500 mg q2 wk × 6 — EuroLupus). Maintenance MMF 1-2 g (ALMS) or AZA, continue ≥ 2-3 yr; voclosporin add-on (AURORA); belimumab + MMF (BLISS-LN). MEMBRANOUS (V): MMF + steroid or CNI. NEUROPSYCHIATRIC SLE: differentiate inflammatory (steroid + CYC/RTX) vs thrombotic (anticoag for APS). ACUTE FLARE: identify trigger + escalate. PREGNANCY: quiescent ≥ 6 mo, continue HCQ, switch teratogens BEFORE, aspirin from 12 wk, fetal cardiac if anti-Ro/La. African ancestry — more severe + advocacy for access in SSA.",
+    "rationale": "EULAR 2023/2024 + ACR 2024 + KDIGO 2024 + ALMS + BLISS-LN + AURORA.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "gout-comprehensive-2024-r1",
+    "title": "Gout — colchicine/NSAID/steroid acute + allopurinol target SU < 360 + prophylaxis 3-6 mo",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "gout-comprehensive-2024"
+    },
+    "indicators": [
+      "acute monoarthritis / hyperuricaemia"
+    ],
+    "recommendation": "Joint aspirate for crystals + rule out septic (gold standard especially first attack). ACUTE: NSAID + PPI / colchicine 1.2 mg STAT then 0.6 mg at 1h then 0.6 mg q12h / steroid (pred 30-40 mg × 5-10 d — first-line if CKD/GI/CV) / IA steroid. ULT initiate if tophi / ≥ 2 attacks/y / CKD / urolithiasis / very high urate — CAN START DURING acute attack + ANTI-INFLAMMATORY PROPHYLAXIS 3-6 mo (colchicine 0.6 mg / low-dose NSAID / pred). ALLOPURINOL 50-100 mg start titrate to TARGET SERUM URATE < 360 µmol/L (< 300 if tophi); HLA-B*5801 test before in Han Chinese/Korean/Thai/African ancestry. Renal dose adjust. Drug interactions (AZA/6-MP/warfarin). Febuxostat alternative — CARES CV signal. Uricosurics for non-renal/non-stone. Pegloticase refractory tophi. LIFESTYLE: weight loss 10%, reduce ETOH (beer/spirits), red meat/organ/seafood/fructose, low-fat dairy, hydrate. SWITCH diuretic if possible (worsens). SGLT2i in DM lowers urate.",
+    "rationale": "EULAR 2023 + ACR 2020/2024 + BSR 2017/2024 + NICE NG219.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "ankylosing-spondylitis-axspa-r1",
+    "title": "axSpA — NSAIDs + exercise; biologic if BASDAI ≥ 4 + spine pain ≥ 4",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "ankylosing-spondylitis-axspa"
+    },
+    "indicators": [
+      "inflammatory back pain + sacroiliitis + HLA-B27"
+    ],
+    "recommendation": "Exercise + physiotherapy + smoking cessation FOUNDATION. NSAID first-line continuous (naproxen/indo/etoricoxib) — may slow progression; topical/IA steroid for peripheral arthritis; AVOID systemic steroid (limited efficacy axial). csDMARD (SSZ/MTX) for PERIPHERAL only (ineffective axial). BIOLOGIC if ≥ 2 NSAID failure + BASDAI ≥ 4 + spinal pain ≥ 4: anti-TNF (etan/ada/infl/golim/cert), IL-17i (secu/ixe/bime), JAK (upa — BBW). Comorbidity: uveitis — anti-TNF mAb preferred (NOT etanercept for uveitis); IBD — anti-TNF mAb (NOT etanercept; NOT IL-17 — may worsen); psoriasis — IL-17/TNFi/IL-23. AVOID IL-23 for axial SpA (ineffective). OSTEOPOROSIS common: DEXA + bisphosphonate; vit D + Ca. SURGICAL: hip/shoulder replacement; spinal osteotomy for kyphosis (selected). ANKYLOSED spine + minor trauma = fracture (high mortality cervical) — cautious handling + alert anaesthesia. Pregnancy: often improves; NSAIDs 1st-2nd trim (NOT 3rd — ductus); certolizumab preferred TNF. Vaccinations pre-biologic; no live.",
+    "rationale": "ASAS-EULAR 2024 + ACR/SAA 2024 + BRITSpA + BSR.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "anca-vasculitis-gpa-mpa-egpa-r1",
+    "title": "ANCA vasculitis — CYC/RTX + steroid induction; RTX maintenance; avacopan",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "anca-vasculitis-gpa-mpa-egpa"
+    },
+    "indicators": [
+      "multisystem disease + ANCA+ (PR3/MPO)"
+    ],
+    "recommendation": "Tissue + ANCA pattern. SEVERE/ORGAN-THREATENING induction: cyclophosphamide 15 mg/kg IV pulses or 2 mg/kg PO × 3-6 mo + high-dose pulse methylpred 500-1000 × 3 d then pred 1 mg/kg taper; OR rituximab 375 mg/m² × 4 (RAVE/RITUXVAS non-inferior; preferred PR3+/relapsing/fertility preservation). PLEX for pulmonary haemorrhage / severe AKI requiring dialysis (PEXIVAS modest). AVACOPAN (C5a antagonist; ADVOCATE) — steroid-sparing newer. MAINTENANCE ≥ 2-3 yr: rituximab 500 mg q6 mo × 2 yr (MAINRITSAN superior) or AZA 1.5-2 mg/kg or MMF or MTX. EGPA: mepolizumab for non-severe corticosteroid-dependent (MIRRA). Severe relapse: re-induce RTX preferred. PROPHYLAXIS: cotrim PCP (high-dose immunosuppression); vaccinations BEFORE biologic (no live); bone health + vit D + bisphosphonate. FERTILITY: CYC reduces — banking pre-treatment; rituximab preferred young. Pregnancy: plan in remission + switch teratogens. Monitor BVAS/VDI + ANCA + Cr + UA. CV risk + bladder/skin cancer surveillance.",
+    "rationale": "EULAR-ERA-EDTA 2024 + ACR/VF 2024 + RAVE + PEXIVAS + ADVOCATE + MAINRITSAN.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "polymyalgia-rheumatica-gca-overlap-r1",
+    "title": "PMR pred 15-20 mg / GCA pred 40-60 mg or pulse if visual; tocilizumab steroid-sparing",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "polymyalgia-rheumatica-gca-overlap"
+    },
+    "indicators": [
+      "age ≥ 50 + bilateral shoulder/hip pain (PMR) or temporal headache/jaw claud/visual (GCA)"
+    ],
+    "recommendation": "PMR: clinical + ESR/CRP raised + rapid response to pred 15-20 mg/d (dramatic within 1 wk supportive); taper 2.5 mg q2-4 wk to 10 mg then 1 mg q4-8 wk; 12-24 mo total. GCA: VISUAL SYMPTOMS or large-vessel — IV methylpred 500-1000 × 3 d then pred 1 mg/kg; NO visual symptoms — pred 40-60 mg/d; START IMMEDIATELY (do NOT wait for biopsy — vision loss permanent + bilateral). Temporal artery biopsy within 1 wk (positive up to 2 wk after starting steroid). TOCILIZUMAB (GiACTA — first-line steroid-sparing GCA) or MTX. Aspirin 75 mg in GCA. Slow taper; 2-3 yr total GCA. Bone protection: DEXA + bisphosphonate within 3 mo > 7.5 mg pred × 3 mo + vit D + Ca. PPI GI protection. PCP cotrim if > 20 mg × 4 wk. Monitor steroid SE (BP/glucose/weight/mood/eye/infection/bone). Aortic surveillance annually GCA (aneurysm). Steroid card + sick day rules + MedicAlert.",
+    "rationale": "BSR PMR + EULAR/ACR + EULAR LVV 2024 + GiACTA + SEMAPHORE.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "antiphospholipid-syndrome-aps-r1",
+    "title": "APS — warfarin INR 2-3 (AVOID DOAC triple-positive/arterial) + aspirin obstetric",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "antiphospholipid-syndrome-aps"
+    },
+    "indicators": [
+      "thrombosis or pregnancy morbidity + persistent positive LA/aCL/anti-β2GP1"
+    ],
+    "recommendation": "Sydney criteria (LA/aCL/anti-β2GP1 — persistent 12 wk apart). VTE/arterial thrombosis: WARFARIN target INR 2-3 (target 3-4 for arterial/recurrent VTE on standard INR); AVOID DOACs in triple-positive (TRAPS), arterial, recurrent — DOAC only in selected single-positive low-risk VTE after discussion. Indefinite anticoag. Add HCQ for SLE-APS + aspirin 75 mg + statin (CV). OBSTETRIC APS: aspirin 75-150 mg from positive pregnancy + prophylactic LMWH throughout pregnancy + 6 wk postpartum (treatment dose if VTE/arterial history); HCQ; multi-D obstetric. CATASTROPHIC APS: ICU + heparin + steroid + PLEX or IVIG + rituximab/eculizumab refractory. ASYMPTOMATIC + APL: low-dose aspirin 75-100 mg controversial — consider high-risk (triple-positive); aggressive CV risk modification + HCQ if SLE. Avoid combined OCP (DVT); use progestin/IUD. Periop bridge LMWH. Patient education + alert card.",
+    "rationale": "EULAR 2024 + ACR/VF + BSH + TRAPS + RAPS.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "fibromyalgia-comprehensive-r1",
+    "title": "Fibromyalgia — education + exercise + CBT + duloxetine/pregabalin/amitriptyline; AVOID opioids",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "fibromyalgia-comprehensive"
+    },
+    "indicators": [
+      "widespread pain ≥ 3 mo + fatigue + sleep + cognitive"
+    ],
+    "recommendation": "Clinical 2010/2016 ACR criteria (WPI + SS). Rule out alternative: TSH/CK/ESR-CRP/FBC/vitD. Education + validate (nociplastic pain — central sensitisation); functional goals (not pain-free). NON-PHARM strongest evidence: GRADED AEROBIC EXERCISE + CBT/ACT + MBSR + sleep hygiene + CBT-I + multi-D pain rehab + aquatic. PHARM modest: AMITRIPTYLINE 10-50 mg nocte (sleep+pain+mood), DULOXETINE 30-120 mg or milnacipran 50-100 BD (FDA-approved), PREGABALIN 75-450 mg/d. AVOID strong opioids (hyperalgesia + addiction); tramadol short-term cautious (5-HT syndrome with SNRI/SSRI). AVOID benzo. NSAIDs ineffective fibro primary (use for comorbid OA). Sleep: exclude OSA + RLS. Treat psychiatric comorbidity (depression/anxiety/PTSD). Diet anti-inflammatory + weight + avoid caffeine excess. Workplace accommodations + vocational rehab. Trauma-informed care. Continuity of care critical — avoid 'shopping'. Re-evaluate diagnosis if focal neuro / joint swelling / constitutional / very high inflammatory markers.",
+    "rationale": "EULAR 2017 + APS/ACR 2018 + AAPT 2019 + Cochrane.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "primary-immunodeficiency-suspected-r1",
+    "title": "PID — 10 warning signs + Ig + functional + refer immunology; IVIG/SCIG replacement",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "primary-immunodeficiency-suspected"
+    },
+    "indicators": [
+      "recurrent / severe / unusual / pattern of infections / family history / Jeffrey Modell warning signs"
+    ],
+    "recommendation": "10 Jeffrey Modell warning signs. Workup: FBC + lymphocyte count/smear, IgG/IgA/IgM/IgE, specific antibody response (tetanus/pneumococcal), lymphocyte subsets (CD3/4/8/19/56), complement (CH50/AH50/C3/C4); HIV ALWAYS (rule out); genetic NGS panel. Newborn SCID screening (TREC). REFER CLINICAL IMMUNOLOGY. ANTIBODY DEFICIENCY (CVID/XLA): IVIG 0.4-0.8 g/kg q3-4 wk OR SCIG 0.1-0.2 g/kg weekly (home self-admin); target trough IgG > 5 g/L (or higher); lifelong; antibiotic prophylaxis for chronic respiratory disease; vaccinations: AVOID LIVE on Ig replacement (or 3 mo after dose). T-CELL DEFICIENCY (SCID): HSCT BEFORE 3 mo age curative; gene therapy for ADA-SCID; avoid live vaccines + transfusions (irradiated CMV-neg leucodepleted); PCP cotrim. PHAGOCYTIC (CGD): antibiotic + antifungal prophylaxis + IFN-γ; HSCT considered. COMPLEMENT: meningococcal + Hib + pneumococcal vaccines essential; eculizumab for aHUS/PNH. Aggressive infection treatment + culture-directed + longer duration. Genetic counselling + family. SSA: HIV first; advocate IVIG access via NHIF; newborn screening expansion.",
+    "rationale": "ESID 2024 + Jeffrey Modell + IUIS + NICE NG157.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "scleroderma-systemic-sclerosis-r1",
+    "title": "SSc — organ-specific; ACEi for renal crisis; MMF/nintedanib/tocilizumab for ILD",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "scleroderma-systemic-sclerosis"
+    },
+    "indicators": [
+      "skin sclerosis + Raynaud + autoantibody (centromere/Scl-70/RNAP3)"
+    ],
+    "recommendation": "ACR/EULAR 2013 criteria. Antibody-organ associations: anti-centromere → limited + PAH; anti-Scl-70 → diffuse + ILD; anti-RNAP3 → renal crisis. NO disease-modifying cure — organ-specific. RAYNAUD'S/digital ulcers: warm + CCB (nifedipine/amlodipine) → PDE5i (sildenafil) for refractory → bosentan for new ulcers (RAPIDS-2) → IV iloprost severe. ILD: mycophenolate 2-3 g (Scleroderma Lung Study II — better safety than CYC) → CYC severe; NINTEDANIB antifibrotic (SENSCIS); TOCILIZUMAB early inflammatory (focuSSed); lung transplant. PAH: dual oral ERA + PDE5i (AMBITION) + prostacyclin high-risk + sotatercept (STELLAR). RENAL CRISIS EMERGENCY: ACEi captopril titrated FAST (start 6.25 mg, q4-8h); BP < 140/90 target; continue ACEi even if Cr worsens; dialysis if needed; AVOID steroid > 15 mg (precipitates renal crisis). GI: PPI for GERD; prokinetic for gastroparesis; rifaximin for SIBO; dietitian + PEG if severe. AUTOLOGOUS HSCT (ASTIS/SCOT) — severe early diffuse SSc + organ; cardiac screen essential. Pregnancy: plan when stable; AVOID ACEi for routine BP (need available for renal crisis). Monitor annually: PFT + DLCO + echo TR velocity + skin score + BP + UA + Cr. African ancestry — more severe.",
+    "rationale": "EULAR 2017/2024 + ACR/BSR + SENSCIS + focuSSced + SLS II + ASTIS/SCOT.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
