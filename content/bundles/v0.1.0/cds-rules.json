@@ -11558,5 +11558,155 @@
     "rationale": "WHO 2024 + CDC 2024 + Kenya Syndromic + BASHH + FDA fluconazole pregnancy.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "acute-appendicitis-modern-management-r1",
+    "title": "Appendicitis — Alvarado + early laparoscopic; antibiotic-first option (CODA)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "acute-appendicitis-modern-management"
+    },
+    "indicators": [
+      "RLQ pain + Alvarado / Lipase / CT positive"
+    ],
+    "recommendation": "Alvarado score + WBC + CRP. US first-line in children + pregnancy (no radiation); CT for adults; MRI in pregnancy if US equivocal. AAST grading. Resuscitate + IV fluids + NPO + analgesia (Pain Trial — does not mask). Antibiotics: pip-tazo 4.5 g q8h or ceftriaxone + metronidazole. SURGERY: LAPAROSCOPIC APPENDICECTOMY first-line (shorter recovery, less infection); within 24h. Complicated (perforation/abscess/phlegmon): IV antibiotics × 4-7 d + CT-guided drainage > 4-6 cm abscess; interval appendicectomy at 6-12 wk (controversial). ANTIBIOTIC-FIRST (CODA NEJM 2020): adult uncomplicated — non-inferior at 90 d for major outcomes; ~30% appendicectomy by 90 d; shared decision; NOT for perforation/abscess/appendicolith. PREGNANCY: laparoscopic safe (2nd trim ideal); MRI if US uncertain. ELDERLY: lower threshold imaging + surgery; investigate underlying CRC. Send specimen histology (carcinoid/lymphoma).",
+    "rationale": "WSES 2020/2024 + NICE NG143 + CODA NEJM 2020.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "acute-cholecystitis-tg18-r1",
+    "title": "Acute cholecystitis — TG18 grading + EARLY lap-chole < 72h",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "acute-cholecystitis-tg18"
+    },
+    "indicators": [
+      "RUQ pain + Murphy sign + leucocytosis + US findings"
+    ],
+    "recommendation": "Tokyo TG18 severity. US first-line: wall > 4 mm + pericholecystic fluid + sonographic Murphy. Resuscitate + NPO + IV antibiotics (cefuroxime + metronidazole or pip-tazo). Grade I/II: EARLY LAP-CHOLE within 72h preferred over delayed (Cochrane). Grade III (organ dysfunction): ICU + sepsis bundle + percutaneous CHOLECYSTOSTOMY bridge → interval cholecystectomy when stable. CHOLEDOCHOLITHIASIS: ERCP + sphincterotomy PRE-cholecystectomy if ALP/bilirubin raised or CBD dilated. ACUTE CHOLANGITIS (Charcot triad / Reynolds pentad): IV antibiotics + ERCP biliary drainage WITHIN 24h. Gallstone pancreatitis: ERCP within 24-48h if cholangitis/persistent obstruction; SAME-admission cholecystectomy for mild (PONCHO). Emphysematous (diabetics): emergency cholecystectomy. Pregnancy: laparoscopic safe (2nd trim ideal). Antibiotic duration 4-7 d post source control. Acalculous cholecystitis (critically ill): drain ± delayed cholecystectomy.",
+    "rationale": "Tokyo TG18 2018/2024 + WSES + NICE NG188 + Cochrane.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "intestinal-obstruction-comprehensive-r1",
+    "title": "SBO — gastrograffin trial; LBO/strangulation → surgery; volvulus → endoscopic detorsion",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "intestinal-obstruction-comprehensive"
+    },
+    "indicators": [
+      "abdominal distension + colicky pain + vomiting + absolute constipation"
+    ],
+    "recommendation": "Resuscitate IV fluids + NPO + NG decompression + catheter + analgesia + correct electrolytes + VTE prophylaxis. CT abdomen/pelvis with contrast — transition + cause + ischaemia features; AXR + erect CXR; FBC + lactate + ABG. ADHESIVE SBO: conservative 24-48-72h with NG + IV fluid + gastrograffin (both diagnostic + therapeutic — Cochrane); surgery if strangulation/peritonitis/closed-loop/failure. HERNIA: try manual reduction with analgesia + sedation; if irreducible/strangulated — emergency repair ± resection. LARGE BOWEL OBSTRUCTION: most malignant — Hartmann's or anastomosis + diverting stoma; SEMS as bridge or palliative; sigmoid volvulus — endoscopic detorsion + flatus tube (60-90% success) then elective sigmoidectomy; caecal volvulus — surgery. MALIGNANT bowel obstruction advanced: stent vs conservative (NG + antiemetic haloperidol/cyclizine + dexamethasone + octreotide). Paediatric intussusception: air/hydrostatic enema reduction first then surgery if fails. Ileus: treat cause + electrolytes + mobilise; Ogilvie's neostigmine 2-2.5 mg IV under cardiac monitor. Early mobilise + ERAS.",
+    "rationale": "WSES Adhesive SBO 2018/2024 + WSES Colon + NICE Cancer + Cochrane.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "diverticulitis-comprehensive-2024-r1",
+    "title": "Diverticulitis — Hinchey CT + selective antibiotic + early surgery for III/IV",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "diverticulitis-comprehensive-2024"
+    },
+    "indicators": [
+      "LLQ pain + fever + leucocytosis"
+    ],
+    "recommendation": "CT abdomen/pelvis with contrast — Hinchey 0-IV grading + complications (abscess/perforation/fistula/stricture). UNCOMPLICATED OUTPATIENT (CT Hinchey 0/Ia mild + low risk): consider NO antibiotic (DIABOLO + AVOD trials) + clear fluids + analgesia + follow-up; antibiotics if immunocompromised/severe/comorbidity. Antibiotic if given: co-amoxiclav 625 TDS × 7 d or ciprofloxacin + metronidazole. COMPLICATED: admit + IV ceftriaxone + metronidazole or pip-tazo; Hinchey I-II abscess > 4 cm — CT-guided drainage; Hinchey III (purulent peritonitis) — surgery (Hartmann's or primary anastomosis with loop ileostomy — LADIES); laparoscopic lavage selected (LADIES/DILALA/SCANDIV mixed); Hinchey IV (faeculent) — HARTMANN'S + damage control if unstable. COLONOSCOPY 6-8 wk post-acute (rule out CRC 1-2%). Elective sigmoidectomy: recurrent (4+), complicated history, immunocompromised. Fistula: elective resection when inflammation settled. Avoid NSAID/steroid/opioid (worsen recurrence). High-fibre diet 25-35 g + hydration + exercise + smoking cessation; NUTS/SEEDS NO LONGER restricted (old advice).",
+    "rationale": "WSES + ASCRS 2020/2024 + DIABOLO/AVOD + LADIES.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "adult-major-trauma-resuscitation-r1",
+    "title": "Adult major trauma — cABCDE + permissive hypotension + TXA + damage control",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "adult-major-trauma-resuscitation"
+    },
+    "indicators": [
+      "major trauma activation"
+    ],
+    "recommendation": "Trauma team activation per criteria. PRIMARY SURVEY cABCDE (with c-spine + catastrophic haemorrhage). FAST/eFAST bedside. Pre-hospital: tourniquet + pelvic binder + airway with c-spine + needle decompression PTX + TXA 1 g IV within 3h. AIRWAY: RSI ketamine + rocuronium + video laryngoscope; cric if can't intubate/oxygenate. BREATHING: O2 + treat tension/open PTX + flail chest. CIRCULATION: 2× large-bore IV (IO if failed 90s); CONTROLLED HYPOTENSION (SBP 80-90 / MAP 65 in non-head injury; SBP > 110 if head injury); early BLOOD (O-neg → crossmatch); MASSIVE TRANSFUSION 1:1:1 RBC:FFP:platelets + TXA + calcium + warmth (CRASH-2/CRASH-3); pelvic binder + angiographic embolisation; REBOA selected centres. DISABILITY: GCS + pupils + glucose + treat raised ICP (head-up 30 + hypertonic saline 3% or mannitol). EXPOSURE: hypothermia prevention. Damage control resuscitation + surgery if lactate > 5 / pH < 7.2 / T < 35 / INR > 1.5. Open fracture Gustilo-Anderson: IV cefazolin + gentamicin + irrigation + debridement within 6h. ICU + tertiary survey on ward (missed injuries 10-15%). Kenya National EMC Strategy 2020-2025; WHO Decade of Road Safety 2021-2030.",
+    "rationale": "ATLS 10e + EAST + WSES + Kenya EMC + CRASH-2/3.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "acute-angle-closure-glaucoma-r1",
+    "title": "ACG — IMMEDIATE IV acetazolamide + topical + ophthalmology emergency + laser PI/lens extraction",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "acute-angle-closure-glaucoma"
+    },
+    "indicators": [
+      "unilateral severe eye pain + halos + cloudy cornea + mid-dilated pupil + raised IOP"
+    ],
+    "recommendation": "EMERGENCY ophthalmology referral. Break the attack: IV acetazolamide 500 mg + oral acetazolamide 250-500 mg + topical β-blocker (timolol) + α2-agonist (apraclonidine/brimonidine) + topical steroid + pilocarpine 1-2% (only AFTER IOP starts dropping — ineffective at IOP > 40); supine; hyperosmotic (mannitol IV) for very high IOP short-term. Analgesia + antiemetic. DEFINITIVE: peripheral laser iridotomy (PI) bilateral or LENS EXTRACTION (EAGLE trial — superior long-term to PI for primary angle closure). Long-term IOP monitoring + medication review (avoid anticholinergic/antihistamine/decongestant/TCA/SSRI/prone position). Fellow eye: prophylactic PI/lens extraction. Distinguish acute red painful eye DDx: ACG (pain + halos + steamy cornea + mid-dilated fixed pupil + hard globe) vs uveitis (small pupil + KPs) vs keratitis (FB sensation + epithelial defect) vs endophthalmitis (post-op + hypopyon) vs scleritis (deep boring + tender globe).",
+    "rationale": "EGS 5e 2024 + AAO PPP + NICE NG81 + EAGLE Lancet 2016.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "central-retinal-artery-occlusion-r1",
+    "title": "CRAO — treat as STROKE within 4-6h; GCA cover + IV steroid immediate; carotid + cardiac workup",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "central-retinal-artery-occlusion"
+    },
+    "indicators": [
+      "sudden painless monocular vision loss + RAPD + cherry-red spot"
+    ],
+    "recommendation": "Treat as STROKE EQUIVALENT. RAPD + cherry-red spot + pale retina + arteriolar narrowing on fundus. GCA assumed > 50: HIGH-DOSE IV METHYLPRED 1 g × 3 d then pred 60-80 mg taper + temporal artery biopsy within 1 week + ESR/CRP — vision loss in opposite eye can occur within days if untreated. IV tPA within 4.5h emerging evidence (treat per stroke protocol — selected centres) — controversial but increasing adoption. Older 'measures' (carotid massage, ocular massage, acetazolamide, AC paracentesis) — limited evidence + may dislodge embolus to cerebral. Stroke workup: ECG (AF), echo, CT angiography head+neck (carotid stenosis), CT/MRI brain (concurrent cerebral infarct in 25%). Secondary prevention: aspirin + statin high-intensity + BP control + anticoagulant if AF + carotid endarterectomy if symptomatic > 70% within 2 wk + smoking cessation + DM. Refer neurology + ophthalmology. Established vision loss > 12h: visual recovery limited; focus on prevention of further events + low-vision rehab. NAION (non-arteritic ischaemic optic neuropathy) different — altitudinal field defect + disc swelling; GCA must be excluded.",
+    "rationale": "AAO PPP 2024 + AHA Retinal Stroke 2021 + BSR GCA + Schultheiss tPA.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "chemical-eye-injury-emergency-r1",
+    "title": "Chemical eye burn — IRRIGATE COPIOUSLY (≥ 30 min until pH 7) + alkali worse + ophthalmology emergency",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "chemical-eye-injury-emergency"
+    },
+    "indicators": [
+      "chemical exposure to eye"
+    ],
+    "recommendation": "IRRIGATE FIRST — do NOT delay for examination or workup. Remove solid particles. Topical anaesthetic (proparacaine) — facilitates cooperation. IRRIGATE COPIOUSLY with sterile saline/Ringer's/sterile water (any clean water at scene — DON'T DELAY) — Morgan lens or IV tubing; evert lids + sweep fornix; MIN 30 MIN + check pH (until 7.0-7.4); ALKALI longer (often hours — penetrates deeper, total 5-10 L may be needed). Roper-Hall grading I-IV — limbal ischaemia is key prognostic factor. Post-irrigation: topical antibiotic (chloramphenicol) + cycloplegic (atropine 1%) + topical STEROID first week ONLY (impairs healing later — specialist guidance) + lubricants + vitamin C + DOXYCYCLINE 100 BD (MMP inhibitor + anti-collagenase) + citrate 10% drops for alkali + tetanus + analgesia. Amniotic membrane / limbal stem cell transplant for severe RH III-IV. EMERGENCY ophthalmology referral all chemical. Long-term: corneal transplant for severe scarring; keratoprosthesis (Boston KPro) end-stage. PREVENTION: PPE + eye-wash stations + workplace safety + pesticide safety (Kenya agricultural) + public education to IRRIGATE IMMEDIATELY + come to hospital. Roper-Hall I good prognosis vs IV severe ischaemia poor.",
+    "rationale": "AAO PPP 2024 + ICO + Wagoner.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "epistaxis-management-emergency-r1",
+    "title": "Epistaxis — first aid + cautery; posterior packing for severe + antibiotic + admit",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "epistaxis-management-emergency"
+    },
+    "indicators": [
+      "nosebleed"
+    ],
+    "recommendation": "Sit forward + pinch CARTILAGINOUS nose 15-20 min continuous + ice + spit blood. Topical cophenylcaine / oxymetazoline + reapply pressure. ANTERIOR identified bleeding point: SILVER NITRATE cautery one side only (bilateral cautery → septal perforation). If fails: anterior nasal packing (Rapid Rhino / Merocel / Floseal) × 24-48h + ANTIBIOTIC (toxic shock syndrome risk — phenoxymethylpenicillin or cephalexin while packed). POSTERIOR (10% — severe, bilateral, posterior pharyngeal blood, older anticoagulated): FOLEY catheter 16-18 Fr through nostril, balloon in nasopharynx + anterior pack + ADMIT (hypoxia/vasovagal/arrhythmia risk) + ECG monitor + O2 + analgesia + antibiotic. Embolisation IR (sphenopalatine + facial) or surgical ligation (endoscopic sphenopalatine artery — most effective posterior). Resuscitate haemodynamic instability. Reverse anticoagulation if life-threatening (vit K + 4F-PCC for warfarin; idarucizumab dabigatran; andexanet Xa inhibitor; FFP if PCC unavailable). RECURRENT: workup HHT/coagulopathy/HTN/tumour; saline + petrolatum + Naseptin preventive; humidifier; HHT — tranexamic acid + bevacizumab (severe). PAEDIATRIC: usually digital trauma + dry air; first aid + petrolatum; avoid routine cautery. Septal haematoma (post-trauma) — DRAIN URGENTLY (cartilage necrosis + saddle nose risk).",
+    "rationale": "ENT UK 2024 + AAO-HNS 2020 + NICE CKS + HHT.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "testicular-torsion-emergency-r1",
+    "title": "Testicular torsion — SURGERY within 6h; manual detorsion if delay; bilateral orchiopexy",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "testicular-torsion-emergency"
+    },
+    "indicators": [
+      "sudden testicular pain in young male + absent cremasteric reflex + high-riding"
+    ],
+    "recommendation": "EMERGENCY — TIME IS TESTIS (viability < 6h good, < 12h declining, 24h near zero). Clinical diagnosis — DO NOT DELAY for imaging in classic presentation. TWIST score ≥ 5 high probability. Doppler US sensitivity 89% (absent flow) — only if doesn't delay surgery. Surgical consultation IMMEDIATELY. SURGICAL EXPLORATION + DETORSION + BILATERAL ORCHIOPEXY (contralateral has same bell-clapper anatomy in 80%); orchiectomy if non-viable + contralateral orchiopexy. MANUAL DETORSION if surgery delayed: 'open book' — rotate testis OUTWARD/laterally from midline (most twist inward) — 1-3 rotations (often 720°); pain relief + Doppler confirms; STILL needs definitive orchiopexy. NPO + IV access + analgesia + antibiotic prophylaxis. Consent including possible orchiectomy + prosthesis. Neonatal torsion: usually extravaginal perinatal not salvageable but explore + contralateral orchiopexy. Intermittent torsion (recurrent self-resolving): elective bilateral orchiopexy. Adolescent male education on recognising + emergency presentation. Major medicolegal — document carefully. DDx: epididymo-orchitis (gradual + STI/UTI history + cremasteric present + pyuria), hydrocele torsion, appendix testis torsion (blue dot sign, less severe), hernia, trauma, tumour.",
+    "rationale": "EAU 2024 + AUA + BAUS + TWIST.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]

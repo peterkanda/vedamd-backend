@@ -82834,5 +82834,927 @@
     "ruleVersion": "2024.1",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "acute-appendicitis-modern-management",
+    "title": "Acute appendicitis — Alvarado + AAST + antibiotic-first option",
+    "icd10": [
+      "K35.80"
+    ],
+    "icd11": [
+      "DB10"
+    ],
+    "domains": [
+      "surgery",
+      "emergency",
+      "primary-care"
+    ],
+    "population": "Lifetime risk 7-8%; peak 10-30 yr but any age. Most common surgical emergency globally.",
+    "presentation": "Periumbilical pain migrating to RLQ + anorexia + nausea + vomiting + low-grade fever + RLQ tenderness (McBurney) + guarding + rebound + Rovsing's + psoas + obturator signs. Variable in elderly + children + pregnancy + immunocompromised.",
+    "redFlags": [
+      "Perforation + diffuse peritonitis",
+      "Appendiceal abscess (palpable mass)",
+      "Sepsis",
+      "Pregnancy with appendicitis (perforation rate higher, fetal loss risk)",
+      "Atypical presentation in elderly / children / immunocompromised — delayed diagnosis",
+      "Carcinoid / mucocele in appendix at older patients"
+    ],
+    "diagnostics": [
+      "Alvarado score: Migration + Anorexia + Nausea + Tenderness RLQ + Rebound + Elevated temp + Leucocytosis + Shift to left",
+      "FBC (leucocytosis + neutrophil predominance), CRP",
+      "Pregnancy test all women of reproductive age",
+      "Urinalysis (rule out UTI, kidney stone)",
+      "ULTRASOUND first-line in children + pregnancy (no radiation): non-compressible blind-ending tubular structure > 6 mm, target sign, mural thickening, free fluid",
+      "CT abdomen/pelvis with contrast — most accurate adults (sensitivity > 95%)",
+      "MRI in pregnancy if US equivocal",
+      "AAST appendicitis grading 1-5 (uncomplicated → perforated)"
+    ],
+    "management": [
+      "RESUSCITATION:",
+      "  IV fluids, NPO, analgesia (does NOT mask diagnosis — Pain Management Trial)",
+      "  Anti-emetic",
+      "  Blood for FBC + U&E + crossmatch",
+      "ANTIBIOTICS:",
+      "  Pre-op single dose (uncomplicated) or 4-7 days (complicated)",
+      "  Pip-tazo 4.5 g q8h or ceftriaxone 2 g + metronidazole 500 mg q8h",
+      "  Allergy: levofloxacin + metronidazole",
+      "SURGICAL (gold standard):",
+      "  LAPAROSCOPIC APPENDICECTOMY — preferred (shorter recovery, less infection, better cosmesis)",
+      "  Open via McBurney incision if not laparoscopy",
+      "  Within 24h (longer delay increases perforation)",
+      "  Send specimen to histology (rule out carcinoid, lymphoma)",
+      "COMPLICATED (perforation / abscess / phlegmon):",
+      "  IV antibiotics × 4-7 days",
+      "  CT-guided percutaneous drainage for abscess",
+      "  Interval appendicectomy 6-12 weeks (controversial — many manage conservatively if no recurrence)",
+      "  Surgical exploration if peritonitis / failure of conservative",
+      "ANTIBIOTIC-FIRST APPROACH (selected uncomplicated):",
+      "  Adult uncomplicated appendicitis — CODA trial 2020 — antibiotic-first non-inferior at 90 days for major outcomes; ~ 30% appendicectomy by 90 days",
+      "  Patient preference + shared decision",
+      "  Not for perforated / abscess / appendicolith",
+      "PREGNANCY:",
+      "  Appendicitis remains the most common surgical condition",
+      "  US first-line, MRI if uncertain (avoid CT in 1st trimester)",
+      "  Appendicectomy as needed — laparoscopic safe in pregnancy (2nd trimester ideal)",
+      "  Antibiotic + early intervention",
+      "PAEDIATRIC:",
+      "  Higher perforation rate (delayed presentation)",
+      "  US first-line",
+      "  Conservative + interval appendicectomy for abscess",
+      "  Antibiotic-only approach increasingly used in selected children (APPY trial)",
+      "ELDERLY:",
+      "  Atypical presentation",
+      "  Higher perforation + mortality",
+      "  Lower threshold for imaging + surgery",
+      "  Investigate for underlying malignancy (occult colorectal cancer)",
+      "DISCHARGE + RECOVERY:",
+      "  Laparoscopic — discharge often day 1-2",
+      "  Open — 3-5 days",
+      "  Follow-up histology",
+      "  Wound care + return to normal activity",
+      "  Complications: SSI (5%), ileus, intra-abdominal abscess, hernia, infertility (rare)"
+    ],
+    "references": [
+      {
+        "label": "WSES Jerusalem Guidelines for Acute Appendicitis 2020 + 2024 update",
+        "kind": "guideline"
+      },
+      {
+        "label": "NICE NG143 Acute Abdomen 2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "CODA NEJM 2020 (antibiotic vs surgery)",
+        "kind": "trial"
+      },
+      {
+        "label": "APPY trial paediatric",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "acute-cholecystitis-tg18",
+    "title": "Acute cholecystitis — Tokyo Guidelines 18 + early lap-chole",
+    "icd10": [
+      "K81.0"
+    ],
+    "icd11": [
+      "DC11"
+    ],
+    "domains": [
+      "surgery",
+      "emergency",
+      "primary-care"
+    ],
+    "population": "Most have gallstones; 10-20% of adults have gallstones; complications include cholecystitis, choledocholithiasis, cholangitis, gallstone pancreatitis, gallstone ileus.",
+    "presentation": "RUQ pain (constant > 6h post-meal), fever, Murphy's sign positive, leucocytosis. Severity TG18 (Tokyo Guidelines): Grade I mild, Grade II moderate (leucocytosis + tenderness + symptoms duration), Grade III severe (organ dysfunction).",
+    "redFlags": [
+      "Severe (Grade III) — sepsis / organ dysfunction — ICU + drainage + antibiotics",
+      "Emphysematous cholecystitis (gas in wall — high mortality, especially diabetics)",
+      "Gallbladder perforation",
+      "Empyema",
+      "Gangrene",
+      "Ascending cholangitis (Charcot triad — fever + jaundice + RUQ pain; Reynolds pentad adds hypotension + altered mental state)",
+      "Mirizzi syndrome (CBD compression by stone)",
+      "Cholecystoenteric fistula"
+    ],
+    "diagnostics": [
+      "FBC + CRP + LFT (ALT/AST/ALP + bilirubin)",
+      "Amylase/lipase (rule out pancreatitis)",
+      "U&E + glucose + coag + blood culture if septic",
+      "ULTRASOUND first-line: gallbladder wall > 4 mm, pericholecystic fluid, sonographic Murphy positive, gallstones, dilated CBD (suggests choledocholithiasis)",
+      "HIDA scan — if US equivocal (non-visualisation of gallbladder = diagnostic for cystic duct obstruction)",
+      "CT/MRI for complications / unclear",
+      "MRCP if suspected choledocholithiasis or non-diagnostic US",
+      "ERCP for both diagnosis + treatment of CBD stones"
+    ],
+    "management": [
+      "TG18 ALGORITHM:",
+      "GRADE I (mild):",
+      "  Hospital admission, IV fluids, NPO, analgesia",
+      "  Antibiotics (cefuroxime + metronidazole or pip-tazo)",
+      "  EARLY LAPAROSCOPIC CHOLECYSTECTOMY (within 72h — recommended over delayed; reduces complications + cost)",
+      "GRADE II (moderate):",
+      "  Same + early lap-chole; if not improving with antibiotics → percutaneous gallbladder drainage (cholecystostomy) bridge",
+      "  Interval cholecystectomy 6 weeks later if too unwell initially",
+      "GRADE III (severe — organ dysfunction):",
+      "  ICU + sepsis bundle + IV antibiotics + organ support",
+      "  PERCUTANEOUS CHOLECYSTOSTOMY (radiologically guided) — initial drainage; defer surgery until stable",
+      "  Cholecystectomy when patient optimised",
+      "ANTIBIOTIC CHOICE (Tokyo 18):",
+      "  Community-acquired mild-moderate: ceftriaxone + metronidazole; or cefuroxime + metronidazole",
+      "  Severe / hospital-acquired / immunocompromised: piperacillin-tazobactam or carbapenem ± vancomycin",
+      "  Duration: 4-7 days post-source control (drainage / surgery); longer if persistent bacteraemia",
+      "EARLY vs DELAYED CHOLECYSTECTOMY:",
+      "  Multiple RCTs + meta-analyses — EARLY (within 72h-1 week of symptom onset) preferred over delayed (6 weeks)",
+      "  Shorter total hospitalisation, similar conversion rates, fewer complications",
+      "  Patient counselling + shared decision",
+      "CHOLEDOCHOLITHIASIS (CBD stones):",
+      "  ERCP + sphincterotomy + stone extraction PRE-cholecystectomy (when ALP/bilirubin raised or CBD dilated)",
+      "  Some prefer intraoperative cholangiogram + laparoscopic CBD exploration if available",
+      "ACUTE CHOLANGITIS:",
+      "  IV antibiotics IMMEDIATELY",
+      "  ERCP biliary drainage WITHIN 24h (urgent — sepsis source)",
+      "  ICU if severe",
+      "  Tokyo 18 severity grading + management",
+      "GALLSTONE PANCREATITIS:",
+      "  Standard pancreatitis management (separate)",
+      "  ERCP within 24-48h if cholangitis or persistent biliary obstruction",
+      "  SAME-admission cholecystectomy for mild (PONCHO trial)",
+      "EMPHYSEMATOUS CHOLECYSTITIS (especially diabetics):",
+      "  Emergency cholecystectomy (high mortality)",
+      "  IV broad-spectrum antibiotics",
+      "  ICU support",
+      "ACALCULOUS CHOLECYSTITIS (critically ill + no stones):",
+      "  Drainage (cholecystostomy) — often without cholecystectomy",
+      "  Treat underlying cause",
+      "PAEDIATRIC: less common; biliary atresia consideration in infants",
+      "PREGNANCY:",
+      "  Cholecystectomy as needed — laparoscopic safe (2nd trimester ideal)",
+      "  Antibiotics + supportive",
+      "  Avoid CT (US, MRI/MRCP if needed)",
+      "POST-OPERATIVE: SSI prevention, mobilisation, return to normal activity"
+    ],
+    "references": [
+      {
+        "label": "Tokyo Guidelines TG18 2018 + 2024 update",
+        "kind": "guideline"
+      },
+      {
+        "label": "WSES Acute Calculous Cholecystitis 2020",
+        "kind": "guideline"
+      },
+      {
+        "label": "NICE NG188 Gallstone Disease 2014 + 2024 update",
+        "kind": "guideline"
+      },
+      {
+        "label": "Cochrane early vs delayed cholecystectomy 2013/2024",
+        "kind": "review"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "intestinal-obstruction-comprehensive",
+    "title": "Intestinal obstruction — small + large bowel",
+    "icd10": [
+      "K56.6"
+    ],
+    "icd11": [
+      "DB30"
+    ],
+    "domains": [
+      "surgery",
+      "emergency",
+      "primary-care",
+      "gastroenterology"
+    ],
+    "population": "Adults — adhesions (post-surgical) account for ~ 60% of SBO; hernias + malignancy; volvulus important SSA (especially sigmoid). Paediatric — intussusception, malrotation, congenital.",
+    "presentation": "Pain (colicky proximal SBO, more constant distal/large bowel), distension, vomiting (early proximal, faeculent distal), absolute constipation (LBO + complete SBO), high-pitched bowel sounds (early) → silent (late, ischaemia). Signs of strangulation: continuous severe pain + tachycardia + fever + raised lactate + leucocytosis + peritoneal signs.",
+    "redFlags": [
+      "STRANGULATION / ISCHAEMIA — emergency surgery (lactate raised, peritonism, continuous pain, fever, leucocytosis)",
+      "Closed-loop obstruction (volvulus, internal hernia, complete LBO with competent ileocaecal valve — at risk of perforation, ischaemia)",
+      "Caecal diameter > 10 cm — imminent perforation",
+      "Faecal vomiting",
+      "Strangulated hernia (irreducible + tender + erythematous)",
+      "Suspected malignancy (especially elderly + LBO)",
+      "Paediatric intussusception (currant jelly stool + sausage mass + colicky)"
+    ],
+    "diagnostics": [
+      "Vital signs + abdomen + hernia orifices + DRE + previous surgical scars",
+      "FBC + U&E (dehydration + AKI) + glucose + lactate (raised = ischaemia) + amylase (rule out pancreatitis)",
+      "VBG / ABG (metabolic acidosis = ischaemia)",
+      "ERECT CHEST X-RAY (subdiaphragmatic gas = perforation)",
+      "SUPINE + ERECT abdominal X-RAY (dilated bowel + air-fluid levels — but limited)",
+      "CT ABDOMEN/PELVIS WITH CONTRAST — most accurate (transition point, cause, ischaemia features)",
+      "Gastrograffin study — both diagnostic + therapeutic for adhesive SBO (passage to colon within 24h = resolution)",
+      "Group + crossmatch if surgery likely"
+    ],
+    "management": [
+      "INITIAL RESUSCITATION (regardless of cause):",
+      "  IV fluids (large volume — third space + GI losses) — Hartmann/PlasmaLyte",
+      "  NPO + NG tube on free drainage (decompression)",
+      "  Urinary catheter (monitor output)",
+      "  IV analgesia",
+      "  Anti-emetic",
+      "  Correct electrolytes (K+, Na+)",
+      "  Pressure care + VTE prophylaxis",
+      "  Early surgical consultation",
+      "ADHESIVE SBO (most common SBO — post-surgical):",
+      "  CONSERVATIVE MANAGEMENT trial (24-48-72h) if no strangulation features:",
+      "    NG decompression + IV fluids + correct electrolytes",
+      "    Gastrograffin oral water-soluble contrast — diagnostic + therapeutic (passage suggests resolution; failure suggests need for surgery)",
+      "    Resolution in 60-70%",
+      "  Surgery if: failure of conservative > 72h, complete obstruction, strangulation signs, peritonitis",
+      "  Laparoscopic adhesiolysis where feasible",
+      "HERNIA STRANGULATION:",
+      "  Attempt manual reduction WITH ANALGESIA + sedation (don't force — strangulated ischaemic bowel cannot be reduced; risk of returning dead bowel)",
+      "  If reduced — observe + elective repair",
+      "  If irreducible / strangulated — EMERGENCY SURGERY (hernia repair + bowel resection if necrotic)",
+      "LARGE BOWEL OBSTRUCTION:",
+      "  Most commonly malignancy (60-70%) — particularly left-sided colon cancer",
+      "  Sigmoid volvulus — endoscopic decompression first attempt; elective sigmoidectomy after",
+      "  Caecal volvulus — surgery (caecopexy or right hemicolectomy)",
+      "  Diverticular stricture",
+      "  Closed-loop obstruction = surgical emergency",
+      "  CT-confirmed malignant LBO with imminent perforation:",
+      "    Surgical resection (Hartmann's or anastomosis with stoma)",
+      "    Self-expanding metal stent (SEMS) — bridge to surgery or palliative",
+      "MALIGNANT BOWEL OBSTRUCTION (advanced cancer, peritoneal carcinomatosis):",
+      "  Surgical bypass / stoma if feasible",
+      "  Stent for selected",
+      "  Conservative: NG tube, antiemetic (haloperidol / cyclizine), steroid (dexamethasone), octreotide (reduces secretions)",
+      "  Palliative care input",
+      "VOLVULUS (Sigmoid most common SSA):",
+      "  Sigmoid — endoscopic detorsion (rigid sigmoidoscope + flatus tube) — successful 60-90%; high recurrence — elective sigmoidectomy",
+      "  Caecal — surgical (caecopexy or right hemicolectomy)",
+      "  Mesenteric volvulus (especially infants/children — malrotation) — emergency surgery",
+      "PAEDIATRIC:",
+      "  Intussusception (6 mo - 3 yr): air or hydrostatic enema reduction (US-guided); surgery if fails or peritonism",
+      "  Malrotation + volvulus — surgical emergency (Ladd's procedure)",
+      "  Pyloric stenosis — surgical (Ramstedt's)",
+      "  Hirschsprung's disease — surgical",
+      "  Hernia (umbilical, inguinal) — incarcerated/strangulated emergency",
+      "MECHANICAL vs FUNCTIONAL (ileus):",
+      "  Ileus — post-op, electrolytes (hypoK), drugs (opioid, anticholinergic), sepsis, intra-abdominal pathology",
+      "  Treat cause + supportive (NG, fluid, electrolyte correction, mobilisation, prokinetic only if confirmed ileus)",
+      "  Pseudo-obstruction (Ogilvie's) — neostigmine 2-2.5 mg IV under cardiac monitoring for refractory colonic dilatation > 10 cm",
+      "EARLY MOBILISATION + ENHANCED RECOVERY post-surgery",
+      "DISCHARGE + RECOVERY:",
+      "  Hernia repair education",
+      "  Adhesive prevention (avoidance of unnecessary surgery; intraoperative anti-adhesion barriers)",
+      "  Cancer surveillance / oncology + radiotherapy / chemo if malignant",
+      "  Bowel function review + dietary advice"
+    ],
+    "references": [
+      {
+        "label": "WSES Adhesive Small Bowel Obstruction 2018 + 2024 update",
+        "kind": "guideline"
+      },
+      {
+        "label": "WSES Colon and Rectal Surgery Bowel Obstruction 2018",
+        "kind": "guideline"
+      },
+      {
+        "label": "NICE Suspected Cancer 2015/2024 (LBO from malignancy pathway)",
+        "kind": "guideline"
+      },
+      {
+        "label": "Cochrane gastrografin in adhesive SBO 2020",
+        "kind": "review"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "diverticulitis-comprehensive-2024",
+    "title": "Acute diverticulitis — Hinchey + modern management",
+    "icd10": [
+      "K57.92"
+    ],
+    "icd11": [
+      "DB30.0"
+    ],
+    "domains": [
+      "surgery",
+      "gastroenterology",
+      "primary-care",
+      "emergency"
+    ],
+    "population": "Common — 50% of adults > 60 have diverticulosis; 10-25% develop diverticulitis. Sigmoid most common Western; right-sided more common Asian + young.",
+    "presentation": "LLQ pain, fever, leucocytosis, change in bowel habit. Right-sided (Asian / young) mimics appendicitis. Complicated: abscess, perforation, peritonitis, fistula (colovesical, colovaginal, coloenteric), obstruction, stricture, bleeding (separate but related diverticular bleed).",
+    "redFlags": [
+      "Generalised peritonitis (Hinchey III / IV) — emergency surgery",
+      "Faeculent peritonitis (Hinchey IV)",
+      "Pneumoperitoneum / sepsis / haemodynamic instability",
+      "Abscess > 4 cm — drain",
+      "Stricture with obstruction",
+      "Faecaluria / pneumaturia — colovesical fistula (workup)",
+      "Recurrent diverticulitis (4+ episodes) — consider elective sigmoidectomy",
+      "Immunocompromised + diverticulitis — admit, lower threshold for surgery"
+    ],
+    "diagnostics": [
+      "Clinical: LLQ pain (Asian patients consider right-sided), fever, leucocytosis",
+      "FBC + CRP + U&E + lactate",
+      "Urinalysis (rule out UTI + fistula investigation)",
+      "Pregnancy test",
+      "CT ABDOMEN/PELVIS WITH IV + ORAL CONTRAST — gold standard",
+      "  Hinchey classification: 0 (clinical only) → I (pericolic abscess < 4 cm) → II (pelvic/distant abscess) → III (purulent peritonitis) → IV (faeculent peritonitis)",
+      "  Identifies abscess, perforation, fistula, stricture",
+      "AVOID barium studies in acute (risk of perforation)",
+      "After resolution: colonoscopy at 6-8 weeks to exclude malignancy (especially first episode, atypical features)"
+    ],
+    "management": [
+      "UNCOMPLICATED ACUTE DIVERTICULITIS (CT Hinchey 0 or Ia mild):",
+      "  ANTIBIOTICS NOT routine in uncomplicated outpatient — recent guideline shift (DIABOLO + AVOD trials):",
+      "    Selected mild outpatient: no antibiotics + clear fluids + simple analgesia + follow-up",
+      "    Risk-stratify: immunocompromised, severe pain, leucocytosis, comorbidity, pregnancy, social factors — give antibiotics",
+      "  Antibiotic (if given): co-amoxiclav 625 mg TDS × 7 days; ciprofloxacin + metronidazole alternative",
+      "  Clear fluids → low-residue → normal diet as tolerated",
+      "  Outpatient if mild + tolerating oral + good social support + no immunocompromise",
+      "COMPLICATED ACUTE DIVERTICULITIS:",
+      "  Admit + IV fluids + NPO + IV antibiotics (ceftriaxone + metronidazole, or pip-tazo)",
+      "  Hinchey I-II (abscess < 4 cm or > 4 cm with image-guided drainage option):",
+      "    CT-GUIDED PERCUTANEOUS DRAINAGE for abscess > 4 cm",
+      "    Continue antibiotics until clinical resolution",
+      "    Elective sigmoidectomy after 6-8 weeks (timing controversial — many guideline now wait + manage future episodes)",
+      "  Hinchey III (purulent peritonitis):",
+      "    Surgery — debate between Hartmann's procedure (resection + end colostomy) vs primary anastomosis with diverting loop ileostomy (LADIES trial)",
+      "    Laparoscopic peritoneal lavage selected (LADIES + DILALA + SCANDIV — Lavage trials — outcomes mixed; reserve for fit selected)",
+      "    Sigmoidectomy if perforated stable",
+      "  Hinchey IV (faeculent peritonitis):",
+      "    HARTMANN'S PROCEDURE — resection + end colostomy + closed rectal stump",
+      "    Reverse stoma at 3-6 months if able + appropriate",
+      "    Damage control surgery if unstable",
+      "POST-ACUTE FOLLOW-UP:",
+      "  Colonoscopy 6-8 weeks (rule out underlying CRC — risk 1-2% post-diverticulitis)",
+      "  Manage risk factors: smoking + obesity + sedentary",
+      "  Diet: high-fibre, hydration, exercise; avoid red meat excess",
+      "  Probiotic + mesalazine — limited evidence; not routinely",
+      "  NSAID + steroid + opioid + immunosuppressive — increase recurrence risk + complications",
+      "ELECTIVE SIGMOIDECTOMY:",
+      "  Recurrent (≥ 4 episodes — controversial), complicated history (fistula, stenosis, persistent symptoms), young (< 50 — historically lower threshold; current less aggressive), immunocompromised (lower threshold)",
+      "  Laparoscopic preferred",
+      "FISTULA:",
+      "  Most colovesical (men) — TURB-like haematuria + pneumaturia + recurrent UTI; CT + cystoscopy",
+      "  Elective surgery (resection + closure) when inflammation settled",
+      "DIVERTICULAR BLEEDING (separate but related):",
+      "  Painless brisk LGI bleed; usually self-limits",
+      "  Resuscitate + colonoscopy + CT angio for localisation + endoscopic / IR embolisation / surgery",
+      "PREVENTION (primary + secondary):",
+      "  High-fibre diet (25-35 g/day)",
+      "  Avoid red + processed meat excess",
+      "  Hydration",
+      "  Exercise + weight management",
+      "  Smoking cessation",
+      "  Avoid NSAIDs + steroids where possible",
+      "  Old advice to avoid nuts/seeds/popcorn — NOT supported"
+    ],
+    "references": [
+      {
+        "label": "WSES Acute Left Side Colonic Diverticulitis 2020",
+        "kind": "guideline"
+      },
+      {
+        "label": "ASCRS Practice Parameters Diverticulitis 2020/2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "DIABOLO + AVOD trials — antibiotic-free uncomplicated",
+        "kind": "trial"
+      },
+      {
+        "label": "LADIES + DILALA + SCANDIV — laparoscopic lavage for Hinchey III",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "adult-major-trauma-resuscitation",
+    "title": "Adult major trauma — ATLS + damage control + ABC",
+    "icd10": [
+      "T07"
+    ],
+    "icd11": [
+      "NA0Z"
+    ],
+    "domains": [
+      "trauma",
+      "emergency",
+      "critical-care",
+      "surgery",
+      "ssa"
+    ],
+    "population": "Adults with major trauma — RTA, falls, penetrating, blunt, blast. SSA: high road traffic mortality; boda-boda injuries common Kenya. Trauma is leading cause of death age 1-44.",
+    "presentation": "Multiple injury patterns — head, chest, abdomen, pelvis, limbs, spine. Polytrauma (≥ 2 systems injured). Mechanism + physiology guide management.",
+    "redFlags": [
+      "Cardiac arrest (post-traumatic — manage cause: hypovolaemia, tension PTX, tamponade, hypoxia; thoracotomy for selected penetrating)",
+      "Haemodynamic instability — massive haemorrhage",
+      "Airway compromise (head injury, facial trauma, burns, inhalation)",
+      "Tension pneumothorax — immediate decompression",
+      "Cardiac tamponade",
+      "Open / closed pneumothorax",
+      "Flail chest",
+      "Pelvic fracture with shock",
+      "Spinal cord injury + neurogenic shock",
+      "Head injury GCS ≤ 8 — intubate",
+      "Penetrating chest/abdo/neck — consider damage control"
+    ],
+    "diagnostics": [
+      "Primary survey ABCDE (with c-spine + catastrophic haemorrhage)",
+      "Secondary survey head-to-toe + AMPLE history",
+      "Trauma team activation per local criteria",
+      "FAST scan (Focused Assessment with Sonography for Trauma) bedside — pericardial, perihepatic, perisplenic, pelvic",
+      "eFAST extended — adds bilateral pneumothorax",
+      "FBC + U&E + LFT + glucose + group + crossmatch (large volume) + INR + APTT + fibrinogen + lactate + base excess",
+      "ABG / VBG",
+      "CT 'pan-scan' (head + neck + chest + abdomen + pelvis) for haemodynamically stable patient with multiple system injury",
+      "X-rays: chest, pelvis (if not CT), c-spine (clinical clearance or imaging per NEXUS/Canadian)",
+      "ECG + troponin if blunt chest trauma",
+      "Trauma scoring: GCS + Revised Trauma Score + ISS"
+    ],
+    "management": [
+      "PRE-HOSPITAL:",
+      "  Scene safety + paramedic activation",
+      "  Catastrophic haemorrhage: tourniquet (windlass-type), pressure dressings, pelvic binder",
+      "  Airway with c-spine control (jaw thrust + cervical collar)",
+      "  Breathing — high-flow O2, treat tension PTX (needle decompression / finger thoracostomy)",
+      "  Circulation — IV access × 2, controlled hypotension if haemorrhage (SBP 80-90), TXA 1 g IV within 3h",
+      "  Disability — GCS + pupils + glucose",
+      "  Exposure + hypothermia prevention",
+      "  Transport to trauma centre with definitive care capability",
+      "RECEIVING TEAM:",
+      "  Pre-arrival information from ambulance",
+      "  Activate trauma team (anaesthetist + general surgeon + orthopaedic + emergency + radiology + nursing + blood bank)",
+      "  Massive transfusion protocol pre-activated if expected",
+      "PRIMARY SURVEY (cABCDE):",
+      "c (catastrophic haemorrhage):",
+      "  Tourniquet + direct pressure + pelvic binder + haemostatic gauze",
+      "A (airway + c-spine):",
+      "  Look + listen + feel",
+      "  Open with jaw thrust (avoid head tilt)",
+      "  Maintain in-line cervical stabilisation",
+      "  OPA / NPA if needed",
+      "  Definitive airway if GCS ≤ 8, facial / burn / inhalation, hypoxia despite oxygen — RSI with ketamine (haemodynamic stable in shock) + rocuronium",
+      "  Video laryngoscope preferred (especially trauma)",
+      "  Surgical cricothyroidotomy if 'can't intubate, can't oxygenate'",
+      "B (breathing):",
+      "  Look, listen, palpate, percuss, auscultate",
+      "  High-flow O2 15 L/min",
+      "  Tension PTX — needle decompression (2nd ICS MCL or 4th-5th ICS AAL) → chest drain (28-32 Fr 5th ICS MAL)",
+      "  Haemothorax — chest drain; > 1500 ml or > 200 ml/h = thoracotomy",
+      "  Open PTX — 3-sided dressing → chest drain",
+      "  Flail chest — analgesia (opioid + regional + paravertebral block) + ventilation if compromise",
+      "  Cardiac contusion — ECG + troponin + echo",
+      "  Diaphragmatic rupture",
+      "C (circulation):",
+      "  Pulse + BP + cap refill + skin colour + JVP",
+      "  IV × 2 large-bore (16G+) — peripheral preferred; IO if failed 90 sec; central if needed",
+      "  CONTROLLED HYPOTENSION until haemorrhage controlled (SBP 80-90 / MAP 65 in non-head injury; SBP > 110 if head injury)",
+      "  Crystalloid 1-2 L cautious (avoid over-resuscitation + dilutional coagulopathy)",
+      "  EARLY BLOOD — O-negative emergency → crossmatched packed cells",
+      "  MASSIVE TRANSFUSION PROTOCOL: 1:1:1 RBC:FFP:platelets + TXA + calcium + warmth",
+      "  TXA 1 g IV within 3h then 1 g over 8h (CRASH-2 + CRASH-3 for TBI)",
+      "  Identify haemorrhage source: external + chest + abdomen + retroperitoneum/pelvis + long bones",
+      "  Pelvic binder at greater trochanters (NOT spring pelvis); angiographic embolisation",
+      "  Long bone fractures — splint + reduce",
+      "  REBOA (resuscitative endovascular balloon occlusion of aorta) — selected centres for severe non-compressible haemorrhage",
+      "D (disability):",
+      "  GCS + pupils + glucose (treat if low) + neurological exam",
+      "  Head injury — maintain MAP > 80 + SpO2 > 94% + glucose 7.8-10 + head-up 30°",
+      "  Raised ICP: hypertonic saline 3% 5 ml/kg or mannitol 0.5-1 g/kg",
+      "  Hypoxia + hypotension WORSE for head injury than uncontrolled bleeding (DAMAGE-CONTROL focus reduces avoidable secondary brain injury)",
+      "E (exposure):",
+      "  Log roll + back + perineum + DRE",
+      "  Prevent hypothermia (warm room + blankets + warm fluids + warmer)",
+      "  Trauma triad of death: hypothermia + acidosis + coagulopathy (treat all simultaneously)",
+      "SECONDARY SURVEY:",
+      "  AMPLE history",
+      "  Head-to-toe examination + log roll + DRE + perineum + ENT + ophth + odontology",
+      "  Identify all injuries — 'tertiary survey' on ward review (10-15% injuries missed on initial survey)",
+      "  Document carefully (forensic + medico-legal)",
+      "DAMAGE CONTROL RESUSCITATION + SURGERY:",
+      "  Permissive hypotension + balanced transfusion (1:1:1) + TXA + warm + early haemorrhage control",
+      "  Damage control surgery: stop bleed + control contamination + return for definitive after physiology restored (ICU re-warming + correction + 24-48h)",
+      "  Indications: lactate > 5, pH < 7.2, T < 35, INR > 1.5, BE < -8, massive transfusion > 10 units in 6h",
+      "SPECIFIC INJURIES:",
+      "  Head injury: CT head (per NICE / PECARN / Canadian), neurosurgical referral, mannitol/hypertonic for raised ICP, antibiotic for open / penetrating, antiepileptic for seizure or high-risk",
+      "  Spinal cord: collar + log roll + maintain MAP > 85 (perfusion); methylprednisolone NOT routinely (NASCIS evidence weak); surgical decompression",
+      "  Chest: as above",
+      "  Abdominal: FAST + CT; haemodynamically unstable + positive FAST = laparotomy; stable + positive = CT then management",
+      "  Pelvic: binder + angio + ortho surgery (pelvic ring fixation)",
+      "  Solid organ (liver, spleen): non-operative management for stable + AAST low-grade; surgery + angio for high-grade + unstable",
+      "  Hollow viscus / mesenteric: laparotomy",
+      "  Limb: tourniquet + reduce + splint + open fracture management (IV antibiotic + tetanus + irrigation + debridement < 6h)",
+      "  Open fracture Gustilo-Anderson: IV cefazolin + gentamicin + irrigation + debridement within 6h + definitive within 24h",
+      "  Compartment syndrome — fasciotomy",
+      "  Burns — separate",
+      "  Crush injury / rhabdomyolysis — IV fluids + alkaline diuresis + dialysis if severe AKI",
+      "POST-RESUSCITATION:",
+      "  ICU admission for most major trauma",
+      "  Continued monitoring + organ support",
+      "  Mental health + family + chaplaincy",
+      "  Disability + functional recovery focus",
+      "PREVENTION (population):",
+      "  Road safety — helmets, seatbelts, speed limits, enforcement (Kenya emergency medical care strategy)",
+      "  Workplace safety",
+      "  Violence prevention",
+      "  Suicide prevention",
+      "  WHO Decade of Action for Road Safety 2021-2030"
+    ],
+    "references": [
+      {
+        "label": "ATLS Advanced Trauma Life Support 10e (ACS Committee on Trauma)",
+        "kind": "guideline"
+      },
+      {
+        "label": "Eastern Association for the Surgery of Trauma Practice Guidelines 2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "WSES Bleeding Trauma Patient + Coagulopathy 2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya National Emergency Medical Care Strategy 2020-2025",
+        "kind": "policy"
+      },
+      {
+        "label": "CRASH-2 Lancet 2010 (TXA in haemorrhagic trauma)",
+        "kind": "trial"
+      },
+      {
+        "label": "CRASH-3 Lancet 2019 (TXA in TBI)",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "chemical-eye-injury-emergency",
+    "title": "Chemical eye injury — irrigation + emergency",
+    "icd10": [
+      "T26.00"
+    ],
+    "icd11": [
+      "NF03"
+    ],
+    "domains": [
+      "ophthalmology",
+      "emergency",
+      "primary-care",
+      "occupational-health",
+      "ssa"
+    ],
+    "population": "Workplace + domestic accidents; deliberate assault. SSA: alkali (lime, ammonia, lye, cement, drain cleaner) more devastating than acid (most domestic + commercial industrial); chemical attacks tragically increasing.",
+    "presentation": "Pain + tearing + blurred vision + redness + chemosis + conjunctival blanching (severe — limbal ischaemia indicates worse prognosis). Roper-Hall grading I-IV.",
+    "redFlags": [
+      "Alkali burn (worse — penetrates deeper) — more emergent than acid",
+      "Limbal ischaemia > 1/3 (Roper-Hall III-IV) — poor prognosis + may need stem cell transplant",
+      "Vision loss",
+      "Severe corneal opacity + perforation risk",
+      "Bilateral injury",
+      "Concurrent eyelid + facial burns",
+      "Periocular skin chemical burns + deep airway burns"
+    ],
+    "diagnostics": [
+      "IRRIGATE FIRST — do NOT delay for examination or workup",
+      "After irrigation: visual acuity, slit lamp, fluorescein (epithelial defect), tonometry (avoid in perforation suspicion)",
+      "pH testing after irrigation (continue irrigation until pH 7.0-7.4)",
+      "Identify causative chemical (bring container / MSDS)",
+      "Roper-Hall grading: I (good prog) → IV (poor)",
+      "Photograph for medico-legal documentation"
+    ],
+    "management": [
+      "IMMEDIATE — IRRIGATE WITHIN SECONDS-MINUTES (every second counts):",
+      "1. Remove any solid chemical particles (cement powder, lime) — manually with cotton swab or sterile saline",
+      "2. Topical anaesthetic (proparacaine / tetracaine) — facilitates cooperation",
+      "3. IRRIGATE COPIOUSLY:",
+      "   Sterile saline / Ringer's lactate / sterile water — ideal",
+      "   ANY clean water if at scene — DO NOT DELAY for sterile (especially in field)",
+      "   Morgan lens / IV tubing into lower fornix",
+      "   Hold eyelids open + rotate eye to expose all surfaces (irrigate sub-tarsally — evert upper lid + sweep fornix)",
+      "   MINIMUM 30 MINUTES + check pH (test strip from tear film)",
+      "   Continue until pH 7.0-7.4 + stable",
+      "   Alkali — irrigate LONGER (often hours; alkali penetrates deeper + continues to damage)",
+      "   Total irrigation 1-3 L typical; severe alkali may need 5-10 L",
+      "4. Remove foreign body particles after irrigation if remaining",
+      "5. Continue irrigation while transferring",
+      "POST-IRRIGATION ASSESSMENT + TREATMENT:",
+      "  Slit lamp + fluorescein",
+      "  Tonometry (alkali can cause raised IOP)",
+      "  ANTIBIOTIC topical (chloramphenicol ointment or moxifloxacin drops) — prophylactic",
+      "  CYCLOPLEGIC (atropine 1% or cyclopentolate 1%) — comfort + reduce uveitis + prevent posterior synechiae",
+      "  TOPICAL STEROID (prednisolone acetate 1%) — first week to reduce inflammation; AVOID after week 1 (impairs healing) unless ophthalmology specialist",
+      "  Lubricants — preservative-free",
+      "  Vitamin C (oral + topical) — collagen synthesis + anti-oxidant",
+      "  Doxycycline 100 mg BD — MMP inhibitor + anti-inflammatory + slows collagen breakdown (anti-collagenolytic action)",
+      "  Citrate 10% drops — chelates calcium, reduces alkali-induced damage",
+      "  Tetanus prophylaxis",
+      "  Analgesia",
+      "  Bandage contact lens for healing epithelial defect (specialist)",
+      "  Symblepharon ring + careful eyelid hygiene",
+      "  Amniotic membrane transplantation for severe Roper-Hall III-IV (limbal stem cell support + healing)",
+      "  Limbal stem cell transplantation for total limbal ischaemia",
+      "OPHTHALMOLOGY EMERGENCY REFERRAL — all chemical injuries",
+      "FOLLOW-UP:",
+      "  Daily early in severe cases",
+      "  Watch for: corneal perforation, secondary glaucoma, cataract, symblepharon, dry eye, neurotrophic ulcer, infection",
+      "  Long-term: corneal transplant for severe scarring (when stable + lid issues addressed); keratoprosthesis (Boston KPro) for end-stage limbal failure",
+      "  Psychological + occupational support",
+      "PROGNOSIS:",
+      "  Acid: epithelium denatures + sloughs but underlying tissue protected = better",
+      "  Alkali: penetrates deeper + saponifies cell membranes = worse",
+      "  Roper-Hall I: good (no scarring); II: scarring + opacity; III: limbal stem cell deficiency, corneal vascularisation; IV: severe ischaemia + perforation",
+      "  Best predictor of outcome: extent of limbal ischaemia at presentation",
+      "PREVENTION (workplace + community):",
+      "  Eye protection (PPE) — chemical splash goggles",
+      "  Emergency eye wash stations + 30+ minute capacity",
+      "  Workplace safety + MSDS access + training",
+      "  Domestic safe storage of cleaning products",
+      "  Pesticide safety (especially Kenya agricultural)",
+      "  Cement workers + agricultural workers + welders + chemical industry — targeted prevention",
+      "  Public education — irrigate IMMEDIATELY + come to hospital",
+      "  Kenya National Eye Health Plan"
+    ],
+    "references": [
+      {
+        "label": "AAO Preferred Practice Pattern Chemical Injury 2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "ICO International Council of Ophthalmology Chemical Eye Injury 2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "Wagoner MD. Chemical injuries of the eye. Surv Ophthalmol 1997",
+        "kind": "review"
+      },
+      {
+        "label": "Roper-Hall grading classic",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "epistaxis-management-emergency",
+    "title": "Epistaxis — anterior + posterior management",
+    "icd10": [
+      "R04.0"
+    ],
+    "icd11": [
+      "MD41"
+    ],
+    "domains": [
+      "ent",
+      "emergency",
+      "primary-care",
+      "haematology"
+    ],
+    "population": "Bimodal: children 2-10 + adults > 50; men > women; dry climate + winter higher. Spontaneous + traumatic + medication-related (anticoagulant + antiplatelet + nasal steroid + cocaine). Posterior nosebleeds more severe + need specialist.",
+    "presentation": "Anterior (90% — Little's area / Kiesselbach's plexus): easily controlled, visible bleeding from anterior septum. Posterior (10% — sphenopalatine artery branch): more severe, bilateral, posterior pharyngeal blood, difficult to visualise, often older patients on anticoagulant.",
+    "redFlags": [
+      "Posterior epistaxis — emergency, need specialist + posterior packing/Foley catheter",
+      "Haemodynamic instability — shock, hypotension",
+      "Anticoagulation + significant bleed (reverse if appropriate)",
+      "Severe hypertension precipitating bleed",
+      "Hereditary haemorrhagic telangiectasia (HHT — Osler-Weber-Rendu — recurrent epistaxis + telangiectasias + AV malformations)",
+      "Coagulopathy / liver disease / leukaemia",
+      "Suspected nasopharyngeal mass / tumour (especially Asian young adult — NPC)",
+      "Trauma / fracture / CSF rhinorrhoea (basal skull #)",
+      "Septal haematoma (post-trauma — drain urgently to prevent septal necrosis + saddle nose)"
+    ],
+    "diagnostics": [
+      "Vital signs + assess severity + airway + breathing",
+      "FBC + coagulation if anticoagulation / severe / bleeding disorder suspected",
+      "BP + ECG if HTN suspected as cause",
+      "Group + crossmatch if heavy / haemodynamic instability",
+      "If suspected mass — nasal endoscopy + imaging (CT)",
+      "INR if on warfarin; DOAC levels (apixaban / rivaroxaban) not routine",
+      "Identify cause: trauma, dry air, infection (sinusitis), HTN, anticoagulant, drug (cocaine), tumour, HHT, bleeding disorder"
+    ],
+    "management": [
+      "INITIAL RESUSCITATION (severe / posterior):",
+      "  Airway protection — suction blood, lateral position to avoid aspiration",
+      "  IV access + fluids if hypovolaemic",
+      "  Group + crossmatch + transfuse if needed",
+      "  Reverse anticoagulation if indicated (vitamin K + 4F-PCC for warfarin; idarucizumab for dabigatran; andexanet for Xa inhibitors; FFP if PCC unavailable)",
+      "FIRST AID (anterior epistaxis):",
+      "  Sit patient up, lean FORWARD (NOT back — avoid swallowing blood + nausea + aspiration)",
+      "  Pinch CARTILAGINOUS part of nose (not bony bridge) firmly × 15-20 minutes continuous (do NOT let go to check)",
+      "  Ice pack on bridge of nose",
+      "  Spit out blood (do not swallow)",
+      "  If not stopped — proceed",
+      "PROGRESSIVE MEDICAL MANAGEMENT:",
+      "1. Topical vasoconstrictor + anaesthetic:",
+      "   Cophenylcaine (lidocaine + phenylephrine) spray",
+      "   Oxymetazoline / xylometazoline (Otrivin) — 2-3 sprays each nostril",
+      "2. Reapply pressure × 10 min",
+      "3. If anterior bleeding identified — CAUTERY:",
+      "   Topical silver nitrate to bleeding point (only ONE side — bilateral cautery risks septal perforation)",
+      "   Electrocautery if severe",
+      "4. Anterior nasal PACKING if cautery fails / posterior bleed visible:",
+      "   Rapid Rhino / Merocel (foam-based with hydrocolloid)",
+      "   Vaseline gauze ribbon (older)",
+      "   Floseal (haemostatic agent)",
+      "   Insert + leave 24-48 hours + antibiotic cover (toxic shock syndrome risk — phenoxymethylpenicillin or cephalexin × duration of packing)",
+      "5. POSTERIOR PACKING (severe / posterior bleed):",
+      "   FOLEY CATHETER (16-18 Fr) — through nostril, balloon inflated in nasopharynx, then anterior packing",
+      "   Specialist double-balloon catheters",
+      "   ADMIT — risk of hypoxia + vasovagal + arrhythmia from posterior pack",
+      "   ECG monitoring + O2 + analgesia + antibiotic",
+      "6. EMBOLISATION:",
+      "   Interventional radiology — sphenopalatine + facial artery embolisation",
+      "   Selected — failure of conservative or recurrent",
+      "   Risk of facial pain + skin necrosis + stroke",
+      "7. SURGICAL LIGATION:",
+      "   Endoscopic sphenopalatine artery ligation (most effective for posterior)",
+      "   Anterior + posterior ethmoidal artery ligation",
+      "   External carotid artery ligation — historical, rarely used",
+      "ANTICOAGULATION + ANTIPLATELET:",
+      "  Continue if possible (CV benefit outweighs)",
+      "  Reverse only if life-threatening + after consultation",
+      "  DOAC short half-life — may temporarily hold",
+      "  Restart after bleeding controlled",
+      "RECURRENT EPISTAXIS:",
+      "  Workup for HHT, bleeding disorder, hypertension, tumour",
+      "  ENT clinic referral",
+      "  Saline + emollient (nasal saline + Naseptin / Bactroban + petrolatum) preventive",
+      "  Humidifier",
+      "  Avoid nose-picking + nose-blowing",
+      "  Cautery / coblation of bleeding sites",
+      "  HHT: tranexamic acid (oral + topical), nasal embolisation, bevacizumab (anti-VEGF — emerging for severe HHT)",
+      "PAEDIATRIC:",
+      "  Most due to digital trauma (nose-picking) + dry air",
+      "  First aid + prevention (saline + petrolatum)",
+      "  Avoid cautery routinely",
+      "  Recurrent — ENT + bleeding disorder workup",
+      "SEPTAL HAEMATOMA (after trauma):",
+      "  Drain urgently (incision + drainage) — prevents septal cartilage necrosis + saddle-nose deformity",
+      "  Antibiotic + ENT follow-up",
+      "SAFETY-NET:",
+      "  Return immediately if heavy bleeding / unable to control",
+      "  Apply first aid + come to hospital",
+      "  Avoid hot drinks, alcohol, spicy food, nose-blowing for 24h after"
+    ],
+    "references": [
+      {
+        "label": "ENT UK Epistaxis Management 2018 + 2024 update",
+        "kind": "guideline"
+      },
+      {
+        "label": "AAO-HNS Epistaxis Clinical Practice Guideline 2020",
+        "kind": "guideline"
+      },
+      {
+        "label": "NICE CKS Epistaxis 2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "International HHT Foundation Guidelines 2020",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "testicular-torsion-emergency",
+    "title": "Testicular torsion — urological emergency",
+    "icd10": [
+      "N44.00"
+    ],
+    "icd11": [
+      "GB04"
+    ],
+    "domains": [
+      "urology",
+      "emergency",
+      "paediatrics",
+      "primary-care"
+    ],
+    "population": "Adolescents 12-18 most common (bell-clapper deformity); also neonates (extravaginal). 1 in 4000 men < 25. Time-critical — viability declines after 6 hours, < 50% salvage at 12 hours, near 0% at 24 hours.",
+    "presentation": "Sudden severe testicular pain (often nocturnal), nausea/vomiting, swollen/elevated testis (high-riding), absent cremasteric reflex (most specific sign), horizontal lie (bell-clapper). May have history of similar self-resolving episodes (intermittent torsion).",
+    "redFlags": [
+      "Acute testicular pain with suspicion of torsion — DO NOT DELAY FOR IMAGING — direct to surgery",
+      "Delayed presentation > 6 hours — diminishing salvage",
+      "Neonatal torsion (extravaginal — often perinatal)",
+      "Suspected appendix testis torsion (less serious but similar presentation — blue dot sign + smaller localised tender area)",
+      "Differential includes epididymo-orchitis, hydrocele torsion, hernia, tumour, trauma"
+    ],
+    "diagnostics": [
+      "CLINICAL DIAGNOSIS — do NOT delay for imaging in classic presentation",
+      "TWIST score (clinical scoring): swelling + hard testis + high-riding + nausea/vomiting + absent cremasteric (0-7); ≥ 5 high probability",
+      "Colour Doppler ultrasound — sensitivity 89%, specificity 99% for torsion (absent or reduced flow); useful only IF imaging won't delay surgery",
+      "Urinalysis (rule out epididymo-orchitis)",
+      "STI screen (rule out epididymitis if older + sexually active)",
+      "Surgical exploration is BOTH diagnostic + therapeutic"
+    ],
+    "management": [
+      "EMERGENCY — TIME IS TESTIS:",
+      "1. Surgical consultation IMMEDIATELY (within minutes)",
+      "2. NPO + IV access + analgesia",
+      "3. SURGICAL EXPLORATION as soon as possible (golden window 6 hours):",
+      "   Bilateral incision (orchiopexy of contralateral testis too — high incidence of contralateral bell-clapper)",
+      "   Detorsion + assess viability (warm packs, observe for re-perfusion)",
+      "   Viable testis: bilateral orchiopexy",
+      "   Non-viable: orchiectomy + contralateral orchiopexy",
+      "MANUAL DETORSION (only if surgery delayed):",
+      "  'Open book' maneuver — rotate affected testis OUTWARD (lateral) from midline (most torsions are inward)",
+      "  May need 2-3 rotations (often 720°)",
+      "  Patient comfort + reduced pain = successful detorsion",
+      "  Still requires definitive orchiopexy (manual detorsion is NOT definitive — risk of re-torsion)",
+      "  Confirm with Doppler if available",
+      "PREOPERATIVE:",
+      "  Anaesthetic assessment + consent",
+      "  Discuss possible orchiectomy + counsel patient + family",
+      "  Antibiotic prophylaxis (cefazolin)",
+      "POST-OPERATIVE:",
+      "  Mobilise early",
+      "  Analgesia",
+      "  Discharge same day or next day",
+      "  Counsel: bilateral orchiopexy prevents future torsion",
+      "  Future fertility — testis viability + contralateral fertility",
+      "  If orchiectomy — discuss prosthesis + future psychological + sexual function",
+      "ALTERNATIVE DIAGNOSES if torsion ruled out at surgery:",
+      "  Appendix testis torsion: excision + symptomatic; smaller blue dot near upper pole",
+      "  Epididymo-orchitis: antibiotics (ceftriaxone + doxycycline for STI; ciprofloxacin if UTI source); scrotal support + NSAID",
+      "  Hydrocele: drainage if symptomatic",
+      "  Hernia: surgical repair",
+      "  Trauma: imaging + supportive",
+      "  Tumour: workup tumour markers + imaging + urological",
+      "NEONATAL TORSION:",
+      "  Often perinatal extravaginal (entire spermatic cord twists)",
+      "  Usually not salvageable (occurred in utero)",
+      "  Surgical exploration + contralateral orchiopexy (prophylactic)",
+      "INTERMITTENT TORSION:",
+      "  Recurrent self-resolving episodes — risk of definitive torsion",
+      "  Elective bilateral orchiopexy",
+      "PATIENT EDUCATION:",
+      "  Adolescent males — recognise testicular pain + emergency",
+      "  Importance of rapid presentation (time = testis)",
+      "  Counsel post-op",
+      "MEDICOLEGAL:",
+      "  Major source of litigation — document clinical exam + timing + decision-making + consent + outcomes"
+    ],
+    "references": [
+      {
+        "label": "EAU European Association of Urology Acute Scrotum Guidelines 2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "AUA American Urological Association Pediatric Urology Practice Parameters 2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "BAUS UK Acute Scrotal Pain Guidelines",
+        "kind": "guideline"
+      },
+      {
+        "label": "Barbosa JA et al. TWIST score validation",
+        "kind": "review"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]
