@@ -9908,5 +9908,155 @@
     "rationale": "ACEP 2021 + RCEM 2021 + AAGBI Safe Sedation 2021.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "postpartum-depression-edinburgh-pnd-r1",
+    "title": "PPD — EPDS at 6 weeks + CBT/IPT + sertraline if mod-severe",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "postpartum-depression-edinburgh-pnd"
+    },
+    "indicators": [
+      "postpartum > 2 weeks low mood / EPDS ≥ 10"
+    ],
+    "recommendation": "EPDS screen at 6 wk + 3/6/12 mo. Item 10 positive = immediate suicide assessment. Mild–mod: CBT / IPT + psychoeducation + social support + sleep + exercise. Mod–severe: sertraline 50–100 mg/d (lowest infant exposure breastfeeding) + CBT. Continue 6–12 mo. AVOID fluoxetine first-line breastfeeding (long half-life). Psychotic / suicidal / infanticide ideation = EMERGENCY admit + antipsychotic. Postpartum psychosis: olanzapine + mood stabiliser + admit MBU. Brexanolone / zuranolone for severe where available. Assess partner. WHO Thinking Healthy for CHV in LMIC.",
+    "rationale": "NICE CG192 + WHO mhGAP + Thinking Healthy Lancet 2008.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "maternal-sepsis-recognition-management-r1",
+    "title": "Maternal sepsis — Sepsis-Six + source control + omqSOFA",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "maternal-sepsis-recognition-management"
+    },
+    "indicators": [
+      "pregnant / postpartum + fever / hypotension"
+    ],
+    "recommendation": "Within 1 h: O2 to SpO2 ≥ 94%, blood cultures BEFORE antibiotics, broad-spectrum (pip-tazo 4.5 g q8h or ceftriaxone 2 g + metronidazole 500 mg q8h; add clindamycin if GAS/TSS), crystalloid 30 ml/kg, lactate, UO. Source control 6–12h (evacuate retained products, drain abscess, debride wound, expedite delivery if intrauterine source). Noradrenaline if persistent hypotension (MAP ≥ 65). ICU for severe. VTE prophylaxis LMWH. omqSOFA score (GCS<15, RR>25, SBP<90 = sepsis). Notify MDR if death.",
+    "rationale": "WHO Maternal Sepsis 2017 + RCOG GTG 64a/b + Surviving Sepsis 2021.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "eclampsia-magnesium-sulphate-pathway-r1",
+    "title": "Eclampsia / severe PE — MgSO4 + BP control + delivery + 24h post",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "eclampsia-magnesium-sulphate-pathway"
+    },
+    "indicators": [
+      "seizure in pregnancy / BP ≥ 160/110"
+    ],
+    "recommendation": "MgSO4 loading 4 g IV over 5–10 min + 1 g/h maintenance × 24h post-delivery / last seizure (or IM 5 g each buttock + 5 g q4h). Calcium gluconate 1 g antidote bedside. Severe HTN: labetalol 20 mg IV doubling q10 min or hydralazine 5 mg q20 min or nifedipine 10 mg PO (NOT SL); target SBP 140–155. CAUTIOUS fluids (80 ml/h). DELIVERY after stabilisation: ≥ 34 wk deliver, 24–33+6 corticosteroids + plan, < 24 counsel termination if severe. VTE prophylaxis post. Aspirin 75–150 mg from 12 wk next pregnancy + calcium 1.5–2 g/d in low-calcium populations.",
+    "rationale": "WHO PE/E 2011 + MAGPIE Lancet 2002 + RCOG GTG 10A.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "gestational-diabetes-screening-management-r1",
+    "title": "GDM — 75g OGTT 24–28 wk + diet then metformin/insulin + 6-12 wk OGTT",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "gestational-diabetes-screening-management"
+    },
+    "indicators": [
+      "pregnant 24–28 weeks / risk factors"
+    ],
+    "recommendation": "75 g OGTT 24–28 wk: WHO/IADPSG cutoffs FBG ≥ 5.1, 1h ≥ 10.0, 2h ≥ 8.5. Pre-existing if FBG ≥ 7 / random ≥ 11.1 / HbA1c ≥ 48 at booking. Diet + exercise first; targets FBG < 5.3, 1h post < 7.8. If targets not met 1–2 wk: metformin 500 mg BD up to 2 g (first-line PO, safe per MiG); add/use insulin (NPH bedtime + rapid prandial). Aspirin 75–150 mg from 12 wk (PE prevention). Growth scans 4-weekly from 28. Deliver by 38–39 wk insulin-controlled / 40+6 diet-only. C-section if EFW > 4.5 kg. Stop meds at delivery, breastfeed, OGTT 6–12 wk postpartum + annual diabetes screen.",
+    "rationale": "WHO 2013 + NICE NG3 + ACOG 190.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "vte-prophylaxis-pregnancy-postpartum-r1",
+    "title": "Pregnancy/postpartum VTE prophylaxis — risk-stratify + LMWH",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "vte-prophylaxis-pregnancy-postpartum"
+    },
+    "indicators": [
+      "pregnancy with VTE risk factors / postpartum"
+    ],
+    "recommendation": "RCOG risk score at booking, antenatal admission, postpartum. Antenatal ≥ 4 RFs = LMWH from 1st trimester; 3 RFs = from 28 wk. Postpartum ≥ 2 RFs / any major = LMWH × 6 wk; C-section 10 d minimum. Enoxaparin 40 mg OD (50–90 kg); 1 mg/kg BD for treatment of confirmed VTE. AVOID warfarin (teratogenic) + DOACs (no safety data) in pregnancy. Stop LMWH 24h before planned delivery / regional, restart 6–12h post if no bleed. Massive PE: thrombolysis. Mechanical: TEDS + IPC + mobilise. D-dimer NOT reliable. Imaging: compression US for DVT, CTPA for PE.",
+    "rationale": "RCOG GTG 37a/b 2015 + ACCP CHEST.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "shoulder-dystocia-helperr-r1",
+    "title": "Shoulder dystocia — HELPERR sequential manoeuvres + deliver in 5 min",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "shoulder-dystocia-helperr"
+    },
+    "indicators": [
+      "turtle sign + failure to deliver shoulders"
+    ],
+    "recommendation": "Call HELP (sr obs + paeds + anaesth + scribe + clock). HELPERR sequence (30 sec each): Evaluate episiotomy, Legs McRobert's (resolves 40%), Pressure suprapubic (NOT fundal — adds 20%), Enter Rubin II / Wood's screw rotations, Remove posterior arm, Roll all-fours. Last resort: cleidotomy, symphysiotomy (Kenya MOH where C-section unavailable), Zavanelli. Post: cord gases, examine baby (Erb's, fractures), refer paeds, examine mother (tears, PPH high risk after dystocia), debrief team + family. PROMPT skill drills regularly.",
+    "rationale": "RCOG GTG 42 + PROMPT + ALSO.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "antenatal-care-who-8-contact-detailed-r1",
+    "title": "ANC — WHO 8-contact + Linda Mama booking essentials",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "antenatal-care-who-8-contact-detailed"
+    },
+    "indicators": [
+      "pregnancy booking visit"
+    ],
+    "recommendation": "WHO 8-contact: < 12 wk, 20, 26, 30, 34, 36, 38, 40. Booking: history + dating scan + bloods (FBC, BG/Rh, HIV, syphilis, HBsAg, rubella, sickle); folic acid 5 mg + IFA 60+0.4 mg + calcium 1.5–2 g/d (low-Ca SSA — WHO 2018); aspirin 75–150 mg from 12 wk if PE high-risk (USPSTF); IPTp-SP × 3 in moderate-high malaria transmission; Td booster; HIV ART for PMTCT; counsel danger signs + skilled birth + Linda Mama. Ongoing: BP + urinalysis + fundal height + fetal movements; anomaly scan 18–22 wk; GDM 24–28; anti-D 28+34; ECV for breech ≥ 36 wk; Tdap 28–36 wk.",
+    "rationale": "WHO ANC 2016 + Kenya Linda Mama + WHO Calcium 2018 + IPTp-SP.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "intrapartum-fetal-monitoring-partogram-r1",
+    "title": "Intrapartum — WHO Labour Care Guide + DR C BRaVADO + AMTSL",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "intrapartum-fetal-monitoring-partogram"
+    },
+    "indicators": [
+      "labour onset / active labour management"
+    ],
+    "recommendation": "WHO Labour Care Guide 2020 — woman-centred decisions; active labour from 5 cm (not 4). Low-risk fetal monitoring: intermittent Doppler every 15 min stage 1, every 5 min stage 2. High-risk: continuous CTG with DR C BRaVADO. Concerning CTG: left lateral + IV fluid + stop oxytocin + tocolysis if hyperstim + exclude cord prolapse + expedite if persistent. GBS IAP if indicated (penicillin G). AMTSL: oxytocin 10 IU IM within 1 min + delayed cord clamping ≥ 1 min + controlled cord traction + uterine massage. Skin-to-skin + early breastfeeding. Companion of choice + respectful care.",
+    "rationale": "WHO Labour Care Guide 2020 + NICE NG235 + Kenya MOH Quality of Care.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "premature-rupture-of-membranes-prom-pprom-r1",
+    "title": "PPROM — corticosteroids + erythromycin + MgSO4 + deliver at 34",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "premature-rupture-of-membranes-prom-pprom"
+    },
+    "indicators": [
+      "liquor leak < 37 weeks"
+    ],
+    "recommendation": "Sterile speculum (NO digital exam). PPROM (< 37 wk): admit + monitor for chorio. Corticosteroids 24–34+6 wk: betamethasone 12 mg × 2 / dexa 6 mg × 4. Erythromycin 250 mg QDS × 10 d (ORACLE I); AVOID amoxiclav (NEC). MgSO4 neuroprotection < 32 wk if imminent delivery (4 g + 1 g/h × 24h). Tocolysis NOT routine. Monitor temp, FBC, CRP, CTG. Deliver at 34+0 (or per PPROMT 34–36 wk) OR if chorio / fetal distress / abruption. Term PROM (≥ 37 wk): induce + antibiotics if > 18h not delivered. Antibiotic GBS prophylaxis per protocol.",
+    "rationale": "RCOG GTG 73 + ORACLE I + PPROMT + WHO Preterm.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "postpartum-mental-health-comprehensive-r1",
+    "title": "Postpartum mental health — screen + treat spectrum (blues→PPD→psychosis)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "postpartum-mental-health-comprehensive"
+    },
+    "indicators": [
+      "postpartum mental health screening / concern"
+    ],
+    "recommendation": "EPDS 6 wk + 3/6/12 mo. Baby blues: education + rescreen 2 wk. PPD mod–severe: sertraline + CBT. PP psychosis: EMERGENCY admit + olanzapine/risperidone ± lithium (mood stabiliser if bipolar; AVOID valproate WCBP). ECT for severe refractory. OCD intrusive: CBT + SSRI. Birth PTSD: trauma-focused CBT + EMDR. Bipolar: postpartum prophylaxis CRITICAL — restart mood stabiliser. Partner screen too (10% paternal PPD). Most psychotropics compatible breastfeeding (LactMed). Brexanolone/zuranolone for severe PPD where available.",
+    "rationale": "NICE CG192 + ACOG 757 + WHO mhGAP.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]

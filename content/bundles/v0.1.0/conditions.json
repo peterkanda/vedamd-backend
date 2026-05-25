@@ -71473,5 +71473,856 @@
     "ruleVersion": "2024.1",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "postpartum-depression-edinburgh-pnd",
+    "title": "Postpartum depression — Edinburgh Postnatal Depression Scale (EPDS)",
+    "icd10": [
+      "F53.0"
+    ],
+    "icd11": [
+      "6E20"
+    ],
+    "domains": [
+      "mental-health",
+      "obstetrics",
+      "primary-care",
+      "mnch",
+      "ssa",
+      "kenya-moh"
+    ],
+    "population": "Women in the year after childbirth — prevalence 10–20% globally, higher in LMICs + SSA (15–25%). Father / partner / non-birthing parent also at risk (~10%). Universal screening at 6-week postnatal visit + 3, 6, 12 months.",
+    "presentation": "Persistent low mood / anhedonia / hopelessness > 2 weeks postpartum (DSM-5 within 4 weeks; ICD-11 within 6 months). Differs from 'baby blues' (resolves within 2 weeks, no functional impairment). May present with anxiety, intrusive thoughts of harming infant, fatigue beyond expected, withdrawal from baby. Postpartum psychosis (rare ~1:1000) — emergency.",
+    "redFlags": [
+      "Suicidal ideation / plan / intent — emergency referral",
+      "Thoughts of harming infant — child protection + emergency mental health",
+      "Psychotic symptoms (hallucinations, delusions about infant, bizarre behaviour) — postpartum psychosis admit",
+      "Severe functional impairment (not caring for self / infant)",
+      "Recurrent severe pre-existing mood disorder (high relapse)"
+    ],
+    "diagnostics": [
+      "Edinburgh Postnatal Depression Scale (EPDS) — 10-item, score 0–30, ≥ 10 likely depression, ≥ 13 probable; positive item 10 = suicidal ideation → assess immediately",
+      "PHQ-9 alternative",
+      "Whooley 2-question case-finder for primary care",
+      "Risk factors: previous depression / anxiety, traumatic birth, lack of social support, partner violence, low SES, infant illness, breastfeeding difficulty, hormonal changes",
+      "Differential: hypothyroidism (TSH), anaemia (FBC), B12, sleep deprivation"
+    ],
+    "management": [
+      "STEPPED CARE (WHO mhGAP-IG2 + NICE CG192):",
+      "Mild–moderate:",
+      "  Active listening + psychoeducation",
+      "  Increase social support, baby-care relief, sleep hygiene",
+      "  Structured CBT or interpersonal therapy (IPT) — first-line",
+      "  Group therapy / peer support (mothers' groups)",
+      "  Physical activity (walking with baby)",
+      "Moderate–severe / failed psychotherapy:",
+      "  SSRI first-line — sertraline 50–100 mg daily (lowest infant exposure if breastfeeding); paroxetine alternative (caution — short half-life)",
+      "  AVOID fluoxetine first-line (long half-life accumulates in infant); avoid citalopram > 20 mg if breastfeeding",
+      "  Continue antidepressant 6–12 months minimum if effective",
+      "  Refer for CBT in parallel",
+      "  TCA alternatives if needed (nortriptyline)",
+      "Severe / suicidal / psychotic — URGENT psychiatric referral, consider admission:",
+      "  Postpartum psychosis: antipsychotic (olanzapine, risperidone) + mood stabiliser (lithium — careful breastfeeding) + admit to mother-baby unit if available",
+      "  ECT for severe refractory / catatonia",
+      "  Brexanolone IV (neurosteroid GABA-A modulator) approved for severe PPD where available — single infusion 60h, expensive",
+      "BREASTFEEDING compatibility:",
+      "  Sertraline + paroxetine — low infant levels, generally compatible",
+      "  Avoid fluoxetine + citalopram (high dose) + lithium with breastfeeding",
+      "  Educate patient — most antidepressants compatible per LactMed",
+      "INFANT: assess attachment, refer to paediatrics + early childhood services; risk of developmental delay if maternal PPD untreated",
+      "PARTNER: screen partner too; couple counselling",
+      "Kenya MOH integrating maternal mental health into MNCH services + community health worker training (mhGAP, WHO Thinking Healthy programme)",
+      "WHO Thinking Healthy Programme — CHV-delivered CBT-based intervention shown effective in LMIC"
+    ],
+    "references": [
+      {
+        "label": "NICE CG192 Antenatal + Postnatal Mental Health 2014/2018",
+        "kind": "guideline"
+      },
+      {
+        "label": "WHO mhGAP Intervention Guide v2 — depression module",
+        "kind": "guideline"
+      },
+      {
+        "label": "Rahman A et al. Thinking Healthy Programme. Lancet 2008 trial",
+        "kind": "trial"
+      },
+      {
+        "label": "Kenya MOH Maternal Mental Health Guidelines (draft)",
+        "kind": "policy"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "maternal-sepsis-recognition-management",
+    "title": "Maternal sepsis — recognition + Sepsis-Six (peripartum specific)",
+    "icd10": [
+      "O85"
+    ],
+    "icd11": [
+      "JB40"
+    ],
+    "domains": [
+      "obstetrics",
+      "emergency",
+      "critical-care",
+      "infection",
+      "mnch",
+      "kenya-moh"
+    ],
+    "population": "Pregnant women (antepartum, intrapartum, postpartum to 42 days). Globally 5th leading cause of maternal mortality; SSA disproportionate. Chorioamnionitis, endometritis, UTI, mastitis, wound infection, post-abortal sepsis common sources.",
+    "presentation": "Pregnancy alters physiology — masks sepsis (relative tachycardia + tachypnoea normal; WCC normally elevated). Use obstetric-specific scores (omqSOFA, SIRS-O). Specific sources: chorioamnionitis (fetal tachycardia, uterine tenderness, foul liquor), endometritis (boggy uterus, foul lochia 24h+), septic abortion, wound + episiotomy infection, mastitis, pyelonephritis (very common in pregnancy).",
+    "redFlags": [
+      "SBP < 90 or MAP < 65",
+      "RR > 25",
+      "Altered consciousness (GCS drop)",
+      "SpO2 < 92%",
+      "Mottled skin / capillary refill > 4s",
+      "Anuria / urine output < 0.5 ml/kg/h",
+      "Lactate > 2",
+      "Suspected septic abortion (esp unsafe)",
+      "Fetal tachycardia / fetal distress (in utero source)",
+      "Group A Strep recognition (especially postpartum — necrotising fasciitis risk)"
+    ],
+    "diagnostics": [
+      "omqSOFA: GCS < 15, RR > 25, SBP < 90 (≥ 2 = sepsis)",
+      "Source examination: abdomen (uterine tenderness, peritonism, wound), perineum, breasts, urine, CXR (pneumonia), LP if meningism",
+      "FBC, CRP, lactate, U&E, LFT, coagulation, blood culture × 2 BEFORE antibiotics, urine culture, high vaginal swab, placenta swab if recently delivered, breast milk if mastitis",
+      "Fetal assessment if undelivered (CTG)",
+      "USS if retained products / abscess suspected"
+    ],
+    "management": [
+      "MATERNAL SEPSIS-SIX (within 1 hour of recognition):",
+      "1. Senior obstetric + anaesthetic + critical care alert",
+      "2. High-flow oxygen (target SpO2 ≥ 94%)",
+      "3. Blood cultures BEFORE antibiotics",
+      "4. Broad-spectrum IV antibiotic within 1h: pip-tazo 4.5 g q8h OR ceftriaxone 2 g + metronidazole 500 mg q8h (covers anaerobes — endometritis); add gentamicin 5 mg/kg or amikacin if shock; add clindamycin 600 mg q6h if Group A Strep / TSS suspected (anti-toxin)",
+      "5. IV crystalloid 30 ml/kg over 3h for hypotension or lactate > 4",
+      "6. Measure lactate + urine output (catheterise)",
+      "SOURCE CONTROL within 6–12 hours:",
+      "  Septic abortion: evacuate retained products (MVA) — definitive control",
+      "  Endometritis: antibiotics; D&C if retained products",
+      "  Chorioamnionitis (undelivered): expedite delivery (vaginal preferred, C-section for obstetric indication); antibiotics during labour",
+      "  Wound: open + debride + drain pus",
+      "  Mastitis: drain abscess",
+      "  Necrotising fasciitis: URGENT surgical debridement",
+      "Vasopressor: noradrenaline first-line if hypotension despite fluids (target MAP ≥ 65)",
+      "ICU admission for severe / septic shock",
+      "Anti-coagulation: VTE prophylaxis with LMWH (pregnancy + sepsis very high risk)",
+      "Delivery considerations: maternal stabilisation priority; expedite if intrauterine source",
+      "Postpartum considerations: continue breastfeeding if mother able + antibiotics compatible (most are)",
+      "Watch for HELLP / pre-eclampsia overlap",
+      "Notify MDR / maternal death review if death"
+    ],
+    "references": [
+      {
+        "label": "WHO Maternal Sepsis Statement 2017 + WHO clinical management",
+        "kind": "guideline"
+      },
+      {
+        "label": "RCOG Green-top 64a + 64b Bacterial Sepsis in Pregnancy 2012",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya MOH Maternal + Newborn Health Quality of Care Standards",
+        "kind": "policy"
+      },
+      {
+        "label": "Surviving Sepsis Campaign 2021 (obstetric considerations)",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "eclampsia-magnesium-sulphate-pathway",
+    "title": "Eclampsia + severe pre-eclampsia — magnesium sulphate (MAGPIE)",
+    "icd10": [
+      "O15"
+    ],
+    "icd11": [
+      "JA24"
+    ],
+    "domains": [
+      "obstetrics",
+      "obstetric-emergency",
+      "emergency",
+      "neurology",
+      "mnch",
+      "kenya-moh"
+    ],
+    "population": "Pregnant + postpartum women (up to 6 weeks). Highest cause of maternal mortality globally; SSA disproportionate. Severe pre-eclampsia BP ≥ 160/110 + proteinuria or end-organ dysfunction; eclampsia = seizure on background.",
+    "presentation": "Pre-eclampsia severe features: BP ≥ 160/110, severe headache, visual disturbance, RUQ/epigastric pain, hyperreflexia / clonus, oliguria, pulmonary oedema. Eclampsia: tonic-clonic seizure. HELLP: haemolysis + raised LFTs + low platelets.",
+    "redFlags": [
+      "Eclamptic seizure",
+      "BP ≥ 160/110 (severe hypertension)",
+      "HELLP (LDH > 600, AST > 70, plts < 100)",
+      "Pulmonary oedema",
+      "Cerebrovascular accident (haemorrhagic in eclampsia)",
+      "Placental abruption",
+      "DIC",
+      "Acute kidney injury",
+      "Fetal compromise"
+    ],
+    "diagnostics": [
+      "BP measurement standardised + repeated 4 hours apart for diagnosis",
+      "Urine dipstick proteinuria; spot urine PCR > 30 mg/mmol or 24h > 300 mg",
+      "FBC, U&E, LFT, urate, LDH, coag",
+      "CTG / biophysical profile",
+      "Reflexes + clonus check during magnesium infusion"
+    ],
+    "management": [
+      "ECLAMPTIC SEIZURE:",
+      "  ABC, lateral position, suction, high-flow O2",
+      "  MAGNESIUM SULPHATE — drug of choice (MAGPIE 2002 — reduced eclampsia 58%):",
+      "    Loading: 4 g IV slowly over 5–10 min (mix 4 g in 20 ml saline)",
+      "    Maintenance: 1 g/h IV infusion × 24h after delivery / last seizure",
+      "    Alternative IM: 5 g each buttock + 5 g q4h × 24h (used where IV not available; pain at injection)",
+      "    Recurrent seizure: further 2 g IV bolus",
+      "    Watch toxicity: loss of patellar reflex (give Ca gluconate), RR < 12 (hypocalcaemia, paralysis), oliguria (reduce dose)",
+      "    Calcium gluconate 1 g IV antidote available bedside",
+      "SEVERE HYPERTENSION (≥ 160/110) — treat within 30–60 min:",
+      "    Labetalol 20 mg IV; double q10 min up to 80 mg (max 220 mg cumulative); or 200 mg PO",
+      "    Hydralazine 5 mg IV q20 min (avoid in CV disease)",
+      "    Nifedipine 10 mg PO (NOT sublingual — uncontrolled drop)",
+      "    Target SBP 140–155, DBP 90–105 (avoid sudden drop — placental hypoperfusion)",
+      "FLUID management: CAUTIOUS — pulmonary oedema risk; maintenance 80 ml/h crystalloid; fluid challenge only if oliguria + invasive monitoring",
+      "DELIVERY:",
+      "  Definitive treatment of pre-eclampsia / eclampsia is delivery",
+      "  After maternal stabilisation",
+      "  Vaginal delivery preferred unless obstetric indication for C-section",
+      "  At ≥ 34 weeks: deliver; 24–33+6: stabilise + corticosteroids + deliver per maternal/fetal status; < 24: counsel termination if severe",
+      "POSTPARTUM:",
+      "  Continue magnesium 24h post-delivery / last seizure",
+      "  Monitor BP for 6 weeks (hypertension may persist or worsen)",
+      "  VTE prophylaxis (high risk)",
+      "  HELLP usually resolves within 48h of delivery",
+      "  Future pregnancy counselling: 15% recurrence pre-eclampsia, aspirin 75–150 mg from 12 weeks in next pregnancy (USPSTF/ACOG)",
+      "RECURRENCE PREVENTION: low-dose aspirin from 12–16 weeks in subsequent pregnancy + calcium 1.5–2 g/d in calcium-deficient diets (LMIC including most of SSA — WHO recommendation)",
+      "Notify MDR if death"
+    ],
+    "references": [
+      {
+        "label": "WHO Recommendations for Prevention and Treatment of Pre-eclampsia and Eclampsia 2011",
+        "kind": "guideline"
+      },
+      {
+        "label": "MAGPIE trial. Lancet 2002",
+        "kind": "trial"
+      },
+      {
+        "label": "RCOG Green-top 10A The Management of Severe Pre-eclampsia/Eclampsia",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya National Guidelines for Quality Obstetrics and Perinatal Care (Linda Mama)",
+        "kind": "policy"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "gestational-diabetes-screening-management",
+    "title": "Gestational diabetes mellitus (GDM) — screening + management",
+    "icd10": [
+      "O24.4"
+    ],
+    "icd11": [
+      "JA63"
+    ],
+    "domains": [
+      "obstetrics",
+      "endocrinology",
+      "primary-care",
+      "mnch",
+      "kenya-moh"
+    ],
+    "population": "Pregnant women — global prevalence rising (10–25% depending on criteria); higher in SSA + South Asian populations. Universal screening 24–28 weeks vs risk-based varies by guideline.",
+    "presentation": "Usually asymptomatic (screen-detected). Risk factors: obesity (BMI > 30), age > 35, family history T2DM, previous GDM / macrosomia, PCOS, ethnicity, glycosuria. Complications: macrosomia, shoulder dystocia, neonatal hypoglycaemia, RDS, pre-eclampsia, polyhydramnios, future T2DM (50% at 10 years).",
+    "redFlags": [
+      "Macrosomia (EFW > 90th centile or > 4 kg)",
+      "Polyhydramnios",
+      "Suspected congenital anomaly (in poorly controlled overt diabetes mistaken for GDM)",
+      "Poor glycaemic control (fasting > 5.3, postprandial > 7.8 mmol/L) despite diet"
+    ],
+    "diagnostics": [
+      "WHO 2013 + IADPSG criteria: 75 g OGTT at 24–28 weeks — fasting ≥ 5.1, 1h ≥ 10.0, 2h ≥ 8.5 mmol/L (any one diagnoses GDM)",
+      "NICE alternative: 75 g OGTT — fasting ≥ 5.6, 2h ≥ 7.8",
+      "Pre-existing diabetes if fasting ≥ 7.0 or random ≥ 11.1 or HbA1c ≥ 48 at booking",
+      "FBG only screening — used in LMIC programmes including Kenya MOH",
+      "Risk-based vs universal — Kenya MOH risk-based plus universal in tertiary",
+      "Fundoscopy + urinary ACR + ECG in overt diabetes (T1/T2 not GDM)"
+    ],
+    "management": [
+      "DIET + LIFESTYLE (1st-line; many controlled by this alone):",
+      "  Low-glycaemic-index carbohydrate, portion control, regular meals + snacks",
+      "  Weight gain limits (IOM): underweight 12.5–18 kg, normal 11.5–16, overweight 7–11.5, obese 5–9",
+      "  Exercise — 30 min walking daily after meals (lowers postprandial)",
+      "  Self-monitor blood glucose 4× daily — fasting + 1h postprandial after each meal",
+      "  Target: fasting < 5.3, 1h post < 7.8 (or 2h post < 6.7) mmol/L",
+      "PHARMACOLOGICAL (if targets not met in 1–2 weeks):",
+      "  Metformin 500 mg BD (titrate to 2 g/d max) — first-line PO; safe in pregnancy, infant + maternal outcomes equivalent to insulin (MiG trial); WHO + ADA + NICE endorse; about 30–50% need insulin added",
+      "  Insulin — gold standard; NPH bedtime + rapid acting prandial; doses titrated; required for tighter control / when metformin contraindicated / type 1 / overt T2",
+      "  Glibenclamide — second-line; falling out of favour (crosses placenta, neonatal hypoglycaemia)",
+      "ANTENATAL MONITORING:",
+      "  Growth scans every 4 weeks from 28 weeks",
+      "  Fetal surveillance (CTG, BPP) weekly from 36 weeks",
+      "  Aspirin 75–150 mg from 12 weeks (pre-eclampsia prevention)",
+      "DELIVERY:",
+      "  Diet-controlled GDM: deliver by 40+6",
+      "  Insulin-controlled: deliver by 38–39 weeks",
+      "  Suspected macrosomia (> 4.5 kg): offer C-section (reduce shoulder dystocia)",
+      "  Intrapartum: variable rate insulin infusion to maintain glucose 4–7 mmol/L; CTG monitoring",
+      "POSTPARTUM:",
+      "  Stop insulin / metformin immediately at delivery",
+      "  Encourage breastfeeding (reduces future maternal T2DM + childhood obesity)",
+      "  Fasting glucose or 75g OGTT at 6–12 weeks postpartum (T2DM screen)",
+      "  Annual diabetes screening lifelong (50% develop T2DM in 10 years)",
+      "  Lifestyle counselling + weight management",
+      "  Future pregnancy: pre-conception counselling, optimise weight + glucose, aspirin",
+      "NEONATAL: glucose monitoring within 30 min + 2h + pre-feeds × 24h; treat hypoglycaemia per neonatal protocol"
+    ],
+    "references": [
+      {
+        "label": "WHO Diagnosis Criteria and Classification of Hyperglycaemia First Detected in Pregnancy 2013",
+        "kind": "guideline"
+      },
+      {
+        "label": "NICE NG3 Diabetes in Pregnancy 2015 (updated)",
+        "kind": "guideline"
+      },
+      {
+        "label": "ACOG Practice Bulletin No 190 Gestational Diabetes 2018",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya MOH NCD Strategic Plan — Diabetes in Pregnancy",
+        "kind": "policy"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "vte-prophylaxis-pregnancy-postpartum",
+    "title": "VTE in pregnancy + postpartum — risk-stratify + LMWH",
+    "icd10": [
+      "O22.3",
+      "O87.1"
+    ],
+    "icd11": [
+      "JA85"
+    ],
+    "domains": [
+      "obstetrics",
+      "haematology",
+      "vascular",
+      "mnch",
+      "primary-care"
+    ],
+    "population": "All pregnant + postpartum women. Pregnancy is hypercoagulable; VTE 5× more common than non-pregnant; postpartum highest risk especially first 6 weeks. Leading direct cause of maternal mortality in many HICs.",
+    "presentation": "DVT — leg swelling/pain (predominantly LEFT-sided in pregnancy 80% — iliac vein compression by gravid uterus); PE — dyspnoea, chest pain, tachycardia, syncope, haemoptysis; subtle presentations common.",
+    "redFlags": [
+      "Sudden dyspnoea / chest pain — exclude PE urgently",
+      "Unilateral leg swelling + pain — DVT",
+      "Massive PE with haemodynamic instability — thrombolysis consideration",
+      "Past VTE / known thrombophilia",
+      "Caesarean section, especially emergency"
+    ],
+    "diagnostics": [
+      "RCOG VTE risk score: assess at booking, antenatal admission, postpartum",
+      "DVT: compression ultrasound (whole leg)",
+      "PE: chest X-ray, ECG (sinus tachycardia, S1Q3T3, RBBB), ABG (low O2 + low CO2 + raised gradient); definitive — CTPA preferred; V/Q if young + normal CXR (radiation comparable; ventilation half-dose)",
+      "D-dimer NOT reliable in pregnancy (physiologically raised); use clinical probability + imaging",
+      "Thrombophilia screen — usually defer to postpartum 6+ weeks"
+    ],
+    "management": [
+      "RISK STRATIFICATION (RCOG Green-top 37a):",
+      "ANTENATAL:",
+      "  ≥ 4 risk factors: LMWH from 1st trimester to 6 weeks postpartum",
+      "  3 risk factors: LMWH from 28 weeks",
+      "  2 risk factors: ?from 28 weeks (intermediate decision)",
+      "  Major risk factors: previous VTE, thrombophilia (lupus anticoagulant, antiphospholipid, factor V Leiden homozygous, AT deficiency), antiphospholipid syndrome",
+      "POSTPARTUM (highest risk):",
+      "  ≥ 2 risk factors / any major: LMWH × 6 weeks",
+      "  Caesarean section: at least 10 days (longer if other RFs)",
+      "  Routine antenatal hospital admission: 7 days LMWH",
+      "DOSING (RCOG):",
+      "  Prophylactic enoxaparin: 40 mg SC OD (50–90 kg); 60 mg OD (91–130 kg); higher per weight",
+      "  AT < 50 kg: 20 mg OD",
+      "  Treatment dose for confirmed VTE: enoxaparin 1 mg/kg SC BD (or 1.5 mg/kg OD)",
+      "AVOID warfarin in pregnancy (teratogenic 6–12 weeks, fetal bleeding); LMWH is mainstay throughout pregnancy",
+      "Stop LMWH 24h before planned induction / C-section / regional anaesthesia (more conservative — 24h for prophylactic, 24h for treatment dose); restart 6–12h postpartum if no bleeding",
+      "Avoid DOACs in pregnancy / breastfeeding (insufficient safety data)",
+      "MASSIVE PE: thrombolysis (alteplase 100 mg over 2h) for haemodynamic collapse — risks high but justified; surgical embolectomy alternative",
+      "Mechanical: TED stockings, IPC during admission, early mobilisation",
+      "Aspirin alone insufficient for VTE prophylaxis in pregnancy",
+      "Patient education: warning signs, seek help urgently",
+      "Document risk assessment at every contact + after any admission / surgery"
+    ],
+    "references": [
+      {
+        "label": "RCOG Green-top Guideline 37a Reducing the risk of Venous Thromboembolism during Pregnancy 2015 (updated)",
+        "kind": "guideline"
+      },
+      {
+        "label": "RCOG Green-top 37b Thromboembolic disease in pregnancy",
+        "kind": "guideline"
+      },
+      {
+        "label": "ACCP Antithrombotic therapy CHEST guidelines 2012",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya National Guidelines for Quality Obstetrics",
+        "kind": "policy"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "shoulder-dystocia-helperr",
+    "title": "Shoulder dystocia — HELPERR algorithm",
+    "icd10": [
+      "O66.0"
+    ],
+    "icd11": [
+      "JA86.5"
+    ],
+    "domains": [
+      "obstetrics",
+      "obstetric-emergency",
+      "emergency",
+      "mnch",
+      "kenya-moh"
+    ],
+    "population": "Vaginal delivery — incidence 0.6–1.4% of all vaginal births. Risk factors: macrosomia, GDM, prior shoulder dystocia, prolonged second stage, instrumental delivery — but most occur without RFs.",
+    "presentation": "After delivery of head — failure to deliver shoulders with normal traction; 'turtle sign' — head retracts against perineum. Need delivery within 5 min (after that fetal hypoxia + brachial plexus injury rise).",
+    "redFlags": [
+      "Failure to deliver in 5 minutes — escalate",
+      "Fetal heart deceleration",
+      "Brachial plexus injury (Erb-Klumpke) — most common complication",
+      "Maternal: PPH, 3rd/4th degree tear, symphysis pubis separation",
+      "Fetal: hypoxic injury, fracture clavicle/humerus, death"
+    ],
+    "diagnostics": [
+      "Clinical recognition — turtle sign + failure to deliver",
+      "Document: time of head delivery, manoeuvres + order + duration, who performed, fetal condition, cord blood gas",
+      "Postpartum: examine neonate for brachial plexus + fractures"
+    ],
+    "management": [
+      "HELPERR mnemonic — sequential, escalating manoeuvres (each 30 sec):",
+      "H — Call for HELP (senior obstetric, paediatric, anaesthetic + scribe + clock)",
+      "E — EVALUATE for Episiotomy (not always needed — bony obstruction not soft tissue; cut if needed for room for hands)",
+      "L — LEGS — McROBERT'S manoeuvre: hyperflex thighs onto abdomen (one assistant each side); resolves 40% by rotating symphysis upwards",
+      "P — PRESSURE — suprapubic (NOT fundal — fundal worsens impaction) — assistant applies CPR-like pressure downwards + laterally on impacted anterior shoulder for 30 seconds; resolves additional 20%",
+      "E — ENTER pelvis (internal manoeuvres):",
+      "   Rubin II: pressure on posterior aspect of anterior shoulder to adduct + rotate to oblique",
+      "   Wood's screw: pressure on anterior aspect of posterior shoulder to rotate 180°",
+      "   Reverse Wood's screw: reverse rotation",
+      "R — REMOVE posterior arm: insert hand along posterior vaginal wall, sweep posterior arm across chest, deliver",
+      "R — ROLL onto all fours (Gaskin manoeuvre) — gravity may help",
+      "LAST RESORT (rarely used in routine practice — usually for catastrophic dystocia):",
+      "  Deliberate fracture of clavicle (cleidotomy)",
+      "  Symphysiotomy (in low-resource settings without C-section access — Kenya MOH protocol includes for catastrophic shoulder dystocia where C-section not possible)",
+      "  Zavanelli manoeuvre (push head back into pelvis, deliver by C-section) — last resort",
+      "POST-DELIVERY:",
+      "  Cord blood gases (umbilical artery + vein)",
+      "  Examine baby — Erb's palsy (waiter's tip — most common), Klumpke (claw hand), clavicle/humerus fracture",
+      "  Refer paediatric for assessment + physiotherapy",
+      "  Maternal: examine for tears, atony, PPH (high risk after dystocia)",
+      "  Debrief team + family (informed disclosure if injury)",
+      "  Skill drills (PROMPT) — train regularly; reduces brachial plexus injury"
+    ],
+    "references": [
+      {
+        "label": "RCOG Green-top 42 Shoulder Dystocia 2012",
+        "kind": "guideline"
+      },
+      {
+        "label": "PROMPT (PRactical Obstetric Multi-Professional Training)",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya MOH Emergency Obstetric Care Manual",
+        "kind": "policy"
+      },
+      {
+        "label": "ALSO (Advanced Life Support in Obstetrics) Provider Manual",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "antenatal-care-who-8-contact-detailed",
+    "title": "Antenatal care — WHO 8-contact model + Linda Mama (Kenya)",
+    "icd10": [
+      "Z34"
+    ],
+    "icd11": [
+      "QA40"
+    ],
+    "domains": [
+      "obstetrics",
+      "primary-care",
+      "mnch",
+      "kenya-moh",
+      "ssa"
+    ],
+    "population": "All pregnant women — Kenya Linda Mama programme provides free MNH services. WHO 2016 recommended 8 contacts (replacing FANC 4-visit model).",
+    "presentation": "Routine ANC contact at: 1 (< 12 wk booking), 2 (20 wk), 3 (26 wk), 4 (30 wk), 5 (34 wk), 6 (36 wk), 7 (38 wk), 8 (40 wk). Booking visit most comprehensive.",
+    "redFlags": [
+      "Bleeding (placenta praevia, abruption)",
+      "Severe headache + visual symptoms (pre-eclampsia)",
+      "Reduced fetal movements (after 24 weeks)",
+      "Severe abdominal pain",
+      "Symptoms of UTI (pyelonephritis — prevent with screening)",
+      "Preterm labour signs < 37 wk",
+      "PROM (premature rupture of membranes)",
+      "Suspected GBS infection"
+    ],
+    "diagnostics": [
+      "Booking: history + examination + dating ultrasound + bloods (FBC, blood group + Rh, HIV, syphilis, hepatitis B sAg, hepatitis C, rubella, varicella, sickle cell + thalassaemia screen where indicated), MSU, urinalysis",
+      "Each visit: BP, urinalysis, fundal height, fetal HR ≥ 12 weeks (Doppler), fetal movements ≥ 24 wk, presentation 36+ wk",
+      "Recommended ultrasound: dating (booking), anomaly (18–22 weeks), growth (28, 32, 36 weeks) where access",
+      "Screening: GDM 24–28 wk, anaemia each trimester, GBS swab 35–37 wk (where policy)",
+      "Aspirin risk assessment at 12 wk: USPSTF criteria → low-dose 75–150 mg pre-eclampsia prevention from 12 wk",
+      "Mental health: EPDS / Whooley booking + 28 wk",
+      "VTE risk at booking + each admission"
+    ],
+    "management": [
+      "BOOKING (< 12 weeks):",
+      "  Comprehensive history (medical, obstetric, family, social, mental health, IPV, FGM)",
+      "  Folic acid 5 mg daily (preferably from pre-conception) — higher dose if epilepsy, diabetes, BMI > 30, twins, prior NTD",
+      "  Iron + folic acid (60 mg + 0.4 mg) daily — WHO + Kenya MOH",
+      "  Calcium 1.5–2 g daily in low-calcium populations (WHO 2018 — most SSA, including Kenya — pre-eclampsia prevention)",
+      "  Aspirin 75–150 mg from 12–16 weeks for pre-eclampsia high-risk",
+      "  Diet + lifestyle: balanced diet, weight gain, avoid alcohol, smoking, recreational drugs, traditional herbs",
+      "  Insecticide-treated bed nets + intermittent preventive treatment for malaria (IPTp): sulfadoxine-pyrimethamine 3 doses ≥ 1 month apart in moderate-high transmission counties (Kenya endemic areas) — Kenya MOH National Malaria in Pregnancy guidelines",
+      "  Tetanus-diphtheria (Td) booster per WHO schedule (2 doses minimum in first pregnancy)",
+      "  Hepatitis B vaccine + tdap (pertussis maternal) where available",
+      "  Counsel on danger signs + birth preparedness",
+      "  Skilled birth attendance + Linda Mama enrolment (Kenya)",
+      "  HIV testing (opt-out) + treat with ART for PMTCT",
+      "  Syphilis test + treat (single dose benzathine penicillin 2.4 MU IM if positive)",
+      "  Hepatitis B sAg + manage per protocol (infant immunoprophylaxis at birth)",
+      "  Family planning counselling for post-partum contraception",
+      "ONGOING (visits 2–8):",
+      "  BP + urinalysis each visit",
+      "  Fetal monitoring (fundal height, fetal movements, FHR)",
+      "  Continued IFA + IPTp + nutrition counselling",
+      "  Anomaly scan 18–22 weeks",
+      "  GDM screen 24–28 weeks",
+      "  Anti-D 28 + 34 weeks (Rh-negative women, where available)",
+      "  Birth plan refinement",
+      "  Breastfeeding preparation",
+      "  Postpartum contraception choice (LARC same day as delivery possible)",
+      "  Pertussis-containing vaccine (Tdap) 28–36 weeks (UK, US recommendations; Kenya catchup if not yet given)",
+      "  External cephalic version offered for breech ≥ 36 weeks",
+      "DANGER SIGNS counselling — return immediately for:",
+      "  Bleeding, severe headache/visual changes, reduced fetal movements, severe abdominal pain, fever, severe vomiting, dyspnoea, water breaking, labour pain < 37 wk",
+      "BIRTH PREPAREDNESS — facility delivery (skilled birth attendant), transport plan, emergency funds, blood donor, companion, supplies"
+    ],
+    "references": [
+      {
+        "label": "WHO Recommendations on Antenatal Care for a Positive Pregnancy Experience 2016",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya Linda Mama Programme + National Guidelines for ANC",
+        "kind": "policy"
+      },
+      {
+        "label": "WHO Calcium supplementation in pregnant women 2018",
+        "kind": "guideline"
+      },
+      {
+        "label": "WHO IPTp-SP for malaria in pregnancy in moderate-to-high transmission areas",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "intrapartum-fetal-monitoring-partogram",
+    "title": "Intrapartum fetal monitoring + WHO Labour Care Guide (partogram)",
+    "icd10": [
+      "O82"
+    ],
+    "icd11": [
+      "JA86"
+    ],
+    "domains": [
+      "obstetrics",
+      "primary-care",
+      "mnch",
+      "kenya-moh"
+    ],
+    "population": "All women in labour. WHO Labour Care Guide (2020) updated the previous partogram — emphasises woman-centred decisions.",
+    "presentation": "Labour assessment + ongoing monitoring of maternal + fetal wellbeing. Triggers for action based on time + fetal heart rate + cervix + contractions.",
+    "redFlags": [
+      "Late decelerations / persistent bradycardia < 110 / persistent tachycardia > 160",
+      "Variable decelerations with concerning features",
+      "Reduced variability or sinusoidal pattern",
+      "Meconium-stained liquor — fresh thick",
+      "Maternal pyrexia > 38°C (chorioamnionitis)",
+      "Failure to progress (no cervical change × 4 hours in active labour, or no descent in 2nd stage)",
+      "Cord prolapse"
+    ],
+    "diagnostics": [
+      "Pinard / Doppler intermittent for low-risk (every 15 min in 1st stage, every 5 min in 2nd; for 60 sec after contraction)",
+      "Continuous CTG for high-risk (oxytocin, meconium, pyrexia, suspected fetal compromise) — DR C BRaVADO interpretation",
+      "  DR — Define Risk",
+      "  C — Contractions",
+      "  BRa — Baseline Rate",
+      "  V — Variability",
+      "  A — Accelerations",
+      "  D — Decelerations",
+      "  O — Overall impression",
+      "Fetal blood sampling pH at fully dilated if continuous CTG concerning (where available)",
+      "Vaginal examination 4-hourly in active 1st stage (cervix + station + caput + moulding)",
+      "Maternal: BP, pulse, temperature, urinalysis hourly"
+    ],
+    "management": [
+      "WHO Labour Care Guide (2020) — replaces older partogram:",
+      "  Decision-points + woman-centred care",
+      "  Cervical dilatation MONITORING (no longer a strict 1 cm/h alert/action line)",
+      "  Recognition that 4 cm is not the onset of active labour; active phase typically from 5 cm",
+      "  Avoid amniotomy + oxytocin augmentation routinely (was over-used)",
+      "  Discourage routine episiotomy",
+      "  Respectful + companion-of-choice care",
+      "  Hydration + oral intake during low-risk labour",
+      "  Mobility + birth position of choice",
+      "  Pain relief options offered (epidural, non-pharm — water, mobility, massage)",
+      "FETAL MONITORING:",
+      "  Low-risk: intermittent every 15 min stage 1, every 5 min stage 2",
+      "  High-risk: continuous CTG",
+      "  Suspected fetal compromise: CTG; if concerning — fetal scalp pH or expedited delivery",
+      "MANAGEMENT OF DECELERATIONS:",
+      "  Position change (left lateral)",
+      "  IV fluid bolus",
+      "  Stop oxytocin if running",
+      "  Maternal O2 (debated efficacy; consider for hypoxia)",
+      "  Tocolysis (terbutaline 250 mcg SC) if hyperstimulation",
+      "  Vaginal exam — exclude cord prolapse",
+      "  Expedite delivery if persistent (instrumental or C-section)",
+      "PROLONGED LABOUR:",
+      "  Latent phase prolonged: review, hydration, mobility, often progresses",
+      "  Active phase arrest > 4h: review (CPD? malposition?); cautious oxytocin if no contraindication",
+      "  2nd stage arrest: review presentation + maternal effort; instrumental or C-section",
+      "INTRAPARTUM ANTIBIOTIC PROPHYLAXIS for GBS:",
+      "  Penicillin G 5 MU IV then 2.5 MU q4h until delivery (where GBS screening done; or risk-based — preterm, PROM > 18h, intrapartum pyrexia, previous GBS-affected infant)",
+      "ACTIVE MANAGEMENT 3rd STAGE (AMTSL):",
+      "  Oxytocin 10 IU IM within 1 min of birth (or carbetocin 100 mcg if heat-stable available)",
+      "  Controlled cord traction",
+      "  Uterine massage after delivery of placenta",
+      "DELAYED CORD CLAMPING ≥ 1 minute (preterm + term)",
+      "Skin-to-skin within 1 hour + early breastfeeding",
+      "BIRTH companion of choice (WHO + Respectful Maternity Care)"
+    ],
+    "references": [
+      {
+        "label": "WHO Labour Care Guide 2020 + Recommendations on Intrapartum Care 2018",
+        "kind": "guideline"
+      },
+      {
+        "label": "NICE NG235 Intrapartum care 2023",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya National Guidelines for Quality Obstetrics and Perinatal Care",
+        "kind": "policy"
+      },
+      {
+        "label": "WHO Respectful Maternity Care Charter",
+        "kind": "policy"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "premature-rupture-of-membranes-prom-pprom",
+    "title": "PROM + preterm PROM (PPROM) — management",
+    "icd10": [
+      "O42"
+    ],
+    "icd11": [
+      "JB04"
+    ],
+    "domains": [
+      "obstetrics",
+      "primary-care",
+      "mnch",
+      "neonatology",
+      "kenya-moh"
+    ],
+    "population": "Term PROM 8–10% pregnancies; preterm PROM (< 37 weeks) 3% — major cause of preterm birth. Risk factors: smoking, low SES, prior PROM, polyhydramnios, twins, ascending infection (BV, GBS, chlamydia).",
+    "presentation": "Sudden gush or continuous trickle of fluid per vagina. Distinguish from urinary leakage, vaginal discharge. Confirm with sterile speculum (pooling, valsalva), nitrazine, ferning, AmnioSure / Actim-PROM if uncertain.",
+    "redFlags": [
+      "Chorioamnionitis (maternal pyrexia, tachycardia, uterine tenderness, fetal tachycardia, foul liquor)",
+      "Cord prolapse",
+      "Placental abruption (vaginal bleeding + pain + hard uterus)",
+      "Fetal distress on CTG",
+      "Sepsis",
+      "Prolonged latency > 18h with no antibiotics",
+      "Hand or foot presentation"
+    ],
+    "diagnostics": [
+      "Sterile speculum (NO digital exam — increases infection risk)",
+      "Pooling of liquor, valsalva test, nitrazine (alkaline — yellow→blue), ferning microscopy",
+      "AmnioSure (PAMG-1) / Actim-PROM if equivocal",
+      "Ultrasound — oligohydramnios supportive",
+      "Vaginal/cervical culture for GBS",
+      "FBC, CRP, urine MSU",
+      "CTG / fetal HR",
+      "Gestational age + estimated fetal weight"
+    ],
+    "management": [
+      "TERM PROM (≥ 37 weeks):",
+      "  Offer induction (immediate or expectant up to 24h)",
+      "  Active = lower chorioamnionitis + earlier delivery",
+      "  Expectant: 50% in labour within 12h, 90% within 48h",
+      "  Antibiotics: if not delivered within 18h (penicillin GBS prophylaxis or per local culture)",
+      "  Discuss + shared decision",
+      "PRETERM PROM (< 37 weeks):",
+      "  Goal: maximise gestation (lung maturity) while monitoring for infection",
+      "  ADMIT to facility with neonatal capacity",
+      "  Confirm diagnosis + gestational age",
+      "  AVOID digital exam unless in active labour",
+      "  CORTICOSTEROIDS for fetal lung maturity 24–34+6 weeks: betamethasone 12 mg IM × 2 (24h apart) or dexamethasone 6 mg IM × 4 (12h apart); single course — reduces RDS + IVH + neonatal death",
+      "  ANTIBIOTICS PROM PPROM (latency): erythromycin 250 mg QDS × 10 days (ORACLE I — extends latency, reduces neonatal morbidity); AVOID amoxicillin-clavulanate (NEC association in ORACLE)",
+      "  MAGNESIUM SULPHATE for neuroprotection if < 32 weeks + imminent delivery: 4 g IV loading + 1 g/h × up to 24h (reduces CP)",
+      "  Tocolysis NOT routine in PPROM (no benefit); consider short-term to allow steroids / transfer",
+      "  Surveillance: maternal temperature 4-hourly, FBC + CRP regularly, CTG / BPP",
+      "  Deliver if: 34+0 weeks (or 36+0 weeks per some guidelines — debate; PPROMT trial 34–36 weeks expectant equivalent), chorioamnionitis suspected, fetal distress, abruption, cord prolapse",
+      "  Delivery mode: vaginal preferred unless obstetric indication",
+      "NEONATAL: cord blood gases, observation for sepsis × 48h (PPROM, prolonged ROM, intrapartum pyrexia), empirical antibiotics if clinical signs",
+      "Counsel parents: prognosis by gestation, neonatal involvement, breastfeeding plan, kangaroo mother care if preterm",
+      "Kenya Linda Mama covers admission + delivery + neonatal care"
+    ],
+    "references": [
+      {
+        "label": "RCOG Green-top 73 PROM 2022",
+        "kind": "guideline"
+      },
+      {
+        "label": "ORACLE I trial — antibiotic in PPROM. Lancet 2001",
+        "kind": "trial"
+      },
+      {
+        "label": "PPROMT trial — 34 vs 37 weeks. Lancet 2016",
+        "kind": "trial"
+      },
+      {
+        "label": "WHO Recommendations on interventions to improve preterm birth outcomes 2015",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya MOH Quality of Care for MNH",
+        "kind": "policy"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "postpartum-mental-health-comprehensive",
+    "title": "Postpartum mental health spectrum — baby blues, PPD, psychosis, OCD, PTSD",
+    "icd10": [
+      "F53.0",
+      "F53.1"
+    ],
+    "icd11": [
+      "6E20",
+      "6E21"
+    ],
+    "domains": [
+      "mental-health",
+      "obstetrics",
+      "primary-care",
+      "mnch",
+      "psychiatry"
+    ],
+    "population": "All women postpartum; partners/co-parents also at risk. Significant under-recognition in SSA primary care.",
+    "presentation": "Spectrum: baby blues (50–80%, day 3–5, resolves 2 wk), PPD (10–20%, > 2 wk, screen with EPDS), postpartum anxiety + OCD (intrusive thoughts of harm), postpartum psychosis (1:1000, emergency, days 2–14), birth trauma + PTSD (3–6%).",
+    "redFlags": [
+      "Postpartum psychosis (rapid onset, mood lability, hallucinations, delusions, suicide/infanticide ideation)",
+      "Suicidal ideation / plan",
+      "Thoughts of harming infant (intrusive vs psychotic — assess insight)",
+      "Severe functional impairment",
+      "Bipolar disorder history (high relapse risk peripartum — 50–70%)"
+    ],
+    "diagnostics": [
+      "EPDS at 6 wk postnatal contact + 3, 6, 12 mo",
+      "Whooley 2-question case-find",
+      "Assess for psychosis: hallucinations, delusions, thought disorder, rapid cycling, lability",
+      "Assess for OCD: ego-dystonic intrusive thoughts vs ego-syntonic psychotic",
+      "Assess for PTSD: re-experiencing, avoidance, hyperarousal of birth-related",
+      "Suicide + infanticide risk assessment",
+      "Substance use screen"
+    ],
+    "management": [
+      "BABY BLUES: education + reassurance + sleep + social support; rescreen at 2 weeks; refer if persistent",
+      "POSTPARTUM DEPRESSION (mod–severe): stepped care per separate condition (postpartum-depression-edinburgh-pnd):",
+      "  CBT / IPT first-line",
+      "  SSRI (sertraline preferred for breastfeeding) for mod–severe",
+      "  Brexanolone IV (where available) — single 60h infusion for severe",
+      "  Zuranolone (oral neurosteroid GABA-A) — FDA-approved 2023 for severe PPD",
+      "POSTPARTUM ANXIETY / OCD: CBT + SSRI; common but under-recognised",
+      "POSTPARTUM PSYCHOSIS (EMERGENCY):",
+      "  Admit (ideally mother-baby unit; refer to tertiary)",
+      "  Antipsychotic — olanzapine, risperidone (compatible with breastfeeding mostly)",
+      "  Mood stabiliser if bipolar — lithium (monitor levels; infant exposure significant — discuss alternatives or formula feeding); valproate AVOID in women of reproductive potential",
+      "  ECT for severe / refractory / catatonia / suicidal",
+      "  Long-term: identify bipolar diathesis, plan for next pregnancy (prophylactic mood stabiliser, close monitoring)",
+      "PTSD POST-BIRTH: trauma-focused CBT, EMDR; debrief in immediate aftermath NOT recommended (may worsen); offer in following weeks; SSRI if persistent",
+      "BIPOLAR + PREGNANCY/POSTPARTUM:",
+      "  Pre-conception: optimise mood stabiliser balancing teratogenicity (avoid valproate, carbamazepine if possible — lamotrigine + olanzapine preferred)",
+      "  Postpartum prophylaxis CRITICAL — restart mood stabiliser if stopped",
+      "  Risk of postpartum psychosis 50–70% in bipolar I",
+      "PARTNER mental health: 10% paternal PPD; screen, refer",
+      "BREASTFEEDING + medication: most antidepressants + antipsychotics compatible (LactMed); risk-benefit conversation",
+      "INFANT: attachment, developmental assessment, parenting support",
+      "Kenya: integrate into Linda Mama postnatal care + CHV training, WHO Thinking Healthy programme"
+    ],
+    "references": [
+      {
+        "label": "NICE CG192 Antenatal + Postnatal Mental Health 2014/2018",
+        "kind": "guideline"
+      },
+      {
+        "label": "ACOG Committee Opinion 757 Screening for Perinatal Depression 2018",
+        "kind": "guideline"
+      },
+      {
+        "label": "WHO mhGAP-IG2 maternal mental health",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya MOH Maternal Mental Health Guidelines (draft)",
+        "kind": "policy"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]
