@@ -10058,5 +10058,155 @@
     "rationale": "NICE CG192 + ACOG 757 + WHO mhGAP.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "heart-failure-reduced-ef-gdmt-four-pillars-r1",
+    "title": "HFrEF — 4 pillars (ARNI + β-blocker + MRA + SGLT2i)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "heart-failure-reduced-ef-gdmt-four-pillars"
+    },
+    "indicators": [
+      "LVEF ≤ 40% / HFrEF"
+    ],
+    "recommendation": "Initiate all 4 pillars: ARNI (sacubitril/valsartan, 36h washout if switching from ACE-i) > ACE-i/ARB; HF-specific β-blocker (bisoprolol/carvedilol/metoprolol succinate/nebivolol); MRA (spironolactone/eplerenone — monitor K+); SGLT2i (dapa 10/empa 10 — irrespective of DM). Loop diuretic for congestion. Add ivabradine if HR > 70 SR on max β-blocker; hydralazine+nitrate for African ancestry or ACE-i intolerant; IV iron if Fe deficient; vericiguat for worsening; tafamidis for ATTR amyloid. CRT if LBBB + QRS ≥ 130 + EF ≤ 35 + NYHA II–IV. ICD post-MI ≥ 40d EF ≤ 35 + NYHA II–III. Advanced: LVAD / transplant; palliation. Heart failure education + cardiac rehab.",
+    "rationale": "ESC HF 2021/2023 + ACC/AHA/HFSA 2022 + PARADIGM-HF + DAPA-HF + EMPEROR-Reduced.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "heart-failure-preserved-ef-hfpef-r1",
+    "title": "HFpEF — SGLT2i + MRA + treat comorbidities (HTN, AF, obesity, OSA)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "heart-failure-preserved-ef-hfpef"
+    },
+    "indicators": [
+      "LVEF ≥ 50% + HF symptoms + raised filling pressures"
+    ],
+    "recommendation": "SGLT2i (DELIVER, EMPEROR-Preserved) reduces HF hospitalisation across full EF. MRA (spironolactone) lower-EF HFpEF (TOPCAT); finerenone (FINEARTS-HF). ARNI marginal benefit lower EF range (PARAGON-HF). Loop diuretic for congestion. Aggressive HTN control < 130/80; AF rhythm control; SGLT2i+/-GLP1-RA for DM; tafamidis for ATTR-CM; semaglutide for obesity (STEP-HFpEF); CPAP for OSA. AVOID nitrate routinely. Cardiac rehab. Workup amyloid if low voltage + raised LV mass + low BP.",
+    "rationale": "ESC HF 2023 + DELIVER + EMPEROR-Preserved + FINEARTS-HF 2024 + STEP-HFpEF.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "atrial-fibrillation-comprehensive-2024-r1",
+    "title": "AF — CHA2DS2-VASc anticoag + DOAC preferred + rate/rhythm",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "atrial-fibrillation-comprehensive-2024"
+    },
+    "indicators": [
+      "confirmed AF on ECG / monitor"
+    ],
+    "recommendation": "Anticoagulate if CHA2DS2-VASc ≥ 2 (≥ 1 men, ≥ 2 women). DOAC PREFERRED — apixaban 5 mg BD (2.5 if 2/3 of: age≥80, Cr≥133, wt≤60) / rivaroxaban 20 OD / dabigatran 150 BD / edoxaban 60 OD. Warfarin only if mechanical valve, mitral stenosis, eGFR < 15. LAAC if anticoag contraindicated. Rate: β-blocker / diltiazem (avoid DTZ in HFrEF); target HR < 110 lenient / < 80 strict. Rhythm: cardioversion (anticoag 3wk pre + 4 wk post or TOE); amiodarone or flecainide; catheter ablation increasingly first-line for symptomatic paroxysmal AF + HFrEF (CASTLE-AF, EAST-AFNET 4). Acute unstable: sync cardioversion. AF+ACS triple→DOAC+P2Y12. Treat OSA, BP, ETOH, weight.",
+    "rationale": "ESC AF 2024 + ACC/AHA 2023 + EAST-AFNET 4 + DOAC trials.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "stable-angina-cad-secondary-prevention-r1",
+    "title": "Stable angina — β-blocker first-line + secondary prevention (A-B-C-S)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "stable-angina-cad-secondary-prevention"
+    },
+    "indicators": [
+      "typical exertional angina / known CAD"
+    ],
+    "recommendation": "Anti-anginal: β-blocker OR non-DHP CCB first-line; GTN SL for acute + prophylaxis. Second-line: long-acting nitrate, DHP CCB, ivabradine (SR HR>70), nicorandil, ranolazine. Secondary prevention: aspirin 75–100 mg + STATIN high-intensity (atorva 80/rosuva 20–40) target LDL < 1.4 (+/- ezetimibe + PCSK9i + inclisiran); ACE-i/ARB; tight BP < 130/80; cardiac rehab. ICOSAPENT ETHYL if TG 1.5–5.6 despite statin (REDUCE-IT). DAPT 6–12 mo post-PCI (3 mo if high bleeding). Revasc for refractory / left main / 3VD-DM (heart team). Vaccinations (flu reduces CV events). Lifestyle: smoking cessation #1.",
+    "rationale": "ESC CCS 2024 + ACC/AHA 2023 + ESC Dyslipidaemia 2019.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "resistant-hypertension-pathway-2-r1",
+    "title": "Resistant HTN — confirm, optimise, add spironolactone (PATHWAY-2)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "resistant-hypertension-pathway-2"
+    },
+    "indicators": [
+      "BP > 140/90 despite 3 agents incl. diuretic"
+    ],
+    "recommendation": "Confirm true resistant: ABPM (rule out white coat), adherence (DOT/urine screen), stop interfering meds (NSAID/OCP/decongestant). Optimise ACE/ARB + CCB + thiazide-like at max doses. Add SPIRONOLACTONE 25→50 mg (PATHWAY-2, monitor K+/Cr). If K+ > 5.5: bisoprolol or doxazosin or clonidine. Eplerenone alternative. Workup secondary: aldosterone/renin, metanephrines, salivary/24h cortisol, renal Doppler/CTA, polysomnography, TSH. Treat cause (PA → adrenalectomy / spiro; phaeo → α then β then surgery; OSA → CPAP). Refractory: aprocitentan, central agents, renal denervation, refer tertiary.",
+    "rationale": "ESC/ESH 2024 + PATHWAY-2 Lancet 2015 + NICE NG136.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "stroke-thrombectomy-window-r1",
+    "title": "Acute stroke — alteplase 0–4.5h + thrombectomy up to 24h LVO",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "stroke-thrombectomy-window"
+    },
+    "indicators": [
+      "acute focal neurological deficit"
+    ],
+    "recommendation": "Door-to-CT < 25 min; CT brain to exclude haemorrhage + CTA for LVO. Alteplase 0.9 mg/kg max 90 (10% bolus + 90% over 60 min) within 4.5h (extended to 9h or wake-up with imaging selection — EXTEND, WAKE-UP). Tenecteplase 0.25 mg/kg single bolus emerging. THROMBECTOMY for LVO within 6h standard; 6–24h with penumbra mismatch (DAWN, DEFUSE 3); basilar up to 24h (BAOCHE, ATTENTION). Pre-tPA BP < 185/110 (labetalol/hydralazine/nicardipine); post-tPA < 180/105 × 24h. Stroke unit. Aspirin 300 mg within 48h (24h after tPA). Statin high-intensity. Decompressive hemicraniectomy for malignant MCA < 60 yr. Secondary: DAPT 21 d minor stroke/high-risk TIA (CHANCE/POINT), DOAC for AF, carotid revasc for symptomatic > 50% within 2 wk.",
+    "rationale": "AHA/ASA 2024 + ESO 2023 + DAWN/DEFUSE 3 + BAOCHE 2022.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "cardiac-arrest-acls-rosc-care-r1",
+    "title": "Cardiac arrest — ACLS + reverse causes + post-ROSC care",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "cardiac-arrest-acls-rosc-care"
+    },
+    "indicators": [
+      "unresponsive + apnoea + pulseless"
+    ],
+    "recommendation": "High-quality CPR 100–120/min depth 5–6 cm, < 10 sec interruptions; early defibrillation 150–200 J biphasic VF/VT; adrenaline 1 mg q3–5 min; amiodarone 300 mg after 3rd shock. Reverse 4Hs + 4Ts. Calcium for hyperK/Mg/CCB/β-blocker; bicarb for hyperK/TCA/ASA; lipid for LA; tPA 50 mg for PE; TXA for haemorrhage; naloxone for opioid. Capnography mandatory after advanced airway. Pregnancy: LLT + perimortem C-section by 4 min if not ROSC + ≥ 20 wk. Post-ROSC: SpO2 92–98% (avoid hyperO2), normocapnia, MAP ≥ 65, glucose 7.8–10, TTM normothermia/33–36° × 24h (TTM2 — current most do normothermia + fever prevention), EEG, urgent angio if STEMI, neuroprognostication NOT before 72h multimodal.",
+    "rationale": "ERC 2021/2025 + AHA 2020/2024 + TTM2.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "pulmonary-embolism-prest-pesi-treatment-r1",
+    "title": "PE — DOAC for most, thrombolysis for high-risk, sPESI to outpatient",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "pulmonary-embolism-prest-pesi-treatment"
+    },
+    "indicators": [
+      "confirmed PE on CTPA / V/Q"
+    ],
+    "recommendation": "Risk-stratify sPESI/Hestia + RV dysfunction + troponin. Anticoag: DOAC (apixaban 10 BD × 7 d then 5 BD; riva 15 BD × 21 d then 20 OD; or LMWH lead-in for edoxaban/dabigatran). LMWH for cancer + pregnancy. Massive/high-risk (shock): alteplase 100 mg IV over 2h (or surgical embolectomy / CDT). Intermediate-high (RV+ troponin+): close monitor HDU, anticoag, ?CDT. Low-risk (sPESI 0/Hestia neg): outpatient DOAC + same-day discharge (HoT-PE). Duration: 3 mo provoked; extended indefinitely unprovoked (reduced-dose apixaban 2.5 BD / riva 10 OD AMPLIFY-EXT/EINSTEIN-CHOICE); ≥ 6 mo cancer. IVC filter only if anticoag contraindicated. 3-mo follow-up — CTEPH workup if symptomatic.",
+    "rationale": "ESC PE 2019/2025 + ACCP 2021 + Hokusai-Cancer + AMPLIFY-EXT.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "hypertensive-emergency-vs-urgency-r1",
+    "title": "Hypertensive emergency — gradual BP reduction (25%/1h) per end-organ",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hypertensive-emergency-vs-urgency"
+    },
+    "indicators": [
+      "BP > 180/120 + end-organ damage"
+    ],
+    "recommendation": "ICU/HDU + arterial line. Reduce MAP 10–20% in 1h then to 160/100 over 2–6h. EXCEPTIONS: dissection target SBP < 120 + HR < 60 (β-blocker FIRST); ischaemic stroke pre-tPA < 185/110; eclampsia 140–155/90–105. IV agents: labetalol (preferred — most), nicardipine, hydralazine (pregnancy), nitroprusside (rapid + cyanide watch > 24h), GTN (pulm oedema/ACS), esmolol (dissection/phaeo), phentolamine (phaeo/cocaine), MgSO4 (eclampsia). URGENCY (no EOD): oral therapy + gradual reduction over 24–48h. AVOID SL nifedipine / hydralazine boluses. Investigate secondary cause.",
+    "rationale": "ESC/ESH 2024 + AHA Statement 2022 + ACC/AHA 2024.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "acute-aortic-dissection-r1",
+    "title": "Aortic dissection — β-blocker FIRST + Stanford A surgery / B medical/TEVAR",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "acute-aortic-dissection"
+    },
+    "indicators": [
+      "tearing chest/back pain + pulse asymmetry / new AR"
+    ],
+    "recommendation": "ADD-RS → urgent CT aorta. β-BLOCKER FIRST (labetalol IV / esmolol) to HR < 60 BEFORE vasodilator (avoid reflex tachy). Then vasodilator (nitroprusside / nicardipine) for SBP 100–120. Pain control. Group + crossmatch 4–6 units. STANFORD A (ascending) → IMMEDIATE cardiothoracic surgery (80% survival vs 20% medical). STANFORD B (descending) uncomplicated → medical + long-term BP < 130/80; complicated → TEVAR > open. Pregnancy: emergency repair + delivery (C-section first if ≥ 28 wk). Long-term: lifelong BP control + surveillance + genetic counsel for connective tissue (Marfan → losartan, root replace at 5 cm).",
+    "rationale": "ESC Aortic 2014/2024 + ACC/AHA 2022 + INSTEAD.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]

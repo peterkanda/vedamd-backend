@@ -72324,5 +72324,792 @@
     "ruleVersion": "2024.1",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "heart-failure-reduced-ef-gdmt-four-pillars",
+    "title": "HFrEF — guideline-directed medical therapy (4 pillars + ARNI)",
+    "icd10": [
+      "I50.20",
+      "I50.22"
+    ],
+    "icd11": [
+      "BD10"
+    ],
+    "domains": [
+      "cardiology",
+      "ncd",
+      "primary-care"
+    ],
+    "population": "HFrEF (LVEF ≤ 40%) — symptomatic NYHA II–IV. Substantial reduction in mortality + hospitalisation with 4-pillar GDMT.",
+    "presentation": "Dyspnoea, orthopnoea, PND, fatigue, exercise intolerance, lower limb oedema. Acute decompensation: pulmonary oedema, cardiogenic shock.",
+    "redFlags": [
+      "NYHA IV at rest / advanced HF — refer specialist (transplant / LVAD / palliation)",
+      "Hypotension / cardiogenic shock",
+      "Renal dysfunction worsening on RAAS / SGLT2i",
+      "Hyperkalaemia > 5.5 on MRA / RAAS",
+      "Recurrent admissions despite GDMT — escalate"
+    ],
+    "diagnostics": [
+      "Echo for LVEF (key for treatment classification HFrEF ≤ 40, HFmrEF 41–49, HFpEF ≥ 50)",
+      "BNP / NT-proBNP",
+      "ECG (LBBB, QRS > 130 — CRT consideration)",
+      "FBC, U&E, LFT, ferritin (iron deficiency — IV iron benefits)",
+      "TSH (thyroid as reversible cause), HIV, HbA1c",
+      "Cardiac MRI / coronary angio for aetiology workup",
+      "Cardiopulmonary exercise testing if transplant candidate"
+    ],
+    "management": [
+      "GDMT 4 PILLARS (start ALL simultaneously / sequentially within weeks; all reduce mortality):",
+      "1. ARNI / ACE-i / ARB:",
+      "   ARNI preferred (sacubitril/valsartan 24/26 → 49/51 → 97/103 mg BD per tolerance — PARADIGM-HF NEJM 2014)",
+      "   If ARNI not available: ACE-i (enalapril, ramipril, lisinopril) or ARB (losartan, candesartan, valsartan)",
+      "   Switch from ACE-i to ARNI: 36h washout to avoid angioedema",
+      "2. β-BLOCKER (HF-specific): bisoprolol, carvedilol, metoprolol succinate, nebivolol — start LOW + uptitrate weekly to target",
+      "3. MRA (mineralocorticoid receptor antagonist): spironolactone 25 mg or eplerenone — RALES + EMPHASIS-HF; monitor K+ + Cr",
+      "4. SGLT2 INHIBITOR: dapagliflozin 10 mg / empagliflozin 10 mg — DAPA-HF + EMPEROR-Reduced — benefit IRRESPECTIVE of diabetes",
+      "ADD-ON THERAPIES:",
+      "  Loop diuretic for symptom control (furosemide, bumetanide, torsemide)",
+      "  Ivabradine — for HR > 70 on max β-blocker + sinus rhythm (SHIFT)",
+      "  Hydralazine + isosorbide dinitrate — African ancestry (A-HeFT) OR ACE/ARB intolerant",
+      "  Digoxin — symptom relief in AF + HF (DIG trial — no mortality benefit)",
+      "  Vericiguat — guanylate cyclase stimulator for worsening HF (VICTORIA)",
+      "  IV iron (ferric carboxymaltose) if ferritin < 100 or TSAT < 20% (CONFIRM-HF + AFFIRM-AHF)",
+      "DEVICE THERAPY:",
+      "  CRT: LBBB + QRS ≥ 130 ms + LVEF ≤ 35% + NYHA II–IV on optimal therapy",
+      "  ICD: LVEF ≤ 35% + NYHA II–III + life expectancy > 1 yr (post-MI ≥ 40 days)",
+      "  ICD + CRT (CRT-D) if both indicated",
+      "ADVANCED HF (NYHA IIIb–IV despite optimal):",
+      "  IV inotropes (dobutamine, milrinone) — palliative or bridge",
+      "  LVAD as destination therapy or bridge to transplant",
+      "  Heart transplant — < 65 yr, no contraindications",
+      "  Palliative care + advance care planning",
+      "MONITORING: weight daily, U&E + K+ every 1–2 wk during titration then 3-monthly",
+      "HEART FAILURE EDUCATION: salt < 2 g/day, fluid restriction 1.5–2 L/day if hyponatraemia, weight monitor + flexible diuretic, smoking cessation, ETOH limit, vaccinations (flu + pneumococcal + COVID), exercise programme (cardiac rehab)",
+      "Atrial fibrillation in HFrEF: anticoagulate per CHA2DS2-VASc; rhythm control — catheter ablation (CASTLE-AF) or amiodarone; rate control β-blocker (NOT non-DHP CCB in HFrEF)"
+    ],
+    "references": [
+      {
+        "label": "ESC Heart Failure Guidelines 2021 + 2023 Focused Update",
+        "kind": "guideline"
+      },
+      {
+        "label": "ACC/AHA/HFSA Heart Failure Guideline 2022",
+        "kind": "guideline"
+      },
+      {
+        "label": "PARADIGM-HF NEJM 2014 (ARNI)",
+        "kind": "trial"
+      },
+      {
+        "label": "DAPA-HF NEJM 2019 (dapagliflozin)",
+        "kind": "trial"
+      },
+      {
+        "label": "EMPEROR-Reduced NEJM 2020",
+        "kind": "trial"
+      },
+      {
+        "label": "NICE NG106 Chronic Heart Failure 2018 + updates",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "heart-failure-preserved-ef-hfpef",
+    "title": "HFpEF — heart failure preserved ejection fraction",
+    "icd10": [
+      "I50.30",
+      "I50.32"
+    ],
+    "icd11": [
+      "BD11"
+    ],
+    "domains": [
+      "cardiology",
+      "ncd",
+      "primary-care"
+    ],
+    "population": "LVEF ≥ 50% with HF symptoms + objective evidence raised filling pressures. Predominantly older women, hypertension, diabetes, obesity, atrial fibrillation. 50% of HF prevalence; treatment options historically limited.",
+    "presentation": "Dyspnoea on exertion, fatigue, oedema, hospital admission for HF; often confused with deconditioning, COPD, anaemia.",
+    "redFlags": [
+      "Acute pulmonary oedema",
+      "AF with rapid ventricular response",
+      "Pulmonary hypertension on echo",
+      "Restrictive cardiomyopathy / amyloid (refer for workup)"
+    ],
+    "diagnostics": [
+      "Echo: LVEF ≥ 50%, LV mass index raised, LA enlargement (LAVI > 34), diastolic dysfunction (E/e' > 14), pulmonary HT",
+      "BNP / NT-proBNP raised",
+      "HFA-PEFF or H2FPEF score for diagnostic certainty",
+      "Cardiac MRI for amyloid (suspected if LV mass+, low voltage on ECG)",
+      "Bone scintigraphy (Tc-PYP) for ATTR amyloid",
+      "Iron studies (HF + iron deficiency)",
+      "Workup for cause: HTN, ischaemic, valvular, restrictive (amyloid, sarcoid, hypereosinophilic), constrictive pericarditis"
+    ],
+    "management": [
+      "AETIOLOGY-DIRECTED:",
+      "  Hypertension: aggressive BP control (target < 130/80)",
+      "  Diabetes: tight HbA1c + SGLT2 inhibitor",
+      "  AF: rhythm + rate control + anticoagulation",
+      "  Obesity: weight loss (semaglutide / tirzepatide — STEP-HFpEF trial showed improved QOL + 6MWD)",
+      "  Sleep apnoea: CPAP",
+      "  Amyloid: tafamidis (ATTR-ACT) — disease-modifying for ATTR-CM",
+      "GDMT (lifesaving evidence growing):",
+      "  SGLT2 INHIBITOR — dapagliflozin / empagliflozin: reduces HF hospitalisation across full EF spectrum (DELIVER + EMPEROR-Preserved)",
+      "  MRA: spironolactone (TOPCAT — modest signal especially LVEF 50–55%, lower potassium); finerenone (FIDELIO-DKD adjacent; FINEARTS-HF positive 2024)",
+      "  ARNI: marginal benefit (PARAGON-HF — subset LVEF 50–57% benefited)",
+      "  Loop diuretic for volume",
+      "  AVOID nitrate routinely (NEAT trial — no benefit + worse exercise)",
+      "  Exercise training — cardiac rehabilitation evidence in HFpEF",
+      "CARDIAC AMYLOID specifically:",
+      "  Tafamidis 61 mg daily — ATTR-CM (ATTR-ACT)",
+      "  Patisiran / vutrisiran — hereditary ATTR with polyneuropathy",
+      "  AL amyloid — chemotherapy + bortezomib + autoHSCT",
+      "Atrial fibrillation strategy IMPORTANT in HFpEF — rhythm control often preferred",
+      "AVOID β-blocker without specific indication (loss of chronotropic reserve worsens HFpEF exercise capacity, although mortality similar)",
+      "Patient education + multidisciplinary HF team referral if multiple admissions"
+    ],
+    "references": [
+      {
+        "label": "ESC HF Guidelines 2021 + 2023 Focused Update (HFpEF)",
+        "kind": "guideline"
+      },
+      {
+        "label": "DELIVER NEJM 2022 dapagliflozin HFpEF",
+        "kind": "trial"
+      },
+      {
+        "label": "EMPEROR-Preserved NEJM 2021 empagliflozin",
+        "kind": "trial"
+      },
+      {
+        "label": "ATTR-ACT NEJM 2018 tafamidis",
+        "kind": "trial"
+      },
+      {
+        "label": "FINEARTS-HF NEJM 2024 finerenone HFmrEF/HFpEF",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "atrial-fibrillation-comprehensive-2024",
+    "title": "Atrial fibrillation — CHA2DS2-VASc + DOAC + rhythm/rate (2024)",
+    "icd10": [
+      "I48"
+    ],
+    "icd11": [
+      "BC81"
+    ],
+    "domains": [
+      "cardiology",
+      "primary-care",
+      "ncd"
+    ],
+    "population": "Adults — prevalence 1–4% rising with age; 25% lifetime risk over 40. Atrial fibrillation prevalence rising in SSA (often missed). Major cause of preventable stroke.",
+    "presentation": "Palpitations, fatigue, dyspnoea, syncope; often asymptomatic and detected on incidental ECG / opportunistic screening. Pulse — irregularly irregular. Stroke as first presentation (cardioembolic 4–5×).",
+    "redFlags": [
+      "Pre-excitation (WPW + AF — narrow + wide QRS) — AVOID AV-nodal blockers",
+      "Haemodynamic instability — emergency cardioversion",
+      "Suspected MI / acute coronary syndrome triggering AF",
+      "AF with HF (rate-related cardiomyopathy)",
+      "Stroke / TIA with AF — urgent anticoagulation start"
+    ],
+    "diagnostics": [
+      "12-lead ECG: irregular RR + absent P waves + fibrillatory waves",
+      "Implantable loop recorder / wearable (smart watch) for paroxysmal",
+      "FBC, U&E, LFT, TSH, glucose, NT-proBNP",
+      "Echocardiogram (left atrial size, LV function, valves)",
+      "CHA2DS2-VASc score: Congestive HF (1), Hypertension (1), Age ≥ 75 (2) / 65–74 (1), Diabetes (1), Stroke/TIA (2), Vascular disease (1), Female (1)",
+      "HAS-BLED bleeding risk: HTN, Abnormal renal/liver, Stroke, Bleeding, Labile INR, Elderly, Drugs/alcohol",
+      "TOE / 4-week anticoag before cardioversion if AF duration > 48h or unknown"
+    ],
+    "management": [
+      "ANTICOAGULATION (stroke prevention):",
+      "  CHA2DS2-VASc ≥ 2 (or ≥ 1 in men, ≥ 2 in women): anticoagulate",
+      "  DOAC PREFERRED over warfarin (apixaban 5 mg BD, rivaroxaban 20 mg OD, dabigatran 150 mg BD, edoxaban 60 mg OD) — equivalent / superior efficacy + safer bleeding profile",
+      "  Apixaban best safety profile in elderly + CKD (eGFR ≥ 25)",
+      "  Renal dose adjustment per drug (apixaban 2.5 BD if 2 of: age ≥ 80, Cr ≥ 133, weight ≤ 60)",
+      "  Warfarin if: severe CKD (eGFR < 15), mechanical valve, mitral stenosis",
+      "  Avoid antiplatelet for AF stroke prevention (less effective + similar bleeding)",
+      "  Left atrial appendage closure (Watchman) — high stroke risk + contraindication to anticoag",
+      "  Bridging only for very high stroke risk (mechanical valve, recent stroke, CHA2DS2-VASc ≥ 7) — DOACs do not need bridging",
+      "RATE CONTROL:",
+      "  β-blocker (bisoprolol, metoprolol) or non-DHP CCB (diltiazem, verapamil — AVOID in HFrEF)",
+      "  Digoxin add-on if needed (especially HF or sedentary)",
+      "  Target resting HR < 110 (lenient — RACE II) or < 80 (strict symptoms)",
+      "RHYTHM CONTROL:",
+      "  Electrical cardioversion: synchronised DC 100–200 J (biphasic); rate-controlled + anticoag 3 wk pre + 4 wk post (or TOE-guided immediate)",
+      "  Pharmacological cardioversion: amiodarone 300 mg IV over 30 min then 900 mg/24h, or 600–800 mg/d PO loading; flecainide 'pill in pocket' for paroxysmal no structural HD",
+      "  Catheter ablation (PVI) — increasing first-line for symptomatic paroxysmal AF, HF-AF (CASTLE-AF), young; EAST-AFNET 4 — early rhythm control reduces CV events",
+      "  Rhythm control preferred in HF, young, persistent symptoms despite rate control, recent onset",
+      "ACUTE AF unstable: synchronised cardioversion 100–200 J + anticoagulation",
+      "Lifestyle: weight loss, ETOH reduction, OSA treatment, BP control, exercise — modify risk factors",
+      "AF + HFrEF: catheter ablation superior (CASTLE-AF) when feasible",
+      "AF + recent MI / PCI: triple therapy → dual (DOAC + clopidogrel) → monotherapy DOAC per AUGUSTUS / ENTRUST-AF PCI",
+      "Pregnancy: prefer rate control + LMWH (warfarin teratogenic 1st trim; DOACs avoid)"
+    ],
+    "references": [
+      {
+        "label": "ESC AF Guidelines 2024 + 2020",
+        "kind": "guideline"
+      },
+      {
+        "label": "ACC/AHA/HRS AF Guideline 2023",
+        "kind": "guideline"
+      },
+      {
+        "label": "EAST-AFNET 4 NEJM 2020",
+        "kind": "trial"
+      },
+      {
+        "label": "CASTLE-AF NEJM 2018",
+        "kind": "trial"
+      },
+      {
+        "label": "ARISTOTLE / ROCKET-AF / RE-LY / ENGAGE-AF DOAC trials",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "stable-angina-cad-secondary-prevention",
+    "title": "Stable angina + chronic coronary syndrome — anti-anginal + secondary prevention",
+    "icd10": [
+      "I20.8",
+      "I25.10"
+    ],
+    "icd11": [
+      "BA40"
+    ],
+    "domains": [
+      "cardiology",
+      "ncd",
+      "primary-care"
+    ],
+    "population": "Adults with stable angina, known CAD, post-MI / PCI / CABG; major cause of mortality worldwide.",
+    "presentation": "Exertional chest tightness/pain radiating to arm/jaw/back, relieved by rest or GTN < 5 min; Canadian CV Society class I–IV. Atypical in women, diabetics, elderly.",
+    "redFlags": [
+      "Crescendo / rest angina (unstable angina — treat as ACS)",
+      "ECG ST changes at rest",
+      "LV dysfunction / HF",
+      "Left main / 3-vessel CAD — surgical revascularisation discussion",
+      "Refractory angina despite max medical therapy"
+    ],
+    "diagnostics": [
+      "ECG (often normal at rest)",
+      "Functional test: exercise tolerance test, stress echo, cardiac MRI, SPECT, PET",
+      "Anatomic: CT coronary angiogram (1st-line per NICE 2016 for typical angina); invasive coronary angio for high-risk / pre-revasc",
+      "FBC, U&E, LFT, lipid profile, HbA1c, TSH"
+    ],
+    "management": [
+      "LIFESTYLE + RISK FACTOR (foundation):",
+      "  Smoking cessation (largest risk reduction)",
+      "  Diet — Mediterranean / DASH",
+      "  Exercise — 150 min moderate weekly + resistance",
+      "  Weight loss (target BMI < 25 / waist < 102 men, < 88 women)",
+      "  ETOH moderation, sleep, stress",
+      "  Vaccinations: flu annually (reduces CV events), pneumococcal",
+      "ANTI-ANGINAL FIRST-LINE:",
+      "  β-blocker (bisoprolol, atenolol, metoprolol) — symptom + post-MI mortality",
+      "  OR non-DHP CCB (diltiazem, verapamil) if β-blocker contraindicated (avoid combo with β-blocker — bradycardia / AV block)",
+      "  GTN sublingual for acute angina + prophylaxis before known trigger",
+      "ANTI-ANGINAL SECOND-LINE (if symptomatic despite first-line):",
+      "  Long-acting nitrate (isosorbide mononitrate) with nitrate-free interval",
+      "  DHP CCB (amlodipine) if β-blocker insufficient",
+      "  Ivabradine — sinus rhythm + HR > 70",
+      "  Nicorandil (K-channel opener)",
+      "  Ranolazine (late Na current inhibitor)",
+      "  Trimetazidine (metabolic — limited evidence)",
+      "SECONDARY PREVENTION (all CAD):",
+      "  Aspirin 75–100 mg daily (clopidogrel 75 mg if aspirin intolerant)",
+      "  STATIN HIGH-INTENSITY: atorvastatin 80 mg or rosuvastatin 20–40 mg — target LDL < 1.4 mmol/L (ESC 2019) or > 50% reduction",
+      "  Add ezetimibe + PCSK9 inhibitor (alirocumab, evolocumab) if LDL target not met",
+      "  Inclisiran (siRNA) 2× yearly — adjunct or alternative",
+      "  Icosapent ethyl (REDUCE-IT) 4 g/day if persistent triglycerides 1.5–5.6 mmol/L despite statin + CV disease",
+      "  ACE-I or ARB (especially if HF, DM, CKD, HTN, post-MI)",
+      "  Tight BP control < 130/80",
+      "  HbA1c target individualised (< 53 / 7% generally)",
+      "  DAPT post-PCI: aspirin + P2Y12 (clopidogrel 75 mg / ticagrelor 90 mg BD / prasugrel) for 6–12 mo (3 mo if high bleeding) — extended to 12–24 mo if high ischaemic risk + low bleeding",
+      "REVASCULARISATION:",
+      "  PCI for refractory symptoms, large area ischaemia, left main, proximal LAD",
+      "  CABG for left main, 3VD with diabetes / LV dysfunction, complex anatomy (SYNTAX score)",
+      "  Heart team discussion",
+      "Cardiac rehabilitation — universally recommended (mortality benefit)",
+      "Long-term aspirin + statin + ACE-i + β-blocker post-MI (A-B-C-S)",
+      "Patient education: angina trigger avoidance, GTN use, when to call emergency"
+    ],
+    "references": [
+      {
+        "label": "ESC Chronic Coronary Syndromes Guidelines 2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "ACC/AHA/ASE Stable Ischemic Heart Disease 2014 + 2023 update",
+        "kind": "guideline"
+      },
+      {
+        "label": "NICE CG95 Chest Pain of Recent Onset 2016",
+        "kind": "guideline"
+      },
+      {
+        "label": "ISCHEMIA NEJM 2020",
+        "kind": "trial"
+      },
+      {
+        "label": "FOURIER NEJM 2017 PCSK9",
+        "kind": "trial"
+      },
+      {
+        "label": "ESC Dyslipidaemia 2019 (LDL targets)",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "resistant-hypertension-pathway-2",
+    "title": "Resistant hypertension — PATHWAY-2 + secondary causes",
+    "icd10": [
+      "I15"
+    ],
+    "icd11": [
+      "BA00.Z"
+    ],
+    "domains": [
+      "cardiology",
+      "hypertension",
+      "endocrinology",
+      "primary-care"
+    ],
+    "population": "BP > 140/90 (or > 130/80 if diabetes / CKD) despite 3+ antihypertensives at optimal doses including a diuretic. Adherence + lifestyle confirmed. ~5–15% of hypertensives.",
+    "presentation": "Routine review of poorly controlled BP. Look for white-coat (24h ABPM) vs true resistant.",
+    "redFlags": [
+      "Hypokalaemia + alkalosis (primary aldosteronism)",
+      "Renovascular HT (renal bruit, atherosclerosis)",
+      "OSA — snoring + sleepy + obesity",
+      "Phaeo: episodic + palpitations + headache + sweating",
+      "Cushing",
+      "Drug-induced (NSAID, OCP, steroid, decongestant, cocaine, ETOH)"
+    ],
+    "diagnostics": [
+      "24h ambulatory BP monitoring (ABPM) — confirm true resistant vs white coat",
+      "Adherence: directly observed dose, urine drug measurement, electronic pill bottle",
+      "Secondary HT workup: aldosterone/renin ratio (4 weeks off mineralocorticoid antagonist + ACE/ARB), 24h urinary metanephrines, plasma cortisol / late-night salivary, renal Doppler / CTA, OSA screening (STOP-Bang, polysomnography), TSH",
+      "End-organ damage: UA, ACR, eGFR, ECG, echo, fundoscopy",
+      "FBC, lipid, glucose, U&E, eGFR"
+    ],
+    "management": [
+      "OPTIMISE existing:",
+      "  Confirm adherence + lifestyle (Na < 5 g/day, alcohol, exercise, weight)",
+      "  Stop interfering drugs (NSAIDs, OCP, decongestant)",
+      "  Confirm best classes — ACE/ARB + CCB + thiazide-like diuretic at maximum tolerated dose",
+      "ADD 4th-line agent:",
+      "  SPIRONOLACTONE 25 mg → 50 mg (PATHWAY-2 trial — superior to bisoprolol + doxazosin); monitor K+ + Cr (especially CKD)",
+      "  If K+ > 5.5: switch to bisoprolol (β-blocker), doxazosin (α-blocker), or clonidine",
+      "  Eplerenone alternative (less gynaecomastia)",
+      "TREAT SECONDARY CAUSES:",
+      "  Primary aldosteronism: spironolactone + adrenal CT + venous sampling + adrenalectomy if unilateral adenoma",
+      "  RAS: medical management + statin + smoking cessation; angioplasty selected (FH ARAS uncommon — ASTRAL/CORAL negative for routine PTRA)",
+      "  Phaeo: phenoxybenzamine then β-blocker then surgery",
+      "  Cushing: refer endocrine",
+      "  OSA: CPAP",
+      "REFRACTORY HT (despite all):",
+      "  Centrally acting (clonidine, moxonidine)",
+      "  Hydralazine + nitrate (mainly HF)",
+      "  Endothelin antagonist (aprocitentan — PRECISION trial 2023 — newly approved for resistant HT)",
+      "  Renal denervation — radiofrequency / ultrasound percutaneous (SPYRAL HTN-OFF MED + RADIANCE-HTN — modest BP reduction; option for refractory)",
+      "  Specialist referral — tertiary hypertension clinic",
+      "End-organ protection: SGLT2 inhibitor in CKD/DM, finerenone if albuminuria + DM2"
+    ],
+    "references": [
+      {
+        "label": "ESC/ESH Hypertension Guidelines 2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "PATHWAY-2 trial. Lancet 2015",
+        "kind": "trial"
+      },
+      {
+        "label": "NICE NG136 Hypertension 2019 + updates",
+        "kind": "guideline"
+      },
+      {
+        "label": "PRECISION trial aprocitentan 2023",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "stroke-thrombectomy-window",
+    "title": "Acute ischaemic stroke — IV thrombolysis + mechanical thrombectomy",
+    "icd10": [
+      "I63.9"
+    ],
+    "icd11": [
+      "8B11"
+    ],
+    "domains": [
+      "neurology",
+      "emergency",
+      "cardiology",
+      "critical-care"
+    ],
+    "population": "Adults with acute focal neurological deficit. Onset-to-treatment time critical — 'Time is brain': ~1.9 million neurons lost per minute.",
+    "presentation": "Sudden onset focal deficit: hemiparesis, dysphasia, dysarthria, hemianopia, ataxia, vertigo + diplopia (posterior); BE FAST screen.",
+    "redFlags": [
+      "GCS deteriorating",
+      "Posterior circulation (basilar — high mortality without recanalisation, atypical signs — coma, locked-in)",
+      "Large hemispheric stroke (malignant — risk of decompressive craniectomy)",
+      "AF with new stroke — anticoagulate after window",
+      "Carotid bruit / known carotid disease — endarterectomy / stenting"
+    ],
+    "diagnostics": [
+      "URGENT non-contrast CT brain — exclude haemorrhage; early ischaemic changes (ASPECTS score)",
+      "CT angiography head + neck — large vessel occlusion (LVO — ICA, M1, basilar)",
+      "CT perfusion or MRI for late window (6–24h) — penumbra estimation",
+      "FBC, U&E, glucose, INR, troponin, ECG, LFT",
+      "Door-to-CT < 25 min, door-to-needle < 60 min targets"
+    ],
+    "management": [
+      "ACUTE PRESENTATION:",
+      "  BE FAST recognition + EMS activation",
+      "  Stroke unit pathway — best evidence-based intervention overall",
+      "  ABCs, O2 if SpO2 < 94%, glucose 7–10 mmol/L, BP per protocol",
+      "BP MANAGEMENT:",
+      "  Pre-thrombolysis: target < 185/110 (use labetalol 10–20 mg IV q10 min, hydralazine, nicardipine)",
+      "  Post-thrombolysis: target < 180/105 × 24h",
+      "  Non-thrombolysis: permissive hypertension up to 220/120 unless end-organ damage",
+      "IV THROMBOLYSIS (alteplase 0.9 mg/kg max 90 mg, 10% bolus then 90% over 60 min):",
+      "  Standard window 0–4.5h from onset",
+      "  Extended window 4.5–9h with imaging selection (penumbra on perfusion) — EXTEND trial",
+      "  Wake-up stroke / unknown onset — MRI DWI-FLAIR mismatch selection (WAKE-UP, EXTEND)",
+      "  Tenecteplase 0.25 mg/kg single bolus — emerging alternative (EXTEND-IA TNK + AcT trials non-inferior)",
+      "  CONTRAINDICATIONS: recent surgery, bleeding, INR > 1.7, BP > 185/110 uncorrected, recent ICH, large infarct (ASPECTS < 6), recent ischaemic stroke (3 mo), pregnancy (relative), DOAC within 48h (or specific reversal first)",
+      "MECHANICAL THROMBECTOMY (most important advance):",
+      "  Large vessel occlusion (ICA, M1, basilar, sometimes M2 / vertebral)",
+      "  Within 6h of onset standard (multiple trials MR CLEAN, EXTEND-IA, SWIFT-PRIME, REVASCAT, ESCAPE)",
+      "  EXTENDED window 6–24h with perfusion mismatch (DAWN, DEFUSE 3)",
+      "  Combine with IV thrombolysis if eligible (DIRECT-MT — non-inferiority debated, but combine standard)",
+      "  Basilar occlusion — thrombectomy up to 24h (BAOCHE, ATTENTION 2022) — game-changer",
+      "ANCILLARY:",
+      "  Glucose 7.8–10, avoid hyperthermia",
+      "  Aspirin 300 mg PO/PR within 48h (not within 24h of thrombolysis)",
+      "  Statin (high-intensity) early",
+      "  VTE prophylaxis (mechanical IPC initially; LMWH after 24h)",
+      "  Swallow screen before oral intake",
+      "  Decompressive hemicraniectomy for malignant MCA stroke < 60 yr (HAMLET, DESTINY, DECIMAL)",
+      "SECONDARY PREVENTION (start before discharge):",
+      "  Antiplatelet: aspirin 75 mg + clopidogrel 75 mg × 21 days (CHANCE / POINT — minor stroke / high-risk TIA), then aspirin or clopidogrel mono",
+      "  Anticoagulant for AF (DOAC preferred) — restart timing per HARMONI / 1-3-6-12 day rule by severity",
+      "  Statin high-intensity LDL < 1.4 (SPARCL — atorvastatin 80 mg)",
+      "  BP control target < 130/80",
+      "  Carotid: endarterectomy / stenting for symptomatic > 50% stenosis within 2 wk",
+      "  Smoking cessation, exercise, diet, weight, ETOH limit, OSA",
+      "REHABILITATION: early mobilisation, SLT for dysphasia, OT, physio, mental health (post-stroke depression common)"
+    ],
+    "references": [
+      {
+        "label": "AHA/ASA Stroke Guidelines 2019 + 2024 updates",
+        "kind": "guideline"
+      },
+      {
+        "label": "ESO ESMINT Acute Stroke Guideline 2019 + 2023",
+        "kind": "guideline"
+      },
+      {
+        "label": "DAWN NEJM 2018 thrombectomy 6–24h",
+        "kind": "trial"
+      },
+      {
+        "label": "DEFUSE 3 NEJM 2018 thrombectomy 6–16h",
+        "kind": "trial"
+      },
+      {
+        "label": "BAOCHE + ATTENTION 2022 basilar thrombectomy",
+        "kind": "trial"
+      },
+      {
+        "label": "WAKE-UP NEJM 2018 MRI-selected thrombolysis",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cardiac-arrest-acls-rosc-care",
+    "title": "Adult cardiac arrest — ACLS + post-ROSC care",
+    "icd10": [
+      "I46.9"
+    ],
+    "icd11": [
+      "MC81"
+    ],
+    "domains": [
+      "emergency",
+      "critical-care",
+      "cardiology"
+    ],
+    "population": "Adults in cardiac arrest (out-of-hospital + in-hospital). Survival depends on early recognition + bystander CPR + early defibrillation + advanced care.",
+    "presentation": "Unresponsive, not breathing normally, no pulse. VF/VT shockable vs PEA/asystole non-shockable.",
+    "redFlags": [
+      "Witnessed collapse with shockable rhythm — best survival",
+      "Asystole as initial rhythm — poor prognosis",
+      "Pregnancy — perimortem C-section within 4 min if no ROSC at 4 min ≥ 20 weeks GA",
+      "Reversible causes: 4 Hs + 4 Ts",
+      "Drowning, electrocution, hypothermia, anaphylaxis, tox — specific reversible causes"
+    ],
+    "diagnostics": [
+      "During arrest: rhythm check every 2 min, capnography (ETCO2 — < 10 = poor; sudden rise suggests ROSC)",
+      "Post-ROSC: 12-lead ECG (STEMI), ABG, glucose, electrolytes, troponin, lactate, FBC, coag, CT brain (post-anoxic)",
+      "Coronary angiography for STEMI post-ROSC"
+    ],
+    "management": [
+      "BLS: chest compressions 100–120/min, depth 5–6 cm adult, full recoil, < 10 sec interruptions, ratio 30:2 if no advanced airway; once advanced airway: continuous compressions + 10 breaths/min",
+      "EARLY DEFIBRILLATION: 150–200 J biphasic ASAP for VF/pulseless VT — every 2 min if persists",
+      "ACLS:",
+      "  Adrenaline 1 mg IV/IO every 3–5 min (give ASAP in non-shockable; after 2nd shock in shockable)",
+      "  Amiodarone 300 mg IV bolus after 3rd shock (lidocaine alternative)",
+      "  Magnesium 2 g IV for torsades / hypoMg",
+      "  Reverse causes — 4 Hs (Hypoxia, Hypovolaemia, Hypo-/hyperkalaemia + electrolytes, Hypothermia) + 4 Ts (Thrombosis cardiac/pulmonary, Tension pneumothorax, Tamponade, Toxins)",
+      "  Calcium for hyperK+ / hyperMg+ / CCB / β-blocker tox",
+      "  Sodium bicarb only for hyperK+ / tox (TCA, ASA)",
+      "  Lipid emulsion for LA toxicity",
+      "  Naloxone for opioid",
+      "  Empiric thrombolysis (tPA 50 mg IV bolus then 50 mg/2h) for suspected PE",
+      "  TXA + massive transfusion for haemorrhage",
+      "  Bicarbonate / hyperventilation for TCA / ASA toxicity",
+      "AIRWAY: bag-mask first; supraglottic (LMA) or ETT once trained — do NOT interrupt compressions for advanced airway",
+      "WAVEFORM CAPNOGRAPHY mandatory once advanced airway",
+      "ECMO (eCPR) — selected patients in trial centres (refractory VF + witnessed + bystander CPR < 60 min)",
+      "POST-ROSC (FOCUS — equally important as resuscitation):",
+      "  Target SpO2 92–98% (AVOID hyperoxia)",
+      "  Target PaCO2 35–45 (normocapnia)",
+      "  Target MAP ≥ 65 (vasopressor as needed)",
+      "  Target glucose 7.8–10",
+      "  Target temperature management (TTM): 32–36°C × 24h (controversial — TTM2 trial showed no benefit of 33° vs 36°/normothermia; current most centres do normothermia with active fever prevention)",
+      "  EEG monitoring for seizures (10–20% post-anoxic) — treat with levetiracetam",
+      "  Urgent coronary angiography if STEMI / strong suspicion ACS",
+      "  CT brain for prognostication / cause",
+      "  Neurological prognostication NOT BEFORE 72 hours (multimodal — clinical, EEG, NSE, MRI, somatosensory evoked potentials)",
+      "PEDIATRIC modifications: 2:1 compressions (newborns 3:1), 4 J/kg defibrillation, drug doses weight-based",
+      "OBSTETRIC: pillow under right hip (left lateral tilt) for venous return; perimortem C-section within 4 min if not ROSC at 4 min + ≥ 20 weeks GA",
+      "Post-resuscitation debrief team + family + survivor"
+    ],
+    "references": [
+      {
+        "label": "ERC Guidelines for Resuscitation 2021 + 2025 update",
+        "kind": "guideline"
+      },
+      {
+        "label": "AHA Guidelines for CPR and ECC 2020 + 2024 focused",
+        "kind": "guideline"
+      },
+      {
+        "label": "TTM2 NEJM 2021 — temperature 33 vs 37.5",
+        "kind": "trial"
+      },
+      {
+        "label": "Sandroni C et al. Prognostication after cardiac arrest. ICM 2020/2024",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "pulmonary-embolism-prest-pesi-treatment",
+    "title": "Pulmonary embolism — PESI / sPESI risk stratification + treatment",
+    "icd10": [
+      "I26.99"
+    ],
+    "icd11": [
+      "BB00"
+    ],
+    "domains": [
+      "cardiology",
+      "respiratory",
+      "emergency",
+      "haematology",
+      "vascular"
+    ],
+    "population": "Adults presenting with dyspnoea, chest pain, syncope, or with venous thromboembolism risk factors. Incidence 1–2 per 1000/year; mortality 5–25%.",
+    "presentation": "Dyspnoea, pleuritic chest pain, cough, haemoptysis, syncope, hypotension, hypoxia, tachycardia, tachypnoea, raised JVP, accentuated P2. DVT signs (unilateral leg swelling).",
+    "redFlags": [
+      "Haemodynamic instability (SBP < 90, shock) — high-risk PE (massive)",
+      "Right ventricular dysfunction on echo / CT — intermediate-high risk",
+      "Hypoxaemia (SpO2 < 90) on room air",
+      "Syncope",
+      "Recent surgery / immobility / cancer / pregnancy / OCP / known thrombophilia"
+    ],
+    "diagnostics": [
+      "Wells / Geneva score → low/intermediate/high probability",
+      "D-dimer if low/intermediate probability (age-adjusted threshold > 50 yr: age × 10 µg/L)",
+      "CTPA — gold standard imaging (if elevated D-dimer or high probability)",
+      "V/Q if CT contraindicated (pregnancy, contrast allergy, severe CKD)",
+      "ECG (S1Q3T3, RBBB, T inversion V1-V4)",
+      "ABG (raised A-a gradient)",
+      "Troponin + NT-proBNP for risk stratification",
+      "Echo — RV dysfunction (intermediate-high risk PE)",
+      "Compression US legs if PE confirmed (DVT)",
+      "sPESI / PESI score for mortality risk:",
+      "  PESI class I/II (low) — outpatient consideration",
+      "  PESI class III–V — admit",
+      "  Hestia criteria — alternative for outpatient candidate"
+    ],
+    "management": [
+      "INITIAL: oxygen, IV access, fluids cautious (RV preload-dependent — over-resuscitation worsens)",
+      "ANTICOAGULATION (start while investigating if high suspicion + no high bleeding risk):",
+      "  DOAC PREFERRED (apixaban 10 mg BD × 7 d then 5 mg BD; rivaroxaban 15 mg BD × 21 d then 20 mg OD; dabigatran/edoxaban after 5–10 d LMWH lead-in)",
+      "  LMWH (enoxaparin 1 mg/kg BD) — cancer-associated PE (CLOT, Hokusai-VTE Cancer), pregnancy, awaiting decision",
+      "  Warfarin — bridged with LMWH × 5 days + INR > 2 × 24h (less common now)",
+      "  UFH infusion — when haemodynamically unstable, severe renal failure, planned thrombolysis / surgery",
+      "DURATION:",
+      "  Provoked (transient RF) — 3 months",
+      "  Unprovoked / persistent RF — extended indefinitely (with risk-benefit reassessment) — DOAC reduced dose (apixaban 2.5 mg BD or rivaroxaban 10 mg OD) for extended phase (AMPLIFY-EXT, EINSTEIN-CHOICE)",
+      "  Cancer-associated — at least 6 months, often indefinite",
+      "MASSIVE / HIGH-RISK PE (haemodynamic instability):",
+      "  SYSTEMIC THROMBOLYSIS — alteplase 100 mg IV over 2h (or 10 mg bolus + 90 mg/2h) for shock / refractory hypoxia",
+      "  Contraindications: recent surgery (10 days), recent stroke (3 mo), bleeding diathesis, severe HTN, recent CPR — relative",
+      "  Surgical embolectomy / catheter-directed thrombolysis if systemic contraindicated",
+      "  ECMO as bridge in selected centres",
+      "INTERMEDIATE-HIGH risk (RV dysfunction + troponin raised, BP normal):",
+      "  Anticoagulate + close monitor in HDU",
+      "  Half-dose thrombolysis controversial (PEITHO trial — increased bleeding, no mortality benefit; further trials ongoing)",
+      "  Catheter-directed thrombolysis (CDT) emerging — lower dose, less bleeding (selected centres)",
+      "IVC filter — only if anticoagulation contraindicated + active VTE; retrievable + remove ASAP",
+      "OUTPATIENT TREATMENT: low-risk PE (sPESI 0, Hestia all negative, social support, no bleeding) — start DOAC + discharge same day with follow-up (HoT-PE)",
+      "Pregnancy: LMWH (1 mg/kg BD treatment dose); thrombolysis only if life-threatening; CTPA with shielding or V/Q",
+      "Post-PE care: 3-month review for residual symptoms, persistent pulmonary HT (chronic thromboembolic pulmonary HT — CTEPH; refer specialist if symptomatic + raised PASP), thrombophilia workup if unprovoked + young / family history"
+    ],
+    "references": [
+      {
+        "label": "ESC Pulmonary Embolism Guidelines 2019 + 2025 update",
+        "kind": "guideline"
+      },
+      {
+        "label": "ACCP CHEST Antithrombotic Therapy for VTE 2021",
+        "kind": "guideline"
+      },
+      {
+        "label": "AMPLIFY / RECOVER / EINSTEIN-PE / Hokusai-VTE DOAC trials",
+        "kind": "trial"
+      },
+      {
+        "label": "PEITHO NEJM 2014 (intermediate-risk thrombolysis)",
+        "kind": "trial"
+      },
+      {
+        "label": "Hokusai-VTE Cancer / Caravaggio cancer PE trials",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hypertensive-emergency-vs-urgency",
+    "title": "Hypertensive emergency vs urgency — pathway",
+    "icd10": [
+      "I16"
+    ],
+    "icd11": [
+      "BA01"
+    ],
+    "domains": [
+      "cardiology",
+      "emergency",
+      "neurology",
+      "hypertension"
+    ],
+    "population": "Adults with markedly elevated BP — emergency (BP usually > 180/120 with end-organ damage) vs urgency (high BP, no acute end-organ damage). Common ED presentation; only emergency needs IV/parenteral.",
+    "presentation": "End-organ damage signs:",
+    "redFlags": [
+      "Acute pulmonary oedema",
+      "Acute coronary syndrome",
+      "Aortic dissection (tearing chest/back pain, asymmetric pulses)",
+      "Acute ischaemic stroke / haemorrhagic stroke",
+      "Hypertensive encephalopathy (papilloedema + headache + seizure + altered mental state)",
+      "Acute kidney injury",
+      "Eclampsia / severe pre-eclampsia",
+      "Phaeochromocytoma crisis",
+      "Cocaine / methamphetamine toxicity"
+    ],
+    "diagnostics": [
+      "BP both arms (asymmetry > 20 mmHg in dissection)",
+      "ECG (LVH, ischaemia)",
+      "Fundoscopy (papilloedema, haemorrhages, exudates — grade III/IV retinopathy = emergency)",
+      "FBC, U&E, creatinine, urinalysis (proteinuria + RBC casts — acute kidney injury)",
+      "Troponin",
+      "CXR (pulmonary oedema, mediastinal widening)",
+      "CT chest with contrast (dissection)",
+      "CT brain if neurological signs",
+      "Echo (acute MR, LV dysfunction, dissection)",
+      "Urinary metanephrines / drug screen if suspected secondary cause"
+    ],
+    "management": [
+      "HYPERTENSIVE EMERGENCY (end-organ damage):",
+      "  Admit ICU/HDU, arterial line, continuous monitoring",
+      "  CAUTIOUS BP REDUCTION — avoid > 25% in 1h (cerebral autoregulation impaired — risk of watershed infarct)",
+      "  Target: MAP reduction 10–20% in 1h, then to 160/100 over 2–6h, then gradually to baseline over 24–48h",
+      "  EXCEPTIONS to gradual reduction:",
+      "    Aortic dissection: target SBP < 120 in 5–10 min + HR < 60 (start with β-blocker before vasodilator)",
+      "    Acute ischaemic stroke pre-thrombolysis: target < 185/110",
+      "    Acute ischaemic stroke not thrombolysed: lenient permissive (< 220/120)",
+      "    Eclampsia: target SBP 140–155, DBP 90–105",
+      "IV AGENTS:",
+      "  Labetalol IV 20 mg over 2 min then double q10 min up to 80 mg (max 220 mg cumulative); infusion 0.5–2 mg/min",
+      "  Nicardipine IV 5 mg/h up to 15 mg/h",
+      "  Hydralazine 5 mg IV q15 min (used in pregnancy)",
+      "  Sodium nitroprusside 0.25–10 mcg/kg/min — rapid, titratable; risk of cyanide toxicity > 24h",
+      "  GTN infusion — preferred in pulmonary oedema / ACS (preload + afterload)",
+      "  Esmolol — short-acting β-blocker for dissection / phaeo",
+      "  Phentolamine — phaeo / cocaine (α-blocker)",
+      "  Magnesium sulphate — eclampsia",
+      "URGENCY (no end-organ damage):",
+      "  Oral therapy — restart / increase usual antihypertensives",
+      "  Amlodipine 5–10 mg, lisinopril 10–20 mg, hydrochlorothiazide 25 mg, labetalol 200 mg PO",
+      "  Goal: gradual reduction over 24–48h to safer range (< 160/100), full target over weeks",
+      "  AVOID rapid SL nifedipine, hydralazine boluses — uncontrolled hypotension",
+      "  Outpatient follow-up within 1 week",
+      "INVESTIGATE secondary cause (RAS, primary aldo, phaeo, OSA, CKD, Cushing) once stable",
+      "Long-term: optimise per resistant HT pathway"
+    ],
+    "references": [
+      {
+        "label": "ESC/ESH Hypertension Guidelines 2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "ACC/AHA Hypertension Guidelines 2017 + 2024 focused update",
+        "kind": "guideline"
+      },
+      {
+        "label": "AHA Scientific Statement Hypertensive Emergencies 2022",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]
