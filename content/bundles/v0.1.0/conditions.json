@@ -70698,5 +70698,780 @@
     "ruleVersion": "2024.1",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "preoperative-assessment-asa-rcri",
+    "title": "Preoperative cardiac risk assessment — ASA + RCRI + NSQIP",
+    "icd10": [
+      "Z01.81"
+    ],
+    "icd11": [
+      "QA01"
+    ],
+    "domains": [
+      "anaesthesia",
+      "perioperative",
+      "cardiology",
+      "primary-care",
+      "surgery"
+    ],
+    "population": "All adults undergoing non-cardiac surgery — outpatient pre-anaesthetic clinic, day-of-surgery review.",
+    "presentation": "Routine pre-op contact. Risk-stratify: functional capacity (METs), cardiac risk indices, frailty, comorbidity.",
+    "redFlags": [
+      "Active ACS, decompensated HF, severe valve disease (AS aortic), arrhythmia uncontrolled",
+      "Recent stent (DES < 6 mo, BMS < 1 mo) on DAPT — postpone elective",
+      "Severe pulmonary HT, untreated AAA",
+      "Poor functional capacity (< 4 METs) + intermediate-high risk surgery",
+      "Frailty (CFS ≥ 5)"
+    ],
+    "diagnostics": [
+      "ASA physical status I–VI",
+      "RCRI (high-risk surgery, IHD, HF, CVD, insulin-DM, Cr > 177)",
+      "ACS-NSQIP risk calculator (MICA, surgical risk)",
+      "Functional capacity — Duke Activity Status Index / 4-METs",
+      "Targeted ECG, echo, troponin only if indicated (NOT routine)",
+      "FBC, U&E, glucose, coagulation per surgery + comorbidity",
+      "Frailty: Clinical Frailty Scale; nutrition: MNA"
+    ],
+    "management": [
+      "Optimise comorbidity: BP < 140/90, glycaemic (HbA1c < 64), Hb correction, smoking cessation 4 weeks pre-op",
+      "Continue β-blockers, statins, ACE-i (or hold morning of surgery), aspirin (most surgeries continue; stop only for high bleeding risk specific procedures)",
+      "Bridge anticoagulation per CHA2DS2-VASc + procedural bleeding risk; DOACs hold 24–48h (renal function dependent)",
+      "Diabetes: variable rate insulin infusion for major; stop SGLT2 inhibitor 3 days pre (ketoacidosis risk)",
+      "Cardiac stress testing only if 4 METs poor + intermediate-high risk + would change management",
+      "Echo only if known/suspected severe valve disease or PHT or HF",
+      "Frailty: prehabilitation, multidisciplinary geriatric input, anaesthesia plan",
+      "Postpone elective if active medical issue uncontrolled; document risk-benefit if proceeding",
+      "Enhanced Recovery After Surgery (ERAS) protocol where available"
+    ],
+    "references": [
+      {
+        "label": "ESC/ESA Guidelines on non-cardiac surgery: cardiovascular assessment 2022",
+        "kind": "guideline"
+      },
+      {
+        "label": "ACC/AHA Perioperative CV evaluation 2014 (updated 2024)",
+        "kind": "guideline"
+      },
+      {
+        "label": "RCoA Guidelines for the Provision of Anaesthesia Services (GPAS)",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "rapid-sequence-induction-anaesthesia",
+    "title": "Rapid sequence induction (RSI) — emergency airway",
+    "icd10": [
+      "Z01.81"
+    ],
+    "icd11": [
+      "QA01"
+    ],
+    "domains": [
+      "anaesthesia",
+      "emergency",
+      "critical-care",
+      "primary-care"
+    ],
+    "population": "Patients needing emergency intubation at risk of aspiration: full stomach, GI bleed, bowel obstruction, pregnancy, trauma, severe sepsis, depressed conscious level.",
+    "presentation": "Airway emergency — failure to maintain / protect airway / oxygenate / ventilate. Pre-intubation hypoxaemia, hypotension, acidosis predict peri-intubation cardiac arrest.",
+    "redFlags": [
+      "Predicted difficult airway (LEMON + MOANS + RODS)",
+      "Hypotension (SBP < 90) — peri-arrest risk",
+      "Hypoxaemia despite preoxygenation (SpO2 < 93%)",
+      "Severe acidosis (pH < 7.2)",
+      "Hyperkalaemia > 5.5 (avoid suxamethonium)"
+    ],
+    "diagnostics": [
+      "Airway assessment LEMON (Look-Evaluate 3-3-2-Mallampati-Obstruction-Neck mobility)",
+      "Plan A/B/C/D (DAS difficult airway algorithm)",
+      "Vital signs, SpO2, capnography mandatory",
+      "ECG, IV access × 2, bloods including K+"
+    ],
+    "management": [
+      "PRE-INTUBATION CHECKLIST (7 P's): Preparation (equipment + drugs + suction + back-up), Preoxygenation, Pretreatment (lidocaine / fentanyl in selected — debated), Paralysis with induction, Placement, Postintubation",
+      "Position: 30° head-up; ramped if obese (ear-sternal notch); reverse Trendelenburg for pregnancy",
+      "Preoxygenation: 3 min tidal volume or 8 vital capacity breaths via tight-fitting mask + NIV if SpO2 < 93%; nasal cannula at 15 L for apnoeic oxygenation",
+      "Optimise haemodynamics BEFORE: fluid bolus, push-dose pressor (phenylephrine 50–100 mcg, adrenaline 5–20 mcg), shock-index < 0.9 target",
+      "INDUCTION + PARALYSIS (push simultaneously, no bag-mask if not desaturating):",
+      "  Ketamine 1–2 mg/kg (haemodynamic-stable, asthma, sepsis — preferred) OR etomidate 0.3 mg/kg (preserves BP but adrenal suppression — single-dose acceptable) OR propofol 1–2 mg/kg (avoid in shock)",
+      "  + Rocuronium 1.2 mg/kg IV (preferred — neutral haemodynamics, fast onset, sugammadex reversal available) OR suxamethonium 1.5 mg/kg (faster but K+ release; AVOID if hyperK+, burns > 48h, prolonged immobility, NMS, denervation)",
+      "Cricoid pressure: routinely applied (Sellick) — but release if difficult; emerging evidence against universal use",
+      "Direct or video laryngoscope (video preferred for first-pass success per multiple RCTs)",
+      "Capnography to confirm — required for ALL intubations",
+      "Post-intubation: secure tube, OG/NG decompression, lung-protective ventilation (Vt 6–8 ml/kg IBW), analgesia + sedation, recheck haemodynamics",
+      "Failed intubation: DAS algorithm — Plan B (alternative blade / VL / bougie), Plan C (LMA / supraglottic), Plan D (emergency front-of-neck access — cricothyroidotomy)",
+      "Avoid 'physiologically difficult airway' assumption — fix shock + acidosis + hypoxia FIRST where possible"
+    ],
+    "references": [
+      {
+        "label": "DAS Difficult Airway Society Guidelines 2015 (updated)",
+        "kind": "guideline"
+      },
+      {
+        "label": "RSI Manual of Emergency Airway Management 5e (Walls)",
+        "kind": "guideline"
+      },
+      {
+        "label": "Sakles JC et al. Video vs direct laryngoscopy — multiple RCTs + meta-analysis",
+        "kind": "review"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "spinal-anaesthesia-technique-complications",
+    "title": "Spinal anaesthesia — technique, contraindications, complications",
+    "icd10": [
+      "Z51.81"
+    ],
+    "icd11": [
+      "QA01"
+    ],
+    "domains": [
+      "anaesthesia",
+      "primary-care",
+      "surgery",
+      "obstetrics"
+    ],
+    "population": "Lower abdominal, pelvic, perineal, lower limb surgery; caesarean delivery — most common anaesthesia method for elective + many emergency C-sections.",
+    "presentation": "Single-shot intrathecal injection (typically L3-L4 or L4-L5 below conus). Onset 5–10 min, duration 2–4 h depending on agent. Sensory + motor + sympathetic block.",
+    "redFlags": [
+      "Hypotension (very common — sympathectomy) — pre-load + co-load + vasopressor",
+      "Total spinal (high block — bradycardia + hypotension + apnoea + arm paralysis)",
+      "Post-dural puncture headache",
+      "Spinal haematoma (anticoagulation — neurological emergency!)",
+      "Cauda equina (rare — toxic agent or pressure)",
+      "Failed block (consider GA conversion)"
+    ],
+    "diagnostics": [
+      "Pre-op assessment: anticoag history, spine examination, allergies, infection",
+      "Coagulation (FBC, INR) if relevant",
+      "Document neurological baseline"
+    ],
+    "management": [
+      "CONTRAINDICATIONS — absolute: patient refusal, infection at site, raised ICP, severe coagulopathy (platelets < 50 or therapeutic anticoag), severe aortic stenosis (relative); relative: fixed CO state, lumbar spine disease, neurological disease",
+      "Anticoag timing (ESRA): therapeutic LMWH withhold 24h; prophylactic LMWH 12h; warfarin INR < 1.5; DOAC withhold 48–72h depending on agent + renal; aspirin OK; clopidogrel 7 d; ticagrelor 5 d; bridge if high thrombotic risk",
+      "Position: sitting (easier, useful for hyperbaric in obstetric) or lateral",
+      "L3-L4 / L4-L5 interspace (line between iliac crests = L4 spinous process)",
+      "Aseptic technique — chlorhexidine, sterile gown + gloves + drape",
+      "25–27G pencil-point needle (Whitacre / Sprotte) — reduces PDPH vs cutting Quincke",
+      "Hyperbaric bupivacaine 0.5% 2–3 ml for C-section (with fentanyl 15 mcg ± morphine 100 mcg for analgesia); plain 0.5% bupivacaine for orthopaedic",
+      "BLOCK ASSESSMENT: cold sensation (ethyl chloride) to T4 (nipple) for C-section, T6–T10 for lower abdo, T10 for lower limb",
+      "HYPOTENSION management: phenylephrine infusion 50–100 mcg/min as needed (or 100 mcg boluses); CO-LOAD with crystalloid 10–15 ml/kg starting at intrathecal injection (pre-load not effective); maintain MAP > 65 (obstetric > 90 mmHg for fetal welfare)",
+      "Avoid ephedrine in obstetric — fetal acidosis (phenylephrine preferred)",
+      "PDPH treatment: hydration, caffeine, analgesia; epidural blood patch if > 48h persistent + severe (gold standard)",
+      "EMERGENCY: spinal haematoma — neurological deficit + back pain + recent neuraxial → urgent MRI + neurosurgical decompression within 8h (irreversible cord damage)"
+    ],
+    "references": [
+      {
+        "label": "RCoA Spinal Anaesthesia Guidelines",
+        "kind": "guideline"
+      },
+      {
+        "label": "ESRA Regional anaesthesia in patient receiving antithrombotic 2022",
+        "kind": "guideline"
+      },
+      {
+        "label": "RCoA Chapter 9 Obstetric anaesthesia",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "acute-postoperative-pain-multimodal",
+    "title": "Acute postoperative pain — multimodal analgesia",
+    "icd10": [
+      "G89.18"
+    ],
+    "icd11": [
+      "MG30"
+    ],
+    "domains": [
+      "pain-medicine",
+      "anaesthesia",
+      "perioperative",
+      "surgery",
+      "primary-care"
+    ],
+    "population": "All postoperative patients; chronic pain patients undergoing surgery especially challenging.",
+    "presentation": "Pain assessment using NRS (0–10), behavioural pain scale in non-verbal, FLACC paediatric. Quality-of-recovery 15 (QoR-15) outcome measure.",
+    "redFlags": [
+      "NRS ≥ 7 despite multimodal — escalate",
+      "New severe pain after stable period (complication: bleeding, ischaemia, compartment, anastomotic)",
+      "Opioid-induced respiratory depression (RR < 8, SpO2 < 92%, sedation score ≥ 3) — naloxone",
+      "Persistent post-surgical pain > 3 months — refer chronic pain service",
+      "Opioid-tolerant — special prescribing"
+    ],
+    "diagnostics": [
+      "Pain trajectory + sleep + mood + function",
+      "Side effects: nausea, constipation, sedation, urinary retention",
+      "Local: signs of complication or wound infection"
+    ],
+    "management": [
+      "MULTIMODAL ANALGESIA (cornerstone — reduces opioid + improves outcomes):",
+      "  Baseline: paracetamol 1 g IV/PO q6h (max 4 g/d, less in liver disease / low weight) — always unless contraindicated",
+      "  NSAID: ibuprofen 400 mg q8h or ketorolac 10 mg q6h ± diclofenac 50 mg q8h — avoid in renal impairment / GI bleed / asthma / pregnancy 3rd trimester / cardiac high risk; consider COX-2 (celecoxib) if GI risk",
+      "  Opioid: short-acting for severe — morphine 0.1 mg/kg IV (titrate), oxycodone 5 mg PO q4h prn; PCA morphine for major (1 mg bolus, 5 min lockout, no background unless opioid-tolerant)",
+      "  Regional anaesthesia where possible — TAP block (abdo), fascia iliaca (hip), femoral / popliteal (lower limb), interscalene (shoulder), serratus anterior (thoracic / breast)",
+      "  Adjuvants:",
+      "    Gabapentinoid (gabapentin 300 mg or pregabalin 75 mg pre-op + post) — opioid-sparing but caution sedation + falls in elderly; off-label",
+      "    Ketamine low-dose 0.1–0.25 mg/kg bolus + 0.1 mg/kg/h infusion — opioid-sparing especially opioid-tolerant",
+      "    IV lidocaine 1–1.5 mg/kg bolus then 1.5–2 mg/kg/h intra-op (laparotomy)",
+      "    Dexamethasone 4–8 mg pre-op — analgesia + PONV prevention",
+      "    α2-agonist (dexmedetomidine, clonidine) — opioid-sparing, sedation",
+      "ENHANCED RECOVERY (ERAS): pre-op education, no prolonged fasting, carbohydrate drink, normothermia, goal-directed fluid, multimodal analgesia, early oral, early mobilisation",
+      "OPIOID-RELATED ADVERSE EVENTS prevention: stool softener + senna routine; ondansetron 4 mg if PONV; pulse oximetry continuous in high-risk",
+      "NALOXONE 40 mcg IV every 2 min if respiratory depression; 100 mcg IM if no IV; expect re-sedation (repeated dosing or infusion)",
+      "PERSISTENT POST-SURGICAL PAIN: identify high-risk pre-op (chronic pain, anxiety, catastrophising, female, young); refer chronic pain at 6 weeks if NRS > 4",
+      "OPIOID-TOLERANT: continue baseline opioid + multimodal; PCA backgrounds appropriate; methadone rotation specialist input",
+      "DISCHARGE: minimise opioid quantity (< 3 days for most), counsel safe storage + disposal; tapering plan"
+    ],
+    "references": [
+      {
+        "label": "ASA Acute Pain Management Practice Guidelines 2012/2017",
+        "kind": "guideline"
+      },
+      {
+        "label": "PROSPECT (Procedure-Specific Postoperative Pain Management) guidelines",
+        "kind": "guideline"
+      },
+      {
+        "label": "Enhanced Recovery After Surgery Society Guidelines (multiple procedures)",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "malignant-hyperthermia",
+    "title": "Malignant hyperthermia — anaesthetic emergency",
+    "icd10": [
+      "T88.3"
+    ],
+    "icd11": [
+      "KB69"
+    ],
+    "domains": [
+      "anaesthesia",
+      "emergency",
+      "critical-care",
+      "genetics"
+    ],
+    "population": "Genetically susceptible (RYR1, CACNA1S mutations — autosomal dominant) — incidence ~1:50,000 adults, higher in children. Family history of anaesthetic death / complications a key clue.",
+    "presentation": "Hypermetabolic crisis triggered by volatile anaesthetic (sevoflurane, isoflurane, desflurane, halothane) or suxamethonium. Earliest: rising end-tidal CO2 unresponsive to ventilation, tachycardia, muscle rigidity (especially masseter spasm after suxamethonium). Later: hyperthermia (rises 1°C every 5 min), arrhythmia, hyperkalaemia, metabolic acidosis, rhabdomyolysis, DIC, AKI. Mortality 1–5% with prompt dantrolene.",
+    "redFlags": [
+      "Unexplained ETCO2 rise + tachycardia during anaesthesia",
+      "Masseter rigidity after suxamethonium",
+      "Generalised muscle rigidity",
+      "Core temp > 38.5°C rising",
+      "Hyperkalaemia (peaked T waves, VF)",
+      "Family history of anaesthetic death"
+    ],
+    "diagnostics": [
+      "Clinical recognition + Clinical Grading Scale",
+      "ABG (severe acidosis), serum K+ (hyperK+), CK (markedly raised, peak at 24h), myoglobin (urine + serum), coag, LFT",
+      "ECG (arrhythmia, peaked T)",
+      "Core temperature (oesophageal / bladder)",
+      "Definitive diagnosis post-recovery: caffeine-halothane contracture test (CHCT) on muscle biopsy; genetic testing for RYR1 / CACNA1S"
+    ],
+    "management": [
+      "EMERGENCY — call for help + MH cart:",
+      "1. STOP triggering agent (volatile, sux). Continue surgery on IV anaesthesia (propofol, opioid, ketamine, non-depolarising NMBA)",
+      "2. Switch ventilator to 100% O2 at high flows (10 L/min) — hyperventilate to lower ETCO2",
+      "3. DANTROLENE 2.5 mg/kg IV bolus (reconstitute 20 mg vials with 60 ml sterile water — need many vials; new ryanodex formulation 250 mg vial = 1 patient dose 2.5 mg/kg avg adult) — repeat every 5 min until ETCO2 + HR + rigidity reverse, up to 10 mg/kg total",
+      "4. ACTIVE COOLING: cold IV fluids, ice packs to axillae/groin/neck, gastric/bladder lavage with cold saline, surface cooling; STOP at 38°C to prevent shivering",
+      "5. Treat hyperkalaemia: calcium gluconate 1 g, insulin + glucose, salbutamol, sodium bicarbonate, dialysis if refractory",
+      "6. Treat arrhythmia: amiodarone (NOT calcium channel blockers — interact with dantrolene)",
+      "7. Maintain urine output > 2 ml/kg/h (forced alkaline diuresis, mannitol); manage rhabdomyolysis-induced AKI",
+      "8. ICU admission post-event for at least 24h — recrudescence in 25%",
+      "9. Continue dantrolene 1 mg/kg q4–6h × 24h post-acute event",
+      "10. Inform family — counsel, refer for testing, MedicAlert bracelet, MH safe anaesthesia in future (TIVA, regional)",
+      "POST: report to MH Registry (UK, NA-MHAUS) and refer index case for confirmatory testing"
+    ],
+    "references": [
+      {
+        "label": "AAGBI Malignant Hyperthermia Guidelines 2020",
+        "kind": "guideline"
+      },
+      {
+        "label": "MHAUS Malignant Hyperthermia Association of the United States",
+        "kind": "guideline"
+      },
+      {
+        "label": "European Malignant Hyperthermia Group",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "local-anaesthetic-systemic-toxicity-last",
+    "title": "Local anaesthetic systemic toxicity (LAST) — recognition + lipid rescue",
+    "icd10": [
+      "T41.3"
+    ],
+    "icd11": [
+      "NE61"
+    ],
+    "domains": [
+      "anaesthesia",
+      "emergency",
+      "critical-care",
+      "toxicology"
+    ],
+    "population": "Any patient receiving regional anaesthesia (peripheral nerve block, epidural, infiltration) — accidental intravascular injection OR systemic absorption. Higher risk: extremes of age, pregnancy, low body weight, cardiac/hepatic/renal disease.",
+    "presentation": "EARLY (excitation): perioral tingling, metallic taste, tinnitus, agitation, confusion. LATE (depression): seizures, LOC, hypotension, bradycardia, ventricular arrhythmia, asystole. Symptoms may be DELAYED up to 30+ min after injection. Bupivacaine the worst (cardiotoxic > CNS); ropivacaine less cardiotoxic; lidocaine mostly CNS.",
+    "redFlags": [
+      "Seizure during/after local anaesthetic injection",
+      "Cardiac arrest after regional block",
+      "Bradycardia + hypotension after epidural / IVRA tourniquet release",
+      "ANY neurological symptom after block — STOP injection"
+    ],
+    "diagnostics": [
+      "Clinical recognition — high index of suspicion is key",
+      "Total dose calculation: maximum safe dose by weight",
+      "Continuous monitoring during + after regional anaesthesia ≥ 30 min",
+      "ECG, ABG",
+      "Plasma LA level (research / forensic only)"
+    ],
+    "management": [
+      "PREVENTION (key — outcome poor once cardiac arrest):",
+      "  Calculate + don't exceed max dose (lignocaine 4.5 mg/kg, with adrenaline 7 mg/kg; bupivacaine 2 mg/kg; ropivacaine 3 mg/kg)",
+      "  Incremental dose with aspiration every 3–5 ml",
+      "  Use ultrasound guidance",
+      "  Add adrenaline 1:200,000 as intravascular marker (HR rise)",
+      "  Continuous ECG + SpO2 during + after",
+      "TREATMENT — at first sign of LAST:",
+      "1. STOP LA injection immediately, call for help, prepare lipid emulsion",
+      "2. Airway — 100% O2, intubate if seizing / unconscious",
+      "3. SEIZURES: benzodiazepine first-line (midazolam 1–2 mg IV; lorazepam 4 mg) — avoid propofol if haemodynamically unstable",
+      "4. LIPID EMULSION RESCUE (Intralipid 20%):",
+      "   Bolus 1.5 ml/kg over 1 min (≈100 ml in 70 kg adult)",
+      "   Infusion 0.25 ml/kg/min",
+      "   Repeat bolus × 2 if persistent collapse",
+      "   Double infusion if BP drops",
+      "   Max 12 ml/kg cumulative",
+      "5. Cardiac arrest: standard ACLS with MODIFICATIONS:",
+      "   AVOID vasopressin",
+      "   REDUCE adrenaline dose to < 1 mcg/kg",
+      "   AVOID calcium channel blockers, β-blockers, lidocaine antiarrhythmic",
+      "   AMIODARONE for VT/VF",
+      "   PROLONGED CPR if needed (> 60 min) — may eventually respond to lipid",
+      "   Consider cardiopulmonary bypass / ECMO",
+      "6. Lipid emulsion mechanism: lipid sink + metabolic effect + ion channel modulation",
+      "7. Post-event: ICU 12+ h; report to local + national LAST registry"
+    ],
+    "references": [
+      {
+        "label": "AAGBI Management of Severe Local Anaesthetic Toxicity 2020",
+        "kind": "guideline"
+      },
+      {
+        "label": "ASRA Checklist for LAST + Local Anesthetic Systemic Toxicity Guidelines 2020",
+        "kind": "guideline"
+      },
+      {
+        "label": "Lipidrescue.org — global registry + algorithm",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "postoperative-nausea-vomiting-prevention",
+    "title": "Postoperative nausea + vomiting (PONV) — prevention + treatment",
+    "icd10": [
+      "R11"
+    ],
+    "icd11": [
+      "MD90"
+    ],
+    "domains": [
+      "anaesthesia",
+      "perioperative",
+      "surgery",
+      "primary-care"
+    ],
+    "population": "All postoperative patients — particularly Apfel high-risk (female, non-smoker, prior PONV / motion sickness, post-op opioid).",
+    "presentation": "Common: 20–30% routinely, 70–80% high-risk. Distressing, delays discharge, dehydration, aspiration, wound dehiscence.",
+    "redFlags": [
+      "Persistent vomiting despite multi-drug therapy — consider surgical complication (bowel obstruction, intracranial)",
+      "Aspiration",
+      "Wound dehiscence after vomiting"
+    ],
+    "diagnostics": [
+      "Apfel score: 4 risk factors — 0 ≈10%, 1 ≈20%, 2 ≈40%, 3 ≈60%, 4 ≈80%",
+      "ECG before ondansetron (QT prolongation in long-QT)",
+      "U&E if persistent (hypokalaemia, hyponatraemia)"
+    ],
+    "management": [
+      "PREVENTION (multi-modal — use N agents based on risk):",
+      "  Low risk (0–1 factors): one agent or none",
+      "  Mod (2 factors): 2 agents from different classes",
+      "  High (3–4 factors): 3+ agents + TIVA + minimise opioids",
+      "DRUG CLASSES (different sites of action — combine):",
+      "  5-HT3 antagonist: ondansetron 4 mg IV at induction or end of surgery (longer effect end of surgery); granisetron 1 mg",
+      "  Corticosteroid: dexamethasone 4–8 mg IV at induction",
+      "  D2 antagonist: droperidol 0.625 mg IV (low-dose, black box warning); metoclopramide 10–20 mg (less effective)",
+      "  NK1 antagonist: aprepitant 40 mg PO (longer prophylaxis, expensive)",
+      "  Anticholinergic: scopolamine transdermal patch (extra-strong for motion sickness)",
+      "  Antihistamine: cyclizine 50 mg (less in elderly), promethazine",
+      "ANAESTHESIA TECHNIQUE:",
+      "  TIVA propofol > volatile (lower PONV)",
+      "  Avoid N2O (especially > 1h)",
+      "  Regional > GA where appropriate",
+      "  Minimise opioids — multimodal analgesia",
+      "  Adequate hydration (10–15 ml/kg crystalloid)",
+      "TREATMENT (established PONV) — use DIFFERENT class from prophylaxis (don't repeat ondansetron in 6h):",
+      "  Ondansetron 1 mg (lower dose for rescue, max 16 mg cumulative)",
+      "  Droperidol 0.625 mg (with ECG check)",
+      "  Promethazine 6.25 mg",
+      "  Dexamethasone if not already given",
+      "  Acupressure P6 (sea-bands) adjunctive",
+      "AVOID metoclopramide in young women (extrapyramidal); avoid droperidol in long QT"
+    ],
+    "references": [
+      {
+        "label": "Society for Ambulatory Anesthesia (SAMBA) PONV guidelines 4th consensus 2020",
+        "kind": "guideline"
+      },
+      {
+        "label": "ESPA — European Society Pediatric Anaesthesiology PONV",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "perioperative-blood-management",
+    "title": "Perioperative blood management — Patient Blood Management",
+    "icd10": [
+      "D64.9"
+    ],
+    "icd11": [
+      "3A93"
+    ],
+    "domains": [
+      "anaesthesia",
+      "haematology",
+      "perioperative",
+      "surgery"
+    ],
+    "population": "All surgical patients — preoperative anaemia in 25–40% major surgery patients.",
+    "presentation": "Pre-op anaemia (Hb < 130 men, < 120 women) doubles morbidity + mortality. Intraoperative blood loss requires transparent decision-making for transfusion vs conservation.",
+    "redFlags": [
+      "Pre-op Hb < 100 + major surgery",
+      "Active bleeding + Hb falling",
+      "Coagulopathy + thrombocytopaenia + active bleeding (DIC)",
+      "Massive haemorrhage (≥ 4 RBC units in 1h or ≥ 10 units in 24h)"
+    ],
+    "diagnostics": [
+      "Pre-op FBC + ferritin + B12 + folate at least 4 weeks pre-op for elective major surgery",
+      "Type + screen / crossmatch as needed",
+      "Intra-op: estimated blood loss, urine output, lactate, ABG, Hb (point-of-care)",
+      "Viscoelastic testing (ROTEM / TEG) for major / cardiac / liver surgery",
+      "Standard coag (PT, INR, APTT, fibrinogen, platelet count)"
+    ],
+    "management": [
+      "Patient Blood Management (PBM) 3 pillars:",
+      "1. OPTIMISE pre-op haemoglobin:",
+      "  Identify + treat anaemia 4 weeks before elective surgery",
+      "  IV iron (ferric carboxymaltose 1000 mg single dose or iron sucrose 200 mg × 5) for iron deficiency",
+      "  B12 / folate if deficient",
+      "  Erythropoietin if Hb < 130 men / < 120 women + no malignancy / vascular contraindication",
+      "  Defer elective surgery if Hb < 100 + correctable",
+      "2. MINIMISE intra-op blood loss:",
+      "  Tranexamic acid 1 g IV at induction + repeat at 3h (or 15–30 mg/kg) — all major surgery, trauma, post-partum (CRASH-2, WOMAN, HALT-IT trials)",
+      "  Cell salvage (intraoperative autotransfusion) — orthopaedic, cardiac, OB",
+      "  Acute normovolaemic haemodilution (ANH)",
+      "  Permissive hypotension where appropriate",
+      "  Minimally invasive surgical technique",
+      "  Reverse anticoagulants pre-op (Idarucizumab for dabigatran, andexanet for Xa inhibitors, 4F-PCC for warfarin)",
+      "3. RESTRICTIVE transfusion threshold:",
+      "  Hb < 70 (or < 80 if cardiovascular disease, symptomatic, ICU) — multiple RCTs support restrictive (TRICC, TRISS, TITRe2)",
+      "  Single-unit transfusion + reassess (don't transfuse 2 units automatically)",
+      "  Platelets: < 10 (no bleeding), < 20 (procedure), < 50 (active bleeding / major surgery), < 100 (CNS / cardiac)",
+      "  FFP: only with active bleeding + INR > 1.5 or fibrinogen < 1.5–2 g/L; do NOT use prophylactically",
+      "  Fibrinogen concentrate / cryoprecipitate if fibrinogen < 1.5 (< 2 obstetric)",
+      "MASSIVE HAEMORRHAGE PROTOCOL: 1:1:1 RBC:FFP:platelets ratio (or whole blood where available), TXA, calcium, viscoelastic-guided",
+      "JEHOVAH'S WITNESS / refused transfusion: optimise pre-op aggressively, IV iron, EPO, cell salvage, minimise sampling, tolerate lower Hb threshold (50–60), discuss respectfully",
+      "Post-op: continue iron, monitor Hb trajectory, restart anticoagulant per bleeding risk"
+    ],
+    "references": [
+      {
+        "label": "AAGBI / NICE NG24 Blood Transfusion 2015 (updated)",
+        "kind": "guideline"
+      },
+      {
+        "label": "Australia Patient Blood Management Modules 1-7",
+        "kind": "guideline"
+      },
+      {
+        "label": "Mueller MM et al. PBM in Europe. Anaesthesia 2019 consensus",
+        "kind": "review"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "chronic-pain-management-stepladder",
+    "title": "Chronic non-cancer pain — biopsychosocial + WHO ladder + opioid stewardship",
+    "icd10": [
+      "G89.4"
+    ],
+    "icd11": [
+      "MG30.1"
+    ],
+    "domains": [
+      "pain-medicine",
+      "primary-care",
+      "psychiatry",
+      "neurology"
+    ],
+    "population": "Adults with pain > 3 months — 20% of adults globally; rising opioid crisis in HICs + emerging in LMICs.",
+    "presentation": "Pain types: nociceptive (somatic, visceral), neuropathic (burning, electric, allodynia, hyperalgesia), nociplastic (central sensitisation — fibromyalgia, CRPS). Often multifactorial. Comorbid depression, anxiety, sleep, occupational impact.",
+    "redFlags": [
+      "New focal neurological deficit",
+      "Cauda equina (saddle anaesthesia + bladder/bowel) — emergency",
+      "Pain with B symptoms (weight loss, fever — malignancy)",
+      "Pain after trauma not improving (compartment / non-union)",
+      "Aberrant medication use / diversion / OUD",
+      "Suicidal ideation"
+    ],
+    "diagnostics": [
+      "Comprehensive pain assessment: location, character, severity, triggers, function",
+      "DN4 / painDETECT for neuropathic component",
+      "Mental health: PHQ-9, GAD-7",
+      "Functional capacity, sleep, work",
+      "Imaging only if red flags or planned intervention (avoid in non-specific LBP)",
+      "Opioid risk: ORT (Opioid Risk Tool), SOAPP-R; baseline urine drug screen for opioid-naive on chronic; check Prescription Drug Monitoring Program if available"
+    ],
+    "management": [
+      "BIOPSYCHOSOCIAL FRAMEWORK — pharm + non-pharm + psychological + social",
+      "NON-PHARM (first-line, continuous):",
+      "  Exercise — graded activity, pacing, physiotherapy",
+      "  Cognitive behavioural therapy (CBT) ± acceptance + commitment (ACT)",
+      "  Mindfulness, MBSR (Mindfulness-Based Stress Reduction)",
+      "  Sleep hygiene, weight management",
+      "  Heat / cold, TENS",
+      "  Multidisciplinary pain rehabilitation",
+      "PHARMACOLOGICAL (WHO modified ladder):",
+      "  Step 1 (mild): paracetamol + NSAID (with PPI if GI risk; avoid in CKD, GIB, CV high risk)",
+      "  Step 2 (moderate): add weak opioid — tramadol (caution serotonin syndrome with SSRI), codeine; OR shift to neuropathic agent if neuropathic",
+      "  Step 3 (severe): strong opioid (morphine, oxycodone) — careful patient selection, time-limited trial, max 50 morphine equivalents/day in chronic non-cancer; reassess",
+      "  Adjuvants for neuropathic: TCA (amitriptyline 10–75 mg nocte — caution elderly anticholinergic), SNRI (duloxetine 60 mg), gabapentinoid (gabapentin 900–3600 mg/d or pregabalin 75–600 mg/d) — slow titration",
+      "  Adjuvants for nociplastic (fibromyalgia): SNRI duloxetine, pregabalin, low-dose amitriptyline",
+      "  Topical: capsaicin, lidocaine patch 5%",
+      "  Cannabinoids — limited evidence, regulatory varies; for neuropathic / palliative",
+      "OPIOID STEWARDSHIP (CDC 2022 + WHO):",
+      "  Reserve for severe pain when benefit > risk + non-opioid inadequate",
+      "  START low + slow; reassess at 4 weeks, then every 3 months",
+      "  Time-limited trial — taper if no functional improvement at 12 weeks",
+      "  Naloxone co-prescribed for those on > 50 MME or with risk factors",
+      "  Avoid concurrent benzodiazepines + opioids",
+      "  Tapering: 10% per month for long-term; never stop abruptly (withdrawal — buprenorphine bridge if OUD)",
+      "  Suspected opioid use disorder (OUD): refer for medication-assisted treatment (methadone or buprenorphine)",
+      "INTERVENTIONS (selected): trigger point injection, epidural steroid, radiofrequency ablation, spinal cord stimulator (refractory), intrathecal pump (refractory cancer pain)",
+      "Set FUNCTIONAL goals — not pain-free, but improved function + QoL"
+    ],
+    "references": [
+      {
+        "label": "CDC Clinical Practice Guideline for Prescribing Opioids for Pain 2022",
+        "kind": "guideline"
+      },
+      {
+        "label": "NICE NG193 Chronic Pain Primary and Secondary Care 2021",
+        "kind": "guideline"
+      },
+      {
+        "label": "WHO Guidelines on Persistent Pain in Children 2021",
+        "kind": "guideline"
+      },
+      {
+        "label": "IASP Classification of Chronic Pain (ICD-11)",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "opioid-overdose-naloxone",
+    "title": "Opioid overdose — recognition + naloxone",
+    "icd10": [
+      "T40.0",
+      "T40.1",
+      "T40.2"
+    ],
+    "icd11": [
+      "NE60"
+    ],
+    "domains": [
+      "emergency",
+      "toxicology",
+      "addiction",
+      "primary-care"
+    ],
+    "population": "Anyone using opioids — illicit (heroin, fentanyl-adulterated), prescription (oxycodone, morphine, methadone, tramadol), or therapeutic over-sedation. Lay rescuer naloxone increasingly available. Kenya — emerging issue with rising prescription opioid use.",
+    "presentation": "Opioid toxidrome triad: pinpoint pupils (miosis) + respiratory depression (< 12) + reduced consciousness. Also: bradycardia, hypotension, hypothermia. Look for needle marks, fentanyl patch, pills.",
+    "redFlags": [
+      "Apnoea / RR < 8",
+      "GCS ≤ 8",
+      "Cyanosis",
+      "Cardiac arrest",
+      "Fentanyl-adulterated heroin (high doses naloxone needed)",
+      "Methadone / sustained-release oxycodone — prolonged toxicity (24h+ obs)"
+    ],
+    "diagnostics": [
+      "Clinical recognition",
+      "POC glucose (rule out hypoglycaemia)",
+      "ABG, ECG (QT prolongation methadone), CK if down for hours (rhabdomyolysis), CXR (aspiration pneumonia, ARDS noncardiogenic)",
+      "Urine toxicology — supportive but slow; specific testing for fentanyl + xylazine"
+    ],
+    "management": [
+      "RESUSCITATION:",
+      "  Open airway, jaw thrust, OPA",
+      "  Bag-valve-mask 10 L O2 — focus on VENTILATION (most deaths from hypoxic respiratory failure, not arrest)",
+      "  IV access",
+      "NALOXONE:",
+      "  Lay rescuer: 4 mg intranasal (Narcan nasal) — repeat every 2–3 min if no response",
+      "  IV: 0.4 mg IV (or IM if no IV) — TITRATE to respiratory rate, NOT consciousness",
+      "  Repeat every 2–3 min; total up to 10 mg for fentanyl-adulterated",
+      "  IM 0.4 mg if no IV access (slower onset)",
+      "  Infusion: 0.4 mg/h titrated (longer-acting opioids — methadone, oxycodone SR)",
+      "  Aim: RR > 12, adequate ventilation — NOT full reversal (precipitates withdrawal + agitation)",
+      "OBSERVE:",
+      "  Heroin: 4–6h after last naloxone dose minimum (resedation common as naloxone half-life ≈ 30 min, heroin much longer)",
+      "  Methadone / SR oxycodone / fentanyl patch: 24+ h",
+      "  Fentanyl-laced: prolonged observation",
+      "POST-OVERDOSE:",
+      "  Treat aspiration pneumonia, ARDS, rhabdo, AKI as needed",
+      "  Screen for OUD; refer to medication-assisted treatment (methadone / buprenorphine — even initiate in ED with linkage)",
+      "  Take-home naloxone (THN) + bystander training for the patient + family",
+      "  Mental health: depression, suicide risk assessment",
+      "  Safer-use counselling: not using alone, fentanyl test strips, supervised consumption sites if available",
+      "PREVENTION:",
+      "  Co-prescribe naloxone with high-MME prescriptions",
+      "  Tapering chronic opioids carefully",
+      "  Opioid stewardship — avoid concurrent benzodiazepines",
+      "  Community naloxone distribution to family of OUD patients"
+    ],
+    "references": [
+      {
+        "label": "WHO Community Management of Opioid Overdose 2014",
+        "kind": "guideline"
+      },
+      {
+        "label": "SAMHSA Opioid Overdose Toolkit 2018",
+        "kind": "guideline"
+      },
+      {
+        "label": "WHO Opioid Overdose Fact Sheet 2023",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "procedural-sedation-emergency",
+    "title": "Procedural sedation and analgesia (PSA) — emergency department",
+    "icd10": [
+      "Z51.81"
+    ],
+    "icd11": [
+      "QA01"
+    ],
+    "domains": [
+      "emergency",
+      "anaesthesia",
+      "primary-care",
+      "paediatrics"
+    ],
+    "population": "Patients requiring short painful or anxiety-provoking procedures (fracture reduction, joint relocation, abscess drainage, cardioversion, endoscopy, dental).",
+    "presentation": "Spectrum: minimal sedation (anxiolysis) → moderate (responsive to voice) → deep (responsive only to painful stimuli, may need airway support) → general anaesthesia. Goal: efficient, safe, with rapid recovery.",
+    "redFlags": [
+      "High aspiration risk (recent meal, GI obstruction, pregnancy, opioid)",
+      "Difficult airway predicted (LEMON, MOANS)",
+      "Severe comorbidity (ASA IV, V)",
+      "Inadequate fasting (NPO) for non-emergent procedure",
+      "Inadequate monitoring or backup"
+    ],
+    "diagnostics": [
+      "Pre-sedation assessment: AMPLE, fasting, ASA status, allergies, airway (LEMON), comorbidity",
+      "Consent + agree level of sedation needed",
+      "Monitoring requirements: continuous SpO2 + capnography + ECG + NIBP + observer dedicated to patient"
+    ],
+    "management": [
+      "PRE-PROCEDURE CHECKLIST:",
+      "  Confirm fasting (NPO 2h clear fluids, 4h breast milk, 6h light meal — but in emergency may proceed with full stomach + aspiration precautions)",
+      "  IV access + crash trolley + advanced airway equipment ready",
+      "  Reversal agents (naloxone, flumazenil) drawn up",
+      "  Dedicated observer (cannot be person doing procedure)",
+      "  Pre-oxygenate with nasal O2 throughout",
+      "  Baseline vitals + EWS",
+      "DRUG CHOICES (titrate to effect):",
+      "  Ketamine 1 mg/kg IV slow over 1 min (or 4 mg/kg IM) — analgesia + sedation + dissociation; preserves airway + respiratory drive; ideal for paeds, asthma, hypotensive. Re-dose 0.5 mg/kg q5–10 min. Co-administer ondansetron 4 mg (emergence vomiting).",
+      "  Propofol 0.5–1 mg/kg IV bolus titrated, 20–30 mg q1–3 min for prolonged — rapid onset/offset; care with apnoea + hypotension",
+      "  Ketofol — mix ketamine + propofol 1:1 — smoother, less PONV, less apnoea than propofol alone",
+      "  Midazolam 0.02 mg/kg IV (1–2 mg adult) — anxiolytic; not analgesic; reverse with flumazenil",
+      "  Fentanyl 0.5–1 mcg/kg IV — analgesic; reverse with naloxone",
+      "  Dexmedetomidine 1 mcg/kg IV over 10 min, then 0.2–0.7 mcg/kg/h — sedation without resp depression",
+      "  Nitrous oxide 50:50 with O2 inhaled — analgesia + anxiolysis for minor procedures",
+      "PAEDIATRIC: ketamine + atropine (less secretions); intranasal midazolam / fentanyl for minor pain",
+      "INTRA-PROCEDURE:",
+      "  Continuous monitoring; document vital signs every 5 min",
+      "  ETCO2 (capnography) — most sensitive for apnoea / hypoventilation",
+      "  Stop procedure if airway / breathing / circulatory compromise",
+      "COMPLICATIONS:",
+      "  Hypoxia (SpO2 < 92%) — chin lift, jaw thrust, BVM, decrease sedative",
+      "  Apnoea — BVM until breathing returns; consider reversal",
+      "  Hypotension — fluid bolus; vasopressor if severe",
+      "  Vomiting / aspiration — suction, lateral position, intubate if compromised",
+      "  Emergence reaction (ketamine, in adults — < 5%) — quiet environment, midazolam 1 mg",
+      "RECOVERY:",
+      "  Monitor until pre-sedation level (Modified Aldrete Score ≥ 9)",
+      "  Discharge criteria: stable vitals, ambulating, tolerating PO, no NV, with responsible adult",
+      "  Do NOT drive / sign legal docs / care for child × 24h"
+    ],
+    "references": [
+      {
+        "label": "ACEP Procedural Sedation Clinical Policy 2014/2021",
+        "kind": "guideline"
+      },
+      {
+        "label": "RCEM UK Pharmacological Agents for Procedural Sedation 2021",
+        "kind": "guideline"
+      },
+      {
+        "label": "AAGBI Safe Sedation Practice for Healthcare Procedures 2021",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]
