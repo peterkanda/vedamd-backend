@@ -11408,5 +11408,155 @@
     "rationale": "EULAR 2017/2024 + ACR/BSR + SENSCIS + focuSSced + SLS II + ASTIS/SCOT.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "hiv-art-modern-dtg-bictegravir-2024-r1",
+    "title": "HIV — TREAT-ALL + TLD (TDF/3TC/DTG) + same-day start + simplified monitoring",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hiv-art-modern-dtg-bictegravir-2024"
+    },
+    "indicators": [
+      "confirmed HIV+"
+    ],
+    "recommendation": "TREAT-ALL regardless of CD4. RAPID/same-day start (within 7 days, ideally same day — RAPID/CASCADE trials). FIRST-LINE: TLD (TDF 300 + 3TC 300 + DTG 50 mg once daily). DTG safe in pregnancy + WCBP (Tsepamo + WAVES resolved NTD concern). TB co-treatment: DTG 50 mg BD with rifampicin; ART within 8 weeks (within 2 weeks if CD4 < 50 — SAPiT/CAMELIA/STRIDE). OI prophylaxis: cotrim if CD4 < 200 (PCP/toxo/falciparum); CrAg screen if CD4 < 100 → fluconazole + LP if positive; TB preventive therapy (3HP or 6H) for all HIV+ without active TB. Cervical Pap annually. Vaccinate hep B + pneumococcal + flu + COVID + HPV. SECOND-LINE on failure: DTG + change NRTI backbone (TAF+FTC or AZT+3TC) or PI (boosted darunavir). THIRD-LINE: lenacapavir SC q6mo + cabotegravir/rilpivirine IM monthly. Monitor VL at 6 months then annual; if > 1000 → enhanced adherence × 3 months + repeat. U=U communication. Differentiated service delivery (3-6 month dispensing). Adolescent: Operation Triple Zero. Kenya 95-95-95 by 2030.",
+    "rationale": "WHO 2024 + Kenya NASCOP 2022 + IAS-USA 2024 + DHHS 2024 + Tsepamo + Sunlenca.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "hiv-prep-prevention-modern-r1",
+    "title": "PrEP — oral TDF/FTC daily / cabotegravir LA q2mo / lenacapavir q6mo",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hiv-prep-prevention-modern"
+    },
+    "indicators": [
+      "HIV-negative + substantial HIV risk (AGYW/MSM/TGW/SW/PWID/serodiscordant)"
+    ],
+    "recommendation": "Confirm HIV-negative (4th-gen Ag/Ab + RNA if recent exposure suspected — acute HIV at PrEP initiation risks resistance). Hepatitis B status (TDF treats HBV — sudden withdrawal flare risk). Renal function (TDF). STI + pregnancy screen. ORAL: TDF/FTC (Truvada) once daily — > 95% efficacy with adherence; 2-1-1 on-demand for MSM only (not women — vaginal PK lag). INJECTABLE LA — game-changers: CABOTEGRAVIR-LA q2 monthly IM (HPTN 083/084 — superior to oral in AGYW + MSM); LENACAPAVIR SC q6 monthly (PURPOSE-1/2 2024 — 98-100% efficacy — most effective ever demonstrated, advocate access in SSA). Dapivirine ring monthly (HOPE/DREAM — moderate; option for women). FOLLOW-UP: 1 month + every 3 months (HIV test, STI, renal, adherence; LA — test before each injection). Acute HIV high suspicion: STOP PrEP + RNA + resistance + initiate ART. STOP PrEP: continue 28 d after last potential exposure. PEP within 72h high-risk exposure — TLD × 28 d. AGYW (Kenya DREAMS) integrated SRH + empowerment + safe schools. MSM/TGW/SW peer-led stigma-free clinics. SSPs + OAT for PWID.",
+    "rationale": "WHO 2024 + Kenya NASCOP PrEP Framework + HPTN 083/084 + PURPOSE-1/2 + DREAMS.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "tb-rifampicin-sensitive-modern-r1",
+    "title": "TB DS — HRZE 2 mo / HR 4 mo OR new 4-month rifapentine+MFX; DTG with rifampicin BD",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "tb-rifampicin-sensitive-modern"
+    },
+    "indicators": [
+      "cough > 2 wk + sputum AFB/Xpert MTB/RIF positive"
+    ],
+    "recommendation": "Xpert MTB/RIF Ultra first-line (rapid + RIF resistance). Test ALL for HIV (Kenya algorithm). STANDARD: HRZE 2 mo intensive then HR 4 mo continuation (FDCs). NEW 4-MONTH (WHO 2022 — Study 31): rifapentine + INH + PZA + moxifloxacin × 17 wk for drug-sensitive pulmonary TB ≥ 12 yr ≥ 40 kg. TB MENINGITIS: 12 months + dexamethasone tapering (Thwaites — survival). TB-HIV: ART within 8 wk (within 2 wk if CD4 < 50 — SAPiT); DTG with rifampicin DOSE-DOUBLED to 50 mg BD; cotrim PCP prophylaxis; IRIS supportive — do NOT stop ART. Monitor LFTs monthly (INH+PZA hepatotoxic — hold if AST > 5× ULN); ethambutol visual acuity; pyridoxine 10-25 mg/d with INH (neuropathy prevention). DOT / video DOT / 99DOTS adherence. Sputum smear at 2, 5, 6 months. TPT for HIV+ + close contacts (3HP rifapentine+INH weekly × 12 OR 6H INH × 6 mo). Notify Kenya TIBU + contact tracing. Pregnancy: continue HRZE (avoid streptomycin — ototoxic); vitamin K mother last weeks; breastfeeding compatible.",
+    "rationale": "WHO 2022 + Kenya TB Programme + TBTC Study 31 + Thwaites + SAPiT/STRIDE.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "mdr-tb-bpal-bpalm-modern-r1",
+    "title": "MDR/RR-TB — 6-mo BPaL/BPaLM all-oral (paradigm shift)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "mdr-tb-bpal-bpalm-modern"
+    },
+    "indicators": [
+      "RIF resistance on Xpert / culture / treatment failure"
+    ],
+    "recommendation": "Comprehensive DST (LPA + culture). 6-MONTH ALL-ORAL BPaL (bedaquiline + pretomanid + linezolid) ± moxifloxacin (BPaLM) — WHO 2022 paradigm shift, TB-PRACTECAL/ZeNix/NIX-TB. Eligible: pulmonary RR/MDR ≥ 14 yr, regardless of HIV. Linezolid 600 mg × 26 wk; can extend to 9 mo if needed. CONTRAINDICATIONS: CNS/pericardial TB → longer regimen; pregnancy → avoid pretomanid → use bedaquiline + linezolid + clofazimine + cycloserine longer regimen. EXTENDED REGIMEN (9-20 mo): Group A (ALL — fluoroquinolone + bedaquiline + linezolid) + Group B (clofazimine + cycloserine) + Group C as needed. MONITORING: monthly ECG (QTc — bedaquiline + MFX + clofazimine all prolong QT — careful combined); FBC for linezolid myelosuppression; visual acuity + colour vision (linezolid optic neuritis); peripheral neuropathy (pyridoxine 200-300 mg with cycloserine); mental health (cycloserine — depression/suicide); LFT; thyroid; audiogram if injectable. Children: dispersible bedaquiline/delamanid; specialist input. HIV: concurrent DTG ART; cotrim. Kenya NTLP MDR-TB unit. Notify + intensive contact tracing + infection control + DSD when stable.",
+    "rationale": "WHO 2022/2024 + Kenya NTP MDR-TB + TB-PRACTECAL + NIX-TB + ZeNix.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "syphilis-modern-staging-treatment-r1",
+    "title": "Syphilis — benzathine penicillin by stage; pregnancy desensitise NOT alternative",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "syphilis-modern-staging-treatment"
+    },
+    "indicators": [
+      "positive treponemal + non-treponemal serology / clinical lesion"
+    ],
+    "recommendation": "Treponemal (TPPA) + non-treponemal (RPR — quantitative for monitoring). LP if neuro/eye/ear symptoms OR late latent unknown duration OR HIV+ with RPR ≥ 1:32 OR treatment failure. PRIMARY/SECONDARY/EARLY LATENT (< 1 yr): benzathine penicillin 2.4 MU IM SINGLE DOSE; allergy + non-pregnant — doxycycline 100 BD × 14 d. LATE LATENT/TERTIARY: benzathine PEN 2.4 MU IM WEEKLY × 3 DOSES; allergy non-pregnant — doxycycline 100 BD × 28 d. NEUROSYPHILIS: aqueous penicillin G 18-24 MU/d IV × 10-14 d; allergy — ceftriaxone 2 g IV/d × 10-14 d; LP at 6/12/24 mo. PREGNANCY: BENZATHINE PENICILLIN ONLY — if reported allergy → DESENSITISE + admit, do NOT give alternative (fetal infection only treated by penicillin). Congenital: aqueous benzylpenicillin IV × 10 d. Jarisch-Herxheimer 24h after start (especially 1° + 2°) — paracetamol + fluids; pregnancy preterm risk. FOLLOW-UP RPR at 6/12/24 mo — 4-fold decline = response. Partner notification (90 d 1° / 6 mo 2° / 1 yr early latent). DOXY-PEP for MSM/TGW reduces syphilis 73% (DoxyPEP 2023). HIV+ — more aggressive + closer follow-up. Universal antenatal screening (Kenya Linda Mama) + Triple MTCT elimination.",
+    "rationale": "WHO 2024 + CDC 2024 + Kenya STI Guidelines + BASHH + DoxyPEP NEJM 2023.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "gonorrhoea-ceftriaxone-resistance-2024-r1",
+    "title": "Gonorrhoea — ceftriaxone 500 mg IM single + azithromycin if chlamydia not excluded",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "gonorrhoea-ceftriaxone-resistance-2024"
+    },
+    "indicators": [
+      "positive NAAT / clinical urethritis/cervicitis"
+    ],
+    "recommendation": "NAAT first-line (any exposed site). UNCOMPLICATED ANOGENITAL/PHARYNGEAL: ceftriaxone 500 mg IM single (CDC 2021 ↑ from 250 due to MIC trends). DUAL THERAPY with azithromycin 1 g if chlamydia not excluded; if chlamydia ruled out via NAAT — ceftriaxone monotherapy adequate (CDC 2021). Cefixime 800 mg PO alternative (less effective). True cephalosporin allergy: gentamicin 240 mg IM + azithromycin 2 g. DGI: admit + ceftriaxone 1 g IV daily × 7-14 d + joint drainage if septic arthritis. OPHTHALMIA NEONATORUM: ceftriaxone 25-50 mg/kg IV/IM single + saline irrigation + topical erythromycin; prevent universal eye prophylaxis (1% tetracycline / povidone-iodine at birth). PID: ceftriaxone 500 IM + doxycycline 100 BD × 14 d + metronidazole 500 BD × 14 d (outpatient); IV severe / TOA. Test of cure pharyngeal + rectal at 14 d (high failure). PARTNERS 60 d prior — examine + treat (EPT where legal). XDR-NG emerging — gentamicin + zoliflodacin (new) + ertapenem. Pregnancy: ceftriaxone + azithromycin; AVOID doxy/tetracycline/FQ. Doxy-PEP reduces gonorrhoea (less than chlamydia/syphilis but significant) — separate. Annual STI screen + PrEP candidates q3 mo. Notify Kenya STI surveillance.",
+    "rationale": "WHO 2024 + CDC 2024 + Kenya STI Guidelines + BASHH + Global Action Plan NG AMR.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "chlamydia-pid-modern-r1",
+    "title": "Chlamydia — doxycycline 100 BD × 7 d (LGV × 21 d); PID dual/triple",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "chlamydia-pid-modern"
+    },
+    "indicators": [
+      "NAAT positive / PID criteria"
+    ],
+    "recommendation": "NAAT first-line (any exposed site). UNCOMPLICATED: DOXYCYCLINE 100 mg BD × 7 d (CDC 2021 + WHO 2024 — preferred over azithromycin esp rectal + pharyngeal). Pregnancy: AZITHROMYCIN 1 g single (doxy contraindicated). LGV: doxycycline 100 BD × 21 d + drain bubo. PID outpatient (mild-moderate, no abscess, no pregnancy): ceftriaxone 500 IM + doxycycline 100 BD × 14 d + metronidazole 500 BD × 14 d; follow-up 48-72h; if no improvement → admit. PID inpatient (severe/pregnancy/TOA/fertility concern): IV ceftriaxone 2 g + doxycycline + metronidazole 500 q8h; switch PO when stable; complete 14 d; drain TOA > 4-6 cm. Pain + fluids. IUD usually leave (remove only if no improvement at 48-72h). Abstinence × 7 d + until partner treated. PARTNERS 60 d prior — examine + treat (EPT where legal). Test of cure: 3 wk pregnancy + 4 wk rectal/pharyngeal. RE-SCREEN at 3 months (high re-infection). Universal antenatal screening (Linda Mama). Annual screen sexually active < 25 women + high-risk. Vertical: infant conjunctivitis + pneumonia (azithromycin treat). DOXY-PEP for MSM/TGW reduces chlamydia 70% (DoxyPEP). Reactive arthritis post-chlamydia: NSAID + steroid + rheumatology.",
+    "rationale": "WHO 2024 + CDC 2024 + Kenya STI Guidelines + BASHH + RCOG/IUSTI PID.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "hpv-cervical-cancer-screening-treatment-r1",
+    "title": "HPV — single-dose vaccine 9-14 (WHO 2022) + primary HPV screen 30-49 + screen+treat",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hpv-cervical-cancer-screening-treatment"
+    },
+    "indicators": [
+      "women 30+ / HPV screening contact / abnormal smear / suspected cervical cancer"
+    ],
+    "recommendation": "PRIMARY PREVENTION: HPV vaccine 9-14 — SINGLE DOSE (WHO 2022 paradigm; Kenya MOH catch-up to 14; immunocompromised 3-dose); Gardasil 9 ideal (90% cervical cancer protection). Gender-neutral consider (boys benefit). SCREENING (WHO 2021): primary HPV DNA/mRNA (self-collection acceptable) every 5-10 yr general 30-49 (extended 25-65); HIV+ start age 25 every 3-5 yr (more aggressive); VIA + same-day cryotherapy/thermal ablation in LMIC. KENYA MOH: VIA + HPV q3 yr / annual HIV+. CIN 2-3 (HSIL): excision LLETZ/LEEP / thermal ablation if eligible; adenocarcinoma in situ → cold knife conization. INVASIVE: stage IA1 conization/simple hyst; IA2-IIA radical hyst + LND or chemoradiation; IIB-IVA chemoradiation (cisplatin + EBRT + brachytherapy gold standard); IVB/metastatic: chemo + PEMBROLIZUMAB (Keynote-826 NEJM 2023 — practice-changing). HIV+ cervical cancer is AIDS-defining + more aggressive. Pregnancy: defer treatment to PP unless invasive; if invasive — stage-specific modification. Genital warts: imiquimod / podophyllotoxin / cryotherapy. WHO 90-70-90 by 2030 + Kenya National Strategy 2022-2030.",
+    "rationale": "WHO 2021/2024 + Kenya Strategy + Keynote-826 + WHO 90-70-90.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "hsv-genital-oral-modern-r1",
+    "title": "HSV — acyclovir first / recurrent / suppression; C-section if active at delivery",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hsv-genital-oral-modern"
+    },
+    "indicators": [
+      "genital vesicles/ulcers + PCR positive"
+    ],
+    "recommendation": "PCR lesion swab (most sensitive) + type-specific serology for serodiscordant partners. ALWAYS: HIV + STI screen + syphilis. ACUTE FIRST EPISODE: acyclovir 400 TID × 7-10 d / valacyclovir 1 g BD / famciclovir 250 TID; severe IV acyclovir 5-10 mg/kg q8h. RECURRENT (start in prodrome): acyclovir 800 BD × 5 d OR valacyclovir 500 BD × 3 d OR famciclovir 1 g BD × 1 d. SUPPRESSION (≥ 6 recurrences/y or transmission concern): acyclovir 400 BD / valacyclovir 500-1000 daily / famciclovir 250 BD — reduces outbreaks 70-80% + transmission 50%. HIV+: higher dose suppression (valacyclovir 1 g BD); foscarnet for acyclovir resistance. PREGNANCY: acyclovir SAFE — suppression from 36 wk reduces lesions at delivery + C-section need. C-SECTION if active lesions / prodrome at labour. Neonatal HSV: IV acyclovir 60 mg/kg/d × 14 d (SEM) or × 21 d (CNS/disseminated) + suppression × 6 mo post (CASG). HSV encephalitis: empirical IV acyclovir 10 mg/kg q8h × 14-21 d for any suspected encephalitis. Eczema herpeticum: admit + IV acyclovir + skin care + ?bacterial cover. Counsel: lifelong, asymptomatic shedding, disclosure to partners, condoms reduce 50%, suppression + condoms reduce > 90% transmission, triggers (UV/stress/menses), pregnancy planning.",
+    "rationale": "WHO 2024 + CDC 2024 + BASHH + RCOG + CASG.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "trichomonas-vaginalis-bv-candida-r1",
+    "title": "Vaginal discharge — Amsel/wet mount; metronidazole / fluconazole / treat partner if Trich",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "trichomonas-vaginalis-bv-candida"
+    },
+    "indicators": [
+      "vaginal discharge + odour / pruritus"
+    ],
+    "recommendation": "Wet mount + KOH + pH; NAAT for trichomonas (high sensitivity). HIV + STI screen. TRICHOMONAS: metronidazole 500 BD × 7 d (women — CDC 2021 preferred over 2 g single) or 2 g single (men); tinidazole alternative; AVOID alcohol; TREAT PARTNER (STI) + abstinence 7 d + re-test 3 mo. BV: metronidazole 500 BD × 7 d (or 0.75% gel intravaginal × 5 d / clindamycin); recurrent — gel 2×/wk × 4-6 mo + probiotic; not primarily STI; partner treatment generally not (lesbian women may benefit); pregnancy — metronidazole reduces preterm + PROM. CANDIDA uncomplicated: topical clotrimazole or fluconazole 150 mg single; recurrent (≥ 4/y) — fluconazole 150 mg q72h × 3 then weekly × 6 mo; non-albicans (glabrata/krusei) — boric acid 600 mg intravaginal × 14 d (fluconazole resistance); pregnancy — TOPICAL only (oral fluconazole 1st trim teratogenic); investigate cause (DM, antibiotic, immunosuppression). SYNDROMIC Kenya: vaginal discharge — ceftriaxone + doxycycline/azithromycin + metronidazole + fluconazole covers gonorrhoea + chlamydia + trich + BV + candida. Refractory: re-examine + culture + rule out atrophic / lichen / malignancy / foreign body. Pediatric vaginitis — consider abuse.",
+    "rationale": "WHO 2024 + CDC 2024 + Kenya Syndromic + BASHH + FDA fluconazole pregnancy.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
