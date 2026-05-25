@@ -1,7 +1,10 @@
 import { Inject, Injectable, Optional } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { KnowledgeRetrieverService } from './knowledge-retriever.service';
 import { ProviderRouter } from './providers/provider-router';
 import { CdsService } from '../cds/cds.service';
+import { CacheService } from '../../common/cache';
+import type { AppConfig } from '../../config/configuration';
 import { PHI_FREE_LOGGER, type PhiFreeLogger } from '../../common/phi-free-logger';
 import { PoliciesService } from '../policies/policies.service';
 import type { PolicyMatch } from '../policies/policies.types';
@@ -38,6 +41,8 @@ export class AgenticService {
     private readonly retriever: KnowledgeRetrieverService,
     private readonly router: ProviderRouter,
     private readonly cds: CdsService,
+    private readonly cache: CacheService,
+    private readonly config: ConfigService<AppConfig, true>,
     @Inject(PHI_FREE_LOGGER) private readonly log: PhiFreeLogger,
     @Optional() private readonly policies?: PoliciesService,
   ) {}
@@ -218,6 +223,24 @@ export class AgenticService {
     cards: CdsCard[];
     strategies: string[];
   }> {
+    const cacheKey = {
+      patient: ctx.patient,
+      medications: normalisedSorted(ctx.medications),
+      diagnoses: normalisedSorted(ctx.diagnoses),
+      allergies: normalisedSorted(ctx.allergies),
+      labs: ctx.labs,
+      signals: ctx.signals,
+    };
+    const ttl = this.config.get('redis.cdsEvaluateTtlSeconds', { infer: true });
+    return this.cache.memoize('cds:deterministic', cacheKey, ttl, () =>
+      this.runDeterministicUncached(ctx),
+    );
+  }
+
+  private async runDeterministicUncached(ctx: AgenticClinicalContext): Promise<{
+    cards: CdsCard[];
+    strategies: string[];
+  }> {
     const context: Record<string, unknown> = {
       ...(ctx.signals ?? {}),
     };
@@ -281,6 +304,11 @@ function mergeCards(deterministic: CdsCard[], agentic: CdsCard[]): CdsCard[] {
   }
   out.sort((a, b) => (INDICATOR_RANK[a.indicator] ?? 3) - (INDICATOR_RANK[b.indicator] ?? 3));
   return out;
+}
+
+function normalisedSorted(arr: string[] | undefined): string[] | undefined {
+  if (!arr || arr.length === 0) return undefined;
+  return [...arr].map((s) => s.trim().toLowerCase()).sort();
 }
 
 function summaryOverlap(a: string, b: string): number {

@@ -253,11 +253,25 @@
     },
     "/api/v1/developer/api-keys": {
       "get": {
+        "description": "Lists every key owned by the calling integrator. Secrets are never returned — only fingerprints + metadata.",
         "operationId": "ApiKeysController_list",
         "parameters": [],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ApiKeyRecordDto"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid operator JWT."
           }
         },
         "security": [
@@ -265,13 +279,13 @@
             "bearer": []
           }
         ],
-        "summary": "List API keys for the calling integrator (fingerprints only)",
+        "summary": "List API keys",
         "tags": [
           "developer"
         ]
       },
       "post": {
-        "description": "FR-313 — secret returned once at creation; only fingerprints displayed thereafter.",
+        "description": "Issues a new bearer secret. The `secret` field is returned EXACTLY ONCE; the server only stores its HMAC fingerprint. Use the secret as `Authorization: Bearer <secret>` on subsequent calls (FR-313).",
         "operationId": "ApiKeysController_create",
         "parameters": [],
         "requestBody": {
@@ -286,7 +300,17 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCreatedOnceDto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid operator JWT."
           }
         },
         "security": [
@@ -300,8 +324,52 @@
         ]
       }
     },
+    "/api/v1/developer/api-keys/{id}/rotate": {
+      "post": {
+        "description": "Atomically revokes the old key and issues a new secret with the same name, scopes, and environment. Returns both the revoked metadata and the newly created key (secret shown once).",
+        "operationId": "ApiKeysController_rotate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RotateResponseDto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid operator JWT."
+          },
+          "404": {
+            "description": "Unknown key id, foreign integrator, or already revoked."
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Rotate an API key",
+        "tags": [
+          "developer"
+        ]
+      }
+    },
     "/api/v1/developer/api-keys/{id}": {
       "delete": {
+        "description": "Immediately revokes the key. Any in-flight request with the old secret will be rejected on its next call.",
         "operationId": "ApiKeysController_revoke",
         "parameters": [
           {
@@ -315,7 +383,20 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyRecordDto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid operator JWT."
+          },
+          "404": {
+            "description": "Unknown key id or foreign integrator."
           }
         },
         "security": [
@@ -491,8 +572,30 @@
         ]
       }
     },
+    "/api/v1/terminology/systems": {
+      "get": {
+        "description": "Catalogue of every code system in the active content bundle: URI, short id, publisher, license, and concept count.",
+        "operationId": "TerminologyController_systems",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List loaded code systems (FR-040, FR-041)",
+        "tags": [
+          "terminology"
+        ]
+      }
+    },
     "/api/v1/terminology/lookup": {
       "get": {
+        "description": "Both system URI (e.g. http://loinc.org) and short id (e.g. loinc) are accepted. Returns 404 if the code is not present in the bundle.",
         "operationId": "TerminologyController_lookup",
         "parameters": [
           {
@@ -517,17 +620,39 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "FHIR $lookup — resolve display + metadata for a (system, code) pair (FR-042)",
         "tags": [
           "terminology"
         ]
       }
     },
-    "/api/v1/terminology/search": {
+    "/api/v1/terminology/validate-code": {
       "get": {
-        "operationId": "TerminologyController_search",
+        "operationId": "TerminologyController_validate",
         "parameters": [
           {
-            "name": "q",
+            "name": "system",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "display",
             "required": true,
             "in": "query",
             "schema": {
@@ -540,6 +665,87 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "FHIR $validate-code — assert (system, code) is valid; optional display check (FR-042)",
+        "tags": [
+          "terminology"
+        ]
+      }
+    },
+    "/api/v1/terminology/search": {
+      "get": {
+        "description": "Ranks matches across the loaded code systems. Optional `systemId` restricts to one (icd-10, loinc, atc, aware).",
+        "operationId": "TerminologyController_search",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "systemId",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Free-text concept search (FR-044)",
+        "tags": [
+          "terminology"
+        ]
+      }
+    },
+    "/api/v1/terminology/value-sets/{id}/$expand": {
+      "get": {
+        "operationId": "TerminologyController_expand",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "FHIR $expand — enumerate the concepts of a value set (FR-042)",
         "tags": [
           "terminology"
         ]
@@ -681,6 +887,686 @@
         ]
       }
     },
+    "/api/v1/policies": {
+      "get": {
+        "description": "Returns summaries (no full body). Each policy is a clinical SOP or external standard (JCI, ISO, WHO, NICE, company). Policies are integrator-scoped and used by the agentic engine to align recommendations.",
+        "operationId": "PoliciesController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List uploaded policies / standards for the current integrator",
+        "tags": [
+          "policies"
+        ]
+      },
+      "post": {
+        "description": "Accepts either an array of structured `sections` ({title?, body}) or a single `text` body. Source identifies the standard family (JCI, ISO, WHO, NICE, company, other). The body must contain ONLY the integrator's own policy text — never patient identifiers or clinical data.",
+        "operationId": "PoliciesController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Upload a policy / standard (JSON body)",
+        "tags": [
+          "policies"
+        ]
+      }
+    },
+    "/api/v1/policies/{id}": {
+      "get": {
+        "operationId": "PoliciesController_get",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a single policy with its sections",
+        "tags": [
+          "policies"
+        ]
+      },
+      "delete": {
+        "operationId": "PoliciesController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Delete a policy by id",
+        "tags": [
+          "policies"
+        ]
+      }
+    },
+    "/api/v1/clinical-scores": {
+      "get": {
+        "description": "Open catalogue of validated scores (CHA2DS2-VASc, Wells, NEWS2, GCS, CURB-65, etc.). Filters: domain, q (free text over slug/title/abbreviation). Returns summaries; fetch full definition by slug.",
+        "operationId": "ClinicalScoresController_list",
+        "parameters": [
+          {
+            "name": "domain",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List clinical scoring tools",
+        "tags": [
+          "clinical-scores"
+        ]
+      }
+    },
+    "/api/v1/clinical-scores/{slug}": {
+      "get": {
+        "description": "Returns purpose, scored items with points, scoring method, interpretation bands with suggested actions, and citations. Reference content only — no patient identity is processed.",
+        "operationId": "ClinicalScoresController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a clinical score definition by slug",
+        "tags": [
+          "clinical-scores"
+        ]
+      }
+    },
+    "/api/v1/pharmacogenomics": {
+      "get": {
+        "description": "Open CPIC-style catalogue (HLA-B*57:01-abacavir, TPMT/NUDT15-thiopurines, CYP2C19-clopidogrel, DPYD-fluoropyrimidines, G6PD-oxidants, etc.). Filters: gene, drug, q. Returns summaries; fetch full phenotype guidance by slug.",
+        "operationId": "PharmacogenomicsController_list",
+        "parameters": [
+          {
+            "name": "gene",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "drug",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List pharmacogenomic gene-drug guidance",
+        "tags": [
+          "pharmacogenomics"
+        ]
+      }
+    },
+    "/api/v1/pharmacogenomics/{slug}": {
+      "get": {
+        "description": "Returns the keyed variant, clinical summary, phenotype-based implications and recommendations (with strength), testing guidance and citations. Reference content only — no patient genotype or identity is processed.",
+        "operationId": "PharmacogenomicsController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a gene-drug pharmacogenomic guideline by slug",
+        "tags": [
+          "pharmacogenomics"
+        ]
+      }
+    },
+    "/api/v1/drug-disease": {
+      "get": {
+        "description": "Open catalogue of condition-based contraindications and cautions (e.g. NSAID in CKD, metformin in AKI, beta-blocker in asthma). Filters: drug (slug or name), condition (slug or name), severity (contraindicated|caution), q. Returns summaries; fetch full guidance by slug.",
+        "operationId": "DrugDiseaseController_list",
+        "parameters": [
+          {
+            "name": "drug",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "condition",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "severity",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List drug-disease / drug-condition interactions",
+        "tags": [
+          "drug-disease"
+        ]
+      }
+    },
+    "/api/v1/drug-disease/{slug}": {
+      "get": {
+        "description": "Returns the drug/class, condition, severity, mechanism, recommendation and citations. Reference content only — no patient identity is processed.",
+        "operationId": "DrugDiseaseController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a drug-disease interaction by slug",
+        "tags": [
+          "drug-disease"
+        ]
+      }
+    },
+    "/api/v1/immunization-schedule": {
+      "get": {
+        "description": "Open routine immunization schedule (BCG, HepB, pentavalent, OPV/IPV, PCV, rotavirus, measles/MR, HPV, Td, yellow fever, MenA, etc.). Filters: disease, q. Returns summaries; fetch full dose schedule by slug.",
+        "operationId": "ImmunizationController_list",
+        "parameters": [
+          {
+            "name": "disease",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List WHO EPI immunization schedule entries",
+        "tags": [
+          "immunization"
+        ]
+      }
+    },
+    "/api/v1/immunization-schedule/{slug}": {
+      "get": {
+        "description": "Returns target diseases, dose timings and routes, target population, catch-up guidance, notes and citations. Reference content only — no patient identity is processed.",
+        "operationId": "ImmunizationController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get an immunization schedule entry by slug",
+        "tags": [
+          "immunization"
+        ]
+      }
+    },
+    "/api/v1/allergy-cross-reactivity": {
+      "get": {
+        "description": "Open catalogue of drug allergy cross-reactivity, including common myths to dispel (e.g. penicillin-cephalosporin, sulfonamide antibiotic vs diuretics, contrast vs shellfish). Filters: drug (slug or name), risk (high|moderate|low|negligible), q. Returns summaries; fetch full guidance by slug.",
+        "operationId": "AllergyController_list",
+        "parameters": [
+          {
+            "name": "drug",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "risk",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List drug allergy cross-reactivity entries",
+        "tags": [
+          "allergy-cross-reactivity"
+        ]
+      }
+    },
+    "/api/v1/allergy-cross-reactivity/{slug}": {
+      "get": {
+        "description": "Returns the allergen, what it does (or does not) cross-react with, the risk level, mechanism, recommendation, related drug slugs and citations. Reference content only — no patient identity is processed.",
+        "operationId": "AllergyController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get an allergy cross-reactivity entry by slug",
+        "tags": [
+          "allergy-cross-reactivity"
+        ]
+      }
+    },
+    "/api/v1/notifiable-diseases": {
+      "get": {
+        "description": "Open reference of WHO IHR and commonly nationally-notifiable diseases with reporting urgency. Filters: level (ihr-always|ihr-assess|national-immediate|national-routine), q. National statutory lists vary — this is guidance, not the local legal list. Returns summaries; fetch detail by slug.",
+        "operationId": "NotifiableController_list",
+        "parameters": [
+          {
+            "name": "level",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List notifiable diseases (public-health reporting reference)",
+        "tags": [
+          "notifiable-diseases"
+        ]
+      }
+    },
+    "/api/v1/notifiable-diseases/{slug}": {
+      "get": {
+        "description": "Returns the disease, notification level, reporting timeframe, linked condition slug, notes and citations. Reference content only — no patient identity is processed.",
+        "operationId": "NotifiableController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a notifiable-disease entry by slug",
+        "tags": [
+          "notifiable-diseases"
+        ]
+      }
+    },
+    "/api/v1/reference-ranges": {
+      "get": {
+        "description": "Open catalogue of typical adult reference intervals (UCUM units) for labs and vital signs. Filters: category (electrolytes, renal, liver, haematology, vital-signs, etc.), q. Local laboratory/method-specific ranges always take precedence. Returns summaries; fetch full range by slug.",
+        "operationId": "ReferenceRangesController_list",
+        "parameters": [
+          {
+            "name": "category",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List laboratory and vital-sign reference ranges",
+        "tags": [
+          "reference-ranges"
+        ]
+      }
+    },
+    "/api/v1/reference-ranges/{slug}": {
+      "get": {
+        "description": "Returns the analyte, specimen, low/high bounds, UCUM unit, sex applicability, notes and source caveat. Reference content only — no patient identity or result is processed.",
+        "operationId": "ReferenceRangesController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a reference range by slug",
+        "tags": [
+          "reference-ranges"
+        ]
+      }
+    },
+    "/api/v1/antidotes": {
+      "get": {
+        "description": "Open antidote reference (paracetamol->NAC, opioid->naloxone, organophosphate->atropine/pralidoxime, iron->desferrioxamine, digoxin->Fab, methanol->fomepizole, beta-blocker->glucagon, CCB->calcium, LAST->lipid emulsion, cyanide->hydroxocobalamin, etc.). Filters: poison, antidote (name or drug slug), q. Returns summaries; fetch mechanism and dosing by slug.",
+        "operationId": "AntidotesController_list",
+        "parameters": [
+          {
+            "name": "poison",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "antidote",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List toxicology antidotes (poison -> antidote)",
+        "tags": [
+          "antidotes"
+        ]
+      }
+    },
+    "/api/v1/antidotes/{slug}": {
+      "get": {
+        "description": "Returns the poison, antidote (with drug slug), mechanism, dosing guidance, linked poisoning condition and citations. Reference content only — no patient identity is processed.",
+        "operationId": "AntidotesController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get an antidote entry by slug",
+        "tags": [
+          "antidotes"
+        ]
+      }
+    },
     "/api/v1/bundles": {
       "get": {
         "description": "FR-147 — filter by domain, locale, country applicability.",
@@ -783,6 +1669,381 @@
           "integration-log"
         ]
       }
+    },
+    "/api/v1/agentic/capabilities": {
+      "get": {
+        "operationId": "AgenticController_capabilities",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Agentic engine capabilities — LLM provider + SQL connector availability",
+        "tags": [
+          "agentic"
+        ]
+      }
+    },
+    "/api/v1/agentic/presets": {
+      "get": {
+        "operationId": "AgenticController_presets",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "EHR/HMIS schema-mapper presets (OpenMRS, Bahmni, openEMR, DHIS2 Tracker, FHIR-SQL) — clone + adapt to your local schema, then register as a named query.",
+        "tags": [
+          "agentic"
+        ]
+      }
+    },
+    "/api/v1/agentic/evaluate": {
+      "post": {
+        "operationId": "AgenticController_evaluate",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenticEvaluateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Agentic CDS evaluation from a structured JSON clinical context",
+        "tags": [
+          "agentic"
+        ]
+      }
+    },
+    "/api/v1/agentic/evaluate-batch": {
+      "post": {
+        "operationId": "AgenticController_evaluateBatch",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenticBatchDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Population / retrospective safety sweep — evaluate up to 100 anonymous contexts; returns per-item results + a critical/warning/info roll-up to triage the most dangerous patients first.",
+        "tags": [
+          "agentic"
+        ]
+      }
+    },
+    "/api/v1/agentic/evaluate-fhir": {
+      "post": {
+        "operationId": "AgenticController_evaluateFhir",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenticFhirEvaluateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Agentic CDS evaluation from a FHIR R4 Bundle or resource",
+        "tags": [
+          "agentic"
+        ]
+      }
+    },
+    "/api/v1/agentic/evaluate-sql": {
+      "post": {
+        "operationId": "AgenticController_evaluateSql",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenticSqlEvaluateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Agentic CDS evaluation pulling patient data from a configured EHR database",
+        "tags": [
+          "agentic"
+        ]
+      }
+    },
+    "/api/v1/reference/summary": {
+      "get": {
+        "operationId": "ReferenceController_summary",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Reference home — content counts + chat availability",
+        "tags": [
+          "reference"
+        ]
+      }
+    },
+    "/api/v1/reference/index": {
+      "get": {
+        "operationId": "ReferenceController_index",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "A–Z index across drugs, conditions + procedures (optionally filter by kind)",
+        "tags": [
+          "reference"
+        ]
+      }
+    },
+    "/api/v1/reference/groups/{kind}/{dimension}": {
+      "get": {
+        "operationId": "ReferenceController_groups",
+        "parameters": [
+          {
+            "name": "dimension",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Grouped browse. drug: class|aware|keml. condition/procedure: specialty|domain (by clinical domain tags).",
+        "tags": [
+          "reference"
+        ]
+      }
+    },
+    "/api/v1/reference/search": {
+      "get": {
+        "operationId": "ReferenceController_search",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Free-text reference search across titles, slugs, classes + tags",
+        "tags": [
+          "reference"
+        ]
+      }
+    },
+    "/api/v1/reference/diagram/condition/{slug}": {
+      "get": {
+        "operationId": "ReferenceController_conditionDiagram",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Mermaid management flowchart for a condition (deterministic, from signed content)",
+        "tags": [
+          "reference"
+        ]
+      }
+    },
+    "/api/v1/reference/diagram/procedure/{slug}": {
+      "get": {
+        "operationId": "ReferenceController_procedureDiagram",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Mermaid step flowchart for a procedure (safety-check gates highlighted)",
+        "tags": [
+          "reference"
+        ]
+      }
+    },
+    "/api/v1/reference/diagram/interactions": {
+      "post": {
+        "operationId": "ReferenceController_interactionNetwork",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InteractionNetworkDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Drug-interaction NETWORK for a medication list (polypharmacy review) — Mermaid graph with severity-coded edges + a structured interaction list.",
+        "tags": [
+          "reference"
+        ]
+      }
+    },
+    "/api/v1/reference/diagram/drug-interactions/{slug}": {
+      "get": {
+        "operationId": "ReferenceController_drugInteractionMap",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Single-drug interaction map — the drug + all its interaction partners, severity-coded",
+        "tags": [
+          "reference"
+        ]
+      }
+    },
+    "/api/v1/reference/dose": {
+      "post": {
+        "operationId": "ReferenceController_doseCalc",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DoseCalcDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Dose calculator — weight/age/renal-based, computed from the signed bundle. Refuses + cites when inputs missing or renally contraindicated.",
+        "tags": [
+          "reference"
+        ]
+      }
+    },
+    "/api/v1/reference/chat": {
+      "post": {
+        "operationId": "ReferenceController_referenceChat",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReferenceChatDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "summary": "Guarded clinician reference chat — answers ONLY from VedaMD references, cites every claim, refuses anything not covered or non-medical. No patient data; PHI-free.",
+        "tags": [
+          "reference"
+        ]
+      }
     }
   },
   "info": {
@@ -802,15 +2063,557 @@
       }
     },
     "schemas": {
+      "ApiKeyRecordDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "a1b2c3d4e5f60718"
+          },
+          "integratorId": {
+            "type": "string",
+            "example": "integrator_acme"
+          },
+          "name": {
+            "type": "string",
+            "example": "EMR production — Nairobi cluster"
+          },
+          "fingerprint": {
+            "type": "string",
+            "description": "HMAC-SHA-256 fingerprint of the secret. Used for safe display.",
+            "example": "7e3d…"
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "cds:evaluate",
+                "cds:discover",
+                "content:read",
+                "drug-info:read",
+                "terminology:read",
+                "bundles:read",
+                "integration-log:read"
+              ]
+            }
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "sandbox",
+              "production"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "example": "2026-05-25T10:00:00.000Z"
+          },
+          "lastUsedAt": {
+            "type": "string",
+            "example": "2026-05-25T11:42:00.000Z"
+          },
+          "revokedAt": {
+            "type": "string",
+            "example": "2026-05-25T12:00:00.000Z"
+          }
+        },
+        "required": [
+          "id",
+          "integratorId",
+          "name",
+          "fingerprint",
+          "scopes",
+          "environment",
+          "createdAt"
+        ]
+      },
       "CreateApiKeyDto": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Human-readable label for this key — shown in the dashboard.",
+            "example": "EMR production — Nairobi cluster",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "scopes": {
+            "type": "array",
+            "description": "Capability scopes granted to this key. Must contain at least one.",
+            "example": [
+              "cds:evaluate",
+              "content:read"
+            ],
+            "items": {
+              "type": "string",
+              "enum": [
+                "cds:evaluate",
+                "cds:discover",
+                "content:read",
+                "drug-info:read",
+                "terminology:read",
+                "bundles:read",
+                "integration-log:read"
+              ]
+            }
+          },
+          "environment": {
+            "type": "string",
+            "description": "Which environment this key applies to. Sandbox keys are isolated from prod.",
+            "enum": [
+              "sandbox",
+              "production"
+            ],
+            "example": "sandbox"
+          }
+        },
+        "required": [
+          "name",
+          "scopes",
+          "environment"
+        ]
+      },
+      "ApiKeyCreatedOnceDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "a1b2c3d4e5f60718"
+          },
+          "integratorId": {
+            "type": "string",
+            "example": "integrator_acme"
+          },
+          "name": {
+            "type": "string",
+            "example": "EMR production — Nairobi cluster"
+          },
+          "fingerprint": {
+            "type": "string",
+            "description": "HMAC-SHA-256 fingerprint of the secret. Used for safe display.",
+            "example": "7e3d…"
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "cds:evaluate",
+                "cds:discover",
+                "content:read",
+                "drug-info:read",
+                "terminology:read",
+                "bundles:read",
+                "integration-log:read"
+              ]
+            }
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "sandbox",
+              "production"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "example": "2026-05-25T10:00:00.000Z"
+          },
+          "lastUsedAt": {
+            "type": "string",
+            "example": "2026-05-25T11:42:00.000Z"
+          },
+          "revokedAt": {
+            "type": "string",
+            "example": "2026-05-25T12:00:00.000Z"
+          },
+          "secret": {
+            "type": "string",
+            "description": "The raw bearer secret. Shown EXACTLY ONCE — copy it now. Use it as `Authorization: Bearer <secret>`.",
+            "example": "vmd_test_8c0w7Z…"
+          }
+        },
+        "required": [
+          "id",
+          "integratorId",
+          "name",
+          "fingerprint",
+          "scopes",
+          "environment",
+          "createdAt",
+          "secret"
+        ]
+      },
+      "RotateResponseDto": {
+        "type": "object",
+        "properties": {
+          "revoked": {
+            "$ref": "#/components/schemas/ApiKeyRecordDto"
+          },
+          "created": {
+            "$ref": "#/components/schemas/ApiKeyCreatedOnceDto"
+          }
+        },
+        "required": [
+          "revoked",
+          "created"
+        ]
       },
       "InteractionsRequestDto": {
         "type": "object",
         "properties": {}
       },
       "DosingRequestDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "PatientDto": {
+        "type": "object",
+        "properties": {
+          "ageYears": {
+            "type": "number",
+            "description": "Age in years.",
+            "example": 42
+          },
+          "ageMonths": {
+            "type": "number",
+            "description": "Age in months (paediatric).",
+            "example": 6
+          },
+          "weightKg": {
+            "type": "number",
+            "description": "Weight in kilograms.",
+            "example": 70
+          },
+          "sex": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female",
+              "other"
+            ]
+          },
+          "pregnant": {
+            "type": "boolean",
+            "description": "Pregnancy flag."
+          },
+          "gestationWeeks": {
+            "type": "number",
+            "description": "Gestation in completed weeks.",
+            "example": 28
+          },
+          "eGFR": {
+            "type": "number",
+            "description": "Estimated GFR (mL/min/1.73m²).",
+            "example": 75
+          },
+          "creatinineUmolL": {
+            "type": "number",
+            "description": "Serum creatinine in µmol/L.",
+            "example": 88
+          }
+        }
+      },
+      "LabDto": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "LOINC code if known.",
+            "example": "2160-0"
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable name.",
+            "example": "Creatinine"
+          },
+          "value": {
+            "type": "object",
+            "description": "Numeric or string lab value.",
+            "example": 88
+          },
+          "unit": {
+            "type": "string",
+            "description": "Unit (UCUM preferred).",
+            "example": "umol/L"
+          },
+          "date": {
+            "type": "string",
+            "description": "ISO date of the result.",
+            "example": "2026-05-20"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      },
+      "AgenticEvaluateDto": {
+        "type": "object",
+        "properties": {
+          "hook": {
+            "type": "string",
+            "description": "CDS Hook to evaluate against (e.g. medication-prescribe, patient-view).",
+            "example": "medication-prescribe"
+          },
+          "question": {
+            "type": "string",
+            "description": "Free-text clinical question for the agentic reasoner.",
+            "example": "Is metformin safe to start in this patient?"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "deterministic",
+              "agentic",
+              "auto"
+            ],
+            "description": "Pipeline mode. `deterministic` skips LLM; `agentic` requires an LLM provider; `auto` runs LLM if configured, else degrades to deterministic.",
+            "default": "auto"
+          },
+          "minConfidence": {
+            "type": "number",
+            "description": "Drop agentic cards with confidence below this threshold (0..1).",
+            "example": 0.6
+          },
+          "patient": {
+            "$ref": "#/components/schemas/PatientDto"
+          },
+          "medications": {
+            "description": "Active medications by free-text name, RxNorm/ATC code, or VedaMD slug. Fuzzy-matched.",
+            "example": [
+              "metformin 500 mg PO BD",
+              "lisinopril 10 mg"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "diagnoses": {
+            "description": "Active diagnoses by name, ICD-10/11, or slug.",
+            "example": [
+              "type 2 diabetes",
+              "hypertension"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "allergies": {
+            "description": "Known allergies.",
+            "example": [
+              "penicillin"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "labs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LabDto"
+            }
+          },
+          "signals": {
+            "type": "object",
+            "description": "Free-form additional signals (vitals, observations) passed straight through.",
+            "example": {
+              "systolicBP": 152,
+              "heartRate": 88
+            }
+          }
+        }
+      },
+      "AgenticBatchItemDto": {
+        "type": "object",
+        "properties": {
+          "hook": {
+            "type": "string",
+            "description": "CDS Hook to evaluate against (e.g. medication-prescribe, patient-view).",
+            "example": "medication-prescribe"
+          },
+          "question": {
+            "type": "string",
+            "description": "Free-text clinical question for the agentic reasoner.",
+            "example": "Is metformin safe to start in this patient?"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "deterministic",
+              "agentic",
+              "auto"
+            ],
+            "description": "Pipeline mode. `deterministic` skips LLM; `agentic` requires an LLM provider; `auto` runs LLM if configured, else degrades to deterministic.",
+            "default": "auto"
+          },
+          "minConfidence": {
+            "type": "number",
+            "description": "Drop agentic cards with confidence below this threshold (0..1).",
+            "example": 0.6
+          },
+          "patient": {
+            "$ref": "#/components/schemas/PatientDto"
+          },
+          "medications": {
+            "description": "Active medications by free-text name, RxNorm/ATC code, or VedaMD slug. Fuzzy-matched.",
+            "example": [
+              "metformin 500 mg PO BD",
+              "lisinopril 10 mg"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "diagnoses": {
+            "description": "Active diagnoses by name, ICD-10/11, or slug.",
+            "example": [
+              "type 2 diabetes",
+              "hypertension"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "allergies": {
+            "description": "Known allergies.",
+            "example": [
+              "penicillin"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "labs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LabDto"
+            }
+          },
+          "signals": {
+            "type": "object",
+            "description": "Free-form additional signals (vitals, observations) passed straight through.",
+            "example": {
+              "systolicBP": 152,
+              "heartRate": 88
+            }
+          },
+          "id": {
+            "type": "string",
+            "description": "Caller-supplied opaque id to correlate the result (e.g. encounter id). Never logged.",
+            "example": "enc_42"
+          }
+        }
+      },
+      "AgenticBatchDto": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "description": "Up to 100 anonymous clinical contexts. Each is evaluated independently.",
+            "minItems": 1,
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgenticBatchItemDto"
+            }
+          }
+        },
+        "required": [
+          "items"
+        ]
+      },
+      "AgenticFhirEvaluateDto": {
+        "type": "object",
+        "properties": {
+          "resource": {
+            "type": "object",
+            "description": "FHIR R4 Bundle or single resource (Patient, MedicationRequest, Observation, Condition). Parsed by the FHIR adapter."
+          },
+          "hook": {
+            "type": "string",
+            "example": "medication-prescribe"
+          },
+          "question": {
+            "type": "string",
+            "example": "Is this safe for this patient?"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "deterministic",
+              "agentic",
+              "auto"
+            ]
+          },
+          "minConfidence": {
+            "type": "number",
+            "example": 0.6
+          }
+        },
+        "required": [
+          "resource"
+        ]
+      },
+      "AgenticSqlEvaluateDto": {
+        "type": "object",
+        "properties": {
+          "connectionId": {
+            "type": "string",
+            "description": "Server-side configured connection id (never a raw connection string from the client).",
+            "example": "openmrs-prod"
+          },
+          "queryId": {
+            "type": "string",
+            "description": "Server-side named query template id (prevents arbitrary SQL injection).",
+            "example": "patient-encounter-snapshot"
+          },
+          "params": {
+            "type": "object",
+            "description": "Bound parameters for the named query.",
+            "example": {
+              "encounterId": "enc_42"
+            }
+          },
+          "hook": {
+            "type": "string",
+            "example": "patient-view"
+          },
+          "question": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "deterministic",
+              "agentic",
+              "auto"
+            ]
+          },
+          "minConfidence": {
+            "type": "number",
+            "example": 0.6
+          }
+        },
+        "required": [
+          "connectionId",
+          "queryId"
+        ]
+      },
+      "InteractionNetworkDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "DoseCalcDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "ReferenceChatDto": {
         "type": "object",
         "properties": {}
       }

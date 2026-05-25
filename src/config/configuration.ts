@@ -73,6 +73,23 @@ export interface AppConfig {
     anthropicApiKey: string;
     openaiApiKey: string;
   };
+  redis: {
+    /**
+     * Optional Redis connection string for shared cache + rate-limit
+     * coordination. Absent in dev / unit tests; an in-process LRU is
+     * used instead. The cache only carries derived, recomputable
+     * server artefacts — never PHI.
+     */
+    url: string;
+    /** Default TTL for deterministic CDS evaluation results, in seconds. */
+    cdsEvaluateTtlSeconds: number;
+  };
+  http: {
+    /** Maximum request body size in bytes. Default 1 MB. */
+    bodyLimitBytes: number;
+    /** Disable Swagger UI in production unless explicitly enabled. */
+    exposeDocs: boolean;
+  };
 }
 
 const STATELESS_EXTENSION_URL = 'http://vedamd.io/CapabilityStatement/stateless';
@@ -153,5 +170,16 @@ export const configuration = (): AppConfig => ({
   llm: {
     anthropicApiKey: process.env.ANTHROPIC_API_KEY ?? '',
     openaiApiKey: process.env.OPENAI_API_KEY ?? '',
+  },
+  redis: {
+    url: process.env.REDIS_URL ?? '',
+    cdsEvaluateTtlSeconds: Number(process.env.REDIS_CDS_TTL_SECONDS ?? 60),
+  },
+  http: {
+    bodyLimitBytes: Number(process.env.HTTP_BODY_LIMIT_BYTES ?? 1_048_576),
+    exposeDocs:
+      process.env.HTTP_EXPOSE_DOCS !== undefined
+        ? process.env.HTTP_EXPOSE_DOCS === 'true'
+        : process.env.NODE_ENV !== 'production',
   },
 });

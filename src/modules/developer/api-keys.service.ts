@@ -112,6 +112,44 @@ export class ApiKeysService {
     return { ...record, secret };
   }
 
+  /**
+   * Atomic rotation: revoke the old key and issue a new secret for the
+   * same logical key (preserves name + scopes + environment). Returns
+   * the new key (secret shown once) plus the revoked old record. If the
+   * old key id doesn't belong to this integrator, returns null.
+   */
+  async rotate(
+    integratorId: string,
+    id: string,
+  ): Promise<{ revoked: ApiKeyRecord; created: ApiKeyCreatedOnce } | null> {
+    const existing = await this.findById(integratorId, id);
+    if (!existing) return null;
+    if (existing.revokedAt) return null;
+
+    const revoked = await this.revoke(integratorId, id);
+    if (!revoked) return null;
+    const created = await this.create({
+      integratorId,
+      name: existing.name,
+      scopes: existing.scopes,
+      environment: existing.environment,
+    });
+    return { revoked, created };
+  }
+
+  private async findById(integratorId: string, id: string): Promise<ApiKeyRecord | null> {
+    if (this.db) {
+      const rows = await this.db
+        .select()
+        .from(apiKeys)
+        .where(and(eq(apiKeys.id, id), eq(apiKeys.integratorId, integratorId)))
+        .limit(1);
+      return rows[0] ? rowToRecord(rows[0]) : null;
+    }
+    const k = this.memoryById.get(id);
+    return k && k.integratorId === integratorId ? k : null;
+  }
+
   async revoke(integratorId: string, id: string): Promise<ApiKeyRecord | null> {
     const revokedAt = new Date();
     if (this.db) {
