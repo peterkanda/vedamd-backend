@@ -10658,5 +10658,155 @@
     "rationale": "BSG 2021 + ACG 2021 + Rome IV 2024 + Mahana + ATLANTIS.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "depression-stepped-care-modern-r1",
+    "title": "MDD — stepped care + suicide risk + medication 4–6 wk trial",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "depression-stepped-care-modern"
+    },
+    "indicators": [
+      "PHQ-9 ≥ 10 / DSM-5 MDD criteria"
+    ],
+    "recommendation": "Rule out bipolar (MDQ/HCL-32) before antidepressant. Rule out TSH/B12/anaemia. Active suicide = urgent assessment. Mild-mod: low-intensity CBT / behavioural activation / exercise; mhGAP PM+ for LMIC; Friendship Bench lay-counsellor. Mod-severe: SSRI (sertraline 50 mg preferred; allow 4–6 wk therapeutic dose; continue 6–12 mo post-remission); + CBT/IPT. Severe/TRD: psychiatry — switch antidepressant, lithium augment, atypical antipsychotic, ECT, esketamine, rTMS. Pregnancy/breastfeeding: sertraline preferred. Paediatric: fluoxetine first-line. Elderly: low + slow, avoid TCA. NEVER antidepressant alone for bipolar depression. Address physical health (CV mortality risk doubled). Means restriction + safety planning + lithium for chronic suicidality in MDD.",
+    "rationale": "NICE NG222 + WHO mhGAP IG-2 + BAP + STAR*D + Friendship Bench.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "bipolar-disorder-comprehensive-r1",
+    "title": "Bipolar — mood stabiliser + antipsychotic; AVOID antidepressant monotherapy",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "bipolar-disorder-comprehensive"
+    },
+    "indicators": [
+      "mania / hypomania / bipolar depression"
+    ],
+    "recommendation": "STOP antidepressant if currently on. Acute mania: lithium (0.6-1.0 mmol/L) + atypical antipsychotic (olanzapine/risperidone/quetiapine); short BZD for agitation; ECT for severe/preg. Bipolar DEPRESSION: NEVER antidepressant alone — quetiapine 300 mg, lurasidone, olanzapine+fluoxetine, lithium, lamotrigine (slow titrate SJS), cariprazine. Maintenance: lithium first-line (suicide-protective; monitor renal/thyroid/Ca q6mo); valproate NOT WCBP (NPPP); quetiapine/lurasidone; lamotrigine for depression-predominant. IPSRT + family-focused therapy + psychoed. Pregnancy: avoid valproate; lithium safe (withdraw 24h pre-delivery, restart immediately post); lamotrigine safer + monitor levels (clearance changes); postpartum prophylaxis CRITICAL. Lithium toxicity (Li > 1.2): hold + hydrate; dialysis if > 2.5. Annual metabolic monitoring.",
+    "rationale": "NICE CG185 + CANMAT/ISBD 2024 + BAP + mhGAP.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "schizophrenia-first-episode-psychosis-eip-r1",
+    "title": "Schizophrenia / FEP — atypical antipsychotic + EIP team + clozapine TRS",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "schizophrenia-first-episode-psychosis-eip"
+    },
+    "indicators": [
+      "psychotic symptoms / FEP / TRS"
+    ],
+    "recommendation": "First-episode: refer EIP within 2 weeks (OPUS — best outcomes). Atypical antipsychotic LOW + SLOW: risperidone 0.5–6 mg / aripiprazole / olanzapine (metabolic); avoid haloperidol high-dose first-line. Switch if no response in 4–6 wk at therapeutic dose; trial 2-3 before TRS. TRS (failed 2+): CLOZAPINE — only evidence-based — mandatory FBC + cardiac/troponin monitoring; agranulocytosis 1% / myocarditis weeks 1-3 / ileus BBW / metabolic. Always combine CBTp + family + vocational + LAI for adherence (Tiihonen — LAI reduces relapse + mortality). Acute agitation: oral preferred (olanzapine 10 / risperidone 2 / lorazepam); IM olanzapine NOT with IV benzo (resp arrest). Annual metabolic + physical (huge mortality gap — CV main cause). Smoking cessation. Pregnancy: olanzapine/quetiapine/aripiprazole preferred. Anti-NMDA encephalitis screen if atypical/young woman.",
+    "rationale": "NICE CG178 + Maudsley 2024 + BAP + OPUS + mhGAP.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "alcohol-use-disorder-comprehensive-r1",
+    "title": "AUD — detox + thiamine + MAT (naltrexone / acamprosate / disulfiram)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "alcohol-use-disorder-comprehensive"
+    },
+    "indicators": [
+      "AUDIT ≥ 8 / DSM-5 AUD moderate-severe"
+    ],
+    "recommendation": "Brief intervention + motivational interviewing for hazardous drinking. DETOX: CIWA-Ar–guided chlordiazepoxide 20–40 q6h taper 5–7 d (or diazepam; lorazepam in hepatic). IV THIAMINE 100 mg × 3 d (high-dose Pabrinex if malnourished/severe withdrawal) — BEFORE glucose (precipitates Wernicke). Folate + multivit + Mg/PO4 (refeeding). DT: HDU + IV diazepam titrated; refractory — phenobarb/propofol/dexmed. Wernicke: thiamine 500 mg TDS IV × 2-3 d. Maintenance MAT: naltrexone 50 mg PO or 380 mg/mo IM; acamprosate 2 g/d (renal); disulfiram supervised; baclofen safer in cirrhosis. + Psychosocial (AA, CBT, MI, contingency). Alcoholic hepatitis severe (Maddrey > 32): prednisolone 40 × 28 d + Lille day 7. WHO SAFER population strategies. Kenya: NACADA + Alcoholic Drinks Control Act. Pregnancy: no safe amount — counsel WCBP.",
+    "rationale": "WHO SAFER + NICE CG115 + APA 2018 + COMBINE + NACADA.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "opioid-use-disorder-medication-assisted-r1",
+    "title": "OUD — buprenorphine or methadone MAT + take-home naloxone + HIV/HCV link",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "opioid-use-disorder-medication-assisted"
+    },
+    "indicators": [
+      "DSM-5 OUD moderate-severe"
+    ],
+    "recommendation": "MAT lifesaving — first-line. METHADONE 30 mg start → 60-120 mg target; DOT; QTc monitor (> 100 mg); drug interactions CYP3A4. BUPRENORPHINE/naloxone (Suboxone): wait COWS ≥ 12 then 2-4 mg → 8 mg day 1; titrate 8-24 mg; safer overdose profile (ceiling); office-based; microinduction (Bernese) if fentanyl user (avoid precip withdrawal); long-acting injectable (Sublocade/Brixadi). XR NALTREXONE 380 mg IM/mo for motivated post-detox (7–10 d opioid-free first). Take-home NALOXONE + bystander training all OUD + family. HIV / HCV / HBV testing + linkage to care; HCV treat regardless of active use (REACH HCV); PrEP if HIV-. SSPs (needle exchange). Pregnancy: methadone or buprenorphine (both first-line); avoid abrupt withdrawal; NOWS supportive + morphine taper severe. Post-incarceration: continue MAT + naloxone on release (overdose mortality peak first 2 weeks). Address stigma — chronic relapsing disease. Kenya MAT programmes (Mombasa, Nairobi) + NACADA.",
+    "rationale": "WHO 2024 + SAMHSA TIP 63 + MOTHER + REACH HCV.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "ptsd-trauma-focused-therapy-r1",
+    "title": "PTSD — TF-CBT / EMDR / NET first-line; SSRI second-line",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "ptsd-trauma-focused-therapy"
+    },
+    "indicators": [
+      "PCL-5 high / DSM-5 PTSD"
+    ],
+    "recommendation": "PSYCHOLOGICAL first-line: TF-CBT, CPT, PE, EMDR, NET; WHO Self-Help+ / PM+ for LMIC + refugees (Kakuma / Dadaab Kenya). Pharm second-line / adjunct: sertraline 50-200 mg or paroxetine 20-60 mg (FDA-approved); venlafaxine; mirtazapine for sleep; prazosin 1-10 mg nocte for nightmares. EMERGING: MDMA-assisted psychotherapy (Phase 3); ketamine; psilocybin. AVOID: benzodiazepines (worsen + dependence), single-session debriefing post-trauma (no benefit/may worsen), polypharmacy. Acute Stress Disorder: watchful waiting; early TF-CBT for moderate-severe. Complex PTSD: STAIR+NST, mentalisation, DBT skills. Substance use + comorbid mental illness — integrate. Refugees/conflict-affected: mhGAP + lay-counsellor (Friendship Bench-style). Paediatric: TF-CBT + caregiver involvement; avoid pharm first-line.",
+    "rationale": "WHO Stress Guidelines + NICE NG116 + ISTSS 2024 + Bryant.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "anxiety-disorders-stepped-care-r1",
+    "title": "Anxiety — stepped care + CBT + SSRI; AVOID benzo maintenance",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "anxiety-disorders-stepped-care"
+    },
+    "indicators": [
+      "GAD-7 ≥ 10 / panic / SAD"
+    ],
+    "recommendation": "Rule out medical: TSH, ECG, caffeine/substances/withdrawal. Stepped care (NICE): Step 1 education. Step 2 guided self-help + digital CBT. Step 3 high-intensity CBT or medication — SSRI first-line (sertraline / escitalopram / citalopram); SNRI (venlafaxine / duloxetine); pregabalin for GAD; buspirone mild; propranolol PRN performance anxiety. Allow 8–12 wk; continue 6–12 mo post-response. Step 4 specialist combination + augmentation. AVOID benzo long-term (dependence, falls, RTAs); short < 4 wk acute crisis only; taper 10-25%/1-2 wk if dependent. Panic: CBT (interoceptive exposure) + SSRI; AVOID benzo maintenance. SAD: CBT + SSRI; propranolol PRN performance. OCD: CBT-ERP + SSRI higher doses. Pregnancy: sertraline + CBT. Paeds: CBT first; fluoxetine / sertraline. Elderly: SSRI low + slow, avoid benzo. Lifestyle: exercise, reduce caffeine/ETOH, sleep.",
+    "rationale": "NICE CG113 + WFSBP + WHO mhGAP + BAP.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "eating-disorders-anorexia-bulimia-bed-r1",
+    "title": "Eating disorders — FBT adolescent AN + CBT-ED + watch refeeding syndrome",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "eating-disorders-anorexia-bulimia-bed"
+    },
+    "indicators": [
+      "BMI < 18 / binge / purging / EDE-Q raised"
+    ],
+    "recommendation": "MDT (specialist ED + dietitian + psych + GP). AN: adolescent — FAMILY-BASED TREATMENT (Maudsley) first-line; adult — CBT-ED / MANTRA / SSCM. Nutritional rehab START LOW 1200–1400 kcal/d, increase gradually — WATCH REFEEDING SYNDROME daily PO4 + K + Mg + glucose; replace BEFORE feeding if low; thiamine 200 mg/d. ECG / orthostatic / bradycardia monitor. Admit if BMI < 13 / rapid loss / electrolytes / CV unstable / suicide. Olanzapine low-dose may help weight + anxiety; SSRI for comorbid AFTER weight restored. Bone — DEXA + Ca + vit D. BN: CBT-ED first-line + fluoxetine 60 mg/d (only FDA approved); address electrolytes (hypoK from vomiting). BED: CBT-ED + lisdexamfetamine (FDA) / SSRI / topiramate. ARFID: MDT including OT + sensory. Pregnancy: relapse risk; specialist multi-D. Comorbidity (depression / anxiety / OCD / SUD / BPD) — integrate. Long-term follow-up — relapse common.",
+    "rationale": "NICE NG69 + APA 2023 + AED + Maudsley FBT.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "adhd-adult-child-comprehensive-r1",
+    "title": "ADHD — behavioural + stimulant 1st-line; non-stimulant for comorbidity",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "adhd-adult-child-comprehensive"
+    },
+    "indicators": [
+      "DSM-5 / ICD-11 ADHD criteria + impairment"
+    ],
+    "recommendation": "Comprehensive assessment + multiple informants + rule out hearing/vision/sleep/anxiety/depression/learning/autism/medical (TSH/lead) + CV screen (FHx sudden death/structural). Children: parent training + school accommodation first-line for preschool; medication added age 6+. Stimulants 1st-line: methylphenidate / lisdexamfetamine / amphetamine — long-acting preferred for adherence + abuse-deterrent; titrate slowly; monitor BP/HR/weight/height/mood/appetite/sleep. Non-stimulant 2nd-line / comorbid tic / anxiety / SUD: atomoxetine (suicidal ideation BBW), guanfacine/clonidine, viloxazine. Adult: CBT for adult ADHD + medication usually combined. Pregnancy: limited data, risk-benefit. Comorbidity high (50%+) — treat in parallel. Combination stimulant + α2-agonist for partial response. Transition child→adult care critical (high dropout 18+). Driving counsel — improvement with treatment. Public health: school training + accommodation + anti-stigma.",
+    "rationale": "NICE NG87 + AAP 2019 + BAP + CADDRA + WFADHD.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "dementia-cognitive-impairment-comprehensive-r1",
+    "title": "Dementia — modifiable RFs + ChEI / memantine + new anti-amyloid early AD + BPSD DICE",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "dementia-cognitive-impairment-comprehensive"
+    },
+    "indicators": [
+      "MoCA / MMSE low + functional impairment"
+    ],
+    "recommendation": "Rule out reversible: TSH/B12/folate/Ca/glucose/HIV/syphilis/depression/NPH/drugs/OSA. MRI for atrophy + vascular load. ANTI-AMYLOID for early AD with confirmed amyloid: LECANEMAB / DONANEMAB (CLARITY-AD / TRAILBLAZER-ALZ2) — IV biweekly/monthly; ARIA-E/H MRI surveillance; APOE genotype; access barriers SSA. SYMPTOMATIC: ChEI (donepezil 5–10 mg / rivastigmine / galantamine) for mild-mod AD + DLB + PDD; memantine for mod-severe AD (add to ChEI). Address LANCET COMMISSION 14 MODIFIABLE RFs (~ 45% attributable): education, hearing loss (hearing aids), HTN, smoking, obesity, depression, inactivity, DM, alcohol, TBI, air pollution, social isolation, vision loss, high LDL. Mediterranean/MIND diet + exercise. BPSD: DICE non-pharm first; PRN antipsychotic limit (BBW mortality); AVOID antipsychotic in LEWY (severe sensitivity); trazodone/mirtazapine for sleep/agitation. Advance care planning EARLY while capacity. Driving + safety + financial protection. Caregiver education + respite + screen burnout.",
+    "rationale": "NICE NG97 + Lancet Commission 2024 + WHO Global Plan + CLARITY-AD + TRAILBLAZER-ALZ2 + FINGER.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
