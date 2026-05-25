@@ -55260,5 +55260,1610 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "phaeochromocytoma-crisis",
+    "title": "Phaeochromocytoma crisis (catecholamine storm)",
+    "icd10": [
+      "E27.5",
+      "D35.0"
+    ],
+    "domains": [
+      "endocrinology",
+      "cardiology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Paroxysmal severe hypertension (often > 200/110), throbbing headache, sweating, palpitations, anxiety.",
+      "Triggers: anaesthesia / surgery, IV contrast, glucagon, beta-blocker WITHOUT prior alpha-blockade, tyramine foods, opioids.",
+      "Severe: end-organ damage (cardiomyopathy, ARDS, MI, stroke, AKI), multi-organ failure.",
+      "Often missed: familial syndromes (MEN2, VHL, NF1), bladder phaeochromocytoma (paroxysms with micturition)."
+    ],
+    "redFlags": [
+      "Hypertensive emergency with end-organ damage.",
+      "Catecholamine-induced cardiomyopathy / acute pulmonary oedema.",
+      "Pregnancy + phaeochromocytoma — maternal + fetal mortality 50% if undiagnosed.",
+      "Suspected unstable phaeo at intubation / induction — refractory hypertension.",
+      "Concurrent bowel ischaemia from severe vasoconstriction."
+    ],
+    "diagnostics": [
+      {
+        "test": "Plasma metanephrines + normetanephrines (preferred — fasting + supine 30 min).",
+        "rationale": "Sensitive screening; > 4× ULN highly specific."
+      },
+      {
+        "test": "24-hour urinary metanephrines + catecholamines.",
+        "rationale": "Alternative / confirmation."
+      },
+      {
+        "test": "CT / MRI abdomen + neck + chest + pelvis (whole-body MIBG for metastatic / extra-adrenal).",
+        "rationale": "Tumour localisation."
+      },
+      {
+        "test": "ECG, echo, BNP, troponin.",
+        "rationale": "Cardiomyopathy / ischaemia."
+      },
+      {
+        "test": "Genetic testing for inherited syndromes.",
+        "rationale": "First-degree relative screening."
+      }
+    ],
+    "management": [
+      {
+        "step": "ALPHA-blockade FIRST, BEFORE any beta-blocker",
+        "detail": "Phenoxybenzamine (irreversible, preferred) 10–20 mg BD titrated to symptom control + supine BP < 130/80 (or postural hypotension). Doxazosin 1–8 mg/day alternative. Start 7–14 days before surgery."
+      },
+      {
+        "step": "Add beta-blocker ONLY after adequate alpha-blockade (3–5 days)",
+        "detail": "Beta-blocker first causes UNOPPOSED alpha-vasoconstriction → severe hypertensive crisis + heart failure. Propranolol, atenolol, or labetalol used to control tachycardia after alpha-blockade established."
+      },
+      {
+        "step": "Volume expansion pre-operatively",
+        "detail": "Liberal salt diet + IV fluids — most patients are chronically vasoconstricted + volume-depleted; pre-operative volume expansion prevents post-tumour-removal hypotension."
+      },
+      {
+        "step": "Hypertensive crisis (acute phaeochromocytoma) management",
+        "detail": "IV phentolamine 1–5 mg boluses every 10 min. IV sodium nitroprusside infusion. IV magnesium sulphate 2 g (especially in pregnancy)."
+      },
+      {
+        "step": "Surgical excision — definitive cure",
+        "detail": "Laparoscopic adrenalectomy (or open for large / malignant). Optimise alpha-blockade + volume + beta-blockade pre-op. Anaesthetist + surgeon experienced in phaeo cases. Plan post-tumour-removal hypotension management."
+      },
+      {
+        "step": "Pregnancy + phaeochromocytoma",
+        "detail": "Phenoxybenzamine safe; control BP + remove in second trimester ideally; LSCS preferred at term. Specialist multidisciplinary team."
+      },
+      {
+        "step": "Malignant phaeochromocytoma",
+        "detail": "Chemotherapy (CVD = cyclophosphamide + vincristine + dacarbazine); MIBG-radioisotope therapy; surgical debulking. Specialist endocrine oncology."
+      },
+      {
+        "step": "Follow-up + family screening",
+        "detail": "Annual biochemistry + imaging × 10 years (recurrence in 10–15%); first-degree relatives — biochemistry + genetic screen."
+      }
+    ],
+    "references": [
+      {
+        "label": "Endocrine Society Clinical Practice Guideline on Pheochromocytoma + Paraganglioma (2014)"
+      },
+      {
+        "label": "ESE Guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "pituitary-apoplexy",
+    "title": "Pituitary apoplexy (acute haemorrhage / infarction of pituitary)",
+    "icd10": [
+      "E23.6"
+    ],
+    "domains": [
+      "endocrinology",
+      "neurology",
+      "neurosurgery",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden severe headache (often retro-orbital), vomiting, visual disturbance (visual field defect / cranial nerve palsies III, IV, VI), reduced consciousness.",
+      "Most patients have undiagnosed pituitary adenoma; ~25% present as apoplexy as first manifestation.",
+      "Adrenal crisis + hypopituitarism develops over hours-days.",
+      "Triggers: anticoagulation, surgery, head trauma, contrast study, dopamine agonist, pregnancy, oestrogen."
+    ],
+    "redFlags": [
+      "Reduced consciousness / cranial-nerve palsies — neurosurgical emergency.",
+      "Adrenal crisis features (shock, hyponatraemia, hyperkalaemia).",
+      "Diabetes insipidus.",
+      "Pregnancy with pituitary apoplexy — fetal compromise + Sheehan-like postpartum."
+    ],
+    "diagnostics": [
+      {
+        "test": "MRI pituitary with contrast (preferred) — haemorrhage or infarction within pituitary, often with sellar / suprasellar mass.",
+        "rationale": "Definitive."
+      },
+      {
+        "test": "Hormonal: cortisol (random + ACTH), TFT (free T4 + TSH), prolactin, LH/FSH, testosterone (men) / oestradiol (women), IGF-1 + GH.",
+        "rationale": "Pituitary axis evaluation."
+      },
+      {
+        "test": "U&E, glucose, calcium.",
+        "rationale": "Electrolyte disturbance from hypocortisolism + diabetes insipidus."
+      },
+      {
+        "test": "Visual fields + acuity + fundoscopy.",
+        "rationale": "Baseline + monitoring."
+      },
+      {
+        "test": "FBC, coag.",
+        "rationale": "Identify coagulopathy."
+      }
+    ],
+    "management": [
+      {
+        "step": "IMMEDIATE hydrocortisone — empirically",
+        "detail": "100 mg IV bolus then 200 mg / 24 h infusion (or 50 mg every 6 h). Do NOT wait for cortisol result — secondary adrenal insufficiency near-universal."
+      },
+      {
+        "step": "Fluid + electrolyte management",
+        "detail": "Saline + correct hyponatraemia + glucose; treat diabetes insipidus with desmopressin if polyuria > 200 mL/h + hypernatraemia (test fluid intake / urine osmolality differential)."
+      },
+      {
+        "step": "Neurosurgical decompression",
+        "detail": "Trans-sphenoidal decompression for: visual deterioration, reduced consciousness, severe visual field defect, expanding mass. Conservative if minimal symptoms + stable vision."
+      },
+      {
+        "step": "Conservative management for stable / mild cases",
+        "detail": "Hydrocortisone replacement + close monitoring; serial visual + neurological assessments; MRI at 3 months to assess pituitary residuum."
+      },
+      {
+        "step": "Hormone replacement long-term",
+        "detail": "Hydrocortisone 15–25 mg/day in 2–3 divided doses; thyroxine 50–125 microgram/day (titrate to free T4 mid-range); testosterone replacement for men; oestrogen for premenopausal women (HRT vs COC); DDAVP if diabetes insipidus; growth hormone if proven adult GH deficiency."
+      },
+      {
+        "step": "Follow-up + tumour surveillance",
+        "detail": "Pituitary endocrinology team; annual MRI for residual / recurrent adenoma; lifetime hormone replacement + sick-day rule education."
+      },
+      {
+        "step": "Pre-operative + perioperative steroid cover",
+        "detail": "Triple-dose hydrocortisone before surgery / infection / stress, in all patients with hypopituitarism. Emergency hydrocortisone kit + medic-alert bracelet."
+      }
+    ],
+    "references": [
+      {
+        "label": "Society for Endocrinology Clinical Guideline on Pituitary Apoplexy (2011)"
+      },
+      {
+        "label": "ESE Pituitary Apoplexy"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-alcohol-withdrawal-delirium-tremens",
+    "title": "Severe alcohol withdrawal / delirium tremens",
+    "icd10": [
+      "F10.231",
+      "F10.232",
+      "F10.239"
+    ],
+    "domains": [
+      "addiction",
+      "psychiatry",
+      "emergency",
+      "critical-care",
+      "neurology"
+    ],
+    "population": {
+      "minAgeYears": 16,
+      "sex": "any"
+    },
+    "presentation": [
+      "Stage 1 (6–12 h): tremor, anxiety, GI upset, headache, sweating, palpitations.",
+      "Stage 2 (24–48 h): alcoholic hallucinosis (auditory > visual), seizures (typically 24–48 h, usually generalised tonic-clonic).",
+      "Stage 3 (48–72 h, sometimes up to day 5): delirium tremens — global confusion + autonomic instability (HR > 100, BP > 160, T > 38.5, sweating) + visual / tactile hallucinations.",
+      "Mortality DT 5–15% even with treatment; > 35% without.",
+      "Wernicke encephalopathy (thiamine deficiency): triad — ataxia + ophthalmoplegia + confusion (often incomplete)."
+    ],
+    "redFlags": [
+      "Status epilepticus.",
+      "DT with severe autonomic instability — ICU.",
+      "Concomitant medical complication (pneumonia, head injury, GI bleed, pancreatitis, sepsis, hyponatraemia, hypoglycaemia).",
+      "Pregnancy + alcohol withdrawal — fetal alcohol exposure + maternal complications.",
+      "Polysubstance withdrawal (benzodiazepine + alcohol) — high risk."
+    ],
+    "diagnostics": [
+      {
+        "test": "CIWA-Ar score every 1–4 h.",
+        "rationale": "Severity grading + symptom-triggered benzodiazepine dosing."
+      },
+      {
+        "test": "FBC (anaemia, macrocytosis), U&E, LFT (raised AST > ALT, GGT), glucose, magnesium, phosphate, INR, calcium.",
+        "rationale": "Identify complications + nutritional state."
+      },
+      {
+        "test": "ABG, lactate, ammonia (hepatic encephalopathy differential).",
+        "rationale": "Severity."
+      },
+      {
+        "test": "ECG (atrial fibrillation, prolonged QT, holiday heart syndrome).",
+        "rationale": "Cardiac complications."
+      },
+      {
+        "test": "Capillary glucose hourly initially (hypoglycaemia).",
+        "rationale": "Identify hypoglycaemia (especially in chronic alcohol-use + malnourished)."
+      },
+      {
+        "test": "CT head if focal neurology / persistent confusion / suspected subdural.",
+        "rationale": "Exclude trauma / haemorrhage."
+      }
+    ],
+    "management": [
+      {
+        "step": "Thiamine FIRST — IV pabrinex BEFORE any glucose",
+        "detail": "Pabrinex IV pairs ampoules I + II three-times daily × 3 days, then 100 mg oral daily long-term. Wernicke encephalopathy: 500 mg IV thiamine TDS × 3 days then 250 mg daily × 5 days. Do NOT give dextrose before thiamine."
+      },
+      {
+        "step": "Symptom-triggered benzodiazepine (preferred over fixed-dose)",
+        "detail": "Long-acting (chlordiazepoxide 10–50 mg every 1–4 h titrated to CIWA-Ar) OR diazepam 10–20 mg every 1–4 h. Hepatic impairment: switch to short-acting (lorazepam 1–4 mg every 1–4 h) — not glucuronide-conjugated."
+      },
+      {
+        "step": "Delirium tremens — aggressive benzodiazepine + ICU",
+        "detail": "IV diazepam 10 mg every 5–10 min until calm (often very high doses needed — 200–800 mg total). Lorazepam infusion. Add propofol or dexmedetomidine for refractory / intubated."
+      },
+      {
+        "step": "Adjunctive agents",
+        "detail": "Phenobarbital 10 mg/kg IV slow loading then titrated for resistant cases (synergistic with benzodiazepine). Beta-blocker for autonomic features (after established benzo dosing). Antipsychotic (haloperidol 2.5 mg IM) ONLY for hallucinations / severe agitation despite benzo — NOT seizure prevention."
+      },
+      {
+        "step": "Correct electrolyte abnormalities",
+        "detail": "Magnesium 2 g IV (most alcohol-dependent patients deficient — predisposes to seizures + arrhythmia). Replace K+, phosphate, calcium."
+      },
+      {
+        "step": "Manage withdrawal seizures",
+        "detail": "Benzodiazepine + magnesium; if status epilepticus — per status epilepticus pathway. Long-term antiseizure drug NOT needed after isolated withdrawal seizures."
+      },
+      {
+        "step": "Brief intervention + relapse prevention before discharge",
+        "detail": "Motivational interviewing; alcohol cessation pharmacotherapy: naltrexone 50 mg/day (oral) OR vivitrol IM monthly; acamprosate 666 mg TDS; disulfiram (selected). Refer to community alcohol services / mutual support (AA / SMART)."
+      },
+      {
+        "step": "Wernicke-Korsakoff prevention",
+        "detail": "Continue oral thiamine 100 mg daily indefinitely; multivitamin; address malnutrition; safeguard against silent progression to Korsakoff dementia."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE CG100 Alcohol-use disorders: diagnosis and clinical management of alcohol-related physical complications; SAMHSA TIP 45"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "opioid-use-disorder-induction-maintenance",
+    "title": "Opioid use disorder — buprenorphine / methadone induction + maintenance",
+    "icd10": [
+      "F11.20",
+      "F11.21"
+    ],
+    "domains": [
+      "addiction",
+      "psychiatry",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 16,
+      "sex": "any"
+    },
+    "presentation": [
+      "Chronic opioid use disorder (heroin, prescription opioid, fentanyl, etc.) seeking treatment or after overdose.",
+      "Diagnostic features (DSM-5): ≥ 2 of 11 criteria including loss of control, withdrawal, tolerance, social impairment, risky use.",
+      "Co-occurring: depression, anxiety, PTSD, HIV, HCV, HBV; high mortality from overdose without treatment."
+    ],
+    "redFlags": [
+      "Pregnancy + OUD — continue MAT (do NOT detoxify mid-pregnancy; risk of preterm birth / fetal distress).",
+      "Concurrent benzodiazepine / alcohol dependence — combined treatment risk-stratification.",
+      "Methadone QT prolongation risk — ECG before + during treatment.",
+      "Suicidal ideation.",
+      "Recent overdose — high re-overdose risk; immediate MAT initiation is protective."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urine drug screen + observed naltrexone challenge (only after opioid-free 7+ days for naltrexone option).",
+        "rationale": "Confirm substances used + readiness."
+      },
+      {
+        "test": "HIV, HCV, HBV, syphilis serology.",
+        "rationale": "Co-infection screening + opportunity for treatment."
+      },
+      {
+        "test": "ECG (baseline QTc) before methadone; LFT, U&E.",
+        "rationale": "Pre-treatment safety."
+      },
+      {
+        "test": "Pregnancy test in women.",
+        "rationale": "Pregnancy-modified pathway."
+      },
+      {
+        "test": "Mental health screen (PHQ-9, GAD-7, suicide).",
+        "rationale": "Common comorbidity."
+      }
+    ],
+    "management": [
+      {
+        "step": "Choice of medication-assisted treatment (MAT)",
+        "detail": "Buprenorphine-naloxone (preferred — partial agonist, ceiling effect, safer in overdose), OR methadone (full agonist — for high tolerance, structured clinic), OR extended-release naltrexone (only after 7–10 days opioid-free; no risk of misuse but lower retention)."
+      },
+      {
+        "step": "Buprenorphine induction",
+        "detail": "Begin when patient in moderate withdrawal (COWS ≥ 12). Start 2–4 mg SL, titrate by 2–4 mg every 1–4 h to symptom relief (typically day 1 8–16 mg). Days 2–7: titrate to 16–24 mg daily. Avoid precipitated withdrawal (do NOT give if recent full-agonist use). Long-acting (Sublocade SC monthly) for stabilised patients."
+      },
+      {
+        "step": "Methadone induction (specialist clinic)",
+        "detail": "Start 10–30 mg daily; titrate slowly (by 5 mg every 3–5 days) to 60–120 mg target. ECG before + after dose titration; risk of overdose during initiation (peak day 3–4)."
+      },
+      {
+        "step": "Naloxone take-home + training",
+        "detail": "ALL patients + household members trained in naloxone use; intranasal (4 mg) easiest. Reduces overdose mortality > 50%."
+      },
+      {
+        "step": "Pregnancy + OUD",
+        "detail": "Continue methadone or buprenorphine (do NOT switch agents mid-pregnancy unless essential). Adjust dose to address physiological changes. Neonatal abstinence syndrome management at birth (Finnegan scoring; morphine titration). Breastfeeding compatible."
+      },
+      {
+        "step": "Psychosocial support",
+        "detail": "Counselling (CBT, contingency management, motivational enhancement); peer support; vocational + housing support; treat co-occurring mental illness (SSRIs, mood stabilisers as needed)."
+      },
+      {
+        "step": "Harm reduction",
+        "detail": "Needle / syringe exchange; safer-injection education; fentanyl test strips; supervised consumption services (where available); naloxone distribution; HIV PrEP for at-risk patients."
+      },
+      {
+        "step": "Long-term care",
+        "detail": "MAT is chronic-disease management — no fixed end-date; relapse is part of recovery, not failure. Random urine + addiction-medicine follow-up; gradual taper only if patient stable + motivated (often years on MAT)."
+      }
+    ],
+    "references": [
+      {
+        "label": "SAMHSA TIP 63 Medications for Opioid Use Disorder; WHO Guidelines for the Management of Substance Use"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "high-altitude-illness-severe",
+    "title": "High altitude illness — AMS / HACE / HAPE",
+    "icd10": [
+      "T70.20"
+    ],
+    "domains": [
+      "travel-medicine",
+      "emergency",
+      "respiratory",
+      "neurology"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Acute mountain sickness (AMS): headache + nausea / vomiting / fatigue / dizziness / sleep disturbance, > 6 h after arrival > 2500 m.",
+      "High-altitude cerebral oedema (HACE): AMS + ataxia + altered consciousness (rare but life-threatening).",
+      "High-altitude pulmonary oedema (HAPE): exertional dyspnoea > resting, cough, frothy / blood-tinged sputum, crackles, hypoxia — usually > 3000 m, 2–4 days after arrival.",
+      "Risk: rapid ascent, individual susceptibility, prior episode, viral infection, dehydration, alcohol, sleeping pills."
+    ],
+    "redFlags": [
+      "Reduced consciousness, ataxia — HACE.",
+      "Resting tachycardia + dyspnoea + frothy sputum — HAPE.",
+      "Children + pregnant — increased risk of severe altitude illness.",
+      "Pre-existing cardiopulmonary disease.",
+      "Sea-level return delayed by terrain — anticipate need for evacuation."
+    ],
+    "diagnostics": [
+      {
+        "test": "Lake Louise Score for AMS (headache + GI / fatigue / dizziness / sleep — 3+ supports AMS).",
+        "rationale": "Severity grading + monitoring."
+      },
+      {
+        "test": "Pulse oximetry — usually low at altitude; serial measurement tracks deterioration.",
+        "rationale": "Trend matters more than absolute number."
+      },
+      {
+        "test": "Chest examination + auscultation — crackles in HAPE.",
+        "rationale": "Pulmonary oedema."
+      },
+      {
+        "test": "Neurological exam (truncal ataxia heel-to-toe walking — sensitive for HACE).",
+        "rationale": "Identify HACE early."
+      }
+    ],
+    "management": [
+      {
+        "step": "AMS — descend or stop ascent",
+        "detail": "STOP ascent until symptoms resolve. Hydration + paracetamol / ibuprofen / aspirin for headache; antiemetic. Acetazolamide 250 mg BD accelerates acclimatisation."
+      },
+      {
+        "step": "HACE — IMMEDIATE descent",
+        "detail": "Lose ≥ 500–1000 m of altitude IMMEDIATELY (do NOT wait for daylight / helicopter). Dexamethasone 8 mg PO/IM/IV loading then 4 mg every 6 h. Oxygen if available. Portable hyperbaric chamber (Gamow bag) as bridge. Continue dexamethasone at lower altitude × 24 h."
+      },
+      {
+        "step": "HAPE — descent + nifedipine + oxygen",
+        "detail": "Descend ≥ 500–1000 m. Oxygen to target SpO2 > 90%. Nifedipine 30 mg slow-release PO BD OR sildenafil 50 mg every 8 h OR tadalafil 10 mg BD — pulmonary vasodilators. Avoid exertion. Portable hyperbaric chamber if descent delayed."
+      },
+      {
+        "step": "Prevention",
+        "detail": "Graded ascent (climb high, sleep low; max 300 m / day above 2500 m + rest day every 1000 m). Acetazolamide 125–250 mg BD starting 24 h before ascent + 2 days at altitude for known susceptibility. Avoid alcohol + sedatives during first 24 h."
+      },
+      {
+        "step": "Children + altitude",
+        "detail": "More susceptible to AMS than adults; cannot articulate symptoms — irritable / off-feeding / lethargic; descend on any concern. Avoid high altitude in infants < 6 weeks; specialist advice for chronic conditions."
+      },
+      {
+        "step": "Pregnancy + altitude",
+        "detail": "Limit to < 2500 m for sleeping. Avoid above 3500 m in pregnancy; if high-altitude residents — monitor for IUGR + pre-eclampsia."
+      },
+      {
+        "step": "Return to altitude",
+        "detail": "Recovery typically within 24–72 h of descent + supportive care. Future trips: acetazolamide prophylaxis + slower ascent."
+      }
+    ],
+    "references": [
+      {
+        "label": "Wilderness Medical Society Practice Guidelines for the Prevention, Diagnosis, and Treatment of Acute Altitude Illness"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "haemophilia-severe-bleeding-emergency",
+    "title": "Severe haemophilia A / B — acute bleed emergency",
+    "icd10": [
+      "D66",
+      "D67"
+    ],
+    "domains": [
+      "haematology",
+      "emergency",
+      "paediatrics"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "male"
+    },
+    "presentation": [
+      "Known haemophilia A (factor VIII deficiency) or B (IX deficiency) — severe < 1% activity; moderate 1–5%; mild 5–40%.",
+      "Bleeding into joints (haemarthrosis) — 80% of bleeds; recurrent → chronic arthropathy.",
+      "Muscle haematomas — iliopsoas, calf, forearm (compartment syndrome).",
+      "Mucocutaneous, GI, urinary, retroperitoneal, intracranial (highest mortality).",
+      "Female carriers — usually mild but can bleed; haemophilia A heterozygotes with skewed X-inactivation."
+    ],
+    "redFlags": [
+      "Intracranial bleed — highest mortality emergency; CT IMMEDIATELY.",
+      "Retroperitoneal / iliopsoas bleed.",
+      "Compartment syndrome (deep muscle).",
+      "Airway haemorrhage (tongue, retropharyngeal).",
+      "Inhibitor (alloantibody to factor) — first-line factor concentrate ineffective; rapid escalation."
+    ],
+    "diagnostics": [
+      {
+        "test": "FBC, APTT (prolonged), PT (normal), fibrinogen, factor VIII / IX activity, von Willebrand factor antigen + activity.",
+        "rationale": "Confirm haemophilia + exclude VWD."
+      },
+      {
+        "test": "Inhibitor screen (Bethesda assay) — especially in non-responding to factor.",
+        "rationale": "Identify alloantibody."
+      },
+      {
+        "test": "Imaging per suspected bleed: CT head (low threshold), USS / MRI of muscle / joint, CT abdomen for retroperitoneal.",
+        "rationale": "Localise + quantify."
+      },
+      {
+        "test": "Compartment pressure measurement if suspected.",
+        "rationale": "Fasciotomy decision."
+      }
+    ],
+    "management": [
+      {
+        "step": "ACT EARLY — give factor concentrate IMMEDIATELY before any imaging if suspected major bleed",
+        "detail": "Most family / patient knows their concentrate type + dose. 'When in doubt, treat'. Delay → permanent damage."
+      },
+      {
+        "step": "Factor VIII for haemophilia A",
+        "detail": "Recombinant or plasma-derived FVIII: 1 unit/kg raises factor by 2%. Target: 30–40% for mild bleeds (joint, muscle, mucosal); 80–100% for major bleeds (intracranial, retroperitoneal, abdominal); 50–80% for surgery. Half-life ~12 h; repeat every 12 h or as continuous infusion 2–4 units/kg/h."
+      },
+      {
+        "step": "Factor IX for haemophilia B",
+        "detail": "Recombinant FIX: 1 unit/kg raises factor by 1%. Same targets as above but doses ~50% higher (lower recovery). Half-life ~24 h; repeat every 24 h. Extended half-life recombinant FIX (nonacog beta pegol, eftrenonacog alfa) — longer dosing intervals."
+      },
+      {
+        "step": "Emicizumab (anti-FIXa / FX bispecific antibody) — preventive AND emergency",
+        "detail": "Patients on emicizumab prophylaxis: standard factor concentrate doses for bleed but factor levels not measured by routine APTT. Avoid activated PCC (aPCC) in emicizumab patients — thrombotic microangiopathy risk."
+      },
+      {
+        "step": "Inhibitor management — bypassing agents",
+        "detail": "Activated prothrombin complex concentrate (FEIBA / aPCC) OR recombinant factor VIIa (NovoSeven) — if inhibitor present. Long-term: emicizumab + immune-tolerance induction."
+      },
+      {
+        "step": "Adjunctive measures",
+        "detail": "Tranexamic acid 25 mg/kg every 8 h for mucocutaneous + dental + minor surgery (NOT in haematuria — clot in ureter). Desmopressin 0.3 microgram/kg IV in mild-moderate haemophilia A (raises VIII transiently)."
+      },
+      {
+        "step": "Joint bleed management",
+        "detail": "RICE (rest + ice + compression + elevation). Factor replacement + physiotherapy. Joint aspiration only by specialist in selected cases. Long-term: prophylactic factor 2–3× per week to prevent arthropathy."
+      },
+      {
+        "step": "Inheritance + carrier counselling",
+        "detail": "X-linked recessive; counsel carriers + screen newborn boys; genetic testing for family. Comprehensive haemophilia centre for shared care."
+      }
+    ],
+    "references": [
+      {
+        "label": "WFH Guidelines for the Management of Hemophilia (3rd edition, 2020)"
+      },
+      {
+        "label": "ASH Pocket Guide"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "acute-lymphoblastic-leukaemia-induction",
+    "title": "Acute lymphoblastic leukaemia (ALL) — induction emergency + chemotherapy",
+    "icd10": [
+      "C91.0"
+    ],
+    "domains": [
+      "oncology",
+      "haematology",
+      "paediatrics",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Children (2–5 years peak) or older adults; pancytopenia / blasts on FBC.",
+      "Fatigue, pallor (anaemia), bleeding (thrombocytopenia), infection (neutropenia).",
+      "Bone pain, hepatosplenomegaly, lymphadenopathy, mediastinal mass (T-cell), CNS involvement.",
+      "Severe risk at presentation: hyperleukocytosis (WBC > 100), tumour lysis, sepsis from neutropenia."
+    ],
+    "redFlags": [
+      "Hyperleukocytosis with leukostasis — pulmonary, CNS, ocular leukostasis; urgent leukapheresis.",
+      "Tumour lysis syndrome — hyperuricaemia, hyperkalaemia, hyperphosphataemia, AKI.",
+      "Neutropenic sepsis at diagnosis.",
+      "CNS involvement (cranial nerve palsy, headache, vomiting) — CSF cytology mandatory.",
+      "Mediastinal mass with SVC syndrome."
+    ],
+    "diagnostics": [
+      {
+        "test": "FBC + blood film (blasts), bone marrow aspirate + biopsy + flow cytometry + cytogenetics + molecular (BCR-ABL1 for Ph+ ALL, MLL rearrangement infant, IKZF1 deletion adverse).",
+        "rationale": "Definitive diagnosis + risk stratification."
+      },
+      {
+        "test": "LP with intrathecal chemotherapy at induction (CSF cytology + flow).",
+        "rationale": "Identify + treat CNS involvement."
+      },
+      {
+        "test": "FBC, U&E, urate, phosphate, LDH, calcium for TLS monitoring.",
+        "rationale": "Severity + tumour lysis."
+      },
+      {
+        "test": "Echo (baseline before anthracycline), CXR, abdominal USS, HBV/HCV/HIV.",
+        "rationale": "Pre-treatment baseline."
+      },
+      {
+        "test": "Pregnancy test + fertility counselling.",
+        "rationale": "Pre-chemotherapy."
+      }
+    ],
+    "management": [
+      {
+        "step": "Initial stabilisation",
+        "detail": "Treat infection (broad-spectrum + empirical antifungal in neutropenic + persistent fever), transfusion (PRBC for Hb < 80, platelets for < 10 or active bleeding), correct coagulopathy."
+      },
+      {
+        "step": "Tumour lysis prevention",
+        "detail": "IV hydration 3 L/m²/day, rasburicase (after G6PD screening) for high-risk; allopurinol for intermediate / low risk. K+, phosphate, calcium monitoring 4–6-hourly; RRT if severe."
+      },
+      {
+        "step": "Hyperleukocytosis management",
+        "detail": "Hydration + low-dose chemotherapy (steroid + cyclophosphamide); leukapheresis for symptomatic leukostasis (WBC > 100 with pulmonary / CNS symptoms)."
+      },
+      {
+        "step": "Induction chemotherapy — multi-drug protocol",
+        "detail": "Paediatric ALL (BFM-style): prednisolone + vincristine + asparaginase + daunorubicin + intrathecal methotrexate × 4 weeks. Adult ALL: hyper-CVAD (cyclophosphamide + vincristine + doxorubicin + dexamethasone) alternating with methotrexate + cytarabine. Ph+: add tyrosine kinase inhibitor (imatinib / dasatinib / ponatinib)."
+      },
+      {
+        "step": "CNS-directed therapy",
+        "detail": "Intrathecal methotrexate (and cytarabine for high-risk) at induction + consolidation phases. Avoid cranial radiotherapy except very high-risk."
+      },
+      {
+        "step": "Asparaginase complications",
+        "detail": "Pegaspargase / E. coli asparaginase causes pancreatitis, thrombosis (CNS sinus), coagulopathy, anaphylaxis, hyperglycaemia. Monitor amylase + coagulation; treat with FFP / antithrombin for severe coagulopathy."
+      },
+      {
+        "step": "Risk-adapted post-induction therapy",
+        "detail": "Consolidation, maintenance (mercaptopurine + methotrexate × 2–3 years). High-risk / relapsed: allogeneic stem cell transplant; CAR-T cell therapy (tisagenlecleucel for refractory paediatric / young adult)."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "PJP prophylaxis (co-trimoxazole 3× weekly during therapy). Antifungal prophylaxis. Anti-emetic. Mucositis care. Nutritional support. Psychosocial support — specialist paediatric / AYA oncology team."
+      }
+    ],
+    "references": [
+      {
+        "label": "BFM protocols; UKALL paediatric; ECOG / GMALL adult; NCCN ALL Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "ttp-thrombotic-thrombocytopenic-purpura",
+    "title": "Thrombotic thrombocytopenic purpura (TTP) — emergency",
+    "icd10": [
+      "M31.1"
+    ],
+    "domains": [
+      "haematology",
+      "emergency",
+      "critical-care",
+      "nephrology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Microangiopathic haemolytic anaemia + thrombocytopenia (often < 30 × 10⁹/L) + new neurological symptoms / fever / AKI / abdominal pain.",
+      "Acquired (auto-Ab against ADAMTS13) is most common; congenital (Upshaw-Schulman) is rare.",
+      "Triggers: pregnancy, infection, malignancy, drugs (clopidogrel, ticlopidine, ciclosporin, tacrolimus, gemcitabine, mitomycin C, quinine, interferon).",
+      "Classic pentad: MAHA + thrombocytopenia + neurological + AKI + fever — only 40%; do not wait for full pentad."
+    ],
+    "redFlags": [
+      "Severe neurological symptoms (seizures, coma, stroke).",
+      "Severe AKI (less common in TTP — more in HUS).",
+      "Cardiac involvement (troponin rise — adverse prognosis).",
+      "Pregnancy + TTP — HELLP / aHUS differential.",
+      "Drug-induced TTP — stop offending drug."
+    ],
+    "diagnostics": [
+      {
+        "test": "FBC + blood film (schistocytes ≥ 1% — diagnostic) + LDH (high) + bilirubin + haptoglobin + Coombs (negative — distinguishes from autoimmune).",
+        "rationale": "Confirm microangiopathic haemolysis."
+      },
+      {
+        "test": "ADAMTS13 activity < 10% confirms TTP; ADAMTS13 inhibitor (acquired).",
+        "rationale": "Distinguish from HUS / DIC. Results may not be immediate — START treatment empirically."
+      },
+      {
+        "test": "U&E, creatinine, urinalysis.",
+        "rationale": "AKI severity."
+      },
+      {
+        "test": "Pregnancy test, stool culture (HUS differential), viral screen (HIV, hepatitis).",
+        "rationale": "Trigger / differential."
+      },
+      {
+        "test": "Direct antiglobulin test, autoimmune screen (SLE), drug history.",
+        "rationale": "Identify aetiology."
+      }
+    ],
+    "management": [
+      {
+        "step": "URGENT plasma exchange (PEX) — within 4–8 h of suspicion",
+        "detail": "Daily PEX (1.5× plasma volume initially, then 1.0× volume) using FFP / cryoprecipitate-poor plasma until platelet count > 150 × 10⁹/L × 2 consecutive days + LDH normalising. Mortality drops from 90% to 10% with PEX."
+      },
+      {
+        "step": "Corticosteroid",
+        "detail": "IV methylprednisolone 1 g daily × 3 days then oral prednisolone 1 mg/kg/day tapered. Reduces ADAMTS13-inhibitor activity."
+      },
+      {
+        "step": "Caplacizumab — anti-vWF nanobody",
+        "detail": "10 mg IV bolus then 10 mg SC daily until ADAMTS13 activity ≥ 20%. Accelerates platelet recovery + reduces refractory / relapse rates per HERCULES trial. Combine with PEX + steroid."
+      },
+      {
+        "step": "Rituximab for refractory / relapsing",
+        "detail": "375 mg/m² weekly × 4 doses — particularly for ADAMTS13 inhibitor-positive disease. Reduces relapse."
+      },
+      {
+        "step": "AVOID platelet transfusion",
+        "detail": "Risk of progressive thrombosis; reserve only for life-threatening bleeding."
+      },
+      {
+        "step": "Treat trigger",
+        "detail": "Stop offending drug; treat underlying infection / malignancy / pregnancy management."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Folate supplementation (rapid red cell turnover); transfusion of red cells for severe anaemia; cardiac + renal monitoring; seizure management; thromboprophylaxis once platelets > 50."
+      },
+      {
+        "step": "Long-term follow-up",
+        "detail": "ADAMTS13 monitoring quarterly; relapse 30–40% in 10 years — pre-emptive rituximab in ADAMTS13 < 10% even without active disease. Pregnancy planning + monitoring."
+      }
+    ],
+    "references": [
+      {
+        "label": "ISTH Guidelines on the Treatment of TTP (2020); BSH guidelines on diagnosis + management of TTP"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "dental-trauma-avulsed-permanent-tooth",
+    "title": "Dental trauma — avulsed permanent tooth + maxillofacial emergencies",
+    "icd10": [
+      "S03.20",
+      "S02.5"
+    ],
+    "domains": [
+      "dental",
+      "emergency",
+      "paediatrics"
+    ],
+    "population": {
+      "minAgeYears": 6,
+      "sex": "any"
+    },
+    "presentation": [
+      "Avulsion: complete displacement of tooth from socket — most commonly maxillary central incisor in children / adolescents.",
+      "Other dental injuries: luxation (intrusion, extrusion, lateral), crown fracture, root fracture, alveolar fracture.",
+      "Soft-tissue injury: lacerations to lip, gingiva, tongue.",
+      "Maxillofacial fracture: midface (Le Fort I/II/III), mandible, orbital floor 'blow-out', zygoma."
+    ],
+    "redFlags": [
+      "Airway compromise (mandibular fracture, severe haemorrhage, tongue swelling).",
+      "Severe maxillofacial injury — exclude head + cervical-spine + intracranial injury.",
+      "Intracranial signs (CSF rhinorrhoea, raccoon eyes, Battle sign) — base of skull fracture.",
+      "Orbital injury — entrapment, vision change.",
+      "Tooth replantation timing — outcome strongly depends on time out of socket + storage medium."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical exam (intra + extra-oral); identify all injured teeth + status; soft-tissue + bony injury.",
+        "rationale": "Triage + treatment plan."
+      },
+      {
+        "test": "Dental radiographs (periapical, occlusal) + OPG.",
+        "rationale": "Identify root fracture, alveolar fracture, retained fragment."
+      },
+      {
+        "test": "Maxillofacial CT for suspected facial / orbital fracture.",
+        "rationale": "Definitive imaging."
+      },
+      {
+        "test": "Tetanus status review.",
+        "rationale": "Open wound assessment."
+      }
+    ],
+    "management": [
+      {
+        "step": "Avulsed permanent tooth — REPLANT WITHIN MINUTES",
+        "detail": "If found and on scene: rinse with saline / milk (NOT scrub or wipe — preserves periodontal ligament cells); reinsert into socket; have patient bite on gauze; seek dental help within hours. Avoid storing in water (osmotic damage)."
+      },
+      {
+        "step": "If avulsed tooth cannot be replanted immediately — storage medium priority",
+        "detail": "Best to worst: Hank's Balanced Salt Solution (HBSS / Save-A-Tooth) > cold milk > saliva (between cheek + gums in conscious patient) > saline > water (last resort). Replant within 60 minutes for best outcome."
+      },
+      {
+        "step": "Dental clinic management",
+        "detail": "Reposition + flexible splint × 2 weeks (rigid splint for alveolar fracture + 4 weeks). Endodontic treatment 7–14 days post-replantation (pulp necrosis common). Tetanus prophylaxis; oral antibiotic (amoxicillin / doxycycline > 12 y) × 7 days; chlorhexidine mouthwash."
+      },
+      {
+        "step": "Avulsed primary (deciduous) tooth — DO NOT REPLANT",
+        "detail": "Risk of damage to developing permanent tooth bud. Refer paediatric dentist for monitoring."
+      },
+      {
+        "step": "Luxation / displacement injuries",
+        "detail": "Reposition + splint × 2 weeks for extrusion / lateral; 4 weeks for intrusion; clinical / radiographic follow-up. Endodontic intervention if pulp necrosis."
+      },
+      {
+        "step": "Crown / root fractures",
+        "detail": "Crown fracture: dental restoration / pulp capping / RCT per pulp exposure. Root fracture: splint × 4 weeks (cervical-mid) or 4 months (apical). Replantation of fragment if available."
+      },
+      {
+        "step": "Maxillofacial fracture — multidisciplinary",
+        "detail": "Maxillofacial / ENT / ophthalmology / neurosurgery as required. Open reduction + internal fixation for displaced fractures. Antibiotics + tetanus."
+      },
+      {
+        "step": "Long-term follow-up",
+        "detail": "Clinical + radiographic follow-up at 1, 3, 6, 12 months + annually for any traumatised tooth. Watch for resorption + pulp necrosis. Orthodontic / restorative needs."
+      }
+    ],
+    "references": [
+      {
+        "label": "International Association of Dental Traumatology (IADT) Guidelines (2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "chronic-neuropathic-pain-management",
+    "title": "Chronic neuropathic pain — diagnosis + tiered management",
+    "icd10": [
+      "G89.4",
+      "M79.2"
+    ],
+    "domains": [
+      "pain-management",
+      "neurology",
+      "primary-care",
+      "rheumatology"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Pain in distribution of identifiable nerve / neuroanatomical area following neurological injury (peripheral neuropathy, post-herpetic, trigeminal, post-stroke, post-surgical, radiculopathy, MS-related, CRPS).",
+      "Burning / shooting / stabbing / electric quality; allodynia (pain from non-painful stimuli); hyperalgesia.",
+      "Often associated with sleep disturbance, depression, anxiety, functional impairment."
+    ],
+    "redFlags": [
+      "Suspected new compressive lesion (spinal cord, root) — escalate urgent imaging.",
+      "Constitutional features (weight loss, night sweats) — exclude malignancy.",
+      "New neurology — exclude evolving cord / nerve lesion.",
+      "Suicidal ideation — depression with chronic pain.",
+      "Pregnancy + chronic pain — limited pharmacotherapy options."
+    ],
+    "diagnostics": [
+      {
+        "test": "DN4 / LANSS / PainDETECT screening — distinguish neuropathic from nociceptive.",
+        "rationale": "Confirm neuropathic component."
+      },
+      {
+        "test": "Focused history + neurological + musculoskeletal examination.",
+        "rationale": "Identify cause."
+      },
+      {
+        "test": "Targeted investigation per cause: nerve conduction studies / EMG, MRI spine, blood glucose / HbA1c, B12, thyroid, paraproteinaemia, HIV serology.",
+        "rationale": "Identify treatable underlying cause."
+      },
+      {
+        "test": "Mental health screening (PHQ-9, GAD-7).",
+        "rationale": "Common co-morbidity."
+      },
+      {
+        "test": "Functional assessment + sleep quality.",
+        "rationale": "Treatment target + outcome measure."
+      }
+    ],
+    "management": [
+      {
+        "step": "Address treatable underlying cause",
+        "detail": "Optimise glycaemic control (diabetic neuropathy); vitamin B12 replacement; treat infection; decompression surgery for compressive."
+      },
+      {
+        "step": "First-line pharmacotherapy (NICE 2019)",
+        "detail": "Choose ONE of: amitriptyline 10–25 mg nocte titrate to 75 mg; OR duloxetine 30 mg → 60 mg; OR gabapentin 300 mg → 1200 mg TDS (slow titration); OR pregabalin 75 mg BD → 300 mg BD. Reassess at 4 weeks; if inadequate response after dose optimisation, switch class."
+      },
+      {
+        "step": "Second-line: combination therapy",
+        "detail": "Combine first-line classes (e.g. duloxetine + gabapentin); evidence supports additive effect."
+      },
+      {
+        "step": "Topical agents — selected",
+        "detail": "Capsaicin 0.075% cream OR 8% patch (PHN, focal); lidocaine 5% patch (PHN, focal — well tolerated, low systemic absorption)."
+      },
+      {
+        "step": "Opioid — last resort",
+        "detail": "Tramadol may have role; strong opioid only for refractory severe — risk-benefit + addiction risk; specialist input. Avoid long-term opioids."
+      },
+      {
+        "step": "Non-pharmacological",
+        "detail": "Cognitive behavioural therapy (CBT-CP), mindfulness-based stress reduction, graded exercise / activity pacing, pain education (Explain Pain framework), physiotherapy, TENS, acupuncture. Multidisciplinary pain clinic for complex cases."
+      },
+      {
+        "step": "Specific syndromes",
+        "detail": "Trigeminal neuralgia: carbamazepine 100 mg BD titrate up; oxcarbazepine alternative; microvascular decompression for refractory. PHN: pregabalin / gabapentin / lidocaine patch / capsaicin. CRPS: physiotherapy + mirror therapy + early multidisciplinary clinic + bisphosphonate for bone loss."
+      },
+      {
+        "step": "Interventional + neuromodulation",
+        "detail": "Nerve block, spinal cord stimulation, intrathecal drug delivery — for refractory + specialist centre. Botulinum toxin for selected (PHN, plantar pain)."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE CG173 Neuropathic pain in adults (2019 update); IASP Neuropathic Pain Special Interest Group recommendations"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "diabetic-retinopathy-screening-progressive",
+    "title": "Diabetic retinopathy — screening + sight-threatening management",
+    "icd10": [
+      "E11.359",
+      "H36"
+    ],
+    "domains": [
+      "ophthalmology",
+      "endocrinology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Background diabetic retinopathy: microaneurysms, dot/blot haemorrhages, hard exudates, cotton-wool spots (mild non-proliferative DR).",
+      "Pre-proliferative / severe NPDR: venous beading, IRMA, multiple haemorrhages — high risk of progression.",
+      "Proliferative DR: neovascularisation of disc / elsewhere — vitreous haemorrhage + traction retinal detachment + neovascular glaucoma.",
+      "Diabetic macular oedema (DMO) — leading cause of vision loss in DM; can occur at any stage.",
+      "Risk factors: duration of diabetes, HbA1c, BP, lipids, pregnancy, renal disease."
+    ],
+    "redFlags": [
+      "Sudden vision loss — vitreous haemorrhage / retinal detachment / neovascular glaucoma.",
+      "New floaters + flashes — posterior vitreous detachment / retinal tear.",
+      "Pre-proliferative or proliferative DR — urgent ophthalmology assessment.",
+      "Severe DMO with vision loss < 6/12.",
+      "Diabetes + pregnancy — DR can worsen rapidly."
+    ],
+    "diagnostics": [
+      {
+        "test": "Annual dilated retinal screening: digital photography + grading.",
+        "rationale": "Detect early disease."
+      },
+      {
+        "test": "Optical coherence tomography (OCT) for macular oedema.",
+        "rationale": "Detect + quantify DMO."
+      },
+      {
+        "test": "Fluorescein angiography for ischaemia + neovascularisation.",
+        "rationale": "Plan treatment."
+      },
+      {
+        "test": "HbA1c, lipids, BP, U&E (renal function affects DR progression).",
+        "rationale": "Risk-factor management."
+      }
+    ],
+    "management": [
+      {
+        "step": "Strict metabolic control",
+        "detail": "HbA1c target < 7% (avoid rapid drop in advanced DR — worsens transiently). BP < 130/80. Lipid lowering. Smoking cessation. Renal protection."
+      },
+      {
+        "step": "Annual screening — first 5 years if onset > age 30 then annual; from puberty onwards in type 1; from diagnosis in type 2",
+        "detail": "Pregnant: screening at first antenatal visit, repeat 16–24 + 28 weeks. Pre-pregnancy planning for optimal control."
+      },
+      {
+        "step": "Proliferative DR — pan-retinal photocoagulation (PRP)",
+        "detail": "Laser causes regression of neovascular vessels — gold standard for PDR. Multiple sessions; mild peripheral vision loss + night-vision impairment as side effects."
+      },
+      {
+        "step": "Diabetic macular oedema — anti-VEGF intravitreal injection",
+        "detail": "Ranibizumab / aflibercept / faricimab monthly × 3–5 then PRN. Bevacizumab off-label alternative (cost-effective). Improves vision in most. Add focal laser for selected residual leakage. Intravitreal dexamethasone implant (Ozurdex) for refractory."
+      },
+      {
+        "step": "Vitreous haemorrhage / retinal detachment — vitrectomy",
+        "detail": "For non-resolving vitreous haemorrhage > 3 months, traction retinal detachment, combined traction-rhegmatogenous. Specialist vitreoretinal centre."
+      },
+      {
+        "step": "Neovascular glaucoma",
+        "detail": "Intravitreal anti-VEGF + PRP + IOP-lowering medication + glaucoma drainage device. Pain control."
+      },
+      {
+        "step": "Patient education + low-vision support",
+        "detail": "Severe vision loss: low-vision aids, social services, occupational rehabilitation, driving certification, family support."
+      }
+    ],
+    "references": [
+      {
+        "label": "AAO Diabetic Retinopathy Preferred Practice Pattern (2019)"
+      },
+      {
+        "label": "WHO Universal Eye Health 2014–2019"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "anterior-cruciate-ligament-injury-acute",
+    "title": "Acute anterior cruciate ligament (ACL) injury — adult",
+    "icd10": [
+      "S83.5"
+    ],
+    "domains": [
+      "orthopaedics",
+      "sports-medicine",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sports injury — pivoting / cutting / landing from jump with audible 'pop'; immediate inability to continue + rapid swelling within hours (haemarthrosis).",
+      "Anterior instability + 'giving way' with subsequent activity.",
+      "Often coexistent injuries: medial collateral ligament (50%), meniscus (50–75% acute), articular cartilage."
+    ],
+    "redFlags": [
+      "Locked knee with displaced bucket-handle meniscal tear.",
+      "Concurrent posterior cruciate / multi-ligament knee injury — high-energy mechanism + dislocation; rule out vascular injury (popliteal artery).",
+      "Open injury / fracture.",
+      "Compartment syndrome (especially with multi-ligament + dislocation)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Lachman test (most sensitive), anterior drawer, pivot shift.",
+        "rationale": "Clinical examination; preserved sensitivity > 90%."
+      },
+      {
+        "test": "MRI knee.",
+        "rationale": "Confirm ACL tear + identify associated injuries (meniscal, MCL, articular cartilage)."
+      },
+      {
+        "test": "Plain X-ray knee.",
+        "rationale": "Exclude Segond fracture (avulsion at lateral tibial plateau — pathognomonic) + tibial plateau fracture."
+      },
+      {
+        "test": "Vascular + neurological exam (multi-ligament).",
+        "rationale": "Identify vascular injury (CT angiogram)."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immediate: RICE + analgesia + crutches",
+        "detail": "Rest + ice + compression + elevation; non-weight-bearing initially with crutches. Aspirate large haemarthrosis if very painful (consider FAT droplets — osteochondral fracture / cruciate ligament fracture)."
+      },
+      {
+        "step": "Physiotherapy first — restore range of motion + quadriceps strength",
+        "detail": "Pre-operative rehabilitation improves post-surgical outcomes. Start within days of injury — early gentle range of motion + isometric quadriceps + open-chain hamstring."
+      },
+      {
+        "step": "Conservative management — selected patients",
+        "detail": "Older / lower-demand / less unstable patients — bracing + physiotherapy + activity modification can avoid surgery. Counsel risk of cartilage / meniscus damage with recurrent instability."
+      },
+      {
+        "step": "ACL reconstruction surgery",
+        "detail": "Indicated for: athletes / pivoting-sport returnees, recurrent giving way, additional repairable meniscal damage, multi-ligament knee injury, paediatric patients. Autograft (hamstring or patellar tendon) — gold standard; allograft for revisions / multi-ligament. Timing: usually 4–6 weeks post-injury (allow swelling to resolve + range of motion improve)."
+      },
+      {
+        "step": "Post-op rehabilitation",
+        "detail": "Multi-phase 9–12 months: range of motion, quadriceps + hamstring strengthening, neuromuscular control, return-to-running (3–4 months), return-to-sport (9–12 months). ACL re-rupture rate 5–10% on graft + 5–10% contralateral — neuromuscular training reduces."
+      },
+      {
+        "step": "Concurrent meniscal / cartilage management",
+        "detail": "Meniscal repair preferred over meniscectomy when feasible (sparing meniscus delays osteoarthritis). Osteochondral fragment fixation / microfracture / OAT / ACI."
+      },
+      {
+        "step": "Long-term — post-traumatic osteoarthritis risk",
+        "detail": "Even after successful ACL reconstruction, 20–30% develop OA in 10–15 years; emphasise neuromuscular training, weight management."
+      }
+    ],
+    "references": [
+      {
+        "label": "AAOS Clinical Practice Guideline on Management of Anterior Cruciate Ligament Injuries; British Orthopaedic Sports Trauma + Arthroscopy Society"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "achilles-tendon-rupture",
+    "title": "Achilles tendon rupture",
+    "icd10": [
+      "S86.0"
+    ],
+    "domains": [
+      "orthopaedics",
+      "sports-medicine",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 25,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sudden severe pain in posterior calf during sport / sudden exertion ('felt as if kicked from behind').",
+      "Often middle-aged 'weekend warrior'; men > women 5:1.",
+      "Risk factors: prior calf injury, fluoroquinolone (especially with steroid), local corticosteroid injection, chronic Achilles tendinopathy, diabetes.",
+      "Inability to plantarflex effectively; gap palpable along tendon."
+    ],
+    "redFlags": [
+      "Open injury — requires urgent surgical debridement + repair.",
+      "Vascular / neurological deficit (rare with isolated Achilles).",
+      "Bilateral / spontaneous — suspect systemic cause (fluoroquinolone, immunosuppression).",
+      "Pregnant + Achilles rupture — adapt management."
+    ],
+    "diagnostics": [
+      {
+        "test": "Thompson (Simmonds) test — squeeze calf with patient prone; lack of plantarflexion = positive (sensitive + specific).",
+        "rationale": "Clinical confirmation."
+      },
+      {
+        "test": "Palpate gap along tendon course.",
+        "rationale": "Localise level of rupture."
+      },
+      {
+        "test": "USS calf — confirm rupture + measure tendon gap.",
+        "rationale": "Helpful for surgical planning."
+      },
+      {
+        "test": "MRI — gold standard but rarely needed for diagnosis; useful for partial / chronic tears.",
+        "rationale": "Detailed imaging."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immediate immobilisation",
+        "detail": "Equinus splint / cast (foot plantarflexed) reduces tendon gap. Refer orthopaedics within days. Crutches non-weight-bearing initially."
+      },
+      {
+        "step": "Treatment decision: surgical vs conservative",
+        "detail": "Modern evidence: equally good outcomes for active / mobile patients in functional rehabilitation programmes (UKSTAR / ARTERY trials). Surgery preferred for: tendon gap > 1 cm at neutral position with USS, very active patients, elite athletes. Conservative preferred for: older / less active / surgical risk + adequate gap closure in plantarflexion."
+      },
+      {
+        "step": "Conservative — functional rehabilitation",
+        "detail": "Equinus cast / boot × 8–10 weeks with progressive plantarflexion reduction; full weight-bearing in boot from 4 weeks; physiotherapy from week 6; return-to-sport 4–6 months."
+      },
+      {
+        "step": "Surgical repair",
+        "detail": "Open or percutaneous (smaller incision, lower wound complications, similar functional outcome). Followed by same functional rehabilitation as conservative."
+      },
+      {
+        "step": "Rehabilitation",
+        "detail": "Multi-phase: range of motion → strengthening → return-to-running → return-to-sport. Eccentric calf strengthening (Alfredson protocol) reduces re-rupture. Return-to-running ~4 months; return-to-pivoting / cutting 6 months."
+      },
+      {
+        "step": "Complications",
+        "detail": "Conservative: 7–13% re-rupture (vs 2–4% surgical). Surgical: wound infection (especially with prior steroid injection / open injury), sural nerve injury, DVT (incidence 35% subclinical — consider LMWH prophylaxis 6 weeks)."
+      },
+      {
+        "step": "Prevention + counselling",
+        "detail": "Avoid fluoroquinolones in those with prior tendinopathy. Pre-exercise warm-up + eccentric strengthening for those at risk."
+      }
+    ],
+    "references": [
+      {
+        "label": "AAOS Clinical Practice Guideline on Management of Acute Achilles Tendon Rupture; UKSTAR + ARTERY trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "congenital-hypothyroidism-neonatal",
+    "title": "Congenital hypothyroidism — neonatal screening + management",
+    "icd10": [
+      "E03.1"
+    ],
+    "domains": [
+      "paediatrics",
+      "neonatology",
+      "endocrinology",
+      "screening"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 1,
+      "sex": "any"
+    },
+    "presentation": [
+      "Most identified by national newborn screening (heel-prick blood spot — TSH ≥ 20 mIU/L).",
+      "Clinically: prolonged jaundice, poor feeding, lethargy, constipation, hypothermia, large posterior fontanelle, macroglossia, umbilical hernia, hoarse cry, hypotonia.",
+      "Often clinically subtle in first weeks — early detection essential to prevent cretinism + intellectual disability.",
+      "Causes: thyroid dysgenesis (agenesis, ectopia — 80%), dyshormonogenesis (recessive — 20%); transient (maternal antibody, iodine deficiency / excess, drug-induced)."
+    ],
+    "redFlags": [
+      "Severe presentation (TSH > 60 + low T4 + clinical features).",
+      "Family history of dyshormonogenesis — recessive screening important.",
+      "Iodine-deficient region — endemic cretinism prevention via salt iodisation.",
+      "Symptomatic / clinical hypothyroidism not detected by screen (rare false-negative or no screening programme)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Newborn screen TSH (or T4 in some programmes).",
+        "rationale": "Mandatory in most countries; identifies most cases."
+      },
+      {
+        "test": "Confirmatory venous TSH + free T4 within 48 h of positive screen.",
+        "rationale": "Definitive diagnosis."
+      },
+      {
+        "test": "Thyroid ultrasound + nuclear scan (Tc-99m or I-123) within first 1–2 weeks of treatment.",
+        "rationale": "Identify aetiology (agenesis vs ectopia vs dyshormonogenesis)."
+      },
+      {
+        "test": "Maternal TSH + thyroid antibodies if transient suspected.",
+        "rationale": "Distinguish from maternal antibody-mediated."
+      }
+    ],
+    "management": [
+      {
+        "step": "Start levothyroxine WITHIN 14 DAYS of birth",
+        "detail": "Levothyroxine 10–15 microgram/kg/day PO once daily (full dose from start, NOT titrate up). Higher dose 12–15 microgram/kg/day for severe (low T4 < 5 pmol/L)."
+      },
+      {
+        "step": "Administration",
+        "detail": "Crush tablet + mix with small amount of water / breast milk / formula; AVOID giving with soya / iron / calcium / fibre (interferes absorption). Daily at same time."
+      },
+      {
+        "step": "Monitor TSH + free T4",
+        "detail": "Every 2 weeks until TSH normalises (target < 5 mIU/L); then every 1–3 months in first year; every 2–4 months ages 1–3 years; every 6–12 months thereafter. Free T4 in upper half of normal range."
+      },
+      {
+        "step": "Adjust dose with growth",
+        "detail": "Dose increases proportionally with body weight. Aim levothyroxine within recommended range; over-replacement causes craniosynostosis + behavioural problems."
+      },
+      {
+        "step": "Re-evaluate at age 3 years",
+        "detail": "Trial off treatment for 30 days; if TSH stays normal, transient; if rises, permanent congenital hypothyroidism — restart + lifelong."
+      },
+      {
+        "step": "Developmental assessment",
+        "detail": "Routine developmental screening at 6, 12, 18, 24 months. Early intervention if any delay. Properly treated children have normal IQ + development."
+      },
+      {
+        "step": "Family counselling + future pregnancies",
+        "detail": "Recurrence risk depends on aetiology — dyshormonogenesis 25% (autosomal recessive); dysgenesis < 5%. Maternal hypothyroidism management in future pregnancies + thyroid antibody screening."
+      },
+      {
+        "step": "Endocrine + paediatric follow-up + transition",
+        "detail": "Specialist paediatric endocrine team — lifetime levothyroxine. Adult-care transition + adherence support; pregnancy counselling for affected women (dose increases 25–50% in pregnancy)."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESPE / ATA Guidelines on Congenital Hypothyroidism (2014, updated)"
+      },
+      {
+        "label": "Global Iodine Network guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "newborn-screening-comprehensive",
+    "title": "Newborn screening — heel-prick programme (PKU, congenital hypothyroidism, CF, SCID, etc.)",
+    "icd10": [
+      "Z13.21",
+      "Z00.1"
+    ],
+    "domains": [
+      "paediatrics",
+      "neonatology",
+      "screening",
+      "genetics",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Heel-prick blood sample 48–72 hours after birth.",
+      "Programme content varies by country — typical: phenylketonuria, congenital hypothyroidism, congenital adrenal hyperplasia, cystic fibrosis, sickle cell + thalassaemia, MCAD deficiency + other inherited metabolic disorders, severe combined immunodeficiency (SCID).",
+      "Additional newborn checks: NIPE (Newborn Infant Physical Examination — within 72 h + at 6–8 weeks), pulse oximetry for critical CHD, hearing screen."
+    ],
+    "redFlags": [
+      "Positive screen — requires urgent confirmation + treatment within days.",
+      "False-positive results — distress to family; arrange rapid confirmatory testing.",
+      "Early discharge / home birth — ensure heel prick is performed.",
+      "Pre-term infant — repeat heel prick at term-equivalent age may be needed.",
+      "Maternal drug history affects interpretation (e.g. maternal levothyroxine)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Heel-prick (blood-spot) sample on filter paper at 48–72 h (after milk feeds established).",
+        "rationale": "Optimal timing for metabolite detection."
+      },
+      {
+        "test": "Repeat heel prick at 7–10 days for borderline / specific conditions per local protocol.",
+        "rationale": "Confirmation."
+      },
+      {
+        "test": "Targeted confirmatory tests: tandem mass spectrometry, immunoreactive trypsinogen, T-cell receptor excision circles (SCID), TSH, plasma phenylalanine, etc.",
+        "rationale": "Definitive diagnosis."
+      },
+      {
+        "test": "Family + genetic counselling.",
+        "rationale": "Inherited disorder management + future pregnancy planning."
+      }
+    ],
+    "management": [
+      {
+        "step": "Process: screen → recall → confirm → treat",
+        "detail": "Positive screen → infant recalled within 24–48 h → confirmatory venous sample → specialist referral within days → initiate treatment ASAP."
+      },
+      {
+        "step": "Condition-specific treatment",
+        "detail": "Phenylketonuria (PKU): low-phenylalanine diet + protein substitute lifelong; sapropterin for selected. Congenital hypothyroidism: levothyroxine 10–15 microgram/kg/day. CAH: hydrocortisone + fludrocortisone; mineralocorticoid replacement. Cystic fibrosis: specialist multidisciplinary CF centre. Sickle cell: penicillin prophylaxis + pneumococcal vaccination + family education + comprehensive sickle cell programme. MCAD: avoid fasting, frequent feeds, glucose for illness. SCID: protective isolation + stem-cell transplant (curative)."
+      },
+      {
+        "step": "Family communication + counselling",
+        "detail": "Sensitive disclosure of positive screen + treatment plan; written information; genetic counselling for inherited disorders. Address parental anxiety + distress."
+      },
+      {
+        "step": "Future pregnancies",
+        "detail": "Genetic counselling + carrier testing; pre-natal diagnosis options; counselling on recurrence risk."
+      },
+      {
+        "step": "Audit + quality assurance",
+        "detail": "Track positive predictive value; false-positive rate; time-to-treatment. Public-health monitoring."
+      },
+      {
+        "step": "Transition to adult care",
+        "detail": "Coordinated transition for chronic conditions (PKU, CF, SCD, CAH); shared transition clinic; education on self-management."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Newborn screening recommendations; ACMG Recommended Uniform Newborn Screening Panel (USA)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "torch-congenital-infections",
+    "title": "Congenital TORCH infections (toxoplasma, rubella, CMV, herpes, syphilis, parvovirus, Zika)",
+    "icd10": [
+      "P35",
+      "P37"
+    ],
+    "domains": [
+      "paediatrics",
+      "neonatology",
+      "infectious-disease",
+      "obstetrics"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Common: small for gestational age, microcephaly, hepatosplenomegaly, jaundice, rash, chorioretinitis, intracranial calcifications, sensorineural hearing loss.",
+      "Toxoplasma: chorioretinitis + hydrocephalus + intracranial calcifications.",
+      "Rubella: cataracts + congenital heart disease (PDA) + sensorineural hearing loss.",
+      "CMV: 90% asymptomatic at birth; sensorineural hearing loss is most common late presentation; petechiae + thrombocytopenia + jaundice severe at birth.",
+      "Herpes: vesicular skin lesions + encephalitis; usually neonatal acquisition.",
+      "Syphilis: rhinitis + maculopapular rash + bony lesions + hepatosplenomegaly (early); Hutchinson teeth + saddle nose + interstitial keratitis (late).",
+      "Parvovirus B19: hydrops fetalis + severe anaemia.",
+      "Zika: microcephaly + brain calcifications + ocular abnormalities."
+    ],
+    "redFlags": [
+      "Severe congenital symptoms (encephalopathy, severe hydrops, multi-organ involvement).",
+      "Suspected herpes encephalitis — urgent IV aciclovir.",
+      "Bilateral cataracts / hearing loss — early intervention saves vision / hearing.",
+      "Maternal seroconversion during pregnancy — antenatal management + neonatal follow-up.",
+      "Pre-term + congenital infection — high mortality."
+    ],
+    "diagnostics": [
+      {
+        "test": "Maternal serology / PCR for individual pathogens at first antenatal visit + retest if seroconversion suspected.",
+        "rationale": "Risk stratification."
+      },
+      {
+        "test": "Neonatal serology + PCR (saliva / urine for CMV; serum for others); IgM + IgA support congenital.",
+        "rationale": "Diagnostic."
+      },
+      {
+        "test": "Ophthalmology examination, hearing test (otoacoustic emissions + auditory brainstem response), neuroimaging (MRI / cranial US).",
+        "rationale": "Define extent of organ involvement."
+      },
+      {
+        "test": "FBC, LFT, U&E, syphilis serology (mother + baby), bone radiographs if syphilis suspected.",
+        "rationale": "Severity + differential."
+      },
+      {
+        "test": "Placenta histopathology + cord blood serology.",
+        "rationale": "Confirmation."
+      }
+    ],
+    "management": [
+      {
+        "step": "CMV — ganciclovir / valganciclovir",
+        "detail": "Oral valganciclovir 16 mg/kg BD × 6 months — reduces hearing deterioration + improves developmental outcomes for symptomatic congenital CMV. Monitor FBC + LFT (neutropenia + hepatotoxicity)."
+      },
+      {
+        "step": "Toxoplasma — pyrimethamine + sulfadiazine + folinic acid × 12 months",
+        "detail": "First-year intensive treatment improves long-term ocular + neurological outcomes."
+      },
+      {
+        "step": "Congenital rubella",
+        "detail": "Supportive; no specific antiviral. Cataract surgery; cochlear implant for hearing loss; cardiology follow-up for CHD; developmental services."
+      },
+      {
+        "step": "Neonatal herpes",
+        "detail": "IV aciclovir 20 mg/kg every 8 h × 14 days (skin / eye / mouth) or × 21 days (CNS / disseminated). Long-term oral aciclovir prophylaxis × 6 months reduces recurrence + improves neurodevelopmental outcome."
+      },
+      {
+        "step": "Congenital syphilis",
+        "detail": "IV penicillin G 50 000 units/kg every 12 h × 7 days then every 8 h to complete 10 days, OR IM procaine penicillin 50 000 units/kg daily × 10 days. Maternal treatment essential to prevent."
+      },
+      {
+        "step": "Parvovirus B19",
+        "detail": "Intrauterine transfusion for fetal anaemia; supportive postnatally."
+      },
+      {
+        "step": "Zika",
+        "detail": "Supportive; specialist neurodevelopmental + ophthalmological follow-up; prevention via vector control + travel advisory."
+      },
+      {
+        "step": "Multidisciplinary long-term follow-up",
+        "detail": "Paediatric infectious disease + neurology + ophthalmology + audiology + developmental pediatrics + family genetic counselling. Lifelong neurodevelopmental support."
+      }
+    ],
+    "references": [
+      {
+        "label": "CDC / AAP Red Book Pediatric Infectious Disease; WHO congenital syphilis elimination guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "smoking-cessation-pharmacotherapy",
+    "title": "Tobacco use cessation — comprehensive pharmacotherapy + behavioural pathway",
+    "icd10": [
+      "Z72.0",
+      "F17.200"
+    ],
+    "domains": [
+      "primary-care",
+      "preventive",
+      "addiction",
+      "psychiatry",
+      "respiratory"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Current tobacco use (cigarette, e-cigarette, smokeless / chewing tobacco, hookah, cigar).",
+      "Heaviness of smoking index: cigarettes/day + time-to-first-cigarette in morning < 30 min predicts severe nicotine dependence.",
+      "Withdrawal symptoms: irritability, anxiety, low mood, increased appetite, sleep disturbance, restlessness, cravings — peak 1–3 days, resolve over 4–6 weeks.",
+      "Comorbid: depression, anxiety, alcohol use, schizophrenia — quit attempts often coincide with mental health."
+    ],
+    "redFlags": [
+      "Severe psychiatric comorbidity — coordinate with mental health team.",
+      "Cardiovascular disease + planning surgery — counsel benefit-risk of quitting within 4 weeks of major surgery (delayed wound healing initially but better overall outcome).",
+      "Pregnancy + breastfeeding — modify pharmacotherapy.",
+      "Recent MI / stroke — quitting reduces re-event but pharmacotherapy choice considered."
+    ],
+    "diagnostics": [
+      {
+        "test": "Brief 5A intervention (Ask, Advise, Assess, Assist, Arrange) at every clinical encounter.",
+        "rationale": "Most effective brief clinical action."
+      },
+      {
+        "test": "Heaviness of smoking + nicotine dependence (Fagerstrom).",
+        "rationale": "Guides treatment choice."
+      },
+      {
+        "test": "Carbon monoxide breath test (ppm) for verification + motivation.",
+        "rationale": "Objective + motivating feedback."
+      },
+      {
+        "test": "Mental health screening (PHQ-9, GAD-7).",
+        "rationale": "Co-morbid treatment."
+      },
+      {
+        "test": "Cardiovascular + respiratory assessment in long-term smokers.",
+        "rationale": "Identify smoking-related disease."
+      }
+    ],
+    "management": [
+      {
+        "step": "Behavioural support + brief intervention",
+        "detail": "Doubling brief intervention effectiveness. Group counselling, telephone quitline, text-message support, smartphone apps. Combined behavioural + pharmacotherapy approach is most effective."
+      },
+      {
+        "step": "First-line pharmacotherapy: nicotine replacement therapy (NRT)",
+        "detail": "Patches (slow release) + short-acting (gum, lozenge, inhaler, nasal spray) for breakthrough cravings. Patches: 21 mg / 24 h for > 10 cigarettes/day; 14 mg for 5–10; 7 mg taper. Use combination NRT (patch + short-acting) — superior to single. Continue × 8–12 weeks then taper."
+      },
+      {
+        "step": "Varenicline (first-line)",
+        "detail": "Partial nicotinic agonist; reduces both withdrawal AND reward. 0.5 mg daily × 3 days → 0.5 mg BD × 4 days → 1 mg BD × 12 weeks; continue 12 weeks if successful. Counsel re: neuropsychiatric warnings (now lifted from black box per EAGLES trial); rare cardiovascular events; nausea + abnormal dreams common."
+      },
+      {
+        "step": "Bupropion sustained-release (first-line)",
+        "detail": "150 mg daily × 3 days then 150 mg BD × 7–12 weeks. AVOID in seizure disorder, eating disorder, alcohol withdrawal. Useful in patients with concurrent depression."
+      },
+      {
+        "step": "Cytisine — emerging first-line where available",
+        "detail": "Partial nicotinic agonist (plant-derived); 25-day course; lower cost than varenicline; non-inferior efficacy per RAUORA + RANGUE trials."
+      },
+      {
+        "step": "Long-term + combined therapy",
+        "detail": "Combining varenicline + NRT may be more effective than either alone (especially for heavy smokers). Extended duration (3–6 months) of NRT or varenicline if relapse risk."
+      },
+      {
+        "step": "Pregnancy + smoking",
+        "detail": "Behavioural support FIRST. NRT preferred over varenicline / bupropion (limited safety data); intermittent dose (gum, lozenge) to reduce sustained nicotine exposure; quit completely if possible. Specialist support important."
+      },
+      {
+        "step": "E-cigarettes — emerging evidence",
+        "detail": "Smokers unable to quit with NRT / varenicline may benefit from e-cigarettes as harm-reduction (lower risk than continued smoking but not without risk). Avoid in never-smokers + adolescents. Eventually plan complete cessation."
+      },
+      {
+        "step": "Follow-up + relapse prevention",
+        "detail": "Review at 1, 4, 12, 24 weeks. Address relapse compassionately — multiple quit attempts often required. Adapt pharmacotherapy + behavioural strategies."
+      }
+    ],
+    "references": [
+      {
+        "label": "USPSTF Tobacco Smoking Cessation Recommendation (2021); UK NICE Tobacco — preventing uptake, promoting quitting (NG209)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]

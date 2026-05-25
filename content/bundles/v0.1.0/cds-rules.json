@@ -6072,5 +6072,291 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "phaeochromocytoma-alpha-block-first",
+    "hook": "patient-view",
+    "type": "phaeochromocytoma-alpha-block-first",
+    "services": [
+      "vedamd-phaeochromocytoma"
+    ],
+    "title": "Phaeochromocytoma — alpha-blockade BEFORE any beta-blocker",
+    "description": "Fires for severe paroxysmal hypertension + sweating + tachycardia + headache, with plasma / urinary metanephrines raised. WARNS that beta-blocker without prior alpha-blockade can precipitate severe hypertensive crisis + heart failure. Recommends phenoxybenzamine 7–14 days pre-op + add beta-blocker only after alpha-blockade established. Pregnancy planning + delivery. Reads context.paroxysmalHypertension, context.metanephrines, context.medications, context.pregnant — never patient identity.",
+    "references": [
+      {
+        "label": "Endocrine Society Pheo Guideline 2014"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E27.5",
+        "display": "Adrenal medullary hyperfunction",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pituitary-apoplexy-empirical-hydrocortisone",
+    "hook": "patient-view",
+    "type": "pituitary-apoplexy-empirical-hydrocortisone",
+    "services": [
+      "vedamd-pituitary-apoplexy"
+    ],
+    "title": "Pituitary apoplexy — empirical hydrocortisone + neurosurgical referral",
+    "description": "Fires for sudden headache + visual disturbance + cranial nerve palsy + reduced consciousness with suspected pituitary mass. Recommends IMMEDIATE hydrocortisone 100 mg IV (do NOT wait for cortisol), neurosurgical assessment, MRI pituitary, DDAVP for DI. Lifelong hormone replacement + sick-day rules. Reads context.suddenHeadache, context.visualLoss, context.cranialNervePalsy, context.suspectedAdrenalCrisis — never patient identity.",
+    "references": [
+      {
+        "label": "Society for Endocrinology Pituitary Apoplexy 2011"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E23.6",
+        "display": "Pituitary disorders",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-alcohol-withdrawal-thiamine-benzo",
+    "hook": "patient-view",
+    "type": "severe-alcohol-withdrawal-thiamine-benzo",
+    "services": [
+      "vedamd-severe-aw"
+    ],
+    "title": "Severe alcohol withdrawal / DT — thiamine BEFORE glucose + benzodiazepine",
+    "description": "Fires for CIWA-Ar ≥ 20 OR delirium tremens features OR alcohol-withdrawal seizures. Recommends IV pabrinex (thiamine) BEFORE dextrose; symptom-triggered diazepam / chlordiazepoxide titrated to CIWA; correct Mg / K / phosphate; ICU for DT; brief intervention + naltrexone / acamprosate for relapse prevention. Reads context.ciwaScore, context.delirium, context.alcoholHistory, context.hepaticFunction — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG100 Alcohol-use disorders"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F10.231",
+        "display": "Alcohol dependence with withdrawal delirium",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "opioid-use-disorder-mat-initiation",
+    "hook": "patient-view",
+    "type": "opioid-use-disorder-mat-initiation",
+    "services": [
+      "vedamd-opioid-use-disorder"
+    ],
+    "title": "Opioid use disorder — buprenorphine / methadone MAT + take-home naloxone",
+    "description": "Fires for patient with opioid-use disorder seeking treatment / recent overdose. Recommends MAT — buprenorphine (start at COWS ≥ 12; avoid precipitated withdrawal) OR methadone (specialist clinic; ECG baseline). Take-home naloxone for all + household training. Continue MAT in pregnancy. Psychosocial support + harm reduction. Reads context.opioidUseDisorder, context.cowsScore, context.recentOverdose, context.pregnant — never patient identity.",
+    "references": [
+      {
+        "label": "SAMHSA TIP 63 MAT for OUD; WHO Pharmacological Treatment of Mental Disorders in Primary Health Care"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F11.20",
+        "display": "Opioid dependence",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "high-altitude-illness-descend",
+    "hook": "patient-view",
+    "type": "high-altitude-illness-descend",
+    "services": [
+      "vedamd-high-altitude"
+    ],
+    "title": "High altitude illness — descent + targeted pharmacotherapy",
+    "description": "Fires for altitude > 2500 m + AMS / HACE / HAPE symptoms. Recommends STOP ascent for AMS; IMMEDIATE descent for HACE / HAPE; dexamethasone 8 mg for HACE; nifedipine 30 mg BD OR sildenafil for HAPE; oxygen; portable hyperbaric chamber as bridge. Acetazolamide for prophylaxis. Reads context.altitudeMeters, context.lakeLouiseScore, context.ataxia, context.haceFeatures, context.frothyBloodSputum — never patient identity.",
+    "references": [
+      {
+        "label": "WMS Practice Guidelines Acute Altitude Illness"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T70.20",
+        "display": "Mountain sickness",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "haemophilia-bleed-emergency",
+    "hook": "patient-view",
+    "type": "haemophilia-bleed-emergency",
+    "services": [
+      "vedamd-haemophilia"
+    ],
+    "title": "Severe haemophilia bleed — factor concentrate IMMEDIATELY",
+    "description": "Fires for known haemophilia A/B + suspected bleed. Recommends factor concentrate BEFORE imaging if major bleed suspected (intracranial, retroperitoneal, severe muscle). FVIII 50–100 IU/kg for haemophilia A; FIX 100–150 IU/kg for haemophilia B; bypassing agent (FEIBA / rVIIa) if inhibitor; tranexamic acid for mucocutaneous (avoid in haematuria); DDAVP for mild haemophilia A. Reads context.haemophiliaType, context.bleedSite, context.inhibitor, context.factorLevel — never patient identity.",
+    "references": [
+      {
+        "label": "WFH Haemophilia Guidelines 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D66",
+        "display": "Hereditary FVIII deficiency",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ttp-plasma-exchange-rituximab",
+    "hook": "patient-view",
+    "type": "ttp-plasma-exchange-rituximab",
+    "services": [
+      "vedamd-ttp"
+    ],
+    "title": "TTP — URGENT plasma exchange + steroid + caplacizumab",
+    "description": "Fires for microangiopathic haemolytic anaemia + thrombocytopenia + ± neurological features + raised LDH + low ADAMTS13. Recommends URGENT PEX within 4–8 h (do not wait for ADAMTS13 result); methylprednisolone 1 g daily × 3 days; caplacizumab 10 mg daily; rituximab for refractory. AVOID platelet transfusion. Reads context.schistocytes, context.platelet, context.ldh, context.adamts13Result, context.creatinine, context.neurologicalSymptoms — never patient identity.",
+    "references": [
+      {
+        "label": "ISTH TTP 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M31.1",
+        "display": "TTP",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "avulsed-tooth-replant-now",
+    "hook": "patient-view",
+    "type": "avulsed-tooth-replant-now",
+    "services": [
+      "vedamd-dental-avulsion"
+    ],
+    "title": "Avulsed permanent tooth — replant within minutes",
+    "description": "Fires for traumatic avulsion of permanent tooth. Recommends IMMEDIATE replantation by patient / first responder (rinse with saline / milk; do NOT scrub); if cannot replant, store in HBSS > milk > saliva > saline (NOT water); dental clinic for splint + endodontic follow-up within hours. DO NOT replant primary teeth. Reads context.permanentTooth, context.timeOutOfSocketMinutes, context.storageMedium — never patient identity.",
+    "references": [
+      {
+        "label": "IADT Dental Trauma Guidelines 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "S03.20",
+        "display": "Dislocation of tooth",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "neuropathic-pain-nice-first-line",
+    "hook": "patient-view",
+    "type": "neuropathic-pain-nice-first-line",
+    "services": [
+      "vedamd-neuropathic-pain"
+    ],
+    "title": "Chronic neuropathic pain — NICE first-line ladder",
+    "description": "Fires for chronic pain with neuropathic features (DN4 / LANSS / PainDETECT positive). Recommends address treatable cause; first-line monotherapy ONE of amitriptyline / duloxetine / gabapentin / pregabalin; rotate / combine if inadequate; topical for focal (lidocaine / capsaicin); CBT + physiotherapy; avoid long-term opioid. Mental health + sleep co-management. Reads context.painDuration, context.dn4Score, context.diabetes, context.priorSurgery — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG173 neuropathic pain"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G89.4",
+        "display": "Chronic pain syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "diabetic-retinopathy-anti-vegf-pathway",
+    "hook": "patient-view",
+    "type": "diabetic-retinopathy-anti-vegf-pathway",
+    "services": [
+      "vedamd-diabetic-retinopathy"
+    ],
+    "title": "Diabetic retinopathy — PRP / anti-VEGF / vitrectomy by stage",
+    "description": "Fires for diabetic patient with retinal disease graded R0–R3 + M0/M1. Recommends annual screening; tight metabolic + BP control; PRP for proliferative; intravitreal anti-VEGF (ranibizumab / aflibercept / faricimab) for diabetic macular oedema; vitrectomy for vitreous haemorrhage / traction detachment. Pregnancy + DR — accelerated progression. Reads context.diabetesDuration, context.hba1c, context.bp, context.retinopathyGrade, context.dmo — never patient identity.",
+    "references": [
+      {
+        "label": "AAO Diabetic Retinopathy PPP"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E11.359",
+        "display": "T2DM with retinopathy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "congenital-hypothyroidism-screen-start-levothyroxine",
+    "hook": "patient-view",
+    "type": "congenital-hypothyroidism-screen-start-levothyroxine",
+    "services": [
+      "vedamd-congenital-hypothyroidism"
+    ],
+    "title": "Positive newborn screen for congenital hypothyroidism — start levothyroxine within 14 days",
+    "description": "Fires for positive newborn screen TSH > 20. Recommends URGENT confirmatory venous TSH + free T4; START levothyroxine 10–15 microgram/kg/day within 14 days of birth; do NOT wait for thyroid imaging. Re-evaluate at 3 years for transient. Family + genetic counselling. Reads context.ageDays, context.newbornScreenTsh, context.confirmTsh, context.freeT4 — never patient identity.",
+    "references": [
+      {
+        "label": "ESPE / ATA Congenital Hypothyroidism Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E03.1",
+        "display": "Congenital hypothyroidism without goitre",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]
