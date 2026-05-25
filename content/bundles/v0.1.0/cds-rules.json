@@ -10508,5 +10508,155 @@
     "rationale": "ESC/ERS PH 2022 + AMBITION + STELLAR + INCREASE.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "ulcerative-colitis-biologic-era-r1",
+    "title": "UC — 5-ASA topical + oral; biologic / JAK / S1P for moderate-severe",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "ulcerative-colitis-biologic-era"
+    },
+    "indicators": [
+      "UC diagnosis / flare"
+    ],
+    "recommendation": "Proctitis: 5-ASA suppositories; left-sided: enemas + oral 5-ASA 2.4–4.8 g; extensive moderate-severe: oral 5-ASA + budesonide MMX / prednisolone + AZA. Moderate-severe failed conventional: anti-TNF (infliximab), vedolizumab, ustekinumab, risankizumab/mirikizumab, tofacitinib/upadacitinib (JAK BBW), ozanimod/etrasimod (S1P). ACUTE SEVERE UC: admit IV hydrocort 100 q6h × 3 d + VTE prophylaxis; rule out infection + CMV; day 3 reassess — failed → infliximab/ciclosporin rescue OR COLECTOMY at day 5–7 if failed rescue. Treat-to-target STRIDE-II. TB/HBV/varicella screen before biologic. Surveillance colonoscopy from 8–10 y. PSC-UC: ursodeoxycholic acid + MRCP.",
+    "rationale": "ECCO 2022 + AGA 2024 + BSG 2024 + ELEVATE/TRUE NORTH.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "crohns-disease-biologic-comprehensive-r1",
+    "title": "Crohn's — biologic early (top-down) for severe/fistulising + STRIDE-II",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "crohns-disease-biologic-comprehensive"
+    },
+    "indicators": [
+      "Crohn's diagnosis / fistula / stricture / steroid-dependent"
+    ],
+    "recommendation": "Treat-to-target. Mild: budesonide 9 mg (ileocaecal). Moderate-severe: corticosteroid + immunomodulator (AZA / MTX) ± biologic. Severe / fistulising / steroid-dependent: biologic EARLY (anti-TNF infliximab best fistula, adalimumab, certolizumab; combo with AZA per SONIC). Vedolizumab, ustekinumab, risankizumab, upadacitinib (BBW — avoid elderly/CV/VTE). Perianal: MRI + EUA + setons + abscess drainage + anti-TNF + cipro/metro adjunct. Stricture: dilatation/strictureplasty; biologic for inflammatory. Drain abscess before immunosuppression. Surgery NOT curative; biologic prophylaxis post-op high-risk (POCER). B12 + iron + vit D supplementation. SMOKING CESSATION critical. Vaccinate before biologic; TB/HBV screen.",
+    "rationale": "ECCO 2022/2024 + AGA 2024 + STRIDE-II + SONIC + U-EXCEL.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "hepatitis-b-chronic-modern-r1",
+    "title": "Chronic HBV — tenofovir lifelong; WHO simplified eligibility 2024",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hepatitis-b-chronic-modern"
+    },
+    "indicators": [
+      "HBsAg+ > 6 months"
+    ],
+    "recommendation": "WHO 2024 simplified: TREAT if any of — cirrhosis, fibrosis ≥ F2, persistent ALT raised + DNA > 2000, HBeAg+ significant disease, pregnant DNA > 200k (PMTCT). FIRST-LINE: tenofovir TDF 300 mg or TAF 25 mg daily (lifelong most); entecavir alternative. AVOID lamivudine mono / interferon SSA. Monitor ALT + DNA 3-monthly then 6-monthly; HCC surveillance US ± AFP 6-monthly cirrhotic + Asian/African criteria. Pregnancy DNA > 200k: tenofovir from 28 wk to 4 wk PP + infant HBIG + vaccine within 12h. HIV-HBV: ART with 2 anti-HBV (TDF+3TC); never stop. HDV: bulevirtide. UNIVERSAL infant vaccination + healthcare worker + high-risk catch-up. Address NHIF / generic TDF access in SSA.",
+    "rationale": "WHO 2024 + EASL 2024 + AASLD 2018+ + Kenya National Viral Hepatitis Plan.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "hepatitis-c-doaa-cure-r1",
+    "title": "HCV — pan-genotypic DAA 8–12 weeks (cure ≥ 95%)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hepatitis-c-doaa-cure"
+    },
+    "indicators": [
+      "confirmed HCV RNA+"
+    ],
+    "recommendation": "Pan-genotypic regimens (WHO simplified — no genotype needed): glecaprevir/pibrentasvir 8 wk (no cirrhosis) / 12 wk (compensated cirrhosis) OR sofosbuvir/velpatasvir 12 wk (+ ribavirin if decompensated/NS5A failure). Check drug interactions (amiodarone, statins, anticonvulsants, rifampicin). DECOMPENSATED: avoid protease inhibitor regimens; sof/vel + ribavirin × 12 wk; refer transplant. HBV reactivation risk — check HBsAg pre-DAA, treat with TDF if positive concurrently. HIV-HCV: same DAA, check ART interactions. Verify SVR12 at 12 wk post-treatment. Cirrhotic — continue HCC surveillance. Re-infection counsel PWID/MSM. WHO 2030 elimination target; advocate generic access.",
+    "rationale": "WHO 2024 + EASL 2020/2024 + AASLD 2024.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "nafld-mash-mafld-modern-r1",
+    "title": "MASLD/MASH — FIB-4 stratify; weight loss + resmetirom F2-F3",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "nafld-mash-mafld-modern"
+    },
+    "indicators": [
+      "steatosis + ≥ 1 cardiometabolic risk factor"
+    ],
+    "recommendation": "Stratify with FIB-4 then FibroScan/ELF if intermediate-high. Refer hepatology if F2+. Lifestyle: Mediterranean diet + 7–10% weight loss (reverses MASH) + exercise. Medical: RESMETIROM 80 mg/d for MASH F2-F3 (MAESTRO-NASH 2024 — FIRST approved); semaglutide / tirzepatide for weight + DM + MASH; vitamin E 800 IU non-diabetic biopsy NASH; pioglitazone in T2DM. Bariatric for BMI ≥ 35 + metabolic syndrome. Treat comorbidities aggressively (CV main cause of death): ACE/ARB for HTN, SGLT2i + GLP-1RA for DM, STATINS SAFE (improve outcomes), CPAP for OSA. Avoid alcohol, hepatotoxins. Coffee 2-3 cups protective. HCC surveillance if cirrhotic.",
+    "rationale": "AASLD 2023 + EASL/EASD/EASO 2024 + MAESTRO-NASH + Multi-Society nomenclature.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "acute-pancreatitis-modern-management-r1",
+    "title": "Acute pancreatitis — moderate fluid (WATERFALL) + early feeding + ERCP if cholangitis",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "acute-pancreatitis-modern-management"
+    },
+    "indicators": [
+      "pain + lipase > 3× ULN ± imaging"
+    ],
+    "recommendation": "Diagnose with 2 of 3 (pain/lipase 3xULN/imaging). Severity: Atlanta 2012 (mild/moderately severe/severe) + BISAP + SIRS; CT delayed to 72–96h. MODERATE Ringer's lactate goal-directed UO > 0.5 ml/kg/h (NOT aggressive — WATERFALL 2022). Pain control opioid. Early enteral feeding within 24–72h (NJ if not tolerating PO) — NOT NPO. NO prophylactic antibiotics (PROPATRIA harm). Gallstone + cholangitis/persistent obstruction: ERCP + sphincterotomy in 24–48h. SAME-admission cholecystectomy for mild gallstone (PONCHO). Alcohol cessation + thiamine. Hypertriglyceridaemia > 1000: insulin/heparin/plasmapheresis. Severe/necrotising: HDU/ICU, NJ feeds; infected necrosis (clinical deterioration > 1 wk + gas/positive FNA) = meropenem + STEP-UP drainage (PANTER — percutaneous first, then endoscopic, then surgical; AVOID early open surgery; delay > 4 wk).",
+    "rationale": "ACG 2024 + Atlanta 2012/2024 + WATERFALL + PANTER + PONCHO.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "upper-gi-bleeding-glasgow-blatchford-r1",
+    "title": "UGIB — restrictive Hb 70 + endoscopy 24h + variceal terlipressin/ceftriaxone",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "upper-gi-bleeding-glasgow-blatchford"
+    },
+    "indicators": [
+      "haematemesis / melaena"
+    ],
+    "recommendation": "GBS pre-endoscopic. Resus 2× large-bore + restrictive transfusion target Hb 70 (Villanueva) — NOT routine TXA (HALT-IT no benefit). Reverse anticoag: idarucizumab (dabigatran) / andexanet (Xa inhibitors) / 4F-PCC+vit K (warfarin). Variceal suspicion (cirrhosis): terlipressin 2 mg IV q4h or octreotide 50 mcg + 50 mcg/h + ceftriaxone 1 g/d × 7 d. Endoscopy within 24h. Forrest Ia/b/IIa: dual modality endoscopic therapy + IV PPI 80 mg bolus + 8 mg/h × 72h. Varices: band ligation ± glue; TIPSS for refractory / early in high-risk. H. pylori test + eradicate ulcer. Restart anticoag within 7 d if low rebleed + high thrombotic. NSAID stop or PPI cover + COX-2. Repeat endo at 6–8 wk for gastric ulcer (cancer exclusion). Variceal secondary prevention NSBB + EVL.",
+    "rationale": "BSG 2024 + NICE CG141 + Villanueva NEJM 2013 + HALT-IT 2020.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "h-pylori-test-treat-2024-r1",
+    "title": "H. pylori — bismuth quadruple 14 d first-line in high resistance regions",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "h-pylori-test-treat-2024"
+    },
+    "indicators": [
+      "ulcer / dyspepsia / IDA unexplained"
+    ],
+    "recommendation": "Test (UBT or stool antigen — off PPI 2 wk, antibiotic 4 wk); serology limited. Indications: ulcer (current/past), uninvestigated dyspepsia < 55 no alarms, MALT, post-gastric Ca, IDA, ITP, NSAID/aspirin chronic + risk, family Ca. HIGH RESISTANCE (Africa, S Asia, S Europe — most): BISMUTH QUADRUPLE 14 d (bismuth + tetracycline + metronidazole + PPI). Low clarithro resistance (< 15%): clarithro triple 14 d. CONCOMITANT (PPI+amox+clarithro+metro) alternative. Vonoprazan-based emerging. Verify eradication 4 wk post-treatment (UBT/stool — off PPI 2 wk). Second-line: bismuth quadruple if not used or levofloxacin triple. Third-line: refer endoscopy + culture-guided. Continue PPI 4-8 wk ulcer; repeat endo at 6-8 wk gastric ulcer (cancer).",
+    "rationale": "Maastricht VI/Florence 2022 + ACG 2024 + Houston 2018.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "cirrhosis-decompensation-comprehensive-r1",
+    "title": "Cirrhosis — Baveno VII; carvedilol primary varix prophylaxis + SBP albumin",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "cirrhosis-decompensation-comprehensive"
+    },
+    "indicators": [
+      "cirrhosis diagnosis / decompensation"
+    ],
+    "recommendation": "Aetiology directed: alcohol cessation + naltrexone/baclofen; HBV TDF lifelong; HCV DAA cure; MASH resmetirom F2-F3 + tirzepatide; AIH steroid+AZA. Variceal primary prophylaxis: CARVEDILOL 12.5 mg/d (superior — Garcia-Tsao 2024) or NSBB or EVL for medium/large. HCC surveillance US ± AFP 6-monthly. Ascites: Na restrict + spironolactone+furosemide 100:40; SBP — diagnostic tap (> 250 PMN) → ceftriaxone 5–7 d + albumin 1.5 g/kg d1 + 1 g/kg d3 (HRS prevent) + norfloxacin secondary prophylaxis. HE: lactulose ± rifaximin 550 BD; treat precipitant. Variceal bleed: terlipressin/octreotide + ceftriaxone + EVL ± TIPSS early. HRS: albumin + terlipressin; refer transplant urgently. Transplant referral MELD ≥ 15 / decompensation / HCC Milan. HCC: resection / RFA / TACE / atezo+bev (IMbrave-150). Vaccinate. Avoid NSAIDs / paracetamol max 2 g / BZD / aminoglycoside. Dietetics — 1.2–1.5 g/kg protein.",
+    "rationale": "EASL 2018/2024 + AASLD 2021 + Baveno VII 2022 + IMbrave-150.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "ibs-rome-iv-low-fodmap-r1",
+    "title": "IBS — Rome IV + low FODMAP + CBT/hypno + targeted pharm",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "ibs-rome-iv-low-fodmap"
+    },
+    "indicators": [
+      "chronic abdominal pain + altered bowel habit, Rome IV criteria"
+    ],
+    "recommendation": "Limited workup: FBC + CRP + calprotectin (< 50 rules out IBD) + coeliac + TSH. NO routine colonoscopy < 50 no alarms. Education biopsychosocial. Dietary: regular meals + reduce trigger; LOW FODMAP 6–8 wk elimination + structured reintroduction with dietitian (NICE 2nd line); soluble fibre (psyllium) for IBS-C; AVOID insoluble fibre (bran). CBT (Mahana 2021) + gut-directed hypnotherapy strong evidence. Pharm: IBS-C — PEG / linaclotide / plecanatide / prucalopride; IBS-D — loperamide / rifaximin 550 TID × 14 d (TARGET) / bile acid binders (BAD subset); antispasmodic mebeverine / peppermint oil; TCA low-dose amitriptyline 10–25 mg nocte (ATLANTIS 2023). Refractory: refer gastro / psychology.",
+    "rationale": "BSG 2021 + ACG 2021 + Rome IV 2024 + Mahana + ATLANTIS.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
