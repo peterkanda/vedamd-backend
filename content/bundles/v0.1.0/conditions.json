@@ -66716,5 +66716,1393 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "who-aware-antibiotic-stewardship",
+    "title": "WHO AWaRe antibiotic stewardship — primary care + hospital",
+    "icd10": [
+      "Z29.2"
+    ],
+    "domains": [
+      "infectious-disease",
+      "primary-care",
+      "policy"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Clinical decision involving antibiotic prescribing across all settings.",
+      "AWaRe (Access, Watch, Reserve) framework launched WHO 2017; embedded in WHO Essential Medicines List + Kenya AMR National Action Plan + Kenya EML.",
+      "ACCESS antibiotics (first-choice): amoxicillin, ampicillin, benzylpenicillin, phenoxymethylpenicillin, flucloxacillin, cefalexin, cefazolin, doxycycline, sulfamethoxazole-trimethoprim, metronidazole, gentamicin, nitrofurantoin, clindamycin (selected).",
+      "WATCH antibiotics (broader spectrum, more resistance concern): macrolides (azithromycin, clarithromycin), fluoroquinolones (ciprofloxacin, levofloxacin), 3rd / 4th-generation cephalosporins (ceftriaxone, cefepime), carbapenems (meropenem, ertapenem), piperacillin-tazobactam, vancomycin (IV), linezolid.",
+      "RESERVE antibiotics (last-resort, multidrug-resistant infections): ceftazidime-avibactam, ceftolozane-tazobactam, colistin, daptomycin, fosfomycin IV, plazomicin, polymyxin B, tigecycline, fidaxomicin."
+    ],
+    "redFlags": [
+      "Sepsis requiring empirical broad-spectrum — escalate then de-escalate.",
+      "Antibiotic-resistant infection — culture-driven; reserved antibiotics only with susceptibility.",
+      "C. difficile risk on broad-spectrum.",
+      "Allergy / intolerance.",
+      "Pregnancy + breastfeeding — adjust.",
+      "Paediatric — weight-banded + formulation-appropriate.",
+      "Renal / hepatic impairment — dose adjustment."
+    ],
+    "diagnostics": [
+      {
+        "test": "Confirm infection — clinical + investigation (CRP, WBC, urinalysis, cultures, imaging) before antibiotic where possible.",
+        "rationale": "Avoid unnecessary use."
+      },
+      {
+        "test": "Culture + sensitivities BEFORE antibiotic where feasible.",
+        "rationale": "Targeted therapy."
+      },
+      {
+        "test": "Antibiotic susceptibility patterns (local antibiogram).",
+        "rationale": "Empirical choice based on local resistance data."
+      },
+      {
+        "test": "Allergy history clarification (true allergy vs intolerance).",
+        "rationale": "Avoid alternative inappropriately."
+      },
+      {
+        "test": "Renal / hepatic / weight + height for dose adjustment.",
+        "rationale": "Safety."
+      },
+      {
+        "test": "Pregnancy / breastfeeding status.",
+        "rationale": "Modify regimen."
+      }
+    ],
+    "management": [
+      {
+        "step": "First-line Access antibiotic for community-acquired infection",
+        "detail": "WHO target: ≥ 60% of antibiotic use should be from ACCESS category. Examples: community-acquired pneumonia — amoxicillin; uncomplicated UTI — nitrofurantoin / trimethoprim; cellulitis — flucloxacillin; pharyngitis (group A strep) — phenoxymethylpenicillin; chlamydia — doxycycline; helicobacter eradication — amoxicillin + clarithromycin + PPI."
+      },
+      {
+        "step": "Watch antibiotic — reserve for specific indications",
+        "detail": "Ceftriaxone: hospital-acquired pneumonia, gonorrhoea, meningitis, severe community infection. Azithromycin: chlamydia, atypical pneumonia, trachoma MDA. Ciprofloxacin: complicated UTI, traveller's diarrhoea, bone / joint, severe shigella. Restrict + audit; not first-line for ambulatory infection."
+      },
+      {
+        "step": "Reserve antibiotic — strict criteria + senior approval",
+        "detail": "Multidrug-resistant organisms confirmed on susceptibility (carbapenem-resistant Enterobacteriaceae, MRSA, VRE, ESBL); failure of conventional + culture-defined; ID consultant approval. NOT empirical."
+      },
+      {
+        "step": "Duration — shorter is better (where evidence supports)",
+        "detail": "Community-acquired pneumonia: 5 days (often previously 7-10). Uncomplicated UTI: 3 days (nitrofurantoin) or 5 days (trimethoprim). Cellulitis: 5-7 days. Sinusitis: 5-7 days. Tonsillitis (GAS): 10 days (full course). Endocarditis: 4-6 weeks. Osteomyelitis: 6 weeks."
+      },
+      {
+        "step": "Targeted de-escalation",
+        "detail": "Once culture + susceptibility known, narrow spectrum; switch to oral when stable; complete course."
+      },
+      {
+        "step": "Prevention principles",
+        "detail": "Hand hygiene (most important infection prevention); vaccination (reduce infection burden); avoid antibiotic in viral / self-limiting illness; non-antibiotic alternatives (saline nasal irrigation for sinusitis, fluids + rest for viral); patient education on prudent use; consider delayed prescriptions in select cases."
+      },
+      {
+        "step": "Education + audit + feedback",
+        "detail": "Kenya AMR National Action Plan + KEMSA + Antimicrobial Stewardship Programme — facility-level monitoring + audit. Local + national antibiogram dissemination. Continuing medical education + prescribing audit."
+      },
+      {
+        "step": "Implementation of stewardship programmes",
+        "detail": "Multidisciplinary antimicrobial stewardship team (pharmacist + ID + microbiology + infection control); restricted formulary; pre-prescription authorisation; post-prescription review; clinical guidelines + protocols; education + behaviour change."
+      },
+      {
+        "step": "Surveillance + reporting",
+        "detail": "Kenya Antimicrobial Resistance Containment Committee (KARCC); routine resistance reporting (GLASS — Global Antimicrobial Resistance Surveillance); facility AMR / consumption monitoring; outbreak detection."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO AWaRe Classification (2021 update); WHO Essential Medicines List 2023; Kenya National AMR Policy + AMR Action Plan; GLASS reports"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "who-triple-elimination-mtct",
+    "title": "WHO Triple elimination of mother-to-child transmission — HIV + syphilis + hepatitis B (Kenya pathway)",
+    "icd10": [
+      "O98",
+      "Z21"
+    ],
+    "domains": [
+      "obstetrics",
+      "hiv",
+      "infectious-disease",
+      "primary-care",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "maxAgeYears": 49,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Pregnant woman receiving antenatal care — universal testing for HIV + syphilis + hepatitis B as part of WHO + Kenya MOH triple elimination strategy.",
+      "WHO targets ≥ 95% antenatal testing + ≥ 90% treatment coverage for elimination of MTCT — paths to validation for individual diseases + combined.",
+      "Kenya MOH implementing through PMTCT programme + Linda Mama + integration with antenatal care."
+    ],
+    "redFlags": [
+      "Late-presentation / unbooked HIV-positive pregnancy — urgent ART + neonatal prophylaxis.",
+      "Active maternal syphilis with raised RPR + symptoms — emergency treatment to prevent congenital syphilis (stillbirth, neonatal death, congenital syphilis).",
+      "HBeAg-positive / high viral load HBV mother — tenofovir from 28 weeks + neonatal HBIG + accelerated immunisation.",
+      "Co-infection (HIV + syphilis; HIV + hepatitis B) — combined management.",
+      "Failed PMTCT (HIV transmission in infant despite intervention) — pediatric ART + investigation.",
+      "Pregnant adolescent / vulnerable — additional support."
+    ],
+    "diagnostics": [
+      {
+        "test": "HIV: rapid test as part of routine ANC; if positive — confirmatory test + viral load + CD4.",
+        "rationale": "Identify HIV-positive pregnant women."
+      },
+      {
+        "test": "Syphilis: rapid plasma reagin (RPR) / venereal disease research laboratory (VDRL) + treponemal antibody test.",
+        "rationale": "Identify active / latent syphilis."
+      },
+      {
+        "test": "Hepatitis B: HBsAg testing; if positive — HBeAg + viral load + LFTs.",
+        "rationale": "Identify active HBV + assess transmission risk."
+      },
+      {
+        "test": "Partner testing offered + encouraged.",
+        "rationale": "Index partner notification."
+      },
+      {
+        "test": "Re-test in 3rd trimester if initial negative + high-risk.",
+        "rationale": "Detect late seroconversion."
+      },
+      {
+        "test": "Postnatal infant testing per protocol: HIV PCR at 6 weeks + 6 months + 12 months OR 18 months; syphilis serology + RPR; HBsAg + anti-HBc at 9-12 months.",
+        "rationale": "Diagnose / exclude infection."
+      }
+    ],
+    "management": [
+      {
+        "step": "Universal antenatal testing + counselling",
+        "detail": "Opt-out testing for HIV + syphilis + hepatitis B at first ANC contact (per Kenya MOH protocol). Confidential + voluntary + with informed consent. Pre + post-test counselling. Repeat in 3rd trimester for high-risk."
+      },
+      {
+        "step": "HIV-positive pregnancy — Option B+ lifelong ART",
+        "detail": "Start ART within 7 days of diagnosis (same-day if possible). Kenya first-line: TLD (tenofovir + lamivudine + dolutegravir). Continue lifelong. Viral load at 36 weeks ideally < 50 copies/mL. Infant antiretroviral prophylaxis per WHO + Kenya 2021 — nevirapine for high-risk infants ± dual prophylaxis with zidovudine."
+      },
+      {
+        "step": "Syphilis-positive pregnancy — single-dose benzathine penicillin",
+        "detail": "Benzathine penicillin G 2.4 MU IM single dose for primary, secondary, early-latent (< 1 year). Late-latent + unknown duration: 3 weekly doses. Allergic + pregnant: DESENSITISATION + penicillin (no alternative as effective for congenital syphilis prevention; doxycycline contraindicated in pregnancy). Repeat RPR at delivery + monitor titres to assess response."
+      },
+      {
+        "step": "Hepatitis B-positive pregnancy — tenofovir + neonatal interventions",
+        "detail": "HBeAg-positive OR HBV DNA > 200,000 IU/mL: start tenofovir from week 28 to reduce viral load + transmission. ALL HBsAg-positive pregnancies: neonatal hepatitis B vaccine within 24 hours of birth + hepatitis B immunoglobulin (HBIG) within 12 hours (where available); continue routine HBV vaccination at 6 + 10 + 14 weeks per Kenya schedule."
+      },
+      {
+        "step": "Co-infection management",
+        "detail": "HIV + syphilis: prioritise treatment of both — penicillin G + ART. HIV + HBV: TLD (tenofovir-containing) covers both. Triple-positive: lifelong ART + benzathine penicillin + HBV treatment + neonatal-specific prophylaxis."
+      },
+      {
+        "step": "Delivery + intrapartum considerations",
+        "detail": "HIV: vaginal delivery preferred if viral suppressed; LSCS if VL > 1000 at 36 weeks or detectable. AVOID prolonged labour + invasive obstetric procedures (FBS, instrumental). Antiretroviral cover during labour. Continue ART postpartum lifelong. Syphilis: vaginal delivery; manage as usual. HBV: vaginal delivery acceptable; ensure neonatal vaccine + HBIG."
+      },
+      {
+        "step": "Postnatal infant interventions",
+        "detail": "HIV-exposed infant: prophylaxis 6-12 weeks (nevirapine + zidovudine), PCR at 6 weeks + 6 months + 12 months; breastfeeding with continued mother ART (preferred over formula in resource-limited where formula not safely possible); co-trimoxazole from 6 weeks. Syphilis-exposed: examine + investigate; treat if confirmed (penicillin per congenital syphilis protocol). HBV-exposed: vaccine within 24 hours + HBIG + complete schedule."
+      },
+      {
+        "step": "Maternal postnatal continuation",
+        "detail": "Lifelong ART. Lifelong hepatitis B antiviral if indicated. Repeat syphilis serology at 6, 12, 24 months to monitor response. Family planning + future-pregnancy planning."
+      },
+      {
+        "step": "Validation criteria + monitoring",
+        "detail": "WHO triple elimination criteria: low / declining incidence of MTCT for each disease; ≥ 95% antenatal coverage; ≥ 90% treatment coverage; data quality + monitoring. Kenya progressing toward validation."
+      },
+      {
+        "step": "Health system + community engagement",
+        "detail": "Linda Mama coverage + CHV-supported testing + adherence + follow-up. Reduce stigma + improve retention in care. Integration of HIV + syphilis + HBV testing into routine ANC."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Triple Elimination of MTCT framework (2017, with updates); Kenya MOH PMTCT National Guidelines; CDC + UNICEF dual elimination guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "mass-drug-administration-deworming-vitamin-a",
+    "title": "Mass drug administration — preventive chemotherapy + vitamin A campaigns",
+    "icd10": [
+      "B83",
+      "E50"
+    ],
+    "domains": [
+      "child-health",
+      "primary-care",
+      "tropical",
+      "preventive",
+      "ntd"
+    ],
+    "population": {
+      "minAgeYears": 1,
+      "maxAgeYears": 14,
+      "sex": "any"
+    },
+    "presentation": [
+      "Mass drug administration (MDA) campaigns for: soil-transmitted helminths (Ascaris, Trichuris, hookworm); schistosomiasis; trachoma (azithromycin); lymphatic filariasis (DEC + albendazole); onchocerciasis (ivermectin); vitamin A supplementation for children 6-59 months.",
+      "Kenya: NTD national programme + school-based deworming + community-based; integrated into immunisation + nutrition campaigns + Vitamin A days.",
+      "Target populations: children + women of reproductive age + endemic-area residents."
+    ],
+    "redFlags": [
+      "Suspected severe acute malnutrition in MDA recipient — treat malnutrition first.",
+      "Concurrent acute illness — defer routine MDA.",
+      "Suspected Loa loa endemic + ivermectin — encephalopathy risk; pre-MDA screening.",
+      "Pregnancy + MDA — albendazole + mebendazole + DEC + praziquantel safety + dose modifications per WHO.",
+      "Adverse drug reaction — Mazzotti for filaria / itch / fever; manage symptomatically."
+    ],
+    "diagnostics": [
+      {
+        "test": "Population mapping + transmission risk assessment.",
+        "rationale": "Determine MDA need + frequency."
+      },
+      {
+        "test": "Sentinel site monitoring — stool parasitology for STH + S. mansoni; urine for S. haematobium; nodule + skin snip for onchocerciasis.",
+        "rationale": "Track MDA impact + transition to elimination."
+      },
+      {
+        "test": "MDA coverage + adherence monitoring.",
+        "rationale": "Ensure programme effectiveness."
+      },
+      {
+        "test": "Vitamin A coverage monitoring + child age + height + weight.",
+        "rationale": "Identify children needing supplementation."
+      },
+      {
+        "test": "Surveillance for adverse events.",
+        "rationale": "Programme safety."
+      }
+    ],
+    "management": [
+      {
+        "step": "Soil-transmitted helminth (STH) deworming",
+        "detail": "Albendazole 400 mg (children 12-24 months: 200 mg) single dose OR mebendazole 500 mg single dose, twice yearly in high-prevalence areas (≥ 50%) — annually for moderate (20-49%). Target: preschool (1-4 years) + school-age (5-14 years) + women of childbearing age. Kenya school-based deworming days integrated with WASH education."
+      },
+      {
+        "step": "Schistosomiasis preventive chemotherapy",
+        "detail": "Praziquantel 40 mg/kg single dose. Frequency depends on prevalence: ≥ 50% — annually in all school-age + adults at risk; 10-49% — annually for school-age + adults at risk; < 10% — selective treatment. Kenya endemic regions (lake + western)."
+      },
+      {
+        "step": "Lymphatic filariasis (LF) elimination",
+        "detail": "Albendazole 400 mg + diethylcarbamazine (DEC) 6 mg/kg OR ivermectin 200 microgram/kg + albendazole 400 mg, annually × 5-7 years in endemic areas. Kenya: targeted MDA + transmission assessment surveys. Severe cases — lymphoedema + hydrocele management."
+      },
+      {
+        "step": "Onchocerciasis elimination",
+        "detail": "Ivermectin 150 microgram/kg single dose annually (twice yearly in some areas) for ≥ 15 years to interrupt transmission. AVOID in Loa loa co-endemic without screening (encephalopathy risk). Kenya: low onchocerciasis burden but neighbouring regions affected."
+      },
+      {
+        "step": "Trachoma elimination — SAFE strategy",
+        "detail": "Surgery for trichiasis + Antibiotics (azithromycin 20 mg/kg single dose OR tetracycline eye ointment, annual MDA in endemic communities) + Facial cleanliness + Environmental improvement (water + latrines). Kenya: targeted areas (Kajiado, Narok, etc.) + integrated with WASH."
+      },
+      {
+        "step": "Vitamin A supplementation",
+        "detail": "Children 6-11 months: 100,000 IU oral single dose every 6 months. Children 12-59 months: 200,000 IU oral single dose every 6 months. Postpartum women in deficient areas: 200,000 IU within 6 weeks. Kenya: Maternal + Child Health Week + Vitamin A days + integration with immunisation. Reduces under-5 mortality 24% + measles mortality 50% + diarrhoea mortality."
+      },
+      {
+        "step": "Iron + folic acid supplementation",
+        "detail": "Pregnant women: iron 30-60 mg + folic acid 0.4 mg daily throughout pregnancy. Children 6-23 months in high-prevalence anaemia: iron-fortified MNP (micronutrient powders) OR iron 10-12.5 mg daily × 3 months/year. Adolescent girls: 60 mg iron + 0.4 mg folic acid weekly. Kenya: nutritional programme integration."
+      },
+      {
+        "step": "Combined MDA campaigns — Maternal + Child Health Week",
+        "detail": "Integrated delivery: vitamin A + deworming albendazole + immunisation catch-up + growth monitoring + nutrition education + WASH messaging. Community health worker delivery + outreach. Twice-yearly campaigns in Kenya. School-based delivery for school-age."
+      },
+      {
+        "step": "Monitoring + evaluation",
+        "detail": "Coverage targets ≥ 75%. Sentinel site evaluation. Transmission assessment surveys (LF). Trachoma + onchocerciasis impact assessments. Post-MDA surveillance for re-emergence."
+      },
+      {
+        "step": "Adverse events management",
+        "detail": "Albendazole / mebendazole: well-tolerated; rare abdominal pain. Praziquantel: nausea + abdominal pain + dizziness (more in heavily-infected). Ivermectin: Mazzotti reaction in onchocerciasis (pruritus, rash, fever); Loa loa encephalopathy in co-endemic. DEC: systemic + ocular reactions in onchocerciasis (so AVOID DEC in oncho-endemic). Vitamin A: very high doses can cause hypervitaminosis A; counsel."
+      },
+      {
+        "step": "Adjunctive WASH + behaviour change",
+        "detail": "Drug delivery alone insufficient — combine with: latrine construction + use + handwashing + safe water + footwear + behavioural change communication for sustained impact + breaking transmission."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Guideline: Preventive chemotherapy to control STH (2017); WHO Schistosomiasis preventive chemotherapy (2022); WHO Vitamin A supplementation in infants + children 6-59 months (2011); Kenya MOH NTD Strategic Plan"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "who-icope-healthy-aging",
+    "title": "WHO ICOPE — integrated care for older people + healthy aging",
+    "icd10": [
+      "Z00.0",
+      "R54"
+    ],
+    "domains": [
+      "geriatrics",
+      "primary-care",
+      "rehabilitation"
+    ],
+    "population": {
+      "minAgeYears": 60,
+      "sex": "any"
+    },
+    "presentation": [
+      "Older adult (≥ 60) attending primary care for health maintenance / chronic disease management.",
+      "WHO Integrated Care for Older People (ICOPE) framework: shift from disease-by-disease to function-centred care.",
+      "Six domains of intrinsic capacity: cognition, mobility, vitality (malnutrition), vision, hearing, psychological (depression + mood).",
+      "ICOPE Step 1: screen all 6 domains in primary care. Step 2: detailed assessment for identified concerns. Step 3: personalised care plan. Step 4: monitor. Step 5: engage community + caregiver."
+    ],
+    "redFlags": [
+      "Recent falls + recurrent fracture — falls clinic + bone health.",
+      "Suspected delirium superimposed on dementia — investigate underlying cause.",
+      "Severe weight loss > 5% in 3 months — investigate (malnutrition / cancer / depression / cognitive).",
+      "Acute cognitive change — exclude reversible cause.",
+      "Suspected elder abuse / neglect / financial exploitation.",
+      "Polypharmacy adverse effects.",
+      "End-of-life — advance care planning + palliative."
+    ],
+    "diagnostics": [
+      {
+        "test": "ICOPE 6-domain screen at each primary care contact.",
+        "rationale": "Standardised early detection."
+      },
+      {
+        "test": "Cognition: 'remember 3 words + draw clock at 5 min' OR MoCA / MMSE for fuller assessment.",
+        "rationale": "Early dementia detection."
+      },
+      {
+        "test": "Mobility: chair-stand test (≥ 14 sec abnormal); gait speed; Timed Up + Go (> 12 sec abnormal).",
+        "rationale": "Falls + functional decline risk."
+      },
+      {
+        "test": "Vitality / nutrition: weight loss > 3 kg in 3 months; appetite loss; SNAQ; mini-nutritional assessment.",
+        "rationale": "Sarcopenia + cachexia risk."
+      },
+      {
+        "test": "Vision: read a small text; near + distance acuity; pinhole if reduced.",
+        "rationale": "Cataract / refractive / macular causes."
+      },
+      {
+        "test": "Hearing: whisper test + audiometry where available.",
+        "rationale": "Identify intervention-amenable hearing loss."
+      },
+      {
+        "test": "Psychological: PHQ-2 / PHQ-9; GAD-2 / GAD-7.",
+        "rationale": "Depression + anxiety screening."
+      },
+      {
+        "test": "Comprehensive geriatric assessment for positive screen — medical / mental / functional / social / environmental / medication.",
+        "rationale": "Holistic baseline."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidimensional intervention",
+        "detail": "Address each affected domain. Person-centred. Community + caregiver involvement. Multidisciplinary as needed."
+      },
+      {
+        "step": "Cognition — early intervention",
+        "detail": "Comprehensive workup for cognitive decline; treat reversible causes; cognitive stimulation + physical activity + social engagement; address vision + hearing + sleep; treat depression / anxiety; address polypharmacy (Beers criteria, STOPP/START). Refer dementia care pathway if appropriate."
+      },
+      {
+        "step": "Mobility + falls prevention",
+        "detail": "Structured exercise (resistance + balance + Tai Chi + Otago programme); home modification + hazard reduction; medication review (anticholinergic burden); vision optimisation; calcium + vitamin D + DEXA + bisphosphonate / denosumab for osteoporosis."
+      },
+      {
+        "step": "Vitality + nutrition",
+        "detail": "Address malnutrition: dietary advice + protein 1.2 g/kg/day + ONS (oral nutritional supplements) if intake inadequate + treat reversible causes (dental, dysphagia, depression, drugs). Vitamin D + B12 + folate replacement. Smoking cessation."
+      },
+      {
+        "step": "Vision + hearing — restore + assist",
+        "detail": "Cataract surgery (often access-limited in LMIC — Kenya CCBRT outreach); glasses; macular degeneration anti-VEGF; glaucoma management. Hearing aids; auditory rehabilitation; remove cerumen. Address communication."
+      },
+      {
+        "step": "Psychological well-being",
+        "detail": "Treat depression + anxiety (preferred non-pharmacological first: CBT, exercise, social engagement; SSRI if needed). Address social isolation. Bereavement support."
+      },
+      {
+        "step": "Polypharmacy review — STOPP/START + Beers criteria",
+        "detail": "Identify potentially inappropriate medication; de-prescribe when benefit / risk shifts; involve patient + family + pharmacist + GP. Anticholinergic burden — particularly important."
+      },
+      {
+        "step": "Advance care planning + frailty assessment",
+        "detail": "Clinical Frailty Scale or other; engage in advance care planning; ReSPECT / DNACPR equivalent; goals of care discussion. Living wills + lasting power of attorney."
+      },
+      {
+        "step": "Carer support",
+        "detail": "Identify caregiver burden + risk of burnout; respite care; carer education; financial benefits; community resources. Address own physical + mental health."
+      },
+      {
+        "step": "Vaccinations",
+        "detail": "Annual influenza; pneumococcal (PCV + PPV per schedule); COVID; zoster (recombinant Shingrix from 50+); pertussis boosters; tetanus."
+      },
+      {
+        "step": "Cardiovascular + cancer + dementia surveillance",
+        "detail": "Hypertension + diabetes + lipids per age-adapted targets. Cancer screening based on life expectancy + preferences (mammography, colonoscopy, prostate). Dementia screening every 1-2 years; cognitive assessment if concerns. Frailty-adapted prescribing."
+      },
+      {
+        "step": "Kenya context — older persons + community",
+        "detail": "Recognise heterogeneous older population — rural + urban + family-based + community + institutional. Engage CHVs + community health committee + faith-based organisations. Kenya National Policy for Older Persons + Aging (under development). Integrate with existing services (NCD clinic + ART + nutrition)."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO ICOPE Guidelines (2017) + handbook (2019); WHO Decade of Healthy Ageing 2021-2030; Kenya MOH Health Sector Older Persons + Aging Strategic Plan"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "outbreak-investigation-disease-surveillance",
+    "title": "Outbreak investigation + integrated disease surveillance response",
+    "icd10": [
+      "U07",
+      "U04"
+    ],
+    "domains": [
+      "infectious-disease",
+      "outbreak",
+      "primary-care",
+      "policy"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Cluster of unusual illness in defined population / geographical area exceeding expected baseline.",
+      "Kenya Integrated Disease Surveillance + Response (IDSR) framework — strengthened post-COVID, post-Ebola, post-cholera outbreaks.",
+      "Priority diseases include: cholera, measles, polio (any AFP), Ebola / VHF, meningococcal, viral haemorrhagic fevers, COVID-19, mpox, neonatal tetanus, yellow fever, plague, rabies (any human case).",
+      "Includes any unusual cluster: respiratory, gastrointestinal, neurological, dermatological, maternal mortality."
+    ],
+    "redFlags": [
+      "Suspected VHF / Ebola — strict infection control + immediate reporting.",
+      "Cholera outbreak with rapid case escalation.",
+      "Acute flaccid paralysis (any case requiring polio investigation).",
+      "Maternal mortality cluster.",
+      "Neonatal mortality / tetanus.",
+      "Bioterrorism suspicion (smallpox, plague, botulism, tularemia, anthrax).",
+      "Healthcare worker infection / exposure.",
+      "Resource-limited setting with inadequate isolation / PPE."
+    ],
+    "diagnostics": [
+      {
+        "test": "Case definition — clinical + laboratory criteria.",
+        "rationale": "Define + count cases."
+      },
+      {
+        "test": "Line list — patient demographics + onset + symptoms + exposure + outcome.",
+        "rationale": "Track cases."
+      },
+      {
+        "test": "Specimens for laboratory: blood + serum + stool + CSF + nasopharyngeal swab + tissue biopsy.",
+        "rationale": "Pathogen identification."
+      },
+      {
+        "test": "Epidemic curve.",
+        "rationale": "Determine source + propagation pattern."
+      },
+      {
+        "test": "Spot map + descriptive epidemiology.",
+        "rationale": "Place + person + time."
+      },
+      {
+        "test": "Contact tracing + ring assessment.",
+        "rationale": "Identify exposed + at-risk."
+      },
+      {
+        "test": "Risk factor analysis (case-control / cohort).",
+        "rationale": "Identify source / transmission."
+      },
+      {
+        "test": "Environmental investigation (water + food + sanitation + animal source).",
+        "rationale": "Identify environmental cause."
+      }
+    ],
+    "management": [
+      {
+        "step": "Outbreak recognition + verification",
+        "detail": "Surveillance system identifies signal — confirm with laboratory + clinical case definition + exclude artifact (reporting changes, diagnostic test changes). Apply case definition + classify (suspected + probable + confirmed)."
+      },
+      {
+        "step": "Activate outbreak response team",
+        "detail": "Multidisciplinary: epidemiology + clinical + laboratory + WASH + risk communication + community engagement + logistics + leadership / political. Kenya: National Public Health Institute (NPHI) leads, Sub-County + County Rapid Response Teams."
+      },
+      {
+        "step": "Implement control measures — case management + isolation + transmission control",
+        "detail": "Treat cases per disease-specific protocol. Isolation + cohort + droplet / airborne / contact precautions per pathogen. WASH for waterborne + foodborne. Vector control for arbovirus / VHF. Animal source control for zoonosis."
+      },
+      {
+        "step": "Vaccination response",
+        "detail": "Outbreak response immunisation: measles MR / yellow fever / OCV (oral cholera vaccine) / meningococcal / pneumococcal / hepatitis E. Stockpile activation. Ring vaccination (Ebola / smallpox). Reactive campaigns + catch-up."
+      },
+      {
+        "step": "Therapeutics + treatment guidelines",
+        "detail": "Standardised case management protocols. Drug stockpiles (rabies vaccine + RIG; cholera ORS + antibiotics; Ebola monoclonal antibodies; tamiflu). Treatment centres established + staffed for severe cases."
+      },
+      {
+        "step": "Contact tracing + community surveillance",
+        "detail": "Identify + trace + monitor contacts (variable per disease — 21 days for Ebola; 14 days for cholera + meningococcal). CHV-supported in Kenya — community-based surveillance. Risk-categorised contact follow-up."
+      },
+      {
+        "step": "Risk communication + community engagement (RCCE)",
+        "detail": "Trustworthy + transparent + culturally-appropriate messaging. Engage community leaders + faith-based + traditional healers. Address rumour + misinformation. Multi-language + multi-channel. Empower community participation."
+      },
+      {
+        "step": "Laboratory + supply-chain support",
+        "detail": "Specimen referral system to reference / KEMRI; rapid diagnostics deployment; supply chain for PPE + therapeutics + vaccines. Quality assurance."
+      },
+      {
+        "step": "Notify WHO + IHR — International Health Regulations",
+        "detail": "Notifiable disease per IHR 2005 — Kenya is signatory. Public health emergency of international concern (PHEIC) reporting for severe / unusual events. Cross-border coordination for transboundary risk."
+      },
+      {
+        "step": "Healthcare worker protection",
+        "detail": "Universal precautions + appropriate PPE + training + post-exposure protocols + mental health support. Vaccination where available."
+      },
+      {
+        "step": "After-action review + lessons learned",
+        "detail": "Document outbreak + response. Identify gaps + strengthen surveillance + readiness. Update protocols. Capacity-building + training. Stockpile replenishment."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO IHR 2005; Africa CDC + WHO AFRO IDSR Framework; Kenya MOH IDSR Guidelines + National Public Health Institute"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "who-surgical-care-district-hospital",
+    "title": "WHO surgical care at the district hospital — essential surgery + safety checklist",
+    "icd10": [
+      "Z53"
+    ],
+    "domains": [
+      "surgery",
+      "anaesthesia",
+      "primary-care",
+      "policy"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Patient requiring surgical intervention at district hospital level — emergency + elective.",
+      "WHO Surgical Care at the District Hospital framework: defines essential surgical capacity at first-referral level.",
+      "Kenya: county hospitals provide district-level surgery; referral pathway to teaching / national hospital for complex.",
+      "Lancet Commission on Global Surgery — universal access to safe surgery as part of UHC."
+    ],
+    "redFlags": [
+      "Patient instability — ABC stabilisation BEFORE surgery.",
+      "Inadequate facility resources — refer rather than attempt.",
+      "Inadequate anaesthesia / equipment — refer.",
+      "Patient not consented / unable to consent — assess capacity.",
+      "Pregnancy + surgery — obstetric input.",
+      "Bleeding diathesis / anticoagulation — preoperative correction.",
+      "Critical comorbidity uncontrolled — optimise first."
+    ],
+    "diagnostics": [
+      {
+        "test": "Comprehensive pre-operative assessment — history + examination + investigations.",
+        "rationale": "Risk stratification + optimization."
+      },
+      {
+        "test": "FBC + U&E + glucose + cross-match (if blood likely needed).",
+        "rationale": "Baseline + safety."
+      },
+      {
+        "test": "ECG + CXR + further imaging per indication.",
+        "rationale": "Comorbid assessment."
+      },
+      {
+        "test": "Pregnancy test for female of childbearing potential.",
+        "rationale": "Pregnancy considerations."
+      },
+      {
+        "test": "WHO Surgical Safety Checklist completion before, during, and after.",
+        "rationale": "Reduce surgical errors."
+      },
+      {
+        "test": "Anaesthetic assessment + ASA grading.",
+        "rationale": "Anaesthetic plan + risk."
+      }
+    ],
+    "management": [
+      {
+        "step": "WHO Surgical Safety Checklist — IMPLEMENT FOR EVERY SURGERY",
+        "detail": "Sign-in (before anaesthesia): patient ID + procedure + consent + site marking + anaesthetic safety + pulse oximetry + allergy + difficult airway + blood loss risk. Time-out (before incision): team introduction + patient + procedure + critical events + antibiotic prophylaxis given. Sign-out (before patient leaves OR): procedure recorded + instruments + sponges + specimen + equipment problems + post-op concerns. Reduces mortality + morbidity 30%."
+      },
+      {
+        "step": "Essential district-hospital surgical scope",
+        "detail": "EMERGENCY: airway management + thoracostomy + abdominal exploration for trauma / perforation / obstruction + appendicectomy + groin / inguinal hernia repair + emergency C-section + ectopic pregnancy + caesarean hysterectomy + PPH surgical management + ruptured ectopic + bowel resection + perforated viscus + hydrocele aspiration + abscess drainage + wound debridement + circumcision (medical) + neonatal pyloric stenosis + paediatric appendicectomy + intussusception. ELECTIVE: hernia repair + hydrocele + appendicectomy + cholecystectomy + tubal ligation + vasectomy + minor procedures."
+      },
+      {
+        "step": "Antibiotic prophylaxis",
+        "detail": "Within 60 minutes of incision (vancomycin / fluoroquinolone: 120 min). Choice + duration per surgery type: clean (no antibiotic), clean-contaminated (1-3 doses cephalosporin), contaminated (extended), dirty (therapeutic). Single dose for most. Kenya formulary aligned with Kenya AMR Action Plan."
+      },
+      {
+        "step": "VTE prophylaxis",
+        "detail": "Risk-stratified: mechanical (intermittent pneumatic compression + graduated stockings) + chemoprophylaxis (LMWH) per surgery type + patient risk. Continue postoperatively until mobile."
+      },
+      {
+        "step": "Postoperative care + early mobilisation",
+        "detail": "Adequate analgesia (WHO ladder + multimodal); thromboprophylaxis; early mobilisation; nutrition; wound care; infection surveillance; pain assessment + management."
+      },
+      {
+        "step": "Anaesthesia at district hospital",
+        "detail": "Spinal anaesthesia for caesarean + lower extremity surgery — safe + cost-effective. General anaesthesia with ketamine + halothane / isoflurane (or TIVA propofol where available). Regional blocks. Local with sedation. Trained anaesthesia provider essential."
+      },
+      {
+        "step": "Blood transfusion + crossmatch availability",
+        "detail": "Cross-matched blood ready; emergency O-negative + group-specific. Kenya National Blood Transfusion Service. Cell salvage for selected. Tranexamic acid for haemorrhage."
+      },
+      {
+        "step": "Postoperative complications recognition",
+        "detail": "Wound infection (superficial vs deep); anastomotic leak; bleeding; ileus + obstruction; respiratory complications (atelectasis, pneumonia); thromboembolism; AKI; delirium; sepsis. Early diagnosis + intervention."
+      },
+      {
+        "step": "Refer to higher-level facility for",
+        "detail": "Complex / specialist surgery beyond district capacity: cardiac surgery; neurosurgery (head injury > minor); paediatric specialty (newborn surgery); complex oncology resection; transplant; complex vascular; major reconstructive. Pre-arranged + accompanied transfer."
+      },
+      {
+        "step": "Outreach surgical missions",
+        "detail": "Kenya CCBRT + free surgical camps + Smile Train (cleft) + Operation Smile + Mercy Ships + Faith-based hospitals — extend access to under-served. Coordinate with MOH."
+      },
+      {
+        "step": "Surgical site safety + audit",
+        "detail": "Local infection control + audit + morbidity + mortality reviews + continuous improvement. Surgical safety culture + checklist compliance audit."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Surgical Care at the District Hospital (2003 + updates); WHO Surgical Safety Checklist (2009 update); Lancet Commission on Global Surgery 2030; Kenya MOH Standard Operating Procedures"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "occupational-health-needlestick-injury",
+    "title": "Occupational needlestick injury / blood-borne pathogen exposure — healthcare worker",
+    "icd10": [
+      "Z20.5",
+      "Z20.6",
+      "Z20.2"
+    ],
+    "domains": [
+      "occupational-medicine",
+      "infectious-disease",
+      "primary-care",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 16,
+      "sex": "any"
+    },
+    "presentation": [
+      "Healthcare worker / community worker / lab worker / first responder with percutaneous or mucocutaneous exposure to blood / body fluid.",
+      "Risk per exposure: HIV ~0.3% (percutaneous); 0.09% (mucocutaneous). HBV: up to 30% if source HBeAg+. HCV: ~1.8%.",
+      "Most preventable; WHO + Kenya MOH have policies for prevention + post-exposure management."
+    ],
+    "redFlags": [
+      "Deep injury + hollow-needle + source viral load high — high HIV + HBV + HCV risk.",
+      "Source unknown / source HIV-positive — full PEP.",
+      "Pregnancy of exposed worker — adjust PEP regimen.",
+      "Delayed presentation > 72 hours — no PEP for HIV (still HBV + HCV testing + follow-up).",
+      "Mental health impact — psychological support."
+    ],
+    "diagnostics": [
+      {
+        "test": "First aid + immediate wound care.",
+        "rationale": "Minimise inoculation."
+      },
+      {
+        "test": "Source + recipient HIV + HBV (HBsAg + anti-HBs) + HCV testing.",
+        "rationale": "Identify exposure type + risk."
+      },
+      {
+        "test": "Pregnancy test in female recipient.",
+        "rationale": "Modify PEP."
+      },
+      {
+        "test": "Baseline FBC + U&E + LFT for PEP monitoring.",
+        "rationale": "Pre-treatment baseline."
+      },
+      {
+        "test": "Risk assessment — type of injury + source status + time since exposure.",
+        "rationale": "Determine PEP need."
+      },
+      {
+        "test": "Workplace incident reporting.",
+        "rationale": "Document + improve safety."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immediate first aid",
+        "detail": "Encourage bleeding (do NOT scrub or apply caustic); wash with soap + running water; do NOT use bleach / antiseptic directly. Mucosa: irrigate with water / saline. Eye: irrigate with sterile water / saline ≥ 5 minutes (remove contact lens after first irrigation)."
+      },
+      {
+        "step": "Risk assessment + counselling",
+        "detail": "Within hours of exposure. Document: type of injury (percutaneous / mucocutaneous), depth, fluid type, source patient status, time since exposure. Provide written information + post-exposure counselling."
+      },
+      {
+        "step": "HIV post-exposure prophylaxis (PEP) — within 72 hours",
+        "detail": "Indications: any percutaneous / mucocutaneous exposure to HIV-positive source OR source-unknown high-risk situation. Kenya first-line: TDF/3TC + DTG (tenofovir + lamivudine + dolutegravir) × 28 days. Alternative: TDF/FTC + raltegravir. Counselling on adherence + side effects. HIV testing at baseline + 6 weeks + 12 weeks + 6 months."
+      },
+      {
+        "step": "Hepatitis B post-exposure",
+        "detail": "Source HBsAg-positive: assess recipient HBV status. Vaccinated + protective (anti-HBs ≥ 10 mIU/mL): no action. Vaccinated + non-responder: HBIG + start vaccination series. Unvaccinated: HBIG within 24-48 hours + start hepatitis B vaccination 0/1/6 month schedule. HBIG dose: 0.06 mL/kg IM within 24 hours."
+      },
+      {
+        "step": "Hepatitis C post-exposure",
+        "detail": "No PEP available. Baseline + 12-week + 24-week HCV antibody + HCV RNA at 6 weeks. If seroconversion → direct-acting antiviral treatment per Kenya HCV guidelines (sofosbuvir-based regimens)."
+      },
+      {
+        "step": "Pregnancy + PEP",
+        "detail": "PEP not contraindicated; TDF/3TC + DTG considered safe. Counsel + monitor. Continue ART beyond pregnancy if HIV-positive."
+      },
+      {
+        "step": "Tetanus + other prophylaxis",
+        "detail": "Tetanus immunisation status check + booster if last dose > 5 years. Rabies PEP if animal-source exposure (see rabies pathway)."
+      },
+      {
+        "step": "Follow-up testing schedule",
+        "detail": "HIV: 6 weeks + 12 weeks + 6 months. HBV: 1 + 6 months. HCV: 6 weeks + 12 weeks + 6 months. Stop PEP if confirmed source HIV-negative. Counsel re: sexual + bloodborne transmission avoidance during follow-up period."
+      },
+      {
+        "step": "Psychological + occupational support",
+        "detail": "Acute stress response common. Psychological counselling. Employer support + workplace return planning. Workplace incident investigation."
+      },
+      {
+        "step": "Prevention + workplace safety",
+        "detail": "Universal precautions; appropriate PPE; safety-engineered devices (retractable / shielded needles); no needle recapping; sharps disposal containers at point-of-use; vaccinations (HBV mandatory; HPV + influenza + COVID + pneumococcal + zoster recommended); training + audit + culture of safety."
+      },
+      {
+        "step": "Kenya MOH framework",
+        "detail": "Occupational Safety + Health Act; workplace incident reporting; PEP availability + free access; HBV vaccination programme for healthcare workers; psychological support integration."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Post-Exposure Prophylaxis to Prevent HIV Infection (2014, updated); CDC Updated Recommendations on PEP; Kenya NASCOP PEP Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "adolescent-pregnancy-comprehensive-care",
+    "title": "Adolescent pregnancy — comprehensive care + sexual + reproductive health",
+    "icd10": [
+      "O09.7",
+      "Z32"
+    ],
+    "domains": [
+      "obstetrics",
+      "primary-care",
+      "adolescent-health",
+      "mental-health"
+    ],
+    "population": {
+      "minAgeYears": 10,
+      "maxAgeYears": 19,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Pregnant adolescent — 10-19 years; often first contact with healthcare.",
+      "Kenya: ~15% of girls give birth before age 18; ~5% before 15; geographic + socioeconomic disparities; substantial unmet need for contraception.",
+      "Heightened risk: preterm birth, low birth weight, neonatal mortality (girls < 15 — 5× higher), maternal mortality (15-19: 2× higher), prolonged + obstructed labour, postpartum haemorrhage, eclampsia, anaemia, school dropout, social vulnerability.",
+      "WHO + Kenya MOH adolescent-friendly services + Kenya National Adolescent Sexual + Reproductive Health Policy."
+    ],
+    "redFlags": [
+      "Adolescent < 14 years — child protection notification; statutory rape consideration per jurisdiction.",
+      "Late booking / unbooked pregnancy.",
+      "Suspected intimate partner violence / coercion.",
+      "Suspected sexual assault — emergency contraception + PEP.",
+      "Severe nutritional deficiency / underweight.",
+      "Mental health crisis / suicide ideation.",
+      "Severe pre-eclampsia / eclampsia / haemorrhage.",
+      "School dropout — educational continuity support needed.",
+      "Suspected unsafe abortion — emergency management."
+    ],
+    "diagnostics": [
+      {
+        "test": "Comprehensive history with adolescent-friendly approach — pregnancy duration, support, schooling, partner age + relationship, intimate partner violence / abuse / coercion, mental health, substance use, contraception history, prior pregnancies.",
+        "rationale": "Identify + address vulnerabilities."
+      },
+      {
+        "test": "Routine ANC tests — Hb, blood group + Rh, HIV + syphilis + hepatitis B, urinalysis, dating ultrasound, BP, weight + height.",
+        "rationale": "Antenatal care."
+      },
+      {
+        "test": "STI screening (chlamydia + gonorrhoea + trichomonas).",
+        "rationale": "Common in adolescents; treat to reduce preterm + neonatal complications."
+      },
+      {
+        "test": "Mental health screen (PHQ-9 + GAD-7; suicide assessment).",
+        "rationale": "Higher depression + anxiety rates."
+      },
+      {
+        "test": "Domestic violence screening.",
+        "rationale": "High prevalence in adolescent pregnancy."
+      },
+      {
+        "test": "Nutritional assessment.",
+        "rationale": "Often inadequate."
+      }
+    ],
+    "management": [
+      {
+        "step": "Adolescent-friendly + non-judgmental + confidential care",
+        "detail": "Private + welcoming + age-appropriate. Adolescent + caregiver in care (where consent + appropriate). Respect autonomy + decision-making capacity. Non-judgmental + empathetic approach essential."
+      },
+      {
+        "step": "Enhanced antenatal care",
+        "detail": "More frequent contacts than standard adult; close monitoring of growth + BP + signs of pre-eclampsia. Iron + folic acid (often higher dose 5 mg folic acid); calcium; nutritional supplementation. Tetanus + flu + pertussis + COVID vaccination. ANC contact + Linda Mama enrolment."
+      },
+      {
+        "step": "Pregnancy options counselling (where legal)",
+        "detail": "Continue pregnancy + parenting; adoption; safe + legal termination (where available + indicated). Kenya: termination for life-threatening conditions per Penal Code + Constitution Article 26(4). Non-judgmental options counselling. Refer specialist if uncertain."
+      },
+      {
+        "step": "Safe abortion / post-abortion care (where legally indicated + accessible)",
+        "detail": "Medication: misoprostol ± mifepristone per gestation. Surgical: manual vacuum aspiration. Post-abortion care: contraception + STI + mental health + counselling. Kenya legal context cautious — consult specialist + ethics."
+      },
+      {
+        "step": "Comprehensive sexuality education + future contraception",
+        "detail": "Antenatal initiation of contraception planning. LARC (implant, IUD) — first-line postpartum for adolescents (high continuation + low pregnancy rate). Counsel re: dual protection (condom + LARC for STI). Encourage school continuation."
+      },
+      {
+        "step": "Psychological + social support",
+        "detail": "Treat depression + anxiety (SSRI + counselling). Identify + address abuse (per IPV pathway). Connect to social services + community supports. Educational continuity — work with school + Ministry of Education. Family support engagement."
+      },
+      {
+        "step": "Nutrition + growth",
+        "detail": "Adolescent still growing — dual nutritional demands. Iron + calcium + adequate protein + calories. Weight gain monitoring."
+      },
+      {
+        "step": "Childbirth + intrapartum",
+        "detail": "Skilled birth attendant + facility delivery. Continuous companion. Adolescent + young primigravida — close monitoring (prolonged labour + obstructed labour + need for assisted / Caesarean). Cervical pre-ripening / induction per protocol."
+      },
+      {
+        "step": "Postnatal — mother + baby",
+        "detail": "Routine postnatal care + mental health screening at 6-8 weeks (postpartum depression more common). Lactation support — exclusive breastfeeding 6 months. Routine infant care + immunisations. Family planning at 6 weeks postpartum."
+      },
+      {
+        "step": "Continuation of education + economic empowerment",
+        "detail": "Encourage return to school post-delivery. Vocational training where school not feasible. Cash transfer programs (Kenya: Hunger Safety Net). DREAMS programme for adolescent girls + young women — comprehensive package."
+      },
+      {
+        "step": "Multidisciplinary team",
+        "detail": "Midwife + obstetrician + paediatrician + GP + social worker + psychologist + nutritionist + community health worker + adolescent peer support."
+      },
+      {
+        "step": "Child protection considerations",
+        "detail": "Adolescent < 14 + sexual activity / pregnancy: statutory rape per Kenya Sexual Offences Act + report to Children's Officer + child protection. Even if 14-17 — consider coercion + abuse. Confidentiality balanced with protection."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Adolescent Pregnancy fact sheet + guidelines; Kenya National Adolescent SRH Policy; DREAMS Partnership"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "child-immunisation-catch-up-schedule",
+    "title": "Childhood immunisation catch-up + WHO + Kenya EPI schedule",
+    "icd10": [
+      "Z23",
+      "Z28"
+    ],
+    "domains": [
+      "paediatrics",
+      "primary-care",
+      "child-health",
+      "vaccine-preventable"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 17,
+      "sex": "any"
+    },
+    "presentation": [
+      "Child with incomplete immunisation history — newly arrived migrant, displacement, defaulted, unknown history.",
+      "Kenya Expanded Programme on Immunisation (EPI) schedule from birth to age 18 months for routine; plus campaigns + boosters.",
+      "WHO recommends catch-up for any incomplete child up to age 18 — never too late."
+    ],
+    "redFlags": [
+      "Suspected severe allergy / anaphylaxis to vaccine component — alternative vaccine / specialist.",
+      "Immunocompromised — modified schedule + avoid live vaccines (where possible).",
+      "Recent IVIG / blood product — delay live vaccines.",
+      "Pregnancy in adolescent — avoid live (MMR + varicella + yellow fever).",
+      "Outbreak situation — additional doses + accelerated schedule."
+    ],
+    "diagnostics": [
+      {
+        "test": "Vaccine history — written records preferred; verbal acceptable if no doubt; assume unvaccinated if uncertain.",
+        "rationale": "Determine catch-up need."
+      },
+      {
+        "test": "Age + medical history + immune status + allergies + previous adverse events.",
+        "rationale": "Modify schedule."
+      },
+      {
+        "test": "Pregnancy status (adolescents).",
+        "rationale": "Avoid live vaccines."
+      },
+      {
+        "test": "Document new doses in vaccine card + national registry.",
+        "rationale": "Track completion."
+      }
+    ],
+    "management": [
+      {
+        "step": "Kenya EPI standard routine schedule",
+        "detail": "AT BIRTH: BCG + OPV (zero dose) + Hepatitis B birth dose. 6 WEEKS: DTwP-HepB-Hib (Penta1) + OPV1 + PCV1 + Rota1. 10 WEEKS: Penta2 + OPV2 + PCV2 + Rota2. 14 WEEKS: Penta3 + OPV3 (or IPV in some) + PCV3. 9 MONTHS: Measles-Rubella (MR1) + Yellow Fever (endemic regions). 18 MONTHS: MR2 + DTP booster. School entry / adolescent: HPV (girls 10 + 14 — increasingly boys), Td booster, COVID."
+      },
+      {
+        "step": "WHO catch-up schedule for unvaccinated / incomplete child",
+        "detail": "Apply minimum age + minimum interval rules. Live vaccines (BCG + MMR + varicella + yellow fever + rotavirus) need ≥ 4 weeks between if not given on same day. Inactivated vaccines: any spacing ≥ 4 weeks between doses."
+      },
+      {
+        "step": "Catch-up DPT-HepB-Hib (Pentavalent)",
+        "detail": "Child < 1 year: 3 doses 4 weeks apart. Child 1-5 years: 3 doses 4 weeks apart. Child > 5 years: Td (tetanus + reduced diphtheria) + acellular pertussis where available. HepB: 3 doses 0/1/6 months (4 weeks minimum + 2 months minimum) for those missed."
+      },
+      {
+        "step": "Catch-up measles + rubella + yellow fever",
+        "detail": "Measles-rubella: 2 doses minimum 4 weeks apart from age 9 months (anywhere) or 12 months (some); apply minimum age cut-off; ensure dose at ≥ 12 months (children given < 9 months need extra dose). Yellow fever (endemic regions): one dose for life from age 9 months."
+      },
+      {
+        "step": "Catch-up oral polio + IPV",
+        "detail": "WHO catch-up: ensure complete primary OPV / IPV series. Kenya: 3-4 doses OPV with IPV at 14 weeks. WHO recommendation for at least one dose IPV in routine schedule (combined IPV/OPV approach)."
+      },
+      {
+        "step": "Catch-up HPV vaccination",
+        "detail": "Girls 10-14 (Kenya 10 + 14 years): 2-dose schedule 6-12 months apart. Boys increasingly added (Kenya: gender-neutral programme). Age 15-26: 3-dose schedule 0/1-2/6 months. Single-dose schedule for low-income settings emerging."
+      },
+      {
+        "step": "Rotavirus catch-up",
+        "detail": "Limited age window for rotavirus — first dose 6-15 weeks; last by 8 months. After 8 months, no rotavirus."
+      },
+      {
+        "step": "Adolescent + young adult catch-up",
+        "detail": "Tdap (or Td if pertussis vaccine unavailable) every 10 years. MMR if unvaccinated (2 doses 4 weeks apart). Varicella if susceptible. HPV. Hepatitis B if unvaccinated. Meningococcal (selected). Influenza annually."
+      },
+      {
+        "step": "Special populations — immunocompromised + pregnant",
+        "detail": "Immunocompromised: inactivated vaccines safe + given normally. AVOID LIVE (BCG, OPV, MMR, varicella, yellow fever, rotavirus, intranasal flu, LAIV) — unless specific specialist indication. Pregnant adolescent: avoid LIVE; give inactivated (influenza + tetanus + pertussis + COVID); HPV completed pre-conception or postpartum."
+      },
+      {
+        "step": "Vaccine storage + cold chain",
+        "detail": "Critical — vaccine potency depends on cold chain (2-8°C for most). VVM (vaccine vial monitor) check. Document + report breaches. Kenya KEMSA cold chain monitoring."
+      },
+      {
+        "step": "Counselling + addressing hesitancy",
+        "detail": "Provide accurate information + address concerns. Build trust + rapport. Address misinformation. Community engagement + religious / traditional leaders. WHO 3Cs of vaccine hesitancy: Complacency, Confidence, Convenience."
+      },
+      {
+        "step": "Documentation + national registry",
+        "detail": "Kenya MOSI (Mtoto Salama Imara) digital immunisation tracking system. Vaccine card to caregiver. Mark every visit. Schedule reminders. CHV-supported community follow-up."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Immunization Schedules + WHO Practical Guide to Vaccine Catch-up; Kenya Expanded Programme on Immunisation Standard Operating Procedures; Kenya National Immunisation Policy + Comprehensive Multi-year Plan"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "refugee-migrant-health-comprehensive",
+    "title": "Refugee + migrant health — comprehensive assessment + care",
+    "icd10": [
+      "Z59.0"
+    ],
+    "domains": [
+      "primary-care",
+      "infectious-disease",
+      "mental-health",
+      "policy"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Refugee + asylum seeker + migrant patient — new arrival, in transit, or settled.",
+      "Kenya hosts ~520,000 refugees (UNHCR 2024) — predominantly from Somalia, South Sudan, DRC, Ethiopia, Burundi.",
+      "Common health needs: infectious disease (TB, HIV, malaria), mental health (PTSD, depression), reproductive health, chronic disease, malnutrition, occupational + interpersonal violence, vaccine catch-up, social vulnerability.",
+      "WHO Global Action Plan on the Health of Refugees + Migrants (2019-2023).",
+      "Kenya MOH integrated refugee health within national health system since 2017 transition."
+    ],
+    "redFlags": [
+      "Suspected human trafficking / sexual exploitation.",
+      "Acute infectious disease in cluster (TB / cholera / measles outbreak in camp).",
+      "Severe acute malnutrition.",
+      "Trauma + torture survivors — specialist services.",
+      "Unaccompanied minors — child protection + identity.",
+      "Severe mental health crisis — suicide / psychosis.",
+      "Pregnant or recently-delivered.",
+      "Severe chronic disease (HIV / hepatitis / TB / DM / cancer) — continuation of treatment."
+    ],
+    "diagnostics": [
+      {
+        "test": "Comprehensive arrival health assessment — physical + mental + social + nutritional + dental + vision + hearing.",
+        "rationale": "Identify needs."
+      },
+      {
+        "test": "Tuberculosis screening — symptom + CXR + sputum / GeneXpert; latent TB testing if appropriate.",
+        "rationale": "Detect active disease + prevent spread."
+      },
+      {
+        "test": "HIV + syphilis + hepatitis B + C + malaria screening per country of origin / risk.",
+        "rationale": "Common conditions; treatable."
+      },
+      {
+        "test": "Routine bloods + nutrition assessment + B12 + vitamin D + iron.",
+        "rationale": "Common deficiencies."
+      },
+      {
+        "test": "Mental health screening (PTSD checklist + PHQ-9 + GAD-7).",
+        "rationale": "Trauma + persecution common."
+      },
+      {
+        "test": "Immunisation history review + catch-up planning.",
+        "rationale": "Often incomplete."
+      },
+      {
+        "test": "Female genital mutilation (FGM) assessment if from prevalent region.",
+        "rationale": "Care + complications + child protection."
+      },
+      {
+        "test": "Reproductive health + contraception + pregnancy testing as appropriate.",
+        "rationale": "Common need."
+      },
+      {
+        "test": "STI screening.",
+        "rationale": "Sexual violence risk + prior exposure."
+      }
+    ],
+    "management": [
+      {
+        "step": "Comprehensive first-arrival health screen + integration into Kenya health system",
+        "detail": "Within 30 days of arrival — comprehensive screen at refugee health centre or county facility. Issue refugee health card. Linkage to NHIF + Linda Mama + free TB/HIV programmes. Continuity of any ongoing treatment (HIV ART, TB treatment, NCD medication)."
+      },
+      {
+        "step": "Infectious disease management",
+        "detail": "TB: per Kenya National TB Programme — same regimens + DOT + cohort monitoring. HIV: linkage to ART (free public sector); continuation across borders + facilities. Malaria: free in public facilities. Hepatitis B + C: vaccination + treatment per Kenya hepatitis policy."
+      },
+      {
+        "step": "Mental health + psychosocial support",
+        "detail": "Recognise trauma sequelae (PTSD, depression, anxiety, complex grief, somatisation). Psychological first aid → counselling → mental health specialist if severe. Avoid re-traumatisation — trauma-informed care. Address torture survivors with specialist services (Kenya: IRCT-affiliated centres). Peer support + community engagement + cultural mediators."
+      },
+      {
+        "step": "Maternal + child health",
+        "detail": "Antenatal care + Linda Mama enrolment. Childhood immunisation catch-up per Kenya EPI. Growth monitoring + nutrition for under-5 (SAM treatment per WHO + Kenya protocols). Adolescent SRH services."
+      },
+      {
+        "step": "Nutrition",
+        "detail": "Targeted screening — severe acute malnutrition (SAM) treatment per Kenya CMAM (Community-based Management of Acute Malnutrition). Therapeutic feeding programmes. Iron + folate + multivitamin. Address food insecurity."
+      },
+      {
+        "step": "Female genital mutilation / cutting",
+        "detail": "Sensitive enquiry + non-judgmental care. Address physical complications (urinary, sexual, obstetric). Avoid re-traumatisation. Specialist deinfibulation surgery (Kenya — selected centres). Multidisciplinary care (gynaecology + psychology + cultural)."
+      },
+      {
+        "step": "Gender-based + sexual violence",
+        "detail": "Sensitive enquiry. Care per WHO LIVES framework + Kenya GBV pathway. Emergency contraception + PEP + STI prophylaxis + medico-legal support."
+      },
+      {
+        "step": "Chronic disease management",
+        "detail": "Identify + continue medication for HIV, TB, NCDs. Build into routine care. Counsel re: medication adherence + side effects."
+      },
+      {
+        "step": "Catch-up immunisation",
+        "detail": "Per Kenya EPI schedule + WHO catch-up guidelines. Document + integrate with Kenya national registry."
+      },
+      {
+        "step": "Cultural + linguistic adaptation",
+        "detail": "Translation services + cultural mediators (Kakuma + Dadaab refugee health centres). Religious + cultural sensitivity. Engage community leaders + health workers."
+      },
+      {
+        "step": "Documentation + advocacy",
+        "detail": "Issue health records portable + transferable. Refer for refugee status determination + legal support. Address social determinants (housing, schooling, employment, family reunification)."
+      },
+      {
+        "step": "Integration with UNHCR + IOM + non-governmental partners",
+        "detail": "Coordinated approach via UNHCR Refugee Coordination Model. IOM for migrants. Kenya partners: IRC, Kenya Red Cross, MSF, faith-based organisations. Avoid parallel systems — integrate into Kenya national health programmes."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Global Action Plan: Health of Refugees + Migrants 2019-2023; UNHCR + WHO Public Health Guidance Note; Kenya MOH Refugee Health Strategy + Integration"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "community-health-volunteer-integrated-case-management",
+    "title": "Community health volunteer (CHV) — integrated community case management (Kenya + WHO)",
+    "icd10": [
+      "Z76.89"
+    ],
+    "domains": [
+      "primary-care",
+      "child-health",
+      "policy"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Kenya community health strategy: every community has trained CHVs (typically one per ~100 households) providing first-contact care + linking to formal facility.",
+      "iCCM (Integrated Community Case Management): trained CHVs identify + treat childhood illness (pneumonia + diarrhoea + malaria + malnutrition) at community level.",
+      "Wider CHV roles: pregnancy registration + ANC referrals + postnatal follow-up + immunisation defaulter tracing + TB / HIV adherence + chronic disease support + health education + referral."
+    ],
+    "redFlags": [
+      "Danger signs in any age — refer immediately to facility (cannot drink / breastfeed, vomiting everything, convulsions, lethargic / unconscious, severe respiratory distress, severe dehydration, severe anaemia, suspected serious infection).",
+      "Newborn danger signs — IMCI young infant pathway.",
+      "Pregnant woman with danger signs — antenatal red flags.",
+      "Adult with severe symptoms — sepsis / heart attack / stroke / severe trauma.",
+      "Suspected outbreak / cluster — alert district health team.",
+      "CHV safety in conflict / disease outbreak — PPE + training."
+    ],
+    "diagnostics": [
+      {
+        "test": "CHV uses standardised algorithms (e.g. WHO IMCI Community Pictorial Algorithm) — danger signs + symptoms + simple measurements.",
+        "rationale": "Pictorial + simple decision aids."
+      },
+      {
+        "test": "Respiratory rate counting; temperature (sometimes mid-upper arm circumference - MUAC for malnutrition screening); RDT for malaria; bedside glucose where available.",
+        "rationale": "Community-level diagnostics."
+      },
+      {
+        "test": "Refer to facility for further investigation / management if criteria met.",
+        "rationale": "Recognise scope limits."
+      }
+    ],
+    "management": [
+      {
+        "step": "Kenya Community Health Strategy structure",
+        "detail": "Level 1 — community health units (CHU) of ~5,000 population, with CHV (~10 per CHU) + Community Health Extension Worker (CHEW) supervising. Links to level 2/3 health facility. Recently formalised + remunerated."
+      },
+      {
+        "step": "iCCM scope — Kenya",
+        "detail": "CHV with iCCM training treats: simple childhood pneumonia (fast breathing without chest indrawing) with amoxicillin dispersible tablets; uncomplicated malaria with AL after positive RDT; diarrhoea with ORS + zinc supplementation; severe acute malnutrition referral (with appetite test + outpatient therapeutic care community follow-up). Refer all severe illness."
+      },
+      {
+        "step": "Maternal + newborn",
+        "detail": "Pregnancy registration + Linda Mama enrolment. ANC defaulter tracing + visit reminders. Birth preparedness + complication readiness counselling. Postnatal home visits days 1, 3, 7, 28. Newborn danger sign recognition + referral. Exclusive breastfeeding promotion. Family planning referral / commodity distribution."
+      },
+      {
+        "step": "TB / HIV / NCD",
+        "detail": "Adherence support (DOT — direct observation of TB treatment; ART adherence). Defaulter tracing. NCD education (HEARTS, healthy lifestyle, hypertension + diabetes monitoring where equipped). Mental health awareness + linkage."
+      },
+      {
+        "step": "Immunisation defaulter tracing + campaigns",
+        "detail": "Identify under-immunised children + bring to facility / outreach. Support catch-up + campaign delivery. Trust + community engagement."
+      },
+      {
+        "step": "Health education + behaviour change",
+        "detail": "WASH (hand washing, latrine use, safe water), nutrition (breastfeeding, complementary feeding), sexual + reproductive health, family planning, malaria prevention (ITN use), TB symptom awareness, HIV testing promotion, vaccination promotion, NCD risk factor reduction."
+      },
+      {
+        "step": "Community-based surveillance",
+        "detail": "Recognise outbreak signs + report to CHEW + health facility — measles, cholera, polio (AFP), neonatal tetanus, maternal mortality. Strengthens IDSR system."
+      },
+      {
+        "step": "Commodity distribution",
+        "detail": "Pre-positioned commodities at community: ORS + zinc + albendazole + Vitamin A + chlorhexidine for cord care + iron-folate + chlorhexidine + condoms + family planning pills. Stock managed by CHV with CHEW supervision."
+      },
+      {
+        "step": "Documentation + reporting",
+        "detail": "Standardised forms — household register + sick child register + maternal register + immunisation defaulter list. Monthly reports to CHEW + sub-county health team. Increasingly electronic (Kenya Community Health Information System)."
+      },
+      {
+        "step": "Training + supervision + supportive role",
+        "detail": "Initial training (~3-6 weeks) + refresher training annually. Monthly supervisor meetings. Continuous learning. Performance feedback. Recognition + motivation. Recent Kenya reforms — recognition + stipend / payment of CHVs (Kshs 2,500/month nationally + county supplements)."
+      },
+      {
+        "step": "Quality assurance + integration",
+        "detail": "Supportive supervision + commodity availability + functional referral + community engagement. Quality of care monitoring (case-mix + treatment adherence + outcomes)."
+      },
+      {
+        "step": "Scope + scope creep prevention",
+        "detail": "CHVs not substitutes for trained health workers. Avoid task-overload. Clear referral criteria + facility back-up essential."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO iCCM (2014 + updates); Kenya Community Health Strategy 2021-2025; Kenya MOH Community Health Information System"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "who-five-moments-hand-hygiene-ipc",
+    "title": "Hand hygiene + infection prevention + control (WHO 5 moments)",
+    "icd10": [
+      "Z29.0"
+    ],
+    "domains": [
+      "infection-control",
+      "infectious-disease",
+      "primary-care",
+      "occupational-medicine"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Single most important intervention for prevention of healthcare-associated infection (HAI).",
+      "WHO 5 moments for hand hygiene: 1) Before touching patient. 2) Before clean / aseptic procedure. 3) After body fluid exposure / risk. 4) After touching patient. 5) After touching patient surroundings.",
+      "Kenya MOH IPC strategy aligned with WHO; widespread implementation post-COVID + Ebola threats."
+    ],
+    "redFlags": [
+      "Outbreak / cluster of HAI — review IPC practices.",
+      "MDRO emergence (MRSA / VRE / CRE / C. difficile) in facility — heightened IPC.",
+      "Norovirus / cholera / rotavirus cluster — alcohol gel inadequate; use soap + water.",
+      "C. difficile — soap + water (alcohol gel does not kill spores).",
+      "Severe diarrhoeal outbreak — strict barrier precautions.",
+      "Suspected high-consequence pathogen (Ebola, Marburg, Lassa, MPOX, smallpox, plague, anthrax) — escalate precautions + isolation."
+    ],
+    "diagnostics": [
+      {
+        "test": "Hand hygiene compliance audit — observational measurement.",
+        "rationale": "Track + improve."
+      },
+      {
+        "test": "MDRO surveillance — facility antibiogram + screening on admission for high-risk.",
+        "rationale": "Identify resistance trends."
+      },
+      {
+        "test": "Surgical site infection rates monitored.",
+        "rationale": "Quality indicator."
+      },
+      {
+        "test": "HAI rates — bloodstream / urinary / pneumonia / surgical site infections.",
+        "rationale": "Track effectiveness."
+      },
+      {
+        "test": "Outbreak investigation as needed.",
+        "rationale": "Identify lapses + source."
+      }
+    ],
+    "management": [
+      {
+        "step": "Hand hygiene techniques",
+        "detail": "Alcohol-based hand rub 20-30 seconds preferred for routine (faster, more effective, less skin irritation). Soap + water 40-60 seconds for visibly soiled hands, C. difficile, norovirus, anthrax spores. Both — WHO 6-step / 7-step technique covering all surfaces."
+      },
+      {
+        "step": "Universal precautions / standard precautions",
+        "detail": "Assume all body fluids potentially infectious. Hand hygiene; PPE based on task; safe injection practice; respiratory hygiene; safe handling of patient equipment + linen; cleaning + disinfection of environment + medical equipment."
+      },
+      {
+        "step": "Transmission-based precautions",
+        "detail": "Contact precautions: MRSA, VRE, C. difficile, scabies, MDROs. Droplet precautions: influenza, meningococcal meningitis, mumps, pertussis. Airborne precautions: TB, measles, varicella, MERS-CoV, SARS-CoV-2 (in aerosol-generating procedures), MPOX. Strict barrier precautions for VHFs."
+      },
+      {
+        "step": "PPE — risk-based selection",
+        "detail": "Gloves (single-use); gown / apron; surgical mask / N95 (FFP3) respirator; eye protection (goggles / face shield). Donning + doffing order critical. Reusable equipment cleaned + disinfected."
+      },
+      {
+        "step": "Aseptic technique for invasive procedures",
+        "detail": "Hand hygiene + sterile gloves + drapes + skin preparation (chlorhexidine 2% in alcohol — superior to povidone iodine) + barrier precautions. Surgical site preparation + antibiotic prophylaxis timing."
+      },
+      {
+        "step": "Catheter + line care",
+        "detail": "Central venous catheter: insertion bundle (hand hygiene + maximal barrier precaution + chlorhexidine skin antisepsis + optimal site selection + daily review of necessity). Urinary catheter: indication-based + remove early + drainage bag below bladder + closed drainage system."
+      },
+      {
+        "step": "Antibiotic stewardship",
+        "detail": "Per AWaRe pathway — appropriate selection + duration. Right indication, right drug, right dose. Antimicrobial stewardship programme + audit + feedback."
+      },
+      {
+        "step": "Environmental cleaning",
+        "detail": "High-touch surfaces cleaned + disinfected (sodium hypochlorite 1000 ppm for general; 10,000 ppm for blood spills; H2O2 vapor / UV for terminal). Trained cleaners + standardised protocols. Frequent cleaning of patient zones."
+      },
+      {
+        "step": "Vaccination of healthcare workers",
+        "detail": "Hepatitis B (mandatory in Kenya MOH); influenza annually; MMR + varicella + Tdap + COVID. Pre-employment + ongoing. Screening + post-exposure as per pathway."
+      },
+      {
+        "step": "Outbreak preparedness + response",
+        "detail": "IPC committee + outbreak response team + emergency procurement (PPE + disinfectants + isolation supplies) + isolation rooms + training. Annual drill. Surge capacity planning."
+      },
+      {
+        "step": "Education + culture + audit",
+        "detail": "Regular training + competency assessment. Cultural shift to 'IPC as everyone's responsibility'. Champion programmes. Monitoring + feedback. Just culture + non-punitive incident reporting. Kenya MOH IPC training rolled out post-Ebola + post-COVID."
+      },
+      {
+        "step": "WASH at facility level",
+        "detail": "Reliable water + sanitation + waste management essential foundation. Kenya many facilities still lack basic WASH — programmatic priority. JMP WASH in healthcare facilities indicators."
+      },
+      {
+        "step": "Multimodal improvement strategy",
+        "detail": "WHO 5-pillar approach: 1) System change (infrastructure, supplies). 2) Training. 3) Monitoring + feedback. 4) Reminders + communication. 5) Institutional safety climate. Combined approach more effective than single."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Guidelines on Hand Hygiene in Health Care (2009); WHO Core Components of IPC (2016); Kenya National IPC Guidelines + IPC Strategy"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]

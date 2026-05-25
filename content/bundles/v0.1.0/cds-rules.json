@@ -8854,5 +8854,317 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "who-aware-stewardship-prescribing",
+    "hook": "medication-prescribe",
+    "type": "who-aware-stewardship-prescribing",
+    "services": [
+      "vedamd-aware-stewardship"
+    ],
+    "title": "WHO AWaRe antibiotic stewardship — favour Access; restrict Watch + Reserve",
+    "description": "Fires on antibiotic prescribing decision. Recommends WHO AWaRe classification (Access first-line ≥ 60% target; Watch restricted to specific indications; Reserve last-resort + multidrug-resistant + senior approval); culture before antibiotic where feasible; shorter courses where evidence supports (CAP 5d, UTI 3-5d, cellulitis 5-7d); de-escalation per culture; Kenya AMR National Action Plan + GLASS surveillance. Reads context.proposedAntibiotic, context.indication, context.cultureAvailable, context.severity — never patient identity.",
+    "references": [
+      {
+        "label": "WHO AWaRe 2021; Kenya AMR Action Plan; GLASS"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z29.2",
+        "display": "Prophylactic chemotherapy",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "who-triple-elimination-mtct-routine",
+    "hook": "patient-view",
+    "type": "who-triple-elimination-mtct-routine",
+    "services": [
+      "vedamd-triple-elimination"
+    ],
+    "title": "Triple elimination — antenatal HIV + syphilis + hepatitis B testing + treatment",
+    "description": "Fires for pregnant patient at ANC. Recommends universal opt-out testing for HIV + syphilis + hepatitis B; if positive — same-day treatment initiation (TLD for HIV; benzathine penicillin G for syphilis; tenofovir from 28 weeks if HBeAg+ / HBV DNA > 200,000); neonatal HBV vaccine + HBIG within 24 hours; infant ART prophylaxis + PCR; partner testing offered; lifelong ART + continuation + monitoring. Reads context.gestationWeeks, context.hivStatus, context.rprResult, context.hbsAg, context.hbeAg — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Triple Elimination MTCT; Kenya PMTCT Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O98",
+        "display": "Maternal infectious + parasitic diseases",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "mass-drug-administration-deworming",
+    "hook": "patient-view",
+    "type": "mass-drug-administration-deworming",
+    "services": [
+      "vedamd-mda"
+    ],
+    "title": "MDA preventive chemotherapy + vitamin A + iron-folic acid",
+    "description": "Fires for paediatric / antenatal / community campaign. Recommends albendazole 400 mg + mebendazole 500 mg twice-yearly STH; praziquantel 40 mg/kg for schistosomiasis; ivermectin / DEC for filaria / oncho (AVOID DEC in oncho); azithromycin trachoma; vitamin A 100,000-200,000 IU age-banded; iron-folic acid for women + adolescent girls; integrated MCH Week delivery in Kenya. AVOID DEC in Loa loa co-endemic without screening. Reads context.ageYears, context.endemicDisease, context.pregnant, context.lastMda — never patient identity.",
+    "references": [
+      {
+        "label": "WHO STH / Schisto Preventive Chemotherapy; WHO Vitamin A; Kenya NTD Programme"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B83.9",
+        "display": "Helminthiasis unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "who-icope-aging-6-domains",
+    "hook": "patient-view",
+    "type": "who-icope-aging-6-domains",
+    "services": [
+      "vedamd-icope"
+    ],
+    "title": "WHO ICOPE — 6-domain intrinsic capacity assessment + person-centred plan",
+    "description": "Fires for adult ≥ 60. Recommends ICOPE 6-domain screen (cognition, mobility, vitality / nutrition, vision, hearing, psychological); detailed CGA for positive screens; falls prevention; polypharmacy review STOPP/START; vaccinations (influenza + PCV + zoster); advance care planning + frailty assessment; carer support; community engagement; integrate with existing services (NCD + ART + nutrition). Reads context.ageYears, context.cognitionScreen, context.mobility, context.vision, context.hearing, context.psychological — never patient identity.",
+    "references": [
+      {
+        "label": "WHO ICOPE 2017 + handbook 2019"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z00.0",
+        "display": "General adult medical examination",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "outbreak-investigation-idsr",
+    "hook": "patient-view",
+    "type": "outbreak-investigation-idsr",
+    "services": [
+      "vedamd-outbreak"
+    ],
+    "title": "Suspected outbreak — investigate + report per IDSR + IHR",
+    "description": "Fires for unusual cluster of illness. Recommends case definition + line list + epidemic curve + spot map + contact tracing; activate Rapid Response Team; specimen collection + reference laboratory + KEMRI; control measures (case management + isolation + WASH + vector + vaccination); risk communication + community engagement; notify Sub-County / County / National Public Health Institute + WHO per IHR; after-action review. Reads context.suspectedDisease, context.casesCount, context.geographicCluster, context.timeFrame — never patient identity.",
+    "references": [
+      {
+        "label": "WHO IHR 2005; Africa CDC + WHO IDSR; Kenya MOH IDSR Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "U07",
+        "display": "Special purpose ICD codes (outbreak)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "who-surgical-safety-checklist",
+    "hook": "patient-view",
+    "type": "who-surgical-safety-checklist",
+    "services": [
+      "vedamd-surgical-safety"
+    ],
+    "title": "WHO Surgical Safety Checklist — sign-in / time-out / sign-out for every surgery",
+    "description": "Fires for surgical procedure. Recommends WHO Surgical Safety Checklist 3-step process (sign-in: patient ID + consent + site marking + anaesthesia + allergy; time-out: team intro + procedure + critical events + antibiotic prophylaxis; sign-out: instrument + sponge count + specimen + concerns); antibiotic prophylaxis within 60 minutes of incision; VTE prophylaxis + early mobilisation; refer complex surgery to higher level. Reads context.procedure, context.urgency, context.facilityLevel, context.checklistCompleted — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Surgical Safety Checklist 2009; Lancet Commission Global Surgery"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z53",
+        "display": "Persons encountering health services for specific procedures",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "needlestick-pep-72h",
+    "hook": "patient-view",
+    "type": "needlestick-pep-72h",
+    "services": [
+      "vedamd-needlestick-pep"
+    ],
+    "title": "Occupational exposure — HIV PEP within 72 hours + HBV / HCV management",
+    "description": "Fires for healthcare worker / lab / first responder needlestick or mucocutaneous blood / body fluid exposure. Recommends immediate wound care; risk-stratify exposure + source; HIV PEP TDF/3TC/DTG × 28 days within 72 h (Kenya first-line); HBV: HBIG + vaccination if unvaccinated or non-responder; HCV: baseline + 12-week + 24-week monitoring + DAA if seroconversion; tetanus update; counselling + psychological support; follow-up HIV testing at 6 + 12 weeks + 6 months. Reads context.exposureType, context.sourceStatus, context.timeSinceExposureHours, context.hbvStatus, context.pregnant — never patient identity.",
+    "references": [
+      {
+        "label": "WHO PEP 2014; CDC PEP; Kenya NASCOP PEP"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z20.6",
+        "display": "Contact with HIV",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "adolescent-pregnancy-comprehensive",
+    "hook": "patient-view",
+    "type": "adolescent-pregnancy-comprehensive",
+    "services": [
+      "vedamd-adolescent-pregnancy"
+    ],
+    "title": "Adolescent pregnancy — adolescent-friendly enhanced antenatal + psychosocial",
+    "description": "Fires for pregnant patient < 20 years (or any first ANC for adolescent). Recommends adolescent-friendly + confidential + non-judgmental care; enhanced ANC frequency + pre-eclampsia + nutritional monitoring; mental health + IPV screening; 5 mg folic acid; Linda Mama enrolment; comprehensive sexuality education + future LARC contraception planning; child protection notification if < 14 years; school continuation support; DREAMS partnership for AGYW; multidisciplinary team. Reads context.ageYears, context.gestationWeeks, context.priorPregnancy, context.education, context.ipvRisk, context.mentalHealth — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Adolescent Pregnancy Guidelines; Kenya National Adolescent SRH Policy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O09.7",
+        "display": "Supervision of high-risk pregnancy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "immunisation-catch-up-pathway",
+    "hook": "patient-view",
+    "type": "immunisation-catch-up-pathway",
+    "services": [
+      "vedamd-immunisation-catch-up"
+    ],
+    "title": "Childhood immunisation catch-up — Kenya EPI + WHO catch-up schedule",
+    "description": "Fires for child / adolescent with incomplete vaccinations. Recommends WHO catch-up scheduling (minimum age + minimum interval); BCG + Hep B + DPT-HepB-Hib (penta) + OPV/IPV + PCV + Rota + MR + YF + HPV per Kenya EPI; multiple vaccines safe same day; avoid live vaccines in immunocompromised + pregnant; cold-chain + VVM check; document in vaccine card + MOSI registry; address vaccine hesitancy + cultural concerns. Reads context.ageYears, context.previousVaccines, context.immunocompromised, context.pregnant — never patient identity.",
+    "references": [
+      {
+        "label": "Kenya EPI; WHO Immunization Schedules + Catch-up Guide"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z28",
+        "display": "Immunisation not carried out",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "refugee-migrant-comprehensive-assessment",
+    "hook": "patient-view",
+    "type": "refugee-migrant-comprehensive-assessment",
+    "services": [
+      "vedamd-refugee-migrant-health"
+    ],
+    "title": "Refugee + migrant — comprehensive arrival health assessment + integration",
+    "description": "Fires for newly-arrived refugee / asylum seeker / migrant. Recommends comprehensive health screen within 30 days; TB + HIV + syphilis + hepatitis B/C + malaria screening per country of origin; mental health screening (PTSD + depression + anxiety); FGM assessment + GBV screening; routine bloods + nutrition; immunisation catch-up; chronic disease medication continuation; integration with Kenya health system (NHIF + Linda Mama + free TB/HIV); trauma-informed care + cultural mediators; child protection for unaccompanied minors. Reads context.countryOfOrigin, context.arrivalDate, context.ageYears, context.familyComposition, context.priorMedications — never patient identity.",
+    "references": [
+      {
+        "label": "WHO GAP Refugees + Migrants 2019-2023; UNHCR + Kenya MOH Refugee Health Strategy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z59.0",
+        "display": "Homelessness / displacement",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "chv-iccm-community-care",
+    "hook": "patient-view",
+    "type": "chv-iccm-community-care",
+    "services": [
+      "vedamd-chv-iccm"
+    ],
+    "title": "CHV iCCM — community-level treatment + referral pathway (Kenya)",
+    "description": "Fires for community-level paediatric or maternal health contact. Recommends CHV iCCM scope: simple pneumonia (amoxicillin DT) + uncomplicated malaria (AL after RDT) + diarrhoea (ORS + zinc) + SAM identification (MUAC + appetite); refer ALL with danger signs; pregnancy registration + ANC defaulter tracing; postnatal home visits days 1/3/7/28; TB/HIV adherence support; immunisation defaulter tracing; commodity distribution + community-based surveillance + outbreak detection + reporting. Reads context.ageMonths, context.symptoms, context.dangerSigns, context.refererral — never patient identity.",
+    "references": [
+      {
+        "label": "WHO iCCM; Kenya Community Health Strategy 2021-2025"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z76.89",
+        "display": "Persons encountering health services",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "who-five-moments-hand-hygiene",
+    "hook": "patient-view",
+    "type": "who-five-moments-hand-hygiene",
+    "services": [
+      "vedamd-hand-hygiene-ipc"
+    ],
+    "title": "WHO 5 moments hand hygiene + standard + transmission-based precautions",
+    "description": "Fires on patient-care encounter. Recommends WHO 5 moments hand hygiene (before patient + before clean / aseptic procedure + after fluid exposure + after patient + after surroundings); alcohol-based hand rub default; soap + water for visibly soiled + C. difficile + norovirus; standard precautions + transmission-based precautions (contact + droplet + airborne); central + urinary catheter insertion bundles; antibiotic prophylaxis timing; PPE risk-based; vaccinations for HCW (HBV mandatory + flu + COVID + MMR); facility WASH essential. Reads context.contactType, context.proceduralStatus, context.suspectedPathogen — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Hand Hygiene 2009; WHO Core Components IPC 2016; Kenya IPC Strategy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z29.0",
+        "display": "Prophylactic immunotherapy",
+        "kind": "finding"
+      }
+    ]
   }
 ]
