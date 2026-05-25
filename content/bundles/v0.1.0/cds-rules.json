@@ -6722,5 +6722,343 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "scd-hydroxyurea-tcd-screen",
+    "hook": "patient-view",
+    "type": "scd-hydroxyurea-tcd-screen",
+    "services": [
+      "vedamd-scd-comprehensive"
+    ],
+    "title": "Sickle cell disease — hydroxyurea + TCD screening from age 2",
+    "description": "Fires for HbSS / HbS-β-thal child / adult. Recommends hydroxyurea for ALL HbSS from age 9 months; annual TCD age 2–16 (start chronic transfusion if > 200 cm/s); penicillin prophylaxis to age 5; pneumococcal + meningococcal + Hib vaccination; annual ophthalmology from age 10; UACR + renal function; allogeneic SCT / gene therapy for severe. Reads context.scdGenotype, context.ageYears, context.tcdVelocity, context.hydroxyureaUse — never patient identity.",
+    "references": [
+      {
+        "label": "ASH SCD Pocket Guide 2020; STOP trial"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D57.1",
+        "display": "Sickle-cell disease without crisis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cf-cftr-modulator-multi-mdt",
+    "hook": "patient-view",
+    "type": "cf-cftr-modulator-multi-mdt",
+    "services": [
+      "vedamd-cystic-fibrosis"
+    ],
+    "title": "Cystic fibrosis — CFTR modulator + multidisciplinary specialist care",
+    "description": "Fires for confirmed CF. Recommends specialist CF centre, CFTR modulator (Trikafta/Kaftrio for eligible F508del mutations), airway clearance + hypertonic saline + dornase alfa, inhaled antibiotic for Pseudomonas, pancreatic enzymes + ADEK vitamins + high-calorie diet, annual OGTT from age 10, lung transplant referral if FEV1 < 30%. Reads context.cfMutation, context.fev1, context.bmi, context.pancreaticInsufficiency, context.colonisationStatus — never patient identity.",
+    "references": [
+      {
+        "label": "CFF + ECFS Standards of Care"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E84.0",
+        "display": "Cystic fibrosis with pulmonary manifestations",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "nsclc-molecular-targeted",
+    "hook": "patient-view",
+    "type": "nsclc-molecular-targeted",
+    "services": [
+      "vedamd-nsclc-treatment"
+    ],
+    "title": "Non-small cell lung cancer — comprehensive molecular testing + targeted therapy",
+    "description": "Fires for newly diagnosed NSCLC stage IV (or recurrent). Recommends COMPREHENSIVE molecular profiling (EGFR, ALK, ROS1, BRAF V600E, KRAS G12C, MET ex14, RET, NTRK, HER2) + PD-L1 IHC BEFORE first-line therapy; matched targeted TKI for driver-positive (osimertinib for EGFR, alectinib for ALK); pembrolizumab ± chemotherapy for driver-negative per PD-L1; durvalumab post-CRT for stage III unresectable. Reads context.nsclcStage, context.histology, context.molecularProfile, context.pdL1Tps — never patient identity.",
+    "references": [
+      {
+        "label": "ESMO + NCCN NSCLC Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C34.9",
+        "display": "Lung cancer",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ckd-sglt2-acei-finerenone",
+    "hook": "patient-view",
+    "type": "ckd-sglt2-acei-finerenone",
+    "services": [
+      "vedamd-ckd-3-5"
+    ],
+    "title": "CKD G3-5 — ACEi/ARB + SGLT2i + finerenone (foundational quartet)",
+    "description": "Fires for adult with eGFR 15–59 OR UACR ≥ 30 mg/g. Recommends ACEi/ARB titrated; SGLT2 inhibitor for eGFR ≥ 20 (DAPA-CKD + EMPA-KIDNEY); finerenone for T2DM + albuminuria; statin per CV risk; BP < 130/80; correct anaemia (Hb 100–115) + CKD-MBD + acidosis; dialysis preparation at G4; transplant referral pre-emptive. Reads context.egfr, context.uacr, context.diabetes, context.bp, context.potassium, context.medications — never patient identity.",
+    "references": [
+      {
+        "label": "KDIGO CKD 2024; KDIGO Diabetes in CKD 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N18.4",
+        "display": "CKD stage 4",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "afib-doac-chads2vasc",
+    "hook": "patient-view",
+    "type": "afib-doac-chads2vasc",
+    "services": [
+      "vedamd-atrial-fibrillation"
+    ],
+    "title": "Atrial fibrillation — ABC pathway + DOAC + rhythm/rate control",
+    "description": "Fires for confirmed AF. Recommends CHA2DS2-VASc + HAS-BLED scoring; DOAC for stroke prevention (apixaban / rivaroxaban / dabigatran / edoxaban) per renal + weight + age criteria; rate control beta-blocker / non-DHP CCB (target HR < 110 lenient or < 80 strict); rhythm control for symptomatic / first onset / new HF; catheter ablation for symptomatic + HFrEF (CASTLE-AF); reverse modifiable risk factors (weight, OSA, alcohol). Reads context.afConfirmed, context.cha2ds2vasc, context.hasBled, context.egfr, context.symptoms, context.hf — never patient identity.",
+    "references": [
+      {
+        "label": "ESC + ACC/AHA AF Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I48",
+        "display": "Atrial fibrillation",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "crohn-biologic-pathway",
+    "hook": "patient-view",
+    "type": "crohn-biologic-pathway",
+    "services": [
+      "vedamd-crohn-disease"
+    ],
+    "title": "Moderate-severe Crohn disease — biologic + treat-to-target",
+    "description": "Fires for moderate-severe Crohn (CDAI > 220, severe extra-intestinal, perianal, failed conventional). Recommends specialist IBD MDT; smoking cessation; biologic (anti-TNF infliximab/adalimumab; ustekinumab; vedolizumab; risankizumab) + immunomodulator combo; treat-to-target deep remission; therapeutic drug monitoring; surgery for localised disease early (LIR!C); maintain biologic through pregnancy; CRC surveillance from 8 years. Reads context.cdScore, context.location, context.fistula, context.smoking, context.priorTherapy — never patient identity.",
+    "references": [
+      {
+        "label": "ECCO Crohn 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K50",
+        "display": "Crohn disease",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "trd-ect-esketamine",
+    "hook": "patient-view",
+    "type": "trd-ect-esketamine",
+    "services": [
+      "vedamd-trd"
+    ],
+    "title": "Treatment-resistant depression — augmentation / ECT / esketamine pathway",
+    "description": "Fires for MDD unresponsive to ≥ 2 adequate trials. Recommends optimise current; switch class; augment (lithium / atypical antipsychotic / T3); IV ketamine or intranasal esketamine (specialist); ECT for severe / psychotic / catatonic / acutely suicidal; rTMS; trauma-focused psychotherapy for comorbid trauma; treat comorbidities + lifestyle. Reads context.numberAdequateTrials, context.phq9, context.suicideRisk, context.psychoticFeatures, context.bipolarRuleOut — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG222; STAR*D; CANMAT TRD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F33.2",
+        "display": "Severe MDD without psychotic features",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "adult-adhd-multimodal",
+    "hook": "patient-view",
+    "type": "adult-adhd-multimodal",
+    "services": [
+      "vedamd-adult-adhd"
+    ],
+    "title": "Adult ADHD — multimodal pathway (psychoeducation + stimulant or non-stimulant)",
+    "description": "Fires for suspected / confirmed adult ADHD (ASRS positive). Recommends specialist diagnostic interview; psychoeducation + behavioural strategies; methylphenidate / lisdexamfetamine first-line stimulant; atomoxetine / guanfacine non-stimulant for SUD / cardiac / tics; ADHD CBT; treat comorbidities (anxiety, depression, sleep, substance); workplace accommodations. Reads context.asrsScore, context.cardiovascularHistory, context.substanceUse, context.comorbidMood — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG87"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F90.0",
+        "display": "ADHD inattentive type",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ptsd-trauma-focused-therapy",
+    "hook": "patient-view",
+    "type": "ptsd-trauma-focused-therapy",
+    "services": [
+      "vedamd-ptsd"
+    ],
+    "title": "PTSD — trauma-focused psychotherapy first-line",
+    "description": "Fires for PTSD diagnosis (DSM-5 / ICD-11). Recommends trauma-focused CBT (PE / CPT) OR EMDR first-line; SSRI (sertraline / paroxetine) or venlafaxine adjunct / second-line; prazosin for nightmares; AVOID benzodiazepines; treat comorbid SUD / depression / anxiety in parallel. Complex PTSD: phase-based. Reads context.pcl5Score, context.traumaType, context.comorbidSubstance, context.suicideRisk — never patient identity.",
+    "references": [
+      {
+        "label": "ISTSS PTSD Guidelines; NICE NG116"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F43.10",
+        "display": "Post-traumatic stress disorder",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "menopause-hrt-individualised",
+    "hook": "patient-view",
+    "type": "menopause-hrt-individualised",
+    "services": [
+      "vedamd-menopause"
+    ],
+    "title": "Menopause — individualised HRT (transdermal preferred for VTE / migraine / HTN)",
+    "description": "Fires for menopausal symptoms in woman 40–60. Recommends individualised HRT (combined for uterus-intact; oestrogen-only post-hysterectomy); transdermal route for VTE / migraine / hypertension / liver disease; micronised progesterone preferred; lowest effective dose; annual review. Vaginal oestrogen for GSM; non-HRT (SSRI / fezolinetant) if HRT contraindicated. POI: HRT until age 51 minimum. Reads context.ageYears, context.menopauseStatus, context.uterus, context.vteHistory, context.migraine, context.bp — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG23; BMS Recommendations"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N95.1",
+        "display": "Menopausal + female climacteric states",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-eczema-dupilumab",
+    "hook": "patient-view",
+    "type": "severe-eczema-dupilumab",
+    "services": [
+      "vedamd-severe-atopic-dermatitis"
+    ],
+    "title": "Severe atopic dermatitis — dupilumab / JAK inhibitor pathway",
+    "description": "Fires for severe AD (EASI > 21 or POEM > 24) failing topical + phototherapy + systemic immunosuppressant. Recommends dupilumab 600 mg loading + 300 mg every 2 weeks (or tralokinumab / lebrikizumab); JAK inhibitor (upadacitinib / abrocitinib / baricitinib) — caution VTE + cardiac; concurrent topical + emollient. Eczema herpeticum: IV aciclovir. Reads context.easi, context.poem, context.priorTreatments, context.infectionRisk — never patient identity.",
+    "references": [
+      {
+        "label": "EuroGuiDerm AD 2023"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "L20",
+        "display": "Atopic dermatitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "acromegaly-surgery-somatostatin",
+    "hook": "patient-view",
+    "type": "acromegaly-surgery-somatostatin",
+    "services": [
+      "vedamd-acromegaly"
+    ],
+    "title": "Acromegaly — IGF-1 + OGTT-GH + trans-sphenoidal surgery first-line",
+    "description": "Fires for clinical features of acromegaly. Recommends IGF-1 screen + OGTT with GH measurement to confirm; pituitary MRI; visual fields; complications screen (HbA1c, BP, sleep study, ECG, echo, colonoscopy); trans-sphenoidal adenomectomy by experienced surgeon first-line; somatostatin analogue / pegvisomant / cabergoline for residual; radiotherapy adjunct. Reads context.clinicalAcromegaly, context.igf1, context.ogttGh, context.adenomaSize, context.visualFields — never patient identity.",
+    "references": [
+      {
+        "label": "Endocrine Society Acromegaly 2014"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E22.0",
+        "display": "Acromegaly + pituitary gigantism",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "graves-disease-thionamide-rai",
+    "hook": "patient-view",
+    "type": "graves-disease-thionamide-rai",
+    "services": [
+      "vedamd-graves-disease"
+    ],
+    "title": "Graves disease — thionamide / RAI / surgery; smoking cessation for ophthalmopathy",
+    "description": "Fires for confirmed Graves hyperthyroidism (TRAb positive). Recommends propranolol for symptoms; carbimazole 20–40 mg titrated × 12–18 months OR PTU in 1st-trimester pregnancy / storm; RAI for recurrence (avoid in pregnancy + severe ophthalmopathy + breastfeeding); total thyroidectomy for large goitre / suspicious / preferred. Counsel agranulocytosis; smoking cessation for ophthalmopathy. Reads context.tshSuppressed, context.freeT4, context.trab, context.ophthalmopathy, context.pregnant — never patient identity.",
+    "references": [
+      {
+        "label": "ATA Hyperthyroidism 2016"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E05.0",
+        "display": "Thyrotoxicosis with diffuse goitre",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]

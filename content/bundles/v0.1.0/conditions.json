@@ -58159,5 +58159,1413 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "sickle-cell-disease-comprehensive-care",
+    "title": "Sickle cell disease — comprehensive lifelong care",
+    "icd10": [
+      "D57.1",
+      "D57.2",
+      "D57.40",
+      "D57.80"
+    ],
+    "domains": [
+      "haematology",
+      "paediatrics",
+      "primary-care",
+      "screening"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Inherited haemoglobinopathy — HbSS, HbSC, HbS-β-thalassaemia and other compound heterozygotes.",
+      "Newborn screening detects affected babies; symptoms emerge after age 6 months as fetal Hb falls.",
+      "Chronic haemolytic anaemia + recurrent vaso-occlusive complications.",
+      "Long-term complications: stroke (silent + overt), pulmonary hypertension, nephropathy, retinopathy, avascular necrosis, leg ulcers, priapism, splenic dysfunction, cholelithiasis, growth + puberty delay, cognitive impairment."
+    ],
+    "redFlags": [
+      "Acute chest syndrome — see VOC pathway.",
+      "Stroke / TIA / cognitive change — TCD screening + transfusion programme.",
+      "Aplastic crisis (Parvovirus B19) — reticulocyte drop + falling Hb.",
+      "Splenic sequestration — sudden splenomegaly + falling Hb in young child.",
+      "Sepsis from encapsulated organism (functional asplenia).",
+      "Pregnancy + SCD — high-risk maternal + fetal monitoring."
+    ],
+    "diagnostics": [
+      {
+        "test": "Newborn screening (or Hb electrophoresis / HPLC).",
+        "rationale": "Definitive diagnosis."
+      },
+      {
+        "test": "Annual FBC + reticulocytes + LFT + U&E + UACR + LDH.",
+        "rationale": "Track haemolysis + organ function."
+      },
+      {
+        "test": "Transcranial Doppler (TCD) annually from age 2–16.",
+        "rationale": "Stroke risk screening; intervention threshold > 200 cm/s middle cerebral artery."
+      },
+      {
+        "test": "Annual ophthalmology from age 10 (retinopathy).",
+        "rationale": "Sight-threatening proliferative retinopathy preventable."
+      },
+      {
+        "test": "Annual urine albumin-creatinine ratio (sickle nephropathy).",
+        "rationale": "Detect early CKD."
+      },
+      {
+        "test": "Echo from age 8 (PHT screening).",
+        "rationale": "TRV ≥ 2.5 m/s warrants right heart catheter."
+      },
+      {
+        "test": "Bone marrow / spine imaging if AVN suspected.",
+        "rationale": "Hip / shoulder AVN common."
+      }
+    ],
+    "management": [
+      {
+        "step": "Patient + family education + comprehensive sickle programme",
+        "detail": "Multidisciplinary specialist centre — haematology + paediatrics + adult medicine + obstetrics + transplant. Genetic counselling for family + partners. Disease education + crisis trigger avoidance."
+      },
+      {
+        "step": "Infection prevention",
+        "detail": "Penicillin V prophylaxis from 3 months to at least 5 years (some continue lifelong post-splenectomy / severe disease). Pneumococcal conjugate + polysaccharide + meningococcal ACWY + B + Hib + annual influenza + COVID + hepatitis B vaccination. Travel-specific vaccines."
+      },
+      {
+        "step": "Hydroxyurea (hydroxycarbamide) — disease-modifying for ALL with HbSS / HbS-β-thalassaemia",
+        "detail": "Start in infants from 9 months (BABY HUG); titrate to MTD or fixed dose 15–35 mg/kg/day. Reduces VOC, ACS, transfusion need, mortality. Monitor FBC every 2 weeks initially then every 2–3 months. Pregnancy: stop ≥ 3 months before conception."
+      },
+      {
+        "step": "Newer disease-modifying agents",
+        "detail": "L-glutamine (Endari) 0.3 g/kg BD; voxelotor 1500 mg daily (HbS polymerisation inhibitor); crizanlizumab (anti-P-selectin) IV monthly. Specialist initiation."
+      },
+      {
+        "step": "Stroke prevention",
+        "detail": "TCD ≥ 200 cm/s — start chronic transfusion programme (every 3–4 weeks; target HbS < 30%); continue indefinitely. Hydroxyurea + phlebotomy alternative once stable (TWiTCH trial). Allogeneic SCT curative for stroke-risk patients with matched donor."
+      },
+      {
+        "step": "Transfusion programme — simple vs exchange",
+        "detail": "Indications: stroke prevention, recurrent ACS, pre-operative, severe anaemia (Hb < 5), preconception. Iron chelation (deferasirox) when ferritin > 1000 / 2.5 g cumulative iron load."
+      },
+      {
+        "step": "Curative therapy — stem cell transplant + gene therapy",
+        "detail": "Allogeneic HSCT (matched-sibling): curative; cures young patients with serious complications. Gene therapy — exa-cel (CRISPR / Cas9, BCL11A targeting) + lovotibeglogene autotemcel (lovo-cel, lentiviral gene addition) — recently approved for select patients ≥ 12 years (US, EU, UK)."
+      },
+      {
+        "step": "Complications management",
+        "detail": "Priapism > 4 h — see acute pathway. Avascular necrosis — joint preservation surgery, physiotherapy. Leg ulcers — compression + wound care. Cholelithiasis — laparoscopic cholecystectomy for symptomatic. Pulmonary hypertension — specialist PHT clinic. Nephropathy — ACE inhibitor for proteinuria; eGFR monitoring; dialysis / transplant for ESRD."
+      },
+      {
+        "step": "Pregnancy",
+        "detail": "Preconception planning; hydroxyurea STOP 3 months pre; folate 5 mg/day; partner haemoglobinopathy testing; aspirin 75 mg from 12 weeks (pre-eclampsia prevention); regular high-risk obstetric monitoring; LMWH prophylaxis; transfusion programme for severe SCD."
+      },
+      {
+        "step": "Transition to adult care + psychosocial",
+        "detail": "Structured adolescent-adult transition clinic; mental health screening (depression + chronic pain coping); educational + vocational support; medication adherence support."
+      }
+    ],
+    "references": [
+      {
+        "label": "ASH Pocket Guide on SCD 2020; BSH 2018; STOP / SWiTCH / TWiTCH / SUSTAIN / RESHAPE trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "cystic-fibrosis-comprehensive",
+    "title": "Cystic fibrosis — comprehensive management",
+    "icd10": [
+      "E84.0",
+      "E84.9"
+    ],
+    "domains": [
+      "respiratory",
+      "gastroenterology",
+      "paediatrics",
+      "genetics",
+      "endocrinology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Autosomal recessive CFTR gene mutations — most common F508del.",
+      "Newborn screening detects most cases (immunoreactive trypsinogen → second-tier DNA / further IRT → sweat test confirmation > 60 mmol/L Cl⁻).",
+      "Multi-system: progressive lung disease (bronchiectasis, chronic infection — S. aureus, H. influenzae, P. aeruginosa, B. cepacia, NTM), pancreatic insufficiency (steatorrhoea, FTT), CF-related diabetes (CFRD), distal intestinal obstruction (DIOS), male infertility (congenital bilateral absence of vas deferens — CBAVD), hepatobiliary disease (CFLD), osteopenia, sinus disease + nasal polyps.",
+      "Median predicted survival in well-resourced settings now > 50 years with modern care + CFTR modulators."
+    ],
+    "redFlags": [
+      "Acute pulmonary exacerbation: increased cough, sputum, dyspnoea, weight loss, hypoxia, falling lung function.",
+      "Massive haemoptysis (> 240 mL in 24 h) — bronchial artery embolisation.",
+      "Pneumothorax.",
+      "Distal intestinal obstruction syndrome (DIOS) — RIF mass + signs of obstruction.",
+      "Decompensating CF-related diabetes / DKA.",
+      "Suspected CF-related liver disease (cirrhosis + variceal bleeding).",
+      "B. cepacia complex isolation — segregation + high mortality concern.",
+      "Lung transplantation eligibility (FEV1 < 30% predicted with declining trajectory)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Sweat test (chloride > 60 mmol/L) + CFTR genetic testing.",
+        "rationale": "Diagnosis."
+      },
+      {
+        "test": "FEV1 + FVC at every clinic visit; CT chest at intervals; HRCT for structural disease.",
+        "rationale": "Lung function + structural surveillance."
+      },
+      {
+        "test": "Sputum culture + sensitivities (annual or more frequent + during exacerbations).",
+        "rationale": "Identify pathogens + resistance."
+      },
+      {
+        "test": "Annual oral glucose tolerance test from age 10 (CFRD screening).",
+        "rationale": "Diabetes detection."
+      },
+      {
+        "test": "Faecal elastase / 3-day faecal fat for pancreatic insufficiency.",
+        "rationale": "Confirm pancreatic exocrine insufficiency."
+      },
+      {
+        "test": "LFTs, USS liver, FibroScan elastography.",
+        "rationale": "Detect CFLD."
+      },
+      {
+        "test": "DEXA from age 18 (or earlier if risk factors).",
+        "rationale": "Bone health."
+      },
+      {
+        "test": "Annual nutritional + height / weight / BMI assessment.",
+        "rationale": "Cornerstone outcome — BMI correlates with FEV1."
+      }
+    ],
+    "management": [
+      {
+        "step": "Specialist CF centre + multidisciplinary team",
+        "detail": "CF consultant + nurse + physiotherapist + dietitian + pharmacist + social worker + psychologist; minimum quarterly review; annual comprehensive assessment."
+      },
+      {
+        "step": "CFTR modulator therapy — game-changer for eligible patients",
+        "detail": "Ivacaftor (potentiator) for gating mutations (e.g. G551D). Lumacaftor/ivacaftor; tezacaftor/ivacaftor for homozygous F508del. Elexacaftor/tezacaftor/ivacaftor (ETI, Trikafta/Kaftrio) — for ≥ 90% of CF patients with at least one F508del or eligible mutation. Dramatic improvement in FEV1, exacerbations, BMI, sweat chloride. Specialist initiation + monitoring."
+      },
+      {
+        "step": "Airway clearance + mucolytics",
+        "detail": "Daily airway clearance physiotherapy (active cycle of breathing, positive expiratory pressure, oscillating PEP); nebulised hypertonic saline 7% (3–7 mL BD); inhaled mannitol; dornase alfa 2.5 mg daily (DNAse for thick mucus); exercise."
+      },
+      {
+        "step": "Inhaled antibiotics for chronic Pseudomonas colonisation",
+        "detail": "Nebulised tobramycin (28 days on / 28 days off cycles), colistin, aztreonam. First isolation of Pseudomonas — eradication regimen (oral ciprofloxacin + nebulised tobramycin / colistin)."
+      },
+      {
+        "step": "Acute pulmonary exacerbation",
+        "detail": "IV antibiotics (two anti-pseudomonal — e.g. ceftazidime / piperacillin-tazobactam + tobramycin) 10–14 days; intensified physiotherapy + nutrition support. Home IV antibiotic programmes."
+      },
+      {
+        "step": "Pancreatic insufficiency management",
+        "detail": "Pancreatic enzyme replacement (Creon) at every meal + snack; weight-band dose + adjusted to stool fat / symptoms. Fat-soluble vitamin (ADEK) supplementation. High-energy diet (110–200% normal); supplemental high-calorie drinks; PEG feeding if BMI falling."
+      },
+      {
+        "step": "CF-related diabetes (CFRD)",
+        "detail": "Insulin therapy preferred over oral agents (CFRD is unique pathophysiology). Basal-bolus regimen; monitor + treat hypoglycaemia. Avoid carbohydrate restriction (would worsen weight loss)."
+      },
+      {
+        "step": "CF-related liver disease",
+        "detail": "Ursodeoxycholic acid 15–20 mg/kg/day for cholestasis. Variceal screening + management. Liver transplantation for end-stage."
+      },
+      {
+        "step": "Lung transplantation",
+        "detail": "Refer when FEV1 < 30% predicted (or rapid decline); 6MWD < 400 m; pulmonary hypertension; recurrent severe exacerbations. Bilateral sequential transplant. 5-year survival ~60%."
+      },
+      {
+        "step": "Mental health + transition + reproductive care",
+        "detail": "Screen depression + anxiety annually (TIDES). Structured transition adolescent to adult. Fertility counselling — male infertility from CBAVD (assisted reproduction options); female fertility usually preserved but pregnancy plan + CFTR-modulator continuation in pregnancy (Trikafta safe + recommended)."
+      }
+    ],
+    "references": [
+      {
+        "label": "Cystic Fibrosis Foundation Clinical Practice Guidelines (multiple); ECFS Standards of Care; UK CF Trust"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "non-small-cell-lung-cancer-treatment-pathway",
+    "title": "Non-small cell lung cancer — molecular-guided treatment pathway",
+    "icd10": [
+      "C34"
+    ],
+    "domains": [
+      "oncology",
+      "respiratory",
+      "surgery",
+      "radiation-oncology"
+    ],
+    "population": {
+      "minAgeYears": 40,
+      "sex": "any"
+    },
+    "presentation": [
+      "Cough, weight loss, haemoptysis, chest pain, breathlessness, recurrent pneumonia, paraneoplastic, asymptomatic incidental finding.",
+      "Histology: adenocarcinoma (50%), squamous cell (25%), large-cell, NOS.",
+      "Molecular drivers (adenocarcinoma): EGFR, ALK, ROS1, BRAF V600E, KRAS G12C, MET ex14, RET, NTRK, HER2.",
+      "PD-L1 expression — guides immunotherapy."
+    ],
+    "redFlags": [
+      "Massive haemoptysis.",
+      "SVC obstruction.",
+      "Malignant spinal cord compression.",
+      "Brain metastases with raised ICP / seizures.",
+      "Hypercalcaemia / SIADH (paraneoplastic).",
+      "Pulmonary embolism (high incidence)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Contrast CT chest + abdomen + pelvis + brain MRI.",
+        "rationale": "Staging (TNM 8th)."
+      },
+      {
+        "test": "PET-CT for staging mediastinum + distant disease.",
+        "rationale": "Improved nodal + distant accuracy."
+      },
+      {
+        "test": "Tissue biopsy (bronchoscopy, EBUS-TBNA for mediastinum, CT-guided percutaneous, surgical) with HISTOLOGY + COMPREHENSIVE MOLECULAR PROFILING.",
+        "rationale": "Driver identification mandatory for non-squamous; increasingly squamous too."
+      },
+      {
+        "test": "PD-L1 IHC (TPS).",
+        "rationale": "Immunotherapy decision."
+      },
+      {
+        "test": "Liquid biopsy (ctDNA) — alternative or complementary, especially for resistance mutations.",
+        "rationale": "Less invasive; sensitive for major drivers."
+      },
+      {
+        "test": "Pulmonary function tests + cardiac assessment.",
+        "rationale": "Treatment fitness."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary lung cancer team",
+        "detail": "Thoracic surgeon + radiation oncologist + medical oncologist + radiologist + pathologist + pulmonologist + specialist nurse."
+      },
+      {
+        "step": "Stage I-II — curative-intent surgical resection",
+        "detail": "Lobectomy (preferred) or sub-lobar (selected). Lymph node dissection. SBRT (stereotactic body radiotherapy) alternative if medically inoperable."
+      },
+      {
+        "step": "Stage IB-IIIA resected — adjuvant therapy",
+        "detail": "Adjuvant cisplatin-based chemotherapy. Atezolizumab (PD-L1 ≥ 1%) or pembrolizumab adjuvant. Osimertinib adjuvant × 3 years for EGFR-mutant resected stage IB-IIIA (ADAURA)."
+      },
+      {
+        "step": "Stage III unresectable — concurrent chemoradiotherapy + durvalumab",
+        "detail": "Concurrent chemo (cisplatin / carboplatin + etoposide / paclitaxel) + thoracic radiotherapy 60–66 Gy. Followed by durvalumab × 12 months (PACIFIC) — improves overall survival."
+      },
+      {
+        "step": "Stage IV — molecular-targeted FIRST in driver-positive",
+        "detail": "EGFR mutation: osimertinib (1st line; FLAURA). ALK rearrangement: alectinib / brigatinib / lorlatinib (1st line; ALEX / CROWN). ROS1: entrectinib / crizotinib. BRAF V600E: dabrafenib + trametinib. KRAS G12C: sotorasib / adagrasib. MET ex14: capmatinib / tepotinib. RET fusion: selpercatinib / pralsetinib. NTRK: larotrectinib / entrectinib. HER2: trastuzumab deruxtecan."
+      },
+      {
+        "step": "Stage IV driver-negative — immunotherapy ± chemotherapy",
+        "detail": "PD-L1 ≥ 50%: pembrolizumab monotherapy (1st line; KEYNOTE-024). PD-L1 1–49%: pembrolizumab + chemotherapy (KEYNOTE-189 + KEYNOTE-407). PD-L1 < 1%: ipilimumab + nivolumab + 2 cycles chemotherapy (CheckMate 9LA) or chemotherapy + pembrolizumab."
+      },
+      {
+        "step": "Targeted-therapy resistance — second-line",
+        "detail": "Re-biopsy for resistance mutations (e.g. EGFR T790M / C797S / MET amplification / SCLC transformation). Switch / add appropriate next-generation TKI; re-biopsy informs salvage strategy."
+      },
+      {
+        "step": "Symptomatic + palliative",
+        "detail": "Palliative radiotherapy for bone / brain metastases / haemoptysis / chest pain. Bisphosphonate / denosumab for bone metastases. Endobronchial stent / debridement for airway. Oxygen + opioid for dyspnoea. Pleural drainage / pleurodesis for effusion. Early specialist palliative care improves quality + survival (Temel NEJM 2010)."
+      },
+      {
+        "step": "Smoking cessation + survivorship",
+        "detail": "Cessation improves treatment outcomes + quality of life — at any stage. Survivorship: surveillance imaging (3–6 monthly years 1–2; annually years 3–5); psychological support; manage chronic complications."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESMO + NCCN NSCLC guidelines; multiple molecular-targeted trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "chronic-kidney-disease-stages-3-5",
+    "title": "Chronic kidney disease G3–G5 — pre-dialysis management",
+    "icd10": [
+      "N18.3",
+      "N18.4",
+      "N18.5"
+    ],
+    "domains": [
+      "nephrology",
+      "primary-care",
+      "endocrinology",
+      "cardiology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "G3a: eGFR 45–59; G3b: 30–44; G4: 15–29; G5: < 15.",
+      "Often asymptomatic until advanced; symptoms (fatigue, oedema, breathlessness, nausea, pruritus) develop at G4–5.",
+      "Causes: diabetes (#1), hypertension, glomerulonephritis, polycystic kidneys, interstitial / drug-induced, renovascular, obstructive.",
+      "Complications: anaemia, mineral + bone disease (CKD-MBD), metabolic acidosis, hyperkalaemia, malnutrition, cardiovascular disease, infection susceptibility."
+    ],
+    "redFlags": [
+      "Rapidly progressive disease (eGFR drop > 5 mL/min/year) — refer nephrology.",
+      "Heavy proteinuria > 3 g/24 h (nephrotic).",
+      "Active urinary sediment (RBC casts, dysmorphic RBCs) — biopsy candidate.",
+      "Severe hypertension difficult to control.",
+      "Hyperkalaemia > 6.0; symptomatic acidosis.",
+      "Suspected vasculitis / glomerulonephritis — urgent referral.",
+      "Approaching dialysis: G4 (eGFR < 30) — modality discussion + access planning."
+    ],
+    "diagnostics": [
+      {
+        "test": "eGFR + UACR every 6–12 months (more often if rapidly progressive).",
+        "rationale": "Stage + monitor progression."
+      },
+      {
+        "test": "Urinalysis (sediment, blood, protein) + renal USS.",
+        "rationale": "Identify cause + obstruction."
+      },
+      {
+        "test": "FBC, U&E, calcium, phosphate, PTH, vitamin D, bicarbonate, ferritin, transferrin saturation.",
+        "rationale": "Identify CKD complications."
+      },
+      {
+        "test": "Albumin, lipids, HbA1c.",
+        "rationale": "Cardiovascular risk + diabetes."
+      },
+      {
+        "test": "Hepatitis B / C / HIV (pre-dialysis / transplant workup).",
+        "rationale": "Transplant + dialysis safety."
+      },
+      {
+        "test": "Renal biopsy if active glomerulonephritis / unexplained.",
+        "rationale": "Specific diagnosis + treatment."
+      }
+    ],
+    "management": [
+      {
+        "step": "Address underlying cause + modifiable risk factors",
+        "detail": "Tight glycaemic control in diabetes (HbA1c ~7%); BP < 130/80 with ACE inhibitor or ARB (proteinuria) + SGLT2 inhibitor (now first-line addition in CKD with eGFR ≥ 20); avoid nephrotoxins (NSAID, contrast, aminoglycoside)."
+      },
+      {
+        "step": "SGLT2 inhibitor — every CKD patient eligibility check",
+        "detail": "Dapagliflozin or empagliflozin — eGFR ≥ 20–25 mL/min, with or without diabetes (DAPA-CKD + EMPA-KIDNEY). Slows decline + reduces CV events. Caution euglycaemic DKA in T2DM (sick-day rules)."
+      },
+      {
+        "step": "Finerenone (non-steroidal MRA) for diabetic kidney disease",
+        "detail": "10–20 mg daily for T2DM + albuminuria — further cardio-renal protection on top of ACEi + SGLT2i (FIDELIO + FIGARO). Monitor K+."
+      },
+      {
+        "step": "ACEi / ARB — first-line for proteinuric CKD",
+        "detail": "Titrate to maximum tolerated; tolerate K+ rise + creatinine rise up to 30% from baseline. Combine with SGLT2i. Avoid combining ACEi + ARB (no benefit, more harm)."
+      },
+      {
+        "step": "BP target < 130/80 (or lower with proteinuria)",
+        "detail": "First-line ACEi/ARB + SGLT2i. Add CCB then thiazide then spironolactone for resistant. Watch hyperkalaemia + AKI risk."
+      },
+      {
+        "step": "Anaemia of CKD",
+        "detail": "Target Hb 100–115 g/L (NOT higher — over-correction increases CV events). Iron repletion first: ferritin > 100, TSAT > 20%; IV iron preferred in CKD. ESA (epoetin / darbepoetin) when Hb < 100 + iron-replete. HIF-PHI (roxadustat) emerging oral alternative."
+      },
+      {
+        "step": "CKD-MBD",
+        "detail": "Hyperphosphataemia: dietary restriction + phosphate binder (calcium acetate / sevelamer / lanthanum). Vitamin D deficiency: cholecalciferol. Secondary hyperparathyroidism: alfacalcidol / paricalcitol; cinacalcet / etelcalcetide for resistant. Avoid high-Ca binders in advanced disease."
+      },
+      {
+        "step": "Metabolic acidosis correction",
+        "detail": "Oral sodium bicarbonate to maintain serum HCO3 ≥ 22 mmol/L — slows CKD progression + improves nutrition + bone health (UBI trial)."
+      },
+      {
+        "step": "Hyperkalaemia management",
+        "detail": "Patiromer or sodium zirconium cyclosilicate — enables continuation of ACEi/ARB at protective doses. Reduce K+ in diet."
+      },
+      {
+        "step": "Dialysis preparation at G4",
+        "detail": "Modality discussion (HD vs PD vs transplant first); vascular access (AVF preferred — 6+ months to mature) OR PD catheter; transplant referral pre-emptive; vaccination (HBV, pneumococcal, flu, COVID)."
+      },
+      {
+        "step": "Conservative management option",
+        "detail": "Elderly / multi-morbid: conservative kidney management (no dialysis) — symptom-focused; palliative team; advance care planning. Survival comparable in very elderly with comorbidities."
+      }
+    ],
+    "references": [
+      {
+        "label": "KDIGO 2024 CKD Guideline; KDIGO Diabetes in CKD 2022; DAPA-CKD + EMPA-KIDNEY + FIDELIO trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "atrial-fibrillation-comprehensive-management",
+    "title": "Atrial fibrillation — comprehensive AF Care Pathway",
+    "icd10": [
+      "I48"
+    ],
+    "domains": [
+      "cardiology",
+      "primary-care",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Irregular pulse; palpitations + breathlessness + fatigue + reduced exercise capacity; up to 1/3 asymptomatic.",
+      "Detection by routine ECG, ambulatory monitor (Holter, patch), implantable loop recorder, smartwatch.",
+      "Patterns: paroxysmal (< 7 days, self-terminating), persistent (> 7 days, cardioversion to restore), long-standing persistent, permanent.",
+      "Risk factors: age, hypertension, heart failure, valve disease, OSA, obesity, alcohol, hyperthyroidism, post-cardiac surgery, lung disease, sleep apnoea."
+    ],
+    "redFlags": [
+      "Haemodynamically unstable (rapid ventricular response with hypotension / pulmonary oedema / cardiac arrest) — urgent cardioversion.",
+      "Pre-excitation syndrome (WPW) with AF — risk of degeneration to VF; avoid AV-nodal blockers.",
+      "Suspected new ischaemic stroke + AF.",
+      "Pregnancy + new-onset AF.",
+      "Concurrent severe valve disease (mitral stenosis especially) — risk of LA appendage thrombus."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG + ambulatory ECG monitoring (24 h–4 weeks).",
+        "rationale": "Confirm rhythm + duration + symptom correlation."
+      },
+      {
+        "test": "TTE — LA size, LV function, valve disease.",
+        "rationale": "Structural assessment."
+      },
+      {
+        "test": "TFTs, U&E, FBC, BNP.",
+        "rationale": "Reversible causes + risk."
+      },
+      {
+        "test": "CHA2DS2-VASc + HAS-BLED + ORBIT bleeding score.",
+        "rationale": "Anticoagulation risk-benefit."
+      },
+      {
+        "test": "Sleep study if OSA risk factors.",
+        "rationale": "Common reversible factor."
+      },
+      {
+        "test": "TOE if rhythm control without ≥ 3 weeks anticoagulation considered.",
+        "rationale": "Exclude LA appendage thrombus before cardioversion."
+      }
+    ],
+    "management": [
+      {
+        "step": "ABC pathway (Atrial fibrillation Better Care)",
+        "detail": "A — Anticoagulation / Avoid stroke. B — Better symptom management (rate + rhythm). C — Cardiovascular + Comorbidity optimisation."
+      },
+      {
+        "step": "Anticoagulation — DOAC preferred over warfarin",
+        "detail": "CHA2DS2-VASc ≥ 2 (men) / ≥ 3 (women): apixaban 5 mg BD OR rivaroxaban 20 mg OD OR edoxaban 60 mg OD OR dabigatran 150 mg BD. Reduce dose per renal / age / weight criteria. Warfarin (INR 2.0–3.0) preferred for mechanical valve, severe mitral stenosis, antiphospholipid. CHA2DS2-VASc 1 (men) — discuss benefit. ZERO — no anticoagulation."
+      },
+      {
+        "step": "Rate control — first-line for asymptomatic / persistent",
+        "detail": "β-blocker (bisoprolol, metoprolol) OR non-DHP CCB (diltiazem, verapamil — AVOID in HFrEF). Digoxin add-on / monotherapy for elderly / sedentary. Target HR < 110 (lenient) or < 80 (strict — if symptomatic / cardiomyopathy)."
+      },
+      {
+        "step": "Rhythm control — for symptomatic / first onset / young / new-onset HF",
+        "detail": "Cardioversion: pharmacological (amiodarone / flecainide IV) or DC (synchronised; 120–200 J biphasic). REQUIRES anticoagulation ≥ 3 weeks pre + 4 weeks post (or TOE-guided). Maintenance: flecainide (no structural HD), amiodarone (structural HD), dronedarone (caution HF), sotalol."
+      },
+      {
+        "step": "Catheter ablation",
+        "detail": "Indicated for symptomatic AF: paroxysmal / persistent that failed / not tolerating AAD; selected first-line for paroxysmal AF (HRS / EHRA / APHRS 2017 guidelines). Pulmonary-vein isolation; cryoballoon or radiofrequency. Recurrence 20–40% over 5 years; repeat ablation sometimes needed. EARLY ablation in HFrEF + AF improves outcomes (CASTLE-AF)."
+      },
+      {
+        "step": "Left atrial appendage occlusion (Watchman / Amulet)",
+        "detail": "Alternative to lifelong anticoagulation in patients with high bleeding risk / contraindication. PROTECT-AF trial — non-inferior to warfarin."
+      },
+      {
+        "step": "Reverse modifiable risk factors",
+        "detail": "Weight loss (10% reduction reduces AF burden — ARREST-AF). Sleep apnoea treatment (CPAP). Alcohol reduction (< 10 standard drinks/week). Blood pressure control. Exercise. Cardiometabolic optimisation."
+      },
+      {
+        "step": "Acute new-onset AF with rapid ventricular response",
+        "detail": "Unstable: synchronised DC cardioversion. Stable: IV β-blocker (metoprolol 2.5–5 mg) OR diltiazem 0.25 mg/kg. Address precipitant (sepsis, PE, alcohol). Consider rhythm-control attempt < 48 h."
+      },
+      {
+        "step": "Anticoagulation reversal for bleeding / urgent surgery",
+        "detail": "Dabigatran: idarucizumab 5 g IV. Apixaban / rivaroxaban: andexanet alfa OR 4-factor PCC 50 IU/kg. Warfarin: vitamin K + PCC."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC + ACC/AHA Atrial Fibrillation Guidelines (2023 + 2024 update); CASTLE-AF + EAST-AFNET 4 trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "moderate-severe-crohn-disease-biologic",
+    "title": "Moderate-severe Crohn disease — biologic + advanced therapy pathway",
+    "icd10": [
+      "K50"
+    ],
+    "domains": [
+      "gastroenterology",
+      "immunology",
+      "surgery"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Chronic relapsing transmural inflammation anywhere from mouth to anus; ileocolonic (~50%), ileal (~30%), colonic (~20%), perianal (~30%).",
+      "Diarrhoea (often non-bloody) + abdominal pain + weight loss + fatigue + extra-intestinal (uveitis, arthritis, erythema nodosum, pyoderma gangrenosum, primary sclerosing cholangitis).",
+      "Complications: strictures, fistulas (perianal, enterocutaneous, enterovesical, enteroenteric), abscess, perforation.",
+      "Risk factors: smoking (worsens — strong association), family history, NSAID, antibiotic use, urban / hygienic environment."
+    ],
+    "redFlags": [
+      "Bowel obstruction from stricture.",
+      "Perforation / peritonitis.",
+      "Severe acute flare — hypoalbuminaemia + CRP > 100.",
+      "Concomitant Clostridioides difficile / CMV (steroid-refractory).",
+      "Concomitant abscess — must drain before / alongside immunosuppression.",
+      "Colon cancer / dysplasia surveillance (longstanding colonic disease).",
+      "Pregnancy + Crohn — biologics continue; flares can complicate."
+    ],
+    "diagnostics": [
+      {
+        "test": "Ileocolonoscopy with biopsies — gold standard.",
+        "rationale": "Definitive diagnosis + extent + grading."
+      },
+      {
+        "test": "Capsule endoscopy + MR enterography for small-bowel disease.",
+        "rationale": "Identify small-bowel involvement + complications."
+      },
+      {
+        "test": "MRI pelvis for perianal disease (fistula characterisation).",
+        "rationale": "Surgical planning."
+      },
+      {
+        "test": "FBC + CRP + albumin + ferritin + vitamin B12 + faecal calprotectin.",
+        "rationale": "Severity + nutritional state + activity."
+      },
+      {
+        "test": "Stool studies — C. difficile + culture + ova / parasites + viral.",
+        "rationale": "Exclude / identify superinfection."
+      },
+      {
+        "test": "Hepatitis B + C + HIV + TB (interferon-gamma release assay + CXR) before biologic.",
+        "rationale": "Pre-biologic safety screen."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary IBD team + treat-to-target",
+        "detail": "Gastroenterologist + IBD nurse + dietitian + stoma nurse + colorectal surgeon + psychologist. Treat to deep remission (clinical + biochemical + endoscopic + radiological)."
+      },
+      {
+        "step": "Smoking cessation — paramount",
+        "detail": "Single most modifiable factor; smoking doubles relapse + surgery rates."
+      },
+      {
+        "step": "Induction — biologics increasingly first-line for moderate-severe",
+        "detail": "Anti-TNF (infliximab 5 mg/kg IV at 0/2/6 weeks then every 8 weeks; adalimumab 160 mg → 80 mg → 40 mg SC every 2 weeks) — first-line. Combination with thiopurine (azathioprine 2 mg/kg) improves outcomes for infliximab. Ustekinumab (IL-12/23) 6 mg/kg IV then 90 mg SC every 8 weeks. Vedolizumab (anti-α4β7 integrin) 300 mg IV at 0/2/6 then every 8 weeks. Risankizumab (anti-IL-23) emerging. Upadacitinib (JAK inhibitor) oral approved for moderate-severe."
+      },
+      {
+        "step": "Corticosteroid for induction (not maintenance)",
+        "detail": "Budesonide CIR 9 mg/day for ileal / right-colonic (less systemic effect). Prednisolone 30–40 mg/day for severe / extensive — taper over 8 weeks; combine with steroid-sparing immunomodulator. NEVER long-term."
+      },
+      {
+        "step": "Maintenance + treat-to-target",
+        "detail": "Same biologic as induction; therapeutic drug monitoring (trough levels + anti-drug antibodies). Tighten / switch if loss of response. Target deep remission (mucosal healing) — improves long-term outcomes (CALM trial)."
+      },
+      {
+        "step": "Surgery integration",
+        "detail": "Resect localised ileocolonic disease — increasingly considered earlier as alternative to long-term medication (LIR!C trial). Drain abscess BEFORE immunosuppression. Stricture: balloon dilation OR resection. Fistula: combined surgical + biologic management. Stoma when needed."
+      },
+      {
+        "step": "Pregnancy",
+        "detail": "Active disease worse than medication for mother + baby. Continue anti-TNF / vedolizumab / ustekinumab throughout pregnancy (FDA pregnancy registry data reassuring). Stop methotrexate 3 months pre-conception. Aim conception when in remission."
+      },
+      {
+        "step": "Nutrition + bone health + vaccinations",
+        "detail": "Vitamin / iron / B12 repletion as needed. Exclusive enteral nutrition (EEN) in paediatric — first-line induction (no steroid). Calcium + vitamin D + DEXA. Live vaccines BEFORE biologic; killed vaccines safe on biologic."
+      },
+      {
+        "step": "Cancer surveillance",
+        "detail": "Colonoscopy 8 years after colonic disease onset, then every 1–3 years per risk. Skin cancer surveillance on thiopurine + anti-TNF."
+      }
+    ],
+    "references": [
+      {
+        "label": "ECCO Guidelines on Crohn Disease (2024 update); AGA Clinical Practice Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "treatment-resistant-depression-management",
+    "title": "Treatment-resistant depression — augmentation, ECT, novel therapies",
+    "icd10": [
+      "F33"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Major depressive disorder unresponsive to ≥ 2 adequate antidepressant trials of adequate dose + duration (4–8 weeks each).",
+      "30% of MDD becomes treatment-resistant.",
+      "Often co-occurring: severe anxiety, suicidal ideation, chronic pain, substance use, personality issues, medical comorbidity (hypothyroidism, vitamin deficiency, sleep apnoea, anaemia).",
+      "Functional impairment: work, relationships, self-care; suicide risk persistently elevated."
+    ],
+    "redFlags": [
+      "Active suicidal ideation with plan or intent — urgent psychiatric assessment + admission consideration.",
+      "Severe psychomotor retardation / catatonia / refusal to eat — urgent treatment (ECT).",
+      "Psychotic depression — needs antipsychotic + antidepressant.",
+      "Pregnancy + severe depression — risk-benefit; some antidepressants safe; ECT safe.",
+      "Bipolar depression masquerading as MDD — antidepressant monotherapy can precipitate mania."
+    ],
+    "diagnostics": [
+      {
+        "test": "Confirm diagnosis + treatment history (adequacy of trials).",
+        "rationale": "Many 'TRD' have inadequate trials."
+      },
+      {
+        "test": "Exclude bipolar (MDQ + family history + episodic mood elevation history).",
+        "rationale": "Bipolar depression has different optimal treatment."
+      },
+      {
+        "test": "Exclude organic + iatrogenic contributors: TSH, B12, folate, vitamin D, FBC, U&E, glucose, sleep study, medication review.",
+        "rationale": "Reversible causes."
+      },
+      {
+        "test": "PHQ-9 + suicide risk assessment at every visit.",
+        "rationale": "Severity tracking + safety."
+      },
+      {
+        "test": "Cognitive testing (Trail Making, Stroop) if cognitive symptoms.",
+        "rationale": "Pseudo-dementia / cognitive depression."
+      }
+    ],
+    "management": [
+      {
+        "step": "Optimise first-line antidepressant",
+        "detail": "Ensure adequate dose × adequate duration (4–8 weeks at maximum tolerated). Check adherence + pharmacogenomics (CYP2D6 / CYP2C19) if available. Address common co-morbidities (sleep, alcohol, substances, hypothyroidism)."
+      },
+      {
+        "step": "Switch antidepressant (different class)",
+        "detail": "SSRI → SNRI (venlafaxine, duloxetine); OR mirtazapine (helpful for insomnia, low appetite); OR vortioxetine; OR bupropion (low energy / weight gain). Cross-taper to avoid discontinuation."
+      },
+      {
+        "step": "Augmentation strategies",
+        "detail": "Lithium (target 0.4–0.8 mmol/L) — most evidence. Atypical antipsychotic (aripiprazole 2–10 mg, quetiapine XR 150–300 mg, olanzapine 2.5–10 mg). Liothyronine T3 25 microgram (well-evidenced). Combination antidepressants (SSRI + bupropion; SSRI + mirtazapine 'California rocket fuel')."
+      },
+      {
+        "step": "Esketamine intranasal (FDA-approved for TRD)",
+        "detail": "Spravato 56–84 mg intranasal twice weekly × 4 weeks then weekly then every 2 weeks. Specialist clinic with monitoring (2 h post-dose for dissociation + BP). REMS programme."
+      },
+      {
+        "step": "Ketamine IV (off-label) — rapid antidepressant effect",
+        "detail": "0.5 mg/kg IV over 40 min × multiple sessions. Specialist centre. Rapid effect within hours; benefit duration variable."
+      },
+      {
+        "step": "Electroconvulsive therapy (ECT)",
+        "detail": "Gold standard for severe TRD especially with psychotic features, catatonia, severe suicidality, refusing food + fluid. Bilateral or right unilateral; 6–12 sessions. Side effects: cognitive (usually transient retrograde amnesia). Maintenance ECT for relapsing severe."
+      },
+      {
+        "step": "Repetitive transcranial magnetic stimulation (rTMS)",
+        "detail": "Non-invasive; daily × 4–6 weeks; specialist centre. Lower response rate than ECT but better tolerated. Newer: Stanford accelerated intermittent theta burst stimulation (SAINT)."
+      },
+      {
+        "step": "Vagus nerve stimulation (VNS)",
+        "detail": "Surgical implantation for very chronic / treatment-refractory cases."
+      },
+      {
+        "step": "Psychological therapy + lifestyle",
+        "detail": "CBT, behavioural activation, interpersonal therapy, mindfulness-based cognitive therapy. Exercise (moderate-intensity, 150 min/week). Sleep hygiene + circadian rhythm. Social support. Light therapy for seasonal pattern."
+      },
+      {
+        "step": "Psilocybin + emerging therapies",
+        "detail": "Psilocybin-assisted psychotherapy (FDA breakthrough designation; specialist trials). MDMA-assisted (PTSD primarily). Stay alert to evolving evidence."
+      },
+      {
+        "step": "Long-term planning + relapse prevention",
+        "detail": "Continue effective treatment 2+ years after response in TRD. Wellness recovery action plan. Family + peer support. Address chronic pain + substance use + sleep + occupational issues."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE NG222 Depression in adults; CANMAT TRD; STAR*D trial"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "adult-adhd-diagnosis-management",
+    "title": "Adult ADHD — diagnosis + comprehensive management",
+    "icd10": [
+      "F90.0",
+      "F90.1",
+      "F90.9"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 17,
+      "sex": "any"
+    },
+    "presentation": [
+      "DSM-5 criteria: ≥ 5 inattention OR hyperactivity-impulsivity symptoms (out of 9 each), present in 2+ settings for ≥ 6 months, with functional impairment, onset of some symptoms before age 12 (relaxed in DSM-5).",
+      "Inattention: difficulty sustaining attention, organisation problems, easily distracted, forgetfulness, time-management problems.",
+      "Hyperactivity-impulsivity: restlessness, talking excessively, blurting out, difficulty waiting turn (less overt motor restlessness than in children).",
+      "Comorbid: anxiety (50%), depression (45%), substance use (40%), learning disability, sleep disorders (delayed sleep phase), eating disorders, autism spectrum disorder."
+    ],
+    "redFlags": [
+      "Severe suicidality — particularly with comorbid depression.",
+      "Substance use disorder — preferred non-stimulant treatment.",
+      "Bipolar disorder — stimulant can worsen; stabilise mood first.",
+      "Cardiovascular history / structural heart disease — pre-treatment ECG + risk-benefit for stimulants.",
+      "Diversion / misuse concerns — long-acting + non-stimulant preferred.",
+      "Pregnancy + ADHD — stimulant safety data limited; non-pharmacological emphasis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Comprehensive clinical interview by trained specialist (DSM-5 / ICD-11 criteria).",
+        "rationale": "Diagnostic gold standard."
+      },
+      {
+        "test": "Validated screening: ASRS (Adult ADHD Self-Report Scale), DIVA-5.",
+        "rationale": "Screening + symptom inventory."
+      },
+      {
+        "test": "Collateral history (parents, partner, school records).",
+        "rationale": "Verify lifelong pattern."
+      },
+      {
+        "test": "Differential / comorbidity screening: mood / anxiety questionnaires, substance use, autism spectrum.",
+        "rationale": "Common co-morbidity."
+      },
+      {
+        "test": "Cognitive testing if learning disability suspected.",
+        "rationale": "Identify specific learning difficulties."
+      },
+      {
+        "test": "Baseline before stimulant: BP, pulse, weight, ECG (per local protocol — usually if cardiac risk).",
+        "rationale": "Safety monitoring."
+      }
+    ],
+    "management": [
+      {
+        "step": "Psychoeducation + behavioural strategies (first-line)",
+        "detail": "Patient + family education; organisational + time-management skills; environmental modifications (timers, calendars, white-noise headphones, designated workspace); coaching."
+      },
+      {
+        "step": "Stimulant medication (first-line pharmacotherapy)",
+        "detail": "Methylphenidate (immediate-release start 5–10 mg BD-TDS titrate to 60 mg/day; long-acting OROS-methylphenidate 18–72 mg AM; lisdexamfetamine 30–70 mg AM; mixed amphetamine salts). Titrate to symptom control with minimal side effects. Monitor BP, pulse, weight, sleep, appetite, mood."
+      },
+      {
+        "step": "Non-stimulant medication",
+        "detail": "Atomoxetine 40–100 mg/day (target ~1.2 mg/kg) — selective NRI; takes 4–6 weeks for effect. Guanfacine ER 1–7 mg/day OR clonidine ER — alpha-2 agonist. Bupropion 150–300 mg/day (off-label). Preferred for substance-use disorder, tics, anxiety, cardiac risk."
+      },
+      {
+        "step": "CBT + coaching for adults",
+        "detail": "Specialised adult-ADHD CBT (e.g. Safren protocol) — improves outcomes when combined with medication. ADHD coaching for organisation + time management."
+      },
+      {
+        "step": "Comorbidity management — bidirectional",
+        "detail": "Anxiety / depression first if severe (treat to remission then start ADHD medication). Substance use — stabilise + monitor; prefer long-acting / non-stimulant. Mood stabiliser for bipolar before stimulant."
+      },
+      {
+        "step": "Lifestyle interventions",
+        "detail": "Sleep hygiene + circadian-shifting strategies (often delayed sleep phase + cognitive function impact). Regular aerobic exercise (consistent evidence). Mediterranean / omega-3-rich diet. Mindfulness."
+      },
+      {
+        "step": "Workplace + educational accommodations",
+        "detail": "Disability-rights protections in many jurisdictions. Reasonable adjustments (flexible hours, quiet workspace, extended deadlines, recorded meetings). University: extended exam time, tutoring."
+      },
+      {
+        "step": "Long-term follow-up + transition",
+        "detail": "Annual review minimum. Adjust dose with life changes (school, work, relationships). Counsel re: misuse + diversion. ADHD persists in 70% to adulthood; identify + support comorbidities."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE NG87 ADHD; APA Diagnostic Criteria DSM-5; European Consensus on Adult ADHD"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "post-traumatic-stress-disorder-treatment",
+    "title": "Post-traumatic stress disorder (PTSD) — evidence-based treatment",
+    "icd10": [
+      "F43.10"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 4,
+      "sex": "any"
+    },
+    "presentation": [
+      "Exposure to actual / threatened death, serious injury, sexual violence — directly experienced, witnessed, learned about close family / friend, repeated occupational exposure (first responders, military).",
+      "Four symptom clusters (DSM-5): intrusion (flashbacks, nightmares, distressing memories); avoidance of trauma reminders; negative cognitions / mood (numbing, detachment, blame, anhedonia); arousal / reactivity (hypervigilance, exaggerated startle, irritability, sleep disturbance, concentration).",
+      "Persistent > 1 month with significant distress / impairment.",
+      "Complex PTSD (ICD-11): additional features — affective dysregulation, negative self-concept, interpersonal difficulties — often from prolonged / interpersonal trauma."
+    ],
+    "redFlags": [
+      "Active suicidal / homicidal ideation.",
+      "Severe dissociation impairing function / safety.",
+      "Comorbid substance use (40–60%).",
+      "Pregnancy + PTSD — flashback during delivery; trauma-focused care.",
+      "Severe complex PTSD with self-harm.",
+      "Suspected dissociative identity disorder (severe / very early-trauma)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical interview based on DSM-5 / ICD-11 criteria.",
+        "rationale": "Diagnostic gold standard."
+      },
+      {
+        "test": "Validated screen: PCL-5 (PTSD Checklist), CAPS-5 (clinician-administered).",
+        "rationale": "Severity + symptom tracking."
+      },
+      {
+        "test": "Suicide risk + substance use + depression + anxiety screen.",
+        "rationale": "Common comorbidity."
+      },
+      {
+        "test": "Physical examination — chronic pain, sleep disorders, gastrointestinal, cardiovascular.",
+        "rationale": "Trauma is systemic."
+      },
+      {
+        "test": "Differential: acute stress disorder (< 1 month), adjustment disorder, depression, borderline PD, dissociative disorders.",
+        "rationale": "Differential."
+      }
+    ],
+    "management": [
+      {
+        "step": "Trauma-focused psychotherapy (first-line)",
+        "detail": "Trauma-focused CBT (TF-CBT) — including prolonged exposure therapy + cognitive processing therapy. Eye movement desensitisation + reprocessing (EMDR) — non-inferior to TF-CBT; useful for those who cannot tolerate prolonged exposure. 8–16 sessions over 3–4 months."
+      },
+      {
+        "step": "Pharmacotherapy — second-line or adjunctive",
+        "detail": "SSRI (sertraline, paroxetine FDA-approved for PTSD) OR SNRI (venlafaxine) — first-line. Titrate to maximum tolerated × 12 weeks. Continue ≥ 12 months in responders. Prazosin 2–15 mg nocte for nightmares + sleep disturbance (specialist evidence)."
+      },
+      {
+        "step": "Avoid benzodiazepines",
+        "detail": "Worsen PTSD outcomes; impair fear extinction learning; high addiction risk in PTSD population. Reserve for very short-term acute crisis only."
+      },
+      {
+        "step": "Adjunctive antipsychotic for psychotic features / severe paranoia",
+        "detail": "Quetiapine 25–200 mg / olanzapine 5–10 mg — selected refractory cases; off-label."
+      },
+      {
+        "step": "Address sleep + comorbidity",
+        "detail": "Sleep disturbance + nightmares often persistent. Sleep hygiene + prazosin (for nightmares) + image rehearsal therapy (IRT). Treat comorbid depression / anxiety / substance use IN PARALLEL."
+      },
+      {
+        "step": "Complex PTSD — phase-based + structured",
+        "detail": "Phase 1: stabilisation + safety + skills. Phase 2: trauma processing. Phase 3: integration + reconnection. Often longer + more relational + skills-focused than standard TF-CBT (e.g. STAIR, ISTSS treatment guidelines)."
+      },
+      {
+        "step": "MDMA-assisted psychotherapy + psilocybin (emerging)",
+        "detail": "MDMA-assisted psychotherapy showed strong phase-3 evidence; FDA approval anticipated (currently under review). Psilocybin in trials. Specialist centres only."
+      },
+      {
+        "step": "Family + community support",
+        "detail": "Veterans + first-responder peer-support programmes. Family education + couples therapy. Trauma-informed care across all healthcare interactions."
+      },
+      {
+        "step": "Comorbid substance use disorder",
+        "detail": "Integrated treatment — concurrent psychotherapy + medication for both. Avoid sequential treatment (often poor outcomes); SSRI + naltrexone OR concurrent therapy programmes."
+      },
+      {
+        "step": "Re-evaluation at 12 weeks",
+        "detail": "If no response — switch SSRI / try different therapy modality / refer specialist trauma centre. Consider ECT / TMS for severe + treatment-resistant (limited evidence in PTSD)."
+      }
+    ],
+    "references": [
+      {
+        "label": "ISTSS Treatment Guidelines for PTSD (2018); NICE NG116 PTSD; VA/DoD Clinical Practice Guideline for PTSD (2023)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "menopause-hormone-therapy-management",
+    "title": "Menopause — hormone therapy decision pathway",
+    "icd10": [
+      "N95.1"
+    ],
+    "domains": [
+      "gynaecology",
+      "primary-care",
+      "endocrinology",
+      "rheumatology"
+    ],
+    "population": {
+      "minAgeYears": 40,
+      "maxAgeYears": 70,
+      "sex": "female"
+    },
+    "presentation": [
+      "Vasomotor symptoms (hot flushes, night sweats) — peak in first 3 years post-final menstrual period; ~25% persist > 10 years.",
+      "Genitourinary syndrome of menopause (vaginal dryness, dyspareunia, urinary urgency / recurrent UTI).",
+      "Mood + cognition: depression, anxiety, brain fog.",
+      "Sleep disturbance.",
+      "Long-term: bone loss (osteoporosis), cardiovascular risk increase.",
+      "Premature ovarian insufficiency (POI): menopause before age 40 — needs HRT until natural menopause age."
+    ],
+    "redFlags": [
+      "Postmenopausal bleeding — exclude endometrial cancer (TVUS endometrial thickness > 4 mm → biopsy).",
+      "Suspected hormone-sensitive malignancy (breast, endometrial) — HRT contraindicated.",
+      "VTE history / thrombophilia — oral HRT contraindicated; transdermal acceptable.",
+      "Severe liver disease, active migraine with aura, uncontrolled hypertension.",
+      "Pregnancy still possible during perimenopause — contraception until 1 year amenorrhoea (or 2 if < 50)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis — VMS + amenorrhoea > 12 months in age-appropriate woman.",
+        "rationale": "Most cases."
+      },
+      {
+        "test": "Premature ovarian insufficiency: FSH > 25 IU/L × 2 occasions 4 weeks apart, age < 40.",
+        "rationale": "Earlier diagnosis = longer HRT need."
+      },
+      {
+        "test": "Baseline + ongoing: BP, BMI, lipids, glucose, mammography (per programme), cervical screen (per programme).",
+        "rationale": "Cardiovascular + cancer risk."
+      },
+      {
+        "test": "DEXA bone density (POI, fracture history, risk factors).",
+        "rationale": "Osteoporosis risk."
+      },
+      {
+        "test": "Differential: thyroid, mood disorder, anxiety.",
+        "rationale": "Symptoms overlap."
+      }
+    ],
+    "management": [
+      {
+        "step": "Shared decision-making + individualised risk-benefit",
+        "detail": "Most healthy women < 60 / within 10 years of menopause: HRT benefits outweigh risks for moderate-severe VMS. Use lowest effective dose for shortest duration consistent with goals (but no arbitrary stop date — review annually)."
+      },
+      {
+        "step": "Vasomotor symptoms — HRT first-line",
+        "detail": "Combined HRT (oestrogen + progestogen) for women with uterus to protect endometrium. Oestrogen-only for hysterectomised women. Routes: oral (cheaper, easier), transdermal patch / gel (preferred for VTE risk, hypertension, migraine, hepatic). Micronised progesterone (Utrogestan) — preferred progestogen (cancer-neutral; sleep + mood benefits)."
+      },
+      {
+        "step": "Genitourinary syndrome of menopause",
+        "detail": "Vaginal oestrogen (cream / tablet / ring) — minimal systemic absorption; safe in most cancer survivors after specialist discussion. Non-hormonal lubricant + moisturiser. Pelvic floor exercises. Ospemifene oral SERM alternative."
+      },
+      {
+        "step": "Non-hormonal therapy for VMS",
+        "detail": "SSRI / SNRI (paroxetine 10 mg, venlafaxine 37.5–75 mg, escitalopram 10 mg) — modest effect. Gabapentin 300–900 mg/day. Clonidine 100 microgram BD. NK3 receptor antagonist (fezolinetant 45 mg) — newer non-hormonal targeted therapy."
+      },
+      {
+        "step": "Bone protection",
+        "detail": "HRT + calcium 1000 mg + vitamin D 800 IU + weight-bearing exercise; bisphosphonate / denosumab / parathyroid hormone analogue if osteoporosis confirmed. POI patients especially benefit."
+      },
+      {
+        "step": "Premature ovarian insufficiency (POI)",
+        "detail": "HRT until expected age of natural menopause (~51) at minimum — even if asymptomatic — to protect bones + cardiovascular + brain. Higher doses than late-menopause may be needed."
+      },
+      {
+        "step": "Risks discussion",
+        "detail": "Breast cancer: small increase with combined HRT after ~5 years (1 extra per 1000 women-years on combined; smaller risk with micronised progesterone). VTE: oral HRT 2× background; transdermal no increase. CHD: small increase if HRT started > 10 years post-menopause; cardio-neutral or protective if started < 60. Stroke: small increase with oral, less transdermal."
+      },
+      {
+        "step": "Annual review",
+        "detail": "Review benefits vs risks annually; lowest effective dose; consider step-down + non-HRT alternatives over time."
+      },
+      {
+        "step": "Specialist clinic",
+        "detail": "Refer for: POI, complex risk-benefit, persistent symptoms despite first-line HRT, cancer-survivor HRT, gender-affirming hormone management overlap."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE NG23 Menopause; BMS Recommendations; IMS Position Statements"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-atopic-dermatitis-biologic-pathway",
+    "title": "Severe atopic dermatitis — systemic + biologic pathway",
+    "icd10": [
+      "L20"
+    ],
+    "domains": [
+      "dermatology",
+      "allergy",
+      "immunology",
+      "paediatrics"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Chronic itchy inflammatory skin disease; flexural pattern (cubital + popliteal) in adults; face / extensor in infants.",
+      "Severe: extensive BSA involvement, sleep disturbance, frequent infection, severe pruritus, failure to thrive (paediatric), depression / anxiety, impaired quality of life.",
+      "Comorbid atopy: asthma, allergic rhinitis, food allergy (especially infants).",
+      "Risk: filaggrin mutations, family history, environmental (climate, allergens, infection)."
+    ],
+    "redFlags": [
+      "Eczema herpeticum (widespread vesicles + fever + lymphadenopathy) — IV aciclovir emergency.",
+      "Secondary bacterial / viral infection (S. aureus most common).",
+      "Erythroderma — see separate pathway.",
+      "Suspected cutaneous T-cell lymphoma (mycosis fungoides) — atypical / adult-onset severe / treatment-resistant.",
+      "Severe paediatric — growth failure, school absence, family burden.",
+      "Suicidal ideation from chronic itch + sleep deprivation."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical (Hanifin-Rajka or UK Working Party criteria).",
+        "rationale": "Diagnostic."
+      },
+      {
+        "test": "EASI (Eczema Area + Severity Index) or POEM (Patient-Oriented Eczema Measure) — severity scoring.",
+        "rationale": "Treatment response + biologic eligibility."
+      },
+      {
+        "test": "Total + specific IgE if comorbid allergy / atopic march concerns.",
+        "rationale": "Common but rarely changes management."
+      },
+      {
+        "test": "Skin swab if suspected infection.",
+        "rationale": "Pathogen identification (S. aureus, HSV)."
+      },
+      {
+        "test": "Mental health screening + sleep assessment.",
+        "rationale": "Common impact."
+      },
+      {
+        "test": "Skin biopsy if atypical / treatment-resistant.",
+        "rationale": "Exclude differential (mycosis fungoides, contact dermatitis, psoriasis)."
+      }
+    ],
+    "management": [
+      {
+        "step": "Foundation: emollients + bathing + trigger avoidance",
+        "detail": "Liberal emollient 2–4 times daily (250–500 g/week adult); cool-tepid baths with bath emollient; soap-free wash. Avoid triggers (irritants, allergens, heat, sweat, stress). Education + self-management."
+      },
+      {
+        "step": "Topical anti-inflammatory",
+        "detail": "Topical corticosteroid (mild — moderate — potent — very potent) tiered to severity + site; ≤ 2 weeks then taper. Topical calcineurin inhibitor (tacrolimus, pimecrolimus) for face / flexures / chronic. Crisaborole. Wet wrap therapy for severe."
+      },
+      {
+        "step": "Phototherapy",
+        "detail": "Narrowband UVB 3 times/week × 8–12 weeks — moderate-severe disease unresponsive to topical. Combination with TCS / TCI."
+      },
+      {
+        "step": "Systemic immunosuppressants",
+        "detail": "Ciclosporin 3–5 mg/kg/day (short-term — 1 year max — renal toxicity). Methotrexate 7.5–25 mg/week. Mycophenolate 1–3 g/day. Azathioprine 1–3 mg/kg/day (TPMT testing). All require monitoring; for severe + cannot use biologic / JAK."
+      },
+      {
+        "step": "Biologics — paradigm shift in severe AD",
+        "detail": "Dupilumab (IL-4Rα) 600 mg SC then 300 mg every 2 weeks — first-line biologic; effective + safe (conjunctivitis common side effect). Tralokinumab (IL-13) 300 mg every 2 weeks. Lebrikizumab approved. Specialist initiation."
+      },
+      {
+        "step": "JAK inhibitors — oral systemic",
+        "detail": "Upadacitinib 15–30 mg daily; abrocitinib 100–200 mg daily; baricitinib 2–4 mg daily — for severe AD. RAPID onset (days). Specialist initiation + monitoring (FBC, lipids, infection screen, malignancy risk). Boxed warnings re: VTE + cardiac (extrapolated from RA data)."
+      },
+      {
+        "step": "Infection management",
+        "detail": "S. aureus colonisation common: dilute bleach baths (1/4 cup per full bath) + nasal mupirocin if recurrent; topical / oral antibiotic for clinical infection. Eczema herpeticum: IV aciclovir 10 mg/kg every 8 h × 7–14 days."
+      },
+      {
+        "step": "Mental health + family support",
+        "detail": "Screen depression + anxiety + sleep impact. Refer paediatric psychology + family support for childhood AD. Eczema-specific patient education programmes."
+      },
+      {
+        "step": "Allergy assessment",
+        "detail": "Food allergy testing if specific reaction or severe paediatric. Aeroallergen avoidance if confirmed sensitivity. Hyposensitisation in selected dust-mite-sensitive."
+      },
+      {
+        "step": "Long-term + transition",
+        "detail": "Atopic march surveillance (asthma, allergic rhinitis). Childhood — adolescent — adult care continuity. Family education + adherence support."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE QS44 Atopic eczema in children; EuroGuiDerm Guideline on AD (2023); ATS Skin position paper on biologics"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "acromegaly-diagnosis-management",
+    "title": "Acromegaly — diagnosis + treatment",
+    "icd10": [
+      "E22.0"
+    ],
+    "domains": [
+      "endocrinology",
+      "neurosurgery",
+      "cardiology"
+    ],
+    "population": {
+      "minAgeYears": 30,
+      "sex": "any"
+    },
+    "presentation": [
+      "Adults: insidious onset of soft-tissue overgrowth — enlarged hands, feet, jaw (prognathism), tongue (macroglossia), nose, lips, supraorbital ridges; spacing of teeth; dental malocclusion; increased shoe / glove / ring size.",
+      "Headache, visual field defects (bitemporal hemianopia from optic chiasm compression), galactorrhoea (prolactin co-secretion).",
+      "Complications: hypertension, diabetes mellitus, hyperhidrosis, sleep apnoea, cardiomyopathy + arrhythmia, colorectal polyps + cancer, osteoarthropathy, carpal tunnel.",
+      "Gigantism in children (before epiphyseal closure): excessive linear growth.",
+      "Cause: pituitary GH-secreting adenoma (95%) — usually macroadenoma at diagnosis due to delayed recognition."
+    ],
+    "redFlags": [
+      "Visual deterioration — chiasmal compression; urgent neurosurgical review.",
+      "Pituitary apoplexy.",
+      "Sleep apnoea with cardiomyopathy.",
+      "Severe diabetes mellitus.",
+      "Colorectal cancer (2–3× background risk).",
+      "Hypopituitarism from mass effect."
+    ],
+    "diagnostics": [
+      {
+        "test": "IGF-1 (age + sex matched) — screening.",
+        "rationale": "Raised in acromegaly."
+      },
+      {
+        "test": "Oral glucose tolerance test with GH measurement at baseline + 30/60/90/120 min (failure of GH suppression < 0.4 microgram/L confirms acromegaly).",
+        "rationale": "Gold standard confirmation."
+      },
+      {
+        "test": "Pituitary MRI with gadolinium.",
+        "rationale": "Identify + localise adenoma."
+      },
+      {
+        "test": "Visual fields + acuity + fundoscopy.",
+        "rationale": "Chiasmal involvement."
+      },
+      {
+        "test": "Full anterior pituitary hormone panel (PRL, TSH + freeT4, LH + FSH + testosterone / oestradiol, ACTH + cortisol).",
+        "rationale": "Assess hypopituitarism / cosecretion."
+      },
+      {
+        "test": "ECG + echo + sleep study + colonoscopy + HbA1c + lipids + BP.",
+        "rationale": "Complications surveillance."
+      },
+      {
+        "test": "Genetic testing if young / family history (MEN1, AIP, FIPA).",
+        "rationale": "Inherited."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary pituitary centre",
+        "detail": "Endocrinologist + neurosurgeon + radiation oncologist + ophthalmologist + cardiologist."
+      },
+      {
+        "step": "Trans-sphenoidal surgical resection — first-line",
+        "detail": "Microsurgery via experienced pituitary neurosurgeon. Cure rate 60–90% for microadenomas, 30–50% for macroadenomas. Pre-operative somatostatin analogue may improve outcomes."
+      },
+      {
+        "step": "Medical therapy — when surgery insufficient / contraindicated / pre-op",
+        "detail": "Somatostatin receptor ligand (octreotide LAR, lanreotide autogel) IM monthly — first-line medical. Pasireotide LAR (second-generation; better efficacy but hyperglycaemia). GH receptor antagonist (pegvisomant) daily SC — blocks GH peripheral action; titrate to IGF-1. Dopamine agonist (cabergoline) — modest benefit, useful for mild / mixed GH+PRL tumours."
+      },
+      {
+        "step": "Radiotherapy — adjunct",
+        "detail": "Stereotactic radiosurgery (Gamma knife) for residual tumour after surgery; takes years for full effect. High rate of hypopituitarism over time."
+      },
+      {
+        "step": "Hormone replacement for hypopituitarism",
+        "detail": "Hydrocortisone / thyroxine / testosterone / oestrogen / growth hormone (selectively) per identified deficiencies."
+      },
+      {
+        "step": "Complications management",
+        "detail": "BP control + diabetes management + sleep apnoea CPAP + cardiomyopathy management (often reverses with biochemical control). Colonoscopy at diagnosis + every 5 years (longer in well-controlled). Joint care (NSAID / physiotherapy / joint replacement)."
+      },
+      {
+        "step": "Treatment goals",
+        "detail": "Biochemical: random GH < 1 microgram/L; OGTT-suppressed GH < 0.4; age-normalised IGF-1. Clinical: symptom improvement + cardiovascular + metabolic + colonic complications addressed. Mortality returns to background when controlled."
+      },
+      {
+        "step": "Long-term follow-up",
+        "detail": "Annual IGF-1 + symptom review + pituitary MRI (initially) + complications surveillance + colonoscopy."
+      },
+      {
+        "step": "Pregnancy + acromegaly",
+        "detail": "Often improves during pregnancy; stop somatostatin analogues + pegvisomant during pregnancy if possible; monitor IGF-1 every trimester; specialist multidisciplinary care."
+      }
+    ],
+    "references": [
+      {
+        "label": "Endocrine Society Clinical Practice Guideline on Acromegaly (2014 update); Pituitary Society International Acromegaly Consensus"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "graves-disease-hyperthyroidism-management",
+    "title": "Graves disease — hyperthyroidism management",
+    "icd10": [
+      "E05.0"
+    ],
+    "domains": [
+      "endocrinology",
+      "ophthalmology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "sex": "any"
+    },
+    "presentation": [
+      "Autoimmune disease (TSH receptor stimulating antibodies — TRAb) causing diffuse goitre + hyperthyroidism.",
+      "Hyperthyroidism: weight loss + heat intolerance + sweating + tachycardia + tremor + irritability + insomnia + bowel frequency + menstrual changes + proximal myopathy + osteoporosis + atrial fibrillation.",
+      "Specific to Graves: diffuse symmetrical goitre + thyroid bruit; Graves ophthalmopathy (proptosis + diplopia + chemosis + optic neuropathy) — 25–50%; pretibial myxoedema (rare); thyroid acropachy (rare).",
+      "Female > male 5–10:1; peak 30–50 years."
+    ],
+    "redFlags": [
+      "Thyroid storm — see separate pathway.",
+      "Severe ophthalmopathy with optic neuropathy / corneal exposure — vision-threatening.",
+      "Severe cardiac complications (AF, heart failure, thromboembolism).",
+      "Severe agranulocytosis on antithyroid drug (rare; sore throat / fever).",
+      "Severe hepatotoxicity on antithyroid drug.",
+      "Pregnancy — risk of fetal hyper / hypothyroidism; specialist care."
+    ],
+    "diagnostics": [
+      {
+        "test": "TSH (suppressed) + free T4 + free T3 (raised).",
+        "rationale": "Confirm thyrotoxicosis."
+      },
+      {
+        "test": "TSH receptor antibody (TRAb / TSI).",
+        "rationale": "Confirm Graves (vs toxic nodular or thyroiditis)."
+      },
+      {
+        "test": "Thyroid USS (diffuse hypervascular goitre — Graves pattern).",
+        "rationale": "Differential."
+      },
+      {
+        "test": "Thyroid uptake scan (Tc-99m) — if needed; diffuse uptake in Graves; reduced in thyroiditis.",
+        "rationale": "Distinguish thyroiditis."
+      },
+      {
+        "test": "FBC + LFT baseline (before antithyroid drug).",
+        "rationale": "Identify agranulocytosis / hepatotoxicity risks."
+      },
+      {
+        "test": "ECG, BMD if osteoporotic risk, mental-health screen.",
+        "rationale": "Complications."
+      },
+      {
+        "test": "Ophthalmology assessment if eye signs.",
+        "rationale": "Graves ophthalmopathy management."
+      }
+    ],
+    "management": [
+      {
+        "step": "Beta-blocker for symptom relief — IMMEDIATELY",
+        "detail": "Propranolol 40 mg TDS-QDS OR atenolol 25–100 mg daily — controls tachycardia, tremor, anxiety. Continue until euthyroid."
+      },
+      {
+        "step": "Antithyroid drug — first-line",
+        "detail": "Carbimazole 20–40 mg/day (or methimazole) — preferred outside USA. Propylthiouracil 200–400 mg/day TDS — preferred in 1st trimester pregnancy + thyroid storm. Continue 12–18 months; remission rate ~50% post-cessation; lower with goitre + persistently positive TRAb. Titrate dose with thyroid function tests every 4–6 weeks."
+      },
+      {
+        "step": "Agranulocytosis warning",
+        "detail": "Counsel patient: ANY sore throat / fever — STOP drug + urgent FBC. Frequency ~0.3% — usually first 90 days."
+      },
+      {
+        "step": "Radioactive iodine (RAI) — definitive treatment",
+        "detail": "I-131 oral — definitive ablation of thyroid; hypothyroidism in 80% within 1 year (then lifelong levothyroxine). Useful for: recurrent Graves after thionamide, large goitre, contraindication to surgery. AVOID during pregnancy + breastfeeding + within 6 months of conception. AVOID with severe ophthalmopathy (may worsen — pre-treat with steroid)."
+      },
+      {
+        "step": "Total thyroidectomy — definitive surgical option",
+        "detail": "Indications: large goitre, suspicious nodule, refusal of RAI, severe ophthalmopathy, planning pregnancy soon, very high TRAb. Specialist endocrine surgeon. Post-op lifelong levothyroxine ± calcium / vitamin D (parathyroid risk)."
+      },
+      {
+        "step": "Graves ophthalmopathy management",
+        "detail": "Smoking cessation (single most important — smoking worsens). Lubricant eye drops; head elevation; sunglasses. Selenium 100 microgram BD × 6 months for mild active disease. Moderate-severe active: IV methylprednisolone 4.5–7.5 g over 12 weeks. Severe / vision-threatening: combine with teprotumumab (anti-IGF-1R) — proptosis-reducing; or orbital decompression surgery; rituximab as alternative."
+      },
+      {
+        "step": "Pregnancy",
+        "detail": "PTU in 1st trimester (lower teratogenicity); switch to carbimazole in 2nd-3rd; lowest dose to maintain free T4 upper-normal range. Block-replace REGIMEN avoided (transplacental hypothyroidism). Specialist obstetric + endocrine care. Newborn — risk of TRAb transmission → fetal/neonatal Graves."
+      },
+      {
+        "step": "Long-term follow-up",
+        "detail": "Annual TSH after stable euthyroid; remission monitoring 1 year after stopping ATD then annually. RAI / surgery: lifelong levothyroxine. Cardiovascular + bone surveillance long-term."
+      }
+    ],
+    "references": [
+      {
+        "label": "ATA Guidelines for Diagnosis + Management of Hyperthyroidism (2016)"
+      },
+      {
+        "label": "ETA / EUGOGO Graves Ophthalmopathy Consensus"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]
