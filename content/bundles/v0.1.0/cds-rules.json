@@ -6358,5 +6358,369 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "leprosy-reaction-steroid",
+    "hook": "patient-view",
+    "type": "leprosy-reaction-steroid",
+    "services": [
+      "vedamd-leprosy-reaction"
+    ],
+    "title": "Leprosy reaction — continue MDT + steroid for neuritis",
+    "description": "Fires for known leprosy + new neuritis / iridocyclitis / severe ENL. Recommends CONTINUE multidrug therapy; prednisolone 40–60 mg/day with 4–6 month taper for type 1 (reversal); thalidomide / steroid for severe type 2 (ENL); ophthalmology + neurology input; disability prevention. Reads context.leprosyType, context.reactionType, context.neuritisFinding, context.iridocyclitis — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Leprosy Guidelines 2018"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A30.9",
+        "display": "Leprosy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "vl-liposomal-ambisome",
+    "hook": "patient-view",
+    "type": "vl-liposomal-ambisome",
+    "services": [
+      "vedamd-visceral-leishmaniasis"
+    ],
+    "title": "Visceral leishmaniasis — liposomal amphotericin B preferred",
+    "description": "Fires for fever > 2 weeks + splenomegaly + pancytopenia + rK39 / DAT positive. Recommends liposomal amphotericin B (AmBisome) 5 mg/kg/day × 1 dose (India) or 6 doses on alternate days (East Africa); extended course for HIV co-infection. Monitor renal + electrolytes. HIV co-infection + secondary prophylaxis. Reads context.fever, context.splenomegaly, context.pancytopenia, context.rk39Result, context.hivStatus — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Control of Leishmaniases"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B55.0",
+        "display": "Visceral leishmaniasis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "parkinson-disease-multidisciplinary-care",
+    "hook": "patient-view",
+    "type": "parkinson-disease-multidisciplinary-care",
+    "services": [
+      "vedamd-parkinson-disease"
+    ],
+    "title": "Parkinson disease — multidisciplinary specialist care + symptom-tailored Rx",
+    "description": "Fires for suspected / confirmed Parkinson disease. Recommends multidisciplinary movement-disorder clinic, levodopa-carbidopa OR dopamine agonist OR MAO-B inhibitor as initial therapy, motor-fluctuation + non-motor symptom management, falls prevention + bone health, advance care planning. AVOID typical antipsychotics + metoclopramide. Reads context.tremor, context.bradykinesia, context.rigidity, context.cognitiveImpairment — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG71 Parkinson disease"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G20",
+        "display": "Parkinson disease",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "alzheimer-disease-aria-monitoring",
+    "hook": "patient-view",
+    "type": "alzheimer-disease-aria-monitoring",
+    "services": [
+      "vedamd-alzheimer-disease"
+    ],
+    "title": "Alzheimer disease — cholinesterase inhibitor; anti-amyloid mAb with ARIA surveillance",
+    "description": "Fires for confirmed Alzheimer disease. Recommends donepezil / rivastigmine / galantamine for mild-moderate; memantine for moderate-severe; lecanemab / donanemab for early symptomatic AD with confirmed amyloid (specialist + MRI surveillance for ARIA — APOE ε4 stratification). BPSD non-pharmacological first; antipsychotic avoid in DLB. Reads context.mmse, context.moca, context.bpsd, context.apoeStatus — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG97; Lancet Commission Dementia 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G30",
+        "display": "Alzheimer disease",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ms-relapse-high-dose-steroid",
+    "hook": "patient-view",
+    "type": "ms-relapse-high-dose-steroid",
+    "services": [
+      "vedamd-ms-relapse"
+    ],
+    "title": "Multiple sclerosis relapse — methylprednisolone + early DMT",
+    "description": "Fires for known / suspected MS with acute neurological deterioration > 24 h without fever / infection. Recommends pseudo-relapse exclusion (treat infection); IV methylprednisolone 1 g/day × 3–5 days (or oral 500 mg–1 g × 5); plasma exchange for steroid-refractory; DMT initiation / escalation; vaccination + JC virus screening; pregnancy planning. Reads context.msType, context.newDeficit, context.feverInfection, context.dmtCurrent — never patient identity.",
+    "references": [
+      {
+        "label": "ECTRIMS / EAN MS Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G35",
+        "display": "Multiple sclerosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "mnd-multidisciplinary-respiratory-niv",
+    "hook": "patient-view",
+    "type": "mnd-multidisciplinary-respiratory-niv",
+    "services": [
+      "vedamd-mnd"
+    ],
+    "title": "Motor neurone disease — multidisciplinary clinic + early NIV + PEG",
+    "description": "Fires for MND / ALS diagnosis. Recommends specialist MDC; riluzole 50 mg BD (extends survival 2–3 months); NIV when FVC < 50% or symptomatic respiratory failure; PEG before respiratory decline; cough assist; sialorrhoea + spasticity management; early advance care planning + palliative care. Reads context.bulbarOnset, context.fvc, context.weightLoss, context.respiratorySymptoms — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG42 MND"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G12.21",
+        "display": "Amyotrophic lateral sclerosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "duchenne-corticosteroid-mh-precautions",
+    "hook": "patient-view",
+    "type": "duchenne-corticosteroid-mh-precautions",
+    "services": [
+      "vedamd-duchenne"
+    ],
+    "title": "Duchenne muscular dystrophy — corticosteroid + cardiac surveillance + anaesthetic precautions",
+    "description": "Fires for DMD diagnosis. Recommends deflazacort 0.9 mg/kg/day OR prednisolone 0.75 mg/kg/day from age 4–5; annual echo + ECG from age 6; nocturnal NIV when FVC < 50%; exon-skipping for amenable mutations; AVOID halogenated anaesthetics + suxamethonium (rhabdo + MH-like); bone protection + endocrine surveillance. Reads context.dmdConfirmed, context.ageYears, context.echo, context.fvc, context.anaesthesiaPlan — never patient identity.",
+    "references": [
+      {
+        "label": "DMD Care Considerations Working Group"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G71.0",
+        "display": "Muscular dystrophy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "amyloidosis-attr-tafamidis",
+    "hook": "patient-view",
+    "type": "amyloidosis-attr-tafamidis",
+    "services": [
+      "vedamd-amyloidosis"
+    ],
+    "title": "Systemic amyloidosis — type-specific therapy (AL vs ATTR)",
+    "description": "Fires for confirmed amyloidosis on biopsy (Congo red apple-green birefringence). Recommends typing (IHC + mass spec); AL: daratumumab-CyBorD + ASCT; ATTR: tafamidis OR patisiran/vutrisiran (silencer); supportive HF + neuropathy + renal management; genetic counselling for hereditary ATTR. Reads context.amyloidType, context.cardiacInvolvement, context.neuropathy, context.geneticTesting — never patient identity.",
+    "references": [
+      {
+        "label": "ANDROMEDA + ATTR-ACT trials"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E85.4",
+        "display": "Organ-limited amyloidosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cushing-syndrome-workup",
+    "hook": "patient-view",
+    "type": "cushing-syndrome-workup",
+    "services": [
+      "vedamd-cushing"
+    ],
+    "title": "Cushing syndrome — confirm + localise + treat cause",
+    "description": "Fires for clinical features of Cushing (central obesity, striae, purple, myopathy, hypertension, hyperglycaemia, depression). Recommends ≥ 2 screening tests positive (24-h urinary cortisol, late-night salivary, dexamethasone suppression); ACTH for ACTH-dependent vs independent; pituitary MRI / adrenal CT / ectopic search; trans-sphenoidal adenomectomy / adrenalectomy; steroidogenesis inhibitor as bridge. Reads context.clinicalCushing, context.cortisolTest, context.acthLevel, context.imaging — never patient identity.",
+    "references": [
+      {
+        "label": "Endocrine Society Cushing Syndrome Guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E24.9",
+        "display": "Cushing syndrome unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "primary-hyperparathyroidism-surgery",
+    "hook": "patient-view",
+    "type": "primary-hyperparathyroidism-surgery",
+    "services": [
+      "vedamd-primary-hpt"
+    ],
+    "title": "Primary hyperparathyroidism — surgical criteria + cinacalcet",
+    "description": "Fires for hypercalcaemia + raised PTH. Recommends exclude FHH (urinary Ca); parathyroidectomy if symptomatic OR (age < 50, Ca > 0.25 above ULN, eGFR < 60, urinary Ca > 10 mmol/24h, nephrolithiasis, T-score < -2.5 / fracture); cinacalcet for non-surgical; vitamin D replacement carefully; genetic screen if young / family history. Reads context.calcium, context.pth, context.urinaryCalcium, context.dexa, context.creatinine — never patient identity.",
+    "references": [
+      {
+        "label": "AAES PHPT 2016; International Workshop"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E21.0",
+        "display": "Primary hyperparathyroidism",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "rcc-multidisciplinary-pathway",
+    "hook": "patient-view",
+    "type": "rcc-multidisciplinary-pathway",
+    "services": [
+      "vedamd-renal-cell-carcinoma"
+    ],
+    "title": "Renal cell carcinoma — multidisciplinary pathway",
+    "description": "Fires for renal mass on imaging. Recommends MDT; partial nephrectomy for T1; radical nephrectomy for T2+ / IVC thrombus; adjuvant pembrolizumab for high-risk; risk-stratified combination immunotherapy + TKI for metastatic per IMDC; active surveillance for selected small lesions; genetic counselling if hereditary suspected. Reads context.renalMassSize, context.metastasis, context.imdcRisk — never patient identity.",
+    "references": [
+      {
+        "label": "EAU + NCCN Kidney Cancer"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C64",
+        "display": "Malignant neoplasm of kidney",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "asthma-pregnancy-step-up",
+    "hook": "patient-view",
+    "type": "asthma-pregnancy-step-up",
+    "services": [
+      "vedamd-asthma-pregnancy"
+    ],
+    "title": "Asthma in pregnancy — maintain control; uncontrolled is more dangerous than medication",
+    "description": "Fires for pregnant patient with asthma. Recommends maintain effective pre-pregnancy therapy (do NOT reduce); GINA step-up as needed; budesonide preferred ICS in pregnancy; oral steroid for severe (benefit > risk); SpO2 94–98% target; continuous fetal monitoring during severe exacerbation; AVOID carboprost. All asthma medications compatible with breastfeeding. Reads context.pregnant, context.gestationWeeks, context.asthmaControl, context.recentExacerbation — never patient identity.",
+    "references": [
+      {
+        "label": "GINA Asthma in Pregnancy 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J45",
+        "display": "Asthma",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "anaesthetic-anaphylaxis-tryptase",
+    "hook": "patient-view",
+    "type": "anaesthetic-anaphylaxis-tryptase",
+    "services": [
+      "vedamd-anaesthetic-anaphylaxis"
+    ],
+    "title": "Perioperative anaphylaxis — adrenaline + tryptase + specialist allergy referral",
+    "description": "Fires for sudden hypotension + tachycardia + reduced ETCO2 + raised airway pressure during anaesthesia. Recommends STOP suspected drug; IV adrenaline 50–100 microgram titrated; 20 mL/kg fluid; tryptase samples at 1, 6, 24 h post-event; document trigger; specialist allergy referral within 4–8 weeks for skin testing; allergy alert documentation lifelong. Reads context.anaphylaxisIntraOp, context.medicationsDuring, context.tryptaseLevel, context.bp — never patient identity.",
+    "references": [
+      {
+        "label": "AAGBI / RCoA Anaphylaxis Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T88.6",
+        "display": "Anaphylactic reaction due to anaesthesia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "japanese-encephalitis-vaccinate",
+    "hook": "patient-view",
+    "type": "japanese-encephalitis-vaccinate",
+    "services": [
+      "vedamd-je"
+    ],
+    "title": "Japanese encephalitis — supportive care + vaccination strategy",
+    "description": "Fires for confirmed / suspected JE in endemic area or recent travel. Recommends supportive ICU care, empirical aciclovir until HSV PCR negative, seizure management, ICP support, public-health notification, long-term rehabilitation. PREVENTION: JE vaccine for endemic populations + travellers > 30 days; vector control. Reads context.jeIgm, context.feverNeurology, context.endemicAreaTravel, context.vaccinationHistory — never patient identity.",
+    "references": [
+      {
+        "label": "WHO JE Position Paper"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A83.0",
+        "display": "Japanese encephalitis",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]
