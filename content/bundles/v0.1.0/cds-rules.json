@@ -4376,5 +4376,3911 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "tof-hypercyanotic-spell",
+    "hook": "patient-view",
+    "type": "tof-hypercyanotic-spell",
+    "services": [
+      "vedamd-tof-spell"
+    ],
+    "title": "TOF hypercyanotic spell management",
+    "description": "Fires for known TOF or undiagnosed cyanotic CHD with acute SpO2 fall + hyperpnoea. Recommends knee-chest position, calm + O2, morphine, fluid bolus, phenylephrine, propranolol. WARNS against inotropes that worsen RVOT obstruction. Reads context.knownTof, context.suspectedCyanoticCHD, context.spO2, context.heartRate — never patient identity.",
+    "references": [
+      {
+        "label": "AHA Guidelines for CHD; Park's Pediatric Cardiology"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q21.3",
+        "display": "Tetralogy of Fallot",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ductal-dependent-prostaglandin",
+    "hook": "patient-view",
+    "type": "ductal-dependent-prostaglandin",
+    "services": [
+      "vedamd-ductal-dependent"
+    ],
+    "title": "Suspected ductal-dependent CHD — start prostaglandin",
+    "description": "Fires for newborn (≤ 28 days) presenting with cyanosis OR shock + weak femoral pulses OR pre/post-ductal SpO2 differential > 3%. Recommends IV alprostadil (PGE1) 0.05 microgram/kg/min IMMEDIATELY pending echo; prepare for intubation (apnoea risk); avoid hyperoxia in ductal-dependent systemic lesion. Reads context.ageDays, context.spO2PreDuctal, context.spO2PostDuctal, context.femoralPulse, context.shock — never patient identity.",
+    "references": [
+      {
+        "label": "AHA/AAP Critical CHD pulse-oximetry screening"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q24.9",
+        "display": "Congenital heart disease unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "paediatric-svt-adenosine",
+    "hook": "patient-view",
+    "type": "paediatric-svt-adenosine",
+    "services": [
+      "vedamd-paeds-svt"
+    ],
+    "title": "Paediatric SVT — vagal then adenosine pathway",
+    "description": "Fires for narrow-complex tachycardia: infant > 220, child > 180, adolescent > 150. Recommends vagal manoeuvres first; adenosine 0.1 mg/kg rapid IV (escalate 0.2; max 12 mg single dose); synchronised cardioversion 0.5–1 J/kg if unstable. WARNS against verapamil in infants. Reads context.ageYears, context.heartRate, context.systolicMmHg, context.gcs — never patient identity.",
+    "references": [
+      {
+        "label": "PALS Tachyarrhythmia algorithm"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I47.1",
+        "display": "Supraventricular tachycardia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-bronchiolitis-supportive",
+    "hook": "patient-view",
+    "type": "severe-bronchiolitis-supportive",
+    "services": [
+      "vedamd-severe-bronchiolitis"
+    ],
+    "title": "Severe bronchiolitis — supportive-only pathway",
+    "description": "Fires for infant < 1 year with bronchiolitis + SpO2 < 92% / apnoea / severe distress / feeding < 50%. Recommends O2 / HFNC / NIV, NG or IV feeds, minimal handling. WARNS against bronchodilator, corticosteroid, antibiotic, hypertonic saline routinely. Reads context.ageMonths, context.spO2, context.respiratoryRate, context.feedingTolerance, context.apnoea — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG9 Bronchiolitis"
+      },
+      {
+        "label": "AAP Bronchiolitis CPG"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J21.9",
+        "display": "Bronchiolitis unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-croup-dexamethasone-adrenaline",
+    "hook": "patient-view",
+    "type": "severe-croup-dexamethasone-adrenaline",
+    "services": [
+      "vedamd-severe-croup"
+    ],
+    "title": "Severe croup — dexamethasone + nebulised adrenaline",
+    "description": "Fires for moderate-severe croup (stridor at rest, recession). Recommends dexamethasone 0.15 mg/kg PO (or 0.6 mg/kg if severe / cannot tolerate oral), nebulised adrenaline 5 mg for stridor at rest, observe ≥ 2–4 h post-adrenaline. WARNS against tongue depressor examination if epiglottitis possible. Reads context.ageYears, context.westleyScore, context.spO2, context.drooling, context.toxicAppearance — never patient identity.",
+    "references": [
+      {
+        "label": "RCH Melbourne croup guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J05.0",
+        "display": "Acute laryngotracheitis (croup)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "kawasaki-ivig-aspirin",
+    "hook": "patient-view",
+    "type": "kawasaki-ivig-aspirin",
+    "services": [
+      "vedamd-kawasaki"
+    ],
+    "title": "Kawasaki disease — IVIG + aspirin + coronary echo",
+    "description": "Fires for child with fever ≥ 5 days + Kawasaki criteria OR coronary aneurysm on echo. Recommends IVIG 2 g/kg single dose + high-dose aspirin (30–50 mg/kg/day) until afebrile 48 h then 3–5 mg/kg/day × 6–8 weeks. Adjunctive steroids for high-risk (< 1 year, coronary dilation, KDSS). Echo at diagnosis + 1–2 weeks + 4–6 weeks. Reads context.ageYears, context.feverDays, context.kawasakiCriteria, context.coronaryDilation — never patient identity.",
+    "references": [
+      {
+        "label": "AHA Scientific Statement: KD diagnosis + management 2017"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M30.3",
+        "display": "Mucocutaneous lymph node syndrome (Kawasaki)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-hypothermia-ecmo",
+    "hook": "patient-view",
+    "type": "severe-hypothermia-ecmo",
+    "services": [
+      "vedamd-severe-hypothermia"
+    ],
+    "title": "Severe hypothermia — ECMO rewarming criteria",
+    "description": "Fires for core temperature < 28°C with cardiac instability / arrest. Recommends gentle handling; CPR if no signs of life; minimal drug administration < 30°C; active rewarming (ECMO preferred for unstable; warmed IV, body cavity lavage second-line). DO NOT PRONOUNCE DEAD until warm and dead (core > 32°C). K+ > 12 adult / > 20 child suggests irreversibility. Reads context.coreTemperature, context.cardiacRhythm, context.potassium — never patient identity.",
+    "references": [
+      {
+        "label": "ERC Guidelines 2021 Hypothermia"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T68",
+        "display": "Hypothermia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "heat-stroke-rapid-cooling",
+    "hook": "patient-view",
+    "type": "heat-stroke-rapid-cooling",
+    "services": [
+      "vedamd-heat-stroke"
+    ],
+    "title": "Severe heat stroke — rapid cooling protocol",
+    "description": "Fires for core temperature > 40°C with CNS dysfunction. Recommends cold-water immersion (preferred for exertional), evaporative + ice packs (classical / unstable); IV fluid resuscitation; STOP cooling at 38.5–39°C. WARNS against paracetamol / NSAID / dantrolene. Reads context.coreTemperature, context.gcs, context.seizure, context.creatineKinase — never patient identity.",
+    "references": [
+      {
+        "label": "Korey Stringer Institute; Wilderness Medical Society"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T67.0",
+        "display": "Heatstroke and sunstroke",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "raaa-permissive-hypotension",
+    "hook": "patient-view",
+    "type": "raaa-permissive-hypotension",
+    "services": [
+      "vedamd-raaa"
+    ],
+    "title": "Ruptured AAA — permissive hypotension + EVAR-first",
+    "description": "Fires for sudden severe abdominal/back pain + hypotension + (pulsatile mass OR known AAA OR USS evidence). Recommends permissive hypotension SBP 70–90 / palpable radial; massive transfusion 1:1:1; activate vascular team for EVAR (preferred) or open repair. Reads context.suspectedRaaa, context.knownAaa, context.systolicMmHg — never patient identity.",
+    "references": [
+      {
+        "label": "ESVS AAA Guideline 2024; IMPROVE trial"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I71.3",
+        "display": "Ruptured AAA",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "acute-limb-ischaemia-heparin",
+    "hook": "patient-view",
+    "type": "acute-limb-ischaemia-heparin",
+    "services": [
+      "vedamd-acute-limb"
+    ],
+    "title": "Acute limb ischaemia — heparin + Rutherford classification",
+    "description": "Fires for 6 Ps (pain, pallor, pulselessness, paraesthesia, paralysis, perishing cold). Classifies Rutherford I/IIa/IIb/III. Recommends immediate IV heparin (80 units/kg bolus); urgent vascular consult; surgical embolectomy / catheter-directed thrombolysis for IIa-IIb. Primary amputation for III. Reads context.painOnset, context.pulses, context.sensation, context.motor — never patient identity.",
+    "references": [
+      {
+        "label": "ESVS Acute Limb Ischaemia Guideline 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I74.3",
+        "display": "Acute limb ischaemia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-dengue-fluid-management",
+    "hook": "patient-view",
+    "type": "severe-dengue-fluid-management",
+    "services": [
+      "vedamd-severe-dengue"
+    ],
+    "title": "Severe dengue — phase-based fluid management",
+    "description": "Fires for dengue patient with warning signs OR severe plasma leak / shock / bleeding. Recommends Group A/B/C WHO classification + matched fluid regimen (5–7 mL/kg/h reducing; aggressive bolus for shock; colloid if refractory). WARNS against prophylactic platelet transfusion + aspirin/NSAID. Recovery phase: reduce fluids. Reads context.dengueDayOfIllness, context.hct, context.platelet, context.warningSign, context.shock — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Dengue Guidelines 2009"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A91",
+        "display": "Dengue haemorrhagic fever",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cerebral-malaria-artesunate",
+    "hook": "patient-view",
+    "type": "cerebral-malaria-artesunate",
+    "services": [
+      "vedamd-cerebral-malaria"
+    ],
+    "title": "Cerebral malaria — IV artesunate + supportive care",
+    "description": "Fires for confirmed P. falciparum parasitaemia with GCS < 11 / coma / repeated seizures. Recommends IV artesunate 2.4 mg/kg at 0, 12, 24 h then daily; empirical IV ceftriaxone (Salmonella cover); RESTRICTIVE fluid resuscitation (FEAST); glucose monitoring; transfusion if Hb < 5 g/dL. Reads context.parasitaemiaConfirmed, context.gcs, context.seizureNew, context.hb, context.glucose — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Malaria treatment guidelines 2015/2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B50.0",
+        "display": "Cerebral falciparum malaria",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "rheumatic-fever-jones-prophylaxis",
+    "hook": "patient-view",
+    "type": "rheumatic-fever-jones-prophylaxis",
+    "services": [
+      "vedamd-acute-rheumatic-fever"
+    ],
+    "title": "Acute rheumatic fever — Jones criteria + secondary prophylaxis",
+    "description": "Fires for child with possible ARF features (carditis, arthritis, chorea, erythema marginatum, nodules + minor criteria). Recommends IM benzathine penicillin G; aspirin / NSAID for arthritis; steroid for severe carditis; echocardiography. SECONDARY PROPHYLAXIS lifelong / extended per carditis status. Reads context.ageYears, context.feverDuration, context.jonesMajor, context.jonesMinor, context.asoTitre, context.echoFindings — never patient identity.",
+    "references": [
+      {
+        "label": "AHA Jones Criteria revision 2015"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I00",
+        "display": "Rheumatic fever without heart involvement",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "hus-supportive-no-antibiotics",
+    "hook": "patient-view",
+    "type": "hus-supportive-no-antibiotics",
+    "services": [
+      "vedamd-hus"
+    ],
+    "title": "HUS — supportive care; AVOID antibiotics in STEC",
+    "description": "Fires for child with diarrhoea (often bloody) + microangiopathic haemolytic anaemia + thrombocytopenia + AKI. Recommends supportive care, careful fluid balance, RRT criteria, packed cells for severe anaemia. WARNS against antibiotics for STEC enteritis (may worsen HUS) + against prophylactic platelet transfusion. Refer for eculizumab assessment if atypical / refractory. Reads context.ageYears, context.diarrhoeaBloody, context.hb, context.platelet, context.creatinine, context.urineOutput — never patient identity.",
+    "references": [
+      {
+        "label": "KDIGO Glomerular Diseases 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D59.3",
+        "display": "Haemolytic-uraemic syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "botulism-antitoxin-public-health",
+    "hook": "patient-view",
+    "type": "botulism-antitoxin-public-health",
+    "services": [
+      "vedamd-botulism"
+    ],
+    "title": "Botulism — antitoxin + public-health notification",
+    "description": "Fires for symmetric descending flaccid paralysis (cranial nerves first) without sensory deficit. Recommends IMMEDIATE public-health notification, equine heptavalent antitoxin (adult/child > 1 year) or BabyBIG (infant). Respiratory monitoring + elective intubation for FVC < 30%. WARNS against aminoglycoside antibiotics. Reads context.cranialNerveWeakness, context.descendingParalysis, context.fvc, context.ageMonths — never patient identity.",
+    "references": [
+      {
+        "label": "CDC botulism guidance; WHO botulism"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A05.1",
+        "display": "Foodborne botulism",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "mis-c-ivig-steroids",
+    "hook": "patient-view",
+    "type": "mis-c-ivig-steroids",
+    "services": [
+      "vedamd-mis-c"
+    ],
+    "title": "MIS-C — IVIG + steroids combination therapy",
+    "description": "Fires for child / adolescent with fever ≥ 3 days + raised inflammatory markers + multi-organ involvement (≥ 2 systems) + recent SARS-CoV-2 exposure. Recommends IVIG 2 g/kg + methylprednisolone 1–2 mg/kg/day combined therapy (superior to IVIG alone). Aspirin 3–5 mg/kg/day for coronary protection. Anakinra / infliximab for refractory. Reads context.ageYears, context.feverDays, context.crp, context.ferritin, context.troponin, context.echoFindings, context.covidExposure — never patient identity.",
+    "references": [
+      {
+        "label": "WHO MIS-C scientific brief; ACR clinical guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M35.81",
+        "display": "MIS-C",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "maternal-sepsis-bundle",
+    "hook": "patient-view",
+    "type": "maternal-sepsis-bundle",
+    "services": [
+      "vedamd-maternal-sepsis"
+    ],
+    "title": "Maternal sepsis — Hour-1 bundle with pregnancy-compatible antibiotics",
+    "description": "Fires for pregnant / postpartum woman (≤ 42 days) with sepsis criteria. Recommends Hour-1 bundle modified: cultures + lactate + IV piperacillin-tazobactam + clindamycin (covers GAS toxin + anaerobes) ± gentamicin; expedite delivery for chorioamnionitis / septic abortion / retained products; IVIG for streptococcal toxic shock. Reads context.pregnant, context.daysPostpartum, context.suspectedChorioamnionitis, context.lactate — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Maternal Sepsis Statement 2017"
+      },
+      {
+        "label": "RCOG Green-top 64a/64b"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O85",
+        "display": "Puerperal sepsis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "acute-cholangitis-tokyo-bundle",
+    "hook": "patient-view",
+    "type": "acute-cholangitis-tokyo-bundle",
+    "services": [
+      "vedamd-acute-cholangitis"
+    ],
+    "title": "Acute cholangitis — Tokyo Grade + biliary drainage timing",
+    "description": "Fires for Charcot triad (RUQ pain + fever + jaundice) or biliary obstruction with sepsis. Calculates Tokyo grade I/II/III. Recommends IV antibiotic (pip-tazo or ceftriaxone+metronidazole), urgent ERCP drainage timing: Grade I within 48 h, Grade II within 24 h, Grade III within 12 h after stabilisation. Reads context.fever, context.bilirubin, context.alp, context.lactate, context.organDysfunction — never patient identity.",
+    "references": [
+      {
+        "label": "Tokyo Guidelines 2018"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K83.0",
+        "display": "Cholangitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "perforated-viscus-surgery",
+    "hook": "patient-view",
+    "type": "perforated-viscus-surgery",
+    "services": [
+      "vedamd-perforated-viscus"
+    ],
+    "title": "Perforated viscus — antibiotic + urgent surgery",
+    "description": "Fires for free intraperitoneal air on imaging with peritonitic abdomen. Recommends: NG decompression, IV pip-tazo + metronidazole, resuscitation, theatre within 6 h. Reads context.freeAirOnImaging, context.peritonism, context.lactate, context.systolicMmHg — never patient identity.",
+    "references": [
+      {
+        "label": "WSES Consensus on intra-abdominal infection"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K65.0",
+        "display": "Acute peritonitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "sigmoid-volvulus-decompression",
+    "hook": "patient-view",
+    "type": "sigmoid-volvulus-decompression",
+    "services": [
+      "vedamd-sigmoid-volvulus"
+    ],
+    "title": "Sigmoid volvulus — endoscopic decompression vs surgery",
+    "description": "Fires for distended abdomen with coffee-bean sign / whirl sign on CT. Recommends sigmoidoscopic detorsion if no peritonism; emergency colectomy for peritonism / gangrene / failed endoscopic. Reads context.coffeeBeanSignAxr, context.peritonism, context.lactate — never patient identity.",
+    "references": [
+      {
+        "label": "ASCRS Practice Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K56.2",
+        "display": "Sigmoid volvulus",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "asuc-day3-rescue",
+    "hook": "patient-view",
+    "type": "asuc-day3-rescue",
+    "services": [
+      "vedamd-asuc-rescue"
+    ],
+    "title": "Acute severe ulcerative colitis — day-3 rescue therapy decision",
+    "description": "Fires on day 3 of IV steroid therapy for acute severe UC. If failure (≥ 8 stools/day OR 3–8 with CRP > 45): recommend ciclosporin 2 mg/kg/day IV OR infliximab 5 mg/kg IV; failure of rescue at day 5–7 → colectomy. Reads context.dayOfTreatment, context.stoolsPerDay, context.crp, context.transverseColonDiameter — never patient identity.",
+    "references": [
+      {
+        "label": "ECCO UC Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K51.9",
+        "display": "Ulcerative colitis unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cauda-equina-urgent-mri",
+    "hook": "patient-view",
+    "type": "cauda-equina-urgent-mri",
+    "services": [
+      "vedamd-cauda-equina"
+    ],
+    "title": "Cauda equina syndrome — urgent MRI + surgery within 48 h",
+    "description": "Fires for back pain with new bilateral leg symptoms OR saddle anaesthesia OR urinary retention (post-void residual > 200 mL) OR reduced anal tone. Recommends URGENT MRI lumbar spine + neurosurgical referral; decompression within 24–48 h preserves function. Reads context.bilateralLegWeakness, context.saddleAnaesthesia, context.urinaryRetention, context.bowelDysfunction, context.postVoidResidual — never patient identity.",
+    "references": [
+      {
+        "label": "BASS UK consensus on CES"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G83.4",
+        "display": "Cauda equina syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "spinal-epidural-abscess-pathway",
+    "hook": "patient-view",
+    "type": "spinal-epidural-abscess-pathway",
+    "services": [
+      "vedamd-spinal-abscess"
+    ],
+    "title": "Spinal epidural abscess — urgent MRI + decompression",
+    "description": "Fires for back pain + fever + neurology in IVDU / immunocompromised / spinal instrumentation. Recommends urgent MRI whole spine, blood cultures, IV vancomycin + ceftriaxone empirically, surgical decompression for any neurological deficit within 24 h. Reads context.backPain, context.fever, context.neurologicalDeficit, context.ivdu, context.immunocompromised — never patient identity.",
+    "references": [
+      {
+        "label": "Darouiche NEJM 2006; IDSA vertebral osteomyelitis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G06.1",
+        "display": "Spinal epidural abscess",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "tbi-severe-bundle",
+    "hook": "patient-view",
+    "type": "tbi-severe-bundle",
+    "services": [
+      "vedamd-severe-tbi"
+    ],
+    "title": "Severe TBI — secondary-injury prevention bundle",
+    "description": "Fires for head injury with GCS ≤ 8. Recommends: intubation, SpO2 > 92%, MAP ≥ 80 / CPP ≥ 60, normocapnia, head up 30°, hypertonic saline or mannitol for raised ICP signs, levetiracetam prophylaxis × 7 days, tranexamic acid 1 g IV within 3 h (CRASH-3). Reverse anticoagulation. Reads context.gcs, context.pupilSize, context.anticoagulant, context.injuryTimeHours, context.intubated — never patient identity.",
+    "references": [
+      {
+        "label": "Brain Trauma Foundation 4th ed; CRASH-3 Lancet 2019"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "S06.9",
+        "display": "Intracranial injury",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "unstable-pelvic-fracture-binder",
+    "hook": "patient-view",
+    "type": "unstable-pelvic-fracture-binder",
+    "services": [
+      "vedamd-pelvic-fracture"
+    ],
+    "title": "Unstable pelvic fracture — binder + massive transfusion",
+    "description": "Fires for trauma with pelvic instability + hypotension. Recommends pelvic binder at greater trochanter level (do not remove for X-ray), massive transfusion 1:1:1, tranexamic acid 1 g, urgent IR embolisation or pre-peritoneal packing, urology consult before catheterising if urethral injury suspected. Reads context.suspectedPelvicFracture, context.systolicMmHg, context.haematuria, context.bloodAtMeatus, context.injuryTimeHours — never patient identity.",
+    "references": [
+      {
+        "label": "WSES pelvic fracture guidelines; ATLS"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "S32.5",
+        "display": "Fracture of pubis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "crao-stroke-equivalent",
+    "hook": "patient-view",
+    "type": "crao-stroke-equivalent",
+    "services": [
+      "vedamd-crao"
+    ],
+    "title": "Central retinal artery occlusion — stroke-equivalent workup",
+    "description": "Fires for sudden painless monocular vision loss with RAPD. Recommends URGENT ESR + CRP (GCA — if suspected start IV methylpred 1 g daily × 3 days); treat as TIA/stroke equivalent with carotid + cardiac workup + secondary prevention; consider tPA within 4.5 h or anterior chamber paracentesis. Reads context.suddenVisionLoss, context.painlessVisionLoss, context.unilateral, context.ageYears, context.gcaFeatures — never patient identity.",
+    "references": [
+      {
+        "label": "AAO Preferred Practice Pattern; AHA CRAO statement 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "H34.1",
+        "display": "Central retinal artery occlusion",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ssnhl-systemic-steroid",
+    "hook": "patient-view",
+    "type": "ssnhl-systemic-steroid",
+    "services": [
+      "vedamd-ssnhl"
+    ],
+    "title": "Sudden sensorineural hearing loss — high-dose steroid + MRI",
+    "description": "Fires for new sudden hearing loss ≥ 30 dB across 3 frequencies developing < 72 h. Recommends prednisolone 1 mg/kg/day × 7–14 days then taper; intratympanic steroid as adjunct/salvage; MRI within weeks for vestibular schwannoma exclusion. Reads context.hearingLossSudden, context.audiogram, context.daysSinceOnset — never patient identity.",
+    "references": [
+      {
+        "label": "AAO-HNS SSNHL CPG 2019"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "H91.2",
+        "display": "Sudden idiopathic hearing loss",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "necrotising-fasciitis-surgical-emergency",
+    "hook": "patient-view",
+    "type": "necrotising-fasciitis-surgical-emergency",
+    "services": [
+      "vedamd-necrotising-fasciitis"
+    ],
+    "title": "Necrotising soft tissue infection — urgent debridement",
+    "description": "Fires for skin/soft-tissue infection with pain out of proportion, rapid spread, anaesthesia over advancing margin, crepitus, or LRINEC ≥ 6. Recommends URGENT surgical debridement within hours, IV meropenem + clindamycin + vancomycin, IVIG for streptococcal toxic shock, sepsis bundle. Reads context.painOutOfProportion, context.crepitus, context.skinAnaesthesia, context.lrinecScore, context.systolicMmHg — never patient identity.",
+    "references": [
+      {
+        "label": "WSES NSTI Guidelines 2018; IDSA SSTI Guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M72.6",
+        "display": "Necrotising fasciitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "acute-aortic-dissection-anti-impulse",
+    "hook": "patient-view",
+    "type": "acute-aortic-dissection-anti-impulse",
+    "services": [
+      "vedamd-aortic-dissection"
+    ],
+    "title": "Acute aortic dissection — anti-impulse + cardiothoracic referral",
+    "description": "Fires for sudden severe chest/back/abdominal pain + BP discrepancy or pulse deficit. Recommends CT angio aorta; for confirmed dissection: HR 60–80, SBP 100–120 with IV esmolol/labetalol then nitroprusside; Type A → immediate cardiothoracic surgery; Type B → medical first-line, TEVAR for complications. Reads context.suddenTearingChestPain, context.bpDiscrepancyArms, context.pulseDeficit, context.ctaConfirmedDissection, context.dissectionType — never patient identity.",
+    "references": [
+      {
+        "label": "ACC/AHA/ESC Aortic Disease 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I71.0",
+        "display": "Dissection of aorta",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "endophthalmitis-intravitreal",
+    "hook": "patient-view",
+    "type": "endophthalmitis-intravitreal",
+    "services": [
+      "vedamd-endophthalmitis"
+    ],
+    "title": "Endophthalmitis — immediate intravitreal antibiotic",
+    "description": "Fires for sudden vision loss / pain / hypopyon within weeks of intraocular procedure. Recommends URGENT vitreous tap + intravitreal vancomycin 1 mg + ceftazidime 2.25 mg; vitrectomy if vision ≤ light perception (EVS); blood cultures if endogenous. Reads context.recentIntraocularProcedure, context.visionLevel, context.hypopyon, context.systemicSourceSuspected — never patient identity.",
+    "references": [
+      {
+        "label": "EVS; AAO endophthalmitis guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "H44.0",
+        "display": "Endophthalmitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cavernous-sinus-thrombosis-anticoag",
+    "hook": "patient-view",
+    "type": "cavernous-sinus-thrombosis-anticoag",
+    "services": [
+      "vedamd-cavernous-sinus"
+    ],
+    "title": "Cavernous sinus thrombosis — antibiotics + anticoagulation",
+    "description": "Fires for headache + fever + cranial nerve palsies III/IV/V1/V2/VI + proptosis. Recommends IMMEDIATE IV vancomycin + ceftriaxone + metronidazole × 3–4 weeks; LMWH anticoagulation; source control (sinus / dental); MR venography. Reads context.cranialNervePalsy, context.proptosis, context.facialInfection, context.fever — never patient identity.",
+    "references": [
+      {
+        "label": "Plewa StatPearls; case-series literature"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G08",
+        "display": "Intracranial phlebitis and thrombophlebitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "svcs-stenting",
+    "hook": "patient-view",
+    "type": "svcs-stenting",
+    "services": [
+      "vedamd-svcs"
+    ],
+    "title": "Superior vena cava syndrome — biopsy then stent / definitive treatment",
+    "description": "Fires for facial / arm swelling + neck-vein distension + dyspnoea with suspected mediastinal mass. Recommends CT chest + tissue biopsy BEFORE empirical steroid (alters lymphoma histology); endovascular stent for severe symptoms; type-specific chemoradiotherapy. Reads context.facialSwelling, context.dyspnoea, context.knownMalignancy, context.airwayCompromise — never patient identity.",
+    "references": [
+      {
+        "label": "ESMO cancer-emergency guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I87.1",
+        "display": "Vena cava compression",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "malignant-hypercalcaemia-bisphosphonate",
+    "hook": "patient-view",
+    "type": "malignant-hypercalcaemia-bisphosphonate",
+    "services": [
+      "vedamd-hypercalcaemia"
+    ],
+    "title": "Malignant hypercalcaemia — fluids + bisphosphonate (+ calcitonin if severe)",
+    "description": "Fires for adjusted Ca > 2.8 mmol/L with malignancy. Recommends IV 0.9% NaCl 3–6 L/24 h + IV zoledronate 4 mg (dose-reduce for eGFR < 60); calcitonin 4 IU/kg every 12 h for rapid temporary lowering; haemodialysis if Ca > 4 with severe symptoms. WARNS against thiazide. Reads context.adjustedCalcium, context.ionisedCalcium, context.creatinine, context.symptoms — never patient identity.",
+    "references": [
+      {
+        "label": "Endocrine Society Hypercalcaemia 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E83.52",
+        "display": "Hypercalcaemia",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "ici-toxicity-steroid",
+    "hook": "patient-view",
+    "type": "ici-toxicity-steroid",
+    "services": [
+      "vedamd-ici-toxicity"
+    ],
+    "title": "Immune checkpoint inhibitor toxicity — grade + steroid pathway",
+    "description": "Fires for any patient on ICI (anti-PD-1, anti-PD-L1, anti-CTLA-4) with new symptoms. Grades CTCAE 1–4. Recommends hold ICI for ≥ grade 2, prednisolone 0.5–2 mg/kg/day for grade 2–3, IV methylpred 1 g daily × 3 days for grade 4. Lifelong hormone replacement for endocrinopathies. WARNS about myocarditis (high mortality). Reads context.iciAgent, context.symptomSystem, context.severity, context.cardiacSymptoms — never patient identity.",
+    "references": [
+      {
+        "label": "ESMO / ASCO management of immunotherapy toxicities"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T78.4",
+        "display": "Adverse drug reaction",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "dic-treat-cause",
+    "hook": "patient-view",
+    "type": "dic-treat-cause",
+    "services": [
+      "vedamd-dic"
+    ],
+    "title": "Disseminated intravascular coagulation — source control + selective products",
+    "description": "Fires for ISTH overt-DIC score ≥ 5. Recommends treating underlying cause; selective component therapy GUIDED BY CLINICAL BLEEDING (not labs alone) — platelet < 50 + bleeding; FFP 15 mL/kg if INR > 1.5 + bleeding; cryoprecipitate if fibrinogen < 1.5. AVOID routine antifibrinolytics. APL emergency — start ATRA + arsenic IMMEDIATELY. Reads context.platelet, context.inr, context.fibrinogen, context.dDimer, context.bleeding, context.suspectedAPL — never patient identity.",
+    "references": [
+      {
+        "label": "ISTH DIC scoring; BSH DIC guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D65",
+        "display": "DIC",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "hit-stop-heparin",
+    "hook": "patient-view",
+    "type": "hit-stop-heparin",
+    "services": [
+      "vedamd-hit"
+    ],
+    "title": "Heparin-induced thrombocytopenia — STOP heparin + alternative anticoag",
+    "description": "Fires for platelet drop ≥ 30–50% from baseline on heparin OR new thrombosis on heparin. Calculates 4Ts score; orders anti-PF4 antibody + SRA. Recommends STOP all heparin (UFH, LMWH, flushes); start argatroban / fondaparinux / DOAC; AVOID warfarin alone (skin necrosis); AVOID platelet transfusion. Reads context.heparinExposureDays, context.plateletDropPercent, context.thrombosisNew, context.fourTsScore — never patient identity.",
+    "references": [
+      {
+        "label": "ASH HIT Guidelines 2018"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D75.82",
+        "display": "HIT",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "sickle-vaso-occlusive-analgesia",
+    "hook": "patient-view",
+    "type": "sickle-vaso-occlusive-analgesia",
+    "services": [
+      "vedamd-sickle-voc"
+    ],
+    "title": "Sickle cell vaso-occlusive crisis — analgesia within 30 min + chest crisis screen",
+    "description": "Fires for known SCD with acute severe pain. Recommends IV opioid within 30 min of presentation + PCA early; supplemental O2 if SpO2 < 95%; CXR + ABG if chest pain / cough / hypoxia (acute chest syndrome → ceftriaxone + macrolide + transfusion). Reads context.knownSCD, context.painScore, context.chestPain, context.spO2, context.fever — never patient identity.",
+    "references": [
+      {
+        "label": "ASH SCD Pocket Guide 2020; BSH acute pain in SCD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D57.00",
+        "display": "Sickle-cell crisis with crisis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "lupus-nephritis-induction",
+    "hook": "patient-view",
+    "type": "lupus-nephritis-induction",
+    "services": [
+      "vedamd-lupus-nephritis"
+    ],
+    "title": "Lupus nephritis (class III/IV) — induction immunosuppression",
+    "description": "Fires for SLE with proteinuria > 0.5 g/24 h + active sediment + AKI. Recommends renal biopsy; for class III/IV: IV methylprednisolone 250–1000 mg × 3 days + oral prednisolone + cyclophosphamide (Euro-Lupus 500 mg every 2 weeks × 6 OR NIH 750 mg/m² monthly × 6) OR MMF 2–3 g/day. Add belimumab. Always hydroxychloroquine. Reads context.knownSLE, context.proteinuria, context.urineSediment, context.creatinine, context.renalBiopsy — never patient identity.",
+    "references": [
+      {
+        "label": "EULAR/ACR SLE 2024; KDIGO Lupus Nephritis 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M32.14",
+        "display": "Glomerular disease in SLE",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "anca-vasculitis-induction-pjp",
+    "hook": "patient-view",
+    "type": "anca-vasculitis-induction-pjp",
+    "services": [
+      "vedamd-anca-vasculitis"
+    ],
+    "title": "ANCA-associated vasculitis — induction therapy + PJP prophylaxis",
+    "description": "Fires for AAV with organ-threatening features (RPGN, alveolar haemorrhage). Recommends IV methylpred 500–1000 mg × 3 days + oral prednisolone 1 mg/kg + rituximab 375 mg/m² weekly × 4 OR cyclophosphamide 15 mg/kg every 2–3 weeks × 6. PJP prophylaxis with co-trimoxazole 480 mg daily during induction. PLEX reserved for severe alveolar haemorrhage / dialysis-dependent AKI per PEXIVAS. Reads context.ancaSubtype, context.organInvolvement, context.creatinine, context.alveolarHaemorrhage — never patient identity.",
+    "references": [
+      {
+        "label": "EULAR AAV 2024; PEXIVAS NEJM 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M31.30",
+        "display": "Wegener granulomatosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ruptured-ectopic-emergency",
+    "hook": "patient-view",
+    "type": "ruptured-ectopic-emergency",
+    "services": [
+      "vedamd-ruptured-ectopic"
+    ],
+    "title": "Ruptured ectopic pregnancy — surgical emergency",
+    "description": "Fires for woman of reproductive age + positive pregnancy test + abdominal pain + haemodynamic instability or free fluid on USS. Recommends emergency laparotomy / laparoscopy + massive transfusion 1:1:1 + tranexamic acid. Anti-D for RhD-negative. Reads context.pregnancyTest, context.ageYears, context.abdominalPain, context.systolicMmHg, context.freeFluidUSS — never patient identity.",
+    "references": [
+      {
+        "label": "RCOG Green-top 21 Ectopic pregnancy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O00.1",
+        "display": "Ectopic tubal pregnancy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ovarian-torsion-urgent-laparoscopy",
+    "hook": "patient-view",
+    "type": "ovarian-torsion-urgent-laparoscopy",
+    "services": [
+      "vedamd-ovarian-torsion"
+    ],
+    "title": "Ovarian torsion — urgent laparoscopy + ovarian conservation",
+    "description": "Fires for sudden severe unilateral pelvic pain with adnexal mass / absent flow on Doppler. Recommends urgent laparoscopy; detorsion + conservation (do NOT assume non-viability from appearance); cystectomy if cyst > 5 cm. Reads context.suddenPelvicPain, context.adnexalMass, context.dopplerFlow, context.pregnant — never patient identity.",
+    "references": [
+      {
+        "label": "RCOG / SGS adnexal torsion guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N83.5",
+        "display": "Torsion of ovary",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "urosepsis-decompression",
+    "hook": "patient-view",
+    "type": "urosepsis-decompression",
+    "services": [
+      "vedamd-urosepsis"
+    ],
+    "title": "Urosepsis + obstruction — antibiotic + URGENT decompression",
+    "description": "Fires for UTI / pyelonephritis features + hydronephrosis on imaging + sepsis criteria. Recommends Hour-1 bundle, broad-spectrum antibiotic (pip-tazo or meropenem), URGENT nephrostomy / ureteric stent within 6 h. Definitive stone treatment after sepsis resolved. Reads context.fever, context.flankPain, context.hydronephrosis, context.lactate, context.knownStone — never patient identity.",
+    "references": [
+      {
+        "label": "EAU Urological Infections; SSC 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N13.6",
+        "display": "Pyonephrosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "sjs-ten-emergency",
+    "hook": "patient-view",
+    "type": "sjs-ten-emergency",
+    "services": [
+      "vedamd-sjs-ten"
+    ],
+    "title": "SJS / TEN — stop drug + transfer to burns unit",
+    "description": "Fires for painful skin + mucosal involvement + recent drug exposure (allopurinol, sulpha, aromatic anticonvulsants, NSAID, nevirapine). Recommends IMMEDIATE drug cessation + transfer to burns / specialist ICU + SCORTEN + supportive burn-style care + ciclosporin (preferred over IVIG / steroid). Reads context.recentDrug, context.bsaInvolvement, context.mucosalInvolvement, context.scorten — never patient identity.",
+    "references": [
+      {
+        "label": "British Association of Dermatologists SJS/TEN guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "L51.2",
+        "display": "Toxic epidermal necrolysis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "disseminated-zoster-iv-aciclovir",
+    "hook": "patient-view",
+    "type": "disseminated-zoster-iv-aciclovir",
+    "services": [
+      "vedamd-disseminated-zoster"
+    ],
+    "title": "Disseminated zoster — IV aciclovir + ophthalmology",
+    "description": "Fires for VZV vesicles in immunocompromised patient with >= 20 lesions outside primary dermatome OR visceral involvement. Recommends IV aciclovir 10 mg/kg every 8 h × 7–14 days (renal-adjusted), foscarnet if resistance, ophthalmology if V1 / Hutchinson sign / Ramsay Hunt, post-recovery RZV vaccine. Reads context.immunocompromised, context.vesicleDistribution, context.cn5Involvement, context.cnsSymptoms — never patient identity.",
+    "references": [
+      {
+        "label": "IDSA VZV in HIV; AAO HZO guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B02.7",
+        "display": "Disseminated zoster",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "salicylate-poisoning-alkalinisation",
+    "hook": "patient-view",
+    "type": "salicylate-poisoning-alkalinisation",
+    "services": [
+      "vedamd-salicylate-poisoning"
+    ],
+    "title": "Salicylate poisoning — urinary alkalinisation + dialysis criteria",
+    "description": "Fires for aspirin / methyl salicylate ingestion with HAGMA + raised salicylate level. Recommends activated charcoal if early, urinary alkalinisation with sodium bicarbonate targeting urine pH 7.5–8.0, replace K+ aggressively, dialysis for level > 100 mg/dL acute / > 60 chronic / severe features / AKI. WARNS against intubation without maintaining hyperventilation. Reads context.salicylateLevel, context.anionGap, context.pH, context.gcs, context.pulmonaryOedema — never patient identity.",
+    "references": [
+      {
+        "label": "EXTRIP salicylate; AACT urinary alkalinisation"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T39.0",
+        "display": "Salicylate poisoning",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "hyperemesis-thiamine-first",
+    "hook": "patient-view",
+    "type": "hyperemesis-thiamine-first",
+    "services": [
+      "vedamd-hyperemesis"
+    ],
+    "title": "Severe hyperemesis gravidarum — thiamine BEFORE dextrose",
+    "description": "Fires for pregnant patient with PUQE ≥ 13 / dehydration / electrolyte derangement / >= 5% weight loss. Recommends IV thiamine BEFORE any dextrose-containing fluid (Wernicke prevention), saline + KCl, step-wise antiemetic (cyclizine/promethazine → ondansetron after 10 weeks → steroids refractory), LMWH thromboprophylaxis, psychological support. Reads context.pregnancyWeeks, context.puqeScore, context.dehydration, context.weightLossPercent, context.thiamineGiven — never patient identity.",
+    "references": [
+      {
+        "label": "RCOG Green-top 69 HG"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O21.1",
+        "display": "Hyperemesis gravidarum with metabolic disturbance",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pcos-chronic-care",
+    "hook": "patient-view",
+    "type": "pcos-chronic-care",
+    "services": [
+      "vedamd-pcos"
+    ],
+    "title": "PCOS — Rotterdam + metabolic surveillance pathway",
+    "description": "Fires for woman with menstrual irregularity + hyperandrogenism. Recommends Rotterdam screen, exclude alternatives (CAH, prolactinoma, thyroid, Cushing); lifestyle first-line; COC for menstrual + hyperandrogenism; letrozole for fertility; metformin for IR; annual metabolic + endometrial surveillance. Reads context.ageYears, context.oligomenorrhoea, context.hirsutism, context.bmi, context.fastingGlucose — never patient identity.",
+    "references": [
+      {
+        "label": "International PCOS Guideline 2023"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E28.2",
+        "display": "PCOS",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "vhf-suspected-isolation",
+    "hook": "patient-view",
+    "type": "vhf-suspected-isolation",
+    "services": [
+      "vedamd-vhf-suspected"
+    ],
+    "title": "Suspected viral haemorrhagic fever — isolation + public health",
+    "description": "Fires for fever + travel from / residence in VHF-endemic area (Ebola, Marburg, Lassa, CCHF, Yellow Fever) ± bleeding / multi-organ involvement. Recommends IMMEDIATE single-room isolation with PPE (gown, FFP3, double gloves, eye protection); NOTIFY public health before sample collection; supportive care; specific antivirals (ribavirin for Lassa / CCHF; monoclonals for Ebola / Marburg). Reads context.travelEndemicArea, context.fever, context.bleeding, context.contactWithCase — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Clinical management of VHF"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A98.4",
+        "display": "Ebola virus disease",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pjp-empirical-trimethoprim",
+    "hook": "patient-view",
+    "type": "pjp-empirical-trimethoprim",
+    "services": [
+      "vedamd-pjp"
+    ],
+    "title": "Pneumocystis pneumonia — high-dose co-trimoxazole + adjunctive steroid",
+    "description": "Fires for hypoxia + bilateral interstitial CXR + immunocompromise (HIV CD4 < 200, transplant, chemotherapy, high-dose steroid). Recommends high-dose co-trimoxazole 90–120 mg/kg/day × 21 days; adjunctive prednisolone 40 mg BD × 5 days then taper if PaO2 < 70 / A-a > 35. Secondary + primary prophylaxis. Reads context.cd4, context.spO2, context.paO2, context.aAgradient, context.immunocompromised — never patient identity.",
+    "references": [
+      {
+        "label": "IDSA OI Guidelines; WHO HIV"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B59",
+        "display": "Pneumocystis pneumonia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "candidaemia-echinocandin",
+    "hook": "patient-view",
+    "type": "candidaemia-echinocandin",
+    "services": [
+      "vedamd-candidaemia"
+    ],
+    "title": "Candidaemia — echinocandin first-line + remove CVC + eye exam",
+    "description": "Fires for positive Candida blood culture / suspected candidaemia in critically ill. Recommends echinocandin first-line (caspofungin 70 mg loading then 50 mg daily); de-escalate to fluconazole if susceptible; REMOVE all central venous catheters; dilated ophthalmology exam within 1 week; treat 14 days from first negative culture (longer for endocarditis / osteo / CNS). Reads context.candidaSpecies, context.centralLine, context.haemodynamicStability — never patient identity.",
+    "references": [
+      {
+        "label": "IDSA Candidiasis Guideline 2016"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B37.7",
+        "display": "Candidal sepsis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "delirium-pinchme",
+    "hook": "patient-view",
+    "type": "delirium-pinchme",
+    "services": [
+      "vedamd-delirium"
+    ],
+    "title": "Acute delirium older adult — PINCH-ME + non-pharmacological first",
+    "description": "Fires for acute confusion / fluctuating cognition / inattention in older adult (4AT ≥ 4). Recommends address PINCH-ME (Pain, Infection, Nutrition, Constipation, Hydration, Medication, Environment), non-pharmacological measures, antipsychotic LAST RESORT (haloperidol / olanzapine / quetiapine in Parkinson). AVOID benzodiazepines except for alcohol/benzodiazepine withdrawal. Thiamine BEFORE glucose for at-risk. Reads context.ageYears, context.fourAtScore, context.recentMedicationChange, context.suspectedInfection — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG103 Delirium; BGS Guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F05",
+        "display": "Delirium not induced by alcohol",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "frailty-cga-pathway",
+    "hook": "patient-view",
+    "type": "frailty-cga-pathway",
+    "services": [
+      "vedamd-frailty"
+    ],
+    "title": "Frailty — Comprehensive Geriatric Assessment trigger",
+    "description": "Fires for Clinical Frailty Scale ≥ 5 OR Rockwood phenotype frailty. Recommends CGA across medical / mental / functional / social / environmental / medication domains; STOPP/START medication review; exercise + nutrition; falls prevention; advance care planning. CFS ≥ 7 — consider end-of-life planning. Reads context.ageYears, context.clinicalFrailtyScale, context.recentFall, context.polypharmacy — never patient identity.",
+    "references": [
+      {
+        "label": "BGS Fit for Frailty; WHO ICOPE"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "R54",
+        "display": "Age-related frailty",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "primary-hiv-rapid-art",
+    "hook": "patient-view",
+    "type": "primary-hiv-rapid-art",
+    "services": [
+      "vedamd-primary-hiv"
+    ],
+    "title": "Acute / primary HIV infection — same-day ART",
+    "description": "Fires for confirmed acute HIV (positive 4th-gen Ag/Ab + high viral load) ± seroconversion illness. Recommends same-day ART (preferred TLD = tenofovir + lamivudine + dolutegravir or B/F/TAF); CD4 + resistance testing; co-trimoxazole if CD4 < 350; TB symptom screen + TPT once cleared; STI + hepatitis screen; mental health screen; partner notification + PEP for contacts < 72 h. Reads context.hivStatus, context.acutePresentation, context.cd4 — never patient identity.",
+    "references": [
+      {
+        "label": "WHO HIV 2021; DHHS ARV"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B23.0",
+        "display": "Acute HIV infection syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "postpartum-psychosis-mother-baby-unit",
+    "hook": "patient-view",
+    "type": "postpartum-psychosis-mother-baby-unit",
+    "services": [
+      "vedamd-postpartum-psychosis"
+    ],
+    "title": "Postpartum psychosis — safety + mother-baby unit admission",
+    "description": "Fires for new-onset psychotic symptoms / mania within 2–6 weeks postpartum. Recommends URGENT psychiatric assessment, safety screen (suicide + infanticide), exclude organic cause (sepsis, eclampsia, electrolytes, thyroid storm), admit mother-baby unit, antipsychotic + mood stabiliser, ECT for severe / refractory. Reads context.postpartumWeeks, context.psychoticSymptoms, context.suicideIdeation, context.infanticideRisk — never patient identity.",
+    "references": [
+      {
+        "label": "RCPsych perinatal psychiatry; NICE CG192"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F53.1",
+        "display": "Severe puerperal psychosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-anorexia-refeeding",
+    "hook": "patient-view",
+    "type": "severe-anorexia-refeeding",
+    "services": [
+      "vedamd-severe-eating-disorder"
+    ],
+    "title": "Severe eating disorder — MARSIPAN refeeding + electrolyte monitoring",
+    "description": "Fires for eating disorder with BMI < 14, HR < 40, SBP < 90, severe electrolyte derangement. Recommends specialist unit admission, START refeeding at 20–30 kcal/kg/day, monitor phosphate / K+ / Mg / glucose 2× daily, thiamine BEFORE refeeding, cardiac monitoring. FBT for adolescents; CBT-E for adults. Consider compulsory treatment if life-threatening. Reads context.bmi, context.heartRate, context.systolicMmHg, context.potassium, context.phosphate, context.suicidalIdeation — never patient identity.",
+    "references": [
+      {
+        "label": "MARSIPAN + Junior MARSIPAN; NICE NG69"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F50.0",
+        "display": "Anorexia nervosa",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pah-specialist-pathway",
+    "hook": "patient-view",
+    "type": "pah-specialist-pathway",
+    "services": [
+      "vedamd-pah"
+    ],
+    "title": "PAH suspected — specialist referral + RHC pathway",
+    "description": "Fires for unexplained dyspnoea + RV strain pattern / raised PAP on echo. Recommends specialist PH centre referral, RHC for confirmation, V/Q scan to exclude CTEPH (Group 4), Group 1 workup (CTD / HIV / portal / drug); combination therapy ERA + PDE5 ± prostacyclin pathway. Pregnancy contraindicated. Reads context.dyspnoea, context.echoRvStrain, context.suspectedCtd — never patient identity.",
+    "references": [
+      {
+        "label": "ESC/ERS PH 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I27.0",
+        "display": "PAH",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-cdi-fidaxomicin",
+    "hook": "patient-view",
+    "type": "severe-cdi-fidaxomicin",
+    "services": [
+      "vedamd-severe-cdi"
+    ],
+    "title": "Severe / recurrent C. difficile — fidaxomicin first + FMT for recurrence",
+    "description": "Fires for confirmed CDI + severity markers (WBC > 15 / albumin < 30 / creatinine > 1.5x baseline). Recommends fidaxomicin 200 mg BD × 10 days (or vancomycin 125 mg QDS); stop offending antibiotic; isolate + soap-and-water hand hygiene; FMT for second + further recurrence; surgical input for fulminant. Reads context.cdiSeverity, context.wbc, context.albumin, context.creatinine, context.recurrenceNumber — never patient identity.",
+    "references": [
+      {
+        "label": "IDSA/SHEA CDI 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A04.7",
+        "display": "C. difficile enterocolitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "hae-c1-inhibitor-first",
+    "hook": "patient-view",
+    "type": "hae-c1-inhibitor-first",
+    "services": [
+      "vedamd-hae"
+    ],
+    "title": "Hereditary angioedema attack — C1-INH / icatibant (NOT adrenaline/steroid)",
+    "description": "Fires for non-pruritic non-pitting swelling without urticaria in known / suspected HAE patient. Recommends C1-INH concentrate 20 IU/kg IV OR icatibant 30 mg SC OR ecallantide. AVOID antihistamine/steroid/adrenaline as primary therapy (bradykinin not histamine-mediated). Airway secure if laryngeal. Reads context.hae, context.swellingDistribution, context.urticaria, context.laryngealInvolvement, context.aceiUse — never patient identity.",
+    "references": [
+      {
+        "label": "WAO/EAACI HAE 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D84.1",
+        "display": "Deficiency of complement",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-eosinophilic-asthma-biologic",
+    "hook": "patient-view",
+    "type": "severe-eosinophilic-asthma-biologic",
+    "services": [
+      "vedamd-severe-asthma"
+    ],
+    "title": "Severe asthma — phenotype-guided biologic",
+    "description": "Fires for step-5 asthma with exacerbations / OCS dependence despite optimised inhaled therapy + adherence. Recommends phenotyping (eosinophils, FeNO, IgE, sensitisation); biologic selection: anti-IgE (omalizumab) for allergic; anti-IL-5/5R (mepolizumab/benralizumab) for eosinophilic; anti-TSLP (tezepelumab) for T2-low; dupilumab for atopic / CRS / EGPA overlap. Reads context.eosinophils, context.feno, context.totalIge, context.exacerbationFrequency, context.ocsDependence — never patient identity.",
+    "references": [
+      {
+        "label": "GINA 2024; ATS/ERS Severe Asthma"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J45.50",
+        "display": "Severe persistent asthma",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "wilson-disease-acute-pathway",
+    "hook": "patient-view",
+    "type": "wilson-disease-acute-pathway",
+    "services": [
+      "vedamd-wilson-disease"
+    ],
+    "title": "Wilson disease — diagnosis + chelation pathway",
+    "description": "Fires for unexplained hepatitis / cirrhosis / neuro-psychiatric features in patient 5–45 y. Recommends ceruloplasmin + 24-h urinary copper + Kayser-Fleischer rings + brain MRI; chelation (trientine preferred for neuro; penicillamine alternative; zinc maintenance); transplant referral for acute liver failure (Wilson type — high mortality). Reads context.ageYears, context.unexplainedHepatitis, context.movementDisorder, context.kayserFleischer — never patient identity.",
+    "references": [
+      {
+        "label": "EASL / AASLD Wilson disease guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E83.01",
+        "display": "Wilson disease",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pjp-prosthetic-joint-infection",
+    "hook": "patient-view",
+    "type": "pjp-prosthetic-joint-infection",
+    "services": [
+      "vedamd-prosthetic-joint"
+    ],
+    "title": "Prosthetic joint infection — MDT + strategy by chronicity",
+    "description": "Fires for pain / sinus / raised inflammatory markers at site of joint prosthesis. Recommends synovial aspiration BEFORE antibiotics, multidisciplinary team, surgical strategy: DAIR (early < 3 weeks + stable + susceptible) vs one-stage (chronic + known) vs two-stage exchange (chronic + unknown / resistant). Targeted antibiotics 3 months with rifampicin for Staph. Reads context.timeFromArthroplasty, context.suspectedOrganism, context.prosthesisStability, context.sinusTract — never patient identity.",
+    "references": [
+      {
+        "label": "IDSA PJI 2013; MSIS criteria"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T84.5",
+        "display": "Infection due to internal joint prosthesis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "sah-aneurysm-secure-nimodipine",
+    "hook": "patient-view",
+    "type": "sah-aneurysm-secure-nimodipine",
+    "services": [
+      "vedamd-sah"
+    ],
+    "title": "Aneurysmal SAH — secure within 24-48 h + nimodipine + vasospasm prophylaxis",
+    "description": "Fires for sudden thunderclap headache + CT SAH or xanthochromia. Recommends BP < 160 mmHg pre-aneurysm-securing; coil / clip within 24-48 h; nimodipine 60 mg every 4 h × 21 days for vasospasm prevention; EVD for hydrocephalus; cerebral salt wasting / SIADH management. Reads context.thunderclapHeadache, context.ctSah, context.gcs, context.wfnsGrade — never patient identity.",
+    "references": [
+      {
+        "label": "AHA/ASA SAH 2023; ISAT"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I60",
+        "display": "Subarachnoid haemorrhage",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "acute-gout-flare-treatment",
+    "hook": "patient-view",
+    "type": "acute-gout-flare-treatment",
+    "services": [
+      "vedamd-acute-gout"
+    ],
+    "title": "Acute gout flare — colchicine / NSAID / steroid + DON'T STOP allopurinol",
+    "description": "Fires for acute monoarthritis with podagra / known gout. Recommends synovial aspirate (exclude septic), colchicine OR NSAID OR oral prednisolone OR intra-articular steroid; HLA-B*58:01 screen in Asian populations before allopurinol initiation; continue allopurinol if already on it; initiate urate-lowering therapy with prophylactic anti-inflammatory cover for 3–6 months. Reads context.acuteMonoarthritis, context.serumUrate, context.allopurinolUse, context.creatinine — never patient identity.",
+    "references": [
+      {
+        "label": "EULAR Gout 2016; ACR Gout 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M10.9",
+        "display": "Gout unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pemphigus-rituximab-first-line",
+    "hook": "patient-view",
+    "type": "pemphigus-rituximab-first-line",
+    "services": [
+      "vedamd-pemphigus"
+    ],
+    "title": "Pemphigus vulgaris — rituximab + steroid (PEMPHIX-aligned)",
+    "description": "Fires for biopsy-confirmed pemphigus vulgaris with severe / extensive disease. Recommends rituximab 1 g × 2 doses + oral prednisolone with rapid taper (PEMPHIX trial superior to mycophenolate); PJP prophylaxis with co-trimoxazole; bone protection; topical wound care; nutritional support. Reads context.pemphigusConfirmed, context.bsaInvolvement, context.mucosalInvolvement — never patient identity.",
+    "references": [
+      {
+        "label": "PEMPHIX trial Lancet 2017; EADV/BAD pemphigus guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "L10.0",
+        "display": "Pemphigus vulgaris",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ipf-antifibrotic-transplant",
+    "hook": "patient-view",
+    "type": "ipf-antifibrotic-transplant",
+    "services": [
+      "vedamd-ipf"
+    ],
+    "title": "Idiopathic pulmonary fibrosis — antifibrotic + transplant referral",
+    "description": "Fires for HRCT UIP pattern + MDD-confirmed IPF. Recommends antifibrotic (pirfenidone OR nintedanib); pulmonary rehab; long-term oxygen for hypoxia; lung-transplant referral at diagnosis for moderate-severe; GERD management; acute exacerbation supportive. Reads context.uipPattern, context.fvc, context.dlco, context.spO2 — never patient identity.",
+    "references": [
+      {
+        "label": "ATS/ERS/JRS/ALAT IPF 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J84.112",
+        "display": "Idiopathic pulmonary fibrosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "phaeochromocytoma-alpha-block-first",
+    "hook": "patient-view",
+    "type": "phaeochromocytoma-alpha-block-first",
+    "services": [
+      "vedamd-phaeochromocytoma"
+    ],
+    "title": "Phaeochromocytoma — alpha-blockade BEFORE any beta-blocker",
+    "description": "Fires for severe paroxysmal hypertension + sweating + tachycardia + headache, with plasma / urinary metanephrines raised. WARNS that beta-blocker without prior alpha-blockade can precipitate severe hypertensive crisis + heart failure. Recommends phenoxybenzamine 7–14 days pre-op + add beta-blocker only after alpha-blockade established. Pregnancy planning + delivery. Reads context.paroxysmalHypertension, context.metanephrines, context.medications, context.pregnant — never patient identity.",
+    "references": [
+      {
+        "label": "Endocrine Society Pheo Guideline 2014"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E27.5",
+        "display": "Adrenal medullary hyperfunction",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pituitary-apoplexy-empirical-hydrocortisone",
+    "hook": "patient-view",
+    "type": "pituitary-apoplexy-empirical-hydrocortisone",
+    "services": [
+      "vedamd-pituitary-apoplexy"
+    ],
+    "title": "Pituitary apoplexy — empirical hydrocortisone + neurosurgical referral",
+    "description": "Fires for sudden headache + visual disturbance + cranial nerve palsy + reduced consciousness with suspected pituitary mass. Recommends IMMEDIATE hydrocortisone 100 mg IV (do NOT wait for cortisol), neurosurgical assessment, MRI pituitary, DDAVP for DI. Lifelong hormone replacement + sick-day rules. Reads context.suddenHeadache, context.visualLoss, context.cranialNervePalsy, context.suspectedAdrenalCrisis — never patient identity.",
+    "references": [
+      {
+        "label": "Society for Endocrinology Pituitary Apoplexy 2011"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E23.6",
+        "display": "Pituitary disorders",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-alcohol-withdrawal-thiamine-benzo",
+    "hook": "patient-view",
+    "type": "severe-alcohol-withdrawal-thiamine-benzo",
+    "services": [
+      "vedamd-severe-aw"
+    ],
+    "title": "Severe alcohol withdrawal / DT — thiamine BEFORE glucose + benzodiazepine",
+    "description": "Fires for CIWA-Ar ≥ 20 OR delirium tremens features OR alcohol-withdrawal seizures. Recommends IV pabrinex (thiamine) BEFORE dextrose; symptom-triggered diazepam / chlordiazepoxide titrated to CIWA; correct Mg / K / phosphate; ICU for DT; brief intervention + naltrexone / acamprosate for relapse prevention. Reads context.ciwaScore, context.delirium, context.alcoholHistory, context.hepaticFunction — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG100 Alcohol-use disorders"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F10.231",
+        "display": "Alcohol dependence with withdrawal delirium",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "opioid-use-disorder-mat-initiation",
+    "hook": "patient-view",
+    "type": "opioid-use-disorder-mat-initiation",
+    "services": [
+      "vedamd-opioid-use-disorder"
+    ],
+    "title": "Opioid use disorder — buprenorphine / methadone MAT + take-home naloxone",
+    "description": "Fires for patient with opioid-use disorder seeking treatment / recent overdose. Recommends MAT — buprenorphine (start at COWS ≥ 12; avoid precipitated withdrawal) OR methadone (specialist clinic; ECG baseline). Take-home naloxone for all + household training. Continue MAT in pregnancy. Psychosocial support + harm reduction. Reads context.opioidUseDisorder, context.cowsScore, context.recentOverdose, context.pregnant — never patient identity.",
+    "references": [
+      {
+        "label": "SAMHSA TIP 63 MAT for OUD; WHO Pharmacological Treatment of Mental Disorders in Primary Health Care"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F11.20",
+        "display": "Opioid dependence",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "high-altitude-illness-descend",
+    "hook": "patient-view",
+    "type": "high-altitude-illness-descend",
+    "services": [
+      "vedamd-high-altitude"
+    ],
+    "title": "High altitude illness — descent + targeted pharmacotherapy",
+    "description": "Fires for altitude > 2500 m + AMS / HACE / HAPE symptoms. Recommends STOP ascent for AMS; IMMEDIATE descent for HACE / HAPE; dexamethasone 8 mg for HACE; nifedipine 30 mg BD OR sildenafil for HAPE; oxygen; portable hyperbaric chamber as bridge. Acetazolamide for prophylaxis. Reads context.altitudeMeters, context.lakeLouiseScore, context.ataxia, context.haceFeatures, context.frothyBloodSputum — never patient identity.",
+    "references": [
+      {
+        "label": "WMS Practice Guidelines Acute Altitude Illness"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T70.20",
+        "display": "Mountain sickness",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "haemophilia-bleed-emergency",
+    "hook": "patient-view",
+    "type": "haemophilia-bleed-emergency",
+    "services": [
+      "vedamd-haemophilia"
+    ],
+    "title": "Severe haemophilia bleed — factor concentrate IMMEDIATELY",
+    "description": "Fires for known haemophilia A/B + suspected bleed. Recommends factor concentrate BEFORE imaging if major bleed suspected (intracranial, retroperitoneal, severe muscle). FVIII 50–100 IU/kg for haemophilia A; FIX 100–150 IU/kg for haemophilia B; bypassing agent (FEIBA / rVIIa) if inhibitor; tranexamic acid for mucocutaneous (avoid in haematuria); DDAVP for mild haemophilia A. Reads context.haemophiliaType, context.bleedSite, context.inhibitor, context.factorLevel — never patient identity.",
+    "references": [
+      {
+        "label": "WFH Haemophilia Guidelines 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D66",
+        "display": "Hereditary FVIII deficiency",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ttp-plasma-exchange-rituximab",
+    "hook": "patient-view",
+    "type": "ttp-plasma-exchange-rituximab",
+    "services": [
+      "vedamd-ttp"
+    ],
+    "title": "TTP — URGENT plasma exchange + steroid + caplacizumab",
+    "description": "Fires for microangiopathic haemolytic anaemia + thrombocytopenia + ± neurological features + raised LDH + low ADAMTS13. Recommends URGENT PEX within 4–8 h (do not wait for ADAMTS13 result); methylprednisolone 1 g daily × 3 days; caplacizumab 10 mg daily; rituximab for refractory. AVOID platelet transfusion. Reads context.schistocytes, context.platelet, context.ldh, context.adamts13Result, context.creatinine, context.neurologicalSymptoms — never patient identity.",
+    "references": [
+      {
+        "label": "ISTH TTP 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M31.1",
+        "display": "TTP",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "avulsed-tooth-replant-now",
+    "hook": "patient-view",
+    "type": "avulsed-tooth-replant-now",
+    "services": [
+      "vedamd-dental-avulsion"
+    ],
+    "title": "Avulsed permanent tooth — replant within minutes",
+    "description": "Fires for traumatic avulsion of permanent tooth. Recommends IMMEDIATE replantation by patient / first responder (rinse with saline / milk; do NOT scrub); if cannot replant, store in HBSS > milk > saliva > saline (NOT water); dental clinic for splint + endodontic follow-up within hours. DO NOT replant primary teeth. Reads context.permanentTooth, context.timeOutOfSocketMinutes, context.storageMedium — never patient identity.",
+    "references": [
+      {
+        "label": "IADT Dental Trauma Guidelines 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "S03.20",
+        "display": "Dislocation of tooth",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "neuropathic-pain-nice-first-line",
+    "hook": "patient-view",
+    "type": "neuropathic-pain-nice-first-line",
+    "services": [
+      "vedamd-neuropathic-pain"
+    ],
+    "title": "Chronic neuropathic pain — NICE first-line ladder",
+    "description": "Fires for chronic pain with neuropathic features (DN4 / LANSS / PainDETECT positive). Recommends address treatable cause; first-line monotherapy ONE of amitriptyline / duloxetine / gabapentin / pregabalin; rotate / combine if inadequate; topical for focal (lidocaine / capsaicin); CBT + physiotherapy; avoid long-term opioid. Mental health + sleep co-management. Reads context.painDuration, context.dn4Score, context.diabetes, context.priorSurgery — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG173 neuropathic pain"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G89.4",
+        "display": "Chronic pain syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "diabetic-retinopathy-anti-vegf-pathway",
+    "hook": "patient-view",
+    "type": "diabetic-retinopathy-anti-vegf-pathway",
+    "services": [
+      "vedamd-diabetic-retinopathy"
+    ],
+    "title": "Diabetic retinopathy — PRP / anti-VEGF / vitrectomy by stage",
+    "description": "Fires for diabetic patient with retinal disease graded R0–R3 + M0/M1. Recommends annual screening; tight metabolic + BP control; PRP for proliferative; intravitreal anti-VEGF (ranibizumab / aflibercept / faricimab) for diabetic macular oedema; vitrectomy for vitreous haemorrhage / traction detachment. Pregnancy + DR — accelerated progression. Reads context.diabetesDuration, context.hba1c, context.bp, context.retinopathyGrade, context.dmo — never patient identity.",
+    "references": [
+      {
+        "label": "AAO Diabetic Retinopathy PPP"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E11.359",
+        "display": "T2DM with retinopathy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "congenital-hypothyroidism-screen-start-levothyroxine",
+    "hook": "patient-view",
+    "type": "congenital-hypothyroidism-screen-start-levothyroxine",
+    "services": [
+      "vedamd-congenital-hypothyroidism"
+    ],
+    "title": "Positive newborn screen for congenital hypothyroidism — start levothyroxine within 14 days",
+    "description": "Fires for positive newborn screen TSH > 20. Recommends URGENT confirmatory venous TSH + free T4; START levothyroxine 10–15 microgram/kg/day within 14 days of birth; do NOT wait for thyroid imaging. Re-evaluate at 3 years for transient. Family + genetic counselling. Reads context.ageDays, context.newbornScreenTsh, context.confirmTsh, context.freeT4 — never patient identity.",
+    "references": [
+      {
+        "label": "ESPE / ATA Congenital Hypothyroidism Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E03.1",
+        "display": "Congenital hypothyroidism without goitre",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "leprosy-reaction-steroid",
+    "hook": "patient-view",
+    "type": "leprosy-reaction-steroid",
+    "services": [
+      "vedamd-leprosy-reaction"
+    ],
+    "title": "Leprosy reaction — continue MDT + steroid for neuritis",
+    "description": "Fires for known leprosy + new neuritis / iridocyclitis / severe ENL. Recommends CONTINUE multidrug therapy; prednisolone 40–60 mg/day with 4–6 month taper for type 1 (reversal); thalidomide / steroid for severe type 2 (ENL); ophthalmology + neurology input; disability prevention. Reads context.leprosyType, context.reactionType, context.neuritisFinding, context.iridocyclitis — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Leprosy Guidelines 2018"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A30.9",
+        "display": "Leprosy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "vl-liposomal-ambisome",
+    "hook": "patient-view",
+    "type": "vl-liposomal-ambisome",
+    "services": [
+      "vedamd-visceral-leishmaniasis"
+    ],
+    "title": "Visceral leishmaniasis — liposomal amphotericin B preferred",
+    "description": "Fires for fever > 2 weeks + splenomegaly + pancytopenia + rK39 / DAT positive. Recommends liposomal amphotericin B (AmBisome) 5 mg/kg/day × 1 dose (India) or 6 doses on alternate days (East Africa); extended course for HIV co-infection. Monitor renal + electrolytes. HIV co-infection + secondary prophylaxis. Reads context.fever, context.splenomegaly, context.pancytopenia, context.rk39Result, context.hivStatus — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Control of Leishmaniases"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B55.0",
+        "display": "Visceral leishmaniasis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "parkinson-disease-multidisciplinary-care",
+    "hook": "patient-view",
+    "type": "parkinson-disease-multidisciplinary-care",
+    "services": [
+      "vedamd-parkinson-disease"
+    ],
+    "title": "Parkinson disease — multidisciplinary specialist care + symptom-tailored Rx",
+    "description": "Fires for suspected / confirmed Parkinson disease. Recommends multidisciplinary movement-disorder clinic, levodopa-carbidopa OR dopamine agonist OR MAO-B inhibitor as initial therapy, motor-fluctuation + non-motor symptom management, falls prevention + bone health, advance care planning. AVOID typical antipsychotics + metoclopramide. Reads context.tremor, context.bradykinesia, context.rigidity, context.cognitiveImpairment — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG71 Parkinson disease"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G20",
+        "display": "Parkinson disease",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "alzheimer-disease-aria-monitoring",
+    "hook": "patient-view",
+    "type": "alzheimer-disease-aria-monitoring",
+    "services": [
+      "vedamd-alzheimer-disease"
+    ],
+    "title": "Alzheimer disease — cholinesterase inhibitor; anti-amyloid mAb with ARIA surveillance",
+    "description": "Fires for confirmed Alzheimer disease. Recommends donepezil / rivastigmine / galantamine for mild-moderate; memantine for moderate-severe; lecanemab / donanemab for early symptomatic AD with confirmed amyloid (specialist + MRI surveillance for ARIA — APOE ε4 stratification). BPSD non-pharmacological first; antipsychotic avoid in DLB. Reads context.mmse, context.moca, context.bpsd, context.apoeStatus — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG97; Lancet Commission Dementia 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G30",
+        "display": "Alzheimer disease",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ms-relapse-high-dose-steroid",
+    "hook": "patient-view",
+    "type": "ms-relapse-high-dose-steroid",
+    "services": [
+      "vedamd-ms-relapse"
+    ],
+    "title": "Multiple sclerosis relapse — methylprednisolone + early DMT",
+    "description": "Fires for known / suspected MS with acute neurological deterioration > 24 h without fever / infection. Recommends pseudo-relapse exclusion (treat infection); IV methylprednisolone 1 g/day × 3–5 days (or oral 500 mg–1 g × 5); plasma exchange for steroid-refractory; DMT initiation / escalation; vaccination + JC virus screening; pregnancy planning. Reads context.msType, context.newDeficit, context.feverInfection, context.dmtCurrent — never patient identity.",
+    "references": [
+      {
+        "label": "ECTRIMS / EAN MS Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G35",
+        "display": "Multiple sclerosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "mnd-multidisciplinary-respiratory-niv",
+    "hook": "patient-view",
+    "type": "mnd-multidisciplinary-respiratory-niv",
+    "services": [
+      "vedamd-mnd"
+    ],
+    "title": "Motor neurone disease — multidisciplinary clinic + early NIV + PEG",
+    "description": "Fires for MND / ALS diagnosis. Recommends specialist MDC; riluzole 50 mg BD (extends survival 2–3 months); NIV when FVC < 50% or symptomatic respiratory failure; PEG before respiratory decline; cough assist; sialorrhoea + spasticity management; early advance care planning + palliative care. Reads context.bulbarOnset, context.fvc, context.weightLoss, context.respiratorySymptoms — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG42 MND"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G12.21",
+        "display": "Amyotrophic lateral sclerosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "duchenne-corticosteroid-mh-precautions",
+    "hook": "patient-view",
+    "type": "duchenne-corticosteroid-mh-precautions",
+    "services": [
+      "vedamd-duchenne"
+    ],
+    "title": "Duchenne muscular dystrophy — corticosteroid + cardiac surveillance + anaesthetic precautions",
+    "description": "Fires for DMD diagnosis. Recommends deflazacort 0.9 mg/kg/day OR prednisolone 0.75 mg/kg/day from age 4–5; annual echo + ECG from age 6; nocturnal NIV when FVC < 50%; exon-skipping for amenable mutations; AVOID halogenated anaesthetics + suxamethonium (rhabdo + MH-like); bone protection + endocrine surveillance. Reads context.dmdConfirmed, context.ageYears, context.echo, context.fvc, context.anaesthesiaPlan — never patient identity.",
+    "references": [
+      {
+        "label": "DMD Care Considerations Working Group"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G71.0",
+        "display": "Muscular dystrophy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "amyloidosis-attr-tafamidis",
+    "hook": "patient-view",
+    "type": "amyloidosis-attr-tafamidis",
+    "services": [
+      "vedamd-amyloidosis"
+    ],
+    "title": "Systemic amyloidosis — type-specific therapy (AL vs ATTR)",
+    "description": "Fires for confirmed amyloidosis on biopsy (Congo red apple-green birefringence). Recommends typing (IHC + mass spec); AL: daratumumab-CyBorD + ASCT; ATTR: tafamidis OR patisiran/vutrisiran (silencer); supportive HF + neuropathy + renal management; genetic counselling for hereditary ATTR. Reads context.amyloidType, context.cardiacInvolvement, context.neuropathy, context.geneticTesting — never patient identity.",
+    "references": [
+      {
+        "label": "ANDROMEDA + ATTR-ACT trials"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E85.4",
+        "display": "Organ-limited amyloidosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cushing-syndrome-workup",
+    "hook": "patient-view",
+    "type": "cushing-syndrome-workup",
+    "services": [
+      "vedamd-cushing"
+    ],
+    "title": "Cushing syndrome — confirm + localise + treat cause",
+    "description": "Fires for clinical features of Cushing (central obesity, striae, purple, myopathy, hypertension, hyperglycaemia, depression). Recommends ≥ 2 screening tests positive (24-h urinary cortisol, late-night salivary, dexamethasone suppression); ACTH for ACTH-dependent vs independent; pituitary MRI / adrenal CT / ectopic search; trans-sphenoidal adenomectomy / adrenalectomy; steroidogenesis inhibitor as bridge. Reads context.clinicalCushing, context.cortisolTest, context.acthLevel, context.imaging — never patient identity.",
+    "references": [
+      {
+        "label": "Endocrine Society Cushing Syndrome Guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E24.9",
+        "display": "Cushing syndrome unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "primary-hyperparathyroidism-surgery",
+    "hook": "patient-view",
+    "type": "primary-hyperparathyroidism-surgery",
+    "services": [
+      "vedamd-primary-hpt"
+    ],
+    "title": "Primary hyperparathyroidism — surgical criteria + cinacalcet",
+    "description": "Fires for hypercalcaemia + raised PTH. Recommends exclude FHH (urinary Ca); parathyroidectomy if symptomatic OR (age < 50, Ca > 0.25 above ULN, eGFR < 60, urinary Ca > 10 mmol/24h, nephrolithiasis, T-score < -2.5 / fracture); cinacalcet for non-surgical; vitamin D replacement carefully; genetic screen if young / family history. Reads context.calcium, context.pth, context.urinaryCalcium, context.dexa, context.creatinine — never patient identity.",
+    "references": [
+      {
+        "label": "AAES PHPT 2016; International Workshop"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E21.0",
+        "display": "Primary hyperparathyroidism",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "rcc-multidisciplinary-pathway",
+    "hook": "patient-view",
+    "type": "rcc-multidisciplinary-pathway",
+    "services": [
+      "vedamd-renal-cell-carcinoma"
+    ],
+    "title": "Renal cell carcinoma — multidisciplinary pathway",
+    "description": "Fires for renal mass on imaging. Recommends MDT; partial nephrectomy for T1; radical nephrectomy for T2+ / IVC thrombus; adjuvant pembrolizumab for high-risk; risk-stratified combination immunotherapy + TKI for metastatic per IMDC; active surveillance for selected small lesions; genetic counselling if hereditary suspected. Reads context.renalMassSize, context.metastasis, context.imdcRisk — never patient identity.",
+    "references": [
+      {
+        "label": "EAU + NCCN Kidney Cancer"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C64",
+        "display": "Malignant neoplasm of kidney",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "asthma-pregnancy-step-up",
+    "hook": "patient-view",
+    "type": "asthma-pregnancy-step-up",
+    "services": [
+      "vedamd-asthma-pregnancy"
+    ],
+    "title": "Asthma in pregnancy — maintain control; uncontrolled is more dangerous than medication",
+    "description": "Fires for pregnant patient with asthma. Recommends maintain effective pre-pregnancy therapy (do NOT reduce); GINA step-up as needed; budesonide preferred ICS in pregnancy; oral steroid for severe (benefit > risk); SpO2 94–98% target; continuous fetal monitoring during severe exacerbation; AVOID carboprost. All asthma medications compatible with breastfeeding. Reads context.pregnant, context.gestationWeeks, context.asthmaControl, context.recentExacerbation — never patient identity.",
+    "references": [
+      {
+        "label": "GINA Asthma in Pregnancy 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "J45",
+        "display": "Asthma",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "anaesthetic-anaphylaxis-tryptase",
+    "hook": "patient-view",
+    "type": "anaesthetic-anaphylaxis-tryptase",
+    "services": [
+      "vedamd-anaesthetic-anaphylaxis"
+    ],
+    "title": "Perioperative anaphylaxis — adrenaline + tryptase + specialist allergy referral",
+    "description": "Fires for sudden hypotension + tachycardia + reduced ETCO2 + raised airway pressure during anaesthesia. Recommends STOP suspected drug; IV adrenaline 50–100 microgram titrated; 20 mL/kg fluid; tryptase samples at 1, 6, 24 h post-event; document trigger; specialist allergy referral within 4–8 weeks for skin testing; allergy alert documentation lifelong. Reads context.anaphylaxisIntraOp, context.medicationsDuring, context.tryptaseLevel, context.bp — never patient identity.",
+    "references": [
+      {
+        "label": "AAGBI / RCoA Anaphylaxis Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T88.6",
+        "display": "Anaphylactic reaction due to anaesthesia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "japanese-encephalitis-vaccinate",
+    "hook": "patient-view",
+    "type": "japanese-encephalitis-vaccinate",
+    "services": [
+      "vedamd-je"
+    ],
+    "title": "Japanese encephalitis — supportive care + vaccination strategy",
+    "description": "Fires for confirmed / suspected JE in endemic area or recent travel. Recommends supportive ICU care, empirical aciclovir until HSV PCR negative, seizure management, ICP support, public-health notification, long-term rehabilitation. PREVENTION: JE vaccine for endemic populations + travellers > 30 days; vector control. Reads context.jeIgm, context.feverNeurology, context.endemicAreaTravel, context.vaccinationHistory — never patient identity.",
+    "references": [
+      {
+        "label": "WHO JE Position Paper"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A83.0",
+        "display": "Japanese encephalitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "scd-hydroxyurea-tcd-screen",
+    "hook": "patient-view",
+    "type": "scd-hydroxyurea-tcd-screen",
+    "services": [
+      "vedamd-scd-comprehensive"
+    ],
+    "title": "Sickle cell disease — hydroxyurea + TCD screening from age 2",
+    "description": "Fires for HbSS / HbS-β-thal child / adult. Recommends hydroxyurea for ALL HbSS from age 9 months; annual TCD age 2–16 (start chronic transfusion if > 200 cm/s); penicillin prophylaxis to age 5; pneumococcal + meningococcal + Hib vaccination; annual ophthalmology from age 10; UACR + renal function; allogeneic SCT / gene therapy for severe. Reads context.scdGenotype, context.ageYears, context.tcdVelocity, context.hydroxyureaUse — never patient identity.",
+    "references": [
+      {
+        "label": "ASH SCD Pocket Guide 2020; STOP trial"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D57.1",
+        "display": "Sickle-cell disease without crisis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cf-cftr-modulator-multi-mdt",
+    "hook": "patient-view",
+    "type": "cf-cftr-modulator-multi-mdt",
+    "services": [
+      "vedamd-cystic-fibrosis"
+    ],
+    "title": "Cystic fibrosis — CFTR modulator + multidisciplinary specialist care",
+    "description": "Fires for confirmed CF. Recommends specialist CF centre, CFTR modulator (Trikafta/Kaftrio for eligible F508del mutations), airway clearance + hypertonic saline + dornase alfa, inhaled antibiotic for Pseudomonas, pancreatic enzymes + ADEK vitamins + high-calorie diet, annual OGTT from age 10, lung transplant referral if FEV1 < 30%. Reads context.cfMutation, context.fev1, context.bmi, context.pancreaticInsufficiency, context.colonisationStatus — never patient identity.",
+    "references": [
+      {
+        "label": "CFF + ECFS Standards of Care"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E84.0",
+        "display": "Cystic fibrosis with pulmonary manifestations",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "nsclc-molecular-targeted",
+    "hook": "patient-view",
+    "type": "nsclc-molecular-targeted",
+    "services": [
+      "vedamd-nsclc-treatment"
+    ],
+    "title": "Non-small cell lung cancer — comprehensive molecular testing + targeted therapy",
+    "description": "Fires for newly diagnosed NSCLC stage IV (or recurrent). Recommends COMPREHENSIVE molecular profiling (EGFR, ALK, ROS1, BRAF V600E, KRAS G12C, MET ex14, RET, NTRK, HER2) + PD-L1 IHC BEFORE first-line therapy; matched targeted TKI for driver-positive (osimertinib for EGFR, alectinib for ALK); pembrolizumab ± chemotherapy for driver-negative per PD-L1; durvalumab post-CRT for stage III unresectable. Reads context.nsclcStage, context.histology, context.molecularProfile, context.pdL1Tps — never patient identity.",
+    "references": [
+      {
+        "label": "ESMO + NCCN NSCLC Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C34.9",
+        "display": "Lung cancer",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ckd-sglt2-acei-finerenone",
+    "hook": "patient-view",
+    "type": "ckd-sglt2-acei-finerenone",
+    "services": [
+      "vedamd-ckd-3-5"
+    ],
+    "title": "CKD G3-5 — ACEi/ARB + SGLT2i + finerenone (foundational quartet)",
+    "description": "Fires for adult with eGFR 15–59 OR UACR ≥ 30 mg/g. Recommends ACEi/ARB titrated; SGLT2 inhibitor for eGFR ≥ 20 (DAPA-CKD + EMPA-KIDNEY); finerenone for T2DM + albuminuria; statin per CV risk; BP < 130/80; correct anaemia (Hb 100–115) + CKD-MBD + acidosis; dialysis preparation at G4; transplant referral pre-emptive. Reads context.egfr, context.uacr, context.diabetes, context.bp, context.potassium, context.medications — never patient identity.",
+    "references": [
+      {
+        "label": "KDIGO CKD 2024; KDIGO Diabetes in CKD 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N18.4",
+        "display": "CKD stage 4",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "afib-doac-chads2vasc",
+    "hook": "patient-view",
+    "type": "afib-doac-chads2vasc",
+    "services": [
+      "vedamd-atrial-fibrillation"
+    ],
+    "title": "Atrial fibrillation — ABC pathway + DOAC + rhythm/rate control",
+    "description": "Fires for confirmed AF. Recommends CHA2DS2-VASc + HAS-BLED scoring; DOAC for stroke prevention (apixaban / rivaroxaban / dabigatran / edoxaban) per renal + weight + age criteria; rate control beta-blocker / non-DHP CCB (target HR < 110 lenient or < 80 strict); rhythm control for symptomatic / first onset / new HF; catheter ablation for symptomatic + HFrEF (CASTLE-AF); reverse modifiable risk factors (weight, OSA, alcohol). Reads context.afConfirmed, context.cha2ds2vasc, context.hasBled, context.egfr, context.symptoms, context.hf — never patient identity.",
+    "references": [
+      {
+        "label": "ESC + ACC/AHA AF Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I48",
+        "display": "Atrial fibrillation",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "crohn-biologic-pathway",
+    "hook": "patient-view",
+    "type": "crohn-biologic-pathway",
+    "services": [
+      "vedamd-crohn-disease"
+    ],
+    "title": "Moderate-severe Crohn disease — biologic + treat-to-target",
+    "description": "Fires for moderate-severe Crohn (CDAI > 220, severe extra-intestinal, perianal, failed conventional). Recommends specialist IBD MDT; smoking cessation; biologic (anti-TNF infliximab/adalimumab; ustekinumab; vedolizumab; risankizumab) + immunomodulator combo; treat-to-target deep remission; therapeutic drug monitoring; surgery for localised disease early (LIR!C); maintain biologic through pregnancy; CRC surveillance from 8 years. Reads context.cdScore, context.location, context.fistula, context.smoking, context.priorTherapy — never patient identity.",
+    "references": [
+      {
+        "label": "ECCO Crohn 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K50",
+        "display": "Crohn disease",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "trd-ect-esketamine",
+    "hook": "patient-view",
+    "type": "trd-ect-esketamine",
+    "services": [
+      "vedamd-trd"
+    ],
+    "title": "Treatment-resistant depression — augmentation / ECT / esketamine pathway",
+    "description": "Fires for MDD unresponsive to ≥ 2 adequate trials. Recommends optimise current; switch class; augment (lithium / atypical antipsychotic / T3); IV ketamine or intranasal esketamine (specialist); ECT for severe / psychotic / catatonic / acutely suicidal; rTMS; trauma-focused psychotherapy for comorbid trauma; treat comorbidities + lifestyle. Reads context.numberAdequateTrials, context.phq9, context.suicideRisk, context.psychoticFeatures, context.bipolarRuleOut — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG222; STAR*D; CANMAT TRD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F33.2",
+        "display": "Severe MDD without psychotic features",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "adult-adhd-multimodal",
+    "hook": "patient-view",
+    "type": "adult-adhd-multimodal",
+    "services": [
+      "vedamd-adult-adhd"
+    ],
+    "title": "Adult ADHD — multimodal pathway (psychoeducation + stimulant or non-stimulant)",
+    "description": "Fires for suspected / confirmed adult ADHD (ASRS positive). Recommends specialist diagnostic interview; psychoeducation + behavioural strategies; methylphenidate / lisdexamfetamine first-line stimulant; atomoxetine / guanfacine non-stimulant for SUD / cardiac / tics; ADHD CBT; treat comorbidities (anxiety, depression, sleep, substance); workplace accommodations. Reads context.asrsScore, context.cardiovascularHistory, context.substanceUse, context.comorbidMood — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG87"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F90.0",
+        "display": "ADHD inattentive type",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ptsd-trauma-focused-therapy",
+    "hook": "patient-view",
+    "type": "ptsd-trauma-focused-therapy",
+    "services": [
+      "vedamd-ptsd"
+    ],
+    "title": "PTSD — trauma-focused psychotherapy first-line",
+    "description": "Fires for PTSD diagnosis (DSM-5 / ICD-11). Recommends trauma-focused CBT (PE / CPT) OR EMDR first-line; SSRI (sertraline / paroxetine) or venlafaxine adjunct / second-line; prazosin for nightmares; AVOID benzodiazepines; treat comorbid SUD / depression / anxiety in parallel. Complex PTSD: phase-based. Reads context.pcl5Score, context.traumaType, context.comorbidSubstance, context.suicideRisk — never patient identity.",
+    "references": [
+      {
+        "label": "ISTSS PTSD Guidelines; NICE NG116"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F43.10",
+        "display": "Post-traumatic stress disorder",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "menopause-hrt-individualised",
+    "hook": "patient-view",
+    "type": "menopause-hrt-individualised",
+    "services": [
+      "vedamd-menopause"
+    ],
+    "title": "Menopause — individualised HRT (transdermal preferred for VTE / migraine / HTN)",
+    "description": "Fires for menopausal symptoms in woman 40–60. Recommends individualised HRT (combined for uterus-intact; oestrogen-only post-hysterectomy); transdermal route for VTE / migraine / hypertension / liver disease; micronised progesterone preferred; lowest effective dose; annual review. Vaginal oestrogen for GSM; non-HRT (SSRI / fezolinetant) if HRT contraindicated. POI: HRT until age 51 minimum. Reads context.ageYears, context.menopauseStatus, context.uterus, context.vteHistory, context.migraine, context.bp — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG23; BMS Recommendations"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N95.1",
+        "display": "Menopausal + female climacteric states",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-eczema-dupilumab",
+    "hook": "patient-view",
+    "type": "severe-eczema-dupilumab",
+    "services": [
+      "vedamd-severe-atopic-dermatitis"
+    ],
+    "title": "Severe atopic dermatitis — dupilumab / JAK inhibitor pathway",
+    "description": "Fires for severe AD (EASI > 21 or POEM > 24) failing topical + phototherapy + systemic immunosuppressant. Recommends dupilumab 600 mg loading + 300 mg every 2 weeks (or tralokinumab / lebrikizumab); JAK inhibitor (upadacitinib / abrocitinib / baricitinib) — caution VTE + cardiac; concurrent topical + emollient. Eczema herpeticum: IV aciclovir. Reads context.easi, context.poem, context.priorTreatments, context.infectionRisk — never patient identity.",
+    "references": [
+      {
+        "label": "EuroGuiDerm AD 2023"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "L20",
+        "display": "Atopic dermatitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "acromegaly-surgery-somatostatin",
+    "hook": "patient-view",
+    "type": "acromegaly-surgery-somatostatin",
+    "services": [
+      "vedamd-acromegaly"
+    ],
+    "title": "Acromegaly — IGF-1 + OGTT-GH + trans-sphenoidal surgery first-line",
+    "description": "Fires for clinical features of acromegaly. Recommends IGF-1 screen + OGTT with GH measurement to confirm; pituitary MRI; visual fields; complications screen (HbA1c, BP, sleep study, ECG, echo, colonoscopy); trans-sphenoidal adenomectomy by experienced surgeon first-line; somatostatin analogue / pegvisomant / cabergoline for residual; radiotherapy adjunct. Reads context.clinicalAcromegaly, context.igf1, context.ogttGh, context.adenomaSize, context.visualFields — never patient identity.",
+    "references": [
+      {
+        "label": "Endocrine Society Acromegaly 2014"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E22.0",
+        "display": "Acromegaly + pituitary gigantism",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "graves-disease-thionamide-rai",
+    "hook": "patient-view",
+    "type": "graves-disease-thionamide-rai",
+    "services": [
+      "vedamd-graves-disease"
+    ],
+    "title": "Graves disease — thionamide / RAI / surgery; smoking cessation for ophthalmopathy",
+    "description": "Fires for confirmed Graves hyperthyroidism (TRAb positive). Recommends propranolol for symptoms; carbimazole 20–40 mg titrated × 12–18 months OR PTU in 1st-trimester pregnancy / storm; RAI for recurrence (avoid in pregnancy + severe ophthalmopathy + breastfeeding); total thyroidectomy for large goitre / suspicious / preferred. Counsel agranulocytosis; smoking cessation for ophthalmopathy. Reads context.tshSuppressed, context.freeT4, context.trab, context.ophthalmopathy, context.pregnant — never patient identity.",
+    "references": [
+      {
+        "label": "ATA Hyperthyroidism 2016"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E05.0",
+        "display": "Thyrotoxicosis with diffuse goitre",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "breast-cancer-biomarker-treatment",
+    "hook": "patient-view",
+    "type": "breast-cancer-biomarker-treatment",
+    "services": [
+      "vedamd-breast-cancer-detailed"
+    ],
+    "title": "Breast cancer — biomarker-guided treatment pathway",
+    "description": "Fires for confirmed breast cancer. Recommends triple assessment + biomarkers (ER/PR/HER2/Ki67/grade); BRCA testing per criteria; subtype-specific therapy (ER+ endocrine + CDK4/6i; HER2+ trastuzumab + pertuzumab; TNBC chemo + pembrolizumab + olaparib if BRCA); CT staging; PARP inhibitor / IO / ADC for metastatic; bone-modifying agents; fertility preservation. Reads context.breastCancer, context.histology, context.biomarkers, context.stage, context.brca — never patient identity.",
+    "references": [
+      {
+        "label": "ESMO + NCCN Breast Cancer"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C50",
+        "display": "Malignant neoplasm of breast",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "multiple-myeloma-dara-vrd-asct",
+    "hook": "patient-view",
+    "type": "multiple-myeloma-dara-vrd-asct",
+    "services": [
+      "vedamd-multiple-myeloma"
+    ],
+    "title": "Multiple myeloma — Dara-VRd induction + ASCT + lenalidomide maintenance",
+    "description": "Fires for confirmed multiple myeloma (CRAB / SLiM-CRAB criteria). Recommends specialist haematology + risk-stratification (R-ISS + cytogenetics); transplant-eligible: Dara-VRd × 4 → melphalan + autologous SCT → consolidation → lenalidomide maintenance; transplant-ineligible: Dara-Rd. Supportive: bisphosphonate, hydration, prophylactic anti-viral / PJP / antifungal, hold cast nephropathy. BCMA-targeted for triple-class refractory. Reads context.crabCriteria, context.cytogenetics, context.transplantEligibility, context.creatinine — never patient identity.",
+    "references": [
+      {
+        "label": "IMWG + ESMO + NCCN MM Guidelines; PERSEUS + MAIA"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C90.0",
+        "display": "Multiple myeloma",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "kidney-transplant-immunosuppression-bk-cmv",
+    "hook": "patient-view",
+    "type": "kidney-transplant-immunosuppression-bk-cmv",
+    "services": [
+      "vedamd-kidney-transplant"
+    ],
+    "title": "Kidney transplant — maintenance + viral surveillance + rejection workup",
+    "description": "Fires for post-renal-transplant patient. Recommends induction (basiliximab / ATG) + maintenance triple (tacrolimus + MMF + steroid); co-trimoxazole 6–12 months PJP; CMV/BK PCR surveillance; biopsy unexplained creatinine rise; treat ACR with high-dose steroid + ATG for resistant; AMR with PEX + IVIG + rituximab; cardiovascular + skin cancer + bone surveillance lifelong. Reads context.transplantDate, context.creatinine, context.tacroLevel, context.viralLoads, context.dsa — never patient identity.",
+    "references": [
+      {
+        "label": "KDIGO Kidney Transplant Recipient"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z94.0",
+        "display": "Kidney transplant status",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ra-treat-to-target-biologic",
+    "hook": "patient-view",
+    "type": "ra-treat-to-target-biologic",
+    "services": [
+      "vedamd-rheumatoid-arthritis"
+    ],
+    "title": "Rheumatoid arthritis — early MTX + treat-to-target; biologic if inadequate",
+    "description": "Fires for confirmed RA (ACR/EULAR 2010). Recommends EARLY methotrexate ≤ 3 months of symptom onset; treat-to-target DAS28 / CDAI remission; combination cDMARD (triple therapy) or anti-TNF / rituximab / abatacept / tocilizumab; JAK inhibitor caution older / CV risk; smoking cessation; CV + bone surveillance; pregnancy-compatible alternatives. Reads context.rfStatus, context.antiCcp, context.das28, context.smoking, context.priorBiologic — never patient identity.",
+    "references": [
+      {
+        "label": "EULAR + ACR RA Recommendations"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M06.9",
+        "display": "Rheumatoid arthritis unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "axial-spa-exercise-biologic",
+    "hook": "patient-view",
+    "type": "axial-spa-exercise-biologic",
+    "services": [
+      "vedamd-ankylosing-spondylitis"
+    ],
+    "title": "Axial spondyloarthritis — exercise + NSAID + anti-TNF / IL-17 if inadequate",
+    "description": "Fires for confirmed axial SpA (ASAS criteria). Recommends structured daily exercise; continuous NSAID; anti-TNF / IL-17 for inadequate response (or upadacitinib oral); uveitis management; spinal fracture precautions (low-energy fracture in fused spine — CT/MRI not just X-ray); anaesthetic precautions for fused cervical. Reads context.backPainInflammatory, context.sacroiliitis, context.crp, context.hlaB27, context.priorTherapy — never patient identity.",
+    "references": [
+      {
+        "label": "ASAS-EULAR Recommendations 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M45",
+        "display": "Ankylosing spondylitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "psoriatic-arthritis-mda-target",
+    "hook": "patient-view",
+    "type": "psoriatic-arthritis-mda-target",
+    "services": [
+      "vedamd-psoriatic-arthritis"
+    ],
+    "title": "Psoriatic arthritis — treat-to-target minimal disease activity",
+    "description": "Fires for confirmed PsA (CASPAR criteria). Recommends MTX + intra-articular steroid for peripheral; anti-TNF / IL-17 / IL-23 (guselkumab) for inadequate response or axial / enthesitis; JAK inhibitor for refractory (caution older + CV). Treat skin in parallel. Cardiovascular + metabolic risk management. Reads context.casparMet, context.peripheral, context.axial, context.enthesitis, context.skin — never patient identity.",
+    "references": [
+      {
+        "label": "EULAR + GRAPPA PsA 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "L40.5",
+        "display": "Arthropathic psoriasis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cerebral-palsy-mdt-surveillance",
+    "hook": "patient-view",
+    "type": "cerebral-palsy-mdt-surveillance",
+    "services": [
+      "vedamd-cerebral-palsy"
+    ],
+    "title": "Cerebral palsy — multidisciplinary surveillance + intervention",
+    "description": "Fires for child / adult with CP. Recommends GMFCS classification; early intervention < 24 months; annual hip + spine surveillance; spasticity management (PT + botulinum + intrathecal baclofen + SDR); communication device; nutrition / GERD / aspiration management; epilepsy management; pain assessment in non-communicative; transition adult care. Reads context.cpType, context.gmfcs, context.epilepsy, context.feeding, context.painSigns — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG62 + AACPDM Care Pathways"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G80",
+        "display": "Cerebral palsy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "down-syndrome-newborn-pathway",
+    "hook": "patient-view",
+    "type": "down-syndrome-newborn-pathway",
+    "services": [
+      "vedamd-down-syndrome"
+    ],
+    "title": "Down syndrome — newborn + lifelong surveillance",
+    "description": "Fires for newborn / child / adult with trisomy 21. Recommends newborn echo + CXR + audiology + ophthalmology + TSH + FBC; lifelong surveillance for cardiac, thyroid, coeliac, OSA, atlantoaxial, leukaemia; childhood + adult mental health screen + dementia / Alzheimer screen from age 30. Reads context.ageYears, context.cardiacAnatomy, context.tshTrend, context.dementiaScreen — never patient identity.",
+    "references": [
+      {
+        "label": "AAP / DSMIG-USA Health Supervision 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q90",
+        "display": "Down syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "autism-diagnosis-early-intervention",
+    "hook": "patient-view",
+    "type": "autism-diagnosis-early-intervention",
+    "services": [
+      "vedamd-autism-spectrum"
+    ],
+    "title": "Autism spectrum — ADOS-2 + ADI-R + early intervention",
+    "description": "Fires for suspected ASD. Recommends standardised diagnostic (ADOS-2 + ADI-R); developmental + cognitive + speech assessment; genetic testing; early intervention < 24 months; sensory + communication + behavioural support; comorbidity treatment; family-centred + neurodiversity-affirming approach; adult assessment + post-diagnostic support. Reads context.ageMonths, context.adosScore, context.communication, context.repetitiveBehaviour, context.cognitiveLevel — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG170 + CG142 ASD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F84.0",
+        "display": "Autistic disorder",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "t1d-cgm-aid-hybrid-closed-loop",
+    "hook": "patient-view",
+    "type": "t1d-cgm-aid-hybrid-closed-loop",
+    "services": [
+      "vedamd-t1d-pump"
+    ],
+    "title": "T1D pump + CGM / hybrid closed-loop pathway",
+    "description": "Fires for adult / paediatric T1DM patient. Recommends carbohydrate counting + insulin regimen; CGM for ALL (Dexcom / Libre / Guardian); insulin pump for refractory or preference; hybrid closed-loop AID (Medtronic 780G, Tandem Control-IQ, Omnipod 5, CamAPS) — improved TIR + reduced hypoglycaemia; glucagon nasal / IM training for severe hypo; preconception HbA1c < 6.5%. Reads context.hba1c, context.timeInRange, context.severeHypoglycaemia, context.pumpUse, context.pregnancyPlanning — never patient identity.",
+    "references": [
+      {
+        "label": "ADA + ISPAD + NICE NG17/NG18"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E10",
+        "display": "Type 1 diabetes mellitus",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "schizophrenia-lai-clozapine",
+    "hook": "patient-view",
+    "type": "schizophrenia-lai-clozapine",
+    "services": [
+      "vedamd-schizophrenia-maintenance"
+    ],
+    "title": "Schizophrenia — early LAI offer; clozapine for TRS",
+    "description": "Fires for stable schizophrenia maintenance. Recommends offer LAI EARLY after first episode (reduces relapse); clozapine for treatment-resistant (2+ failed antipsychotics) — with mandatory FBC + ECG monitoring; metabolic + cardiac surveillance; psychosocial intervention (CBTp + family); physical health checks; suicide-risk assessment. Reads context.responseLevel, context.episodes, context.adherence, context.metabolic, context.suicideRisk — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG178; Maudsley"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F20",
+        "display": "Schizophrenia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "bipolar-lithium-maintenance",
+    "hook": "patient-view",
+    "type": "bipolar-lithium-maintenance",
+    "services": [
+      "vedamd-bipolar-maintenance"
+    ],
+    "title": "Bipolar disorder — lithium first-line maintenance; avoid antidepressant monotherapy",
+    "description": "Fires for bipolar disorder maintenance phase. Recommends lithium first-line (reduces relapse + suicide); valproate avoided in women of childbearing potential without PPP; lamotrigine for depressive predominance; atypical antipsychotic alternatives; AVOID antidepressant monotherapy; ECT severe / refractory; CBT-bipolar + family-focused therapy; pregnancy planning; postpartum lithium prophylaxis. Reads context.bipolarType, context.predominantPolarity, context.priorEpisodes, context.pregnancyPlan, context.suicideRisk — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG185; CANMAT-ISBD Bipolar"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F31.9",
+        "display": "Bipolar disorder unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "prostate-cancer-risk-stratified",
+    "hook": "patient-view",
+    "type": "prostate-cancer-risk-stratified",
+    "services": [
+      "vedamd-prostate-cancer-detail"
+    ],
+    "title": "Prostate cancer — risk-stratified treatment + active surveillance for low-risk",
+    "description": "Fires for confirmed prostate cancer. Recommends MRI + risk stratification (D'Amico / NCCN); active surveillance for low-risk; radical prostatectomy / EBRT + ADT for intermediate-high; triplet (ADT + chemotherapy + ARSI) for mHSPC; PARP inhibitor for BRCA-mutated CRPC; PSMA-PET + lutetium-177-PSMA; bone-modifying agents; sexual + continence rehabilitation; survivorship + late-effect surveillance. Reads context.gleason, context.psa, context.metastatic, context.brcaStatus, context.functionalStatus — never patient identity.",
+    "references": [
+      {
+        "label": "EAU + NCCN Prostate Cancer"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C61",
+        "display": "Malignant neoplasm of prostate",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "vt-vfib-acls-algorithm",
+    "hook": "patient-view",
+    "type": "vt-vfib-acls-algorithm",
+    "services": [
+      "vedamd-vt-vfib"
+    ],
+    "title": "Sustained VT / VF — ACLS algorithm + ICD evaluation",
+    "description": "Fires for sustained ventricular tachycardia or VF on telemetry / arrest. Recommends defibrillation if unstable; amiodarone / procainamide / lidocaine for stable; magnesium for torsades; correct K+ + Mg; ischaemia workup; ICD secondary prevention; substrate-specific (LQTS, Brugada, CPVT, ARVC, HCM); cardiac MRI + EP study + genetic + family screening. Reads context.vtSustained, context.haemodynamics, context.qtc, context.electrolytes, context.priorMi — never patient identity.",
+    "references": [
+      {
+        "label": "ESC Ventricular Arrhythmia + SCD 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I47.2",
+        "display": "Ventricular tachycardia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "infective-endocarditis-team-pathway",
+    "hook": "patient-view",
+    "type": "infective-endocarditis-team-pathway",
+    "services": [
+      "vedamd-endocarditis-detail"
+    ],
+    "title": "Infective endocarditis — endocarditis team + targeted antibiotic + surgical decision",
+    "description": "Fires for suspected / confirmed IE (Duke criteria). Recommends 3 blood cultures BEFORE antibiotic; empirical regimen per native / prosthetic / IVDU + healthcare exposure; targeted to organism × 4–6 weeks (longer prosthetic); TTE + TOE + PET-CT for diagnostic uncertainty; endocarditis team + cardiothoracic surgery for HF, uncontrolled infection, embolic prevention; anticoagulation considerations. Reads context.dukeCriteria, context.organism, context.valveType, context.vegetationSize, context.heartFailure — never patient identity.",
+    "references": [
+      {
+        "label": "ESC IE Guidelines 2023"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I33.0",
+        "display": "Acute + subacute infective endocarditis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "myocarditis-mri-biopsy",
+    "hook": "patient-view",
+    "type": "myocarditis-mri-biopsy",
+    "services": [
+      "vedamd-myocarditis"
+    ],
+    "title": "Acute myocarditis — cardiac MRI + biopsy if specific treatment indicated",
+    "description": "Fires for new heart failure / chest pain / arrhythmia / troponin rise + suspected myocarditis. Recommends cardiac MRI (Lake Louise); endomyocardial biopsy for fulminant / treatment-altering scenarios; supportive HF therapy; ICI-induced — STOP ICI + IV methylprednisolone; AVOID routine steroid for viral; specific immunosuppression for giant cell / eosinophilic / sarcoid / SLE / RA. ICD evaluation if persistent LV dysfunction. Reads context.troponin, context.lvFunction, context.mriLgeOedema, context.suspectedAetiology, context.iciExposure — never patient identity.",
+    "references": [
+      {
+        "label": "ESC + AHA Myocarditis 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I40",
+        "display": "Acute myocarditis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "hcm-screen-mavacamten-icd",
+    "hook": "patient-view",
+    "type": "hcm-screen-mavacamten-icd",
+    "services": [
+      "vedamd-hcm-detail"
+    ],
+    "title": "Hypertrophic cardiomyopathy — risk stratification + mavacamten + ICD",
+    "description": "Fires for confirmed HCM (wall thickness ≥ 15 mm). Recommends beta-blocker / verapamil; mavacamten for symptomatic obstructive HCM; septal myectomy / alcohol septal ablation for refractory LVOTO; HCM Risk-SCD or ACC/AHA enhanced risk → ICD; atrial fibrillation anticoagulate regardless of CHA2DS2-VASc; family screening + genetic testing. Reads context.wallThickness, context.lvotGradient, context.familyScd, context.lge, context.nsvt, context.priorSyncope — never patient identity.",
+    "references": [
+      {
+        "label": "ESC Cardiomyopathies 2023; ACC/AHA HCM 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I42.1",
+        "display": "Obstructive HCM",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "marfan-aortic-surveillance",
+    "hook": "patient-view",
+    "type": "marfan-aortic-surveillance",
+    "services": [
+      "vedamd-marfan"
+    ],
+    "title": "Marfan syndrome — aortic surveillance + beta-blocker / losartan + prophylactic surgery",
+    "description": "Fires for confirmed / suspected Marfan. Recommends multidisciplinary Marfan clinic; beta-blocker (atenolol) or losartan; activity restriction (avoid isometric / contact); annual echo + biannual CT/MR angio; prophylactic root replacement at 50 mm (45 if family / rapid growth / pregnancy planning); ophthalmology + orthopaedic + spinal review; family + genetic counselling. Reads context.aorticRootSize, context.ghentScore, context.familyDissection, context.pregnancyPlanning — never patient identity.",
+    "references": [
+      {
+        "label": "Ghent Nosology + ESC Aortic Disease"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q87.40",
+        "display": "Marfan syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "nephrotic-biopsy-targeted-treatment",
+    "hook": "patient-view",
+    "type": "nephrotic-biopsy-targeted-treatment",
+    "services": [
+      "vedamd-nephrotic-syndrome"
+    ],
+    "title": "Adult nephrotic syndrome — biopsy + targeted immunosuppression",
+    "description": "Fires for adult with UPCR > 3 g/g + hypoalbuminaemia + oedema. Recommends comprehensive aetiology workup; renal biopsy (membranous, FSGS, MCD, lupus, diabetic, amyloid); diagnosis-specific therapy (rituximab for membranous + MCD relapsing; cyclophosphamide for FSGS / SLE; targeted for amyloidosis); supportive (ACEi + diuretic + statin + anticoagulation if Alb < 25); vaccination; cancer screen older adults. Reads context.upcr, context.albumin, context.biopsy, context.aetiology — never patient identity.",
+    "references": [
+      {
+        "label": "KDIGO Glomerular Diseases 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N04",
+        "display": "Nephrotic syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "iga-nephropathy-budesonide-sparsentan",
+    "hook": "patient-view",
+    "type": "iga-nephropathy-budesonide-sparsentan",
+    "services": [
+      "vedamd-iga-nephropathy"
+    ],
+    "title": "IgA nephropathy — ACEi + SGLT2i + targeted budesonide / sparsentan",
+    "description": "Fires for confirmed IgA nephropathy with UPCR > 0.75 despite optimised ACEi. Recommends targeted-release budesonide (Nefecon) 16 mg × 9 months; sparsentan dual endothelin / angiotensin antagonist; pulse steroid + cyclophosphamide for crescentic; SGLT2i + ACEi/ARB foundational; secondary causes managed. Reads context.upcr, context.egfr, context.crescents, context.bp — never patient identity.",
+    "references": [
+      {
+        "label": "KDIGO Glomerular Diseases 2021; NefIgArd + PROTECT"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N02.8",
+        "display": "IgA nephropathy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "torsades-magnesium-pacing",
+    "hook": "patient-view",
+    "type": "torsades-magnesium-pacing",
+    "services": [
+      "vedamd-torsades"
+    ],
+    "title": "Torsades de pointes — magnesium + remove QT-prolonging drug + pace if bradycardic",
+    "description": "Fires for polymorphic VT + QT prolongation. Recommends defibrillate if unstable; IV magnesium 2 g bolus + infusion; correct K+ + Mg + Ca; STOP all QT-prolonging drugs (Liverpool QT database review); transcutaneous / transvenous pacing or isoproterenol for bradycardia-dependent; ICD if recurrent + irreversible substrate. Family screening for congenital LQTS. Reads context.qtc, context.medications, context.electrolytes, context.heartRate — never patient identity.",
+    "references": [
+      {
+        "label": "ESC VA-SCD 2022; CredibleMeds"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I49.8",
+        "display": "Other specified cardiac arrhythmia (TdP)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pad-medical-revasc",
+    "hook": "patient-view",
+    "type": "pad-medical-revasc",
+    "services": [
+      "vedamd-pad-chronic"
+    ],
+    "title": "Peripheral arterial disease — risk-factor + supervised exercise + revascularisation for CLTI",
+    "description": "Fires for diagnosed PAD with claudication / CLTI. Recommends smoking cessation + statin + ACEi + antiplatelet ± low-dose rivaroxaban (COMPASS); supervised exercise programme; cilostazol; CLTI — urgent vascular referral for revascularisation (endovascular preferred per BEST-CLI); foot care. Reads context.abpi, context.symptoms, context.clti, context.diabetes — never patient identity.",
+    "references": [
+      {
+        "label": "ESVS PAD 2024; AHA/ACC PAD; COMPASS + VOYAGER-PAD + BEST-CLI"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I70.20",
+        "display": "PAD",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "hfpef-sglt2-mra",
+    "hook": "patient-view",
+    "type": "hfpef-sglt2-mra",
+    "services": [
+      "vedamd-hfpef"
+    ],
+    "title": "HFpEF — SGLT2 inhibitor + MRA + comorbidity management",
+    "description": "Fires for HF symptoms + LVEF ≥ 50% + raised BNP. Recommends dapagliflozin / empagliflozin (foundational); spironolactone in selected; loop diuretic for congestion; aggressive BP + AF + obesity + OSA + iron deficiency management; rule out + treat amyloidosis (ATTR — tafamidis). Reads context.lvef, context.bnp, context.symptoms, context.comorbidities — never patient identity.",
+    "references": [
+      {
+        "label": "ESC HF 2023; DELIVER + EMPEROR-Preserved"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I50.30",
+        "display": "HF preserved EF",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "primary-aldosteronism-workup",
+    "hook": "patient-view",
+    "type": "primary-aldosteronism-workup",
+    "services": [
+      "vedamd-primary-aldosteronism"
+    ],
+    "title": "Primary aldosteronism — screen, confirm, lateralise, treat",
+    "description": "Fires for resistant hypertension / hypertension + hypokalaemia / young-onset hypertension / family. Recommends aldosterone-renin ratio (washout offending drugs); confirmatory saline / captopril / fludrocortisone; CT adrenal; adrenal vein sampling for unilateral cases; adrenalectomy for unilateral; spironolactone / eplerenone for bilateral. Avoid spironolactone in pregnancy. Reads context.arr, context.potassium, context.bp, context.adrenalImaging — never patient identity.",
+    "references": [
+      {
+        "label": "Endocrine Society Primary Aldosteronism 2016"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E26.0",
+        "display": "Primary hyperaldosteronism",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "adpkd-tolvaptan-aneurysm-screening",
+    "hook": "patient-view",
+    "type": "adpkd-tolvaptan-aneurysm-screening",
+    "services": [
+      "vedamd-adpkd"
+    ],
+    "title": "ADPKD — risk-stratified tolvaptan + aneurysm screening + family",
+    "description": "Fires for diagnosed ADPKD. Recommends BP < 130/80 (HALT-PKD low target); tolvaptan for rapidly progressive (Mayo 1C–E, PROPKD ≥ 6); LFT monthly first 18 months on tolvaptan; intracranial aneurysm screening for family history / pre-op / pilot / smoker / pre-tolvaptan; cyst infection lipophilic antibiotic; cascade family screening; pre-conception genetic counselling. Reads context.tkv, context.proPkdScore, context.familySah, context.bp, context.symptoms — never patient identity.",
+    "references": [
+      {
+        "label": "KDIGO ADPKD Conference; TEMPO + REPRISE + HALT-PKD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q61.2",
+        "display": "ADPKD",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cll-btk-vs-venetoclax",
+    "hook": "patient-view",
+    "type": "cll-btk-vs-venetoclax",
+    "services": [
+      "vedamd-cll"
+    ],
+    "title": "CLL — TP53 / IGHV stratification → BTK or venetoclax-obinutuzumab",
+    "description": "Fires for CLL meeting iwCLL treatment criteria. Recommends BTK inhibitor (acalabrutinib / zanubrutinib / ibrutinib) OR venetoclax-obinutuzumab 12-month fixed (CLL14); TP53/del(17p) — targeted only (NO chemoimmunotherapy); venetoclax TLS prophylaxis with 5-week ramp-up; vaccination + IVIG for hypogammaglobulinaemia; Richter biopsy mandatory; annual skin cancer surveillance. Reads context.iwcllCriteria, context.tp53Status, context.ighvStatus, context.firstLineChoice — never patient identity.",
+    "references": [
+      {
+        "label": "iwCLL 2018; CLL14 + ELEVATE-TN"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C91.1",
+        "display": "Chronic lymphocytic leukaemia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cml-tki-monitor-tfr",
+    "hook": "patient-view",
+    "type": "cml-tki-monitor-tfr",
+    "services": [
+      "vedamd-cml"
+    ],
+    "title": "CML — TKI choice + 3-monthly BCR-ABL PCR + treatment-free remission",
+    "description": "Fires for confirmed CML. Recommends first-line TKI (imatinib / dasatinib / nilotinib / bosutinib) per ELTS + comorbidity; baseline ECG + cardiovascular + ophthalmology + dental for nilotinib / ponatinib; BCR-ABL PCR baseline + 3 + 6 + 12 then every 3 months; switch TKI for resistance / suboptimal; ABL kinase mutation analysis; T315I — ponatinib / asciminib; TFR eligibility (chronic phase + sustained MR4 ≥ 2 years); fertility preservation; teratogenicity counselling. Reads context.cmlPhase, context.bcrAblIs, context.tkiChoice, context.priorTkiResponse — never patient identity.",
+    "references": [
+      {
+        "label": "ELN CML 2020; ESMO + NCCN"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C92.1",
+        "display": "Chronic myeloid leukaemia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "sarcoidosis-multisystem-pathway",
+    "hook": "patient-view",
+    "type": "sarcoidosis-multisystem-pathway",
+    "services": [
+      "vedamd-sarcoidosis"
+    ],
+    "title": "Sarcoidosis — multisystem assessment + organ-specific immunosuppression",
+    "description": "Fires for clinical / histological diagnosis of sarcoidosis (non-caseating granulomas). Recommends comprehensive systemic assessment (cardiac MRI / PET if cardiac symptoms; ophthalmology; calcium; neurosarcoidosis MRI; renal); exclude TB / fungal; prednisolone for active organ disease; methotrexate / azathioprine / MMC steroid-sparing; infliximab for refractory; ICD for cardiac with arrhythmia / aborted SCD; ATS/ERS/WASOG guidelines. Reads context.histology, context.organInvolvement, context.cardiacInvolvement, context.neuroSarcoid — never patient identity.",
+    "references": [
+      {
+        "label": "ATS / ERS / WASOG Sarcoidosis 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D86.9",
+        "display": "Sarcoidosis unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "autoimmune-hepatitis-induction",
+    "hook": "patient-view",
+    "type": "autoimmune-hepatitis-induction",
+    "services": [
+      "vedamd-autoimmune-hepatitis"
+    ],
+    "title": "Autoimmune hepatitis — induction prednisolone + azathioprine; lifelong maintenance",
+    "description": "Fires for hepatocellular hepatitis + positive autoantibodies + raised IgG + biopsy interface hepatitis. Recommends prednisolone + azathioprine combination first-line; budesonide alternative for non-cirrhotic; transplant referral for fulminant; MMC / tacrolimus / rituximab for refractory; lifelong maintenance + monitoring (FBC + LFT); HCC surveillance in cirrhosis; PCP prophylaxis on high-dose immunosuppression; pregnancy compatible regimens. Reads context.alt, context.igG, context.autoantibodies, context.biopsy, context.cirrhosis — never patient identity.",
+    "references": [
+      {
+        "label": "EASL AIH 2024; AASLD AIH"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K75.4",
+        "display": "Autoimmune hepatitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "psc-mrcp-cca-surveillance",
+    "hook": "patient-view",
+    "type": "psc-mrcp-cca-surveillance",
+    "services": [
+      "vedamd-psc"
+    ],
+    "title": "Primary sclerosing cholangitis — MRCP + cholangiocarcinoma + colorectal surveillance",
+    "description": "Fires for cholestatic LFT + biliary stricture / IBD. Recommends MRCP for diagnosis (beaded ducts); ursodeoxycholic acid 13-17 mg/kg (limited efficacy); annual colonoscopy from diagnosis (IBD + PSC = very high CRC risk); annual MRCP + CA 19-9 for CCA surveillance; ERCP for dominant strictures; acute cholangitis emergency drainage + antibiotics; transplant referral for end-stage. Reads context.alkPhos, context.mrcpFindings, context.ibd, context.dominantStricture — never patient identity.",
+    "references": [
+      {
+        "label": "EASL PSC 2022; AASLD PSC"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K83.0",
+        "display": "Cholangitis (PSC)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "amd-anti-vegf-areds2",
+    "hook": "patient-view",
+    "type": "amd-anti-vegf-areds2",
+    "services": [
+      "vedamd-amd"
+    ],
+    "title": "Age-related macular degeneration — anti-VEGF for wet; AREDS2 for intermediate dry",
+    "description": "Fires for AMD diagnosis. Recommends smoking cessation; AREDS-2 for intermediate / advanced dry (avoid beta-carotene in smokers); intravitreal anti-VEGF (aflibercept / ranibizumab / faricimab / brolucizumab) for wet — monthly loading then T+E; pegcetacoplan / avacincaptad for geographic atrophy; low-vision rehabilitation + Amsler grid home monitoring; depression screening. Reads context.amdType, context.geographicAtrophy, context.choroidalNeovasc, context.va — never patient identity.",
+    "references": [
+      {
+        "label": "AAO AMD PPP 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "H35.30",
+        "display": "Age-related macular degeneration",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "poag-prostaglandin-slt",
+    "hook": "patient-view",
+    "type": "poag-prostaglandin-slt",
+    "services": [
+      "vedamd-poag"
+    ],
+    "title": "Primary open-angle glaucoma — prostaglandin analogue / SLT first-line",
+    "description": "Fires for confirmed POAG. Recommends individualised IOP target (20-40% reduction); first-line topical prostaglandin (latanoprost) OR selective laser trabeculoplasty (LiGHT); add beta-blocker / alpha-2 / CAI / Rho kinase inhibitor; trabeculectomy / MIGS for refractory; gonioscopy + visual fields + OCT monitoring; African ancestry / family history / high myopia higher risk. Reads context.iop, context.visualFieldLoss, context.cupToDisc, context.medsCount — never patient identity.",
+    "references": [
+      {
+        "label": "European Glaucoma Society 2020; LiGHT trial"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "H40.11",
+        "display": "Primary open-angle glaucoma",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "infertility-couple-investigation",
+    "hook": "patient-view",
+    "type": "infertility-couple-investigation",
+    "services": [
+      "vedamd-infertility"
+    ],
+    "title": "Couple infertility — investigation + ART pathway",
+    "description": "Fires for couple TTC > 12 months (or > 6 months age ≥ 35). Recommends female: AMH + ovulation confirmation + HSG / HyCoSy; male: 2 semen analyses (WHO 2021); both BBV screen + immunity. Lifestyle optimisation; treat reversible cause; letrozole first-line ovulation induction; IUI for mild factor; IVF + ICSI for moderate-severe male / tubal / failed IUI / unexplained > 2 years; PGT for advanced age / recurrent loss / monogenic; fertility preservation before chemotherapy / radiotherapy. Reads context.femaleAge, context.amh, context.semenAnalysis, context.duration — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG156 + ESHRE / ASRM Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N97.9",
+        "display": "Female infertility unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cah-sick-day-emergency-kit",
+    "hook": "patient-view",
+    "type": "cah-sick-day-emergency-kit",
+    "services": [
+      "vedamd-cah"
+    ],
+    "title": "Congenital adrenal hyperplasia — sick day rules + emergency IM kit + maternal PKU-like care",
+    "description": "Fires for confirmed CAH. Recommends hydrocortisone replacement (children 10-15 mg/m²/day; adult 15-25 mg/day); fludrocortisone for salt-wasting; SICK DAY DOUBLE / TRIPLE dose for fever / illness / surgery; emergency IM hydrocortisone kit + medic-alert; multidisciplinary for ambiguous genitalia; pre-conception preconceptual planning for fertility / pregnancy. Newborn screen + cascade family screening. Reads context.cahType, context.ageYears, context.currentDose, context.stress, context.sickDayKit — never patient identity.",
+    "references": [
+      {
+        "label": "Endocrine Society CAH 2018"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E25.0",
+        "display": "Congenital adrenogenital disorder",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pku-lifelong-phe-restriction",
+    "hook": "patient-view",
+    "type": "pku-lifelong-phe-restriction",
+    "services": [
+      "vedamd-pku"
+    ],
+    "title": "Phenylketonuria — lifelong Phe-restricted diet + maternal Phe < 6 mg/dL preconception",
+    "description": "Fires for confirmed PKU (newborn screen). Recommends LIFELONG Phe-restricted diet + amino acid formula; blood Phe monitoring; sapropterin for BH4-responsive; pegvaliase for treatment-resistant adults (anaphylaxis REMS); MATERNAL PKU — Phe < 6 mg/dL (preferred < 4) BEFORE conception + throughout pregnancy (devastating fetal effects otherwise); adolescent / adult transition + cascade family screening + reproductive counselling. Reads context.pheLevel, context.ageYears, context.pregnant, context.preConception, context.dietAdherence — never patient identity.",
+    "references": [
+      {
+        "label": "ACMG PKU Practice Guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E70.0",
+        "display": "Phenylketonuria",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "uveitis-stepwise-immunosuppression",
+    "hook": "patient-view",
+    "type": "uveitis-stepwise-immunosuppression",
+    "services": [
+      "vedamd-uveitis"
+    ],
+    "title": "Uveitis — topical / systemic / biologic + infection exclusion",
+    "description": "Fires for confirmed uveitis. Recommends systemic workup to exclude infection (TB, syphilis, toxoplasma, CMV, HSV, VZV) + identify systemic disease (HLA-B27, sarcoid, Behçet, JIA, MS); topical steroid for anterior; systemic / intravitreal / implant steroid for posterior + intermediate; methotrexate / MMC / azathioprine / ciclosporin steroid-sparing; adalimumab for refractory non-infectious; specific antimicrobials for infectious; JIA paediatric screening for asymptomatic uveitis prevents blindness. Reads context.uveitisLocation, context.unilateralBilateral, context.systemic, context.priorTreatment, context.infectionExclusion — never patient identity.",
+    "references": [
+      {
+        "label": "AAO Uveitis PPP 2020; IUSG / SUN; VISUAL trials"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "H20.9",
+        "display": "Uveitis unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "medulloblastoma-risk-stratified",
+    "hook": "patient-view",
+    "type": "medulloblastoma-risk-stratified",
+    "services": [
+      "vedamd-medulloblastoma"
+    ],
+    "title": "Medulloblastoma — risk-stratified surgery + chemoradiotherapy; spare radiotherapy in infants",
+    "description": "Fires for paediatric posterior fossa tumour. Recommends specialist neuro-oncology centre; maximal safe resection; molecular subgroup (WNT / SHH / Group 3 / Group 4); standard vs high-risk chemoradiotherapy; AVOID radiotherapy in infants < 3 years; lifelong late-effect surveillance (cognitive, endocrine, audiology, secondary malignancy, vascular). Reads context.ageYears, context.posteriorFossa, context.molecularSubgroup, context.metastases — never patient identity.",
+    "references": [
+      {
+        "label": "WHO CNS 2021; COG / SIOPE / HIT"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C71.6",
+        "display": "Medulloblastoma",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "retinoblastoma-eye-salvage",
+    "hook": "patient-view",
+    "type": "retinoblastoma-eye-salvage",
+    "services": [
+      "vedamd-retinoblastoma"
+    ],
+    "title": "Retinoblastoma — life > eye > vision; specialist centre + intra-arterial chemo",
+    "description": "Fires for paediatric leukocoria / strabismus + suspected retinoblastoma. Recommends URGENT specialist ocular-oncology centre; EUA + RetCam imaging (DO NOT biopsy — seeding); MRI brain + orbit; RB1 germline + family cascade screening; intra-arterial chemotherapy / systemic chemotherapy + focal consolidation for eye-salvage; enucleation for advanced; lifelong second-cancer surveillance for hereditary survivors. Reads context.leukocoria, context.unilateralBilateral, context.familyHistory, context.icrbGroup — never patient identity.",
+    "references": [
+      {
+        "label": "International Society of Ocular Oncology"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C69.2",
+        "display": "Retinoblastoma",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "nf1-mdt-mpnst-surveillance",
+    "hook": "patient-view",
+    "type": "nf1-mdt-mpnst-surveillance",
+    "services": [
+      "vedamd-nf1"
+    ],
+    "title": "Neurofibromatosis type 1 — MDT clinic + MPNST + breast cancer surveillance",
+    "description": "Fires for confirmed / suspected NF1 (NIH criteria). Recommends specialist MDT; annual ophthalmology in childhood (optic glioma); whole-body MRI for plexiform burden + MPNST detection; selumetinib (MEK inhibitor) for symptomatic plexiform; AVOID radiotherapy where possible (secondary cancer risk); annual breast screen from age 30 (women); cascade family testing + reproductive counselling. Reads context.diagnosticCriteria, context.plexiformGrowth, context.symptoms, context.hypertension — never patient identity.",
+    "references": [
+      {
+        "label": "Legius NF1 2021; SPRINT"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q85.01",
+        "display": "NF1",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "tsc-mtor-multiorgan",
+    "hook": "patient-view",
+    "type": "tsc-mtor-multiorgan",
+    "services": [
+      "vedamd-tsc"
+    ],
+    "title": "Tuberous sclerosis — multiorgan mTOR inhibitor (everolimus) + vigabatrin for infantile spasms",
+    "description": "Fires for confirmed TSC. Recommends multidisciplinary clinic; everolimus for SEGA / AML > 3 cm / LAM / drug-resistant epilepsy; vigabatrin for infantile spasms (PARTICULARLY effective in TSC); topical sirolimus for facial angiofibroma; annual surveillance — brain MRI / renal MRI / HRCT (women age 18 +) / DEXA / ECG; TAND assessment; cascade family + reproductive counselling. Reads context.tscCriteria, context.organInvolvement, context.epilepsyType, context.amlSize, context.tand — never patient identity.",
+    "references": [
+      {
+        "label": "TSC International Consensus 2021; EXIST + MILES + ARDIE"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q85.1",
+        "display": "Tuberous sclerosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "turner-aortic-surveillance-hrt",
+    "hook": "patient-view",
+    "type": "turner-aortic-surveillance-hrt",
+    "services": [
+      "vedamd-turner"
+    ],
+    "title": "Turner syndrome — GH + HRT + aortic surveillance + preconception cardiac assessment",
+    "description": "Fires for Turner syndrome diagnosis. Recommends specialist multidisciplinary clinic; growth hormone from age 4–6; oestrogen pubertal induction from age 11–12 with progestogen addition; LIFELONG HRT until menopause age; annual cardiac surveillance with aortic dimension (Z-score); pre-conception cardiac assessment MANDATORY before pregnancy (some patients absolutely contraindicated); annual TSH + lipid + glucose + audiology; cascade family / reproductive counselling. Reads context.karyotype, context.ageYears, context.aorticRoot, context.pregnancyPlanning, context.hrt — never patient identity.",
+    "references": [
+      {
+        "label": "International Turner Consensus 2017"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q96.9",
+        "display": "Turner syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "klinefelter-testosterone-fertility",
+    "hook": "patient-view",
+    "type": "klinefelter-testosterone-fertility",
+    "services": [
+      "vedamd-klinefelter"
+    ],
+    "title": "Klinefelter syndrome — testosterone + early fertility preservation (micro-TESE)",
+    "description": "Fires for Klinefelter syndrome. Recommends multidisciplinary clinic; LIFELONG testosterone replacement from puberty; micro-TESE for sperm retrieval EARLY (adolescent / young adult — best yield); cryopreservation for future ART; bone + cardiovascular + metabolic surveillance; mental health + neurodevelopmental support; annual breast examination + low-threshold imaging (high cancer risk). Reads context.ageYears, context.testosterone, context.semenAnalysis, context.fertilityPlanning — never patient identity.",
+    "references": [
+      {
+        "label": "EAA Klinefelter Guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q98.4",
+        "display": "Klinefelter syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "rpl-aps-anticoagulation",
+    "hook": "patient-view",
+    "type": "rpl-aps-anticoagulation",
+    "services": [
+      "vedamd-rpl"
+    ],
+    "title": "Recurrent pregnancy loss — APS workup + LMWH + aspirin for confirmed APS",
+    "description": "Fires for ≥ 2-3 consecutive pregnancy losses. Recommends couple's karyotype + uterine imaging + APS screen × 2 (12 weeks apart) + thyroid + diabetes + thrombophilia; treat reversible: cerclage for cervical insufficiency, septoplasty for septate uterus; ASPIRIN + LMWH from positive pregnancy test until 6 weeks postpartum for confirmed APS; thyroid optimisation; lifestyle (BMI, smoking, caffeine); supportive 'tender loving care' for unexplained. Reads context.numberOfLosses, context.apsAntibodies, context.uterineAnomaly, context.thyroid — never patient identity.",
+    "references": [
+      {
+        "label": "ESHRE RPL 2023; RCOG GTG 17"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N96",
+        "display": "Recurrent pregnancy loss",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-iugr-doppler-delivery",
+    "hook": "patient-view",
+    "type": "severe-iugr-doppler-delivery",
+    "services": [
+      "vedamd-severe-iugr"
+    ],
+    "title": "Severe IUGR — Doppler-guided delivery timing + corticosteroid + MgSO4",
+    "description": "Fires for EFW < 3rd centile or abnormal Doppler. Recommends serial UA Doppler + MCA + ductus venosus; corticosteroid + MgSO4 if preterm anticipated; deliver for absent / reversed end-diastolic flow OR DV a-wave reversal OR oligohydramnios OR maternal compromise; neonatology presence at delivery; aspirin 75-150 mg from 12 weeks in future pregnancy. Reads context.gestationWeeks, context.efwCentile, context.uaDoppler, context.dvDoppler, context.maternalCondition — never patient identity.",
+    "references": [
+      {
+        "label": "RCOG GTG 31; TRUFFLE + DIGITAT"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "P05",
+        "display": "Slow fetal growth + fetal malnutrition",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-acne-isotretinoin-iPledge",
+    "hook": "patient-view",
+    "type": "severe-acne-isotretinoin-iPledge",
+    "services": [
+      "vedamd-severe-acne"
+    ],
+    "title": "Severe acne — isotretinoin with Pregnancy Prevention + mental health monitoring",
+    "description": "Fires for severe / scarring acne unresponsive to conventional. Recommends isotretinoin 0.5-1 mg/kg/day to cumulative 120-150 mg/kg; mandatory iPLEDGE / Pregnancy Prevention Programme (2 contraceptives + monthly pregnancy test); monitor LFT + lipids month 2 + 4; depression / suicidality screening monthly; acne fulminans — steroid + isotretinoin combination. Reads context.acneGrade, context.priorTreatments, context.pregnancyRisk, context.depression — never patient identity.",
+    "references": [
+      {
+        "label": "EDF + AAD + BAD Acne Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "L70.0",
+        "display": "Acne vulgaris",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "narcolepsy-mslt-modafinil-sodium-oxybate",
+    "hook": "patient-view",
+    "type": "narcolepsy-mslt-modafinil-sodium-oxybate",
+    "services": [
+      "vedamd-narcolepsy"
+    ],
+    "title": "Narcolepsy — PSG + MSLT + modafinil / pitolisant + sodium oxybate for cataplexy",
+    "description": "Fires for excessive daytime sleepiness ± cataplexy. Recommends polysomnography + MSLT (≤ 8 min latency + ≥ 2 SOREMPs); CSF hypocretin if available for type 1; scheduled naps + modafinil / pitolisant / solriamfetol first-line; sodium oxybate for cataplexy + sleepiness; SSRI / TCA / sodium oxybate for cataplexy; driving counselling. Reads context.epworth, context.cataplexy, context.mslt, context.hypocretin — never patient identity.",
+    "references": [
+      {
+        "label": "AASM Narcolepsy 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G47.4",
+        "display": "Narcolepsy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "chronic-insomnia-cbti-first",
+    "hook": "patient-view",
+    "type": "chronic-insomnia-cbti-first",
+    "services": [
+      "vedamd-chronic-insomnia"
+    ],
+    "title": "Chronic insomnia — CBT-I FIRST; medication short-term adjunct only",
+    "description": "Fires for chronic insomnia ≥ 3 nights/week ≥ 3 months with daytime impairment. Recommends CBT-I first-line (in-person / digital); sleep diary + ISI; treat comorbidities (OSA, RLS, depression, pain); short-term Z-drug or orexin antagonist OR sedating antidepressant if mood; AVOID OTC antihistamine; older adults — avoid benzodiazepine / Z-drugs (falls + cognitive); pregnancy — non-pharmacological + careful selection. Reads context.isi, context.comorbidities, context.priorMedications, context.ageYears — never patient identity.",
+    "references": [
+      {
+        "label": "AASM Insomnia 2021; NICE NG219"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F51.01",
+        "display": "Primary insomnia",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]
