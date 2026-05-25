@@ -9166,5 +9166,187 @@
         "kind": "finding"
       }
     ]
+  },
+  {
+    "id": "snakebite-envenomation-kenya-r1",
+    "title": "Snakebite — give polyvalent antivenom for systemic envenomation (Kenya MOH)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "snakebite-envenomation-kenya"
+    },
+    "indicators": [
+      "20WBCT failure",
+      "neurotoxic signs",
+      "spontaneous bleeding"
+    ],
+    "recommendation": "Polyvalent antivenom 10 vials IV over 1 hour after adrenaline/hydrocortisone/chlorphenamine premedication; repeat 6h if 20WBCT still failed or neurotoxicity persists. Avoid tourniquet, cutting, ice. Use pressure immobilisation ONLY for neurotoxic elapids.",
+    "rationale": "Kenya MOH National Snakebite Guidelines (2019) + WHO Africa Snakebite Guidelines (2024).",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "severe-acute-malnutrition-imam-r1",
+    "title": "SAM — F-75 stabilisation phase + cautious IV fluids (Kenya IMAM)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "severe-acute-malnutrition-imam"
+    },
+    "indicators": [
+      "MUAC < 11.5 cm or WHZ < −3 or bilateral pitting oedema with complications"
+    ],
+    "recommendation": "Admit; F-75 130 ml/kg/day in 8–12 feeds; no iron in stabilisation; routine amoxicillin + vitamin A + folic acid + measles vaccine. Avoid standard IV fluid resuscitation (refeeding + heart failure risk) — use ReSoMal orally; if IV essential, half-strength Darrow's with 5% dextrose 15 ml/kg over 1h and reassess.",
+    "rationale": "WHO + Kenya IMAM 2023 guideline.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "postpartum-hemorrhage-active-management-r1",
+    "title": "PPH — WHO E-MOTIVE bundle within 30 minutes",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "postpartum-hemorrhage-active-management"
+    },
+    "indicators": [
+      "EBL > 500 ml on calibrated drape or clinical concern"
+    ],
+    "recommendation": "Activate E-MOTIVE bundle: uterine massage + oxytocin 10 IU IM/IV + TXA 1 g IV (within 3h) + IV crystalloid + genital tract exam + catheter + escalation if uncontrolled at 30 min. Add misoprostol 800 mcg SL, balloon tamponade, B-Lynch, NASG for transport. Use carbetocin where heat-stable available.",
+    "rationale": "WHO 2022 PPH guideline + E-MOTIVE Lancet 2023 + WOMAN trial 2017.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "sepsis-hour-1-bundle-adults-r1",
+    "title": "Sepsis — Hour-1 bundle in adults",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "sepsis-hour-1-bundle-adults"
+    },
+    "indicators": [
+      "suspected infection + qSOFA ≥ 2 or NEWS2 ≥ 5"
+    ],
+    "recommendation": "Within 1 hour: lactate + blood cultures before antibiotics + broad-spectrum antibiotic + 30 ml/kg crystalloid if hypotensive/lactate > 4 + noradrenaline (MAP ≥ 65) if persistent hypotension. Source control within 6–12h. Test for malaria in endemic areas (RDT) before attributing to bacterial sepsis.",
+    "rationale": "Surviving Sepsis Campaign 2021 + WHO sepsis resolution.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "cholera-outbreak-response-kenya-r1",
+    "title": "Cholera — aggressive rehydration + outbreak notification (Kenya IDSR)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "cholera-outbreak-response-kenya"
+    },
+    "indicators": [
+      "acute watery diarrhoea with severe dehydration"
+    ],
+    "recommendation": "Plan C IV Ringer's lactate 100 ml/kg over 3h (adults) / age-specific paediatric regimen; continue ORS as soon as able to drink; doxycycline 300 mg single dose (or azithromycin in children/pregnancy); zinc 20 mg × 10 days in children; notify IDSR within 24h; set up CTC; reactive OCV per GTFCC/MOH.",
+    "rationale": "GTFCC Ending Cholera Roadmap 2030 + Kenya National Cholera Plan + IDSR.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "gender-based-violence-clinical-response-kenya-r1",
+    "title": "GBV — LIVES support + 72h HIV PEP + 120h emergency contraception (Kenya)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "gender-based-violence-clinical-response-kenya"
+    },
+    "indicators": [
+      "disclosed or suspected sexual / intimate partner violence"
+    ],
+    "recommendation": "Use WHO LIVES first-line psychological support. For sexual assault within 72h start TLD HIV PEP × 28 days, within 120h give levonorgestrel 1.5 mg or Cu-IUD, STI prophylaxis (ceftriaxone + azithromycin + metronidazole), hepatitis B vaccine ± HBIG, tetanus. Complete PRC1/P3 form. Refer to SGBV centre; mandatory reporting for child cases (Children Act + Sexual Offences Act).",
+    "rationale": "WHO Clinical Handbook on IPV/Sexual Violence (2014) + Kenya National GBV Guidelines.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "baby-friendly-hospital-initiative-breastfeeding-r1",
+    "title": "Breastfeeding support — BFHI Ten Steps",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "baby-friendly-hospital-initiative-breastfeeding"
+    },
+    "indicators": [
+      "newborn / postnatal contact"
+    ],
+    "recommendation": "Implement Ten Steps: skin-to-skin within 1h, exclusive breastfeeding 6 months, rooming-in, responsive feeding, no formula/bottles/pacifiers unless medically indicated, discharge with community support. Latch + position counselling. Continue breastfeeding through mastitis with antibiotics. Follow Kenya BMS Act + WHO Code (no formula marketing).",
+    "rationale": "WHO/UNICEF BFHI 2018 + Kenya BFCI.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "road-traffic-injury-trauma-primary-survey-r1",
+    "title": "RTI trauma — cABCDE + TXA within 3h + permissive hypotension",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "road-traffic-injury-trauma-primary-survey"
+    },
+    "indicators": [
+      "polytrauma / haemorrhagic shock / GCS drop"
+    ],
+    "recommendation": "cABCDE primary survey; control catastrophic haemorrhage (tourniquet, pelvic binder); permissive hypotension (SBP 80–90) until bleed controlled; TXA 1 g IV within 3 hours of injury then 1 g over 8h; massive transfusion 1:1:1; head-up 30° + SBP > 110 for head injury; activate trauma referral per Kenya EMC strategy.",
+    "rationale": "ATLS + CRASH-2 + Kenya National EMC Strategy 2020–2025.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "pediatric-hiv-art-kenya-r1",
+    "title": "Pediatric HIV — DTG-based ART from 4 weeks (Kenya NASCOP)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "pediatric-hiv-art-kenya"
+    },
+    "indicators": [
+      "confirmed paediatric HIV infection"
+    ],
+    "recommendation": "Start ART immediately regardless of CD4. < 4 wks: AZT + 3TC + NVP. 4 wks–< 20 kg: ABC + 3TC + paediatric DTG dispersible. ≥ 20 kg: TDF + 3TC + DTG. Cotrimoxazole prophylaxis from 6 wks of age in HIV-exposed until HIV excluded. TB preventive therapy. Routine VL at 6 + 12 months then annually; enhanced adherence if VL > 1000. Operation Triple Zero for adolescents.",
+    "rationale": "Kenya NASCOP ARV Guidelines 2022 + WHO 2024 update.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "drowning-prevention-management-who-r1",
+    "title": "Drowning — 5 rescue breaths first, oxygen, observe asymptomatic 4–6h",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "drowning-prevention-management-who"
+    },
+    "indicators": [
+      "submersion incident"
+    ],
+    "recommendation": "Hypoxia is the primary problem — start CPR with FIVE rescue breaths before compressions. Oxygen titrated to SpO2 ≥ 94%. Spinal immobilisation only if mechanism + signs. No prophylactic antibiotics or steroids. Asymptomatic with normal exam at 4–6h can discharge. 'Not dead until warm and dead' — rewarm to 32°C before terminating resuscitation. Implement WHO 10 prevention interventions.",
+    "rationale": "WHO Global Report on Drowning + ILCOR 2021 + UN A/RES/75/273.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "neonatal-resuscitation-helping-babies-breathe-r1",
+    "title": "Neonatal resuscitation — The Golden Minute (HBB)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "neonatal-resuscitation-helping-babies-breathe"
+    },
+    "indicators": [
+      "non-vigorous newborn / apnoea / HR < 100"
+    ],
+    "recommendation": "Dry + stimulate + clear airway within 30 sec; if not breathing by 60 sec start BMV 40–60/min with room air (term) ensuring chest rise. Add chest compressions 3:1 if HR < 60 after 30 sec effective ventilation. Adrenaline 0.01–0.03 mg/kg IV. Delayed cord clamping ≥ 1 min. Skin-to-skin. Discontinue at 20 min if no HR. Therapeutic hypothermia for HIE where available.",
+    "rationale": "WHO Basic Newborn Resuscitation 2012/2024 + Helping Babies Breathe 2nd Ed + Kenya Basic Paediatric Protocols.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "rabies-post-exposure-prophylaxis-kenya-r1",
+    "title": "Rabies PEP — wound wash + vaccine ± RIG by exposure category",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "rabies-post-exposure-prophylaxis-kenya"
+    },
+    "indicators": [
+      "potential rabies exposure"
+    ],
+    "recommendation": "Wash wound with soap + running water × 15 min + virucidal. Category II → vaccine only. Category III / immunocompromised / bat / head-face-hand bite → vaccine + RIG (HRIG 20 IU/kg or ERIG 40 IU/kg infiltrated into wound). Cell-culture vaccine days 0, 3, 7, 14, 28 IM or WHO dose-sparing ID 4-visit regimen. Previously vaccinated: 2 doses days 0 + 3, no RIG. Notify One Health team.",
+    "rationale": "WHO Rabies Position Paper 2018 + Kenya National Rabies Elimination Strategy 2014–2030.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
