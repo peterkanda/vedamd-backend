@@ -11108,5 +11108,155 @@
     "rationale": "ITAC 2022/2024 + ASCO 2023 + ESMO 2023 + CARAVAGGIO + Hokusai-VTE Cancer + CASSINI + AVERT.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "imci-paediatric-severe-pneumonia-r1",
+    "title": "Paediatric severe pneumonia — IMCI + amoxicillin DT 40-50 mg/kg + O2",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "imci-paediatric-severe-pneumonia"
+    },
+    "indicators": [
+      "age-appropriate tachypnoea + chest indrawing / danger signs"
+    ],
+    "recommendation": "WHO IMCI/Kenya MOH classification. Non-severe (no indrawing/no danger): home amoxicillin DT 40 mg/kg BD × 3 d + counsel return + extra fluids + continue feeding. SEVERE (indrawing/danger signs): admit + O2 if sats < 90% (target > 90%) + amoxicillin DT 40-50 mg/kg BD × 5 d (WHO 2014); severe with danger signs IV ampicillin 50 mg/kg q6h + gentamicin 7.5 mg/kg OD × 5 d; failure / very severe ceftriaxone 80 mg/kg/d + cloxacillin if Staph. HIV+ + LRTI: cotrim 8 mg TMP/kg BD × 21 d + pred if hypoxia. Vitamin A 100-200k IU + zinc 10-20 mg × 10 d. CAUTIOUS IV fluids (FEAST harm in non-shock African children). Bubble CPAP for hypoxic infants (mortality benefit). Pulse oximetry MANDATORY (WHO 2014). Vaccinate (PCV13 + Hib + measles + RSV emerging). Address indoor air pollution. Discharge sats > 90% + feeding + counsel + follow-up 48-72h.",
+    "rationale": "WHO IMCI 2014/2024 + Kenya Basic Paeds Protocols + FEAST + bubble CPAP trials.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "neonatal-sepsis-early-late-onset-r1",
+    "title": "Neonatal sepsis — ampicillin + gent EOS / vanc + cefepime LOS + LP all",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "neonatal-sepsis-early-late-onset"
+    },
+    "indicators": [
+      "sick neonate / risk factors / temp / feeding / behaviour change"
+    ],
+    "recommendation": "Assume sepsis until proven otherwise. ALWAYS LP (meningitis 25%). Blood + urine cultures + FBC + CRP + glucose + LFT + coag + HSV PCR if vesicles. EARLY-ONSET (< 72h): ampicillin 50-100 mg/kg q12h + gentamicin 4-5 mg/kg/d (preterm 3-4 q24-36h); add acyclovir 60 mg/kg/d if HSV suspected; 10 d if culture+, 14 d standard, 21 d meningitis. LATE-ONSET (> 72h): vancomycin + gent/amikacin; cefepime/pip-tazo/meropenem if NICU-acquired; antifungal (fluconazole 12 mg/kg) prolonged NICU/line/TPN; acyclovir if HSV. Supportive: thermoneutral (KMC); glucose 2.6-5; O2; CAUTIOUS fluid (FEAST); adrenaline pressor; phenobarbital seizure; vitamin K 1 mg IM; breastmilk priority. Treat specifics: GBS pen G 250k IU/kg/d; Listeria amp+gent 14-21 d; HSV acyclovir 14-21+; Candida fluconazole/amphoB. PREVENTION: IAP GBS (pen G 5 MU + 2.5 MU q4h); skilled birth + clean delivery + chlorhexidine cord (WHO); PMTCT HIV; maternal screening syphilis/UTI/BV; Tdap.",
+    "rationale": "WHO Pocket Book 2024 + Kenya Basic Paeds + AAP 2018 + NICE NG195.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "paediatric-dka-ispad-r1",
+    "title": "Paeds DKA — slow rehydration 48h + insulin 0.05-0.1 U/kg/h + cerebral oedema watch",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "paediatric-dka-ispad"
+    },
+    "indicators": [
+      "hyperglycaemia + ketosis + acidosis in child"
+    ],
+    "recommendation": "ISPAD 2022. ASSESS shock vs not. Shock only: 10-20 ml/kg crystalloid bolus over 30-60 min (NOT routinely); maintenance + replace deficit (max 5-10%) over 48h slowly (NOT 24h). 0.9% NaCl → 0.45% NaCl + D5% when glucose < 14-17. Start insulin AFTER 1h fluid; 0.05-0.1 U/kg/h IV (NO bolus); continue basal insulin if on (reduces rebound). Target glucose drop 3-5 mmol/L/h (no faster). K+ replacement early (40 mmol/L if 3.5-5.5; HOLD INSULIN if K+ < 3.5); NO routine bicarb (worsens cerebral oedema risk); PO4 only if < 0.3. CEREBRAL OEDEMA (1% mortality cause): immediate mannitol 0.5-1 g/kg OR 3% NaCl 5 ml/kg over 10-15 min + reduce fluid rate 1/3 + head-up + URGENT CT after stabilising + PICU; AVOID rapid drop in Na (corrected Na should rise as glucose falls). Switch to SC insulin when ketones < 0.5 + pH > 7.3 + HCO3 > 18 + eating (overlap 1h). Treat trigger (infection, missed insulin, diabulimia). Post-DKA: diabetes education + DAFNE + CGM + psychology + celiac/thyroid screen.",
+    "rationale": "ISPAD 2022 + PECARN NEJM 2018 + BSPED 2024.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "severe-acute-malnutrition-imam-detailed-r1",
+    "title": "SAM — F-75 stabilisation + AVOID IV bolus + amoxicillin + vitamin A + slow transition",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "severe-acute-malnutrition-imam-detailed"
+    },
+    "indicators": [
+      "MUAC < 11.5 / WHZ < -3 / bilateral pitting oedema"
+    ],
+    "recommendation": "WHO 10 steps: 1) hypoglycaemia (give 10% glucose 50 ml + F-75 q2-3h), 2) hypothermia (skin-to-skin), 3) dehydration AVOID IV resus unless shock (FEAST harm) — use ReSoMal 5 ml/kg q30 min PO/NG, 4) K replenish 3-4 mmol/kg/d + Mg, 5) prophylactic AMOXICILLIN 50 mg/kg/d × 5-7 d (uncomplicated); IV ampicillin + gentamicin (complicated); cotrim if HIV+; malaria if RDT+; 6) vitamin A day 1 (unless oedema/recent dose) 50-200k IU + folate 5 mg d1 then 1 mg + multivit + zinc; NO iron in phase 1, 7) F-75 130 ml/kg/d in 8-12 feeds (low protein/lactose-free), 8) refeeding syndrome watch (PO4/K/Mg), 9) transition to F-100/RUTF when appetite returns + oedema resolving, 10) RUTF 200 kcal/kg/d OTP weekly until WHZ ≥ -2 / MUAC ≥ 12.5 × 2 visits + no oedema × 2 wk. Stimulation + Care for Child Development. HIV/TB integrated care. Late mortality (> 6 mo) high — continued community follow-up critical.",
+    "rationale": "WHO SAM 2023 + Kenya IMAM 2023 + FEAST.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "paediatric-severe-malaria-artesunate-r1",
+    "title": "Severe paeds malaria — IV artesunate (AQUAMAT) + glucose + complete ACT",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "paediatric-severe-malaria-artesunate"
+    },
+    "indicators": [
+      "fever + parasitaemia + danger signs (coma/severe anaemia/respiratory distress/hypoglycaemia)"
+    ],
+    "recommendation": "ABCDE. ALWAYS check glucose (give D10% 5 ml/kg if < 2.2). IV ARTESUNATE 2.4 mg/kg at 0/12/24h then daily (3 mg/kg if < 20 kg) per AQUAMAT (superior to quinine). Switch to oral artemether-lumefantrine 6 doses × 3 days when tolerating + ≥ 24h IV. AVOID phenytoin prophylactic; benzodiazepines for seizure. Severe anaemia: transfuse if Hb < 5 + symptomatic OR < 4 routine (10 ml/kg over 3-4h + furosemide). Empirical ceftriaxone 80 mg/kg/d for severe (Salmonella co-infection SSA). CAUTIOUS fluid (FEAST — bolus harm in non-shock African children); maintenance 5% dextrose with monitored UO. Watch DELAYED HAEMOLYSIS post-artesunate (1-3 wk — check FBC follow-up). PREVENTION: ITN + IPTp-SP maternal + seasonal malaria chemoprophylaxis Sahel + R21/RTS,S vaccine (Kenya pilot in Western — substantial mortality reduction).",
+    "rationale": "WHO Malaria 2023/2024 + AQUAMAT Lancet 2010 + Kenya National Malaria Treatment + R21/RTS,S.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "paediatric-trauma-resuscitation-r1",
+    "title": "Paeds trauma — cABCDE with age-norms + cautious fluid + TXA within 3h + NAI screen",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "paediatric-trauma-resuscitation"
+    },
+    "indicators": [
+      "paediatric major trauma"
+    ],
+    "recommendation": "Age-appropriate vital sign norms (compensate well — hypotension LATE). cABCDE: tourniquet/pelvic binder; airway with c-spine (neutral with shoulder roll for large occiput); ETT size (age/4)+4 mm; RSI ketamine 1-2 + rocuronium 1.2 + atropine pre-treat < 1 yr. Treat tension PTX (anterior axillary preferred). IV × 2 large-bore peripheral or IO if failed 90s. Crystalloid 20 ml/kg balanced bolus over 5-10 min; reassess; permissive hypotension cautious in paeds; blood early; TXA 15 mg/kg (max 1 g) IV within 3h (CRASH-2/ENGAGE). MTP 1:1:1. Glucose 5 ml/kg D10% if < 2.2. Prevent hypothermia (high risk). Head injury SBP > 110 + sats > 94 + head-up 30 + hypertonic saline 3% 3 ml/kg (preferred over mannitol paeds) + CT per PECARN. C-spine: NEXUS/Canadian paeds rule; AVOID routine CT < 8 yr; SCIWORA. Pelvic binder at greater trochanters. SCREEN FOR NON-ACCIDENTAL INJURY (multiple injuries different ages, inconsistent history, specific patterns, retinal haemorrhages, posterior rib/metaphyseal corner fractures) — mandatory reporting per Children Act + Sexual Offences Act.",
+    "rationale": "ATLS 10e + APLS 7e + PALS 2024 + RCEM + PECARN + CRASH-2.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "child-abuse-mandatory-reporting-r1",
+    "title": "Child abuse — recognise patterns + mandatory report + 72h HIV PEP if SA",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "child-abuse-mandatory-reporting"
+    },
+    "indicators": [
+      "suspected abuse / disclosure / suspicious injuries / SA"
+    ],
+    "recommendation": "RECOGNISE: inconsistent history, delayed presentation, multiple injuries different ages, patterns (cigarette burns, immersion lines, posterior rib/metaphyseal corner fractures, shaken baby — retinal haemorrhages + subdural), genital trauma, behavioural change. Document carefully (body map, photographs per protocol, measurements). Trained interviewer for SA (avoid leading questions). Skeletal survey for young + repeat at 10-14 d; fundoscopy; CT head if neuro. SEXUAL ASSAULT < 72h: HIV PEP TLD × 28 d (NASCOP) + EC if < 120h + STI prophylaxis (ceftriaxone + azithromycin + metronidazole) + Hep B vaccine ± HBIG + tetanus. MANDATORY REPORTING per Kenya Children Act 2022 + Sexual Offences Act 2006 — Children's Officer + Police Gender Desk + DCI + child protection team + PRC1/P3 forms. Safety plan + place of safety + restraining order if needed. MULTIDISCIPLINARY: SGBV one-stop centre + Childline Kenya 116 + counsellor + legal aid (FIDA, Kituo cha Sheria) + NGOs. FGM (Anti-FGM Act 2011) + child marriage (Marriage Act 2014). Long-term TF-CBT + family therapy with safety priority. INSPIRE 7 strategies prevention.",
+    "rationale": "Kenya Children Act 2022 + Sexual Offences Act + Anti-FGM Act + WHO INSPIRE + WHO Clinical Handbook + RCPCH.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "kangaroo-mother-care-preterm-r1",
+    "title": "KMC — immediate skin-to-skin (WHO 2022 paradigm shift) — all preterm/LBW",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "kangaroo-mother-care-preterm"
+    },
+    "indicators": [
+      "preterm or LBW < 2500g"
+    ],
+    "recommendation": "WHO 2022 RECOMMENDATION — INITIATE KMC IMMEDIATELY AFTER BIRTH (no stabilisation needed first — iKMC NEJM 2021 reduced mortality 25%). Continuous skin-to-skin 24h/day with mother (or surrogate). Position: infant naked + nappy + cap, upright between breasts, head turned to side, hips frog-flexed; cover with mother's clothing + warm cloth. EXCLUSIVE BREASTFEEDING (cup feeding for non-suckling preterm — avoid bottles); donor milk if needed. Monitor temp/HR/RR/glucose. Daily weight target 15-20 g/kg/d. Vitamin K 1 mg IM at birth + eye prophylaxis + Hep B birth dose + BCG/OPV0 + chlorhexidine cord (WHO low-resource). Reduces mortality 25-40% + infection + improves breastfeeding + bonding + cardiac/respiratory stability + cost-effective LMIC. Discharge ~1800-2000g + weight gain + feeding well + mother trained + community follow-up. Father involvement ('kangaroo dad'). Kenya MOH KMC scaling + Lancet Every Newborn Action Plan.",
+    "rationale": "WHO 2022 + iKMC NEJM 2021 + Lancet Every Newborn + Kenya MOH KMC.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "neonatal-jaundice-bilirubin-r1",
+    "title": "Neonatal jaundice — phototherapy per nomogram + investigate prolonged + < 24h pathological",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "neonatal-jaundice-bilirubin"
+    },
+    "indicators": [
+      "clinical jaundice / TcB raised / SBR for treatment threshold"
+    ],
+    "recommendation": "AAP 2022 nomogram by age/gestation/risk factors. < 24h = pathological — investigate (ABO/Rh DAT, G6PD, sepsis, congenital infection). PHOTOTHERAPY: maximise efficiency (nappy + eye protection + max skin exposure + double-bank for high levels + intensive triple-bank); continue breastfeeding; monitor SBR q6-12h; stop when > 50 below threshold + falling; check REBOUND 12-24h after stopping. IVIG 0.5-1 g/kg for isoimmune haemolytic disease reaching exchange threshold. EXCHANGE TRANSFUSION (double-volume 160-200 ml/kg) if approaching neurotoxic + failed intensive phototherapy — ICU/HDU. Treat cause: sepsis (antibiotics), hypothyroid (levothyroxine), G6PD (avoid triggers + supportive), BILIARY ATRESIA (urgent Kasai BEFORE 8 weeks — best outcomes). Prolonged > 14 d term/21 d preterm: workup conjugated + LFT + TFT + G6PD + biliary atresia screen. CRITICAL kernicterus prevention in SSA — train CHV + reduce late presentation + solar phototherapy innovation.",
+    "rationale": "AAP 2022 + NICE CG98 + WHO Pocket Book + Kenya Basic Paeds.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "paediatric-asthma-comprehensive-r1",
+    "title": "Paeds asthma — GINA age-specific + spacer always + dexa or pred for acute",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "paediatric-asthma-comprehensive"
+    },
+    "indicators": [
+      "paediatric wheeze / asthma diagnosis"
+    ],
+    "recommendation": "GINA 2024 age-specific. ≤ 5 yr: SABA prn → daily low-dose ICS via spacer + face mask → double ICS or add LTRA. ≥ 6 yr: as-needed ICS-formoterol (preferred) → daily ICS-LABA → medium/high-dose + biologic referral (omalizumab/mepolizumab/dupilumab). NEVER SABA-only. SPACER ALWAYS for < 8 yr (mask < 4, mouthpiece 4-7). ACUTE: salbutamol 4-10 puffs spacer q20 min × 1h + DEXAMETHASONE 0.3-0.6 mg/kg × 1-2 doses (equivalent to pred + better compliance) or prednisolone 1-2 mg/kg × 3-5 d; severe — neb salbutamol+ipratropium + IV MgSO4 40 mg/kg + IV steroid; refractory IV salbutamol infusion (caution arrhythmia/hypoK); INTUBATE only if absolutely needed (dynamic hyperinflation + PTX risk). O2 target sats > 94%. Watch hypoK + hypoglycaemia. Triggers: viral (#1 children), allergens (dust mite/pollen/dander), exercise, cold air, SMOKING EXPOSURE (counsel cessation + smoke-free home — major SSA), INDOOR AIR POLLUTION (improved cookstoves). Allergic comorbidity 'one airway' — treat AR + eczema. EPI vaccines + annual flu + pneumococcal + COVID. Refer specialist refractory / Step 4+ / atypical / biologic candidate.",
+    "rationale": "GINA 2024 paeds + BTS/SIGN + ERS/ATS Severe + NICE NG80 + PRACTALL.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]

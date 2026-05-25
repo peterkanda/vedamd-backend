@@ -79085,5 +79085,1277 @@
     "ruleVersion": "2024.1",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "imci-paediatric-severe-pneumonia",
+    "title": "Paediatric severe pneumonia — WHO IMCI + Kenya MOH protocols",
+    "icd10": [
+      "J18.9"
+    ],
+    "icd11": [
+      "CA40.0"
+    ],
+    "domains": [
+      "paediatrics",
+      "respiratory",
+      "infectious-disease",
+      "emergency",
+      "primary-care",
+      "who-imci",
+      "kenya-moh",
+      "ssa"
+    ],
+    "population": "Children < 5 years — leading cause of paediatric mortality globally + SSA disproportionate. Kenya: highest under-5 mortality from pneumonia.",
+    "presentation": "Cough + difficult breathing + age-specific tachypnoea (≥ 60 < 2 mo, ≥ 50 2-11 mo, ≥ 40 12-59 mo). IMCI severe: chest indrawing or any general danger sign (unable to drink/breastfeed, vomits everything, convulsions, lethargy/unconscious, stridor in calm child).",
+    "redFlags": [
+      "IMCI 'severe pneumonia / very severe disease' — any general danger sign",
+      "Sats < 90% on room air",
+      "Severe respiratory distress (head bobbing, grunting, nasal flaring, severe indrawing)",
+      "Cyanosis",
+      "Failure to feed",
+      "Severe malnutrition (admit per IMAM regardless of pneumonia severity)",
+      "HIV-positive + LRTI (PCP cover)",
+      "Measles + LRTI"
+    ],
+    "diagnostics": [
+      "Clinical assessment using IMCI chart booklet",
+      "Pulse oximetry MANDATORY (key triage tool — WHO 2014)",
+      "Respiratory rate (count for full 1 min)",
+      "Temperature, weight, MUAC (malnutrition screen)",
+      "Glucose (low in severe illness)",
+      "Malaria RDT (any febrile child in endemic — Kenya)",
+      "HIV test (if status unknown)",
+      "FBC (severe), CXR (suspected complication / not improving)",
+      "Blood culture if severe / not responding",
+      "ABG / VBG if severe"
+    ],
+    "management": [
+      "WHO IMCI / KENYA MOH PAEDIATRIC PROTOCOLS:",
+      "FAST BREATHING / NON-SEVERE PNEUMONIA (no chest indrawing, no danger signs):",
+      "  Home treatment: amoxicillin DT (dispersible tablet) 40 mg/kg/dose BD × 3 days (WHO 2014 reduced from 5 d)",
+      "  Treat fever (paracetamol)",
+      "  Continue feeding + extra fluids",
+      "  Return immediately if worsening / not improving in 3 days",
+      "SEVERE PNEUMONIA (chest indrawing OR danger signs):",
+      "  ADMIT to facility",
+      "  OXYGEN if sats < 90% — nasal prongs 0.5-2 L/min (target sats > 90%)",
+      "  AMOXICILLIN dispersible tablet 40-50 mg/kg BD × 5 days (WHO 2014 — replaces previous penicillin in inpatient mild-moderate)",
+      "  Severe + danger signs: IV ampicillin 50 mg/kg q6h + gentamicin 7.5 mg/kg OD × 5 days; switch to oral when improving",
+      "  If failure / very severe: change to ceftriaxone 80 mg/kg/day; add cloxacillin / vancomycin if Staph suspected (empyema, cavitation, post-measles)",
+      "  Cotrim 8 mg TMP/kg BD × 21 d if HIV-exposed/positive + LRTI (PCP cover) + prednisolone 1 mg/kg if hypoxia",
+      "  Vitamin A 100,000 IU < 1 yr / 200,000 IU > 1 yr if not given in last month (especially measles)",
+      "  Zinc 10 mg < 6 mo / 20 mg ≥ 6 mo × 10-14 days for measles / persistent infection",
+      "  Treat concomitant malaria if RDT+",
+      "  TB consideration if symptoms > 2 weeks / contact / HIV+ (GeneXpert + sputum/gastric)",
+      "VERY SEVERE / IMMINENT FAILURE:",
+      "  HDU/ICU",
+      "  CPAP — bubble CPAP for hypoxic infants (proven mortality benefit Kenya/Malawi trials)",
+      "  Mechanical ventilation if available",
+      "  IV fluids cautiously — FEAST trial — AVOID bolus in non-shock African children (harmful); use maintenance",
+      "  Empirical broad-spectrum + cover for atypicals if hospital-acquired",
+      "  Consider thoracentesis if pleural effusion (empyema management — drain + 4-6 weeks antibiotic)",
+      "FOLLOW-UP:",
+      "  Reassess at 48-72h for response",
+      "  Discharge when sats > 90% on room air, feeding well, no danger signs",
+      "  Counsel family on warning signs",
+      "  Complete vaccination — esp PCV13, Hib, measles, COVID, RSV",
+      "PREVENTION:",
+      "  Immunisation (Hib + PCV13 — Kenya EPI; rotavirus reduces gastro-pneumonia; measles)",
+      "  Exclusive breastfeeding 6 months",
+      "  Reduce indoor air pollution (clean cookstoves)",
+      "  HIV PMTCT + early infant treatment",
+      "  Vitamin A supplementation campaigns",
+      "  Address malnutrition (IMAM)",
+      "  Hand hygiene + WASH",
+      "  Address overcrowding"
+    ],
+    "references": [
+      {
+        "label": "WHO IMCI Chart Booklet 2014/2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "WHO Pocket Book of Hospital Care for Children 2013/2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya MOH Basic Paediatric Protocols 2022",
+        "kind": "policy"
+      },
+      {
+        "label": "FEAST NEJM 2011 (Maitland)",
+        "kind": "trial"
+      },
+      {
+        "label": "RAMP / SUPER 2017 bubble CPAP",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "neonatal-sepsis-early-late-onset",
+    "title": "Neonatal sepsis — early + late onset",
+    "icd10": [
+      "P36.9"
+    ],
+    "icd11": [
+      "KA63"
+    ],
+    "domains": [
+      "neonatology",
+      "infectious-disease",
+      "emergency",
+      "primary-care",
+      "mnch",
+      "kenya-moh",
+      "ssa"
+    ],
+    "population": "Newborns < 28 days; major SSA mortality. Early-onset < 72h (vertical — GBS, E. coli, Listeria), late-onset > 72h (nosocomial — coag-neg Staph, Staph aureus, gram-negatives, Candida).",
+    "presentation": "Subtle + non-specific in neonates — temperature instability (hypo or hyperthermia), feeding poorly, lethargy, irritability, apnoea, grunting, cyanosis, jaundice, abdominal distension, bleeding, seizures, bulging fontanelle (meningitis).",
+    "redFlags": [
+      "Any sick neonate — assume sepsis until proven otherwise",
+      "Bulging fontanelle / seizures (meningitis up to 25%)",
+      "Apnoea / respiratory failure",
+      "Shock — poor perfusion / hypotension",
+      "Mother with chorioamnionitis / GBS-positive without IAP",
+      "Maternal HSV outbreak / fever near delivery",
+      "Inborn errors of metabolism in differential — hypoglycaemia + acidosis + odd odour"
+    ],
+    "diagnostics": [
+      "Clinical assessment + WHO/IMCI danger signs",
+      "ALWAYS perform LUMBAR PUNCTURE — meningitis incidence high + non-specific signs",
+      "Blood culture × 1 (paeds — single, careful technique)",
+      "FBC + CRP + glucose + electrolytes + bilirubin + coagulation",
+      "Urine MSU + culture (suprapubic aspirate if needed)",
+      "CXR if respiratory",
+      "Surface cultures + gastric aspirate if early-onset",
+      "Mother — review GBS status, chorioamnionitis, PROM > 18h, intrapartum fever, antibiotic in labour",
+      "HIV test mother + infant if status unknown",
+      "Consider HSV PCR if vesicles / maternal genital herpes",
+      "Acyclovir empiric if HSV suspected (don't wait for results)"
+    ],
+    "management": [
+      "EARLY-ONSET SEPSIS (< 72h):",
+      "  AMPICILLIN 50-100 mg/kg q12h + GENTAMICIN 4-5 mg/kg/day (preterm 3-4 mg/kg q24-36h) — first-line per WHO + Kenya + AAP",
+      "  Alternative: ampicillin + cefotaxime (some prefer + cover gram-negatives better)",
+      "  Add acyclovir 60 mg/kg/day in 3 doses if HSV suspected",
+      "  Treat for 10 days if culture positive (14 days if meningitis 21 days)",
+      "  Stop antibiotics at 48h if cultures negative + clinical improvement",
+      "LATE-ONSET SEPSIS (> 72h):",
+      "  VANCOMYCIN + GENTAMICIN (or amikacin)",
+      "  Cefepime / piperacillin-tazobactam / meropenem if hospital-acquired / NICU exposure",
+      "  Consider antifungal (fluconazole 12 mg/kg IV) for prolonged NICU stay / central line / TPN",
+      "  Acyclovir if HSV suspected",
+      "SUPPORTIVE:",
+      "  Maintain thermoneutral environment (skin-to-skin/Kangaroo Mother Care)",
+      "  Glucose 2.6-5 mmol/L (avoid hypoglycaemia — major risk)",
+      "  Oxygen if sats < 90%",
+      "  Cautious fluid resuscitation 10-20 ml/kg over 30 min if shock (NOT routine bolus)",
+      "  Pressor (adrenaline 0.05-0.3 mcg/kg/min) for shock not responsive to fluid",
+      "  Treat seizures (phenobarbital 20 mg/kg loading)",
+      "  Vitamin K 1 mg IM (haemorrhagic disease of newborn — give all newborns; some preparations needed if not yet)",
+      "  Establish enteral feeding when stable (breastmilk preferred; NG if poor suck)",
+      "  Phototherapy for jaundice (separate)",
+      "SPECIFIC PATHOGENS:",
+      "  GBS: penicillin G 250,000 IU/kg/day; close maternal contacts (other neonate) testing",
+      "  Listeria: ampicillin + gentamicin × 14-21 days",
+      "  HSV: acyclovir 60 mg/kg/d × 14-21 days (longer if CNS)",
+      "  Candida: fluconazole 12 mg/kg/d (or amphotericin B if severe)",
+      "  Congenital syphilis: penicillin G 50,000 IU/kg q12h × 10 days",
+      "  Congenital toxoplasmosis: pyrimethamine + sulfadiazine + folinic acid × 12 months",
+      "  Congenital CMV: ganciclovir / valganciclovir",
+      "PREVENTION:",
+      "  INTRAPARTUM ANTIBIOTIC PROPHYLAXIS for GBS — penicillin G 5 MU then 2.5 MU q4h × delivery",
+      "  Indications: GBS-positive screen, GBS bacteriuria pregnancy, previous GBS-affected infant, preterm < 37 wk, PROM > 18h, intrapartum fever",
+      "  Risk-based or universal GBS screening (35-37 weeks)",
+      "  Skilled birth attendance, clean delivery, cord care, early breastfeeding",
+      "  Chlorhexidine cord care (low resource — WHO recommendation)",
+      "  Maternal vaccination (Tdap, RSV — newer)",
+      "  PMTCT for HIV",
+      "  Maternal screening + treat syphilis + UTI + bacterial vaginosis",
+      "  Standard infection control in NICU + hand hygiene + early breast milk",
+      "Kenya MOH protocols: standard package per Basic Paediatric Protocols + Newborn Care"
+    ],
+    "references": [
+      {
+        "label": "WHO Pocket Book of Hospital Care for Children — Sepsis in Newborns 2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya Basic Paediatric Protocols + Newborn Care",
+        "kind": "policy"
+      },
+      {
+        "label": "AAP Management of Newborns at Risk of Early-Onset Sepsis 2018",
+        "kind": "guideline"
+      },
+      {
+        "label": "NICE NG195 Neonatal Infection 2021",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "paediatric-dka-ispad",
+    "title": "Paediatric DKA — ISPAD 2022 + slow rehydration",
+    "icd10": [
+      "E10.10"
+    ],
+    "icd11": [
+      "5A22"
+    ],
+    "domains": [
+      "paediatrics",
+      "endocrinology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": "T1DM children — initial presentation (especially LMIC late diagnosis), missed insulin, infection, omission. Cerebral oedema (0.5-1%) major preventable mortality cause.",
+    "presentation": "Polyuria, polydipsia, weight loss, abdominal pain, vomiting, Kussmaul respiration, fruity breath, dehydration, altered mental state. Distinguish from sepsis / appendicitis / gastroenteritis.",
+    "redFlags": [
+      "Cerebral oedema (headache, reduced GCS, papilloedema, abnormal pupillary response, hypertension + bradycardia, change in pattern of respiration, decorticate / decerebrate posturing) — life-threatening",
+      "Severe acidosis pH < 7.0",
+      "Glasgow Coma Scale < 12",
+      "Hypokalaemia < 3.0 (worsens with insulin)",
+      "Failure to improve in 12-24h",
+      "Concurrent infection / sepsis",
+      "First presentation — risk of cerebral oedema higher"
+    ],
+    "diagnostics": [
+      "Diagnostic triad: hyperglycaemia > 11 mmol/L (or any in known T1DM) + ketonaemia/uria + acidosis (pH < 7.3, HCO3 < 18)",
+      "Severity: mild pH 7.25-7.3, mod 7.0-7.25, severe < 7.0",
+      "Hourly: glucose + GCS + vital signs; 2-hourly: U&E + venous gas; 4-hourly: ABG/VBG + ketones",
+      "Strict input/output (catheter if obtunded)",
+      "Identify trigger: infection (CRP, cultures, CXR), missed insulin, MI rarely paeds, pancreatitis, pregnancy in older adolescents"
+    ],
+    "management": [
+      "ISPAD 2022 PROTOCOL (different from adult — slower, cerebral oedema risk):",
+      "ASSESS:",
+      "  Mild dehydration (clinical 5%) vs moderate (5-10%) vs severe (> 10% — shock)",
+      "  Severity by pH",
+      "FLUIDS — SLOW REHYDRATION OVER 48 HOURS:",
+      "  Shock only — 10-20 ml/kg crystalloid bolus over 30-60 min (UK / UK + ISPAD PECARN trials — bolus volume more conservative than older practice)",
+      "  Maintenance + replace deficit (max 5-10% deficit) over 48h (not bolus, not 24h)",
+      "  Calculate total: maintenance (Holliday-Segar) + estimated deficit",
+      "  0.9% NaCl initial; switch to 0.45% NaCl + D5% when glucose < 14-17 mmol/L",
+      "  AVOID rapid fluid resuscitation (cerebral oedema risk) — PECARN large RCT showed similar outcomes with multiple regimens but ANY excessive fluid harmful",
+      "INSULIN:",
+      "  Start AFTER first hour of fluid (allows partial correction of hypovolaemia)",
+      "  Fixed-rate IV infusion 0.05-0.1 U/kg/h (ISPAD 0.05 mg/kg/h for younger / less severe — reduces cerebral oedema)",
+      "  Do NOT bolus insulin (cerebral oedema risk)",
+      "  Continue LONG-ACTING insulin (basal) if previously on — reduces rebound hyperglycaemia",
+      "  Target: ketone drop 0.5/h, HCO3 rise 3/h, glucose drop 3-5 mmol/L/h (no faster)",
+      "  Adjust insulin rate if glucose falling > 5 mmol/L/h",
+      "  When ketones < 0.5 mmol/L + pH > 7.3 + HCO3 > 18 + eating + drinking — change to SC insulin (overlap 1h to avoid recurrence)",
+      "POTASSIUM:",
+      "  Replace EARLY (insulin shifts K+ intracellular)",
+      "  K+ > 5.5: no replacement, recheck 2h",
+      "  K+ 3.5-5.5: add 40 mmol KCl per litre fluid",
+      "  K+ < 3.5: HOLD INSULIN until K+ replaced; replace K+ + recheck before resuming",
+      "BICARBONATE: NOT routine (no benefit + worsens cerebral oedema risk)",
+      "PHOSPHATE: replace only if < 0.3",
+      "CEREBRAL OEDEMA — emergency (any decline in mental status / pattern of breathing change / focal signs):",
+      "  IMMEDIATE MANNITOL 0.5-1 g/kg IV over 10-15 min OR 3% NaCl 5 ml/kg over 10-15 min (preferred newer guidance)",
+      "  Reduce IV fluid rate by 1/3",
+      "  Elevate head 30°",
+      "  Intubate + hyperventilate to PaCO2 30-35 if signs of herniation (controversial — avoid excessive hyperventilation)",
+      "  URGENT CT brain (only after stabilising — do not delay treatment for imaging)",
+      "  PICU admission",
+      "PREVENT CEREBRAL OEDEMA:",
+      "  Avoid rapid fluid administration",
+      "  Avoid bicarbonate",
+      "  Avoid rapid drop in serum glucose (insulin titration to ≤ 5 mmol/L/h drop)",
+      "  Adequate potassium replacement",
+      "  Avoid bolus insulin",
+      "  Maintain serum sodium correction (corrected Na for glucose should rise as glucose falls)",
+      "MONITORING:",
+      "  Hourly: GCS, vital signs, glucose, fluid balance",
+      "  2-hourly: electrolytes, venous gas, ketones",
+      "  4-hourly: ABG, full bloods",
+      "  Cardiac monitoring",
+      "TRIGGER MANAGEMENT:",
+      "  Infection: cultures + appropriate antibiotic",
+      "  Address missed insulin / psychosocial (insulin omission for weight in adolescents — 'diabulimia')",
+      "POST-DKA:",
+      "  Diabetes specialist nurse education / DAFNE / structured education for family",
+      "  CGM consideration",
+      "  Pump consideration recurrent",
+      "  Psychological support (chronic disease, family burden)",
+      "  Sick day rules education",
+      "  Test for celiac + thyroid (associated autoimmune)",
+      "  Follow-up + community support"
+    ],
+    "references": [
+      {
+        "label": "ISPAD Paediatric DKA Guidelines 2022",
+        "kind": "guideline"
+      },
+      {
+        "label": "PECARN DKA trial NEJM 2018 (fluid rate)",
+        "kind": "trial"
+      },
+      {
+        "label": "BSPED UK Guidelines for Paediatric DKA 2021/2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya MOH Basic Paediatric Protocols",
+        "kind": "policy"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "severe-acute-malnutrition-imam-detailed",
+    "title": "Severe acute malnutrition — IMAM with hypoglycaemia/hypothermia/dehydration triad",
+    "icd10": [
+      "E43"
+    ],
+    "icd11": [
+      "5B50"
+    ],
+    "domains": [
+      "paediatrics",
+      "nutrition",
+      "emergency",
+      "primary-care",
+      "kenya-moh",
+      "ssa"
+    ],
+    "population": "Children 6-59 months with MUAC < 11.5 cm OR weight-for-height z-score < −3 OR bilateral pitting oedema. Kenya ASAL counties + drought-affected areas; refugee + IDP populations.",
+    "presentation": "Marasmus (severe wasting), kwashiorkor (bilateral pitting oedema + dermatosis + hair changes + hepatomegaly), or marasmic-kwashiorkor. WHO criteria: MUAC < 11.5 or WHZ < -3 or oedema.",
+    "redFlags": [
+      "Severe pitting oedema +++ (face + legs + arms)",
+      "Hypoglycaemia (BG < 3 mmol/L)",
+      "Hypothermia (axillary < 35°C or rectal < 35.5°C)",
+      "Severe dehydration (cautious — IV fluid bolus harmful per FEAST)",
+      "Failed appetite test (won't eat RUTF)",
+      "Concurrent infection / sepsis / shock",
+      "Severe anaemia Hb < 4 g/dL + decompensated",
+      "Eye signs of vitamin A deficiency (xerophthalmia, corneal ulceration) — emergency",
+      "TB suspected",
+      "HIV-positive"
+    ],
+    "diagnostics": [
+      "WHO criteria + clinical staging",
+      "Anthropometry: MUAC, weight, height/length, WHZ, oedema grade",
+      "Appetite test with RUTF — determines OTP vs inpatient",
+      "Blood glucose (always)",
+      "Malaria RDT, HIV test",
+      "FBC + Hb",
+      "Stool for parasites + giardia",
+      "Urine dipstick + MSU",
+      "Vital signs + temperature",
+      "CXR if respiratory signs",
+      "TB screening (signs, sputum/gastric, GeneXpert)"
+    ],
+    "management": [
+      "WHO PROTOCOL — 10 STEPS (STABILISATION → TRANSITION → REHABILITATION):",
+      "STABILISATION (PHASE 1 — inpatient if complicated, 1-7 days):",
+      "1. HYPOGLYCAEMIA prevention/treatment: glucose every 30 min; F-75 every 2-3h; if BG < 3 — give 50 ml of 10% glucose PO/NG + start F-75",
+      "2. HYPOTHERMIA: skin-to-skin / thermal blanket / Kangaroo Mother Care; monitor temp 30 min",
+      "3. DEHYDRATION:",
+      "   AVOID IV resuscitation unless shock (FEAST trial harm)",
+      "   Use ReSoMal (rehydration solution for malnutrition — low sodium, high potassium) — 5 ml/kg every 30 min × 2h, then 5-10 ml/kg/h for 4-10h",
+      "   If shock + no IV access: ReSoMal NG or per rectum",
+      "   If shock + IV essential: half-strength Darrow's with 5% dextrose 15 ml/kg over 1h, reassess",
+      "4. ELECTROLYTES: SAM children severely K depleted + Na overloaded — give potassium 3-4 mmol/kg/day + Mg + replenish glucose (in F-75)",
+      "5. INFECTION (very common, often subtle):",
+      "   ALL get prophylactic AMOXICILLIN 50 mg/kg/day × 5-7 days (uncomplicated)",
+      "   If complicated (signs of severe infection / shock): IV gentamicin 7.5 mg/kg/day + ampicillin 50 mg/kg q6h",
+      "   Treat malaria if RDT+ (artesunate)",
+      "   Cotrimoxazole prophylaxis if HIV+",
+      "6. MICRONUTRIENTS:",
+      "   Vitamin A on day 1 IF no oedema and no recent dose (50,000 IU < 6 mo, 100,000 IU 6-11 mo, 200,000 IU > 12 mo)",
+      "   Vitamin A for ALL children with oedema or eye signs",
+      "   Folic acid 5 mg day 1 then 1 mg daily",
+      "   Multivitamin",
+      "   Zinc (in F-75)",
+      "   Iron NOT in phase 1 (oxidative stress + worsens infection)",
+      "7. F-75 FEEDING (LOW PROTEIN + LACTOSE-FREE):",
+      "   130 ml/kg/day in 8-12 small feeds (start) — slowly, avoids refeeding",
+      "   Reduce volume + protein in severe oedema",
+      "   F-75 = 75 kcal/100 ml, 0.9 g protein/100 ml",
+      "   NG if not tolerating PO",
+      "8. CAUTIOUS REFEEDING + WATCH FOR REFEEDING SYNDROME: hypophosphataemia + hypoK + hypoMg + cardiac failure",
+      "TRANSITION (3-5 days):",
+      "9. SWITCH from F-75 to F-100 (or RUTF) when:",
+      "   Appetite returns",
+      "   Oedema reducing",
+      "   No medical complication",
+      "   Slow transition over 2-3 days",
+      "REHABILITATION (PHASE 2 — outpatient OTP):",
+      "10. RUTF (ready-to-use therapeutic food, Plumpy'Nut):",
+      "    200 kcal/kg/day OR 175 kcal/kg/day adjusted",
+      "    Weekly OTP visits — weight, MUAC, MUAC, oedema, appetite, action plan",
+      "    Continue until 2 visits with WHZ ≥ −2 OR MUAC ≥ 12.5 cm + no oedema × 2 visits",
+      "    Continue routine medicines per WHO + IMAM",
+      "    Discharge: nutritional rehab + community support + monitoring",
+      "F-75 / F-100 / RUTF — UN and WHO standardised products via UNICEF / WFP procurement; locally produced increasing (Insta in Kenya)",
+      "STIMULATION + DEVELOPMENT:",
+      "  SAM children have neurodevelopmental risks",
+      "  Play + interaction + responsive caregiving",
+      "  Care for Child Development (UNICEF)",
+      "MONITORING:",
+      "  Weekly outpatient: weight, MUAC, oedema, appetite, action plan adherence",
+      "  Inpatient: daily weight, twice-daily oedema, vital signs, appetite",
+      "PREVENTION (community + policy):",
+      "  Maternal nutrition + breastfeeding 6 months exclusive + continued 24 months + complementary feeding",
+      "  IMCI integrated + growth monitoring (MUAC tape, GMP)",
+      "  Food security + cash transfer programmes",
+      "  Address drought + conflict + displacement",
+      "  Kenya: ASAL counties priority; Cash Transfer + School Feeding + Vitamin A campaigns",
+      "  Linda Mama + ANC",
+      "  Address underlying poverty, social determinants",
+      "DISCHARGE PLANNING:",
+      "  Community follow-up by CHV",
+      "  Linkage to other services (immunisation, social protection, HIV)",
+      "  Counselling + caregiver education on feeding + hygiene + danger signs",
+      "  Continued nutritional support for at-risk after discharge",
+      "  Late mortality (6 months post) higher than discharge — continued follow-up critical"
+    ],
+    "references": [
+      {
+        "label": "WHO Updates on Management of SAM in Infants + Children 2023",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya National IMAM Guidelines 2023",
+        "kind": "policy"
+      },
+      {
+        "label": "WHO/UNICEF Wasting Action Plan",
+        "kind": "policy"
+      },
+      {
+        "label": "WHO Pocket Book of Hospital Care for Children",
+        "kind": "guideline"
+      },
+      {
+        "label": "FEAST NEJM 2011 (Maitland — cautious IV fluid)",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "paediatric-severe-malaria-artesunate",
+    "title": "Severe paediatric malaria — IV artesunate (AQUAMAT)",
+    "icd10": [
+      "B50.8"
+    ],
+    "icd11": [
+      "1F40"
+    ],
+    "domains": [
+      "paediatrics",
+      "infectious-disease",
+      "emergency",
+      "tropical",
+      "ssa",
+      "kenya-moh"
+    ],
+    "population": "Children in malaria-endemic areas (SSA — leading cause of child mortality). Highest burden Kenya endemic counties (Lake region, coast, Western, Nyanza).",
+    "presentation": "Severe complications: cerebral malaria (impaired consciousness, seizures, coma), severe anaemia (Hb < 5 g/dL), respiratory distress (acidotic), hypoglycaemia (very common in children), hyperparasitaemia (> 4%), AKI, jaundice, hyperlactataemia, shock (rare — exclude bacterial co-infection), abnormal bleeding.",
+    "redFlags": [
+      "Coma / GCS < 11 (cerebral malaria) — mortality 15-30%",
+      "Seizures multiple",
+      "Severe anaemia (Hb < 5) — transfuse",
+      "Hypoglycaemia < 2.2 mmol/L (often profound — give glucose immediately)",
+      "Respiratory distress (acidotic breathing — Kussmaul-like) — sign of severe acidosis",
+      "Shock — but in African children FEAST showed bolus harm — cautious",
+      "Black water fever (haemolysis + AKI)",
+      "Hyperparasitaemia > 10%",
+      "Concurrent bacterial sepsis (especially Salmonella in SSA)"
+    ],
+    "diagnostics": [
+      "MALARIA RDT (HRP2 or pLDH) — first-line (immediate)",
+      "MICROSCOPY thick + thin film if available (species + parasitaemia %)",
+      "Blood glucose (always — hypoglycaemia very common)",
+      "FBC + Hb (severe anaemia)",
+      "U&E + creatinine + ABG / VBG + lactate",
+      "LFT",
+      "Coagulation (DIC risk)",
+      "Urinalysis (haemoglobinuria, AKI)",
+      "Blood culture (rule out bacterial co-infection — Salmonella common in SSA)",
+      "LP if seizure / coma (exclude meningitis — controversial in cerebral malaria due to raised ICP risk; do after stabilising + imaging if possible)",
+      "Cross-match for transfusion"
+    ],
+    "management": [
+      "EMERGENCY MEASURES:",
+      "  ABCDE",
+      "  Glucose 25% / 10% 5 ml/kg IV bolus IF BG < 2.2 (CHECK AT PRESENTATION ALWAYS)",
+      "  Oxygen if sats < 90%",
+      "  Seizures: phenobarbital 20 mg/kg IM/IV or diazepam 0.5 mg/kg PR (lorazepam 0.1 mg/kg IV)",
+      "  Antipyretics for high fever",
+      "  Cautious fluid (FEAST trial harm with bolus in African children); maintenance 5% dextrose with monitored UO",
+      "ANTIMALARIAL — IV ARTESUNATE FIRST-LINE (AQUAMAT, SEAQUAMAT):",
+      "  2.4 mg/kg IV at 0, 12, 24h then daily × 24h continuous (minimum 3 doses)",
+      "  Once tolerating PO + ≥ 24h IV: switch to oral artemisinin-based combination therapy (ACT) — artemether-lumefantrine 6 doses × 3 days; complete full course",
+      "  AVOID quinine first-line (inferior — but acceptable second-line if artesunate unavailable: 20 mg/kg IV loading then 10 mg/kg q8h)",
+      "  Children < 20 kg: artesunate 3 mg/kg/dose (higher dose per kg for small children — pharmacokinetics)",
+      "  Watch DELAYED HAEMOLYSIS post-artesunate (1-3 weeks — check FBC at follow-up)",
+      "SEVERE ANAEMIA:",
+      "  Transfusion threshold: Hb < 5 g/dL with severe symptoms (respiratory distress, shock, decompensation); Hb < 4 g/dL routine (WHO recommendation; cautious in cardiac child)",
+      "  Packed cells 10 ml/kg over 3-4h (slow — avoid overload)",
+      "  Co-administer furosemide if cardiac risk",
+      "BACTERIAL CO-INFECTION:",
+      "  Empirical ceftriaxone 80 mg/kg/day for any severely ill malaria child (especially Salmonella in SSA) — until cultures back",
+      "  Add vancomycin if severe shock / line",
+      "MONITORING:",
+      "  Vital signs hourly",
+      "  Glucose 4-hourly (PROFOUND hypoglycaemia common, especially infants + on quinine)",
+      "  Parasite count + Hb every 12-24h",
+      "  Urine output",
+      "  Conscious level + neurological",
+      "CEREBRAL MALARIA / SEIZURES:",
+      "  AVOID phenytoin prophylactically (no benefit)",
+      "  Seizure management as above",
+      "  Maintain glucose + electrolytes",
+      "  Manage raised ICP if signs: head-up 30°, mannitol controversial (no proven benefit); avoid hyperventilation",
+      "  Corticosteroids — NO benefit, may worsen (older trials)",
+      "AKI / BLACKWATER FEVER:",
+      "  Fluid balance careful",
+      "  Avoid nephrotoxins",
+      "  Renal replacement therapy if uraemia / refractory",
+      "ACIDOSIS:",
+      "  Treat underlying (improve perfusion, glucose, transfusion)",
+      "  Bicarbonate only severe (pH < 7.1) + cautious",
+      "FOLLOW-UP:",
+      "  Complete oral ACT course",
+      "  Reassess at 7-14 d (post-artesunate haemolysis)",
+      "  Address ITN use + chemoprophylaxis if applicable",
+      "  Address concurrent / sequel conditions (anaemia, malnutrition)",
+      "PREVENTION:",
+      "  Insecticide-treated bed nets",
+      "  Seasonal malaria chemoprophylaxis in Sahel (WHO 2023)",
+      "  IPTi (intermittent preventive treatment of infants) — pilot in some Kenya counties",
+      "  RTS,S / R21 malaria VACCINE — RTS,S Mosquirix scaled up Africa; R21 newer + cheaper + similar efficacy",
+      "  4 doses 6-18 months for children at risk",
+      "  Kenya pilot RTS,S in Western Kenya — substantial mortality reduction",
+      "  Maternal IPTp-SP in moderate-high transmission",
+      "  Vector control (indoor residual spraying, larvicide)",
+      "  Address environmental — drainage",
+      "  Public health Kenya MOH: National Malaria Strategy"
+    ],
+    "references": [
+      {
+        "label": "WHO Guidelines for Malaria 2023/2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "AQUAMAT Lancet 2010 (artesunate vs quinine African children)",
+        "kind": "trial"
+      },
+      {
+        "label": "SEAQUAMAT Lancet 2005 (artesunate vs quinine SE Asian adults)",
+        "kind": "trial"
+      },
+      {
+        "label": "Kenya National Malaria Treatment Guidelines 2024",
+        "kind": "policy"
+      },
+      {
+        "label": "WHO IMCI Severe Malaria Module",
+        "kind": "guideline"
+      },
+      {
+        "label": "WHO Malaria Vaccine Position Paper R21/RTS,S 2023",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "paediatric-trauma-resuscitation",
+    "title": "Paediatric trauma resuscitation — ATLS for kids",
+    "icd10": [
+      "T07"
+    ],
+    "icd11": [
+      "NA0Z"
+    ],
+    "domains": [
+      "paediatrics",
+      "trauma",
+      "emergency",
+      "critical-care"
+    ],
+    "population": "Children with trauma — falls, RTA, drowning, burns, abuse. Anatomic + physiologic differences from adults: larger head, more compliant chest, different airway, less reserve.",
+    "presentation": "Multiple trauma, polytrauma, head injury, burns, drowning. Mechanism of injury crucial. Non-accidental injury — high index of suspicion.",
+    "redFlags": [
+      "NEXUS criteria for paeds c-spine clearance",
+      "GCS ≤ 8 — intubate",
+      "Persistent shock despite fluid (consider haemorrhage, tension PTX, tamponade)",
+      "Mechanism suggestive of abuse (NAI) — multiple injuries different ages, inconsistent history, social red flags",
+      "Suspected spinal injury — log roll + collar (paediatric size)",
+      "Major haemorrhage — paediatric TXA + MTP",
+      "Significant burns (separate condition)"
+    ],
+    "diagnostics": [
+      "Primary survey: cABCDE (catastrophic haemorrhage, Airway+c-spine, Breathing, Circulation, Disability, Exposure) — age-appropriate norms",
+      "Secondary survey: head-to-toe + AMPLE history",
+      "Vital signs by age — normal ranges:",
+      "  Newborn: HR 100-205, RR 30-60, SBP > 60",
+      "  Infant: HR 100-180, RR 25-50",
+      "  Toddler: HR 90-150, RR 20-40",
+      "  Pre-school: HR 80-130",
+      "  School age: HR 65-110",
+      "Adolescent: adult ranges",
+      "FAST scan if available",
+      "FBC, group + crossmatch, glucose, electrolytes, lactate, base excess, coag",
+      "Imaging: CT head/c-spine/chest/abdo per indication (paeds — minimise radiation; targeted)",
+      "Trauma scoring: paediatric GCS, paediatric trauma score (PTS), ISS"
+    ],
+    "management": [
+      "PRE-HOSPITAL:",
+      "  Scene safety, paediatric-specific equipment",
+      "  Avoid unnecessary movement",
+      "  Direct pressure for haemorrhage",
+      "  In-line c-spine immobilisation",
+      "  IV access if able, fluid bolus cautious in non-shock (FEAST)",
+      "  Transport to trauma centre with paediatric capabilities",
+      "PRIMARY SURVEY ABCDE:",
+      "c (catastrophic): tourniquet + pelvic binder (paediatric size — at level of greater trochanters)",
+      "A (airway + c-spine):",
+      "  Position — neutral (large occiput in young — shoulder roll)",
+      "  Chin lift / jaw thrust",
+      "  Suction (small bore Yankauer)",
+      "  OPA / NPA size-appropriate",
+      "  Definitive airway: ETT if GCS ≤ 8 — RSI with appropriate dose drugs (ketamine 1-2 mg/kg, rocuronium 1.2 mg/kg, atropine 20 mcg/kg pre-treat in < 1 yr to prevent bradycardia)",
+      "  ETT size: (age/4) + 4 = mm internal diameter (uncuffed for < 8 traditional but cuffed now acceptable + preferred for trauma due to aspiration)",
+      "  C-spine: rigid collar + log roll; clear with NEXUS / Canadian paediatric criteria",
+      "B (breathing):",
+      "  High-flow O2",
+      "  Treat tension pneumothorax — needle decompression 2nd ICS MCL or 4th-5th ICS AAL (alternative children — anterior axillary preferred); chest drain",
+      "  Haemothorax: chest drain",
+      "  Flail chest: stabilise, analgesia, may need ventilation",
+      "C (circulation):",
+      "  Hypotension is LATE in children (compensate well; can be near-arrest before BP drops)",
+      "  Heart rate + perfusion (cap refill, mottling) are earlier signs",
+      "  IV × 2 large-bore peripheral if possible (16-22G); IO if failed in 90 seconds (proximal tibia)",
+      "  Crystalloid: 20 ml/kg balanced crystalloid (Hartmann/PlasmaLyte) bolus over 5-10 min",
+      "  Reassess after each bolus",
+      "  PERMISSIVE HYPOTENSION in haemorrhage controversial in paeds — typically MAP > 65 (paediatric) target until source controlled",
+      "  Blood early if ongoing haemorrhage: O-negative emergency, then crossmatched",
+      "  TRANEXAMIC ACID 15 mg/kg (max 1 g) IV within 3h of injury (CRASH-2 + ENGAGE paediatric)",
+      "  Massive transfusion protocol 1:1:1 if shock + bleeding",
+      "  AVOID excessive crystalloid (dilutional coagulopathy, oedema)",
+      "D (disability):",
+      "  GCS (paediatric version for < 4 yr — AVPU acceptable)",
+      "  Pupils",
+      "  Glucose (always)",
+      "  BE-FAST stroke (rare paeds)",
+      "  Treat hypoglycaemia: 5 ml/kg of 10% glucose",
+      "E (exposure):",
+      "  Log roll",
+      "  Examine back + perineum + bottom",
+      "  Prevent hypothermia (children at high risk — large surface area / small body mass)",
+      "  Warm blankets, warm fluids, warmer environment",
+      "SECONDARY SURVEY:",
+      "  AMPLE + head-to-toe",
+      "  Document all findings",
+      "  Look for non-accidental injury signs:",
+      "    Inconsistent history",
+      "    Delayed presentation",
+      "    Multiple injuries different ages",
+      "    Specific patterns (cigarette burns, immersion lines, bilateral fractures, posterior rib fractures, metaphyseal corner fractures, retinal haemorrhages in shaken baby)",
+      "    Inappropriate caregiver behaviour",
+      "    Mandatory reporting per Kenya Children Act + Sexual Offences Act if SA",
+      "HEAD INJURY:",
+      "  Maintain SBP > 110 (or age-appropriate)",
+      "  Sats > 94%",
+      "  Head-up 30°",
+      "  CT head per PECARN criteria (avoid unnecessary radiation in low-risk)",
+      "  Hypertonic saline 3% 3 ml/kg for raised ICP signs (preferred over mannitol in paeds)",
+      "  Anticonvulsants if seizing",
+      "  Neurosurgical referral for significant injuries",
+      "C-SPINE:",
+      "  NEXUS / Canadian paediatric C-spine rule for clinical clearance < 14 yr",
+      "  CT only if clinical concern + > 14 yr (or specific paeds criteria)",
+      "  AVOID routine C-spine CT < 8 yr (radiation; MRI preferred where indicated)",
+      "  SCIWORA (spinal cord injury without radiographic abnormality) common in children",
+      "PELVIC FRACTURE: binder at greater trochanters (NOT spring pelvis); often associated with massive haemorrhage; angiography embolisation",
+      "ABDOMINAL TRAUMA: solid organ injuries managed non-operatively often; FAST + CT; surgical for haemodynamic instability / hollow viscus",
+      "LIMB FRACTURES: splint + analgesia + reduce if vascular compromise; open fractures — IV cefazolin + tetanus + irrigation/debridement",
+      "OPEN FRACTURE / wound: tetanus prophylaxis + antibiotic (IV cefazolin + gentamicin per BACO)",
+      "BURNS (separate condition)",
+      "DROWNING (separate condition)",
+      "TRAUMA TEAM ACTIVATION CRITERIA per local protocol",
+      "DISPOSITION: paediatric trauma centre transfer if local capabilities exceeded",
+      "POST-RESUSCITATION:",
+      "  Damage control surgery for unstable (control bleed + contamination, return for definitive)",
+      "  ICU + monitoring",
+      "  Pain control",
+      "  VTE prophylaxis adolescents",
+      "  Tetanus prophylaxis",
+      "  Mental health screening for trauma sequelae",
+      "  Rehabilitation",
+      "  Family communication",
+      "  Mandatory reporting if NAI suspected",
+      "PRIMARY PREVENTION:",
+      "  Child safety education + seat belts + car seats + helmets",
+      "  Smoke detectors + pool safety + medications safe storage",
+      "  Address SDOH (poverty, supervision)"
+    ],
+    "references": [
+      {
+        "label": "ATLS Advanced Trauma Life Support 10e (American College of Surgeons)",
+        "kind": "guideline"
+      },
+      {
+        "label": "PALS Paediatric Advanced Life Support 2020/2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "APLS Advanced Paediatric Life Support 7e (ALSG)",
+        "kind": "guideline"
+      },
+      {
+        "label": "RCEM UK Paediatric Trauma 2020",
+        "kind": "guideline"
+      },
+      {
+        "label": "PECARN clinical decision rule (head injury, c-spine)",
+        "kind": "guideline"
+      },
+      {
+        "label": "WHO Pocket Book of Hospital Care for Children — Trauma",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "child-abuse-mandatory-reporting",
+    "title": "Child abuse + maltreatment — recognition + mandatory reporting",
+    "icd10": [
+      "T74.92"
+    ],
+    "icd11": [
+      "QE82"
+    ],
+    "domains": [
+      "paediatrics",
+      "primary-care",
+      "mental-health",
+      "emergency",
+      "ssa",
+      "kenya-moh"
+    ],
+    "population": "All children — physical, sexual, emotional abuse, neglect. SSA: high prevalence; under-reporting; harmful traditional practices (FGM, child marriage, physical punishment, witchcraft accusations).",
+    "presentation": "Physical: unexplained / inconsistent injuries, multiple injuries different ages, specific patterns (cigarette burns, immersion lines, hand prints, posterior rib fractures, metaphyseal corner fractures, shaken baby — retinal haemorrhages + subdural). Sexual: STI / pregnancy in child, genital trauma, behavioural change, regression. Neglect: failure to thrive, poor hygiene, untreated medical, missed appointments. Emotional: developmental delay, behavioural disorders, low self-esteem.",
+    "redFlags": [
+      "Inconsistent history with injuries",
+      "Delayed presentation for serious injury",
+      "Different histories from different sources",
+      "Inappropriate caregiver behaviour",
+      "Witnessed abuse / disclosure",
+      "Multiple ED visits",
+      "Domestic violence in home (children at risk too)",
+      "FGM features",
+      "Suspected child marriage",
+      "Suspected child labour / trafficking",
+      "Witchcraft accusation against child",
+      "Children with disability (higher abuse risk)"
+    ],
+    "diagnostics": [
+      "Detailed history (separate from caregivers if appropriate age + safe)",
+      "Use trained interviewer (child sexual abuse — specialist forensic interview)",
+      "AVOID leading questions",
+      "Comprehensive examination by trained clinician",
+      "Document injuries: body map, photographs (with consent + per protocol), measurements",
+      "Investigations as indicated:",
+      "  Imaging: skeletal survey for non-accidental injury in young child + repeat at 10-14 days; fundoscopy (shaken baby); CT head if neurological",
+      "  Bloods: FBC, coagulation, LFT, urinalysis, drug screen, alcohol, glucose, calcium (rule out alternative — bleeding disorder, OI, leukaemia)",
+      "  Pregnancy test, STI screen, HIV test if sexual abuse",
+      "  Forensic evidence collection within 72-120h (consent + chain of custody) — SAEK kit",
+      "Mental health: depression, anxiety, suicidality, behavioural assessment",
+      "Developmental + behavioural assessment",
+      "Multidisciplinary case review"
+    ],
+    "management": [
+      "ACUTE — STABILISATION:",
+      "  Treat injuries per trauma protocols",
+      "  Sexual assault < 72h: HIV PEP (TLD) × 28 days (Kenya NASCOP)",
+      "  Sexual assault < 120h: emergency contraception (levonorgestrel 1.5 mg or Cu-IUD)",
+      "  STI prophylaxis: ceftriaxone + azithromycin + metronidazole",
+      "  Hepatitis B vaccination + HBIG if unvaccinated",
+      "  Tetanus prophylaxis",
+      "  Wound care",
+      "  Mental health support + psychological first aid",
+      "  Safety planning",
+      "MANDATORY REPORTING (Kenya):",
+      "  Children Act 2022 + Sexual Offences Act 2006",
+      "  Required: physical / sexual / emotional abuse, neglect, FGM, defilement (sexual contact with child < 18)",
+      "  Report to: Children's Department (Children's Officer), Police (Gender Desk), DCI, hospital child protection team",
+      "  PRC1 / P3 forms for evidence",
+      "  Inform mother if she is not implicated; involve father if not implicated; sometimes immediate separation needed",
+      "  Confidentiality limited by mandatory reporting laws",
+      "MULTIDISCIPLINARY:",
+      "  Hospital child protection team (where exists — Kenya KNH + major referrals)",
+      "  Children's Officer + social worker",
+      "  Police Gender Desk for sexual abuse",
+      "  Counsellor + child psychologist",
+      "  Legal aid (FIDA Kenya, Kituo cha Sheria)",
+      "  Forensic medical examiner (police surgeon for legal evidence)",
+      "  Education + housing + protection services",
+      "  NGO support (e.g. Childline Kenya 116 — toll-free, GBV hotline 1195 / 1199)",
+      "  SGBV one-stop centre (where available — KNH, GBV Recovery Centre)",
+      "SAFETY PLANNING:",
+      "  Immediate safety — admit if necessary for medical / protection",
+      "  Place of safety / foster care if extraction needed (children's home, kinship)",
+      "  Restraining order against perpetrator if needed",
+      "  School / community awareness for ongoing protection",
+      "LONGER-TERM:",
+      "  Trauma-focused CBT or play therapy",
+      "  Family therapy if family-based (with caution + safety priority)",
+      "  Support groups",
+      "  Educational continuity (especially adolescent pregnancy — Kenya school re-entry policy)",
+      "  Address developmental + behavioural impact",
+      "  Long-term mental health follow-up",
+      "FGM (specific):",
+      "  Illegal Kenya Anti-FGM Act 2011 — any procedure on female genital organs not for medical reasons",
+      "  Acute management: bleeding control, infection, urinary retention, pain",
+      "  Long-term: defibulation + counselling + obstetric care; do NOT re-infibulate after birth",
+      "  Public health: prevent — community education, religious leader engagement, alternative rites of passage, prosecution",
+      "CHILD MARRIAGE:",
+      "  Illegal Kenya Marriage Act 2014 — minimum age 18",
+      "  Address health consequences (obstetric, mental, education)",
+      "  Public health: girls' education + economic empowerment + community programmes",
+      "PROFESSIONAL CONSIDERATIONS:",
+      "  Document carefully + objectively (medico-legal)",
+      "  Be prepared for legal proceedings (testify)",
+      "  Avoid showing emotion that might be misinterpreted",
+      "  Self-care + supervision (vicarious trauma)",
+      "  Continuing education on child protection",
+      "  Multidisciplinary team approach reduces missed cases + improves outcomes",
+      "SECONDARY PREVENTION (programmes):",
+      "  Home visiting programmes for at-risk families",
+      "  Parenting education",
+      "  Address parental mental health + substance abuse + IPV",
+      "  Support for caregivers of children with disability",
+      "  Early childhood programmes"
+    ],
+    "references": [
+      {
+        "label": "WHO INSPIRE: Seven Strategies for Ending Violence Against Children 2016",
+        "kind": "policy"
+      },
+      {
+        "label": "RCPCH Child Protection Companion 2nd edition",
+        "kind": "guideline"
+      },
+      {
+        "label": "AAP Clinical Report: Evaluation of Suspected Child Physical Abuse 2015/2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya Children Act 2022",
+        "kind": "policy"
+      },
+      {
+        "label": "Kenya Sexual Offences Act 2006",
+        "kind": "policy"
+      },
+      {
+        "label": "Kenya Anti-FGM Act 2011",
+        "kind": "policy"
+      },
+      {
+        "label": "WHO Clinical Handbook on Health Care for Children Subjected to Violence + Sexual Abuse 2017",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "kangaroo-mother-care-preterm",
+    "title": "Kangaroo mother care — preterm + low birthweight newborn",
+    "icd10": [
+      "P07.30"
+    ],
+    "icd11": [
+      "KA21.0"
+    ],
+    "domains": [
+      "neonatology",
+      "paediatrics",
+      "primary-care",
+      "mnch",
+      "ssa",
+      "kenya-moh"
+    ],
+    "population": "Preterm + low birthweight (LBW < 2500g) infants — primarily resource-limited settings where neonatal ICU access limited. WHO Recommendation 2022: ALL preterm + LBW infants, including immediately after birth (paradigm shift from previously 'stabilised infants only').",
+    "presentation": "Routine intervention from birth or as soon as possible for preterm + LBW. Continuous KMC (24/7 skin-to-skin contact + exclusive breastfeeding + early discharge) reduces neonatal mortality 25-40% in trials.",
+    "redFlags": [
+      "Severe respiratory distress requiring intubation — defer KMC until stable",
+      "Severe hypothermia (temp < 32°C) — warm first",
+      "Massive intracranial haemorrhage requiring intensive care",
+      "Severe sepsis with shock — stabilise first then KMC adjunctive",
+      "Mother unable to provide KMC — surrogate (father / family member / 'kangaroo dad' / nurse) can provide"
+    ],
+    "diagnostics": [
+      "Baseline: weight, gestational age, vital signs, temperature",
+      "Maternal: postpartum recovery, mental health, social support",
+      "Identify any contraindications (rare absolute)"
+    ],
+    "management": [
+      "WHO 2022 RECOMMENDATIONS (paradigm shift):",
+      "  INITIATE KMC immediately after birth (not after stabilisation as before)",
+      "  CONTINUOUS skin-to-skin 24h/day if possible",
+      "  Includes pre-stabilisation period (immediate KMC trial in NEJM 2021 — 25% mortality reduction)",
+      "PRACTICAL POSITIONING:",
+      "  Infant placed naked (except nappy + cap) between mother's breasts in upright vertical position",
+      "  Direct skin-to-skin contact",
+      "  Infant head turned to one side, neck slightly extended, ear over mother's heart",
+      "  Hips flexed in 'frog' position",
+      "  Cover with mother's clothing / wrap + warm cloth / blanket",
+      "  Vital signs monitored regularly",
+      "  Continuous as much as possible (24h/day if able), with brief breaks for hygiene",
+      "FEEDING:",
+      "  EXCLUSIVE BREASTFEEDING — direct breast where possible",
+      "  Cup feeding for non-suckling preterm (avoid bottle)",
+      "  NG tube if very preterm; cup as suckling develops",
+      "  Frequent small feeds (q2-3h)",
+      "  Track weight gain (target 15-20 g/kg/day)",
+      "  Donor breast milk if mother's milk insufficient",
+      "ROUTINE NEWBORN CARE:",
+      "  Vitamin K 1 mg IM at birth (haemorrhagic disease prevention)",
+      "  Eye prophylaxis (tetracycline 1% or povidone-iodine 2.5%)",
+      "  Hepatitis B birth dose (within 24h)",
+      "  BCG + OPV0 if eligible",
+      "  Cord care (chlorhexidine in low resource — WHO recommendation; or clean + dry)",
+      "MONITORING:",
+      "  Daily weight (target 15-20 g/kg/day after initial loss)",
+      "  Temperature 6-hourly minimum, more if unstable",
+      "  Heart rate, respiratory rate, glucose monitoring",
+      "  Identify danger signs: poor feeding, breathing difficulty, fever, hypothermia, jaundice, lethargy, irritability, vomiting, bloody stool, seizures",
+      "ADVANTAGES vs incubator/conventional care:",
+      "  Thermoregulation (mother adjusts temperature)",
+      "  Improved breastfeeding rates + duration",
+      "  Reduced infection (lower nosocomial; protective)",
+      "  Improved bonding + maternal mental health",
+      "  Cardiac + respiratory stability",
+      "  Less hypoglycaemia",
+      "  Earlier discharge",
+      "  Cost-effective LMIC",
+      "  Mortality reduction 25-40% in preterm/LBW (Cochrane + WHO trials including iKMC NEJM 2021)",
+      "DISCHARGE CRITERIA:",
+      "  Weight gain consistent ~ 15 g/kg/day for 3 days",
+      "  Tolerates feeding well",
+      "  Mother trained + confident",
+      "  No medical complication",
+      "  Community follow-up arranged",
+      "  Typically discharge at 1800-2000g (some smaller with strong follow-up)",
+      "COMMUNITY CONTINUATION:",
+      "  Continue KMC at home until infant outgrows / unwilling (typically 2-3 months)",
+      "  Frequent follow-up at clinic (weekly until 2500g)",
+      "  Community health volunteer support",
+      "  Kenya MNCH integrated",
+      "PROGRAMMATIC EXPANSION (LMIC priority):",
+      "  Kenya MOH KMC scaling — KMC centres at Level 4+ hospitals + community",
+      "  Father involvement (father-KMC, 'kangaroo dad')",
+      "  Address stigma + cultural barriers",
+      "  Train staff + community",
+      "  Equip facilities (wraps, beds for mother + infant together)",
+      "  Allow continuous family presence in NICU (paradigm shift from visitor restrictions)",
+      "  Lancet Every Newborn Action Plan"
+    ],
+    "references": [
+      {
+        "label": "WHO Recommendations for Care of the Preterm or Low-Birth-Weight Infant 2022",
+        "kind": "guideline"
+      },
+      {
+        "label": "Immediate KMC Study Group. NEJM 2021 (iKMC mortality reduction)",
+        "kind": "trial"
+      },
+      {
+        "label": "Lawn JE et al. Lancet 2016 + Every Newborn Action Plan",
+        "kind": "policy"
+      },
+      {
+        "label": "Kenya MOH KMC Implementation Guidelines",
+        "kind": "policy"
+      },
+      {
+        "label": "Cochrane Kangaroo Mother Care for Low Birth Weight",
+        "kind": "review"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "neonatal-jaundice-bilirubin",
+    "title": "Neonatal jaundice — phototherapy + exchange transfusion thresholds",
+    "icd10": [
+      "P59.9"
+    ],
+    "icd11": [
+      "KA84.4"
+    ],
+    "domains": [
+      "neonatology",
+      "paediatrics",
+      "primary-care",
+      "ssa"
+    ],
+    "population": "Newborns — physiological jaundice 60%, pathological 5-10%. Kernicterus (bilirubin encephalopathy) preventable cause of permanent neurodevelopmental disability — major SSA burden due to late presentation.",
+    "presentation": "Jaundice visible day 2-3 (physiological peak day 3-5, resolves by 1-2 weeks). Pathological: appears in first 24h, rises rapidly, prolonged > 14 days term / 21 days preterm, unwell infant, ABO/Rh incompatibility, family history, conjugated > 20%.",
+    "redFlags": [
+      "Jaundice in first 24h — pathological",
+      "Rapidly rising bilirubin (> 8.5 µmol/L/hour)",
+      "Bilirubin reaching exchange transfusion threshold",
+      "Signs of acute bilirubin encephalopathy (hypotonia + retrocollis + opisthotonus + high-pitched cry + drowsy / irritable + poor feeding → escalating to seizures + coma)",
+      "Conjugated hyperbilirubinaemia (any) — biliary atresia investigation urgent < 6 weeks",
+      "Unwell infant — sepsis / metabolic"
+    ],
+    "diagnostics": [
+      "Transcutaneous bilirubin (TcB) for screening; serum bilirubin (SBR) if TcB high or unwell",
+      "Direct (conjugated) bilirubin — fractionate",
+      "FBC + blood film + reticulocyte count",
+      "Blood group + Rh + direct Coombs (DAT) — haemolytic disease of newborn",
+      "G6PD test (especially African ancestry — common haemolysis cause; also if poor response to phototherapy)",
+      "LFT (raised AST/ALT suggests hepatocellular)",
+      "TSH (hypothyroidism)",
+      "Septic screen if unwell (FBC + CRP + blood culture + urine)",
+      "Stool colour (pale stool suggests biliary atresia)",
+      "Galactosaemia screen if prolonged + ill",
+      "Newborn screen routine"
+    ],
+    "management": [
+      "PHYSIOLOGICAL JAUNDICE (most cases):",
+      "  Watch + reassure",
+      "  Continue breastfeeding (don't stop — breast milk jaundice usually benign)",
+      "  Monitor TcB / SBR per nomogram",
+      "  Daily review until resolving",
+      "PHOTOTHERAPY:",
+      "  THRESHOLD by age, gestation, risk factors (use AAP 2022 + Kenya/WHO nomograms)",
+      "  Conventional vs intensive (sun + LED + intensive triple-bank LED)",
+      "  Phototherapy works by converting unconjugated bilirubin to water-soluble isomers excreted in bile + urine",
+      "  Maximise efficiency: nappy only + eye protection + maximum skin exposure + distance optimised + double-bank for high levels + intensive for very high levels",
+      "  Continue breastfeeding (interruption rarely needed)",
+      "  Monitor: SBR every 6-12h depending on level + response",
+      "  Side effects: dehydration (extra fluids), loose stools, mild rash, retinal damage if no eye protection",
+      "  Stop when bilirubin > 50 below threshold + falling",
+      "  REBOUND check 12-24h after stopping",
+      "EXCHANGE TRANSFUSION:",
+      "  THRESHOLD per nomogram (much higher than phototherapy)",
+      "  Indications: ABO/Rh haemolytic + severe; bilirubin approaching neurotoxic; failed maximal intensive phototherapy",
+      "  Double-volume exchange (2 × blood volume — 160-200 ml/kg)",
+      "  Centrifuged O-negative or group-specific compatible blood",
+      "  ICU/HDU procedure with anaesthetic / neonatal support",
+      "  Risks: arrhythmia, hypotension, hypoglycaemia, hypocalcaemia, thrombocytopaenia, infection, NEC",
+      "IV IMMUNOGLOBULIN (IVIG):",
+      "  For isoimmune haemolytic disease (DAT+) reaching exchange threshold",
+      "  0.5-1 g/kg IV — may avoid exchange",
+      "TREAT UNDERLYING CAUSE:",
+      "  Sepsis: antibiotics",
+      "  Hypothyroidism: levothyroxine",
+      "  G6PD deficiency: avoid haemolytic triggers + supportive",
+      "  Biliary atresia: urgent surgical (Kasai portoenterostomy) BEFORE 8 weeks — best outcomes",
+      "  ABO/Rh haemolytic: phototherapy + IVIG + exchange if needed; consider EPO + prolonged phototherapy",
+      "  Cephalohaematoma / extensive bruising: monitor, phototherapy",
+      "  Breast milk jaundice (prolonged, well infant): continue breastfeeding (interruption diagnostic if needed)",
+      "EDUCATION + FOLLOW-UP:",
+      "  Mother on jaundice signs + when to return",
+      "  Follow-up 24-72h after discharge if any jaundice or high-risk",
+      "  Continued monitoring through 2 weeks",
+      "PROLONGED JAUNDICE (> 14 days term / 21 days preterm):",
+      "  Workup: SBR + fractionate + LFT + TFT + G6PD + screen for biliary atresia (stool colour, US) + urine ferric chloride + galactose screen + breast milk jaundice trial",
+      "  Refer to specialist if conjugated, unwell, evolving",
+      "PREVENTION:",
+      "  Adequate breastfeeding initiation + frequency (8-12 times/day)",
+      "  Antenatal Rh status + anti-D for Rh-negative mothers (separate management)",
+      "  Newborn check before discharge",
+      "  Education for parents on jaundice",
+      "  Routine bilirubin screening before discharge in high-risk",
+      "KERNICTERUS PREVENTION (CRITICAL SSA):",
+      "  Late presentation common in LMIC + community delivery",
+      "  Train community health workers on jaundice recognition",
+      "  Solar phototherapy (innovation for off-grid)",
+      "  Reduce delays in treatment"
+    ],
+    "references": [
+      {
+        "label": "AAP Clinical Practice Guideline Hyperbilirubinaemia 2022",
+        "kind": "guideline"
+      },
+      {
+        "label": "NICE CG98 Jaundice in Newborns 2010 + 2024 update",
+        "kind": "guideline"
+      },
+      {
+        "label": "WHO Pocket Book of Hospital Care for Children — Neonatal Jaundice",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya MOH Basic Paediatric + Newborn Protocols",
+        "kind": "policy"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "paediatric-asthma-comprehensive",
+    "title": "Paediatric asthma — GINA + age-specific management",
+    "icd10": [
+      "J45.9"
+    ],
+    "icd11": [
+      "CA23"
+    ],
+    "domains": [
+      "paediatrics",
+      "respiratory",
+      "primary-care",
+      "emergency",
+      "ssa"
+    ],
+    "population": "Children + adolescents — prevalence 10-15% rising; SSA under-diagnosis common as 'recurrent bronchitis' / 'wheezy bronchitis'. Asthma deaths preventable.",
+    "presentation": "Variable wheeze, cough (often dry, worse at night/early morning), dyspnoea, chest tightness — episodic + triggered. < 5 yr: preschool wheeze (viral-induced, episodic) vs atopic asthma (multitrigger, atopic). Acute attack: severity by RR + accessory muscles + sats + ability to speak / feed.",
+    "redFlags": [
+      "Severe attack: unable to speak / feed / cyanosis / silent chest / exhaustion",
+      "Sats < 92% on room air",
+      "Tachycardia + tachypnoea + accessory muscles",
+      "RR > 50 (< 5 yr) / > 30 (5+ yr)",
+      "Bradycardia / silent chest / cyanosis — pre-arrest",
+      "Pneumothorax (sudden deterioration)",
+      "Repeated ED visits",
+      "Recent course of oral steroid",
+      "Previous ICU admission for asthma",
+      "Inadequate response to first-line treatment"
+    ],
+    "diagnostics": [
+      "History: pattern, triggers, family history, atopy (eczema, allergic rhinitis, food allergy)",
+      "Examination: wheeze, prolonged expiration, accessory muscles, eczema",
+      "Spirometry from age 5: FEV1/FVC < 0.85 + reversibility ≥ 12% post-bronchodilator",
+      "FeNO if available — eosinophilic inflammation marker",
+      "Peak expiratory flow (PEF) variability > 13% diagnostic in children",
+      "Skin prick test or specific IgE for aeroallergens",
+      "Asthma control test (cACT / ACQ)",
+      "CXR not routine; useful for severe / atypical / not responding"
+    ],
+    "management": [
+      "GINA 2024 BY AGE GROUP:",
+      "≤ 5 YEARS:",
+      "  Step 1: SABA prn (mild infrequent symptoms)",
+      "  Step 2: daily low-dose ICS (budesonide 200 mcg, fluticasone 50 mcg) via spacer + face mask (< 4 yr) / mouthpiece (≥ 4 yr) + SABA prn",
+      "  Step 3: double low-dose ICS or add LTRA (montelukast) — review diagnosis if needed",
+      "  Step 4: refer specialist; high-dose ICS",
+      "  Continuous viral-induced wheeze: episodic LTRA / pre-emptive ICS bursts",
+      "  AVOID LABA in monotherapy in young children (safety + indication concerns)",
+      "≥ 6 YEARS (similar to adult GINA):",
+      "  Step 1: as-needed low-dose ICS-formoterol (preferred GINA — eliminates SABA-only) OR daily low-dose ICS + SABA",
+      "  Step 2: as-needed ICS-formoterol OR daily low-dose ICS + SABA",
+      "  Step 3: daily low-dose ICS-LABA + as-needed ICS-formoterol",
+      "  Step 4: medium-dose ICS-LABA daily",
+      "  Step 5: high-dose ICS-LABA + LAMA + refer for biologic + specialist (omalizumab, mepolizumab, dupilumab)",
+      "  AVOID SABA-only (SABINA mortality)",
+      "  Annual inhaler technique + adherence + spacer + action plan + asthma education",
+      "DELIVERY:",
+      "  Spacer + face mask < 4 yr",
+      "  Spacer + mouthpiece 4-7 yr",
+      "  MDI ± spacer 8+ (most still benefit from spacer)",
+      "  DPI / breath-actuated if reliably can use (> 8 yr typically)",
+      "  Avoid neb except acute severe (no benefit + tachycardia)",
+      "ACUTE ATTACK MANAGEMENT:",
+      "  Mild-moderate: salbutamol 4-10 puffs via spacer q20 min × 1h",
+      "  Severe / inability to use spacer: nebulised salbutamol 2.5 mg + ipratropium 250 mcg q20 min",
+      "  Oral prednisolone 1-2 mg/kg (max 40 mg) × 3-5 days OR dexamethasone 0.3-0.6 mg/kg × 1-2 doses (alternative — better compliance + same efficacy per multiple RCTs)",
+      "  Oxygen titrated to sats > 94%",
+      "  Severe: IV MgSO4 40 mg/kg (max 2 g) over 20 min",
+      "  Refractory: IV salbutamol infusion (caution arrhythmia + hypokalaemia)",
+      "  IV aminophylline rarely (narrow therapeutic, arrhythmia, vomiting)",
+      "  Intubation only if absolutely needed (DYNAMIC HYPERINFLATION + pneumothorax risk)",
+      "  Watch for hypokalaemia + hypoglycaemia (salbutamol)",
+      "ADMISSION CRITERIA:",
+      "  Severe attack with poor response",
+      "  Sats < 92% after treatment",
+      "  Risk factors (previous ICU, near-fatal asthma)",
+      "  Social: late hour, distance, parental anxiety",
+      "DISCHARGE:",
+      "  Stable on inhaled + oral therapy",
+      "  Sats > 94% on room air",
+      "  Reviewed inhaler technique",
+      "  Action plan",
+      "  Asthma educator / clinic referral",
+      "  Restart / step-up preventer",
+      "  Follow-up in 2-7 days",
+      "TRIGGERS:",
+      "  Viral URTI (most common children)",
+      "  Allergens (dust mite, pollen, animal dander)",
+      "  Exercise (pre-treatment SABA or LTRA)",
+      "  Cold air",
+      "  Smoking exposure (passive)",
+      "  Irritants (perfume, cooking smoke — major SSA — improved cookstoves)",
+      "  Stress",
+      "  Aspirin/NSAID (aspirin-exacerbated respiratory disease — AERD, less common in children)",
+      "  GERD",
+      "ALLERGY: comorbid allergic rhinitis (treat with intranasal steroid) + eczema (emollient + steroid) — 'one airway' approach",
+      "EXERCISE-INDUCED bronchospasm: SABA pre-exercise; LTRA / ICS-formoterol daily preventer",
+      "ATOPIC MARCH: many start as eczema + food allergy → develop allergic rhinitis + asthma; early intervention with peanut introduction (LEAP) + emollient may modify",
+      "VACCINATIONS:",
+      "  Annual influenza",
+      "  Pneumococcal (PCV13 routine + PPSV23 high-risk)",
+      "  COVID",
+      "  Routine EPI",
+      "SMOKING EXPOSURE: cessation counselling for caregivers; smoke-free home + car",
+      "INDOOR AIR QUALITY: improved cookstoves (major SSA primary care role)",
+      "WHO Global Asthma Strategy + Kenya MOH NCD Strategic Plan address paediatric asthma",
+      "REFERRAL:",
+      "  Refractory asthma",
+      "  Diagnostic uncertainty",
+      "  Step 4+",
+      "  Recurrent admissions",
+      "  Biologic candidate",
+      "  Workup atypical features"
+    ],
+    "references": [
+      {
+        "label": "GINA 2024 — paediatric chapters",
+        "kind": "guideline"
+      },
+      {
+        "label": "BTS/SIGN Asthma 2019 + 2024 update",
+        "kind": "guideline"
+      },
+      {
+        "label": "ERS/ATS Severe Asthma 2020 (paediatric)",
+        "kind": "guideline"
+      },
+      {
+        "label": "NICE NG80 Asthma 2017 + 2024 update",
+        "kind": "guideline"
+      },
+      {
+        "label": "PRACTALL Pediatric Asthma Consensus 2024",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]
