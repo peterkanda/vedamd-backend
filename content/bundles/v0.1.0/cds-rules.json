@@ -10358,5 +10358,155 @@
     "rationale": "IWGDF 2023 + IDSA 2024 + NICE NG19.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "copd-gold-2024-comprehensive-r1",
+    "title": "COPD GOLD 2024 — ABE category-based; ICS only if eos ≥ 300",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "copd-gold-2024-comprehensive"
+    },
+    "indicators": [
+      "confirmed post-BD FEV1/FVC < 0.7"
+    ],
+    "recommendation": "Smoking cessation + pulm rehab + vaccinations (flu/pneumo/RSV/COVID). GOLD ABE: A = SABA/SAMA; B = LABA+LAMA; E (exacerbator) = LABA+LAMA, ADD ICS if eos ≥ 300 (triple — IMPACT/ETHOS); roflumilast for FEV1 < 50% + chronic bronchitis + frequent exac; macrolide 3×/wk selected. LTOT for PaO2 ≤ 7.3 ≥ 15 h/d; target sats 88–92%. Alpha-1AT screen if young/non-smoker/lower-lobe. Exacerbation: SABA+SAMA neb, prednisolone 30 mg × 5 d (REDUCE), antibiotic if 2/3 Anthonisen × 5 d, controlled O2 88–92%, NIV for pH < 7.35 + pCO2 > 6. Lung volume reduction / transplant / palliative for advanced.",
+    "rationale": "GOLD 2024 + ERS/ATS 2023 + REDUCE/IMPACT/ETHOS.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "asthma-gina-2024-comprehensive-r1",
+    "title": "Asthma GINA 2024 — ICS-formoterol reliever + controller (no SABA only)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "asthma-gina-2024-comprehensive"
+    },
+    "indicators": [
+      "asthma diagnosis / step-up review"
+    ],
+    "recommendation": "Step 1–2: as-needed low-dose ICS-formoterol (preferred) or daily low-dose ICS + SABA. Step 3: low-dose ICS-LABA daily + ICS-formoterol prn. Step 4: medium-dose ICS-LABA + prn. Step 5: high-dose ICS-LABA + LAMA (triple) + assess biologics. NEVER SABA-only (SABINA — mortality). Severe asthma biologics: omalizumab IgE / mepolizumab/benralizumab eos / dupilumab T2 / tezepelumab TSLP (NAVIGATOR). Exacerbation: salbutamol q20 min + pred 50 mg × 5 d; severe — neb + ipratropium + IV MgSO4 2 g + IV steroid + sats 93–95%; refractory — IV salbutamol/ketamine/ICU. Inhaler technique + spacer + action plan + adherence annually.",
+    "rationale": "GINA 2024 + BTS/SIGN + ERS/ATS Severe + SABINA + NAVIGATOR.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "pneumonia-community-acquired-cap-r1",
+    "title": "CAP — CURB-65 + amoxicillin + macrolide; 5-day non-severe",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "pneumonia-community-acquired-cap"
+    },
+    "indicators": [
+      "consolidation + fever + respiratory symptoms"
+    ],
+    "recommendation": "CURB-65: 0–1 outpatient amoxicillin 1g TDS × 5 d (PRECISE); 2 admit amox + clarithro 5–7 d; 3–5/severe IV co-amox + macrolide or ceftriaxone + azithro × 7 d; ICU if ≥ 4. Always SSA: AFB sputum/GeneXpert for TB; HIV test; PCP cover if HIV+ pO2 < 9.3 (cotrim 1920 TID + steroid). Treat atypicals (Mycoplasma/Legionella/Chlamydia) — macrolide / doxy / FQ. Empyema: drain + 4–6 wk antibiotic; tPA+DNase (MIST2) for locu-lated. O2 target 94–98% (88–92% COPD). Switch IV→PO when stable. CXR follow-up at 6 wk if > 50 / smoker (rule out malignancy). Pneumococcal + flu + RSV vaccine.",
+    "rationale": "BTS 2024 + ATS/IDSA 2019 + ERS/ESCMID 2023 + PRECISE 2024.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "hospital-acquired-pneumonia-vap-r1",
+    "title": "HAP/VAP — local antibiogram-guided + de-escalate at 48–72h",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hospital-acquired-pneumonia-vap"
+    },
+    "indicators": [
+      "new infiltrate after > 48h hospital / > 48h ventilation"
+    ],
+    "recommendation": "Risk-stratify MDR. Low risk: ceftriaxone or co-amoxiclav. High risk MDR: anti-pseudomonal β-lactam (pip-tazo / cefepime / meropenem) + second anti-pseudo if septic (cipro / aminoglycoside) + vanc/linezolid if MRSA risk. Duration 7 days (most — non-inferior); 14 d Staph/Pseudo/non-responsive/immunocompromised. De-escalate per culture + procalcitonin. VAP prevention bundle: HOB 30–45°, daily SAT+SBT, oral care, subglottic ETT, cuff pressure 20–30, hand hygiene + chlorhex bathing, early enteral. Failure 48–72h: review C+S, repeat imaging, consider TB/fungal/viral/PCP.",
+    "rationale": "IDSA/ATS 2016 + ERS/ESICM 2017 + WHO AWaRe.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "ards-berlin-criteria-lung-protective-r1",
+    "title": "ARDS — lung-protective Vt 4–6 ml/kg PBW + prone for P/F < 150",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "ards-berlin-criteria-lung-protective"
+    },
+    "indicators": [
+      "P/F < 300 + bilateral infiltrates + non-cardiogenic"
+    ],
+    "recommendation": "Berlin criteria. Lung-protective: Vt 4–6 ml/kg PBW, plateau ≤ 30, driving pressure < 15, PEEP per ARDSNet table (higher for moderate-severe), permissive hypercapnia pH ≥ 7.15, sats 88–95%. P/F < 150: PRONE ≥ 16h/d (PROSEVA). Severe + refractory: cisatracurium × 48h, NMBA. Conservative fluid (FACTT). Dexamethasone 20 mg × 5 d then 10 mg × 5 d (DEXA-ARDS). ECMO if P/F < 80 refractory (EOLIA). Light sedation + SAT/SBT + ABCDEF + early mobilise. Treat trigger. Post-ICU rehab + mental health screen.",
+    "rationale": "ATS/ESICM/SCCM 2017/2024 + ARDSNet + PROSEVA + DEXA-ARDS + EOLIA.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "obstructive-sleep-apnoea-osa-r1",
+    "title": "OSA — STOP-Bang + PSG + CPAP first-line + weight loss / tirzepatide",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "obstructive-sleep-apnoea-osa"
+    },
+    "indicators": [
+      "snoring + EDS + STOP-Bang ≥ 3"
+    ],
+    "recommendation": "STOP-Bang + ESS screen; PSG (or HSAT if high pretest + no comorbidity). AHI staging. Lifestyle: weight loss (10% → AHI -26%), avoid ETOH evening, lateral position, treat nasal obstruction. CPAP first-line moderate-severe + symptomatic mild (target ≥ 4h × 70% nights). MAD for mild-mod or CPAP-intolerant. ADENOTONSILLECTOMY first-line paediatric. Tirzepatide for OSA+obesity (SURMOUNT-OSA). Solriamfetol/pitolisant for residual EDS. AVOID hypnotic/opioid. ASV CONTRAINDICATED in HFrEF (SERVE-HF). Bariatric surgery improves/resolves. Treat HTN/AF — OSA worsens both.",
+    "rationale": "AASM 2019 + ERS/ESC 2024 + SURMOUNT-OSA + SERVE-HF.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "idiopathic-pulmonary-fibrosis-ipf-r1",
+    "title": "IPF — pirfenidone/nintedanib antifibrotic + transplant referral early",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "idiopathic-pulmonary-fibrosis-ipf"
+    },
+    "indicators": [
+      "UIP pattern on HRCT + restrictive PFT"
+    ],
+    "recommendation": "MDT-confirmed UIP. ANTIFIBROTIC: pirfenidone 267→801 mg TID (sun protect, LFT) or nintedanib 150 BD (diarrhoea, LFT, anticoag caution). Both slow FVC decline. Pulm rehab. O2 for sats < 88%. Treat GERD (PPI). Cough — opiate, gabapentin. Vaccinate flu/pneumo/COVID. Refer LUNG TRANSPLANT EARLY: DLCO < 40, FVC < 80, ≥ 5% FVC decline 6 mo, O2-dependent. Acute exacerbation: rule out infection/PE/cardiac, high-dose methylpred 500–1000 mg × 3 d (modest), palliation 50-80% mortality. PALLIATIVE CARE early. Other PF-ILD (HP, NSIP) — nintedanib per INBUILD.",
+    "rationale": "ATS/ERS/JRS/ALAT 2022 + ASCEND/CAPACITY + INPULSIS + INBUILD.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "status-epilepticus-emergency-management-r1",
+    "title": "Status epilepticus — benzo→2nd-line→anaesthesia stepped algorithm",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "status-epilepticus-emergency-management"
+    },
+    "indicators": [
+      "seizure > 5 min / recurrent without recovery"
+    ],
+    "recommendation": "0–5 min: ABC + lateral + suction + O2 + IV + glucose ± thiamine. 5–20 min: lorazepam 0.1 mg/kg IV (max 4 mg) or midazolam 10 mg IM (RAMPART) or buccal/IN — repeat × 1. 20–40 min: levetiracetam 60 mg/kg IV (max 4500) OR phenytoin 20 mg/kg IV (max 1500, ≤ 50 mg/min — fosphenytoin safer) OR valproate 40 mg/kg (avoid pregnancy/liver/mito) — ESETT all equivalent ~50%. > 60 min: anaesthesia + intubate + cEEG — midazolam 0.05-2 mg/kg/h, propofol (PIS > 24h), pentobarb burst suppression, ketamine. Specific: hypogly D50, hypoNa 3% saline, eclampsia MgSO4, INH pyridoxine 5 g, encephalitis aciclovir+steroid, alcohol withdrawal BZD (not phenytoin). Long-term AED + cause + driving advice + rescue benzo.",
+    "rationale": "AES 2016/2024 + ILAE 2015 + NICE NG217 + ESETT + RAMPART.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "paediatric-sepsis-recognition-r1",
+    "title": "Paediatric sepsis — recognise age-specific + FEAST cautious bolus",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "paediatric-sepsis-recognition"
+    },
+    "indicators": [
+      "child with infection signs + tachycardia / mottling / altered mental state"
+    ],
+    "recommendation": "Phoenix Sepsis Score 2024. Recognise age-specific vital signs. WITHIN 1H: blood culture + ceftriaxone 50–80 mg/kg (add vanc if MRSA risk, anti-pseudo if neutropenic). FLUID: 10–20 ml/kg balanced crystalloid bolus over 5–10 min — reassess; FEAST trial — AVOID bolus in non-shock African children (harmful); maintenance only if compensated. VASOPRESSOR adrenaline 0.05–0.3 mcg/kg/min (paeds first-line, vs adult NA). Hydrocortisone 50 mg/m² × 4 if fluid-refractory. Source control 6–12h. Malaria endemic: artesunate 2.4 mg/kg if RDT+ (AQUAMAT). Meningococcal: ceftriaxone + PEP cipro for contacts. Neonatal: ampicillin + gent / cefotaxime early, vanc + cefepime late + acyclovir for HSV; LP all. Prevention: vaccines, breastfeeding, ITN.",
+    "rationale": "Surviving Sepsis Paediatric 2020 + Phoenix 2024 + FEAST + AQUAMAT.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "pulmonary-hypertension-comprehensive-r1",
+    "title": "PH — WHO group + RHC + group-specific therapy; CTEPH curable",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "pulmonary-hypertension-comprehensive"
+    },
+    "indicators": [
+      "mPAP > 20 / echo PASP raised + dyspnoea"
+    ],
+    "recommendation": "Echo screening → RHC for definitive (mPAP > 20). V/Q scan to rule out CTEPH. Workup: HIV / schisto / CTD / portal / sleep / lung / left heart. GROUP 1 PAH: dual oral ERA + PDE5i (AMBITION); add prostacyclin for high risk (epoprostenol IV, treprostinil); sotatercept (STELLAR 2023); selexipag; transplant for refractory. GROUP 2 (LHD): treat LHD; AVOID PAH therapy. GROUP 3 (lung/hypoxia): optimise + O2 + inhaled treprostinil if ILD (INCREASE). GROUP 4 CTEPH: lifelong anticoag + PEA (surgical CURE) > BPA / riociguat. Avoid pregnancy. Flu+pneumo vaccines. Schisto-PAH (common SSA): praziquantel + PAH therapy.",
+    "rationale": "ESC/ERS PH 2022 + AMBITION + STELLAR + INCREASE.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
