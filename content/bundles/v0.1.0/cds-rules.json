@@ -8282,5 +8282,577 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "hcc-bclc-stage-treatment",
+    "hook": "patient-view",
+    "type": "hcc-bclc-stage-treatment",
+    "services": [
+      "vedamd-hcc"
+    ],
+    "title": "Hepatocellular carcinoma — BCLC stage-based treatment + atezo-bev for advanced",
+    "description": "Fires for HCC diagnosis. Recommends multidisciplinary HCC team; BCLC staging; transplant / resection / ablation for very-early / early; TACE / SIRT for intermediate; atezolizumab + bevacizumab first-line for advanced (variceal screen first); sorafenib / lenvatinib for second-line; surveillance USS + AFP 6-monthly in at-risk cirrhosis; antiviral therapy (HBV / HCV). Reads context.bclcStage, context.childPugh, context.ecog, context.tumourSize, context.metastases, context.varices — never patient identity.",
+    "references": [
+      {
+        "label": "EASL HCC 2018; AASLD HCC 2023; IMbrave150"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C22.0",
+        "display": "Hepatocellular carcinoma",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pancreatic-cancer-folfirinox-resection",
+    "hook": "patient-view",
+    "type": "pancreatic-cancer-folfirinox-resection",
+    "services": [
+      "vedamd-pancreatic-cancer"
+    ],
+    "title": "Pancreatic adenocarcinoma — multidisciplinary + neoadjuvant FOLFIRINOX + palliative care early",
+    "description": "Fires for confirmed pancreatic adenocarcinoma. Recommends specialist pancreatic centre; comprehensive molecular profiling (BRCA / PALB2 / ATM / Lynch); neoadjuvant FOLFIRINOX OR gemcitabine + nab-paclitaxel; Whipple / distal pancreatectomy; adjuvant chemo (modified FOLFIRINOX); olaparib for BRCA-mutated metastatic; biliary stenting + pancreatic enzyme replacement + early palliative care + advance planning. Reads context.stage, context.resectability, context.brcaStatus, context.ecog — never patient identity.",
+    "references": [
+      {
+        "label": "ESMO + NCCN Pancreatic; PRODIGE 24 + POLO"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C25.0",
+        "display": "Pancreatic head cancer",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "dtc-risk-adapted-thyroidectomy",
+    "hook": "patient-view",
+    "type": "dtc-risk-adapted-thyroidectomy",
+    "services": [
+      "vedamd-dtc"
+    ],
+    "title": "Differentiated thyroid cancer — risk-adapted treatment + RAI + TSH suppression",
+    "description": "Fires for confirmed papillary / follicular thyroid cancer. Recommends multidisciplinary; low-risk lobectomy OR active surveillance; intermediate / high-risk total thyroidectomy ± nodal dissection; RAI for selected; risk-adapted TSH suppression; thyroglobulin + USS surveillance; lenvatinib / sorafenib for RAI-refractory progressive; selpercatinib (RET) + dabrafenib + trametinib (BRAF). Reads context.histology, context.size, context.lymphNodes, context.brafV600e, context.distantMets — never patient identity.",
+    "references": [
+      {
+        "label": "ATA Thyroid Cancer 2015 + updates"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C73",
+        "display": "Thyroid cancer",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "gist-kit-targeted-imatinib",
+    "hook": "patient-view",
+    "type": "gist-kit-targeted-imatinib",
+    "services": [
+      "vedamd-gist"
+    ],
+    "title": "GIST — KIT / PDGFRA mutation analysis + imatinib + 5-line escalation",
+    "description": "Fires for confirmed GIST. Recommends molecular analysis (KIT exon 11 best response; PDGFRA D842V — avapritinib; SDH-deficient paediatric different biology); R0 surgical resection; adjuvant imatinib × 3 years for high-risk; metastatic — imatinib 400 mg → sunitinib → regorafenib → ripretinib; NF1 + Carney triad surveillance. Reads context.kitMutation, context.pdgfraMutation, context.tumourSize, context.mitoticCount, context.location — never patient identity.",
+    "references": [
+      {
+        "label": "ESMO + NCCN GIST"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C49.9",
+        "display": "GIST",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cervical-cancer-chemoradio-pembro",
+    "hook": "patient-view",
+    "type": "cervical-cancer-chemoradio-pembro",
+    "services": [
+      "vedamd-cervical-cancer"
+    ],
+    "title": "Cervical cancer — FIGO 2018 staging + chemoradiotherapy + pembrolizumab",
+    "description": "Fires for confirmed cervical cancer. Recommends multidisciplinary; early stage radical hysterectomy + nodes (fertility-sparing trachelectomy considered); locally advanced concurrent chemoradiotherapy + brachytherapy + pembrolizumab if PD-L1+ (KEYNOTE-A18); metastatic chemotherapy + bevacizumab + pembrolizumab (KEYNOTE-826); HPV vaccination prevention; sexual + bladder + bowel rehabilitation. Reads context.figoStage, context.histology, context.pdL1, context.fertility, context.metastases — never patient identity.",
+    "references": [
+      {
+        "label": "ESMO + NCCN Cervical Cancer; FIGO 2018"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C53",
+        "display": "Cervical cancer",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "moderate-severe-uc-biologic",
+    "hook": "patient-view",
+    "type": "moderate-severe-uc-biologic",
+    "services": [
+      "vedamd-severe-uc"
+    ],
+    "title": "Moderate-severe UC — biologic + treat-to-target + CRC surveillance",
+    "description": "Fires for moderate-severe UC. Recommends mesalamine topical + oral; steroid for moderate flare; biologic (anti-TNF / vedolizumab / ustekinumab) or JAK / S1P for inadequate response; treat-to-target endoscopic + histologic healing; acute severe UC — IV steroid + day-3 rescue infliximab / ciclosporin + day-5 colectomy if refractory; LMWH thromboprophylaxis during flare; CRC surveillance from 8 years; pregnancy-compatible biologic. Reads context.severity, context.extent, context.priorTherapies, context.flareDay, context.pregnant — never patient identity.",
+    "references": [
+      {
+        "label": "ECCO UC 2022; AGA Practice Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K51",
+        "display": "Ulcerative colitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-migraine-cgrp-mab",
+    "hook": "patient-view",
+    "type": "severe-migraine-cgrp-mab",
+    "services": [
+      "vedamd-severe-migraine"
+    ],
+    "title": "Severe migraine — CGRP mAb / gepant for prevention + acute therapy",
+    "description": "Fires for severe / chronic migraine ≥ 4 days / month. Recommends acute — triptan / gepant / lasmiditan; preventive — first-line propranolol / topiramate / amitriptyline; CGRP mAb (erenumab / fremanezumab / galcanezumab / eptinezumab) OR gepant (rimegepant / atogepant) for failed conventional preventives; onabotulinum toxin for chronic migraine; medication overuse withdrawal + bridging; AVOID opioids + barbiturates; pregnancy-modified. Reads context.frequency, context.acuteResponse, context.priorPreventives, context.pregnant, context.cardiovascularRisk — never patient identity.",
+    "references": [
+      {
+        "label": "AHS CGRP Consensus 2021; EHF Migraine; ICHD-3"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G43.9",
+        "display": "Migraine",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "concussion-removal-graduated-rtp",
+    "hook": "patient-view",
+    "type": "concussion-removal-graduated-rtp",
+    "services": [
+      "vedamd-concussion"
+    ],
+    "title": "Sport concussion — IMMEDIATE removal + brief rest + graduated return-to-play",
+    "description": "Fires for suspected concussion. Recommends IMMEDIATE removal from play (no same-day return adolescent / paediatric); SCAT6 standardised assessment; CT only for red flags (Canadian CT Head Rule); 24-48 h brief rest then sub-symptom-threshold aerobic exercise; graduated return-to-school + return-to-sport (6 days minimum); paracetamol + sleep hygiene; multidisciplinary for persistent symptoms > 4 weeks; AVOID opioids + repetitive concussion. Reads context.gcs, context.LOC, context.amnesia, context.symptoms, context.ageYears, context.priorConcussion — never patient identity.",
+    "references": [
+      {
+        "label": "Concussion in Sport Group Amsterdam 2022; CDC HEADS UP"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "S06.0",
+        "display": "Concussion",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "palliative-care-early-integration",
+    "hook": "patient-view",
+    "type": "palliative-care-early-integration",
+    "services": [
+      "vedamd-palliative"
+    ],
+    "title": "Palliative care — early integration + WHO ladder pain + advance care planning",
+    "description": "Fires for patient with life-limiting illness (surprise question positive). Recommends EARLY integration alongside disease-modifying treatment (improves survival + QoL — Temel NEJM 2010); holistic assessment; WHO analgesia ladder + opioid titration with constipation prophylaxis; mechanism-driven antiemetic; breathlessness — low-dose morphine + benzodiazepine; advance care planning + DNACPR; recognise dying + adapt care for last days; bereavement follow-up. Reads context.surpriseQuestion, context.symptoms, context.painScore, context.prognosis, context.advanceDirective — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Palliative Care; NICE NG31; EAPC"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z51.5",
+        "display": "Palliative care encounter",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "maternal-cardiac-arrest-pmcs",
+    "hook": "patient-view",
+    "type": "maternal-cardiac-arrest-pmcs",
+    "services": [
+      "vedamd-maternal-arrest"
+    ],
+    "title": "Maternal cardiac arrest — left uterine displacement + peri-mortem caesarean within 5 minutes",
+    "description": "Fires for cardiac arrest in pregnant patient ≥ 20 weeks. Recommends standard ALS; LEFT lateral uterine displacement (manual); PERI-MORTEM CAESAREAN within 4-5 minutes if no ROSC (primarily maternal benefit); identify reversible cause (amniotic fluid embolism, PE, haemorrhage, eclampsia, anaesthetic toxicity); senior multidisciplinary team — obstetrics + anaesthetics + neonatology; mandatory case review. Reads context.gestationWeeks, context.witnessedArrest, context.timeOfArrest, context.romoSpontaneous — never patient identity.",
+    "references": [
+      {
+        "label": "AHA Maternal Cardiac Arrest 2021; ERC ALS pregnancy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "O75.4",
+        "display": "Other complications of obstetric surgery + procedures",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "who-pen-cvd-risk-score",
+    "hook": "patient-view",
+    "type": "who-pen-cvd-risk-score",
+    "services": [
+      "vedamd-who-pen-cvd-risk"
+    ],
+    "title": "WHO PEN — total CVD risk + treatment threshold",
+    "description": "Fires for adult ≥ 40 attending primary care. Uses WHO/ISH CVD risk chart (Africa AFR table); categorises low (< 10%) / moderate (10-20%) / high (20-30%) / very-high (≥ 30%); recommends lifestyle for all + statin at ≥ 20% + intensify BP / diabetes / lipid based on risk; secondary-prevention pathway for established CVD; Kenya HEARTS implementation. Reads context.ageYears, context.sex, context.smoker, context.diabetes, context.systolicMmHg, context.totalCholesterol, context.knownCvd — never patient identity.",
+    "references": [
+      {
+        "label": "WHO PEN 2020; WHO HEARTS; Kenya NCD Strategic Plan"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z82.49",
+        "display": "Family history of CVD",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "who-anc-8-contact-pathway",
+    "hook": "patient-view",
+    "type": "who-anc-8-contact-pathway",
+    "services": [
+      "vedamd-who-anc"
+    ],
+    "title": "WHO 2016 antenatal care 8-contact model + Kenya Linda Mama",
+    "description": "Fires for pregnant patient. Recommends 8 ANC contacts at ≤ 12, 20, 26, 30, 34, 36, 38, 40 weeks; folic acid 400 microgram + iron + tetanus + aspirin for high-risk; HIV / syphilis / hep B testing; OGTT 24-28 weeks; anti-D for RhD-neg; intimate partner violence enquiry; postnatal contraception planning; Kenya Linda Mama enrolment for free care + community follow-up via CHV. Reads context.gestationWeeks, context.parity, context.priorComplications, context.hivStatus, context.rhStatus — never patient identity.",
+    "references": [
+      {
+        "label": "WHO ANC 2016; Kenya Linda Mama"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z34",
+        "display": "Supervision of normal pregnancy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "who-postnatal-care-4-contact",
+    "hook": "patient-view",
+    "type": "who-postnatal-care-4-contact",
+    "services": [
+      "vedamd-who-pnc"
+    ],
+    "title": "WHO postnatal care — 4 contacts in first 6 weeks for mother + newborn",
+    "description": "Fires for postpartum patient. Recommends 4 PNC contacts (24 h, day 3, day 7-14, 6 weeks) for mother + newborn; vitamin K + immunisations + eye prophylaxis at birth; exclusive breastfeeding 6 months; postnatal contraception (LAM, LARC); Edinburgh PDS at 6 weeks; CHV home visits in Kenya days 1, 3, 7, 28; danger-sign recognition (maternal + newborn); Linda Mama integration. Reads context.daysPostpartum, context.deliveryMode, context.breastfeedingStatus, context.mood — never patient identity.",
+    "references": [
+      {
+        "label": "WHO PNC 2022; Kenya MOH PNC"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z39",
+        "display": "Postpartum care + examination",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "who-mec-family-planning",
+    "hook": "patient-view",
+    "type": "who-mec-family-planning",
+    "services": [
+      "vedamd-family-planning"
+    ],
+    "title": "Family planning — WHO MEC + tiered effectiveness counselling",
+    "description": "Fires for woman seeking contraception. Recommends WHO Medical Eligibility Criteria assessment; tier-1 LARC (implant + IUD) first-line for most; tier-2 hormonal (DMPA, COC, POP, ring, patch) by preference + MEC; postpartum LAM + immediate LARC; emergency contraception (levonorgestrel + ulipristal + copper IUD); STI dual protection; adolescent-friendly + confidential. Reads context.ageYears, context.parity, context.breastfeeding, context.medicalConditions, context.preferences — never patient identity.",
+    "references": [
+      {
+        "label": "WHO MEC 2015; Kenya FP Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z30",
+        "display": "Contraceptive management",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "who-etat-paediatric-triage",
+    "hook": "patient-view",
+    "type": "who-etat-paediatric-triage",
+    "services": [
+      "vedamd-etat"
+    ],
+    "title": "WHO ETAT — paediatric emergency triage (Kenya outpatient)",
+    "description": "Fires for sick child arriving at outpatient department / emergency. Recommends 30-second triage; emergency signs (airway / breathing / circulation / disability / dehydration / convulsion) — immediate treatment; priority signs (tiny baby / temperature / trauma / pallor / poisoning / pain / respiratory distress) — expedited assessment; non-urgent — routine IMCI assessment; equipment + drugs available at triage; CHV-supported community recognition + referral. Reads context.ageMonths, context.airway, context.breathing, context.circulation, context.consciousness, context.dehydration, context.convulsion — never patient identity.",
+    "references": [
+      {
+        "label": "WHO ETAT + IMCI; Kenya MOH Paediatrics"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z03.9",
+        "display": "Medical observation/evaluation",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "kenya-malaria-test-treat",
+    "hook": "patient-view",
+    "type": "kenya-malaria-test-treat",
+    "services": [
+      "vedamd-kenya-malaria"
+    ],
+    "title": "Kenya malaria — test first then treat with ACT (artemether-lumefantrine)",
+    "description": "Fires for febrile illness in malaria-endemic region. Recommends RDT or microscopy BEFORE treatment (Kenya policy + WHO); artemether-lumefantrine first-line for uncomplicated; IV artesunate for severe; quinine + clindamycin for 1st-trimester pregnancy; SP intermittent preventive treatment in pregnancy (IPTp); ITNs + indoor residual spraying for prevention; RTS,S/R21 vaccine rollout in Kenya. Reads context.fever, context.rdtResult, context.smearResult, context.pregnant, context.endemicArea — never patient identity.",
+    "references": [
+      {
+        "label": "Kenya National Malaria Policy; WHO Malaria 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "B54",
+        "display": "Malaria unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "kenya-tb-program-dot",
+    "hook": "patient-view",
+    "type": "kenya-tb-program-dot",
+    "services": [
+      "vedamd-kenya-tb"
+    ],
+    "title": "Kenya National TB Programme — Xpert MTB/RIF + DOT + HIV testing",
+    "description": "Fires for cough > 2 weeks or suspected TB. Recommends sputum Xpert MTB/RIF (Kenya primary diagnostic); standard 6-month regimen 2HRZE / 4HR; weight-banded FDC + DOT (family / CHV); HIV testing mandatory for ALL TB cases + ART initiation 2-8 weeks; co-trimoxazole + pyridoxine 25-50 mg; monthly review + sputum at 2 + 5 months; MDR-TB → BPaL/BPaLM; contact tracing + TPT (3HP) for eligible. Reads context.coughDuration, context.hivStatus, context.priorTbTreatment, context.contactTb — never patient identity.",
+    "references": [
+      {
+        "label": "Kenya National TB Programme; WHO TB 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A15.9",
+        "display": "Pulmonary TB unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "kenya-hiv-test-treat-same-day-art",
+    "hook": "patient-view",
+    "type": "kenya-hiv-test-treat-same-day-art",
+    "services": [
+      "vedamd-kenya-hiv"
+    ],
+    "title": "Kenya HIV — test-and-treat + same-day TLD ART + PrEP for high-risk",
+    "description": "Fires for HIV testing or positive result. Recommends Kenya rapid-test algorithm (2 different rapid tests); same-day ART initiation (TLD first-line — tenofovir + lamivudine + dolutegravir); co-trimoxazole if CD4 < 350; TPT (3HP) for all PLHIV; PMTCT for pregnant; PrEP for high-risk negative (oral TDF/FTC daily; emerging CAB-LA); PEP within 72 h for exposures; VMMC for HIV prevention; partner notification + DREAMS partnership for AGYW. Reads context.hivStatus, context.cd4, context.priorArt, context.pregnant, context.exposureWithin72h — never patient identity.",
+    "references": [
+      {
+        "label": "Kenya NASCOP HIV guidelines; WHO HIV 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z21",
+        "display": "Asymptomatic HIV",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "sti-syndromic-management-kenya",
+    "hook": "patient-view",
+    "type": "sti-syndromic-management-kenya",
+    "services": [
+      "vedamd-sti-syndromic"
+    ],
+    "title": "STI syndromic management — Kenya WHO empirical algorithms",
+    "description": "Fires for STI syndromic presentation. Recommends urethral discharge: ceftriaxone 500 mg IM + doxycycline 100 mg BD × 7 days; vaginal discharge + lower abdominal pain (PID): add metronidazole; genital ulcer: benzathine penicillin G + ciprofloxacin + aciclovir; partner treatment essential; HIV + hepatitis screening; condom counselling + dual protection; pregnancy adaptations (avoid doxycycline); newborn ophthalmia neonatorum prophylaxis. Reads context.syndrome, context.pregnant, context.partnerNotified — never patient identity.",
+    "references": [
+      {
+        "label": "WHO STI 2021; Kenya STI Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A64",
+        "display": "Unspecified sexually transmitted disease",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ipv-screening-lives",
+    "hook": "patient-view",
+    "type": "ipv-screening-lives",
+    "services": [
+      "vedamd-ipv-screen"
+    ],
+    "title": "Intimate partner violence — universal screening + LIVES response",
+    "description": "Fires in antenatal / sexual + reproductive health / emergency / mental health visits. Recommends WHO LIVES response (Listen, Inquire, Validate, Enhance safety, Support); safety planning; treat injuries + emergency contraception + STI prophylaxis + HIV PEP within 72 h if sexual; document medico-legally; refer to specialist IPV services (Kenya GBV Recovery Centres / FIDA); child protection if children at risk; non-judgmental + patient-led approach; provider self-care + training. Reads context.disclosure, context.injuries, context.pregnancy, context.childrenInvolved — never patient identity.",
+    "references": [
+      {
+        "label": "WHO IPV Health Sector Response 2014; Kenya GBV Policy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "T74.11",
+        "display": "Adult physical abuse confirmed",
+        "kind": "finding"
+      }
+    ]
+  },
+  {
+    "id": "kenya-rabies-pep-category-iii",
+    "hook": "patient-view",
+    "type": "kenya-rabies-pep-category-iii",
+    "services": [
+      "vedamd-kenya-rabies-pep"
+    ],
+    "title": "Kenya rabies post-exposure prophylaxis — categorise + vaccine + RIG",
+    "description": "Fires for animal bite / exposure. Recommends immediate wound wash with soap + water × 15 min; categorise per WHO (I/II/III); vaccine for II + III (Essen IM days 0/3/7/14/28 or WHO 2-dose ID days 0/3/7); RIG for III (20 IU/kg HRIG OR 40 IU/kg ERIG — infiltrate around wound + IM); tetanus prophylaxis; antibiotic for cat bites; 10-day dog observation if possible; previously vaccinated needs only 2-dose booster. Reads context.exposureCategory, context.priorRabiesVaccine, context.animalType, context.woundLocation — never patient identity.",
+    "references": [
+      {
+        "label": "WHO Rabies 2018; Kenya MOH Rabies Programme"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z20.3",
+        "display": "Contact with rabies",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "kenya-eml-rational-prescribing",
+    "hook": "medication-prescribe",
+    "type": "kenya-eml-rational-prescribing",
+    "services": [
+      "vedamd-kenya-eml"
+    ],
+    "title": "Kenya EML — rational prescribing + formulary check",
+    "description": "Fires on prescribing decision. Recommends Kenya Essential Medicines List + WHO Model EML alignment; right drug + dose + duration + indication; generic prescribing where possible; antimicrobial stewardship (Kenya AMR Action Plan); paediatric formulations + weight-banded; renal + hepatic dose adjustment; pharmacovigilance reporting via Kenya Pharmacovigilance Centre; NHIF + Linda Mama coverage check; KEMSA supply chain; report stockouts. Reads context.proposedMedication, context.ageYears, context.weight, context.creatinine, context.allergies — never patient identity.",
+    "references": [
+      {
+        "label": "Kenya EML; WHO EML 23rd 2023; KEMSA"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z76.89",
+        "display": "Persons encountering health services",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]

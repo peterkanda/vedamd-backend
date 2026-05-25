@@ -64410,5 +64410,2311 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "hepatocellular-carcinoma-bclc-pathway",
+    "title": "Hepatocellular carcinoma — BCLC staging + stage-adapted treatment",
+    "icd10": [
+      "C22.0"
+    ],
+    "domains": [
+      "oncology",
+      "hepatology",
+      "surgery",
+      "radiology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Most common primary liver cancer; 80% on background of cirrhosis (HBV / HCV / NAFLD / alcohol / haemochromatosis).",
+      "Often asymptomatic — detected on surveillance imaging in known cirrhosis.",
+      "Symptomatic: RUQ pain, weight loss, jaundice, ascites, hepatic decompensation, paraneoplastic (hypoglycaemia, hypercalcaemia, polycythaemia).",
+      "BCLC staging: stage 0 (very early — single < 2 cm + Child-Pugh A); stage A (early — single or up to 3 ≤ 3 cm + Child-Pugh A/B); stage B (intermediate — multinodular without vascular invasion / metastases); stage C (advanced — portal invasion / metastases / N1); stage D (terminal — Child-Pugh C / ECOG > 2).",
+      "Diagnosis: tumour ≥ 1 cm in cirrhosis + characteristic CT / MRI hallmarks (arterial enhancement + portal washout) → diagnostic without biopsy."
+    ],
+    "redFlags": [
+      "Rapidly rising AFP > 200 + lesion in cirrhosis — likely HCC.",
+      "Decompensated cirrhosis with new lesion — advanced disease.",
+      "Portal vein thrombosis — bland vs tumour thrombus distinction critical for treatment.",
+      "Suspected ruptured HCC (sudden severe abdominal pain + shock + haemoperitoneum) — emergency.",
+      "Cholestatic jaundice / biliary obstruction.",
+      "Pregnancy + HCC — high-risk multidisciplinary management."
+    ],
+    "diagnostics": [
+      {
+        "test": "Surveillance for at-risk: USS + AFP every 6 months in compensated cirrhosis + chronic HBV with risk factors.",
+        "rationale": "Early detection; cures possible at very-early / early stages."
+      },
+      {
+        "test": "Multiphase contrast CT or MRI liver — characteristic enhancement pattern.",
+        "rationale": "Diagnostic without biopsy if hallmarks present in cirrhosis."
+      },
+      {
+        "test": "AFP + AFP-L3 + DCP (PIVKA-II) — markers; not diagnostic alone.",
+        "rationale": "Risk stratification + post-treatment surveillance."
+      },
+      {
+        "test": "Biopsy — selected (atypical imaging, no cirrhosis, planning systemic therapy).",
+        "rationale": "Histology + molecular."
+      },
+      {
+        "test": "Staging: CT chest + bone scan if symptoms.",
+        "rationale": "Extra-hepatic metastases."
+      },
+      {
+        "test": "Liver function (Child-Pugh + MELD) + ECOG performance status.",
+        "rationale": "BCLC staging."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary HCC team — specialist centre",
+        "detail": "Hepatologist + interventional radiologist + transplant + surgical oncologist + medical oncologist + radiation oncologist + nuclear medicine + nurse."
+      },
+      {
+        "step": "BCLC 0 / A — curative intent",
+        "detail": "Liver transplantation (Milan criteria: 1 ≤ 5 cm OR 3 ≤ 3 cm, no vascular invasion / metastases) — best long-term outcomes. Resection for Child-Pugh A with preserved function + no portal hypertension + no significant cirrhosis. Ablation (radiofrequency / microwave / cryoablation) for small tumours / unfit for surgery — comparable to resection for small lesions."
+      },
+      {
+        "step": "BCLC B — locoregional therapy",
+        "detail": "Transarterial chemoembolisation (TACE) — bead / conventional. Selective internal radiation therapy (SIRT / yttrium-90) — alternative. Multiple sessions per response. Bridge to transplant in some."
+      },
+      {
+        "step": "BCLC C — systemic therapy (revolutionised)",
+        "detail": "First-line: atezolizumab + bevacizumab (IMbrave150 — gold standard if no varices / GI bleeding risk; endoscopy first). Durvalumab + tremelimumab (STRIDE / HIMALAYA). Second-line: sorafenib OR lenvatinib (TKIs); regorafenib / cabozantinib / ramucirumab (second-line)."
+      },
+      {
+        "step": "BCLC D — palliative",
+        "detail": "Symptom-directed only; palliative care; best supportive care."
+      },
+      {
+        "step": "Manage underlying liver disease",
+        "detail": "Antiviral therapy (HBV: entecavir / tenofovir; HCV: direct-acting antivirals — SVR essential before / during HCC treatment). Alcohol cessation. NASH management. Hepatitis B prophylaxis during chemoembolisation / immunotherapy."
+      },
+      {
+        "step": "Variceal screening + management",
+        "detail": "Pre-treatment endoscopy; eradicate / prophylax varices before atezolizumab + bevacizumab (bevacizumab bleeding risk)."
+      },
+      {
+        "step": "Post-treatment surveillance",
+        "detail": "Triphasic CT / MRI 3-monthly initially; AFP. Recurrence common — early detection essential."
+      },
+      {
+        "step": "Survivorship",
+        "detail": "Long-term hepatology follow-up; cirrhosis complications surveillance; family member screening for HBV / HCV; lifestyle modification."
+      }
+    ],
+    "references": [
+      {
+        "label": "EASL CPG on HCC (2018, updated); AASLD HCC (2023); IMbrave150 + HIMALAYA trials; BCLC 2022 update"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "pancreatic-adenocarcinoma-treatment",
+    "title": "Pancreatic ductal adenocarcinoma — diagnosis + treatment pathway",
+    "icd10": [
+      "C25"
+    ],
+    "domains": [
+      "oncology",
+      "surgery",
+      "gastroenterology"
+    ],
+    "population": {
+      "minAgeYears": 40,
+      "sex": "any"
+    },
+    "presentation": [
+      "Insidious onset — often advanced at diagnosis. Persistent epigastric / back pain, weight loss, anorexia, fatigue, painless obstructive jaundice (head of pancreas — Courvoisier sign), new-onset diabetes / change in pre-existing diabetes, steatorrhoea, depression.",
+      "Less common: thromboembolism (Trousseau syndrome), acute pancreatitis, paraneoplastic dermatosis.",
+      "Risk factors: smoking (2-3×), chronic pancreatitis, diabetes, family history, hereditary (BRCA1/2, PALB2, ATM, Lynch — 10%), obesity, alcohol, occupational chemical exposure.",
+      "Histology: ductal adenocarcinoma (90%), neuroendocrine tumour (5%, different biology + treatment), cystic, intraductal papillary mucinous neoplasm (IPMN)."
+    ],
+    "redFlags": [
+      "Painless obstructive jaundice — high suspicion for pancreatic head cancer.",
+      "Cholangitis from biliary obstruction — emergency drainage + antibiotics.",
+      "Severe abdominal pain — may indicate locally advanced / nerve invasion / acute pancreatitis.",
+      "Venous thromboembolism in middle-age + weight loss — paraneoplastic.",
+      "Suspected hereditary — genetic counselling.",
+      "Performance-status decline + cachexia — modify treatment intensity."
+    ],
+    "diagnostics": [
+      {
+        "test": "Contrast-enhanced CT pancreas (pancreatic protocol) + chest.",
+        "rationale": "Diagnosis + staging + resectability assessment."
+      },
+      {
+        "test": "Endoscopic ultrasound (EUS) + FNA — most sensitive; tissue diagnosis + better than CT for small lesions.",
+        "rationale": "Definitive tissue + locoregional staging."
+      },
+      {
+        "test": "MRI + MRCP for biliary anatomy / biliary obstruction / cyst characterisation.",
+        "rationale": "Detailed biliary + cystic assessment."
+      },
+      {
+        "test": "PET-CT for selected — detect distant disease pre-resection.",
+        "rationale": "Avoid unnecessary surgery."
+      },
+      {
+        "test": "CA 19-9 — baseline + monitoring; can be false-positive (jaundice / inflammation) or false-negative (Lewis antigen negative).",
+        "rationale": "Tumour marker."
+      },
+      {
+        "test": "Genetic testing for hereditary syndromes (BRCA1/2 + PALB2 + ATM + Lynch + p16) — all PDAC for treatment-defining + family.",
+        "rationale": "PARP inhibitor eligibility + family screening."
+      },
+      {
+        "test": "Multidisciplinary review of resectability + neoadjuvant candidacy.",
+        "rationale": "Treatment-defining."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary specialist pancreatic centre",
+        "detail": "Hepatobiliary surgeon + oncologist + radiation oncologist + interventional radiologist + endoscopist + pathologist + dietitian + palliative care."
+      },
+      {
+        "step": "Resectable disease (~15% at diagnosis) — neoadjuvant + surgery",
+        "detail": "Increasingly neoadjuvant FOLFIRINOX (modified) OR gemcitabine + nab-paclitaxel × 4 cycles → surgical re-staging → Whipple procedure (head) OR distal pancreatectomy (body / tail) → adjuvant chemotherapy. Modified FOLFIRINOX as adjuvant standard (PRODIGE 24)."
+      },
+      {
+        "step": "Borderline / locally-advanced — neoadjuvant first",
+        "detail": "Neoadjuvant FOLFIRINOX × 6 months ± radiotherapy → re-stage → surgery if responsive (20–40%). Improves R0 resection rates."
+      },
+      {
+        "step": "Metastatic disease — systemic chemotherapy",
+        "detail": "Performance-status driven: ECOG 0–1: FOLFIRINOX (oxaliplatin + irinotecan + 5-FU + leucovorin). ECOG 2: gemcitabine + nab-paclitaxel (less toxic). ECOG 3+: gemcitabine monotherapy or best supportive care."
+      },
+      {
+        "step": "BRCA-mutated / PARP inhibitor maintenance",
+        "detail": "Germline BRCA1/2-mutated metastatic PDAC: olaparib maintenance after platinum-based response (POLO trial)."
+      },
+      {
+        "step": "Palliative interventions",
+        "detail": "Biliary obstruction — endoscopic stent (preferred) OR percutaneous biliary drainage. Duodenal obstruction — duodenal stent / gastrojejunostomy. Pain — celiac plexus block / neurolysis + opioids + adjuvants (gabapentin). Pancreatic enzyme replacement (Creon) for steatorrhoea. Diabetes management. Thromboprophylaxis (high-risk LMWH)."
+      },
+      {
+        "step": "Cachexia + nutrition",
+        "detail": "Dietitian + high-calorie diet + pancreatic enzyme replacement + nutritional supplements; consider feeding tube for severe."
+      },
+      {
+        "step": "Hereditary + family screening",
+        "detail": "Cascade BRCA / PALB2 / ATM / Lynch testing. High-risk family (≥ 2 affected first-degree relatives, BRCA carrier with FH) — annual MRI / EUS surveillance starting age 50 (or 10 years before youngest affected)."
+      },
+      {
+        "step": "Palliative care + advance planning EARLY",
+        "detail": "Median survival metastatic 6–11 months; resected 25–30 months; 5-year survival ~10% overall. Early palliative involvement improves outcomes. Address goals of care, symptom control, advance directives."
+      },
+      {
+        "step": "Surveillance post-resection",
+        "detail": "CT + CA 19-9 every 3 months × 2 years then every 6 months × 3 years."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESMO + NCCN Pancreatic Cancer Guidelines; PRODIGE 24 + POLO + PRINTO trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "differentiated-thyroid-cancer-management",
+    "title": "Differentiated thyroid cancer (papillary + follicular) — risk-stratified treatment",
+    "icd10": [
+      "C73"
+    ],
+    "domains": [
+      "oncology",
+      "endocrinology",
+      "surgery",
+      "nuclear-medicine"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Most common endocrine malignancy. Female:male 3:1; peak 30-50 years.",
+      "Papillary (80–85%) — better prognosis; lymph node spread; multifocal common; BRAF V600E mutation in 50%.",
+      "Follicular (10–15%) — vascular invasion; haematogenous (lung, bone); not lymph node typically; better prognosis if minimally invasive.",
+      "Presentation: asymptomatic thyroid nodule (incidental on imaging); palpable neck mass; hoarseness (recurrent laryngeal nerve compression); dysphagia / dyspnoea (large); cervical lymphadenopathy.",
+      "Anaplastic (1%) — extremely aggressive; rapid growth + airway compromise; median survival 6 months.",
+      "Medullary (parafollicular C-cell, MEN-2 association — separate biology + treatment)."
+    ],
+    "redFlags": [
+      "Rapidly growing thyroid mass — exclude anaplastic / lymphoma.",
+      "Airway compromise — stridor + dysphagia.",
+      "Vocal cord paralysis — recurrent laryngeal nerve involvement.",
+      "Family history of MEN-2 — RET gene testing; medullary thyroid cancer.",
+      "Distant metastases at diagnosis (lung + bone) — modify treatment intensity.",
+      "Pregnancy + thyroid cancer — usually delay treatment but surgery sometimes needed."
+    ],
+    "diagnostics": [
+      {
+        "test": "Thyroid ultrasound — TIRADS / ATA risk categorisation; suspicious nodules > 1 cm (some 0.5 cm if high-risk features) → FNA.",
+        "rationale": "Risk-stratify nodule + decide biopsy."
+      },
+      {
+        "test": "Fine-needle aspiration (FNA) cytology — Bethesda classification.",
+        "rationale": "Tissue diagnosis."
+      },
+      {
+        "test": "Molecular testing of indeterminate / non-diagnostic FNA (Bethesda III / IV) — Afirma / ThyroSeq / Veracyte — molecular panels.",
+        "rationale": "Risk-stratify indeterminate nodules; avoid unnecessary surgery."
+      },
+      {
+        "test": "Pre-operative neck USS + vocal cord assessment.",
+        "rationale": "Surgical planning."
+      },
+      {
+        "test": "TSH, free T4, calcium (parathyroid baseline), calcitonin (if medullary suspected), thyroglobulin baseline.",
+        "rationale": "Baseline + medullary screening."
+      },
+      {
+        "test": "BRAF V600E + RET + NTRK + TERT mutation testing — high-risk + recurrent / refractory.",
+        "rationale": "Targeted therapy eligibility."
+      },
+      {
+        "test": "Post-operative whole-body radioiodine scan + thyroglobulin.",
+        "rationale": "Detect residual / metastatic disease."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary thyroid cancer team",
+        "detail": "Endocrine surgeon + endocrinologist + nuclear medicine physician + oncologist + pathologist + ENT + radiologist."
+      },
+      {
+        "step": "Low-risk papillary microcarcinoma (< 1 cm, intrathyroidal, no nodes) — active surveillance OR lobectomy",
+        "detail": "Active surveillance increasingly accepted for very low-risk papillary microcarcinoma. Lobectomy for definitive treatment + smaller scar + no thyroid hormone replacement needed."
+      },
+      {
+        "step": "Standard low-risk (T1-T2 N0) — lobectomy + selective central nodes",
+        "detail": "Hemithyroidectomy. Levothyroxine selectively (not always needed)."
+      },
+      {
+        "step": "Intermediate / high-risk — total thyroidectomy ± central neck dissection",
+        "detail": "Multifocal / large tumour / nodal disease / extrathyroidal extension / distant metastases. Lateral neck dissection for clinical / radiological lateral nodal disease."
+      },
+      {
+        "step": "Radioactive iodine (RAI) ablation — risk-stratified",
+        "detail": "Low-risk: usually NOT needed. Intermediate-risk: selective per individual factors. High-risk: standard adjuvant after total thyroidectomy. Recombinant TSH (rhTSH) for stimulation (avoids hypothyroid state)."
+      },
+      {
+        "step": "TSH suppression therapy",
+        "detail": "Levothyroxine to suppress TSH: high-risk TSH < 0.1; intermediate TSH 0.1–0.5; low-risk TSH 0.5–2.0 (normal range). Monitor bone + cardiac for over-suppression. De-escalate as evidence of remission grows."
+      },
+      {
+        "step": "Surveillance",
+        "detail": "TSH + thyroglobulin + neck USS every 6–12 months. Stimulated thyroglobulin (TSH-stimulated or rhTSH) for ablated patients to monitor recurrence."
+      },
+      {
+        "step": "Recurrent / refractory disease",
+        "detail": "Surgical resection of resectable recurrences. RAI for iodine-avid metastases. Radiotherapy for symptomatic / brain / bone. Sorafenib / lenvatinib (multikinase TKI) for RAI-refractory progressive disease. Selpercatinib (RET-positive); dabrafenib + trametinib (BRAF V600E + anaplastic — recently approved). NTRK / ALK inhibitors for fusion-positive."
+      },
+      {
+        "step": "Anaplastic thyroid cancer",
+        "detail": "Airway management priority (tracheostomy if needed); dabrafenib + trametinib for BRAF V600E (~25% — neoadjuvant + then surgery in selected; RECOVER study); pembrolizumab + chemotherapy + radiotherapy. Mortality high; palliative care early."
+      },
+      {
+        "step": "Pregnancy + thyroid cancer",
+        "detail": "Surgery preferably delayed to 2nd trimester or postpartum. RAI contraindicated (avoid pregnancy × 6–12 months post-RAI). Thyroxine dose increases in pregnancy."
+      },
+      {
+        "step": "Family screening",
+        "detail": "MEN-2 (medullary) — RET gene testing. Familial papillary — less established."
+      }
+    ],
+    "references": [
+      {
+        "label": "ATA Management Guidelines for Adult Patients with Thyroid Nodules + Differentiated Thyroid Cancer (2015, with updates); ESMO Thyroid Cancer"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "gastrointestinal-stromal-tumour-management",
+    "title": "Gastrointestinal stromal tumour (GIST) — KIT-targeted treatment",
+    "icd10": [
+      "C49"
+    ],
+    "domains": [
+      "oncology",
+      "gastroenterology",
+      "surgery"
+    ],
+    "population": {
+      "minAgeYears": 30,
+      "sex": "any"
+    },
+    "presentation": [
+      "Most common mesenchymal GI tumour. Stomach (60%), small bowel (30%), colorectal / oesophagus / extra-GI (10%).",
+      "Variable presentation: incidental on imaging / endoscopy; GI bleeding (haematemesis / melaena); abdominal mass; abdominal pain; obstruction; perforation.",
+      "Driver mutations: KIT (75%, particularly exon 11 — best imatinib response) and PDGFRA (10% — exon 18 D842V resistant to imatinib). Wild-type GIST (15% — SDH-deficient pediatric / Carney triad; NF1-associated; BRAF / NTRK).",
+      "Risk-stratification: tumour size, mitotic count, location, mutation status."
+    ],
+    "redFlags": [
+      "Massive GI bleed from GIST.",
+      "Obstruction / perforation.",
+      "Metastatic at diagnosis (15% — liver predominantly; lung / bone rarer than other GI tumours).",
+      "Suspected paediatric GIST — different biology (SDH-deficient); refer specialist.",
+      "Imatinib resistance / progression.",
+      "NF1 / Carney triad / paraganglioma association."
+    ],
+    "diagnostics": [
+      {
+        "test": "Contrast CT abdomen + pelvis.",
+        "rationale": "Staging + size + location."
+      },
+      {
+        "test": "Endoscopic ultrasound + biopsy (EUS-FNA) — better than blind biopsy for risk of bleeding / seeding.",
+        "rationale": "Tissue diagnosis."
+      },
+      {
+        "test": "Histology + IHC (CD117 / KIT positive; DOG1 positive; CD34 variable; SMA / desmin negative).",
+        "rationale": "Diagnosis."
+      },
+      {
+        "test": "Molecular: KIT (exons 9, 11, 13, 17), PDGFRA (exons 12, 14, 18 — D842V), SDH (paediatric / wild-type), BRAF, NTRK, NF1 association.",
+        "rationale": "Treatment-defining + prognostic."
+      },
+      {
+        "test": "Liver MRI for metastases.",
+        "rationale": "Liver is most common metastasis."
+      },
+      {
+        "test": "Cardiac assessment for imatinib (rare cardiotoxicity).",
+        "rationale": "Pre-treatment baseline."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary sarcoma centre",
+        "detail": "Pathologist + surgical / medical / radiation oncologist + interventional radiologist. Outcomes superior at high-volume centres."
+      },
+      {
+        "step": "Localised resectable disease — surgical resection",
+        "detail": "Wide local excision with negative margins; no routine lymphadenectomy (uncommon nodal spread). Laparoscopic acceptable for selected. Avoid tumour rupture (peritoneal seeding catastrophic)."
+      },
+      {
+        "step": "Adjuvant imatinib for high-risk localised",
+        "detail": "Imatinib 400 mg daily × 3 years for high-risk (size > 5 cm + mitotic count > 5/50 HPF OR > 10 cm any mitotic OR ruptured). KIT exon 11 — best response; exon 9 — needs higher dose (800 mg); D842V PDGFRA — imatinib RESISTANT (use avapritinib)."
+      },
+      {
+        "step": "Neoadjuvant imatinib — borderline / large",
+        "detail": "Imatinib × 6–12 months to downsize before surgery; preserve function (rectal / oesophageal / duodenal GIST)."
+      },
+      {
+        "step": "Metastatic disease — first-line imatinib",
+        "detail": "400 mg daily (800 mg for KIT exon 9). Continuous indefinite therapy. Median PFS ~30 months."
+      },
+      {
+        "step": "Imatinib resistance / progression",
+        "detail": "Second-line: sunitinib 50 mg × 4 weeks on / 2 off. Third-line: regorafenib 160 mg daily 3 weeks on / 1 off. Fourth-line: ripretinib 150 mg daily. PDGFRA D842V: avapritinib 300 mg daily (first-line for this mutation). NTRK fusion: larotrectinib / entrectinib. BRAF V600E: dabrafenib + trametinib. Wild-type / SDH-deficient: less responsive to imatinib; tipiraciclib / sunitinib / regorafenib + clinical trials."
+      },
+      {
+        "step": "Surveillance",
+        "detail": "Adjuvant imatinib: CT + clinical every 3 months × first year then every 6 months for 5 years. Metastatic on TKI: every 3 months CT."
+      },
+      {
+        "step": "Side-effect management of TKI",
+        "detail": "Imatinib: oedema, GI, muscle cramp, rash, hepatic. Sunitinib: cardiovascular, hypertension, hand-foot syndrome, hypothyroidism. Regorafenib: hand-foot, hypertension, fatigue. Monitor + dose-modify."
+      },
+      {
+        "step": "Family screening for hereditary GIST",
+        "detail": "NF1, Carney triad (GIST + paraganglioma + pulmonary chondroma — paediatric), Carney-Stratakis syndrome — SDH-deficient. Genetic counselling."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESMO + NCCN GIST Guidelines; INTRIGUE + INVICTUS + VOYAGER trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "cervical-cancer-treatment-pathway",
+    "title": "Cervical cancer — screening + stage-based treatment",
+    "icd10": [
+      "C53"
+    ],
+    "domains": [
+      "oncology",
+      "gynaecology",
+      "radiation-oncology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "maxAgeYears": 80,
+      "sex": "female"
+    },
+    "presentation": [
+      "HPV-driven (>95% — high-risk types 16, 18, 31, 33, 45, 52, 58).",
+      "Early: often asymptomatic, screen-detected. Symptomatic — abnormal vaginal bleeding (post-coital, intermenstrual, post-menopausal), watery discharge, pelvic pain.",
+      "Advanced: hydronephrosis (ureteric obstruction), pelvic pain, bowel symptoms, leg oedema, fistula (vesicovaginal, rectovaginal).",
+      "Histology: squamous cell carcinoma (75%), adenocarcinoma (20%), adenosquamous, small cell (poor prognosis), neuroendocrine.",
+      "Risk: HPV, smoking, immunosuppression, multiple partners, early sexual debut, lack of screening, COCP long-term (mild)."
+    ],
+    "redFlags": [
+      "Massive bleeding from advanced cervical cancer — radiation / embolisation / vaginal packing.",
+      "Acute renal failure from bilateral ureteric obstruction — nephrostomy.",
+      "Fistula formation (recurrent / advanced disease).",
+      "DVT / PE — high cancer + pelvic mass risk.",
+      "Pregnancy + cervical cancer — multidisciplinary (oncology + obstetrics + neonatal); fertility-sparing approach possible for early disease.",
+      "Pre-treatment fertility counselling for premenopausal."
+    ],
+    "diagnostics": [
+      {
+        "test": "Cervical screening (HPV testing primary; cytology if available).",
+        "rationale": "Screening + early detection."
+      },
+      {
+        "test": "Colposcopy + biopsy of suspicious lesion.",
+        "rationale": "Tissue diagnosis."
+      },
+      {
+        "test": "FIGO 2018 staging — clinical + radiological + pathological.",
+        "rationale": "Stage-based treatment."
+      },
+      {
+        "test": "Pelvic MRI — gold standard for tumour size + parametrial / nodal involvement.",
+        "rationale": "Local staging."
+      },
+      {
+        "test": "PET-CT or CT chest / abdomen — nodal + distant disease.",
+        "rationale": "Distant staging."
+      },
+      {
+        "test": "Examination under anaesthesia + cystoscopy + sigmoidoscopy if locally advanced.",
+        "rationale": "Identify organ invasion."
+      },
+      {
+        "test": "HIV testing (associated immunosuppression + altered management).",
+        "rationale": "Comorbidity affecting prognosis."
+      },
+      {
+        "test": "HPV genotyping (research / specific protocols).",
+        "rationale": "Identify vaccine-preventable + future risk."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary gynaecological oncology team",
+        "detail": "Gynaecological oncologist + radiation oncologist + medical oncologist + pathologist + radiologist + clinical nurse specialist + fertility specialist + psychology."
+      },
+      {
+        "step": "Pre-invasive (CIN 2/3) — local excisional treatment",
+        "detail": "Loop electrosurgical excision procedure (LEEP / LLETZ) OR cold knife conisation. Cervical follow-up at 6 months post-treatment + return to routine screening per protocol."
+      },
+      {
+        "step": "Early stage IA1 — conisation alone",
+        "detail": "For fertility-sparing in young women + selected pathology (no LVSI). Hysterectomy for definitive."
+      },
+      {
+        "step": "Stage IA2-IB1 (small tumour) — radical hysterectomy + pelvic lymphadenectomy",
+        "detail": "Or fertility-sparing radical trachelectomy + cerclage for early-stage + desired pregnancy. Sentinel lymph node mapping increasingly accepted."
+      },
+      {
+        "step": "Stage IB2-IIA (locally advanced) — concurrent chemoradiotherapy",
+        "detail": "External beam radiotherapy + brachytherapy + concurrent weekly cisplatin (40 mg/m²). Equivalent / better outcomes than radical surgery for larger tumours."
+      },
+      {
+        "step": "Stage IIB-IVA — concurrent chemoradiotherapy + brachytherapy",
+        "detail": "Definitive curative-intent. Pembrolizumab added for PD-L1+ FIGO III-IVA (KEYNOTE-A18). Adjuvant pembrolizumab for high-risk post-CRT (KEYNOTE-A18)."
+      },
+      {
+        "step": "Stage IVB / recurrent — systemic therapy",
+        "detail": "Cisplatin + paclitaxel + bevacizumab (BEV — improves OS in GOG-240). Pembrolizumab + chemotherapy + bevacizumab (KEYNOTE-826) — new first-line for PD-L1+ metastatic. Cemiplimab second-line (EMPOWER-Cervical 1)."
+      },
+      {
+        "step": "Pregnancy + cervical cancer",
+        "detail": "Multidisciplinary decision: gestational age, stage, patient preference. Delay treatment until fetal viability where stage allows (early disease); some early disease can be managed with conisation + close monitoring. Locally advanced / metastatic — discussion of pregnancy termination + treatment OR delayed treatment until fetal viability + Caesarean + treatment. Refer specialist."
+      },
+      {
+        "step": "Survivorship + late effects",
+        "detail": "Sexual dysfunction (vaginal shortening / dryness — vaginal dilator, lubricant, oestrogen if possible); bowel + bladder dysfunction; lymphoedema; psychological / body image. Vaginal moisturisers + dilators."
+      },
+      {
+        "step": "HPV vaccination + prevention",
+        "detail": "HPV vaccine eligible age (9-26 typically; up to 45 in some); essential for primary prevention. Cervical screening continued in vaccinated."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESMO + NCCN Cervical Cancer Guidelines; FIGO 2018 staging; KEYNOTE-A18 + KEYNOTE-826"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-ulcerative-colitis-biologic",
+    "title": "Moderate-severe ulcerative colitis — biologic + treat-to-target",
+    "icd10": [
+      "K51"
+    ],
+    "domains": [
+      "gastroenterology",
+      "immunology",
+      "surgery"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Chronic relapsing inflammation of colonic mucosa — contiguous from rectum; varying extent (proctitis 30%, left-sided 30%, extensive / pancolitis 30%).",
+      "Bloody diarrhoea + urgency + tenesmus + abdominal pain + fatigue + extra-intestinal manifestations.",
+      "Severity (Truelove-Witts): mild < 4 stools / day; moderate 4–6; severe ≥ 6 + systemic signs (HR > 90, T > 37.8, Hb < 105, ESR > 30).",
+      "Comorbidities: PSC (~5% of UC; 70% of PSC has UC), spondyloarthropathy, ocular (uveitis, episcleritis), skin (erythema nodosum, pyoderma gangrenosum), AIH, oral aphthous."
+    ],
+    "redFlags": [
+      "Acute severe colitis (ASUC; see toxic-megacolon pathway).",
+      "Cholestatic LFT — PSC overlap; MRCP.",
+      "Suspected CRC in long-standing extensive disease.",
+      "Pregnancy + active UC — treat actively; flare worse than therapy.",
+      "C. difficile + CMV superinfection in steroid-refractory.",
+      "VTE risk extremely elevated during flare — even with bleeding."
+    ],
+    "diagnostics": [
+      {
+        "test": "Ileocolonoscopy + biopsies — diagnosis + extent + activity (Mayo endoscopic subscore).",
+        "rationale": "Diagnosis + monitoring."
+      },
+      {
+        "test": "Faecal calprotectin — disease activity monitoring; non-invasive.",
+        "rationale": "Track response + relapse."
+      },
+      {
+        "test": "FBC + CRP + albumin + ferritin + B12 + vitamin D + nutrition assessment.",
+        "rationale": "Severity + nutritional state."
+      },
+      {
+        "test": "C. difficile + CMV PCR + stool cultures.",
+        "rationale": "Exclude / identify superinfection."
+      },
+      {
+        "test": "MRCP for cholestatic LFT (PSC).",
+        "rationale": "Identify overlap."
+      },
+      {
+        "test": "Pre-biologic: hepatitis B + C + HIV + TB (IGRA + CXR) + varicella; vaccinations.",
+        "rationale": "Safety screen."
+      },
+      {
+        "test": "CRC surveillance — colonoscopy at 8 years then every 1–3 years.",
+        "rationale": "Dysplasia / cancer surveillance."
+      }
+    ],
+    "management": [
+      {
+        "step": "Mild-moderate proctitis / left-sided — topical first",
+        "detail": "Mesalamine (5-ASA) suppositories 1 g / enemas 1 g daily for proctitis; foam / enema for left-sided. Combine with oral mesalamine 2.4-4.8 g/day for extensive. Cochrane: combined oral + topical superior."
+      },
+      {
+        "step": "Moderate flare — escalate",
+        "detail": "Oral prednisolone 40 mg/day taper over 8 weeks. Add steroid-sparing thiopurine (azathioprine 2 mg/kg, TPMT testing) for relapsing / steroid-dependent."
+      },
+      {
+        "step": "Moderate-severe inadequate to conventional — biologics",
+        "detail": "Anti-TNF (infliximab, adalimumab, golimumab) first-line. Vedolizumab (anti-α4β7 integrin) — gut-selective; safer profile. Ustekinumab (IL-12/23). JAK inhibitors (tofacitinib, upadacitinib — oral, fast onset, caution VTE + cardiovascular). Ozanimod (S1P modulator)."
+      },
+      {
+        "step": "Acute severe UC — hospital admission + IV steroid",
+        "detail": "IV hydrocortisone 100 mg every 6 h × 3 days assessment; if inadequate response (Travis criteria — > 8 stools or CRP > 45 at day 3) → rescue with infliximab OR ciclosporin; failure of rescue at day 5–7 → colectomy."
+      },
+      {
+        "step": "Treat-to-target",
+        "detail": "Symptomatic remission + endoscopic healing (Mayo 0–1) + histological healing. Therapeutic drug monitoring (anti-TNF trough levels + anti-drug antibodies)."
+      },
+      {
+        "step": "Pregnancy",
+        "detail": "Continue mesalamine + thiopurine + anti-TNF; certolizumab no placental transfer. Active disease worse than medication for mother + baby. Tofacitinib / JAK inhibitor avoid in pregnancy."
+      },
+      {
+        "step": "CRC surveillance",
+        "detail": "Pancolitis: from 8 years post-diagnosis. Left-sided: from 15 years. Chromoendoscopy + targeted biopsy preferred. Annual in high-risk (PSC + UC, family history). Dysplasia → colectomy."
+      },
+      {
+        "step": "Surgery — colectomy",
+        "detail": "Indications: refractory severe disease, dysplasia / cancer, complications (perforation, haemorrhage, fistula). Subtotal colectomy + ileostomy + planned restorative proctocolectomy + IPAA (J-pouch) — cures UC; some long-term pouchitis."
+      },
+      {
+        "step": "VTE prophylaxis during flare",
+        "detail": "LMWH for ALL hospitalised flares — even with rectal bleeding. UC + flare carries extreme VTE risk."
+      },
+      {
+        "step": "Vaccinations + lifestyle",
+        "detail": "Pneumococcal + flu + COVID + zoster (live avoided on biologic); hepatitis B before biologic. Smoking cessation (paradoxically can worsen UC after quitting). Bone protection (calcium + vitamin D). Mental health support."
+      }
+    ],
+    "references": [
+      {
+        "label": "ECCO UC Guidelines 2022 (update); AGA Practice Guidelines; True UCDS"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-migraine-cgrp-prevention",
+    "title": "Severe / chronic migraine — CGRP-targeted prevention + acute therapy",
+    "icd10": [
+      "G43"
+    ],
+    "domains": [
+      "neurology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Migraine: recurrent unilateral pulsating headache + photophobia + phonophobia + nausea ± vomiting ± aura, 4–72 h duration, female predominant 3:1.",
+      "Episodic (< 15 headache days / month) vs chronic (≥ 15 days / month for > 3 months with ≥ 8 migraine days).",
+      "Aura (25%): visual scotoma + scintillating + sensory + motor / dysphasic / brainstem aura (migraine with aura subtype).",
+      "Triggers: stress, sleep disturbance, hormonal (menstrual), food (chocolate, cheese, alcohol, MSG), caffeine withdrawal, weather, missed meals, dehydration.",
+      "Comorbid: depression, anxiety, PTSD, sleep disorder, obesity, cardiovascular disease, stroke (especially migraine with aura), epilepsy."
+    ],
+    "redFlags": [
+      "Thunderclap headache (peak intensity within 1 minute) — SAH / cerebral venous sinus thrombosis / RCVS.",
+      "New-onset > 50 — temporal arteritis; brain tumour; subdural haematoma.",
+      "Progressive deteriorating headache.",
+      "New focal neurology / persistent aura > 1 h — investigate.",
+      "Headache with fever + neck stiffness — meningitis.",
+      "Postpartum severe headache — eclampsia / cerebral venous sinus thrombosis.",
+      "Medication overuse headache (MOH) — > 10 days / month opioid / triptan / combination analgesic."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical (ICHD-3 criteria) — no investigation for typical episodic migraine.",
+        "rationale": "Diagnosis."
+      },
+      {
+        "test": "Imaging (MRI brain) — atypical features, red flags, > 50 new onset, change in pattern.",
+        "rationale": "Exclude secondary cause."
+      },
+      {
+        "test": "Headache diary — frequency + triggers + treatment response.",
+        "rationale": "Diagnostic + treatment-tracking."
+      },
+      {
+        "test": "Visual acuity + neurology examination.",
+        "rationale": "Identify chronic abnormalities."
+      },
+      {
+        "test": "Cardiovascular risk assessment for women > 35 with aura + smoking (avoid oestrogen-containing contraception).",
+        "rationale": "Stroke risk."
+      },
+      {
+        "test": "Pregnancy test before pharmacotherapy in women of childbearing potential.",
+        "rationale": "Treatment safety."
+      }
+    ],
+    "management": [
+      {
+        "step": "Lifestyle + trigger avoidance",
+        "detail": "Regular sleep + meals + hydration + exercise + stress management. Identify + avoid individual triggers. Mediterranean diet. Limit caffeine 2 cups/day. Riboflavin 400 mg + coenzyme Q10 + magnesium 600 mg supplementation modest evidence."
+      },
+      {
+        "step": "Acute migraine — graded approach",
+        "detail": "Mild: paracetamol 1 g + ibuprofen 400-600 mg + antiemetic (metoclopramide / domperidone). Moderate-severe: triptan (sumatriptan 50-100 mg PO OR 6 mg SC; rizatriptan, zolmitriptan, almotriptan, eletriptan). AVOID triptan in cardiovascular disease, uncontrolled HTN, pregnancy, migraine with brainstem / hemiplegic aura. CGRP receptor antagonist (gepants — ubrogepant, rimegepant) — no vasoconstriction, safer in cardiovascular. Lasmiditan (selective 5-HT1F agonist) — no vasoconstriction; driving caution. AVOID opioids + butalbital + barbiturate (medication overuse + tolerance)."
+      },
+      {
+        "step": "Preventive therapy — indicated for ≥ 4 days / month OR debilitating attacks",
+        "detail": "First-line: propranolol 80-240 mg/day (heart disease, asthma caveat). Topiramate 50-100 mg/day (cognitive, kidney stones, pregnancy avoid). Amitriptyline 10-50 mg nocte (depression overlap, anticholinergic). Sodium valproate (NOT women of childbearing potential). Candesartan 8-16 mg. Flunarizine."
+      },
+      {
+        "step": "CGRP-targeted preventive monoclonal antibodies",
+        "detail": "Erenumab 70-140 mg SC monthly OR fremanezumab 225 mg SC monthly / 675 mg quarterly OR galcanezumab 240 mg loading + 120 mg monthly OR eptinezumab IV every 3 months. Generally indicated after ≥ 2 first-line preventives fail. Effective for both episodic + chronic migraine. Constipation, injection site reactions, rare cardiovascular events (relative monitoring)."
+      },
+      {
+        "step": "Gepants for prevention",
+        "detail": "Rimegepant 75 mg every other day OR atogepant 60 mg daily — oral CGRP antagonist; alternative to mAbs."
+      },
+      {
+        "step": "Chronic migraine ± medication overuse",
+        "detail": "Onabotulinum toxin A 155 units (PREEMPT protocol) every 12 weeks — FDA-approved for chronic migraine. Withdraw overused medication (often worsens before improving)."
+      },
+      {
+        "step": "Pregnancy",
+        "detail": "Paracetamol first-line. Sumatriptan limited safety data — avoid where possible (use in severe / refractory only). Propranolol acceptable for prevention. Most preventives avoided (topiramate, valproate, ergot). Magnesium + riboflavin. Specialist neurology."
+      },
+      {
+        "step": "Medication overuse headache management",
+        "detail": "Withdraw overused medication (cold turkey OR taper); bridging therapy (steroid prednisolone 60 mg taper, or naproxen, or DHE if specialist); start preventive simultaneously; counsel patient + family."
+      },
+      {
+        "step": "Refractory + specialist treatments",
+        "detail": "Greater occipital nerve block; sphenopalatine ganglion block; ablation; neurostimulation (transcutaneous supraorbital — Cefaly; remote electrical neuromodulation — Nerivio; vagus nerve stimulation). Refer specialist headache clinic."
+      },
+      {
+        "step": "Comorbidity management",
+        "detail": "Treat depression / anxiety + sleep disorders + obesity + chronic pain. Aerobic exercise. Mindfulness-based CBT."
+      }
+    ],
+    "references": [
+      {
+        "label": "AHS Consensus on CGRP for Migraine (2021 update); EHF Migraine; ICHD-3"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "concussion-mild-tbi-return-to-play",
+    "title": "Sport-related concussion / mild traumatic brain injury",
+    "icd10": [
+      "S06.0"
+    ],
+    "domains": [
+      "sports-medicine",
+      "neurology",
+      "emergency",
+      "rehabilitation",
+      "paediatrics"
+    ],
+    "population": {
+      "minAgeYears": 5,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sport / occupational head injury — biomechanical force directly to head OR transmitted to head.",
+      "Clinical features: somatic (headache, dizziness, balance problems, photophobia, phonophobia, vision changes); cognitive (confusion, memory disturbance, slowed reaction time, difficulty concentrating); emotional (irritability, anxiety, low mood); sleep (insomnia, hypersomnia).",
+      "GCS 13–15 + LOC ≤ 30 min + post-traumatic amnesia ≤ 24 h.",
+      "Most resolve within 1-4 weeks (children may take longer); persistent symptoms > 4 weeks = persistent post-concussion symptoms.",
+      "Repetitive sub-concussive impacts may cause long-term chronic traumatic encephalopathy (CTE) — particularly in contact sports."
+    ],
+    "redFlags": [
+      "Worsening headache + vomiting + confusion + LOC > 30 min — exclude bleed (CT head).",
+      "Focal neurology / seizure / pupillary abnormality.",
+      "Suspected cervical-spine injury — immobilise.",
+      "Anticoagulation / antiplatelet — lower threshold for imaging.",
+      "Skull fracture (basal — raccoon eyes, Battle sign, CSF rhinorrhoea / otorrhoea).",
+      "Same-day return to play after concussion — second-impact syndrome (catastrophic in adolescents)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical assessment — Sport Concussion Assessment Tool 6 (SCAT6) for adults / Child SCAT6 for paediatric.",
+        "rationale": "Standardised sideline + clinic assessment."
+      },
+      {
+        "test": "Glasgow Coma Scale + neurological examination + cervical-spine assessment.",
+        "rationale": "Severity + injury exclusion."
+      },
+      {
+        "test": "CT head per Canadian CT Head Rule / NICE criteria — NOT routinely; selectively for red flags + GCS < 15 + LOC > 5 min + amnesia > 30 min + age > 65 + anticoagulation + intoxication + concerning mechanism.",
+        "rationale": "Exclude intracranial bleed."
+      },
+      {
+        "test": "Symptom inventory (PCS scale) + neurocognitive testing (ImPACT, SCAT 6).",
+        "rationale": "Track recovery."
+      },
+      {
+        "test": "Vestibular + oculomotor + balance assessment (VOMS).",
+        "rationale": "Identify specific symptom domains."
+      }
+    ],
+    "management": [
+      {
+        "step": "Remove from play IMMEDIATELY",
+        "detail": "Any suspected concussion = removal from play same day. 'When in doubt, sit them out'. NEVER return same day in adolescents / children."
+      },
+      {
+        "step": "Initial rest (24–48 h)",
+        "detail": "BRIEF physical + cognitive rest (24-48 hours) — not prolonged. Recent evidence: prolonged rest worsens outcomes."
+      },
+      {
+        "step": "Active rehabilitation — gradual return to function",
+        "detail": "Sub-symptom threshold aerobic exercise after 24-48 h (improves recovery — Buffalo Concussion Treadmill Test informed). Vestibular rehabilitation for vestibular symptoms. Cognitive rehabilitation for persistent cognitive symptoms. Vision therapy for ocular motor."
+      },
+      {
+        "step": "Graduated return-to-school (RTS)",
+        "detail": "Step 1: daily activity at home with no symptoms. Step 2: school activities (light cognitive). Step 3: return to school part-time. Step 4: full days. Step 5: full activities. Each step 24 h apart; if symptoms — step back."
+      },
+      {
+        "step": "Graduated return-to-sport (RTSp) — Concussion in Sport Group 2017",
+        "detail": "Step 1: symptom-limited activity. Step 2: light aerobic. Step 3: sport-specific exercise. Step 4: non-contact training. Step 5: full contact practice (medical clearance). Step 6: return to competitive play. Minimum 24 h per step → minimum 6 days. Children + adolescents: more conservative."
+      },
+      {
+        "step": "Symptomatic treatment",
+        "detail": "Analgesia: paracetamol (avoid NSAIDs in first 24-48 h — bleeding risk in rare missed bleed). Antiemetic. Sleep hygiene + low-dose melatonin. Address mood + anxiety."
+      },
+      {
+        "step": "Persistent post-concussion symptoms (> 4 weeks)",
+        "detail": "Multidisciplinary clinic — neurology + sports medicine + physiotherapy + psychology + occupational therapy. Vestibular + vision rehabilitation. CBT for mood / anxiety. Sleep optimisation. Headache management. Education + reassurance."
+      },
+      {
+        "step": "Repeat concussions + chronic traumatic encephalopathy concerns",
+        "detail": "Higher risk after first concussion. Multiple concussions especially close together — increased risk of complications. Permanent retirement from contact sport considered after multiple severe / prolonged recoveries / persistent symptoms. CTE — long-term cognitive + behavioural changes; only diagnosable post-mortem currently."
+      },
+      {
+        "step": "Adolescent + paediatric considerations",
+        "detail": "Slower recovery; more conservative return-to-play; greater academic accommodations. Family + school + sport coordinator involvement."
+      },
+      {
+        "step": "Education + prevention",
+        "detail": "Helmet use; rule changes in sport (no head contact); coaching education; baseline testing (controversial)."
+      }
+    ],
+    "references": [
+      {
+        "label": "Concussion in Sport Group Consensus Statement (Amsterdam 2022); CDC HEADS UP; American Academy of Neurology"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "cardiac-arrest-in-pregnancy",
+    "title": "Maternal cardiac arrest — resuscitation + peri-mortem caesarean",
+    "icd10": [
+      "O75.4",
+      "I46"
+    ],
+    "domains": [
+      "obstetrics",
+      "emergency",
+      "resuscitation",
+      "critical-care",
+      "obstetric-emergency"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "maxAgeYears": 49,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Cardiac arrest in pregnant patient ≥ 20 weeks gestation OR fundal height at / above umbilicus.",
+      "Causes: amniotic fluid embolism, pulmonary embolism, haemorrhage (PPH, abruption, ectopic, rupture), pre-eclampsia / eclampsia, sepsis, cardiac (peripartum cardiomyopathy, ACS, dissection), trauma, drug-related (Mg toxicity, anaesthesia, illicit).",
+      "Maternal physiology challenges: aortocaval compression by gravid uterus reduces CPR effectiveness; increased oxygen consumption + decreased reserve; airway changes (more difficult intubation).",
+      "Dual patient — mother + fetus."
+    ],
+    "redFlags": [
+      "ALL pregnant cardiac arrests — peri-mortem caesarean section (PMCS) within 4–5 minutes if no ROSC.",
+      "Suspected amniotic fluid embolism — emergency.",
+      "Massive haemorrhage — massive transfusion protocol + surgical control.",
+      "Suspected eclampsia — MgSO4 + delivery.",
+      "Suspected PE — thrombolysis consideration.",
+      "Local anaesthetic toxicity — intralipid."
+    ],
+    "diagnostics": [
+      {
+        "test": "ABCDE during ongoing CPR — minimise interruption.",
+        "rationale": "Identify reversible causes."
+      },
+      {
+        "test": "Bedside ultrasound — abdomen + cardiac.",
+        "rationale": "Identify free fluid (ruptured ectopic, abruption), PE, tamponade."
+      },
+      {
+        "test": "FBC + crossmatch + coagulation + fibrinogen + lactate + ABG + electrolytes (Mg+ glucose).",
+        "rationale": "Multiple potential causes."
+      },
+      {
+        "test": "ECG, troponin.",
+        "rationale": "Identify ACS / arrhythmia."
+      },
+      {
+        "test": "Pregnancy test (if uncertain).",
+        "rationale": "Confirm pregnancy."
+      }
+    ],
+    "management": [
+      {
+        "step": "Call for help — maternal cardiac arrest team",
+        "detail": "Multidisciplinary: obstetrics + anaesthetics + neonatology + ICU + emergency. Prepare for PMCS."
+      },
+      {
+        "step": "Standard adult ALS — modified for pregnancy",
+        "detail": "Standard chest compressions (slightly higher position on sternum). Standard defibrillation. Standard drug doses + ventilation."
+      },
+      {
+        "step": "Left lateral uterine displacement (NOT tilt)",
+        "detail": "Manual displacement of uterus to LEFT by assistant pushing from right side — improves CPR effectiveness more than tilt. Critical from 20 weeks."
+      },
+      {
+        "step": "Peri-mortem caesarean section (PMCS) within 4-5 MINUTES if no ROSC",
+        "detail": "PRIMARILY for MATERNAL benefit — emptying uterus improves return of circulation by reducing aortocaval compression. Secondarily for fetus. Decision at 4 min; delivery by 5 min. Done at site of arrest — DO NOT transfer to theatre. Make midline vertical incision. Continue CPR throughout. Neonatology present."
+      },
+      {
+        "step": "Treat reversible cause",
+        "detail": "Amniotic fluid embolism: supportive — DIC management. Massive haemorrhage: massive transfusion + tranexamic acid + uterotonic + surgical / IR control. Eclampsia: MgSO4 4 g IV. PE: alteplase considered. Local anaesthetic toxicity: 20% intralipid 1.5 mL/kg bolus + 0.25 mL/kg/min infusion. Cardiac: PCI / surgery. Sepsis: hour-1 bundle."
+      },
+      {
+        "step": "Airway management",
+        "detail": "Anticipate difficult intubation; senior anaesthetist; smaller ETT; ramped position; consider video laryngoscopy + cricoid pressure controversial."
+      },
+      {
+        "step": "Post-ROSC care",
+        "detail": "Targeted temperature management 32-36°C as per non-pregnant. Identify + treat underlying cause. ICU level care."
+      },
+      {
+        "step": "Neonatal care + family support",
+        "detail": "Neonatology prepared for delivery. Family + bereavement support if poor outcome. Debrief team."
+      },
+      {
+        "step": "Maternal mortality review",
+        "detail": "Mandatory case review (MBRRACE-UK or local equivalent). Learn from each case."
+      }
+    ],
+    "references": [
+      {
+        "label": "AHA Maternal Cardiac Arrest Scientific Statement (2015 + 2021 update); ERC ALS pregnancy; MBRRACE-UK"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "who-pen-cvd-risk-screening-pathway",
+    "title": "WHO PEN — total cardiovascular risk screening + management (Kenya primary care)",
+    "icd10": [
+      "Z82.49",
+      "I10"
+    ],
+    "domains": [
+      "cardiology",
+      "primary-care",
+      "ncd",
+      "preventive"
+    ],
+    "population": {
+      "minAgeYears": 40,
+      "sex": "any"
+    },
+    "presentation": [
+      "Adult ≥ 40 years (or younger if symptomatic) attending primary care for opportunistic screening (or with established risk factor).",
+      "WHO/ISH CVD risk prediction charts — age, sex, smoking, BP, total cholesterol (or no-cholesterol option for low-resource), diabetes.",
+      "Categorise: < 10% (low), 10–20% (moderate), 20–30% (high), ≥ 30% (very high) 10-year risk of fatal + non-fatal CVD.",
+      "Kenya national NCD policy aligns with WHO PEN package — prioritises hypertension, diabetes, CVD risk, asthma / COPD basic care in primary facility."
+    ],
+    "redFlags": [
+      "Established CVD (prior MI, stroke, PAD) — treat as very-high-risk regardless of score.",
+      "Diabetes with target-organ damage — high-risk threshold.",
+      "Severe hypertension (BP ≥ 180/110) — treat without scoring.",
+      "Familial hypercholesterolaemia (LDL ≥ 5 mmol/L, family history premature CVD) — treat without scoring + specialist.",
+      "Pregnancy — separate cardiovascular pathway."
+    ],
+    "diagnostics": [
+      {
+        "test": "BP × 2 readings (different visits if not severe). Use calibrated upper-arm device.",
+        "rationale": "Foundational measurement."
+      },
+      {
+        "test": "Capillary blood glucose / fasting glucose / HbA1c.",
+        "rationale": "Identify diabetes."
+      },
+      {
+        "test": "Total cholesterol (optional if no laboratory — WHO/ISH no-cholesterol chart usable).",
+        "rationale": "Risk score input where available."
+      },
+      {
+        "test": "Urine dipstick (proteinuria + glucose).",
+        "rationale": "Identify renal involvement."
+      },
+      {
+        "test": "ECG (where available).",
+        "rationale": "Identify LVH + ischaemia."
+      },
+      {
+        "test": "Body mass index + waist circumference.",
+        "rationale": "Obesity component of risk."
+      },
+      {
+        "test": "Smoking + alcohol + physical activity + diet questions.",
+        "rationale": "Behavioural risk + intervention opportunity."
+      }
+    ],
+    "management": [
+      {
+        "step": "Apply WHO/ISH CVD risk chart for region — Africa AFR-D / E table",
+        "detail": "Generate 10-year risk category using age, sex, BP, smoking, diabetes, total cholesterol (if available)."
+      },
+      {
+        "step": "Universal lifestyle counselling (5As: Ask, Advise, Assess, Assist, Arrange)",
+        "detail": "Tobacco cessation; reduce salt < 5 g/day; reduce sugar; ≥ 5 fruit + vegetable servings/day; ≥ 150 min/week physical activity; alcohol moderation; weight loss to BMI 20–25."
+      },
+      {
+        "step": "Treat individual risk factors regardless of total score",
+        "detail": "BP ≥ 140/90 sustained: lifestyle + medication if persists. HbA1c ≥ 6.5%: diabetes treatment per WHO HEARTS-D pathway. LDL above target: lifestyle + statin per CVD risk."
+      },
+      {
+        "step": "Add statin therapy by CVD risk band",
+        "detail": "< 10% risk: lifestyle only. 10–20%: lifestyle + statin if cholesterol/risk factors not improving. ≥ 20%: lifestyle + statin (atorvastatin 10–20 mg or simvastatin 20–40 mg) + BP medication if BP elevated. ≥ 30% OR established CVD: aggressive statin + BP + antiplatelet for secondary prevention only (no routine aspirin primary prevention per modern evidence)."
+      },
+      {
+        "step": "Antihypertensive therapy per WHO HEARTS protocol",
+        "detail": "Step 1: ACEi/ARB OR DHP-CCB (amlodipine 5 mg). Step 2: combination ACEi/ARB + CCB. Step 3: add thiazide. Step 4: spironolactone for resistant. Target < 140/90 (< 130/80 in diabetes/CKD/post-stroke if tolerated)."
+      },
+      {
+        "step": "Diabetes per WHO HEARTS-D / Kenya NCD program",
+        "detail": "Metformin first-line; titrate to HbA1c target; add second / third agent. Insulin for HbA1c > 10% or new presentation with marked symptoms. Annual eye + foot + renal screening."
+      },
+      {
+        "step": "Smoking cessation — pharmacotherapy where feasible",
+        "detail": "Brief intervention + NRT / bupropion / varenicline / cytisine where available. Counsel re: cardiovascular benefit (50% reduction in 1 year)."
+      },
+      {
+        "step": "Follow-up + review",
+        "detail": "Annual cardiovascular risk reassessment. Adjust therapy per response. Multidisciplinary (community health worker + nurse + clinical officer + GP) supported in Kenya primary care setting."
+      },
+      {
+        "step": "Refer to specialist for",
+        "detail": "Resistant hypertension; suspected secondary HTN; established CVD; symptomatic angina / heart failure; severe diabetes; complications (retinopathy, neuropathy, nephropathy)."
+      },
+      {
+        "step": "Linkage with community + structural support",
+        "detail": "Engage community health workers + village health teams; structural support for accessing essential medicines (Kenya Essential Medicines List); HEARTS technical package implementation."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Package of essential noncommunicable disease interventions (PEN) for primary health care (2020); WHO HEARTS technical package; Kenya National NCD Strategic Plan 2021-2025"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "who-antenatal-care-8-contact-model",
+    "title": "WHO 2016 antenatal care — 8-contact model + Kenya MOH protocol",
+    "icd10": [
+      "Z34",
+      "O09"
+    ],
+    "domains": [
+      "obstetrics",
+      "primary-care",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "maxAgeYears": 49,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Pregnant woman (any gestation) presenting for antenatal care.",
+      "WHO 2016 recommends EIGHT contacts (replaced previous four-visit model) to reduce perinatal mortality + improve maternal experience.",
+      "Kenya MOH protocol (Linda Mama free maternity care): aligns with WHO; prioritises early booking + multi-visit care + community engagement.",
+      "First contact: by 12 weeks; subsequent contacts at 20, 26, 30, 34, 36, 38, 40 weeks."
+    ],
+    "redFlags": [
+      "Severe pre-eclampsia / eclampsia features at any contact — emergency.",
+      "Significant antepartum haemorrhage.",
+      "Decreased fetal movement / IUGR / abnormal Doppler.",
+      "Preterm labour symptoms.",
+      "Severe hypertension at any contact.",
+      "Suspected ectopic / molar pregnancy at early contact.",
+      "Severe anaemia (Hb < 7 g/dL).",
+      "Intimate partner violence disclosure."
+    ],
+    "diagnostics": [
+      {
+        "test": "First contact (≤ 12 weeks): dating scan (USS), confirm pregnancy, gestational age, dating; obstetric + medical + family + social history; physical examination; BP, weight, height; blood group + Rh + irregular antibodies; FBC; HIV + syphilis + hepatitis B (Kenya: also malaria + TB symptom screen).",
+        "rationale": "Foundational."
+      },
+      {
+        "test": "Routine bloods + screening at each visit per protocol: urinalysis for proteinuria + glucose; symphysis-fundal height; fetal heart sounds (Doppler from 12 weeks; pinard 24+ weeks).",
+        "rationale": "Ongoing surveillance."
+      },
+      {
+        "test": "OGTT 24-28 weeks for gestational diabetes screening.",
+        "rationale": "Detect GDM."
+      },
+      {
+        "test": "Anti-D for RhD-negative women at 28-30 weeks + after sensitising events.",
+        "rationale": "Prevent haemolytic disease of newborn."
+      },
+      {
+        "test": "Anomaly USS at 20-24 weeks where available.",
+        "rationale": "Detect fetal anomalies."
+      },
+      {
+        "test": "GBS screening at 35-37 weeks (selected jurisdictions).",
+        "rationale": "Reduce early-onset GBS sepsis."
+      }
+    ],
+    "management": [
+      {
+        "step": "Contact 1 (≤ 12 weeks) — booking + risk assessment",
+        "detail": "Comprehensive history + physical; routine bloods; pregnancy + birth-plan counselling; lifestyle (smoking + alcohol + nutrition + folic acid 400 microgram + iron); intimate partner violence routine enquiry; vaccination review (Tdap, influenza, COVID); maternal mental health PHQ-2 screen."
+      },
+      {
+        "step": "Contact 2 (20 weeks) — fetal anomaly scan + growth",
+        "detail": "Detailed anomaly USS where available; OGTT planning; review blood results; continue iron + folic acid; reinforce education."
+      },
+      {
+        "step": "Contact 3 (26 weeks)",
+        "detail": "BP + urine + SFH + FHS; FBC repeat; OGTT result review; address concerns; movement counselling."
+      },
+      {
+        "step": "Contact 4 (30 weeks)",
+        "detail": "BP + urine + SFH + FHS; preterm birth risk assessment; anti-D for RhD-neg at 28-30; pertussis vaccination 16-32 weeks; birth-plan discussion."
+      },
+      {
+        "step": "Contact 5 (34 weeks)",
+        "detail": "BP + urine + SFH + FHS; GBS screening (selected); breastfeeding education; postnatal contraception planning; birthing plan finalise."
+      },
+      {
+        "step": "Contact 6 (36 weeks)",
+        "detail": "BP + urine + SFH + FHS; presentation assessment; ECV consideration for breech; finalise birth plan; postnatal mental health planning."
+      },
+      {
+        "step": "Contact 7 (38 weeks) + Contact 8 (40 weeks)",
+        "detail": "BP + urine + SFH + FHS; induction of labour discussion (41 weeks if no spontaneous); membrane sweeping considered."
+      },
+      {
+        "step": "Universal interventions across all contacts",
+        "detail": "Iron + folic acid 400 microgram daily (5 mg if epilepsy / previous NTD / sickle cell disease); calcium 1.5–2 g/day in low-calcium populations; aspirin 75–150 mg from 12 weeks for pre-eclampsia high-risk; tetanus vaccination per protocol; ITN distribution in malaria-endemic Kenya; HIV monitoring + ART continuation; malaria intermittent preventive treatment (IPTp with sulfadoxine-pyrimethamine in endemic Kenya regions); nutrition counselling; intimate partner violence screening + support; mental health screening."
+      },
+      {
+        "step": "Refer specialist if",
+        "detail": "Multiple pregnancy; previous LSCS; previous PPH; previous stillbirth / IUFD; gestational diabetes; gestational hypertension; chronic medical conditions; suspected fetal anomaly / IUGR; advanced maternal age; significant social vulnerability."
+      },
+      {
+        "step": "Kenya Linda Mama enrolment",
+        "detail": "Free maternity care + transport voucher + community follow-up. Engage community health worker + village health team."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Recommendations on Antenatal Care for a Positive Pregnancy Experience (2016); Kenya MOH National ANC Guidelines + Linda Mama; FIGO + ACOG"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "who-postnatal-care-comprehensive",
+    "title": "WHO postnatal care — mother + newborn",
+    "icd10": [
+      "Z39"
+    ],
+    "domains": [
+      "obstetrics",
+      "neonatology",
+      "primary-care",
+      "mnch"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "maxAgeYears": 49,
+      "sex": "female"
+    },
+    "presentation": [
+      "Postnatal period — first 6 weeks after delivery for mother + newborn.",
+      "WHO recommends FOUR postnatal contacts in first 6 weeks: within 24 hours, day 3 (48-72 h), 7-14 days, 6 weeks.",
+      "Kenya MOH integrates WHO recommendations with community-level follow-up by trained CHWs.",
+      "Highest-mortality period for mother (40% maternal deaths within first day) + newborn (40% neonatal deaths within first day)."
+    ],
+    "redFlags": [
+      "Maternal: severe haemorrhage, severe headache + vision changes (postpartum eclampsia / cerebral venous sinus thrombosis), fever + offensive lochia (sepsis), severe abdominal pain (uterine atony / retained placenta), respiratory distress (PE / amniotic fluid embolism), severe depression / suicidal ideation, deep vein thrombosis, breast abscess, urinary retention / incontinence.",
+      "Newborn: not feeding well, lethargy / floppiness, fast breathing > 60/min, severe chest indrawing, jaundice (especially day 1), fever / hypothermia, convulsions, umbilical infection, low birthweight < 2.5 kg, weight loss > 7%, persistent vomiting."
+    ],
+    "diagnostics": [
+      {
+        "test": "Maternal — BP + temperature + pulse at every contact; weight; pain; lochia colour + amount; uterine involution (height); breast examination; perineal / wound check.",
+        "rationale": "Detect early complications."
+      },
+      {
+        "test": "Newborn — temperature + respiratory rate + colour + activity + feeding; weight (track for 7-10% loss + recovery by day 14); umbilical stump; jaundice; reflexes; cardiac auscultation (CCHD pulse-oximetry screen day 1).",
+        "rationale": "Identify neonatal sepsis / jaundice / heart disease."
+      },
+      {
+        "test": "PHQ-2 / Edinburgh Postnatal Depression Scale at 6-8 weeks.",
+        "rationale": "Mental health screening."
+      },
+      {
+        "test": "Newborn screen heel-prick (PKU, CH, MCAD, CF, SCD, SCID where included).",
+        "rationale": "Early detection."
+      },
+      {
+        "test": "Hearing screen + ophthalmology (red reflex).",
+        "rationale": "Identify treatable sensory deficit."
+      },
+      {
+        "test": "Maternal FBC if anaemic ANC / postpartum.",
+        "rationale": "Postpartum anaemia."
+      }
+    ],
+    "management": [
+      {
+        "step": "Contact 1 (within 24 hours)",
+        "detail": "Maternal: BP + uterus + bleeding + perineum + breast + voiding + mood + breastfeeding success. Newborn: vital signs + feeding + warmth + skin-to-skin (delayed cord clamping + early breastfeeding within 1 h essential). Vitamin K 1 mg IM to newborn. Erythromycin / tetracycline eye prophylaxis. Hepatitis B vaccination (within 24 h). BCG + OPV birth dose per Kenya schedule."
+      },
+      {
+        "step": "Contact 2 (day 3, 48-72 hours)",
+        "detail": "Track 5-10% weight loss in newborn (recovers by day 10-14); check breastfeeding latch + frequency; jaundice (clinical + bilirubin if elevated); fever / hypothermia; maternal bleeding + breastfeeding pain; mental health observation."
+      },
+      {
+        "step": "Contact 3 (day 7-14)",
+        "detail": "Weight recovered to birthweight; routine vaccinations; cord care; maternal recovery + mood (postpartum 'blues' usually peak day 3-5); contraception counselling (LAM, COC after 6 weeks, progesterone-only sooner, copper IUD post-placental, vasectomy + tubal ligation discussion); breast care; resuming activities."
+      },
+      {
+        "step": "Contact 4 (6 weeks)",
+        "detail": "Comprehensive maternal — cardiovascular (BP, postpartum eclampsia surveillance), perineum, urinary + bowel function, pelvic floor, contraception initiation, mental health (Edinburgh Postnatal Depression Scale). Newborn — growth + development + feeding + immunisations (Kenya: 6-week visit gets DPT-HepB-Hib + OPV + PCV + Rotavirus)."
+      },
+      {
+        "step": "Breastfeeding support — exclusive 6 months",
+        "detail": "WHO recommendation: exclusive breastfeeding 6 months + continued breastfeeding to 2 years with complementary feeds. Address common problems: poor latch, sore nipples, mastitis (manage early), perceived insufficient milk, return to work (express + store)."
+      },
+      {
+        "step": "Maternal mental health",
+        "detail": "Postpartum 'blues' (day 3-7, self-limiting) → distinguish from postpartum depression (persistent symptoms ≥ 2 weeks). PHQ-2 / Edinburgh PDS screen. Treat depression + anxiety; severe — postpartum psychosis emergency (mother-baby unit)."
+      },
+      {
+        "step": "Family planning + birth spacing",
+        "detail": "WHO recommends at least 24-month interval between pregnancies. Postnatal contraception: LAM if exclusively breastfeeding < 6 months + amenorrhoeic + < 6 m postpartum (98% effective). Progestin-only pill / implant / DMPA injection (breastfeeding compatible). Combined OCP > 6 weeks postpartum (not in breastfeeding women < 6 weeks). LARC: copper IUD post-placental; LNG-IUS 6 weeks postpartum; implant any time. Permanent: tubal ligation (postpartum or interval) + vasectomy."
+      },
+      {
+        "step": "Kenya specific — community-based follow-up",
+        "detail": "CHW (community health worker) home visits day 1, 3, 7, 28 + 6 weeks. Linkage to Linda Mama free maternity. ITN distribution in malaria-endemic. PMTCT continuation. Birth registration."
+      },
+      {
+        "step": "Refer to higher level for",
+        "detail": "Any red flag; severe postpartum depression; ongoing severe pain; significant retained placenta / haemorrhage; suspected sepsis; postpartum eclampsia; newborn dangerous signs."
+      },
+      {
+        "step": "Vaccination + preventive at 6 weeks",
+        "detail": "Newborn: DTP-HepB-Hib + IPV/OPV + PCV + Rotavirus per Kenya schedule. Mother: routine adult vaccinations; HIV testing if not done; family planning initiation."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Recommendations on Postnatal Care of the Mother + Newborn (2022 update); Kenya MOH Postnatal Care Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "comprehensive-family-planning-counselling",
+    "title": "Family planning + contraception — comprehensive method-mix counselling",
+    "icd10": [
+      "Z30"
+    ],
+    "domains": [
+      "primary-care",
+      "gynaecology",
+      "reproductive-medicine",
+      "sexual-reproductive-health"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "maxAgeYears": 55,
+      "sex": "female"
+    },
+    "presentation": [
+      "Patient seeking contraception OR postpartum / post-abortion family planning.",
+      "WHO Medical Eligibility Criteria (MEC) — risk categorisation for each method per medical condition: Category 1 (no restriction) → Category 4 (unacceptable risk).",
+      "Kenya MOH family planning: comprehensive method mix, free in public facilities, community-based distribution of pills + condoms by CHWs."
+    ],
+    "redFlags": [
+      "Postpartum first 6 weeks — limit oestrogen-containing (VTE risk).",
+      "Migraine WITH aura — avoid combined oestrogen-progestogen contraception (stroke risk).",
+      "VTE history / known thrombophilia.",
+      "Active hepatitis / severe liver disease.",
+      "Breast cancer (current / history) — avoid hormonal.",
+      "Uncontrolled severe hypertension > 160/100.",
+      "Adolescent — confidential counselling + consent considerations.",
+      "Suspected IPV — discuss covert / undetectable methods (implant, IUD).",
+      "Religious / cultural considerations — respect + offer all options."
+    ],
+    "diagnostics": [
+      {
+        "test": "Detailed history — current sexual activity, parity, plans, previous contraception, medical history, BP, BMI, smoking, headaches, breast exam, pelvic exam selective.",
+        "rationale": "MEC assessment + appropriate choice."
+      },
+      {
+        "test": "Pregnancy exclusion before starting method (LMP > 4 weeks or other reliable exclusion).",
+        "rationale": "Avoid inadvertent fetal exposure."
+      },
+      {
+        "test": "STI screen as appropriate (especially adolescent + new partner + symptoms).",
+        "rationale": "Sexual health."
+      },
+      {
+        "test": "BP measurement (essential for COC initiation).",
+        "rationale": "Hypertension exclusion."
+      },
+      {
+        "test": "Counselling on STI prevention — dual protection (contraception + condom).",
+        "rationale": "STI risk."
+      }
+    ],
+    "management": [
+      {
+        "step": "Tiered method effectiveness counselling",
+        "detail": "Most effective (Tier 1, < 1% pregnancy/year typical use): implant (Implanon NXT — 3 years; Jadelle — 5 years), IUD (copper TCu380A — 10-12 years; LNG-IUS Mirena/Kyleena — 6-8 years), sterilisation (female tubal occlusion / vasectomy). Tier 2 (6-9% typical use): DMPA injectable 3-monthly; combined oral contraceptive; progestogen-only pill; combined patch; combined vaginal ring. Tier 3 (12-28%): male / female condom, diaphragm, withdrawal, fertility awareness, lactational amenorrhoea (LAM)."
+      },
+      {
+        "step": "Long-acting reversible contraception (LARC) — FIRST-LINE for most",
+        "detail": "Implant + IUD: 'fit-and-forget'; highest continuation + lowest unintended pregnancy. Implanon NXT (etonogestrel) — most popular in Kenya; insertion / removal trained provider. Jadelle — 5-year alternative. Copper IUD — non-hormonal; insertion any time including immediate postpartum. LNG-IUS — reduces bleeding; emerging role for menorrhagia + HRT-progestogen."
+      },
+      {
+        "step": "Combined hormonal contraception",
+        "detail": "COC: 21-day or 24-day active; common low-dose 30 microgram ethinyl oestradiol + levonorgestrel / norethisterone. Patch (weekly) + ring (monthly) alternatives. Start any time if reasonably certain not pregnant (quick-start). Counsel re: VTE + ischaemic stroke + breast cancer (small increased) vs benefit. AVOID: migraine with aura, VTE history, smoking > 35 years, BP > 160/100, recent peripartum, breast cancer."
+      },
+      {
+        "step": "Progestogen-only methods",
+        "detail": "Progestogen-only pill (POP / 'mini-pill') — strict timing; useful where oestrogen contraindicated. Desogestrel-POP (Cerazette) — 12-hour window (more forgiving). DMPA injectable — 3-monthly; convenient; bone density caution (reversible). Subdermal implant Implanon — 3 years; first-line LARC in Kenya."
+      },
+      {
+        "step": "Emergency contraception",
+        "detail": "Levonorgestrel 1.5 mg single dose — within 72 h (less effective 72-120 h). Ulipristal acetate 30 mg — within 120 h, more effective for later use. Copper IUD insertion within 120 h — most effective; can be retained for ongoing contraception."
+      },
+      {
+        "step": "Permanent / surgical methods",
+        "detail": "Tubal ligation (female) — laparoscopic / mini-laparotomy / hysteroscopic (some). Vasectomy (male) — simpler + safer + more cost-effective; counsel 12-week semen test post-op for sterility. Both nearly 100% effective; technically reversible but assume permanent."
+      },
+      {
+        "step": "Postpartum + post-abortion contraception",
+        "detail": "Immediate postpartum (within 48 h) IUD + implant. LAM if exclusively breastfeeding + amenorrhoeic + < 6 months. COC after 6 weeks postpartum (NOT in breastfeeding women in first 6 weeks). Post-abortion: contraception can be initiated immediately; addresses unmet need."
+      },
+      {
+        "step": "Adolescent-friendly services",
+        "detail": "Confidential counselling + non-judgmental approach + STI dual protection + Tier 1 LARC offered first. Education + skill-building. Consent considerations + Gillick-competence."
+      },
+      {
+        "step": "Method-switch + side-effect management",
+        "detail": "Counsel realistic side-effect expectations (breakthrough bleeding, amenorrhoea, breast tenderness, mood). Switch if intolerable. Address misconceptions (e.g. weight gain less than perceived). Continuation counselling."
+      },
+      {
+        "step": "Kenya CBP / CBD + free public-facility provision",
+        "detail": "Community-based pill + condom distribution; integrated post-pregnancy + post-abortion FP; free in public facilities including LARC insertion."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Medical Eligibility Criteria for Contraceptive Use 5th edition (2015); FSRH UK MEC; Kenya MOH National Family Planning Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "who-etat-paediatric-triage",
+    "title": "WHO ETAT — paediatric emergency triage assessment + treatment (Kenya outpatient + hospital)",
+    "icd10": [
+      "Z03.9"
+    ],
+    "domains": [
+      "paediatrics",
+      "emergency",
+      "primary-care",
+      "child-health"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Sick child arriving at outpatient department / emergency / health facility — triage decision needed.",
+      "ETAT (Emergency Triage Assessment + Treatment) framework: identify emergency signs (need treatment immediately), priority signs (need expedited assessment), non-urgent (queue).",
+      "Validated in Kenya + multiple LMIC settings — reduces under-5 mortality in busy outpatient."
+    ],
+    "redFlags": [
+      "Airway / breathing obstruction — immediate.",
+      "Circulation — shock, severe pallor + cold extremities.",
+      "Disability — convulsion, unconscious.",
+      "Severe dehydration (Plan C of IMCI).",
+      "Severe acute malnutrition with danger signs.",
+      "Active major bleeding.",
+      "Severe respiratory distress / cyanosis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Quick visual triage — emergency signs (ABCD + dehydration / convulsion).",
+        "rationale": "30-second pass-through identifies immediate-treatment cases."
+      },
+      {
+        "test": "Priority signs: tiny baby (< 2 months), temperature (very hot — fever > 39 / very cold), trauma, pallor, poisoning, pain, respiratory distress, restless / continuously irritable / lethargic, referral, urgent (under-nutrition, oedema).",
+        "rationale": "Identify cases for expedited assessment."
+      },
+      {
+        "test": "Full IMCI assessment for non-emergency / non-priority — see IMCI pathway.",
+        "rationale": "Standardised paediatric assessment."
+      }
+    ],
+    "management": [
+      {
+        "step": "Emergency signs — IMMEDIATE treatment + resuscitation",
+        "detail": "Airway: position, suction, oxygen. Breathing: support, oxygen if SpO2 < 90 (or central cyanosis without saturometer). Circulation: IV / IO access + 20 mL/kg crystalloid bolus if shocked (caution in severe febrile illness without shock — FEAST). Disability: glucose for convulsion + treat hypoglycaemia (10% dextrose 5 mL/kg IV). Diarrhoea / severe dehydration: Plan C IV rehydration (per IMCI Plan C). Severe malnutrition: F-75 + cautious resuscitation (different fluid protocols)."
+      },
+      {
+        "step": "Priority signs — expedited full assessment",
+        "detail": "Move to front of queue; full IMCI / IMAI assessment within 15-30 minutes."
+      },
+      {
+        "step": "Non-urgent — routine queue",
+        "detail": "Full IMCI assessment in turn."
+      },
+      {
+        "step": "ETAT principles",
+        "detail": "30 seconds per child to identify emergency / priority. Standardised algorithm. Trained staff at entry point. Necessary equipment (oxygen + IV fluids + emergency drugs) immediately available."
+      },
+      {
+        "step": "Documentation + monitoring + audit",
+        "detail": "Record triage category + intervention + outcomes. Identify systemic issues + training needs."
+      },
+      {
+        "step": "Refer / admit",
+        "detail": "Children with emergency signs requiring inpatient care, persistent priority signs, social vulnerability."
+      },
+      {
+        "step": "Kenya implementation specifics",
+        "detail": "ETAT incorporated into outpatient department of every level-2 + level-3 facility. CHWs trained for community-level recognition + referral. ETAT-Africa + ETAT+ regional adaptations."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Pocket book of hospital care for children + ETAT module; Kenya MOH Standard Treatment Guidelines for Paediatrics"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "kenya-malaria-policy-treatment",
+    "title": "Kenya malaria policy — diagnosis + treatment + prevention",
+    "icd10": [
+      "B54",
+      "B50",
+      "B51"
+    ],
+    "domains": [
+      "infectious-disease",
+      "tropical",
+      "primary-care",
+      "child-health",
+      "malaria"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Malaria endemic in lake region + coast + parts of western Kenya; epidemic-prone in highlands; low in arid / semi-arid; very low in urban areas.",
+      "Predominantly P. falciparum (90%+); P. malariae + P. ovale less common.",
+      "All ages affected — under-5 + pregnant women highest morbidity / mortality.",
+      "Presents with fever — uncomplicated (asymptomatic — mild) or severe (see severe malaria pathway)."
+    ],
+    "redFlags": [
+      "Severe malaria features — see severe falciparum malaria pathway.",
+      "Pregnant woman with malaria — high risk.",
+      "Returning traveller from endemic area within 6 weeks.",
+      "Drug-resistance signal — slow parasite clearance.",
+      "Co-infection HIV + malaria.",
+      "Severe anaemia + cerebral malaria + multi-organ failure."
+    ],
+    "diagnostics": [
+      {
+        "test": "RDT — first-line in Kenya. HRP-2 (P. falciparum) + pLDH (pan-malaria) — different commercial kits available.",
+        "rationale": "Bedside diagnosis < 20 min."
+      },
+      {
+        "test": "Thick + thin blood smear (microscopy) — gold standard for confirmation + species + parasitaemia + monitoring.",
+        "rationale": "Where available; quality-assured."
+      },
+      {
+        "test": "FBC, U&E, glucose, LFT, urinalysis (severe).",
+        "rationale": "Severity + complication assessment."
+      },
+      {
+        "test": "DO NOT TREAT empirically without confirmation — WHO + Kenya policy.",
+        "rationale": "Prevents over-treatment + antimalarial pressure for resistance + identifies alternative diagnoses."
+      }
+    ],
+    "management": [
+      {
+        "step": "Uncomplicated P. falciparum — artemisinin-based combination therapy (ACT)",
+        "detail": "Kenya first-line: Artemether-lumefantrine (AL — 'Coartem') — 6-dose regimen over 3 days. Weight-banded: 5–14 kg 1 tablet; 15–24 kg 2 tablets; 25–34 kg 3 tablets; ≥ 35 kg 4 tablets — each dose × 6 doses at 0, 8, 24, 36, 48, 60 hours. Take with fatty food / milk to improve absorption."
+      },
+      {
+        "step": "Second-line / treatment failure — dihydroartemisinin-piperaquine",
+        "detail": "DHA-PPQ alternative. 3-day course. Both AL + DHA-PPQ available in Kenya."
+      },
+      {
+        "step": "Severe malaria — IV artesunate (per severe malaria pathway)",
+        "detail": "IV artesunate 2.4 mg/kg at 0, 12, 24 h then daily until oral. Switch to oral ACT for 3-day course once tolerating. IV artemether OR IV quinine if artesunate unavailable. See severe falciparum malaria pathway."
+      },
+      {
+        "step": "P. malariae / P. ovale / P. vivax",
+        "detail": "AL effective for blood-stage. P. ovale + P. vivax also need primaquine 0.25 mg/kg/day × 14 days for hypnozoite clearance (after G6PD screening); P. vivax very rare in Kenya."
+      },
+      {
+        "step": "Pregnancy + malaria",
+        "detail": "1st trimester: quinine + clindamycin for uncomplicated. 2nd + 3rd trimester: ACT (AL) acceptable. Intermittent preventive therapy in pregnancy (IPTp): sulfadoxine-pyrimethamine 3 doses each at least 4 weeks apart starting 2nd trimester (Kenya endemic regions)."
+      },
+      {
+        "step": "Prevention — Kenya National Malaria Strategy",
+        "detail": "Insecticide-treated bednets (ITNs / LLINs) — universal coverage; free distribution + community-based education. Indoor residual spraying (IRS) — targeted high-transmission areas. Larval source management. Vector control. Community health volunteer engagement."
+      },
+      {
+        "step": "Chemoprophylaxis",
+        "detail": "Travellers to endemic areas: atovaquone-proguanil OR mefloquine OR doxycycline. Kenya residents in endemic areas: routine prophylaxis not given (rather ITNs + early case management); pregnant women IPTp."
+      },
+      {
+        "step": "Seasonal + school-based interventions",
+        "detail": "Seasonal malaria chemoprevention (SMC) for under-5 in highly seasonal epidemic regions. School-based malaria control programmes."
+      },
+      {
+        "step": "Vaccine + emerging",
+        "detail": "RTS,S/AS01 malaria vaccine — being rolled out in Kenya pilot + scale-up. R21/Matrix-M — recently licensed; complementary to vector + treatment measures."
+      },
+      {
+        "step": "Surveillance + diagnosis-treatment pathway",
+        "detail": "Notifiable disease in Kenya. Active case detection in epidemic-prone areas. CHV-supported test-treat-track approach."
+      }
+    ],
+    "references": [
+      {
+        "label": "Kenya MOH National Guidelines for the Diagnosis, Treatment + Prevention of Malaria; WHO Guidelines for Malaria"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "kenya-tb-program-treatment",
+    "title": "Kenya National Tuberculosis Programme — diagnosis + treatment",
+    "icd10": [
+      "A15",
+      "A16",
+      "A17",
+      "A18"
+    ],
+    "domains": [
+      "tb",
+      "infectious-disease",
+      "respiratory",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Kenya has high TB burden — 7th highest in Africa; estimated 558 per 100,000 population; high HIV + TB co-infection.",
+      "Common presentation: cough > 2 weeks + fever + night sweats + weight loss + anorexia.",
+      "Extra-pulmonary common: lymph node, pleural, miliary, abdominal, CNS, spinal (Pott's), genitourinary.",
+      "Paediatric TB: contact history + chronic illness + failure to thrive + chronic cough.",
+      "Kenya focus on case-finding + DOT + adherence + outcome tracking."
+    ],
+    "redFlags": [
+      "Suspected drug-resistant TB — prior treatment failure / contact with known DR-TB / treatment default.",
+      "TB meningitis / disseminated / miliary — high mortality.",
+      "Concurrent HIV + TB — see advanced HIV pathway.",
+      "Pregnancy + TB — modify regimen.",
+      "Severe respiratory failure / haemoptysis.",
+      "Diabetes + TB — bidirectional adverse outcomes."
+    ],
+    "diagnostics": [
+      {
+        "test": "Cough ≥ 2 weeks — collect 2 sputum samples (spot + early morning) for Xpert MTB/RIF + microscopy + culture.",
+        "rationale": "Standard case-finding."
+      },
+      {
+        "test": "Xpert MTB/RIF as primary diagnostic — rapid (~2 hours) + rifampicin resistance detection. Kenya rollout extensive.",
+        "rationale": "Improved diagnostic + DR-TB detection."
+      },
+      {
+        "test": "Sputum microscopy (Ziehl-Neelsen) — where Xpert not available; serial samples.",
+        "rationale": "Cost-effective initial screen."
+      },
+      {
+        "test": "Chest X-ray.",
+        "rationale": "Pattern supports TB (upper-lobe cavities, miliary, hilar adenopathy)."
+      },
+      {
+        "test": "HIV testing — mandatory for ALL TB patients in Kenya.",
+        "rationale": "Co-infection management."
+      },
+      {
+        "test": "FBC + U&E + LFT + creatinine + diabetes screen.",
+        "rationale": "Baseline + comorbidity."
+      },
+      {
+        "test": "Paediatric: Mantoux + contact tracing + paediatric Xpert + chest X-ray + (often empirical given diagnostic difficulty).",
+        "rationale": "Paediatric TB diagnostic challenges."
+      }
+    ],
+    "management": [
+      {
+        "step": "Standard 6-month regimen — drug-sensitive TB",
+        "detail": "Intensive phase: 2 months HRZE (isoniazid + rifampicin + pyrazinamide + ethambutol) daily. Continuation phase: 4 months HR daily. Weight-banded FDC (fixed-dose combination) tablets per Kenya formulary."
+      },
+      {
+        "step": "DOT — directly observed therapy",
+        "detail": "Family / community-based DOT — Kenya emphasis. CHV-supported daily observation. Treatment supporter selected by patient + community."
+      },
+      {
+        "step": "Pyridoxine 25-50 mg daily for all on isoniazid",
+        "detail": "Prevent peripheral neuropathy; especially HIV + diabetic + malnourished + pregnant."
+      },
+      {
+        "step": "Monthly follow-up + sputum at 2 + 5 months",
+        "detail": "Clinical + weight + adherence + side effects. Sputum smear at end of intensive phase (month 2) — if positive, repeat at month 3 + 5; if month 5 positive — treatment failure → DR-TB workup."
+      },
+      {
+        "step": "Side-effect management",
+        "detail": "Hepatotoxicity: stop all hepatotoxic (HRZ); ethambutol + streptomycin / fluoroquinolone bridge; rechallenge sequentially (rifampicin first, then isoniazid, then pyrazinamide); permanent withdrawal of agent triggering ALT > 5× ULN. Optic neuritis: stop ethambutol. Visual changes — ophthalmology. Skin rash: antihistamine; severe (SJS/TEN) — stop."
+      },
+      {
+        "step": "HIV co-infection",
+        "detail": "Start ART within 2 weeks if CD4 < 50; within 8 weeks if higher. Preferred regimen: TLD (tenofovir + lamivudine + dolutegravir) — adjust dolutegravir to 50 mg BD with rifampicin. Co-trimoxazole prophylaxis. PJP screen. ART continuation after TB cure."
+      },
+      {
+        "step": "Multi-drug resistant TB (MDR-TB)",
+        "detail": "Kenya National DR-TB Programme — specialist centres. BPaL or BPaLM 6-month regimen per WHO 2022 / Kenya adaptation: bedaquiline + pretomanid + linezolid ± moxifloxacin × 6 months. Longer individualised regimens for complex resistance. Strict adherence + monthly QTc + LFT + visual + audiometric monitoring."
+      },
+      {
+        "step": "Treatment outcomes + cohort review",
+        "detail": "Outcome categories: cured (negative culture + symptoms gone), treatment completed, treatment failure, died, lost to follow-up, transferred out. Cohort analysis 6 + 12 months. Target > 90% treatment success."
+      },
+      {
+        "step": "Contact tracing + preventive therapy",
+        "detail": "Household + close contacts screened — < 5 years + HIV-positive contacts: TPT (3HP — isoniazid + rifapentine weekly × 12 weeks; OR 6 months daily isoniazid). Universal TPT for PLHIV regardless of contact (Kenya policy). Symptomatic contacts: full TB workup."
+      },
+      {
+        "step": "Special populations",
+        "detail": "Pregnancy: standard regimen; pyridoxine + vitamin K (prevent neonatal bleeding). Children: weight-banded paediatric formulations + 6-month regimen; BPaLM increasingly considered. Severe drug-resistant TB: specialist management."
+      },
+      {
+        "step": "Kenya NTLD-Programme integration",
+        "detail": "National Tuberculosis, Leprosy + Lung Disease Program oversight. Free TB diagnosis + treatment in public facilities. Community DOTS + adherence support. Patient tracing for default. Drug supply chain + quality assurance."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO consolidated TB guidelines (multiple modules); Kenya National TB Programme guidelines; Kenya NTLD Strategic Plan"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "kenya-hiv-testing-services-prep",
+    "title": "Kenya HIV testing services + PrEP + treatment access",
+    "icd10": [
+      "Z21",
+      "Z11.4"
+    ],
+    "domains": [
+      "hiv",
+      "infectious-disease",
+      "primary-care",
+      "sexual-reproductive-health"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Patient seeking HIV testing — provider-initiated testing + counselling (PITC), voluntary counselling + testing (VCT), index testing of contacts, self-testing, ART entry point.",
+      "Kenya context: ~1.4 million people living with HIV; mature programme — high coverage of testing + ART + PrEP; concentrated epidemic in key populations (FSW, MSM, IDU); generalised in coastal + lake regions.",
+      "PrEP available in Kenya since 2017 — adolescent girls + young women, key populations, serodiscordant couples."
+    ],
+    "redFlags": [
+      "Acute HIV / seroconversion illness — Ag/Ab combo testing + viral load.",
+      "Pregnant woman with positive HIV — PMTCT pathway + ART within 7 days.",
+      "Suspected ART failure — second-line consideration.",
+      "Advanced HIV (CD4 < 200 or WHO stage 3/4) — AHD package.",
+      "TB + HIV co-infection — concurrent treatment timing.",
+      "PrEP candidate not eligible (active HIV / hepatitis B / renal insufficiency).",
+      "Suspected sexual / gender-based violence — post-exposure prophylaxis (PEP) within 72 h."
+    ],
+    "diagnostics": [
+      {
+        "test": "Pre-test counselling + consent.",
+        "rationale": "Voluntary informed testing."
+      },
+      {
+        "test": "First test: rapid test (HIV1/2 antibody — Determine + KHB / Trinity / Unigold per Kenya algorithm).",
+        "rationale": "Initial screening."
+      },
+      {
+        "test": "Confirmatory: second rapid test (different antigen / format) per Kenya algorithm. Tiebreaker if needed.",
+        "rationale": "Confirm positive."
+      },
+      {
+        "test": "Acute HIV / window-period: 4th-generation Ag/Ab combo + viral load.",
+        "rationale": "Detect within 2-4 weeks of infection."
+      },
+      {
+        "test": "HIV self-test (HIVST) — oral fluid or fingerprick; community-distributed in Kenya.",
+        "rationale": "Expand access; high sensitivity + specificity but needs confirmation."
+      },
+      {
+        "test": "Post-test: CD4 + HIV viral load + hepatitis B / C / syphilis + TB symptom screen + ART resistance testing if clinically indicated.",
+        "rationale": "Comprehensive baseline."
+      },
+      {
+        "test": "Kenya: integration with antenatal care + sexual + reproductive health + outpatient department + community.",
+        "rationale": "Multiple entry points."
+      }
+    ],
+    "management": [
+      {
+        "step": "Positive test — immediate linkage to care",
+        "detail": "Pre-ART preparation: comprehensive counselling + disclosure support + adherence counselling + partner / family contact tracing. ART initiation: same-day OR within 7 days (Kenya same-day initiation since 2018). Preferred first-line: TLD (tenofovir + lamivudine + dolutegravir)."
+      },
+      {
+        "step": "ART regimen + monitoring",
+        "detail": "First-line: TLD. Alternatives for intolerance / interactions: TDF/FTC/EFV → TLD switch; TAF/FTC/DTG. Children: paediatric weight-banded formulations. Monitoring: viral load at 6 months + then annually. CD4 monitoring routinely at baseline; less frequent on suppressed ART. Suspect failure: VL > 1000 copies/mL — adherence counselling + re-check at 3 months; if still > 1000 + second-line."
+      },
+      {
+        "step": "Opportunistic infection prophylaxis",
+        "detail": "Co-trimoxazole 960 mg daily for ALL adults + children CD4 < 350 (or all in high TB-malaria burden settings). TB preventive therapy (3HP / 6H) for ALL PLHIV after active TB excluded. Cryptococcal antigen screen for CD4 < 200 — pre-emptive fluconazole if positive."
+      },
+      {
+        "step": "Advanced HIV disease (AHD) package",
+        "detail": "See advanced-hiv-disease-adult pathway — full WHO AHD package."
+      },
+      {
+        "step": "Pre-exposure prophylaxis (PrEP)",
+        "detail": "Kenya PrEP eligibility: high-risk negative individuals — adolescent girls + young women in high prevalence settings, sex workers, MSM, PWID, serodiscordant couples (with positive partner not virally suppressed), recent STI / multiple partners. Regimens: oral TDF/FTC (Truvada) daily — Kenya first-line. Long-acting cabotegravir injection (CAB-LA) IM every 2 months — emerging access. Dapivirine vaginal ring — alternative for women. On-demand 2-1-1 PrEP for MSM (specific context)."
+      },
+      {
+        "step": "Post-exposure prophylaxis (PEP)",
+        "detail": "Within 72 hours of exposure (occupational, sexual, sexual assault). TDF/FTC/DTG × 28 days. HIV test baseline + 6 weeks + 12 weeks + 6 months. Counsel + adherence support."
+      },
+      {
+        "step": "PMTCT — prevention of mother-to-child transmission",
+        "detail": "All HIV-positive pregnant women: lifelong ART (TLD or TLE per regimen). Infant prophylaxis: nevirapine (high-risk infant) OR AZT depending on maternal status + viral load + breastfeeding decision. Exclusive breastfeeding for 6 months OR exclusive formula feeding (mother's decision with counselling). Postpartum maternal continuation + infant follow-up."
+      },
+      {
+        "step": "Index partner testing",
+        "detail": "Active contact tracing + testing of sexual + needle-sharing partners of newly diagnosed people; assisted partner notification supported by Kenya MOH."
+      },
+      {
+        "step": "Voluntary medical male circumcision (VMMC)",
+        "detail": "WHO + Kenya scale-up: 60% reduction in female-to-male HIV transmission. Free in public facilities + community campaigns. Integration with HIV testing + STI screening + condom counselling."
+      },
+      {
+        "step": "Kenya National HIV/STI Programme + DREAMS partnership",
+        "detail": "Free HIV testing + ART + PrEP. DREAMS programme for adolescent girls + young women (HIV prevention + economic empowerment + education). KEPHIA Kenya population-based surveys monitor progress."
+      }
+    ],
+    "references": [
+      {
+        "label": "Kenya MOH National AIDS + STI Control Programme (NASCOP) Guidelines (latest); WHO consolidated guidelines on HIV testing services + ART + PrEP"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "sti-syndromic-management-detailed",
+    "title": "STI syndromic management — WHO + Kenya detailed pathway",
+    "icd10": [
+      "A50",
+      "A51",
+      "A52",
+      "A54",
+      "A55",
+      "A56",
+      "A57",
+      "A58",
+      "A59",
+      "A60",
+      "A63"
+    ],
+    "domains": [
+      "sti",
+      "infectious-disease",
+      "primary-care",
+      "sexual-reproductive-health"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Patient presenting with sexual / reproductive symptoms — syndromic approach used widely in primary care + low-resource settings where lab confirmation unavailable.",
+      "Syndromes: urethral discharge (male), vaginal discharge, lower abdominal pain (female), genital ulcer, scrotal swelling, inguinal bubo, neonatal conjunctivitis.",
+      "WHO + Kenya STI syndromic management — covers common bacterial + protozoal causes with empirical antibiotic combinations."
+    ],
+    "redFlags": [
+      "Pelvic inflammatory disease severity — abscess, sepsis, peritonitis.",
+      "Suspected sexual abuse / violence — see specific pathway + PEP + emergency contraception.",
+      "Pregnancy + STI — fetal risk; adjust regimen.",
+      "Neonatal ophthalmia neonatorum — gonococcal + chlamydial.",
+      "Suspected HIV + STI co-infection — testing offered.",
+      "Recurrent infection — confirm partner treatment + drug resistance + behavioural risk.",
+      "Suspected disseminated gonorrhoea / syphilis — systemic features."
+    ],
+    "diagnostics": [
+      {
+        "test": "History — symptoms onset, sexual history, prior infection, partner notification, allergy.",
+        "rationale": "Risk stratification + management."
+      },
+      {
+        "test": "Physical examination — genitalia + bimanual / speculum (female) + lymph nodes + skin.",
+        "rationale": "Syndrome identification."
+      },
+      {
+        "test": "Where lab available: urine NAAT for gonorrhoea + chlamydia; urethral / cervical / vaginal / rectal swabs; syphilis serology (RPR / VDRL + treponemal); HIV test; hepatitis B + C; HSV PCR.",
+        "rationale": "Confirm + targeted therapy."
+      },
+      {
+        "test": "Where lab unavailable: syndromic approach per WHO algorithm.",
+        "rationale": "Empirical treatment."
+      },
+      {
+        "test": "Pregnancy test (women).",
+        "rationale": "Adjust treatment + neonatal precautions."
+      }
+    ],
+    "management": [
+      {
+        "step": "Urethral discharge (male) — gonorrhoea + chlamydia cover",
+        "detail": "Ceftriaxone 500 mg IM single dose + doxycycline 100 mg BD × 7 days. Pregnancy: ceftriaxone + azithromycin 1 g single dose (replace doxycycline)."
+      },
+      {
+        "step": "Vaginal discharge — broader cover (gonorrhoea, chlamydia, trichomonas, candida, BV)",
+        "detail": "Ceftriaxone 500 mg IM + doxycycline 100 mg BD × 7 days + metronidazole 2 g single dose + clotrimazole intravaginal 500 mg single dose. Risk-assess for gonorrhoea / chlamydia inclusion."
+      },
+      {
+        "step": "Lower abdominal pain (female) — PID syndrome",
+        "detail": "EXCLUDE: ectopic pregnancy, surgical abdomen, abscess. Ceftriaxone 500 mg IM + doxycycline 100 mg BD × 14 days + metronidazole 400 mg BD × 14 days. Severe / pregnant / refractory: hospital admission + IV therapy. See severe PID pathway."
+      },
+      {
+        "step": "Genital ulcer — syphilis + chancroid + HSV cover",
+        "detail": "Benzathine penicillin G 2.4 MU IM single dose (primary / secondary / early latent syphilis) + ciprofloxacin 500 mg single dose for chancroid + aciclovir 400 mg TDS × 7 days (or specific HSV-related regimen). Pregnancy: erythromycin / azithromycin alternative for chancroid; penicillin desensitisation for severe penicillin allergy + syphilis."
+      },
+      {
+        "step": "Scrotal swelling — epididymo-orchitis",
+        "detail": "Ceftriaxone 500 mg IM + doxycycline 100 mg BD × 14 days. Exclude torsion (urgent surgical consult if young + acute onset)."
+      },
+      {
+        "step": "Inguinal bubo (with / without ulcer) — lymphogranuloma venereum + chancroid",
+        "detail": "Doxycycline 100 mg BD × 21 days (LGV) + treat associated ulcer."
+      },
+      {
+        "step": "Neonatal ophthalmia neonatorum",
+        "detail": "Newborn with discharge: ceftriaxone 50 mg/kg IM single dose (max 125 mg) — gonococcal cover; erythromycin syrup 12.5 mg/kg QID × 14 days (chlamydial cover). Prophylaxis at birth: 1% tetracycline / erythromycin eye ointment OR povidone-iodine 2.5% drops universally."
+      },
+      {
+        "step": "Partner notification + treatment",
+        "detail": "Treat all sexual contacts in past 3-6 months — even if asymptomatic — to prevent reinfection + onward transmission. Anonymous notification options (Kenya: provider-assisted referral). Counselling + condom education."
+      },
+      {
+        "step": "HIV + viral hepatitis testing offer",
+        "detail": "All STI presentations — opportunity to offer comprehensive sexual + reproductive health screen. Repeat at 3 + 6 months for high-risk."
+      },
+      {
+        "step": "Counselling + dual protection",
+        "detail": "Condom use education + demonstration. Vaccination (hepatitis B, HPV, varicella). Brief intervention for risk reduction. PrEP discussion for high-risk."
+      },
+      {
+        "step": "Kenya-specific resistance considerations",
+        "detail": "Gonorrhoea: monitor for cephalosporin + azithromycin resistance — surveillance via Kenya MOH. Update protocols if resistance emerges. Treatment failure → repeat testing + culture / NAAT + susceptibility."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Test of cure at 1-4 weeks for gonorrhoea / chlamydia (selective). Syphilis: RPR / VDRL titres at 3 + 6 + 12 months. HIV / hepatitis screening at 3 + 6 months. Behavioural / risk-reduction reinforcement."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Guidelines for the Management of STIs (2021); Kenya MOH National Guidelines for STI Care + Management (2018, updated 2021)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "intimate-partner-violence-screening-response",
+    "title": "Intimate partner violence — screening + response in primary care",
+    "icd10": [
+      "Z62.81",
+      "T74"
+    ],
+    "domains": [
+      "primary-care",
+      "psychiatry",
+      "mental-health",
+      "obstetrics",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "sex": "any"
+    },
+    "presentation": [
+      "Patient at risk of / experiencing intimate partner violence — physical, sexual, emotional / psychological, financial, controlling, stalking, technology-facilitated.",
+      "Pregnant women particularly affected — escalates often during pregnancy.",
+      "Lifetime prevalence in Kenya — ~40% women experience IPV.",
+      "Often-missed presentations: chronic pelvic / abdominal pain, depression, anxiety, PTSD, somatic symptoms, suicide attempt, repeated injury, repeated STI, recurrent pregnancy loss.",
+      "WHO + Kenya MOH recommend universal screening in antenatal + sexual + reproductive health + emergency + mental health."
+    ],
+    "redFlags": [
+      "Immediate safety risk — child / partner threatening; weapon present; recent escalation; strangulation history (high risk of homicide).",
+      "Pregnant + IPV — maternal + fetal compromise.",
+      "Child also at risk — child protection notification.",
+      "Severe mental health — suicide ideation; severe PTSD; substance use.",
+      "Geographical isolation / migration / refugee — limited support access.",
+      "Disclosure should NOT trigger forced reporting (varies by jurisdiction); patient-led + consent-based."
+    ],
+    "diagnostics": [
+      {
+        "test": "Routine enquiry — non-judgmental + private + during established trust.",
+        "rationale": "Increase identification of hidden IPV."
+      },
+      {
+        "test": "Validated screen — HITS, WAST, AAS, Composite Abuse Scale.",
+        "rationale": "Standardised screening."
+      },
+      {
+        "test": "Asses ImmediateRisk: weapon access, strangulation, escalation, control, jealousy, threats, financial control, social isolation.",
+        "rationale": "Lethality risk assessment."
+      },
+      {
+        "test": "Mental health screen (PHQ-9 + PTSD checklist).",
+        "rationale": "Common sequelae."
+      },
+      {
+        "test": "STI screen + pregnancy test + contraception review.",
+        "rationale": "Reproductive health impacts."
+      },
+      {
+        "test": "Injury documentation (drawings + photos + descriptions) if requested.",
+        "rationale": "Medico-legal."
+      }
+    ],
+    "management": [
+      {
+        "step": "FIRST RESPONSE — LIVES framework (WHO)",
+        "detail": "Listen — actively + empathetically. Inquire about needs + concerns. Validate experience. Enhance safety. Support follow-up."
+      },
+      {
+        "step": "Validate + believe + acknowledge",
+        "detail": "Use affirming language: 'You did not cause this' + 'You are not to blame' + 'This was not your fault' + 'Many people experience this'."
+      },
+      {
+        "step": "Safety planning",
+        "detail": "Discuss safe place to go in emergency; pack 'go bag' (documents, money, medications, phone, children's needs); identify emergency contact + safe word; review household weapons; technology safety (different password, location tracking off, separate email)."
+      },
+      {
+        "step": "Immediate medical care",
+        "detail": "Treat injuries; emergency contraception + STI prophylaxis + HIV PEP within 72 h if sexual assault; document carefully; offer forensic examination + medico-legal documentation (no forced reporting unless mandated). Pregnancy + IPV — augmented antenatal care + safety + neonatal."
+      },
+      {
+        "step": "Mental health support",
+        "detail": "Treat depression / anxiety / PTSD. Trauma-focused CBT once safe. Cognitive processing therapy. Avoid encouraging premature return to relationship. Substance use co-treatment."
+      },
+      {
+        "step": "Referral + multidisciplinary",
+        "detail": "Refer to IPV-specialist services: domestic violence shelter / refuge; legal aid; counselling; social work; police (with patient consent). Kenya: National Council for Gender + Development; Gender-Based Violence Recovery Centres at major hospitals; Polysensitive Recovery Centres."
+      },
+      {
+        "step": "Child protection considerations",
+        "detail": "Children witnessing IPV — psychological harm; child protection notification per jurisdiction. Kenya: Children Officer + Department of Children Services."
+      },
+      {
+        "step": "Pregnancy + IPV-specific",
+        "detail": "Multidisciplinary antenatal care + augmented monitoring + safety. IPV increases pre-eclampsia + preterm birth + LBW + postpartum depression."
+      },
+      {
+        "step": "Workplace + community support",
+        "detail": "Community-based women's groups + economic empowerment + skill-building. Kenya: SAUTI ya Wanawake; HAKI Africa; AMHF; FIDA Kenya legal aid."
+      },
+      {
+        "step": "Provider self-care + training",
+        "detail": "Vicarious trauma in providers; supervision + debrief. IPV-response training for all primary care providers (Kenya MOH guidelines)."
+      },
+      {
+        "step": "Follow-up",
+        "detail": "Schedule follow-up; do not pressure for decisions; respect autonomy; non-judgmental approach throughout."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Guidelines for the Health Sector Response to IPV + Sexual Violence Against Women (2014); Kenya National Policy + Plan of Action on Elimination of Gender-Based Violence"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "kenya-rabies-prevention-post-exposure",
+    "title": "Rabies post-exposure prophylaxis — Kenya MOH protocol",
+    "icd10": [
+      "A82",
+      "Z20.3"
+    ],
+    "domains": [
+      "infectious-disease",
+      "emergency",
+      "primary-care",
+      "tropical"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Patient with potential rabies exposure — bite, scratch, or mucous-membrane / open-wound contact with saliva from suspect / known rabid animal (dog most common in Kenya; cats, bats, jackals, hyenas, mongooses).",
+      "Kenya context: dog rabies endemic; ~2000 human deaths annually estimated; rural + peri-urban exposure common.",
+      "Once clinical signs appear — 100% fatal; prevention via post-exposure prophylaxis (PEP) critical.",
+      "WHO categories: I (touch / lick on intact skin) — no PEP; II (minor scratch / abrasion without bleeding) — vaccine; III (bite / scratch with bleeding / mucosa / multiple wounds / immunocompromised) — vaccine + rabies immunoglobulin (RIG)."
+    ],
+    "redFlags": [
+      "Category III exposure — RIG essential + vaccine.",
+      "Severe wound — bleeding, deep, multiple bites, face, neck, hands.",
+      "Vaccination already started elsewhere — continue with appropriate schedule.",
+      "Immunocompromised — extended vaccination + RIG necessary.",
+      "Suspected rabid animal — quarantine / observe (dogs / cats) per protocol; humane testing if available.",
+      "Pregnancy is NOT a contraindication to PEP."
+    ],
+    "diagnostics": [
+      {
+        "test": "Detailed exposure history — animal species, vaccination status, behaviour (provoked vs unprovoked attack), suspect rabies signs (foaming, aggression, paralysis), location, type of contact.",
+        "rationale": "Categorise exposure + decide PEP intensity."
+      },
+      {
+        "test": "Wound assessment — type, depth, location, severity.",
+        "rationale": "Severity + categorisation."
+      },
+      {
+        "test": "Tetanus status review.",
+        "rationale": "Concurrent prophylaxis."
+      },
+      {
+        "test": "Animal observation / quarantine (10 days for dogs + cats in Kenya).",
+        "rationale": "If animal remains healthy, suspect rabies excluded."
+      },
+      {
+        "test": "Animal testing (laboratory confirmation) — if available; dRIT / FAT.",
+        "rationale": "Definitive confirmation."
+      }
+    ],
+    "management": [
+      {
+        "step": "Immediate wound care — paramount FIRST step",
+        "detail": "Wash wound thoroughly with soap + water for 15 MINUTES; rinse with normal saline. Apply povidone-iodine OR 70% alcohol. Do NOT suture wound primarily (delayed primary closure); leave open for drainage. Avoid suturing where possible (especially in cat / category III); irrigate copiously."
+      },
+      {
+        "step": "Tetanus prophylaxis",
+        "detail": "Tetanus toxoid OR Td if last dose > 5 years OR uncertain. Antibiotic for cat bites (50% infection) — co-amoxiclav 625 mg TDS × 5-7 days OR doxycycline 100 mg BD. Dog bite if deep / contaminated / immunocompromised — co-amoxiclav."
+      },
+      {
+        "step": "Category I exposure (no broken skin / saliva on intact skin)",
+        "detail": "No PEP required. Reassurance + wound care + observation."
+      },
+      {
+        "step": "Category II exposure (minor scratch / nibble without bleeding / lick on broken skin)",
+        "detail": "VACCINE only. Kenya WHO updated 2-dose intradermal protocol: 0.1 mL × 2 sites days 0 + 3 + 7 (Essen IM regimen 1 mL into deltoid days 0, 3, 7, 14 / 28 alternative). Verocell-derived purified rabies vaccine commonly available."
+      },
+      {
+        "step": "Category III exposure (bite / scratch with bleeding / mucosa / immunocompromised)",
+        "detail": "VACCINE + RABIES IMMUNOGLOBULIN (RIG). Vaccine: same schedule as Category II. RIG: 20 IU/kg HUMAN rabies immunoglobulin (HRIG) OR 40 IU/kg EQUINE (ERIG, more available in Kenya — skin test for hypersensitivity). Infiltrate AROUND wound + surrounding tissue — as much as wound permits; ANY REMAINDER given IM at site distant from vaccine."
+      },
+      {
+        "step": "Previously vaccinated patient (pre-exposure prophylaxis OR previous full PEP)",
+        "detail": "VACCINE booster: 2 doses days 0 + 3 (no RIG needed)."
+      },
+      {
+        "step": "Animal management",
+        "detail": "Dogs / cats — quarantine 10 days. If animal remains healthy at 10 days — exposure unlikely rabid + can STOP vaccination (or complete short course). If animal develops illness OR dies — continue full PEP + test brain. Wild / unidentifiable / stray — treat as if rabid + complete PEP."
+      },
+      {
+        "step": "Schedule completion",
+        "detail": "All doses essential — vaccine has very high efficacy when completed timely. Counsel patient on importance of adherence."
+      },
+      {
+        "step": "Special populations",
+        "detail": "Pregnancy: PEP safe + effective. Immunocompromised: complete IM Essen regimen + RIG essential. Infants: same dosing; gentle wound care."
+      },
+      {
+        "step": "Pre-exposure prophylaxis (PrEP)",
+        "detail": "Recommended for: laboratory workers + animal handlers + cavers + travellers to highly endemic areas with limited PEP access + children in rabies-endemic regions. WHO 2-dose intradermal schedule days 0 + 7. Periodic serological monitoring + boosters for ongoing risk."
+      },
+      {
+        "step": "Kenya national programme + community engagement",
+        "detail": "Free PEP in public health facilities. Community education on dog vaccination + dog population management. National rabies elimination strategy targeting 'zero by 30' (zero human rabies deaths by 2030)."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Rabies Vaccines + Immunoglobulins Position Paper (2018, updated); Kenya MOH National Rabies Control Programme; Kenya Veterinary Vaccines Production Institute"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "essential-medicines-list-kenya-formulary",
+    "title": "Kenya Essential Medicines List + WHO Model EML — primary care formulary",
+    "icd10": [
+      "Z76.89"
+    ],
+    "domains": [
+      "primary-care",
+      "policy",
+      "ncd"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Kenya Essential Medicines List (KEML) — official formulary; aligned with WHO Model EML (2023, 23rd list); updated periodically.",
+      "Categorised by level of care: primary care + sub-county / county hospital + tertiary.",
+      "Free / subsidised access via public health facilities + community-based services (CHV-distributed).",
+      "Underpins universal health coverage (UHC) + Linda Mama + Beyond Zero campaign + national hospital insurance fund (NHIF)."
+    ],
+    "redFlags": [
+      "Medicine stockout — critical for emergency / chronic disease control.",
+      "Substandard / falsified medicines — Kenya MOH quality assurance through Pharmacy + Poisons Board.",
+      "Off-formulary medications — require justification + special procurement.",
+      "Antimicrobial resistance — irrational use of unrestricted prescription.",
+      "Patient unable to afford non-formulary alternative — adjust to formulary."
+    ],
+    "diagnostics": [
+      {
+        "test": "Knowledge of EML for level of care + age (adult / paediatric).",
+        "rationale": "Appropriate prescribing."
+      },
+      {
+        "test": "Renal + hepatic function for dose adjustment.",
+        "rationale": "Safety."
+      },
+      {
+        "test": "Drug-interaction screening.",
+        "rationale": "Polypharmacy safety."
+      },
+      {
+        "test": "Allergy + tolerance documentation.",
+        "rationale": "Avoid adverse reactions."
+      },
+      {
+        "test": "Adherence assessment.",
+        "rationale": "Effectiveness."
+      }
+    ],
+    "management": [
+      {
+        "step": "Essential medicines by therapeutic class — high-impact + cost-effective",
+        "detail": "Cardiovascular: amlodipine, hydrochlorothiazide, lisinopril, atenolol, atorvastatin, aspirin, furosemide. Diabetes: metformin, glibenclamide, gliclazide, insulin (NPH + soluble + premixed). Respiratory: salbutamol + ipratropium + beclomethasone inhalers, prednisolone. Infectious disease: amoxicillin, co-amoxiclav, doxycycline, azithromycin, ceftriaxone, ciprofloxacin, metronidazole, isoniazid, rifampicin, pyrazinamide, ethambutol, artemether-lumefantrine, tenofovir + lamivudine + dolutegravir. Mental health: amitriptyline, fluoxetine, haloperidol, olanzapine, diazepam, carbamazepine, valproate, phenytoin, lithium. Pain: paracetamol, ibuprofen, morphine, codeine + paracetamol. Cancer: vincristine, doxorubicin, cyclophosphamide, methotrexate, cisplatin, paclitaxel, tamoxifen, imatinib. Endocrine: levothyroxine, hydrocortisone, prednisolone, dexamethasone, oestradiol patch, levonorgestrel implant, copper IUD. Other: oral rehydration salts, zinc tablets, vitamin K (newborn), iron + folic acid, calcium, magnesium, salbutamol nebules."
+      },
+      {
+        "step": "Rational prescribing principles",
+        "detail": "Right drug, right dose, right duration, right indication, right cost. Generic prescribing where applicable. Avoid polypharmacy + over-prescribing antibiotics. Patient counselling on adherence + adverse effects."
+      },
+      {
+        "step": "Antimicrobial stewardship",
+        "detail": "Kenya National Action Plan on AMR — restricted antibiotic prescribing. Use of guidelines + reserved antibiotics requiring approval. Surveillance of resistance patterns."
+      },
+      {
+        "step": "Procurement + supply chain",
+        "detail": "KEMSA (Kenya Medical Supplies Authority) — central procurement + distribution. Track stockouts; emergency procurement when needed."
+      },
+      {
+        "step": "Quality assurance + pharmacovigilance",
+        "detail": "Pharmacy + Poisons Board — quality, safety, efficacy monitoring. Report adverse drug reactions through Kenya Pharmacovigilance Centre."
+      },
+      {
+        "step": "Universal Health Coverage integration",
+        "detail": "NHIF coverage for essential medicines. Linda Mama + Beyond Zero campaigns address maternal + child health medicines. UHC expansion."
+      },
+      {
+        "step": "Substandard + falsified medicines",
+        "detail": "Vigilance — patient-empowerment + provider education + supply-chain integrity + community awareness."
+      },
+      {
+        "step": "Continuous medical education + prescribing audit",
+        "detail": "MOH-supported training + clinical audit of prescribing practices + feedback loops."
+      },
+      {
+        "step": "Special populations + paediatric formulary",
+        "detail": "Paediatric formulations (suspensions, scored tablets, weight-banded). Pregnancy + breastfeeding considerations. Renal + hepatic dosing."
+      }
+    ],
+    "references": [
+      {
+        "label": "Kenya National Medicines Policy + Kenya Essential Medicines List (most recent update); WHO Model List of Essential Medicines (23rd 2023); KEMSA"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]
