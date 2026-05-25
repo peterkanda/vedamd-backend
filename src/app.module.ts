@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { configuration } from './config/configuration';
 import { DatabaseModule } from './db/database.module';
+import { CacheModule } from './common/cache';
 import { PhiFreeLoggerModule } from './common/phi-free-logger';
 import { HealthModule } from './health/health.module';
 import { CdsModule } from './modules/cds/cds.module';
@@ -28,6 +29,7 @@ import { AnalyticsModule } from './modules/analytics/analytics.module';
 import { IntegrationLogModule } from './modules/integration-log/integration-log.module';
 import { DeveloperModule } from './modules/developer/developer.module';
 import { AgenticModule } from './modules/agentic/agentic.module';
+import { CustomRulesModule } from './modules/custom-rules/custom-rules.module';
 import { ReferenceModule } from './modules/reference/reference.module';
 
 @Module({
@@ -37,6 +39,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
       load: [configuration],
     }),
     DatabaseModule,
+    CacheModule,
     PhiFreeLoggerModule,
     HealthModule,
     CdsModule,
@@ -63,6 +66,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     IntegrationLogModule,
     DeveloperModule,
     AgenticModule,
+    CustomRulesModule,
     ReferenceModule,
   ],
 })

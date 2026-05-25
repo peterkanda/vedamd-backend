@@ -1,10 +1,15 @@
 import { Inject, Injectable, Optional } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { KnowledgeRetrieverService } from './knowledge-retriever.service';
 import { ProviderRouter } from './providers/provider-router';
 import { CdsService } from '../cds/cds.service';
+import { CacheService } from '../../common/cache';
+import type { AppConfig } from '../../config/configuration';
 import { PHI_FREE_LOGGER, type PhiFreeLogger } from '../../common/phi-free-logger';
 import { PoliciesService } from '../policies/policies.service';
 import type { PolicyMatch } from '../policies/policies.types';
+import { CustomRulesService } from '../custom-rules/custom-rules.service';
+import type { CustomRuleEvaluation } from '../custom-rules/custom-rules.types';
 import { CLINICAL_REASONER_SYSTEM, buildUserMessage } from './prompts/clinical-reasoner.prompt';
 import { extractCards } from './card-extractor';
 import type {
@@ -38,8 +43,11 @@ export class AgenticService {
     private readonly retriever: KnowledgeRetrieverService,
     private readonly router: ProviderRouter,
     private readonly cds: CdsService,
+    private readonly cache: CacheService,
+    private readonly config: ConfigService<AppConfig, true>,
     @Inject(PHI_FREE_LOGGER) private readonly log: PhiFreeLogger,
     @Optional() private readonly policies?: PoliciesService,
+    @Optional() private readonly customRules?: CustomRulesService,
   ) {}
 
   async evaluate(ctx: AgenticClinicalContext): Promise<AgenticEvaluationResponse> {
@@ -68,6 +76,32 @@ export class AgenticService {
         });
       }
     }
+
+    // --- 2c. Custom CDS rules (per-integrator, developer-defined) ---
+    let customMatches: CustomRuleEvaluation[] = [];
+    if (this.customRules && ctx.integratorId) {
+      try {
+        customMatches = await this.customRules.evaluate(ctx.integratorId, {
+          hook: ctx.hook,
+          medications: ctx.medications,
+          diagnoses: ctx.diagnoses,
+          allergies: ctx.allergies,
+          patient: ctx.patient
+            ? {
+                ageYears: ctx.patient.ageYears,
+                pregnant: ctx.patient.pregnant,
+                eGFR: ctx.patient.eGFR,
+              }
+            : undefined,
+          labs: ctx.labs,
+        });
+      } catch (err) {
+        this.log.warn('custom_rules_lookup_failed', {
+          error_category: err instanceof Error ? err.name : 'unknown',
+        });
+      }
+    }
+    const customCards = customMatches.map((m) => m.card);
 
     // --- 3. Agentic layer (graceful degrade if unconfigured) ---
     let agenticCards: CdsCard[] = [];
@@ -116,13 +150,15 @@ export class AgenticService {
       }
     }
 
-    // --- 4. Merge (deterministic never dropped) ---
-    const cards = mergeCards(deterministicCards, agenticCards);
+    // --- 4. Merge (deterministic + custom rules never dropped;
+    //          agentic cards deduped against either) ---
+    const cards = mergeCards([...deterministicCards, ...customCards], agenticCards);
 
     return {
       cards,
       meta: {
         deterministicStrategies: strategies,
+        customRuleCount: customMatches.length,
         llmModel,
         llmProvider,
         agenticInvoked,
@@ -137,6 +173,13 @@ export class AgenticService {
               version: m.version,
               sectionTitle: m.sectionTitle,
               snippet: m.snippet,
+            }))
+          : undefined,
+        customRuleCitations: customMatches.length
+          ? customMatches.map((m) => ({
+              ruleId: m.rule.id,
+              ruleName: m.rule.name,
+              indicator: m.rule.indicator,
             }))
           : undefined,
       },
@@ -218,6 +261,24 @@ export class AgenticService {
     cards: CdsCard[];
     strategies: string[];
   }> {
+    const cacheKey = {
+      patient: ctx.patient,
+      medications: normalisedSorted(ctx.medications),
+      diagnoses: normalisedSorted(ctx.diagnoses),
+      allergies: normalisedSorted(ctx.allergies),
+      labs: ctx.labs,
+      signals: ctx.signals,
+    };
+    const ttl = this.config.get('redis.cdsEvaluateTtlSeconds', { infer: true });
+    return this.cache.memoize('cds:deterministic', cacheKey, ttl, () =>
+      this.runDeterministicUncached(ctx),
+    );
+  }
+
+  private async runDeterministicUncached(ctx: AgenticClinicalContext): Promise<{
+    cards: CdsCard[];
+    strategies: string[];
+  }> {
     const context: Record<string, unknown> = {
       ...(ctx.signals ?? {}),
     };
@@ -281,6 +342,11 @@ function mergeCards(deterministic: CdsCard[], agentic: CdsCard[]): CdsCard[] {
   }
   out.sort((a, b) => (INDICATOR_RANK[a.indicator] ?? 3) - (INDICATOR_RANK[b.indicator] ?? 3));
   return out;
+}
+
+function normalisedSorted(arr: string[] | undefined): string[] | undefined {
+  if (!arr || arr.length === 0) return undefined;
+  return [...arr].map((s) => s.trim().toLowerCase()).sort();
 }
 
 function summaryOverlap(a: string, b: string): number {

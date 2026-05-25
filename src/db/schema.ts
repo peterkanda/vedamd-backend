@@ -142,3 +142,37 @@ export type PolicyRow = typeof policies.$inferSelect;
 export type NewPolicyRow = typeof policies.$inferInsert;
 export type AuditEventRow = typeof auditEvents.$inferSelect;
 export type NewAuditEventRow = typeof auditEvents.$inferInsert;
+
+/**
+ * Per-integrator custom CDS rules. Developers attach lightweight
+ * triggers (medication/diagnosis/lab match) and a recommendation
+ * card body; the agentic engine evaluates them alongside the signed
+ * deterministic strategies + policy snippets. Integrator-scoped only,
+ * never global, never carries patient identity.
+ */
+export const customRules = pgTable(
+  'custom_rules',
+  {
+    id: text('id').primaryKey(),
+    integratorId: text('integrator_id').notNull(),
+    name: text('name').notNull(),
+    description: text('description'),
+    /** 'critical' | 'warning' | 'info' */
+    indicator: text('indicator').notNull(),
+    /** Active/disabled flag (kept across edits to preserve history). */
+    enabled: boolean('enabled').notNull().default(true),
+    /** Match block: { medications?, diagnoses?, allergies?, hooks?, ageMinYears?, ageMaxYears?, pregnant?, eGFRBelow?, labs? } */
+    match: jsonb('match').notNull(),
+    /** Card to emit when match passes: { summary, detail?, source?, suggestions?, links? } */
+    card: jsonb('card').notNull(),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+    createdBy: text('created_by'),
+  },
+  (t) => ({
+    byIntegrator: index('idx_custom_rules_integrator').on(t.integratorId),
+  }),
+);
+
+export type CustomRuleRow = typeof customRules.$inferSelect;
+export type NewCustomRuleRow = typeof customRules.$inferInsert;

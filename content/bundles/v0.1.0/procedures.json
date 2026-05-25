@@ -7574,5 +7574,350 @@
       "Apnoea / cyanosis — full neonatal assessment.",
       "Poor feeding / lethargy — sepsis workup."
     ]
+  },
+  {
+    "slug": "parkland-fluid-resuscitation-burns",
+    "title": "Parkland formula fluid resuscitation for major burns",
+    "domains": [
+      "burns",
+      "emergency",
+      "trauma",
+      "primary-care",
+      "ssa"
+    ],
+    "population": "Adults and children with major burns (TBSA ≥ 15% adult / ≥ 10% paeds) or any burn with shock or inhalation injury.",
+    "indications": [
+      "Burn TBSA ≥ 15% adult or ≥ 10% child",
+      "Inhalational injury with cutaneous burns",
+      "Electrical burn with myoglobinuria"
+    ],
+    "contraindications": {
+      "absolute": [],
+      "relative": [
+        "Burns < 15% TBSA without shock (oral fluids usually sufficient)",
+        "Severe heart failure (titrate cautiously to UOP)"
+      ]
+    },
+    "consentNotes": [
+      "Explain the need for IV fluids, urinary catheter, and frequent monitoring of urine output, blood pressure, and lab tests.",
+      "In life-threatening burn shock, treat under emergency / best-interest provisions if patient cannot consent."
+    ],
+    "equipment": [
+      "Two large-bore IV cannulae (16G+) or IO needle",
+      "Warmed Ringer's lactate (avoid 0.9% saline — hyperchloraemic acidosis)",
+      "Foley catheter + urometer",
+      "Pulse oximeter, NIBP, ECG monitor",
+      "Pressure infuser / pump",
+      "Lund–Browder paediatric burn chart"
+    ],
+    "redFlags": [
+      "Increasing oxygen requirement / pulmonary oedema (over-resuscitation, 'fluid creep')",
+      "Bladder pressure > 20 mmHg (abdominal compartment syndrome)",
+      "UOP < 0.5 ml/kg/h despite escalation (under-resuscitation, missed injury)",
+      "Inhalational injury features (stridor, hoarseness, soot)"
+    ],
+    "steps": [
+      {
+        "step": "Accurately calculate %TBSA using Lund–Browder (paediatric) or rule of 9s (adult); palmar method 1% for scattered burns. EXCLUDE erythema only.",
+        "safetyCheck": "Re-verify TBSA at handover — under- and over-estimation both cause harm."
+      },
+      {
+        "step": "Secure two large-bore IV lines through unburned skin if possible; IO if vascular access fails after 90 seconds."
+      },
+      {
+        "step": "Compute total Parkland volume: 4 ml × weight(kg) × %TBSA = ml RL over 24h from time of burn (not arrival)."
+      },
+      {
+        "step": "Give half the calculated volume in the first 8 hours from burn; remaining half over the next 16 hours.",
+        "safetyCheck": "If presentation delayed, give the missed portion alongside the running rate — do not 'catch up' with a single bolus."
+      },
+      {
+        "step": "Insert urinary catheter; titrate fluid rate to urine output: 0.5 ml/kg/h adults, 1 ml/kg/h children, 1.5–2 ml/kg/h electrical with myoglobinuria.",
+        "safetyCheck": "Reassess UOP every hour; adjust rate by 20–30% rather than bolus to formula."
+      },
+      {
+        "step": "Add maintenance fluid (Holliday–Segar with D5/0.45% NaCl) for children < 30 kg in addition to Parkland resuscitation."
+      },
+      {
+        "step": "Provide IV opioid analgesia (morphine 0.1 mg/kg) — avoid IM / SC routes during shock."
+      },
+      {
+        "step": "Initiate enteral feeding via NG within 6 hours of major burn to preserve gut barrier and reduce translocation."
+      },
+      {
+        "step": "Monitor for compartment syndrome: serial bladder pressures and limb perfusion; perform escharotomy for circumferential full-thickness burns with compromise.",
+        "safetyCheck": "Escalate to senior decision-maker before escharotomy."
+      }
+    ],
+    "complications": [
+      "Pulmonary oedema / ARDS from over-resuscitation",
+      "Abdominal compartment syndrome",
+      "Acute kidney injury from under-resuscitation",
+      "Hypothermia",
+      "Catheter-associated UTI"
+    ],
+    "postProcedureCare": [
+      "Switch to oral or enteral fluids once haemodynamically stable",
+      "Daily weights and electrolyte review",
+      "Pressure-area care; early physiotherapy and splinting in position of function",
+      "Wound care with silver sulfadiazine or honey dressings; tetanus prophylaxis",
+      "Referral per ABA criteria when burn exceeds local capability"
+    ],
+    "references": [
+      {
+        "label": "ABA Advanced Burn Life Support Course Manual",
+        "kind": "guideline"
+      },
+      {
+        "label": "ISBI Practice Guidelines Part 2 (2018)",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya National Burn Care Guidelines (KNH)",
+        "kind": "guideline"
+      }
+    ],
+    "evidenceLevel": "A",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "slug": "manual-vacuum-aspiration-mva-post-abortion-care",
+    "title": "Manual vacuum aspiration (MVA) — post-abortion care",
+    "domains": [
+      "obstetrics",
+      "gynaecology",
+      "emergency",
+      "primary-care",
+      "ssa",
+      "kenya-moh"
+    ],
+    "population": "Women presenting with incomplete or missed abortion < 12 weeks gestation, or after failed medical management.",
+    "indications": [
+      "Incomplete abortion < 12 weeks",
+      "Missed miscarriage < 12 weeks",
+      "Septic incomplete abortion (after stabilisation + antibiotics)",
+      "Failed medical management (misoprostol)"
+    ],
+    "contraindications": {
+      "absolute": [
+        "Suspected ectopic pregnancy",
+        "Pelvic infection that has not been treated"
+      ],
+      "relative": [
+        "Uterine size > 12 weeks (refer for D&E or admit for medical management)",
+        "Severe coagulopathy",
+        "Maternal instability — stabilise first"
+      ]
+    },
+    "consentNotes": [
+      "Explain procedure, expected pain, bleeding pattern, signs needing return, and same-day contraception options.",
+      "Document choice between IUD/implant insertion immediately versus deferred contraception.",
+      "Confirm voluntary consent free from coercion."
+    ],
+    "equipment": [
+      "Ipas double-valve MVA Plus syringe + cannulae (4–12 mm)",
+      "Sterile speculum, tenaculum / vulsellum, sponge forceps",
+      "Hegar / Pratt dilators (if needed)",
+      "Sterile gloves, antiseptic (chlorhexidine), sterile gauze",
+      "1% lidocaine for paracervical block; 5 ml + 22G spinal needle",
+      "Analgesia: PO paracetamol + ibuprofen; IV pethidine / diazepam if needed",
+      "Strainer + clear container for tissue inspection",
+      "Sharps + biohazard disposal"
+    ],
+    "redFlags": [
+      "Uterine sounding deeper than expected for gestation (perforation)",
+      "Hypotension / tachycardia (haemorrhage or vasovagal)",
+      "Foul-smelling tissue (septic abortion)",
+      "Suspected ectopic on inspection (no products of conception)"
+    ],
+    "steps": [
+      {
+        "step": "Counsel + obtain written informed consent including post-abortion contraception choice.",
+        "safetyCheck": "Confirm intrauterine pregnancy by ultrasound or POC tissue exam; suspected ectopic = STOP and refer."
+      },
+      {
+        "step": "Verify gestational age by LMP, bimanual examination, and ultrasound if available."
+      },
+      {
+        "step": "Administer pre-procedure analgesia 30–60 min ahead (paracetamol 1 g + ibuprofen 400–600 mg PO)."
+      },
+      {
+        "step": "Position lithotomy; aseptic vulval prep; insert sterile speculum."
+      },
+      {
+        "step": "Apply paracervical block: 1% lidocaine 5 ml at 4 and 8 o'clock positions (or 2/4/8/10).",
+        "safetyCheck": "Aspirate before injection to avoid intravascular injection; pause and observe for vagal symptoms."
+      },
+      {
+        "step": "Stabilise the cervix with tenaculum / vulsellum."
+      },
+      {
+        "step": "Dilate cervix only if necessary using Hegar dilators (≈ 1 mm per gestational week)."
+      },
+      {
+        "step": "Insert appropriately sized cannula through the cervix to the fundus; attach charged MVA syringe and release the valves to apply vacuum."
+      },
+      {
+        "step": "Rotate the cannula 360° while moving in and out until gritty sensation, uterus grips cannula, and foam (no tissue) appears in syringe — endpoint of evacuation.",
+        "safetyCheck": "Stop and reassess if cannula advances deeper than expected — possible perforation."
+      },
+      {
+        "step": "Inspect aspirated tissue (POC) to confirm intrauterine pregnancy and rule out missed ectopic.",
+        "safetyCheck": "Absent or scant POC = suspected ectopic; arrange urgent US + senior review."
+      },
+      {
+        "step": "Offer immediate post-abortion contraception (LARC — Cu-IUD or implant — most effective)."
+      },
+      {
+        "step": "Give anti-D 250 IU IM for Rh-negative women."
+      }
+    ],
+    "complications": [
+      "Uterine perforation",
+      "Cervical laceration",
+      "Haemorrhage",
+      "Endometritis / pelvic infection",
+      "Incomplete evacuation (re-evacuate or repeat misoprostol)",
+      "Vasovagal collapse during cervical instrumentation"
+    ],
+    "postProcedureCare": [
+      "Observe in recovery 30 minutes; discharge when ambulating, voiding, light bleeding, pain controlled",
+      "Counsel on warning signs: heavy bleeding, fever, severe pain, foul discharge — return immediately",
+      "Initiate / continue chosen contraception",
+      "Routine follow-up at 1–2 weeks; mental-health screening if pregnancy was wanted",
+      "Reference: WHO Abortion Care Guideline 2022; Kenya post-abortion care standards"
+    ],
+    "references": [
+      {
+        "label": "WHO Abortion Care Guideline 2022 (consolidated)",
+        "kind": "guideline"
+      },
+      {
+        "label": "Ipas Performing Uterine Evacuation with the Ipas MVA Plus",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya Standards and Guidelines for the Reduction of Maternal Morbidity and Mortality from Unsafe Abortion",
+        "kind": "guideline"
+      }
+    ],
+    "evidenceLevel": "A",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "slug": "intraosseous-access-pediatric-adult",
+    "title": "Intraosseous (IO) vascular access — adult and paediatric emergency",
+    "domains": [
+      "emergency",
+      "paediatrics",
+      "critical-care",
+      "primary-care",
+      "ssa"
+    ],
+    "population": "Patients of any age in life-threatening situations (cardiac arrest, shock, status epilepticus, severe burns, severe dehydration) when reliable peripheral IV access cannot be obtained within 90 seconds.",
+    "indications": [
+      "Failed peripheral IV access within 90 seconds during emergency resuscitation",
+      "Cardiac arrest where IV access not immediately available",
+      "Status epilepticus / severe shock",
+      "Severe burns precluding IV access"
+    ],
+    "contraindications": {
+      "absolute": [
+        "Fracture in the target bone",
+        "Previous IO attempt in the same bone within 48 hours",
+        "Infection / cellulitis at insertion site",
+        "Prosthesis in target bone (e.g. knee replacement)"
+      ],
+      "relative": [
+        "Osteogenesis imperfecta or other bone fragility disorder",
+        "Severe peripheral vascular disease in target limb"
+      ]
+    },
+    "consentNotes": [
+      "Used in emergency, life-saving situations — implied / best-interest consent applies when the patient cannot consent.",
+      "Inform a conscious patient briefly that vascular access is needed; explain that the device is temporary (replaced within 24 hours)."
+    ],
+    "equipment": [
+      "EZ-IO drill with 15 mm, 25 mm, and 45 mm needles (or manual Cook needle)",
+      "Antiseptic prep (chlorhexidine), sterile gloves",
+      "10 ml syringe with 0.9% saline",
+      "Pressure bag for fluids",
+      "Securement device (commercial dressing) or tape",
+      "Local anaesthetic (1% lidocaine) for conscious patients"
+    ],
+    "redFlags": [
+      "Extravasation around the needle (compartment syndrome risk)",
+      "Failed insertion (do not reuse the same bone for 48 hours)",
+      "Sudden fall in BP after infusion (fat embolism — rare)",
+      "Suspected osteomyelitis at follow-up"
+    ],
+    "steps": [
+      {
+        "step": "Identify target site: proximal tibia (preferred — 2 cm below and 1 cm medial to the tibial tuberosity); alternatives: distal tibia, proximal humerus, distal femur (paeds).",
+        "safetyCheck": "Confirm no fracture, no prior IO in that bone within 48 h, no infection at site."
+      },
+      {
+        "step": "Aseptic skin preparation; sterile gloves."
+      },
+      {
+        "step": "In conscious patients, infiltrate skin and periosteum with 1% lidocaine."
+      },
+      {
+        "step": "Select needle length: 15 mm (≤ 39 kg), 25 mm (≥ 40 kg), 45 mm (proximal humerus / obese)."
+      },
+      {
+        "step": "Insert needle perpendicular to bone; drive in until loss of resistance (sudden 'give') — usually < 1 cm of penetration.",
+        "safetyCheck": "Stop driving immediately on loss of resistance to avoid through-and-through penetration."
+      },
+      {
+        "step": "Confirm placement: needle stands without support; aspirate marrow (may not aspirate in shock — acceptable); flush 5–10 ml saline without extravasation.",
+        "safetyCheck": "Palpate around needle during flush — any swelling = extravasation, remove and re-site."
+      },
+      {
+        "step": "In conscious patient, slow IO push of lidocaine 40 mg before infusing fluid or medications (mitigates intense pressure pain)."
+      },
+      {
+        "step": "Connect pressure-bagged fluids; administer medications at standard IV doses."
+      },
+      {
+        "step": "Secure with commercial IO dressing or tape; mark time of insertion clearly."
+      },
+      {
+        "step": "Replace with definitive vascular access (peripheral IV or central line) within 24 hours."
+      }
+    ],
+    "complications": [
+      "Extravasation with compartment syndrome",
+      "Osteomyelitis (< 1%)",
+      "Fracture during insertion",
+      "Failed insertion or premature dislodgement",
+      "Fat embolism (rare)",
+      "Skin necrosis from prolonged extravasation of vasoactive drugs"
+    ],
+    "postProcedureCare": [
+      "Document time of insertion clearly; remove within 24 hours",
+      "Monitor limb for swelling, redness, perfusion, and pain",
+      "Replace with peripheral IV or central line as soon as safe",
+      "Post-removal: clean dressing, observe for signs of osteomyelitis at follow-up"
+    ],
+    "references": [
+      {
+        "label": "ILCOR 2020 Consensus on Resuscitation (IO access in cardiac arrest)",
+        "kind": "guideline"
+      },
+      {
+        "label": "AHA PALS Provider Manual",
+        "kind": "guideline"
+      },
+      {
+        "label": "Tobias JD, Ross AK. Intraosseous infusions. Anesth Analg 2010",
+        "kind": "review"
+      }
+    ],
+    "evidenceLevel": "A",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
