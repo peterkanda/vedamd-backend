@@ -7710,5 +7710,291 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "cll-btk-vs-venetoclax",
+    "hook": "patient-view",
+    "type": "cll-btk-vs-venetoclax",
+    "services": [
+      "vedamd-cll"
+    ],
+    "title": "CLL — TP53 / IGHV stratification → BTK or venetoclax-obinutuzumab",
+    "description": "Fires for CLL meeting iwCLL treatment criteria. Recommends BTK inhibitor (acalabrutinib / zanubrutinib / ibrutinib) OR venetoclax-obinutuzumab 12-month fixed (CLL14); TP53/del(17p) — targeted only (NO chemoimmunotherapy); venetoclax TLS prophylaxis with 5-week ramp-up; vaccination + IVIG for hypogammaglobulinaemia; Richter biopsy mandatory; annual skin cancer surveillance. Reads context.iwcllCriteria, context.tp53Status, context.ighvStatus, context.firstLineChoice — never patient identity.",
+    "references": [
+      {
+        "label": "iwCLL 2018; CLL14 + ELEVATE-TN"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C91.1",
+        "display": "Chronic lymphocytic leukaemia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cml-tki-monitor-tfr",
+    "hook": "patient-view",
+    "type": "cml-tki-monitor-tfr",
+    "services": [
+      "vedamd-cml"
+    ],
+    "title": "CML — TKI choice + 3-monthly BCR-ABL PCR + treatment-free remission",
+    "description": "Fires for confirmed CML. Recommends first-line TKI (imatinib / dasatinib / nilotinib / bosutinib) per ELTS + comorbidity; baseline ECG + cardiovascular + ophthalmology + dental for nilotinib / ponatinib; BCR-ABL PCR baseline + 3 + 6 + 12 then every 3 months; switch TKI for resistance / suboptimal; ABL kinase mutation analysis; T315I — ponatinib / asciminib; TFR eligibility (chronic phase + sustained MR4 ≥ 2 years); fertility preservation; teratogenicity counselling. Reads context.cmlPhase, context.bcrAblIs, context.tkiChoice, context.priorTkiResponse — never patient identity.",
+    "references": [
+      {
+        "label": "ELN CML 2020; ESMO + NCCN"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C92.1",
+        "display": "Chronic myeloid leukaemia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "sarcoidosis-multisystem-pathway",
+    "hook": "patient-view",
+    "type": "sarcoidosis-multisystem-pathway",
+    "services": [
+      "vedamd-sarcoidosis"
+    ],
+    "title": "Sarcoidosis — multisystem assessment + organ-specific immunosuppression",
+    "description": "Fires for clinical / histological diagnosis of sarcoidosis (non-caseating granulomas). Recommends comprehensive systemic assessment (cardiac MRI / PET if cardiac symptoms; ophthalmology; calcium; neurosarcoidosis MRI; renal); exclude TB / fungal; prednisolone for active organ disease; methotrexate / azathioprine / MMC steroid-sparing; infliximab for refractory; ICD for cardiac with arrhythmia / aborted SCD; ATS/ERS/WASOG guidelines. Reads context.histology, context.organInvolvement, context.cardiacInvolvement, context.neuroSarcoid — never patient identity.",
+    "references": [
+      {
+        "label": "ATS / ERS / WASOG Sarcoidosis 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "D86.9",
+        "display": "Sarcoidosis unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "autoimmune-hepatitis-induction",
+    "hook": "patient-view",
+    "type": "autoimmune-hepatitis-induction",
+    "services": [
+      "vedamd-autoimmune-hepatitis"
+    ],
+    "title": "Autoimmune hepatitis — induction prednisolone + azathioprine; lifelong maintenance",
+    "description": "Fires for hepatocellular hepatitis + positive autoantibodies + raised IgG + biopsy interface hepatitis. Recommends prednisolone + azathioprine combination first-line; budesonide alternative for non-cirrhotic; transplant referral for fulminant; MMC / tacrolimus / rituximab for refractory; lifelong maintenance + monitoring (FBC + LFT); HCC surveillance in cirrhosis; PCP prophylaxis on high-dose immunosuppression; pregnancy compatible regimens. Reads context.alt, context.igG, context.autoantibodies, context.biopsy, context.cirrhosis — never patient identity.",
+    "references": [
+      {
+        "label": "EASL AIH 2024; AASLD AIH"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K75.4",
+        "display": "Autoimmune hepatitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "psc-mrcp-cca-surveillance",
+    "hook": "patient-view",
+    "type": "psc-mrcp-cca-surveillance",
+    "services": [
+      "vedamd-psc"
+    ],
+    "title": "Primary sclerosing cholangitis — MRCP + cholangiocarcinoma + colorectal surveillance",
+    "description": "Fires for cholestatic LFT + biliary stricture / IBD. Recommends MRCP for diagnosis (beaded ducts); ursodeoxycholic acid 13-17 mg/kg (limited efficacy); annual colonoscopy from diagnosis (IBD + PSC = very high CRC risk); annual MRCP + CA 19-9 for CCA surveillance; ERCP for dominant strictures; acute cholangitis emergency drainage + antibiotics; transplant referral for end-stage. Reads context.alkPhos, context.mrcpFindings, context.ibd, context.dominantStricture — never patient identity.",
+    "references": [
+      {
+        "label": "EASL PSC 2022; AASLD PSC"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "K83.0",
+        "display": "Cholangitis (PSC)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "amd-anti-vegf-areds2",
+    "hook": "patient-view",
+    "type": "amd-anti-vegf-areds2",
+    "services": [
+      "vedamd-amd"
+    ],
+    "title": "Age-related macular degeneration — anti-VEGF for wet; AREDS2 for intermediate dry",
+    "description": "Fires for AMD diagnosis. Recommends smoking cessation; AREDS-2 for intermediate / advanced dry (avoid beta-carotene in smokers); intravitreal anti-VEGF (aflibercept / ranibizumab / faricimab / brolucizumab) for wet — monthly loading then T+E; pegcetacoplan / avacincaptad for geographic atrophy; low-vision rehabilitation + Amsler grid home monitoring; depression screening. Reads context.amdType, context.geographicAtrophy, context.choroidalNeovasc, context.va — never patient identity.",
+    "references": [
+      {
+        "label": "AAO AMD PPP 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "H35.30",
+        "display": "Age-related macular degeneration",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "poag-prostaglandin-slt",
+    "hook": "patient-view",
+    "type": "poag-prostaglandin-slt",
+    "services": [
+      "vedamd-poag"
+    ],
+    "title": "Primary open-angle glaucoma — prostaglandin analogue / SLT first-line",
+    "description": "Fires for confirmed POAG. Recommends individualised IOP target (20-40% reduction); first-line topical prostaglandin (latanoprost) OR selective laser trabeculoplasty (LiGHT); add beta-blocker / alpha-2 / CAI / Rho kinase inhibitor; trabeculectomy / MIGS for refractory; gonioscopy + visual fields + OCT monitoring; African ancestry / family history / high myopia higher risk. Reads context.iop, context.visualFieldLoss, context.cupToDisc, context.medsCount — never patient identity.",
+    "references": [
+      {
+        "label": "European Glaucoma Society 2020; LiGHT trial"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "H40.11",
+        "display": "Primary open-angle glaucoma",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "infertility-couple-investigation",
+    "hook": "patient-view",
+    "type": "infertility-couple-investigation",
+    "services": [
+      "vedamd-infertility"
+    ],
+    "title": "Couple infertility — investigation + ART pathway",
+    "description": "Fires for couple TTC > 12 months (or > 6 months age ≥ 35). Recommends female: AMH + ovulation confirmation + HSG / HyCoSy; male: 2 semen analyses (WHO 2021); both BBV screen + immunity. Lifestyle optimisation; treat reversible cause; letrozole first-line ovulation induction; IUI for mild factor; IVF + ICSI for moderate-severe male / tubal / failed IUI / unexplained > 2 years; PGT for advanced age / recurrent loss / monogenic; fertility preservation before chemotherapy / radiotherapy. Reads context.femaleAge, context.amh, context.semenAnalysis, context.duration — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG156 + ESHRE / ASRM Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N97.9",
+        "display": "Female infertility unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cah-sick-day-emergency-kit",
+    "hook": "patient-view",
+    "type": "cah-sick-day-emergency-kit",
+    "services": [
+      "vedamd-cah"
+    ],
+    "title": "Congenital adrenal hyperplasia — sick day rules + emergency IM kit + maternal PKU-like care",
+    "description": "Fires for confirmed CAH. Recommends hydrocortisone replacement (children 10-15 mg/m²/day; adult 15-25 mg/day); fludrocortisone for salt-wasting; SICK DAY DOUBLE / TRIPLE dose for fever / illness / surgery; emergency IM hydrocortisone kit + medic-alert; multidisciplinary for ambiguous genitalia; pre-conception preconceptual planning for fertility / pregnancy. Newborn screen + cascade family screening. Reads context.cahType, context.ageYears, context.currentDose, context.stress, context.sickDayKit — never patient identity.",
+    "references": [
+      {
+        "label": "Endocrine Society CAH 2018"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E25.0",
+        "display": "Congenital adrenogenital disorder",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pku-lifelong-phe-restriction",
+    "hook": "patient-view",
+    "type": "pku-lifelong-phe-restriction",
+    "services": [
+      "vedamd-pku"
+    ],
+    "title": "Phenylketonuria — lifelong Phe-restricted diet + maternal Phe < 6 mg/dL preconception",
+    "description": "Fires for confirmed PKU (newborn screen). Recommends LIFELONG Phe-restricted diet + amino acid formula; blood Phe monitoring; sapropterin for BH4-responsive; pegvaliase for treatment-resistant adults (anaphylaxis REMS); MATERNAL PKU — Phe < 6 mg/dL (preferred < 4) BEFORE conception + throughout pregnancy (devastating fetal effects otherwise); adolescent / adult transition + cascade family screening + reproductive counselling. Reads context.pheLevel, context.ageYears, context.pregnant, context.preConception, context.dietAdherence — never patient identity.",
+    "references": [
+      {
+        "label": "ACMG PKU Practice Guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E70.0",
+        "display": "Phenylketonuria",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "uveitis-stepwise-immunosuppression",
+    "hook": "patient-view",
+    "type": "uveitis-stepwise-immunosuppression",
+    "services": [
+      "vedamd-uveitis"
+    ],
+    "title": "Uveitis — topical / systemic / biologic + infection exclusion",
+    "description": "Fires for confirmed uveitis. Recommends systemic workup to exclude infection (TB, syphilis, toxoplasma, CMV, HSV, VZV) + identify systemic disease (HLA-B27, sarcoid, Behçet, JIA, MS); topical steroid for anterior; systemic / intravitreal / implant steroid for posterior + intermediate; methotrexate / MMC / azathioprine / ciclosporin steroid-sparing; adalimumab for refractory non-infectious; specific antimicrobials for infectious; JIA paediatric screening for asymptomatic uveitis prevents blindness. Reads context.uveitisLocation, context.unilateralBilateral, context.systemic, context.priorTreatment, context.infectionExclusion — never patient identity.",
+    "references": [
+      {
+        "label": "AAO Uveitis PPP 2020; IUSG / SUN; VISUAL trials"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "H20.9",
+        "display": "Uveitis unspecified",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]

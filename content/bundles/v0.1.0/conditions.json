@@ -62132,5 +62132,1176 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "chronic-lymphocytic-leukaemia-treatment",
+    "title": "Chronic lymphocytic leukaemia — diagnosis + targeted therapy",
+    "icd10": [
+      "C91.1"
+    ],
+    "domains": [
+      "oncology",
+      "haematology"
+    ],
+    "population": {
+      "minAgeYears": 40,
+      "sex": "any"
+    },
+    "presentation": [
+      "Most common adult leukaemia — often asymptomatic; incidental lymphocytosis on FBC.",
+      "Symptomatic: fatigue, lymphadenopathy, splenomegaly, recurrent infection (hypogammaglobulinaemia), autoimmune cytopenia (AIHA, ITP), B-symptoms (fever, night sweats, weight loss).",
+      "Risk-stratified by genetics: TP53 mutation / del(17p), IGHV mutation status, complex karyotype, NOTCH1, SF3B1.",
+      "Increased risk: second malignancy, especially skin (annual surveillance), infection."
+    ],
+    "redFlags": [
+      "Lymphocyte doubling < 6 months — active disease.",
+      "Bulky lymphadenopathy / splenomegaly with B-symptoms.",
+      "Autoimmune cytopenia.",
+      "Richter transformation (rapid lymph node growth + B-symptoms + extranodal disease) — biopsy mandatory.",
+      "Infection cluster — pneumococcal vaccine + prophylaxis.",
+      "Tumour lysis syndrome with first dose of venetoclax — high-risk patients."
+    ],
+    "diagnostics": [
+      {
+        "test": "FBC + blood film (mature lymphocytes + smudge cells) + flow cytometry (CD5+ + CD19+ + CD23+ + kappa or lambda restriction).",
+        "rationale": "Diagnostic — Matutes score / RMH-CLL panel."
+      },
+      {
+        "test": "Bone marrow biopsy (selected — staging + cytopenia workup).",
+        "rationale": "Helps when blood film inconclusive + assesses marrow involvement."
+      },
+      {
+        "test": "FISH for del(17p) + del(11q) + trisomy 12 + del(13q); TP53 + IGHV + NOTCH1 + SF3B1 mutation.",
+        "rationale": "Risk-stratification + treatment selection — TP53 / del(17p) need targeted therapy."
+      },
+      {
+        "test": "Serum immunoglobulins + DAT (Coombs) + reticulocytes + LDH + haptoglobin.",
+        "rationale": "Infection risk + AIHA / haemolysis."
+      },
+      {
+        "test": "CT chest + abdomen + pelvis for staging in symptomatic.",
+        "rationale": "Bulky disease + Richter."
+      },
+      {
+        "test": "Hepatitis B + C + HIV screen pre-treatment.",
+        "rationale": "Reactivation risk on therapy."
+      }
+    ],
+    "management": [
+      {
+        "step": "Watch + wait for asymptomatic early-stage",
+        "detail": "Most patients do NOT need treatment at diagnosis — RAI 0–II / Binet A asymptomatic disease can be observed for years. iwCLL 2018 criteria for treatment initiation."
+      },
+      {
+        "step": "Treatment indications (iwCLL 2018)",
+        "detail": "Progressive marrow failure (anaemia / thrombocytopenia); massive / progressive symptomatic splenomegaly or lymphadenopathy; rapidly progressive lymphocytosis (doubling < 6 months); autoimmune cytopenia poorly responsive to standard therapy; B-symptoms."
+      },
+      {
+        "step": "Targeted therapy — first-line",
+        "detail": "BTK inhibitor: acalabrutinib (BTK selective, lower cardiac toxicity than ibrutinib), zanubrutinib, ibrutinib — continuous indefinite therapy. OR venetoclax (BCL2 inhibitor) + obinutuzumab (anti-CD20) — fixed duration 12 months (CLL14, CLL13 — superior PFS, undetectable MRD)."
+      },
+      {
+        "step": "Treatment of TP53 / del(17p)",
+        "detail": "Venetoclax-based OR BTK inhibitor — only options effective (chemoimmunotherapy ineffective). Lifelong BTK inhibitor OR fixed-duration venetoclax-obinutuzumab; consider allogeneic stem cell transplant in fit selected."
+      },
+      {
+        "step": "Chemoimmunotherapy — limited role",
+        "detail": "FCR (fludarabine + cyclophosphamide + rituximab) for fit IGHV-mutated only (no role in TP53-mutated); reserved for resource-limited / specific scenarios. Bendamustine + rituximab for older."
+      },
+      {
+        "step": "Venetoclax — tumour lysis prophylaxis essential",
+        "detail": "5-week dose ramp-up (20 mg → 50 → 100 → 200 → 400 mg/day) with aggressive TLS prophylaxis (rasburicase or allopurinol, hyperhydration, K+/phosphate/Ca monitoring); inpatient initiation for high TLS risk."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Vaccinations pre-treatment: pneumococcal + flu + COVID + zoster RZV. Aciclovir + co-trimoxazole prophylaxis on chemoimmunotherapy / BTK inhibitor. IVIG for recurrent infections + severe hypogammaglobulinaemia (IgG < 4). Erythropoietin if symptomatic anaemia."
+      },
+      {
+        "step": "Autoimmune cytopenia",
+        "detail": "AIHA: prednisolone 1 mg/kg + rituximab; severe — IVIG / splenectomy. ITP: prednisolone + rituximab + thrombopoietin-receptor agonist."
+      },
+      {
+        "step": "Richter transformation",
+        "detail": "Biopsy mandatory — DLBCL most common; R-CHOP ± targeted; allogeneic SCT for fit; outcomes worse than de novo DLBCL."
+      },
+      {
+        "step": "Surveillance + second cancer screen",
+        "detail": "Annual dermatology + skin self-exam (BCC + SCC + melanoma elevated); age-appropriate cancer screening; CT surveillance per disease + treatment."
+      }
+    ],
+    "references": [
+      {
+        "label": "iwCLL Guidelines 2018; ESMO + NCCN CLL Guidelines; CLL14 + CLL13 + ELEVATE-TN + ALLIANCE trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "chronic-myeloid-leukaemia-tki-management",
+    "title": "Chronic myeloid leukaemia — BCR-ABL TKI management",
+    "icd10": [
+      "C92.1"
+    ],
+    "domains": [
+      "oncology",
+      "haematology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Chronic phase (90% at diagnosis): often asymptomatic; raised WBC (often very high) + left-shifted myeloid maturation + basophilia + splenomegaly.",
+      "Accelerated / blast phase: rapid progression — anaemia, thrombocytopenia, basophilia, new chromosomal abnormalities, splenomegaly, B-symptoms.",
+      "Defined by Philadelphia chromosome t(9;22) — BCR-ABL1 fusion gene + tyrosine kinase activity.",
+      "TKI revolutionised: median survival now > 20 years; many achieve treatment-free remission."
+    ],
+    "redFlags": [
+      "Accelerated / blast crisis at presentation — urgent.",
+      "Massive splenomegaly with leukostasis (WBC > 100) — apheresis.",
+      "TLS at TKI initiation.",
+      "T315I mutation — resistant to most TKIs.",
+      "TKI-related complications: pleural effusion (dasatinib), arterial events (nilotinib, ponatinib).",
+      "Pregnancy considerations — TKI teratogenic."
+    ],
+    "diagnostics": [
+      {
+        "test": "FBC + blood film + bone marrow aspirate + biopsy + cytogenetics (Philadelphia chromosome).",
+        "rationale": "Diagnosis + phase."
+      },
+      {
+        "test": "BCR-ABL1 fusion confirmation by FISH + quantitative PCR (international standard — IS).",
+        "rationale": "Diagnostic + baseline for monitoring."
+      },
+      {
+        "test": "ABL kinase domain mutation analysis if resistant disease (e.g. T315I).",
+        "rationale": "TKI selection."
+      },
+      {
+        "test": "Baseline: BP, ECG (QTc), lipids, glucose, ophthalmology, dermatology + dental for nilotinib + ponatinib.",
+        "rationale": "TKI-specific complications."
+      },
+      {
+        "test": "Pleural USS / echocardiography baseline (dasatinib).",
+        "rationale": "Side-effect surveillance."
+      }
+    ],
+    "management": [
+      {
+        "step": "First-line TKI — choice individualised",
+        "detail": "Imatinib 400 mg daily (lowest cost; longest experience; generic; less efficacious than 2nd-gen) OR dasatinib 100 mg daily (faster MMR; pleural effusion + pulmonary HT) OR nilotinib 300 mg BD (faster MMR; cardiovascular events + hyperglycaemia) OR bosutinib 400 mg daily (gastrointestinal). Risk-adapt by ELTS score + comorbidities."
+      },
+      {
+        "step": "Monitor with quantitative PCR (BCR-ABL IS)",
+        "detail": "Baseline + 3 + 6 + 12 months then every 3 months until major molecular response (MMR = BCR-ABL ≤ 0.1% IS); then every 6 months. Targets: MR^3 (MMR) by 12 months; deeper MR^4 + MR^4.5 over time."
+      },
+      {
+        "step": "Treatment failure / sub-optimal response",
+        "detail": "Resistance — check adherence first; ABL kinase mutation analysis; switch to alternate-generation TKI. T315I — ponatinib OR asciminib (allosteric inhibitor) OR olverembatinib. Allogeneic stem cell transplant for multi-TKI-resistant / blast crisis."
+      },
+      {
+        "step": "Asciminib — newer agent",
+        "detail": "Allosteric inhibitor of BCR-ABL; effective even in T315I (at higher dose 200 mg BD); better tolerated than ATP-competitive TKIs. Increasing first-line consideration."
+      },
+      {
+        "step": "Blast crisis treatment",
+        "detail": "TKI + chemotherapy (AML-like for myeloid blast; ALL-like for lymphoid blast) → allogeneic stem cell transplant if responding + fit + donor available. Prognosis remains poor."
+      },
+      {
+        "step": "Treatment-free remission (TFR)",
+        "detail": "Eligibility: chronic phase only, MR^4 + sustained ≥ 2 years on TKI ≥ 5 years. Monitor closely after stopping; 40–50% maintain TFR; restart TKI if loss of MMR."
+      },
+      {
+        "step": "TKI-specific side-effect management",
+        "detail": "Imatinib: oedema, GI, muscle cramps, hepatic — supportive. Dasatinib: pleural effusion (diuretic + steroid + hold), pulmonary HT (irreversible — discontinue), GI bleed. Nilotinib: hyperglycaemia, peripheral arterial disease, pancreatitis, QTc prolongation. Ponatinib: cardiovascular events (highest), hypertension. Hepatic + cardiac monitoring."
+      },
+      {
+        "step": "Pregnancy + family planning",
+        "detail": "TKIs are teratogenic. Achieve stable MMR for ≥ 2 years before considering pregnancy; stop TKI before conception (some restart trimester 2 with interferon as bridge); restart TKI postpartum (no breastfeeding on TKI). Sperm banking for men; fertility-preservation discussions."
+      },
+      {
+        "step": "Vaccinations + supportive",
+        "detail": "Routine vaccinations safe on TKI; avoid live in immunocompromised. Aciclovir / antifungal prophylaxis selectively."
+      }
+    ],
+    "references": [
+      {
+        "label": "ELN Recommendations for Treatment of CML (2020); ESMO + NCCN CML Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "sarcoidosis-multisystem-management",
+    "title": "Sarcoidosis — diagnosis + multisystem management",
+    "icd10": [
+      "D86"
+    ],
+    "domains": [
+      "respiratory",
+      "rheumatology",
+      "neurology",
+      "cardiology",
+      "dermatology",
+      "ophthalmology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Multisystem granulomatous disease of unknown aetiology — non-caseating granulomas.",
+      "Pulmonary (90%): bilateral hilar lymphadenopathy + reticulonodular infiltrates; cough + dyspnoea.",
+      "Lofgren syndrome (acute): erythema nodosum + bilateral hilar lymphadenopathy + arthralgia + fever — usually self-limiting + excellent prognosis.",
+      "Extra-pulmonary: skin (erythema nodosum, lupus pernio, papules), uveitis (often anterior), cardiac (conduction block, ventricular arrhythmia, sudden death, cardiomyopathy), neurosarcoidosis (cranial nerve palsy, meningitis, intracranial mass, peripheral neuropathy), hepatic + splenic granulomas, hypercalcaemia (vitamin D activation), kidneys, parotid (Heerfordt syndrome).",
+      "Risk: female, age 20–40, Black > White, family history."
+    ],
+    "redFlags": [
+      "Cardiac sarcoidosis with arrhythmia / heart block / sudden death risk — urgent EP + cardiac MRI / FDG-PET + ICD consideration.",
+      "Severe neurosarcoidosis — cranial mass, meningitis, hydrocephalus, focal neurology.",
+      "Severe pulmonary fibrosis / pulmonary hypertension.",
+      "Symptomatic hypercalcaemia.",
+      "Posterior uveitis with vision loss.",
+      "Pregnancy — disease often improves; some immunosuppressants contraindicated."
+    ],
+    "diagnostics": [
+      {
+        "test": "CXR — Scadding stages 0–IV (LN ± infiltrate ± fibrosis).",
+        "rationale": "Initial assessment + prognostication."
+      },
+      {
+        "test": "HRCT chest with characteristic perilymphatic nodules + LN + fibrosis pattern.",
+        "rationale": "Detailed pulmonary assessment."
+      },
+      {
+        "test": "Tissue biopsy demonstrating non-caseating granulomas — bronchoscopy + EBUS-TBNA (preferred over mediastinoscopy); skin / lymph node; consider biopsy of accessible site.",
+        "rationale": "Diagnostic confirmation."
+      },
+      {
+        "test": "Comprehensive systemic workup: ECG + echo + cardiac MRI / FDG-PET (cardiac involvement); ophthalmology (slit-lamp + fundoscopy); calcium + 24-h urinary Ca + vitamin D; renal function + urinalysis; LFT; cranial MRI if neuro features.",
+        "rationale": "Detect extra-pulmonary disease."
+      },
+      {
+        "test": "ACE level — supportive (not diagnostic; raised in 50–60%); soluble IL-2 receptor — adjunct.",
+        "rationale": "Biomarker — not specific."
+      },
+      {
+        "test": "Exclude TB, fungal, berylliosis, lymphoma, hypersensitivity pneumonitis.",
+        "rationale": "Critical differential — TB especially in endemic areas."
+      },
+      {
+        "test": "PFTs + DLCO + 6MWT.",
+        "rationale": "Pulmonary function + monitoring."
+      }
+    ],
+    "management": [
+      {
+        "step": "Observation for asymptomatic + mild disease",
+        "detail": "Many cases (especially Lofgren) self-limit. NSAIDs / paracetamol for arthralgia. Topical / inhaled steroid for skin or airway. Follow at 3–6 month intervals."
+      },
+      {
+        "step": "Systemic glucocorticoid — first-line for active organ disease",
+        "detail": "Indications: progressive pulmonary disease / symptomatic deterioration, hypercalcaemia, cardiac involvement, neurosarcoidosis, posterior uveitis, severe skin / liver / spleen / renal. Prednisolone 0.5–1 mg/kg/day (max 40 mg) × 4–6 weeks then taper over 6–12 months. Most relapse if too rapid taper."
+      },
+      {
+        "step": "Steroid-sparing immunosuppressants",
+        "detail": "Methotrexate 10–25 mg/week (preferred — most evidence). Azathioprine 1.5–2.5 mg/kg/day; mycophenolate 2–3 g/day; hydroxychloroquine 200–400 mg/day for skin / mild pulmonary / hypercalcaemia."
+      },
+      {
+        "step": "Biologics — refractory disease",
+        "detail": "Infliximab — TNF inhibitor; effective for steroid-refractory pulmonary + neurosarcoidosis + skin (lupus pernio). Adalimumab alternative. Rituximab + abatacept emerging."
+      },
+      {
+        "step": "Organ-specific",
+        "detail": "Cardiac: cardiac MRI / FDG-PET + biopsy; immunosuppression + amiodarone for arrhythmia + ICD if VT / aborted SCD / advanced AV block. Neuro: high-dose steroid + immunosuppression + infliximab. Eye: topical + systemic per ophthalmology. Hypercalcaemia: avoid sun + vitamin D + dietary calcium; steroid; ketoconazole (anti-vitamin D activation)."
+      },
+      {
+        "step": "Pulmonary hypertension secondary to sarcoidosis",
+        "detail": "Specialist PHT centre — distinct from idiopathic PAH; cautious use of PAH-targeted therapy + treat sarcoidosis."
+      },
+      {
+        "step": "End-stage lung disease",
+        "detail": "Lung transplant for refractory severe pulmonary fibrosis or pulmonary hypertension."
+      },
+      {
+        "step": "Pregnancy",
+        "detail": "Disease often improves; continue hydroxychloroquine + low-dose steroid. Avoid methotrexate + leflunomide. Specialist obstetric care."
+      },
+      {
+        "step": "Long-term follow-up",
+        "detail": "Annual PFTs + chest imaging + ophthalmology + ECG; vitamin D + calcium surveillance. Vaccinations + cardiovascular risk management."
+      }
+    ],
+    "references": [
+      {
+        "label": "ATS / ERS / WASOG Sarcoidosis Guidelines (2020); ATS / ERS / JRS / ALAT IPF + ILD"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "autoimmune-hepatitis-flare-management",
+    "title": "Autoimmune hepatitis — diagnosis + immunosuppression",
+    "icd10": [
+      "K75.4"
+    ],
+    "domains": [
+      "hepatology",
+      "rheumatology",
+      "immunology"
+    ],
+    "population": {
+      "minAgeYears": 10,
+      "sex": "any"
+    },
+    "presentation": [
+      "Subacute / chronic hepatitis: fatigue, jaundice, raised transaminases (AST/ALT > 5–10× ULN often), hypergammaglobulinaemia (IgG), autoantibodies.",
+      "Type 1 (most common): ANA + smooth muscle antibody (anti-SMA / actin); any age, female predominant.",
+      "Type 2: anti-LKM-1 + anti-LC1; usually paediatric / younger.",
+      "Type 3: anti-SLA/LP.",
+      "Acute presentation can mimic acute liver failure (10%).",
+      "Overlap syndromes with PBC + PSC.",
+      "Often associated with other autoimmune disease — thyroid, T1D, coeliac, IBD, vitiligo."
+    ],
+    "redFlags": [
+      "Acute severe / fulminant hepatic failure (INR > 1.5, encephalopathy) — emergency hepatology + transplant evaluation.",
+      "Cirrhosis at presentation (~30%).",
+      "Suspected overlap with PSC (ANCA + cholangiogram).",
+      "Hepatocellular carcinoma in cirrhosis.",
+      "Pregnancy + AIH — usually improves but flare postpartum."
+    ],
+    "diagnostics": [
+      {
+        "test": "ALT, AST, bilirubin, ALP, albumin, INR (severity).",
+        "rationale": "Hepatocellular pattern + liver function."
+      },
+      {
+        "test": "Autoantibodies: ANA, anti-SMA, anti-LKM-1, anti-SLA/LP, anti-ANCA (PSC overlap).",
+        "rationale": "Autoimmune type."
+      },
+      {
+        "test": "IgG (raised); IgM if PBC overlap; IgA mild.",
+        "rationale": "Diagnosis support."
+      },
+      {
+        "test": "Liver biopsy — interface hepatitis + lymphoplasmacytic infiltrate + rosetting.",
+        "rationale": "Definitive diagnosis + grade + stage."
+      },
+      {
+        "test": "Simplified or Revised IAIHG diagnostic criteria.",
+        "rationale": "Standardised diagnosis."
+      },
+      {
+        "test": "Exclude viral (HBV / HCV / HEV / HSV / EBV / CMV), drug-induced hepatotoxicity, Wilson, NAFLD, alpha-1 antitrypsin, haemochromatosis.",
+        "rationale": "Differential diagnosis."
+      },
+      {
+        "test": "Cholangiogram (MRCP) if cholestatic features — overlap PSC.",
+        "rationale": "Distinguish overlap."
+      }
+    ],
+    "management": [
+      {
+        "step": "Induction immunosuppression",
+        "detail": "Prednisolone 40–60 mg/day monotherapy OR prednisolone 30 mg/day + azathioprine 50 mg → 1–2 mg/kg/day (combination preferred — less steroid). Budesonide alternative for non-cirrhotic (first-pass metabolism)."
+      },
+      {
+        "step": "Maintenance immunosuppression",
+        "detail": "Azathioprine 1–2 mg/kg/day monotherapy OR low-dose prednisolone + AZA. Continue ≥ 2–4 years after biochemical remission; relapse common on cessation. Lifelong therapy for many."
+      },
+      {
+        "step": "Steroid-refractory / intolerant / atypical disease",
+        "detail": "Mycophenolate 1–3 g/day; tacrolimus 0.5–6 mg/day (trough 5–8 ng/mL); rituximab (specialist); ciclosporin."
+      },
+      {
+        "step": "Acute severe AIH",
+        "detail": "IV methylprednisolone 60–100 mg/day; assess for liver transplant if no response in 7 days. AIH-related liver failure has high mortality without transplant."
+      },
+      {
+        "step": "Liver transplantation",
+        "detail": "For fulminant failure or end-stage cirrhosis. AIH can recur in graft (15–40%) — continue immunosuppression."
+      },
+      {
+        "step": "Hepatocellular carcinoma surveillance",
+        "detail": "USS + AFP every 6 months in cirrhosis."
+      },
+      {
+        "step": "Monitor immunosuppression",
+        "detail": "TPMT testing before azathioprine. Monthly FBC + LFT initially → 3-monthly when stable. Vaccinations (pneumococcal, influenza, hepatitis A + B); avoid live vaccines on immunosuppression. PJP prophylaxis with high-dose steroid + immunosuppression."
+      },
+      {
+        "step": "Pregnancy",
+        "detail": "Continue azathioprine + low-dose prednisolone (safer than disease flare). Avoid mycophenolate (teratogenic). Multidisciplinary obstetric + hepatology. Postpartum flare common — monitor closely."
+      },
+      {
+        "step": "Associated conditions + lifelong follow-up",
+        "detail": "Screen for + manage co-occurring autoimmune disease. Alcohol abstinence. Vaccinations. Long-term biochemical + clinical follow-up."
+      }
+    ],
+    "references": [
+      {
+        "label": "EASL Clinical Practice Guideline on Autoimmune Hepatitis (2024 update); AASLD AIH Guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "primary-sclerosing-cholangitis-management",
+    "title": "Primary sclerosing cholangitis (PSC) — diagnosis + management",
+    "icd10": [
+      "K83.0"
+    ],
+    "domains": [
+      "hepatology",
+      "gastroenterology",
+      "oncology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Chronic progressive cholestatic liver disease — multifocal strictures + segmental dilations of intra + extra-hepatic bile ducts.",
+      "Asymptomatic — detected on raised ALP + GGT + abnormal LFT screening.",
+      "Symptomatic: fatigue, pruritus, jaundice, abdominal pain, recurrent cholangitis (fever + RUQ pain + jaundice).",
+      "Strongly associated with inflammatory bowel disease (~70% with PSC have IBD, mostly UC).",
+      "Progression: cirrhosis + portal hypertension + variceal bleeding + ascites.",
+      "Increased cancer risk: cholangiocarcinoma (lifetime 10–15%), gallbladder cancer, colorectal (with concurrent IBD)."
+    ],
+    "redFlags": [
+      "Acute ascending cholangitis — emergency antibiotics + ERCP drainage.",
+      "Rapid clinical / biochemical deterioration — exclude dominant stricture (CCA suspicion).",
+      "Suspected cholangiocarcinoma (rising CA 19-9, dominant stricture on MRCP).",
+      "Concurrent IBD flare with PSC requires careful immunosuppression choice.",
+      "Hepatic decompensation."
+    ],
+    "diagnostics": [
+      {
+        "test": "MRCP — first-line imaging (characteristic beaded appearance of bile ducts).",
+        "rationale": "Diagnostic; non-invasive."
+      },
+      {
+        "test": "ERCP — diagnostic only if MRCP non-diagnostic OR for therapeutic dilatation of dominant stricture; carries pancreatitis + cholangitis risk.",
+        "rationale": "Tissue sampling + therapy."
+      },
+      {
+        "test": "Liver biopsy in selected — small-duct PSC, overlap syndrome.",
+        "rationale": "Confirm small-duct disease or autoimmune overlap."
+      },
+      {
+        "test": "Annual colonoscopy from diagnosis (CRC surveillance — PSC + UC has very high CRC risk).",
+        "rationale": "Cancer surveillance."
+      },
+      {
+        "test": "MRCP + CA 19-9 + brushings during ERCP if CCA suspected.",
+        "rationale": "Detect cholangiocarcinoma early."
+      },
+      {
+        "test": "Annual abdominal USS for gallbladder polyp / cancer surveillance.",
+        "rationale": "GB cancer risk."
+      },
+      {
+        "test": "Annual MRCP for early CCA detection (some centres).",
+        "rationale": "Emerging practice."
+      }
+    ],
+    "management": [
+      {
+        "step": "No proven disease-modifying therapy",
+        "detail": "Ursodeoxycholic acid 13–17 mg/kg/day commonly used (improves biochemistry; uncertain long-term outcome benefit; AVOID high doses > 28 mg/kg). Vancomycin oral 50 mg/kg/day for paediatric PSC (limited adult evidence). Trials ongoing: norUDCA, vedolizumab, simtuzumab, FXR agonists."
+      },
+      {
+        "step": "Manage cholestatic symptoms",
+        "detail": "Pruritus: cholestyramine, rifampicin, naltrexone, sertraline. Fatigue. Steatorrhoea — fat-soluble vitamin (ADEK) replacement. Bone disease — calcium + vitamin D + DEXA."
+      },
+      {
+        "step": "Dominant stricture management",
+        "detail": "ERCP + balloon dilatation ± stenting; brush cytology for cholangiocarcinoma. Antibiotic cover for ERCP."
+      },
+      {
+        "step": "Acute cholangitis",
+        "detail": "IV antibiotic (piperacillin-tazobactam or ceftriaxone + metronidazole); urgent biliary drainage if obstructive (ERCP)."
+      },
+      {
+        "step": "IBD management",
+        "detail": "Avoid mesalamine alone (often inadequate in PSC-IBD); biologics often needed; CRC surveillance from diagnosis annually (not just 8 years like other UC)."
+      },
+      {
+        "step": "Cholangiocarcinoma surveillance + management",
+        "detail": "Annual MRCP + CA 19-9 increasingly used. Suspected CCA: brush cytology + cross-sectional imaging + multidisciplinary. Some early CCA in PSC — consider transplant per local protocol (Mayo neoadjuvant + transplant for selected hilar)."
+      },
+      {
+        "step": "Liver transplantation",
+        "detail": "Indications: decompensated cirrhosis, intractable pruritus, recurrent cholangitis, early CCA per protocol. Best survival outcomes among transplant indications. PSC can recur post-transplant (20%); colon cancer risk continues."
+      },
+      {
+        "step": "Colonoscopy surveillance — annual in PSC + IBD",
+        "detail": "Earlier + more frequent than non-PSC IBD due to dramatically elevated CRC risk."
+      },
+      {
+        "step": "Specialist hepatology + IBD + transplant + colorectal team",
+        "detail": "Multidisciplinary clinic; cascade care + family education."
+      }
+    ],
+    "references": [
+      {
+        "label": "EASL Clinical Practice Guideline on PSC (2022); AASLD PSC Guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "macular-degeneration-age-related",
+    "title": "Age-related macular degeneration — early to advanced management",
+    "icd10": [
+      "H35.30"
+    ],
+    "domains": [
+      "ophthalmology",
+      "geriatrics",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 50,
+      "sex": "any"
+    },
+    "presentation": [
+      "Most common cause of irreversible vision loss in adults > 65 in developed countries.",
+      "Dry AMD (80–90%): drusen + retinal pigment epithelium atrophy + geographic atrophy; gradual central vision loss.",
+      "Wet (exudative) AMD: choroidal neovascularisation + sub-retinal fluid / haemorrhage / exudate; sudden / rapid central vision loss + metamorphopsia (lines wavy on Amsler grid).",
+      "Risk: age, smoking, family history (CFH + ARMS2 variants), white ethnicity, hypertension, hyperlipidaemia, low-fish-diet, sunlight exposure."
+    ],
+    "redFlags": [
+      "Acute / sub-acute vision distortion (metamorphopsia, scotoma) — urgent ophthalmology for possible wet AMD or rapid deterioration.",
+      "Pigment epithelial detachment / sub-retinal haemorrhage.",
+      "Bilateral disease.",
+      "Falls + injuries from central vision loss.",
+      "Depression / social isolation from vision loss."
+    ],
+    "diagnostics": [
+      {
+        "test": "Slit-lamp + dilated fundoscopy for drusen, RPE changes, sub-retinal fluid / haemorrhage.",
+        "rationale": "Identification."
+      },
+      {
+        "test": "Optical coherence tomography (OCT) — sub-retinal fluid + drusen + RPE changes.",
+        "rationale": "Sensitive diagnosis + monitoring; gold standard for treatment decisions."
+      },
+      {
+        "test": "Fluorescein angiography for confirming neovascularisation / classifying.",
+        "rationale": "Wet AMD diagnosis + classification."
+      },
+      {
+        "test": "OCT angiography — alternative for assessing neovascularisation without dye.",
+        "rationale": "Non-invasive."
+      },
+      {
+        "test": "Amsler grid for home monitoring.",
+        "rationale": "Patient self-monitoring."
+      },
+      {
+        "test": "Visual acuity + Snellen / ETDRS.",
+        "rationale": "Functional assessment + monitoring."
+      }
+    ],
+    "management": [
+      {
+        "step": "Smoking cessation + risk factor modification — FOUNDATION",
+        "detail": "Single most important — smoking 2–3× risk; quitting reduces. Mediterranean / leafy-green / fish-rich diet. UV protection (sunglasses). BP + lipid control."
+      },
+      {
+        "step": "AREDS-2 vitamin supplementation for intermediate / advanced dry AMD",
+        "detail": "Vitamin C + E + zinc + copper + lutein + zeaxanthin. Reduces progression to advanced disease by ~25%. NOT for early AMD or no AMD. AVOID beta-carotene in smokers (lung cancer risk)."
+      },
+      {
+        "step": "Wet AMD — anti-VEGF intravitreal injection (PARADIGM CHANGE)",
+        "detail": "Aflibercept (every 8 weeks after loading; 8 mg high-dose Eylea-HD or faricimab can extend interval), ranibizumab, brolucizumab. Faricimab (anti-Ang-2/anti-VEGF) — extended interval. Initial monthly × 3 then treat-and-extend OR PRN regimens. Lifelong therapy in most. Bevacizumab off-label affordable alternative."
+      },
+      {
+        "step": "Geographic atrophy — newer therapy",
+        "detail": "Pegcetacoplan (complement C3 inhibitor) intravitreal every 25–60 days; avacincaptad pegol (anti-C5) — slow GA progression (15–22%). FDA-approved 2023. Specialist initiation."
+      },
+      {
+        "step": "Low-vision rehabilitation",
+        "detail": "Magnifiers, telescopic glasses, lighting, contrast enhancement, eccentric viewing training, audio-books, screen readers, smartphone apps. Occupational therapy + social services."
+      },
+      {
+        "step": "Driving + safety",
+        "detail": "Notify driving authority per local rules (may need to surrender licence). Falls prevention; home assessment; medication review for hypotensives."
+      },
+      {
+        "step": "Mental health",
+        "detail": "Depression + anxiety + social isolation common. Screen + treat. Peer support groups + counselling. Independence support."
+      },
+      {
+        "step": "Patient self-monitoring",
+        "detail": "Amsler grid daily — sudden distortion / new scotoma → urgent ophthalmology. Empower for early treatment."
+      },
+      {
+        "step": "Surveillance",
+        "detail": "OCT + visual acuity every 1–3 months on anti-VEGF; less frequent for stable dry AMD."
+      }
+    ],
+    "references": [
+      {
+        "label": "AAO Preferred Practice Pattern Age-Related Macular Degeneration (2024); AREDS + AREDS-2; HAWK + HARRIER + TENAYA / LUCERNE + OAKS / DERBY"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "primary-open-angle-glaucoma-management",
+    "title": "Primary open-angle glaucoma — diagnosis + IOP-lowering therapy",
+    "icd10": [
+      "H40.11"
+    ],
+    "domains": [
+      "ophthalmology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 40,
+      "sex": "any"
+    },
+    "presentation": [
+      "Progressive optic neuropathy — cupping (vertical cup-to-disc ratio increase) + retinal nerve fibre layer thinning + visual field loss (peripheral first, central preserved late).",
+      "Most common type — open anterior chamber angle; raised IOP usually but normal-tension glaucoma also.",
+      "Risk: age > 40, African / Caribbean ancestry, family history, high myopia, diabetes, chronic steroid use.",
+      "Asymptomatic until very late — leading cause of irreversible blindness worldwide.",
+      "Normal-tension glaucoma: glaucomatous damage despite IOP < 21 mmHg."
+    ],
+    "redFlags": [
+      "Acute angle-closure (severe pain + red eye + halos + nausea) — distinct entity; emergency.",
+      "Rapidly progressive visual field loss.",
+      "Disc haemorrhage.",
+      "Pregnancy + glaucoma — limit some topical agents.",
+      "Steroid-induced glaucoma."
+    ],
+    "diagnostics": [
+      {
+        "test": "Intraocular pressure (IOP) — Goldmann applanation gold standard.",
+        "rationale": "Baseline + monitor; aim individualised target reduction."
+      },
+      {
+        "test": "Optic disc examination + photograph (cup-to-disc ratio + disc haemorrhage + RNFL).",
+        "rationale": "Structural damage."
+      },
+      {
+        "test": "Visual field — automated perimetry (24-2 or 30-2).",
+        "rationale": "Functional damage + monitor."
+      },
+      {
+        "test": "Optical coherence tomography (RNFL + ganglion cell complex).",
+        "rationale": "Early structural damage."
+      },
+      {
+        "test": "Gonioscopy.",
+        "rationale": "Confirm open angle + exclude angle closure / secondary."
+      },
+      {
+        "test": "Central corneal thickness (CCT) — affects IOP measurement.",
+        "rationale": "Glaucoma risk + IOP correction."
+      },
+      {
+        "test": "Pachymetry, family history, blood pressure.",
+        "rationale": "Risk stratification."
+      }
+    ],
+    "management": [
+      {
+        "step": "Target IOP reduction individualised (20–40% from baseline)",
+        "detail": "Aggressive target for advanced disease / continued progression / younger patient. Set + adjust based on progression."
+      },
+      {
+        "step": "First-line: topical prostaglandin analogue",
+        "detail": "Latanoprost / travoprost / bimatoprost / tafluprost once daily. Highly effective (~25–30% IOP reduction); side effects: iris pigmentation, eyelash growth, periorbital fat atrophy, mild conjunctival hyperaemia."
+      },
+      {
+        "step": "Selective laser trabeculoplasty (SLT) — first-line alternative",
+        "detail": "Recent LiGHT trial — SLT effective as primary therapy; many patients can avoid drops. Painless, repeatable."
+      },
+      {
+        "step": "Second-line topical agents",
+        "detail": "Beta-blocker (timolol — caution asthma, bradyarrhythmia). Alpha-2 agonist (brimonidine — fatigue, allergic conjunctivitis). Carbonic anhydrase inhibitor (dorzolamide, brinzolamide). Rho kinase inhibitor (netarsudil — newer)."
+      },
+      {
+        "step": "Trabeculectomy + filtering surgery",
+        "detail": "For inadequate IOP control on maximum medical therapy. Gold standard surgical. MMC adjunct for high-risk."
+      },
+      {
+        "step": "Minimally invasive glaucoma surgery (MIGS)",
+        "detail": "iStent + Hydrus microstent + Xen gel stent + ECP + Trabectome + KDB goniotomy. Better safety profile but less IOP reduction; often combined with cataract surgery."
+      },
+      {
+        "step": "Glaucoma drainage device (Ahmed / Baerveldt)",
+        "detail": "For refractory glaucoma / failed trabeculectomy / specific secondary glaucomas."
+      },
+      {
+        "step": "Cyclophotocoagulation (cyclodestruction)",
+        "detail": "End-stage; eyes with poor visual potential. Trans-scleral or endoscopic."
+      },
+      {
+        "step": "Adherence + counselling",
+        "detail": "Drop instruction + nasolacrimal occlusion (reduce systemic absorption). Reminder systems. Combination drops to simplify regimen. Address cost barriers."
+      },
+      {
+        "step": "Long-term surveillance",
+        "detail": "Stable disease: every 6–12 months. Progressing: more frequent. OCT + visual field tracking; intensify if progressing."
+      }
+    ],
+    "references": [
+      {
+        "label": "European Glaucoma Society Guidelines (2020); AAO Primary Open-Angle Glaucoma PPP; LiGHT trial"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "infertility-investigation-couple",
+    "title": "Couple infertility — investigation + assisted reproductive technology",
+    "icd10": [
+      "N97",
+      "N46"
+    ],
+    "domains": [
+      "reproductive-medicine",
+      "gynaecology",
+      "andrology",
+      "endocrinology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "maxAgeYears": 50,
+      "sex": "any"
+    },
+    "presentation": [
+      "Inability to achieve pregnancy after 12 months of regular unprotected intercourse (6 months if female ≥ 35).",
+      "Causes: female (ovulatory ~25%, tubal / pelvic ~20%, endometriosis 10%, uterine 5%); male (~30% — oligospermia / azoospermia / motility / morphology); combined; unexplained 15–20%.",
+      "Risk factors: age (especially female > 35), smoking, alcohol, obesity, prior STIs / PID, prior surgery, chemotherapy / radiotherapy, medication, occupational exposure, genetic / chromosomal."
+    ],
+    "redFlags": [
+      "Suspected primary ovarian insufficiency (FSH > 25, age < 40).",
+      "Azoospermia — chromosome / Y-microdeletion + cystic fibrosis workup.",
+      "Endometriosis severe / deep / endometrioma — specialist surgical.",
+      "Recurrent pregnancy loss ≥ 2 — separate workup.",
+      "Genetic + chromosomal — counsel both partners.",
+      "Cancer in either partner — fertility preservation BEFORE chemotherapy / radiotherapy / hormone therapy."
+    ],
+    "diagnostics": [
+      {
+        "test": "Female: cycle history, FSH + LH + oestradiol + AMH + prolactin + TSH + androgens day 2–5; mid-luteal progesterone confirms ovulation; pelvic USS (antral follicle count + structural); hysterosalpingography or HyCoSy for tubal patency; laparoscopy for endometriosis.",
+        "rationale": "Female fertility workup."
+      },
+      {
+        "test": "Male: semen analysis × 2 (WHO 2021 criteria — concentration ≥ 16 × 10⁶/mL; total motility ≥ 42%; morphology ≥ 4%); testicular examination; FSH + LH + testosterone + prolactin; scrotal USS if abnormal exam.",
+        "rationale": "Male fertility workup."
+      },
+      {
+        "test": "Azoospermia: karyotype + Y-chromosome microdeletion + CFTR (CBAVD).",
+        "rationale": "Cause identification + genetic counselling."
+      },
+      {
+        "test": "Both: hepatitis B + C + HIV + syphilis + immunity status (rubella + varicella).",
+        "rationale": "Pre-ART safety."
+      },
+      {
+        "test": "Specialist referral after 1 year (or 6 months if ≥ 35) of trying.",
+        "rationale": "Time-sensitive — ovarian reserve declines."
+      }
+    ],
+    "management": [
+      {
+        "step": "Lifestyle optimisation — both partners",
+        "detail": "Smoking + alcohol + recreational drug cessation. BMI 20–30 (under- + over-weight both reduce fertility). Reduce stress + adequate sleep + balanced diet. Folic acid 400 microgram (5 mg if epilepsy or family history NTD) pre-conception. Avoid hot baths / saunas for male. Timed intercourse around ovulation."
+      },
+      {
+        "step": "Treat reversible cause",
+        "detail": "Hyperprolactinaemia: dopamine agonist (cabergoline). Hypothyroidism: levothyroxine. PCOS: weight loss + metformin + letrozole / clomiphene for ovulation induction. Endometriosis: surgical resection + assisted reproductive technology. Male hypogonadism: testosterone (note — testosterone reduces fertility; not appropriate if seeking pregnancy); pulsatile GnRH or gonadotropins for hypogonadotropic. Surgical varicocele repair selectively."
+      },
+      {
+        "step": "Ovulation induction (anovulatory)",
+        "detail": "First-line: letrozole 2.5–7.5 mg days 2–6 (preferred over clomiphene per evidence). Clomiphene 50–150 mg days 2–6 if letrozole unavailable. Gonadotropin (FSH) for clomiphene-resistant. Cycle monitoring + trigger + intercourse-timing."
+      },
+      {
+        "step": "Intrauterine insemination (IUI)",
+        "detail": "Indications: mild male factor, unexplained infertility, cervical factor, donor sperm. With or without ovulation induction. Less expensive than IVF; success per cycle ~10–15%."
+      },
+      {
+        "step": "In vitro fertilisation (IVF)",
+        "detail": "Indications: tubal disease, severe male factor (IVF + ICSI), endometriosis, failed IUI, advanced maternal age, unexplained infertility > 2 years. Controlled ovarian stimulation + egg retrieval + fertilisation + embryo culture + transfer. Single embryo transfer increasingly standard (reduce multiple). Frozen embryo transfer for selected (PCOS, OHSS risk, PGT).Success per cycle live birth rate ~30% (under 35), declining with age."
+      },
+      {
+        "step": "Intracytoplasmic sperm injection (ICSI)",
+        "detail": "For severe male factor — direct injection of single sperm into oocyte. Surgical sperm retrieval (PESA / TESE / micro-TESE) for azoospermia."
+      },
+      {
+        "step": "Pre-implantation genetic testing (PGT)",
+        "detail": "PGT-A for aneuploidy (advanced age, recurrent loss); PGT-M for monogenic (Marfan, BRCA, Huntington, CF, SCD); PGT-SR for structural rearrangements."
+      },
+      {
+        "step": "Third-party reproduction",
+        "detail": "Donor egg / sperm / embryo + gestational surrogacy. Counselling + legal + ethical considerations."
+      },
+      {
+        "step": "Fertility preservation",
+        "detail": "Pre-chemotherapy / radiotherapy / hormone therapy: egg + embryo + sperm + ovarian / testicular tissue freezing. Cancer-related pre-treatment freezing increasingly standard of care."
+      },
+      {
+        "step": "Psychological support",
+        "detail": "Infertility distress + treatment burden is substantial; counselling + peer support throughout. Address relationship + body image + grief."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE CG156 Fertility Problems; ESHRE / ASRM Guidelines; WHO 2021 semen analysis"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "congenital-adrenal-hyperplasia-management",
+    "title": "Congenital adrenal hyperplasia (21-hydroxylase deficiency) — lifelong care",
+    "icd10": [
+      "E25.0"
+    ],
+    "domains": [
+      "endocrinology",
+      "paediatrics",
+      "genetics",
+      "obstetrics",
+      "screening"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Autosomal recessive — CYP21A2 mutations cause cortisol deficiency + androgen excess.",
+      "Classical salt-wasting (75%): newborn salt-losing crisis (vomiting, dehydration, shock, hyponatraemia, hyperkalaemia) + virilisation (female ambiguous genitalia; male hyperpigmentation + macrogenitosomia).",
+      "Classical simple virilising (25%): female ambiguous genitalia; male early virilisation.",
+      "Non-classical (NCCAH): adolescent / adult onset — hirsutism, irregular menses, infertility (often mistaken for PCOS), early pubarche in children.",
+      "Newborn screening for 17-OHP captures most classical cases."
+    ],
+    "redFlags": [
+      "Salt-wasting crisis in newborn — life-threatening; IV hydrocortisone + saline + glucose immediately.",
+      "Adrenal crisis at any age — physiological stress, illness, missed dose, surgery.",
+      "Ambiguous genitalia at birth — emergency multidisciplinary assessment + delay sex assignment.",
+      "Growth + pubertal disturbance.",
+      "Infertility in non-classical.",
+      "Maternal CAH planning pregnancy — fetal management considerations."
+    ],
+    "diagnostics": [
+      {
+        "test": "Newborn screen 17-OHP (capillary).",
+        "rationale": "Detection of classical CAH."
+      },
+      {
+        "test": "Confirmatory: serum 17-OHP (very high in classical; mildly raised in NCCAH); ACTH stimulation test for borderline / NCCAH (post-stimulation 17-OHP > 30 nmol/L).",
+        "rationale": "Definitive diagnosis."
+      },
+      {
+        "test": "Sodium, potassium, glucose, ACTH, cortisol, renin.",
+        "rationale": "Identify salt-wasting + hormone deficiency."
+      },
+      {
+        "test": "CYP21A2 genetic testing.",
+        "rationale": "Confirm + genotype-phenotype correlation."
+      },
+      {
+        "test": "Karyotype + pelvic ultrasound for ambiguous genitalia.",
+        "rationale": "Sex assignment + anatomical assessment."
+      }
+    ],
+    "management": [
+      {
+        "step": "Salt-wasting crisis — emergency",
+        "detail": "IV hydrocortisone 50–100 mg/m² stat then 50 mg/m²/day. IV 0.9% NaCl + 10% dextrose for hypoglycaemia. Treat hyperkalaemia. Newborn — early diagnosis from newborn screen prevents."
+      },
+      {
+        "step": "Lifelong glucocorticoid replacement",
+        "detail": "Children: hydrocortisone 10–15 mg/m²/day in 2–3 divided doses (preferred over longer-acting because of growth effects). Adult: hydrocortisone 15–25 mg/day in divided doses OR longer-acting (prednisolone, dexamethasone) — but worse growth + metabolic profile in younger. Recent: hydrocortisone-modified-release (Plenadren) once daily; mineralocorticoid mimicking circadian (Chronocort)."
+      },
+      {
+        "step": "Mineralocorticoid replacement (salt-wasting type)",
+        "detail": "Fludrocortisone 0.05–0.2 mg/day. Salt supplement in infants. Monitor BP + electrolytes + renin (target 4–8 ng/mL/h)."
+      },
+      {
+        "step": "Sick-day rules",
+        "detail": "Double or triple glucocorticoid dose for fever / illness / dental procedure / minor surgery. IM hydrocortisone (Solu-Cortef Act-O-Vial) kit for vomiting / unable to take oral. Major surgery: 50–100 mg IV every 6 h until eating + recovered."
+      },
+      {
+        "step": "Ambiguous genitalia",
+        "detail": "Multidisciplinary team (paediatric endocrine + urology + psychology + genetics + ethics). Delayed sex assignment + minimal surgery; preserve fertility + sexual function. Family + ethical counselling + support."
+      },
+      {
+        "step": "Growth + puberty",
+        "detail": "Monitor growth carefully — both over-treatment (suppress growth) + under-treatment (rapid advance of bone age + reduced final height). Pubertal monitoring."
+      },
+      {
+        "step": "Non-classical CAH",
+        "detail": "Low-dose hydrocortisone or prednisolone if symptomatic (hirsutism, infertility, early puberty); not required if asymptomatic. Sometimes only intermittent during stress."
+      },
+      {
+        "step": "Fertility + pregnancy",
+        "detail": "Pre-conception planning. Glucocorticoid dose review. Fetal CAH risk if both parents carriers — pre-implantation genetic diagnosis option. Maternal CAH + classic — IVF + careful monitoring; consider prenatal dexamethasone (in classic) to prevent female fetal virilisation (controversial — long-term safety concerns)."
+      },
+      {
+        "step": "Long-term comorbidities",
+        "detail": "Cardiovascular risk (over-treatment leads to obesity + insulin resistance + dyslipidaemia + hypertension; under-treatment leads to androgen excess + adrenal hyperplasia + adrenal rest tumours in testis / ovary). Annual cardiovascular + bone + fertility + tumour surveillance."
+      },
+      {
+        "step": "Patient + family education + transition + emergency kit",
+        "detail": "Medic-alert bracelet; emergency hydrocortisone IM kit; sick-day rules education for family + school + workplace; lifelong specialist follow-up; structured paediatric — adult transition."
+      }
+    ],
+    "references": [
+      {
+        "label": "Endocrine Society Clinical Practice Guideline on Congenital Adrenal Hyperplasia (2018)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "phenylketonuria-comprehensive-management",
+    "title": "Phenylketonuria — lifelong dietary management + sapropterin",
+    "icd10": [
+      "E70.0"
+    ],
+    "domains": [
+      "paediatrics",
+      "genetics",
+      "metabolism",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Autosomal recessive PAH gene mutations causing phenylalanine hydroxylase deficiency.",
+      "Newborn screen (heel-prick) detects elevated phenylalanine.",
+      "Untreated: profound intellectual disability + microcephaly + seizures + behavioural problems + musty body odour + eczema + hypopigmentation.",
+      "Treated from birth: normal IQ + function.",
+      "Sub-classifications by Phe level + BH4 responsiveness.",
+      "Maternal PKU syndrome: maternal Phe > 6 mg/dL in pregnancy causes fetal microcephaly + congenital heart disease + intellectual disability — DEVASTATING."
+    ],
+    "redFlags": [
+      "Untreated / poorly-treated newborn — emergency dietary intervention.",
+      "Pregnant woman with PKU — Phe must be < 6 mg/dL (preferred < 4) BEFORE conception + throughout pregnancy.",
+      "Adolescent / adult discontinuation of diet — cognitive decline + executive function impairment + mood disturbance + anxiety.",
+      "Sapropterin trial — identifies responsive patients.",
+      "Family + cascade screening + reproductive counselling."
+    ],
+    "diagnostics": [
+      {
+        "test": "Newborn screen (heel-prick Phe). Confirmatory: plasma Phe + tyrosine + DHPR + biopterin.",
+        "rationale": "Universal newborn detection."
+      },
+      {
+        "test": "PAH genotyping.",
+        "rationale": "Severity classification + sapropterin responsiveness prediction + family screening."
+      },
+      {
+        "test": "BH4 (sapropterin) loading test — identifies responsive subset.",
+        "rationale": "Treatment selection."
+      },
+      {
+        "test": "Blood Phe monitoring (target < 360 micromol/L children; < 360–600 adults — though adult targets less strict in some guidelines).",
+        "rationale": "Treatment adequacy."
+      },
+      {
+        "test": "Nutritional + growth + neurodevelopmental assessment.",
+        "rationale": "Ongoing care."
+      }
+    ],
+    "management": [
+      {
+        "step": "Lifelong Phe-restricted diet from birth",
+        "detail": "Strict low-protein diet (avoid meat, fish, eggs, milk, nuts, legumes, ordinary bread/pasta). Phe-free medical food + amino acid formulae provide protein. Tailored to BLOOD PHE LEVELS rather than weight-based. Frequent dietitian + specialist contact. Children: blood Phe weekly initially → monthly when stable."
+      },
+      {
+        "step": "Sapropterin (Kuvan) for BH4-responsive — selective",
+        "detail": "Synthetic BH4 cofactor; identifies ~30% responsiveness. Reduces Phe → allows liberalised diet (still restricted). Higher cost; specialist initiation."
+      },
+      {
+        "step": "Pegvaliase (Palynziq) for treatment-resistant adults",
+        "detail": "Pegylated enzyme substitute — degrades Phe extracorporally. Subcutaneous injection. Anaphylaxis risk (carry epinephrine; REMS programme). Allows substantial diet liberation."
+      },
+      {
+        "step": "Maternal PKU management",
+        "detail": "PRE-CONCEPTION: achieve blood Phe < 6 mg/dL (preferred < 4) × 3 months before. CONTINUE throughout pregnancy + breastfeeding. High-risk obstetric care. Counsel partner / fetus risk. Pre-implantation genetic diagnosis option for affected couples wanting unaffected child."
+      },
+      {
+        "step": "Neurocognitive + mental health follow-up",
+        "detail": "Annual neurodevelopmental + cognitive assessment in children; periodic in adults. Treat depression / anxiety / ADHD — common in PKU especially when poorly controlled."
+      },
+      {
+        "step": "Adolescent + adult transition",
+        "detail": "Diet adherence often falters in adolescence; long-term consequences become apparent in adulthood. Structured transition + ongoing support. Address adult-specific issues (cardiovascular, bone)."
+      },
+      {
+        "step": "Family + reproductive counselling",
+        "detail": "Cascade testing of siblings + extended family. Reproductive counselling for affected + carriers. Pre-implantation diagnosis for at-risk couples."
+      },
+      {
+        "step": "Emergency PKU management",
+        "detail": "Catabolic illness can raise Phe rapidly. Continue Phe-free formula; hydrate; treat illness; monitor Phe closely; contact specialist for severe / refractory."
+      }
+    ],
+    "references": [
+      {
+        "label": "ACMG Practice Guideline on Diagnosis + Management of PKU; National PKU Alliance"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "uveitis-anterior-posterior-management",
+    "title": "Uveitis — anterior + intermediate + posterior + panuveitis",
+    "icd10": [
+      "H20"
+    ],
+    "domains": [
+      "ophthalmology",
+      "rheumatology",
+      "immunology"
+    ],
+    "population": {
+      "minAgeYears": 5,
+      "sex": "any"
+    },
+    "presentation": [
+      "Anterior uveitis (iritis / iridocyclitis): painful red eye + photophobia + reduced vision + circumlimbal injection + miosis + slit-lamp keratic precipitates / hypopyon / posterior synechiae.",
+      "Intermediate uveitis (pars planitis): floaters + vision reduction; vitreous cells / snowballs / snowbanking on indirect ophthalmoscopy.",
+      "Posterior uveitis (chorioretinitis): variable vision loss; retinal / choroidal lesions on fundoscopy / OCT / fluorescein angiography.",
+      "Panuveitis: all chambers involved.",
+      "Aetiology: idiopathic (~50%); HLA-B27 (acute anterior — especially with axial spondyloarthritis, IBD, psoriasis, reactive); juvenile idiopathic arthritis (chronic anterior — often asymptomatic in children, blindness risk); sarcoidosis; Behçet; toxoplasmosis; CMV (HIV); syphilis; TB; herpes (HSV / VZV); idiopathic Vogt-Koyanagi-Harada; multiple sclerosis."
+    ],
+    "redFlags": [
+      "Acute angle-closure secondary to uveitis — raised IOP, pain, vision loss.",
+      "Vitritis with retinal lesion — exclude infection (CMV, toxoplasmosis, syphilis, TB).",
+      "Hypopyon — Behçet, endogenous endophthalmitis, severe HLA-B27.",
+      "Bilateral panuveitis with neurological — Behçet, sarcoidosis, VKH, multiple sclerosis.",
+      "Asymptomatic uveitis in child with JIA — blindness risk; routine ophthalmology screen.",
+      "Pregnancy — limit some immunosuppressants."
+    ],
+    "diagnostics": [
+      {
+        "test": "Slit-lamp examination + dilated fundoscopy.",
+        "rationale": "Classification + severity."
+      },
+      {
+        "test": "IOP measurement (uveitic glaucoma vs hypotony).",
+        "rationale": "Complication."
+      },
+      {
+        "test": "OCT (macular oedema common).",
+        "rationale": "Cystoid macular oedema — most vision-threatening complication."
+      },
+      {
+        "test": "Fluorescein + indocyanine angiography for posterior.",
+        "rationale": "Detail vascular + choroidal."
+      },
+      {
+        "test": "B-scan ultrasound when media opacified.",
+        "rationale": "Posterior segment assessment."
+      },
+      {
+        "test": "Systemic workup based on pattern: FBC + ESR + ANA + HLA-B27 + ACE + lysozyme + syphilis serology + HIV + IGRA TB + CXR; toxoplasmosis IgG + PCR; HSV / VZV PCR vitreous; consider chest CT for sarcoid.",
+        "rationale": "Identify systemic cause + infection."
+      },
+      {
+        "test": "Diagnostic anterior chamber tap or vitreous sample for atypical / refractory / suspected infection.",
+        "rationale": "PCR + culture."
+      }
+    ],
+    "management": [
+      {
+        "step": "Anterior uveitis — topical first-line",
+        "detail": "Topical corticosteroid (prednisolone 1% / dexamethasone) hourly initially then taper. Cycloplegic (cyclopentolate / atropine) for pain + posterior synechiae prevention. Treat underlying systemic disease."
+      },
+      {
+        "step": "Intermediate / posterior / panuveitis — systemic therapy",
+        "detail": "Periocular / intravitreal triamcinolone or dexamethasone implant (Ozurdex 0.7 mg lasting 4–6 months); fluocinolone implant (Iluvien 0.19 mg lasting 3 years; Yutiq 0.18 mg lasting 3 years; Retisert 0.59 mg lasting 2.5 years). Oral prednisolone 1 mg/kg/day for severe + taper."
+      },
+      {
+        "step": "Steroid-sparing immunosuppressants",
+        "detail": "Antimetabolites (methotrexate, mycophenolate, azathioprine) first-line second tier. Calcineurin inhibitors (ciclosporin, tacrolimus). Alkylating (cyclophosphamide for severe / vasculitic)."
+      },
+      {
+        "step": "Biologic therapy",
+        "detail": "Anti-TNF (adalimumab — FDA-approved for non-infectious uveitis based on VISUAL trials; infliximab) for refractory non-infectious uveitis. Tocilizumab + rituximab in selected. JAK inhibitor emerging."
+      },
+      {
+        "step": "Infectious uveitis — specific therapy",
+        "detail": "Toxoplasmosis: pyrimethamine + sulfadiazine + folinic acid OR co-trimoxazole + steroid for vision-threatening macular lesion. CMV retinitis (HIV): ganciclovir / foscarnet IV + intravitreal. HSV / VZV: oral / IV aciclovir + topical steroid (under cover). Syphilis: high-dose IV penicillin G × 2 weeks (treat as neurosyphilis). TB: standard TB therapy + topical / systemic steroid."
+      },
+      {
+        "step": "Cystoid macular oedema management",
+        "detail": "Topical NSAID + periocular / intravitreal steroid + systemic immunosuppression + anti-VEGF in selected."
+      },
+      {
+        "step": "Complications management",
+        "detail": "Uveitic glaucoma: IOP-lowering + minimise steroid where possible; trabeculectomy / drainage device. Cataract: surgery once inflammation controlled × 3 months pre-op. Retinal detachment: vitrectomy."
+      },
+      {
+        "step": "Childhood JIA-associated uveitis",
+        "detail": "Asymptomatic — slit-lamp screening every 3–6 months; topical + systemic methotrexate + adalimumab early to prevent blindness."
+      },
+      {
+        "step": "Multidisciplinary care",
+        "detail": "Ophthalmology + rheumatology + ID + paediatrics + specialist uveitis clinic. Patient education + medication adherence + long-term follow-up."
+      }
+    ],
+    "references": [
+      {
+        "label": "AAO Preferred Practice Pattern on Uveitis (2020); IUSG / SUN nomenclature; ESCRS"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]
