@@ -10958,5 +10958,155 @@
     "rationale": "AAN 2022/2024 + NICE NG173 + EFNS CIDP + IASP NeuPSIG.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "neutropenic-sepsis-febrile-neutropenia-r1",
+    "title": "FN — pip-tazo within 1h; vanco for shock/SSTI/severe mucositis",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "neutropenic-sepsis-febrile-neutropenia"
+    },
+    "indicators": [
+      "fever + neutrophil < 0.5 in cancer / chemo"
+    ],
+    "recommendation": "Sepsis resus + cultures (2 sets + each line lumen). EMPIRICAL ANTIBIOTIC WITHIN 1H: pip-tazo 4.5 g q8h IV (or cefepime / meropenem if pen-allergy / severe / hospital). ADD vancomycin if shock / pneumonia / SSTI / line infection / severe mucositis / MRSA risk. Aminoglycoside for septic shock. Empirical antifungal (caspofungin / micafungin) if fever > 72h on broad-spectrum + high-risk. MASCC ≥ 21 + low-risk features: outpatient PO cipro + amox-clav. Source control 6-12h. G-CSF for severe/prolonged. Continue 5-7 d minimum + afebrile + recovering. Tunnel line removal if Pseudomonas/fungaemia/persistent/shock. Cotrim PCP prophylaxis for prolonged steroid/ALL/HSCT. Education: thermometer + emergency contact card.",
+    "rationale": "IDSA + NICE CG151 + ESMO + EORTC.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "tumour-lysis-syndrome-tls-r1",
+    "title": "TLS — rasburicase + hydration + monitor electrolytes; allopurinol for moderate-risk",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "tumour-lysis-syndrome-tls"
+    },
+    "indicators": [
+      "high-grade lymphoma / leukaemia + chemo initiation"
+    ],
+    "recommendation": "Risk-stratify low/int/high. HIGH RISK (Burkitt/ALL/bulky/WBC>50): rasburicase 0.2 mg/kg IV daily × 1-7 d — G6PD test FIRST (haemolysis); avoid bicarb. INTERMEDIATE: allopurinol 300-600 mg/d (interactions: 6-MP/AZA reduce). Aggressive hydration 3 L/m²/24h NS, UO > 100 ml/m²/h. Cytoreductive pre-phase chemo for Burkitt. ESTABLISHED TLS: rasburicase + fluids + treat hyperK (Ca gluconate + insulin/dex + Resonium/patiromer + dialysis); hyperPO4 (binder; dialysis); HYPOCa replace ONLY if symptomatic (avoid worsening Ca-PO4 product); AKI dialysis. Cardiac monitor. Continue underlying treatment + supportive. AVOID K+ fluids + Ca/PO4 supplements + thiazide. CLL venetoclax: VERY SLOW ramp-up + admit first dose. CAR-T cell: TLS first 1-2 wk. Refer nephrology.",
+    "rationale": "Cairo-Bishop + BSH 2015/2024 + ESMO 2024 + Coiffier JCO 2008.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "spinal-cord-compression-malignant-r1",
+    "title": "MSCC — MRI within 24h + dexamethasone 16 mg + surgery vs RT within 24h",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "spinal-cord-compression-malignant"
+    },
+    "indicators": [
+      "back pain in cancer / new neurological signs"
+    ],
+    "recommendation": "ANY cancer patient with back pain = MRI whole spine within 24h (regardless of neuro signs). Bed rest + log-roll until stability assessed. DEXAMETHASONE 16 mg IV stat then 4-8 mg q6h immediately. Analgesia + VTE prophylaxis + catheter if retention. Spinal MDT within 24h: SURGERY if single-site + good performance status + life expectancy > 3 mo + radio-resistant tumour + instability / tissue Dx needed (Patchell — surgery + RT > RT alone within 14 d paralysis); RT for radiosensitive (lymphoma/myeloma/breast/prostate/lung) / multiple levels / poor surgical candidate. SBRT for oligometastatic. Bisphosphonate / denosumab for bone disease. Chemo for chemosensitive. Rehab + bladder/bowel + pain + psychological. Pre-treatment ambulatory: 75-90% retain ambulation. Time = key. Median survival 3-6 mo.",
+    "rationale": "NICE NG196 + Patchell Lancet 2005 + ASCO/ASTRO 2024.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "hypercalcaemia-malignancy-r1",
+    "title": "HCM — IV saline + zoledronic acid 4 mg; denosumab if renal failure",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hypercalcaemia-malignancy"
+    },
+    "indicators": [
+      "corrected Ca > 3 mmol/L in cancer"
+    ],
+    "recommendation": "Correct Ca for albumin (Ca + 0.02 × (40 − alb)). IV saline 3-6 L/24h (cautious cardiac/renal). ZOLEDRONIC ACID 4 mg IV over 15-30 min — drug of choice (onset 24-48h, peak 4-7 d, duration 4 wk); renal dose adjust if eGFR < 30. DENOSUMAB 120 mg SC for refractory/renal failure (no renal adjust). Steroid (hydrocortisone 100 mg q6h then pred 40-60 mg) for vitamin-D-mediated (lymphoma/granulomatous). Calcitonin 4-8 IU/kg q6-12h bridge (rapid, short, tachyphylaxis). Dialysis for refractory + AKI. AVOID thiazide/lithium/Ca-D supplements/loop diuretic first-line (only after repletion); encourage MOBILISATION (immobility worsens). Address underlying malignancy. Bisphosphonate/denosumab prophylaxis for bone mets. Monitor: daily Ca/PO4/Cr/U&E/ECG. ONJ risk — dental review pre-treatment.",
+    "rationale": "ASCO 2023 + ESMO 2020/2024 + ASBMR.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "superior-vena-cava-obstruction-r1",
+    "title": "SVCO — tissue diagnosis FIRST + dexamethasone + endovascular stent / chemo",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "superior-vena-cava-obstruction"
+    },
+    "indicators": [
+      "facial / arm swelling + dilated chest veins + dyspnoea"
+    ],
+    "recommendation": "Head + upper body elevation; O2 if hypoxic; lower-limb IV access; furosemide for facial oedema. TISSUE DIAGNOSIS BEFORE definitive treatment (UNLESS airway emergency) — biopsy lymph node / CT-guided mass / bronchoscopy / mediastinoscopy. DEXAMETHASONE 4-16 mg BD-QDS (controversial if biopsy not done — may interfere with lymphoma Dx). DEFINITIVE: SCLC chemo+RT; LYMPHOMA chemo + steroid (R-CHOP) — chemosensitive; germ cell cisplatin chemo — curable; ENDOVASCULAR STENT for rapid symptom relief / refractory / palliation — anticoagulate after; thrombolysis for clot-predominant (line-related) + remove line. Manage stridor — anaesthesia/ENT; sitting intubation if needed.",
+    "rationale": "ESMO 2024 + NCCN + RCR + Cochrane.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "immune-related-adverse-events-irae-r1",
+    "title": "irAE — hold ICI + steroid + escalate immunosuppression by grade",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "immune-related-adverse-events-irae"
+    },
+    "indicators": [
+      "new toxicity on ICI"
+    ],
+    "recommendation": "CTCAE grading. G1 mild: continue ICI + monitor. G2 moderate: hold ICI + prednisolone 0.5-1 mg/kg + resume when ≤G1. G3 severe: hold + pred 1-2 mg/kg (or IV methylpred) + admit; taper 4-6 wk; permanently discontinue most G3 + ALL G4. G4 life-threatening: IV methylpred 1-2 mg/kg + permanent discontinue + ESCALATE if not improving 48-72h: colitis (infliximab/vedolizumab), hepatitis (MMF/AZA), pneumonitis (IVIG/MMF/CYC/tocilizumab + PCP prophylaxis), MYOCARDITIS (high-dose methylpred 1 g + IVIG/MMF/abatacept/ATG — high mortality), neuro (IVIG + PLEX + steroid). ENDOCRINE: hypophysitis = hydrocortisone STAT + replacement; T1DM = insulin; thyroiditis = β-blocker hyper-phase then levothyroxine — usually CONTINUE ICI for endocrine. PCP prophylaxis for prolonged ≥ 20 mg pred ≥ 4 wk. irAE card + report immediately. AVOID live vaccines.",
+    "rationale": "ASCO 2024 + ESMO 2024 + NCCN + SITC.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "chemotherapy-induced-nausea-vomiting-cinv-r1",
+    "title": "CINV — emetogenic risk-stratified prophylaxis with olanzapine quadruplet for HEC",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "chemotherapy-induced-nausea-vomiting-cinv"
+    },
+    "indicators": [
+      "chemotherapy administration"
+    ],
+    "recommendation": "Risk-stratify chemo regimen emetogenic potential. HIGH (cisplatin/AC): 5-HT3 + NK1 (aprepitant/fosaprepitant) + dex 12 mg + OLANZAPINE 5-10 mg D1 + days 2-4 dex/aprepitant/olanzapine continuation — olanzapine-containing regimen superior (Navari NEJM 2016). MODERATE: 5-HT3 + dex + add NK1 for carboplatin AUC ≥ 4. LOW: 5-HT3 or dex or metoclopramide D1. MINIMAL: no prophylactic. Breakthrough: add different class — olanzapine / metoclopramide / prochlorperazine / lorazepam (anxiety). Refractory: combo + mirtazapine / cannabinoid + pre-medicate anticipatory with lorazepam. Manage 5-HT3 constipation + QTc. Adjuncts: ginger / P6 acupressure / mindfulness. Hydration + electrolytes. Pregnancy in cancer: ondansetron + metoclopramide + steroid — avoid NK1.",
+    "rationale": "ASCO 2024 + ESMO/MASCC + NCCN + Navari NEJM 2016.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "cancer-pain-who-modified-ladder-r1",
+    "title": "Cancer pain — modified WHO ladder + opioid titration + adjuvants + side-effect management",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "cancer-pain-who-modified-ladder"
+    },
+    "indicators": [
+      "cancer pain NRS ≥ 4"
+    ],
+    "recommendation": "Assess: location/character/intensity/mechanism. Step 1 (NRS 1-3): paracetamol 1 g q6h + NSAID (with PPI; avoid CKD/GIB/HF). Step 2 (NRS 4-6): + weak opioid codeine/tramadol or skip to step 3 low-dose. Step 3 (NRS ≥ 7): STRONG OPIOID — morphine 5-10 mg q4h IR then convert to MR BD; breakthrough 1/6-1/10 daily PRN q1-4h; alternatives oxycodone (1.5-2× more potent PO) / hydromorphone (7×) / fentanyl patch (stable pain) / methadone (complex — specialist). Manage SIDE EFFECTS PROACTIVELY: constipation (routine laxative + methylnaltrexone), nausea (haloperidol/metoclopramide), sedation, respiratory depression (cautious naloxone in tolerant), confusion (rotation), itch, myoclonus (rotation). Rotation: reduce calculated dose 25-50% (incomplete cross-tolerance). ADJUVANTS: gabapentin/pregabalin/amitriptyline/duloxetine for neuropathic; bisphosphonate/denosumab/RT for bone; steroid for liver capsule/raised ICP/cord compression; ketamine specialist. Address SSA OPIOID ACCESS GAP — WHO essential medicines + Kenya KEHPRO advocacy.",
+    "rationale": "WHO 2018 + NICE CSG4 + ESMO 2024 + ASCO 2024 + Lancet Commission.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "end-of-life-comprehensive-care-r1",
+    "title": "EoL — anticipatory prescribing + holistic comfort + family + bereavement",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "end-of-life-comprehensive-care"
+    },
+    "indicators": [
+      "recognised dying phase"
+    ],
+    "recommendation": "Multidisciplinary recognition of dying. Stop unnecessary meds + investigations; focus on comfort. Anticipatory prescribing SC PRN: morphine 2.5-5 mg q1-4h (pain/breathlessness), midazolam 2.5-5 mg (distress/agitation), cyclizine 50 mg or haloperidol 0.5-1.5 mg (nausea), hyoscine butylbromide 20 mg (secretions). Switch to CSCI/syringe driver when oral compromised. Symptom-specific: breathlessness — non-pharm + low-dose opioid + benzo + O2 only if hypoxic; agitation/delirium — identify cause + midazolam + haloperidol; secretions — hyoscine + reposition + family preparation; nausea — mechanism-targeted. Limited artificial hydration/nutrition (often worsens secretions). Communication + cultural/religious sensitivity. Place of death preferences. After-death care, bereavement support, staff debrief. SSA palliative care gap — advocate hospice expansion + community model (Hospice Africa Uganda).",
+    "rationale": "WHO Palliative Strategy 2014/2024 + Lancet Commission 2018 + EAPC + NICE NG31.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "venous-thromboembolism-cancer-associated-r1",
+    "title": "Cancer VTE — DOAC first-line (apixaban/edoxaban/rivaroxaban); LMWH if GI luminal",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "venous-thromboembolism-cancer-associated"
+    },
+    "indicators": [
+      "confirmed DVT / PE in cancer patient"
+    ],
+    "recommendation": "Anticoagulation: DOAC FIRST-LINE most (apixaban 10 BD × 7 d then 5 BD per CARAVAGGIO; rivaroxaban 15 BD × 21 then 20 OD per SELECT-D; edoxaban 60 OD per Hokusai). LMWH preferred for: luminal GI cancer (DOAC GI bleed), brain tumour/mets, drug interactions (CYP3A4), thrombocytopaenia 50-100 (dose-reduce), pregnancy, severe renal/hepatic. Warfarin obsolete in cancer VTE. Duration ≥ 6 mo; consider indefinite while cancer active + treatment. Massive PE: thrombolysis if no contraindication (balance bleeding). Breakthrough on AC: switch to/up LMWH + investigate adherence. Catheter thrombosis: anticoag + remove only if essential/sepsis. PRIMARY PROPHYLAXIS: pancreatic/lung/Khorana ≥ 2 outpatient — rivaroxaban 10 OD (CASSINI) or apixaban 2.5 BD (AVERT) × 6 mo; multiple myeloma on lenalidomide/pomalidomide; surgical cancer extended 28 d post-major abdo. Thrombocytopaenia: LMWH dose-reduce + platelet support. Pregnancy: LMWH (no DOAC/warfarin).",
+    "rationale": "ITAC 2022/2024 + ASCO 2023 + ESMO 2023 + CARAVAGGIO + Hokusai-VTE Cancer + CASSINI + AVERT.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
