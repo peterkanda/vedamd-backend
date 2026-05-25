@@ -59567,5 +59567,1430 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "breast-cancer-treatment-pathway-detailed",
+    "title": "Breast cancer — comprehensive biomarker-guided treatment pathway",
+    "icd10": [
+      "C50"
+    ],
+    "domains": [
+      "oncology",
+      "surgery",
+      "radiation-oncology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 20,
+      "sex": "any"
+    },
+    "presentation": [
+      "Lump (most common), nipple discharge, skin / nipple changes, axillary lymphadenopathy, metastatic (bone pain, breathlessness, hepatomegaly, neurology, pleural effusion).",
+      "Screen-detected (mammography programme).",
+      "Subtypes by biomarker: ER+ / PR+ / HER2- (luminal A — best prognosis); ER+ / HER2+ (luminal B); HER2-amplified; triple-negative (no targets — chemotherapy mainstay).",
+      "Male breast cancer (1%) — usually ER+; treated similarly.",
+      "Inflammatory breast cancer — erythema + peau d'orange + rapid course; T4d."
+    ],
+    "redFlags": [
+      "Inflammatory or locally advanced (T3-4) at presentation — urgent multidisciplinary.",
+      "Metastatic at presentation (cord compression, brain mets, leptomeningeal, hepatic failure).",
+      "Hypercalcaemia / SVC obstruction / pleural effusion.",
+      "Pregnancy + breast cancer — preserve pregnancy where possible; modify chemotherapy choice.",
+      "Hereditary suspicion (BRCA / PALB2 / TP53) — young / triple-negative / family history."
+    ],
+    "diagnostics": [
+      {
+        "test": "Triple assessment: clinical + imaging (mammography + USS / MRI) + core biopsy.",
+        "rationale": "Definitive diagnosis."
+      },
+      {
+        "test": "Histology + biomarkers: ER, PR, HER2 (IHC + FISH for equivocal), Ki67, grade.",
+        "rationale": "Subtype-defining."
+      },
+      {
+        "test": "BRCA1/2 + PALB2 + TP53 + multi-gene panel for hereditary suspicion.",
+        "rationale": "Treatment + family screening."
+      },
+      {
+        "test": "Staging: CT chest/abdomen, bone scan, MRI brain if neuro symptoms; PET-CT for selected.",
+        "rationale": "Stage IV detection."
+      },
+      {
+        "test": "Oncotype DX / MammaPrint / Endopredict for ER+ / HER2- node-negative early (chemotherapy decision aid).",
+        "rationale": "Recurrence risk-stratification."
+      },
+      {
+        "test": "Fertility + cardiac baseline before chemotherapy.",
+        "rationale": "Preserve options + safety."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary tumour board for ALL cases",
+        "detail": "Breast surgeon + oncologist + radiation oncologist + radiologist + pathologist + specialist nurse + plastic surgery + genetic counsellor."
+      },
+      {
+        "step": "Early-stage (I-IIB) — surgery + adjuvant",
+        "detail": "Breast-conserving surgery + radiotherapy (equivalent survival to mastectomy for selected; better cosmesis). Mastectomy for: large tumour, multifocal, BRCA, patient choice, prior radiation. Axillary sentinel node biopsy ± ALND. Adjuvant therapy: chemotherapy + endocrine + targeted per subtype."
+      },
+      {
+        "step": "Neoadjuvant therapy — for downstaging + triple-negative / HER2+ / large ER+",
+        "detail": "Triple-negative: anthracycline-taxane + pembrolizumab (KEYNOTE-522). HER2+: trastuzumab + pertuzumab + chemotherapy (TCHP). ER+: usually adjuvant (some neoadjuvant endocrine for elderly / locally advanced). Path complete response (pCR) is positive prognostic."
+      },
+      {
+        "step": "ER+/HER2- adjuvant endocrine therapy — backbone",
+        "detail": "Pre-menopausal: tamoxifen 20 mg/day × 5–10 years (longer for higher-risk). Add ovarian function suppression (LHRH agonist or oophorectomy) for higher-risk young pre-menopausal (SOFT / TEXT). Post-menopausal: aromatase inhibitor (anastrozole / letrozole / exemestane) × 5 years; consider extended adjuvant. Switch protocols common (tamoxifen first then AI)."
+      },
+      {
+        "step": "ER+/HER2- early-stage adjuvant CDK4/6 inhibitor",
+        "detail": "Abemaciclib × 2 years (monarchE) for high-risk early ER+/HER2- (4+ nodes, or 1–3 nodes with grade 3 / size ≥ 5 cm / Ki67 ≥ 20). Ribociclib also approved (NATALEE)."
+      },
+      {
+        "step": "HER2+ adjuvant",
+        "detail": "Trastuzumab × 1 year + chemotherapy. T-DM1 (Kadcyla) if residual disease post-neoadjuvant TCHP (KATHERINE). Trastuzumab deruxtecan (Enhertu) for metastatic / refractory."
+      },
+      {
+        "step": "Triple-negative adjuvant",
+        "detail": "Chemotherapy backbone (anthracycline + taxane); pembrolizumab × 1 year if neoadjuvant-given (KEYNOTE-522). Olaparib × 1 year for BRCA-mutated post-adjuvant (OlympiA)."
+      },
+      {
+        "step": "Metastatic — palliative + life-extending",
+        "detail": "ER+: endocrine + CDK4/6 inhibitor (palbociclib / ribociclib / abemaciclib) first-line; PI3K inhibitor (alpelisib) for PIK3CA mutation; capivasertib for AKT-PI3K-PTEN-mutated. HER2+: trastuzumab + pertuzumab + taxane → T-DM1 → T-DXd → tucatinib + capecitabine + trastuzumab. Triple-negative: chemotherapy + pembrolizumab (PD-L1+) → sacituzumab govitecan (ASCENT) → talazoparib / olaparib (BRCA-mutant) → trastuzumab deruxtecan (HER2-low). Survival extending year-on-year with novel agents."
+      },
+      {
+        "step": "Local control + supportive",
+        "detail": "Bone-modifying agents (zoledronate or denosumab) for bone metastases. Radiotherapy for symptomatic bone, brain, spinal cord. Lymphoedema management. Menopausal symptom management. Fertility preservation pre-chemotherapy. Specialist palliative care + survivorship clinic."
+      },
+      {
+        "step": "Genetic counselling + family + survivorship",
+        "detail": "Test for BRCA1/2 + PALB2 + multi-gene if criteria. Risk-reducing surgery for mutation carriers (mastectomy + salpingo-oophorectomy). Family screening; long-term cardiac + bone + cognitive monitoring; second-cancer surveillance."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESMO + NCCN Breast Cancer Guidelines; St Gallen Consensus; multiple trial-defining regimens"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "multiple-myeloma-treatment-pathway",
+    "title": "Multiple myeloma — diagnosis + treatment pathway",
+    "icd10": [
+      "C90.0"
+    ],
+    "domains": [
+      "oncology",
+      "haematology",
+      "nephrology",
+      "orthopaedics"
+    ],
+    "population": {
+      "minAgeYears": 40,
+      "sex": "any"
+    },
+    "presentation": [
+      "Clonal plasma-cell malignancy: CRAB criteria (hyperCalcaemia, Renal impairment, Anaemia, Bone lytic lesions).",
+      "Symptoms: bone pain (often back, ribs, long bones; pathological fracture), anaemia, infection (humoral immunosuppression), AKI, hyperviscosity, weight loss, fatigue.",
+      "Spectrum: MGUS → smouldering myeloma → symptomatic MM. SLiM-CRAB criteria (2014) lowered diagnostic threshold (BM clonal plasma cells ≥ 60%, FLC ratio ≥ 100, MRI > 1 focal lesion).",
+      "Subgroups: high-risk cytogenetics t(4;14), t(14;16), del(17p), gain(1q), TP53 mutations."
+    ],
+    "redFlags": [
+      "Spinal cord compression — urgent MRI + radiotherapy.",
+      "Hypercalcaemia crisis.",
+      "AKI from cast nephropathy — preserve renal function with rapid disease reduction.",
+      "Plasma cell leukaemia (> 20% peripheral plasma cells or absolute > 2 × 10⁹/L) — aggressive.",
+      "Hyperviscosity syndrome (IgM MM variant) — emergency plasmapheresis.",
+      "Suspected POEMS / amyloidosis variants."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serum + urine immunofixation + serum free light chains (kappa : lambda ratio).",
+        "rationale": "Identify monoclonal protein."
+      },
+      {
+        "test": "Bone marrow aspirate + trephine + FISH cytogenetics (for high-risk markers).",
+        "rationale": "Definitive + risk-stratification."
+      },
+      {
+        "test": "Whole-body low-dose CT / WB-MRI / PET-CT (preferred over skeletal survey).",
+        "rationale": "Identify focal lesions + extramedullary disease."
+      },
+      {
+        "test": "FBC, U&E, calcium, LDH, beta-2-microglobulin, albumin (R-ISS staging).",
+        "rationale": "Staging + prognosis."
+      },
+      {
+        "test": "24-h urine for Bence-Jones + albumin.",
+        "rationale": "Identify renal involvement."
+      },
+      {
+        "test": "Cardiac assessment + echo + NT-proBNP (cardiac amyloid screen).",
+        "rationale": "Differential AL amyloid + drug safety."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary haematology + clinical trial enrolment encouraged",
+        "detail": "Specialist myeloma centre; clinical trials accelerate access to novel therapy."
+      },
+      {
+        "step": "Induction — transplant-eligible (typically < 70 + good performance status)",
+        "detail": "Daratumumab + bortezomib + lenalidomide + dexamethasone (Dara-VRd; 4 cycles) — current standard (PERSEUS / GRIFFIN). Other options: Dara-VTd, VRd (no transplant-modifying anti-CD38)."
+      },
+      {
+        "step": "Autologous stem-cell transplant + consolidation",
+        "detail": "Melphalan 200 mg/m² conditioning + autologous SCT. Consolidation + maintenance daratumumab + lenalidomide. Significant survival benefit in eligible patients."
+      },
+      {
+        "step": "Transplant-ineligible induction",
+        "detail": "Daratumumab + lenalidomide + dexamethasone (Dara-Rd; MAIA) — first-line in transplant-ineligible. Daratumumab + bortezomib + melphalan + prednisolone (Dara-VMP) for fit elderly. Continue until progression."
+      },
+      {
+        "step": "Maintenance therapy",
+        "detail": "Lenalidomide 10–15 mg daily until progression — standard after ASCT. Add daratumumab in high-risk + relapsed."
+      },
+      {
+        "step": "Relapsed / refractory disease",
+        "detail": "Sequential novel agents in proteasome / immunomodulatory / anti-CD38 / antibody-drug conjugates / BCMA-targeted. Lines of therapy: anti-CD38 + IMiD + PI combinations; carfilzomib; pomalidomide; elotuzumab; ixazomib oral. BCMA-targeted: belantamab mafodotin (ADC); teclistamab / talquetamab (bispecific T-cell engagers); idecabtagene vicleucel + ciltacabtagene autoleucel (CAR-T) for triple-class refractory. Allogeneic SCT in young / refractory."
+      },
+      {
+        "step": "Supportive care",
+        "detail": "Bone-modifying agent (zoledronate or denosumab) monthly initially; AVOID in severe renal failure (denosumab acceptable). Calcium + vitamin D. Radiotherapy for symptomatic / spinal cord compression / pathological fracture. Vertebroplasty / kyphoplasty for vertebral compression. Erythropoietin for symptomatic anaemia. Aciclovir prophylaxis (zoster). Anti-thrombotic prophylaxis (aspirin or LMWH per VTE risk). IVIG for recurrent infection. PJP + antifungal prophylaxis during chemotherapy. Vaccinations."
+      },
+      {
+        "step": "Renal preservation",
+        "detail": "Aggressive hydration. Rapid disease control (bortezomib-based). Plasma exchange for severe cast nephropathy (controversial — selected centres). Avoid nephrotoxins."
+      },
+      {
+        "step": "Long-term follow-up + second malignancy + survivorship",
+        "detail": "MRD (minimal residual disease) monitoring increasingly used. Second cancers (lenalidomide + alkylating). Cardiovascular events. Bone health surveillance. Continue maintenance until progression."
+      }
+    ],
+    "references": [
+      {
+        "label": "IMWG criteria + guidelines; ESMO + NCCN Multiple Myeloma; PERSEUS + MAIA + GRIFFIN trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "kidney-transplant-immunosuppression",
+    "title": "Kidney transplant — peri-operative + immunosuppression + long-term care",
+    "icd10": [
+      "Z94.0",
+      "T86.10"
+    ],
+    "domains": [
+      "nephrology",
+      "transplant",
+      "immunology",
+      "infectious-disease"
+    ],
+    "population": {
+      "minAgeYears": 5,
+      "sex": "any"
+    },
+    "presentation": [
+      "Patient with end-stage renal disease pre-/post-transplantation.",
+      "Pre-transplant: dialysis or pre-emptive; complete workup; living-donor or deceased-donor.",
+      "Post-transplant: acute (first year — rejection, infection, surgical complications); chronic (years — graft dysfunction, infection, malignancy, cardiovascular, metabolic).",
+      "Common immunosuppression: induction (basiliximab or anti-thymocyte globulin) + maintenance (calcineurin inhibitor + antimetabolite + steroid)."
+    ],
+    "redFlags": [
+      "Acute rejection: rapid creatinine rise; needs biopsy + treatment.",
+      "Severe infection — opportunistic (CMV, BK virus, PJP, fungal, TB, post-transplant lymphoproliferative disease).",
+      "Cardiovascular event — leading cause of death.",
+      "Skin malignancy (high incidence on immunosuppression).",
+      "Suspected renal artery / vein thrombosis acute post-op.",
+      "Recurrent disease (FSGS, MPGN, lupus nephritis, atypical HUS)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serial creatinine + eGFR + urinalysis (early frequent; later weekly → monthly).",
+        "rationale": "Detect rejection / dysfunction."
+      },
+      {
+        "test": "Tacrolimus / ciclosporin trough level + drug interactions.",
+        "rationale": "Therapeutic + toxic range."
+      },
+      {
+        "test": "Donor-specific antibody (DSA) monitoring.",
+        "rationale": "Detect humoral rejection."
+      },
+      {
+        "test": "BK virus PCR + CMV PCR + EBV PCR at intervals.",
+        "rationale": "Viral surveillance."
+      },
+      {
+        "test": "Allograft biopsy for unexplained renal dysfunction.",
+        "rationale": "Definitive rejection vs other diagnosis."
+      },
+      {
+        "test": "Annual cardiovascular review, lipid + glucose + BP + DEXA, skin / cancer surveillance.",
+        "rationale": "Long-term complications."
+      },
+      {
+        "test": "Vaccination history + infection screen pre-transplant; family / donor screening.",
+        "rationale": "Reduce post-transplant infection risk."
+      }
+    ],
+    "management": [
+      {
+        "step": "Pre-transplant workup",
+        "detail": "Cardiovascular fitness (CT angiography / cardiac catheter; coronary revascularisation if indicated). Cancer screening (age-appropriate). Infection screen (HBV, HCV, HIV, CMV, EBV, VZV, TB, syphilis, parasites per region). Vaccinations: all routine + influenza + pneumococcal + COVID + zoster + hepatitis B + HPV. Live vaccines must be given pre-transplant. Donor matching: ABO + HLA + crossmatch + DSA screening."
+      },
+      {
+        "step": "Surgical procedure + early post-op",
+        "detail": "Heterotopic placement in iliac fossa. Reperfusion injury management. Vascular + ureteric complication surveillance. Early ambulation. DVT prophylaxis."
+      },
+      {
+        "step": "Induction immunosuppression",
+        "detail": "Basiliximab (IL-2 receptor) for low-risk; anti-thymocyte globulin (ATG) for high-risk (HLA-mismatched, sensitised, repeat transplant, paediatric)."
+      },
+      {
+        "step": "Maintenance triple immunosuppression",
+        "detail": "Calcineurin inhibitor (tacrolimus preferred over ciclosporin; trough 5–8 ng/mL after first year) + antimetabolite (mycophenolate mofetil 1 g BD or mycophenolic acid) + corticosteroid (prednisolone 5–10 mg/day; some centres minimise / withdraw). Sirolimus / everolimus (mTOR inhibitors) as steroid-sparing or for malignancy."
+      },
+      {
+        "step": "Acute T-cell-mediated rejection",
+        "detail": "High-dose IV methylprednisolone 500 mg–1 g × 3 days. Anti-thymocyte globulin for steroid-resistant. Optimise maintenance regimen."
+      },
+      {
+        "step": "Antibody-mediated rejection",
+        "detail": "Plasma exchange + IVIG + rituximab + bortezomib (refractory). Increasingly recognised; specialist transplant unit."
+      },
+      {
+        "step": "Infection prophylaxis",
+        "detail": "Co-trimoxazole for PJP × 6–12 months. CMV: ganciclovir / valganciclovir prophylaxis for donor +/recipient – × 6 months. Aciclovir for HSV/VZV. Antifungal selectively. Nystatin for oral candidiasis. Vaccine review."
+      },
+      {
+        "step": "BK virus nephropathy",
+        "detail": "Reduce immunosuppression on BK viraemia > 10⁴ copies/mL; convert tacrolimus to ciclosporin; IVIG or leflunomide for established nephropathy."
+      },
+      {
+        "step": "Cardiovascular + metabolic risk",
+        "detail": "BP target < 130/80; statin (atorvastatin / pravastatin — interact with calcineurin inhibitor); ACE inhibitor / ARB; tight glycaemic control; weight + lifestyle."
+      },
+      {
+        "step": "Malignancy surveillance",
+        "detail": "Skin: annual dermatology + sun protection (very high SCC + BCC risk on immunosuppression). Cervical + breast + colorectal screening per general population. PTLD surveillance (EBV PCR; biopsy if suspicious)."
+      },
+      {
+        "step": "Pregnancy post-transplant",
+        "detail": "Wait ≥ 1 year stable graft function. Convert mycophenolate to azathioprine 6 weeks pre-conception (teratogenic). Continue tacrolimus + steroid. Joint nephrology + obstetric care. Aspirin from 12 weeks (pre-eclampsia)."
+      }
+    ],
+    "references": [
+      {
+        "label": "KDIGO Clinical Practice Guideline for Care of Kidney Transplant Recipient; UK Renal Association"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "rheumatoid-arthritis-treat-to-target",
+    "title": "Rheumatoid arthritis — early treat-to-target + biologic / targeted synthetic",
+    "icd10": [
+      "M05",
+      "M06"
+    ],
+    "domains": [
+      "rheumatology",
+      "immunology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Symmetric inflammatory polyarthritis — small joints of hands + feet predominantly; morning stiffness > 30 min; fatigue.",
+      "Extra-articular: rheumatoid nodules, sicca, pulmonary (ILD, pleural effusion), cardiovascular (accelerated atherosclerosis), Felty syndrome, vasculitis, scleritis, anaemia of chronic disease, lymphoma risk.",
+      "Lab: positive RF + anti-CCP (high specificity), raised CRP / ESR.",
+      "Imaging: erosions + joint space narrowing + bony oedema on MRI / USS (sub-clinical inflammation)."
+    ],
+    "redFlags": [
+      "Septic arthritis differential — sudden severe monoarticular swelling + fever — aspirate.",
+      "Suspected vasculitis (mononeuritis multiplex, skin necrosis).",
+      "Severe ILD with rapid decline.",
+      "Felty syndrome (RA + splenomegaly + neutropenia) — infection risk.",
+      "Atlanto-axial instability — cervical instability + neuro symptoms.",
+      "Suspected lymphoma (DLBCL more common in RA)."
+    ],
+    "diagnostics": [
+      {
+        "test": "ACR/EULAR 2010 classification criteria.",
+        "rationale": "Early identification."
+      },
+      {
+        "test": "RF + anti-CCP + ANA + CRP + ESR.",
+        "rationale": "Confirm + prognosis (seropositive worse)."
+      },
+      {
+        "test": "X-ray hands + feet + chest baseline.",
+        "rationale": "Erosive damage + lung involvement."
+      },
+      {
+        "test": "USS / MRI hands + feet for early disease + subclinical synovitis.",
+        "rationale": "Early disease detection."
+      },
+      {
+        "test": "FBC, U&E, LFT, hepatitis B + C, TB (IGRA + CXR), pregnancy test, varicella status — pre-biologic.",
+        "rationale": "Safety screen."
+      },
+      {
+        "test": "Pulmonary function tests + HRCT if respiratory symptoms.",
+        "rationale": "ILD screen."
+      },
+      {
+        "test": "DEXA bone density.",
+        "rationale": "Osteoporosis screening."
+      }
+    ],
+    "management": [
+      {
+        "step": "Early diagnosis + treat-to-target — paradigm",
+        "detail": "EULAR / ACR: early DMARD (within 3 months of symptom onset); target remission or low disease activity (DAS28 / CDAI); escalate if not at target by 3 months; specialist rheumatology team."
+      },
+      {
+        "step": "First-line: methotrexate",
+        "detail": "10–25 mg/week oral or SC (SC if oral poorly tolerated or BMI > 30). Folic acid 5 mg/week (different day). Reduces inflammation + erosions + extra-articular + cardiovascular. Combine with prednisolone bridge."
+      },
+      {
+        "step": "Combination conventional DMARDs",
+        "detail": "If MTX inadequate: add hydroxychloroquine 200–400 mg/day + sulfasalazine 1.5–3 g/day (triple therapy) — non-inferior to anti-TNF for many."
+      },
+      {
+        "step": "Biologic therapy",
+        "detail": "Anti-TNF (etanercept, adalimumab, infliximab, golimumab, certolizumab) — first-line biologic. Rituximab (anti-CD20) for refractory / RF+ / extra-articular. Abatacept (CTLA4-Ig). IL-6 inhibitor (tocilizumab + sarilumab). All require pre-biologic safety screen + ongoing surveillance."
+      },
+      {
+        "step": "Targeted synthetic DMARDs — JAK inhibitors",
+        "detail": "Tofacitinib, baricitinib, upadacitinib, filgotinib — oral. ORAL Surveillance + post-marketing have shown increased cardiac + VTE + serious infection events in older RA patients with cardiovascular risk factors — restricted use in patients with these risks; counsel."
+      },
+      {
+        "step": "Steroid use",
+        "detail": "Bridging low-dose prednisolone 5–10 mg/day during DMARD titration; intra-articular steroid for joint flare. AVOID long-term high-dose (osteoporosis, cataracts, diabetes, infection)."
+      },
+      {
+        "step": "Non-pharmacological",
+        "detail": "Physiotherapy + occupational therapy + hand therapy; exercise (essential for joint health + cardiovascular); smoking cessation (smoking worsens + reduces biologic response); orthotics; joint protection."
+      },
+      {
+        "step": "Comorbidity management",
+        "detail": "Cardiovascular risk-modification (statins, BP control — RA accelerates atherosclerosis). Osteoporosis (vitamin D + calcium + bisphosphonate); infection prophylaxis (PCP if high-dose immunosuppression); vaccinations (avoid live during biologic; flu + pneumococcal annual). Cancer surveillance + skin checks."
+      },
+      {
+        "step": "Pregnancy + RA",
+        "detail": "MTX, leflunomide CONTRAINDICATED — stop ≥ 3 months pre-conception. Sulfasalazine + hydroxychloroquine + azathioprine compatible. Anti-TNF (especially certolizumab — no placental transfer) compatible in pregnancy. Rituximab requires 6-month washout. Most RA improves in pregnancy + flares postpartum — restart effective DMARD postpartum."
+      },
+      {
+        "step": "Surgical referral",
+        "detail": "Joint replacement for refractory destructive disease (hip, knee, shoulder, ankle). Synovectomy. Tendon repair. Cervical spine surgery for instability."
+      }
+    ],
+    "references": [
+      {
+        "label": "EULAR + ACR Treat-to-Target Recommendations; NICE NG100 + TA225 RA biologic + targeted synthetic"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "ankylosing-spondylitis-axial-spondyloarthritis",
+    "title": "Ankylosing spondylitis / axial spondyloarthritis — treatment pathway",
+    "icd10": [
+      "M45",
+      "M46.9"
+    ],
+    "domains": [
+      "rheumatology",
+      "physiotherapy",
+      "ophthalmology"
+    ],
+    "population": {
+      "minAgeYears": 16,
+      "sex": "any"
+    },
+    "presentation": [
+      "Chronic inflammatory back pain — insidious onset before age 45; > 3 months duration; morning stiffness > 30 min; improves with activity worsens with rest; alternating buttock pain.",
+      "Enthesitis (Achilles, plantar fascia, ribs); dactylitis; peripheral arthritis.",
+      "Extra-articular: anterior uveitis (acute unilateral; recurrent), psoriasis, inflammatory bowel disease, aortic root involvement, IgA nephropathy.",
+      "HLA-B27 positive in 80–90% of AS; family history common.",
+      "Progressive spinal fusion → restrictive lung disease + fracture risk."
+    ],
+    "redFlags": [
+      "New focal back pain or trauma — increased fracture risk in fused spine (low-energy fracture).",
+      "Cauda equina syndrome — rare late complication.",
+      "Severe acute anterior uveitis with vision loss.",
+      "Aortic regurgitation / heart block on ECG.",
+      "Severe restrictive lung disease."
+    ],
+    "diagnostics": [
+      {
+        "test": "ASAS classification criteria (back pain ≥ 3 months + age < 45 + sacroiliitis on imaging + ≥ 1 SpA feature OR HLA-B27 + ≥ 2 SpA features).",
+        "rationale": "Diagnosis."
+      },
+      {
+        "test": "X-ray sacroiliac joints (Modified New York criteria — radiographic AS).",
+        "rationale": "Detect structural sacroiliitis (often takes years to develop)."
+      },
+      {
+        "test": "MRI sacroiliac joints + spine for inflammatory bone oedema — earlier than X-ray.",
+        "rationale": "Non-radiographic axial SpA."
+      },
+      {
+        "test": "HLA-B27 testing.",
+        "rationale": "Support diagnosis + family screening."
+      },
+      {
+        "test": "CRP + ESR (often raised in active disease).",
+        "rationale": "Disease activity."
+      },
+      {
+        "test": "Pre-biologic: hepatitis B/C + HIV + TB + varicella + vaccine review.",
+        "rationale": "Safety."
+      },
+      {
+        "test": "Annual ophthalmology if uveitis history; cardiac assessment for aortitis; PFTs.",
+        "rationale": "Complications surveillance."
+      }
+    ],
+    "management": [
+      {
+        "step": "Patient education + structured exercise — FOUNDATION",
+        "detail": "Daily home exercise + supervised physiotherapy (improves function + reduces stiffness; SPINE trial). Posture training; avoid prolonged static positions; spinal mobility maintenance critical."
+      },
+      {
+        "step": "NSAIDs — first-line for symptoms",
+        "detail": "Continuous NSAID (e.g. naproxen 500 mg BD, etoricoxib 60–90 mg daily) — evidence for symptom + structural-progression benefit. Caution gastrointestinal + cardiovascular + renal risk."
+      },
+      {
+        "step": "Biologic therapy — for axial disease inadequate response to NSAID",
+        "detail": "Anti-TNF first-line (etanercept, adalimumab, infliximab, golimumab, certolizumab) — dramatic symptom + radiographic improvement. IL-17 inhibitor (secukinumab, ixekizumab, bimekizumab) — alternative. Pre-biologic screen mandatory."
+      },
+      {
+        "step": "JAK inhibitor — newer oral option",
+        "detail": "Upadacitinib (15 mg daily) and tofacitinib approved for AS; caution VTE + cardiac risk in older patients."
+      },
+      {
+        "step": "Peripheral arthritis — conventional DMARDs",
+        "detail": "Methotrexate / sulfasalazine for peripheral disease (NOT effective for axial)."
+      },
+      {
+        "step": "Acute anterior uveitis",
+        "detail": "Topical steroid + cycloplegic (atropine 1%); urgent ophthalmology. Recurrence common; some biologics (adalimumab) reduce uveitis flares."
+      },
+      {
+        "step": "Spinal precaution + fracture management",
+        "detail": "Counsel re: fracture risk (low-energy injury can cause spinal fracture in fused spine — neuro-surgical consult + careful imaging — CT or MRI; not just X-ray which may underestimate). Calcium + vitamin D + bisphosphonate if osteoporotic."
+      },
+      {
+        "step": "Anaesthetic precautions",
+        "detail": "Fused cervical spine — difficult intubation; awake fibre-optic; alert anaesthetist."
+      },
+      {
+        "step": "Pregnancy + AS",
+        "detail": "Disease activity variable in pregnancy. NSAID + biologic management as per general; certolizumab preferred biologic for pregnancy. Postpartum flares common."
+      },
+      {
+        "step": "Multidisciplinary follow-up",
+        "detail": "Rheumatology + ophthalmology + cardiology + respiratory + physiotherapy + occupational therapy + GP. Lifelong management."
+      }
+    ],
+    "references": [
+      {
+        "label": "ASAS-EULAR Recommendations for Management of Axial SpA (2022 update); ACR / SAA Guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "psoriatic-arthritis-treat-to-target",
+    "title": "Psoriatic arthritis — treat-to-target with biologics + targeted synthetic",
+    "icd10": [
+      "L40.50",
+      "L40.5",
+      "M07"
+    ],
+    "domains": [
+      "rheumatology",
+      "dermatology",
+      "immunology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Inflammatory arthritis in patient with psoriasis (90%; 10% precedes psoriasis); spectrum: oligoarticular asymmetric, polyarticular (RA-like), DIP-predominant, arthritis mutilans, axial / spondylitis-predominant.",
+      "Enthesitis + dactylitis ('sausage digit') common.",
+      "Nail changes (pitting, onycholysis); psoriasis often nail / scalp / hidden sites.",
+      "Often seronegative for RF + anti-CCP; HLA-B27 positive subset (axial-predominant).",
+      "Comorbidities: cardiovascular (accelerated), depression, metabolic syndrome, NAFLD, uveitis, IBD."
+    ],
+    "redFlags": [
+      "Severe destructive arthropathy (arthritis mutilans).",
+      "Sacroiliitis with aortic / cardiac involvement.",
+      "Severe nail + scalp + erythrodermic psoriasis.",
+      "Suspected septic arthritis differential.",
+      "Pregnancy + active disease — switch agent."
+    ],
+    "diagnostics": [
+      {
+        "test": "CASPAR classification criteria.",
+        "rationale": "Definitive diagnosis."
+      },
+      {
+        "test": "USS / MRI of inflamed joints for sub-clinical synovitis / enthesitis.",
+        "rationale": "Early disease + erosions."
+      },
+      {
+        "test": "RF + anti-CCP usually negative (helps differential from RA).",
+        "rationale": "Distinguish."
+      },
+      {
+        "test": "X-ray hands / feet for 'pencil-in-cup' deformity (severe).",
+        "rationale": "Erosive damage."
+      },
+      {
+        "test": "MRI sacroiliac joints if axial involvement suspected.",
+        "rationale": "Identify spondylitis subset."
+      },
+      {
+        "test": "Disease activity: DAPSA, PASDAS, PsAID (patient-reported); skin: PASI.",
+        "rationale": "Treatment monitoring."
+      },
+      {
+        "test": "Pre-biologic safety screen.",
+        "rationale": "Safety."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary (rheumatology + dermatology + GP)",
+        "detail": "Joint clinic for combined skin + joint + comorbidity; ophthalmology / gastroenterology for relevant comorbidity."
+      },
+      {
+        "step": "NSAIDs + targeted steroids for mild peripheral",
+        "detail": "Intra-articular steroid injection; oral steroid avoided long-term (rebound psoriasis on withdrawal)."
+      },
+      {
+        "step": "Conventional DMARDs for peripheral disease",
+        "detail": "Methotrexate first-line (also treats skin) 15–25 mg/week. Sulfasalazine, leflunomide, ciclosporin alternatives. Not effective for axial / enthesitis-predominant."
+      },
+      {
+        "step": "Biologics — for inadequate response to DMARDs OR axial / enthesitis disease",
+        "detail": "Anti-TNF (etanercept, adalimumab, infliximab, golimumab, certolizumab). IL-17 inhibitor (secukinumab, ixekizumab, bimekizumab — also excellent skin). IL-23 inhibitor (guselkumab, risankizumab — excellent skin + dactylitis + entheses; less effective axial). IL-12/23 (ustekinumab)."
+      },
+      {
+        "step": "Targeted synthetic DMARDs",
+        "detail": "Apremilast (PDE-4) oral; modest efficacy but well-tolerated for mild disease. JAK inhibitor (tofacitinib, upadacitinib) for refractory; caution VTE + cardiac in older."
+      },
+      {
+        "step": "Treat-to-target",
+        "detail": "Aim minimal disease activity (MDA); reassess at 3-month intervals; escalate if not achieving."
+      },
+      {
+        "step": "Manage comorbidities",
+        "detail": "Cardiovascular risk-modification (statin, BP, lifestyle); depression screen + treatment; weight + metabolic syndrome; smoking cessation; alcohol moderation."
+      },
+      {
+        "step": "Pregnancy + PsA",
+        "detail": "Most controlled with sulfasalazine / certolizumab in pregnancy. Stop methotrexate + JAK 3 months pre-conception. Postpartum flares common — restart biologic."
+      },
+      {
+        "step": "Family + skin care",
+        "detail": "Patient + family psoriasis education; trigger management (stress, infection, smoking, alcohol); topical skin care; phototherapy adjuncts."
+      }
+    ],
+    "references": [
+      {
+        "label": "EULAR + GRAPPA Recommendations for PsA Management (2024 update); CASPAR criteria"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "cerebral-palsy-comprehensive",
+    "title": "Cerebral palsy — diagnosis + lifelong multidisciplinary care",
+    "icd10": [
+      "G80"
+    ],
+    "domains": [
+      "paediatrics",
+      "neurology",
+      "rehabilitation",
+      "orthopaedics"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 99,
+      "sex": "any"
+    },
+    "presentation": [
+      "Non-progressive motor disorder caused by lesion to developing brain (in utero / perinatal / early childhood).",
+      "Subtypes: spastic (most common: hemiplegia / diplegia / quadriplegia), dyskinetic (athetoid / dystonic), ataxic, mixed.",
+      "Severity: GMFCS I (walks without limitation) → V (transported, no head control).",
+      "Comorbidities: epilepsy (35%), intellectual disability (50% — variable), feeding / nutrition / GI (dysphagia, GERD), respiratory (aspiration, chronic), orthopaedic (contractures, hip dysplasia, scoliosis), visual / hearing impairment, communication, behaviour, sleep, pain.",
+      "Aetiology: prematurity / intraventricular haemorrhage / hypoxic-ischaemic encephalopathy / antenatal stroke / congenital infection / kernicterus / postnatal head injury / meningitis / metabolic."
+    ],
+    "redFlags": [
+      "Progressive neurological signs — suggests alternative diagnosis (metabolic, neurodegenerative).",
+      "New / worsening seizures.",
+      "Hip dislocation / scoliosis progression — orthopaedic referral.",
+      "Respiratory failure from chronic aspiration or restrictive lung disease.",
+      "Severe pain — under-recognised in non-communicative CP.",
+      "Suspected abuse / neglect."
+    ],
+    "diagnostics": [
+      {
+        "test": "MRI brain — identifies cause + pattern (PVL, basal ganglia, stroke, malformation).",
+        "rationale": "Aetiology + prognosis."
+      },
+      {
+        "test": "Genetic + metabolic workup if atypical / progressive / family history.",
+        "rationale": "Exclude alternative diagnoses."
+      },
+      {
+        "test": "Developmental assessment + GMFCS classification.",
+        "rationale": "Functional level + planning."
+      },
+      {
+        "test": "Annual hip surveillance X-ray (especially GMFCS III–V) + spinal assessment.",
+        "rationale": "Detect progressive hip displacement + scoliosis."
+      },
+      {
+        "test": "EEG if seizures suspected; sleep study if disordered sleep / respiratory concern.",
+        "rationale": "Comorbidity detection."
+      },
+      {
+        "test": "Swallow assessment (VFSS / FEES); nutritional assessment.",
+        "rationale": "Aspiration + nutrition risks."
+      },
+      {
+        "test": "Hearing + vision assessment.",
+        "rationale": "Sensory impairment common."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary team — specialist CP centre",
+        "detail": "Developmental paediatrician + neurologist + physiotherapist + occupational therapist + speech-language pathologist + orthopaedic surgeon + nutrition / dietitian + nurse specialist + social worker + family + community-based services."
+      },
+      {
+        "step": "Early intervention — first 2 years CRITICAL",
+        "detail": "Identify early (within 6 months of corrected age if possible) for early intervention. Specific therapies: constraint-induced movement therapy (CIMT) for unilateral CP; bimanual intensive therapy; goal-directed therapy."
+      },
+      {
+        "step": "Spasticity management",
+        "detail": "Stretching + orthoses + functional rehabilitation (PT/OT). Oral antispasticity (baclofen, diazepam, tizanidine, dantrolene). Botulinum toxin injection — focal; effective + repeated every 3–6 months. Intrathecal baclofen pump for severe diffuse. Selective dorsal rhizotomy (selected GMFCS II–IV)."
+      },
+      {
+        "step": "Orthopaedic management",
+        "detail": "Hip surveillance + soft-tissue release / osteotomy for displacement. Single-event multilevel surgery (SEMLS) — combined procedures around age 8–12. Scoliosis surgery for progressive curves. Foot deformities + contractures."
+      },
+      {
+        "step": "Communication + assistive technology",
+        "detail": "Augmentative + alternative communication (AAC) — picture boards, switches, eye-gaze devices; speech therapy; functional communication training."
+      },
+      {
+        "step": "Nutrition + feeding",
+        "detail": "PEG feeding for severe dysphagia / aspiration / failure to thrive. Fundoplication for severe GERD. Anti-reflux + prokinetic medications. Monitor + treat constipation."
+      },
+      {
+        "step": "Epilepsy management",
+        "detail": "Standard antiepileptic per seizure type; ketogenic diet for refractory; vagus nerve stimulation."
+      },
+      {
+        "step": "Pain management",
+        "detail": "Assess pain even in non-communicative; treat constipation, GERD, dental, musculoskeletal causes; analgesia (paracetamol, NSAID, gabapentin for neuropathic); botulinum toxin for spasticity-related pain."
+      },
+      {
+        "step": "School + community + family support",
+        "detail": "Educational support + accommodations; respite care; carer support; financial benefits; community-based therapy; equipment + adaptations; transport."
+      },
+      {
+        "step": "Transition to adult care",
+        "detail": "Structured adolescent — adult transition. Continued multidisciplinary care into adulthood; address employment + relationships + sexuality + housing + ageing."
+      }
+    ],
+    "references": [
+      {
+        "label": "AACPDM Care Pathways; SCPE Surveillance of Cerebral Palsy in Europe; NICE NG62 Cerebral palsy"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "down-syndrome-multidisciplinary-care",
+    "title": "Down syndrome (trisomy 21) — lifelong multidisciplinary care",
+    "icd10": [
+      "Q90"
+    ],
+    "domains": [
+      "paediatrics",
+      "genetics",
+      "cardiology",
+      "endocrinology",
+      "ophthalmology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Trisomy 21 — most commonly free trisomy (95%), Robertsonian translocation (4%), mosaicism (1%).",
+      "Diagnostic features: facial morphology (epicanthal folds, flat nasal bridge, brachycephaly, short neck), hypotonia, single palmar crease, sandal gap, brushfield spots; karyotype confirms.",
+      "Increased risk: congenital heart disease (50% — AVSD most common), duodenal atresia, Hirschsprung, hearing impairment, vision impairment, hypothyroidism, atlanto-axial instability, leukaemia (transient + later ALL/AML), obstructive sleep apnoea, dementia (early-onset Alzheimer).",
+      "Median life expectancy now > 60 years."
+    ],
+    "redFlags": [
+      "Newborn — diagnose cardiac lesion early (often pre-symptomatic; echo essential).",
+      "Severe feeding difficulty / failure to thrive.",
+      "Atlantoaxial subluxation — neurological symptoms, neck pain — urgent imaging.",
+      "Transient abnormal myelopoiesis (TAM) at birth — usually resolves but ~20% develop AML.",
+      "Acute leukaemia at any age — particularly ALL + AML.",
+      "Adult-onset cognitive decline — Alzheimer pathology near-universal by 50 (clinical dementia in 50% by 60)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Newborn: karyotype confirmation; echo + CXR + audiology + ophthalmology; TSH + FBC.",
+        "rationale": "Baseline + early detection of congenital abnormalities."
+      },
+      {
+        "test": "First year: monthly weight + height + growth on DS-specific charts; cardiac follow-up; TSH 6-monthly.",
+        "rationale": "Detect heart failure + thyroid dysfunction."
+      },
+      {
+        "test": "Childhood: annual TSH + FBC + audiology + ophthalmology + dental; coeliac (~5% risk); diabetes screening from age 5; lateral cervical-spine X-ray (controversial — selectively); sleep study for OSA risk.",
+        "rationale": "Routine surveillance."
+      },
+      {
+        "test": "Adolescent + adult: BMI + lipids + diabetes (high risk); sleep apnoea; mental health + cognitive screening; gynaecological; thyroid + coeliac annually.",
+        "rationale": "Adult-onset comorbidity."
+      },
+      {
+        "test": "Suspected dementia: structured cognitive assessment (CAMDEX-DS); collateral history.",
+        "rationale": "Early-onset Alzheimer detection."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary team + family-centred care",
+        "detail": "Paediatrician + cardiology + ENT + ophthalmology + endocrinology + audiology + dental + physiotherapy + speech + occupational + nutrition + community paediatrics + adult medicine + family support / DSA. Coordinated transition into adulthood."
+      },
+      {
+        "step": "Cardiac care",
+        "detail": "Echo at diagnosis + per CHD findings. Surgical correction of AVSD in first 6 months; other CHD per specific anatomy. Adult surveillance for late-onset valve / arrhythmia."
+      },
+      {
+        "step": "GI + nutrition",
+        "detail": "Identify + treat congenital GI (duodenal atresia, Hirschsprung, anal stenosis) in newborn. Feeding support; PEG if needed. Coeliac screening; obesity prevention from school-age. Constipation management."
+      },
+      {
+        "step": "Endocrine",
+        "detail": "Lifelong TSH monitoring (~10% develop hypothyroidism). Diabetes screening — increased risk. Growth charts. Pubertal review."
+      },
+      {
+        "step": "Vision + hearing",
+        "detail": "Cataract, refractive error (glasses), keratoconus, strabismus, blocked tear ducts — early ophthalmology essential. Conductive (otitis media — frequent) + sensorineural hearing loss — annual audiology + hearing aids."
+      },
+      {
+        "step": "Atlantoaxial instability",
+        "detail": "Counsel about contact sports + general anaesthesia (head/neck positioning); urgent imaging if neurological symptoms. Lateral cervical X-ray in flexion/extension if planning contact sport — recent guidance moves away from routine screening."
+      },
+      {
+        "step": "Mental health + neurodevelopmental",
+        "detail": "Early intervention services. Educational support (often individualised education plan; some attend mainstream with support). Autism spectrum disorder overlap (~15–20%). ADHD common. Adult-onset depression / anxiety common."
+      },
+      {
+        "step": "Sleep apnoea",
+        "detail": "High prevalence (50–80%). Polysomnography + CPAP / surgical (tonsillectomy + adenoidectomy)."
+      },
+      {
+        "step": "Adult-onset Alzheimer disease",
+        "detail": "Alzheimer pathology near-universal by 40; clinical dementia 50% by 60. Disease-modifying therapy (anti-amyloid mAbs) emerging for early symptomatic stage with confirmed amyloid pathology. Structured dementia care + family support; CAMDEX-DS cognitive screening from age 30."
+      },
+      {
+        "step": "Vaccination + infection",
+        "detail": "Increased infection susceptibility — full vaccination including pneumococcal + influenza + COVID + RSV (for at-risk infants). Selective antibiotic prophylaxis after recurrent infection."
+      },
+      {
+        "step": "Reproductive + sexual health",
+        "detail": "Most men infertile; most women fertile (50% pregnancy with trisomy 21 in offspring). Contraception + sexual education + relationship support."
+      },
+      {
+        "step": "Transition to adult care + end-of-life",
+        "detail": "Structured adolescent — adult transition clinic. Continued multidisciplinary care. Advance care planning + end-of-life — increasingly relevant as life expectancy approaches general population."
+      }
+    ],
+    "references": [
+      {
+        "label": "AAP / DSMIG-USA Health Supervision for Children + Adolescents with Down Syndrome (2022); Trisomy 21 Research Society"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "autism-spectrum-disorder-diagnosis",
+    "title": "Autism spectrum disorder — diagnosis + lifelong support",
+    "icd10": [
+      "F84.0",
+      "F84.9"
+    ],
+    "domains": [
+      "paediatrics",
+      "psychiatry",
+      "developmental",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Persistent deficits in social communication + interaction + restricted, repetitive behaviours / interests + sensory differences — DSM-5 / ICD-11.",
+      "Early signs: reduced eye contact, response to name, joint attention, pointing, pretend play; speech delay or regression.",
+      "Spectrum: mild (level 1) to substantial (level 3) support needs.",
+      "Co-occurring: intellectual disability (~30%); ADHD (~50%); anxiety (~40%); depression; epilepsy (~25%); sleep disorders; gastrointestinal; sensory processing differences.",
+      "Female autism often underdiagnosed (different presentation — internalising, social masking)."
+    ],
+    "redFlags": [
+      "Regression of previously acquired skills — exclude neurodegenerative.",
+      "Severe self-injurious behaviour or aggression.",
+      "Catatonia (in older children, adolescents, adults).",
+      "Severe sleep disorder + irritability.",
+      "Suicidal ideation / self-harm in adolescent + adult.",
+      "Suspected abuse (autistic individuals at increased risk)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Standardised diagnostic instruments: ADOS-2 (Autism Diagnostic Observation Schedule) + ADI-R (Autism Diagnostic Interview-Revised).",
+        "rationale": "Gold-standard diagnostic confirmation."
+      },
+      {
+        "test": "Developmental + cognitive assessment.",
+        "rationale": "Functional profile + intervention planning."
+      },
+      {
+        "test": "Speech / language assessment.",
+        "rationale": "Communication profile."
+      },
+      {
+        "test": "Audiometry + ophthalmology.",
+        "rationale": "Exclude sensory deficit."
+      },
+      {
+        "test": "Genetic testing (chromosomal microarray + Fragile-X + whole-exome) — increasingly first-line.",
+        "rationale": "Identify cause + family + reproductive counselling; treatment-relevant for some conditions."
+      },
+      {
+        "test": "EEG if seizures suspected; MRI selectively.",
+        "rationale": "Identify comorbidity."
+      },
+      {
+        "test": "Mental health + behavioural screen at intervals.",
+        "rationale": "Co-morbidity management."
+      }
+    ],
+    "management": [
+      {
+        "step": "Early intervention — within 12 months of identification",
+        "detail": "Naturalistic developmental behavioural interventions (NDBI), Early Start Denver Model, parent-mediated programmes (e.g. JASPER, ImPACT). Frequency + intensity individualised. Speech + occupational + behavioural therapy as needed."
+      },
+      {
+        "step": "Family-centred + neurodiversity-affirming approach",
+        "detail": "Parent / carer education + training; sibling support; respite. Move from 'normalisation' to support of authentic autistic identity. Co-produced with autistic community."
+      },
+      {
+        "step": "Communication support",
+        "detail": "Augmentative + alternative communication (AAC) for minimally verbal — picture boards, sign language, speech-generating devices; speech + language therapy."
+      },
+      {
+        "step": "Educational + occupational accommodations",
+        "detail": "Individualised education plan; sensory accommodations (quiet space, noise-cancelling headphones, breaks); visual schedules; transition support. Adult: workplace accommodations + supported employment."
+      },
+      {
+        "step": "Comorbidity treatment",
+        "detail": "ADHD: stimulant / atomoxetine. Anxiety: SSRI + CBT (modified). Sleep: melatonin (good evidence) + sleep hygiene. Epilepsy: standard antiepileptic. Aggression / severe behaviour: behavioural intervention first; risperidone / aripiprazole (FDA-approved for irritability — only after non-pharm)."
+      },
+      {
+        "step": "Sensory processing support",
+        "detail": "Occupational therapy for sensory integration + environmental adaptations; sensory tools (weighted blanket, fidget items, dimmed lighting, quiet times)."
+      },
+      {
+        "step": "Catatonia (in older autistic individuals)",
+        "detail": "Watch for motor / verbal slowing, withdrawal, refusal of food, repetitive movements; benzodiazepine (lorazepam challenge); ECT for severe."
+      },
+      {
+        "step": "Adult diagnosis + support",
+        "detail": "Many adults diagnosed late — particularly women + minoritised. Validation + post-diagnostic support; peer community; mental health treatment; employment + relationships."
+      },
+      {
+        "step": "Mental health surveillance",
+        "detail": "Autistic adults — 9× elevated suicide risk. Routine screening for depression, anxiety, suicidality. Adapted therapy (modified CBT, autism-aware therapists)."
+      },
+      {
+        "step": "Transition + lifespan support",
+        "detail": "Adolescent — adult transition critical; healthcare + education + employment + housing + relationships + finances. Lifelong support; community participation; aged-care planning."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE CG170 + CG142 Autism; AAP Autism Practice Guidelines; ESCAP Autism Position"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "diabetes-type-1-insulin-pump-cgm",
+    "title": "Type 1 diabetes — insulin pump + continuous glucose monitoring",
+    "icd10": [
+      "E10"
+    ],
+    "domains": [
+      "endocrinology",
+      "paediatrics",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Established type 1 diabetes requiring intensive insulin regimen.",
+      "Modalities: multiple daily injection (MDI — basal-bolus); insulin pump (CSII); hybrid closed-loop (HCL) automated insulin delivery (AID) — increasingly first-line.",
+      "Monitoring: capillary glucose; continuous glucose monitoring (CGM) — flash (rtCGM intermittent scan) or real-time CGM.",
+      "Targets: time-in-range 70–180 mg/dL > 70%; time below range < 4% (< 70) and < 1% (< 54); HbA1c < 7%."
+    ],
+    "redFlags": [
+      "Severe hypoglycaemia (third-party assistance) — review regimen.",
+      "Recurrent DKA — typically poor adherence / pump dysfunction.",
+      "Pregnancy planning — preconception HbA1c < 6.5% target.",
+      "Diabetic ketoacidosis under pump therapy — pump can fail silently (cannula blockage / kink).",
+      "Eating disorder + T1D (T1DM with eating disorder / diabulimia) — high mortality."
+    ],
+    "diagnostics": [
+      {
+        "test": "HbA1c + capillary / CGM time-in-range every 3 months.",
+        "rationale": "Glycaemic monitoring."
+      },
+      {
+        "test": "Annual: U&E + ACR + lipids + retinal screening + foot examination + thyroid + coeliac (autoimmune association) + BP.",
+        "rationale": "Comprehensive diabetes annual review."
+      },
+      {
+        "test": "Mental health + eating disorder screen (especially adolescent + young adult).",
+        "rationale": "Common comorbidity."
+      },
+      {
+        "test": "Pump + CGM data download review.",
+        "rationale": "Patterns + dose optimisation."
+      },
+      {
+        "test": "Ketone testing kit (blood or urine) at home.",
+        "rationale": "DKA prevention."
+      }
+    ],
+    "management": [
+      {
+        "step": "Initial education + diabetes self-management programme",
+        "detail": "Structured education (DAFNE for adults; carbohydrate counting for children); carbohydrate counting; insulin-to-carb ratio; correction factor; sick-day rules; hypoglycaemia education."
+      },
+      {
+        "step": "Insulin regimen — MDI standard",
+        "detail": "Basal-bolus: long-acting (glargine U100 / U300, degludec, detemir) + rapid-acting (lispro, aspart, glulisine) with each meal + correction. Adjust per CGM patterns."
+      },
+      {
+        "step": "Insulin pump (CSII) — selective",
+        "detail": "Continuous SC infusion via pump; basal rate + meal-time bolus + correction. Indications: difficult-to-control on MDI, frequent hypoglycaemia, dawn phenomenon, occupational, lifestyle, planning pregnancy. NICE: HbA1c > 8.5% on MDI OR severe hypoglycaemia."
+      },
+      {
+        "step": "Hybrid closed-loop / Automated Insulin Delivery",
+        "detail": "Pump + CGM + algorithm modulating basal (and increasingly bolus) automatically. Currently approved: Medtronic 770G/780G, Tandem t:slim X2 with Control-IQ, Omnipod 5, CamAPS FX (CGM-pump-app hybrid). Open-source DIY systems (Loop, AndroidAPS). Improved time-in-range + reduced hypoglycaemia + reduced burden."
+      },
+      {
+        "step": "CGM — increasingly first-line for ALL T1D",
+        "detail": "Real-time CGM (Dexcom G6/G7, Medtronic Guardian) — alerts. Flash (Libre 2/3). Improved outcomes + reduced hypoglycaemia (DIAMOND + GOLD trials). Healthcare-system coverage expanding."
+      },
+      {
+        "step": "Severe hypoglycaemia management",
+        "detail": "Glucagon nasal spray (Baqsimi) OR injection (1 mg IM/SC for adult, 0.5 mg < 25 kg); IV 10% dextrose. Newer: dasiglucagon ready-to-use auto-injector. Family + colleague training in glucagon use."
+      },
+      {
+        "step": "Pregnancy + planning",
+        "detail": "Preconception HbA1c < 6.5%; high-dose folic acid 5 mg; pre-pregnancy retinal screen; pump + CGM strongly recommended; tighter glucose targets in pregnancy (FGM/CGM time-in-range > 70% target 63–140 mg/dL pregnancy); regular obstetric high-risk care; aspirin from 12 weeks."
+      },
+      {
+        "step": "Adjunct therapy for selected",
+        "detail": "Pramlintide (amylin analog) for postprandial spikes. SGLT2 inhibitor + GLP-1 agonist — not approved as routine T1D adjunct due to DKA risk."
+      },
+      {
+        "step": "Complications surveillance + cardiovascular protection",
+        "detail": "Annual screening: retinopathy (from 5 years post-diagnosis adults; from age 12+ adolescents), nephropathy (UACR), peripheral neuropathy + foot, autonomic neuropathy. Statin from age 40 (or earlier with high risk). ACEi for albuminuria. SGLT2i for adult T1D with CKD ± CV disease selectively per specialist."
+      },
+      {
+        "step": "Education + mental health + transition",
+        "detail": "Annual structured education refresher; carer / family support; mental-health screening (PHQ-9, GAD-7, eating disorder); adolescent — adult transition clinic; technology training."
+      }
+    ],
+    "references": [
+      {
+        "label": "ADA Standards of Medical Care in Diabetes (annual); ISPAD Clinical Practice Consensus Guidelines for paediatric; NICE NG18 + NG17 T1DM"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "schizophrenia-maintenance-lai",
+    "title": "Schizophrenia — maintenance treatment + long-acting injectable",
+    "icd10": [
+      "F20"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "sex": "any"
+    },
+    "presentation": [
+      "Established schizophrenia / schizoaffective disorder — beyond acute phase.",
+      "Maintenance phase: relapse prevention + functional restoration + comorbidity management.",
+      "Common: positive symptoms (residual hallucinations, delusions, thought disorder), negative symptoms (avolition, alogia, anhedonia, social withdrawal), cognitive deficits (attention, memory, executive function), depression / suicide risk (10%), substance use comorbidity (50%), metabolic syndrome (often medication-induced), cardiovascular disease (life expectancy reduced 15–20 years).",
+      "Risk of relapse: 60% within 1 year off medication."
+    ],
+    "redFlags": [
+      "Suicidal ideation (lifetime risk 5–10%).",
+      "Acute psychotic relapse — urgent intervention.",
+      "Neuroleptic malignant syndrome (rigidity + hyperthermia + autonomic) — emergency.",
+      "Severe tardive dyskinesia.",
+      "Cardiovascular event — metabolic + adverse drug effects.",
+      "Pregnancy — maintain treatment; fetal antipsychotic exposure / neonatal extrapyramidal symptoms.",
+      "Catatonia."
+    ],
+    "diagnostics": [
+      {
+        "test": "Symptom monitoring (PANSS / BPRS or clinical interview).",
+        "rationale": "Track activity."
+      },
+      {
+        "test": "Substance use screen.",
+        "rationale": "Common comorbidity."
+      },
+      {
+        "test": "Annual: BMI + waist + BP + lipids + glucose + HbA1c + ECG (QT).",
+        "rationale": "Metabolic + cardiac monitoring."
+      },
+      {
+        "test": "Clozapine: weekly FBC × 18 weeks → 2-weekly → monthly + ECG + troponin + cardiac symptoms — agranulocytosis + myocarditis monitoring.",
+        "rationale": "Required surveillance."
+      },
+      {
+        "test": "AIMS / Glazov scale for tardive dyskinesia screening every 6 months.",
+        "rationale": "Detect TD."
+      }
+    ],
+    "management": [
+      {
+        "step": "Antipsychotic maintenance — continue 2-5 years after first episode",
+        "detail": "After first episode: 2 years minimum; multiple episodes: 5+ years or indefinite. Patient-centred shared decision-making. Atypical antipsychotic preferred over first-generation (less EPS / TD; though metabolic risk)."
+      },
+      {
+        "step": "Long-acting injectable (LAI) — strong adherence aid",
+        "detail": "Aripiprazole maintena (4-weekly), risperidone Consta (2-weekly), paliperidone (4-weekly or 3-monthly Trinza or 6-monthly Hafyera), olanzapine pamoate (LAI). Significantly reduce relapse + rehospitalisation. Offer EARLY (after first episode), not after multiple relapses."
+      },
+      {
+        "step": "Treatment-resistant schizophrenia (TRS) — CLOZAPINE",
+        "detail": "Definition: failure of 2 adequate antipsychotic trials. Clozapine is THE most effective antipsychotic + UNIQUELY effective for TRS + reduces suicidality. Side effects: agranulocytosis (monitoring), seizures, myocarditis, metabolic, hypersalivation, constipation (severe — fatal), sedation. Combine with sulpiride / risperidone if partial response."
+      },
+      {
+        "step": "Manage side effects",
+        "detail": "EPS: anticholinergic (procyclidine), switch agent. Akathisia: propranolol / mirtazapine / switch. Tardive dyskinesia: VMAT-2 inhibitor (valbenazine / deutetrabenazine — newer evidence). NMS: stop antipsychotic + supportive + dantrolene / bromocriptine."
+      },
+      {
+        "step": "Metabolic + cardiovascular intervention",
+        "detail": "Healthy lifestyle programmes; metformin for antipsychotic-induced weight gain; statin + BP control; smoking cessation (very high prevalence)."
+      },
+      {
+        "step": "Psychosocial intervention",
+        "detail": "Cognitive behavioural therapy for psychosis (CBTp); family interventions; social skills training; supported employment; cognitive remediation; peer support."
+      },
+      {
+        "step": "Treat comorbidity",
+        "detail": "Depression: SSRI (some QTc + interactions). Anxiety: avoid benzodiazepine long-term. Substance use: integrated dual diagnosis treatment. PTSD: trauma-focused therapy."
+      },
+      {
+        "step": "Pregnancy + breastfeeding",
+        "detail": "Continue antipsychotic (relapse risk > medication risk in most cases). Some agents safer (olanzapine, quetiapine, aripiprazole); folate; specialist perinatal psychiatry. Neonatal extrapyramidal symptoms / sedation possible — neonatology aware."
+      },
+      {
+        "step": "Physical health checks + transition",
+        "detail": "Annual physical health check (often poor in standard psychiatric care). Smoking cessation. Dental. Adolescent-adult / adult-elderly care transitions. Family + carer support."
+      },
+      {
+        "step": "Advance care + crisis planning",
+        "detail": "Co-produced crisis plan; advance statements; emergency contact + community team; named worker / care coordinator."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE CG178 Psychosis + schizophrenia in adults; APA Practice Guideline for Schizophrenia; Maudsley Prescribing Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "bipolar-disorder-maintenance-treatment",
+    "title": "Bipolar disorder — long-term maintenance + relapse prevention",
+    "icd10": [
+      "F31"
+    ],
+    "domains": [
+      "psychiatry",
+      "mental-health",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "sex": "any"
+    },
+    "presentation": [
+      "Recurrent mood episodes — bipolar I (mania ± depression) or bipolar II (hypomania + depression).",
+      "Maintenance phase: euthymic but lifelong relapse risk; functional impairment; cognitive symptoms; comorbidities (anxiety 60%, substance use 40%, ADHD 20%, eating disorders, PTSD).",
+      "Suicide risk lifetime 15–20% (highest of all psychiatric disorders).",
+      "Cardiovascular + metabolic premature mortality."
+    ],
+    "redFlags": [
+      "Mixed features (depression + hyperarousal / racing thoughts) — high suicide risk.",
+      "Rapid cycling (≥ 4 episodes/year).",
+      "Psychotic depression / mania.",
+      "Suicidal ideation with plan.",
+      "Switch to mania on antidepressant (avoid antidepressant monotherapy).",
+      "Pregnancy + bipolar — relapse risk + medication selection.",
+      "Lithium toxicity / discontinuation rebound."
+    ],
+    "diagnostics": [
+      {
+        "test": "Lifetime mood pattern + family history (often delays diagnosis).",
+        "rationale": "Diagnostic clarification."
+      },
+      {
+        "test": "Mood charting + symptom rating (e.g. YMRS, MADRS).",
+        "rationale": "Track + relapse prevention."
+      },
+      {
+        "test": "Substance use + ADHD + anxiety screening.",
+        "rationale": "Common comorbidity."
+      },
+      {
+        "test": "Annual: BMI + lipids + glucose + thyroid + ECG + lithium levels (if on Li); U&E + creatinine + Ca (lithium effects).",
+        "rationale": "Mood stabiliser monitoring + metabolic."
+      },
+      {
+        "test": "Pregnancy test in women starting valproate.",
+        "rationale": "Teratogen avoidance."
+      }
+    ],
+    "management": [
+      {
+        "step": "Lithium — first-line for maintenance + acute mania + bipolar depression",
+        "detail": "Target trough 0.6–0.8 mmol/L (some up to 1.0). Reduces relapse + suicide. Side effects: tremor, polydipsia / polyuria (nephrogenic DI), hypothyroidism, weight gain, cognitive, GI, renal toxicity (long-term). Monitor U&E + Ca + thyroid + lithium every 3–6 months. Avoid NSAID + thiazide + ACEi (raise levels)."
+      },
+      {
+        "step": "Valproate — second-line for maintenance",
+        "detail": "500–2000 mg/day; trough 50–125 mg/L. AVOID in women of childbearing potential — major teratogen (10% NTD + behavioural). Pregnancy Prevention Programme required. Side effects: weight gain, alopecia, tremor, hepatotoxicity, pancreatitis, PCOS."
+      },
+      {
+        "step": "Lamotrigine — bipolar depression maintenance",
+        "detail": "25 mg → 200 mg over 6 weeks (slow titration to avoid SJS). Best for depressive predominance. AVOID combining with valproate (increases lamotrigine levels markedly)."
+      },
+      {
+        "step": "Atypical antipsychotic — single or combination",
+        "detail": "Quetiapine (mania + depression + maintenance), olanzapine, risperidone, aripiprazole, asenapine, lurasidone (bipolar depression), cariprazine (bipolar depression). LAI considered for non-adherent. Metabolic monitoring."
+      },
+      {
+        "step": "Avoid antidepressant monotherapy",
+        "detail": "Risk of mania induction + rapid cycling. If used, combine with mood stabiliser; consider lithium-augmentation or atypical antipsychotic (quetiapine + lurasidone) for bipolar depression."
+      },
+      {
+        "step": "ECT for severe / refractory / catatonic / psychotic mania or depression",
+        "detail": "Highly effective; safe in pregnancy + elderly + treatment-resistant."
+      },
+      {
+        "step": "Psychological therapies + lifestyle",
+        "detail": "CBT for bipolar; interpersonal social rhythm therapy (IPSRT); family-focused therapy; psychoeducation. Sleep hygiene + regular routine + circadian regulation. Exercise. Avoid alcohol + recreational drugs. Identify + manage early warning signs (mood diary, family early alert)."
+      },
+      {
+        "step": "Comorbidity management",
+        "detail": "Anxiety, substance use, ADHD — careful selection avoiding mood destabilisation. Treat physical health proactively (CV, metabolic, thyroid)."
+      },
+      {
+        "step": "Pregnancy planning",
+        "detail": "Specialist perinatal psychiatry. Lithium relatively safe (avoid 1st trimester if possible; reduce dose in 3rd; postpartum LITHIUM PROPHYLAXIS reduces severe relapse). Valproate CONTRAINDICATED. Lamotrigine safer. ECT safe in pregnancy. Postpartum is highest-risk period for severe relapse / postpartum psychosis (50% recurrence)."
+      },
+      {
+        "step": "Suicide-risk reduction",
+        "detail": "Lithium has independent anti-suicidal effect. Means restriction. Crisis planning. Family involvement. Safety planning at every visit."
+      },
+      {
+        "step": "Patient + family education + peer support",
+        "detail": "Comprehensive psychoeducation; mood charting; relapse prevention plan; peer support (Bipolar UK; DBSA). Workplace / educational accommodation."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE CG185 Bipolar Disorder; CANMAT-ISBD Bipolar Guidelines; APA Practice Guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "prostate-cancer-screening-treatment",
+    "title": "Prostate cancer — screening + risk-stratified treatment",
+    "icd10": [
+      "C61"
+    ],
+    "domains": [
+      "oncology",
+      "urology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 40,
+      "sex": "male"
+    },
+    "presentation": [
+      "Often asymptomatic; detected on PSA / DRE screening.",
+      "Local: LUTS (overlap with BPH), haematuria, haematospermia.",
+      "Advanced: bone pain (skeletal metastases — bone scan), pathological fracture, spinal cord compression, lymphoedema, anaemia, weight loss.",
+      "Risk factors: age, family history, BRCA1/2 + Lynch syndrome (increased risk + earlier onset + more aggressive), Black African heritage."
+    ],
+    "redFlags": [
+      "Suspected spinal cord compression — urgent MRI + dexamethasone + radiotherapy.",
+      "Severe bone pain — palliative radiotherapy.",
+      "Acute urinary retention from local disease.",
+      "Massive haematuria.",
+      "Anaemia / bone marrow infiltration."
+    ],
+    "diagnostics": [
+      {
+        "test": "Screening: PSA + digital rectal examination — discuss benefits/risks individualised; from age 50 (45 if Black or family history); STOP at age 70 / life expectancy < 10–15 years.",
+        "rationale": "Detection of clinically significant prostate cancer; overdiagnosis remains concern."
+      },
+      {
+        "test": "Suspicious PSA: multiparametric MRI prostate (FIRST) — PI-RADS 3-5 for biopsy.",
+        "rationale": "Avoids unnecessary biopsies; identifies clinically significant lesions."
+      },
+      {
+        "test": "MRI-guided / fusion biopsy of suspicious lesions; systematic biopsy.",
+        "rationale": "Histology + Gleason score / ISUP grade."
+      },
+      {
+        "test": "Staging: MRI prostate + lymph nodes; PSMA-PET (preferred) or bone scan + CT (high risk).",
+        "rationale": "Identify metastatic disease."
+      },
+      {
+        "test": "Genetic testing if family history / metastatic / atypical histology / young.",
+        "rationale": "BRCA / Lynch / HOXB13."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary team for ALL diagnoses",
+        "detail": "Urologist + oncologist + radiation oncologist + radiologist + pathologist."
+      },
+      {
+        "step": "Low-risk (PSA < 10, Gleason 6/ISUP 1, ≤ T2a) — active surveillance",
+        "detail": "Serial PSA + DRE + MRI ± repeat biopsy; treatment if progression. ProtecT trial — 10-year survival equivalent between active surveillance, surgery, radiation."
+      },
+      {
+        "step": "Intermediate / high-risk — definitive treatment",
+        "detail": "Radical prostatectomy (open / robotic) — younger / lower comorbidity. External beam radiotherapy + androgen deprivation therapy (ADT) for high-risk. Brachytherapy (low-dose-rate + high-dose-rate) alternative. Pelvic lymph node dissection per risk."
+      },
+      {
+        "step": "Metastatic hormone-sensitive prostate cancer (mHSPC) — TRIPLET therapy",
+        "detail": "ADT (GnRH agonist degarelix / leuprolide; or antagonist relugolix) + docetaxel + AR pathway inhibitor (abiraterone OR enzalutamide OR apalutamide OR darolutamide). Triplet superior to doublet (PEACE-1 + ARASENS)."
+      },
+      {
+        "step": "Castration-resistant prostate cancer (CRPC) — sequential novel agents",
+        "detail": "ARSI (abiraterone, enzalutamide, apalutamide, darolutamide); cabazitaxel; radium-223 for bone-metastatic; PARP inhibitor (olaparib, rucaparib, talazoparib) for BRCA-mutated; PSMA-targeted radioligand therapy (lutetium-177-PSMA — VISION trial); sipuleucel-T (limited use)."
+      },
+      {
+        "step": "Bone-targeted therapy + supportive",
+        "detail": "Zoledronate or denosumab monthly for bone metastases (reduce SREs). Vitamin D + calcium. Palliative radiotherapy. Spinal cord compression pathway. Pain management. Hot flushes (ADT) — venlafaxine / cyproterone."
+      },
+      {
+        "step": "Survivorship + late effects",
+        "detail": "Sexual function (PDE-5i, intracavernosal alprostadil, penile prosthesis); urinary continence; bone health (DEXA + bisphosphonate / denosumab on ADT); cardiovascular (ADT increases events); metabolic; depression. Survivorship clinic."
+      },
+      {
+        "step": "Family / genetic counselling",
+        "detail": "BRCA1/2 + multi-gene panel for family + treatment-defining (PARP inhibitor); cascade testing of first-degree relatives."
+      }
+    ],
+    "references": [
+      {
+        "label": "EAU + NCCN Prostate Cancer Guidelines; ProtecT trial; PEACE-1 + ARASENS + VISION trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]

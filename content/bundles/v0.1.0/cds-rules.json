@@ -7060,5 +7060,343 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "breast-cancer-biomarker-treatment",
+    "hook": "patient-view",
+    "type": "breast-cancer-biomarker-treatment",
+    "services": [
+      "vedamd-breast-cancer-detailed"
+    ],
+    "title": "Breast cancer — biomarker-guided treatment pathway",
+    "description": "Fires for confirmed breast cancer. Recommends triple assessment + biomarkers (ER/PR/HER2/Ki67/grade); BRCA testing per criteria; subtype-specific therapy (ER+ endocrine + CDK4/6i; HER2+ trastuzumab + pertuzumab; TNBC chemo + pembrolizumab + olaparib if BRCA); CT staging; PARP inhibitor / IO / ADC for metastatic; bone-modifying agents; fertility preservation. Reads context.breastCancer, context.histology, context.biomarkers, context.stage, context.brca — never patient identity.",
+    "references": [
+      {
+        "label": "ESMO + NCCN Breast Cancer"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C50",
+        "display": "Malignant neoplasm of breast",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "multiple-myeloma-dara-vrd-asct",
+    "hook": "patient-view",
+    "type": "multiple-myeloma-dara-vrd-asct",
+    "services": [
+      "vedamd-multiple-myeloma"
+    ],
+    "title": "Multiple myeloma — Dara-VRd induction + ASCT + lenalidomide maintenance",
+    "description": "Fires for confirmed multiple myeloma (CRAB / SLiM-CRAB criteria). Recommends specialist haematology + risk-stratification (R-ISS + cytogenetics); transplant-eligible: Dara-VRd × 4 → melphalan + autologous SCT → consolidation → lenalidomide maintenance; transplant-ineligible: Dara-Rd. Supportive: bisphosphonate, hydration, prophylactic anti-viral / PJP / antifungal, hold cast nephropathy. BCMA-targeted for triple-class refractory. Reads context.crabCriteria, context.cytogenetics, context.transplantEligibility, context.creatinine — never patient identity.",
+    "references": [
+      {
+        "label": "IMWG + ESMO + NCCN MM Guidelines; PERSEUS + MAIA"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C90.0",
+        "display": "Multiple myeloma",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "kidney-transplant-immunosuppression-bk-cmv",
+    "hook": "patient-view",
+    "type": "kidney-transplant-immunosuppression-bk-cmv",
+    "services": [
+      "vedamd-kidney-transplant"
+    ],
+    "title": "Kidney transplant — maintenance + viral surveillance + rejection workup",
+    "description": "Fires for post-renal-transplant patient. Recommends induction (basiliximab / ATG) + maintenance triple (tacrolimus + MMF + steroid); co-trimoxazole 6–12 months PJP; CMV/BK PCR surveillance; biopsy unexplained creatinine rise; treat ACR with high-dose steroid + ATG for resistant; AMR with PEX + IVIG + rituximab; cardiovascular + skin cancer + bone surveillance lifelong. Reads context.transplantDate, context.creatinine, context.tacroLevel, context.viralLoads, context.dsa — never patient identity.",
+    "references": [
+      {
+        "label": "KDIGO Kidney Transplant Recipient"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z94.0",
+        "display": "Kidney transplant status",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "ra-treat-to-target-biologic",
+    "hook": "patient-view",
+    "type": "ra-treat-to-target-biologic",
+    "services": [
+      "vedamd-rheumatoid-arthritis"
+    ],
+    "title": "Rheumatoid arthritis — early MTX + treat-to-target; biologic if inadequate",
+    "description": "Fires for confirmed RA (ACR/EULAR 2010). Recommends EARLY methotrexate ≤ 3 months of symptom onset; treat-to-target DAS28 / CDAI remission; combination cDMARD (triple therapy) or anti-TNF / rituximab / abatacept / tocilizumab; JAK inhibitor caution older / CV risk; smoking cessation; CV + bone surveillance; pregnancy-compatible alternatives. Reads context.rfStatus, context.antiCcp, context.das28, context.smoking, context.priorBiologic — never patient identity.",
+    "references": [
+      {
+        "label": "EULAR + ACR RA Recommendations"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M06.9",
+        "display": "Rheumatoid arthritis unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "axial-spa-exercise-biologic",
+    "hook": "patient-view",
+    "type": "axial-spa-exercise-biologic",
+    "services": [
+      "vedamd-ankylosing-spondylitis"
+    ],
+    "title": "Axial spondyloarthritis — exercise + NSAID + anti-TNF / IL-17 if inadequate",
+    "description": "Fires for confirmed axial SpA (ASAS criteria). Recommends structured daily exercise; continuous NSAID; anti-TNF / IL-17 for inadequate response (or upadacitinib oral); uveitis management; spinal fracture precautions (low-energy fracture in fused spine — CT/MRI not just X-ray); anaesthetic precautions for fused cervical. Reads context.backPainInflammatory, context.sacroiliitis, context.crp, context.hlaB27, context.priorTherapy — never patient identity.",
+    "references": [
+      {
+        "label": "ASAS-EULAR Recommendations 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "M45",
+        "display": "Ankylosing spondylitis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "psoriatic-arthritis-mda-target",
+    "hook": "patient-view",
+    "type": "psoriatic-arthritis-mda-target",
+    "services": [
+      "vedamd-psoriatic-arthritis"
+    ],
+    "title": "Psoriatic arthritis — treat-to-target minimal disease activity",
+    "description": "Fires for confirmed PsA (CASPAR criteria). Recommends MTX + intra-articular steroid for peripheral; anti-TNF / IL-17 / IL-23 (guselkumab) for inadequate response or axial / enthesitis; JAK inhibitor for refractory (caution older + CV). Treat skin in parallel. Cardiovascular + metabolic risk management. Reads context.casparMet, context.peripheral, context.axial, context.enthesitis, context.skin — never patient identity.",
+    "references": [
+      {
+        "label": "EULAR + GRAPPA PsA 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "L40.5",
+        "display": "Arthropathic psoriasis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "cerebral-palsy-mdt-surveillance",
+    "hook": "patient-view",
+    "type": "cerebral-palsy-mdt-surveillance",
+    "services": [
+      "vedamd-cerebral-palsy"
+    ],
+    "title": "Cerebral palsy — multidisciplinary surveillance + intervention",
+    "description": "Fires for child / adult with CP. Recommends GMFCS classification; early intervention < 24 months; annual hip + spine surveillance; spasticity management (PT + botulinum + intrathecal baclofen + SDR); communication device; nutrition / GERD / aspiration management; epilepsy management; pain assessment in non-communicative; transition adult care. Reads context.cpType, context.gmfcs, context.epilepsy, context.feeding, context.painSigns — never patient identity.",
+    "references": [
+      {
+        "label": "NICE NG62 + AACPDM Care Pathways"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G80",
+        "display": "Cerebral palsy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "down-syndrome-newborn-pathway",
+    "hook": "patient-view",
+    "type": "down-syndrome-newborn-pathway",
+    "services": [
+      "vedamd-down-syndrome"
+    ],
+    "title": "Down syndrome — newborn + lifelong surveillance",
+    "description": "Fires for newborn / child / adult with trisomy 21. Recommends newborn echo + CXR + audiology + ophthalmology + TSH + FBC; lifelong surveillance for cardiac, thyroid, coeliac, OSA, atlantoaxial, leukaemia; childhood + adult mental health screen + dementia / Alzheimer screen from age 30. Reads context.ageYears, context.cardiacAnatomy, context.tshTrend, context.dementiaScreen — never patient identity.",
+    "references": [
+      {
+        "label": "AAP / DSMIG-USA Health Supervision 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q90",
+        "display": "Down syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "autism-diagnosis-early-intervention",
+    "hook": "patient-view",
+    "type": "autism-diagnosis-early-intervention",
+    "services": [
+      "vedamd-autism-spectrum"
+    ],
+    "title": "Autism spectrum — ADOS-2 + ADI-R + early intervention",
+    "description": "Fires for suspected ASD. Recommends standardised diagnostic (ADOS-2 + ADI-R); developmental + cognitive + speech assessment; genetic testing; early intervention < 24 months; sensory + communication + behavioural support; comorbidity treatment; family-centred + neurodiversity-affirming approach; adult assessment + post-diagnostic support. Reads context.ageMonths, context.adosScore, context.communication, context.repetitiveBehaviour, context.cognitiveLevel — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG170 + CG142 ASD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F84.0",
+        "display": "Autistic disorder",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "t1d-cgm-aid-hybrid-closed-loop",
+    "hook": "patient-view",
+    "type": "t1d-cgm-aid-hybrid-closed-loop",
+    "services": [
+      "vedamd-t1d-pump"
+    ],
+    "title": "T1D pump + CGM / hybrid closed-loop pathway",
+    "description": "Fires for adult / paediatric T1DM patient. Recommends carbohydrate counting + insulin regimen; CGM for ALL (Dexcom / Libre / Guardian); insulin pump for refractory or preference; hybrid closed-loop AID (Medtronic 780G, Tandem Control-IQ, Omnipod 5, CamAPS) — improved TIR + reduced hypoglycaemia; glucagon nasal / IM training for severe hypo; preconception HbA1c < 6.5%. Reads context.hba1c, context.timeInRange, context.severeHypoglycaemia, context.pumpUse, context.pregnancyPlanning — never patient identity.",
+    "references": [
+      {
+        "label": "ADA + ISPAD + NICE NG17/NG18"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E10",
+        "display": "Type 1 diabetes mellitus",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "schizophrenia-lai-clozapine",
+    "hook": "patient-view",
+    "type": "schizophrenia-lai-clozapine",
+    "services": [
+      "vedamd-schizophrenia-maintenance"
+    ],
+    "title": "Schizophrenia — early LAI offer; clozapine for TRS",
+    "description": "Fires for stable schizophrenia maintenance. Recommends offer LAI EARLY after first episode (reduces relapse); clozapine for treatment-resistant (2+ failed antipsychotics) — with mandatory FBC + ECG monitoring; metabolic + cardiac surveillance; psychosocial intervention (CBTp + family); physical health checks; suicide-risk assessment. Reads context.responseLevel, context.episodes, context.adherence, context.metabolic, context.suicideRisk — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG178; Maudsley"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F20",
+        "display": "Schizophrenia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "bipolar-lithium-maintenance",
+    "hook": "patient-view",
+    "type": "bipolar-lithium-maintenance",
+    "services": [
+      "vedamd-bipolar-maintenance"
+    ],
+    "title": "Bipolar disorder — lithium first-line maintenance; avoid antidepressant monotherapy",
+    "description": "Fires for bipolar disorder maintenance phase. Recommends lithium first-line (reduces relapse + suicide); valproate avoided in women of childbearing potential without PPP; lamotrigine for depressive predominance; atypical antipsychotic alternatives; AVOID antidepressant monotherapy; ECT severe / refractory; CBT-bipolar + family-focused therapy; pregnancy planning; postpartum lithium prophylaxis. Reads context.bipolarType, context.predominantPolarity, context.priorEpisodes, context.pregnancyPlan, context.suicideRisk — never patient identity.",
+    "references": [
+      {
+        "label": "NICE CG185; CANMAT-ISBD Bipolar"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F31.9",
+        "display": "Bipolar disorder unspecified",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "prostate-cancer-risk-stratified",
+    "hook": "patient-view",
+    "type": "prostate-cancer-risk-stratified",
+    "services": [
+      "vedamd-prostate-cancer-detail"
+    ],
+    "title": "Prostate cancer — risk-stratified treatment + active surveillance for low-risk",
+    "description": "Fires for confirmed prostate cancer. Recommends MRI + risk stratification (D'Amico / NCCN); active surveillance for low-risk; radical prostatectomy / EBRT + ADT for intermediate-high; triplet (ADT + chemotherapy + ARSI) for mHSPC; PARP inhibitor for BRCA-mutated CRPC; PSMA-PET + lutetium-177-PSMA; bone-modifying agents; sexual + continence rehabilitation; survivorship + late-effect surveillance. Reads context.gleason, context.psa, context.metastatic, context.brcaStatus, context.functionalStatus — never patient identity.",
+    "references": [
+      {
+        "label": "EAU + NCCN Prostate Cancer"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C61",
+        "display": "Malignant neoplasm of prostate",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]
