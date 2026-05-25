@@ -60992,5 +60992,1145 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "ventricular-tachycardia-vfib-management",
+    "title": "Sustained ventricular tachycardia / ventricular fibrillation",
+    "icd10": [
+      "I47.2",
+      "I49.0"
+    ],
+    "domains": [
+      "cardiology",
+      "emergency",
+      "critical-care",
+      "resuscitation"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Monomorphic VT: regular wide-QRS tachycardia > 100 bpm; sustained > 30 s or with haemodynamic instability.",
+      "Polymorphic VT: torsades de pointes — QT-prolongation-related (drugs, electrolyte, congenital LQTS); non-TdP polymorphic in ischaemia / heart failure.",
+      "VF: chaotic; pulseless; cardiac arrest.",
+      "Aetiology: structural heart disease (ischaemia/post-MI scar, cardiomyopathy), inherited channelopathy (LQTS, Brugada, CPVT), electrolyte (K+, Mg2+), drugs (QT-prolonging), idiopathic."
+    ],
+    "redFlags": [
+      "Haemodynamic instability — IMMEDIATE DC cardioversion / defibrillation.",
+      "Recurrent VT / VF (electrical storm — ≥ 3 episodes in 24 h).",
+      "Brugada syndrome with VF — implantable defibrillator + family screen.",
+      "Post-MI new VT — risk for sudden death; refer EP.",
+      "Congenital LQTS with TdP — bradycardia + electrolyte + drug-trigger reversal."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG during arrhythmia + after restoration.",
+        "rationale": "Confirm rhythm + QT + Brugada / LQTS pattern."
+      },
+      {
+        "test": "U&E (K+, Mg2+, Ca2+), troponin, glucose, ABG.",
+        "rationale": "Reversible electrolyte + ischaemia."
+      },
+      {
+        "test": "TTE — LV function + structural disease.",
+        "rationale": "Identify underlying substrate."
+      },
+      {
+        "test": "Coronary angiography for ischaemia-driven.",
+        "rationale": "Revascularisation."
+      },
+      {
+        "test": "Cardiac MRI — scar pattern (post-MI vs cardiomyopathy vs ARVC vs sarcoid).",
+        "rationale": "Substrate."
+      },
+      {
+        "test": "Genetic testing for inherited (LQTS, CPVT, Brugada, HCM, ARVC).",
+        "rationale": "Family screening."
+      },
+      {
+        "test": "Holter / implantable loop / EP study.",
+        "rationale": "Ventricular ectopy burden + inducibility."
+      }
+    ],
+    "management": [
+      {
+        "step": "Pulseless VT / VF — defibrillate IMMEDIATELY + ACLS",
+        "detail": "Biphasic 150–200 J; continue CPR; adrenaline 1 mg every 3–5 min from 2nd shock; amiodarone 300 mg IV after 3 shocks (refractory). Identify + reverse causes (4 Hs + 4 Ts)."
+      },
+      {
+        "step": "Sustained monomorphic VT — haemodynamics-driven",
+        "detail": "Unstable (hypotension / pulmonary oedema / chest pain / altered consciousness): synchronised DC cardioversion 100–200 J. Stable: IV amiodarone 150 mg bolus then 1 mg/min × 6 h then 0.5 mg/min × 18 h; OR procainamide 20 mg/min loading (preferred per recent evidence — PROCAMIO); OR sotalol IV (caution QT); OR lignocaine 1–1.5 mg/kg (older; preferred in MI context). Beta-blocker also useful."
+      },
+      {
+        "step": "Torsades de pointes",
+        "detail": "Magnesium sulphate 2 g IV bolus + 2 g/h infusion. Correct K+ + Mg2+. Stop QT-prolonging drugs (list current medications; check Liverpool QT database). Isoprenaline / overdrive pacing to shorten QT if bradycardia-dependent."
+      },
+      {
+        "step": "Electrical storm",
+        "detail": "Sedation (propofol / midazolam) + intubation reduces sympathetic drive. Amiodarone + beta-blocker. Stellate ganglion block for refractory. Catheter ablation (epicardial / endocardial). Mechanical circulatory support (ECMO, Impella) as bridge."
+      },
+      {
+        "step": "Reverse + secondary prevention",
+        "detail": "Treat ischaemia (revascularisation); correct electrolyte; stop QT-prolonging drug. Optimise heart failure therapy. Beta-blocker + ACE inhibitor / ARB + sacubitril-valsartan for HFrEF; SGLT2 inhibitor."
+      },
+      {
+        "step": "Implantable cardioverter-defibrillator (ICD)",
+        "detail": "Secondary prevention: ICD for survivors of cardiac arrest, sustained VT with structural heart disease. Primary prevention: LVEF ≤ 35% on optimal HF therapy ≥ 3 months (post-MI ≥ 40 days); inherited channelopathy with high risk; HCM with high-risk features; ARVC; sarcoidosis with scar. Wearable cardioverter defibrillator (WCD, LifeVest) as bridge."
+      },
+      {
+        "step": "Catheter ablation",
+        "detail": "Idiopathic VT (outflow tract, fascicular) — often curative. Scar-related VT (post-MI, cardiomyopathy, ARVC) — substrate-based ablation; reduces ICD shocks + improves outcomes."
+      },
+      {
+        "step": "Inherited channelopathy specifics",
+        "detail": "LQTS: beta-blocker (nadolol or propranolol); avoid QT-prolonging drugs; left cardiac sympathetic denervation for refractory. Brugada: ICD; quinidine to suppress; avoid febrile illness + offending drugs. CPVT: beta-blocker + flecainide; consider ICD; left cardiac sympathetic denervation. Family screening + cascade genetic testing."
+      },
+      {
+        "step": "Genetic counselling + family screening",
+        "detail": "Inherited channelopathy / cardiomyopathy — family screening of first-degree relatives with ECG + echo ± genetic testing. Lifestyle modification (avoid trigger sports for some)."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC Guidelines for Management of Patients with Ventricular Arrhythmias + Prevention of Sudden Cardiac Death (2022); AHA/ACC/HRS VA-SCD"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "infective-endocarditis-detailed-management",
+    "title": "Infective endocarditis — comprehensive management",
+    "icd10": [
+      "I33.0"
+    ],
+    "domains": [
+      "cardiology",
+      "infectious-disease",
+      "cardiothoracic",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Fever + new / changing murmur + embolic phenomena + persistent bacteraemia.",
+      "Modified Duke criteria for diagnosis (major: blood cultures + endocardial involvement; minor: predisposition, fever, vascular phenomena, immunologic, microbiologic).",
+      "Common organisms: Staph aureus (most common; especially IV drug users + healthcare-associated), Streptococcus viridans (subacute on damaged native valves), Enterococcus (elderly + post-procedural), Coagulase-negative staph (prosthetic), HACEK (rare), culture-negative (5–15% — fastidious, prior antibiotic).",
+      "Risk: prior IE, prosthetic valve, congenital heart disease, structural valve disease, IV drug use, immunosuppression, indwelling line / pacemaker / ICD, recent dental / GI / GU procedure."
+    ],
+    "redFlags": [
+      "Septic shock / decompensated heart failure.",
+      "Large mobile vegetation > 10 mm — high embolic risk.",
+      "Cerebral embolic event (35% have CNS complications) — caution timing of surgery.",
+      "Severe perivalvular extension (abscess, fistula, pseudoaneurysm).",
+      "Persistent bacteraemia despite appropriate antibiotic.",
+      "Suspected prosthetic-valve IE — high mortality + complex management.",
+      "Right-sided IE in IVDU — septic pulmonary emboli."
+    ],
+    "diagnostics": [
+      {
+        "test": "Blood cultures × 3 sets from different sites + 30 min apart BEFORE antibiotic.",
+        "rationale": "Identify organism — basis of management."
+      },
+      {
+        "test": "TTE first; TOE if TTE non-diagnostic / negative + clinical suspicion remains / prosthetic valve / complications suspected.",
+        "rationale": "Identify vegetation + valve abnormality + perivalvular complications."
+      },
+      {
+        "test": "PET-CT for diagnostic uncertainty (prosthetic valve, CIED).",
+        "rationale": "Adjunctive — increasingly important in 2023 ESC criteria."
+      },
+      {
+        "test": "FBC, CRP, ESR, U&E, urinalysis, fungal markers if culture-negative.",
+        "rationale": "Severity + culture-negative workup."
+      },
+      {
+        "test": "Dental + brain MRI + CT body for embolic search.",
+        "rationale": "Source + embolic complications."
+      },
+      {
+        "test": "Bartonella, Coxiella, Brucella, Mycoplasma, Tropheryma whippelii serology for culture-negative.",
+        "rationale": "Atypical organisms."
+      }
+    ],
+    "management": [
+      {
+        "step": "Endocarditis team — multidisciplinary",
+        "detail": "Cardiology + ID + cardiothoracic surgery + microbiology + neurology + radiology — joint care reduces mortality."
+      },
+      {
+        "step": "Empirical antibiotic ONLY after blood cultures",
+        "detail": "Native valve / community: vancomycin + ceftriaxone OR ampicillin + gentamicin + flucloxacillin. Prosthetic valve / healthcare: vancomycin + gentamicin + rifampicin + cefepime. Adjust to identified organism."
+      },
+      {
+        "step": "Targeted antibiotic regimens",
+        "detail": "Strep viridans / bovis (penicillin-susceptible): IV penicillin G 12–18 MU/24 h × 4 weeks (or 2 weeks combined with gentamicin). Staph aureus (MSSA): flucloxacillin 12 g/24 h × 4–6 weeks. MRSA: vancomycin OR daptomycin × 4–6 weeks. Enterococcus: ampicillin + gentamicin × 4–6 weeks (or ampicillin + ceftriaxone for HLAR). HACEK: ceftriaxone × 4–6 weeks. Prosthetic valve: 6 weeks + rifampicin."
+      },
+      {
+        "step": "Surgical indications",
+        "detail": "Heart failure (acute severe regurgitation); uncontrolled infection (persistent bacteraemia, perivalvular extension, abscess, fungal/MDRO); embolism prevention (vegetation > 10 mm with prior embolism or > 15 mm); fungal endocarditis (always surgery)."
+      },
+      {
+        "step": "Surgical timing",
+        "detail": "Emergency (< 24 h): refractory heart failure, severe acute mitral / aortic regurgitation with shock. Urgent (within days): uncontrolled infection. Elective: large vegetation + healed embolic. Stroke complicates — re-image; usually safe to operate but multi-disciplinary decision per stroke type + size."
+      },
+      {
+        "step": "CIED-related IE",
+        "detail": "Complete device + lead extraction; antibiotics 4–6 weeks; new device after 14 days negative cultures + on opposite side / epicardial."
+      },
+      {
+        "step": "Anticoagulation",
+        "detail": "Mechanical valve IE: continue (stroke risk). Discontinue all anticoagulation in S. aureus IE with intracerebral haemorrhage / large embolic stroke."
+      },
+      {
+        "step": "Long-term + secondary prevention",
+        "detail": "Dental + IDU intervention; CIED hygiene; prophylactic antibiotic prior to high-risk dental procedures in IE-survivors / prosthetic / cyanotic CHD (per current restricted criteria). Echo follow-up; valve replacement surveillance."
+      },
+      {
+        "step": "Specific scenarios",
+        "detail": "Right-sided IE in IVDU (tricuspid): often medical only (uncomplicated MSSA); surgery for refractory / large vegetation. Culture-negative: empirical doxycycline + ceftriaxone for Coxiella / Bartonella; Bartonella PCR / serology."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC Guidelines for the Management of Endocarditis (2023); AHA/IDSA Endocarditis"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "hypertrophic-cardiomyopathy-management",
+    "title": "Hypertrophic cardiomyopathy — diagnosis + risk stratification",
+    "icd10": [
+      "I42.1",
+      "I42.2"
+    ],
+    "domains": [
+      "cardiology",
+      "genetics"
+    ],
+    "population": {
+      "minAgeYears": 5,
+      "sex": "any"
+    },
+    "presentation": [
+      "Most common inherited cardiac disease (1 in 500).",
+      "Asymptomatic — often family screening / pre-participation.",
+      "Symptomatic: dyspnoea, chest pain, palpitations, syncope, sudden cardiac death.",
+      "Subtypes: obstructive HCM (~70% — LVOTO at rest or on provocation > 30 mmHg); non-obstructive HCM; apical HCM (Yamaguchi).",
+      "Risk: sudden death (especially adolescents + young adults), heart failure, atrial fibrillation, stroke, atypical chest pain, exercise limitation."
+    ],
+    "redFlags": [
+      "Sustained / inducible ventricular tachycardia / aborted sudden death.",
+      "Severe LVOTO (gradient > 50 mmHg + symptoms).",
+      "End-stage 'burnout' phase with LV dysfunction / dilation.",
+      "Atrial fibrillation in HCM — high stroke risk.",
+      "Family history of sudden death — screening + risk stratification."
+    ],
+    "diagnostics": [
+      {
+        "test": "ECG (LVH + repolarisation, deep narrow Q waves, T-wave inversion).",
+        "rationale": "Screening abnormality in 75–95%."
+      },
+      {
+        "test": "TTE — wall thickness ≥ 15 mm (or ≥ 13 mm with family history) without explanatory load; LVOTO at rest + Valsalva; systolic anterior motion of mitral valve.",
+        "rationale": "Diagnostic."
+      },
+      {
+        "test": "Cardiac MRI — wall thickness measurement + LGE (scar — risk marker).",
+        "rationale": "Disease characterisation + risk."
+      },
+      {
+        "test": "Holter monitoring 24–48 h for ventricular arrhythmia.",
+        "rationale": "Sudden-death risk."
+      },
+      {
+        "test": "Exercise stress echocardiography for LVOTO + ambulatory BP.",
+        "rationale": "Provocable obstruction + functional capacity + abnormal BP response."
+      },
+      {
+        "test": "Genetic testing (sarcomeric panel) + cascade family screening.",
+        "rationale": "Identification of asymptomatic relatives + planning."
+      },
+      {
+        "test": "Calculate HCM Risk-SCD score (ESC) or ACC/AHA enhanced major risk markers.",
+        "rationale": "5-year sudden-death risk → ICD decision."
+      }
+    ],
+    "management": [
+      {
+        "step": "Lifestyle + exercise counselling",
+        "detail": "Avoid competitive / high-intensity sport (especially severe LVOTO, family SCD history, sustained arrhythmia). Moderate recreational exercise increasingly endorsed (LIVE-HCM, RESET-HCM trials). Smoking cessation. Maintain hydration."
+      },
+      {
+        "step": "Symptomatic LVOT obstruction — first-line beta-blocker / non-DHP CCB",
+        "detail": "Bisoprolol or metoprolol up-titrated. Verapamil or diltiazem (caution — avoid in resting LVOT gradient > 100 mmHg). Avoid vasodilators (DHP CCB, ACE inhibitor, diuretic over-treatment, nitrates) — worsen LVOTO."
+      },
+      {
+        "step": "Mavacamten — disease-modifying for symptomatic obstructive HCM (NYHA II-III)",
+        "detail": "Cardiac myosin inhibitor; 2.5–15 mg daily. REMS programme — echo monitoring (LVEF < 50% threshold for hold). EXPLORER-HCM + VALOR-HCM trials. Aficamten — newer alternative."
+      },
+      {
+        "step": "Septal reduction therapy for refractory symptomatic LVOTO",
+        "detail": "Surgical septal myectomy (preferred, gold standard); alcohol septal ablation (for higher surgical risk). Specialist HCM centre."
+      },
+      {
+        "step": "ICD for sudden-death prevention",
+        "detail": "Secondary prevention: SCD survivor, sustained VT. Primary prevention based on HCM Risk-SCD score (ESC > 6%) or ACC/AHA major risk markers (family SCD, massive LVH ≥ 30 mm, recent syncope, abnormal BP response, NSVT > 3 beats > 120 bpm, extensive LGE, LV aneurysm)."
+      },
+      {
+        "step": "Atrial fibrillation",
+        "detail": "Anticoagulation — DOAC / warfarin (irrespective of CHA2DS2-VASc); HCM is independent stroke risk factor. Rhythm control preferred; catheter ablation often needed; amiodarone."
+      },
+      {
+        "step": "End-stage HCM (LV dysfunction)",
+        "detail": "Standard heart-failure therapy; consider heart transplantation."
+      },
+      {
+        "step": "Family screening + genetic counselling",
+        "detail": "First-degree relatives — ECG + echocardiography every 5 years (or earlier with clinical concerns) starting at age 10–12; genetic testing if proband variant identified; positive carriers screened more frequently."
+      },
+      {
+        "step": "Pregnancy + HCM",
+        "detail": "Most women tolerate pregnancy well; multidisciplinary care. Risk varies by symptoms + LV function + arrhythmia. Avoid vasodilators; continue beta-blocker. Vaginal delivery preferred for most; epidural cautious (gradient may rise)."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC Guidelines for the Management of Cardiomyopathies (2023); ACC/AHA HCM Guideline (2024)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "marfan-syndrome-aortopathy-management",
+    "title": "Marfan syndrome — aortic surveillance + multidisciplinary management",
+    "icd10": [
+      "Q87.40"
+    ],
+    "domains": [
+      "genetics",
+      "cardiology",
+      "ophthalmology",
+      "orthopaedics"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Autosomal dominant connective tissue disorder — FBN1 mutations.",
+      "Cardiovascular: aortic root dilation + dissection (leading cause of mortality), mitral valve prolapse + regurgitation, pulmonary artery dilation.",
+      "Ocular: ectopia lentis (lens dislocation — 60%), myopia, retinal detachment, early cataract.",
+      "Skeletal: tall stature, arachnodactyly, scoliosis, pectus excavatum / carinatum, joint hypermobility, dural ectasia, high-arched palate, dolichocephaly.",
+      "Pulmonary: pneumothorax, restrictive lung disease.",
+      "Skin: striae, hernias."
+    ],
+    "redFlags": [
+      "New chest / back pain — exclude aortic dissection.",
+      "Aortic root > 50 mm or rapid growth (> 3 mm/year) — surgery indication.",
+      "Family history of dissection.",
+      "Pregnancy + aortic root > 40 mm — high-risk; specialist care.",
+      "Pneumothorax + atypical chest pain.",
+      "Acute lens dislocation with vision change."
+    ],
+    "diagnostics": [
+      {
+        "test": "Revised Ghent criteria (clinical scoring).",
+        "rationale": "Diagnostic."
+      },
+      {
+        "test": "Echo for aortic root dimension (Z-score for age + body surface area), MV prolapse + regurgitation, LV / RV function.",
+        "rationale": "Aortic + valve surveillance — annually."
+      },
+      {
+        "test": "Cardiac MRI for aortic root + arch + descending; CT angio for full aorta.",
+        "rationale": "Comprehensive aortic assessment; baseline + every 2–5 years."
+      },
+      {
+        "test": "Genetic testing — FBN1 sequence + deletion / duplication; multi-gene panel (TGFBR1, TGFBR2, SMAD3, TGFB2, TGFB3 for related disorders — Loeys-Dietz).",
+        "rationale": "Diagnosis + family + treatment-defining."
+      },
+      {
+        "test": "Annual ophthalmology — slit-lamp + dilated.",
+        "rationale": "Lens + retinal."
+      },
+      {
+        "test": "Spine + chest examination + DEXA + spirometry as needed.",
+        "rationale": "Musculoskeletal + pulmonary surveillance."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary Marfan clinic",
+        "detail": "Cardiology + cardiothoracic surgery + ophthalmology + orthopaedics / spinal + genetics / counsellor + adult / paediatric medicine."
+      },
+      {
+        "step": "Cardiovascular medical therapy",
+        "detail": "Beta-blocker (lifelong from diagnosis) — atenolol or losartan — reduces aortic dilation. ARB (losartan) — alternative or combined; AIMS / COMPARE trials. ACE inhibitor for hypertension. Avoid stimulants + vasoconstrictors."
+      },
+      {
+        "step": "Activity restriction",
+        "detail": "AVOID isometric exercise + heavy weightlifting + contact / collision sports + competitive intense aerobic (especially if aortic root > 40 mm). Light-moderate aerobic acceptable. Smoking cessation."
+      },
+      {
+        "step": "Surveillance imaging",
+        "detail": "Echo annually (more if rapid growth or > 40 mm); CT or MRI angio every 2–5 years for whole aorta. Children: more frequent depending on growth + family history."
+      },
+      {
+        "step": "Prophylactic aortic root surgery",
+        "detail": "Indications: aortic root diameter ≥ 50 mm in adults (45 mm if family history of dissection / rapid growth / planning pregnancy); 47 mm in children. Valve-sparing root replacement (David procedure) preferred over Bentall (composite mechanical + valve) if anatomy + experienced centre. Post-op lifelong follow-up + endocarditis prophylaxis."
+      },
+      {
+        "step": "Dissection management",
+        "detail": "Type A (ascending) — emergency surgery. Type B (descending) — medical first-line; TEVAR for complicated. Per aortic-dissection pathway."
+      },
+      {
+        "step": "Pregnancy + Marfan",
+        "detail": "Pre-conception counselling; assess aortic dimension; prophylactic root replacement if > 40 mm and planning. Continue beta-blocker through pregnancy; restrict activity; serial echo every 4–6 weeks. Vaginal delivery for stable; LSCS if dilation. Family-planning + 50% offspring inheritance."
+      },
+      {
+        "step": "Ophthalmology",
+        "detail": "Annual review; correct refractive error; lens dislocation may need surgery; retinal detachment risk."
+      },
+      {
+        "step": "Orthopaedic + spinal",
+        "detail": "Scoliosis bracing / surgery for progressive curves. Pectus repair for cosmetic / cardiopulmonary impact. Joint protection. Foot orthoses."
+      },
+      {
+        "step": "Genetic counselling + family screening",
+        "detail": "First-degree relatives — clinical + echo + slit-lamp ± genetic testing. Reproductive counselling — pre-implantation genetic diagnosis option."
+      }
+    ],
+    "references": [
+      {
+        "label": "Revised Ghent Nosology (Loeys et al. 2010); ESC/AHA aortic-disease guidelines; Marfan Foundation"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "nephrotic-syndrome-adult-management",
+    "title": "Adult nephrotic syndrome — diagnosis + treatment by aetiology",
+    "icd10": [
+      "N04"
+    ],
+    "domains": [
+      "nephrology",
+      "rheumatology",
+      "haematology"
+    ],
+    "population": {
+      "minAgeYears": 16,
+      "sex": "any"
+    },
+    "presentation": [
+      "Diagnostic triad: heavy proteinuria > 3.5 g/24 h + hypoalbuminaemia (< 30 g/L) + oedema (often pitting; periorbital + dependent).",
+      "Hyperlipidaemia + thrombotic risk (urinary loss of antithrombin) + infection susceptibility (urinary loss of IgG + complement).",
+      "Adult aetiology: membranous nephropathy (~30%), FSGS (~25%), minimal change disease (~10%), diabetic nephropathy, lupus nephritis, amyloidosis, MGUS / myeloma, secondary causes."
+    ],
+    "redFlags": [
+      "Acute thrombosis (DVT, PE, renal vein thrombosis) — anticoagulation.",
+      "Severe oedema with pleural effusion + ascites.",
+      "AKI from intravascular volume depletion or contrast / drug.",
+      "Septic complication.",
+      "Suspected malignancy-associated (anti-PLA2R-negative membranous in older).",
+      "Pregnancy + nephrotic — severe complications."
+    ],
+    "diagnostics": [
+      {
+        "test": "Urinary protein-creatinine ratio (UPCR) or 24-h urine collection.",
+        "rationale": "Quantify proteinuria."
+      },
+      {
+        "test": "Serum albumin, U&E, lipids, FBC, fasting glucose / HbA1c, complement (C3 + C4), ANA + anti-dsDNA, anti-PLA2R + THSD7A (membranous), serum + urine immunofixation + light chains, hepatitis B + C + HIV + syphilis, ANCA.",
+        "rationale": "Aetiology workup."
+      },
+      {
+        "test": "Renal biopsy — gold standard.",
+        "rationale": "Diagnose specific GN; treatment depends on pathology."
+      },
+      {
+        "test": "Renal USS + Doppler for renal vein thrombosis.",
+        "rationale": "Identify complication."
+      },
+      {
+        "test": "Cancer screen in older (especially anti-PLA2R-negative membranous).",
+        "rationale": "Identify paraneoplastic."
+      }
+    ],
+    "management": [
+      {
+        "step": "Treat underlying cause + supportive — UNIVERSAL",
+        "detail": "Salt restriction (< 100 mmol/day) + fluid restriction; loop diuretic (furosemide + thiazide / metolazone for refractory); ACEi/ARB to reduce proteinuria + protect renal function; statin for lipids; pneumococcal + influenza vaccination."
+      },
+      {
+        "step": "Anticoagulation prophylaxis",
+        "detail": "Anti-Xa or warfarin if serum albumin < 25 g/L AND additional risk factor (membranous nephropathy has highest VTE risk). Treat established VTE with full anticoagulation × at least 6 months."
+      },
+      {
+        "step": "Membranous nephropathy",
+        "detail": "First-line (high-risk per KDIGO): rituximab 1 g IV × 2 doses 2 weeks apart, OR ciclosporin / tacrolimus, OR Ponticelli regimen (alternating cyclophosphamide + steroid 6 months). Anti-PLA2R titre tracks response. Spontaneous remission in 30%."
+      },
+      {
+        "step": "Minimal change disease (more common in children but presents in adults)",
+        "detail": "Prednisolone 1 mg/kg/day × 16 weeks then taper. Steroid-resistant: ciclosporin, tacrolimus, mycophenolate, rituximab. Relapsing: long-term immunosuppression."
+      },
+      {
+        "step": "FSGS",
+        "detail": "Primary: high-dose steroid × 6 months → ciclosporin / rituximab for steroid-resistant. Genetic causes — no benefit from immunosuppression; manage ACEi + supportive. Secondary FSGS (obesity, virus, drug, reflux): treat underlying."
+      },
+      {
+        "step": "Diabetic nephropathy",
+        "detail": "Tight glycaemic + BP control + ACEi/ARB + SGLT2i + finerenone (foundational quartet; see CKD pathway). Avoid immunosuppression."
+      },
+      {
+        "step": "Lupus nephritis (class III/V/IV)",
+        "detail": "Per SLE flare pathway — MMF or cyclophosphamide + steroid + hydroxychloroquine + belimumab."
+      },
+      {
+        "step": "Amyloidosis / monoclonal protein",
+        "detail": "Per amyloidosis pathway — Dara-CyBorD for AL; treat plasma-cell dyscrasia."
+      },
+      {
+        "step": "Refractory / progressive disease — dialysis + transplant referral",
+        "detail": "Manage as CKD progression; renal replacement therapy planning."
+      }
+    ],
+    "references": [
+      {
+        "label": "KDIGO Clinical Practice Guideline for Glomerular Diseases (2021)"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "iga-nephropathy-detailed-management",
+    "title": "IgA nephropathy — diagnosis + risk-stratified treatment",
+    "icd10": [
+      "N02.8"
+    ],
+    "domains": [
+      "nephrology"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Most common primary glomerulonephritis worldwide.",
+      "Visible (macroscopic) haematuria episodes — often within 1–3 days of URTI ('synpharyngitic'); microscopic haematuria + proteinuria most common presentation; hypertension; CKD progression in 25–30% over 20 years.",
+      "Rare presentations: rapidly progressive GN (crescentic), nephrotic syndrome, acute kidney injury.",
+      "Co-occurring: Henoch-Schönlein purpura (IgA vasculitis), inflammatory bowel disease, coeliac disease, chronic liver disease."
+    ],
+    "redFlags": [
+      "Rapidly progressive GN (crescents > 25% on biopsy) — pulse steroid + cyclophosphamide.",
+      "Nephrotic-range proteinuria.",
+      "Heavy proteinuria + high BP + reduced eGFR — high-risk progression.",
+      "Acute kidney injury during macroscopic haematuria episode (acute tubular obstruction).",
+      "MEST-C score on biopsy — Oxford classification (mesangial / endocapillary / segmental sclerosis / tubular atrophy / crescents)."
+    ],
+    "diagnostics": [
+      {
+        "test": "UPCR + serum creatinine + eGFR + BP at every visit.",
+        "rationale": "Disease activity + progression."
+      },
+      {
+        "test": "Renal biopsy with MEST-C scoring + immunofluorescence (mesangial IgA dominance).",
+        "rationale": "Diagnosis + risk-stratification."
+      },
+      {
+        "test": "Exclude secondary IgA: chronic liver disease (cirrhosis), HIV, IBD, coeliac, gluten enteropathy.",
+        "rationale": "Aetiology."
+      }
+    ],
+    "management": [
+      {
+        "step": "Supportive — ACEi/ARB + SGLT2i + BP control (foundational)",
+        "detail": "ACEi/ARB titrated to maximum tolerated (reduces proteinuria + slows progression); BP target < 130/80 or lower in heavy proteinuria. SGLT2i for proteinuria > 1 g/day (DAPA-CKD + EMPA-KIDNEY)."
+      },
+      {
+        "step": "High-risk patients (UPCR > 0.75 g/g despite ACEi optimisation × 3 months) — escalate",
+        "detail": "Targeted-release budesonide (Nefecon, 16 mg/day × 9 months) — first-line per recent NefIgArd trial; gut-targeted reduces mucosal IgA. Combination with SGLT2i + RAS blockade."
+      },
+      {
+        "step": "Sparsentan — dual endothelin / angiotensin antagonist",
+        "detail": "PROTECT trial showed proteinuria reduction; FDA-approved for IgA nephropathy with high progression risk. Specialist initiation."
+      },
+      {
+        "step": "Rapidly progressive crescentic IgA nephropathy",
+        "detail": "IV methylprednisolone 1 g daily × 3 days + cyclophosphamide × 3–6 months → maintenance azathioprine. Plasma exchange for severe / dialysis-dependent (selected centres)."
+      },
+      {
+        "step": "Avoid blanket high-dose immunosuppression for stable disease",
+        "detail": "TESTING + STOP-IgAN trials caution risk-benefit of conventional systemic steroids. Use targeted budesonide preferentially."
+      },
+      {
+        "step": "Tonsillectomy — uncertain",
+        "detail": "Some evidence for benefit in Japanese / Asian populations; not universally adopted. Consider in selected cases."
+      },
+      {
+        "step": "Secondary cause management",
+        "detail": "Treat underlying coeliac / IBD; manage chronic liver disease."
+      },
+      {
+        "step": "Family screening + counselling",
+        "detail": "Some familial cases; counsel siblings about screening."
+      },
+      {
+        "step": "Pregnancy + IgA",
+        "detail": "Pre-conception planning; switch ACEi to alternative; aspirin for pre-eclampsia prevention; close BP + proteinuria monitoring."
+      }
+    ],
+    "references": [
+      {
+        "label": "KDIGO Glomerular Diseases 2021; NefIgArd + PROTECT + DAPA-CKD trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "torsades-de-pointes-acquired",
+    "title": "Acquired long QT syndrome + torsades de pointes",
+    "icd10": [
+      "I49.8",
+      "T46.7"
+    ],
+    "domains": [
+      "cardiology",
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "QT prolongation on ECG (QTc > 500 ms strongly increased risk; > 460 ms women / > 450 ms men borderline).",
+      "Torsades de pointes: polymorphic VT with twisting QRS axis on ECG; usually self-terminating but can degenerate to VF.",
+      "Causes: QT-prolonging drugs (antiarrhythmic IA + III, antibiotics — macrolides, fluoroquinolones, antifungals, antipsychotics, antidepressants, antiemetics, methadone), electrolyte derangements (hypokalaemia, hypomagnesaemia, hypocalcaemia), bradyarrhythmia (pause-dependent), starvation / eating disorder, hypothermia, hypothyroidism.",
+      "Risk factors: female, age > 65, structural heart disease, prolonged baseline QT, concurrent QT-prolonging drugs, hepatic / renal impairment."
+    ],
+    "redFlags": [
+      "Sustained / recurrent TdP — emergency.",
+      "QTc > 600 ms — extreme risk.",
+      "Concurrent severe electrolyte abnormality.",
+      "Bradycardia-dependent TdP (after pauses).",
+      "Suicidal / accidental overdose of QT-prolonging drug.",
+      "Pregnancy + drug-induced QT prolongation."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG — measure QT (Bazett or Fridericia correction).",
+        "rationale": "Confirm prolongation."
+      },
+      {
+        "test": "Electrolytes: K+, Mg2+, Ca2+.",
+        "rationale": "Reversible cause."
+      },
+      {
+        "test": "Medication review against Liverpool QT database / CredibleMeds.",
+        "rationale": "Identify offending agent."
+      },
+      {
+        "test": "Continuous telemetry monitoring.",
+        "rationale": "Detect TdP."
+      },
+      {
+        "test": "If TdP without obvious cause: consider congenital LQTS — genetic testing + family screen.",
+        "rationale": "Identify inherited."
+      }
+    ],
+    "management": [
+      {
+        "step": "Sustained TdP / unstable — defibrillate",
+        "detail": "Unsynchronised defibrillation 200 J biphasic."
+      },
+      {
+        "step": "MAGNESIUM SULPHATE — first-line for TdP",
+        "detail": "2 g IV bolus over 1–2 min; repeat once; continue infusion 2 g/h until QTc < 500 ms + no further TdP. Effective even with normal Mg level."
+      },
+      {
+        "step": "Correct + monitor electrolytes",
+        "detail": "K+ to 4.5–5.0 mmol/L (aggressive). Mg2+ to upper-normal. Ca2+ to normal."
+      },
+      {
+        "step": "STOP all QT-prolonging drugs",
+        "detail": "Review medication list against Liverpool QT database. Switch to non-QT-prolonging alternatives. Counsel patient + record allergy / warning."
+      },
+      {
+        "step": "Bradycardia-dependent TdP — shorten QT by raising heart rate",
+        "detail": "Transcutaneous pacing OR transvenous pacing (target HR 90–100); OR isoproterenol infusion 1–2 microgram/min IV (titrate to HR 90–100); useful while preparing pacing or as bridge."
+      },
+      {
+        "step": "Refractory / recurrent TdP",
+        "detail": "Lignocaine 1–1.5 mg/kg IV. Mexiletine (oral; specialist). Phenytoin. Beta-blocker (esmolol) — controversial in acute TdP but useful prevention after stabilisation."
+      },
+      {
+        "step": "Address underlying cause",
+        "detail": "Treat hypothyroidism; correct hypothermia; treat starvation (anorexia / refeeding syndrome); reverse drug overdose."
+      },
+      {
+        "step": "Prevention + discharge",
+        "detail": "ECG monitoring × 24–48 h after last episode. Counsel patient + family + GP about avoidable QT-prolonging drugs (provide list). Implantable defibrillator only if recurrent despite reversible-cause correction OR underlying severe substrate."
+      },
+      {
+        "step": "Genetic LQTS suspected",
+        "detail": "Beta-blocker (nadolol or propranolol — class IA recommendation); avoid QT-prolonging drugs lifelong; competitive sport restriction (some); cardiac MRI / EP study; left cardiac sympathetic denervation for refractory; ICD for high-risk."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC Ventricular Arrhythmia + SCD 2022; Liverpool QT Drug Database; CredibleMeds.org"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "peripheral-arterial-disease-chronic-management",
+    "title": "Peripheral arterial disease — chronic management + limb salvage",
+    "icd10": [
+      "I70.20",
+      "I73.9"
+    ],
+    "domains": [
+      "vascular",
+      "cardiology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 40,
+      "sex": "any"
+    },
+    "presentation": [
+      "Intermittent claudication — exercise-induced calf / thigh / buttock pain relieved by rest.",
+      "Critical / chronic limb-threatening ischaemia (CLTI): rest pain, non-healing ulcer, gangrene.",
+      "Risk factors: smoking, diabetes, hypertension, hyperlipidaemia, age, family history, CKD.",
+      "Often part of polyvascular disease — coronary + cerebrovascular involvement.",
+      "Diabetic foot complicates frequently."
+    ],
+    "redFlags": [
+      "Critical limb-threatening ischaemia (rest pain, ulcer, gangrene) — refer urgently.",
+      "Rapid progression / new symptoms.",
+      "Diabetic foot infection — emergency.",
+      "Suspected acute on chronic limb ischaemia.",
+      "Aneurysmal disease (popliteal, AAA)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Ankle-brachial pressure index (ABPI) — < 0.9 diagnostic; < 0.5 severe; > 1.4 incompressible (DM, ESRD) — use TBI.",
+        "rationale": "Diagnosis + severity."
+      },
+      {
+        "test": "Toe-brachial index (TBI) for incompressible arteries / diabetes.",
+        "rationale": "Alternative to ABPI."
+      },
+      {
+        "test": "Arterial duplex / CT angiography / MR angiography.",
+        "rationale": "Define anatomy + plan intervention."
+      },
+      {
+        "test": "Fasting lipids + HbA1c + U&E + creatinine + BP + smoking status.",
+        "rationale": "Risk-factor management."
+      },
+      {
+        "test": "ECG + carotid Doppler + AAA screen.",
+        "rationale": "Polyvascular disease + concurrent screening."
+      }
+    ],
+    "management": [
+      {
+        "step": "Aggressive risk-factor modification — FIRST",
+        "detail": "Smoking cessation (single most important; counsel + pharmacotherapy). HbA1c < 7%. BP < 130/80 (ACEi / ARB first-line). Statin (high-intensity) regardless of baseline lipid (atorvastatin 80 mg or rosuvastatin 20–40 mg)."
+      },
+      {
+        "step": "Antiplatelet — dual or single",
+        "detail": "Aspirin 75 mg OR clopidogrel 75 mg daily. Add low-dose rivaroxaban 2.5 mg BD to aspirin (COMPASS, VOYAGER-PAD) — significant cardiovascular + limb benefit. Single antiplatelet for intermittent claudication if no symptomatic CAD."
+      },
+      {
+        "step": "Supervised exercise programme — first-line for claudication",
+        "detail": "30–60 min/week × 12 weeks supervised — improves walking distance ≥ 100%. Home-based programmes secondary."
+      },
+      {
+        "step": "Pharmacotherapy for claudication",
+        "detail": "Cilostazol 100 mg BD — improves walking distance; AVOID in heart failure. Naftidrofuryl 200 mg TDS alternative."
+      },
+      {
+        "step": "Critical limb-threatening ischaemia (CLTI)",
+        "detail": "Urgent specialist vascular assessment. Endovascular revascularisation (angioplasty + stent) — first-line for most. Open surgical bypass for long lesions / multi-level / poor endo runoff (BASIL-2, BEST-CLI trials). Hybrid procedures. Amputation only when limb non-salvageable."
+      },
+      {
+        "step": "Wound + foot care",
+        "detail": "Specialist diabetic foot / wound clinic (see diabetic foot pathway). Offloading + debridement + antibiotic per infection severity."
+      },
+      {
+        "step": "Pain management",
+        "detail": "Analgesia ladder for ischaemic rest pain; gabapentin for neuropathic component; spinal cord stimulator for refractory inoperable."
+      },
+      {
+        "step": "Surveillance + secondary prevention",
+        "detail": "Annual ABPI + symptom + cardiovascular risk reassessment. Post-revascularisation: surveillance USS at 3, 6, 12 months. Lifelong antiplatelet + statin."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESVS Guideline on Peripheral Arterial Diseases (2024); AHA/ACC Lower Extremity PAD; COMPASS + VOYAGER-PAD trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "heart-failure-preserved-ejection-fraction",
+    "title": "Heart failure with preserved ejection fraction (HFpEF)",
+    "icd10": [
+      "I50.30"
+    ],
+    "domains": [
+      "cardiology",
+      "primary-care",
+      "geriatrics"
+    ],
+    "population": {
+      "minAgeYears": 50,
+      "sex": "any"
+    },
+    "presentation": [
+      "Symptoms + signs of heart failure (dyspnoea, fatigue, oedema) WITH LVEF ≥ 50%.",
+      "H2FPEF score (Heavy, hypertension, atrial Fibrillation, Pulmonary hypertension, Elderly, elevated Filling pressures) — diagnostic aid.",
+      "Comorbidities are central: hypertension (90%), obesity (40–80%), diabetes (40%), atrial fibrillation (40%), CKD, anaemia, COPD, sleep apnoea.",
+      "Increasing prevalence — now > 50% of HF cases."
+    ],
+    "redFlags": [
+      "Acute decompensation with pulmonary oedema.",
+      "Atrial fibrillation with rapid ventricular response — precipitates flash pulmonary oedema.",
+      "Concurrent ischaemic heart disease + acute coronary syndrome.",
+      "Suspected cardiac amyloidosis (especially elderly + thickened ventricle + low voltages + carpal tunnel history).",
+      "Suspected hypertrophic cardiomyopathy.",
+      "Constrictive pericarditis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Echocardiogram — preserved LVEF ≥ 50% + diastolic dysfunction (E/e' > 14, tricuspid regurgitation velocity > 2.8 m/s, LA volume index > 34 mL/m²).",
+        "rationale": "Diagnostic."
+      },
+      {
+        "test": "BNP / NT-proBNP — elevated; thresholds vary by age + AF.",
+        "rationale": "Confirm + severity."
+      },
+      {
+        "test": "Cardiac MRI — when amyloid suspected (LGE + T1 mapping); HCM + sarcoidosis assessment.",
+        "rationale": "Identify specific aetiologies."
+      },
+      {
+        "test": "Cardiopulmonary exercise testing if diagnosis uncertain.",
+        "rationale": "Confirm cardiac limitation."
+      },
+      {
+        "test": "Investigate amyloidosis: serum + urine immunofixation + free light chains; 99mTc-PYP / DPD bone scan for ATTR; abdominal fat pad biopsy.",
+        "rationale": "Increasingly recognised cause."
+      },
+      {
+        "test": "Iron studies, thyroid, sleep study, OGTT, vitamin D.",
+        "rationale": "Common modifiable comorbidities."
+      }
+    ],
+    "management": [
+      {
+        "step": "SGLT2 inhibitor — first-line for ALL HFpEF",
+        "detail": "Dapagliflozin OR empagliflozin 10 mg daily (DELIVER + EMPEROR-Preserved trials). Reduces HF hospitalisations + cardiovascular death. Effective regardless of diabetes status. Approved for HFpEF."
+      },
+      {
+        "step": "MRA — consider for selected",
+        "detail": "Spironolactone 25 mg daily (TOPCAT subgroup analysis showed benefit in patients with elevated BNP). Monitor K+ + creatinine."
+      },
+      {
+        "step": "Diuretic for congestion",
+        "detail": "Loop diuretic (furosemide, torsemide, bumetanide) titrated to euvolaemia. Thiazide adjunct for resistance. Aggressive diuresis can precipitate hypotension + AKI in HFpEF (more so than HFrEF)."
+      },
+      {
+        "step": "Treat hypertension aggressively",
+        "detail": "BP < 130/80 — uncontrolled HTN drives HFpEF. ACEi / ARB / sacubitril-valsartan + CCB + thiazide; spironolactone. Loop diuretic also lowers BP via volume."
+      },
+      {
+        "step": "Atrial fibrillation management",
+        "detail": "Rate or rhythm control per individual. Increasingly rhythm control favoured in HFpEF + AF (CABANA + EAST-AFNET 4 subgroups). Anticoagulation per CHA2DS2-VASc."
+      },
+      {
+        "step": "Weight loss + exercise — major impact",
+        "detail": "Caloric restriction + structured exercise — improves symptoms + quality of life (STEP-HFpEF trial — semaglutide also improves)."
+      },
+      {
+        "step": "Treat sleep apnoea, anaemia, iron deficiency",
+        "detail": "CPAP for moderate-severe OSA. Iron infusion for iron-deficiency (IRONMAN, AFFIRM-AHF — beneficial). Treat anaemia."
+      },
+      {
+        "step": "Cardiac amyloidosis specific",
+        "detail": "If ATTR cardiomyopathy: tafamidis 61 mg or 80 mg daily — improves survival. Patisiran / vutrisiran for ATTR neuropathy + cardiomyopathy."
+      },
+      {
+        "step": "Constrictive pericarditis surgical option",
+        "detail": "Surgical pericardiectomy for severe constrictive disease."
+      },
+      {
+        "step": "Specialist palliative care",
+        "detail": "Advanced HFpEF — symptom-focused; advance care planning; opioids + benzodiazepines for end-stage breathlessness."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC HF Guidelines 2021 (updated 2023); ACC/AHA/HFSA HF 2022 + 2023; DELIVER + EMPEROR-Preserved + STEP-HFpEF trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "primary-aldosteronism-diagnosis",
+    "title": "Primary aldosteronism — diagnosis + treatment",
+    "icd10": [
+      "E26.0"
+    ],
+    "domains": [
+      "endocrinology",
+      "cardiology",
+      "nephrology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Most common identifiable cause of secondary hypertension (~5–10% of all hypertension, > 20% of resistant hypertension).",
+      "Hypertension (often resistant; severe young-onset) ± hypokalaemia (now recognised majority normokalaemic) ± metabolic alkalosis.",
+      "Adrenal adenoma (Conn syndrome — ~30%) OR bilateral adrenal hyperplasia (~60%) OR familial / unilateral hyperplasia / aldosterone-producing carcinoma.",
+      "Long-term consequences: accelerated cardiovascular events (stroke, MI, AF, HF) + CKD + cognitive decline + DM — compared to essential hypertension."
+    ],
+    "redFlags": [
+      "Severe hypokalaemia (K+ < 2.5) with hypertension.",
+      "Hypertensive emergency.",
+      "Suspected adrenal carcinoma (large mass, irregular).",
+      "Familial cases — younger / inherited / cascade screening.",
+      "Concurrent secondary causes (renal artery stenosis, Cushing) — workup more complex."
+    ],
+    "diagnostics": [
+      {
+        "test": "Aldosterone-to-renin ratio (ARR) — screening test.",
+        "rationale": "Identifies primary aldosteronism — elevated ARR + plasma aldosterone ≥ 15 ng/dL is suggestive. Stop interfering drugs (MRA, spironolactone — 6 weeks; ACEi/ARB — 4 weeks; beta-blocker, NSAID, diuretic — modify timing) before testing. Use cautiously if cannot stop."
+      },
+      {
+        "test": "Confirmatory testing: saline suppression test (aldosterone > 5–10 ng/dL after 2 L NaCl) OR captopril challenge OR fludrocortisone suppression OR oral salt loading.",
+        "rationale": "Confirm primary aldosteronism."
+      },
+      {
+        "test": "CT adrenal imaging.",
+        "rationale": "Identify adenoma vs bilateral hyperplasia vs carcinoma (size + heterogeneity)."
+      },
+      {
+        "test": "Adrenal vein sampling — gold standard for lateralisation BEFORE surgery in unilateral cases.",
+        "rationale": "Determines unilateral vs bilateral disease — guides surgery."
+      },
+      {
+        "test": "U&E + creatinine + plasma renin / aldosterone.",
+        "rationale": "Severity + monitoring."
+      },
+      {
+        "test": "Genetic testing for familial hyperaldosteronism (KCNJ5, glucocorticoid-remediable aldosteronism).",
+        "rationale": "Selected cases — < 20 years onset, family history."
+      }
+    ],
+    "management": [
+      {
+        "step": "Unilateral disease (adenoma / unilateral hyperplasia) — adrenalectomy",
+        "detail": "Laparoscopic adrenalectomy — biochemical cure 95%; hypertension cure / improvement 70–90%. Pre-op: control BP + correct hypokalaemia + spironolactone × 4 weeks. Post-op: monitor K+ (can become hyperkalaemic transiently); ongoing antihypertensive often needed."
+      },
+      {
+        "step": "Bilateral disease — medical therapy",
+        "detail": "Spironolactone 12.5–100 mg daily (titrate to BP + K+; gynaecomastia + menstrual irregularity common). Eplerenone 25–100 mg daily — selective MRA, fewer side effects (sexual + menstrual) but more expensive + ~50% potency of spironolactone. Finerenone (non-steroidal selective MRA) emerging."
+      },
+      {
+        "step": "Add other antihypertensives as needed",
+        "detail": "ACEi / ARB + CCB + thiazide as standard. Combine with MRA. BP target < 130/80."
+      },
+      {
+        "step": "Potassium replacement",
+        "detail": "Oral KCl until MRA achieves normalisation. Replace urgently if severe (< 2.5)."
+      },
+      {
+        "step": "Lifestyle + cardiovascular risk modification",
+        "detail": "Low sodium diet; weight management; alcohol moderation; statin per CV risk; smoking cessation."
+      },
+      {
+        "step": "Long-term follow-up",
+        "detail": "Annual BP + electrolytes + cardiovascular assessment + adrenal imaging surveillance for adenoma residuum / contralateral disease."
+      },
+      {
+        "step": "Familial cases",
+        "detail": "Cascade screening of first-degree relatives + genetic counselling."
+      },
+      {
+        "step": "Pregnancy + primary aldosteronism",
+        "detail": "Avoid spironolactone (anti-androgen effects on fetus). Methyldopa / labetalol / nifedipine; restrict salt; postpone surgery to postpartum; specialist obstetric + endocrine care."
+      }
+    ],
+    "references": [
+      {
+        "label": "Endocrine Society Clinical Practice Guideline on the Case Detection, Diagnosis and Treatment of Primary Aldosteronism (2016); ESC Hypertension 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "polycystic-kidney-disease-comprehensive",
+    "title": "Autosomal dominant polycystic kidney disease (ADPKD)",
+    "icd10": [
+      "Q61.2"
+    ],
+    "domains": [
+      "nephrology",
+      "genetics",
+      "cardiology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "sex": "any"
+    },
+    "presentation": [
+      "Autosomal dominant inheritance — PKD1 (~85%, more severe) + PKD2 (~15%, milder, later onset). 50% of offspring affected.",
+      "Renal: cysts in kidneys (bilateral progression); flank pain, recurrent cyst infection / haemorrhage, urinary stones, hypertension (young-onset), progression to ESRD (median age 58 — PKD1; 79 — PKD2).",
+      "Extra-renal: hepatic cysts (asymptomatic to massive), pancreatic + splenic cysts (rare); intracranial aneurysms (10–12%, higher with family history of SAH); mitral valve prolapse; abdominal hernia; diverticulosis.",
+      "Diagnosis criteria (modified Ravine): age-dependent number of bilateral renal cysts + family history; genetic testing for atypical / sporadic."
+    ],
+    "redFlags": [
+      "Acute severe flank pain — cyst haemorrhage or infection or stone or rarely cyst rupture.",
+      "New / severe headache — exclude intracranial aneurysm + SAH.",
+      "Hypertension young-onset (< 40 years) — often first manifestation.",
+      "Rapidly progressive renal failure.",
+      "Large polycystic liver causing symptomatic mass effect.",
+      "Pregnancy + ADPKD — maternal + offspring counselling."
+    ],
+    "diagnostics": [
+      {
+        "test": "Renal USS — primary screening modality.",
+        "rationale": "Cyst quantification + age-adjusted criteria."
+      },
+      {
+        "test": "MRI for total kidney volume (TKV) calculation — disease progression marker.",
+        "rationale": "Risk stratification + tolvaptan eligibility (Mayo Clinic imaging classification 1C–1E or PROPKD ≥ 6)."
+      },
+      {
+        "test": "Genetic testing for: atypical presentation, sporadic, pre-implantation genetic diagnosis.",
+        "rationale": "PKD1 vs PKD2; family planning."
+      },
+      {
+        "test": "MR angiography intracranial — for screening in family history of SAH / aneurysm / occupational (e.g. pilot) / pre-major surgery / on tolvaptan / smokers.",
+        "rationale": "Identify treatable aneurysm."
+      },
+      {
+        "test": "Annual BP, urinalysis, creatinine + eGFR + UACR.",
+        "rationale": "Monitor progression."
+      },
+      {
+        "test": "Family screening + counselling.",
+        "rationale": "Cascade testing."
+      }
+    ],
+    "management": [
+      {
+        "step": "Strict blood-pressure control",
+        "detail": "ACEi / ARB first-line — target < 130/80 (HALT-PKD trial — lower target slows TKV growth in young adults). Combine with thiazide / CCB as needed. AVOID over-diuresis (cyst growth)."
+      },
+      {
+        "step": "Tolvaptan — disease-modifying therapy",
+        "detail": "Vasopressin V2 receptor antagonist; 60 mg + 30 mg (titrate to 90 + 30) daily. Indicated for rapidly progressive ADPKD (Mayo class 1C–1E, PROPKD ≥ 6, eGFR > 30). Major side effects: polyuria (mandatory) + hepatotoxicity (LFT monthly × 18 months then 3-monthly; STOP if elevation). REPRISE + TEMPO trials demonstrated slowing of eGFR decline."
+      },
+      {
+        "step": "Lifestyle + dietary",
+        "detail": "Adequate hydration (3–4 L/day — suppresses vasopressin). Low sodium diet. Caffeine moderation. Avoid NSAID (cyst haemorrhage + nephrotoxicity). Smoking cessation. Maintain healthy weight."
+      },
+      {
+        "step": "Manage pain",
+        "detail": "Paracetamol + opioid (cautious). Avoid NSAID. Cyst aspiration / sclerotherapy / surgical decortication for refractory severe pain. Nerve block."
+      },
+      {
+        "step": "Cyst infection",
+        "detail": "Lipophilic antibiotics (ciprofloxacin, fluconazole, doxycycline) — penetrate cysts; 4–6 weeks. Drain if refractory. Distinguish from pyelonephritis."
+      },
+      {
+        "step": "Renal stones",
+        "detail": "More common in ADPKD; lithotripsy / ureteroscopy + dietary modification + hydration."
+      },
+      {
+        "step": "Intracranial aneurysm management",
+        "detail": "Screening every 5–10 years in high-risk (family history of SAH / smokers / pre-op / on tolvaptan). Coiling / clipping for > 7 mm / symptomatic / growing."
+      },
+      {
+        "step": "Polycystic liver disease",
+        "detail": "Conservative for most. Symptomatic large cyst: sclerotherapy, fenestration, segmental resection. Severe: liver transplant (rarely simultaneous with kidney)."
+      },
+      {
+        "step": "End-stage renal disease",
+        "detail": "Dialysis (PD acceptable despite intra-abdominal cysts) OR transplantation (preferred — often after native kidney removal for space / nephrectomy for refractory pain or infection)."
+      },
+      {
+        "step": "Pregnancy + ADPKD",
+        "detail": "Pre-conception counselling — 50% offspring; consider pre-implantation genetic diagnosis. Pregnancy increases pre-eclampsia + UTI risk. Stop tolvaptan + ACEi/ARB in pregnancy; manage BP with methyldopa / labetalol / nifedipine."
+      },
+      {
+        "step": "Family screening + counselling",
+        "detail": "Cascade testing of first-degree relatives; pre-conception planning; offer pre-implantation genetic diagnosis for affected couples wanting unaffected child."
+      }
+    ],
+    "references": [
+      {
+        "label": "KDIGO Controversies Conference on ADPKD; HALT-PKD + TEMPO + REPRISE trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]

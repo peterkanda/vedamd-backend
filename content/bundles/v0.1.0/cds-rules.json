@@ -7398,5 +7398,317 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "vt-vfib-acls-algorithm",
+    "hook": "patient-view",
+    "type": "vt-vfib-acls-algorithm",
+    "services": [
+      "vedamd-vt-vfib"
+    ],
+    "title": "Sustained VT / VF — ACLS algorithm + ICD evaluation",
+    "description": "Fires for sustained ventricular tachycardia or VF on telemetry / arrest. Recommends defibrillation if unstable; amiodarone / procainamide / lidocaine for stable; magnesium for torsades; correct K+ + Mg; ischaemia workup; ICD secondary prevention; substrate-specific (LQTS, Brugada, CPVT, ARVC, HCM); cardiac MRI + EP study + genetic + family screening. Reads context.vtSustained, context.haemodynamics, context.qtc, context.electrolytes, context.priorMi — never patient identity.",
+    "references": [
+      {
+        "label": "ESC Ventricular Arrhythmia + SCD 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I47.2",
+        "display": "Ventricular tachycardia",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "infective-endocarditis-team-pathway",
+    "hook": "patient-view",
+    "type": "infective-endocarditis-team-pathway",
+    "services": [
+      "vedamd-endocarditis-detail"
+    ],
+    "title": "Infective endocarditis — endocarditis team + targeted antibiotic + surgical decision",
+    "description": "Fires for suspected / confirmed IE (Duke criteria). Recommends 3 blood cultures BEFORE antibiotic; empirical regimen per native / prosthetic / IVDU + healthcare exposure; targeted to organism × 4–6 weeks (longer prosthetic); TTE + TOE + PET-CT for diagnostic uncertainty; endocarditis team + cardiothoracic surgery for HF, uncontrolled infection, embolic prevention; anticoagulation considerations. Reads context.dukeCriteria, context.organism, context.valveType, context.vegetationSize, context.heartFailure — never patient identity.",
+    "references": [
+      {
+        "label": "ESC IE Guidelines 2023"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I33.0",
+        "display": "Acute + subacute infective endocarditis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "myocarditis-mri-biopsy",
+    "hook": "patient-view",
+    "type": "myocarditis-mri-biopsy",
+    "services": [
+      "vedamd-myocarditis"
+    ],
+    "title": "Acute myocarditis — cardiac MRI + biopsy if specific treatment indicated",
+    "description": "Fires for new heart failure / chest pain / arrhythmia / troponin rise + suspected myocarditis. Recommends cardiac MRI (Lake Louise); endomyocardial biopsy for fulminant / treatment-altering scenarios; supportive HF therapy; ICI-induced — STOP ICI + IV methylprednisolone; AVOID routine steroid for viral; specific immunosuppression for giant cell / eosinophilic / sarcoid / SLE / RA. ICD evaluation if persistent LV dysfunction. Reads context.troponin, context.lvFunction, context.mriLgeOedema, context.suspectedAetiology, context.iciExposure — never patient identity.",
+    "references": [
+      {
+        "label": "ESC + AHA Myocarditis 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I40",
+        "display": "Acute myocarditis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "hcm-screen-mavacamten-icd",
+    "hook": "patient-view",
+    "type": "hcm-screen-mavacamten-icd",
+    "services": [
+      "vedamd-hcm-detail"
+    ],
+    "title": "Hypertrophic cardiomyopathy — risk stratification + mavacamten + ICD",
+    "description": "Fires for confirmed HCM (wall thickness ≥ 15 mm). Recommends beta-blocker / verapamil; mavacamten for symptomatic obstructive HCM; septal myectomy / alcohol septal ablation for refractory LVOTO; HCM Risk-SCD or ACC/AHA enhanced risk → ICD; atrial fibrillation anticoagulate regardless of CHA2DS2-VASc; family screening + genetic testing. Reads context.wallThickness, context.lvotGradient, context.familyScd, context.lge, context.nsvt, context.priorSyncope — never patient identity.",
+    "references": [
+      {
+        "label": "ESC Cardiomyopathies 2023; ACC/AHA HCM 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I42.1",
+        "display": "Obstructive HCM",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "marfan-aortic-surveillance",
+    "hook": "patient-view",
+    "type": "marfan-aortic-surveillance",
+    "services": [
+      "vedamd-marfan"
+    ],
+    "title": "Marfan syndrome — aortic surveillance + beta-blocker / losartan + prophylactic surgery",
+    "description": "Fires for confirmed / suspected Marfan. Recommends multidisciplinary Marfan clinic; beta-blocker (atenolol) or losartan; activity restriction (avoid isometric / contact); annual echo + biannual CT/MR angio; prophylactic root replacement at 50 mm (45 if family / rapid growth / pregnancy planning); ophthalmology + orthopaedic + spinal review; family + genetic counselling. Reads context.aorticRootSize, context.ghentScore, context.familyDissection, context.pregnancyPlanning — never patient identity.",
+    "references": [
+      {
+        "label": "Ghent Nosology + ESC Aortic Disease"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q87.40",
+        "display": "Marfan syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "nephrotic-biopsy-targeted-treatment",
+    "hook": "patient-view",
+    "type": "nephrotic-biopsy-targeted-treatment",
+    "services": [
+      "vedamd-nephrotic-syndrome"
+    ],
+    "title": "Adult nephrotic syndrome — biopsy + targeted immunosuppression",
+    "description": "Fires for adult with UPCR > 3 g/g + hypoalbuminaemia + oedema. Recommends comprehensive aetiology workup; renal biopsy (membranous, FSGS, MCD, lupus, diabetic, amyloid); diagnosis-specific therapy (rituximab for membranous + MCD relapsing; cyclophosphamide for FSGS / SLE; targeted for amyloidosis); supportive (ACEi + diuretic + statin + anticoagulation if Alb < 25); vaccination; cancer screen older adults. Reads context.upcr, context.albumin, context.biopsy, context.aetiology — never patient identity.",
+    "references": [
+      {
+        "label": "KDIGO Glomerular Diseases 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N04",
+        "display": "Nephrotic syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "iga-nephropathy-budesonide-sparsentan",
+    "hook": "patient-view",
+    "type": "iga-nephropathy-budesonide-sparsentan",
+    "services": [
+      "vedamd-iga-nephropathy"
+    ],
+    "title": "IgA nephropathy — ACEi + SGLT2i + targeted budesonide / sparsentan",
+    "description": "Fires for confirmed IgA nephropathy with UPCR > 0.75 despite optimised ACEi. Recommends targeted-release budesonide (Nefecon) 16 mg × 9 months; sparsentan dual endothelin / angiotensin antagonist; pulse steroid + cyclophosphamide for crescentic; SGLT2i + ACEi/ARB foundational; secondary causes managed. Reads context.upcr, context.egfr, context.crescents, context.bp — never patient identity.",
+    "references": [
+      {
+        "label": "KDIGO Glomerular Diseases 2021; NefIgArd + PROTECT"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N02.8",
+        "display": "IgA nephropathy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "torsades-magnesium-pacing",
+    "hook": "patient-view",
+    "type": "torsades-magnesium-pacing",
+    "services": [
+      "vedamd-torsades"
+    ],
+    "title": "Torsades de pointes — magnesium + remove QT-prolonging drug + pace if bradycardic",
+    "description": "Fires for polymorphic VT + QT prolongation. Recommends defibrillate if unstable; IV magnesium 2 g bolus + infusion; correct K+ + Mg + Ca; STOP all QT-prolonging drugs (Liverpool QT database review); transcutaneous / transvenous pacing or isoproterenol for bradycardia-dependent; ICD if recurrent + irreversible substrate. Family screening for congenital LQTS. Reads context.qtc, context.medications, context.electrolytes, context.heartRate — never patient identity.",
+    "references": [
+      {
+        "label": "ESC VA-SCD 2022; CredibleMeds"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I49.8",
+        "display": "Other specified cardiac arrhythmia (TdP)",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "pad-medical-revasc",
+    "hook": "patient-view",
+    "type": "pad-medical-revasc",
+    "services": [
+      "vedamd-pad-chronic"
+    ],
+    "title": "Peripheral arterial disease — risk-factor + supervised exercise + revascularisation for CLTI",
+    "description": "Fires for diagnosed PAD with claudication / CLTI. Recommends smoking cessation + statin + ACEi + antiplatelet ± low-dose rivaroxaban (COMPASS); supervised exercise programme; cilostazol; CLTI — urgent vascular referral for revascularisation (endovascular preferred per BEST-CLI); foot care. Reads context.abpi, context.symptoms, context.clti, context.diabetes — never patient identity.",
+    "references": [
+      {
+        "label": "ESVS PAD 2024; AHA/ACC PAD; COMPASS + VOYAGER-PAD + BEST-CLI"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I70.20",
+        "display": "PAD",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "hfpef-sglt2-mra",
+    "hook": "patient-view",
+    "type": "hfpef-sglt2-mra",
+    "services": [
+      "vedamd-hfpef"
+    ],
+    "title": "HFpEF — SGLT2 inhibitor + MRA + comorbidity management",
+    "description": "Fires for HF symptoms + LVEF ≥ 50% + raised BNP. Recommends dapagliflozin / empagliflozin (foundational); spironolactone in selected; loop diuretic for congestion; aggressive BP + AF + obesity + OSA + iron deficiency management; rule out + treat amyloidosis (ATTR — tafamidis). Reads context.lvef, context.bnp, context.symptoms, context.comorbidities — never patient identity.",
+    "references": [
+      {
+        "label": "ESC HF 2023; DELIVER + EMPEROR-Preserved"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "I50.30",
+        "display": "HF preserved EF",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "primary-aldosteronism-workup",
+    "hook": "patient-view",
+    "type": "primary-aldosteronism-workup",
+    "services": [
+      "vedamd-primary-aldosteronism"
+    ],
+    "title": "Primary aldosteronism — screen, confirm, lateralise, treat",
+    "description": "Fires for resistant hypertension / hypertension + hypokalaemia / young-onset hypertension / family. Recommends aldosterone-renin ratio (washout offending drugs); confirmatory saline / captopril / fludrocortisone; CT adrenal; adrenal vein sampling for unilateral cases; adrenalectomy for unilateral; spironolactone / eplerenone for bilateral. Avoid spironolactone in pregnancy. Reads context.arr, context.potassium, context.bp, context.adrenalImaging — never patient identity.",
+    "references": [
+      {
+        "label": "Endocrine Society Primary Aldosteronism 2016"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "E26.0",
+        "display": "Primary hyperaldosteronism",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "adpkd-tolvaptan-aneurysm-screening",
+    "hook": "patient-view",
+    "type": "adpkd-tolvaptan-aneurysm-screening",
+    "services": [
+      "vedamd-adpkd"
+    ],
+    "title": "ADPKD — risk-stratified tolvaptan + aneurysm screening + family",
+    "description": "Fires for diagnosed ADPKD. Recommends BP < 130/80 (HALT-PKD low target); tolvaptan for rapidly progressive (Mayo 1C–E, PROPKD ≥ 6); LFT monthly first 18 months on tolvaptan; intracranial aneurysm screening for family history / pre-op / pilot / smoker / pre-tolvaptan; cyst infection lipophilic antibiotic; cascade family screening; pre-conception genetic counselling. Reads context.tkv, context.proPkdScore, context.familySah, context.bp, context.symptoms — never patient identity.",
+    "references": [
+      {
+        "label": "KDIGO ADPKD Conference; TEMPO + REPRISE + HALT-PKD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q61.2",
+        "display": "ADPKD",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]
