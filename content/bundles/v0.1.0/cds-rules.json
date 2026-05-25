@@ -9548,5 +9548,200 @@
     "rationale": "WHO Noma NTD designation 2023 + WHO Noma brochure + MSF Sokoto protocol.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "visceral-leishmaniasis-kala-azar-ssa-r1",
+    "title": "VL eastern Africa — PM+SSG combination or AmBisome",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "visceral-leishmaniasis-kala-azar-ssa"
+    },
+    "indicators": [
+      "fever > 1 month + splenomegaly + pancytopaenia in endemic area"
+    ],
+    "recommendation": "Confirm rK39 + bone marrow / spleen aspirate. First-line: paromomycin 15 mg/kg/d IM + SSG 20 mg/kg/d × 17 d. AmBisome 3–5 mg/kg/d total 30 mg/kg for pregnancy / HIV / age > 45 / severe. HIV co-infection: AmBisome 40 mg/kg total + miltefosine, then monthly maintenance until CD4 > 200. Monitor SSG QT + LFT.",
+    "rationale": "WHO TRS 949 + Kenya VL Strategic Plan.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "human-african-trypanosomiasis-sleeping-sickness-r1",
+    "title": "HAT — fexinidazole (gambiense) / NECT or melarsoprol (rhodesiense)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "human-african-trypanosomiasis-sleeping-sickness"
+    },
+    "indicators": [
+      "sleep reversal + tsetse exposure + lymphadenopathy"
+    ],
+    "recommendation": "T.b. gambiense first-line: fexinidazole PO × 10 d (stage 1 + stage 2 with CSF WBC ≤ 100). Stage 2 severe: NECT (eflornithine + nifurtimox). T.b. rhodesiense stage 1: suramin; stage 2: melarsoprol with prednisolone cover (5–10% mortality reactive encephalopathy). Follow-up LP at 6+12+24 months. Notify WHO surveillance.",
+    "rationale": "WHO HAT treatment guidelines 2019.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "cutaneous-leishmaniasis-ssa-r1",
+    "title": "CL — local for small, systemic SSG / miltefosine for facial / multiple",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "cutaneous-leishmaniasis-ssa"
+    },
+    "indicators": [
+      "chronic painless ulcer + endemic exposure"
+    ],
+    "recommendation": "Confirm slit smear / PCR. Small lesions on body: observe or intralesional SSG / cryotherapy / thermotherapy. Facial / large / multiple / immunocompromised: systemic SSG 20 mg/kg/day × 20 d or miltefosine 2.5 mg/kg/d × 28 d (avoid pregnancy). AmphoB if refractory.",
+    "rationale": "WHO TRS 949 + Aronson IDSA 2017.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "lymphatic-filariasis-elimination-ssa-r1",
+    "title": "LF — IDA triple therapy where loa loa not co-endemic",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "lymphatic-filariasis-elimination-ssa"
+    },
+    "indicators": [
+      "positive FTS / microfilariae"
+    ],
+    "recommendation": "MDA: triple-drug IDA (ivermectin 200 mcg/kg + DEC 6 mg/kg + albendazole 400 mg) where loa NOT co-endemic; DA elsewhere. Loa loa co-endemic: albendazole twice yearly + vector control. Chronic LE: daily hygiene + skin care + elevation + compression + footwear; treat ADL with antibiotic. Hydrocele surgery at district level.",
+    "rationale": "WHO GPELF + Triple-Drug Therapy 2017.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "onchocerciasis-river-blindness-ssa-r1",
+    "title": "Onchocerciasis — ivermectin annual/biannual; doxycycline if loa co-endemic",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "onchocerciasis-river-blindness-ssa"
+    },
+    "indicators": [
+      "chronic pruritus + nodules / skin lichenification in endemic area"
+    ],
+    "recommendation": "Confirm skin snip / Ov16 / slit-lamp. Ivermectin 150 mcg/kg PO annual (biannual in active transmission per WHO 2023) × 10–15 years. Loa co-endemic + mLOA > 8000/ml: doxycycline 100–200 mg/d × 4–6 wk (Wolbachia). Eye care for vision-threatening sequelae. MDA via ESPEN.",
+    "rationale": "WHO Ivermectin position paper 2023 + Oncho Elimination 2021–2030.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "buruli-ulcer-mycobacterium-ulcerans-ssa-r1",
+    "title": "Buruli ulcer — rifampicin + clarithromycin × 8 weeks",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "buruli-ulcer-mycobacterium-ulcerans-ssa"
+    },
+    "indicators": [
+      "painless undermined ulcer in child / endemic area"
+    ],
+    "recommendation": "PCR IS2404 confirmation. Rifampicin 10 mg/kg/d + clarithromycin 7.5 mg/kg BD × 8 weeks (WHO 2017 — replaced streptomycin). Wound care + minimal debridement only; skin grafting after antibiotic completion. Physio + splinting to prevent contractures. Manage paradoxical reaction supportively.",
+    "rationale": "WHO Mycobacterium ulcerans 2012/2017.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "echinococcosis-hydatid-disease-ssa-r1",
+    "title": "Hydatid — albendazole + WHO staging (CE1-CE5) + PAIR / surgery",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "echinococcosis-hydatid-disease-ssa"
+    },
+    "indicators": [
+      "cystic liver / lung mass + serology / endemic exposure"
+    ],
+    "recommendation": "WHO cyst staging. CE1/CE3a < 5 cm: albendazole 10–15 mg/kg/d × 3–6 mo or PAIR with hypertonic saline scolicide. CE2/CE3b complex: surgery (cystectomy/pericystectomy) + albendazole 4 d pre + 1 mo post. CE4/CE5 inactive: watch + wait. Pre-op albendazole reduces recurrence. Anti-spill technique mandatory; anaphylaxis precautions.",
+    "rationale": "WHO IWGE consensus + Kenya Hydatid Control (Turkana).",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "neurocysticercosis-taenia-solium-r1",
+    "title": "NCC viable cysts — albendazole + dexa ± praziquantel; AEDs for seizures",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "neurocysticercosis-taenia-solium"
+    },
+    "indicators": [
+      "adult-onset seizures + ring lesions on imaging"
+    ],
+    "recommendation": "Del Brutto criteria + serology. Parenchymal viable: albendazole 15 mg/kg/d BD × 10–14 d + dexamethasone 6 mg/d BEFORE + during; add praziquantel 50 mg/kg/d × 10 d if ≥ 2 cysts. AED for seizures (carbamazepine / levetiracetam). Intraventricular / giant subarachnoid: neurosurgery + prolonged albendazole. Calcified only: AED, NO cysticidal. Ocular cyst: surgery only.",
+    "rationale": "IDSA NCC Guidelines 2017 + Garcia NEJM 2014.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "schistosomiasis-comprehensive-ssa-r1",
+    "title": "Schistosomiasis — praziquantel 40 mg/kg single dose + MDA + screen FGS",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "schistosomiasis-comprehensive-ssa"
+    },
+    "indicators": [
+      "haematuria / chronic diarrhoea / endemic exposure"
+    ],
+    "recommendation": "Praziquantel 40 mg/kg PO single dose (60 mg/kg in 2 doses for S. japonicum). MDA via school programmes when prevalence > 10%. Katayama: praziquantel + steroid. FGS — treat + counsel HIV risk + fertility. Hepatosplenic: praziquantel + variceal banding. Neuroschisto: praziquantel + dexamethasone. Bladder cystoscopy surveillance if long-standing urinary.",
+    "rationale": "WHO Schistosomiasis Preventive Chemotherapy 2022.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "soil-transmitted-helminths-mda-ssa-r1",
+    "title": "STH — albendazole + MDA + iron-folate adolescent girls",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "soil-transmitted-helminths-mda-ssa"
+    },
+    "indicators": [
+      "anaemia / GI symptoms / endemic exposure"
+    ],
+    "recommendation": "Albendazole 400 mg single dose (or mebendazole 500 mg) covers all three. MDA pre-school 6-monthly + school annual/biannual. WRA twice yearly where prevalence > 20% (safe after 1st trimester pregnancy). Iron-folate for anaemic / adolescent girls. WASH + footwear (hookworm). Kenya NSBDP.",
+    "rationale": "WHO Preventive Chemotherapy STH 2022.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "lassa-fever-vhf-ssa-r1",
+    "title": "Suspected Lassa — IV ribavirin + barrier nursing + IDSR notify",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "lassa-fever-vhf-ssa"
+    },
+    "indicators": [
+      "fever + mucosal bleeding + endemic exposure"
+    ],
+    "recommendation": "Strict barrier nursing — dedicated isolation, full PPE. RT-PCR at BSL3 (KEMRI). IV ribavirin 30 mg/kg loading then 16 mg/kg q6h × 4 d then 8 mg/kg q8h × 6 d (most effective within first 6 d). Pregnancy — balance teratogenicity vs maternal mortality. Ring contact tracing 21 d. Notify IDSR + WHO IHR. PEP ribavirin for high-risk exposed.",
+    "rationale": "WHO Lassa Clinical Management + Nigeria CDC.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "mpox-ssa-2024-r1",
+    "title": "Mpox — isolate + supportive; tecovirimat for severe / immunocompromised",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "mpox-ssa-2024"
+    },
+    "indicators": [
+      "characteristic rash + lymphadenopathy"
+    ],
+    "recommendation": "PCR lesion swab. Standard + contact + droplet precautions until all lesions crusted. Supportive — analgesia, fluids, wound care, antibiotic if cellulitis. Severe / immunocompromised / paediatric / pregnancy: tecovirimat via MEURI / outbreak protocols. HIV + STI testing all. Contact tracing 21 d. MVA-BN vaccine pre- + post-exposure for high-risk. Notify IDSR + WHO.",
+    "rationale": "WHO Mpox Clinical Guidelines 2024 + Africa CDC + Kenya MOH Plan 2024.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "trachoma-elimination-ssa-r1",
+    "title": "Trachoma — SAFE strategy + azithromycin MDA + TT surgery",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "trachoma-elimination-ssa"
+    },
+    "indicators": [
+      "TF in child community / trichiasis adult / endemic area"
+    ],
+    "recommendation": "SAFE: TT surgery (bilamellar tarsal rotation by trained OCO); azithromycin 20 mg/kg single dose annually × 3–5 yrs MDA where TF ≥ 5% in 1–9 yrs (Pfizer ITI donation); facial cleanliness; environmental — latrines + water + fly control. Validation as PHP elimination via WHO GET2030 dossier process.",
+    "rationale": "WHO Alliance for Global Elimination of Trachoma 2030.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
