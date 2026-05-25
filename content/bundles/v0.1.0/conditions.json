@@ -63303,5 +63303,1112 @@
     "evidenceLevel": "A",
     "icd11": [],
     "snomed": []
+  },
+  {
+    "slug": "medulloblastoma-paediatric",
+    "title": "Medulloblastoma — paediatric posterior fossa tumour",
+    "icd10": [
+      "C71.6"
+    ],
+    "domains": [
+      "oncology",
+      "paediatrics",
+      "neurosurgery",
+      "radiation-oncology"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 25,
+      "sex": "any"
+    },
+    "presentation": [
+      "Most common malignant paediatric brain tumour (peak 5–9 years).",
+      "Cerebellar / brainstem signs: ataxia, gait disturbance, intention tremor, cranial neuropathies.",
+      "Raised ICP: morning headache, vomiting, papilloedema, lethargy, behavioural change.",
+      "Macrocephaly in infants.",
+      "Drop metastases (leptomeningeal spread — ~30% at diagnosis): back pain, focal neuro.",
+      "Molecular subgroups (WHO 2021): WNT (best prognosis), SHH (intermediate, infant subtype), Group 3 (high-risk metastatic), Group 4 (most common, intermediate)."
+    ],
+    "redFlags": [
+      "Severe obstructive hydrocephalus (4th ventricle compression) — EVD.",
+      "Brainstem herniation.",
+      "Spinal cord drop metastasis with cord compression.",
+      "Tumour bleeding.",
+      "Posterior fossa syndrome post-resection (mutism + irritability + emotional dysregulation — 25%).",
+      "Infants — radiotherapy avoided (devastating long-term effects); chemotherapy-only approaches."
+    ],
+    "diagnostics": [
+      {
+        "test": "MRI brain + entire neuraxis (spine) with contrast.",
+        "rationale": "Posterior fossa tumour location + size + hydrocephalus + drop metastasis."
+      },
+      {
+        "test": "CSF cytology (lumbar puncture after surgical decompression of hydrocephalus).",
+        "rationale": "Leptomeningeal spread — defines risk."
+      },
+      {
+        "test": "Tissue biopsy / resection specimen — histology + molecular: methylation profiling, WNT (CTNNB1 mutation, monosomy 6), SHH (PTCH1, SUFU, MYCN amplification), Group 3 (MYC amplification), Group 4.",
+        "rationale": "Risk-stratification + treatment."
+      },
+      {
+        "test": "Baseline endocrine + audiology + neurocognitive + dental + ophthalmology + cardiac.",
+        "rationale": "Pre-treatment baseline for late effects."
+      },
+      {
+        "test": "Genetic counselling — predisposition syndromes (Li-Fraumeni, Gorlin, familial adenomatous polyposis with Turcot, Fanconi anaemia).",
+        "rationale": "Identify germline mutations."
+      }
+    ],
+    "management": [
+      {
+        "step": "Specialist paediatric neuro-oncology centre",
+        "detail": "Multidisciplinary team (neurosurgery + paediatric oncology + radiation oncology + neuropsychology + endocrinology + audiology). Outcomes substantially better at high-volume centres + clinical trial enrolment encouraged."
+      },
+      {
+        "step": "Surgical resection — maximal safe",
+        "detail": "Gross total / near-total resection improves outcomes. EVD for hydrocephalus + posterior fossa craniotomy. Posterior fossa syndrome counselling pre-op."
+      },
+      {
+        "step": "Risk-stratified chemoradiotherapy",
+        "detail": "Standard-risk (gross-total resected, no metastases, > 3 years, no MYC/MYCN amplification): craniospinal RT 23.4 Gy + boost to tumour bed 54 Gy + maintenance chemotherapy (cisplatin + lomustine + vincristine OR cyclophosphamide + cisplatin + vincristine). High-risk (metastases / sub-total resection / MYC amplification): intensified chemoradiotherapy ± high-dose chemo + stem-cell rescue. Infants (< 3 years): radiotherapy AVOIDED — chemotherapy-only approaches (head-saving infant protocols)."
+      },
+      {
+        "step": "WNT-subgroup — opportunity for treatment de-intensification",
+        "detail": "Excellent prognosis (~90% 5-year survival); current trials reducing radiation dose + chemotherapy intensity to mitigate late effects (SJYC07, COG ACNS1422)."
+      },
+      {
+        "step": "SHH-subgroup",
+        "detail": "Vismodegib (smoothened inhibitor) for adult / older paediatric refractory; cautious in growing children — premature epiphyseal closure."
+      },
+      {
+        "step": "Late-effect surveillance — lifelong",
+        "detail": "Neurocognitive (IQ decline ~2 points/year radiation), endocrine (panhypopituitarism, growth hormone, hypothyroidism, gonadal failure, ACTH deficiency), audiology (cisplatin ototoxicity), secondary malignancy (radiation + alkylator), cardiotoxicity, vascular (Moyamoya post-radiation)."
+      },
+      {
+        "step": "Rehabilitation + family support",
+        "detail": "Multidisciplinary rehabilitation; school re-integration + IEP; family support + counselling; siblings."
+      },
+      {
+        "step": "Recurrent / progressive disease",
+        "detail": "Salvage chemotherapy ± high-dose with stem cell rescue + re-irradiation in selected. Targeted therapy per molecular subgroup (clinical trials)."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Classification of Tumours of the Central Nervous System (2021); COG / SIOPE / HIT protocols"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "retinoblastoma",
+    "title": "Retinoblastoma — paediatric intraocular malignancy",
+    "icd10": [
+      "C69.2"
+    ],
+    "domains": [
+      "oncology",
+      "paediatrics",
+      "ophthalmology",
+      "genetics"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 5,
+      "sex": "any"
+    },
+    "presentation": [
+      "Most common paediatric intraocular cancer — median diagnosis 18 months (unilateral) / 12 months (bilateral).",
+      "Leukocoria (white pupillary reflex — 'cat eye reflex'): most common presenting sign.",
+      "Strabismus, vision loss, red eye, glaucoma, hyphaema, proptosis (advanced).",
+      "Hereditary (40%) — germline RB1 mutation (autosomal dominant; bilateral / multifocal / younger; trilateral with pineoblastoma).",
+      "Sporadic (60%) — somatic mutation; unilateral.",
+      "Survivors of hereditary retinoblastoma at lifetime risk of second cancers (osteosarcoma + soft-tissue sarcoma + melanoma + brain tumours)."
+    ],
+    "redFlags": [
+      "Suspected bilateral / multifocal disease — likely hereditary; genetic counselling.",
+      "Extraocular extension — emergency.",
+      "Optic-nerve involvement on imaging.",
+      "Trilateral retinoblastoma (intraocular + pineoblastoma).",
+      "Genetic counselling for siblings + parents.",
+      "Pregnant carrier — prenatal counselling + early postnatal screening of newborn."
+    ],
+    "diagnostics": [
+      {
+        "test": "Detailed ophthalmological examination under anaesthesia (EUA) with indirect ophthalmoscopy + RetCam imaging.",
+        "rationale": "Diagnosis + staging (International Classification of Retinoblastoma); definitive (no biopsy — seeding risk)."
+      },
+      {
+        "test": "Ocular ultrasound + MRI orbit + brain (for trilateral disease).",
+        "rationale": "Local extent + CNS involvement."
+      },
+      {
+        "test": "RB1 germline + tumour mutation analysis.",
+        "rationale": "Hereditary vs sporadic; family counselling + screening of siblings."
+      },
+      {
+        "test": "Bone marrow + CSF + bone scan for advanced / extraocular suspicion.",
+        "rationale": "Staging extraocular disease."
+      },
+      {
+        "test": "Examination of parents + siblings + offspring of survivors.",
+        "rationale": "Cascade testing."
+      }
+    ],
+    "management": [
+      {
+        "step": "Specialist paediatric ocular-oncology centre",
+        "detail": "Multidisciplinary: ophthalmic oncologist + paediatric oncologist + geneticist + interventional radiologist + radiation oncologist. Goals: life > eye > vision."
+      },
+      {
+        "step": "Eye-salvaging treatment (groups A-D per International Classification)",
+        "detail": "Group A: laser photocoagulation OR cryotherapy. Groups B-D: systemic intravenous chemotherapy (vincristine + etoposide + carboplatin) + focal consolidation (laser / cryo). Intra-arterial chemotherapy (super-selective ophthalmic artery infusion of melphalan / topotecan / carboplatin) — preferred at experienced centres. Intravitreal melphalan / topotecan for vitreous seeds."
+      },
+      {
+        "step": "Group E / advanced — enucleation",
+        "detail": "Surgical removal of eye when not salvageable / vision unrecoverable / optic-nerve involvement / glaucoma + buphthalmos. Long optic-nerve stump for staging. Prosthesis fitting."
+      },
+      {
+        "step": "Extraocular / metastatic disease",
+        "detail": "High-dose chemotherapy + stem-cell rescue. Intrathecal chemotherapy for CNS. Radiotherapy (focal + craniospinal for trilateral)."
+      },
+      {
+        "step": "External beam radiotherapy — limit due to long-term risks",
+        "detail": "Increases second-cancer risk substantially in hereditary RB. Reserved for salvage / extraocular disease."
+      },
+      {
+        "step": "Hereditary + family screening",
+        "detail": "Genetic testing of all newborn siblings of affected child + offspring of survivors. EUA from neonatal period if hereditary suspected — early treatment maximises eye / vision preservation."
+      },
+      {
+        "step": "Surveillance for second malignancy in hereditary RB survivors",
+        "detail": "Lifetime risk ~50% for second cancer. Avoid radiation where possible (treatment + diagnostic — minimize CT, prefer MRI). Annual surveillance + early symptomatic investigation. Sun protection. Educate patient + family."
+      },
+      {
+        "step": "Visual + cognitive rehabilitation + low-vision",
+        "detail": "Prosthesis adjustment + visual rehabilitation for residual vision. Low-vision aids. School + occupational support."
+      },
+      {
+        "step": "Pregnancy + reproductive counselling",
+        "detail": "Hereditary carriers — pre-implantation genetic diagnosis option; prenatal testing; postnatal early ophthalmology."
+      }
+    ],
+    "references": [
+      {
+        "label": "International Society of Ocular Oncology / ICRB criteria; American Brain Tumor Association"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "neurofibromatosis-type-1-management",
+    "title": "Neurofibromatosis type 1 — comprehensive lifelong care",
+    "icd10": [
+      "Q85.01"
+    ],
+    "domains": [
+      "genetics",
+      "neurology",
+      "oncology",
+      "dermatology",
+      "paediatrics"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Autosomal dominant — NF1 (neurofibromin) gene; 50% de novo.",
+      "Diagnostic criteria (NIH revised 2021): ≥ 2 of café-au-lait macules (≥ 6 lesions > 5 mm pre-pubertal / > 15 mm post-pubertal); freckling axillary / inguinal; Lisch nodules (iris hamartoma); optic pathway glioma; first-degree relative; characteristic bone lesion (sphenoid dysplasia, tibial pseudarthrosis); ≥ 2 cutaneous / subcutaneous neurofibromas OR plexiform neurofibroma.",
+      "Multi-system manifestations: cutaneous neurofibromas, plexiform neurofibromas (risk of MPNST), optic pathway glioma, low-grade glioma, intellectual difficulty + ADHD + learning disability, scoliosis, sphenoid dysplasia, pseudarthrosis, hypertension (often secondary — phaeochromocytoma 0.1–5%; renal artery stenosis), GIST, breast cancer (women 30–50 → 5× background risk), juvenile myelomonocytic leukaemia."
+    ],
+    "redFlags": [
+      "New / rapidly growing / painful neurofibroma — exclude MPNST (malignant peripheral nerve sheath tumour — 8–13% lifetime in NF1).",
+      "Visual disturbance — optic pathway glioma (most common ~15% — particularly age 1–7).",
+      "Spinal cord compression from plexiform neurofibroma.",
+      "Hypertension — secondary cause workup (phaeochromocytoma / renal artery stenosis).",
+      "New scoliosis curve progression.",
+      "Pregnancy + NF1 — increased growth of neurofibromas + hypertension risk.",
+      "Acute deterioration in adolescent / young adult — MPNST."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnostic criteria + careful skin / eye / musculoskeletal examination.",
+        "rationale": "Diagnosis."
+      },
+      {
+        "test": "NF1 genetic testing (sequencing + deletion / duplication).",
+        "rationale": "Confirmation + family cascade + sporadic vs familial."
+      },
+      {
+        "test": "Annual / 6-monthly ophthalmology + visual acuity / fields in childhood (peak optic glioma risk age 1–7).",
+        "rationale": "Optic glioma surveillance."
+      },
+      {
+        "test": "Annual blood pressure + secondary HT workup if HTN.",
+        "rationale": "Phaeochromocytoma + renal artery stenosis."
+      },
+      {
+        "test": "Whole-body MRI baseline + symptom-driven for plexiform / MPNST surveillance.",
+        "rationale": "Plexiform burden + early MPNST detection."
+      },
+      {
+        "test": "Annual spine examination (scoliosis surveillance).",
+        "rationale": "Progressive curves common."
+      },
+      {
+        "test": "Annual breast screen from age 30 in females + early mammography.",
+        "rationale": "5× breast cancer risk."
+      },
+      {
+        "test": "Neurocognitive + ADHD assessment.",
+        "rationale": "Learning + behavioural support."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary NF1 specialist clinic",
+        "detail": "Geneticist + neurologist + neurosurgeon + dermatologist + ophthalmologist + orthopaedic + endocrinologist + oncologist + psychologist + paediatrician + family + specialist nurse."
+      },
+      {
+        "step": "Plexiform neurofibroma — selumetinib (MEK inhibitor) for symptomatic / progressive paediatric",
+        "detail": "FDA-approved (SPRINT trial). Adolescent + adult — surgical resection if accessible + symptomatic; large / inoperable — surveillance + MEK inhibitor."
+      },
+      {
+        "step": "Cutaneous neurofibroma management",
+        "detail": "Excision / laser ablation for symptomatic / cosmetic / pre-malignant. Emerging targeted therapies (MEK inhibitor selumetinib topical formulations in trial)."
+      },
+      {
+        "step": "Optic pathway glioma",
+        "detail": "MOST do NOT need treatment. Treatment indications: visual decline / radiographic progression. Carboplatin + vincristine OR vinblastine OR MEK inhibitor (selumetinib) increasingly first-line. AVOID radiotherapy in NF1 (very high secondary cancer + moyamoya + cognitive decline risk)."
+      },
+      {
+        "step": "MPNST — surgical resection + adjuvant",
+        "detail": "Wide local excision + adjuvant chemotherapy (ifosfamide + doxorubicin) + radiotherapy if margins close. Aggressive disease — high mortality."
+      },
+      {
+        "step": "Hypertension management — workup secondary cause",
+        "detail": "Plasma + urinary metanephrines (phaeochromocytoma); MRA for renal artery stenosis; standard ACE inhibitor (renal artery stenosis caveats)."
+      },
+      {
+        "step": "Scoliosis + skeletal",
+        "detail": "Bracing / surgery for progressive curves. Tibial pseudarthrosis — orthopaedic + bisphosphonate + bracing + surgery."
+      },
+      {
+        "step": "Learning + behavioural support",
+        "detail": "Educational support (IEP); ADHD treatment (stimulant / non-stimulant); cognitive rehabilitation; family counselling."
+      },
+      {
+        "step": "Pregnancy + reproductive counselling",
+        "detail": "50% offspring inheritance. Pre-implantation diagnosis option. Pregnancy may accelerate neurofibroma growth + BP monitoring intensified."
+      },
+      {
+        "step": "Breast cancer surveillance (women)",
+        "detail": "Annual MRI + mammography from age 30 (5× background risk); consider risk-reducing mastectomy in selected after counselling."
+      },
+      {
+        "step": "Cascade family testing",
+        "detail": "First-degree relatives — clinical + genetic; explain 50% inheritance."
+      }
+    ],
+    "references": [
+      {
+        "label": "Revised NF1 Diagnostic Criteria (Legius et al. 2021); SPRINT trial; ESCO + AAP NF1 surveillance"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "tuberous-sclerosis-comprehensive-management",
+    "title": "Tuberous sclerosis complex (TSC) — multisystem management",
+    "icd10": [
+      "Q85.1"
+    ],
+    "domains": [
+      "genetics",
+      "neurology",
+      "nephrology",
+      "dermatology",
+      "cardiology",
+      "respiratory"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "any"
+    },
+    "presentation": [
+      "Autosomal dominant — TSC1 (hamartin) or TSC2 (tuberin) mutations; ~70% de novo. 50% inheritance.",
+      "CNS: cortical tubers, subependymal nodules (SENs), subependymal giant cell astrocytomas (SEGAs), epilepsy (80–90% — onset infantile spasms common; LGS / focal / drug-resistant), TAND (TSC-associated neuropsychiatric disorders — intellectual disability, ASD, ADHD, anxiety, depression).",
+      "Skin: facial angiofibroma (post-pubertal), forehead plaque, ash-leaf macules (early), shagreen patch, ungual fibroma.",
+      "Cardiac: rhabdomyoma — often detected antenatally / infancy; usually regress.",
+      "Renal: angiomyolipoma (AML — large > 3 cm risk of bleeding), polycystic kidneys, RCC.",
+      "Pulmonary: lymphangioleiomyomatosis (LAM) — women 20–40; cystic lung disease + pneumothorax.",
+      "Ophthalmology: retinal hamartoma.",
+      "Endocrine: subclinical hypothyroidism, growth hormone effects, parathyroid adenoma."
+    ],
+    "redFlags": [
+      "Subependymal giant cell astrocytoma (SEGA) with growth / hydrocephalus — surgical / mTOR inhibitor.",
+      "Drug-resistant epilepsy — surgical + dietary + mTOR inhibitor.",
+      "AML > 3 cm with vascular pattern — bleeding risk; mTOR inhibitor + embolisation.",
+      "LAM with progressive lung function decline.",
+      "Suspected RCC — surveillance + intervention.",
+      "Severe TAND with self-injury / aggression."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnostic criteria (TSC International Consensus 2012, updated 2021).",
+        "rationale": "Definite diagnosis with 2 major OR 1 major + 2 minor criteria."
+      },
+      {
+        "test": "TSC1 + TSC2 genetic testing.",
+        "rationale": "Confirmation + family cascade."
+      },
+      {
+        "test": "Baseline + surveillance MRI brain every 1–3 years until age 25 (SEGA screening).",
+        "rationale": "Detect SEGAs."
+      },
+      {
+        "test": "EEG + sleep EEG.",
+        "rationale": "Identify seizures + subclinical activity."
+      },
+      {
+        "test": "Renal MRI / USS — baseline + every 1–3 years lifelong.",
+        "rationale": "AML + cyst + RCC surveillance."
+      },
+      {
+        "test": "HRCT chest baseline at age 18 in women + every 5–10 years (LAM screening).",
+        "rationale": "Identify LAM."
+      },
+      {
+        "test": "Echocardiogram if cardiac symptoms / antenatally detected rhabdomyoma.",
+        "rationale": "Cardiac surveillance."
+      },
+      {
+        "test": "Annual skin / dental / ophthalmology / cognitive / behavioural assessment.",
+        "rationale": "Multisystem surveillance + TAND."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary TSC clinic",
+        "detail": "Neurology + neurosurgery + nephrology + respiratory + dermatology + cardiology + endocrinology + psychology + paediatrician / adult medicine + family support."
+      },
+      {
+        "step": "mTOR inhibitors — multi-organ DMT",
+        "detail": "Everolimus 4.5 mg/m² daily (paediatric) or 10 mg daily (adult) — approved for SEGA (when surgery not feasible), AML (renal), LAM, drug-resistant epilepsy (EXIST + EXIST-2 + EXIST-3 trials). Sirolimus topical for facial angiofibroma. Monitor: trough levels, lipids, glucose, oral ulcers, infection."
+      },
+      {
+        "step": "Epilepsy management",
+        "detail": "Infantile spasms: vigabatrin first-line (PARTICULARLY EFFECTIVE in TSC — ARDIE trial). Other seizure types: standard antiepileptic. Refractory: ketogenic diet, VNS, mTOR inhibitor, epilepsy surgery (high yield in TSC; specialist multidisciplinary)."
+      },
+      {
+        "step": "SEGA management",
+        "detail": "Growing / symptomatic SEGA: surgical resection (preferred) OR everolimus. Hydrocephalus emergency — EVD + surgical decompression."
+      },
+      {
+        "step": "Renal AML",
+        "detail": "AML > 3 cm: everolimus to shrink + selective embolisation. Acute bleeding: emergency embolisation. Active surveillance for smaller / stable."
+      },
+      {
+        "step": "LAM (women)",
+        "detail": "Sirolimus / everolimus — slows lung function decline + reduces chylothorax (MILES trial). Pulmonary function monitoring + smoking cessation. Pleurodesis / lung transplant for end-stage. Oestrogen-containing contraception cautious."
+      },
+      {
+        "step": "Cardiac rhabdomyoma",
+        "detail": "Most regress without intervention. Symptomatic / obstructive — surgery or everolimus."
+      },
+      {
+        "step": "Dermatological",
+        "detail": "Topical sirolimus 0.1% twice daily for facial angiofibroma (FDA-approved Hyftor / Vitos). Laser therapy alternative. Surgical excision for shagreen / forehead plaque."
+      },
+      {
+        "step": "TAND management",
+        "detail": "Annual TAND-checklist assessment. Educational support; behavioural therapy; SSRI / methylphenidate / atomoxetine; intensive support for severe ID."
+      },
+      {
+        "step": "Cascade family testing + reproductive counselling",
+        "detail": "50% inheritance. Pre-implantation genetic diagnosis option. Newborns of affected parents: serial echocardiogram + skin examination."
+      }
+    ],
+    "references": [
+      {
+        "label": "TSC International Consensus Diagnostic Criteria (Northrup et al. 2021); EXIST + MILES + ARDIE trials; TSC Alliance"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "turner-syndrome-comprehensive-care",
+    "title": "Turner syndrome (45,X / mosaic) — lifelong multidisciplinary care",
+    "icd10": [
+      "Q96"
+    ],
+    "domains": [
+      "endocrinology",
+      "genetics",
+      "cardiology",
+      "gynaecology",
+      "paediatrics"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "female"
+    },
+    "presentation": [
+      "Chromosomal abnormality — complete or partial monosomy X (45,X most common; mosaic 45,X/46,XX; structural X abnormalities).",
+      "Newborn / infant: lymphoedema, redundant nuchal skin, low birthweight.",
+      "Childhood: short stature, broad chest with widely spaced nipples, low hairline, low-set ears, cubitus valgus, neck webbing, short fourth metacarpal, Madelung deformity.",
+      "Adolescence / adult: delayed / absent puberty, primary amenorrhoea, infertility.",
+      "Cardiovascular: bicuspid aortic valve (30%), coarctation (10%), aortic dilation + dissection — leading cause of mortality.",
+      "Endocrine: hypothyroidism (Hashimoto, 25%), type 2 diabetes, ovarian failure (primary), GH responsive growth.",
+      "Renal: horseshoe kidney (10%), collecting system anomaly.",
+      "Hearing: conductive + sensorineural loss (50%).",
+      "Cognitive: NORMAL IQ; specific visuospatial + math difficulties; ADHD risk.",
+      "Skeletal: osteoporosis risk (oestrogen deficiency + secondary)."
+    ],
+    "redFlags": [
+      "Aortic dissection — rare but devastating; surveillance critical.",
+      "Aortic root > 2.0 cm/m² ascending diameter — prophylactic surgery consideration.",
+      "Pregnancy in Turner — high maternal cardiac mortality from aortic dissection; specialist counselling pre-conception MANDATORY.",
+      "Severe hypertension.",
+      "Suspected adrenal insufficiency.",
+      "Delayed / absent puberty."
+    ],
+    "diagnostics": [
+      {
+        "test": "Karyotype on peripheral blood (30 metaphase cells for mosaicism detection).",
+        "rationale": "Diagnosis."
+      },
+      {
+        "test": "Comprehensive newborn / childhood assessment: echocardiography + renal USS + thyroid + DEXA + skeletal survey.",
+        "rationale": "Identify congenital abnormalities."
+      },
+      {
+        "test": "Annual / 2-yearly cardiac MRI / CT angiography (aortic root surveillance).",
+        "rationale": "Aortic dilation / dissection prevention."
+      },
+      {
+        "test": "Annual TSH + lipid + HbA1c + 24-h ABPM.",
+        "rationale": "Endocrine + metabolic + BP surveillance."
+      },
+      {
+        "test": "Annual audiology.",
+        "rationale": "Detect progressive hearing loss."
+      },
+      {
+        "test": "DEXA every 2–5 years.",
+        "rationale": "Osteoporosis."
+      },
+      {
+        "test": "Pre-conception cardiac assessment — strict.",
+        "rationale": "Pregnancy risk stratification."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary Turner specialist clinic",
+        "detail": "Paediatric / adult endocrinology + cardiology + gynaecology + audiology + ENT + orthopaedics + psychology + nephrology + dental."
+      },
+      {
+        "step": "Growth hormone — early initiation",
+        "detail": "rGH from age 4–6 (or earlier if growth failure) until adult height attained; achieves ~7 cm additional adult height. Add oxandrolone (anabolic) age 9+ for further height. Monitor: growth velocity, glucose, lipids."
+      },
+      {
+        "step": "Pubertal induction with oestrogen",
+        "detail": "Start low-dose 17β-oestradiol from age 11–12 (transdermal preferred); titrate over 2–3 years; add progestogen once breakthrough bleeding or 2 years after starting; mimics normal pubertal development. CONTINUE oestrogen + progestogen until age of expected menopause (~50)."
+      },
+      {
+        "step": "Cardiac surveillance + intervention",
+        "detail": "Aortic root size for body surface area (Z-score). Annual / 2-yearly MRI / CT angio. Beta-blocker (atenolol / metoprolol) OR losartan for aortic protection. Prophylactic root replacement at ascending aortic diameter > 2.5 cm/m² OR > 2.0 cm/m² with risk factors (bicuspid valve, coarctation, hypertension). Aortic dissection emergency — per dissection pathway."
+      },
+      {
+        "step": "Reproductive considerations",
+        "detail": "Spontaneous fertility rare (mostly mosaic 45,X/46,XX). Donor egg + IVF pregnancy possible. PRE-CONCEPTION cardiac assessment MANDATORY — pregnancy contraindicated if aortic root > 2.0 cm/m² OR significant valve / coarctation / aortic dissection. Specialist obstetric care. Fertility preservation (ovarian tissue / oocyte cryopreservation) emerging in selected adolescents."
+      },
+      {
+        "step": "Endocrine management",
+        "detail": "Hypothyroidism: levothyroxine. Type 2 diabetes: standard management. Hypertension: target < 130/80; ACEi / ARB / beta-blocker."
+      },
+      {
+        "step": "Bone health",
+        "detail": "Calcium + vitamin D + bisphosphonate for osteoporosis. Weight-bearing exercise. Continue HRT through reproductive age."
+      },
+      {
+        "step": "Hearing + ENT",
+        "detail": "Hearing aids for sensorineural loss. Grommets for childhood serous otitis media. Annual ENT review."
+      },
+      {
+        "step": "Psychological + educational support",
+        "detail": "IQ usually normal; specific math + visuospatial support. School-based IEP. ADHD treatment if indicated. Social + body-image counselling."
+      },
+      {
+        "step": "Transition to adult care + lifelong follow-up",
+        "detail": "Structured adolescent → adult Turner clinic. Continuous multidisciplinary care; cardiovascular + endocrine + bone + psychological."
+      }
+    ],
+    "references": [
+      {
+        "label": "International Turner Syndrome Consensus (Gravholt et al. 2017); ENDO Society Turner; Turner Syndrome Society"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "klinefelter-syndrome-comprehensive-care",
+    "title": "Klinefelter syndrome (47,XXY) — lifelong management",
+    "icd10": [
+      "Q98"
+    ],
+    "domains": [
+      "endocrinology",
+      "genetics",
+      "reproductive-medicine",
+      "psychiatry"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "sex": "male"
+    },
+    "presentation": [
+      "Chromosomal disorder — extra X chromosome (47,XXY most common; variants 48,XXXY; mosaic).",
+      "Childhood: often unrecognised — language delay; learning + behavioural difficulties; delayed speech; tall stature.",
+      "Adolescent / adult: small firm testes (< 6 mL), incomplete virilisation, gynaecomastia, sparse facial / body hair, eunuchoidal proportions (long limbs).",
+      "Infertility (95%) — non-obstructive azoospermia.",
+      "Hypogonadism: low testosterone + raised LH + FSH from adolescence.",
+      "Comorbidities: type 2 diabetes + metabolic syndrome (3–5×), cardiovascular disease, osteoporosis, autoimmune (thyroid, SLE, RA, vasculitis), breast cancer (50× background — small absolute), germ-cell tumours, mental health (depression, anxiety, autism spectrum overlap)."
+    ],
+    "redFlags": [
+      "Severe psychiatric presentation — increased mental health burden.",
+      "Suspected germ cell / breast tumour.",
+      "Severe osteoporosis with fracture.",
+      "Suspected SLE / vasculitis / autoimmune.",
+      "Suicidal ideation.",
+      "Pregnancy planning — reproductive technology + fertility preservation timing critical."
+    ],
+    "diagnostics": [
+      {
+        "test": "Karyotype on peripheral blood (50 cells for mosaicism).",
+        "rationale": "Diagnosis."
+      },
+      {
+        "test": "Morning total + free testosterone + LH + FSH + oestradiol + SHBG.",
+        "rationale": "Confirm hypogonadism."
+      },
+      {
+        "test": "Semen analysis (azoospermia in 95% — but rare sperm sometimes; cryptozoospermia).",
+        "rationale": "Fertility planning."
+      },
+      {
+        "test": "DEXA (often osteoporotic / osteopenic — early).",
+        "rationale": "Bone health."
+      },
+      {
+        "test": "TSH + autoimmune screen + lipids + glucose / HbA1c + cardiovascular risk assessment.",
+        "rationale": "Comorbidity."
+      },
+      {
+        "test": "Mental health screening (PHQ-9 + GAD-7 + autism spectrum).",
+        "rationale": "High burden."
+      },
+      {
+        "test": "Annual breast examination + low-threshold imaging (mammography / ultrasound).",
+        "rationale": "Breast cancer surveillance."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary clinic",
+        "detail": "Endocrinology + reproductive medicine + psychology + cardiology + bone-specialist + family / partner support."
+      },
+      {
+        "step": "Testosterone replacement — lifelong from puberty",
+        "detail": "IM testosterone enanthate / cypionate (250 mg every 2–4 weeks) OR transdermal gel (50–100 mg daily) OR long-acting IM testosterone undecanoate (1000 mg every 10–14 weeks). Target morning total testosterone in mid-normal range. Monitor: haematocrit (polycythaemia), PSA, lipids, BP, mood, libido. Counsel on infertility (suppresses spermatogenesis)."
+      },
+      {
+        "step": "Fertility — sperm retrieval BEFORE testosterone OR with washout",
+        "detail": "Micro-TESE (microsurgical testicular sperm extraction) yields sperm in 40–60% of KS adolescents / young men. EARLIER (adolescent) may improve outcomes — best window before testosterone. Cryopreservation for future ART (IVF + ICSI). Withhold testosterone if attempting fertility ± transition with HCG / clomiphene."
+      },
+      {
+        "step": "Bone health",
+        "detail": "Calcium 1000 mg + vitamin D 800 IU daily. DEXA every 2–5 years. Bisphosphonate for osteoporosis."
+      },
+      {
+        "step": "Cardiovascular + metabolic",
+        "detail": "Standard CVD risk reduction; BP < 130/80; statin per risk; diabetes screening; weight management. Higher MI risk; CVD leading cause of death."
+      },
+      {
+        "step": "Mental health + neurodevelopmental support",
+        "detail": "Higher rates of depression, anxiety, learning difficulty, autism spectrum, ADHD. Mental health screening + treatment. Educational support + IEP."
+      },
+      {
+        "step": "Cancer surveillance",
+        "detail": "Annual breast self-examination + clinical exam. Low-threshold imaging for breast lump; mammography per local risk-adapted protocols. Mediastinal germ cell tumour — exclude with imaging if symptoms (rare)."
+      },
+      {
+        "step": "Gynaecomastia management",
+        "detail": "Reassurance for mild. Aromatase inhibitor (anastrozole) limited evidence. Reduction mammoplasty for severe / psychologically distressing."
+      },
+      {
+        "step": "Transition + lifelong follow-up",
+        "detail": "Paediatric → adult; complete medical + reproductive workup; long-term endocrinology + lifestyle + psychological care."
+      },
+      {
+        "step": "Pre-implantation genetic counselling for partners considering pregnancy",
+        "detail": "Pregnancy from KS man with cryopreserved sperm via IVF + ICSI; recurrence risk in offspring slightly elevated but usually low."
+      }
+    ],
+    "references": [
+      {
+        "label": "European Academy of Andrology Clinical Practice Guideline on Klinefelter; Endocrine Society male hypogonadism"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-iugr-intrauterine-growth-restriction",
+    "title": "Severe intrauterine growth restriction (IUGR) — monitoring + delivery timing",
+    "icd10": [
+      "P05",
+      "O36.5"
+    ],
+    "domains": [
+      "obstetrics",
+      "neonatology",
+      "obstetric-emergency"
+    ],
+    "population": {
+      "minAgeYears": 14,
+      "maxAgeYears": 49,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Fetus failing to reach growth potential — estimated fetal weight < 10th centile (small for gestational age) OR < 3rd centile (severe SGA / IUGR), with abnormal Doppler / amniotic fluid / fetal monitoring.",
+      "Causes: placental insufficiency (most common — pre-eclampsia, maternal vascular disease, antiphospholipid syndrome, smoking, drug use), maternal (severe medical illness, malnutrition), fetal (congenital infection — TORCH, chromosomal abnormality, structural anomaly), genetic (Russell-Silver syndrome, IGF-1 mutations).",
+      "Early-onset (< 32 weeks): more severe; placental insufficiency dominant; high perinatal mortality + long-term morbidity.",
+      "Late-onset (≥ 32 weeks): more common; less severe; better short-term outcomes."
+    ],
+    "redFlags": [
+      "Absent / reversed end-diastolic flow in umbilical artery — critical placental insufficiency; consider delivery.",
+      "Abnormal ductus venosus Doppler (a-wave reversal) — fetal cardiac compromise; delivery indicated.",
+      "Severe oligohydramnios.",
+      "Decreased fetal movement.",
+      "Maternal severe pre-eclampsia / HELLP.",
+      "Suspected fetal infection / chromosomal — counselling.",
+      "Very-preterm + uncertain viability — multidisciplinary decision."
+    ],
+    "diagnostics": [
+      {
+        "test": "Serial growth scans (every 2 weeks) — estimated fetal weight + abdominal circumference + amniotic fluid.",
+        "rationale": "Track growth velocity."
+      },
+      {
+        "test": "Umbilical artery Doppler (UA) every 1–2 weeks; weekly if abnormal.",
+        "rationale": "Placental function — gold standard."
+      },
+      {
+        "test": "Middle cerebral artery (MCA) Doppler + cerebroplacental ratio (CPR).",
+        "rationale": "Fetal compromise; brain-sparing."
+      },
+      {
+        "test": "Ductus venosus Doppler if UA absent / reversed end-diastolic flow.",
+        "rationale": "Pre-acidaemic fetal compromise."
+      },
+      {
+        "test": "CTG biophysical profile (BPP) — fetal heart rate + amniotic fluid + breathing + movement + tone.",
+        "rationale": "Acute well-being."
+      },
+      {
+        "test": "Maternal: BP + urinalysis + bloods for pre-eclampsia; PIGF + sFlt-1 (where available).",
+        "rationale": "Pre-eclampsia surveillance."
+      },
+      {
+        "test": "Fetal echocardiography + invasive testing (CVS / amniocentesis) for suspected genetic / structural.",
+        "rationale": "Identify treatable / non-treatable causes."
+      },
+      {
+        "test": "TORCH serology + CMV PCR if congenital infection suspected.",
+        "rationale": "Identify treatable."
+      }
+    ],
+    "management": [
+      {
+        "step": "Multidisciplinary fetal-medicine clinic",
+        "detail": "Obstetrician + sonographer + neonatologist + paediatric + genetic counsellor + maternal-fetal medicine specialist."
+      },
+      {
+        "step": "Treat reversible maternal causes",
+        "detail": "Stop smoking + recreational drugs; optimise nutrition; treat severe maternal illness; manage diabetes; aspirin 75–150 mg from 12 weeks for placental disease."
+      },
+      {
+        "step": "Antenatal corticosteroids — fetal lung maturation",
+        "detail": "Betamethasone 12 mg × 2 doses 24 hours apart if delivery anticipated 24–34 weeks (some up to 36+6). Repeat course if delivery delayed > 7 days + still < 34 weeks."
+      },
+      {
+        "step": "Magnesium sulphate — neuroprotection",
+        "detail": "MgSO4 4 g IV loading + 1 g/h infusion for 4 g total — given for at-risk preterm < 30 (some up to 32) weeks; reduces cerebral palsy + severe motor dysfunction."
+      },
+      {
+        "step": "Timing of delivery — risk-stratified",
+        "detail": "TRUFFLE + DIGITAT trials guide. Early IUGR (< 32 weeks) with absent / reversed end-diastolic flow OR ductus venosus a-wave reversal: deliver. Pulsatility index > 95th centile + CPR < 1: deliver at 36–37 weeks. Severe oligohydramnios / abnormal CTG / maternal pre-eclampsia: deliver."
+      },
+      {
+        "step": "Late-onset IUGR delivery timing",
+        "detail": "EFW < 3rd centile: 36 weeks. EFW 3-10th + abnormal Doppler / CPR: 37 weeks. Isolated SGA (no Doppler change): 38–39 weeks."
+      },
+      {
+        "step": "Mode of delivery",
+        "detail": "Vaginal acceptable if other obstetric reasons not contraindicating — continuous CTG. LSCS for: severe IUGR with abnormal Doppler / CTG / oligohydramnios; breech / malpresentation; severe maternal disease."
+      },
+      {
+        "step": "Neonatal team — antenatal + postnatal",
+        "detail": "Specialist neonatology team present at delivery. Prepare for hypothermia + hypoglycaemia + polycythaemia + thrombocytopenia. Cord blood sampling + paediatric review + parental counselling."
+      },
+      {
+        "step": "Postnatal follow-up + long-term",
+        "detail": "Growth monitoring; metabolic + cardiovascular surveillance long-term (Barker hypothesis — fetal programming of adult disease)."
+      },
+      {
+        "step": "Future pregnancy planning",
+        "detail": "Increased risk of recurrent IUGR + pre-eclampsia. Pre-conception counselling; aspirin 75–150 mg from 12 weeks; specialist obstetric care."
+      }
+    ],
+    "references": [
+      {
+        "label": "RCOG Green-top Guideline No. 31 SGA / IUGR; ISUOG Practice Guideline; TRUFFLE + DIGITAT trials"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "severe-acne-isotretinoin-management",
+    "title": "Severe nodulocystic acne — isotretinoin pathway",
+    "icd10": [
+      "L70.0"
+    ],
+    "domains": [
+      "dermatology",
+      "primary-care",
+      "psychiatry"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Severe acne vulgaris — Grade IV (nodulocystic with scarring) OR severe Grade III with psychological / scarring impact OR moderate refractory to 6 months of conventional therapy.",
+      "Common: face, chest, back; nodules + cysts + scarring; post-inflammatory hyperpigmentation; psychological distress + body image + depression + suicidality.",
+      "Female: often hormonal pattern (jawline, chin); PCOS overlap; pre-menstrual exacerbation.",
+      "Acne fulminans — sudden severe ulcerative + systemic (fever, polyarthritis) — emergency."
+    ],
+    "redFlags": [
+      "Acne fulminans — emergency systemic steroid + isotretinoin.",
+      "Severe acne with PCOS / hyperandrogenism workup.",
+      "Depression / suicidal ideation — careful isotretinoin discussion + monitoring.",
+      "Female of childbearing potential considering isotretinoin — Pregnancy Prevention Programme essential.",
+      "Inflammatory bowel disease history — small but acknowledged signal with isotretinoin.",
+      "Tetracycline failure / contraindication."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical grading + photographs (track response).",
+        "rationale": "Severity + monitoring."
+      },
+      {
+        "test": "Hormonal workup for female adolescent / adult with hyperandrogenism: free testosterone, DHEAS, 17-OHP, prolactin, TSH.",
+        "rationale": "PCOS / late-onset CAH / hyperandrogenism."
+      },
+      {
+        "test": "Pre-isotretinoin: LFT + lipids + FBC + pregnancy test in females (× 2 — confirm not pregnant + monthly throughout).",
+        "rationale": "Baseline safety + REMS."
+      },
+      {
+        "test": "Mental health screen (PHQ-9) pre + during therapy.",
+        "rationale": "Depression + suicidality risk."
+      }
+    ],
+    "management": [
+      {
+        "step": "Conventional therapies — first / second-line",
+        "detail": "Topical: retinoid + benzoyl peroxide + topical antibiotic (clindamycin / erythromycin only with BPO to prevent resistance). Systemic: doxycycline 100 mg daily × 3–6 months (lymecycline / minocycline alternatives — watch hyperpigmentation + autoimmune); hormonal therapy in women (COC + spironolactone 50–200 mg)."
+      },
+      {
+        "step": "Isotretinoin — severe / refractory / scarring / psychological impact",
+        "detail": "0.5–1 mg/kg/day (or 0.25–0.5 with low-dose protocol — emerging — extended duration; same cumulative dose). Target cumulative 120–150 mg/kg total. Specialist dermatology initiation. Duration typically 5–7 months. Cure rate ~75–80%; second course in ~30%."
+      },
+      {
+        "step": "Pregnancy Prevention Programme (iPLEDGE / equivalent)",
+        "detail": "MANDATORY for all females of childbearing potential. 2 reliable contraceptive methods OR strict abstinence × 1 month before + during + 1 month after. Monthly negative pregnancy test before each prescription. Counsel on TERATOGENICITY — severe craniofacial, cardiac, CNS, thymus malformations."
+      },
+      {
+        "step": "Isotretinoin side effects management",
+        "detail": "Mucocutaneous (universal): lip balm, emollient, eye drops, sunscreen. Hypertriglyceridaemia: monitor month 2 + 4; reduce dose / hold if > 5 mmol/L. Hepatotoxicity: monitor LFT month 2 + 4. Acne flare in first month — start prednisolone 0.5 mg/kg × 2–4 weeks if severe (especially acne fulminans). Photosensitivity. Reduced night vision."
+      },
+      {
+        "step": "Mental health monitoring",
+        "detail": "Depression + anxiety + suicidal ideation can occur on isotretinoin — counsel + monitor monthly + emergency contact information. Discontinue if significant psychiatric event."
+      },
+      {
+        "step": "Inflammatory bowel disease — relative caution",
+        "detail": "Small signal of new IBD on isotretinoin; discuss + careful screening."
+      },
+      {
+        "step": "Hormonal therapy for women",
+        "detail": "Combined oral contraceptive + spironolactone 50–200 mg/day — effective for hormonal acne; PCOS-overlap. Anti-androgen monotherapy with mandatory contraception."
+      },
+      {
+        "step": "Scarring management",
+        "detail": "Once active disease controlled: chemical peel, microneedling, fractional laser, dermal filler, subcision, punch excision, dermabrasion. Acne keloids — intralesional triamcinolone + silicone."
+      },
+      {
+        "step": "Psychological support",
+        "detail": "Address body image + relationships + mental health throughout treatment. Refer counsellor / CBT as needed."
+      },
+      {
+        "step": "Acne fulminans — emergency",
+        "detail": "Systemic prednisolone 0.5–1 mg/kg × 4 weeks + isotretinoin started at 0.1–0.5 mg/kg (gradual increase). Continue overlap × 2–4 weeks then taper steroid. Avoid initial isotretinoin alone (risk of severe flare)."
+      }
+    ],
+    "references": [
+      {
+        "label": "European Dermatology Forum Acne Guideline (2024); American Academy of Dermatology Acne Guidelines; BAD"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "narcolepsy-diagnosis-management",
+    "title": "Narcolepsy type 1 + type 2 — diagnosis + treatment",
+    "icd10": [
+      "G47.4"
+    ],
+    "domains": [
+      "neurology",
+      "sleep-medicine",
+      "psychiatry"
+    ],
+    "population": {
+      "minAgeYears": 5,
+      "sex": "any"
+    },
+    "presentation": [
+      "Type 1 (cataplectic): excessive daytime sleepiness + cataplexy (sudden bilateral loss of muscle tone triggered by emotion); hypnagogic hallucinations; sleep paralysis; disrupted nocturnal sleep.",
+      "Type 2: excessive daytime sleepiness WITHOUT cataplexy.",
+      "Onset: bimodal (adolescent / young adult most common; secondary peak ~35 years).",
+      "Autoimmune destruction of hypocretin (orexin) neurons — strongly HLA-DQB1*06:02 associated.",
+      "Comorbid: depression, obesity, type 2 diabetes, OSA, parasomnias."
+    ],
+    "redFlags": [
+      "Sudden onset cataplexy + sleepiness post-infection (especially post-H1N1 vaccination — historical; post-strep / EBV).",
+      "Suspected narcolepsy in driver / safety-critical job — driving cessation pending evaluation.",
+      "Severe depression with sleepiness — differentiate.",
+      "Falls / accidents from cataplexy.",
+      "Pregnancy — narcolepsy medications management."
+    ],
+    "diagnostics": [
+      {
+        "test": "Detailed sleep history + sleep diary + Epworth Sleepiness Scale.",
+        "rationale": "Severity + screening."
+      },
+      {
+        "test": "Polysomnography (PSG) overnight + multiple sleep latency test (MSLT) next day — gold standard.",
+        "rationale": "Mean sleep latency ≤ 8 min + ≥ 2 sleep-onset REM periods (SOREMPs) — diagnostic."
+      },
+      {
+        "test": "Cerebrospinal fluid hypocretin-1 < 110 pg/mL — confirms type 1 (replaces need for cataplexy criterion in some).",
+        "rationale": "Direct biomarker."
+      },
+      {
+        "test": "HLA-DQB1*06:02 typing — supportive.",
+        "rationale": "Genetic association."
+      },
+      {
+        "test": "Rule out: other sleep disorders (OSA, periodic limb movement, idiopathic hypersomnia), shift work, medication-related, depression.",
+        "rationale": "Differential."
+      }
+    ],
+    "management": [
+      {
+        "step": "Lifestyle + scheduled naps",
+        "detail": "20-minute scheduled naps (1–3 times daily) reduce sleepiness + medication burden. Regular sleep schedule + good sleep hygiene. Avoid caffeine close to bedtime."
+      },
+      {
+        "step": "Wake-promoting agents — modafinil first-line",
+        "detail": "Modafinil 100–400 mg/day OR armodafinil 150–250 mg. Onset 1–2 hours. Side effects: headache, anxiety, nausea, reduced COC efficacy (counsel alternative contraception). Solriamfetol 75–150 mg as alternative."
+      },
+      {
+        "step": "Methylphenidate / amphetamine for refractory",
+        "detail": "Effective for sleepiness; abuse potential; cardiovascular caution. Reserve for inadequate response to first-line."
+      },
+      {
+        "step": "Pitolisant (H3 inverse agonist) — newer alternative",
+        "detail": "8.9–35.6 mg/day; non-stimulant; effective for sleepiness + cataplexy; better tolerated. QTc monitoring."
+      },
+      {
+        "step": "Sodium oxybate (Xyrem) / low-sodium oxybate (Xywav) — for cataplexy + sleepiness",
+        "detail": "Taken nocturnally in two doses 3 hours apart. Highly effective for cataplexy + improves sleep quality + reduces daytime sleepiness. Schedule III (US) — abuse risk. Pregnancy + breastfeeding caution. Monitor breathing + dependence."
+      },
+      {
+        "step": "Cataplexy — additional anti-cataplexy agents",
+        "detail": "SSRI (venlafaxine, fluoxetine) — modest; TCA (clomipramine 25–75 mg) — effective but anticholinergic; sodium oxybate."
+      },
+      {
+        "step": "Driving + occupational",
+        "detail": "Counsel re: driving — varies by jurisdiction; many require notification + treatment + assessment. Safety-critical occupations require accommodation / role change."
+      },
+      {
+        "step": "Mental health + comorbid disorders",
+        "detail": "Screen + treat depression + anxiety. Address obesity + diabetes + sleep apnoea (often coexist)."
+      },
+      {
+        "step": "Pregnancy",
+        "detail": "Stop sodium oxybate (limited data). Modafinil moderate risk — discuss alternatives. Specialist neurology + obstetric. Postpartum risk of cataplexy + sleepiness — support."
+      },
+      {
+        "step": "Patient + family education",
+        "detail": "Narcolepsy support groups; school / workplace accommodations; emergency contact information; safety planning around cataplexy triggers."
+      }
+    ],
+    "references": [
+      {
+        "label": "American Academy of Sleep Medicine Clinical Practice Guideline on Narcolepsy (2021); ESRS European Sleep Research Society"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
+  },
+  {
+    "slug": "chronic-insomnia-cbti-pharmacotherapy",
+    "title": "Chronic insomnia disorder — CBT-I + pharmacotherapy",
+    "icd10": [
+      "F51.01"
+    ],
+    "domains": [
+      "psychiatry",
+      "sleep-medicine",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any"
+    },
+    "presentation": [
+      "Difficulty initiating + maintaining sleep ≥ 3 nights/week for ≥ 3 months with daytime impairment (fatigue, mood, concentration, work / school performance).",
+      "Often comorbid: depression / anxiety (40–60%), chronic pain, OSA, restless legs syndrome.",
+      "Behavioural / cognitive contributors: poor sleep hygiene, conditioned arousal, paradoxical insomnia."
+    ],
+    "redFlags": [
+      "Suicidal ideation / severe depression.",
+      "Suspected OSA — particularly snoring + witnessed apnoeas + obesity + STOP-BANG ≥ 5.",
+      "Severe daytime sleepiness — narcolepsy / OSA / circadian rhythm disorder.",
+      "Substance / medication contributing — caffeine, alcohol, recreational drugs, beta-blocker, stimulants, antidepressants (some).",
+      "Restless legs syndrome — iron deficiency check.",
+      "Pregnancy + insomnia — non-pharmacological emphasis."
+    ],
+    "diagnostics": [
+      {
+        "test": "Detailed sleep history + sleep diary × 2 weeks.",
+        "rationale": "Pattern + severity."
+      },
+      {
+        "test": "Validated questionnaires (Insomnia Severity Index — ISI; Pittsburgh Sleep Quality Index — PSQI).",
+        "rationale": "Standardised severity."
+      },
+      {
+        "test": "Exclude OSA: STOP-BANG; polysomnography selective.",
+        "rationale": "OSA can mimic / coexist."
+      },
+      {
+        "test": "Mental health screening (PHQ-9 + GAD-7).",
+        "rationale": "Common comorbidity."
+      },
+      {
+        "test": "Iron studies + ferritin for restless legs / periodic limb movements.",
+        "rationale": "Treatable contributor."
+      },
+      {
+        "test": "TSH + medication review.",
+        "rationale": "Reversible contributors."
+      }
+    ],
+    "management": [
+      {
+        "step": "Cognitive behavioural therapy for insomnia (CBT-I) — FIRST-LINE",
+        "detail": "Components: sleep restriction therapy; stimulus control; cognitive restructuring; relaxation; sleep hygiene. Delivered face-to-face / group / digital (effective). Lasting effect > pharmacological without dependence. 5–8 sessions over 6–8 weeks."
+      },
+      {
+        "step": "Pharmacotherapy — short-term + adjunct to CBT-I",
+        "detail": "Z-drugs (zolpidem 5–10 mg, zopiclone 3.75–7.5 mg, eszopiclone) OR benzodiazepine receptor agonist — short-term (< 4 weeks) due to tolerance + dependence + falls in elderly + cognitive impact. Suvorexant / lemborexant / daridorexant (orexin receptor antagonists) — newer, less dependence, longer-term use considered. Sedating antidepressant (mirtazapine 15–30 mg, trazodone 25–100 mg, doxepin 3–6 mg) for insomnia + depression. AVOID over-the-counter antihistamine (poor evidence + side effects, especially elderly)."
+      },
+      {
+        "step": "Melatonin",
+        "detail": "Prolonged-release melatonin 2 mg (Circadin) — approved for adults > 55 short-term. Modest effect; useful for circadian rhythm disorders + jet lag. Off-label paediatric use (selective)."
+      },
+      {
+        "step": "Comorbidity-specific",
+        "detail": "Depression: SSRI + CBT (combined depression + insomnia treatment improves both). Chronic pain: gabapentinoids + sleep-promoting agent. OSA: CPAP. RLS: dopamine agonist OR alpha-2-delta ligand. Hot flushes: HRT or SSRI."
+      },
+      {
+        "step": "Lifestyle + sleep hygiene",
+        "detail": "Regular sleep schedule; no naps > 30 min after 3 pm; avoid bright light 2 h before bed; no caffeine 6 h before bed; no alcohol 3 h before bed; relaxing pre-sleep routine; cool dark quiet bedroom; bed for sleep / sex only; aerobic exercise (not within 3 h of bed)."
+      },
+      {
+        "step": "Older adults — selective non-pharmacological",
+        "detail": "CBT-I particularly important; avoid sedative-hypnotics (falls + dementia association). Sleep restriction approach. Address comorbidities."
+      },
+      {
+        "step": "Pregnancy",
+        "detail": "Non-pharmacological first. Magnesium glycinate, glycine, sleep hygiene. Avoid sedative-hypnotics — risk-benefit; antihistamines (doxylamine — safer; diphenhydramine), tricyclics in some. Specialist."
+      },
+      {
+        "step": "Refractory / specialist referral",
+        "detail": "Sleep clinic referral for inadequate response, suspected OSA / RLS / narcolepsy, polysomnography needed, persistent severe insomnia despite optimised treatment."
+      }
+    ],
+    "references": [
+      {
+        "label": "AASM Insomnia 2021; NICE NG219 Insomnia; ESRS"
+      }
+    ],
+    "ruleVersion": "0.1.0-placeholder",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "icd11": [],
+    "snomed": []
   }
 ]

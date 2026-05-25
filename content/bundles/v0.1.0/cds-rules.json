@@ -7996,5 +7996,291 @@
         "kind": "diagnosis"
       }
     ]
+  },
+  {
+    "id": "medulloblastoma-risk-stratified",
+    "hook": "patient-view",
+    "type": "medulloblastoma-risk-stratified",
+    "services": [
+      "vedamd-medulloblastoma"
+    ],
+    "title": "Medulloblastoma — risk-stratified surgery + chemoradiotherapy; spare radiotherapy in infants",
+    "description": "Fires for paediatric posterior fossa tumour. Recommends specialist neuro-oncology centre; maximal safe resection; molecular subgroup (WNT / SHH / Group 3 / Group 4); standard vs high-risk chemoradiotherapy; AVOID radiotherapy in infants < 3 years; lifelong late-effect surveillance (cognitive, endocrine, audiology, secondary malignancy, vascular). Reads context.ageYears, context.posteriorFossa, context.molecularSubgroup, context.metastases — never patient identity.",
+    "references": [
+      {
+        "label": "WHO CNS 2021; COG / SIOPE / HIT"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C71.6",
+        "display": "Medulloblastoma",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "retinoblastoma-eye-salvage",
+    "hook": "patient-view",
+    "type": "retinoblastoma-eye-salvage",
+    "services": [
+      "vedamd-retinoblastoma"
+    ],
+    "title": "Retinoblastoma — life > eye > vision; specialist centre + intra-arterial chemo",
+    "description": "Fires for paediatric leukocoria / strabismus + suspected retinoblastoma. Recommends URGENT specialist ocular-oncology centre; EUA + RetCam imaging (DO NOT biopsy — seeding); MRI brain + orbit; RB1 germline + family cascade screening; intra-arterial chemotherapy / systemic chemotherapy + focal consolidation for eye-salvage; enucleation for advanced; lifelong second-cancer surveillance for hereditary survivors. Reads context.leukocoria, context.unilateralBilateral, context.familyHistory, context.icrbGroup — never patient identity.",
+    "references": [
+      {
+        "label": "International Society of Ocular Oncology"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "C69.2",
+        "display": "Retinoblastoma",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "nf1-mdt-mpnst-surveillance",
+    "hook": "patient-view",
+    "type": "nf1-mdt-mpnst-surveillance",
+    "services": [
+      "vedamd-nf1"
+    ],
+    "title": "Neurofibromatosis type 1 — MDT clinic + MPNST + breast cancer surveillance",
+    "description": "Fires for confirmed / suspected NF1 (NIH criteria). Recommends specialist MDT; annual ophthalmology in childhood (optic glioma); whole-body MRI for plexiform burden + MPNST detection; selumetinib (MEK inhibitor) for symptomatic plexiform; AVOID radiotherapy where possible (secondary cancer risk); annual breast screen from age 30 (women); cascade family testing + reproductive counselling. Reads context.diagnosticCriteria, context.plexiformGrowth, context.symptoms, context.hypertension — never patient identity.",
+    "references": [
+      {
+        "label": "Legius NF1 2021; SPRINT"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q85.01",
+        "display": "NF1",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "tsc-mtor-multiorgan",
+    "hook": "patient-view",
+    "type": "tsc-mtor-multiorgan",
+    "services": [
+      "vedamd-tsc"
+    ],
+    "title": "Tuberous sclerosis — multiorgan mTOR inhibitor (everolimus) + vigabatrin for infantile spasms",
+    "description": "Fires for confirmed TSC. Recommends multidisciplinary clinic; everolimus for SEGA / AML > 3 cm / LAM / drug-resistant epilepsy; vigabatrin for infantile spasms (PARTICULARLY effective in TSC); topical sirolimus for facial angiofibroma; annual surveillance — brain MRI / renal MRI / HRCT (women age 18 +) / DEXA / ECG; TAND assessment; cascade family + reproductive counselling. Reads context.tscCriteria, context.organInvolvement, context.epilepsyType, context.amlSize, context.tand — never patient identity.",
+    "references": [
+      {
+        "label": "TSC International Consensus 2021; EXIST + MILES + ARDIE"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q85.1",
+        "display": "Tuberous sclerosis",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "turner-aortic-surveillance-hrt",
+    "hook": "patient-view",
+    "type": "turner-aortic-surveillance-hrt",
+    "services": [
+      "vedamd-turner"
+    ],
+    "title": "Turner syndrome — GH + HRT + aortic surveillance + preconception cardiac assessment",
+    "description": "Fires for Turner syndrome diagnosis. Recommends specialist multidisciplinary clinic; growth hormone from age 4–6; oestrogen pubertal induction from age 11–12 with progestogen addition; LIFELONG HRT until menopause age; annual cardiac surveillance with aortic dimension (Z-score); pre-conception cardiac assessment MANDATORY before pregnancy (some patients absolutely contraindicated); annual TSH + lipid + glucose + audiology; cascade family / reproductive counselling. Reads context.karyotype, context.ageYears, context.aorticRoot, context.pregnancyPlanning, context.hrt — never patient identity.",
+    "references": [
+      {
+        "label": "International Turner Consensus 2017"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q96.9",
+        "display": "Turner syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "klinefelter-testosterone-fertility",
+    "hook": "patient-view",
+    "type": "klinefelter-testosterone-fertility",
+    "services": [
+      "vedamd-klinefelter"
+    ],
+    "title": "Klinefelter syndrome — testosterone + early fertility preservation (micro-TESE)",
+    "description": "Fires for Klinefelter syndrome. Recommends multidisciplinary clinic; LIFELONG testosterone replacement from puberty; micro-TESE for sperm retrieval EARLY (adolescent / young adult — best yield); cryopreservation for future ART; bone + cardiovascular + metabolic surveillance; mental health + neurodevelopmental support; annual breast examination + low-threshold imaging (high cancer risk). Reads context.ageYears, context.testosterone, context.semenAnalysis, context.fertilityPlanning — never patient identity.",
+    "references": [
+      {
+        "label": "EAA Klinefelter Guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Q98.4",
+        "display": "Klinefelter syndrome",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "rpl-aps-anticoagulation",
+    "hook": "patient-view",
+    "type": "rpl-aps-anticoagulation",
+    "services": [
+      "vedamd-rpl"
+    ],
+    "title": "Recurrent pregnancy loss — APS workup + LMWH + aspirin for confirmed APS",
+    "description": "Fires for ≥ 2-3 consecutive pregnancy losses. Recommends couple's karyotype + uterine imaging + APS screen × 2 (12 weeks apart) + thyroid + diabetes + thrombophilia; treat reversible: cerclage for cervical insufficiency, septoplasty for septate uterus; ASPIRIN + LMWH from positive pregnancy test until 6 weeks postpartum for confirmed APS; thyroid optimisation; lifestyle (BMI, smoking, caffeine); supportive 'tender loving care' for unexplained. Reads context.numberOfLosses, context.apsAntibodies, context.uterineAnomaly, context.thyroid — never patient identity.",
+    "references": [
+      {
+        "label": "ESHRE RPL 2023; RCOG GTG 17"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "N96",
+        "display": "Recurrent pregnancy loss",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-iugr-doppler-delivery",
+    "hook": "patient-view",
+    "type": "severe-iugr-doppler-delivery",
+    "services": [
+      "vedamd-severe-iugr"
+    ],
+    "title": "Severe IUGR — Doppler-guided delivery timing + corticosteroid + MgSO4",
+    "description": "Fires for EFW < 3rd centile or abnormal Doppler. Recommends serial UA Doppler + MCA + ductus venosus; corticosteroid + MgSO4 if preterm anticipated; deliver for absent / reversed end-diastolic flow OR DV a-wave reversal OR oligohydramnios OR maternal compromise; neonatology presence at delivery; aspirin 75-150 mg from 12 weeks in future pregnancy. Reads context.gestationWeeks, context.efwCentile, context.uaDoppler, context.dvDoppler, context.maternalCondition — never patient identity.",
+    "references": [
+      {
+        "label": "RCOG GTG 31; TRUFFLE + DIGITAT"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "P05",
+        "display": "Slow fetal growth + fetal malnutrition",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "severe-acne-isotretinoin-iPledge",
+    "hook": "patient-view",
+    "type": "severe-acne-isotretinoin-iPledge",
+    "services": [
+      "vedamd-severe-acne"
+    ],
+    "title": "Severe acne — isotretinoin with Pregnancy Prevention + mental health monitoring",
+    "description": "Fires for severe / scarring acne unresponsive to conventional. Recommends isotretinoin 0.5-1 mg/kg/day to cumulative 120-150 mg/kg; mandatory iPLEDGE / Pregnancy Prevention Programme (2 contraceptives + monthly pregnancy test); monitor LFT + lipids month 2 + 4; depression / suicidality screening monthly; acne fulminans — steroid + isotretinoin combination. Reads context.acneGrade, context.priorTreatments, context.pregnancyRisk, context.depression — never patient identity.",
+    "references": [
+      {
+        "label": "EDF + AAD + BAD Acne Guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "L70.0",
+        "display": "Acne vulgaris",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "narcolepsy-mslt-modafinil-sodium-oxybate",
+    "hook": "patient-view",
+    "type": "narcolepsy-mslt-modafinil-sodium-oxybate",
+    "services": [
+      "vedamd-narcolepsy"
+    ],
+    "title": "Narcolepsy — PSG + MSLT + modafinil / pitolisant + sodium oxybate for cataplexy",
+    "description": "Fires for excessive daytime sleepiness ± cataplexy. Recommends polysomnography + MSLT (≤ 8 min latency + ≥ 2 SOREMPs); CSF hypocretin if available for type 1; scheduled naps + modafinil / pitolisant / solriamfetol first-line; sodium oxybate for cataplexy + sleepiness; SSRI / TCA / sodium oxybate for cataplexy; driving counselling. Reads context.epworth, context.cataplexy, context.mslt, context.hypocretin — never patient identity.",
+    "references": [
+      {
+        "label": "AASM Narcolepsy 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "G47.4",
+        "display": "Narcolepsy",
+        "kind": "diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "chronic-insomnia-cbti-first",
+    "hook": "patient-view",
+    "type": "chronic-insomnia-cbti-first",
+    "services": [
+      "vedamd-chronic-insomnia"
+    ],
+    "title": "Chronic insomnia — CBT-I FIRST; medication short-term adjunct only",
+    "description": "Fires for chronic insomnia ≥ 3 nights/week ≥ 3 months with daytime impairment. Recommends CBT-I first-line (in-person / digital); sleep diary + ISI; treat comorbidities (OSA, RLS, depression, pain); short-term Z-drug or orexin antagonist OR sedating antidepressant if mood; AVOID OTC antihistamine; older adults — avoid benzodiazepine / Z-drugs (falls + cognitive); pregnancy — non-pharmacological + careful selection. Reads context.isi, context.comorbidities, context.priorMedications, context.ageYears — never patient identity.",
+    "references": [
+      {
+        "label": "AASM Insomnia 2021; NICE NG219"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "F51.01",
+        "display": "Primary insomnia",
+        "kind": "diagnosis"
+      }
+    ]
   }
 ]
