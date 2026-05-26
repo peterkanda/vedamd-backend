@@ -12158,5 +12158,155 @@
     "rationale": "International PCOS 2023 (Monash/ESHRE/Endocrine Soc) + NICE NG215 + AE-PCOS + Pregnancy in PCOS NEJM 2014.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "chronic-urticaria-modern-r1",
+    "title": "CSU — H1 antihistamine step-up to 4x then omalizumab; AVOID NSAIDs",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "chronic-urticaria-modern"
+    },
+    "indicators": [
+      "recurrent wheals + angioedema > 6 weeks"
+    ],
+    "recommendation": "EAACI step-wise: 1) standard H1 non-sedating (cetirizine 10/loratadine 10/fexofenadine 180/desloratadine 5/bilastine 20/levocetirizine 5); 2) UP-DOSE to 4× standard (off-label evidence-based); 3) ADD OMALIZUMAB 300 mg SC q4 wk (XCUISITE/ASTERIA — 60-70% response, safe pregnancy); 4) refractory: ciclosporin 3-5 mg/kg, MTX, MMF; emerging — ligelizumab/dupilumab/remibrutinib. AVOID 1st-gen sedating, NSAIDs (worsen 30%), opioids. Rescue severe flare: pred 30-40 mg × 3-7 d (not chronic). UAS7/UCT for severity + response. Investigate vasculitis if lesions > 24h + bruising. HAE WITHOUT urticaria + ACE-i resistant: C1-INH level + function + C4 (low) — icatibant/lanadelumab/C1-INH replacement; stop ACE-i if drug-induced. Pregnancy: loratadine/cetirizine/levocetirizine + omalizumab emerging acceptance. Inducible — H1 + omalizumab refractory; avoid trigger.",
+    "rationale": "EAACI/GA²LEN 2024 + BSACI + WAO + ASTERIA/GLACIAL.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "anaphylaxis-comprehensive-algorithm-r1",
+    "title": "Anaphylaxis — IM adrenaline thigh FIRST + observe biphasic + 2 auto-injectors at discharge",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "anaphylaxis-comprehensive-algorithm"
+    },
+    "indicators": [
+      "mucocutaneous + respiratory/CV/GI after likely allergen"
+    ],
+    "recommendation": "IM ADRENALINE THIGH IMMEDIATELY (most important — delays kill): adult 0.5 mg IM (0.5 mL of 1:1000); adolescent > 30 kg 0.5 mg; child 6-12 yr 0.3 mg; 6 mo-6 yr 0.15 mg; infant < 6 mo 0.1-0.15 mg; REPEAT q5 min if no improvement. Position: supine with legs elevated (CV); upright if respiratory; LEFT LATERAL if pregnant. High-flow O2. Intubate EARLY if airway compromise (oedema progresses). 2 large-bore IV + crystalloid 20 mL/kg paeds or 1-2 L adult bolus. REFRACTORY (2+ doses + fluid): adrenaline IV infusion 0.1-1 mcg/kg/min titrated; noradrenaline; GLUCAGON 1-2 mg IV if on β-blocker; methylene blue for refractory. Adjuncts (NOT primary): hydrocortisone 200 mg IV (controversial), chlorphenamine 10 mg, salbutamol neb. Observe 4-6h min; longer for severe/refractory/β-blocker/asthmatic/late. DISCHARGE: 2 ADRENALINE AUTO-INJECTORS + train use + action plan (BSACI/WAO) + medic-alert + refer allergy specialist 4-6 wk + avoid trigger + 3-5 d antihistamine + counsel biphasic 5-20%. Pregnancy: left lateral tilt + same adrenaline dose + CTG + multi-D.",
+    "rationale": "WAO 2024 + BSACI + EAACI + Resus Council UK.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "skin-cancer-screening-melanoma-bcc-scc-r1",
+    "title": "Skin cancer — ABCDE for melanoma; excise + sentinel node + immunotherapy stage IV",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "skin-cancer-screening-melanoma-bcc-scc"
+    },
+    "indicators": [
+      "pigmented lesion ABCDE / suspicious skin lesion"
+    ],
+    "recommendation": "Full-body skin exam + dermoscopy. Excisional biopsy 2-3 mm margin for suspected melanoma. Breslow + Clark + AJCC 8th + mitotic rate + ulceration + BRAF V600E test stage III/IV. SLNB for melanoma > 1 mm or 0.8-1 mm + adverse. CT/PET-CT staging III/IV. BCC: excision (4-5 mm low-risk / 5-10 mm high-risk / Mohs face/recurrent); topical imiquimod/5-FU superficial; vismodegib advanced. SCC: excision; Mohs face/high-risk/immunocompromised; CEMIPLIMAB advanced (EMPOWER-CSCC-1); field treatment for actinic. MELANOMA: excision margins 0.5/1/1-2/2 cm; stage III adjuvant anti-PD1 (pembrolizumab/nivolumab — KEYNOTE-054/CHECKMATE-238) or dabrafenib+trametinib (BRAFV600E — COMBI-AD); stage IV first-line: IPILIMUMAB+NIVOLUMAB (CHECKMATE-067 — 50% 5-yr survival) or anti-PD1 mono or relatlimab+nivolumab (RELATIVITY-047). BRAF V600E/K: dabrafenib+trametinib. Brain mets: ipi+nivo effective + SRS. T-VEC + TIL (LIFILEUCEL — Amtagvi FDA 2024) for advanced refractory. ACRAL MELANOMA common SSA + less BRAF — immunotherapy + KIT-targeted. ALBINISM populations (SSA) — extremely high SCC — sun protection + early intervention essential.",
+    "rationale": "NCCN 2024 + AAD + ESMO + CHECKMATE-067 + KEYNOTE-054 + RELATIVITY-047.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "diabetic-retinopathy-screening-treatment-r1",
+    "title": "Diabetic retinopathy — annual screen + anti-VEGF for PDR/DMO (Protocol S/T)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "diabetic-retinopathy-screening-treatment"
+    },
+    "indicators": [
+      "DM screening / abnormal fundus / DMO suspected"
+    ],
+    "recommendation": "ANNUAL SCREENING: T1DM age 12 or 5 yr post-Dx; T2DM at diagnosis; pregnancy each trimester; dilated fundus photography or OCT; AI screening emerging (deployable SSA primary care). ETDRS/ICDR staging. Foundation: tight HbA1c (individualised), BP < 130/80, statin, smoking cessation, avoid rapid HbA1c drop (paradoxical worsening). MILD-MOD NPDR: observe + optimise. SEVERE NPDR/PDR: PAN-RETINAL PHOTOCOAGULATION (PRP) or ANTI-VEGF (Protocol S NEJM 2015 — non-inferior + preferred if DMO co-exists); ranibizumab/aflibercept/bevacizumab (Avastin off-label cheaper — equivalent CATT/IVAN; widely used SSA). FARICIMAB (Vabysmo) longer duration. DMO centre-involving + vision impact: ANTI-VEGF (Protocol T — aflibercept superior at lower vision); steroid intravitreal (Ozurdex/Iluvien) 2nd-line; focal/grid laser non-centre. Vitrectomy for vitreous haemorrhage/tractional. Bevacizumab cost advocacy SSA. Kenya National Eye Health Plan + integrated DM + eye care.",
+    "rationale": "AAO PPP 2024 + ICO + Protocol S + Protocol T + CATT/IVAN.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "cataract-comprehensive-surgery-r1",
+    "title": "Cataract — phaco/MSICS with IOL; intra-cameral cefuroxime to prevent endophthalmitis",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "cataract-comprehensive-surgery"
+    },
+    "indicators": [
+      "cataract impacting QoL / function / driving / reading"
+    ],
+    "recommendation": "Indications: VA affecting QoL/occupation, anisometropia, phacomorphic glaucoma, concurrent retinal/glaucoma surgery, congenital (urgent — amblyopia prevention < 6-12 wk). Pre-op biometry + optimise DM/HTN/anticoag. PHACOEMULSIFICATION gold standard developed; MSICS cost-effective high-volume SSA (Aravind/KCCO model — < $40/surgery — excellent outcomes). IOL: monofocal (most), toric (astigmatism), multifocal/EDOF (reduce glasses). Aseptic technique + INTRA-CAMERAL CEFUROXIME at end (reduces endophthalmitis 80% — ESCRS). Topical anaesthesia common. Post-op: topical antibiotic + steroid × 4 wk tapering; review d1/wk1/wk4; avoid heavy lifting/swimming/eye rubbing × 2 wk. Complications: endophthalmitis 0.05-0.1%, PCO (YAG laser in-office), CME, refractive surprise, retinal detachment (high myopes). Congenital cataract: urgent surgery first 6-12 wk + contact lens + IOL later + patching for amblyopia. Diabetic cataract: stabilise DR/DMO first + anti-VEGF if needed. SSA: LEADING blindness cause; scale-up MSICS programmes (KCCO, Sightsavers, Operation Eyesight) + train ophthalmic clinical officers + outreach + WHO VISION 2020 + Kenya National Eye Health Plan.",
+    "rationale": "AAO PPP 2024 + ICO + NICE NG77 + ESCRS Endophthalmitis Study + IAPB World Vision.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "primary-open-angle-glaucoma-poag-r1",
+    "title": "POAG — SLT or latanoprost first-line (LiGHT); MIGS/trab if refractory; African ancestry earlier/aggressive",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "primary-open-angle-glaucoma-poag"
+    },
+    "indicators": [
+      "optic nerve damage + visual field defect ± raised IOP"
+    ],
+    "recommendation": "Screening: African ancestry + FH > 35 yr annual; general > 40 yr every 2-3 yr. Diagnosis: tonometry + gonioscopy + optic nerve + VF + OCT RNFL + pachymetry. Target IOP individualised (25-30% reduction mild, 30-40% mod, >40% + < 14 severe; < 12-14 NTG). FIRST-LINE: SLT (LiGHT NEJM 2019 — non-inferior + cost-effective + low SE + repeatable — first-line many guidelines especially SSA) OR PROSTAGLANDIN ANALOGUE evening (latanoprost 0.005% generic — most common; SE iris darkening, lash growth, periorbital changes). Add β-blocker (timolol — cautions asthma/HF/bradyarrhythmia), α2-agonist (brimonidine — avoid < 2 yr severe sedation), CAI (dorzolamide — sulpha caution), Rho-kinase (netarsudil) for additional IOP. FIXED COMBINATIONS for adherence. REFRACTORY: trabeculectomy + tube shunt (Baerveldt/Ahmed/Molteno) + MIGS (iStent/Hydrus/XEN combined with cataract); cyclophotocoagulation refractory. African ancestry — earlier onset + faster progression + more aggressive. Adherence < 50% chronic drops — major barrier; SLT addresses + simplify regimen + generic affordable KEML. Train primary care + ophth clinical officers SSA. Tele-ophthalmology community screening.",
+    "rationale": "AAO PPP 2024 + EGS 5e + NICE NG81 + LiGHT NEJM 2019 + OHTS.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "age-related-macular-degeneration-amd-r1",
+    "title": "AMD — AREDS2 supplement dry; anti-VEGF wet (CATT/IVAN — bevacizumab equivalent + cheaper SSA)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "age-related-macular-degeneration-amd"
+    },
+    "indicators": [
+      "central vision loss + drusen / metamorphopsia / OCT findings"
+    ],
+    "recommendation": "Diagnosis: VA + Amsler + slit-lamp + fundoscopy + OCT (gold standard) + OCT-A + fluorescein/ICG angiography. DRY AMD: AREDS2 supplements (vitamin C 500 + E 400 IU + lutein 10 + zeaxanthin 2 + zinc 80 + copper 2 — no β-carotene if smoker) reduce intermediate-advanced dry AMD progression 25%; SMOKING CESSATION (single most modifiable); Mediterranean diet; UV protection. GEOGRAPHIC ATROPHY (advanced dry): PEGCETACOPLAN (Syfovre) + AVACINCAPTAD PEGOL (Izervay) FDA 2023 — slow progression. WET AMD: INTRAVITREAL ANTI-VEGF first-line — ranibizumab/aflibercept/BEVACIZUMAB (Avastin off-label EQUIVALENT — CATT NEJM 2011 + IVAN BMJ 2012 — much cheaper, widely used SSA + low-cost settings); FARICIMAB (Vabysmo FDA 2022) longer durability (TENAYA/LUCERNE); brolucizumab caution (inflammation); high-dose aflibercept (PHOTON/PULSAR) longer interval. Loading 3 monthly then maintenance treat-and-extend with OCT. Port Delivery System (Susvimo). POLYPOIDAL CHOROIDAL VASCULOPATHY (common SSA/Asian): anti-VEGF + ICG-guided PDT. SUDDEN CENTRAL VISION LOSS/distortion = WET AMD until proven — URGENT ophth (early anti-VEGF works best). Low-vision rehab + depression screening + fellow eye risk (50% 5 yr) + Amsler self-monitor. Bevacizumab access advocacy SSA.",
+    "rationale": "AAO PPP 2024 + ICO + AREDS/AREDS2 + CATT/IVAN + TENAYA/LUCERNE + OAKS/DERBY.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "retinal-detachment-emergency-r1",
+    "title": "Retinal detachment — urgent surgery (macula-on within 24h preserves vision)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "retinal-detachment-emergency"
+    },
+    "indicators": [
+      "sudden flashes/floaters/curtain/shadow"
+    ],
+    "recommendation": "SAME-DAY ophth referral. VA + dilated fundoscopy + indirect ophth + B-scan if dense vitreous haemorrhage + OCT macula (macula-on vs off — KEY prognostic). MACULA-ON detachment — URGENT surgery within 24h preserves > 90% near-normal vision. MACULA-OFF detachment > 7 d — vision recovery limited (50% 6/12 best). Strict bed rest + positioning + avoid Valsalva + antiemetic. SURGICAL: laser/cryopexy for break alone (prophylactic — acute PVD with tear); pneumatic retinopexy single superior break; scleral buckle (young/phakic); PARS PLANA VITRECTOMY most versatile + modern + with gas/oil tamponade; combined PPV + buckle for complex. Post-op: positioning 7-14 d for gas/oil; NO air travel/altitude with intraocular gas (expansion); topical antibiotic + steroid. Re-detachment 5-15% — redo or silicone oil. TRACTIONAL (DM-PDR/ROP/SCD): vitrectomy + anti-VEGF + treat underlying. EXUDATIVE: treat cause (VKH steroid/choroidal mass/malignant HTN/eclampsia). SSA limited vitreoretinal access — train + scale-up + community awareness of warning symptoms (flashes/floaters/curtain) + immediate referral. Kenya: KNH + Lions SightFirst + regional centres. SCD retinopathy + diabetic surveillance.",
+    "rationale": "AAO PPP 2024 + ASRS Practice Guidelines.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "hearing-loss-comprehensive-r1",
+    "title": "Hearing loss — newborn screen 1-3-6 rule; hearing aids reduce dementia (Lancet 2024)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hearing-loss-comprehensive"
+    },
+    "indicators": [
+      "newborn screen positive / sudden loss / age-related / ototoxic exposure"
+    ],
+    "recommendation": "NEWBORN screening (OAE/AABR universal) — 1-3-6 RULE: screen by 1 mo, diagnose by 3 mo, INTERVENE by 6 mo (best language + cognitive outcomes). Congenital — confirm + early hearing aids + cochlear implant if severe-profound bilateral + early sign language; treat congenital CMV (ganciclovir/valganciclovir 6 mo — improves hearing) + TORCH screen. SUDDEN SNHL (within 72h) EMERGENCY — refer ENT within 1-2 wk for steroid window — PREDNISOLONE 1 mg/kg/d × 7-14 d taper + intratympanic dexamethasone alternative/salvage + MRI IAM to rule out retrocochlear; 1/3 recover, 1/3 partial, 1/3 permanent. AGE-RELATED: HEARING AIDS bilateral fitting — single most effective; OTC hearing aids FDA 2022 for mild-mod cheaper; HEARING AIDS REDUCE DEMENTIA 8% (Lancet Commission 2024 modifiable RF) + ACHIEVE trial JAMA 2023 — 48% cognitive decline reduction; address tinnitus. CONDUCTIVE: cerumen (drops + irrigation if no perforation), OME (grommets if persistent + hearing loss > 25 dB > 3 mo), tympanic perforation (tympanoplasty chronic), otosclerosis (stapedectomy/hearing aid). OTOTOXICITY: minimise aminoglycoside dose/duration; serial audiogram baseline + on cisplatin/aminoglycoside/vancomycin > 5-7 d; counsel early symptoms; genetic test m.1555A>G (common Kenya/SSA + Asia aminoglycoside hypersensitivity). COCHLEAR IMPLANT for severe-profound bilateral SNHL not benefiting from hearing aids — MDT evaluation + rehab. Ramsay-Hunt: acyclovir + steroid × 7-14 d. SSA: WHO World Hearing Report 2021 + advocate newborn screening rollout + affordable hearing aid access (WHO PPP) + Kenya National Eye+Hearing Health Plan.",
+    "rationale": "WHO World Hearing 2021/2024 + AAO-HNS + NICE NG98 + Lancet Commission Dementia 2024 + ACHIEVE.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "uveitis-anterior-posterior-comprehensive-r1",
+    "title": "Uveitis — workup systemic + infectious; topical steroid + cycloplegic; adalimumab for non-infectious posterior",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "uveitis-anterior-posterior-comprehensive"
+    },
+    "indicators": [
+      "red painful eye + photophobia + AC cells/flare"
+    ],
+    "recommendation": "Slit-lamp + IOP + dilated fundoscopy + OCT macula + FFA/ICG for posterior. WORKUP per features: HLA-B27 + spondyloarthropathy; ACE + CXR + CT for sarcoidosis; ANA/ANCA/RF; TB IGRA + CXR (essential SSA); SYPHILIS RPR/TPPA ALWAYS (great mimic); HIV testing; toxoplasma serology + PCR vitreous; HSV/VZV/CMV PCR vitreous selected; Bartonella; Lyme; aqueous/vitreous sampling selected severe/atypical for PCR + cytology + culture. ANTERIOR UVEITIS: topical prednisolone acetate 1% frequent (q1-2h initially taper over weeks) + cyclopentolate 1% TID (prevent synechiae + ciliary spasm) + topical NSAID adjunct + IOP monitor (steroid-induced glaucoma). POSTERIOR/INTERMEDIATE/PANUVEITIS: systemic prednisolone 1 mg/kg/d taper over months + periocular/intravitreal steroid (Ozurdex/Iluvien); steroid-sparing IMMUNOMODULATORS (MTX/AZA/MMF first-line; ciclosporin/tacrolimus); ADALIMUMAB (VISUAL-I/II — first biologic approved non-infectious posterior); infliximab/tocilizumab/rituximab refractory. INFECTIOUS — treat infection FIRST (steroid cautious + after anti-infective): TB uveitis ATT 6-9 mo + steroid; SYPHILIS aqueous penicillin G IV × 10-14 d + LP; TOXO retinochoroiditis pyrimethamine + sulfadiazine + folinic acid × 4-6 wk + pred for vision-threat or cotrim; HSV/VZV anterior valacyclovir 1 g TDS × 7-14 d; CMV retinitis (HIV) ganciclovir IV + intravitreal + valganciclovir; endophthalmitis intravitreal antibiotics + vitrectomy. BEHCET'S/VKH/sympathetic — aggressive immunosuppression. MASQUERADE (chronic/atypical/steroid-refractory) — vitrectomy + cytology + flow + MRI brain (CNS lymphoma). SSA: TB+syphilis+HIV+toxo common — workup essential + train + access biologic.",
+    "rationale": "AAO PPP 2024 + SUN 2024 + VISUAL I/II + IUSG.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
