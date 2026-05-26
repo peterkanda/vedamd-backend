@@ -12,6 +12,7 @@ import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import type { FastifyRequest } from 'fastify';
 import { IntegrationsService } from './integrations.service';
 import { PostmanCollectionService } from './postman-collection.service';
+import { IntegrationMarkdownService } from './integration-markdown.service';
 import { CdsService } from '../cds/cds.service';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';
 import type { IntegrationCategory, IntegrationMethod } from './integrations.data';
@@ -24,6 +25,7 @@ export class IntegrationsController {
   constructor(
     private readonly integrations: IntegrationsService,
     private readonly postman: PostmanCollectionService,
+    private readonly markdown: IntegrationMarkdownService,
     private readonly cds: CdsService,
   ) {}
 
@@ -59,6 +61,20 @@ export class IntegrationsController {
     const host = (req.headers['x-forwarded-host'] as string | undefined) ?? req.headers.host ?? 'api.vedamd.io';
     const baseUrl = `${proto}://${host}`;
     return this.postman.build({ baseUrl, services: this.cds.listServices() });
+  }
+
+  @Get(':slug/markdown')
+  @RequireScope('content:read')
+  @Header('content-type', 'text/markdown; charset=utf-8')
+  @ApiOperation({
+    summary: 'Get an EMR / HMIS integration as a Markdown document',
+    description:
+      'Same content as GET /:slug, rendered as Markdown. Paste into Confluence / Notion / GitHub README / internal wiki. Plain text — no PHI, no patient data.',
+  })
+  getMarkdown(@Param('slug') slug: string): string {
+    const found = this.integrations.get(slug);
+    if (!found) throw new NotFoundException(`Unknown integration: ${slug}`);
+    return this.markdown.render(found);
   }
 
   @Get(':slug')

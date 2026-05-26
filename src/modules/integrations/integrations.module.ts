@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { IntegrationsController } from './integrations.controller';
 import { IntegrationsService } from './integrations.service';
 import { PostmanCollectionService } from './postman-collection.service';
+import { IntegrationMarkdownService } from './integration-markdown.service';
 import { DeveloperModule } from '../developer/developer.module';
 import { CdsModule } from '../cds/cds.module';
 
@@ -20,7 +21,7 @@ import { CdsModule } from '../cds/cds.module';
 @Module({
   imports: [DeveloperModule, CdsModule],
   controllers: [IntegrationsController],
-  providers: [IntegrationsService, PostmanCollectionService],
+  providers: [IntegrationsService, PostmanCollectionService, IntegrationMarkdownService],
   exports: [IntegrationsService],
 })
 export class IntegrationsModule {}
