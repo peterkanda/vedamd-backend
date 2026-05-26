@@ -11858,5 +11858,155 @@
     "rationale": "EWMA + NICE NG217 + SIGN 120 + EVRA 2018 + Pentoxifylline Cochrane.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "comprehensive-geriatric-assessment-r1",
+    "title": "CGA — multidimensional MDT assessment + individualised targets + WHO ICOPE",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "comprehensive-geriatric-assessment"
+    },
+    "indicators": [
+      "older adult routine / admission / functional decline / frailty"
+    ],
+    "recommendation": "Multidimensional CGA: physical + cognitive (MoCA preferred) + functional (ADL/IADL/TUG) + social + environmental + values + frailty (CFS) + polypharmacy (STOPP/START + Beers) + nutrition (MNA) + EoL surprise question. MDT (geriatrician + GP + nurse + physio + OT + pharmacist + SLT + dietitian + social work + palliative care). INDIVIDUALISE TARGETS for frail (HbA1c 53-64 not 48; BP 130-140 not strict 120-130; LDL liberalised). Continue evidence-based therapy where benefits exceed risks but DEPRESCRIBE with diminishing benefit. Falls prevention (separate). Cognitive screening + dementia management. Continence + nutrition (1.0-1.2 g/kg protein + ONS) + sensory (hearing aids reduce dementia per Lancet Commission). ADVANCE CARE PLANNING early. Vaccinations: pneumo + flu + COVID + shingles + RSV. CGA in hospital reduces death + dependency (Cochrane). Models: ICOPE (WHO LMIC) + day hospital + hospital-at-home + frailty hubs. Kenya National Policy on Older Persons.",
+    "rationale": "BGS CGA 2024 + WHO ICOPE 2024 + AGS Beers + STOPP/START + WHO Decade of Healthy Ageing.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "falls-prevention-elderly-r1",
+    "title": "Falls — multifactorial assessment + Otago exercise + medication review + home modification",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "falls-prevention-elderly"
+    },
+    "indicators": [
+      "fall in older adult / ≥ 2 falls / fall with injury"
+    ],
+    "recommendation": "Multifactorial assessment for ≥ 2 falls / 1 fall with injury / fear of falling. Cardiovascular (postural BP lying + standing, ECG, 24h Holter for syncope), cognition (MoCA + GDS), gait (TUG > 12s abnormal), strength, vision/audiometry, foot/footwear, continence, polypharmacy, bone (DEXA + FRAX), environmental (OT). INTERVENTIONS most effective combined (Cochrane): EXERCISE primary prevention (Otago Programme home — gold standard) + resistance + balance + tai chi > 3h/wk lifelong. HOME MODIFICATION (grab bars + ramps + remove rugs + lighting + bedside commode + pendant alarm). MEDICATION REVIEW + DEPRESCRIBING — withdraw psychoactives (benzo/Z-drug/opioid/antipsychotic/anticholinergic/TCA/sedating antihistamine/sulfonylurea/orthostatic-causing antihypertensives) per STOPP/Beers/ACB. VISION (cataract surgery first eye especially). FOOTWEAR (closed-toe + low heel + non-slip). CARDIOVASCULAR (orthostatic — stop offending + hydration + compression + fludrocortisone/midodrine; bradyarrhythmia + carotid sinus → pacemaker). BONE: vit D 800-1000 IU + Ca 1000-1200 + DEXA + bisphosphonate. Postural hypotension protocol. Fall with injury: trauma protocol + low threshold CT head anticoagulated; hip fracture < 36h surgery (NICE NG124). Fear of falling — CBT + balance training. WHO Step Safely.",
+    "rationale": "NICE CG161 2024 + AGS/BGS + Cochrane + WHO Step Safely.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "frailty-comprehensive-r1",
+    "title": "Frailty — CFS + Fried + exercise (any CFS) + nutrition + deprescribing + ACP",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "frailty-comprehensive"
+    },
+    "indicators": [
+      "CFS ≥ 4 / Fried phenotype ≥ 3 / sarcopenia"
+    ],
+    "recommendation": "CFS 1-9 staging + Fried phenotype (≥ 3 frail, 1-2 pre-frail). Investigate reversible (TSH/B12/anaemia/vit D/depression/polypharmacy/sensory). EXERCISE (most evidence — even advanced frailty): resistance + aerobic + balance 3×/wk; Otago/FaME/Tai Chi/chair-based for severely frail. NUTRITION: protein 1.0-1.2 g/kg/d (1.2-1.5 in acute illness) + adequate calories + vit D + ONS for malnourished + dietitian; address sarcopenia (combined exercise + protein). DEPRESCRIBING: STOPP/START + Beers + ACB; liberalise targets (HbA1c 64 + BP 140-150) per trajectory; withdraw statins / aspirin primary prevention in CFS 6+ if limited life expectancy. Comorbidity optimisation individualised. MOOD + COGNITION + falls + continence + sleep + sensory (hearing aids — Lancet Commission). Carer support + respite. ADVANCE CARE PLANNING + TEP/RESPECT + DNACPR + LPA. Integrated care (frailty hubs + hospital-at-home + virtual ward + ICOPE). CFS 7-9 → palliative + EoL. Vaccinations universal. Address SSA poverty + food + isolation; Kenya National Policy on Older Persons.",
+    "rationale": "BGS Fit for Frailty + WHO ICOPE + Rockwood CFS + Fried + FORTA.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "delirium-recognition-management-r1",
+    "title": "Delirium — 4AT + identify cause + non-pharmacological first; AVOID benzo (except ETOH withdrawal)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "delirium-recognition-management"
+    },
+    "indicators": [
+      "acute change cognition / 4AT ≥ 4 / CAM positive"
+    ],
+    "recommendation": "4AT bedside (Alertness + AMT-4 + Attention + Acute change). HYPOACTIVE delirium often missed — worse outcomes. Identify TRIGGER — drugs (new/dose change — anticholinergic/opioid/benzo/steroid), infection (UTI/pneumonia/sepsis), metabolic (Na/glucose/Ca/urea/ammonia), hypoxia, pain, retention, sleep deprivation, sensory deprivation, withdrawal (ETOH/benzo), stroke/SDH (especially after fall on anticoag), cardiac (MI/arrhythmia/HF), Wernicke's (thiamine for any ETOH/malnutrition). Workup: FBC/U&E/glucose/Ca/LFT/ammonia/TSH/B12/UA+culture/blood culture/CXR/ECG/ABG/CT head if focal or fall on anticoag. PREVENTION (most effective — HELP/multicomponent non-pharm): reorientation + sleep hygiene + early mobilise + sensory aids + hydration + pain + avoid catheters/restraints/lines. MANAGEMENT: identify+treat cause + STOP offending drugs + non-pharm (quiet single room + consistent staff + family + reorient + mobilise + sleep + hearing/glasses). PHARM only severe agitation/danger: HALOPERIDOL 0.5-1 mg PO/IM (AVOID in Lewy/Parkinson — use clozapine/quetiapine); olanzapine 2.5-5 mg / risperidone 0.25-0.5 mg; AVOID BENZODIAZEPINES (worsen delirium) EXCEPT alcohol withdrawal / seizures; dexmedetomidine for ICU. QTc + minimal dose + reassess daily. DSD (superimposed on dementia) — high mortality. Post-delirium — persistent cognitive 6-12 mo; reassess dementia; family/patient counsel (PTSD-like). ABCDEF bundle ICU. Perioperative: pre-op CGA + avoid drugs/sedation + early mobilise + HELP.",
+    "rationale": "NICE CG103 2023 + BGS 2024 + AGS + HELP + 4AT.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "hip-fracture-elderly-pathway-r1",
+    "title": "Hip fracture — < 36h surgery + ortho-geriatric + fascia iliaca block + ZA + FLS",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hip-fracture-elderly-pathway"
+    },
+    "indicators": [
+      "fragility hip fracture in older adult"
+    ],
+    "recommendation": "ED: analgesia + FASCIA ILIACA BLOCK (US-guided — strongly recommended, reduces opioid + delirium); IV fluids; restrictive transfusion (Hb < 80 — FOCUS); reverse anticoag per protocol; pressure care + LMWH VTE prophylaxis; admit ortho-geriatric ward. SURGERY < 36 HOURS (NICE NG124 Best Practice Tariff — improves outcomes). DON'T DELAY for minor abnormalities. INTRACAPSULAR Garden I-II: cannulated screws; Garden III-IV: hemiarthroplasty (cemented) or THR (if independent + cognitively fit per NICE). EXTRACAPSULAR: DHS (intertroch stable) or intramedullary nail (subtroch/unstable/reverse oblique). Anaesthesia spinal vs GA — shared decision (REGAIN 2021 no difference); avoid benzo/sedatives; multimodal analgesia + peripheral blocks. POST-OP: ortho-geriatric co-management + EARLY MOBILISE within 24h + physio daily + multimodal pain + nutrition + LMWH/DOAC × 28-35 d (extended) + delirium prevention HELP + falls assess + cognitive + bone health. BONE HEALTH (don't miss — secondary prevention): vit D 800-1000 + Ca + ZOLEDRONIC ACID 5 mg IV annually starting within first week post-op (RECOVERY trial — no delay union) or alendronate 70 mg/wk; Fracture Liaison Service. 20-30% 1-yr mortality + 50% never regain function — best outcomes with co-managed pathway. SSA: emerging burden + train + integrate NCD strategy.",
+    "rationale": "NICE NG124 2024 + AAOS + RECOVERY + REGAIN + FOCUS + BPT UK.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "polypharmacy-deprescribing-stopp-start-r1",
+    "title": "Polypharmacy — STOPP/START + Beers + ACB + structured deprescribing",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "polypharmacy-deprescribing-stopp-start"
+    },
+    "indicators": [
+      "≥ 5 medications / frailty / falls / cognitive decline / ADR / transitions"
+    ],
+    "recommendation": "Medication reconciliation EVERY visit/transition (prescription + OTC + supplements + herbal). Tools: STOPP/START v2 + AGS Beers 2023 + FORTA + Anticholinergic Burden (ACB). STRUCTURED DEPRESCRIBE: 1) reconcile 2) review indication/efficacy/safety/adherence 3) prioritise stop/reduce/switch 4) plan with patient+family 5) TAPER (psychoactive/steroid/antihypertensive — avoid rebound) 6) monitor 7) document. STOPP candidates: long-term benzo > 4 wk, Z-drugs, long-term oral steroid for COPD/OA, PPI > 8 wk full-dose without indication, aspirin primary prevention low CV risk, TCA, 1st-gen antihistamine, NSAID with CV/GI/renal risk, antipsychotic in dementia (BBW). START candidates: statin + ACEi + βB + DOAC + Ca/vitD/bisphosphonate + vaccinations. ANTICHOLINERGIC BURDEN > 3 increases dementia/falls/delirium — switch to lower-burden alternatives (mirabegron β3 for OAB; SSRI not TCA; melatonin not benzo). PRESCRIBING CASCADE — recognise + reverse (CCB→diuretic; metoclopramide→Parkinson Rx; anticholinergic→laxative). INDIVIDUALISE for frail: liberalise HbA1c/BP/LDL; statin in 90-yr-old with limited life expectancy — deprescribe; ASPREE — aspirin primary prevention withdraw elderly. End-of-life — minimise burden; symptom-focused only; SC infusion when can't swallow. Pharmacist embedded in primary care + hospital — major value. SSA: cost + traditional medicine + adherence considerations.",
+    "rationale": "STOPP/START 2024 + Beers 2023 + Deprescribing.org + ASPREE + WHO Medication Without Harm.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "osteoporosis-fracture-prevention-r1",
+    "title": "Osteoporosis — DEXA + FRAX + alendronate / zoledronate / denosumab / romosozumab + FLS",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "osteoporosis-fracture-prevention"
+    },
+    "indicators": [
+      "T-score ≤ -2.5 / fragility fracture / FRAX > threshold / glucocorticoid > 7.5 mg > 3 mo"
+    ],
+    "recommendation": "DEXA hip + spine + FRAX (Kenya-specific available). Vertebral fracture assessment. Bloods (FBC/U&E/Ca/PO4/ALP/25-OH vit D/PTH/TSH/testosterone in men); secondary cause workup if young/unexpected (SPEP/cortisol/coeliac). NON-PHARM ALL: Ca 1000-1200 mg/d + vit D 800-1000 IU/d (50,000 IU monthly if deficient) + weight-bearing + resistance exercise + smoking cessation + ETOH limit + protein 1.0-1.2 g/kg/d + falls prevention + sunlight. TREATMENT INDICATIONS: T ≤ -2.5 OR fragility fracture OR FRAX > 20% major / 3% hip OR long-term steroid > 7.5 mg > 3 mo. FIRST-LINE BISPHOSPHONATES: alendronate 70 mg/wk PO (upright × 30 min) or risedronate 35 mg/wk; ZOLEDRONIC ACID 5 mg IV annually for oral intolerance/adherence/hip fracture (RECOVERY ZA within first week post-op — no delay union); duration 5 yr oral / 3 yr IV initially + reassess holiday. DENOSUMAB 60 mg SC q6 mo for CKD < 35 or bisphosphonate-intolerant — NO drug holiday (rebound vertebral fractures — don't stop without bisphosphonate transition). ROMOSOZUMAB 210 mg SC monthly × 12 mo for severe (T < -2.5 + fracture / multiple) + bisphosphonate after — CV warning recent MI/stroke. TERIPARATIDE 20 mcg SC daily × 24 mo for severe + multiple fragility + failed; followed by anti-resorptive. SECONDARY PREVENTION post-fracture: ALL fragility fracture > 50 = osteoporosis (no DEXA needed pre-treatment per FLS). ALL osteoporotic fracture → Fracture Liaison Service. Glucocorticoid-induced > 7.5 mg > 3 mo: Ca+vit D + bisphosphonate. ONJ + atypical femur fracture warning (dental review + thigh pain investigate).",
+    "rationale": "NICE TA464/NG56 2024 + AACE + NOF/BHOF + FRAX + RECOVERY + ARCH.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "advance-care-planning-end-of-life-r1",
+    "title": "ACP — surprise question + Serious Illness Conversation Guide + TEP/RESPECT + DNACPR",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "advance-care-planning-end-of-life"
+    },
+    "indicators": [
+      "serious illness / surprise question yes / CFS ≥ 7 / advanced dementia / end-organ failure"
+    ],
+    "recommendation": "Trigger: surprise question 'would you be surprised if this patient died in 6-12 months?'. Discuss EARLY while capacity intact (at diagnosis + transitions + routine review). Iterative — revisit. SERIOUS ILLNESS CONVERSATION GUIDE (Ariadne Labs): set up + assess understanding + share prognosis (range) + explore values/fears/strengths + plan + affirm + summarise. Document: advance directive + LPA + TREATMENT ESCALATION PLAN (TEP / RESPECT / POLST — broader than DNACPR; ICU/intubation/dialysis/surgery/transfusion/antibiotic) + DNACPR (clinical futility + patient wishes — Tracey/Winspear judgments communicate unless harm). Share across team + ambulance + community + family + shared EHR. Place of care preferences. Family meetings (SPIKES). Cultural + religious + spiritual care (chaplain/imam/priest/traditional). PALLIATIVE CARE early integration (Temel NEJM 2010 lung cancer — improves QoL + survival). Capacity decision-specific + time-specific; best-interest if lacking. Carer assessment + respite + bereavement. SSA: cultural variation in disclosure (sensitive + cultural mediators); religious + traditional beliefs; limited PC + opioid — Kenya National Palliative Care Policy + KEHPRO + Hospice Africa model + advocate; train primary care + CHV + religious leaders + traditional. Staff debrief + compassion fatigue prevention.",
+    "rationale": "Ariadne Labs + VitalTalk + Mental Capacity Act + Temel NEJM 2010 + Lancet Commission Palliative 2018 + WHO PC Strategy + Kenya National PC Policy.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "elder-abuse-neglect-safeguarding-r1",
+    "title": "Elder abuse — recognise + private interview + multidisciplinary safeguarding + capacity",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "elder-abuse-neglect-safeguarding"
+    },
+    "indicators": [
+      "suspected physical / sexual / emotional / financial abuse / neglect / self-neglect / institutional"
+    ],
+    "recommendation": "Private interview WITHOUT caregiver if possible. Trauma-informed + empathy + believe + non-judgemental. Document carefully (verbatim + body map + photos with consent/protocol). Physical examination head-to-toe + genital + skin + dentition. Cognitive + MENTAL CAPACITY assessment (decision-specific + time-specific). Mood screen. Bloods. Toxicology if suspect. Pregnancy + STI + HIV PEP if sexual abuse < 72h. Financial review with consent/capacity. SAFETY FIRST — admit if necessary, place of safety, respite. MANDATORY REPORTING per jurisdiction (UK safeguarding adult social care; US APS; Kenya: Children Act for minors + customary/community + County Social Services + emerging older persons policy). MDT: social work + geriatric medicine + safeguarding lead + mental health + legal aid + police if criminal + community/NGO (HelpAge, Mosaic). If CAPACITY intact + returning to abusive situation — respect autonomy, provide resources, follow up. If CAPACITY LACKING — best-interest + safeguarding may override autonomy + Court of Protection / Kadhi. CAREGIVER assessment (Zarit) — many perpetrators face their own burdens; respite + support + treat mental health/substance — separate from protection. Trauma-focused CBT + counselling for survivor. Sexual abuse pathway: SGBV one-stop centre Kenya + PEP + EC + STI prophylaxis + Hep B + counsel. PREVENTION: reduce isolation + financial safeguards + caregiver support + community programmes + address WITCHCRAFT ACCUSATIONS against older women SSA (community/religious leader engagement, customary mediation, education) + property/inheritance rights protection (widows). WHO Toronto Declaration 2002 + Kenya Constitution Article 57 + emerging older persons policy.",
+    "rationale": "WHO Toronto 2002 + UK Care Act 2014 + Kenya Constitution Art 57 + HelpAge International.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "urinary-incontinence-older-adults-r1",
+    "title": "Urinary incontinence — DIPPERS reversible + PFMT first-line + mirabegron preferred elderly",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "urinary-incontinence-older-adults"
+    },
+    "indicators": [
+      "UI in older adult / OAB / stress / mixed / overflow / functional"
+    ],
+    "recommendation": "History — type (stress vs urge vs mixed vs overflow vs functional) + 3-day frequency-volume chart + QoL + sexual. DIPPERS reversible (Delirium/Infection-UTI/Pharmaceutical/Psychological/Endocrine/Restricted mobility/Stool impaction) — ADDRESS FIRST. Urinalysis + MSU + PVR bladder scan (> 100 ml = retention) + U&E + glucose. Refer urology if haematuria + risk factors (rule out cancer). STRESS: PFMT (Kegel) physiotherapist-supervised FIRST-LINE 60-70% effective + weight loss + fluid management + smoking cessation + topical vaginal oestrogen postmenopausal; duloxetine modest; surgery (mid-urethral sling controversial + selected). URGE/OAB: bladder training + avoid bladder irritants (caffeine/ETOH/citrus/carbonated). ANTIMUSCARINIC — oxybutynin/solifenacin/tolterodine (caution elderly cognitive — anticholinergic burden); β3-AGONIST MIRABEGRON 50 mg/d PREFERRED ELDERLY/COGNITIVE (less anticholinergic SE; SE HTN/tachy); combination for refractory; botox intravesical 100 U for refractory; sacral nerve modulation. MIXED: PFMT + bladder training + treat predominant. OVERFLOW: identify cause (BPH/neurogenic); catheterise initially; treat BPH (α-blocker + 5ARI); ISC for neurogenic. FUNCTIONAL (cognitive/mobility): accessibility + bedside commode + toileting schedule + prompted voiding for dementia + caregiver education + continence products. SKIN CARE: barrier cream + prompt change. Faecal incontinence often coexists — treat constipation + dietary + biofeedback. VESICOVAGINAL FISTULA SSA: obstetric injury — refer fistula centre (Kenya KNH/Jamaa/Fistula Foundation); early catheter may close < 6 wk; PREVENTION via skilled birth + partogram + EmONC + Linda Mama. Dementia/frailty UI: avoid antimuscarinic (worsen cognition) — mirabegron preferred; toileting schedule + caregiver support. SSA stigma — train primary care + community continence services + pessaries + simple devices + advocate pad/aid access.",
+    "rationale": "NICE NG123 2024 + NICE CG97 + EAU + AUA + ICS.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
