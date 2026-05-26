@@ -90312,5 +90312,623 @@
     "ruleVersion": "2024.1",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "mrsa-bacteraemia-endocarditis",
+    "title": "MRSA bacteraemia + endocarditis — vancomycin / daptomycin source-control",
+    "icd10": [
+      "B95.6",
+      "A41.0"
+    ],
+    "icd11": [
+      "MG50.0"
+    ],
+    "domains": [
+      "infection",
+      "internal-medicine",
+      "amr"
+    ],
+    "population": "Methicillin-resistant S. aureus — health-care + community + IVDU. Catheter + skin + bone + endovascular.",
+    "presentation": "Persistent bacteraemia ± metastatic seeding (endocarditis, vertebral osteomyelitis, septic arthritis, psoas/epidural abscess, lung). Catheter-related; injection drug use right-sided endocarditis.",
+    "redFlags": [
+      "Persistent bacteraemia > 7 d on appropriate therapy",
+      "New murmur / heart failure (endocarditis)",
+      "Back pain / neurological deficit (epidural abscess + vertebral osteo)",
+      "Septic emboli (right-sided septic pulmonary, left-sided systemic)",
+      "Catheter — remove source",
+      "Vancomycin MIC creep / hVISA / VISA"
+    ],
+    "diagnostics": [
+      "≥ 2 blood cultures pre-antibiotic (paired sets); REPEAT q48h until clear",
+      "TTE all MRSA bacteraemia; TOE if persistent / prosthetic / inadequate TTE / IE features",
+      "Source workup: vascular catheter, skin / soft tissue, bone (MRI), psoas, joint, vertebral",
+      "MIC: vancomycin (target < 2 mg/L), daptomycin baseline",
+      "Vancomycin AUC24/MIC 400-600 (preferred over trough alone — IDSA 2020); CK baseline + weekly (daptomycin)"
+    ],
+    "management": [
+      "IDSA 2011 MRSA + 2020 vancomycin therapeutic monitoring + 2023 ESC IE:",
+      "Source control FIRST — remove catheter / drain abscess / surgical debridement",
+      "VANCOMYCIN IV (loading 25-30 mg/kg, maintenance 15-20 mg/kg q8-12h) — TARGET AUC24/MIC 400-600 by Bayesian software or two-level pharmacokinetics; alternative trough 15-20 mg/L (less accurate)",
+      "DAPTOMYCIN 8-10 mg/kg IV OD if vancomycin MIC ≥ 2, hVISA/VISA, vancomycin AKI/allergy, persistent bacteraemia, IE (use ≥ 8 mg/kg for IE; ≥ 10 mg/kg for persistent); NOT for pneumonia (surfactant inactivates)",
+      "CEFTAROLINE 600 mg q8h IV — combination with vanco/dapto for persistent bacteraemia or salvage",
+      "LINEZOLID 600 mg q12h alternative; NOT for IE/bacteraemia first-line (bacteriostatic); reserve for refractory soft tissue/bone with bacteraemia",
+      "Combination therapy with rifampicin 300 mg q12h for prosthetic device / hardware infection (NOT routine for native bacteraemia)",
+      "DURATION: uncomplicated bacteraemia + cleared in 72h + no metastatic 14 d IV from first negative blood culture; complicated/metastatic/endocarditis 4-6 wk IV; vertebral osteomyelitis 6-8 wk",
+      "FOLLOW-UP cultures q48h; persistent > 7 d = complicated → search seed + escalate",
+      "Native MRSA IE: vancomycin OR daptomycin 6 wk; prosthetic — combination + surgical",
+      "Surgical IE referral: HF, perivalvular abscess, persistent bacteraemia, large vegetation > 10 mm + embolic, fungal, prosthetic",
+      "OPAT (outpatient parenteral antibiotic) for selected stable",
+      "Long-acting alternative: oritavancin / dalbavancin single/twice-weekly for selected uncomplicated SSTI bacteraemia",
+      "Decolonisation: mupirocin nasal + chlorhexidine wash — controversial routine; consider recurrent / outbreak",
+      "Avoid quinupristin-dalfopristin + cotrimoxazole monotherapy for IE",
+      "SSA: vancomycin + cloxacillin (MSSA) widely available; MRSA recognition + lab capacity essential; bed nets for resource-limited; daptomycin + ceftaroline access advocacy."
+    ],
+    "references": [
+      {
+        "label": "IDSA 2011 MRSA Treatment Guideline",
+        "kind": "guideline"
+      },
+      {
+        "label": "IDSA 2020 Vancomycin TDM Consensus",
+        "kind": "guideline"
+      },
+      {
+        "label": "ESC 2023 Infective Endocarditis Guideline",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "esbl-enterobacterales-infection",
+    "title": "ESBL-producing Enterobacterales — carbapenem for serious; ceftolozane/zoledronate cautions",
+    "icd10": [
+      "A41.5"
+    ],
+    "icd11": [
+      "MG50"
+    ],
+    "domains": [
+      "infection",
+      "amr"
+    ],
+    "population": "ESBL Enterobacterales (E. coli, Klebsiella) — globally rising; high prevalence S Asia / SSA / Mediterranean. Healthcare + community (urinary + travel).",
+    "presentation": "UTI (community most common), bacteraemia, intra-abdominal, hospital-acquired pneumonia. Bloodstream often urinary source.",
+    "redFlags": [
+      "Septic shock + ESBL suspected — broad cover + carbapenem early",
+      "Pyelonephritis with ESBL — switch to active agent",
+      "Catheter / urinary obstruction — source control"
+    ],
+    "diagnostics": [
+      "Culture + sensitivity (ESBL phenotype by clavulanate inhibition; ESBL gene PCR research)",
+      "Urinalysis + urine culture",
+      "Blood cultures if febrile / severe",
+      "Imaging for source (US/CT abdo if intra-abdominal; CXR for pneumonia)",
+      "Risk factors: travel S Asia / Mediterranean, recent antibiotic, hospitalisation, catheter, recurrent UTI"
+    ],
+    "management": [
+      "IDSA AMR Guidance 2024 + ESCMID:",
+      "MILD-MODERATE UTI (uncomplicated cystitis):",
+      "  Nitrofurantoin 100 mg QDS × 5 d (preferred — preserves carbapenem)",
+      "  Fosfomycin 3 g single dose (multidose for males / complicated)",
+      "  Pivmecillinam 400 mg TDS × 3-7 d (active where licensed)",
+      "  Cotrimoxazole or fluoroquinolone IF susceptible (often not)",
+      "PYELONEPHRITIS / SEVERE / BACTERAEMIA:",
+      "  CARBAPENEM first-line — ertapenem 1 g OD (good if no Pseudomonas/Acinetobacter) or meropenem 1-2 g q8h",
+      "  Step-down to oral if susceptible: cotrim, ciprofloxacin (if susceptible), pivmecillinam, amox-clav (caution bacteraemia)",
+      "  Aminoglycoside (amikacin 15-20 mg/kg OD or gentamicin) — combination salvage selected; monitor",
+      "INTRA-ABDOMINAL: carbapenem + source control (drainage); piperacillin-tazobactam INFERIOR to meropenem for ESBL bacteraemia (MERINO RCT JAMA 2018 — increased mortality with pip-taz)",
+      "BACTERAEMIC INFECTION: carbapenem definitive; transition oral selected once clinical improvement + clearance + source control + susceptibility documented",
+      "Ceftolozane-tazobactam + ceftazidime-avibactam — generally reserved for CRE / Pseudomonas — selective ESBL use",
+      "PREVENTION: hand hygiene + contact precautions + decolonisation (limited evidence) + antimicrobial stewardship + AWaRe (Watch carbapenem)",
+      "PROPHYLAXIS: recurrent UTI ESBL — nitrofurantoin / fosfomycin nightly; address contributing factors",
+      "SSA: ESBL widely prevalent; ertapenem + nitrofurantoin + fosfomycin essential AWaRe Watch; stewardship + lab capacity + IPC + KEML alignment."
+    ],
+    "references": [
+      {
+        "label": "IDSA AMR Guidance 2024",
+        "kind": "guideline"
+      },
+      {
+        "label": "MERINO RCT pip-taz vs meropenem ESBL bacteraemia JAMA 2018",
+        "kind": "trial"
+      },
+      {
+        "label": "ESCMID treatment Gram-negative resistant",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cre-carbapenem-resistant-enterobacterales",
+    "title": "Carbapenem-resistant Enterobacterales — ceftazidime-avibactam / meropenem-vaborbactam by mechanism",
+    "icd10": [
+      "A41.5"
+    ],
+    "icd11": [
+      "MG50"
+    ],
+    "domains": [
+      "infection",
+      "amr"
+    ],
+    "population": "CRE — emerging globally; KPC + NDM + OXA-48 + VIM/IMP enzymes; healthcare-associated; high mortality.",
+    "presentation": "Bacteraemia, ventilator-associated pneumonia, intra-abdominal, urinary in critically ill / immunocompromised; often colonisation precedes infection.",
+    "redFlags": [
+      "Septic shock — empirically cover CRE if local epidemiology + risk factors (travel, recent admission, prior CRE, transfer from endemic)",
+      "Persistent bacteraemia despite carbapenem — refer ID urgently",
+      "Outbreak — IPC + screening"
+    ],
+    "diagnostics": [
+      "Culture + carbapenemase phenotype (CIM/mCIM) + genotype (KPC/NDM/OXA-48/VIM/IMP — informs treatment)",
+      "Rapid molecular tests (BioFire, GeneXpert) where available",
+      "Screen rectal swab (admission high-risk units)",
+      "Source identification + imaging"
+    ],
+    "management": [
+      "IDSA AMR 2024 + ESCMID:",
+      "TREAT BY MECHANISM (PCR identifies enzyme):",
+      "  KPC (USA/Europe/Latin America): CEFTAZIDIME-AVIBACTAM 2.5 g q8h OR MEROPENEM-VABORBACTAM 4 g q8h OR IMIPENEM-RELEBACTAM",
+      "  OXA-48 (Middle East / Mediterranean / Africa): CEFTAZIDIME-AVIBACTAM 2.5 g q8h preferred",
+      "  NDM / VIM / IMP metallo-β-lactamases (S Asia / Middle East): CEFTAZIDIME-AVIBACTAM + AZTREONAM combination (aztreonam stable to MBL + avibactam protects aztreonam from ESBL/AmpC); OR CEFIDEROCOL 2 g q8h (siderophore cephalosporin — only approved single agent for MBL CRE — APEKS-NP/CREDIBLE-CR)",
+      "  Activity uncertain — request ID + lab consultation + susceptibility panel",
+      "ALTERNATIVES / SALVAGE: polymyxin B / colistin (nephrotoxicity + neurotoxicity), tigecycline (NOT for bacteraemia — low serum), aminoglycoside (plazomicin where available, gentamicin/amikacin if susceptible), eravacycline, fosfomycin IV (urinary preferred)",
+      "DURATION: 7-14 d depending on source + clinical response; complicated/endovascular 4-6 wk",
+      "SOURCE CONTROL — drain abscess, remove catheter, control intra-abdominal — essential",
+      "ID consultation MANDATORY",
+      "DECOLONISATION: not generally recommended (no benefit + risk of resistance)",
+      "INFECTION CONTROL: contact precautions + cohort + dedicated equipment + active surveillance high-risk units + hand hygiene + environmental cleaning + antimicrobial stewardship",
+      "REPORTING: notifiable in many jurisdictions; report to national AMR surveillance (WHO GLASS)",
+      "SSA: emerging; lab capacity building essential (Kenya KEMRI surveillance); access to newer agents (ceftaz-avi, cefiderocol) limited — advocacy + ID/microbiology training."
+    ],
+    "references": [
+      {
+        "label": "IDSA AMR Guidance 2024 (CRE section)",
+        "kind": "guideline"
+      },
+      {
+        "label": "ESCMID treatment Gram-negative MDR",
+        "kind": "guideline"
+      },
+      {
+        "label": "CREDIBLE-CR cefiderocol Lancet Infect Dis 2021",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "loiasis-loa-loa",
+    "title": "Loiasis (Loa loa) — pre-screen microfilarial load before ivermectin to prevent encephalopathy",
+    "icd10": [
+      "B74.3"
+    ],
+    "icd11": [
+      "1F66.10"
+    ],
+    "domains": [
+      "tropical-medicine",
+      "infection",
+      "ntd"
+    ],
+    "population": "12 million infected; Central + West Africa rainforest — Cameroon, Gabon, CAR, DRC, Congo, Equatorial Guinea, southern Nigeria, South Sudan. Chrysops deer-fly vector.",
+    "presentation": "Calabar swellings (transient subcutaneous oedema), pruritus, conjunctival 'eye-worm' (adult migrating across conjunctiva — characteristic), urticaria; many asymptomatic carriers.",
+    "redFlags": [
+      "Heavy microfilaraemia (> 30,000 mf/mL) + IVERMECTIN / DEC = ENCEPHALOPATHY + death — TEST FIRST before MDA in co-endemic areas (with onchocerciasis or LF)",
+      "Encephalopathy post-treatment — urgent corticosteroid + supportive",
+      "Renal involvement (nephropathy)",
+      "Cardiomyopathy (rare)"
+    ],
+    "diagnostics": [
+      "Day-time blood smear (10am-2pm — diurnal periodicity opposite W. bancrofti) — microscopic microfilariae",
+      "Microfilarial count quantitative — ESSENTIAL before mass treatment (LoaScope point-of-care smartphone — Cameroon RCT)",
+      "Serology + PCR (research)",
+      "Adult worm — eye worm visualisation + surgical removal if subconjunctival"
+    ],
+    "management": [
+      "WHO Loiasis + APOC + LoaScope studies:",
+      "INDIVIDUAL treatment:",
+      "  DEC 6 mg/kg/d × 21 d (escalate from low dose to avoid encephalopathy) — first-line for symptomatic + low microfilarial load",
+      "  Pretreatment with antihistamine + steroid for symptomatic relief during microfilarial killing",
+      "  IVERMECTIN 150 μg/kg single dose — reduces microfilaraemia but does NOT cure adult — CONTRAINDICATED in > 30,000 mf/mL (encephalopathy risk)",
+      "  Albendazole 200 mg BD × 21 d — slow microfilarial reduction + macrofilaricidal — alternative for high microfilarial load (slow + safer)",
+      "  Surgical removal of eye worm if subconjunctival under topical anaesthesia (forceps after slit-lamp)",
+      "PRE-MDA SCREENING (essential in co-endemic with oncho/LF):",
+      "  LoaScope smartphone POC microfilarial count — < 20,000 mf/mL → IVM safe; 20,000-30,000 → caution; > 30,000 → DO NOT GIVE IVM (encephalopathy)",
+      "  Alternative pathway in Loa-endemic: doxycycline 200 mg/d × 4-6 wk (anti-Wolbachia — works for oncho/LF without IVM/DEC risk)",
+      "  Albendazole alone can pre-treat to reduce Loa microfilarial load before IVM (TEST-AND-NOT-TREAT or TEST-AND-DOSE strategies)",
+      "PREVENTION: insect repellent + long clothing + avoid forest day-time exposure",
+      "Encephalopathy treatment: high-dose IV steroid + supportive intensive care; consider IVIG + plasma exchange experimental",
+      "SSA: Loa loa is huge obstacle to onchocerciasis + LF elimination programmes in Central Africa — LoaScope deployment + alternative regimens essential."
+    ],
+    "references": [
+      {
+        "label": "Boussinesq WHO Loiasis review 2022",
+        "kind": "guideline"
+      },
+      {
+        "label": "LoaScope test-and-not-treat Cameroon NEJM 2017",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "echinococcosis-hydatid-disease",
+    "title": "Cystic echinococcosis — WHO-IWGE stage-based + albendazole + PAIR + surgery",
+    "icd10": [
+      "B67"
+    ],
+    "icd11": [
+      "1F77.0"
+    ],
+    "domains": [
+      "tropical-medicine",
+      "infection",
+      "surgery",
+      "ntd"
+    ],
+    "population": "E. granulosus — sheep + dog endemic (Mediterranean, Central Asia, North + East Africa, S America, Australia). E. multilocularis (alveolar — Europe, Russia, China, N America) — more aggressive, malignant-like.",
+    "presentation": "Cystic — slow-growing liver (70%) > lung (20%) > brain/bone/other; often asymptomatic incidental imaging; pain, mass, rupture (anaphylaxis + dissemination), secondary infection, biliary obstruction. Alveolar — infiltrative liver mass, jaundice, hepatomegaly.",
+    "redFlags": [
+      "Cyst rupture into biliary tree / peritoneum — anaphylaxis + dissemination — surgical emergency",
+      "Spillage during surgery — secondary echinococcosis",
+      "Pulmonary cyst rupture — haemoptysis / pneumothorax",
+      "Alveolar echinococcosis (E. multilocularis) — locally invasive, late metastases — manage like malignancy",
+      "Pregnancy + cystic echinococcosis"
+    ],
+    "diagnostics": [
+      "Abdominal US + serial — WHO-IWGE staging: CE1 active unilocular / CE2 multivesicular / CE3a-b transitional / CE4 inactive / CE5 calcified",
+      "CT / MRI for complex + extra-hepatic + pre-op planning",
+      "Serology (ELISA + immunoblot) — positive cystic echinococcosis; less in lung; cross-reactivity (cysticercosis)",
+      "FBC eosinophilia + LFT",
+      "FNA / aspiration — only with antihelminthic cover (anaphylaxis risk)"
+    ],
+    "management": [
+      "WHO-IWGE Cystic Echinococcosis 2010 + 2017 + Brunetti Acta Tropica:",
+      "STAGE-BASED:",
+      "  CE1 / CE3a (active small < 5 cm) — albendazole alone or PAIR + albendazole",
+      "  CE1 / CE3a (large > 5 cm) — PAIR + albendazole OR surgery",
+      "  CE2 / CE3b multivesicular — surgery (open or laparoscopic); PAIR not effective",
+      "  CE4 / CE5 inactive — WATCH AND WAIT — no treatment; serial US",
+      "ALBENDAZOLE 10-15 mg/kg/d divided BD (max 800 mg/d adult, 400 BD; smaller children weight-based) × 3-6 mo (continuous OR cyclical 4 wk on / 2 wk off × 3-6 cycles); reassess imaging",
+      "  Add praziquantel for daughter cysts / pre-op / post-spillage prophylaxis",
+      "  Monitor LFT + FBC monthly (transaminitis + neutropenia)",
+      "  Pre-op + intra-op albendazole (4 d before, 1 mo after) — reduce risk of recurrence",
+      "PAIR (Puncture-Aspiration-Injection-Reaspiration) for selected CE1/CE3a:",
+      "  Trained centre + emergency anaesthesia + adrenaline for anaphylaxis ready",
+      "  Aspirate cyst → inject scolicide (95% ethanol or hypertonic saline) wait 15-30 min → reaspirate",
+      "  Albendazole cover before + 1 mo after",
+      "  Catheterisation drainage modification for complex",
+      "SURGERY: cystectomy / pericystectomy / partial hepatectomy / lobectomy — bilateral lung — depending on anatomy + complications + recurrent; minimise spillage with hypertonic gauze + meticulous technique",
+      "BILIARY RUPTURE / OBSTRUCTION: ERCP + sphincterotomy + drainage; surgery",
+      "ANAPHYLAXIS during procedure: adrenaline IM + intensive care",
+      "PULMONARY: surgical resection preferred (lung less responsive to albendazole)",
+      "BONE: surgery + long-term albendazole; recurrent",
+      "ALVEOLAR (E. multilocularis): radical surgery if resectable (R0 like cancer) + long-term albendazole; many require lifelong; transplant selected",
+      "PREVENTION + One Health: dog deworming (praziquantel monthly endemic), pig/sheep slaughter hygiene, hand hygiene, vegetable washing, community education, prevent dog access to viscera",
+      "SSA: Kenya (Turkana) + East African endemic — surgical centres + community education + One Health."
+    ],
+    "references": [
+      {
+        "label": "WHO-IWGE Cystic Echinococcosis Expert Consensus 2010 + 2017",
+        "kind": "guideline"
+      },
+      {
+        "label": "Brunetti Acta Tropica 2010 PAIR consensus",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "brucellosis-comprehensive",
+    "title": "Brucellosis — doxycycline + rifampicin/streptomycin × 6 wk; longer for focal",
+    "icd10": [
+      "A23"
+    ],
+    "icd11": [
+      "1B95"
+    ],
+    "domains": [
+      "tropical-medicine",
+      "infection",
+      "zoonosis"
+    ],
+    "population": "500,000 cases/yr; Mediterranean + Middle East + Central Asia + Latin America + sub-Saharan Africa; unpasteurised dairy + occupational (vets, farmers, abattoir) + lab exposure.",
+    "presentation": "Undulant fever + sweats + arthralgia + back pain + hepatosplenomegaly + lymphadenopathy. Chronic / relapsing. FOCAL — spondylitis (sacroiliitis), arthritis, orchitis/epididymitis, endocarditis (rare but fatal), neurobrucellosis, hepatic abscess.",
+    "redFlags": [
+      "Endocarditis (rare but #1 mortality cause) — surgical + prolonged combination",
+      "Neurobrucellosis — meningitis / encephalitis / spinal",
+      "Spondylodiscitis with cord compression",
+      "Pregnancy + brucellosis (foetal demise + abortion)",
+      "Lab exposure — PEP rifampicin + doxycycline"
+    ],
+    "diagnostics": [
+      "Blood culture (special media — incubate 3-6 wk; PCR faster); bone marrow more sensitive but invasive",
+      "Serology — Rose Bengal (screen) + standard tube agglutination (SAT) + IgM/IgG ELISA + 2-mercaptoethanol",
+      "FBC pancytopenia, LFT raised, ESR/CRP elevated",
+      "Imaging — MRI spine (spondylitis), echo (endocarditis), US testes (orchitis)",
+      "LP for neurobrucellosis (CSF lymphocytic + raised protein + low glucose + culture/PCR)",
+      "Occupational + dietary history"
+    ],
+    "management": [
+      "WHO + IDSA + Ioannidou Lancet Infect Dis 2019:",
+      "UNCOMPLICATED ADULT:",
+      "  DOXYCYCLINE 100 mg BD × 6 weeks + RIFAMPICIN 600-900 mg OD × 6 weeks (oral combination preferred WHO)",
+      "  OR doxycycline 100 mg BD × 6 wk + STREPTOMYCIN 1 g IM OD × 14-21 d (or GENTAMICIN 5 mg/kg OD × 7-14 d) — often superior to oral combination (less relapse)",
+      "  AVOID monotherapy (high relapse)",
+      "PAEDIATRIC < 8 yr (avoid doxy):",
+      "  Cotrimoxazole + rifampicin × 6 wk (± gentamicin first week)",
+      "  Doxycycline acceptable short course > 7 d if benefits outweigh (WHO update)",
+      "PREGNANCY:",
+      "  Cotrimoxazole (after 1st trimester) + rifampicin × 6 wk; or rifampicin monotherapy 900 mg/d × 6 wk (less effective + higher relapse)",
+      "  Avoid doxycycline + aminoglycoside",
+      "FOCAL (SPONDYLITIS / NEURO / ENDOCARDITIS):",
+      "  TRIPLE THERAPY × 3-6 MONTHS minimum:",
+      "    Doxycycline + rifampicin + streptomycin/gentamicin first 2-4 wk",
+      "    Continue doxy + rifampicin to ≥ 12 wk (spondylitis ≥ 3 mo), ≥ 4-6 mo neurobrucellosis",
+      "  Add cotrimoxazole for neurobrucellosis (CSF penetration)",
+      "  ENDOCARDITIS: triple/quadruple therapy ≥ 3 mo + early valve surgery (better outcome)",
+      "  Spondylitis: doxy + rifampicin + aminoglycoside; surgical drainage abscess; bracing + physio",
+      "  Neurobrucellosis: doxy + rifampicin + cotrimoxazole ± ceftriaxone × 4-6 mo + steroid for vasculitis/cranial nerve",
+      "MONITORING: clinical + ESR + serology titres trend (slow normalisation 6-12 mo); LFT (rifampicin/doxy); CBC (cotrim, rifampicin)",
+      "RELAPSE 5-15% — same regimen + extended duration; consider focal source",
+      "PREVENTION: pasteurise dairy + boil milk + occupational PPE + animal vaccination (Rev-1 + S19); LAB EXPOSURE PEP — doxycycline + rifampicin × 3 wk + serology surveillance",
+      "SSA: Kenya — pastoralist communities + occupational + dairy; integrated with veterinary services (One Health) + animal vaccination + pasteurisation + community education."
+    ],
+    "references": [
+      {
+        "label": "WHO Brucellosis in Humans and Animals",
+        "kind": "guideline"
+      },
+      {
+        "label": "Ioannidou Lancet Infect Dis 2019 Brucella treatment",
+        "kind": "guideline"
+      },
+      {
+        "label": "Spanish Brucellosis Consensus",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "q-fever-coxiella-burnetii",
+    "title": "Q fever — doxycycline acute; doxycycline + hydroxychloroquine ≥ 18 mo chronic endocarditis",
+    "icd10": [
+      "A78"
+    ],
+    "icd11": [
+      "1C32"
+    ],
+    "domains": [
+      "tropical-medicine",
+      "infection",
+      "zoonosis"
+    ],
+    "population": "Globally distributed (except NZ); occupational (vets, farmers, abattoir, lab); pregnancy + valvulopathy + immunocompromised increased risk chronic. Coxiella burnetii — small Gram-negative obligate intracellular; aerosol transmission.",
+    "presentation": "ACUTE — fever + headache + atypical pneumonia + hepatitis + flu-like; 60% asymptomatic. CHRONIC (1-5% of acute, especially valvulopathy / vascular / immunocompromised / pregnant) — culture-negative endocarditis + vascular infection + osteomyelitis + post-Q fever fatigue syndrome.",
+    "redFlags": [
+      "Culture-NEGATIVE endocarditis in valvulopath / prosthetic — Q fever (+ Bartonella + Tropheryma whipplei) — serology",
+      "Vascular aneurysm or graft infection",
+      "Pregnant + acute Q fever — high risk congenital + chronic",
+      "Post-Q fever fatigue syndrome (CFS-like)",
+      "Outbreak — occupational + abattoir + livestock"
+    ],
+    "diagnostics": [
+      "Serology — indirect immunofluorescence (IFA) — phase I and phase II IgG/IgM antibodies",
+      "  Acute: phase II IgG ≥ 1:200 + IgM ≥ 1:50 (or 4× rise paired)",
+      "  Chronic: phase I IgG ≥ 1:1024 (or ≥ 1:800 some centres) — endocarditis / vascular",
+      "PCR blood + tissue early acute (before seroconversion)",
+      "Culture — BSL-3 (highly infectious)",
+      "Echo (TOE + TTE — culture-negative endocarditis), PET-CT (vascular + endocarditis)",
+      "FBC + LFT + CRP"
+    ],
+    "management": [
+      "CDC + ESC + European Q Fever Treatment 2017:",
+      "ACUTE Q FEVER:",
+      "  DOXYCYCLINE 100 mg BD × 14 d (extend to 21 d if severe)",
+      "  Pregnancy: COTRIMOXAZOLE 160/800 BD throughout pregnancy (until delivery) — reduces congenital + chronic risk",
+      "  Children < 8 yr: cotrimoxazole or short doxycycline",
+      "CHRONIC Q FEVER (endocarditis / vascular / persistent focus):",
+      "  DOXYCYCLINE 100 mg BD + HYDROXYCHLOROQUINE 200 mg TDS — for ≥ 18-24 MONTHS native valve, ≥ 24 MONTHS prosthetic",
+      "  Monitor — HCQ ophthalmology baseline + 6 mo annually (retinopathy)",
+      "  Phase I IgG titre serial — decreasing = response; ≥ 4-fold drop sustained = consider stopping after 18-24 mo",
+      "  Surgical valve replacement for severe / refractory / structural complication",
+      "POST-Q FEVER FATIGUE: supportive + graded exercise + CBT + symptom management; no specific antibiotic",
+      "VACCINATION: Q-VAX (Australia — occupational; not widely available globally) — pre-vaccination skin + serology screening",
+      "PREVENTION: occupational PPE (P2 respirator), animal vaccination (limited), birthing fluid management (avoid attending livestock parturition), pasteurisation, environmental control",
+      "OUTBREAK: ID + public health + occupational + livestock investigation; serology screening at-risk + treat",
+      "PREGNANCY POST-OUTBREAK: serology screen + treat + follow paediatric (congenital risk)",
+      "REPORT — notifiable in many jurisdictions",
+      "SSA: Kenya — pastoralist + abattoir + livestock — integrated One Health surveillance."
+    ],
+    "references": [
+      {
+        "label": "CDC Q Fever Diagnosis + Management MMWR 2013 (updated)",
+        "kind": "guideline"
+      },
+      {
+        "label": "European Q Fever Treatment Consensus 2017",
+        "kind": "guideline"
+      },
+      {
+        "label": "ESC 2023 Infective Endocarditis Guideline (culture-negative)",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "lyme-disease-borreliosis",
+    "title": "Lyme disease — doxycycline (most stages); IV ceftriaxone for severe neuro/cardiac",
+    "icd10": [
+      "A69.2"
+    ],
+    "icd11": [
+      "1C1G"
+    ],
+    "domains": [
+      "tropical-medicine",
+      "infection",
+      "zoonosis"
+    ],
+    "population": "Borrelia burgdorferi sensu lato (USA — B. burgdorferi; Europe — B. afzelii, B. garinii); Ixodes tick (deer / sheep); peak summer; northern hemisphere; not endemic SSA (sporadic).",
+    "presentation": "EARLY LOCALISED (days-weeks) — ERYTHEMA MIGRANS (expanding annular rash > 5 cm, central clearing — diagnostic) ± flu-like. EARLY DISSEMINATED (weeks-months) — multiple EM + carditis (AV block) + neuritis (cranial — facial palsy; meningitis; radiculitis). LATE (months-years) — arthritis (oligoarticular knee), acrodermatitis chronica atrophicans (Europe), encephalopathy.",
+    "redFlags": [
+      "AV block 2nd/3rd degree (Lyme carditis) — telemetry + IV antibiotic + temporary pacing if needed",
+      "Meningitis / encephalitis",
+      "Bilateral facial palsy = Lyme until proven otherwise (Borrelia + sarcoidosis + GBS)",
+      "Pregnant + active Lyme — treat (no doxy — use amox or cefuroxime)",
+      "Post-Lyme symptoms (PTLDS — not relieved by prolonged antibiotic — supportive)"
+    ],
+    "diagnostics": [
+      "EARLY LOCALISED erythema migrans — CLINICAL diagnosis; treat empirically + DO NOT need serology (sensitivity poor early)",
+      "Disseminated / late — TWO-TIER SEROLOGY (ELISA → if positive/equivocal → Western blot — IgM + IgG)",
+      "PCR — skin biopsy / synovial fluid / CSF (limited sensitivity)",
+      "LP for neuroborreliosis (CSF lymphocytic + raised protein + intrathecal antibody synthesis)",
+      "ECG ± telemetry / Holter for carditis (PR > 300 ms = high block risk)",
+      "MRI / synovial fluid for arthritis / encephalitis"
+    ],
+    "management": [
+      "IDSA/AAN/ACR 2020 Lyme Guideline + NICE NG95 2018 + ESCMID:",
+      "EARLY LOCALISED + DISSEMINATED MILD:",
+      "  DOXYCYCLINE 100 mg BD × 10 d (early localised) or × 14 d (disseminated mild)",
+      "  Alternative: amoxicillin 500 mg TDS or cefuroxime axetil 500 mg BD × 14 d",
+      "  Pregnancy: AMOXICILLIN or cefuroxime × 14 d (no doxy)",
+      "  Children: doxy now ACCEPTED short course < 21 d age ≥ 8 yr (IDSA 2020 update) or amoxicillin",
+      "LYME ARTHRITIS:",
+      "  Doxycycline 100 mg BD × 28 d (or amoxicillin)",
+      "  If incomplete response — repeat 28 d course OR IV ceftriaxone 2 g OD × 14-28 d",
+      "  Refractory (post-antibiotic Lyme arthritis) — NSAID + DMARD; not antibiotic",
+      "LYME CARDITIS:",
+      "  Hospitalise if 2nd/3rd-degree AV block, symptomatic, syncope, PR > 300 ms",
+      "  IV ceftriaxone 2 g OD × 14-21 d, transition to oral doxy when stable + PR < 300 ms",
+      "  Mild (1st-degree) outpatient oral doxy × 14-21 d",
+      "  Temporary pacing if high-grade block; permanent rarely needed (recovers)",
+      "NEUROBORRELIOSIS (meningitis, radiculitis, encephalitis):",
+      "  IV ceftriaxone 2 g OD × 14-28 d (severe / encephalitis 28 d)",
+      "  Alternative: doxycycline 200 mg BD or 100 mg BD × 14-28 d (CSF penetration acceptable — Lancet trials)",
+      "  Facial palsy isolated: oral doxy or amox × 14-21 d (palsy resolves over weeks regardless)",
+      "ACRODERMATITIS chronica atrophicans (Europe): doxy × 28 d",
+      "POST-TREATMENT LYME DISEASE SYNDROME (PTLDS): NO benefit from prolonged/repeated antibiotic (multiple RCTs — Klempner NEJM 2001) — supportive + graded exercise + symptom management + multidisciplinary",
+      "PROPHYLAXIS post-tick bite:",
+      "  Single-dose doxy 200 mg if (a) adult or > 8 yr (b) tick attached ≥ 36 h (c) within 72 h of removal (d) endemic area",
+      "  Otherwise watch + treat if EM develops",
+      "PREVENTION: avoid tick areas + DEET / permethrin clothing + tick check + prompt removal (fine forceps at skin) + tick-borne disease vaccine — VLA15 Pfizer-Valneva Phase 3 emerging",
+      "SSA: not generally endemic — return-from-travel symptoms; consider in differential — refer ID."
+    ],
+    "references": [
+      {
+        "label": "IDSA/AAN/ACR 2020 Lyme Disease Guideline",
+        "kind": "guideline"
+      },
+      {
+        "label": "NICE NG95 Lyme Disease 2018",
+        "kind": "guideline"
+      },
+      {
+        "label": "Klempner PTLDS NEJM 2001",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "long-covid-post-acute-syndrome",
+    "title": "Long COVID / Post-acute COVID-19 syndrome — multisystem rehabilitation + symptom-based",
+    "icd10": [
+      "U09.9"
+    ],
+    "icd11": [
+      "RA02"
+    ],
+    "domains": [
+      "infection",
+      "internal-medicine",
+      "rehabilitation"
+    ],
+    "population": "10-30% of acute COVID infections develop ≥ 1 persistent symptom > 4-12 weeks; female + older + severe acute + comorbid + vaccinated less. Hundreds of millions globally affected.",
+    "presentation": "Persistent symptoms > 4 wk (subacute) or > 12 wk (long COVID / post-COVID condition) post-SARS-CoV-2: fatigue + post-exertional malaise + cognitive dysfunction ('brain fog') + dyspnoea + chest pain + palpitations / POTS + autonomic dysfunction + anosmia/dysgeusia + sleep disturbance + mood + arthralgia + GI + chronic urticaria + thrombosis risk early + paediatric MIS-C. WHO definition: symptoms > 3 mo post-infection lasting > 2 mo, not explained by alternative.",
+    "redFlags": [
+      "Persistent dyspnoea — exclude pulmonary embolism (early period); chronic ILD / pulmonary fibrosis (HRCT)",
+      "Chest pain — exclude myocarditis (cardiac MRI), pericarditis, pulmonary embolism, ischaemia",
+      "POTS / autonomic dysfunction — tilt table + holter",
+      "Cognitive impairment — formal neuropsychology + neuroimaging if focal",
+      "MIS-C (multisystem inflammatory syndrome) — children + young adults — fever + multi-organ — IVIG + steroid + ICU",
+      "Suicide / severe mental health"
+    ],
+    "diagnostics": [
+      "CLINICAL diagnosis (no specific test confirms)",
+      "Tailored workup per symptom: D-dimer + CT-PA if PE suspected; HRCT chest if persistent dyspnoea/cough/abnormal exam; PFT (DLCO often low); echo + ECG ± cardiac MRI for chest pain/dyspnoea/palpitations; tilt-table for POTS; thyroid + cortisol if fatigue; ferritin + Hb + B12/folate / vit D / autoimmune; neuropsychology if cognitive",
+      "Exclude alternatives — hypothyroid, anaemia, depression, OSA, postural hypotension, cardiac, ME/CFS",
+      "Validated tools: COVID-19 Yorkshire Rehab Scale (C19-YRS); EQ-5D; FACIT-Fatigue"
+    ],
+    "management": [
+      "NICE NG188 + WHO 2023 + CDC + various long COVID consortia (RECOVER, PHOSP-COVID):",
+      "MULTIDISCIPLINARY PHENOTYPE-BASED:",
+      "  Holistic assessment + rehabilitation plan + GP + multidisciplinary clinic if available",
+      "  PACING for post-exertional malaise — DO NOT push graded exercise if PEM (worsens — same caveat as ME/CFS); energy management",
+      "  Symptom-targeted graded return to activity if no PEM",
+      "RESPIRATORY:",
+      "  Pulmonary rehabilitation + breathing techniques (inspiratory muscle training)",
+      "  Inhaled corticosteroid/bronchodilator if asthma-like / new airway",
+      "  Anticoagulation if PE confirmed",
+      "  ILD / fibrosis — pulm + transplant pathway if progressive",
+      "CARDIOVASCULAR:",
+      "  Myocarditis — cardiology + exercise restriction 3-6 mo + serial imaging",
+      "  POTS — increased salt + fluid + compression stockings + graded exercise (recumbent → upright) + β-blocker (low-dose propranolol/ivabradine) + midodrine + fludrocortisone",
+      "  Pericarditis — NSAID + colchicine",
+      "NEURO + COGNITIVE:",
+      "  Brain fog — cognitive rehab + sleep + treat sleep apnoea + mood + exercise as tolerated",
+      "  Headache — standard migraine pathways",
+      "  Anosmia — olfactory training + corticosteroid trial",
+      "  Small fibre neuropathy — gabapentinoid + IVIG investigational",
+      "  Stroke — secondary prevention per stroke guidelines",
+      "FATIGUE / PEM — pacing + energy management + sleep + mood + treat anaemia / endocrine; AVOID forced graded exercise if PEM",
+      "MENTAL HEALTH: CBT for adjustment / anxiety / depression; mindfulness; peer support; specialist if severe",
+      "GI / OTHER: probiotics evidence weak; H2 blocker / PPI for dyspepsia; standard pathways",
+      "VACCINATION: COVID-19 vaccine + boosters + may modestly improve long COVID symptoms; influenza + pneumococcal protect",
+      "ANTIVIRALS post-acute — no proven benefit (PAXLOVID for long COVID trials mostly negative; ongoing)",
+      "PAEDIATRIC LONG COVID: less common; supportive + school accommodations + reassurance + MIS-C surveillance",
+      "OCCUPATIONAL: workplace accommodations + phased return + disability assessment + employer engagement",
+      "RESEARCH ONGOING: low-dose naltrexone, IVIG, plasma exchange, anti-inflammatory, exercise tolerance — enrol in trials (RECOVER + PHOSP-COVID + others)",
+      "SSA: under-recognised + access to multidisciplinary care limited; integrate with chronic disease + mental health + rehab services; advocacy + research participation."
+    ],
+    "references": [
+      {
+        "label": "NICE NG188 Managing Long-term Effects of COVID-19 (updated)",
+        "kind": "guideline"
+      },
+      {
+        "label": "WHO 2023 Post-COVID Condition Clinical Guidance",
+        "kind": "guideline"
+      },
+      {
+        "label": "PHOSP-COVID + RECOVER consortium research",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
   }
 ]
