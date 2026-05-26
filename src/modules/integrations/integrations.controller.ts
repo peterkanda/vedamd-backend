@@ -1,6 +1,18 @@
-import { Controller, Get, NotFoundException, Param, Query, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Header,
+  NotFoundException,
+  Param,
+  Query,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
+import type { FastifyRequest } from 'fastify';
 import { IntegrationsService } from './integrations.service';
+import { PostmanCollectionService } from './postman-collection.service';
+import { CdsService } from '../cds/cds.service';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';
 import type { IntegrationCategory, IntegrationMethod } from './integrations.data';
 
@@ -9,7 +21,11 @@ import type { IntegrationCategory, IntegrationMethod } from './integrations.data
 @UseGuards(ApiKeyGuard)
 @ApiBearerAuth()
 export class IntegrationsController {
-  constructor(private readonly integrations: IntegrationsService) {}
+  constructor(
+    private readonly integrations: IntegrationsService,
+    private readonly postman: PostmanCollectionService,
+    private readonly cds: CdsService,
+  ) {}
 
   @Get()
   @RequireScope('content:read')
@@ -24,6 +40,25 @@ export class IntegrationsController {
     @Query('q') q?: string,
   ) {
     return { integrations: this.integrations.list({ category, method, q }) };
+  }
+
+  @Get('postman-collection')
+  @RequireScope('content:read')
+  @Header('content-type', 'application/json')
+  @Header(
+    'content-disposition',
+    'attachment; filename="vedamd-postman-collection.json"',
+  )
+  @ApiOperation({
+    summary: 'Download a Postman v2.1 collection for the API',
+    description:
+      'Generates a ready-to-import Postman v2.1 collection covering CDS Hooks discovery, every discovered CDS service (POST with realistic sample body), core content endpoints (drugs, conditions, scores, antidotes, ranges, drug-disease, immunization, allergy, notifiable, pgx), the integrations catalogue itself, and a deterministic agentic evaluate example. Bearer auth is pre-configured at the collection level — set the `apiKey` variable to your sandbox or production key after import. Also imports cleanly into Insomnia (via the Postman importer) and Bruno.',
+  })
+  postmanCollection(@Req() req: FastifyRequest) {
+    const proto = (req.headers['x-forwarded-proto'] as string | undefined) ?? 'https';
+    const host = (req.headers['x-forwarded-host'] as string | undefined) ?? req.headers.host ?? 'api.vedamd.io';
+    const baseUrl = `${proto}://${host}`;
+    return this.postman.build({ baseUrl, services: this.cds.listServices() });
   }
 
   @Get(':slug')
