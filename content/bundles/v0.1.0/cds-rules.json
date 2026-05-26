@@ -12743,5 +12743,155 @@
     "rationale": "NICE NG188 + WHO 2023 + PHOSP-COVID + RECOVER.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "pre-travel-medicine-consultation-r1",
+    "title": "Pre-travel — start 4-8 wk before; YF + typhoid + Hep A + malaria proph + risk-tailored",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "pre-travel-medicine-consultation"
+    },
+    "indicators": [
+      "upcoming travel to higher-risk region"
+    ],
+    "recommendation": "Start 4-8 wk before travel. Routine catch-up: MMR/Tdap/polio/varicella/HPV/flu/COVID. YELLOW FEVER single dose lifetime + IHR cert (10 d after) — SSA + Amazon entry; contraindicated < 9 mo, pregnant (unless high risk), severely IC, thymic, caution ≥ 60 yr (YEL-AVD). TYPHOID Vi injectable or oral live Ty21a × 3 (live CI in IC); booster 3-5 yr. HEP A 2 doses 6-12 mo; combined HepA/B if needed. HEP B at-risk; accelerated 0-7-21 d + 12 mo. MENINGOCOCCAL ACWY mandatory HAJJ/UMRAH + meningitis belt + outbreak. RABIES PrEP 3-dose IM or 2-dose WHO 2018 if rural+animal+remote. JE rural Asia > 1 mo. TBE central/east Europe forest. CHOLERA Dukoral outbreak/aid. POLIO IHR cert from endemic. MALARIA chemoprophylaxis by region+resistance+patient: atovaquone-proguanil (Malarone — well-tolerated 1-2 d to 7 d), doxycycline 100 OD (1-2 d to 4 wk; photosens + GI + no preg/<8), mefloquine 250 wkly (2-3 wk to 4 wk; neuropsych CI; OK preg), primaquine/tafenoquine terminal eradication P. vivax (G6PD TEST), chloroquine only chlor-sensitive (rare). BITE PREVENTION: DEET 30-50/picaridin/IR3535 + permethrin clothing + bed nets. TRAVELLER DIARRHOEA: hygiene + ORS + loperamide + AZITHROMYCIN 500 × 3 d (preferred Asia high quinolone R) or cipro Africa/Americas; rifaximin proph selected. ALTITUDE: 'climb high sleep low' + acetazolamide 125 BD 24h before + 2 d; HAPE/HACE descend + dex + nifedipine. VTE long-haul: hydration + movement + compression; ASA/LMWH high-risk. OTHER: sun + water + ROAD TRAUMA (#1 mortality) + animal + sex (condoms + STI + PrEP) + mental + insurance + jet lag + motion + contraception. SPECIAL: pregnant defer Zika/high-risk; paeds adjusted; chronic + alert card. POST-TRAVEL fever 3 mo = malaria until proven (thick film + RDT); schisto serology 3 mo post freshwater; pattern workup. SSA: Kenya referral travel clinics + cross-border + Hajj.",
+    "rationale": "WHO ITH 2024 + CDC Yellow Book + NaTHNaC + Kenya MoH.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "renal-replacement-therapy-modality-r1",
+    "title": "RRT modality — shared decision; transplant > home HD/PD > in-centre HD; conservative care option",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "renal-replacement-therapy-modality"
+    },
+    "indicators": [
+      "ESKD eGFR < 15 or symptomatic — RRT decision"
+    ],
+    "recommendation": "Pre-dialysis education + SHARED DECISION (eGFR ~ 20). MODALITIES: HD (in-centre vs home), PD (CAPD/APD), TRANSPLANT (deceased/living — best outcomes if feasible; refer eGFR ≈ 20; LIVING DONOR preferred; ABO-i + paired exchange; pre-emptive ideal), CONSERVATIVE/SUPPORTIVE (active management without dialysis — frail/multimorbid/preference — comparable survival some elderly with less burden). PATIENT values + lifestyle + comorbid + access + social. HD: AVF (gold) > AVG > tunnelled CVC (last) — Fistula First; AVF needs 8-12 wk maturation + avoid PICC/forearm cannulation early CKD; 4h × 3/wk standard; home/nocturnal/daily better selected; Kt/V ≥ 1.2 + regional citrate anticoag. PD: catheter + 2 wk healing; CAPD 4 manual exchanges OR APD overnight; suitable home/employment/preserve residual function/less CV swings; PERITONITIS empirical IP cefazolin+ceftaz/genta — retain catheter unless refractory. ANCILLARY: ESA + iron — Hb 100-115; HIF-PHi (roxadustat) oral alt; phosphate binder + active vitD + cinacalcet SHPT; BP individualised < 140/90; CV RF + statin (4D + SHARP); VACCINES HBV ESSENTIAL pre-HD + pneumo + flu + COVID + zoster recombinant (NO live on transplant); protein 1.0-1.2 + dietitian + Na/K/PO4 mgmt; psychosocial — dialysis depression high + screen + peer support. EMERGENCY dialysis: refractory hyperK/acidosis/fluid overload/uraemic enceph/pericarditis/severe intox. SSA: Kenya KRH transplant growing; HD expanding (KNH + private); PD scale-up potential (lower infrastructure); cost barrier — NHIF advocacy.",
+    "rationale": "KDIGO 2024 + KDOQI 2019 + ISN.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "continuous-renal-replacement-therapy-crrt-r1",
+    "title": "CRRT — 20-25 mL/kg/h effluent; REGIONAL CITRATE preferred; right IJ access; pharmacist for drug dosing",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "continuous-renal-replacement-therapy-crrt"
+    },
+    "indicators": [
+      "AKI Stage 3 ICU + haemodynamic instability + RRT indication"
+    ],
+    "recommendation": "INDICATIONS (AEIOU + clinical judgement) — STARRT-AKI NEJM 2020: NO benefit of earlier initiation — wait for established indication. MODALITY: CRRT (CVVH/CVVHD/CVVHDF) for haemodynamic instability + MOF; SLED 6-12 h alt cost-effective; IHD if stable. DOSE: effluent 20-25 mL/kg/h delivered (ATN + RENAL NEJM 2008-9 — no benefit higher 35; prescribe higher to deliver target with interruptions). ANTICOAGULATION: REGIONAL CITRATE (RCA) PREFERRED KDIGO 2024 — longer filter life + less bleeding (CI severe liver failure/shock — citrate accumulation: ionised hypoCa + total/ionised Ca ratio > 2.5 alarm; monitor); systemic/regional heparin alternative (HIT precautions); argatroban/fondaparinux HIT alternative; no anticoag for bleeding (high filter loss). FLUID: net UF by haemodynamics + cumulative; avoid rapid shifts; integrate vasopressor + sedation. CATHETER: ultrasound right IJ preferred > left IJ > femoral; AVOID SUBCLAVIAN (stenosis later AVF); CXR position before use; tunnel if > 2-3 wk. DRUG DOSING: most antibiotics + sedatives need adjustment for CRRT clearance — PHARMACIST + drug clearance per modality/flow; vanco + aminoglycoside + β-lactam TDM. COMPLICATIONS: hypothermia (warm), electrolyte (HYPOPHOSPHATAEMIA common — add to dialysate), catheter infection/dysfunction, bleeding, air/clotting alarms. WEAN: spontaneous UO > 500 mL/d off diuretic = good sign; discontinue + monitor 24-48 h; restart if needed. SSA: CRRT expanding tertiary (KNH/Aga Khan/MTRH); SLED + PD alternatives; train ICU + nephro + nursing.",
+    "rationale": "KDIGO 2012 AKI + 2024 + STARRT-AKI + RENAL/ATN.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "massive-transfusion-protocol-r1",
+    "title": "Massive haemorrhage — 1:1:1 + TXA within 3h trauma/PPH (CRASH-2/WOMAN); NO TXA in GI bleed (HALT-IT)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "massive-transfusion-protocol"
+    },
+    "indicators": [
+      "> 10 RBC/24h or > 4 RBC/1h or hemorrhagic shock"
+    ],
+    "recommendation": "ACTIVATE MTP — clear team + lab + porter; DAMAGE CONTROL bleeding source FIRST (surgery/IR/endoscopy/tourniquet/pack). RATIOS 1:1:1 RBC:FFP:platelets (PROPPR JAMA 2015); pack 1 = 4-6 RBC + 4-6 FFP + 1 plt pool; pack 2 = + cryo 2 pools. TXA: TRAUMA 1 g IV 10 min then 1 g 8 h WITHIN 3 H (CRASH-2 Lancet 2010 + CRASH-3 head 2019); PPH 1 g IV repeat 30 min if bleeding within 3 h (WOMAN Lancet 2017); GI BLEED — HALT-IT Lancet 2020 NO benefit + harm signal — DO NOT USE. FIBRINOGEN target > 1.5-2 g/L PPH > 2 — cryoprecipitate (4 pools ≈ 8 g) or fibrinogen concentrate. CALCIUM: monitor ionised + replace IV CaCl 1 g per 4 RBC (citrate binds; hypoCa worsens coag + cardiac). PREVENT TRAUMA TRIAD: warm (Bair Hugger + warmed fluid/blood + warm room); correct acidosis (perfusion + cause); PERMISSIVE HYPOTENSION in trauma without head injury (SBP 90/palp radial) until source control. REVERSAL: warfarin — vit K 10 IV + 4F-PCC 25-50 IU/kg by INR; dabigatran — idarucizumab 5 g IV; Xa-i (apix/rivarox) — andexanet alfa (cost) or 4F-PCC 50 IU/kg; heparin — protamine 1 mg/100 U last 2-3 h; antiplatelet — platelets if life-threatening. ROTEM/TEG-guided component if available. FACTOR VIIa NOT routine — salvage refractory. DIC — treat cause + replace components. OBSTETRIC: uterotonic ladder (oxytocin → ergometrine → carboprost → misoprostol) + B-Lynch/balloon/hysterectomy + IR embolisation. POC: Hb HemoCue + lactate + base deficit + ABG + ionised Ca; cross-match + emergency O-. AUDIT + simulation + debrief. SSA: Kenya KNBTS + facility MTP + safe blood + train + TXA access for PPH advocacy.",
+    "rationale": "European Trauma 2023 + PROPPR JAMA 2015 + CRASH-2/3 + WOMAN + HALT-IT.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "difficult-airway-management-das-r1",
+    "title": "Difficult airway DAS — VL first; SGA 2nd; FONA scalpel-bougie-tube CICO; AFOI anticipated",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "difficult-airway-management-das"
+    },
+    "indicators": [
+      "airway compromise / planned difficult / failed intubation / RSI"
+    ],
+    "recommendation": "Airway assessment (Mallampati + thyromental + neck + mouth + LEMON; obese/burn/trauma/anaphylaxis/distorted anatomy); US identify cricothyroid membrane high-risk. PRE-OXYGENATE 3-5 min 100% O2 + denitrogenate; APNOEIC OXYGENATION nasal high-flow 60 L/min in difficult patients reduces desat. PLAN A INTUBATION (max 3 attempts) — optimal position (sniffing or RAMP if obese) + VIDEOLARYNGOSCOPY first-line (C-MAC/Glidescope/McGrath) + bougie + 7-8 ETT + cuff + CAPNOGRAPHY MANDATORY; cricoid pressure release if obscuring; rocuronium 1-1.2 mg/kg or sux 1-1.5 mg/kg for RSI (rocuronium preferred + sugammadex 16 mg/kg reverses within 3 min if failed). PLAN B SUPRAGLOTTIC AIRWAY (max 3) — 2nd gen i-gel/LMA Proseal; consider intubate through Fastrach; decide: wake (elective), proceed surgery via SGA (urgent), or Plan C. PLAN C FACE MASK 2-person 2-handed + oral/nasal adjunct + relaxant if not given; wake if possible. PLAN D CICO — FRONT-OF-NECK ACCESS (eFONA) EMERGENCY: declare CICO loudly; SCALPEL-BOUGIE-TUBE (DAS 2015 adult) — horizontal stab cricothyroid → bougie → 6.0 ETT → capnography + bilateral air entry; cannula crico + jet ventilation alternative (paeds < 8 yr first-line; barotrauma risk); convert formal tracheostomy when stable. AWAKE FIBREOPTIC anticipated difficult — distorted (burns/Ludwig/AC/neck mass/severe OSA/unstable c-spine/anaphylaxis oedema) — topical anaesthesia + minimal sedation (alert + cooperative); awake VL emerging. PAEDIATRIC (DAS Paeds 2024) — large head/tongue/anterior larynx + high O2 consumption + rapid desat — appropriately sized equipment + skilled help + cannula crico+jet < 8 yr. EXTUBATION high-risk DAS 2012 — LMA exchange + airway exchange catheter + surgical airway ready. DOCUMENT + ALERT (chart + bracelet + difficult airway letter to patient + GP + future). NAP4 lessons + simulation + critical incident.",
+    "rationale": "DAS 2015 Adult + 2018 + DAS Paeds 2024 + NAP4 + ASA.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "stillbirth-perinatal-loss-care-r1",
+    "title": "Stillbirth — confirm 2 clinicians + respectful care + mementos + cause workup + bereavement + subsequent care",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "stillbirth-perinatal-loss-care"
+    },
+    "indicators": [
+      "confirmed intrauterine fetal death / neonatal death / late miscarriage"
+    ],
+    "recommendation": "CONFIRM by 2 clinicians US (auscultation alone insufficient). ACUTE care: PRIVATE quiet room + continuity + named midwife/clinician + RESPECTFUL communication (use baby's NAME + parental wishes + acknowledge as baby) + informed choices (labour vs LSCS + position + family) + generous pain relief + epidural if requested. INDUCTION usually preferred (DIC + psychological) — mifepristone + misoprostol regimen + oxytocin. MEMENTOS (offer + revisit — not forced): holding baby + cuddle cot extend time + photographs (NILMDTS volunteer) + footprints/handprints/lock of hair/blanket/clothes/name bracelet + naming + birth certificate where legal + faith/cultural rituals. FAMILY support — partner + siblings (age-appropriate) + grandparents + cultural-sensitive. WORKUP: maternal FBC+coag+UEC+LFT+glucose+HbA1c+TSH+viral (CMV/parvo/syphilis/toxo/rubella)+Kleihauer+APL+thrombophilia selective+autoimmune+cultures if infective; FETAL postmortem (parental consent — uptake higher empathetic) + PLACENTAL HISTOLOGY essential even no PM + karyotype/microarray + photographs + footprints + measurements + cord/cardiac for chr/culture. DISCHARGE: lactation suppression (cabergoline 1 mg single or supportive) + postnatal recovery + contraception (offered not pressured) + MENTAL HEALTH SCREEN (Edinburgh + PTSD + complicated grief) + bereavement pack + support orgs (Sands, Tommy's, local) + memorial + funeral arrangements + benefits + return-to-work + legal registration + avoid ward with newborns + private discharge if requested. FOLLOW-UP: consultant-led debrief 6-8 wk — review results + cause + risk subsequent + emotional; GP 1-2 wk + community midwife/HV; peer support + counselling (CBT PTSD); subsequent pregnancy — early consultant + early scan + extra support + RAINBOW pregnancy clinic. STAFF: bereavement training + own support (debrief + supervision + time off). AUDIT + perinatal mortality review (MBRRACE-PMRT + WHO Standards). PREVENT: ANC quality + 8-contact + risk assessment + GROW + reduced movements action + smoking cessation + BMI + glycaemia + APL + ASA in PE risk + lateral sleep > 28 wk + ENAP. SSA: Kenya 21/1000 — respectful care + PMR + ENAP + community education + obstetric quality.",
+    "rationale": "RCOG Green-top 55 + ACOG + WHO Every Newborn + Sands.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "paediatric-obesity-comprehensive-r1",
+    "title": "Paeds obesity — IHBLT 26+ contact hours; GLP-1 from 12 yr; bariatric > 13 yr severe; no stigma",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "paediatric-obesity-comprehensive"
+    },
+    "indicators": [
+      "BMI > 95th percentile + comorbid screen / family concern"
+    ],
+    "recommendation": "BMI percentile/z-score (WHO < 5 + 5-19; CDC; IOTF) + waist + BP + Tanner + comorbid screen (HbA1c/OGTT for T2DM, lipids, ALT/AST for NAFLD, TSH if growth, vit D); SLEEP + STOP-BANG/PSG if severe; MENTAL HEALTH + bullying + ED screen; family environment + SDoH; GENETICS if extreme + < 5 yr + syndromic. INTENSIVE HEALTH BEHAVIOUR LIFESTYLE TREATMENT (IHBLT — AAP 2023): family-based + ≥ 26 contact hours over 3-12 mo + MI + goal-setting + self-monitor + school/community + address SDoH (food insecurity/housing/safety/screen/parental work) — AVOID weight stigma + diet talk + focus health behaviours. NUTRITION: whole + veg + fruit + lean + reduce ultra-processed; reduce SSB + juice + portions; family meals + structured times; dietitian. ACTIVITY: 60 min/d MVPA (WHO) + reduce screen + enjoyable + family + community + barriers. SLEEP age-appropriate + screen-free bedroom + routine. MENTAL HEALTH treat depression/anxiety/body image/bullying/ED + CBT. PHARMACOTHERAPY ≥ 12 yr (AAP 2023): LIRAGLUTIDE 3 mg SC OD (Saxenda FDA 2020); SEMAGLUTIDE 2.4 SC wkly (Wegovy FDA 2022 — STEP-TEENS 16% loss); phentermine-topiramate (Qsymia FDA 2022); orlistat 120 with meals; SETMELANOTIDE selected genetic (POMC/LEPR/Bardet-Biedl). METABOLIC-BARIATRIC SURGERY ≥ 13 yr severe (BMI ≥ 35 + comorbid or ≥ 40): VSG common adolescent or RYGB at adolescent MBS centre + comprehensive psychosocial + family — Teen-LABS NEJM 2016 durable + comorbidity remission; lifelong supplements + follow-up. T2DM: lifestyle + METFORMIN first-line (often inadequate alone); insulin if HbA1c > 8.5; GLP-1 liraglutide ≥ 10 yr (ELLIPSE T2DM) + dapagliflozin ≥ 10 yr. OSA: ENT + adenotonsillectomy + CPAP. NAFLD: lifestyle + selected vit E (no resmetirom in paeds). POPULATION: WHO ECHO + SSB tax + labelling + advertising + school nutrition + active transport. STIGMA-FREE care + family-centred + long-term + no shame. SSA: double-burden under-/overnutrition coexist + nuanced messaging; Kenya urbanisation + SSB tax debate.",
+    "rationale": "AAP 2023 + WHO 2024 + NICE NG189 + STEP-TEENS + Teen-LABS.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "failure-to-thrive-paediatric-r1",
+    "title": "FTT — MDT + root cause + WHO SAM/MAM CMAM with RUTF + WASH + 1000 days + no overshadow",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "failure-to-thrive-paediatric"
+    },
+    "indicators": [
+      "growth faltering / weight crossing percentiles / inadequate gain / SAM/MAM"
+    ],
+    "recommendation": "MDT: paeds + dietitian + SLT (feeding) + nurse + SW + CHW + GP. SERIAL ANTHROPOMETRY: weight + length/height + HC + WAZ/HAZ/WHZ + MUAC (WHO < 5; growth velocity). RED FLAGS: SAM = MUAC < 11.5 OR WHZ < -3 OR bilateral oedema (WHO/UNICEF emergency); MAM = MUAC 11.5-12.5; STUNTING HAZ < -2; WASTING WHZ < -2; anaemia + micronutrient. WORKUP TARGETED (not blanket): FBC + iron + UEC + LFT + TFT + coeliac TTG + urinalysis + faecal occult/fat/parasites + lead + HIV test essential SSA + TB Mantoux/GeneXpert if exposure; genetics/cardiac/GI/neuro/metabolic per clinical; bone age if linear. ROOT-CAUSE-BASED: treat medical cause (HIV/TB/GI/heart/etc); feeding behaviour + technique (latch + paced bottle + position + oromotor); caregiver education + mental health + food security + parenting. NUTRITIONAL RESCUE: breastfeed optimisation (lactation counsellor; relactation possible); complementary feeding 6 mo+ diverse + energy-dense + iron + zinc + frequency (WHO IYCF); calorie supplements (high-cal + thickeners + oils + nut paste + fortification); SAM WHO 2013+2023 simplified — outpatient if no complications + appetite test (eat RUTF) — CMAM/IMAM with RUTF (Plumpy'Nut + local); inpatient if complicated (oedema 3+/anorexia/infection/hypothermia/hypoglyc/severe dehydration) WHO 10 STEPS — F-75 then F-100 + antibiotic (amox or amp+genta) + vit A + folate + Zn + transition to RUTF + rehab. REFEEDING SYNDROME: gradual + monitor PO4/Mg/K/glucose + thiamine before glucose. MICRONUTRIENT: vit A high-dose q6 mo < 5 yr deficient settings; iron + folate; zinc; iodised salt + multimic; DEWORM albendazole 400 q6 mo > 1 yr endemic. INFECTION: TB/HIV/malaria/diarrhoea (Zn + ORS)/pneumonia (IMCI antibiotic). EARLY STIMULATION (UNICEF/WHO Care for Child Development) + play + responsive feeding + cognitive. FOLLOW-UP serial weight + growth + dev + nutrition + family + community transition. SAFEGUARDING — suspected neglect/abuse → pathway + MDT + SW; inpatient observation may clarify. POPULATION WHO 1000 days + BFHI + Code substitutes + school feeding + maternal nutrition + food security + WASH + agriculture + SDG 2. SSA: Kenya MOH + IMAM + RUTF + CHV + integrate HIV/TB + UNICEF + WFP.",
+    "rationale": "WHO 2013/2023 SAM + IYCF + NICE NG75 + Kenya IMAM.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "disability-inclusive-primary-care-r1",
+    "title": "Disability — UNCRPD + reasonable adjustments + avoid diagnostic overshadowing + annual LD/ID health check",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "disability-inclusive-primary-care"
+    },
+    "indicators": [
+      "patient with physical/sensory/intellectual/psychosocial/neurodevelopmental disability"
+    ],
+    "recommendation": "ACCESSIBILITY: physical (ramps + accessible toilets + height-adjust couches + scales for wheelchair + hoists + parking); communication (Easy Read + pictorial + SIGN LANGUAGE interpreter + longer appts + plain language + hearing loop + AAC + Braille/large print); sensory-friendly autism (quiet room + sensory adjust); telehealth + outreach + affordability (NHIF + fee waivers). REASONABLE ADJUSTMENTS (legal — UK Equality Act/ADA/UNCRPD): individual + ask + record + act — longer appt, first/last slot, separate waiting, named clinician, advance info, sedation for dental/proc, social story. CO-PRODUCTION 'Nothing About Us Without Us' — engage in service design + decisions; SUPPORTED DECISION-MAKING UNCRPD Art 12 — supported autonomy + best interests; carers/family support but PATIENT is centre. AVOID DIAGNOSTIC OVERSHADOWING — investigate symptoms thoroughly + don't attribute to disability without workup; pain expressed differently (behavioural change in ID + non-verbal — DisDAT/FLACC/Abbey/PAINAD scales); objective + collateral + careful. PREVENTIVE CARE — general + specific: cancer screening (cervical/breast/colorectal) often missed + adapted access; vaccinations; bone (low activity + AED + low BMI); MENTAL HEALTH SCREEN (high prev depression/anxiety/PTSD); dental + vision + hearing checks regularly missed; sexual + reproductive health (often denied — rights-based); continence + bowel + skin. ANNUAL HEALTH CHECK (LD/ID per NHS Cardiff Health Check — improves detection). MEDICATION: polypharmacy common — STOPP/START + anticholinergic burden + interactions; avoid sedating in falls/aspiration risk; STOMP/STAMP UK — Stopping Over-Medication of People with LD/Autism (psychotropic). SAFEGUARDING + ADULT PROTECTION — 3-4× abuse/neglect/hate crime — routine enquiry + safe disclosure + multi-agency. MDT: GP + specialist + PT/OT/SLT + community nurse + SW + carer + advocate; transition paeds → adult 'Ready Steady Go'. ASSISTIVE TECHNOLOGY WHO GATE + APL — wheelchair/hearing/glasses/prosthetic/AAC; community-based rehab (CBR) LMIC. INTERSECTIONAL gender/race/LGBTQ+/age/rural/refugee compounding. POPULATION: UNCRPD Kenya 2008 ratified + national action plan; WHO Disability Inclusion + Rehab 2030; Persons with Disabilities Act Kenya 2003 (in revision); disability employment + education + transport + social protection (cash transfers); inclusive emergency response; data disaggregated by disability (Washington Group Questions).",
+    "rationale": "WHO Disability + Health 2022 + UNCRPD 2006 + WHO World Report 2011/2022 + NHS LD Annual Health Check + Kenya PWD Act.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "pulmonary-embolism-pert-pathway-r1",
+    "title": "PE — risk-stratify; massive thrombolysis; intermediate-high PERT for CDT; DOAC first-line stable",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "pulmonary-embolism-pert-pathway"
+    },
+    "indicators": [
+      "confirmed/suspected PE (CTPA / risk + symptoms)"
+    ],
+    "recommendation": "Risk stratify (ESC 2019/2024): clinical Wells/Geneva; D-dimer (age-adjusted) if low to exclude; CTPA gold (V/Q if contrast CI / preg); bedside US — RV dilation + McConnell + TR + RA thrombus + DVT confirms PE clinical context; ECG (S1Q3T3 rare; tachy + RBBB) + troponin (RV strain → mortality) + BNP. CLASS: low (PESI I-II) outpatient; intermediate-low anticoag + monitor; INTERMEDIATE-HIGH (RV dysfunc echo + biomarker pos) anticoag + watch + PERT if deteriorating; HIGH (shock) MASSIVE — THROMBOLYSIS. ANTICOAG: DOAC first-line stable non-cancer non-preg — apixaban 10 BD × 7 d → 5 BD; rivaroxaban 15 BD × 21 d → 20 OD; dabig/edox after parenteral LMWH 5-10 d; LMWH first-line cancer (apix/edox alt non-GI per HOKUSAI/CARAVAGGIO); preg LMWH only; warfarin INR 2-3 alt (KEML-affordable). DURATION: provoked transient 3 mo; unprovoked/cancer/thrombophilia 6 mo-indefinite (HERDOO2 for women shared). MASSIVE (high-risk shock/arrest): SYSTEMIC THROMBOLYSIS alteplase 100 mg over 2 h (or 0.6 mg/kg bolus 15 min arrest) — class I; avoid active bleed/recent surg/stroke/late preg; PEA arrest + RF — bolus + CPR 60-90 min; surgical embolectomy or CATHETER-DIRECTED THROMBOLYSIS for lysis CI or failed (SEATTLE-II + EXTRACT-PE + FLARE — EkoSonic/FlowTriever — reduce RV/LV + less bleeding); VA-ECMO refractory. INTERMEDIATE-HIGH (submassive RV strain + tn): anticoag + close monitor ICU; PERT review for CDT/embolectomy — PEITHO NEJM 2014 (alteplase reduced decompensation but bleeding); routine systemic lysis NOT beneficial. PERT MDT — IC/IR/CT surg/ICU/pulm/haem rapid activation for inter-high + massive — decide CDT/mechanical thrombectomy/surgical/ECMO. PREG PE: CTPA or V/Q + MRI; LMWH therapeutic throughout + 6 wk PP + switch UFH peri-delivery; thrombolysis OK life-threatening (alteplase doesn't cross placenta). FOLLOW-UP: extend decision + CTEPH at 3-6 mo (4% — echo + V/Q if persistent dyspnoea) + cancer workup unprovoked + lifestyle + secondary prevention. IVC FILTER only anticoag CI (active bleed/imminent surg) or progressive despite anticoag; remove when CI resolved (PREPIC-2). SSA: Kenya CTPA tertiary; alteplase + DOAC affordability/access advocacy; PERT tertiary; warfarin resource-limited.",
+    "rationale": "ESC 2019/2024 PE + PEITHO NEJM 2014 + FLARE + PERT Consortium.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
