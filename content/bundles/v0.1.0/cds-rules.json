@@ -12893,5 +12893,155 @@
     "rationale": "ESC 2019/2024 PE + PEITHO NEJM 2014 + FLARE + PERT Consortium.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "serotonin-syndrome-r1",
+    "title": "Serotonin syndrome — Hunter criteria; STOP serotonergic + benzo + cyproheptadine; AVOID dantrolene",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "serotonin-syndrome"
+    },
+    "indicators": [
+      "autonomic + neuromuscular clonus/hyperreflexia + mental status + serotonergic exposure within 24 h"
+    ],
+    "recommendation": "HUNTER criteria (preferred) — exposure + clonus (spontaneous/inducible/ocular) + agitation/diaphoresis OR tremor + hyperreflexia OR hypertonia + temp > 38 + ocular/inducible clonus. STOP ALL serotonergic IMMEDIATELY (SSRI/SNRI/MAOI/TCA/triptan/tramadol/pethidine/fentanyl/linezolid/methylene blue/St John's/MDMA/cocaine). SUPPORTIVE mainstay: IV fluid + cardiac/temp/neuro monitor + ICU mod-severe; ACTIVE COOLING for hyperthermia (ice/evaporative/cooling blanket — NO antipyretics; temp is muscle-driven). BENZODIAZEPINE first-line for agitation/autonomic/rigidity/clonus — diazepam 5-10 IV q5-10 min titrated or midazolam 1-2 or lorazepam 2-4 IV. CYPROHEPTADINE (5-HT2A antagonist) mod-severe — 12 mg PO/NG initial then 2 mg q2h to response (max 32/24h); maintenance 8 mg q6h (NG if intubated). Chlorpromazine 50-100 IM alternative (avoid hypotension). SEVERE (temp > 41 / rigid / rhabdo): intubate + sedate + PARALYSE non-depolarising (rocuronium/vecuronium — SUXAMETHONIUM CONTRAINDICATED hyperK rhabdo) — reverses rigidity → controls temp; treat rhabdo (fluid + K/CK/AKI; dialyse severe) + DIC. AVOID dantrolene (no good evidence — that's MH), bromocriptine (that's NMS), antipyretics (ineffective + hepato-renal in rhabdo), physical restraint alone. Most resolve 24-72 h. WASHOUT before restart: SSRI 2 wk, FLUOXETINE 5-6 wk, MAOI 2 wk before serotonergic. PREVENT: review meds + ED/primary care prescribing tramadol/fentanyl/triptan/linezolid/methylene blue/St John's in patient on SSRI/SNRI/MAOI.",
+    "rationale": "Boyer NEJM 2005 + Hunter QJM 2003 + ACMT 2014.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "neuroleptic-malignant-syndrome-r1",
+    "title": "NMS — stop neuroleptic / restart L-DOPA; benzo + DANTROLENE + bromocriptine; ICU support",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "neuroleptic-malignant-syndrome"
+    },
+    "indicators": [
+      "hyperthermia + lead-pipe rigidity + autonomic + altered mental + neuroleptic exposure (or L-DOPA withdrawal)"
+    ],
+    "recommendation": "DSM-5/Levenson criteria — neuroleptic exposure + hyperthermia + rigidity + 2 of: autonomic + altered + CK > 4× ULN + tremor + leucocytosis + diaphoresis + incontinence. CK often > 10,000. STOP NEUROLEPTIC / dopamine antagonist; RESTART L-DOPA if withdrawal-precipitated. SUPPORTIVE: IV fluid + electrolyte + ACTIVE COOLING (ice/evaporative/blanket) + ICU; correct rhabdo (fluid + K/Mg/PO4/CK/UO + alkalinise if pigmenturia); treat acidosis + hypoxia + DIC + AKI (dialysis severe). BENZODIAZEPINE for agitation/autonomic — lorazepam 1-2 IV q4-6h. DANTROLENE skeletal relaxant 1-2.5 mg/kg IV q6-12h (max 10 mg/kg/24h) for severe rigid + hyperthermia; PO 100-200 mg/d as improves. BROMOCRIPTINE dopamine agonist 2.5-5 PO/NG q8h titrate to 45 mg/d; restart L-DOPA if Parkinsonian (CAUTION serotonergic combination). Amantadine 100-200 BD alt. ECT for refractory / overlap catatonia. Intubate + paralyse non-depolarising (NOT sux — rhabdo hyperK) for refractory. DURATION 5-10 d (longer depot). RESTART neuroleptic ≥ 2 wk post-recovery + switch lower potency / atypical (clozapine sometimes) + start low + slow + monitor + share decision; recurrence 30%; avoid all dopamine antagonist if possible — use alternative antiemetic (ondansetron/antihistamine). DIFFERENTIAL: serotonin syndrome (hyperreflex + lower-limb clonus + recent serotonergic + faster onset), heat stroke, thyroid storm, MH (anaesthesia + sux), lethal catatonia (overlap). PREVENT: avoid rapid neuroleptic escalation + dehydration + monitor temp/CK in high-risk init; gradual L-DOPA + don't stop abruptly.",
+    "rationale": "Strawn AJP 2007 + Caroff + DSM-5.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "catatonia-recognition-treatment-r1",
+    "title": "Catatonia — Bush-Francis + lorazepam challenge 2 mg IV; ECT refractory; rule out NMDAR encephalitis",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "catatonia-recognition-treatment"
+    },
+    "indicators": [
+      "mutism + immobility + posturing + waxy flexibility ± autonomic"
+    ],
+    "recommendation": "BUSH-FRANCIS catatonia rating scale ≥ 2 of first 14 + total ≥ 6 (or DSM-5 catatonia 3+ of 12). STOP any neuroleptic (worsens + precipitates malignant catatonia). MEDICAL WORKUP essential: NMDAR + autoimmune + UEC + LFT + Ca + Mg + glucose + TSH + B12 + folate + CRP + CK + drug screen + neuroimaging (CT/MRI) + EEG + LP if encephalitis suspected. TREAT UNDERLYING (anti-NMDAR encephalitis with teratoma — immunotherapy + tumour resection). LORAZEPAM CHALLENGE 2 mg IV (or 4) DIAGNOSTIC + therapeutic — observe 5-10 min for improvement (mutism/immobility/eye contact) — 70-80% response confirms diagnosis. MAINTENANCE LORAZEPAM 6-24 mg/d divided q4-8h titrated — may need surprisingly high — safe sedation. Alternatives: zolpidem, memantine, amantadine, carbamazepine, valproate. ECT gold standard refractory/malignant/rapid response — bilateral + daily then taper — 80-90% response (more than lorazepam alone). NUTRITION (NG) + IV fluid + DVT prophylaxis (LMWH) + position/pressure + mouth care + monitor electrolytes + treat aspiration pneumonia. MALIGNANT CATATONIA (hyperthermia + autonomic): ICU + ECT urgent + lorazepam + supportive (cool/fluid/electrolyte); AVOID NEUROLEPTIC. ANTI-NMDAR ENCEPHALITIS specific: ovarian teratoma screen (young woman essential — US + MRI + tumour markers); methylpred 1 g/d × 5 + IVIG 0.4 g/kg × 5 OR PLEX first-line; rituximab + cyclophosphamide second-line; tumour resection; long-term 1-2 yr; relapse 20%; recovery months. Most resolve with treatment. Family education + early recognition. SSA: lorazepam + ECT capacity expanding tertiary; train.",
+    "rationale": "Sienaert Lancet Psychiatry 2014/19 + BFI + Dalmau NEJM 2008.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "refeeding-syndrome-prevention-management-r1",
+    "title": "Refeeding — risk-stratify; thiamine BEFORE glucose; 10 kcal/kg/d high-risk; monitor PO4/K/Mg daily",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "refeeding-syndrome-prevention-management"
+    },
+    "indicators": [
+      "malnourished/starved patient about to start feeding (oral/enteral/parenteral)"
+    ],
+    "recommendation": "RISK STRATIFY (NICE CG32) — HIGH ≥ 1 major OR ≥ 2 minor; MAJOR: BMI < 16, weight loss > 15% in 3-6 mo, > 10 d minimal intake, pre-feeding low K/PO4/Mg; MINOR: BMI < 18.5, > 10% loss, > 5 d minimal, alcohol/drug/insulin/chemo/diuretic/antacid history. VERY HIGH ≥ 2 major or BMI < 14 or > 15 d nil. BEFORE feeding: THIAMINE 200-300 mg IV/IM (Pabrinex 1+2 IV in alcoholic/severe over 30 min) + multivitamin daily × 3-10 d — THIAMINE BEFORE GLUCOSE (Wernicke prevention). Correct fluid + electrolytes BEFORE feeding (or together) + replace K/PO4/Mg even if low-normal high-risk — target K > 4, PO4 > 0.8, Mg > 0.7. CALORIE: HIGH-RISK start 10 kcal/kg/d (max 5 if very high risk/BMI < 14/> 15 d nil); increase slowly over 4-7 d to need (25-35 kcal/kg/d); carb ≤ 50% energy initially; balanced protein + fat. Salt/fluid restrict if cardiac risk. ELECTROLYTE REPLACE: phosphate IV (Phosphate Polyfusor 500 mL = 50 mmol over 12-24h severe; oral Phosphate Sandoz 16.2 mmol BD-TDS mild-mod); K IV/PO; Mg IV severe/PO. MONITOR: daily weight + fluid balance + electrolyte (PO4/K/Mg) + glucose + UEC × 7 d → 2-3× wk × 2 wk; cardiac (ECG + telemetry high-risk + HF); refeeding bloods even after target. WERNICKE'S: thiamine 500 IV TDS × 2-3 d → 250 IM/IV daily → PO 100 TDS long-term; missed → Korsakoff. SAM children: WHO 10 steps (F-75 → F-100; antibiotic + vit A + folate + Zn; specific). ANOREXIA NERVOSA: specialist eating disorder team + MDT + medical + psych + dietitian + family; supervised; capacity + MHA if life-threatening refusing. PN: same risk + slower titration + central + specialist.",
+    "rationale": "NICE CG32 2017 + ESPEN + WHO SAM.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "nephrolithiasis-kidney-stones-r1",
+    "title": "Stones — NSAID > opioid analgesia; MET tamsulosin 5-10mm; URGENT decompression infected+obstructed",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "nephrolithiasis-kidney-stones"
+    },
+    "indicators": [
+      "loin-to-groin colic + haematuria ± nausea ± fever"
+    ],
+    "recommendation": "DIAGNOSIS: CT KUB non-contrast gold; US first in pregnancy + paeds + low-dose alt; urinalysis + UEC + Ca + urate + FBC + CRP + pregnancy test; ANALYSE PASSED STONE (sieve urine); 24h urine + serum PTH + uric acid for recurrent/young/family. ACUTE COLIC: NSAID first-line (diclo 75 mg IM/IV/PO or ketorolac 30 IM/IV — superior Cochrane) + paracetamol IV adjunct; opioid if NSAID CI/inadequate (morphine; tramadol cautious); antiemetic; IV fluid only if dehydrated (forcing fluids does NOT speed passage); hot pack. SIZE/LOCATION: < 5 mm 80-90% pass — trial 2-4 wk + sieve; 5-10 mm 50% pass — MET TAMSULOSIN 400 μg/d × 4 wk distal ureteric stones (SUSPEND modest benefit; NICE 2019 still); > 10 mm or failed or upper ureter — intervention. INTERVENTION: ESWL stones < 2 cm renal/upper; URS + holmium laser ± JJ stent most stones; PCNL > 2 cm + staghorn; stent for obstruction; nephrostomy if infected. EMERGENCY INFECTED + OBSTRUCTED: sepsis bundle + broad-spectrum (ceftriaxone + gentamicin or pip-taz) + URGENT decompression — retrograde stent or PERCUTANEOUS NEPHROSTOMY within hours; NEVER delay decompression for full stone treatment; definitive after sepsis resolved. STONE-TYPE: Ca oxalate (most) — hydration + low oxalate + adequate Ca + thiazide if hyperCa-uria + K-citrate 10-30 mEq TDS; uric acid — alkalinise K-citrate/NaHCO3 pH > 6.5 + allopurinol; struvite — treat infection + complete removal; cystine — high hydration + alkalinise + tiopronin/D-penicillamine; Ca phosphate — investigate RTA + hyperPTH. PREVENT recurrent: HYDRATION > 2.5 L/d (urine > 2 L); diet — moderate Ca (NOT low — increases oxalate absorption), reduce Na < 100 mmol/d, reduce animal protein, oxalate if hyperox; thiazide chlortalidone 25 if hyperCa-uria recurrent (NOSTONE); citrate if hypocitraturia; treat 2° (hyperPTH parathyroidectomy/RTA/gout). PREGNANCY: US + paracetamol/codeine (avoid NSAID 1st+3rd) + urology if obstruction (JJ/nephrostomy until post-partum); tamsulosin off-label cautious. SSA: hot climate + dehydration + scale-up imaging + urology + ESWL/URS tertiary; primary care awareness.",
+    "rationale": "EAU 2024 + AUA 2016/2019 + NICE NG118 + SUSPEND Lancet 2015.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "food-allergy-ige-comprehensive-r1",
+    "title": "Food allergy — SPT/specific IgE + OFC; 2 auto-injectors + plan; early peanut introduction (LEAP)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "food-allergy-ige-comprehensive"
+    },
+    "indicators": [
+      "IgE-mediated reaction within 2 h of food / FPIES / EoE"
+    ],
+    "recommendation": "DETAILED history (food/timing/reaction/reproducibility) + SPT + specific IgE (ImmunoCAP) — sensitisation marker NOT diagnostic alone (30-50% false positive); COMPONENT-RESOLVED diagnostics (Ara h 2 peanut, Cor a 14 hazelnut, Gly m 8 soy) increase specificity + risk stratification; ORAL FOOD CHALLENGE gold standard + outgrowth + threshold (supervised allergist + emergency-ready); tryptase if anaphylaxis (within 4 h); eczema severity + atopy + asthma. AVOIDANCE strict for confirmed — read labels (top allergens; 'may contain' confusing); communicate eating out + cross-contamination + school/parties/travel. ADRENALINE AUTO-INJECTOR — TWO (EpiPen/Jext/Emerade) for anaphylaxis history + severe + multiple + asthma+food + persistent peanut/tree nut + mast cell + exercise-induced; TRAIN family + school + carer + child age-appropriate + ANAPHYLAXIS ACTION PLAN pictorial + review annually + replace before expiry + ALWAYS CARRY (biphasic + injector failure). Medic-alert + dietitian + psychosocial + transition. Rescue mild non-anaph: oral antihistamine + observe; severe/progressive → adrenaline. ORAL IMMUNOTHERAPY emerging: PEANUT OIT Palforzia FDA 2020 ages 4-17 — desensitisation + threshold; risk reactions during build-up + EoE; access/cost. EARLY introduction of allergenic foods (LEAP NEJM 2015) — peanut from 4-6 mo in high-risk eczema/egg allergic infants REDUCES allergy 80% — PARADIGM SHIFT (replaced 'delay'); early egg/milk emerging; OMALIZUMAB adjunct OIT (OUtMATCH 2024 raises threshold + safer multi-food). OUTGROWING: milk + egg 50-80% by school age — re-challenge q12-24 mo allergist; peanut + tree nut + fish + shellfish usually lifelong; component results predict. FPIES (non-IgE): acute IV fluid + ondansetron + (refractory methylpred 1 mg/kg); chronic avoid trigger + supervised reintro 12-18 mo (yearly); common triggers cow milk/soy/rice/oats/egg. EoE: PPI + topical steroid (swallowed fluticasone/budesonide) + elimination diet (6-food/4-food/milk-only) + dilatation strictures + dupilumab FDA. Proctocolitis: maternal exclusion if breastfed; eHF formula if formula-fed; resolves by 1 yr usually. Pollen-food (OAS): cook trigger (denature); avoid raw if sx; usually mild; rare anaph. Pregnancy/lactation: NORMAL diet (no restriction benefit; promotes tolerance). SSA: emerging + auto-injector access + cost advocacy + school education + train primary care + integrate with anaphylaxis algorithm.",
+    "rationale": "EAACI 2024 + BSACI + LEAP NEJM 2015 + OUtMATCH 2024.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "paediatric-enuresis-bedwetting-r1",
+    "title": "Enuresis — exclude underlying + reassure + alarm first-line; desmopressin for short-term/refractory",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "paediatric-enuresis-bedwetting"
+    },
+    "indicators": [
+      "wetting > 5 yr / daytime sx / family concern"
+    ],
+    "recommendation": "EXCLUDE underlying — UTI (urinalysis), DM (glycosuria), constipation (common contributor — treat), OSA (snoring + adenotonsillar — treat may resolve enuresis), neurological/structural (US KUB/MRI spine if daytime + sx + recurrent UTI). Secondary enuresis → workup more carefully. REASSURE — common + most outgrow + not naughty + no punishment. LIFESTYLE: adequate daytime fluid (6-8 drinks evenly); restrict evening fluid 2 h before bed; avoid caffeine + dark fizzy + chocolate; regular voiding day q2-3h + before bed + double void bedtime; treat constipation (Movicol/laxative + regular toileting); positive reward chart + no punishment; lifting/waking limited evidence — discontinue if not working. TREATMENT ages 5-7+ (or distress earlier): ENURESIS ALARM first-line — body-worn or pad-sound — child wakes to alarm → toilet → reset; 14-week trial; supportive parent + child engaged; cure ~ 65% (better long-term than meds; low relapse); continue until 14 consecutive dry or 14 wk. DESMOPRESSIN alternative/combination — short-term (sleepover/camp) or alarm not feasible/older — 120-240 μg sublingual (or 200-400 μg tab) at bedtime; RESTRICT FLUID EVENING (HYPONATRAEMIC SEIZURE risk if drink late — counsel + monitor); withdraw periodically — 1 wk break q3 mo; combination alarm + desmopressin for refractory. Imipramine 25-50 nocte historic — TOXIC overdose + cardiac risk — last resort + specialist only. Antimuscarinic (oxybutynin/tolterodine) if daytime overactive — specialist. REFER specialist if refractory / daytime + nocturnal / structural / underlying / safeguarding / mental health. PSYCHOSOCIAL: reassurance + sibling teasing + school + sleepovers + camp planning + self-esteem; address bullying + parental frustration; counselling if needed. Adult enuresis — neuro/structural/sleep/OUD/alcohol/psychiatric workup essential — never assume primary. SSA: constipation + UTI common contributors + train primary care + non-pharm for resource-limited.",
+    "rationale": "NICE CG111 + ICCS 2020.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "tinnitus-vestibular-schwannoma-r1",
+    "title": "Asymmetric SNHL + tinnitus — MRI IAM for VS; CBT + hearing aid for tinnitus distress",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "tinnitus-vestibular-schwannoma"
+    },
+    "indicators": [
+      "tinnitus / unilateral SNHL / imbalance / NF2 family"
+    ],
+    "recommendation": "AUDIOLOGY: pure-tone audiogram + tympanometry + acoustic reflex + speech audiometry. IF ASYMMETRIC SNHL ≥ 15 dB any frequency or ≥ 10 dB 2 adjacent — MRI INTERNAL AUDITORY MEATUS + cerebellopontine angle WITH GADOLINIUM gold for VS. Tinnitus questionnaire TFI/THI. Identify treatable cause: cerumen + OME + otosclerosis + Meniere's + ototoxic review. Pulsatile tinnitus: MRA + MRV + duplex + autoimmune + ferritin (vascular — AVM/glomus/dural fistula/atherosclerosis/BIH). Bilateral VS/family — NF2 genetics. TINNITUS management: reassure benign primary + most habituate + address fears/catastrophising; treat treatable cause; HEARING AID for tinnitus + hearing loss — most effective intervention (masks + improves background); CBT strongest evidence for distress (NICE NG98 + AAO-HNS) + TRT; sound enrichment / masking (white noise + fan + music + masker); AVOID promising silence cures; AVOID gingko/B12/melatonin (AAO-HNS no evidence); sleep hygiene + relaxation + meditation + mindfulness + low-dose antidepressant if mood comorbid; avoid ototoxic + further noise + hearing protection; severe distress/suicide — MH urgent; cochlear implant for SNHL + tinnitus (severe-profound bilateral); BIMODAL stimulation (Lenire auditory + tongue) FDA 2023 emerging. VESTIBULAR SCHWANNOMA: SMALL < 1.5 cm intracanalicular — WATCH + WAIT (MRI q6-12 mo initially then yearly — most slow); growth/sx/larger > 1.5-2 cm — INTERVENE: STEREOTACTIC RADIOSURGERY (Gamma Knife/CyberKnife/linac) preferred small-medium + hearing preservation; MICROSURGERY (translab sacrifices hearing; middle fossa / retrosigmoid hearing preservation selected small); combined/staged large; facial nerve preservation paramount + skilled centre; hearing aid + CI + auditory brainstem implant (NF2 bilateral). NF2 — MDT (genetics + ENT + neurosurg + ophth + cardiac + tumour surveillance — meningiomas + ependymomas + schwannomas); bevacizumab anti-VEGF refractory NF2 schwannoma. Tinnitus UK + ANA peer support. SSA: MRI access tertiary + audiology + ENT scale-up + raise awareness asymmetric loss referral.",
+    "rationale": "AAO-HNS 2014 Tinnitus + 2018 VS + NICE NG98.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "mental-capacity-assessment-ethics-r1",
+    "title": "Capacity — DECISION-SPECIFIC + 4-step functional test; presume capacity; support before declaring lack",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "mental-capacity-assessment-ethics"
+    },
+    "indicators": [
+      "treatment/finance/residence decision + concern about decision-making ability"
+    ],
+    "recommendation": "5 PRINCIPLES (MCA 2005): presume capacity unless proven; all practicable steps to support decision; unwise decision ≠ lack capacity; best interests if lack; least restrictive. 2-STAGE TEST: diagnostic — impairment of mind/brain? functional — can the person UNDERSTAND + RETAIN + WEIGH + COMMUNICATE the decision (any means)? Inability in ANY ONE due to impairment = lacks capacity for THAT DECISION. Capacity is DECISION-SPECIFIC + TIME-SPECIFIC + fluctuates. BEFORE assessing — REASONABLE ADJUSTMENTS: quiet/private + best time-of-day; Easy Read + pictorial + plain language + interpreter + AAC + advocate + family if patient wishes; treat reversible (UTI/hypoxia/electrolyte/drug/infection — delirium reversible); multiple sessions + re-assess after improvement; respect cultural communication. CAPACITY EXISTS — RESPECT decision even if 'unwise'. LACK CAPACITY — best interests: decision-specific + minimum restriction + permissive; consider PAST + PRESENT wishes + values + beliefs + advance statement; consult those close (LPA + family + advocate) but final decision clinical/proxy; document 5 principles + reasoning. ADVANCE DIRECTIVE: valid (specific + signed + witnessed life-sustaining + had capacity + applicable). LPA Health+Welfare AND/OR Property+Finance. DEPRIVATION OF LIBERTY (DoLS/LPS): continuous supervision + control + not free to leave + lacks capacity → authorisation required + least restrictive. SUPPORTED DECISION-MAKING (UNCRPD Art 12) — global shift substitute → supported decision-making even with ID/dementia. PAED: Gillick competence < 16 sufficient understanding can consent; Fraser (contraception under 16); parental responsibility for younger; disagreement → court. EMERGENCY: doctrine of necessity preserve life when capacity not assessable; reassess + comply with directives if any. MHA (UK) — separate from MCA — compulsory psychiatric admission/treatment specific criteria. Research: additional safeguards for those lacking capacity. SAFEGUARDING — undue influence + abuse + financial — pathway. DOCUMENT thoroughly + explain to patient/family. TRAIN all clinicians + regular updates. SSA: Kenya MHA 2022 + draft Mental Capacity Bill + UNCRPD ratified 2008 — develop frameworks + train + community + supported decision-making + safeguarding.",
+    "rationale": "MCA 2005 + UNCRPD Art 12 + Kenya MHA 2022 + BMA Toolkit.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "drug-allergy-delabeling-assessment-r1",
+    "title": "Penicillin allergy — DELABEL low-risk via direct oral challenge; SCAR = lifelong avoidance + alternative class",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "drug-allergy-delabeling-assessment"
+    },
+    "indicators": [
+      "reported drug allergy + need for antibiotic or alternative confirmation"
+    ],
+    "recommendation": "DETAILED history — drug + indication + timing (immediate < 1h vs delayed > 6h) + nature (urticaria vs rash vs anaph vs SJS vs serum sickness vs DRESS) + severity + hospitalised + how many years + intervening exposure + similar reactions related drugs. PENICILLIN DECISION (UK Penicillin Allergy Algorithm + ALLERGY-NICE): LOW-RISK (childhood rash > 10 yr ago / isolated GI / family-reported / vague) — DIRECT ORAL CHALLENGE single 250 mg amoxicillin observed 60-120 min — outpatient or inpatient trained team — if NEGATIVE DE-LABEL in records (EMR alert removed + patient counselled + alert card); MEDIUM-RISK (urticaria within hours not anaphylaxis) — skin testing + graded challenge (allergist); HIGH-RISK (anaphylaxis/SCAR/recent < 5 yr) — allergist + skin testing + caution; AVOID if SCAR. Should be SYSTEMATIC programme — hospital antibiotic stewardship + outpatient clinic + pharmacist-led + integrated. CROSS-REACTIVITY (modern evidence): penicillin → cephalosporin < 2% (esp different R1 side chain) — cefuroxime/ceftriaxone/cefepime/ceftaz usually safe; cefadroxil/cephalexin/cefaclor more cross-reactive (R1 similar to ampi/amox); penicillin → carbapenem < 1% — can use if not severe; cephalosporin → cephalosporin R1-dependent; penicillin → monobactam (aztreonam) minimal (unless ceftaz allergy — same R1). MODERN guidance side-chain + severity based — NOT blanket avoidance. ANAPHYLAXIS to drug: IM adrenaline + anaph algorithm + AVOID drug + class + auto-injector + medic-alert + allergist + alternative documented. MILD DELAYED rash (T-cell) — safe alternative β-lactam after evaluation. SCAR (SJS/TEN/DRESS/AGEP) — NEVER rechallenge + lifelong alternative + record clearly + alert + counsel. DESENSITISATION for true allergy + no alternative + essential treatment (penicillin for syphilis in pregnancy, sulfa for PCP in HIV, chemo allergy) — inpatient + allergist + ICU-ready + graded 3-12 h; temporary tolerance — must continue uninterrupted. Vaccine allergy: skin test + graded challenge (MMR + flu usually safe with egg allergy per UK + US updates). Contrast media: low-osmolar non-ionic + emergency-ready; pre-med controversial. PENICILLIN DE-LABELLING — highest-impact stewardship intervention (reduces vanco/broad-spectrum/HCAI/cost) — AHRQ + WHO advocate. SSA: AMR + stewardship priority + de-labelling cost-effective + train + integrate hospital stewardship.",
+    "rationale": "EAACI 2024 + BSACI 2020 + NICE NG134 + AHRQ + PALACE JAMA 2022.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
