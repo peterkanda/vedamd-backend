@@ -1,0 +1,20 @@
+import { Module } from '@nestjs/common';
+import { IntegrationsController } from './integrations.controller';
+import { IntegrationsService } from './integrations.service';
+import { DeveloperModule } from '../developer/developer.module';
+
+/**
+ * EMR / HMIS integration catalogue — plugin / snippet metadata for
+ * OpenMRS, OpenEMR, Bahmni, ERPNext, GNU Health, DHIS2, OpenHIM,
+ * CommCare, Epic, Cerner / Oracle Health, Allscripts / Veradigm,
+ * athenahealth, plus standard targets (HL7 v2, FHIR R4, CDS Hooks 1.0,
+ * SMART on FHIR). Static configuration, anonymous-by-design — no
+ * patient data exchange happens at this endpoint.
+ */
+@Module({
+  imports: [DeveloperModule],
+  controllers: [IntegrationsController],
+  providers: [IntegrationsService],
+  exports: [IntegrationsService],
+})
+export class IntegrationsModule {}
