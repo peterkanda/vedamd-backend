@@ -12008,5 +12008,155 @@
     "rationale": "NICE NG123 2024 + NICE CG97 + EAU + AUA + ICS.",
     "ruleVersion": "2024.1",
     "reviewStatus": "draft"
+  },
+  {
+    "id": "hypothyroidism-modern-management-r1",
+    "title": "Hypothyroidism — levothyroxine; pregnancy increase 25-30%; myxoedema coma emergency",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hypothyroidism-modern-management"
+    },
+    "indicators": [
+      "raised TSH ± low free T4"
+    ],
+    "recommendation": "TSH + free T4 + anti-TPO. Cortisol/ACTH check if central (low TSH + low T4) — give hydrocortisone BEFORE thyroxine if adrenal insufficient (otherwise precipitates adrenal crisis). OVERT (TSH > 10 / symptomatic): levothyroxine 1.5-1.7 mcg/kg/d adults < 60; start 25-50 mcg/d elderly/cardiac; empty stomach 30-60 min before food/Ca/iron; target TSH 0.4-2.5; recheck 6-8 wk after change; LIFELONG. SUBCLINICAL (TSH 4-10): treat if > 10, anti-TPO+ + symptoms, pregnancy/fertility, < 65 + symptoms/CV risk; OBSERVE elderly without symptoms (TRUST NEJM 2017). PREGNANCY: increase dose 25-30% (LATE — 2 extra tablets/week immediately); target TSH 0.1-2.5; monitor every 4-6 wk first half + every trimester. CONGENITAL: newborn screening + L-T4 10-15 mcg/kg/d within 2 wk (prevents cretinism). MYXOEDEMA COMA: IV L-T4 200-500 mcg load + 50-100 mcg/d + HYDROCORTISONE 100 mg q8h (before thyroxine) + warm gradually + glucose + treat trigger + ICU (mortality 25-60%). Drug interactions reduce absorption (PPI/Ca/iron/soy — separate 4h); pregnancy/oestrogen increases requirement; amiodarone/lithium/TKI/ICI thyroiditis. Kenya: KEML access + newborn screening rollout.",
+    "rationale": "ATA 2024 + ETA + NICE NG145 + TRUST + LATE.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "hyperthyroidism-graves-comprehensive-r1",
+    "title": "Hyperthyroidism — β-blocker + thionamide; PTU 1st trim pregnancy; carbimazole 2nd/3rd; Graves TED EUGOGO",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "hyperthyroidism-graves-comprehensive"
+    },
+    "indicators": [
+      "suppressed TSH + raised free T4"
+    ],
+    "recommendation": "TSH + free T4 + TRAb (Graves'-specific) + radioactive uptake scan (diffuse Graves' / patchy nodular / low thyroiditis). Symptom relief: PROPRANOLOL 20-40 mg q8h or atenolol 25-50 mg/d. Definitive (3 options shared decision): 1) THIONAMIDE — carbimazole/methimazole 10-40 mg/d titrate then maintenance 5-10 mg × 12-18 mo (Graves' 30-50% remission); PTU 1ST TRIMESTER pregnancy (less teratogenic — carbimazole aplasia cutis/choanal); switch to carbimazole 2nd/3rd trim (PTU hepatotoxicity); MONITOR FBC + LFT — STOP for sore throat/fever (agranulocytosis); 2) RAI-131 — definitive for Graves'/toxic nodular; CONTRAINDICATED pregnancy/breastfeeding/active ophthalmopathy; lifelong L-T4 4-6 mo post; 3) THYROIDECTOMY — large goitre/compressive/cancer/refractory/ophthalmopathy mod-severe; pre-op euthyroid + Lugol's 10 d. GRAVES' OPHTHALMOPATHY: smoking cessation #1; mild — lubricants + selenium 100 mg BD × 6 mo (CITED); moderate-severe — IV methylpred EUGOGO 500 mg/wk × 6 then 250/wk × 6 (4.5 g cumul); TEPROTUMUMAB anti-IGF-1R (HZNP); AVOID RAI in active TED. AF + thyrotoxicosis: rate/rhythm + anticoag CHA2DS2-VASc; reverts SR after euthyroid 4-6 mo. Amiodarone-induced: type 1 thionamide / type 2 steroid. Pregnancy Graves': TSAb at 22+36 wk (fetal hyperthyroidism). Thyroid storm (separate). Postpartum thyroiditis: β-blocker only (destructive — not thionamide).",
+    "rationale": "ATA 2024 + ETA/EUGOGO 2024 + NICE NG145 + HZNP teprotumumab + CITED.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "thyroid-nodule-cancer-workup-r1",
+    "title": "Thyroid nodule — US TI-RADS + FNA Bethesda; DTC lobectomy/total + RAI; advanced TKI/RET inhibitor",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "thyroid-nodule-cancer-workup"
+    },
+    "indicators": [
+      "thyroid nodule on US / calcitonin elevated"
+    ],
+    "recommendation": "TSH + free T4 + anti-TPO + calcitonin (MEN2/family). US thyroid + neck nodes — TI-RADS (ACR/EU/Korean): hypoechoic + microcalcifications + irregular margins + taller-than-wide + extrathyroidal extension. FNA per TI-RADS + size; Bethesda I-VI; molecular testing (ThyroSeq/Afirma) for III-IV reduces unnecessary surgery. Hot nodule on uptake scan rarely cancer (functional adenoma). DTC (papillary + follicular): ATA risk-stratify; lobectomy for small low-risk (< 4 cm, limited ETE, no nodes); total thyroidectomy for larger/multifocal/high-risk + central neck dissection if disease; lateral neck dissection if positive. Post-op L-T4 suppression (TSH < 0.1 high / 0.1-0.5 intermediate / 0.5-2 low); RAI ablation for intermediate-high (recombinant TSH Thyrogen); thyroglobulin + neck US surveillance. Advanced RAI-refractory: LENVATINIB (SELECT NEJM 2015) or sorafenib; RET inhibitor SELPERCATINIB (LIBRETTO-001) for RET-altered; BRAF/MEK dabrafenib+trametinib for BRAF V600E; NTRK fusion larotrectinib. MTC: total thyroidectomy + central neck + lateral if positive; calcitonin/CEA; RET germline test (MEN2 — phaeo screen + Ca/HPT BEFORE surgery + family cascade + prophylactic thyroidectomy in carriers timing by mutation). ATC: BRAF V600E mutation 30% — dabrafenib+trametinib+pembrolizumab transformative; chemoradiation; palliative for poor PS.",
+    "rationale": "ATA Nodule + Cancer 2024 + NICE + Bethesda 2023 + SELECT + LIBRETTO.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "adrenal-incidentaloma-workup-r1",
+    "title": "Adrenal incidentaloma — functional workup ALL + characterise + ESE/ESES 2023",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "adrenal-incidentaloma-workup"
+    },
+    "indicators": [
+      "adrenal mass on imaging"
+    ],
+    "recommendation": "FUNCTIONAL WORKUP ALL incidentalomas: 1 mg overnight DST (autonomous cortisol > 50 nmol/L); plasma free metanephrines (phaeo); ARR if HTN/hypoK (primary aldo); DHEAS/testosterone/oestradiol if ACC suspected. IMAGING: non-contrast HU (< 10 benign lipid-rich); contrast washout (> 60% absolute = benign); MRI chemical shift for lipid-rich; PET-CT/MIBG/DOTA for malignant/phaeo. Genetic testing for hereditary phaeo (RET/SDHx/VHL/NF1) if < 50/bilateral/paraganglioma/family. BENIGN (HU < 10, < 4 cm, non-functioning): observe + repeat imaging 6-12 mo (no growth = benign); annual functional × 4 yr; discharge stable + non-functioning at 4 yr. FUNCTIONAL: mild autonomous cortisol secretion (MACS) — adrenalectomy + comorbidity workup; overt Cushing's — adrenalectomy + post-op hydrocortisone cover; PHAEO — α-blockade (phenoxybenzamine) 7-14 d BEFORE β-blockade (avoid unopposed α → HTN crisis); laparoscopic adrenalectomy + genetic testing + family. SUSPECTED MALIGNANT (> 4 cm/HU > 20/heterogeneous/rapid growth/multiple hormone excess): surgical adrenalectomy experienced centre; ACC — open + adjuvant mitotane + EDP-M for advanced. BILATERAL: workup all causes + TB/fungal/HIV in endemic (common SSA) + mets in cancer patients.",
+    "rationale": "ESE/ESES 2023 + AACE 2024 + NICE + Endocrine Society Phaeo 2024.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "primary-aldosteronism-screening-r1",
+    "title": "Primary aldo — ARR screen for resistant HTN + AVS lateralise + adrenalectomy/spironolactone",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "primary-aldosteronism-screening"
+    },
+    "indicators": [
+      "resistant HTN / HTN + hypoK / adrenal incidentaloma / HTN < 30 yr / family"
+    ],
+    "recommendation": "SCREEN ARR (aldosterone/renin): replete K+ > 4; stop MRA 4-6 wk; consider switch interfering meds (β-blocker/ACEi/ARB/diuretic) to non-interfering (verapamil SR + hydralazine + α-blocker); morning sample seated. ARR > 20-40 + PA > 15 ng/dL suggests. CONFIRM: saline infusion (failure to suppress aldosterone < 5 after 2L); captopril challenge or fludrocortisone alternative. LATERALISE: CT adrenals may show unilateral but ADRENAL VENOUS SAMPLING (AVS) is gold standard before surgery (especially > 35). UNILATERAL adenoma (Conn's): laparoscopic adrenalectomy — pre-op spironolactone 50-100 mg × 4-6 wk; cure 95% biochemical + 50% clinical BP. BILATERAL hyperplasia / non-surgical: SPIRONOLACTONE 12.5-100 mg/d (gynaecomastia 5-30%) or EPLERENONE 25-50 mg BD selective (less gynaecomastia) or esaxerenone; add amiloride if insufficient. GRA (FH-I — chimeric CYP11B1/CYP11B2): low-dose dexamethasone 0.125-0.5 mg nocte. Genetic test + family if early onset/family. CV risk modification + bone health (chronic mineralocorticoid excess). Pregnancy: avoid ACEi/ARB/spironolactone (feminisation male fetus); methyldopa/labetalol/CCB/hydralazine. SSA: major hidden cause of resistant HTN — train primary care to screen + access spironolactone (cheap KEML).",
+    "rationale": "Endocrine Society Primary Aldo 2024 + AHA + ESH/ESC 2024.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "cushings-syndrome-comprehensive-r1",
+    "title": "Cushing's — DST + UFC + late-night salivary + ACTH + IPSS for pituitary; TSS first-line",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "cushings-syndrome-comprehensive"
+    },
+    "indicators": [
+      "Cushing features + 2 abnormal screening tests"
+    ],
+    "recommendation": "Screen (any 2 of): late-night salivary cortisol > 4 nmol/L + 24h UFC > 3× ULN × 3 + overnight 1 mg DST cortisol > 50 nmol/L (1.8 µg/dL). Differentiate iatrogenic (most common — taper) vs endogenous. ACTH: suppressed → adrenal (CT); raised → ACTH-dependent (8 mg DST suppress > 50% pituitary; CRH stim — pituitary responds, ectopic doesn't; IPSS gold standard pituitary vs ectopic petrosal/peripheral > 2 basal or > 3 with CRH); MRI pituitary; CT chest/abdo/pelvis or PET for ectopic; DOTATATE for NET. TREATMENT: 1) iatrogenic — TAPER carefully; 2) PITUITARY (Cushing's disease): transsphenoidal surgery first-line (70-90% cure microadenoma); repeat TSS or pituitary radiotherapy/medical for residual; bilateral adrenalectomy last resort (Nelson's syndrome risk); medical — pasireotide/cabergoline/mifepristone/levoketoconazole/OSILODROSTAT (LINC-3/4); 3) ECTOPIC — resect source or adrenal blockade (metyrapone/ketoconazole/osilodrostat/etomidate IV critically ill); 4) ADRENAL — adrenalectomy + post-op hydrocortisone cover (contralateral suppressed); ACC — open + mitotane + EDP-M. Post-cure: hydrocortisone replacement until HPA recovery (months-yr; some lifelong); stress dose + MedicAlert; address DM/HTN/osteoporosis/depression (often persists). SSA: address topical steroid (skin lightening) + iatrogenic.",
+    "rationale": "Endocrine Society Cushing's 2024 + Pituitary Society + LINC-3/4 osilodrostat.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "male-hypogonadism-testosterone-replacement-r1",
+    "title": "Male hypogonadism — confirm two morning T + treat cause; TRT individualised + monitor",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "male-hypogonadism-testosterone-replacement"
+    },
+    "indicators": [
+      "symptomatic + persistently low morning T"
+    ],
+    "recommendation": "TWO morning T (< 264-280 ng/dL or 9.2-9.7 nmol/L) + symptoms required. LH/FSH: high primary (testicular failure — karyotype/Klinefelter); low/normal secondary (HPG — prolactin/MRI pituitary/iron studies haemochromatosis/opioid/steroid/anabolic abuse/severe illness/obesity/OSA). PSA + DRE + FBC (haematocrit) + lipid + HbA1c + DEXA. TREAT CAUSE: obesity (weight loss reverses functional); OSA (CPAP); opioid taper; pituitary mass (surgery/cabergoline for prolactinoma); haemochromatosis phlebotomy; anabolic steroid abuse cessation + counsel. FERTILITY consideration BEFORE TRT — if desired: hCG ± FSH (secondary), clomiphene/SERM (off-label preserves fertility); sperm banking; TRT SUPPRESSES SPERMATOGENESIS — reversible months. TRT INDICATIONS: symptomatic + biochemical hypogonadism + no contraindications. CONTRAINDICATIONS: untreated prostate ca, active breast ca, severe LUTS, HCT > 54%, severe HF, untreated OSA, planned fertility 6 mo, suspicious PSA/DRE without urology. Formulations: IM testosterone enanthate/cypionate 100-200 mg q1-2 wk or undecanoate 1000 mg q10-14 wk; transdermal gel 50-100 mg/d (avoid contact partners/children). Target mid-range normal (350-700 ng/dL). MONITOR T + HCT + PSA + DRE + lipid + glucose at 3, 6 mo then annual. AE: polycythaemia (reduce dose/phlebotomy), acne, gynaecomastia, fluid, OSA worsen, prostate. TRAVERSE NEJM 2023 — no increased MACE middle-aged hypogonadism + CV risk. Klinefelter: lifelong TRT + micro-TESE IVF. Older men T Trials NEJM 2016 — symptomatic improvement.",
+    "rationale": "Endocrine Society 2024 + EAU + AUA + TRAVERSE + T Trials.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "menopause-hrt-modern-r1",
+    "title": "Menopause — individualised HRT + transdermal preferred for VTE risk + fezolinetant non-hormonal",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "menopause-hrt-modern"
+    },
+    "indicators": [
+      "vasomotor / GSM / POI / surgical menopause"
+    ],
+    "recommendation": "PARADIGM SHIFT — HRT effective + safe most women within 10 yr of menopause / under 60. Discuss benefits vs risks individualised. Postmenopausal bleeding INVESTIGATE (TVS + biopsy — endometrial cancer until proven). HRT: OESTROGEN transdermal preferred (estradiol patch 25-100 mcg twice weekly or gel — lower VTE; preferred > 35 yr / smokers / VTE risk / migraine with aura / hepatic); oral estradiol 1-2 mg/d; NEVER ethinyl estradiol (high VTE). PROGESTOGEN (women with uterus — endometrial protection): MICRONISED PROGESTERONE 100-200 mg nocte (most physiological — less metabolic/breast risk) or Mirena IUS 5 yr (convenient). VAGINAL OESTROGEN for GSM only (minimal systemic — even breast ca with oncology consent). POI < 40: continue HRT until natural menopausal age (51) — replacement not 'symptom'. Duration no fixed limit — reassess annually. ALTERNATIVES non-hormonal for VMS: SSRI (paroxetine/escitalopram/venlafaxine), gabapentin, clonidine, CBT, FEZOLINETANT 45 mg/d (NK3 antagonist — FDA 2023 first non-hormonal targeted). GSM: vaginal oestrogen + moisturiser + lubricant + ospemifene + DHEA prasterone. Risks: breast ca — minimal/none oestrogen-only (hysterectomy women) per WHI re-analysis; modest with combined > 5 yr; endometrial only with unopposed oestrogen — combine progestogen; VTE oral (transdermal no); stroke oral small (transdermal no); CV likely cardioprotective < 10 yr menopause / < 60 (timing hypothesis). Breast cancer — HRT contraindicated; vaginal oestrogen with oncology consent for severe GSM; non-hormonal alternatives.",
+    "rationale": "NICE NG23 2024 + NAMS 2022 + IMS 2024 + WHI + PEACE + FEZ-MS.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "gender-affirming-care-comprehensive-r1",
+    "title": "Gender-affirming care — WPATH 8; informed consent; multidisciplinary; mental health priority",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "gender-affirming-care-comprehensive"
+    },
+    "indicators": [
+      "gender incongruence (ICD-11 — depathologised)"
+    ],
+    "recommendation": "PATIENT-CENTRED + AFFIRMATIVE — gender-affirming care reduces depression/suicide; gatekeeping harmful. Multidisciplinary (endo + mental health + primary + surgery). WPATH 8 + Endocrine Society 2017/2024. Informed consent model adults. SOCIAL affirmation FIRST + always (name/pronouns/presentation/legal). MENTAL HEALTH support + suicide prevention + minority stress + co-occurring (depression/anxiety/autism/eating) — don't delay affirmation. FERTILITY counselling BEFORE hormones (sperm/oocyte banking — partially reversible suppression). MASCULINISING: testosterone enanthate/cypionate IM 50-100 mg/wk or 100-200 mg q2 wk or undecanoate Nebido q10-14 wk; transdermal gel; target male physiological 300-700 ng/dL; effects voice (permanent) + facial/body hair (permanent) + menses cessation (3-6 mo — supplementary norethisterone if needed) + clitoral + muscle redistribution + polycythaemia; testosterone NOT contraceptive. FEMINISING: estradiol transdermal preferred (lower VTE — patches 100-200 mcg twice weekly or gel; especially > 35 yr/smokers/VTE risk); oral 2-8 mg/d alternative; NEVER ethinyl estradiol; ANTI-ANDROGEN — spironolactone 100-200 mg/d (monitor K+) or GnRH agonist or cyproterone; effects breast (often modest) + body fat + skin + reduced muscle/libido — voice + facial hair don't change (speech therapy + electrolysis). MONITORING: T + estradiol + LH/FSH + prolactin + HCT + LFT + lipid + K+ + BP. ADOLESCENT: specialist multidisciplinary; GnRH agonist (puberty suppression reversible); cross-hormones ~ 16; surgery typically adulthood. Cass Review 2024 — cautious evidence-based; ongoing debate; WPATH maintains affirming. Surgery: chest/genital/facial/voice/laryngoplasty + hyster/ooph/orchi per individual. Primary care routine per current anatomy (cervical/prostate/breast screening). SSA: significant criminalisation + stigma — confidentiality + safety + non-judgemental + advocate (Galck+ Kenya).",
+    "rationale": "WPATH 8 + Endocrine Society 2024 + ICD-11 depathologised + Cass Review 2024.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
+  },
+  {
+    "id": "polycystic-ovary-syndrome-pcos-r1",
+    "title": "PCOS — Rotterdam + lifestyle + metformin + COC + letrozole for fertility (NEJM 2014)",
+    "trigger": "patient-view",
+    "appliesTo": {
+      "conditionSlug": "polycystic-ovary-syndrome-pcos"
+    },
+    "indicators": [
+      "Rotterdam 2/3 criteria + exclusion of other causes"
+    ],
+    "recommendation": "Rotterdam (2 of 3 + exclude): hyperandrogenism + oligo-anovulation + polycystic ovary morphology (≥ 12 follicles 2-9 mm or > 10 ml). EXCLUDE: TSH/prolactin/17-OHP (CAH)/cortisol Cushing/androgen tumour/POI/HAIR-AN. Metabolic assessment: 75g OGTT diagnosis + 2-yearly + lipid + LFT + FibroScan + STOP-Bang + mental health + AMH (not diagnostic alone). LIFESTYLE foundation (regardless BMI): Mediterranean diet + 150-300 min exercise + 5-10% weight loss + sleep/OSA + smoking cessation + mental health. MENSTRUAL/ENDOMETRIAL: COC first-line (anti-androgen progestin drospirenone/cyproterone for hyperandrogenism); cyclical progestin if oestrogen CI; Mirena IUS (endometrial + contraception). HYPERANDROGENISM: COC + SPIRONOLACTONE 50-200 mg (contraception required — teratogenic); finasteride/dutasteride for severe; eflornithine topical facial; cosmetic. METABOLIC: METFORMIN 500-2000 mg/d (insulin resistance + menstrual + weight + GDM/T2DM prevention); GLP-1 RA / TIRZEPATIDE emerging powerful for obesity + metabolic; SGLT2i; inositol modest. FERTILITY (when desired): weight first; LETROZOLE 2.5-7.5 mg days 3-7 SUPERIOR (Pregnancy in PCOS NEJM 2014); clomiphene 50-150 mg older; metformin co-therapy; gonadotrophins/IUI/IVF; laparoscopic ovarian drilling selected; metabolic surgery for severe obesity. PREGNANCY: pre-conception optimise + monitor GDM 24-28 wk + pre-eclampsia + preterm; continue metformin; aspirin 75-150 mg from 12 wk. MENTAL HEALTH: screen + treat depression/anxiety/eating/body image. ENDOMETRIAL surveillance — TVS + biopsy if abnormal bleed/thickened. Adolescent: defer Rotterdam 2 yr post-menarche; lifestyle + COC + metformin. SSA more severe metabolic — integrate NCD strategy.",
+    "rationale": "International PCOS 2023 (Monash/ESHRE/Endocrine Soc) + NICE NG215 + AE-PCOS + Pregnancy in PCOS NEJM 2014.",
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft"
   }
 ]
