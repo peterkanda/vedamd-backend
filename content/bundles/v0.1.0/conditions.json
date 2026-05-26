@@ -92673,5 +92673,839 @@
     "ruleVersion": "2024.1",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "pheochromocytoma-paraganglioma",
+    "title": "Pheochromocytoma / paraganglioma — α-blockade before β-blockade, surgical referral",
+    "icd10": [
+      "D35.0",
+      "E27.5"
+    ],
+    "icd11": [
+      "2D11"
+    ],
+    "domains": [
+      "endocrinology",
+      "oncology",
+      "cardiology"
+    ],
+    "population": "Rare (0.2-0.6/100k). 25% hereditary — VHL, MEN2A/B, NF1, SDHx (SDHB → metastatic risk), TMEM127, MAX. All adrenal (pheo) or extra-adrenal sympathetic chain (paraganglioma).",
+    "presentation": "Triad — headache + sweating + palpitations + hypertension (sustained or paroxysmal). May be normotensive (esp. paraganglioma, dopamine-secreting). Pallor, anxiety, weight loss, hyperglycaemia. Often missed — investigate any resistant HTN + family history + symptoms.",
+    "redFlags": [
+      "Hypertensive crisis with anaesthesia / surgery / contrast / β-blocker monotherapy (worsens — unopposed α)",
+      "Cardiomyopathy + cardiac failure (catecholamine-induced)",
+      "Metastatic disease (SDHB mutation — 30-70% metastatic risk)",
+      "Hereditary syndrome — index case → screen family",
+      "Pregnancy + pheo — high maternal + fetal mortality"
+    ],
+    "diagnostics": [
+      "PLASMA FREE METANEPHRINES (most sensitive — first-line) or 24h URINE FRACTIONATED METANEPHRINES",
+      "Avoid: pre-test caffeine + paracetamol + TCA + SSRI + labetalol (false positive); supine seated 30 min before draw",
+      "CT/MRI adrenal + abdo + chest + pelvis for localisation; MRI in pregnancy + paragangliomas",
+      "MIBG / 68-Ga DOTATATE PET — functional imaging + metastatic + paraganglioma",
+      "Genetic testing — all <50 yr + bilateral + extra-adrenal + family history + metastatic (10 known genes)",
+      "ECG + echo (catecholamine cardiomyopathy); HbA1c",
+      "Workup family of confirmed hereditary"
+    ],
+    "management": [
+      "ESE 2014 + Endocrine Society 2014 + ENS@T:",
+      "PREOPERATIVE α-BLOCKADE 7-14 days BEFORE surgery — MANDATORY:",
+      "  PHENOXYBENZAMINE (irreversible α-blocker — gold standard but limited supply) 10 mg BD titrate to 1-2 mg/kg/d in divided doses",
+      "  OR doxazosin (selective α1) 2 mg BD titrate to 16-32 mg/d — less postural hypotension but rebound HTN possible",
+      "  Goals: BP < 130/80 sitting; orthostatic to 90 systolic acceptable; no paroxysms; nasal congestion + postural symptoms (signs of effective blockade)",
+      "  Liberal salt + fluids in last 3-5 days (catecholamines deplete volume; collapse on surgery if not preloaded)",
+      "ADD β-BLOCKER ONLY AFTER α-blockade established (≥ 3-4 days):",
+      "  Atenolol / metoprolol / propranolol — controls reflex tachycardia + arrhythmia from α-blocker",
+      "  NEVER β-blocker first — unopposed α-vasoconstriction → hypertensive crisis + cardiogenic shock + death",
+      "CALCIUM CHANNEL BLOCKER (nicardipine / amlodipine) — adjunct if BP still uncontrolled or labile",
+      "AVOID: metoclopramide / glucagon / opioid (some) / cold pressor / IV contrast in unblocked patient — all release catecholamines",
+      "SURGERY:",
+      "  Laparoscopic adrenalectomy preferred (open if > 6-8 cm or invasive)",
+      "  Extra-adrenal — depends on location, sometimes en bloc resection",
+      "  Anaesthetist expertise essential — labile BP intraoperative (manipulation releases stored catecholamines); arterial line + CVP + esmolol / phentolamine / nitroprusside / nitroglycerin / magnesium ready",
+      "  Post-op: hypotension common (catecholamine withdrawal) — fluid + pressor if needed; hypoglycaemia possible",
+      "FOLLOW-UP:",
+      "  Plasma metanephrines at 2-6 wk post-op to confirm cure",
+      "  Annual biochemical (metanephrines) lifelong — recurrence 6-23% over 10 yr; higher SDHB + hereditary + paraganglioma",
+      "  Imaging if biochemical recurrence",
+      "METASTATIC / unresectable:",
+      "  131-I-MIBG therapy",
+      "  Sunitinib (TKI emerging — KEYNOTE-158)",
+      "  Lutetium-177 DOTATATE (peptide receptor radionuclide therapy)",
+      "  Chemotherapy CVD (cyclophosphamide + vincristine + dacarbazine)",
+      "  Belzutifan emerging (HIF-2α inhibitor — VHL + SDH-related)",
+      "  Symptom control with α + β blockade",
+      "PREGNANCY:",
+      "  Diagnose with plasma metanephrines + MRI; CT contraindicated",
+      "  α-blockade essential; β-blockade after (avoid in 1st trimester atenolol)",
+      "  Multidisciplinary — endocrine, obstetric, anaesthesia",
+      "  Resect ideally in 2nd trimester or post-delivery (LSCS with synchronous resection or staged); maternal + fetal mortality higher in 3rd trimester",
+      "GENETICS + family — refer index case to genetics; screen family for hereditary syndrome",
+      "SSA: phenoxybenzamine access often limited — doxazosin alternative; surgical + anaesthetic expertise + MDT essential; advocate access + training."
+    ],
+    "references": [
+      {
+        "label": "Endocrine Society 2014 Clinical Practice Guideline Pheochromocytoma",
+        "kind": "guideline"
+      },
+      {
+        "label": "ESE 2024 Phaeochromocytoma + Paraganglioma update",
+        "kind": "guideline"
+      },
+      {
+        "label": "ENS@T European Network Adrenal Tumours",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hyperprolactinaemia-prolactinoma",
+    "title": "Hyperprolactinaemia + prolactinoma — exclude drug / hypothyroid / pregnancy, dopamine agonist first-line",
+    "icd10": [
+      "E22.1"
+    ],
+    "icd11": [
+      "5A60"
+    ],
+    "domains": [
+      "endocrinology"
+    ],
+    "population": "10-30/100k; female predominance (microadenomas) and gender-balanced (macroadenomas). Causes: pituitary adenoma (most), drugs (antipsychotic, metoclopramide, antiemetic, SSRI, methadone, verapamil, ranitidine), hypothyroidism, renal failure, chest wall lesion, idiopathic.",
+    "presentation": "Female: galactorrhoea + amenorrhoea / oligomenorrhoea / infertility. Male: hypogonadism + reduced libido + erectile dysfunction + infertility + osteoporosis. Macroadenoma: headache + visual field defect (bitemporal hemianopia) + hypopituitarism + diplopia.",
+    "redFlags": [
+      "Visual field defect / acute visual loss — bitemporal hemianopia → urgent MRI + neurosurgical / endocrine",
+      "Pituitary apoplexy (sudden severe headache + ophthalmoplegia + visual + altered mental) — emergency (covered separately)",
+      "Macroadenoma > 10 mm with mass effect",
+      "Pregnancy + macroadenoma — counsel + monitor (oestrogen stimulates growth)",
+      "Cabergoline + valvular heart disease at high cumulative dose (rare Parkinson dose; reassuring at prolactinoma doses)"
+    ],
+    "diagnostics": [
+      "MORNING prolactin (after rest 30 min, no breast exam, fasting) — repeat if borderline",
+      "Levels:",
+      "  < 25 ng/mL (530 mIU/L) normal female; < 20 male",
+      "  > 100 ng/mL (2120 mIU/L) usually adenoma",
+      "  > 200 ng/mL macroadenoma",
+      "  EXCLUDE 'HOOK EFFECT' with macroadenoma — assay falsely low — dilute sample if disconnect imaging + level",
+      "MACROPROLACTIN (PEG precipitation) — false-high prolactin if asymptomatic — common reason",
+      "WORKUP CAUSE: drug history (medication review), TSH (hypothyroid → TRH → prolactin), creatinine + eGFR, hCG (pregnancy)",
+      "Pituitary MRI with contrast — if hyperprolactinaemia confirmed + cause not drug / thyroid / pregnancy / renal",
+      "Pituitary function: cortisol + ACTH + FT4 + TSH + LH/FSH + testosterone / oestradiol + GH/IGF-1 + ADH",
+      "Visual field testing if macroadenoma or compression suspected"
+    ],
+    "management": [
+      "Endocrine Society 2011 + ESE 2024:",
+      "TREAT CAUSE if non-tumour: stop / switch culprit drug (psychiatry consult for antipsychotic — aripiprazole + quetiapine prolactin-sparing); treat hypothyroidism (L-thyroxine); pregnancy normalises post-delivery",
+      "PROLACTINOMA — DOPAMINE AGONIST FIRST-LINE:",
+      "  CABERGOLINE 0.25 mg twice/week initially → titrate by prolactin response (typical 0.5-1 mg twice/week; max 3.5 mg/week) — first choice (more effective + better tolerated than bromocriptine; high MRI shrinkage response)",
+      "  BROMOCRIPTINE 1.25 mg nocte titrate to 2.5-15 mg/d (TDS for nausea) — alternative; preferred in pregnancy planning (more pregnancy safety data)",
+      "  Quinagolide — alternative; not available everywhere",
+      "  Monitor prolactin q1-3 mo until normal, then q6-12 mo + MRI 1 yr + every 1-2 yr; visual field if macro",
+      "  Withdrawal after 2+ yr normal prolactin + tumour shrinkage on MRI — about 30-40% sustained remission",
+      "SURGERY (transsphenoidal):",
+      "  Indications: intolerance / resistance to dopamine agonist; visual field not improving on medical; CSF leak; apoplexy; pregnancy planning with macro near optic chiasm",
+      "  Pituitary surgeon — high-volume centre — better outcomes + lower hypopituitarism rate",
+      "  Cure rates microadenoma 70-80%; macroadenoma 30-40%",
+      "RADIOTHERAPY (stereotactic / fractionated) — selected refractory / aggressive — slow response + hypopituitarism risk",
+      "TEMOZOLOMIDE — aggressive / malignant prolactinoma (rare)",
+      "MANAGE HYPOGONADISM if persistent (oestrogen + progesterone in female; testosterone in male) once tumour control established — bone health + libido + fertility (but oestrogen may stimulate tumour growth — discuss)",
+      "BONE: DEXA + Ca + vit D + bisphosphonate / denosumab if osteoporotic",
+      "PREGNANCY:",
+      "  Most women resume fertility on DA → conceive",
+      "  STOP DA at confirmed pregnancy IF microadenoma (low risk of growth)",
+      "  CONTINUE DA throughout pregnancy IF macroadenoma > 1 cm or near optic chiasm (bromocriptine more data)",
+      "  Visual field testing each trimester + headache awareness",
+      "  Symptomatic growth → restart DA (or surgery 2nd trimester)",
+      "  Breastfeeding usually OK after delivery (encourage); restart DA after weaning if needed",
+      "MEN1 + AIP screen — young patients + family history",
+      "SSA: cabergoline + bromocriptine widely available; transsphenoidal expertise limited (KNH + few centres); telemedicine MDT + neurosurgery referral."
+    ],
+    "references": [
+      {
+        "label": "Endocrine Society 2011 Hyperprolactinaemia + Prolactinoma",
+        "kind": "guideline"
+      },
+      {
+        "label": "ESE 2024 Update Prolactinoma",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "premenstrual-dysphoric-disorder-pmdd",
+    "title": "PMDD — luteal-phase SSRI + COC (drospirenone) + lifestyle",
+    "icd10": [
+      "N94.3"
+    ],
+    "icd11": [
+      "GA34.41"
+    ],
+    "domains": [
+      "psychiatry",
+      "obstetrics",
+      "primary-care"
+    ],
+    "population": "3-8% menstruating women; underdiagnosed. Heightened sensitivity to normal cyclical hormonal change; family + personal history of mood disorder.",
+    "presentation": "Severe mood + behavioural + physical symptoms in luteal phase (week before menses) with resolution within 2-3 days of onset of menses, symptom-free week after. ≥ 5 of 11 DSM-5-TR symptoms (at least 1 affective): markedly depressed mood, marked anxiety / tension, marked affective lability, marked irritability / anger, decreased interest, concentration, fatigue, appetite, sleep, overwhelm, physical symptoms. Confirmed by prospective daily ratings × 2 cycles.",
+    "redFlags": [
+      "Suicidality (12% lifetime in PMDD)",
+      "Severe affective + functional impairment cyclical with menses — formal psychiatric review",
+      "Differential — premenstrual exacerbation of underlying MDD / bipolar / anxiety (symptoms persist outside luteal phase — different management)",
+      "Postpartum + perimenopausal disruption to PMDD"
+    ],
+    "diagnostics": [
+      "DSM-5-TR criteria for PMDD",
+      "DAILY RECORD OF SEVERITY OF PROBLEMS (DRSP) — prospective daily symptom diary for 2+ cycles confirms cyclical pattern",
+      "Rule out underlying MDD / bipolar / anxiety / OCD / PTSD / thyroid / anaemia / endometriosis / migraine",
+      "Suicide risk assessment",
+      "Pregnancy + lactation status"
+    ],
+    "management": [
+      "ACOG + RCOG + ISPMD:",
+      "MILD-MODERATE:",
+      "  Lifestyle — regular aerobic exercise + adequate sleep + reduce caffeine/alcohol/sodium luteal phase + mindfulness + CBT",
+      "  Calcium 1200 mg/d + vit B6 50-100 mg/d + magnesium 200-360 mg/d + evening primrose oil (modest evidence)",
+      "  Symptom diary tracking",
+      "SEVERE / functional impairment — FIRST-LINE:",
+      "  SSRI — continuous OR LUTEAL-PHASE-ONLY dosing (day 14 to menses; emerging — symptom-onset dosing — Eriksson) — sertraline 50-150 mg/d, fluoxetine 20 mg/d, paroxetine, escitalopram, citalopram, venlafaxine",
+      "  Effective within 1-2 cycles (much faster than MDD response)",
+      "  Side effects + sexual + weight: warn + monitor",
+      "  Combined oral contraceptive with DROSPIRENONE 24/4 cycle (Yaz/Yasmin) — FDA approved PMDD — superior to other COCs",
+      "  Some women — continuous (extended) COC eliminates withdrawal symptoms",
+      "REFRACTORY:",
+      "  GnRH ANALOGUE (leuprolide / goserelin) + add-back oestrogen + progesterone — ovulation suppression — significant relief",
+      "  Bone health — DEXA + Ca + D + bisphosphonate if prolonged",
+      "  Surgical: bilateral salpingo-oophorectomy ± hysterectomy + HRT — last resort + women who completed family + severe refractory",
+      "  Mindfulness-based + dialectical behaviour therapy + ACT",
+      "  Sepranolone (allopregnanolone modulator) — in trials",
+      "CO-OCCURRING — treat in parallel (MDD/anxiety/OCD/eating disorder)",
+      "PSYCHOSOCIAL: education + family + partner; reduce stigma (validate cyclical pattern); peer support; impact on relationships + work",
+      "PERIMENOPAUSE: PMDD symptoms can worsen; HRT may help; transition to MDD/anxiety pattern",
+      "PREGNANCY/POSTPARTUM: PMDD usually quiescent in pregnancy; postpartum depression/anxiety risk increased — anticipate + screen + treat",
+      "SSA: education + recognition + access to SSRI affordable (KEML) + integrate with women's mental health services; advocacy + reduce stigma."
+    ],
+    "references": [
+      {
+        "label": "ACOG Clinical Practice Bulletin PMDD 2023",
+        "kind": "guideline"
+      },
+      {
+        "label": "RCOG Premenstrual Syndrome 2017",
+        "kind": "guideline"
+      },
+      {
+        "label": "ISPMD Consensus PMDD Treatment",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "gestational-trophoblastic-disease",
+    "title": "Gestational trophoblastic disease — molar pregnancy + GTN with chemotherapy",
+    "icd10": [
+      "O01",
+      "C58"
+    ],
+    "icd11": [
+      "2C70"
+    ],
+    "domains": [
+      "obstetrics",
+      "oncology"
+    ],
+    "population": "Hydatidiform mole 1/1000 pregnancies in West, higher in Asia (Philippines 1/100). GTN (gestational trophoblastic neoplasia) — 50% follow molar, 25% follow miscarriage, 25% follow term pregnancy. Extremely chemo-sensitive.",
+    "presentation": "Molar pregnancy: vaginal bleeding + uterus larger than dates + hyperemesis + early pre-eclampsia (< 20 wk — classic) + theca-lutein cysts + hyperthyroidism (β-hCG cross-reacts TSH) + 'snowstorm' US appearance + very high β-hCG (> 100,000). GTN: persistent / rising β-hCG + post-evacuation; metastasis (lung, vagina, brain, liver) — haemoptysis, neuro, pulmonary nodules.",
+    "redFlags": [
+      "Brain or liver metastases — high-risk metastatic GTN — urgent oncology",
+      "Acute respiratory failure from pulmonary metastases",
+      "Hyperthyroid + thyroid storm + β-hCG > 200,000",
+      "Severe pre-eclampsia + eclampsia presenting before 20 weeks (rare; suspect mole)",
+      "Massive vaginal bleeding — emergency",
+      "Subsequent pregnancy too soon — affects β-hCG monitoring"
+    ],
+    "diagnostics": [
+      "Quantitative β-hCG (very high — > 100,000) + serial monitoring",
+      "Pelvic US (snowstorm — complete mole; partial mole — fetus + abnormal placenta)",
+      "Histopathology — complete mole (46XX paternal genome) vs partial mole (69 chromosomes, triploid) — IHC + ploidy",
+      "Pre-evacuation: FBC + UEC + LFT + TFT + coagulation + blood group + CXR (lung mets baseline)",
+      "If suspected GTN: WHO FIGO scoring — age + antecedent pregnancy + interval + β-hCG + tumour size + sites + number of mets + prior chemo; ≤ 6 low-risk, ≥ 7 high-risk",
+      "Staging CT chest + abdo + pelvis + MRI brain (high-risk) + LP if neuro symptoms",
+      "Cardiology + thyroid storm risk pre-evacuation if very high β-hCG"
+    ],
+    "management": [
+      "ESMO 2022 + RCOG + FIGO + ISSTD + Charing Cross:",
+      "MOLAR PREGNANCY:",
+      "  Suction evacuation (NOT misoprostol — risk of trophoblast embolisation) at experienced centre + cross-match + IV access; uterotonic post-evacuation",
+      "  Anti-D if Rh- (partial mole has fetal tissue)",
+      "  Histopathology + ploidy + genetic confirmation",
+      "  CONTRACEPTION mandatory while β-hCG monitored (combined oral preferred; IUD after β-hCG normalises — risk if mole present)",
+      "  Avoid pregnancy 6 mo (complete) or 12 mo (partial / GTN) until β-hCG documented normal",
+      "  REGISTER in national trophoblastic disease centre (UK: Charing Cross, Sheffield, Dundee; Kenya/SSA: KEMRI / KNH oncology referral)",
+      "FOLLOW-UP β-hCG:",
+      "  Weekly until normal × 3, then monthly × 6-12 mo (complete mole) or 6 mo (partial)",
+      "  Rising or plateau β-hCG → GTN suspected → treat",
+      "GTN (persistent / metastatic / choriocarcinoma):",
+      "  WHO FIGO score determines regimen",
+      "  LOW-RISK GTN (score ≤ 6):",
+      "    Single-agent — methotrexate (MTX 0.4 mg/kg/d × 5 d q2 wk OR MTX 50 mg IM days 1,3,5,7 with folinic acid days 2,4,6,8)",
+      "    Or actinomycin D (DACT) — alternative or salvage",
+      "    Cure rate > 90%",
+      "  HIGH-RISK GTN (score ≥ 7) or metastatic (lung > 3 cm, brain, liver):",
+      "    EMA-CO (etoposide + MTX + DACT + cyclophosphamide + vincristine) combination chemo",
+      "    Brain mets: high-dose MTX + intrathecal MTX + whole-brain RT or stereotactic",
+      "    Liver mets: arterial embolisation + chemo",
+      "    Cure rate 80-90%",
+      "  Refractory: EMA-EP (replacing CO with etoposide+cisplatin); BEP; immunotherapy emerging",
+      "  Hysterectomy — selected (perimenopausal + resistant local + life-threatening bleeding)",
+      "CHORIOCARCINOMA (post-term pregnancy / metastatic) — same EMA-CO + intensive",
+      "PSTT (placental site trophoblastic tumour) — chemo-resistant — hysterectomy + EMA-EP",
+      "PROGNOSIS — excellent if early recognition + specialist referral + adequate chemo + follow-up",
+      "SUBSEQUENT PREGNANCIES — usually normal; 1-2% recurrence; early US in next pregnancy + β-hCG post-delivery",
+      "PSYCHOSOCIAL: pregnancy loss + cancer diagnosis + chemo + fertility uncertainty — support + counselling",
+      "SSA: Kenya — refer KEMRI / KNH / Aga Khan oncology; methotrexate + DACT widely available; EMA-CO needs tertiary infusion centre; trophoblastic registry advocacy."
+    ],
+    "references": [
+      {
+        "label": "ESMO 2022 Gestational Trophoblastic Disease Guidelines",
+        "kind": "guideline"
+      },
+      {
+        "label": "RCOG Green-top 38 Gestational Trophoblastic Disease 2020",
+        "kind": "guideline"
+      },
+      {
+        "label": "FIGO Staging + Scoring GTN",
+        "kind": "guideline"
+      },
+      {
+        "label": "Charing Cross GTD service protocols",
+        "kind": "guideline"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "svt-wpw-adult-management",
+    "title": "Adult SVT + WPW — vagal → adenosine → ablation; avoid AV-node blockers in pre-excited AF",
+    "icd10": [
+      "I47.1",
+      "I45.6"
+    ],
+    "icd11": [
+      "BC65"
+    ],
+    "domains": [
+      "cardiology",
+      "emergency"
+    ],
+    "population": "SVT 2-3/1000 in adults; AVNRT (60%) > AVRT (incl. WPW, 30%) > atrial tachycardia (10%). WPW pre-excitation 1-3/1000; risk of sudden death from pre-excited AF.",
+    "presentation": "Regular narrow-complex tachycardia 150-250 bpm + palpitations + chest discomfort + dizziness + dyspnoea + light-headedness + syncope. WPW: short PR + delta wave + wide QRS on resting ECG; AF + WPW = irregular wide-complex tachycardia (\"AF with pre-excitation\") — EMERGENCY.",
+    "redFlags": [
+      "Pre-excited AF (irregular wide complex + WPW) — AV-node blockers (adenosine, β-blocker, CCB, digoxin) CONTRAINDICATED — facilitate accessory pathway conduction → VF — give procainamide or DC cardiovert",
+      "Haemodynamic instability — DC cardioversion immediately",
+      "Sudden cardiac death risk in WPW (short refractory accessory pathway) — ablation indicated",
+      "Refractory recurrent SVT despite drugs",
+      "Underlying CHD (Ebstein anomaly + WPW) + cardiomyopathy"
+    ],
+    "diagnostics": [
+      "12-lead ECG during SVT + sinus (look for short PR + delta wave in WPW)",
+      "Telemetry for paroxysmal",
+      "Echo to exclude structural disease",
+      "Holter / loop recorder if paroxysmal + not captured",
+      "Electrophysiology study + induction of pre-excited AF + accessory pathway refractory period — risk stratify WPW (short < 250 ms = high risk)",
+      "Electrolytes, TSH, drugs/caffeine review"
+    ],
+    "management": [
+      "ESC 2019 + ACC/AHA/HRS 2015:",
+      "ACUTE TERMINATION (haemodynamically stable narrow-complex regular SVT):",
+      "  VAGAL MANOEUVRES first — Valsalva (modified — supine + leg-raise — REVERT trial Lancet 2015, more effective than standard) or carotid sinus massage (auscultate first, avoid in elderly / bruit / TIA)",
+      "  ADENOSINE 6 mg IV rapid bolus + 20 mL saline flush in large vein (antecubital); if no response 1-2 min later → 12 mg → 12 mg",
+      "    Warn patient of brief chest discomfort + flushing + impending doom feeling",
+      "    Caution asthma (theoretical) + transplanted heart (start 3 mg)",
+      "  Verapamil 5-10 mg IV slow (avoid in WPW + HF + LV dysfunction); diltiazem 0.25 mg/kg IV; β-blocker (metoprolol 5 mg IV)",
+      "  Synchronised DC CARDIOVERSION 50-100 J if haemodynamically unstable or drug-refractory",
+      "AF + WPW (PRE-EXCITED AF — IRREGULAR WIDE COMPLEX):",
+      "  EMERGENCY — DC cardioversion synchronised 100-200 J first-line",
+      "  Procainamide 10-15 mg/kg IV over 30 min — if stable + no IHD/HF",
+      "  Ibutilide alternative",
+      "  AVOID AV-node blockers (adenosine, β-blocker, CCB verapamil/diltiazem, digoxin, amiodarone IV — can accelerate accessory pathway in some, controversial) — facilitate accessory → VF",
+      "  Anticoagulate per AF (CHADS-VASc) + plan electrophysiology + ABLATION",
+      "PROPHYLAXIS recurrent SVT:",
+      "  CATHETER ABLATION first-line for symptomatic SVT + WPW + recurrent — > 95% success + curative; minimal complication",
+      "  Drug therapy if ablation deferred / refused — β-blocker, CCB (verapamil), flecainide / propafenone (no IHD) for AVRT/AVNRT",
+      "ASYMPTOMATIC WPW:",
+      "  Risk stratify with EPS — short refractory pathway < 250 ms in AF + multiple pathways + high-risk occupation (pilot / soldier) → ablation",
+      "  Most asymptomatic + long refractory — observation",
+      "PREGNANCY + SVT:",
+      "  Vagal + adenosine safe; β-blocker (metoprolol) if needed (avoid atenolol 1st trimester); flecainide alternative",
+      "  Delay ablation until post-delivery if possible (radiation exposure)",
+      "EDUCATION: identify + train vagal manoeuvres self-administered; medic-alert; recognise + present to ED if symptomatic SVT/AF",
+      "SSA: vagal manoeuvres + adenosine + DC cardioversion widely available; catheter ablation tertiary (KNH + Aga Khan + few centres); EPS scale-up advocacy."
+    ],
+    "references": [
+      {
+        "label": "ESC 2019 SVT Management Guideline",
+        "kind": "guideline"
+      },
+      {
+        "label": "ACC/AHA/HRS 2015 SVT + 2024 AF Guideline (incl. pre-excited AF)",
+        "kind": "guideline"
+      },
+      {
+        "label": "REVERT modified Valsalva Lancet 2015",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "prostatitis-epididymo-orchitis",
+    "title": "Prostatitis + epididymo-orchitis — STI vs uropathogen pathway",
+    "icd10": [
+      "N41",
+      "N45"
+    ],
+    "icd11": [
+      "GA90",
+      "GB04"
+    ],
+    "domains": [
+      "urology",
+      "infection",
+      "men's-health"
+    ],
+    "population": "Prostatitis: 8% lifetime men; bacterial (5-10%) vs chronic non-bacterial pelvic pain syndrome (CPPS, 90%). Epididymo-orchitis: STI < 35 yr (chlamydia, gonorrhoea); uropathogen + BPH ≥ 35 yr.",
+    "presentation": "Acute prostatitis: fever + chills + perineal/pelvic pain + dysuria + LUTS + acute retention; very tender boggy prostate (gentle PR ONLY — avoid vigorous — bacteraemia). Chronic bacterial: recurrent UTI + same organism + perineal pain weeks/months. CPPS: pain + LUTS without infection (NIH IIIa inflam vs IIIb non-inflam). Epididymo-orchitis: scrotal pain + swelling + erythema + warmth ± fever; Prehn's sign (relief on elevation — supports vs torsion).",
+    "redFlags": [
+      "Acute scrotum + young man — EXCLUDE TESTICULAR TORSION (sudden onset + nausea + high-riding + absent cremasteric + sx < 6h = surgical emergency — Doppler if available, otherwise surgical exploration)",
+      "Septic prostatitis + bacteraemia + perineal abscess — emergency IV antibiotic + drainage",
+      "Acute urinary retention from inflammation — catheter (SUPRAPUBIC preferred — avoid urethral worsening + sepsis seeding)",
+      "Recurrent UTI + same organism in man — chronic bacterial prostatitis / urological referral",
+      "Sterile pyuria + epididymitis < 35 — STI screen + treat",
+      "Tuberculous epididymo-orchitis chronic (think TB endemic)"
+    ],
+    "diagnostics": [
+      "Urinalysis + culture (mid-stream)",
+      "STI screen if epididymitis < 35 or risk factors — urethral / urine NAAT for chlamydia + gonorrhoea + HIV + syphilis (Kenya MoH/CDC syndromic + lab confirm)",
+      "Acute prostatitis: blood culture if septic; FBC + CRP + creatinine; PSA NOT measured acutely (elevated; recheck after 6-8 wk recovery)",
+      "Imaging: scrotal US Doppler if torsion suspected; transrectal US if abscess; CT/MRI selected",
+      "Mears-Stamey 4-glass test (chronic prostatitis classification)"
+    ],
+    "management": [
+      "EAU 2024 + NICE NG109 + CDC STI 2021 + AUA:",
+      "ACUTE BACTERIAL PROSTATITIS:",
+      "  Empirical antibiotic — Gram-negative coverage:",
+      "    Outpatient mild: ciprofloxacin 500 mg BD or co-trimoxazole 960 mg BD × 2-4 wk",
+      "    Inpatient severe: gentamicin + ampicillin OR ceftriaxone 2 g IV OD then PO step-down ciprofloxacin",
+      "    Duration 2-4 weeks (longer to prevent chronic + abscess)",
+      "  ANALGESIA + ANTIPYRETIC + α-blocker (tamsulosin) for LUTS + suprapubic catheter if retention (avoid urethral)",
+      "  Drain abscess + urology if prostatic abscess on imaging",
+      "CHRONIC BACTERIAL PROSTATITIS:",
+      "  Fluoroquinolone (ciprofloxacin / levofloxacin) × 4-6 wk (good prostate penetration); cotrim alternative",
+      "  Refractory: tetracycline / azithromycin (atypical); intraprostatic injection (research)",
+      "CHRONIC PROSTATITIS / CPPS:",
+      "  UPOINT-based: Urinary (α-blocker), Psychosocial (CBT), Organ-specific (5α-RI, NSAID, pelvic-floor PT), Infection (trial antibiotic if Mears-Stamey suggests), Neurologic (gabapentin / amitriptyline), Tenderness (pelvic-floor PT)",
+      "  Multidisciplinary",
+      "EPIDIDYMO-ORCHITIS:",
+      "  < 35 yr OR high-risk STI: CEFTRIAXONE 500 mg IM single + DOXYCYCLINE 100 mg BD × 10-14 d (covers chlamydia + gonorrhoea)",
+      "  + Test of cure GC at 1 wk + chlamydia at 4 wk; contact tracing partners; HIV + syphilis screen; Kenya MoH algorithm",
+      "  ≥ 35 yr / no STI risk OR enteric organism: cipro 500 mg BD × 10-14 d or ofloxacin",
+      "  Severe / sepsis: IV ceftriaxone + admit + urology",
+      "  Bed rest + scrotal elevation + ice + analgesia + NSAID + ABSTAIN sex until partners treated",
+      "  Surgical exploration if torsion uncertain",
+      "  Mumps orchitis — supportive (most resolve)",
+      "  TB epididymo-orchitis — chronic indurated mass — biopsy + TB workup + ATT",
+      "PREVENTION:",
+      "  Safe sex + condoms",
+      "  STI screen + partner notification + treat",
+      "  PrEP for high-risk MSM",
+      "  Vaccination — HPV + Hep B + meningococcal as indicated",
+      "  Treat BPH / structural urological cause",
+      "FOLLOW-UP: PSA at 6-8 wk recovery if elevated initially; sexual function counselling; recurrence surveillance",
+      "SSA: STI antibiotics widely available + syndromic management Kenya NASCOP + partner notification; tertiary urology referral for chronic / refractory; TB awareness."
+    ],
+    "references": [
+      {
+        "label": "EAU 2024 Male Urogenital Infections",
+        "kind": "guideline"
+      },
+      {
+        "label": "NICE NG109 Prostatitis 2018 (update)",
+        "kind": "guideline"
+      },
+      {
+        "label": "CDC STI Treatment Guidelines 2021",
+        "kind": "guideline"
+      },
+      {
+        "label": "Kenya MoH/NASCOP Syndromic STI Management",
+        "kind": "policy"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "primary-sclerosing-cholangitis-psc",
+    "title": "Primary sclerosing cholangitis — MRCP + colonoscopy + transplant pathway",
+    "icd10": [
+      "K83.0"
+    ],
+    "icd11": [
+      "DB95"
+    ],
+    "domains": [
+      "hepatology",
+      "gastroenterology"
+    ],
+    "population": "1-16/100k; male 2:1; peak 30-50; 75% co-existing IBD (usually UC). Increased risk cholangiocarcinoma + colorectal cancer + gallbladder cancer.",
+    "presentation": "Often asymptomatic; raised ALP + GGT on routine labs; fatigue + pruritus + abdominal pain; jaundice + cholangitis (RUQ + fever + jaundice) later; cirrhosis + portal HT + variceal bleed + liver failure end-stage.",
+    "redFlags": [
+      "DOMINANT STRICTURE — workup cholangiocarcinoma (10-15% lifetime risk — CA 19-9 + ERCP + brush cytology + FISH; sometimes MRCP follow-up)",
+      "Bacterial cholangitis — IV ceftriaxone + drainage",
+      "Cirrhosis decompensation + variceal bleed",
+      "Colorectal cancer — annual colonoscopy in UC-PSC + dye-spray / chromoendoscopy",
+      "End-stage liver disease — transplant evaluation (MELD-Na used; PSC-specific exception)",
+      "Gallbladder polyps / mass — cholecystectomy threshold low"
+    ],
+    "diagnostics": [
+      "MRCP — gold standard; multifocal strictures + dilatations + 'beaded' appearance intra + extrahepatic ducts",
+      "ERCP only if intervention needed (dominant stricture, brush cytology, stenting) — risk of cholangitis",
+      "LFT (cholestatic — ALP + GGT raised) + ALT/AST + bilirubin + albumin + INR + IgG4 (exclude IgG4-related cholangitis)",
+      "ANA + ANCA (especially p-ANCA) — positive in 70%",
+      "Antimitochondrial Ab — exclude PBC overlap (positive PBC → different pathway)",
+      "Liver biopsy — usually NOT needed; only small-duct PSC (normal MRCP) or overlap workup",
+      "COLONOSCOPY at diagnosis + annually (50-75% have IBD often subclinical)",
+      "CA 19-9 baseline + serial annual (cholangiocarcinoma surveillance)",
+      "Abdominal US + CT/MRI 6-12 monthly (HCC / cholangiocarcinoma / gallbladder)",
+      "Fibroscan / staging"
+    ],
+    "management": [
+      "AASLD 2010 + EASL 2022 + BSG:",
+      "NO disease-modifying therapy with proven survival benefit (URSO does NOT improve overall survival despite improving LFTs — meta-analyses)",
+      "  Ursodeoxycholic acid 13-15 mg/kg/d (low-mid dose) — some clinicians use for symptom + LFT improvement; AVOID HIGH-DOSE > 28 mg/kg (Lindor NEJM 2009 — adverse outcomes)",
+      "  Vedolizumab + investigational therapies (norUDCA, FXR agonists obeticholic acid + cilofexor, anti-LOXL2, anti-fibrotics, biologics) — research trials",
+      "DOMINANT STRICTURE — ERCP + balloon dilatation ± temporary stent + brush cytology + FISH; cholangiocarcinoma workup",
+      "CHOLANGITIS: ceftriaxone + metronidazole + biliary drainage urgent (ERCP / PTC / surgery)",
+      "PRURITUS:",
+      "  Cholestyramine 4 g BD-QDS",
+      "  Rifampicin 150-600 mg/d",
+      "  Naltrexone / nalmefene",
+      "  Sertraline / odevixibat (IBAT inhibitor — Bylvay FDA 2021 progressive familial intrahepatic cholestasis; emerging PSC trials)",
+      "  Phototherapy refractory",
+      "MAINTENANCE:",
+      "  Fat-soluble vitamins (A, D, E, K)",
+      "  Bone health — DEXA + Ca + vitamin D + bisphosphonate if osteoporotic",
+      "  Vaccinations (no live if cirrhotic / pre-transplant — pneumococcal + influenza + COVID + zoster recombinant + Hep A + Hep B)",
+      "  Cardiovascular RF + statin (NOT contraindicated)",
+      "  Manage IBD per gastroenterology",
+      "SURVEILLANCE:",
+      "  Cholangiocarcinoma — annual CA 19-9 + MRI/MRCP",
+      "  Colorectal cancer — annual colonoscopy + chromoendoscopy if UC-PSC (highest CRC risk)",
+      "  Gallbladder cancer — annual US; cholecystectomy for any polyp regardless of size",
+      "  HCC — 6-monthly US ± AFP",
+      "  Osteoporosis — DEXA every 2-3 yr",
+      "  Endoscopy variceal screen at cirrhosis + every 1-2 yr",
+      "TRANSPLANT:",
+      "  Refer when MELD ≥ 15 or refractory pruritus / cholangitis / dominant strictures unresponsive / quality of life",
+      "  PSC-specific MELD exception in many programmes",
+      "  Recurrence post-transplant 20-30% — affects long-term outcome",
+      "  Cholangiocarcinoma + transplant — Mayo protocol selected (chemo-radiation + transplant) for early hilar < 3 cm",
+      "PSYCHOSOCIAL: chronic + uncertain + cancer risk + transplant — counselling + peer support + IBD overlap",
+      "SSA: MRCP access tertiary; ERCP for dominant stricture; URSO + supportive widely available; transplant programmes emerging (Kenya KNH planning); awareness for cholangitis prompt treatment."
+    ],
+    "references": [
+      {
+        "label": "EASL 2022 PSC Clinical Practice Guideline",
+        "kind": "guideline"
+      },
+      {
+        "label": "AASLD 2010 PSC + 2021 update",
+        "kind": "guideline"
+      },
+      {
+        "label": "BSG IBD-PSC surveillance + management",
+        "kind": "guideline"
+      },
+      {
+        "label": "Lindor NEJM 2009 high-dose UDCA adverse",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "primary-biliary-cholangitis-pbc",
+    "title": "Primary biliary cholangitis — UDCA first-line, OCA / fibrate for non-responders",
+    "icd10": [
+      "K74.3"
+    ],
+    "icd11": [
+      "DB95.1"
+    ],
+    "domains": [
+      "hepatology"
+    ],
+    "population": "Female 9:1; peak 40-60; 35/100k; AMA-positive autoimmune cholestasis; family history common.",
+    "presentation": "Often asymptomatic — raised ALP + GGT + AMA on screening. Fatigue (40-80%) + pruritus + sicca syndrome + dry eyes + jaundice late; portal HT + cirrhosis end-stage. Increased risk of osteoporosis + dyslipidaemia.",
+    "redFlags": [
+      "Cirrhosis decompensation — ascites + variceal bleed + HE + transplant referral",
+      "Hepatocellular carcinoma — 6-monthly US ± AFP",
+      "AIH-PBC overlap (high ALT/AST + raised IgG + biopsy) — adds steroid + AZA",
+      "Pregnancy + PBC (cholestasis worsens 3rd trimester; UDCA safe; pruritus management)",
+      "Bone disease — DEXA + bisphosphonate"
+    ],
+    "diagnostics": [
+      "ALP > 1.5× ULN + AMA-M2 positive (≥ 1:40) = diagnostic without biopsy in most",
+      "AMA-negative PBC (5-10%) — anti-sp100, anti-gp210, anti-PML (PBC-specific ANA) — biopsy + clinical",
+      "LFT cholestatic + bilirubin + albumin + INR + IgG + IgM",
+      "ANA + SMA + IgG (exclude AIH overlap)",
+      "Lipids (often elevated — usually not atherogenic)",
+      "TSH (autoimmune thyroid 20-25%)",
+      "DEXA + bone profile + vit D",
+      "US baseline + 6-monthly (HCC surveillance once cirrhotic)",
+      "Fibroscan / non-invasive fibrosis staging",
+      "Biopsy reserved — AMA-negative, AIH overlap suspected, drug-induced exclusion, atypical course"
+    ],
+    "management": [
+      "EASL 2017 + AASLD 2018 + 2023 updates:",
+      "FIRST-LINE: URSODEOXYCHOLIC ACID (URSO/UDCA) 13-15 mg/kg/d divided — improves LFTs + survival + reduces transplant need (POISE + multiple cohort studies)",
+      "  Response assessment at 12 months: POISE-criteria + Paris-II + Toronto + GLOBE/UK-PBC risk scores",
+      "  GOOD responder: ALP < 1.67× ULN + bilirubin normal at 12 mo — continue UDCA only — normal life expectancy approx",
+      "  INADEQUATE responder ~ 25-40% — ADD second-line",
+      "SECOND-LINE (UDCA inadequate response):",
+      "  OBETICHOLIC ACID (Ocaliva — FXR agonist) 5 mg OD titrate to 10 mg OD (FDA 2016, POISE NEJM 2016) — improves LFTs; SE pruritus (often dose-limiting); caution decompensated cirrhosis (REGENERATE-style warnings — recent label restrictions)",
+      "  FIBRATES — bezafibrate 400 mg OD (BEZURSO NEJM 2018) or fenofibrate — improves LFTs + survival; off-label many countries; renal + muscle monitoring",
+      "  Triple therapy emerging (UDCA + OCA + fibrate)",
+      "THIRD-LINE / refractory:",
+      "  Seladelpar (PPARδ agonist) — RESPONSE trial Hepatology 2023 + FDA approval 2024",
+      "  Elafibranor (PPARα/δ agonist) — ELATIVE NEJM 2023 + FDA 2024",
+      "  Anti-IL-12/23 (ustekinumab) — research",
+      "  Liver transplant — end-stage / refractory pruritus",
+      "PRURITUS:",
+      "  Cholestyramine 4 g BD-QDS",
+      "  Rifampicin 150-600 mg",
+      "  Naltrexone / nalmefene",
+      "  Sertraline",
+      "  IBAT inhibitor — odevixibat / linerixibat (GLIMMER trial)",
+      "FATIGUE: rule out anaemia + hypothyroid + sleep apnoea + depression; modafinil selected",
+      "OSTEOPOROSIS: Ca + vitamin D + bisphosphonate / denosumab if FRAX-high",
+      "DYSLIPIDAEMIA: statin (not contraindicated; rarely causes flare)",
+      "AIH-PBC OVERLAP: add prednisolone + azathioprine to UDCA",
+      "PREGNANCY: UDCA SAFE throughout; cholestasis worsens 3rd trimester — manage pruritus + monitor fetal wellbeing + LFT; multidisciplinary",
+      "VACCINES: pneumococcal + influenza + COVID + Hep A + Hep B + zoster recombinant (no live if cirrhotic / immunosuppressed)",
+      "HCC surveillance once cirrhotic — 6-monthly US ± AFP",
+      "TRANSPLANT — MELD ≥ 15, refractory complications, severe pruritus, recurrent variceal bleed; PBC recurrence post-transplant 20-30% — affects long-term outcome",
+      "SSA: UDCA widely available + KEML; OCA + fibrate + newer agents access advocacy; transplant programmes emerging."
+    ],
+    "references": [
+      {
+        "label": "EASL 2017 PBC Clinical Practice Guideline",
+        "kind": "guideline"
+      },
+      {
+        "label": "AASLD 2018 + 2023 PBC update",
+        "kind": "guideline"
+      },
+      {
+        "label": "POISE OCA NEJM 2016 + BEZURSO NEJM 2018",
+        "kind": "trial"
+      },
+      {
+        "label": "ELATIVE elafibranor NEJM 2023 + Seladelpar RESPONSE 2023",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "paroxysmal-nocturnal-haemoglobinuria-pnh",
+    "title": "Paroxysmal nocturnal haemoglobinuria — flow cytometry + complement inhibitor (eculizumab/ravulizumab)",
+    "icd10": [
+      "D59.5"
+    ],
+    "icd11": [
+      "3A20.21"
+    ],
+    "domains": [
+      "haematology"
+    ],
+    "population": "Rare — 1-10/million; acquired PIGA mutation in haematopoietic stem cell → CD55 + CD59 GPI-anchor deficiency → complement-mediated haemolysis. Median age 30s-40s.",
+    "presentation": "Intravascular haemolytic anaemia (Hb low, LDH high, indirect bilirubin, haemoglobinuria — classically morning urine) + pancytopenia (overlap with aplastic anaemia + MDS) + thrombosis (venous esp. hepatic — Budd-Chiari, cerebral, abdo) + abdominal pain + dysphagia + erectile dysfunction (NO-related smooth muscle).",
+    "redFlags": [
+      "Acute thrombosis — Budd-Chiari + cerebral venous sinus + abdominal venous — leading mortality cause — anticoagulate + complement inhibition",
+      "Severe haemolysis with renal failure",
+      "Aplastic anaemia overlap with profound cytopenia + transfusion dependence",
+      "Meningococcal infection on complement inhibitor — vaccinate before + chemo-prophylaxis",
+      "Pregnancy + PNH — high thrombotic risk + management + delivery planning"
+    ],
+    "diagnostics": [
+      "FLOW CYTOMETRY — GPI-anchor (CD55 + CD59) deficient clone on RBC + granulocytes + monocytes; FLAER (fluorescein-labelled aerolysin) most sensitive — gold standard diagnosis",
+      "FBC (anaemia + neutropenia + thrombocytopenia variable); reticulocyte raised; LDH markedly raised; haptoglobin low; indirect bilirubin raised; urine haemosiderin",
+      "Coombs DAT NEGATIVE (distinguishes from AIHA)",
+      "Iron studies (chronic haemoglobinuria → iron deficiency)",
+      "UEC + LFT + coag; D-dimer for thrombosis",
+      "Bone marrow if cytopenias / AA overlap / MDS workup; cytogenetics",
+      "Imaging for thrombosis (Doppler, CT/MRI venous, MRCP for Budd-Chiari)"
+    ],
+    "management": [
+      "International PNH Working Group + IWG 2024 + AAWG:",
+      "COMPLEMENT INHIBITION first-line for classical PNH + symptomatic (haemolysis + thrombosis + transfusion-dependent):",
+      "  ECULIZUMAB (Soliris) — C5 inhibitor IV q14 d — TRIUMPH + SHEPHERD NEJM 2004/2006 — landmark — reduces haemolysis + thrombosis + improves survival",
+      "  RAVULIZUMAB (Ultomiris) — long-acting C5 inhibitor IV q8 wk — FDA 2018, ALXN1210 trials — non-inferior to eculizumab; better convenience",
+      "  PEGCETACOPLAN (Empaveli) — C3 inhibitor SC twice weekly — FDA 2021 (PEGASUS NEJM 2021 — superior to eculizumab for haemoglobin + transfusion in suboptimal responders to anti-C5)",
+      "  Iptacopan (Fabhalta — oral factor B inhibitor BID) — FDA 2023 (APPLY-PNH + APPOINT-PNH) — first ORAL treatment",
+      "  Danicopan (factor D inhibitor) — add-on to anti-C5",
+      "  Crovalimab (anti-C5 — long-acting subcutaneous) — emerging",
+      "MENINGOCOCCAL VACCINE — MenACWY + MenB at least 2 wk BEFORE complement inhibitor (and revaccinate per schedule) — MENINGOCOCCAL SEPSIS risk increased 1000× on anti-C5",
+      "  Penicillin V prophylaxis 250 mg BD additional layer (some guidelines) for at least first 2 wk after vaccine + ongoing in some programmes",
+      "  Medic-alert card + emergency antibiotic supply + fever education",
+      "  Other vaccines: pneumococcal + Hib + influenza + COVID",
+      "FOLATE + IRON supplementation",
+      "ANTICOAGULATION:",
+      "  For acute thrombosis — therapeutic LMWH → DOAC (apixaban / rivaroxaban) or warfarin INR 2-3",
+      "  Prophylaxis if PNH clone > 50% + thrombosis history (not all asymptomatic on anti-C5)",
+      "  Budd-Chiari — anticoagulant + TIPS / liver transplant",
+      "STEM CELL TRANSPLANT (allo-HSCT) — CURATIVE option:",
+      "  Indications: aplastic anaemia / severe pancytopenia / MDS evolution / refractory PNH / pregnancy planning / cost-prohibitive lifelong therapy",
+      "  Best with matched sibling donor",
+      "  Multidisciplinary",
+      "TRANSFUSION + IRON CHELATION as needed",
+      "APLASTIC ANAEMIA overlap — immunosuppression (ATG + ciclosporin) + eltrombopag + transplant",
+      "MDS evolution — surveillance (cytogenetics); transplant",
+      "PREGNANCY:",
+      "  High maternal + fetal risk + thrombosis",
+      "  Continue eculizumab / ravulizumab throughout (safe + extensive data — Kelly NEJM 2015)",
+      "  Prophylactic LMWH throughout pregnancy + 6 wk postpartum",
+      "  Monitor closely + obstetric MDT",
+      "MONITORING: FBC + LDH + reticulocyte + flow cytometry clone size periodic; thrombosis surveillance + symptom enquiry",
+      "PSYCHOSOCIAL: rare + chronic + lifelong infusion + cost — peer support + counselling",
+      "SSA: ultra-rare; complement inhibitor access extremely limited + cost ($400-700k/yr in US) — advocacy + transplant access + clinical trial referral."
+    ],
+    "references": [
+      {
+        "label": "International PNH Working Group 2024 + EBMT",
+        "kind": "guideline"
+      },
+      {
+        "label": "TRIUMPH + SHEPHERD eculizumab NEJM 2004/2006",
+        "kind": "trial"
+      },
+      {
+        "label": "PEGASUS pegcetacoplan NEJM 2021 + APPLY-PNH iptacopan 2024",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hypertensive-urgency-vs-emergency",
+    "title": "Hypertensive urgency vs emergency — end-organ damage flag, gradual vs rapid BP reduction",
+    "icd10": [
+      "I10",
+      "I16"
+    ],
+    "icd11": [
+      "BA00"
+    ],
+    "domains": [
+      "cardiology",
+      "emergency",
+      "primary-care"
+    ],
+    "population": "1-3% of hypertensive patients yearly; majority hypertensive urgency (no acute end-organ damage); hypertensive emergency (with damage) is uncommon but life-threatening.",
+    "presentation": "BP ≥ 180/120 mmHg. URGENCY: high BP without acute end-organ damage. EMERGENCY: severe HTN + acute target-organ injury — hypertensive encephalopathy, acute stroke, acute LV failure / pulmonary oedema, ACS, aortic dissection, AKI (creatinine rise + proteinuria + haematuria), retinopathy grade 3-4 (haemorrhage / exudate / papilloedema), eclampsia, pheo crisis.",
+    "redFlags": [
+      "EMERGENCY end-organ — neuro (encephalopathy / stroke / haemorrhage), cardiac (ACS / LV failure / pulmonary oedema), AKI, aortic dissection (asymmetric pulse + radial-femoral delay + tearing pain), eclampsia — IMMEDIATE controlled BP lowering + cause-specific",
+      "Pseudohypertensive crisis — anxiety + non-adherence + pain — recheck after rest + treat trigger",
+      "Pheo crisis — use α-blocker FIRST never β-blocker monotherapy",
+      "Pregnancy + severe hypertension ≥ 160/110 — pre-eclampsia / eclampsia pathway",
+      "Stroke + thrombolysis BP > 185/110 — must reduce before tPA"
+    ],
+    "diagnostics": [
+      "Repeat BP after 15-30 min rest in seated quiet environment with appropriate cuff size",
+      "Check both arms + leg BP if suspected dissection (asymmetry > 20 mmHg systolic = consider)",
+      "Examine for end-organ damage: neuro (mental + focal + fundoscopy), cardiac (chest pain + ECG + troponin + CXR + echo), renal (urinalysis + UEC), aortic (asymmetric pulse + CT), pregnancy (urinalysis + PCR + FBC + LFT + reflexes)",
+      "Symptoms — headache + visual + chest pain + dyspnoea + neuro + abdominal pain + nausea",
+      "Medication history + adherence + new drugs (cocaine, sympathomimetic, MAOI + tyramine, sudden BP-med stop)",
+      "Pregnancy test in women of childbearing age"
+    ],
+    "management": [
+      "ESC 2024 + ACC/AHA 2017/2023 + NICE NG136 + JNC8:",
+      "FIRST — distinguish URGENCY vs EMERGENCY (end-organ damage determines pathway):",
+      "URGENCY (severe BP ≥ 180/120 NO acute organ damage):",
+      "  NO need for IV / parenteral therapy — slow oral BP reduction over hours-days",
+      "  GOAL: 20-25% reduction over 24-48 h to ≤ 160/100; THEN gradual toward 140/90 over days-weeks",
+      "  AVOID short-acting nifedipine sublingual (sudden drops + ischaemic events — historic + abandoned)",
+      "  Restart / adjust outpatient regimen: ACE-i / ARB / CCB / thiazide / β-blocker as appropriate",
+      "  Identify + treat trigger — non-adherence + new med + pain + anxiety + alcohol + drugs",
+      "  Outpatient with 24-48 h follow-up; ensure no end-organ before discharge",
+      "EMERGENCY (BP severe + acute end-organ):",
+      "  ICU / HDU + arterial line + IV antihypertensive titration",
+      "  GOAL: 25% reduction in MAP within 1 h (some specific scenarios faster); then to ~160/100 over 2-6 h; then gradual toward 140/90 over 24-48 h",
+      "  AVOID rapid normalisation — cerebral / coronary / renal hypoperfusion",
+      "  AGENT BY CAUSE (organ-specific):",
+      "    HYPERTENSIVE ENCEPHALOPATHY / acute ischaemic stroke + tPA candidate (BP > 185/110): labetalol / nicardipine; AVOID nitroprusside (ICP rise)",
+      "    Acute haemorrhagic stroke (SBP > 180 + ICH): nicardipine / labetalol → target SBP ~140 (INTERACT-3 / RIGHT-2 / ATACH-II)",
+      "    ACS: nitroglycerin + β-blocker (labetalol / metoprolol)",
+      "    Acute LV failure / pulmonary oedema: nitroglycerin + furosemide + nitroprusside or clevidipine",
+      "    Aortic dissection: target SBP < 120 + HR < 60 within 5-10 min — esmolol / labetalol FIRST (β-blockade) then nicardipine or nitroprusside (avoid lone vasodilator — increases shear stress)",
+      "    AKI: nicardipine / fenoldopam",
+      "    Pheo crisis: PHENTOLAMINE (α-blocker) / sodium nitroprusside; NEVER β-blocker alone",
+      "    Eclampsia / severe pre-eclampsia: LABETALOL / NIFEDIPINE (immediate-release IR — short-acting safe in pregnancy) + magnesium sulphate for seizure prevention",
+      "    Cocaine / sympathomimetic crisis: BENZODIAZEPINE first (calms sympathetic) + phentolamine / nitroglycerin; AVOID β-blocker alone (unopposed α)",
+      "  IV AGENTS COMMONLY USED:",
+      "    Labetalol 10-20 mg IV bolus + infusion (mixed α/β — good first-line many emergencies)",
+      "    Nicardipine 5 mg/h IV infusion titrate (CCB)",
+      "    Clevidipine (short-acting CCB infusion)",
+      "    Nitroglycerin infusion (cardiac contexts)",
+      "    Nitroprusside (last resort + ICU + cyanide risk + short-term)",
+      "    Esmolol (β-blocker — dissection + tachyarrhythmia)",
+      "    Hydralazine IV (pregnancy)",
+      "POST-EMERGENCY — transition to oral after stabilisation; outpatient follow-up with comprehensive workup for secondary HTN (renovascular + endocrine + OSA)",
+      "WORKUP for secondary HTN if emergency in young / refractory: renal Doppler + renal artery + plasma metanephrines + aldosterone-renin ratio + TSH + cortisol + OSA screen",
+      "PRIMARY CARE follow-up: home BP monitoring + adherence + lifestyle (DASH + reduce Na + weight + exercise + alcohol + smoking) + medication reconciliation + identify barriers",
+      "SSA: oral antihypertensives (amlodipine + lisinopril + losartan + hydrochlorothiazide) widely available KEML; IV agents tertiary; magnesium for pregnancy emergency universally available + Kenya MoH protocol."
+    ],
+    "references": [
+      {
+        "label": "ESC 2024 Hypertension Guidelines",
+        "kind": "guideline"
+      },
+      {
+        "label": "ACC/AHA 2017 + 2023 update Hypertension",
+        "kind": "guideline"
+      },
+      {
+        "label": "NICE NG136 Hypertension 2019 + update",
+        "kind": "guideline"
+      },
+      {
+        "label": "INTERACT-3 ICH bundle Lancet 2023 + ATACH-II",
+        "kind": "trial"
+      }
+    ],
+    "ruleVersion": "2024.1",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]
