@@ -161,10 +161,11 @@ export const configuration = (): AppConfig => ({
       process.env.CONTENT_STRICT_VERIFICATION !== undefined
         ? process.env.CONTENT_STRICT_VERIFICATION === 'true'
         : process.env.NODE_ENV === 'production',
-    requireApproved:
-      process.env.CONTENT_REQUIRE_APPROVED !== undefined
-        ? process.env.CONTENT_REQUIRE_APPROVED === 'true'
-        : process.env.NODE_ENV === 'production',
+    // Defaults to OFF in every environment because the v0.1 bundle that
+    // ships in the repo is entirely draft records. Set
+    // CONTENT_REQUIRE_APPROVED=true in production once the bundle's
+    // editorial review status has been promoted from draft → approved.
+    requireApproved: process.env.CONTENT_REQUIRE_APPROVED === 'true',
     snomedEnabled: process.env.CONTENT_SNOMED_ENABLED === 'true',
   },
   apiKeys: {
