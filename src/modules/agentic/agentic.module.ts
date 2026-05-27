@@ -39,6 +39,6 @@ import { CustomRulesModule } from '../custom-rules/custom-rules.module';
     MssqlConnector,
     OracleConnector,
   ],
-  exports: [AgenticService, ProviderRouter, KnowledgeRetrieverService],
+  exports: [AgenticService, ProviderRouter, KnowledgeRetrieverService, SqlIngestionService],
 })
 export class AgenticModule {}
