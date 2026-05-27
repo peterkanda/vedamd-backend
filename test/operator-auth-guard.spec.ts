@@ -53,11 +53,24 @@ describe('OperatorAuthGuard — production / OIDC path', () => {
     await expect(guard.canActivate(ctx)).rejects.toThrow(/Invalid or expired/);
   });
 
-  it('rejects a JWT without the integrator_id claim', async () => {
+  it('falls back to the sub claim when the configured integratorId claim is missing', async () => {
+    // The guard now treats a missing OIDC_INTEGRATOR_ID_CLAIM as a
+    // recoverable misconfiguration when the token carries a sub claim
+    // (e.g. Supabase Auth JWTs always do). Better to identify the
+    // operator by sub than to surface a 401 to logged-in users.
     const claims: JWTPayload = { sub: 'op-1' };
     guard = new OperatorAuthGuard(makeIdentity(claims), makeConfig({ devBypass: false }));
+    const { ctx, req } = makeContext({ authorization: 'Bearer t' });
+    await expect(guard.canActivate(ctx)).resolves.toBe(true);
+    const op = (req as { operator?: { integratorId: string } }).operator;
+    expect(op?.integratorId).toBe('op-1');
+  });
+
+  it('rejects a JWT carrying neither the configured claim nor sub', async () => {
+    const claims: JWTPayload = { iss: 'somewhere' };
+    guard = new OperatorAuthGuard(makeIdentity(claims), makeConfig({ devBypass: false }));
     const { ctx } = makeContext({ authorization: 'Bearer t' });
-    await expect(guard.canActivate(ctx)).rejects.toThrow(/integrator_id/);
+    await expect(guard.canActivate(ctx)).rejects.toThrow(/integrator_id.*sub|sub.*integrator_id/);
   });
 
   it('accepts a valid JWT and attaches the operator', async () => {
