@@ -1,0 +1,515 @@
+[
+  {
+    "slug": "warfarin-reversal",
+    "anticoagulant": "Warfarin",
+    "anticoagulantDrugSlug": "warfarin",
+    "drugClass": "Vitamin K antagonist (VKA)",
+    "oneLiner": "Life-threatening bleed: 4F-PCC 25-50 IU/kg IV + vitamin K 5-10 mg IV slow. INR > 10 without bleeding: oral vitamin K 1-5 mg + hold. Never use FFP if PCC is available.",
+    "domains": ["haematology", "emergency", "cardiology"],
+    "mechanism": "Inhibits vitamin K epoxide reductase → depletes functional factors II, VII, IX, X and proteins C/S. Reversal restores those factors directly (PCC) or via the liver over hours-to-days (vitamin K).",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "4-factor prothrombin complex concentrate (4F-PCC, e.g. Beriplex, Kcentra, Octaplex)",
+        "agentDrugSlug": null,
+        "dosing": "INR 2-3.9: 25 IU/kg (max 2,500 IU). INR 4-5.9: 35 IU/kg (max 3,500 IU). INR ≥ 6: 50 IU/kg (max 5,000 IU). Round to nearest vial; give IV over 10-30 min. Repeat INR within 30 min and 6 h.",
+        "adjuncts": [
+          "Vitamin K (phytomenadione) 5-10 mg IV slowly (dilute, infuse over ≥ 30 min — risk of anaphylactoid reaction with rapid bolus) — sustains reversal beyond PCC half-life.",
+          "Red cells, platelets, tranexamic acid as per haemorrhage management.",
+          "Reverse hypothermia, acidosis, hypocalcaemia (lethal triad)."
+        ],
+        "monitoring": "INR at 30 min, 6 h, 24 h. Clinical bleeding endpoint. Watch for thrombosis post-PCC (especially in valve / DOAC-naïve patients).",
+        "cautions": [
+          "Do NOT use FFP if 4F-PCC is available — slower, larger volume, less effective.",
+          "Activated PCC (FEIBA) is not first-line for warfarin reversal; reserve for specific factor inhibitor scenarios.",
+          "Mechanical heart valve: discuss with cardiology before reversal; thrombosis risk."
+        ]
+      },
+      {
+        "urgency": "urgent-surgery-or-procedure",
+        "agent": "4F-PCC + vitamin K",
+        "agentDrugSlug": null,
+        "dosing": "If surgery within 6-12 h: 4F-PCC dosed by INR as above PLUS vitamin K 5-10 mg IV. If surgery in 24-72 h: vitamin K 5-10 mg PO/IV may suffice; recheck INR before procedure.",
+        "adjuncts": [
+          "Discuss thrombosis risk vs bleeding with the surgical team — bridging plan post-operatively."
+        ],
+        "monitoring": "INR pre-procedure (target depends on procedure; < 1.5 for major surgery)."
+      },
+      {
+        "urgency": "major-non-life-threatening-bleed",
+        "agent": "Vitamin K + selective 4F-PCC",
+        "agentDrugSlug": null,
+        "dosing": "Hold warfarin. Vitamin K 5-10 mg IV slowly. Consider 4F-PCC 25 IU/kg if INR significantly elevated or bleeding persists despite local measures."
+      },
+      {
+        "urgency": "minor-bleed-or-supratherapeutic-no-bleed",
+        "agent": "Hold dose ± oral vitamin K",
+        "agentDrugSlug": null,
+        "dosing": "INR 4.5-10, no bleed: hold 1-2 doses, recheck INR; routine vitamin K not required. INR > 10, no bleed: vitamin K 1-5 mg PO; hold warfarin; recheck INR at 24 h. Restart at lower dose once therapeutic.",
+        "cautions": [
+          "Avoid large doses (≥ 10 mg) of vitamin K in patients on long-term warfarin for thrombosis prophylaxis — risk of over-correction and warfarin resistance for days."
+        ]
+      }
+    ],
+    "pitfalls": [
+      "FFP requires ~ 30 mL/kg to fully reverse INR — usually impractical and volume-overloading; PCC is the standard of care where available.",
+      "Vitamin K alone takes 6-12 h to begin lowering INR — do not rely on it for active life-threatening bleeding.",
+      "Subcutaneous vitamin K is unreliable (erratic absorption) — use IV or oral.",
+      "After PCC, INR may rebound at 12-24 h once PCC factors decay — vitamin K supplementation prevents this.",
+      "Mechanical valve patients have a substantial early thrombosis risk after reversal — restart anticoagulation as soon as bleeding controlled, ideally with heparin bridge."
+    ],
+    "references": [
+      { "label": "BSH guideline: Reversal of antithrombotic therapy in patients with major bleeding. Br J Haematol 2018." },
+      { "label": "Neurocritical Care Society / Society of Critical Care Medicine: Guideline for reversal of antithrombotics in intracranial haemorrhage. 2016." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "dabigatran-reversal",
+    "anticoagulant": "Dabigatran",
+    "anticoagulantDrugSlug": "dabigatran",
+    "drugClass": "Direct thrombin (factor IIa) inhibitor (DOAC-IIa)",
+    "oneLiner": "Life-threatening bleed or urgent surgery: idarucizumab 5 g IV (two 2.5 g vials). If idarucizumab unavailable: 4F-PCC 50 IU/kg + dialysis (dabigatran is dialysable, ~ 60% removal in 4 h).",
+    "domains": ["haematology", "emergency", "cardiology"],
+    "mechanism": "Direct, reversible thrombin (IIa) inhibitor. Renally cleared (~ 80%) — accumulates in CKD. Half-life 12-17 h normal renal function; > 24 h if CrCl < 30 mL/min.",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "Idarucizumab (Praxbind)",
+        "agentDrugSlug": null,
+        "dosing": "5 g IV — given as two consecutive infusions or boluses of 2.5 g each, no more than 15 min apart. Onset within minutes; reversal sustained for up to 24 h.",
+        "adjuncts": [
+          "Red cells, platelets, tranexamic acid as per haemorrhage management.",
+          "Activated charcoal 50 g PO/NG if ingestion within 2 h AND airway protected.",
+          "Haemodialysis can be added in severe cases (especially CKD): removes ~ 60% in 4 h. Note: idarucizumab is NOT removed by dialysis."
+        ],
+        "monitoring": "Dilute thrombin time (dTT), ecarin clotting time (ECT) if available, or aPTT (less sensitive); clinical bleeding endpoint. Re-bleeding within 24 h is described — anticipate possible repeat dosing."
+      },
+      {
+        "urgency": "urgent-surgery-or-procedure",
+        "agent": "Idarucizumab 5 g IV",
+        "agentDrugSlug": null,
+        "dosing": "Same as life-threatening bleed: 5 g IV (two 2.5 g aliquots). Proceed to surgery when reversal confirmed (normalised aPTT / dTT)."
+      },
+      {
+        "urgency": "major-non-life-threatening-bleed",
+        "agent": "Supportive — hold dabigatran; consider idarucizumab",
+        "agentDrugSlug": null,
+        "dosing": "Hold dabigatran. Local haemostasis. Idarucizumab 5 g IV if bleeding persists or cannot be controlled. 4F-PCC 50 IU/kg if idarucizumab unavailable."
+      },
+      {
+        "urgency": "minor-bleed-or-supratherapeutic-no-bleed",
+        "agent": "Hold dose",
+        "agentDrugSlug": null,
+        "dosing": "Hold 1-2 doses. Recheck renal function; review dose appropriateness. Reassess indication and bleeding risk."
+      }
+    ],
+    "pitfalls": [
+      "Renal clearance dominates — CrCl < 30 mL/min: half-life > 24 h, expect prolonged effect even after idarucizumab.",
+      "Idarucizumab is a humanised monoclonal Fab fragment — short half-life (~ 47 min α, 10 h β); rebleeding due to dabigatran redistribution from tissues can occur 12-24 h post-reversal.",
+      "Normal aPTT does NOT rule out clinically significant dabigatran effect — use dTT or ECT.",
+      "PCC is less effective for dabigatran than for Xa-inhibitor reversal; idarucizumab is the standard of care where available.",
+      "Restart anticoagulation as soon as bleeding controlled to avoid thromboembolic complications (median 4-7 days post-bleed in published series)."
+    ],
+    "references": [
+      { "label": "Pollack CV Jr et al. Idarucizumab for dabigatran reversal — full cohort analysis. NEJM 2017;377:431-41." },
+      { "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "apixaban-reversal",
+    "anticoagulant": "Apixaban",
+    "anticoagulantDrugSlug": "apixaban",
+    "drugClass": "Direct factor Xa inhibitor (DOAC-Xa)",
+    "oneLiner": "Life-threatening bleed: andexanet alfa (where available, dose by last apixaban dose + time since) OR 4F-PCC 50 IU/kg. Andexanet is procoagulant — anticipate VTE risk and rebound thrombosis.",
+    "domains": ["haematology", "emergency", "cardiology"],
+    "mechanism": "Direct, reversible factor Xa inhibitor. ~ 27% renal clearance; half-life 12 h. Reversal by sequestration (andexanet decoy receptor) or by bypassing (PCC supplies factor II/IX/X/VII).",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "Andexanet alfa (Andexxa, Ondexxya) — where available",
+        "agentDrugSlug": null,
+        "dosing": "Low dose (apixaban ≤ 5 mg AND last dose ≥ 8 h ago, OR unknown dose ≥ 8 h ago): 400 mg IV bolus over 15 min, then 4 mg/min infusion for up to 120 min. High dose (apixaban > 5 mg OR last dose < 8 h ago): 800 mg IV bolus over 30 min, then 8 mg/min infusion for up to 120 min.",
+        "adjuncts": [
+          "Red cells, platelets, tranexamic acid as per haemorrhage management.",
+          "Reverse hypothermia, acidosis, hypocalcaemia (lethal triad).",
+          "Restart anticoagulation as soon as bleeding controlled — andexanet's procoagulant effect raises rebound thrombosis risk significantly."
+        ],
+        "monitoring": "Anti-Xa activity (apixaban-calibrated if available — but anti-Xa is artefactually low during andexanet exposure due to assay interference). Clinical bleeding endpoint. VTE surveillance (incidence ~ 10% in ANNEXA-4 cohort).",
+        "cautions": [
+          "Andexanet is contraindicated if the bleed is on apixaban for active VTE — risk of catastrophic clot.",
+          "Andexanet effect terminates within ~ 1-2 h of stopping infusion; apixaban can rebind once exogenous Xa is consumed.",
+          "Cost and availability are major barriers — 4F-PCC remains the standard where andexanet is unavailable."
+        ]
+      },
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "4-factor PCC (alternative when andexanet unavailable)",
+        "agentDrugSlug": null,
+        "dosing": "50 IU/kg IV (max 5,000 IU); some protocols use 25 IU/kg as initial dose with re-dosing. Round to nearest vial; give over 10-30 min.",
+        "adjuncts": [
+          "Activated charcoal 50 g PO/NG if ingestion within 2-4 h AND airway protected.",
+          "Tranexamic acid 1 g IV (10 min) then 1 g over 8 h for traumatic bleed (CRASH-2 logic).",
+          "Local haemostasis: endoscopy, IR embolisation, surgery."
+        ],
+        "monitoring": "Anti-Xa activity (apixaban-calibrated). Clinical bleeding endpoint. Thrombosis risk lower than with andexanet but not zero."
+      },
+      {
+        "urgency": "urgent-surgery-or-procedure",
+        "agent": "Time-based: hold + delay if possible; andexanet or PCC if cannot delay",
+        "agentDrugSlug": null,
+        "dosing": "Elective: hold 24-48 h (low bleed risk) or 48-72 h (high bleed risk, CrCl > 50). Urgent: andexanet (where available) or 4F-PCC 50 IU/kg if bleeding intra-operatively.",
+        "monitoring": "Anti-Xa (apixaban-calibrated) immediately preoperatively."
+      },
+      {
+        "urgency": "major-non-life-threatening-bleed",
+        "agent": "Supportive + local haemostasis; consider 4F-PCC if persistent",
+        "agentDrugSlug": null,
+        "dosing": "Hold apixaban. Volume resuscitation. Activated charcoal within 2-4 h of ingestion. 4F-PCC 25-50 IU/kg if bleeding persists despite supportive care."
+      },
+      {
+        "urgency": "minor-bleed-or-supratherapeutic-no-bleed",
+        "agent": "Hold dose; reassess",
+        "agentDrugSlug": null,
+        "dosing": "Hold 1-2 doses. Reassess indication, dose, and bleeding risk (HAS-BLED). Restart at appropriate dose."
+      }
+    ],
+    "pitfalls": [
+      "INR and aPTT are unreliable measures of apixaban effect — use apixaban-calibrated anti-Xa.",
+      "Andexanet alfa interferes with anti-Xa assays — results during/immediately after infusion do NOT reflect true anticoagulant burden.",
+      "Andexanet has a black-box-equivalent warning for thromboembolic and ischaemic events — restart anticoagulation as soon as feasible.",
+      "Apixaban is NOT dialysable (high protein binding) — dialysis is not a reversal option.",
+      "Renal dose-reduction criteria (any 2 of: age ≥ 80, weight ≤ 60 kg, creatinine ≥ 133 µmol/L) — confirm dose was appropriate; supratherapeutic dosing in elderly is a common cause of bleeding."
+    ],
+    "references": [
+      { "label": "Connolly SJ et al. Andexanet alfa for acute major bleeding associated with factor Xa inhibitors (ANNEXA-4). NEJM 2019;380:1326-35." },
+      { "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "rivaroxaban-reversal",
+    "anticoagulant": "Rivaroxaban",
+    "anticoagulantDrugSlug": "rivaroxaban",
+    "drugClass": "Direct factor Xa inhibitor (DOAC-Xa)",
+    "oneLiner": "Same approach as apixaban: andexanet alfa where available (low/high dose by last dose + time), or 4F-PCC 50 IU/kg. Activated charcoal within 8 h of ingestion (longer absorption window than apixaban).",
+    "domains": ["haematology", "emergency", "cardiology"],
+    "mechanism": "Direct, reversible factor Xa inhibitor. ~ 33% renal clearance; half-life 5-13 h (longer in elderly / renal impairment). Highly protein-bound — not dialysable.",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "Andexanet alfa",
+        "agentDrugSlug": null,
+        "dosing": "Low dose (rivaroxaban ≤ 10 mg AND last dose ≥ 8 h ago, OR unknown ≥ 8 h ago): 400 mg IV bolus over 15 min, then 4 mg/min for up to 120 min. High dose (rivaroxaban > 10 mg OR last dose < 8 h ago): 800 mg IV bolus over 30 min, then 8 mg/min for up to 120 min.",
+        "adjuncts": [
+          "Red cells, platelets, tranexamic acid.",
+          "Restart anticoagulation as soon as bleeding controlled — VTE rebound risk."
+        ],
+        "monitoring": "Anti-Xa (rivaroxaban-calibrated; assay interference during andexanet). Clinical bleeding."
+      },
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "4F-PCC (alternative)",
+        "agentDrugSlug": null,
+        "dosing": "50 IU/kg IV (max 5,000 IU), rounded to nearest vial. Activated charcoal 50 g PO/NG if ingestion within 8 h AND airway protected.",
+        "monitoring": "Clinical bleeding; anti-Xa (rivaroxaban-calibrated)."
+      },
+      {
+        "urgency": "urgent-surgery-or-procedure",
+        "agent": "Hold and delay if possible; andexanet or 4F-PCC if cannot",
+        "agentDrugSlug": null,
+        "dosing": "Elective: hold 24-48 h (standard risk) or 48-72 h (high bleed risk / CrCl 30-50). Urgent: andexanet or 4F-PCC 50 IU/kg if intra-operative bleeding."
+      },
+      {
+        "urgency": "major-non-life-threatening-bleed",
+        "agent": "Supportive; consider 4F-PCC if persistent",
+        "agentDrugSlug": null,
+        "dosing": "Hold rivaroxaban. Activated charcoal within 8 h. 4F-PCC 25-50 IU/kg if persistent."
+      },
+      {
+        "urgency": "minor-bleed-or-supratherapeutic-no-bleed",
+        "agent": "Hold dose",
+        "agentDrugSlug": null,
+        "dosing": "Hold 1-2 doses. Reassess dose appropriateness (especially CrCl 15-49: 15 mg OD; 50+: 20 mg OD with food)."
+      }
+    ],
+    "pitfalls": [
+      "Rivaroxaban has a longer absorption window than apixaban — activated charcoal useful up to 8 h post-ingestion.",
+      "Bioavailability depends on food (the 20 mg dose must be taken with food, otherwise ~ 66% absorption only).",
+      "PT may be prolonged but is an unreliable measure; use rivaroxaban-calibrated anti-Xa.",
+      "Not dialysable.",
+      "DOAC-on-DOAC bridging is common in errors — confirm the agent before reversal."
+    ],
+    "references": [
+      { "label": "Connolly SJ et al. ANNEXA-4. NEJM 2019." },
+      { "label": "ISTH guidance: When and how to use idarucizumab and andexanet alfa. J Thromb Haemost 2020." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "edoxaban-reversal",
+    "anticoagulant": "Edoxaban",
+    "anticoagulantDrugSlug": "edoxaban",
+    "drugClass": "Direct factor Xa inhibitor (DOAC-Xa)",
+    "oneLiner": "Andexanet not formally licensed for edoxaban in all jurisdictions; off-label use is reported. 4F-PCC 50 IU/kg is the practical reversal where andexanet unavailable.",
+    "domains": ["haematology", "emergency", "cardiology"],
+    "mechanism": "Direct, reversible factor Xa inhibitor. ~ 50% renal clearance; half-life 10-14 h. Reduced efficacy in patients with CrCl > 95 mL/min (paradoxically) — labelled for CrCl 15-95.",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "4F-PCC (first-line in most jurisdictions); andexanet off-label where considered",
+        "agentDrugSlug": null,
+        "dosing": "4F-PCC 50 IU/kg IV (max 5,000 IU). Andexanet off-label: high dose 800 mg + 8 mg/min infusion (extrapolated from rivaroxaban data).",
+        "adjuncts": [
+          "Activated charcoal 50 g PO/NG within 2 h AND airway protected.",
+          "Red cells, platelets, tranexamic acid.",
+          "Reverse lethal triad (hypothermia/acidosis/hypocalcaemia)."
+        ],
+        "monitoring": "Anti-Xa (edoxaban-calibrated, if available); clinical bleeding."
+      },
+      {
+        "urgency": "urgent-surgery-or-procedure",
+        "agent": "Hold ≥ 24 h (standard risk) / ≥ 48 h (high bleed risk); 4F-PCC if cannot delay",
+        "agentDrugSlug": null,
+        "dosing": "Elective: hold 24-48 h. Urgent: 4F-PCC 50 IU/kg if active bleeding."
+      },
+      {
+        "urgency": "major-non-life-threatening-bleed",
+        "agent": "Supportive; 4F-PCC 25-50 IU/kg if persistent",
+        "agentDrugSlug": null,
+        "dosing": "Hold edoxaban. Activated charcoal within 2 h. 4F-PCC if persistent."
+      },
+      {
+        "urgency": "minor-bleed-or-supratherapeutic-no-bleed",
+        "agent": "Hold dose",
+        "agentDrugSlug": null,
+        "dosing": "Hold 1-2 doses; reassess dose appropriateness."
+      }
+    ],
+    "pitfalls": [
+      "Not licensed in some countries; check local availability and indication.",
+      "CrCl > 95: reduced efficacy in AF — consider alternative DOAC.",
+      "Not dialysable.",
+      "Andexanet labelling does not include edoxaban in many jurisdictions — use is off-label."
+    ],
+    "references": [
+      { "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020." },
+      { "label": "ISTH guidance 2020." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "unfractionated-heparin-reversal",
+    "anticoagulant": "Unfractionated heparin (UFH)",
+    "anticoagulantDrugSlug": "heparin",
+    "drugClass": "Indirect antithrombin-mediated anticoagulant",
+    "oneLiner": "Protamine sulfate 1 mg IV per 100 units of heparin given in the last 2-3 h, max 50 mg per dose, IV slowly. Anaphylaxis + hypotension common with rapid administration.",
+    "domains": ["haematology", "emergency", "cardiology", "surgery"],
+    "mechanism": "Heparin potentiates antithrombin to inactivate thrombin (IIa) and factor Xa. Protamine binds heparin directly, forming an inactive complex.",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "Protamine sulfate",
+        "agentDrugSlug": null,
+        "dosing": "1 mg protamine IV per 100 units UFH given in the last 2-3 h. Maximum single dose 50 mg. Give slowly (over 10 min) — rapid administration causes hypotension, bradycardia, anaphylaxis. If UFH > 30 min ago, give 0.5 mg per 100 units (heparin half-life ~ 60-90 min IV).",
+        "adjuncts": [
+          "Stop heparin infusion immediately.",
+          "Repeat aPTT 5-15 min after protamine; redose if still elevated (50% of initial dose).",
+          "Manage anaphylaxis: adrenaline, IV fluids, antihistamine, hydrocortisone."
+        ],
+        "monitoring": "aPTT or anti-Xa. Clinical bleeding. Watch for hypotension during infusion.",
+        "cautions": [
+          "Protamine is itself a weak anticoagulant in excess — do not over-dose.",
+          "Prior protamine exposure (CABG, NPH insulin users, vasectomy patients, fish allergy) increases anaphylaxis risk."
+        ]
+      },
+      {
+        "urgency": "urgent-surgery-or-procedure",
+        "agent": "Stop infusion; protamine if needed",
+        "agentDrugSlug": null,
+        "dosing": "Stop UFH infusion 4-6 h before procedure for spontaneous decay (half-life ~ 90 min). Protamine if cannot delay or bleeding intra-operatively (post-cardiopulmonary-bypass dose ~ 1 mg / 100 units residual heparin)."
+      }
+    ],
+    "pitfalls": [
+      "Protamine dosing must account for time since last heparin dose (rapid IV elimination — 30 min ago: 0.5 mg/100 units; > 2 h: 0.25 mg/100 units).",
+      "After cardiopulmonary bypass, redistribution releases sequestered heparin (heparin rebound) 2-3 h later — re-dose protamine if aPTT rises again.",
+      "Anaphylaxis risk: prior CABG, NPH insulin (contains protamine), fish allergy."
+    ],
+    "references": [
+      { "label": "Bates SM, Weitz JI. The mechanism of action of thrombin inhibitors. J Invasive Cardiol 2000." },
+      { "label": "Local trust protocol / BCSH guidelines." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "lmwh-reversal",
+    "anticoagulant": "Low molecular weight heparin (enoxaparin, dalteparin, tinzaparin)",
+    "anticoagulantDrugSlug": "enoxaparin",
+    "drugClass": "Indirect factor Xa-dominant inhibitor (LMWH)",
+    "oneLiner": "Protamine partially reverses LMWH (~ 60-75% anti-Xa neutralisation): 1 mg protamine per 1 mg enoxaparin (or per 100 anti-Xa units of other LMWH) given in the last 8 h; half-dose if 8-12 h ago.",
+    "domains": ["haematology", "emergency", "obstetrics"],
+    "mechanism": "Antithrombin-potentiated anti-Xa activity > anti-IIa. Renal clearance — accumulates in CKD. Protamine fully reverses anti-IIa but only partially reverses anti-Xa (~ 60-75%) because of LMWH chain length variability.",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "Protamine sulfate (partial reversal)",
+        "agentDrugSlug": null,
+        "dosing": "Enoxaparin: 1 mg protamine per 1 mg enoxaparin if given within last 8 h; 0.5 mg per 1 mg if 8-12 h ago. Maximum single dose 50 mg. Give slowly (over 10 min). Dalteparin / tinzaparin: 1 mg protamine per 100 anti-Xa units. Repeat at half dose if bleeding persists.",
+        "adjuncts": [
+          "Hold further LMWH.",
+          "Red cells, platelets, tranexamic acid (1 g IV over 10 min then 1 g over 8 h for traumatic / GI / mucosal bleeding).",
+          "Manage anaphylaxis risk as for protamine."
+        ],
+        "monitoring": "Anti-Xa (LMWH-specific calibration). Clinical bleeding. Note: aPTT is INSENSITIVE to LMWH effect."
+      },
+      {
+        "urgency": "urgent-surgery-or-procedure",
+        "agent": "Hold LMWH; protamine if cannot delay",
+        "agentDrugSlug": null,
+        "dosing": "Prophylactic dose: hold 12 h pre-procedure. Therapeutic dose: hold 24 h pre-procedure (longer if CrCl < 30: 48 h). Protamine if active intra-operative bleeding."
+      },
+      {
+        "urgency": "major-non-life-threatening-bleed",
+        "agent": "Supportive + half-dose protamine if persistent",
+        "agentDrugSlug": null,
+        "dosing": "Hold LMWH. Local haemostasis. Half-dose protamine (0.5 mg/mg or per 100 anti-Xa units) if bleeding persists."
+      },
+      {
+        "urgency": "minor-bleed-or-supratherapeutic-no-bleed",
+        "agent": "Hold dose; reassess",
+        "agentDrugSlug": null,
+        "dosing": "Hold 1-2 doses. Reassess CrCl and weight-based dose."
+      }
+    ],
+    "pitfalls": [
+      "Protamine never fully reverses LMWH — anti-Xa activity persists. Plan for ongoing bleeding management.",
+      "CrCl < 30: enoxaparin accumulates; use dose-adjusted regimen (1 mg/kg OD instead of BD) and consider switching to UFH for severe renal impairment.",
+      "Tinzaparin has the largest fraction reversible by protamine; nadroparin / dalteparin somewhat less.",
+      "aPTT is not a reliable monitor for LMWH — use anti-Xa (drawn 4 h post-dose, peak)."
+    ],
+    "references": [
+      { "label": "Tran HA et al. New oral anticoagulants — clinical management and reversal. Med J Aust 2014." },
+      { "label": "BCSH guideline: Reversal of antithrombotic therapy. Br J Haematol 2018." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "fondaparinux-reversal",
+    "anticoagulant": "Fondaparinux",
+    "anticoagulantDrugSlug": "fondaparinux",
+    "drugClass": "Synthetic pentasaccharide, indirect factor Xa inhibitor",
+    "oneLiner": "No specific antidote — protamine ineffective. Activated PCC (aPCC / FEIBA) 20 IU/kg or recombinant factor VIIa (rFVIIa) 90 µg/kg for life-threatening bleed; supportive care otherwise.",
+    "domains": ["haematology", "emergency"],
+    "mechanism": "Synthetic pentasaccharide that binds antithrombin selectively to inactivate factor Xa. Renally cleared; half-life 17-21 h (longer in elderly / renal impairment).",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "Activated PCC (aPCC / FEIBA) or rFVIIa — limited evidence",
+        "agentDrugSlug": null,
+        "dosing": "aPCC 20 IU/kg IV (rounded to nearest vial). OR recombinant factor VIIa (rFVIIa, NovoSeven) 90 µg/kg IV bolus, repeat at 2 h if persistent bleeding.",
+        "adjuncts": [
+          "Red cells, platelets, tranexamic acid.",
+          "Stop fondaparinux.",
+          "Manage thromboembolic risk — both aPCC and rFVIIa are procoagulant; restart anticoagulation when bleeding controlled."
+        ],
+        "monitoring": "Anti-Xa (fondaparinux-calibrated) if available — confirms drug level. Clinical bleeding endpoint."
+      },
+      {
+        "urgency": "urgent-surgery-or-procedure",
+        "agent": "Hold ≥ 24 h (CrCl > 50) or 48-72 h (CrCl 30-50); aPCC / rFVIIa if cannot delay",
+        "agentDrugSlug": null,
+        "dosing": "Elective: hold 24-72 h depending on CrCl. Urgent: aPCC 20 IU/kg or rFVIIa 90 µg/kg if intra-operative bleeding."
+      },
+      {
+        "urgency": "major-non-life-threatening-bleed",
+        "agent": "Supportive",
+        "agentDrugSlug": null,
+        "dosing": "Hold fondaparinux. Local haemostasis. aPCC / rFVIIa only if persistent."
+      },
+      {
+        "urgency": "minor-bleed-or-supratherapeutic-no-bleed",
+        "agent": "Hold dose",
+        "agentDrugSlug": null,
+        "dosing": "Hold 1-2 doses; reassess renal function and dose appropriateness."
+      }
+    ],
+    "pitfalls": [
+      "Protamine does NOT reverse fondaparinux — do not use it.",
+      "Long half-life + renal accumulation in CKD — anticipate prolonged effect after stopping.",
+      "Limited evidence for aPCC / rFVIIa in fondaparinux reversal; both carry thrombosis risk.",
+      "Contraindicated in severe renal impairment (CrCl < 30) — if reversal needed in a CKD patient, switch to UFH for future anticoagulation."
+    ],
+    "references": [
+      { "label": "Bijsterveld NR et al. Recombinant factor VIIa reverses the anticoagulant effect of the long-acting pentasaccharide idraparinux. Br J Haematol 2004." },
+      { "label": "BCSH guideline 2018." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "alteplase-reversal",
+    "anticoagulant": "Alteplase (tPA) and other fibrinolytics",
+    "anticoagulantDrugSlug": "alteplase",
+    "drugClass": "Fibrinolytic (recombinant tissue plasminogen activator)",
+    "oneLiner": "Symptomatic intracranial haemorrhage post-tPA: stop infusion, cryoprecipitate 10 units IV + tranexamic acid 1-2 g IV. Neurosurgical consult immediately.",
+    "domains": ["haematology", "emergency", "neurology", "cardiology"],
+    "mechanism": "Converts plasminogen to plasmin, lysing fibrin in clots. Causes systemic fibrinogenolysis; bleeding complications mediated by hypofibrinogenaemia and breakdown of haemostatic plugs.",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "Cryoprecipitate + antifibrinolytic",
+        "agentDrugSlug": null,
+        "dosing": "Stop tPA infusion immediately. Cryoprecipitate 10 units (or 1 unit per 7-10 kg) IV — aim for fibrinogen > 1.5 g/L (some guidelines > 2.0). Tranexamic acid 1-2 g IV over 10 min. Recheck fibrinogen 30 min after cryoprecipitate; redose if < 1.5 g/L.",
+        "adjuncts": [
+          "Send fibrinogen, prothrombin time, aPTT, platelets, group and screen STAT.",
+          "Platelets if count < 100 × 10⁹/L (particularly important in intracranial bleeds).",
+          "Neurosurgical consult for ICH within minutes.",
+          "Reverse hypothermia, acidosis, hypocalcaemia.",
+          "Blood pressure: target SBP 140-160 in tPA-related ICH (aggressive lowering risks ischaemic penumbra)."
+        ],
+        "monitoring": "Fibrinogen 30 min post-cryoprecipitate then 6 h. CT head repeat at 6-24 h. Neurological observations every 15 min for 2 h, then every 30 min for 6 h.",
+        "cautions": [
+          "Aminocaproic acid (EACA) is an alternative if tranexamic acid unavailable — 4-5 g IV over 1 h.",
+          "Prothrombin complex concentrate (PCC) is NOT effective for tPA-related bleeding (mechanism is fibrinogenolysis, not factor depletion).",
+          "Do not give FFP first-line — too slow and too low fibrinogen content; cryoprecipitate is much more efficient."
+        ]
+      },
+      {
+        "urgency": "major-non-life-threatening-bleed",
+        "agent": "Stop tPA; supportive + cryoprecipitate if persistent",
+        "agentDrugSlug": null,
+        "dosing": "Stop infusion. Local haemostasis. Cryoprecipitate 10 units if fibrinogen < 1.5 g/L AND bleeding persists."
+      }
+    ],
+    "pitfalls": [
+      "tPA half-life is short (5 min) but fibrinogen depletion persists for hours — reversal is about replacing fibrinogen, not blocking the drug.",
+      "Time window for action is narrow — sICH after tPA carries 30-60% mortality.",
+      "Aggressive blood pressure lowering can extend ischaemic stroke — avoid SBP < 140 in tPA-related ICH.",
+      "Tenecteplase and reteplase reversal follows the same logic (cryoprecipitate + antifibrinolytic).",
+      "After successful reversal, anticoagulation restart depends on indication for thrombolysis — defer for ≥ 72 h post-haemorrhage unless competing thrombotic risk dominates."
+    ],
+    "references": [
+      { "label": "Frontera JA et al. Guideline for reversal of antithrombotics in intracranial haemorrhage. Neurocrit Care 2016;24:6-46." },
+      { "label": "Powers WJ et al. AHA/ASA 2019 guideline for the early management of acute ischemic stroke." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  }
+]

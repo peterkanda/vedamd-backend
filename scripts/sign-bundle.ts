@@ -76,6 +76,7 @@ const fileEntries = files.map((name) => {
     referenceRanges: readOptional('reference-ranges.json'),
     antidotes: readOptional('antidotes.json'),
     toxidromes: readOptional('toxidromes.json'),
+    anticoagulantReversal: readOptional('anticoagulant-reversal.json'),
   };
   const validation = validateBundle(bundle);
   const stats = validation.stats;

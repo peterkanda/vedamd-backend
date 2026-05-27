@@ -57,6 +57,7 @@ interface Bundle {
   referenceRanges?: ExtendedRecord[];
   antidotes?: ExtendedRecord[];
   toxidromes?: ExtendedRecord[];
+  anticoagulantReversal?: ExtendedRecord[];
 }
 
 const KNOWN_STATUSES: readonly ReviewStatus[] = ['draft', 'review', 'approved', 'deprecated'];
@@ -118,6 +119,7 @@ export function validateBundle(bundle: Bundle): ValidationResult {
     ['reference-ranges', bundle.referenceRanges],
     ['antidotes', bundle.antidotes],
     ['toxidromes', bundle.toxidromes],
+    ['anticoagulant-reversal', bundle.anticoagulantReversal],
   ];
   let extendedCount = 0;
   for (const [domain, set] of extendedSets) {

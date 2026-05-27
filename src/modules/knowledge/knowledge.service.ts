@@ -149,6 +149,10 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.toxidromes;
   }
 
+  getAnticoagulantReversal() {
+    return this.bundle.anticoagulantReversal;
+  }
+
   getTerminology() {
     return this.bundle.terminology;
   }
