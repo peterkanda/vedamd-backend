@@ -1,0 +1,459 @@
+[
+  {
+    "slug": "paracetamol-pllr",
+    "drugSlug": "paracetamol",
+    "drug": "Paracetamol (acetaminophen)",
+    "oneLiner": "Analgesic / antipyretic of choice across all trimesters and during lactation — use the lowest effective dose for the shortest duration.",
+    "pregnancyCompatibility": "preferred",
+    "lactationCompatibility": "preferred",
+    "legacyFdaCategory": "B",
+    "domains": ["analgesia", "antipyretic", "obstetrics"],
+    "pregnancy": {
+      "riskSummary": "Paracetamol crosses the placenta but has not been shown to increase the risk of major congenital malformations or miscarriage. It is the analgesic / antipyretic of FIRST CHOICE in pregnancy across all trimesters. Recent observational signals (possible association with ADHD, ASD, asthma in offspring with prolonged exposure) have not been replicated in sibling-controlled analyses and remain weak; do not deny clinically indicated paracetamol on this basis. Use lowest effective dose for the shortest duration.",
+      "clinicalConsiderations": "Untreated fever in pregnancy is itself harmful (associated with NTDs in 1st trimester and adverse outcomes throughout). Treating fever with paracetamol is recommended. Pain control with paracetamol is preferred over NSAIDs (3rd trimester contraindicated) and over opioids (neonatal abstinence, sedation).",
+      "data": "Multiple cohort and case-control studies and a Nordic sibling-controlled study (~ 2.4 million pregnancies) showed no causal link with neurodevelopmental outcomes once familial confounding was adjusted. No animal teratogenicity at clinical doses."
+    },
+    "lactation": {
+      "riskSummary": "Compatible with breastfeeding. Excreted in milk in small amounts — infant exposure is < 5% of the maternal weight-adjusted dose, well below the paediatric therapeutic dose.",
+      "clinicalConsiderations": "No specific monitoring required. Use lowest effective maternal dose.",
+      "data": "Relative infant dose (RID) approximately 6-25% of the maternal dose adjusted for weight, but absolute infant intake is far below paediatric dosing (15 mg/kg/dose). No adverse effects reported in breastfed infants.",
+      "alternatives": []
+    },
+    "references": [
+      { "label": "FDA. PLLR final rule. 21 CFR 201.57." },
+      { "label": "LactMed: Acetaminophen. https://www.ncbi.nlm.nih.gov/books/NBK500980/" },
+      { "label": "Ahlqvist VH et al. Acetaminophen use during pregnancy and children's risk of autism, ADHD, and intellectual disability. JAMA 2024;331:1205-1214." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ibuprofen-pllr",
+    "drugSlug": "ibuprofen",
+    "drug": "Ibuprofen (and other NSAIDs)",
+    "oneLiner": "CONTRAINDICATED from 20 weeks gestation onwards (FDA black-box, oligohydramnios + ductal closure). Use paracetamol instead. Acceptable during lactation as occasional short courses.",
+    "pregnancyCompatibility": "contraindicated",
+    "lactationCompatibility": "acceptable",
+    "legacyFdaCategory": "C",
+    "domains": ["analgesia", "rheumatology", "obstetrics"],
+    "pregnancy": {
+      "riskSummary": "AVOID NSAIDs (ibuprofen, naproxen, diclofenac, ketorolac, celecoxib) from 20 weeks gestation onwards — FDA-mandated black-box warning (2020). Use causes oligohydramnios (fetal renal hypoperfusion) and, after 30 weeks, premature closure of the ductus arteriosus with persistent pulmonary hypertension of the newborn (PPHN). 1st-trimester use is associated with a small increased risk of miscarriage and possibly cardiac septal defects. Paracetamol is the preferred analgesic.",
+      "clinicalConsiderations": "Low-dose aspirin (75-150 mg) is the EXCEPTION — used through pregnancy for pre-eclampsia prophylaxis in high-risk women, with extensive safety data at that dose. Higher analgesic / anti-inflammatory aspirin doses fall under the same NSAID warning.",
+      "data": "FDA Drug Safety Communication 2020 reviewed > 30 case reports of oligohydramnios and PPHN with second-half-of-pregnancy NSAID exposure, prompting the labelling change. Pre-2020 the cut-off was 30 weeks; the 20-week cut-off was added based on this signal.",
+      "trimesterNotes": [
+        { "trimester": "1", "note": "Small increased risk of miscarriage; possible cardiac defects. Use only when paracetamol inadequate AND benefits outweigh risks." },
+        { "trimester": "2", "note": "Contraindicated from 20 weeks (oligohydramnios)." },
+        { "trimester": "3", "note": "Contraindicated (PPHN, premature ductal closure, prolonged labour, increased maternal bleeding at delivery)." }
+      ]
+    },
+    "lactation": {
+      "riskSummary": "Compatible — ibuprofen is the NSAID of choice if NSAID needed during breastfeeding. Minimal transfer into milk; no adverse effects reported in breastfed infants.",
+      "clinicalConsiderations": "Prefer ibuprofen over diclofenac or naproxen for occasional analgesia. For chronic NSAID need (rheumatology) consult specialist — long-half-life NSAIDs (naproxen, piroxicam) less preferred.",
+      "data": "RID 0.1-0.7%. Undetectable in breastmilk at therapeutic maternal doses in most studies.",
+      "alternatives": ["paracetamol (first line for breastfeeding analgesia)", "ibuprofen (preferred NSAID)"]
+    },
+    "references": [
+      { "label": "FDA Drug Safety Communication. NSAID warning at 20 weeks gestation. October 2020." },
+      { "label": "LactMed: Ibuprofen. https://www.ncbi.nlm.nih.gov/books/NBK500986/" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "aspirin-pllr",
+    "drugSlug": "aspirin",
+    "drug": "Aspirin",
+    "oneLiner": "Low-dose (75-150 mg) ACCEPTABLE through pregnancy — first-line pre-eclampsia prophylaxis from 12-16 weeks. Analgesic doses (≥ 300 mg) follow NSAID rules: avoid from 20 weeks.",
+    "pregnancyCompatibility": "caution",
+    "lactationCompatibility": "avoid",
+    "legacyFdaCategory": "D",
+    "domains": ["obstetrics", "cardiology", "antiplatelet"],
+    "pregnancy": {
+      "riskSummary": "DOSE-DEPENDENT. LOW DOSE (75-150 mg/day) is recommended from 12-16 weeks until 36-37 weeks for women at moderate-to-high risk of pre-eclampsia (NNT ~ 20 in high-risk cohorts; supported by USPSTF, NICE, ACOG, WHO). ANALGESIC / ANTI-INFLAMMATORY DOSE (≥ 300 mg) is contraindicated from 20 weeks (same risks as other NSAIDs — oligohydramnios, premature ductal closure, PPHN) and should be avoided 1st trimester (small increased miscarriage risk).",
+      "clinicalConsiderations": "Low-dose aspirin for pre-eclampsia prophylaxis is the EXCEPTION to the general NSAID-in-pregnancy avoidance. It does NOT cause oligohydramnios or ductal closure at 75-150 mg. Stop at 36-37 weeks (some guidelines say 34) to reduce bleeding risk at delivery.",
+      "data": "ASPRE trial (NEJM 2017): 150 mg aspirin from 11-14 weeks reduced preterm pre-eclampsia by 62% in screened high-risk women. Multiple meta-analyses support low-dose aspirin from before 16 weeks."
+    },
+    "lactation": {
+      "riskSummary": "AVOID regular maternal aspirin during breastfeeding (theoretical Reye's syndrome risk in viral infection; reported infant metabolic acidosis with chronic high-dose use). Single occasional low doses are unlikely to harm. For pre-eclampsia prophylaxis, low-dose aspirin (75-150 mg) is commonly continued postpartum with breastfeeding when indicated (e.g. APS); discuss with paediatrics.",
+      "clinicalConsiderations": "Use paracetamol or ibuprofen for postpartum analgesia in preference.",
+      "data": "Transferred in low amounts; documented infant salicylate levels with chronic high-dose maternal use.",
+      "alternatives": ["paracetamol", "ibuprofen"]
+    },
+    "references": [
+      { "label": "USPSTF. Aspirin Use to Prevent Preeclampsia and Related Morbidity and Mortality. 2021." },
+      { "label": "Rolnik DL et al. ASPRE trial. NEJM 2017;377:613-22." },
+      { "label": "LactMed: Aspirin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "warfarin-pllr",
+    "drugSlug": "warfarin",
+    "drug": "Warfarin",
+    "oneLiner": "CONTRAINDICATED in pregnancy — warfarin embryopathy (1st trimester) and fetal CNS / haemorrhagic complications (any trimester). Switch to LMWH (enoxaparin) preconception or at first positive pregnancy test.",
+    "pregnancyCompatibility": "contraindicated",
+    "lactationCompatibility": "preferred",
+    "legacyFdaCategory": "X",
+    "domains": ["haematology", "obstetrics", "cardiology"],
+    "pregnancy": {
+      "riskSummary": "AVOID warfarin in pregnancy. Crosses the placenta and causes (1) warfarin embryopathy if exposed at 6-12 weeks (nasal hypoplasia, stippled epiphyses; ~ 5-10% incidence with exposure in this window); (2) fetal intracranial haemorrhage at any gestation, particularly during labour; (3) increased miscarriage and stillbirth. ALL women of childbearing potential on warfarin should be on effective contraception and counselled to switch to LMWH BEFORE conception or at the first positive pregnancy test. Mechanical heart valve patients are an EXCEPTION discussed with multidisciplinary specialist input — risk of valve thrombosis on LMWH must be balanced against fetal warfarin risk; some centres continue warfarin 12 weeks to term then switch.",
+      "clinicalConsiderations": "Switch to weight-adjusted therapeutic LMWH (e.g. enoxaparin 1 mg/kg BD) preconception or at first positive pregnancy test. Stop LMWH at onset of labour; restart 4-6 h post vaginal / 6-12 h post Caesarean delivery once haemostasis confirmed. Resume warfarin 24-48 h postpartum if non-breastfeeding context; if breastfeeding, both warfarin and LMWH are compatible.",
+      "data": "Bates SM et al. ACCP 9th edition — venous thromboembolism in pregnancy. Chest 2012. Multiple registries of warfarin embryopathy.",
+      "trimesterNotes": [
+        { "trimester": "1", "note": "Warfarin embryopathy risk at 6-12 weeks. Switch to LMWH BEFORE conception ideally; if exposed, urgent obstetric / haematology / fetal medicine referral." },
+        { "trimester": "all", "note": "Fetal intracranial haemorrhage risk — particularly at delivery." }
+      ]
+    },
+    "lactation": {
+      "riskSummary": "Warfarin is COMPATIBLE with breastfeeding — does not cross into breast milk in clinically significant amounts (highly protein-bound, weakly acidic). PREFERRED oral anticoagulant during lactation.",
+      "clinicalConsiderations": "Routine monitoring of infant clotting NOT required. Monitor maternal INR as usual.",
+      "data": "Warfarin not detected in breast milk in published series; no anticoagulant effect documented in breastfed infants. DOACs in lactation: SAFETY UNKNOWN — limited data; expert consensus advises against DOACs in breastfeeding mothers (use warfarin or LMWH instead).",
+      "alternatives": ["enoxaparin / LMWH (parenteral alternative)", "unfractionated heparin"]
+    },
+    "reproductive": {
+      "pregnancyTesting": "Confirm before initiating warfarin in any patient of childbearing potential; reconfirm if menses missed during therapy.",
+      "contraception": "Effective contraception is mandatory while on warfarin if pregnancy is not desired. Note: warfarin teratogenicity does NOT contraindicate combined oral contraceptive — but estrogen contraceptives increase thrombosis risk and may not be appropriate for the underlying indication. Discuss progestogen-only or non-hormonal options."
+    },
+    "references": [
+      { "label": "Bates SM et al. VTE, thrombophilia, antithrombotic therapy, and pregnancy. CHEST 2012;141(2 Suppl):e691S-736S." },
+      { "label": "LactMed: Warfarin." },
+      { "label": "RCOG Green-top Guideline No. 37b (acute management of VTE in pregnancy)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "enoxaparin-pllr",
+    "drugSlug": "enoxaparin",
+    "drug": "Enoxaparin (LMWH)",
+    "oneLiner": "PREFERRED anticoagulant in pregnancy — does not cross the placenta. Compatible with breastfeeding. Weight-adjusted therapeutic dosing; stop at labour onset; restart 4-12 h post delivery.",
+    "pregnancyCompatibility": "preferred",
+    "lactationCompatibility": "preferred",
+    "legacyFdaCategory": "B",
+    "domains": ["haematology", "obstetrics", "cardiology"],
+    "pregnancy": {
+      "riskSummary": "LMWH (enoxaparin, dalteparin, tinzaparin) is the anticoagulant of CHOICE throughout pregnancy. Does NOT cross the placenta (too large). Used both prophylactically (high VTE-risk pregnancies, mechanical valves where indicated) and therapeutically (acute VTE, APS, recurrent miscarriage with APS).",
+      "clinicalConsiderations": "Dose is weight-based on booking weight (not adjusted for gestational weight gain in most protocols, but check local guidance). Prophylactic enoxaparin 40 mg OD (BMI < 30); 60 mg OD (BMI 30-39); 80 mg OD (BMI ≥ 40). Therapeutic 1 mg/kg BD (or 1.5 mg/kg OD). Convert to UFH near delivery if planned induction / Caesarean to allow neuraxial anaesthesia. Stop prophylactic at onset of labour; therapeutic 24 h before planned delivery. Restart 4-6 h post vaginal / 6-12 h post Caesarean. Continue at least 6 weeks postpartum.",
+      "data": "Multiple cohorts; established standard of care in RCOG, ACOG, ACCP guidelines."
+    },
+    "lactation": {
+      "riskSummary": "Compatible. Not absorbed orally by the infant; not detected in clinically significant amounts in breastmilk.",
+      "clinicalConsiderations": "No monitoring required.",
+      "data": "Large molecular weight prevents milk transfer; oral bioavailability negligible. Compatible per LactMed.",
+      "alternatives": ["warfarin (oral; compatible with lactation)", "unfractionated heparin"]
+    },
+    "references": [
+      { "label": "RCOG Green-top Guideline No. 37a (reducing risk of VTE during pregnancy and the puerperium)." },
+      { "label": "LactMed: Enoxaparin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ace-inhibitors-pllr",
+    "drugSlug": "lisinopril",
+    "drug": "ACE inhibitors and angiotensin receptor blockers (ACEi / ARB)",
+    "oneLiner": "CONTRAINDICATED 2nd and 3rd trimester (renal failure, oligohydramnios, fetal hypotension, skull hypoplasia, death). Avoid in 1st trimester if possible. Switch preconception to labetalol or methyldopa.",
+    "pregnancyCompatibility": "contraindicated",
+    "lactationCompatibility": "acceptable",
+    "legacyFdaCategory": "D",
+    "domains": ["cardiology", "obstetrics", "nephrology"],
+    "pregnancy": {
+      "riskSummary": "CONTRAINDICATED in 2nd and 3rd trimesters — fetal renal hypoperfusion and dysplasia, oligohydramnios → pulmonary hypoplasia + limb contractures, fetal hypotension, hypocalvaria (skull hypoplasia), neonatal renal failure and death. 1st trimester exposure may also increase major malformation rate — best to switch BEFORE conception in any woman of childbearing potential on an ACEi / ARB.",
+      "clinicalConsiderations": "Switch preconception (or at first positive pregnancy test) to labetalol, nifedipine MR, or methyldopa for BP control. Sacubitril-valsartan (Entresto) carries the same warning. Mineralocorticoid receptor antagonists (spironolactone, eplerenone) also avoided.",
+      "data": "ACOG Practice Bulletin 203 (chronic hypertension in pregnancy)."
+    },
+    "lactation": {
+      "riskSummary": "Captopril, enalapril, quinapril have published lactation data and are considered ACCEPTABLE with breastfeeding (very low milk transfer). Other ACEi / ARB have less data — prefer captopril or enalapril postpartum if ACEi indicated.",
+      "clinicalConsiderations": "Monitor infant for hypotension, decreased urine output (in premature or low-birth-weight infants particularly).",
+      "data": "RID < 0.1% for captopril, enalapril.",
+      "alternatives": ["captopril or enalapril (preferred ACEi in lactation if needed)", "labetalol", "metoprolol"]
+    },
+    "reproductive": {
+      "pregnancyTesting": "Consider before initiating in patients of childbearing potential.",
+      "contraception": "Effective contraception while on ACEi / ARB if pregnancy is not desired."
+    },
+    "references": [
+      { "label": "ACOG Practice Bulletin 203 — Chronic Hypertension in Pregnancy." },
+      { "label": "LactMed: Captopril, Enalapril, Lisinopril." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "methyldopa-pllr",
+    "drugSlug": "methyldopa",
+    "drug": "Methyldopa",
+    "oneLiner": "PREFERRED first-line agent for chronic hypertension and pre-eclampsia in pregnancy — longest safety record. Compatible with breastfeeding.",
+    "pregnancyCompatibility": "preferred",
+    "lactationCompatibility": "preferred",
+    "legacyFdaCategory": "B",
+    "domains": ["cardiology", "obstetrics"],
+    "pregnancy": {
+      "riskSummary": "First-line treatment for chronic hypertension and pre-eclampsia in pregnancy. Decades of safety data showing no adverse fetal effects on growth or neurodevelopment.",
+      "clinicalConsiderations": "Starting dose 250 mg BD-TDS, titrating to 500 mg-1 g BD-TDS (max 3 g/day). Slow onset (1-3 days); not for acute crisis. Maternal side-effects (sedation, postural dizziness, depression, hepatitis) may limit acceptability — labetalol increasingly preferred for tolerability while sharing strong safety profile.",
+      "data": "1976 follow-up study (Cockburn et al.) of children exposed in utero showed normal development at 7.5 years."
+    },
+    "lactation": {
+      "riskSummary": "Compatible. Low milk transfer; no adverse infant effects reported.",
+      "clinicalConsiderations": "Methyldopa can worsen postpartum depression — consider switching to alternative (labetalol, nifedipine) postpartum if depressive symptoms emerge.",
+      "data": "RID < 1%.",
+      "alternatives": ["labetalol (often preferred postpartum due to depression risk with methyldopa)"]
+    },
+    "references": [
+      { "label": "NICE Hypertension in Pregnancy guideline NG133." },
+      { "label": "LactMed: Methyldopa." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "labetalol-pllr",
+    "drugSlug": "labetalol",
+    "drug": "Labetalol",
+    "oneLiner": "Preferred for hypertension in pregnancy (chronic, pre-eclampsia, acute severe). Compatible with breastfeeding. Monitor neonate for hypoglycaemia and bradycardia.",
+    "pregnancyCompatibility": "preferred",
+    "lactationCompatibility": "preferred",
+    "legacyFdaCategory": "C",
+    "domains": ["cardiology", "obstetrics"],
+    "pregnancy": {
+      "riskSummary": "First-line oral and IV agent for hypertension in pregnancy and pre-eclampsia. Combined α- and non-selective β-blockade; preferred over atenolol (which is associated with fetal growth restriction). Crosses placenta.",
+      "clinicalConsiderations": "Oral: 100 mg BD-TDS, titrate to 800 mg TDS (max 2.4 g/day). IV (acute severe hypertension): 20 mg slow IV bolus, doubled every 10 min to max single 80 mg / cumulative 300 mg, or infusion 20-160 mg/h titrated to BP. AVOID in maternal severe asthma, heart block, severely decompensated heart failure. Monitor neonate for hypoglycaemia and bradycardia for 24-48 h post-delivery (placental transfer effect).",
+      "data": "NICE NG133, ACOG Practice Bulletin 222 (Gestational Hypertension and Preeclampsia)."
+    },
+    "lactation": {
+      "riskSummary": "Compatible. Low milk transfer; well-tolerated by breastfed infants.",
+      "clinicalConsiderations": "Generally preferred over atenolol (higher milk concentrations and reported infant bradycardia / hypoglycaemia).",
+      "data": "RID 0.2-0.6%.",
+      "alternatives": ["metoprolol", "propranolol"]
+    },
+    "references": [
+      { "label": "NICE NG133 — Hypertension in Pregnancy." },
+      { "label": "ACOG Practice Bulletin 222 — Gestational Hypertension and Preeclampsia." },
+      { "label": "LactMed: Labetalol." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "valproate-pllr",
+    "drugSlug": "valproate",
+    "drug": "Valproate (sodium valproate, divalproex)",
+    "oneLiner": "HIGHLY TERATOGENIC. Must NOT be used in any woman of childbearing potential unless there is no alternative AND a Pregnancy Prevention Programme is in place. Neural tube defects (10×), major malformations (10%), neurodevelopmental disorders (30-40%).",
+    "pregnancyCompatibility": "contraindicated",
+    "lactationCompatibility": "acceptable",
+    "legacyFdaCategory": "X",
+    "domains": ["neurology", "psychiatry", "obstetrics", "patient-safety"],
+    "pregnancy": {
+      "riskSummary": "TERATOGEN — among the most dangerous prescription medicines in pregnancy. (1) Neural tube defects 10× background (~ 1-2% absolute risk). (2) Major congenital malformations ~ 10% (vs ~ 2-3% baseline) — orofacial cleft, hypospadias, cardiac, limb. (3) Neurodevelopmental disorders in 30-40% of exposed children — autism, lower IQ (mean reduction ~ 9 points). Risk is DOSE-DEPENDENT and additive with polytherapy. Switch BEFORE conception. MHRA Valproate Pregnancy Prevention Programme is mandatory in the UK/EU for any prescription to a woman of childbearing potential.",
+      "clinicalConsiderations": "For epilepsy: lamotrigine, levetiracetam, oxcarbazepine are safer first-line options. For bipolar disorder: lithium (own teratogenic profile but lower), lamotrigine, atypical antipsychotics are alternatives. For migraine: propranolol, amitriptyline. ANY woman of childbearing potential on valproate needs: documented annual specialist review, signed Risk Acknowledgement Form, dual contraception (where indicated), pre-pregnancy counselling, folic acid 5 mg/day if pregnancy possible.",
+      "data": "MHRA Drug Safety Update Jan 2015, Apr 2018 — multiple regulatory actions globally."
+    },
+    "lactation": {
+      "riskSummary": "Compatible with breastfeeding despite the pregnancy contraindication. Milk transfer is low; serum levels in breastfed infants generally undetectable or very low.",
+      "clinicalConsiderations": "Monitor infant for sedation, poor feeding, jaundice, hepatotoxicity (rare). Avoid in infants with hepatic dysfunction.",
+      "data": "RID 1-7%.",
+      "alternatives": []
+    },
+    "reproductive": {
+      "pregnancyTesting": "Mandatory annual pregnancy test (urine or serum); test before each prescription if any concern.",
+      "contraception": "TWO complementary forms (e.g. IUD + condom) per MHRA Pregnancy Prevention Programme. Combined oral contraceptive interacts with some hepatic enzyme-inducing AEDs (not valproate per se but with co-administered AEDs).",
+      "infertility": "Polycystic ovary syndrome features (oligomenorrhoea, hyperandrogenism, weight gain, insulin resistance) are recognised valproate adverse effects."
+    },
+    "references": [
+      { "label": "MHRA Drug Safety Update: Valproate Pregnancy Prevention Programme. Apr 2018." },
+      { "label": "Bromley R et al. Treatment for epilepsy in pregnancy: neurodevelopmental outcomes in the child. Cochrane 2014." },
+      { "label": "LactMed: Valproic acid." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "lamotrigine-pllr",
+    "drugSlug": "lamotrigine",
+    "drug": "Lamotrigine",
+    "oneLiner": "Preferred AED in pregnancy — lowest teratogenicity of established AEDs. Compatible with breastfeeding (monitor infant for rash, sedation). Levels DROP in pregnancy; check monthly.",
+    "pregnancyCompatibility": "preferred",
+    "lactationCompatibility": "acceptable",
+    "legacyFdaCategory": "C",
+    "domains": ["neurology", "psychiatry", "obstetrics"],
+    "pregnancy": {
+      "riskSummary": "Lamotrigine has the LOWEST major congenital malformation rate of established AEDs (~ 2-3%, near background). Use throughout pregnancy if needed for epilepsy or bipolar disorder. Preconception folic acid 5 mg/day is recommended for any woman on an AED.",
+      "clinicalConsiderations": "Lamotrigine clearance INCREASES during pregnancy (estrogen-induced glucuronidation) — serum level can fall 50-70% by 3rd trimester, requiring dose increases of 50-100% to maintain seizure control. Monitor level monthly through pregnancy, weekly in 3rd trimester. After delivery, reduce dose back to preconception within 1-3 weeks (risk of toxicity / Stevens-Johnson otherwise). Continue folic acid 5 mg/day throughout pregnancy.",
+      "data": "UK Epilepsy and Pregnancy Register; EURAP registry — major congenital malformation rate 2.0-3.4% across cohorts."
+    },
+    "lactation": {
+      "riskSummary": "Compatible with breastfeeding. Watch infant for sedation, poor feeding, and rare rash (case reports of Stevens-Johnson in breastfed infants are extremely rare).",
+      "clinicalConsiderations": "Infant serum levels can reach 20-30% of maternal — higher transfer than most AEDs but generally well tolerated. Monitor infant clinically. Maternal serum level may rise rapidly postpartum due to lost pregnancy-induced clearance — reduce dose to preconception within 1-3 weeks.",
+      "data": "RID 9-18%.",
+      "alternatives": ["levetiracetam (lower milk transfer)"]
+    },
+    "references": [
+      { "label": "Pennell PB. Use of antiepileptic drugs during pregnancy. NEJM 2020." },
+      { "label": "LactMed: Lamotrigine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "sertraline-pllr",
+    "drugSlug": "sertraline",
+    "drug": "Sertraline (and other SSRIs)",
+    "oneLiner": "Sertraline is the SSRI of choice in pregnancy and lactation — most data, lowest milk transfer. Untreated maternal depression is itself harmful — do not discontinue without specialist input.",
+    "pregnancyCompatibility": "acceptable",
+    "lactationCompatibility": "preferred",
+    "legacyFdaCategory": "C",
+    "domains": ["psychiatry", "obstetrics"],
+    "pregnancy": {
+      "riskSummary": "Sertraline is the SSRI of CHOICE in pregnancy — extensive safety data; no convincing increase in major congenital malformations. Paroxetine has a small increase in cardiac defects (avoid if alternative possible). Untreated antenatal depression and anxiety are themselves associated with adverse outcomes (preterm birth, low birth weight, postnatal depression, infant behavioural disturbance) — the risk of NOT treating is real.",
+      "clinicalConsiderations": "Neonatal adaptation syndrome (jitteriness, irritability, transient respiratory distress, feeding difficulty) in 15-30% of infants exposed in late pregnancy — usually mild, self-limited within days. Persistent pulmonary hypertension of the newborn (PPHN) — absolute risk small (incidence 1-2 per 1000 exposed, vs 1 per 1000 background). Continue maternal medication through delivery; do not abruptly discontinue (relapse risk).",
+      "data": "ACOG / APA Joint Practice Guideline: Use of Psychiatric Medications during Pregnancy and Lactation. 2008 (updated)."
+    },
+    "lactation": {
+      "riskSummary": "Sertraline is the PREFERRED SSRI during breastfeeding — RID < 2%, infant serum levels usually undetectable. Maternal mental health continuity is essential for the infant.",
+      "clinicalConsiderations": "Fluoxetine has higher milk transfer and a long-half-life active metabolite — may accumulate in neonates and breastfed infants (sedation, feeding difficulty reports). If breastfeeding and starting an SSRI fresh, prefer sertraline.",
+      "data": "RID for sertraline 0.4-2.2%; fluoxetine 1.6-14.6% (highest of the SSRIs).",
+      "alternatives": ["paroxetine (also low milk transfer; avoid initiation in 1st trimester)", "citalopram", "escitalopram"]
+    },
+    "references": [
+      { "label": "ACOG Committee Opinion 757: Screening for Perinatal Depression." },
+      { "label": "LactMed: Sertraline." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ciprofloxacin-pllr",
+    "drugSlug": "ciprofloxacin",
+    "drug": "Ciprofloxacin (and other fluoroquinolones)",
+    "oneLiner": "AVOID in pregnancy when alternative available (historical cartilage / arthropathy concerns in animal models, not confirmed in human data). Acceptable in lactation in single doses.",
+    "pregnancyCompatibility": "caution",
+    "lactationCompatibility": "caution",
+    "legacyFdaCategory": "C",
+    "domains": ["antimicrobials", "obstetrics"],
+    "pregnancy": {
+      "riskSummary": "AVOID if alternative available, although the historical concern (cartilage arthropathy in juvenile animals) has NOT been confirmed in human follow-up studies of in-utero or paediatric exposure. Use is appropriate when no acceptable alternative exists (e.g. complicated UTI in penicillin-allergic patient, resistant organisms, post-exposure anthrax). Beta-lactams (amoxicillin, cefalexin, nitrofurantoin) and macrolides preferred for routine pregnancy infections.",
+      "clinicalConsiderations": "First-line pregnancy UTI: nitrofurantoin (1st-2nd trimester only; avoid near term — neonatal haemolysis if G6PD deficient), trimethoprim (avoid 1st trimester — folate antagonist), cefalexin, amoxicillin. Complicated / pyelonephritis: ceftriaxone IV.",
+      "data": "Multiple cohort studies have not shown increased malformations or musculoskeletal abnormalities with in-utero fluoroquinolone exposure."
+    },
+    "lactation": {
+      "riskSummary": "Compatible with single doses or short courses; not preferred for long-term use due to theoretical risk of altered infant gut flora and infant joint development concern (mostly theoretical).",
+      "clinicalConsiderations": "Time feed after dose, or use alternative (cefalexin, nitrofurantoin) for nursing mothers with UTI.",
+      "data": "RID 0.4-2.7%; infant serum levels generally undetectable.",
+      "alternatives": ["cefalexin", "nitrofurantoin (avoid if infant < 1 month or G6PD deficient)", "amoxicillin"]
+    },
+    "references": [
+      { "label": "Yefet E et al. The safety of quinolones in pregnancy. Obstet Gynecol Surv 2014." },
+      { "label": "LactMed: Ciprofloxacin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "nitrofurantoin-pllr",
+    "drugSlug": "nitrofurantoin",
+    "drug": "Nitrofurantoin",
+    "oneLiner": "Preferred for uncomplicated UTI in 1st and 2nd trimester. AVOID near term (≥ 38 weeks) and during labour — risk of neonatal haemolytic anaemia, particularly with G6PD deficiency. Avoid in lactation if infant < 1 month or G6PD deficient.",
+    "pregnancyCompatibility": "acceptable",
+    "lactationCompatibility": "caution",
+    "legacyFdaCategory": "B",
+    "domains": ["antimicrobials", "obstetrics", "neonatology"],
+    "pregnancy": {
+      "riskSummary": "First-line for uncomplicated lower UTI / asymptomatic bacteriuria from 14 weeks to 36 weeks. AVOID at term (≥ 38 weeks) and during labour — risk of neonatal haemolytic anaemia. Also AVOID in 1st trimester if alternative available (small signal for orofacial cleft and cardiac defects, conflicting data) — though acceptable when alternative not safe.",
+      "clinicalConsiderations": "Dose: nitrofurantoin MR 100 mg BD × 5 days for uncomplicated UTI. Confirm sensitivity. Not for pyelonephritis (does not achieve renal tissue concentrations). G6PD: known maternal G6PD deficiency is a contraindication.",
+      "trimesterNotes": [
+        { "trimester": "1", "note": "Acceptable when no alternative; theoretical orofacial cleft / cardiac defect signal weak." },
+        { "trimester": "2", "note": "Preferred." },
+        { "trimester": "3", "note": "Acceptable up to ~ 36 weeks; AVOID ≥ 38 weeks and during labour." }
+      ]
+    },
+    "lactation": {
+      "riskSummary": "Avoid if breastfed infant is < 1 month, premature, jaundiced, or G6PD deficient — risk of haemolytic anaemia. Otherwise short courses are acceptable.",
+      "clinicalConsiderations": "Check infant G6PD status if mother of relevant ethnicity. Monitor infant for jaundice / pallor.",
+      "data": "RID ~ 6%.",
+      "alternatives": ["cefalexin (preferred for breastfeeding UTI with young infants)"]
+    },
+    "references": [
+      { "label": "NICE NG109 — Urinary Tract Infection (Lower) in Pregnant Women." },
+      { "label": "LactMed: Nitrofurantoin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "methotrexate-pllr",
+    "drugSlug": "methotrexate",
+    "drug": "Methotrexate",
+    "oneLiner": "ABSOLUTELY CONTRAINDICATED in pregnancy — folate antagonist, abortifacient, teratogenic (methotrexate embryopathy). Mandatory pregnancy exclusion + dual contraception. Compatible-with-caution during lactation only as occasional low-dose rheumatology.",
+    "pregnancyCompatibility": "contraindicated",
+    "lactationCompatibility": "avoid",
+    "legacyFdaCategory": "X",
+    "domains": ["rheumatology", "oncology", "obstetrics", "patient-safety"],
+    "pregnancy": {
+      "riskSummary": "ABSOLUTELY CONTRAINDICATED. Folate antagonist → neural tube defects, craniofacial dysmorphism, limb abnormalities, fetal loss. Used clinically to TERMINATE ectopic pregnancy. Stop ≥ 3 months before conception (some guidance now allows 1 month based on EULAR 2016, but local practice may be more conservative). Mandatory pregnancy testing before initiation; dual contraception throughout.",
+      "clinicalConsiderations": "Inadvertent exposure: urgent specialist referral. Folinic acid (calcium folinate) rescue if exposure < 7 days. Discuss therapeutic termination vs continuation based on dose, timing, and parental wishes.",
+      "data": "Methotrexate embryopathy classic syndrome described from 1970s onwards."
+    },
+    "lactation": {
+      "riskSummary": "AVOID — concentrates in tissue and cells; cumulative infant exposure risk. Occasional low-dose oral rheumatology may be considered (RID < 3%, transient milk levels) but most authorities recommend not breastfeeding.",
+      "clinicalConsiderations": "If essential, time feeds 24 h after a single weekly dose. AVOID if infant has any haematological or hepatic concern.",
+      "data": "RID 0.4-3%.",
+      "alternatives": ["sulfasalazine (compatible)", "hydroxychloroquine (compatible)", "azathioprine (compatible)"]
+    },
+    "reproductive": {
+      "pregnancyTesting": "Mandatory monthly during treatment in patients of childbearing potential.",
+      "contraception": "Dual contraception throughout treatment AND for 3 months after stopping (women) / 3 months (men — sperm DNA effects).",
+      "infertility": "Reduces sperm count reversibly in men; advise stopping 3 months pre-conception."
+    },
+    "references": [
+      { "label": "EULAR points to consider for use of antirheumatic drugs before pregnancy, and during pregnancy and lactation. Ann Rheum Dis 2016." },
+      { "label": "LactMed: Methotrexate." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "metformin-pllr",
+    "drugSlug": "metformin",
+    "drug": "Metformin",
+    "oneLiner": "Compatible with pregnancy — used as first-line for type 2 diabetes and gestational diabetes (NICE / WHO). Compatible with breastfeeding. Crosses placenta but no congenital malformation signal.",
+    "pregnancyCompatibility": "preferred",
+    "lactationCompatibility": "preferred",
+    "legacyFdaCategory": "B",
+    "domains": ["endocrinology", "obstetrics"],
+    "pregnancy": {
+      "riskSummary": "Compatible with pregnancy. Used as first-line oral agent for type 2 diabetes and gestational diabetes (GDM) per NICE NG3 and WHO. Crosses placenta; no congenital malformation or growth signal in large meta-analyses. May modestly increase risk of small-for-gestational-age and modestly reduce risk of large-for-gestational-age in GDM.",
+      "clinicalConsiderations": "Insulin is often added when glycaemic targets not met on metformin alone. Pre-existing T2DM on metformin: continue through pregnancy, add insulin when needed. Polycystic ovary syndrome: metformin may be continued in pregnancy if benefit (e.g. reduced miscarriage in some studies — evidence mixed).",
+      "data": "MIG trial (NEJM 2008) and follow-up: no excess risk of adverse outcomes with metformin vs insulin in GDM."
+    },
+    "lactation": {
+      "riskSummary": "Compatible. Minimal milk transfer; no adverse infant effects.",
+      "clinicalConsiderations": "Monitor infant glucose if mother on combined insulin + metformin and infant has risk factors for hypoglycaemia.",
+      "data": "RID 0.3-0.7%; infant serum levels low/undetectable.",
+      "alternatives": []
+    },
+    "references": [
+      { "label": "NICE NG3 — Diabetes in Pregnancy." },
+      { "label": "Rowan JA et al. Metformin versus insulin for the treatment of gestational diabetes (MIG trial). NEJM 2008;358:2003-15." },
+      { "label": "LactMed: Metformin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  }
+]

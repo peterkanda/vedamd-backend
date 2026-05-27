@@ -46,6 +46,7 @@ function copyBundle(): string {
     'toxidromes.json',
     'anticoagulant-reversal.json',
     'iv-compatibility.json',
+    'pregnancy-lactation.json',
   ]) {
     copyFileSync(resolve(REAL_BUNDLE, f), resolve(dir, f));
   }

@@ -59,6 +59,7 @@ interface Bundle {
   toxidromes?: ExtendedRecord[];
   anticoagulantReversal?: ExtendedRecord[];
   ivCompatibility?: ExtendedRecord[];
+  pregnancyLactation?: ExtendedRecord[];
 }
 
 const KNOWN_STATUSES: readonly ReviewStatus[] = ['draft', 'review', 'approved', 'deprecated'];
@@ -122,6 +123,7 @@ export function validateBundle(bundle: Bundle): ValidationResult {
     ['toxidromes', bundle.toxidromes],
     ['anticoagulant-reversal', bundle.anticoagulantReversal],
     ['iv-compatibility', bundle.ivCompatibility],
+    ['pregnancy-lactation', bundle.pregnancyLactation],
   ];
   let extendedCount = 0;
   for (const [domain, set] of extendedSets) {

@@ -15,6 +15,7 @@ import type { Antidote } from '../antidotes/antidotes.types';
 import type { Toxidrome } from '../toxidromes/toxidromes.types';
 import type { AnticoagulantReversal } from '../anticoagulant-reversal/anticoagulant-reversal.types';
 import type { IvCompatibility } from '../iv-compatibility/iv-compatibility.types';
+import type { PregnancyLactationRecord } from '../pregnancy-lactation/pregnancy-lactation.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import { nonApprovedCount, validateBundle } from './bundle-validator';
 import type {
@@ -154,6 +155,8 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
       (parsed['anticoagulant-reversal.json'] as AnticoagulantReversal[] | undefined) ?? [],
     ivCompatibility:
       (parsed['iv-compatibility.json'] as IvCompatibility[] | undefined) ?? [],
+    pregnancyLactation:
+      (parsed['pregnancy-lactation.json'] as PregnancyLactationRecord[] | undefined) ?? [],
     terminology:
       (parsed['terminology.json'] as TerminologyBundle | undefined) ??
       ({ version: '0.0.0-absent', codeSystems: [], valueSets: [] } as TerminologyBundle),
@@ -232,6 +235,7 @@ export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBun
     toxidromes: [],
     anticoagulantReversal: [],
     ivCompatibility: [],
+    pregnancyLactation: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }
@@ -277,6 +281,7 @@ function failOrReturn(
     toxidromes: [],
     anticoagulantReversal: [],
     ivCompatibility: [],
+    pregnancyLactation: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }

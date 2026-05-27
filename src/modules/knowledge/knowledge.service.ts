@@ -157,6 +157,10 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.ivCompatibility;
   }
 
+  getPregnancyLactation() {
+    return this.bundle.pregnancyLactation;
+  }
+
   getTerminology() {
     return this.bundle.terminology;
   }
