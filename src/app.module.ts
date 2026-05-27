@@ -20,6 +20,7 @@ import { AllergyModule } from './modules/allergy/allergy.module';
 import { NotifiableModule } from './modules/notifiable/notifiable.module';
 import { ReferenceRangesModule } from './modules/reference-ranges/reference-ranges.module';
 import { AntidotesModule } from './modules/antidotes/antidotes.module';
+import { ToxidromesModule } from './modules/toxidromes/toxidromes.module';
 import { IntegrationsModule } from './modules/integrations/integrations.module';
 import { DoseProtocolsModule } from './modules/dose-protocols/dose-protocols.module';
 import { ClinicalToolsModule } from './modules/clinical-tools/clinical-tools.module';
@@ -60,6 +61,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     NotifiableModule,
     ReferenceRangesModule,
     AntidotesModule,
+    ToxidromesModule,
     IntegrationsModule,
     DoseProtocolsModule,
     ClinicalToolsModule,

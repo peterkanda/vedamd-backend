@@ -56,6 +56,7 @@ interface Bundle {
   notifiableDiseases?: ExtendedRecord[];
   referenceRanges?: ExtendedRecord[];
   antidotes?: ExtendedRecord[];
+  toxidromes?: ExtendedRecord[];
 }
 
 const KNOWN_STATUSES: readonly ReviewStatus[] = ['draft', 'review', 'approved', 'deprecated'];
@@ -116,6 +117,7 @@ export function validateBundle(bundle: Bundle): ValidationResult {
     ['notifiable-diseases', bundle.notifiableDiseases],
     ['reference-ranges', bundle.referenceRanges],
     ['antidotes', bundle.antidotes],
+    ['toxidromes', bundle.toxidromes],
   ];
   let extendedCount = 0;
   for (const [domain, set] of extendedSets) {
