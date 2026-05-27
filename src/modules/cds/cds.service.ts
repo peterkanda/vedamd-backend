@@ -36,6 +36,20 @@ export class CdsService {
         'Drug-drug interactions, dose checking, pediatric/renal/hepatic adjustments, AWaRe stewardship.',
     },
     {
+      id: 'vedamd-order-select',
+      hook: 'order-select',
+      title: 'VedaMD order-select safety',
+      description:
+        'Same safety checks as medication-prescribe (DDI, renal/hepatic dose adjustment, paediatric dosing, pregnancy safety, AWaRe stewardship) fired earlier in the order workflow — when the clinician picks orders but has not yet signed. Cards returned here let the EHR offer alternative drafts before the order is committed.',
+    },
+    {
+      id: 'vedamd-order-sign',
+      hook: 'order-sign',
+      title: 'VedaMD order-sign final safety gate',
+      description:
+        'Last-chance evaluation before the clinician commits the order. Re-runs the prescribing-safety rule set (DDI, dose checks, pregnancy / renal / hepatic safety, stewardship) so an interaction added late in the session is still caught. Critical-indicator cards here are intended to soft-block until acknowledged.',
+    },
+    {
       id: 'vedamd-patient-view',
       hook: 'patient-view',
       title: 'VedaMD patient overview alerts',
@@ -534,11 +548,30 @@ export class CdsService {
     let rulesFired = 0;
 
     if (known) {
+      // CDS Hooks 1.0: order-select and order-sign fire the same safety
+      // checks as medication-prescribe — same medical question (is this
+      // order safe?), different point in the EHR workflow. Re-using the
+      // existing 89 medication-prescribe rules avoids content duplication
+      // and keeps a single source of truth. The strategies (DDI, renal,
+      // hepatic, pregnancy, AWaRe stewardship) already read context fields
+      // that accept both medication-prescribe and order-select/order-sign
+      // payload shapes (see ddi.strategy.ts — accepts proposed / draft /
+      // current variants).
+      const hookMatches = (ruleHook: string | null | undefined): boolean => {
+        if (ruleHook === known.hook) return true;
+        if (
+          (known.hook === 'order-select' || known.hook === 'order-sign') &&
+          ruleHook === 'medication-prescribe'
+        ) {
+          return true;
+        }
+        return false;
+      };
       const applicableRules = this.knowledge
         .getCdsRules()
         .filter(
           (rule) =>
-            rule.hook === known.hook &&
+            hookMatches(rule.hook) &&
             (rule.services === undefined || rule.services.includes(known.id)),
         );
 
