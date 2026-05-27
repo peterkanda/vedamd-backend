@@ -43,8 +43,8 @@ describe('NotificationsService — channel CRUD', () => {
     expect(created.name).toBe('On-call SMS');
     expect(created.provider).toBe('twilio-sms');
     // Critical: the API summary must not carry credentials.
-    expect((created as Record<string, unknown>).credentials).toBeUndefined();
-    expect((created as Record<string, unknown>).encryptedCreds).toBeUndefined();
+    expect((created as unknown as Record<string, unknown>).credentials).toBeUndefined();
+    expect((created as unknown as Record<string, unknown>).encryptedCreds).toBeUndefined();
   });
 
   it('rejects invalid Twilio credential shape at create time', async () => {

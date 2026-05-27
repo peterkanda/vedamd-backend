@@ -16,7 +16,7 @@ describe('ReferenceRangesService', () => {
 
   it('loads the open reference-ranges catalogue from the signed bundle', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThan(25);
+    expect(list.length).toBeGreaterThanOrEqual(280);
     expect(list.map((r) => r.slug)).toContain('potassium');
   });
 
