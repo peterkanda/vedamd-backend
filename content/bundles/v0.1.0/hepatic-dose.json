@@ -1,0 +1,292 @@
+[
+  {
+    "slug": "paracetamol-hepatic",
+    "drugSlug": "paracetamol",
+    "drug": "Paracetamol (acetaminophen)",
+    "oneLiner": "MAX 2 g/day in cirrhosis (any Child-Pugh class) and active alcohol use — first-line analgesic in liver disease but dose-restricted. AVOID in acute liver failure.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["analgesia", "hepatology"],
+    "mechanism": "Hepatic metabolism via glucuronidation, sulfation, and small fraction via CYP2E1 to NAPQI (the toxic metabolite). In cirrhosis or chronic alcohol use, glutathione stores are depleted and CYP2E1 may be induced, increasing NAPQI accumulation. Standard 4 g/day adult dose risks hepatotoxicity in these settings.",
+    "guidance": [
+      { "class": "A", "adjustment": "Reduce to max 2-3 g/day; safer than NSAIDs (which carry GI bleed + renal risk in cirrhosis).", "notes": "Avoid combination paracetamol-opioid products that risk inadvertent overdose." },
+      { "class": "B", "adjustment": "Max 2 g/day; preferred analgesic over NSAIDs and opioids.", "notes": "Monitor LFTs at baseline and 1 week, then 3-monthly." },
+      { "class": "C", "adjustment": "Max 2 g/day with caution; consider 1-2 g/day only in severe disease.", "notes": "Discuss with hepatology." }
+    ],
+    "monitoring": "Baseline LFTs; repeat 1 week after starting then 3-monthly. Educate patient to avoid concurrent paracetamol-containing OTC products (cough/cold combinations).",
+    "acuteFailureGuidance": "AVOID — additional paracetamol load worsens injury. Use cautious opioid (fentanyl preferred — no active metabolites, hepatic clearance preserved) at reduced dose.",
+    "alternatives": ["topical NSAID for local pain", "non-paracetamol opioid with caution"],
+    "references": [
+      { "label": "Lewis JH, Stine JG. Review article: prescribing medications in patients with cirrhosis. Aliment Pharmacol Ther 2013." },
+      { "label": "Khalid SK et al. Use of analgesics in cirrhosis. Postgrad Med J 2019." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ibuprofen-hepatic",
+    "drugSlug": "ibuprofen",
+    "drug": "Ibuprofen and other NSAIDs",
+    "oneLiner": "AVOID in cirrhosis — precipitates AKI (hepatorenal syndrome), GI bleeding from varices, and worsens ascites. Risk increases through Child-Pugh classes.",
+    "worstClassDecision": "avoid",
+    "domains": ["analgesia", "hepatology"],
+    "mechanism": "Prostaglandin inhibition impairs renal autoregulation — cirrhotic patients depend on prostaglandin-mediated renal perfusion (already reduced by splanchnic vasodilation). NSAIDs precipitate functional renal failure (HRS). Also worsens sodium / water retention (ascites) and impairs platelet function in patients already coagulopathic.",
+    "guidance": [
+      { "class": "A", "adjustment": "Avoid where possible; short-course only with renal function monitoring.", "notes": "Topical NSAID is acceptable." },
+      { "class": "B", "adjustment": "AVOID.", "notes": "Use paracetamol ≤ 2 g/day instead." },
+      { "class": "C", "adjustment": "CONTRAINDICATED.", "notes": "High HRS / variceal bleed risk." }
+    ],
+    "monitoring": "If short-course needed in Class A: creatinine and electrolytes before, day 3, and at end of course.",
+    "alternatives": ["paracetamol ≤ 2 g/day", "topical NSAID", "tramadol with caution (50% dose; risk of encephalopathy)"],
+    "references": [
+      { "label": "Lewis JH, Stine JG. Aliment Pharmacol Ther 2013." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "morphine-hepatic",
+    "drugSlug": "morphine",
+    "drug": "Morphine (and other glucuronidated opioids)",
+    "oneLiner": "Reduce dose and extend interval in moderate-severe cirrhosis — clearance falls 50-75%. Risk of accumulation → respiratory depression, hepatic encephalopathy. Fentanyl preferred for parenteral use.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["analgesia", "anaesthesia", "hepatology", "palliative"],
+    "mechanism": "Morphine undergoes hepatic glucuronidation to active morphine-6-glucuronide (M6G, analgesic) and inactive morphine-3-glucuronide (M3G, neurotoxic). In cirrhosis, glucuronidation is relatively preserved but biliary excretion fails — both metabolites accumulate. Renal impairment (common in cirrhosis) compounds accumulation.",
+    "guidance": [
+      { "class": "A", "adjustment": "Start at 50-75% standard dose; titrate cautiously.", "notes": "Standard intervals usually acceptable." },
+      { "class": "B", "adjustment": "Start at 25-50% standard dose AND extend interval (e.g. q6-8h instead of q4h).", "notes": "Monitor sedation, respiratory rate, and signs of encephalopathy." },
+      { "class": "C", "adjustment": "Start at 25% standard dose with extended interval; consider fentanyl PCA / patch instead (no active metabolites, hepatic clearance preserved).", "notes": "High encephalopathy / aspiration risk." }
+    ],
+    "monitoring": "Sedation score, respiratory rate, GCS, signs of hepatic encephalopathy (asterixis, confusion). Naloxone immediately available.",
+    "acuteFailureGuidance": "Fentanyl is the parenteral opioid of choice (no active metabolites; clearance largely unaffected by liver failure). Avoid morphine, oxycodone, hydromorphone.",
+    "alternatives": ["fentanyl (preferred parenteral)", "buprenorphine SL (compatible)", "paracetamol ≤ 2 g/day for mild pain"],
+    "references": [
+      { "label": "Tegeder I et al. Pharmacokinetics of opioids in liver disease. Clin Pharmacokinet 1999." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "benzodiazepines-hepatic",
+    "drugSlug": "diazepam",
+    "drug": "Benzodiazepines (diazepam, midazolam, alprazolam, clonazepam vs lorazepam, oxazepam, temazepam)",
+    "oneLiner": "AVOID long-half-life benzos in cirrhosis (precipitate encephalopathy). If essential: LORAZEPAM, OXAZEPAM or TEMAZEPAM (glucuronidated — clearance preserved). Reduce dose by 50%.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["psychiatry", "anaesthesia", "hepatology", "addiction-medicine"],
+    "mechanism": "Diazepam, midazolam, alprazolam, clonazepam undergo hepatic CYP3A oxidation — clearance markedly reduced in cirrhosis with prolonged sedation and risk of hepatic encephalopathy. Lorazepam, oxazepam, temazepam are conjugated by glucuronidation only — pathway largely preserved in liver disease.",
+    "guidance": [
+      { "class": "A", "adjustment": "Use cautiously; prefer glucuronidated agents (lorazepam, oxazepam, temazepam); halve dose of CYP3A-metabolised benzos.", "notes": "Avoid alcohol-withdrawal benzo regimens with long-acting agents — switch to lorazepam-CIWA-Ar." },
+      { "class": "B", "adjustment": "Lorazepam / oxazepam / temazepam at 50% dose. AVOID diazepam, midazolam, alprazolam, clonazepam.", "notes": "Risk of precipitating encephalopathy." },
+      { "class": "C", "adjustment": "AVOID all benzodiazepines unless essential. If essential: lorazepam 0.5 mg single doses with neurological monitoring.", "notes": "Refractory agitation in hepatic encephalopathy is often treated by addressing the precipitant (lactulose, rifaximin), not sedation." }
+    ],
+    "monitoring": "Sedation score, GCS, asterixis, signs of encephalopathy. Avoid in patients with prior encephalopathy.",
+    "alternatives": ["lorazepam, oxazepam, temazepam (glucuronidated; cirrhosis-friendly)", "dexmedetomidine for ICU sedation"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al. Drug dosage recommendations in patients with chronic liver disease. Rev Esp Enferm Dig 2012." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "statins-hepatic",
+    "drugSlug": "atorvastatin",
+    "drug": "Statins (atorvastatin, simvastatin, rosuvastatin, pravastatin, etc.)",
+    "oneLiner": "Compensated cirrhosis (Child-Pugh A): statins ACCEPTABLE and may improve outcomes. Decompensated (Class B/C) or active hepatocellular disease: AVOID. Discontinue if ALT > 3× ULN.",
+    "worstClassDecision": "avoid",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "Mostly hepatic metabolism (CYP3A4 for simvastatin, atorvastatin; CYP2C9 for fluvastatin; minimal CYP for pravastatin and rosuvastatin). Hepatotoxicity is rare but recognised. Cirrhosis impairs first-pass metabolism — exposures rise.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard or reduced starting dose; observational data suggest statins improve hepatic outcomes in compensated cirrhosis.", "notes": "Pravastatin or rosuvastatin (less CYP-dependent) preferred." },
+      { "class": "B", "adjustment": "Use with caution and at reduced dose; benefit-risk highly individualised. Decompensation is a relative contraindication.", "notes": "Avoid statins in active hepatocellular injury / decompensation." },
+      { "class": "C", "adjustment": "AVOID.", "notes": "Discontinue if started prior to decompensation." }
+    ],
+    "monitoring": "Baseline LFTs; recheck 4-12 weeks; then 6-monthly. Discontinue if ALT > 3× ULN persistently.",
+    "alternatives": ["dietary intervention + risk factor modification first-line in decompensated disease", "ezetimibe (minimal hepatic metabolism)"],
+    "references": [
+      { "label": "Bays H et al. An assessment by the Statin Liver Safety Task Force. J Clin Lipidol 2014." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "doacs-hepatic",
+    "drugSlug": "apixaban",
+    "drug": "Direct oral anticoagulants (apixaban, rivaroxaban, dabigatran, edoxaban)",
+    "oneLiner": "Child-Pugh C: CONTRAINDICATED for ALL DOACs. Class B: avoid rivaroxaban (specifically contraindicated); use apixaban with caution. Cirrhosis raises bleeding risk independent of anticoagulant.",
+    "worstClassDecision": "contraindicated",
+    "domains": ["haematology", "cardiology", "hepatology"],
+    "mechanism": "Apixaban and rivaroxaban undergo CYP3A4 metabolism — exposure rises in advanced cirrhosis. Dabigatran is renally cleared but cirrhosis often comes with reduced renal function. All DOACs are associated with worsened bleeding in cirrhosis (varices, coagulopathy, thrombocytopenia, vitamin K deficiency).",
+    "guidance": [
+      { "class": "A", "adjustment": "All DOACs may be used at standard doses. Bleeding risk slightly higher than non-cirrhotic but acceptable.", "notes": "Variceal screening / management before starting." },
+      { "class": "B", "adjustment": "RIVAROXABAN CONTRAINDICATED (specific labelling). Apixaban with caution at standard dose; some guidance favours apixaban in this group. Dabigatran avoided due to coexisting renal impairment. Edoxaban not recommended.", "notes": "LMWH or warfarin (with careful INR control) often preferred." },
+      { "class": "C", "adjustment": "ALL DOACs CONTRAINDICATED.", "notes": "Use LMWH; warfarin difficult due to baseline INR derangement." }
+    ],
+    "monitoring": "Hb, platelets, coagulation, LFTs, renal function. Variceal surveillance every 1-2 years (per BSG/AASLD). Clinical bleeding endpoints.",
+    "alternatives": ["LMWH (preferred in Child-Pugh B-C)", "warfarin (challenging INR control)", "no anticoagulation if bleeding risk outweighs thrombotic risk"],
+    "references": [
+      { "label": "Northup PG et al. Vascular liver disorders, portal vein thrombosis, and anticoagulation in cirrhosis. AASLD 2020." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "metformin-hepatic",
+    "drugSlug": "metformin",
+    "drug": "Metformin",
+    "oneLiner": "Compensated cirrhosis: ACCEPTABLE — observational benefit. Decompensated (Class B/C): AVOID due to lactic acidosis risk, particularly with concomitant renal impairment.",
+    "worstClassDecision": "avoid",
+    "domains": ["endocrinology", "hepatology"],
+    "mechanism": "Renal excretion (not hepatic metabolism). Cirrhosis itself raises lactate clearance burden (impaired hepatic gluconeogenesis from lactate). Combined with cirrhosis-associated renal impairment (HRS, NSAID exposure), lactic acidosis risk rises.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing acceptable; consider continuing — observational data suggest reduced HCC risk and improved survival in compensated cirrhosis.", "notes": "Monitor renal function and lactate if any concern." },
+      { "class": "B", "adjustment": "Caution — reduce dose and consider alternatives if HCC or renal impairment present.", "notes": "Lactate measurement if any clinical concern (tachycardia, hypotension, vomiting, drowsiness)." },
+      { "class": "C", "adjustment": "AVOID.", "notes": "Particularly with acute decompensation, HRS, sepsis, or hypoperfusion." }
+    ],
+    "monitoring": "eGFR, lactate (if symptomatic), HbA1c.",
+    "acuteFailureGuidance": "Withhold during any acute illness (sepsis, AKI, contrast exposure, dehydration) regardless of baseline liver status.",
+    "alternatives": ["insulin (preferred in advanced liver disease)", "DPP-4 inhibitors with caution"],
+    "references": [
+      { "label": "Vilar-Gomez E et al. Long-term metformin use may improve clinical outcomes in diabetic patients with compensated NASH-related cirrhosis. Hepatology 2017." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "rifampicin-hepatic",
+    "drugSlug": "rifampicin",
+    "drug": "Rifampicin",
+    "oneLiner": "Inherently hepatotoxic — use with caution in any pre-existing liver disease, avoid in Child-Pugh C unless TB justifies the risk. Monitor LFTs frequently; do NOT confuse asymptomatic ALT rise with hepatitis.",
+    "worstClassDecision": "avoid",
+    "domains": ["antimicrobials", "infectious-disease", "tuberculosis", "hepatology"],
+    "mechanism": "Hepatic metabolism by deacetylation and biliary excretion. Potent CYP3A4 inducer (alters many co-prescribed drug levels). Hepatotoxicity rate ~ 1-2% in TB therapy; baseline liver disease raises this several-fold.",
+    "guidance": [
+      { "class": "A", "adjustment": "Use with intensive baseline + weekly LFT monitoring for first 2 months. Hold at ALT > 5× ULN or ALT > 3× ULN with symptoms.", "notes": "Hepatology / TB-specialist input for any DILI." },
+      { "class": "B", "adjustment": "Reduce dose; monitor LFTs twice weekly first 2 months. Consider liver-sparing TB regimen (e.g. moxifloxacin + ethambutol + linezolid).", "notes": "MDR-TB regimens are an active area of practice change — discuss with TB specialist." },
+      { "class": "C", "adjustment": "AVOID where possible; use specialist-supervised liver-sparing regimens.", "notes": "Decompensation post-rifampicin in cirrhotic TB patients carries high mortality." }
+    ],
+    "monitoring": "Baseline LFTs; weekly first month, fortnightly to 8 weeks, monthly thereafter. Hepatitis B/C status at baseline (pre-treatment).",
+    "alternatives": ["moxifloxacin-based regimen", "linezolid", "ethambutol — under specialist guidance"],
+    "references": [
+      { "label": "Saukkonen JJ et al. ATS / IDSA / CDC official statement: hepatotoxicity of antituberculosis therapy. Am J Respir Crit Care Med 2006." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "spironolactone-hepatic",
+    "drugSlug": "spironolactone",
+    "drug": "Spironolactone",
+    "oneLiner": "FIRST-LINE diuretic in cirrhotic ascites (counters hyperaldosteronism). Standard adult dose 100-400 mg/day with furosemide 40-160 mg/day (5:2 ratio). Monitor K⁺, renal function, sodium.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "Aldosterone receptor antagonist. Hepatic metabolism to active canrenone. Cirrhotic ascites is driven by secondary hyperaldosteronism; spironolactone directly addresses the mechanism. Dose-limited by hyperkalaemia and renal function.",
+    "guidance": [
+      { "class": "A", "adjustment": "Start 100 mg/day; titrate to 400 mg/day if needed. Often combined with furosemide 40-160 mg/day (Mascalchi 5:2 ratio).", "notes": "Monitor K⁺ and renal function weekly during titration." },
+      { "class": "B", "adjustment": "Same as Class A — first-line for ascites.", "notes": "Anticipate need for combination diuretics; watch for HRS." },
+      { "class": "C", "adjustment": "Continue at lower dose; HRS / renal failure risk is high — hold if creatinine rising or K⁺ > 5.5.", "notes": "Refractory ascites: large-volume paracentesis with albumin replacement; TIPS; transplant assessment." }
+    ],
+    "monitoring": "K⁺, Na⁺, creatinine, urea — weekly during titration, then 2-4 weekly. Hold if K⁺ > 5.5 mmol/L. Monitor weight loss target ~ 0.5 kg/day (no peripheral oedema) or 1 kg/day (with oedema).",
+    "alternatives": ["eplerenone (selective; less gynaecomastia)", "amiloride (alternative K-sparing — weaker)", "furosemide alone (less effective in cirrhotic ascites; risk of intravascular depletion)"],
+    "references": [
+      { "label": "EASL Clinical Practice Guidelines on the management of patients with decompensated cirrhosis. J Hepatol 2018." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "propranolol-hepatic",
+    "drugSlug": "propranolol",
+    "drug": "Propranolol (and carvedilol) — non-selective beta-blockers for varices",
+    "oneLiner": "First-line for primary and secondary prevention of variceal bleeding in cirrhosis. Use lowest effective dose; titrate to HR 55-60 bpm. CONSIDER STOPPING in decompensated Class C with refractory ascites / HRS / hypotension.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "Non-selective β-blockade + α₂ unopposed splanchnic vasoconstriction reduces portal pressure. Hepatic clearance is reduced in cirrhosis — start low.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing for variceal prophylaxis: propranolol 20-40 mg BD titrated to HR 55-60 (max 320 mg/day); or carvedilol 6.25-12.5 mg/day.", "notes": "Endoscopic surveillance per BSG/AASLD." },
+      { "class": "B", "adjustment": "Same as Class A; standard for primary / secondary variceal prophylaxis.", "notes": "Consider carvedilol — additional alpha-blockade." },
+      { "class": "C", "adjustment": "Use with caution — STOP if refractory ascites + SBP < 90 mmHg, HRS, or SBP develops. Hold during decompensation; consider band ligation alone.", "notes": "'Window hypothesis': beta-blockers may worsen outcome in very decompensated cirrhosis with refractory ascites." }
+    ],
+    "monitoring": "BP, HR, renal function. Look for HRS / hypoperfusion signals.",
+    "alternatives": ["endoscopic variceal band ligation alone (in patients unsuited to beta-blockade)", "TIPS for refractory bleeding"],
+    "references": [
+      { "label": "Garcia-Tsao G et al. AASLD Practice Guidance: Portal Hypertensive Bleeding in Cirrhosis. Hepatology 2017." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "phenytoin-hepatic",
+    "drugSlug": "phenytoin",
+    "drug": "Phenytoin",
+    "oneLiner": "Highly hepatically metabolised (CYP2C9/CYP2C19) with saturable kinetics — small dose changes cause large level changes. Reduce dose 30-50% in Class B/C, monitor FREE phenytoin (albumin-bound; bound fraction falls in cirrhosis).",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["neurology", "hepatology"],
+    "mechanism": "CYP2C9 + CYP2C19 hepatic metabolism; non-linear (Michaelis-Menten) kinetics — small dose increments give large concentration increments near saturation. Albumin-bound (90%); in cirrhosis / hypoalbuminaemia, the free (active) fraction rises and total levels MISREPRESENT toxicity.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing with TDM; check free phenytoin if available, otherwise interpret total level with albumin correction.", "notes": "Sheiner-Tozer correction: corrected = measured / (0.2 × albumin g/dL + 0.1). Free phenytoin target 1-2 µg/mL." },
+      { "class": "B", "adjustment": "Reduce loading dose to 75% and maintenance to 50-75%; use FREE phenytoin levels for monitoring.", "notes": "Increased risk of cerebellar / cognitive toxicity at lower total levels." },
+      { "class": "C", "adjustment": "Reduce dose 30-50% and consider alternative AED (levetiracetam — renal clearance, no hepatic metabolism, no protein binding issues).", "notes": "High risk of toxicity at standard dosing." }
+    ],
+    "monitoring": "Free phenytoin level (preferred over total in cirrhosis); LFTs; signs of nystagmus, ataxia, drowsiness, hyperammonaemia.",
+    "alternatives": ["levetiracetam (preferred — renal clearance, no protein binding, no CYP interactions)", "lamotrigine (slower titration; rash)"],
+    "references": [
+      { "label": "Lewis JH, Stine JG. Aliment Pharmacol Ther 2013." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "tacrolimus-hepatic",
+    "drugSlug": "tacrolimus",
+    "drug": "Tacrolimus",
+    "oneLiner": "Hepatic CYP3A metabolism — exposure rises sharply in liver dysfunction. Reduce dose 25-50% in Class B; consider 50-75% reduction with intensive TDM in Class C. Common scenario: post-liver-transplant patient with allograft dysfunction.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["transplantation", "immunosuppression", "hepatology"],
+    "mechanism": "CYP3A4 / CYP3A5 hepatic metabolism, biliary excretion. Narrow therapeutic window (trough 5-15 ng/mL post-transplant; varies by indication and time). In liver dysfunction, clearance falls and exposure rises, increasing nephrotoxicity, neurotoxicity, hyperglycaemia, hyperkalaemia.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing with TDM; consider 25% reduction if persistent above-target troughs.", "notes": "CYP3A5 expresser status affects target dose (see PGx record)." },
+      { "class": "B", "adjustment": "Reduce dose 25-50% and check trough at 3 days; titrate to target.", "notes": "Tighter monitoring of nephrotoxicity, neurotoxicity (tremor, headache, encephalopathy)." },
+      { "class": "C", "adjustment": "Reduce dose 50-75% with daily TDM during titration. Consider cyclosporine switch in select cases.", "notes": "Allograft dysfunction post-transplant requires transplant-hepatology input." }
+    ],
+    "monitoring": "Trough levels (whole blood); creatinine; potassium; magnesium; glucose; neurological status. Drug interactions (CYP3A inhibitors / inducers — azoles, macrolides, rifampicin, anticonvulsants).",
+    "alternatives": ["cyclosporine (also CYP3A but different toxicity profile)", "everolimus / sirolimus with caution"],
+    "references": [
+      { "label": "Birdwell KA et al. CPIC Guideline for CYP3A5 Genotype and Tacrolimus Dosing (2015)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tramadol-hepatic",
+    "drugSlug": "tramadol",
+    "drug": "Tramadol",
+    "oneLiner": "AVOID in Child-Pugh B/C — accumulation precipitates seizures and encephalopathy. Class A: 50 mg q12h max; titrate cautiously. Tramadol also has serotonergic activity — caution with SSRIs.",
+    "worstClassDecision": "avoid",
+    "domains": ["analgesia", "hepatology"],
+    "mechanism": "CYP2D6 + CYP3A4 hepatic metabolism to active M1 metabolite. Cirrhosis dramatically prolongs half-life (~ 13 h vs 6 h normal). Lowered seizure threshold; serotonin syndrome risk with SSRIs / SNRIs.",
+    "guidance": [
+      { "class": "A", "adjustment": "Start 50 mg q12h; max 100 mg q12h. AVOID combination with paracetamol if total paracetamol exceeds 2 g/day.", "notes": "Monitor for sedation, confusion, seizure." },
+      { "class": "B", "adjustment": "AVOID. Use paracetamol ≤ 2 g/day or low-dose fentanyl instead.", "notes": "Encephalopathy and seizure risk." },
+      { "class": "C", "adjustment": "AVOID.", "notes": "Use fentanyl (preferred parenteral) or paracetamol < 2 g/day." }
+    ],
+    "monitoring": "Mental status, seizure activity, signs of serotonin toxicity (with SSRI/SNRI co-use).",
+    "alternatives": ["fentanyl (preferred parenteral)", "buprenorphine SL", "paracetamol ≤ 2 g/day"],
+    "references": [
+      { "label": "Lewis JH, Stine JG. Aliment Pharmacol Ther 2013." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  }
+]

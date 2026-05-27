@@ -43,6 +43,12 @@ function copyBundle(): string {
     'notifiable-diseases.json',
     'reference-ranges.json',
     'antidotes.json',
+    'toxidromes.json',
+    'anticoagulant-reversal.json',
+    'iv-compatibility.json',
+    'pregnancy-lactation.json',
+    'hepatic-dose.json',
+    'symptom-triage.json',
   ]) {
     copyFileSync(resolve(REAL_BUNDLE, f), resolve(dir, f));
   }

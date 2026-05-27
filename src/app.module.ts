@@ -20,6 +20,12 @@ import { AllergyModule } from './modules/allergy/allergy.module';
 import { NotifiableModule } from './modules/notifiable/notifiable.module';
 import { ReferenceRangesModule } from './modules/reference-ranges/reference-ranges.module';
 import { AntidotesModule } from './modules/antidotes/antidotes.module';
+import { ToxidromesModule } from './modules/toxidromes/toxidromes.module';
+import { AnticoagulantReversalModule } from './modules/anticoagulant-reversal/anticoagulant-reversal.module';
+import { IvCompatibilityModule } from './modules/iv-compatibility/iv-compatibility.module';
+import { PregnancyLactationModule } from './modules/pregnancy-lactation/pregnancy-lactation.module';
+import { HepaticDoseModule } from './modules/hepatic-dose/hepatic-dose.module';
+import { SymptomTriageModule } from './modules/symptom-triage/symptom-triage.module';
 import { IntegrationsModule } from './modules/integrations/integrations.module';
 import { DoseProtocolsModule } from './modules/dose-protocols/dose-protocols.module';
 import { ClinicalToolsModule } from './modules/clinical-tools/clinical-tools.module';
@@ -60,6 +66,12 @@ import { ReferenceModule } from './modules/reference/reference.module';
     NotifiableModule,
     ReferenceRangesModule,
     AntidotesModule,
+    ToxidromesModule,
+    AnticoagulantReversalModule,
+    IvCompatibilityModule,
+    PregnancyLactationModule,
+    HepaticDoseModule,
+    SymptomTriageModule,
     IntegrationsModule,
     DoseProtocolsModule,
     ClinicalToolsModule,

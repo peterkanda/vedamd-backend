@@ -1,0 +1,461 @@
+[
+  {
+    "slug": "anticholinergic-toxidrome",
+    "name": "Anticholinergic toxidrome",
+    "oneLiner": "Hot as a hare, blind as a bat, dry as a bone, red as a beet, mad as a hatter — and the bowel sounds are absent.",
+    "domains": ["toxicology", "emergency", "psychiatry"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia (often 110-160)",
+      "bloodPressure": "mildly elevated or normal",
+      "respiratoryRate": "normal or tachypnoea",
+      "temperature": "hyperthermia",
+      "pupils": "mydriasis (dilated, sluggish)",
+      "skin": "dry, flushed, warm",
+      "mentalStatus": "agitation, delirium, hallucinations (often visual, lilliputian)",
+      "bowelSounds": "hypoactive or absent (ileus, urinary retention)",
+      "other": ["myoclonic jerks", "picking behaviour", "seizures in severe cases"]
+    },
+    "causativeAgents": [
+      "antihistamines (diphenhydramine, chlorpheniramine, promethazine)",
+      "tricyclic antidepressants (amitriptyline, nortriptyline) — also Na-channel toxicity",
+      "antipsychotics (chlorpromazine, clozapine, olanzapine)",
+      "atropine, hyoscine (scopolamine), glycopyrrolate",
+      "oxybutynin, tolterodine (urinary antimuscarinics)",
+      "plants: Datura stramonium (jimsonweed), Atropa belladonna, Brugmansia"
+    ],
+    "differentialDiagnosis": [
+      "sympathomimetic toxidrome (skin is sweaty, bowel sounds present)",
+      "serotonin syndrome (clonus + hyperreflexia, history of serotonergic agent)",
+      "sepsis with delirium",
+      "alcohol withdrawal / DTs",
+      "heat stroke"
+    ],
+    "management": [
+      "ABC, IV access, continuous cardiac monitoring, 12-lead ECG (TCA → wide QRS).",
+      "Cooling: undress, evaporative + tepid sponging; target core temp < 38.5°C.",
+      "IV fluid resuscitation (isotonic crystalloid) for hyperthermia / rhabdomyolysis prevention.",
+      "Benzodiazepines (lorazepam 1-2 mg IV titrated) for agitation — avoid antipsychotics (worsen anticholinergic load and lower seizure threshold).",
+      "Foley catheter for urinary retention if present.",
+      "Physostigmine 1-2 mg IV slowly (over 5 min) ONLY for pure anticholinergic delirium without TCA features and without ECG changes — contraindicated if QRS > 100 ms or any conduction delay. Discuss with toxicology first.",
+      "Sodium bicarbonate 1-2 mEq/kg IV bolus if TCA overdose with wide QRS.",
+      "Activated charcoal 1 g/kg PO/NG if presented within 1 hour AND airway protected."
+    ],
+    "antidote": "Physostigmine 1-2 mg IV (adult) slowly — only in pure anticholinergic delirium with normal ECG; do not use if TCA suspected.",
+    "redFlags": [
+      "QRS > 100 ms (TCA poisoning) — give sodium bicarbonate, urgent ICU.",
+      "Seizures — benzodiazepines first-line.",
+      "Core temp > 40°C — aggressive active cooling.",
+      "Rhabdomyolysis (CK rising, dark urine) — IV fluids + monitor K+ / renal function."
+    ],
+    "references": [
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Anticholinergics" },
+      { "label": "UK National Poisons Information Service / TOXBASE — anticholinergic poisoning" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "cholinergic-toxidrome",
+    "name": "Cholinergic toxidrome (SLUDGE / DUMBELS)",
+    "oneLiner": "Wet everywhere (SLUDGE: salivation, lacrimation, urination, diarrhoea, GI cramps, emesis) with fasciculations and miosis — think organophosphate.",
+    "domains": ["toxicology", "emergency", "occupational-health"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "bradycardia (or tachycardia early)",
+      "bloodPressure": "variable; hypotension in severe poisoning",
+      "respiratoryRate": "tachypnoea with bronchorrhoea / wheeze",
+      "temperature": "normothermia or mild hyperthermia",
+      "pupils": "miosis (pinpoint), often bilateral",
+      "skin": "diaphoretic, profuse sweating",
+      "mentalStatus": "anxiety → confusion → coma in severe cases",
+      "bowelSounds": "hyperactive with cramps, vomiting, diarrhoea",
+      "other": ["muscle fasciculations", "weakness / paralysis", "seizures", "garlic / petroleum odour on patient or clothing"]
+    },
+    "causativeAgents": [
+      "organophosphate pesticides (malathion, chlorpyrifos, parathion, dichlorvos)",
+      "carbamate pesticides (carbaryl, methomyl, propoxur) — usually milder, self-limiting",
+      "nerve agents (sarin, VX, novichok)",
+      "medicinal cholinergics overdose (pyridostigmine, neostigmine, donepezil, rivastigmine)",
+      "muscarinic mushrooms (Inocybe spp., Clitocybe spp.)"
+    ],
+    "differentialDiagnosis": [
+      "opioid overdose (also miosis + respiratory depression, but skin is dry and no fasciculations)",
+      "sedative-hypnotic overdose",
+      "pontine stroke (miosis + coma but no SLUDGE)",
+      "clonidine / imidazoline overdose"
+    ],
+    "management": [
+      "PPE for staff — organophosphate is dermally absorbed; remove patient's clothing, wash skin with copious soap & water before extensive resuscitation.",
+      "ABC; high-flow O₂; suction copious secretions; early intubation if airway / ventilation compromised. AVOID succinylcholine (prolonged paralysis — pseudocholinesterase already inhibited).",
+      "Atropine 1-3 mg IV (adult) or 0.05 mg/kg (child) — DOUBLE the dose every 3-5 minutes until secretions dry and chest is clear; titrate to bronchorrhoea, NOT to pupil size or heart rate. May need very large cumulative doses (tens to hundreds of mg).",
+      "Pralidoxime (2-PAM) 30 mg/kg IV over 30 min (max 2 g), then 8-10 mg/kg/h infusion — give within 24-48 h of exposure, before ageing of the enzyme. Carbamate poisoning does not strictly require pralidoxime.",
+      "Benzodiazepines (diazepam 5-10 mg IV) for seizures and to reduce CNS toxicity.",
+      "Continuous cardiac monitoring; manage hypotension with IV fluids and noradrenaline if needed."
+    ],
+    "antidote": "Atropine (titrated to dry secretions — primary endpoint is clear chest, not heart rate) PLUS pralidoxime (2-PAM) for organophosphates.",
+    "redFlags": [
+      "Bronchorrhoea / bronchospasm — main cause of death; aggressive atropine.",
+      "Respiratory muscle weakness — anticipate intubation; AVOID suxamethonium.",
+      "Seizures or coma — benzodiazepines, ICU.",
+      "Type II (intermediate) syndrome 1-4 days post-exposure: proximal weakness, cranial nerve palsies → may need re-ventilation."
+    ],
+    "references": [
+      { "label": "WHO. The WHO recommended classification of pesticides by hazard." },
+      { "label": "Eddleston M et al. Management of acute organophosphorus pesticide poisoning. Lancet 2008;371:597-607." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "opioid-toxidrome",
+    "name": "Opioid toxidrome",
+    "oneLiner": "Triad: pinpoint pupils + respiratory depression + depressed mental status — reverse with naloxone, titrate to ventilation not consciousness.",
+    "domains": ["toxicology", "emergency", "addiction-medicine"],
+    "antidoteSlug": "opioid-naloxone",
+    "features": {
+      "heartRate": "bradycardia",
+      "bloodPressure": "hypotension",
+      "respiratoryRate": "bradypnoea (< 12) or apnoea — the lethal feature",
+      "temperature": "hypothermia",
+      "pupils": "miosis (pinpoint) — may be normal in meperidine, tramadol, propoxyphene, polypharmacy or anoxic injury",
+      "skin": "cool, dry, cyanotic if hypoxic",
+      "mentalStatus": "somnolence, stupor, coma",
+      "bowelSounds": "hypoactive (ileus, constipation)",
+      "other": ["track marks / patches / fentanyl analogue concerns", "ARDS / NCPE post-overdose", "QT prolongation with methadone"]
+    },
+    "causativeAgents": [
+      "heroin, fentanyl + analogues (carfentanil, nitazenes — extremely potent, may need repeat naloxone)",
+      "prescription opioids (morphine, oxycodone, hydromorphone, methadone, buprenorphine, tramadol)",
+      "loperamide (very high doses → QT prolongation + opioid features)",
+      "diphenoxylate-atropine (Lomotil — mixed opioid + anticholinergic features)"
+    ],
+    "differentialDiagnosis": [
+      "clonidine / imidazoline overdose (miosis + bradycardia, no rescue with naloxone)",
+      "organophosphate poisoning (also miosis, but wet and bradypnoeic with bronchorrhoea)",
+      "sedative-hypnotic overdose (normal-sized pupils)",
+      "pontine haemorrhage",
+      "hypoglycaemia"
+    ],
+    "management": [
+      "ABC — bag-mask ventilation with 100% O₂ first; this alone reverses most opioid deaths.",
+      "Naloxone 0.04-0.4 mg IV (adult, opioid-tolerant) or 0.4-2 mg IV/IM/intranasal in non-tolerant overdose. Titrate to adequate ventilation (RR ≥ 12, SpO₂ ≥ 92%), NOT to full alertness — over-reversal precipitates withdrawal, agitation, vomiting + aspiration.",
+      "Repeat naloxone every 2-3 min; if > 10 mg needed without response, reconsider diagnosis.",
+      "Naloxone infusion 2/3 of the effective bolus per hour for long-acting agents (methadone, sustained-release oxycodone, fentanyl patch, nitazenes).",
+      "IV fluids + supportive care; consider intubation if no response to naloxone or refractory hypoxia / NCPE.",
+      "Activated charcoal 1 g/kg PO/NG only if recent ingestion AND protected airway.",
+      "Refer to addiction services; consider buprenorphine induction if patient is willing and meets criteria. Distribute take-home naloxone."
+    ],
+    "antidote": "Naloxone — see opioid-naloxone record for full dosing protocol.",
+    "redFlags": [
+      "Pulmonary oedema / NCPE — supportive ventilation, PEEP.",
+      "QT prolongation (methadone) — continuous cardiac monitoring.",
+      "Body packer / stuffer — whole-bowel irrigation, surgical consult.",
+      "Polypharmacy (especially benzodiazepines / alcohol) — full naloxone reversal still leaves ventilatory depression; do not discharge prematurely.",
+      "Synthetic opioid (fentanyl analogue / nitazene) suspected — expect re-sedation, longer monitoring (≥ 6 h post last dose)."
+    ],
+    "references": [
+      { "label": "WHO. Community management of opioid overdose. 2014." },
+      { "label": "Boyer EW. Management of opioid analgesic overdose. NEJM 2012;367:146-55." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "sympathomimetic-toxidrome",
+    "name": "Sympathomimetic toxidrome",
+    "oneLiner": "Hyperadrenergic state: hypertension + tachycardia + hyperthermia + mydriasis + diaphoresis + agitation — skin is sweaty, bowel sounds present (distinguishes from anticholinergic).",
+    "domains": ["toxicology", "emergency", "psychiatry"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia (often > 130)",
+      "bloodPressure": "hypertension (may be severe; risk of intracranial bleed, aortic dissection)",
+      "respiratoryRate": "tachypnoea",
+      "temperature": "hyperthermia (may exceed 41°C — life-threatening)",
+      "pupils": "mydriasis (dilated, reactive)",
+      "skin": "diaphoretic — KEY differentiator from anticholinergic (dry)",
+      "mentalStatus": "agitation, paranoia, psychosis, hallucinations",
+      "bowelSounds": "normal / hyperactive — KEY differentiator from anticholinergic (absent)",
+      "other": ["seizures", "myocardial ischaemia / infarction", "rhabdomyolysis", "intracranial haemorrhage"]
+    },
+    "causativeAgents": [
+      "cocaine (also Na-channel blockade → wide QRS)",
+      "amphetamines, methamphetamine, MDMA, MDPV (bath salts), cathinones",
+      "phenylpropanolamine, pseudoephedrine, ephedrine, phentermine",
+      "synthetic cannabinoids (variable presentation)",
+      "thyroid storm (clinical mimic — not a poisoning)",
+      "khat (Catha edulis) — cathinone-containing"
+    ],
+    "differentialDiagnosis": [
+      "anticholinergic toxidrome (dry skin, absent bowel sounds)",
+      "serotonin syndrome (clonus, hyperreflexia, history of serotonergic agent)",
+      "neuroleptic malignant syndrome (rigidity, history of antipsychotic exposure, slower onset)",
+      "alcohol or benzodiazepine withdrawal",
+      "thyroid storm, phaeochromocytoma, hypoglycaemia"
+    ],
+    "management": [
+      "ABC, continuous cardiac monitoring, 12-lead ECG, IV access, large-bore access for fluids.",
+      "Aggressive benzodiazepines (lorazepam 2-4 mg IV q5min titrated; or diazepam 5-10 mg IV q5min) — FIRST LINE for agitation, hypertension, tachycardia, seizures, and to lower body temperature indirectly. Cumulative doses often large.",
+      "Active cooling: undress, evaporative cooling, cool IV fluids; target core temp < 38.5°C within 30 min. Consider neuromuscular blockade + intubation + cooling if temp > 41°C refractory to benzodiazepines.",
+      "IV fluid resuscitation (isotonic crystalloid) for rhabdomyolysis prevention and hyperthermia.",
+      "Hypertension: titrate benzodiazepines first. If persistent, use vasodilator (phentolamine 1-5 mg IV; nitroglycerin or nicardipine infusion). AVOID pure β-blockers (esmolol, propranolol) in cocaine — historic concern of unopposed α-agonism; if β-blockade is required use a combined α/β agent (labetalol) only after α-blockade established.",
+      "Cocaine + chest pain: aspirin, nitroglycerin, benzodiazepines; if STEMI, primary PCI is preferred over thrombolysis.",
+      "Sodium bicarbonate 1-2 mEq/kg IV for QRS widening (cocaine Na-channel blockade)."
+    ],
+    "antidote": "No specific antidote. Benzodiazepines are the cornerstone of management.",
+    "redFlags": [
+      "Core temp > 41°C — life-threatening; aggressive cooling + paralysis.",
+      "Wide QRS or ventricular arrhythmia (cocaine) — sodium bicarbonate.",
+      "Severe hypertension with end-organ damage — vasodilator, NOT pure β-blockade.",
+      "Chest pain — rule out MI / aortic dissection.",
+      "Seizures — benzodiazepines; if refractory, barbiturates or propofol.",
+      "Hyponatraemia (MDMA + free water) — careful sodium correction."
+    ],
+    "references": [
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Cocaine; Amphetamines." },
+      { "label": "Richards JR et al. Treatment of cocaine cardiovascular toxicity. Clin Toxicol 2016." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "sedative-hypnotic-toxidrome",
+    "name": "Sedative-hypnotic toxidrome",
+    "oneLiner": "CNS depression with relatively preserved vitals: somnolence + slurred speech + ataxia + nystagmus, normal pupils, normal-ish respirations (until severe).",
+    "domains": ["toxicology", "emergency", "psychiatry"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "normal or mild bradycardia",
+      "bloodPressure": "normal or mild hypotension",
+      "respiratoryRate": "normal early; bradypnoea in severe cases (especially with alcohol or opioid co-ingestion)",
+      "temperature": "hypothermia",
+      "pupils": "normal size, reactive",
+      "skin": "normal, may be cool",
+      "mentalStatus": "drowsy → stupor → coma in overdose; ataxia, slurred speech, disinhibition",
+      "bowelSounds": "normal",
+      "other": ["nystagmus", "diplopia", "co-ingestion with alcohol is the main lethality multiplier"]
+    },
+    "causativeAgents": [
+      "benzodiazepines (diazepam, alprazolam, lorazepam, clonazepam, midazolam)",
+      "Z-drugs (zolpidem, zopiclone, eszopiclone)",
+      "barbiturates (phenobarbital, thiopental) — narrower therapeutic index, higher mortality",
+      "gamma-hydroxybutyrate (GHB) and precursors (GBL, 1,4-BD)",
+      "ethanol (the most common co-ingestant)",
+      "first-generation antihistamines (also anticholinergic)",
+      "carisoprodol, meprobamate"
+    ],
+    "differentialDiagnosis": [
+      "opioid toxidrome (miosis + bradypnoea; reverses with naloxone)",
+      "hypoglycaemia (always check glucose)",
+      "post-ictal state",
+      "metabolic encephalopathy (hepatic, uraemic)",
+      "structural CNS lesion (focal signs)"
+    ],
+    "management": [
+      "ABC, supplemental O₂, IV access, glucose check (POC + lab), continuous cardiac + pulse-oximetry monitoring.",
+      "Supportive care is the mainstay — most patients do well with airway protection and observation.",
+      "Bag-mask ventilation / intubation for inadequate ventilation, hypoxia, or loss of airway reflexes.",
+      "IV fluids for hypotension; vasopressors rarely needed.",
+      "Flumazenil 0.2 mg IV (then 0.3-0.5 mg q1min, max 3 mg) for ISOLATED iatrogenic benzodiazepine over-sedation in a benzodiazepine-naive patient. AVOID in chronic benzodiazepine users, mixed overdose (especially with TCAs), known seizure disorder — risk of refractory seizures.",
+      "Active rewarming if hypothermic.",
+      "Consider haemodialysis for severe phenobarbital or carbamazepine overdose.",
+      "Activated charcoal 1 g/kg if presented < 1 h AND airway protected."
+    ],
+    "antidote": "Flumazenil — for isolated, iatrogenic benzodiazepine over-sedation only. Do NOT use empirically in mixed or chronic-user overdose.",
+    "redFlags": [
+      "Mixed overdose with opioids, alcohol, or TCAs — disproportionate respiratory failure.",
+      "Severe barbiturate poisoning — coma, hypothermia, hypotension → ICU + consider haemodialysis (phenobarbital).",
+      "GHB overdose — abrupt awakening 2-4 h later; do not assume malingering.",
+      "Aspiration pneumonia."
+    ],
+    "references": [
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Sedative-hypnotics." },
+      { "label": "Penninga EI et al. Adverse events associated with flumazenil treatment. BMC Pharmacol Toxicol 2016." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "serotonin-syndrome",
+    "name": "Serotonin syndrome",
+    "oneLiner": "Triad: mental status change + autonomic hyperactivity + neuromuscular hyperactivity (clonus, hyperreflexia — LOWER-LIMB DOMINANT). Hunter Criteria > Sternbach.",
+    "domains": ["toxicology", "emergency", "psychiatry", "neurology"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia",
+      "bloodPressure": "hypertension (or labile)",
+      "respiratoryRate": "tachypnoea",
+      "temperature": "hyperthermia (often > 38.5°C; may exceed 41°C)",
+      "pupils": "mydriasis",
+      "skin": "diaphoresis, flushed",
+      "mentalStatus": "agitation, restlessness, confusion → coma in severe cases",
+      "bowelSounds": "hyperactive, diarrhoea",
+      "other": ["clonus — spontaneous, inducible (ankle) or ocular — KEY finding", "hyperreflexia, lower limbs > upper limbs", "muscle rigidity (severe)", "shivering, tremor"]
+    },
+    "causativeAgents": [
+      "SSRIs / SNRIs (fluoxetine, sertraline, paroxetine, citalopram, escitalopram, venlafaxine, duloxetine)",
+      "MAOIs (phenelzine, tranylcypromine, selegiline, moclobemide) — high-risk combinations",
+      "tramadol, tapentadol, meperidine, fentanyl, methadone, pethidine",
+      "ondansetron, metoclopramide, dextromethorphan, linezolid (also MAOI activity)",
+      "St John's wort, MDMA, cocaine, amphetamines, LSD",
+      "lithium, triptans (combined with SSRIs)",
+      "methylene blue (MAOI activity) given to a patient on SSRI"
+    ],
+    "differentialDiagnosis": [
+      "neuroleptic malignant syndrome (slow onset over days, lead-pipe rigidity, normo- or hyporeflexia, history of antipsychotic exposure)",
+      "anticholinergic toxidrome (dry skin, normal reflexes)",
+      "sympathomimetic toxidrome (no clonus or hyperreflexia)",
+      "malignant hyperthermia (anaesthetic trigger; hypercarbia)",
+      "meningoencephalitis, thyroid storm, status epilepticus"
+    ],
+    "management": [
+      "Stop all serotonergic agents IMMEDIATELY — most cases resolve within 24 h once the offending agent is withdrawn.",
+      "ABC, continuous cardiac monitoring, IV access, IV fluids.",
+      "Aggressive cooling for hyperthermia: undress, evaporative cooling, IV crystalloid; target core temp < 38.5°C.",
+      "Benzodiazepines (lorazepam 1-2 mg IV q5min titrated; or diazepam) for agitation, tremor, clonus — first line. Cumulative doses often large.",
+      "Cyproheptadine PO/NG — 12 mg loading dose, then 2 mg q2h while symptoms persist, up to 8 mg q6h maintenance (max 32 mg/24 h). Limited evidence; reasonable in moderate-severe cases unresponsive to benzodiazepines. No IV form.",
+      "Severe / refractory hyperthermia (> 41°C) — intubation + non-depolarising neuromuscular blockade (rocuronium / vecuronium — AVOID succinylcholine, exacerbates hyperkalaemia from rhabdomyolysis) + active cooling + sedation.",
+      "Manage hypertension as for sympathomimetic; AVOID propranolol (long-acting, masks tachycardia which is a useful clinical marker).",
+      "Treat rhabdomyolysis (IV fluids), monitor renal function, K+, lactate, CK."
+    ],
+    "antidote": "Cyproheptadine PO/NG (5-HT2A antagonist) — adjunct to benzodiazepines + supportive care in moderate-severe cases.",
+    "redFlags": [
+      "Core temp > 41°C — life-threatening; intubation, paralysis, aggressive cooling.",
+      "Rigidity with rhabdomyolysis, AKI, DIC.",
+      "Seizures — benzodiazepines.",
+      "Recent linezolid or methylene blue exposure — high index of suspicion.",
+      "Mixed with MDMA — also risk hyponatraemia from free-water intake."
+    ],
+    "references": [
+      { "label": "Boyer EW, Shannon M. The serotonin syndrome. NEJM 2005;352:1112-20." },
+      { "label": "Dunkley EJC et al. The Hunter Serotonin Toxicity Criteria. QJM 2003;96:635-42." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "neuroleptic-malignant-syndrome",
+    "name": "Neuroleptic malignant syndrome (NMS)",
+    "oneLiner": "Tetrad over hours-to-days: lead-pipe rigidity + hyperthermia + autonomic instability + altered mental status, after dopamine antagonist exposure or dopaminergic withdrawal.",
+    "domains": ["toxicology", "emergency", "psychiatry", "neurology"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia",
+      "bloodPressure": "labile (hyper- and hypotension)",
+      "respiratoryRate": "tachypnoea",
+      "temperature": "hyperthermia (often > 38.5°C; may exceed 41°C)",
+      "pupils": "normal or sluggish",
+      "skin": "diaphoretic, pale",
+      "mentalStatus": "altered — agitation, mutism, catatonia, coma",
+      "bowelSounds": "normal or hypoactive",
+      "other": ["lead-pipe / generalised rigidity (NOT clonus)", "tremor, dystonia", "elevated CK (often > 1,000)", "leukocytosis", "elevated transaminases"]
+    },
+    "causativeAgents": [
+      "typical antipsychotics (haloperidol, fluphenazine, chlorpromazine) — highest risk",
+      "atypical antipsychotics (risperidone, olanzapine, quetiapine, aripiprazole, clozapine) — lower risk but possible",
+      "antiemetics with dopamine antagonism (metoclopramide, prochlorperazine, droperidol)",
+      "abrupt withdrawal of dopaminergic agents (levodopa, amantadine, pramipexole) in Parkinson's patients — 'parkinsonism-hyperpyrexia syndrome'",
+      "lithium, tetrabenazine"
+    ],
+    "differentialDiagnosis": [
+      "serotonin syndrome (rapid onset, clonus + hyperreflexia, lower-limb dominant)",
+      "malignant hyperthermia (anaesthetic trigger; hypercarbia; succinylcholine / volatile anaesthetic)",
+      "anticholinergic toxidrome",
+      "heat stroke",
+      "meningoencephalitis, sepsis with delirium",
+      "lethal catatonia, encephalitis"
+    ],
+    "management": [
+      "STOP the offending dopamine antagonist immediately. If parkinsonism-hyperpyrexia, RESTART the withdrawn dopaminergic agent.",
+      "ABC, continuous cardiac monitoring, IV access, large-bore IV fluids — high-volume to support renal perfusion (myoglobinuric AKI risk).",
+      "Aggressive active cooling: undress, evaporative cooling, cool IV fluids; target core temp < 38.5°C.",
+      "Benzodiazepines (lorazepam 1-2 mg IV q4-6h) — first-line for agitation, mild-moderate cases.",
+      "Bromocriptine 2.5 mg PO/NG q6-8h titrated up to 5 mg q4-6h (max 40 mg/day) — dopamine agonist, restores dopaminergic tone. Onset 24-72 h.",
+      "Dantrolene 1-2.5 mg/kg IV q6h (max 10 mg/kg/day) — direct muscle relaxant; reserve for severe rigidity / hyperthermia. Beware hepatotoxicity.",
+      "Amantadine 100 mg PO/NG bd as alternative dopaminergic agent.",
+      "Severe / refractory — intubation + non-depolarising paralysis + ICU. ECT has been used for refractory NMS and lethal catatonia.",
+      "Monitor CK, K+, lactate, renal function, coags; treat rhabdomyolysis (IV fluids, ± urinary alkalinisation).",
+      "DVT prophylaxis early — high VTE risk from immobility + rigidity.",
+      "Avoid antipsychotic re-challenge for at least 2 weeks after recovery; if needed later, use a different class at the lowest effective dose."
+    ],
+    "antidote": "Bromocriptine PO (dopamine agonist) + dantrolene IV (muscle relaxant) for moderate-severe disease, in addition to withdrawal of the offending agent.",
+    "redFlags": [
+      "Core temp > 41°C — life-threatening, ICU.",
+      "Rhabdomyolysis with myoglobinuric AKI — aggressive IV fluids, renal replacement if needed.",
+      "Severe rigidity — risk of compartment syndrome.",
+      "Aspiration, pulmonary embolism (immobility), DIC.",
+      "Recurrence on re-introduction of antipsychotic — wait ≥ 2 weeks and use a different class."
+    ],
+    "references": [
+      { "label": "Strawn JR et al. Neuroleptic malignant syndrome. Am J Psychiatry 2007;164:870-6." },
+      { "label": "Berman BD. Neuroleptic malignant syndrome: a review for neurohospitalists. Neurohospitalist 2011;1:41-7." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "salicylate-toxidrome",
+    "name": "Salicylate toxicity",
+    "oneLiner": "Mixed primary respiratory alkalosis + primary metabolic acidosis with tinnitus, hyperpnoea (Kussmaul-like), nausea, agitation, hyperthermia — even at therapeutic levels in chronic toxicity.",
+    "domains": ["toxicology", "emergency", "paediatrics"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia",
+      "bloodPressure": "normal or hypotension if dehydrated",
+      "respiratoryRate": "tachypnoea + hyperpnoea (deep) — drives the respiratory alkalosis",
+      "temperature": "hyperthermia (uncoupling of oxidative phosphorylation)",
+      "pupils": "normal or mydriatic",
+      "skin": "diaphoretic, may be flushed",
+      "mentalStatus": "agitation → confusion → coma in severe / chronic poisoning",
+      "bowelSounds": "normal or hyperactive; nausea, vomiting, haematemesis",
+      "other": ["TINNITUS / hearing loss — early sign", "non-cardiogenic pulmonary oedema in severe cases", "anion-gap metabolic acidosis with concomitant respiratory alkalosis"]
+    },
+    "causativeAgents": [
+      "aspirin (acetylsalicylic acid)",
+      "topical methyl salicylate (oil of wintergreen, deep heat rubs) — 1 tsp = ~7 g aspirin equivalent; lethal in children",
+      "bismuth subsalicylate (Pepto-Bismol) — chronic, in children",
+      "salicylate-containing keratolytics (high concentration over large body surface area)"
+    ],
+    "differentialDiagnosis": [
+      "DKA (high anion gap, but glucose elevated and ketones present)",
+      "sepsis (lactic acidosis)",
+      "methanol / ethylene glycol poisoning (osmolar gap)",
+      "iron toxicity",
+      "uraemia",
+      "isoniazid toxicity (anion gap + seizures)"
+    ],
+    "management": [
+      "ABC, IV access, continuous cardiac + pulse-oximetry monitoring, serial salicylate levels (q2h until peak then q4h; consider extended-release / enteric-coated formulations may peak late).",
+      "Salicylate level (mg/dL) + ABG + electrolytes + glucose + renal/liver function + lactate + coagulation + CK.",
+      "Activated charcoal 1 g/kg PO/NG within 1-2 h of acute ingestion (multiple-dose may be considered for sustained-release / massive ingestion).",
+      "IV fluid resuscitation (D5W with potassium added once urine output established) — patients are profoundly dehydrated.",
+      "SODIUM BICARBONATE IV — 1-2 mEq/kg bolus, then infusion (150 mEq NaHCO₃ in 1 L D5W at 1.5-2 × maintenance) — target urine pH > 7.5 and serum pH 7.45-7.55. Maintains salicylate in ionised form (ion trapping), enhances renal excretion, reverses CNS acidosis.",
+      "POTASSIUM REPLETION is essential — hypokalaemia prevents urinary alkalinisation. Aim for K+ 4-4.5 mmol/L.",
+      "Glucose — give D50 boluses even if serum glucose normal (CNS hypoglycaemia despite normal serum levels).",
+      "HAEMODIALYSIS — indications include level > 100 mg/dL acute (> 90 in chronic), altered mental status, renal failure, severe acid-base disturbance, pulmonary or cerebral oedema, or refractory to alkalinisation."
+    ],
+    "antidote": "No specific antidote. Treatment is alkalinisation (sodium bicarbonate + potassium repletion) and early haemodialysis for severe poisoning.",
+    "redFlags": [
+      "Altered mental status — INDICATION FOR HAEMODIALYSIS regardless of level.",
+      "Salicylate level > 100 mg/dL (acute) or > 60-90 mg/dL (chronic, often more toxic at lower level).",
+      "Cerebral oedema, seizures, coma.",
+      "Non-cardiogenic pulmonary oedema — supportive ventilation; mechanical ventilation is HIGH-RISK as iatrogenic respiratory acidosis worsens CNS salicylate uptake. If intubation unavoidable, ventilate to match the patient's pre-intubation minute ventilation (often very high), give NaHCO₃ first.",
+      "Co-ingestion (paracetamol common with aspirin combination products).",
+      "Chronic toxicity in elderly — often missed, presents as confusion / acidosis."
+    ],
+    "references": [
+      { "label": "EXTRIP workgroup. Extracorporeal treatment for salicylate poisoning. Ann Emerg Med 2015;66:165-81." },
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Salicylates." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  }
+]

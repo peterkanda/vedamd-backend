@@ -12,6 +12,12 @@ import type { AllergyCrossReactivity } from '../allergy/allergy.types';
 import type { NotifiableDisease } from '../notifiable/notifiable.types';
 import type { ReferenceRange } from '../reference-ranges/reference-ranges.types';
 import type { Antidote } from '../antidotes/antidotes.types';
+import type { Toxidrome } from '../toxidromes/toxidromes.types';
+import type { AnticoagulantReversal } from '../anticoagulant-reversal/anticoagulant-reversal.types';
+import type { IvCompatibility } from '../iv-compatibility/iv-compatibility.types';
+import type { PregnancyLactationRecord } from '../pregnancy-lactation/pregnancy-lactation.types';
+import type { HepaticDoseRecord } from '../hepatic-dose/hepatic-dose.types';
+import type { SymptomTriageRecord } from '../symptom-triage/symptom-triage.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import { nonApprovedCount, validateBundle } from './bundle-validator';
 import type {
@@ -146,6 +152,16 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
       (parsed['notifiable-diseases.json'] as NotifiableDisease[] | undefined) ?? [],
     referenceRanges: (parsed['reference-ranges.json'] as ReferenceRange[] | undefined) ?? [],
     antidotes: (parsed['antidotes.json'] as Antidote[] | undefined) ?? [],
+    toxidromes: (parsed['toxidromes.json'] as Toxidrome[] | undefined) ?? [],
+    anticoagulantReversal:
+      (parsed['anticoagulant-reversal.json'] as AnticoagulantReversal[] | undefined) ?? [],
+    ivCompatibility:
+      (parsed['iv-compatibility.json'] as IvCompatibility[] | undefined) ?? [],
+    pregnancyLactation:
+      (parsed['pregnancy-lactation.json'] as PregnancyLactationRecord[] | undefined) ?? [],
+    hepaticDose: (parsed['hepatic-dose.json'] as HepaticDoseRecord[] | undefined) ?? [],
+    symptomTriage:
+      (parsed['symptom-triage.json'] as SymptomTriageRecord[] | undefined) ?? [],
     terminology:
       (parsed['terminology.json'] as TerminologyBundle | undefined) ??
       ({ version: '0.0.0-absent', codeSystems: [], valueSets: [] } as TerminologyBundle),
@@ -221,6 +237,12 @@ export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBun
     notifiableDiseases: [],
     referenceRanges: [],
     antidotes: [],
+    toxidromes: [],
+    anticoagulantReversal: [],
+    ivCompatibility: [],
+    pregnancyLactation: [],
+    hepaticDose: [],
+    symptomTriage: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }
@@ -263,6 +285,12 @@ function failOrReturn(
     notifiableDiseases: [],
     referenceRanges: [],
     antidotes: [],
+    toxidromes: [],
+    anticoagulantReversal: [],
+    ivCompatibility: [],
+    pregnancyLactation: [],
+    hepaticDose: [],
+    symptomTriage: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }

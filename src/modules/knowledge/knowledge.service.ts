@@ -145,6 +145,30 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.antidotes;
   }
 
+  getToxidromes() {
+    return this.bundle.toxidromes;
+  }
+
+  getAnticoagulantReversal() {
+    return this.bundle.anticoagulantReversal;
+  }
+
+  getIvCompatibility() {
+    return this.bundle.ivCompatibility;
+  }
+
+  getPregnancyLactation() {
+    return this.bundle.pregnancyLactation;
+  }
+
+  getHepaticDose() {
+    return this.bundle.hepaticDose;
+  }
+
+  getSymptomTriage() {
+    return this.bundle.symptomTriage;
+  }
+
   getTerminology() {
     return this.bundle.terminology;
   }

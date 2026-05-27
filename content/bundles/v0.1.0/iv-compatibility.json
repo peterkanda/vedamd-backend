@@ -1,0 +1,486 @@
+[
+  {
+    "slug": "ceftriaxone-calcium",
+    "drugA": "Ceftriaxone",
+    "drugASlug": "ceftriaxone",
+    "drugB": "Calcium-containing IV solutions (gluconate, chloride, Ringer's lactate, Hartmann's, TPN with calcium)",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "DEATHS reported in neonates: ceftriaxone + Ca → ceftriaxone-calcium crystalline precipitate in lung/kidney → fatal embolic disease. FDA black-box. Do not co-administer; separate lines, ≥ 48 h gap in neonates.",
+    "domains": ["paediatrics", "neonatology", "antimicrobials", "patient-safety"],
+    "routeContext": ["y-site", "additive", "syringe", "all"],
+    "notes": "Neonates (≤ 28 days): ceftriaxone is CONTRAINDICATED with any calcium-containing IV solution or product, even via separate lines and at different times, due to fatal crystalline precipitate cases reported in pulmonary and renal tissue at post-mortem. Patients > 28 days: ceftriaxone and Ca-containing solutions may be given sequentially via the same line ONLY if the line is thoroughly flushed with a compatible fluid (NS or D5W) between infusions. Never mix in the same line / bag / syringe at any age. Avoid Ringer's lactate as the dilution / flush fluid for ceftriaxone in any patient.",
+    "alternative": "Use cefotaxime (no calcium incompatibility) for neonatal sepsis. Adults: separate lines, NS flush.",
+    "references": [
+      { "label": "FDA Safety Communication. Information for Healthcare Professionals: Ceftriaxone (marketed as Rocephin and generics). 2009." },
+      { "label": "Bradley JS et al. Intravenous ceftriaxone and calcium in the neonate: assessing the risk for cardiopulmonary adverse events. Pediatrics 2009;123:e609-13." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "phenytoin-dextrose",
+    "drugA": "Phenytoin (parenteral)",
+    "drugASlug": "phenytoin",
+    "drugB": "Dextrose-containing IV solutions (D5W, D10W, D5/0.45NS)",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Phenytoin precipitates in dextrose solutions — use NORMAL SALINE only, with an in-line 0.22 micron filter. Infusion rate ≤ 50 mg/min (adult); ≤ 1 mg/kg/min (paediatric, max 50 mg/min).",
+    "domains": ["neurology", "emergency", "patient-safety"],
+    "routeContext": ["y-site", "additive", "all"],
+    "notes": "Phenytoin parenteral is a highly alkaline solution (pH 12) in propylene glycol vehicle. In any dextrose-containing fluid, the pH drops and phenytoin precipitates as fine crystals — often not visually obvious before the line embolises or the drug becomes subtherapeutic. Use 0.9% NaCl (NS) only. Infuse via a dedicated large-bore peripheral or central line, with an in-line 0.22-0.45 micron filter to catch micro-precipitate. Maximum infusion rate 50 mg/min in adults; reduce to 25 mg/min in elderly / cardiovascular disease (hypotension, arrhythmia at higher rates). Pediatric: 1 mg/kg/min, max 50 mg/min. Fosphenytoin (a water-soluble pro-drug) is compatible with dextrose AND saline AND can run faster (150 mg PE/min adult).",
+    "alternative": "Use fosphenytoin where available (compatible with any standard fluid). For phenytoin: dilute in NS only, use filter, dedicated line.",
+    "references": [
+      { "label": "ASHP Therapeutic Position Statement on the use of fosphenytoin. Am J Health Syst Pharm 1999." },
+      { "label": "BNF / Phenytoin sodium injection SmPC." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "amiodarone-saline",
+    "drugA": "Amiodarone",
+    "drugASlug": "amiodarone",
+    "drugB": "Normal saline (0.9% NaCl)",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Amiodarone precipitates in saline. Dilute in DEXTROSE 5% (D5W) only. Concentrations > 2 mg/mL via central line (peripheral vein → phlebitis).",
+    "domains": ["cardiology", "emergency", "patient-safety"],
+    "routeContext": ["y-site", "additive", "all"],
+    "notes": "Amiodarone HCl injection is poorly soluble in 0.9% NaCl — precipitates as fine crystals visible within minutes. Always dilute in D5W. Concentrations ≤ 2 mg/mL may be given peripherally (still high phlebitis risk); > 2 mg/mL MUST be central. Use a non-PVC infusion set if available (amiodarone leaches plasticisers from PVC, and adsorbs to in-line filters > 0.22 micron significantly). In-line 0.22 micron filter is RECOMMENDED to trap micro-particulate.",
+    "alternative": "If central access is unavailable for prolonged infusion: switch to oral loading when haemodynamically tolerated.",
+    "references": [
+      { "label": "Cordarone IV (amiodarone HCl) — manufacturer prescribing information." },
+      { "label": "ASHP King Guide to Parenteral Admixtures — amiodarone." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "propofol-y-site",
+    "drugA": "Propofol",
+    "drugASlug": "propofol",
+    "drugB": "Most other drugs (lipid emulsion vehicle)",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Propofol is a 10% lipid emulsion — destabilises with many co-administered drugs (visible oiling, droplet enlargement). Run dedicated line; very few drugs are confirmed Y-site compatible.",
+    "domains": ["critical-care", "anaesthesia", "patient-safety"],
+    "routeContext": ["y-site", "additive", "syringe"],
+    "notes": "Propofol's lipid vehicle (Intralipid-like emulsion) is destabilised by acidic drugs, divalent cations, and most antibiotics — leading to fat globule coalescence, lipid oiling and embolism risk. Established Y-site compatible drugs (small Trissel's-confirmed list): fentanyl, alfentanil, sufentanil, midazolam (most studies), ketamine, dexmedetomidine, ondansetron, lorazepam (some studies), morphine, hydromorphone, naloxone, remifentanil. INCOMPATIBLE at Y-site (visible incompatibility): bretylium, calcium chloride, ciprofloxacin, methotrexate, methylprednisolone, gentamicin, tobramycin, magnesium sulfate (when concentrated), bicarbonate. Many others: NO RELIABLE DATA — treat as incompatible. Use a dedicated propofol line where possible; if shared, restrict to confirmed compatible agents and use micro-bore proximal injection ports. Use of in-line filter on a propofol line is NOT recommended (filter pore < 5 µm captures lipid).",
+    "alternative": "Dedicated propofol line. If lines limited and drug not on confirmed-compatible list: temporarily pause propofol, flush with NS, give bolus drug, flush NS, resume.",
+    "references": [
+      { "label": "Trissel LA et al. Compatibility of propofol injectable emulsion with selected drugs during simulated Y-site administration. Am J Health Syst Pharm 1997." },
+      { "label": "ASHP King Guide — propofol." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "norepinephrine-bicarbonate",
+    "drugA": "Norepinephrine (noradrenaline)",
+    "drugASlug": "norepinephrine",
+    "drugB": "Sodium bicarbonate (NaHCO₃)",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "incompatible",
+    "oneLiner": "Norepinephrine is inactivated in alkaline solution — colour darkens (oxidation), potency lost. Do NOT mix with bicarbonate; do not co-infuse via the same lumen without flush.",
+    "domains": ["critical-care", "emergency"],
+    "routeContext": ["y-site", "additive", "all"],
+    "notes": "Catecholamines (norepinephrine, epinephrine, dopamine, dobutamine, isoprenaline) are oxidised by alkaline solutions, producing visible pink/brown discolouration and rapid loss of pressor activity. ALWAYS use a separate lumen for bicarbonate boluses; if only one lumen available, pause pressor, flush thoroughly with NS, push bicarb, flush again, restart pressor. The same warning applies to aminophylline, furosemide and any other strongly alkaline drugs co-administered with catecholamines.",
+    "alternative": "Use a dedicated lumen for vasopressors. For acute bicarbonate boluses on a single-lumen line: pause-flush-bicarb-flush-resume.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Norepinephrine." },
+      { "label": "King Guide to Parenteral Admixtures — catecholamine alkaline incompatibility." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "epinephrine-bicarbonate",
+    "drugA": "Epinephrine (adrenaline)",
+    "drugASlug": "epinephrine",
+    "drugB": "Sodium bicarbonate (NaHCO₃)",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "incompatible",
+    "oneLiner": "Epinephrine oxidises in alkaline solution (visible browning, loss of potency). Same separation rule as norepinephrine.",
+    "domains": ["critical-care", "emergency"],
+    "routeContext": ["y-site", "additive", "all"],
+    "notes": "Same mechanism as norepinephrine: catecholamine oxidation in alkaline medium. Separate lumen for bicarb; if not possible, pause-flush-bicarb-flush-resume. This is particularly relevant in cardiac arrest where epinephrine and sodium bicarbonate are commonly given through the same peripheral line under time pressure — flush thoroughly between them.",
+    "alternative": "Dedicated lumen, or pause-flush sequence.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Epinephrine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "calcium-bicarbonate",
+    "drugA": "Calcium (gluconate or chloride)",
+    "drugASlug": null,
+    "drugB": "Sodium bicarbonate (NaHCO₃)",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "incompatible",
+    "oneLiner": "Forms insoluble calcium carbonate — visible white precipitate, line occlusion. Separate lumen or pause-flush-bicarb-flush-resume.",
+    "domains": ["emergency", "critical-care", "neonatology"],
+    "routeContext": ["y-site", "additive", "syringe", "all"],
+    "notes": "Ca²⁺ + 2 HCO₃⁻ → CaCO₃ + H₂CO₃ (insoluble precipitate). Common emergency-room mistake: pushing calcium gluconate and bicarbonate through the same peripheral line during hyperkalaemia or cardiac arrest — line blocks within seconds with a white precipitate. Always use separate lumens or flush thoroughly between pushes. Particularly relevant in massive transfusion (Ca + citrated blood) and in neonatal resuscitation.",
+    "alternative": "Separate lumen; if single line, push Ca, flush 20 mL NS, push bicarb, flush 20 mL NS.",
+    "references": [
+      { "label": "ASHP King Guide — Calcium / Sodium bicarbonate." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "vancomycin-piperacillin-tazobactam",
+    "drugA": "Vancomycin",
+    "drugASlug": "vancomycin",
+    "drugB": "Piperacillin-tazobactam",
+    "drugBSlug": "piperacillin-tazobactam",
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate at Y-site. Do not co-infuse on the same line concurrently; separate lines or stagger doses with flush.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel-confirmed Y-site incompatible — visible precipitate within minutes when mixed at clinical concentrations. The combination is one of the most common empiric ICU regimens (vancomycin + pip-tazo for hospital-acquired pneumonia / sepsis) so the incompatibility is frequently relevant. Note that this is separate from the well-publicised vancomycin-pip-tazo AKI signal (which is a clinical interaction, not a chemical compatibility issue).",
+    "alternative": "Use separate IV lines, or stagger administration on the same line with a thorough NS flush between doses.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vancomycin." },
+      { "label": "King Guide to Parenteral Admixtures — vancomycin compatibility tables." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "vancomycin-heparin",
+    "drugA": "Vancomycin",
+    "drugASlug": "vancomycin",
+    "drugB": "Heparin (unfractionated)",
+    "drugBSlug": "heparin",
+    "status": "incompatible",
+    "oneLiner": "Vancomycin + heparin → visible precipitate at Y-site. Use separate lumens, or flush thoroughly between.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Documented incompatibility (precipitate, loss of potency for both drugs). Relevant when both run on the same central line (e.g. vancomycin for line sepsis + therapeutic heparin in the same critical-care patient). For heparin-locked central lines, flush thoroughly with NS before and after vancomycin doses.",
+    "alternative": "Separate lumen on a multi-lumen central line. If only one lumen: flush 10 mL NS before and after vancomycin push / infusion.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vancomycin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "norepinephrine-y-site-common",
+    "drugA": "Norepinephrine (noradrenaline)",
+    "drugASlug": "norepinephrine",
+    "drugB": "Common Y-site partners (epinephrine, vasopressin, dobutamine, dexmedetomidine, fentanyl, midazolam, propofol, insulin, KCl)",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Norepinephrine is Y-site compatible with most other vasoactive infusions and ICU staples at typical concentrations — the main exceptions are alkaline drugs (bicarb, aminophylline, furosemide).",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel / King Guide confirmed compatible at typical ICU concentrations (norepinephrine 16-128 µg/mL, partners at standard infusion concentrations): epinephrine, vasopressin (note: vasopressin should ideally run on its own line for steady-state dosing but is Y-site compatible if needed), dobutamine, dexmedetomidine, fentanyl, midazolam, propofol (one of the few — confirmed), insulin (regular human), KCl (20-40 mmol/L), magnesium sulfate, heparin, hydrocortisone, ondansetron, pantoprazole, lorazepam. Discoloration may occur with prolonged contact — observe.",
+    "alternative": "If discolouration appears, separate the lines.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Norepinephrine Y-site." },
+      { "label": "ASHP King Guide — vasoactive infusion compatibility." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vasopressin-y-site-common",
+    "drugA": "Vasopressin",
+    "drugASlug": "vasopressin",
+    "drugB": "Common Y-site partners (norepinephrine, epinephrine, fentanyl, midazolam, propofol, insulin)",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Vasopressin is generally Y-site compatible with the common ICU vasoactive and sedative infusions, but is adsorbed by PVC (use polyolefin / non-DEHP sets where available) and best run on its own line for steady-state dosing.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, epinephrine, dopamine, dobutamine, fentanyl, midazolam, propofol, regular insulin, heparin. Adsorbs to PVC (~ 10-20% loss over typical infusion length) — non-PVC tubing preferred for reliable dosing. For accurate titration, give via its own line where feasible.",
+    "alternative": "Non-PVC tubing; dedicated line for titration accuracy.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vasopressin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "fentanyl-midazolam",
+    "drugA": "Fentanyl",
+    "drugASlug": "fentanyl",
+    "drugB": "Midazolam",
+    "drugBSlug": "midazolam",
+    "status": "compatible",
+    "oneLiner": "Compatible — commonly co-infused as ICU sedation/analgesia. No reported chemical incompatibility at clinical concentrations.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site", "syringe"],
+    "notes": "Both stable in NS and D5W. Y-site compatible and syringe-compatible at typical infusion concentrations (fentanyl 10-50 µg/mL, midazolam 1-5 mg/mL). Pharmacodynamic synergy on respiratory depression is the clinical concern, not chemical incompatibility — titrate both with that in mind.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Fentanyl / Midazolam." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "furosemide-most-drugs",
+    "drugA": "Furosemide",
+    "drugASlug": "furosemide",
+    "drugB": "Most acidic drugs (catecholamines, midazolam, ondansetron, amiodarone, ciprofloxacin, vancomycin, dobutamine)",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Furosemide is highly alkaline (pH 8.5-9) — visible precipitate with most acidic drugs at Y-site. Separate line or flush thoroughly.",
+    "domains": ["critical-care", "cardiology"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Furosemide is unstable below pH 5.5 — it crystallises out. Documented incompatible at Y-site with most catecholamines (norepinephrine, epinephrine, dobutamine, dopamine), midazolam (acidic), ondansetron, amiodarone, ciprofloxacin, vancomycin, metoclopramide, labetalol. Use a dedicated lumen for furosemide infusions, or flush thoroughly (20 mL NS) before and after a furosemide push. Bumetanide has the same alkalinity profile.",
+    "alternative": "Dedicated lumen for continuous furosemide. For intermittent boluses on a shared line: 20 mL NS flush before + after.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Furosemide." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "potassium-chloride-peripheral",
+    "drugA": "Potassium chloride (KCl) concentrated",
+    "drugASlug": null,
+    "drugB": "Peripheral IV access (compatibility with the line, not a partner drug)",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Concentrated KCl is a high-alert medication — peripheral infusion max 40 mmol/L at ≤ 10 mmol/h to avoid phlebitis; > 40 mmol/L MUST be central. Never IV push neat KCl.",
+    "domains": ["critical-care", "emergency", "patient-safety"],
+    "routeContext": ["all"],
+    "notes": "Although technically a route question rather than a drug-pair compatibility, KCl administration is one of the most common patient-safety incidents and warrants a dedicated reference. Peripheral: ≤ 40 mmol/L concentration, ≤ 10 mmol/h infusion rate (phlebitis ceiling). Central: up to 100 mmol/L, ≤ 20 mmol/h (continuous cardiac monitoring needed). Bolus IV push of neat KCl is rapidly fatal (cardiac arrest) — never administer as a push. Always dilute and label as a high-alert drug; double-check the patient and the bag with a second clinician.",
+    "alternative": "For mild hypokalaemia: oral KCl (Slow K, Sando-K) is preferred — equally effective, no infusion risk.",
+    "references": [
+      { "label": "ISMP High-Alert Medications list." },
+      { "label": "WHO List of High Alert Medications." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "magnesium-calcium",
+    "drugA": "Magnesium sulfate",
+    "drugASlug": "magnesium-sulfate",
+    "drugB": "Calcium gluconate / chloride",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Forms insoluble precipitate (magnesium-calcium salts). Never mix in the same bag or syringe; separate lines or pause-flush sequence on a single line.",
+    "domains": ["obstetrics", "emergency", "critical-care"],
+    "routeContext": ["y-site", "additive", "syringe"],
+    "notes": "Common scenario: a patient on magnesium sulfate infusion for pre-eclampsia who develops symptomatic magnesium toxicity (loss of patellar reflexes, respiratory depression). The treatment is calcium gluconate IV — but cannot be given through the same line / lumen as the magnesium. Stop magnesium infusion, FLUSH line, then push calcium via the same line (or use a separate access).",
+    "alternative": "Stop Mg infusion → flush line with NS → push Ca → resume only after toxicity resolves.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Magnesium sulfate." },
+      { "label": "WHO recommendations on prevention and treatment of pre-eclampsia and eclampsia." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tpn-most-drugs",
+    "drugA": "Total parenteral nutrition (TPN — amino acid + dextrose + lipid)",
+    "drugASlug": null,
+    "drugB": "Most IV medications",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "TPN is a complex emulsion — destabilises with most co-administered drugs (lipid coalescence, precipitation, line occlusion). Run TPN through its OWN dedicated lumen.",
+    "domains": ["critical-care", "nutrition", "patient-safety"],
+    "routeContext": ["y-site", "additive", "all"],
+    "notes": "TPN should be administered through its OWN dedicated central line lumen. Very few drugs have been formally studied for Y-site compatibility with 3-in-1 TPN admixtures: documented compatible (at Y-site only): insulin (regular), ranitidine, famotidine, octreotide, low-dose dopamine. INCOMPATIBLE or no-data — treat as incompatible: all antibiotics, vasopressors, electrolytes (additives are mixed into the TPN bag by pharmacy ONLY), phenytoin, midazolam, morphine, heparin (some 2-in-1 amino acid + dextrose are heparin-compatible — verify locally). Particular danger: calcium + phosphate solubility curve — these must be balanced when the bag is compounded; never add Ca or PO₄ at the bedside.",
+    "alternative": "Dedicated TPN lumen on a multi-lumen central line. Co-administer other drugs through a different lumen.",
+    "references": [
+      { "label": "ASPEN parenteral nutrition safety consensus recommendations. JPEN 2014." },
+      { "label": "ASHP King Guide — TPN compatibility." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "insulin-line-adsorption",
+    "drugA": "Insulin (regular human IV)",
+    "drugASlug": "insulin-regular",
+    "drugB": "PVC infusion sets and bags (line/container compatibility — not a drug pair)",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Regular insulin adsorbs to PVC and glass (up to ~ 30% loss) — flush 20-50 mL of the diluted insulin infusion through the line BEFORE connecting to the patient, to saturate the binding sites.",
+    "domains": ["critical-care", "endocrinology", "patient-safety"],
+    "routeContext": ["all"],
+    "notes": "When preparing a continuous insulin infusion (e.g. 50 units in 50 mL NS for DKA), the first ~ 20-50 mL run through the line will be subtherapeutic due to adsorption onto the PVC tubing and bag — this is why DKA infusion protocols specify 'prime the line with 20-50 mL of the prepared infusion and discard before connecting to the patient'. Non-PVC tubing (polyolefin, polyurethane) has much less adsorption. Y-site compatibility with norepinephrine, fentanyl, midazolam, propofol — all confirmed compatible (insulin is commonly co-infused on a single lumen with ICU drips).",
+    "alternative": "Use non-PVC tubing where available. If PVC: prime + discard 20-50 mL before patient connection.",
+    "references": [
+      { "label": "ASHP King Guide — Insulin admixture stability." },
+      { "label": "JBDS-IP guideline: Management of DKA in adults." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "metronidazole-most-compatible",
+    "drugA": "Metronidazole",
+    "drugASlug": "metronidazole",
+    "drugB": "Common antibiotics + ICU drugs (most)",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Metronidazole is Y-site compatible with most common antibiotics (ceftriaxone, piperacillin-tazobactam, meropenem, vancomycin, gentamicin) and many ICU drugs — one of the more permissive co-administration agents.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with most beta-lactams (ceftriaxone, ceftazidime, cefepime, piperacillin-tazobactam, meropenem, imipenem, aztreonam), vancomycin (yes — confirmed Y-site compatible despite the vancomycin + pip-tazo separate-line rule), aminoglycosides, fluoroquinolones, clindamycin, fluconazole, fentanyl, morphine, midazolam, propofol, dexmedetomidine, heparin. Few documented incompatibilities — useful for co-infusion when line access is limited.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Metronidazole." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "meropenem-others",
+    "drugA": "Meropenem",
+    "drugASlug": "meropenem",
+    "drugB": "Common ICU partners (vasopressors, sedation, vancomycin, metronidazole)",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Meropenem is Y-site compatible with most common ICU drugs at clinical concentrations. Avoid co-infusion with valproate (well-known interaction reduces valproate levels — clinical, not chemical).",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Y-site compatible with norepinephrine, fentanyl, midazolam, propofol, vancomycin, metronidazole, heparin. Stability in solution is the bigger practical concern: meropenem is stable in NS for ~ 4 h at room temperature, ~ 24 h refrigerated; D5W reduces stability significantly (degradation > 10% within 1 h). Use NS, not D5W. Extended infusion (3-4 h) is supported by NS stability data but requires a fresh bag every 3-4 h. Valproate: not a chemical compatibility issue but a clinical drug interaction — meropenem (and other carbapenems) dramatically reduce valproate plasma levels, risking seizure breakthrough.",
+    "alternative": "For valproate-treated patients: avoid carbapenems if possible; use alternative anti-pseudomonal (cefepime, piperacillin-tazobactam).",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Meropenem." },
+      { "label": "Park MK et al. Meropenem-valproate interaction. Am J Health Syst Pharm 2012." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ciprofloxacin-many-incompatible",
+    "drugA": "Ciprofloxacin (IV)",
+    "drugASlug": "ciprofloxacin",
+    "drugB": "Many acidic / divalent-cation-containing drugs",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Ciprofloxacin has poor compatibility — precipitates with most heparin-containing solutions, aminophylline, furosemide, dexamethasone, magnesium and many beta-lactams. Y-site with caution.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Documented incompatible at Y-site: heparin (visible precipitate), aminophylline, furosemide, dexamethasone, hydrocortisone, magnesium sulfate, ampicillin, cefepime, cefoperazone, ceftriaxone (visible cloudiness — flush thoroughly between), propofol, meropenem (some studies), erythromycin. Compatible at Y-site: vancomycin (in some studies — verify locally), morphine, midazolam, ondansetron, tobramycin (if administered through pump, not as Y-site bolus). Dilute to ≤ 2 mg/mL; infuse over 60 min minimum to reduce phlebitis. Note: divalent cation co-administration (Mg, Ca, Al, Zn) clinically reduces ciprofloxacin absorption (with oral) but is also a chemical issue at IV Y-site with high-concentration cation infusions.",
+    "alternative": "Dedicated line for ciprofloxacin infusion. If single-line: flush thoroughly between drugs.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ciprofloxacin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ondansetron-many-compatible",
+    "drugA": "Ondansetron",
+    "drugASlug": "ondansetron",
+    "drugB": "Common ICU / chemo partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Ondansetron is Y-site compatible with most ICU + chemo agents at typical concentrations. Notable exceptions: alkaline solutions (5-FU, sodium bicarbonate, furosemide, aciclovir, ampicillin, ceftriaxone occasionally).",
+    "domains": ["critical-care", "oncology"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, morphine, hydromorphone, midazolam, propofol, lorazepam, dexmedetomidine, vancomycin, metronidazole, piperacillin-tazobactam, meropenem, heparin, KCl, magnesium sulfate (low concentration). Incompatible at Y-site with sodium bicarbonate, furosemide, 5-FU, ampicillin (variable), aciclovir, methylprednisolone (some preparations), pantoprazole (acidic incompatibility).",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ondansetron." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "pantoprazole-many-incompatible",
+    "drugA": "Pantoprazole (IV)",
+    "drugASlug": "pantoprazole",
+    "drugB": "Most ICU drugs (alkaline + most others)",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Pantoprazole is very pH-sensitive (stable at pH ≥ 9; precipitates rapidly at neutral / acidic pH). Use NS or D5W, flush thoroughly before and after, do not co-infuse with most other drugs.",
+    "domains": ["critical-care", "gastroenterology"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Documented Y-site incompatible with most things: catecholamines (norepinephrine, epinephrine — well-documented precipitate), midazolam, fentanyl, morphine, KCl, calcium, magnesium, vancomycin, ondansetron, metoclopramide, ciprofloxacin. Compatible (Y-site, limited list): heparin, ranitidine, octreotide. Best practice: pantoprazole infusion on a dedicated lumen. If single-line: flush 10-20 mL NS before and after each pantoprazole administration.",
+    "alternative": "Dedicated lumen, or substitute with omeprazole infusion (similar compatibility issues but better in NS).",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Pantoprazole." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "heparin-many",
+    "drugA": "Heparin (unfractionated)",
+    "drugASlug": "heparin",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Heparin is broadly compatible with sedation, analgesia, and most pressors, but INCOMPATIBLE with several common antibiotics (vancomycin, ciprofloxacin, gentamicin, tobramycin at higher concentrations).",
+    "domains": ["critical-care", "haematology"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Y-site COMPATIBLE with: fentanyl, morphine, hydromorphone, midazolam, propofol, dexmedetomidine, norepinephrine, epinephrine, dopamine, dobutamine, vasopressin, insulin (regular), pantoprazole, ranitidine, ondansetron, metronidazole, metoclopramide, KCl, magnesium sulfate. INCOMPATIBLE: vancomycin (precipitate), ciprofloxacin (precipitate), gentamicin (loss of potency at high heparin concentrations — clinical relevance is debated), tobramycin (similar), amiodarone (precipitate), aminoglycosides generally (consider separate line), diazepam (precipitate). Heparin is often run as a continuous infusion on a single ICU line shared with sedation and vasopressors — that combination is well-tolerated; the antibiotic dose pushes need to go through a different lumen or via a thorough flush.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Heparin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "dexmedetomidine-common",
+    "drugA": "Dexmedetomidine",
+    "drugASlug": "dexmedetomidine",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Dexmedetomidine is Y-site compatible with the standard ICU vasoactive + sedation + analgesia infusions. No major documented incompatibilities.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site (Trissel-confirmed at typical clinical concentrations): fentanyl, alfentanil, remifentanil, morphine, hydromorphone, midazolam, lorazepam, propofol, ketamine, norepinephrine, epinephrine, vasopressin, dopamine, dobutamine, insulin, heparin, KCl, magnesium sulfate, vancomycin, metronidazole, piperacillin-tazobactam, meropenem, hydrocortisone, methylprednisolone, ondansetron, esmolol, labetalol, nicardipine, nitroglycerin. Stable in NS and D5W. Adsorbs minimally to PVC.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Dexmedetomidine." },
+      { "label": "Wagner DS et al. Compatibility of dexmedetomidine with selected medications during simulated Y-site administration. Am J Health Syst Pharm 2009." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tranexamic-acid-others",
+    "drugA": "Tranexamic acid",
+    "drugASlug": "tranexamic-acid",
+    "drugB": "Blood products, urokinase, penicillins (with caution)",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Tranexamic acid is INCOMPATIBLE with blood products in the same line (acts as a procoagulant locally) and with thrombolytics (mechanistic antagonism). Use a separate line.",
+    "domains": ["haematology", "emergency", "obstetrics"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Do not mix tranexamic acid in the same bag or line as packed red cells, fresh frozen plasma, platelets, or cryoprecipitate — the antifibrinolytic activity in the line can promote local clot formation in transfused product. Mechanistically antagonistic to thrombolytics (alteplase, tenecteplase) — do not co-administer; tranexamic acid is sometimes given AFTER lysis-related bleed but on a separate line, well after the lytic infusion has stopped. Compatible with most NS / D5W infusion partners (vasopressors, sedation, analgesia).",
+    "alternative": "Separate line for tranexamic acid when transfusing.",
+    "references": [
+      { "label": "TXA injection — manufacturer SmPC." },
+      { "label": "CRASH-2 administration protocol." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  }
+]

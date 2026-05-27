@@ -56,6 +56,12 @@ interface Bundle {
   notifiableDiseases?: ExtendedRecord[];
   referenceRanges?: ExtendedRecord[];
   antidotes?: ExtendedRecord[];
+  toxidromes?: ExtendedRecord[];
+  anticoagulantReversal?: ExtendedRecord[];
+  ivCompatibility?: ExtendedRecord[];
+  pregnancyLactation?: ExtendedRecord[];
+  hepaticDose?: ExtendedRecord[];
+  symptomTriage?: ExtendedRecord[];
 }
 
 const KNOWN_STATUSES: readonly ReviewStatus[] = ['draft', 'review', 'approved', 'deprecated'];
@@ -116,6 +122,12 @@ export function validateBundle(bundle: Bundle): ValidationResult {
     ['notifiable-diseases', bundle.notifiableDiseases],
     ['reference-ranges', bundle.referenceRanges],
     ['antidotes', bundle.antidotes],
+    ['toxidromes', bundle.toxidromes],
+    ['anticoagulant-reversal', bundle.anticoagulantReversal],
+    ['iv-compatibility', bundle.ivCompatibility],
+    ['pregnancy-lactation', bundle.pregnancyLactation],
+    ['hepatic-dose', bundle.hepaticDose],
+    ['symptom-triage', bundle.symptomTriage],
   ];
   let extendedCount = 0;
   for (const [domain, set] of extendedSets) {

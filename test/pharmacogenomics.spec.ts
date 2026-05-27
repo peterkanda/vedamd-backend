@@ -37,4 +37,18 @@ describe('PharmacogenomicsService', () => {
   it('returns null for an unknown slug', () => {
     expect(svc.get('not-a-real-pgx')).toBeNull();
   });
+
+  it('carries the priority-1 CPIC pairs added in the gap-analysis (anti-hallucination guard)', () => {
+    const slugs = svc.list().map((g) => g.slug);
+    for (const required of [
+      'cyp2c19-voriconazole',
+      'cftr-ivacaftor',
+      'cyp2c9-nsaids',
+      'cyp2d6-opioids-non-codeine',
+      'cyp2d6-metoprolol',
+      'cyp3a5-cyclosporine',
+    ]) {
+      expect(slugs).toContain(required);
+    }
+  });
 });
