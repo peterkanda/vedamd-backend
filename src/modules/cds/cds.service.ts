@@ -551,6 +551,17 @@ export class CdsService {
           if (ruleCards.length > 0) rulesFired += 1;
           for (const card of ruleCards) {
             mergeRuleCodings(card, rule.codings);
+            // Anti-hallucination guardrail: propagate the underlying
+            // rule's review status into every card so the consuming UI
+            // can render a DRAFT / UNDER REVIEW / DEPRECATED banner.
+            // Cards generated from unreviewed content MUST be visually
+            // flagged — clinicians need a signal that the guideline
+            // synthesis is provisional. See conditions.types.ts for
+            // the four canonical statuses.
+            const ext = card.extension?.['http://vedamd.io/Card/recommendation'];
+            if (ext && !ext.reviewStatus) {
+              ext.reviewStatus = rule.reviewStatus;
+            }
           }
           cards.push(...ruleCards);
         } catch (e) {

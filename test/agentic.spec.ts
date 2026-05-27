@@ -56,7 +56,7 @@ describe('Agentic — card extractor', () => {
         },
       ],
     });
-    const { cards, citedRecords } = extractCards(text, now);
+    const { cards, citedRecords } = extractCards(text, now, 0);
     expect(cards).toHaveLength(1);
     expect(cards[0].indicator).toBe('critical');
     expect(cards[0].extension?.['http://vedamd.io/Card/recommendation'].ruleId).toBe('agentic-reasoner');
@@ -65,13 +65,13 @@ describe('Agentic — card extractor', () => {
 
   it('drops cards with no citation (anti-hallucination guard)', () => {
     const text = JSON.stringify({ cards: [{ summary: 'Some claim', indicator: 'warning', citations: [] }] });
-    const { cards } = extractCards(text, now);
+    const { cards } = extractCards(text, now, 0);
     expect(cards).toHaveLength(0);
   });
 
   it('extracts JSON from prose + code fences', () => {
     const text = 'Here is my analysis:\n```json\n{"cards":[{"summary":"X","indicator":"info","citations":[{"kind":"drug","id":"warfarin","label":"W"}]}]}\n```\nDone.';
-    const { cards } = extractCards(text, now);
+    const { cards } = extractCards(text, now, 0);
     expect(cards).toHaveLength(1);
     expect(cards[0].summary).toBe('X');
   });
@@ -87,7 +87,7 @@ describe('Agentic — card extractor', () => {
         { summary: 'B', indicator: 'info', confidence: 1.7, citations: [{ kind: 'drug', id: 'x', label: 'X' }] },
       ],
     });
-    const { cards } = extractCards(text, now);
+    const { cards } = extractCards(text, now, 0);
     expect(cards[0].extension?.['http://vedamd.io/Card/agentic-confidence']).toBeCloseTo(0.92);
     // clamped to 1.0
     expect(cards[1].extension?.['http://vedamd.io/Card/agentic-confidence']).toBe(1);
@@ -105,9 +105,32 @@ describe('Agentic — card extractor', () => {
     expect(cards[0].summary).toBe('high');
   });
 
+  it('applies a default 0.6 confidence floor when none is specified (anti-hallucination)', () => {
+    // No minConfidence argument — the caller should get the safe default.
+    // The 0.5-default-when-LLM-omits card and the 0.45 card are both
+    // below 0.6 → dropped; the 0.92 card is kept.
+    const text = JSON.stringify({
+      cards: [
+        { summary: 'omitted-confidence', indicator: 'info', citations: [{ kind: 'drug', id: 'a', label: 'A' }] },
+        { summary: 'just-below', indicator: 'warning', confidence: 0.45, citations: [{ kind: 'drug', id: 'b', label: 'B' }] },
+        { summary: 'safe', indicator: 'warning', confidence: 0.92, citations: [{ kind: 'drug', id: 'c', label: 'C' }] },
+      ],
+    });
+    const { cards } = extractCards(text, now);
+    expect(cards.map((c) => c.summary)).toEqual(['safe']);
+  });
+
+  it('agentic cards carry reviewStatus="review" so the UI flags LLM provenance', () => {
+    const text = JSON.stringify({
+      cards: [{ summary: 'A', indicator: 'warning', confidence: 0.9, citations: [{ kind: 'drug', id: 'x', label: 'X' }] }],
+    });
+    const { cards } = extractCards(text, now, 0);
+    expect(cards[0].extension?.['http://vedamd.io/Card/recommendation'].reviewStatus).toBe('review');
+  });
+
   it('defaults confidence to 0.5 when the model omits it', () => {
     const text = JSON.stringify({ cards: [{ summary: 'A', indicator: 'info', citations: [{ kind: 'drug', id: 'x', label: 'X' }] }] });
-    const { cards } = extractCards(text, now);
+    const { cards } = extractCards(text, now, 0);
     expect(cards[0].extension?.['http://vedamd.io/Card/agentic-confidence']).toBe(0.5);
   });
 
@@ -129,7 +152,7 @@ describe('Agentic — card extractor', () => {
         },
       ],
     });
-    const { cards } = extractCards(text, now);
+    const { cards } = extractCards(text, now, 0);
     const sugg = (cards[0].suggestions ?? []) as Array<{ label: string; actions: unknown[] }>;
     expect(sugg).toHaveLength(1);
     expect(sugg[0].label).toBe('Replace naproxen with paracetamol');
@@ -148,7 +171,7 @@ describe('Agentic — card extractor', () => {
         },
       ],
     });
-    const { cards } = extractCards(text, now);
+    const { cards } = extractCards(text, now, 0);
     expect(cards[0].suggestions).toBeUndefined();
   });
 
@@ -160,7 +183,7 @@ describe('Agentic — card extractor', () => {
         { summary: 'w', indicator: 'warning', citations: [{ kind: 'drug', id: 'z', label: 'z' }] },
       ],
     });
-    const { cards } = extractCards(text, now);
+    const { cards } = extractCards(text, now, 0);
     expect(cards.map((c) => c.indicator)).toEqual(['critical', 'warning', 'info']);
   });
 });

@@ -77,6 +77,13 @@ export interface VedaMdRecommendationMeta {
   evidenceLevel: 'A' | 'B' | 'C' | 'D' | 'expert-consensus';
   generatedAt: string;
   /**
+   * Editorial review status of the underlying record. Cards generated
+   * from `draft` records MUST be visually flagged in the consuming UI
+   * — the content has not been formally reviewed by the clinical
+   * editorial board. Anti-hallucination guardrail (FR-024).
+   */
+  reviewStatus?: 'draft' | 'review' | 'approved' | 'deprecated';
+  /**
    * Optional coded references attached to the card. May include
    * ICD-10 / ICD-11 (problem), SNOMED CT (clinical finding /
    * procedure), LOINC (lab / observation), RxNorm / ATC (drug),
