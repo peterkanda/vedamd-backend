@@ -23,10 +23,20 @@ const VALID_ACTION_TYPES = new Set(['remove', 'modify', 'add', 'monitor', 'order
 const VALID_INDICATORS: CdsIndicator[] = ['info', 'warning', 'critical'];
 const INDICATOR_RANK: Record<CdsIndicator, number> = { critical: 0, warning: 1, info: 2 };
 
+/**
+ * Anti-hallucination confidence floor applied to LLM-generated cards
+ * when the caller does not specify one. Cards below this threshold
+ * are silently dropped: the agentic layer is meant to *amplify* the
+ * deterministic safety floor, not replace it with low-confidence
+ * synthesis. The number is conservative — a 0.5 confidence card is
+ * a coin flip and not safe to show clinicians as actionable advice.
+ */
+const DEFAULT_AGENTIC_CONFIDENCE_FLOOR = 0.6;
+
 export function extractCards(
   llmText: string,
   generatedAt: string,
-  minConfidence = 0,
+  minConfidence: number = DEFAULT_AGENTIC_CONFIDENCE_FLOOR,
 ): { cards: CdsCard[]; citedRecords: Array<{ kind: string; id: string }> } {
   const json = extractJsonObject(llmText);
   if (!json) return { cards: [], citedRecords: [] };
@@ -70,6 +80,12 @@ export function extractCards(
           ruleId: 'agentic-reasoner',
           ruleVersion: '0.1.0',
           evidenceLevel: 'expert-consensus',
+          // Agentic cards always carry 'review' status — they're LLM
+          // synthesis over reviewed bundle records, but the synthesis
+          // itself is not human-reviewed. The UI surfaces this with a
+          // dedicated "AI-assisted" badge so clinicians can calibrate
+          // trust (HIGH-4 in the anti-hallucination audit).
+          reviewStatus: 'review',
           generatedAt,
           codings: citations.map((cit) => ({
             system: 'http://vedamd.io/codesystem/bundle-record',
