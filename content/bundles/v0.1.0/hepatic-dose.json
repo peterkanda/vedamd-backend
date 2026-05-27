@@ -288,5 +288,1945 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "B"
+  },
+  {
+    "slug": "fentanyl-hepatic",
+    "drugSlug": "fentanyl",
+    "drug": "Fentanyl",
+    "oneLiner": "PREFERRED parenteral opioid in liver disease — no active metabolites; hepatic clearance modestly affected even in advanced disease.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["analgesia", "anaesthesia", "hepatology", "palliative"],
+    "mechanism": "CYP3A4 hepatic metabolism to inactive metabolites. Clearance modestly reduced in cirrhosis but no neurotoxic accumulation (unlike morphine M3G). High protein binding — free fraction rises in hypoalbuminaemia.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing; usual PCA / patch regimens acceptable.", "notes": "First-choice opioid in cirrhosis." },
+      { "class": "B", "adjustment": "Start at 75% standard dose; titrate cautiously.", "notes": "Use IV PCA in preference to patch where titration needed." },
+      { "class": "C", "adjustment": "Reduce dose 50% and extend interval; close sedation / RR monitoring.", "notes": "Patches inappropriate for opioid-naive patient in this group." }
+    ],
+    "monitoring": "Sedation score, respiratory rate, GCS, signs of encephalopathy.",
+    "acuteFailureGuidance": "First-line parenteral opioid in acute liver failure.",
+    "alternatives": ["buprenorphine SL", "paracetamol ≤ 2 g/day for mild pain"],
+    "references": [
+      { "label": "Tegeder I et al. Pharmacokinetics of opioids in liver disease. Clin Pharmacokinet 1999." },
+      { "label": "Lewis JH, Stine JG. Aliment Pharmacol Ther 2013." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "codeine-hepatic",
+    "drugSlug": "codeine",
+    "drug": "Codeine",
+    "oneLiner": "AVOID in cirrhosis — CYP2D6-dependent conversion to morphine is unpredictable, and the morphine produced accumulates dangerously.",
+    "worstClassDecision": "avoid",
+    "domains": ["analgesia", "hepatology"],
+    "mechanism": "Prodrug requiring CYP2D6 conversion to morphine for analgesia. Cirrhosis affects both the conversion and the downstream morphine clearance. CYP2D6 polymorphisms add further unpredictability.",
+    "guidance": [
+      { "class": "A", "adjustment": "Use with caution and at reduced dose if essential.", "notes": "Prefer fentanyl or low-dose buprenorphine." },
+      { "class": "B", "adjustment": "AVOID.", "notes": "Unpredictable conversion + morphine accumulation." },
+      { "class": "C", "adjustment": "AVOID.", "notes": "Use fentanyl." }
+    ],
+    "monitoring": "Sedation, respiratory rate, signs of encephalopathy.",
+    "alternatives": ["fentanyl", "buprenorphine SL", "paracetamol ≤ 2 g/day"],
+    "references": [
+      { "label": "Lewis JH, Stine JG. Aliment Pharmacol Ther 2013." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "oxycodone-hepatic",
+    "drugSlug": "oxycodone",
+    "drug": "Oxycodone",
+    "oneLiner": "Reduce dose 50% in moderate-severe cirrhosis. CYP3A4/2D6 metabolism with active metabolite (oxymorphone). Prefer fentanyl when parenteral opioid needed.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["analgesia", "hepatology", "palliative"],
+    "mechanism": "Hepatic CYP3A4 / CYP2D6 metabolism with active metabolite oxymorphone. Clearance falls 50% in cirrhosis; both parent and metabolite accumulate.",
+    "guidance": [
+      { "class": "A", "adjustment": "Start at 50-75% standard dose; titrate cautiously.", "notes": "Avoid sustained-release in opioid-naive patient." },
+      { "class": "B", "adjustment": "Reduce dose 50% and extend interval.", "notes": "Prefer fentanyl for parenteral needs." },
+      { "class": "C", "adjustment": "AVOID; use fentanyl.", "notes": "Accumulation → encephalopathy and respiratory depression." }
+    ],
+    "monitoring": "Sedation score, RR, GCS, signs of encephalopathy.",
+    "alternatives": ["fentanyl", "buprenorphine SL"],
+    "references": [
+      { "label": "Tegeder I et al. Clin Pharmacokinet 1999." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "hydromorphone-hepatic",
+    "drugSlug": "hydromorphone",
+    "drug": "Hydromorphone",
+    "oneLiner": "Reduce dose in cirrhosis — accumulates similarly to morphine; fentanyl preferred.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["analgesia", "hepatology", "palliative"],
+    "mechanism": "Hepatic glucuronidation to hydromorphone-3-glucuronide (neurotoxic, accumulates in renal impairment). Cirrhosis lowers clearance.",
+    "guidance": [
+      { "class": "A", "adjustment": "Start at 50-75% standard dose.", "notes": "Caution if coexisting renal impairment." },
+      { "class": "B", "adjustment": "Reduce dose 50% and extend interval.", "notes": "Prefer fentanyl." },
+      { "class": "C", "adjustment": "AVOID; use fentanyl.", "notes": "Risk of accumulation and encephalopathy." }
+    ],
+    "monitoring": "Sedation, RR, GCS, asterixis, signs of encephalopathy.",
+    "alternatives": ["fentanyl", "buprenorphine"],
+    "references": [
+      { "label": "Lewis JH, Stine JG. Aliment Pharmacol Ther 2013." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "buprenorphine-hepatic",
+    "drugSlug": "buprenorphine",
+    "drug": "Buprenorphine",
+    "oneLiner": "Acceptable in Class A/B at reduced dose; CYP3A4-metabolised partial agonist with ceiling on respiratory depression. Use caution in Class C.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["analgesia", "addiction-medicine", "hepatology"],
+    "mechanism": "Partial μ-agonist; CYP3A4 hepatic metabolism to norbuprenorphine. Sublingual route bypasses first-pass. Ceiling effect on respiratory depression makes overdose less dangerous than full agonists.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing acceptable; monitor LFTs.", "notes": "Used in opioid use disorder treatment in cirrhotic patients." },
+      { "class": "B", "adjustment": "Reduce dose 25-50% with monitoring.", "notes": "LFT rise has been reported with buprenorphine — monitor." },
+      { "class": "C", "adjustment": "Use with caution at reduced dose; specialist input.", "notes": "Avoid high-dose sublingual; SL formulations often more stable than IV." }
+    ],
+    "monitoring": "LFTs at baseline and 1-3 monthly; sedation, RR.",
+    "alternatives": ["fentanyl (for acute analgesia)", "methadone with specialist supervision"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al. Rev Esp Enferm Dig 2012." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "methadone-hepatic",
+    "drugSlug": "methadone",
+    "drug": "Methadone",
+    "oneLiner": "Methadone is well-tolerated in mild-moderate cirrhosis but unpredictable in advanced disease — long half-life, QT prolongation, accumulation risk. Specialist supervision.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["analgesia", "addiction-medicine", "hepatology", "palliative"],
+    "mechanism": "CYP3A4 / CYP2B6 metabolism; very long, variable half-life (often > 24h); QT-prolonging. Cirrhosis reduces clearance and raises accumulation / cardiotoxicity risk.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard initiation by addiction / palliative specialist; baseline ECG.", "notes": "Drug interaction-prone (CYP3A inhibitors / inducers)." },
+      { "class": "B", "adjustment": "Reduce dose; slow titration; ECG monitoring.", "notes": "QT risk amplified by hypokalaemia (common in cirrhosis with diuretics)." },
+      { "class": "C", "adjustment": "AVOID where possible; specialist supervision essential if continued.", "notes": "Accumulation can cause prolonged sedation, fatal arrhythmia." }
+    ],
+    "monitoring": "ECG (QTc), electrolytes (K⁺, Mg²⁺), sedation, RR, LFTs.",
+    "alternatives": ["buprenorphine (safer ceiling on respiratory depression)", "fentanyl (acute analgesia)"],
+    "references": [
+      { "label": "Lewis JH, Stine JG. Aliment Pharmacol Ther 2013." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "pethidine-hepatic",
+    "drugSlug": "pethidine",
+    "drug": "Pethidine (meperidine)",
+    "oneLiner": "AVOID in any cirrhosis — accumulation of neurotoxic norpethidine causes seizures.",
+    "worstClassDecision": "avoid",
+    "domains": ["analgesia", "hepatology"],
+    "mechanism": "Hepatic N-demethylation to norpethidine (neurotoxic, half-life 15-20h; renally excreted). Cirrhosis + renal impairment → seizures, myoclonus, agitation. Largely obsolete.",
+    "guidance": [
+      { "class": "A", "adjustment": "AVOID.", "notes": "Other opioids preferred even at this level." },
+      { "class": "B", "adjustment": "AVOID.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "—",
+    "alternatives": ["fentanyl", "buprenorphine", "morphine at reduced dose"],
+    "references": [
+      { "label": "Lewis JH, Stine JG. Aliment Pharmacol Ther 2013." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "midazolam-hepatic",
+    "drugSlug": "midazolam",
+    "drug": "Midazolam",
+    "oneLiner": "AVOID in cirrhosis where possible — CYP3A oxidation impaired, prolonged sedation, precipitates encephalopathy. Use lorazepam if benzo essential.",
+    "worstClassDecision": "avoid",
+    "domains": ["anaesthesia", "critical-care", "hepatology"],
+    "mechanism": "CYP3A4 metabolism. Clearance markedly reduced in cirrhosis with prolonged sedation and risk of encephalopathy.",
+    "guidance": [
+      { "class": "A", "adjustment": "Use with caution at reduced dose; prefer lorazepam.", "notes": "If used for procedural sedation, halve dose." },
+      { "class": "B", "adjustment": "AVOID; use lorazepam.", "notes": "Prolonged sedation, encephalopathy risk." },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "Sedation, GCS, asterixis.",
+    "alternatives": ["lorazepam (glucuronidated)", "dexmedetomidine for ICU sedation"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al. Rev Esp Enferm Dig 2012." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "propofol-hepatic",
+    "drugSlug": "propofol",
+    "drug": "Propofol",
+    "oneLiner": "Acceptable for ICU sedation and procedures in cirrhosis at modestly reduced infusion rate; rapid offset preserved.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["anaesthesia", "critical-care", "hepatology"],
+    "mechanism": "Hepatic and extrahepatic conjugation; very high clearance with rapid offset largely preserved even in cirrhosis. Hypotension is the main concern in volume-depleted cirrhotic patients.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard induction and infusion doses; titrate to effect.", "notes": "Hypotension common — pre-load if hypovolaemic." },
+      { "class": "B", "adjustment": "Reduce induction dose 25%; cautious infusion titration.", "notes": "Watch for haemodynamic instability." },
+      { "class": "C", "adjustment": "Reduce dose; very cautious titration; lower infusion rates.", "notes": "Hypotension can precipitate HRS." }
+    ],
+    "monitoring": "BP, HR, SpO2, depth of sedation; lactate / triglycerides for prolonged infusion (propofol infusion syndrome).",
+    "alternatives": ["dexmedetomidine for prolonged ICU sedation", "low-dose lorazepam infusion"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al. Rev Esp Enferm Dig 2012." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "dexmedetomidine-hepatic",
+    "drugSlug": "dexmedetomidine",
+    "drug": "Dexmedetomidine",
+    "oneLiner": "Reduce infusion dose in cirrhosis — hepatic clearance impaired; useful alternative to benzos for ICU sedation.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["critical-care", "anaesthesia", "hepatology"],
+    "mechanism": "Selective α2 agonist; hepatic glucuronidation and CYP metabolism. Clearance falls progressively through Child-Pugh classes.",
+    "guidance": [
+      { "class": "A", "adjustment": "Reduce maintenance infusion 25%.", "notes": "Useful for ICU sedation avoiding delirium." },
+      { "class": "B", "adjustment": "Reduce 25-50% and titrate slowly.", "notes": "Watch for bradycardia and hypotension." },
+      { "class": "C", "adjustment": "Reduce 50% with very cautious titration.", "notes": "Discuss with intensivist." }
+    ],
+    "monitoring": "HR, BP, sedation score.",
+    "alternatives": ["propofol (shorter offset)", "lorazepam infusion"],
+    "references": [
+      { "label": "FDA label / SmPC for dexmedetomidine; Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "zopiclone-hepatic",
+    "drugSlug": "zopiclone",
+    "drug": "Zopiclone / zolpidem (Z-drugs)",
+    "oneLiner": "Reduce dose 50% in any cirrhosis; AVOID in Class C — risk of encephalopathy and prolonged sedation.",
+    "worstClassDecision": "avoid",
+    "domains": ["psychiatry", "hepatology"],
+    "mechanism": "Hepatic CYP3A metabolism. Z-drugs share benzo-like GABA-A modulation; same encephalopathy risks in cirrhosis.",
+    "guidance": [
+      { "class": "A", "adjustment": "Reduce dose 50% (e.g. zopiclone 3.75 mg, zolpidem 5 mg); short course only.", "notes": "Address sleep hygiene; avoid alcohol." },
+      { "class": "B", "adjustment": "AVOID where possible.", "notes": "Encephalopathy risk." },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "Sedation, GCS, encephalopathy signs.",
+    "alternatives": ["sleep hygiene", "melatonin", "trazodone with caution"],
+    "references": [
+      { "label": "BNF Z-drug cautions; Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ketamine-hepatic",
+    "drugSlug": "ketamine",
+    "drug": "Ketamine",
+    "oneLiner": "Useful for analgesia / sedation in cirrhosis — primarily extrahepatic clearance preserved at procedural doses. Limit prolonged infusions (hepatotoxicity with chronic use).",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["anaesthesia", "critical-care", "analgesia", "hepatology"],
+    "mechanism": "Hepatic CYP3A/2B6 metabolism to norketamine (active). High clearance preserved. Chronic infusions (> several days) associated with cholestatic LFT rise.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard procedural and sub-anaesthetic analgesia doses.", "notes": "Useful opioid-sparing adjunct." },
+      { "class": "B", "adjustment": "Reduce dose 25-50%; limit infusion duration.", "notes": "Watch LFTs with prolonged infusion." },
+      { "class": "C", "adjustment": "Reduce dose; short duration only.", "notes": "Specialist input." }
+    ],
+    "monitoring": "BP, HR, dissociation; LFTs if prolonged use.",
+    "alternatives": ["fentanyl PCA", "low-dose propofol"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al. Rev Esp Enferm Dig 2012." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "amoxicillin-hepatic",
+    "drugSlug": "amoxicillin",
+    "drug": "Amoxicillin (± clavulanate)",
+    "oneLiner": "Amoxicillin alone: standard dosing in cirrhosis. Co-amoxiclav: well-recognised cause of cholestatic DILI — use cautiously.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["antimicrobials", "infectious-disease", "hepatology"],
+    "mechanism": "Renal excretion (parent compound). Clavulanate carries a small but consistent risk of cholestatic hepatitis (delayed, idiosyncratic), more prominent in older patients and prolonged courses.",
+    "guidance": [
+      { "class": "A", "adjustment": "Amoxicillin standard dosing. Co-amoxiclav with baseline + interval LFT monitoring.", "notes": "Counsel about jaundice." },
+      { "class": "B", "adjustment": "Same; weigh benefit of co-amoxiclav vs alternative.", "notes": "DILI risk." },
+      { "class": "C", "adjustment": "Same; co-amoxiclav DILI may be poorly tolerated.", "notes": "Use narrower-spectrum or alternative if appropriate." }
+    ],
+    "monitoring": "LFTs if prolonged course or DILI suspicion.",
+    "alternatives": ["amoxicillin alone", "narrow-spectrum agent per culture"],
+    "references": [
+      { "label": "EASL Clinical Practice Guidelines on Drug-Induced Liver Injury (2019)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ceftriaxone-hepatic",
+    "drugSlug": "ceftriaxone",
+    "drug": "Ceftriaxone",
+    "oneLiner": "Standard dosing in cirrhosis; first-line for SBP prophylaxis / treatment. Reduce dose only if combined hepatic + severe renal impairment.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["antimicrobials", "infectious-disease", "hepatology"],
+    "mechanism": "Mixed hepatobiliary and renal excretion. Useful in cirrhosis for SBP, sepsis. Risk of biliary pseudolithiasis with prolonged courses.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard 1-2 g IV daily.", "notes": "First-line for SBP." },
+      { "class": "B", "adjustment": "Standard dose; monitor renal function.", "notes": "Watch biliary pseudolithiasis with prolonged courses." },
+      { "class": "C", "adjustment": "Reduce dose only if combined hepatic + severe renal impairment.", "notes": "" }
+    ],
+    "monitoring": "Renal function, LFTs, signs of biliary obstruction with prolonged use.",
+    "alternatives": ["piperacillin-tazobactam", "carbapenem for resistant organisms"],
+    "references": [
+      { "label": "EASL Clinical Practice Guidelines on decompensated cirrhosis 2018." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "metronidazole-hepatic",
+    "drugSlug": "metronidazole",
+    "drug": "Metronidazole",
+    "oneLiner": "Reduce dose 50% in severe cirrhosis — hepatic metabolism impaired, risk of accumulation and neurotoxicity.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["antimicrobials", "infectious-disease", "hepatology"],
+    "mechanism": "Hepatic oxidation and conjugation. Accumulation in cirrhosis can cause peripheral neuropathy, encephalopathy.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing.", "notes": "Monitor for prolonged courses." },
+      { "class": "B", "adjustment": "Reduce dose 30-50% or extend interval.", "notes": "Watch neurotoxicity." },
+      { "class": "C", "adjustment": "Reduce dose 50%.", "notes": "Limit duration." }
+    ],
+    "monitoring": "Neurological symptoms (paraesthesia, ataxia, confusion).",
+    "alternatives": ["clindamycin (different toxicity)", "depends on indication"],
+    "references": [
+      { "label": "BNF / SmPC metronidazole liver disease section." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vancomycin-hepatic",
+    "drugSlug": "vancomycin",
+    "drug": "Vancomycin (IV)",
+    "oneLiner": "Renally cleared — no hepatic dose adjustment. Caution with concurrent nephrotoxic agents (cirrhotic patients are more nephrotoxin-sensitive).",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["antimicrobials", "infectious-disease", "hepatology"],
+    "mechanism": "Renal excretion. Hepatic clearance negligible. Cirrhotic patients are predisposed to AKI which then affects vancomycin clearance.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing with TDM.", "notes": "" },
+      { "class": "B", "adjustment": "Standard dosing with TDM; closer renal monitoring.", "notes": "Cirrhotic patients more prone to AKI." },
+      { "class": "C", "adjustment": "Standard dosing with TDM; adjust per renal function.", "notes": "HRS risk; co-administered nephrotoxins compound." }
+    ],
+    "monitoring": "Trough levels; creatinine.",
+    "alternatives": ["linezolid (renal-sparing) where appropriate"],
+    "references": [
+      { "label": "IDSA / ASHP vancomycin TDM 2020." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "linezolid-hepatic",
+    "drugSlug": "linezolid",
+    "drug": "Linezolid",
+    "oneLiner": "Standard dosing in cirrhosis (non-CYP hepatic metabolism); use with caution given thrombocytopenia and lactic acidosis risk in advanced disease.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["antimicrobials", "infectious-disease", "hepatology"],
+    "mechanism": "Non-enzymatic oxidation; no CYP involvement. Toxicities (myelosuppression, neuropathy, lactic acidosis, serotonin syndrome) of concern in cirrhotics with anaemia, thrombocytopenia, hyperlactataemia.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard 600 mg q12h.", "notes": "Weekly FBC." },
+      { "class": "B", "adjustment": "Standard dose; closer FBC monitoring.", "notes": "Thrombocytopenia worsens with cirrhosis." },
+      { "class": "C", "adjustment": "Standard dose with caution; monitor lactate.", "notes": "Lactic acidosis precipitating factor in decompensated patient." }
+    ],
+    "monitoring": "FBC weekly; lactate; serotonergic drug interactions.",
+    "alternatives": ["vancomycin", "daptomycin (not for pneumonia)"],
+    "references": [
+      { "label": "FDA linezolid label; Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "clindamycin-hepatic",
+    "drugSlug": "clindamycin",
+    "drug": "Clindamycin",
+    "oneLiner": "Reduce dose in Class B/C — hepatically metabolised, accumulation risk; also recognised cause of cholestatic injury.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["antimicrobials", "infectious-disease", "hepatology"],
+    "mechanism": "Hepatic CYP3A4 metabolism with biliary excretion. Accumulates in cirrhosis. Idiosyncratic cholestatic hepatitis reported.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing with LFT monitoring.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose 25-50% or extend interval.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose 50% with intensive monitoring.", "notes": "C. difficile risk in any cirrhotic patient." }
+    ],
+    "monitoring": "LFTs, stool for CDI risk.",
+    "alternatives": ["depends on indication; macrolide or metronidazole for anaerobes"],
+    "references": [
+      { "label": "BNF clindamycin liver disease section." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "isoniazid-hepatic",
+    "drugSlug": "isoniazid",
+    "drug": "Isoniazid",
+    "oneLiner": "Inherently hepatotoxic — combined with rifampicin in TB therapy, hepatitis risk multiplied. Avoid in Class C unless TB justifies; intensive LFT monitoring throughout.",
+    "worstClassDecision": "avoid",
+    "domains": ["antimicrobials", "tuberculosis", "infectious-disease", "hepatology"],
+    "mechanism": "Hepatic N-acetylation; rate determined by NAT2 polymorphism. Hepatotoxicity well-recognised (idiosyncratic), amplified by rifampicin, alcohol use, age, baseline liver disease.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard 5 mg/kg/day with intensive LFT monitoring; co-prescribe pyridoxine 25 mg/day.", "notes": "Stop if ALT > 5× ULN or > 3× ULN with symptoms." },
+      { "class": "B", "adjustment": "Reduce dose; closer monitoring; TB-specialist supervision.", "notes": "Consider liver-sparing regimen." },
+      { "class": "C", "adjustment": "AVOID where possible.", "notes": "Specialist supervision essential if continued." }
+    ],
+    "monitoring": "LFTs at baseline, weekly first month then fortnightly; symptoms of hepatitis; peripheral neuropathy (give pyridoxine).",
+    "alternatives": ["liver-sparing regimen (moxifloxacin / linezolid based)"],
+    "references": [
+      { "label": "Saukkonen JJ et al. ATS / IDSA / CDC 2006." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "pyrazinamide-hepatic",
+    "drugSlug": "pyrazinamide",
+    "drug": "Pyrazinamide",
+    "oneLiner": "Highly hepatotoxic — usually omitted or replaced in Class B/C cirrhosis; specialist TB input.",
+    "worstClassDecision": "avoid",
+    "domains": ["antimicrobials", "tuberculosis", "hepatology"],
+    "mechanism": "Hepatic hydrolysis to pyrazinoic acid; intrinsic hepatotoxin. Risk highest in first 2 months of therapy.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing only with intensive monitoring.", "notes": "Hepatology + TB MDT input." },
+      { "class": "B", "adjustment": "AVOID; consider omitting from regimen.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "Specialist substitutes essential." }
+    ],
+    "monitoring": "LFTs intensively first 2 months; uric acid.",
+    "alternatives": ["moxifloxacin", "linezolid (in MDR-TB regimens)"],
+    "references": [
+      { "label": "Saukkonen JJ et al. ATS / IDSA / CDC 2006." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ethambutol-hepatic",
+    "drugSlug": "ethambutol",
+    "drug": "Ethambutol",
+    "oneLiner": "Renally cleared, minimal hepatic effect — useful in liver-sparing TB regimens. Monitor visual function.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["antimicrobials", "tuberculosis", "hepatology"],
+    "mechanism": "Mostly renal excretion; modest hepatic metabolism. Optic neuritis is the dose-limiting toxicity.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard 15-25 mg/kg/day.", "notes": "Visual acuity / colour vision at baseline." },
+      { "class": "B", "adjustment": "Standard dose; useful in liver-sparing regimens.", "notes": "Adjust per renal function (cirrhotic AKI common)." },
+      { "class": "C", "adjustment": "Standard dose; adjust per renal function.", "notes": "" }
+    ],
+    "monitoring": "Visual acuity / colour vision monthly; renal function.",
+    "alternatives": ["TB-specialist regimen choice"],
+    "references": [
+      { "label": "WHO consolidated guidelines on TB treatment." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "fluconazole-hepatic",
+    "drugSlug": "fluconazole",
+    "drug": "Fluconazole",
+    "oneLiner": "Use with caution in cirrhosis — recognised cause of hepatocellular and cholestatic DILI; CYP inhibitor (many interactions).",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["antimicrobials", "infectious-disease", "hepatology"],
+    "mechanism": "Renal excretion of parent. CYP2C9 / CYP3A4 inhibitor — drug-drug interactions important in polypharmacy. Idiosyncratic hepatitis at higher doses.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing with LFT monitoring.", "notes": "Review interaction list (warfarin, tacrolimus, statins)." },
+      { "class": "B", "adjustment": "Standard dose; closer LFT monitoring.", "notes": "" },
+      { "class": "C", "adjustment": "Use with caution; lowest effective dose; stop on rising ALT.", "notes": "" }
+    ],
+    "monitoring": "LFTs; drug interactions.",
+    "alternatives": ["other azole per indication", "echinocandin (caspofungin, micafungin)"],
+    "references": [
+      { "label": "EASL Drug-Induced Liver Injury guidelines 2019." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "voriconazole-hepatic",
+    "drugSlug": "voriconazole",
+    "drug": "Voriconazole",
+    "oneLiner": "Reduce maintenance dose 50% in Child-Pugh A/B (per label); AVOID in Class C — frequent and severe hepatotoxicity.",
+    "worstClassDecision": "avoid",
+    "domains": ["antimicrobials", "infectious-disease", "hepatology"],
+    "mechanism": "Extensive hepatic CYP2C19 / CYP3A4 metabolism. Hepatotoxicity common; potent CYP inhibitor.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard loading; maintenance dose halved per SmPC.", "notes": "TDM mandatory." },
+      { "class": "B", "adjustment": "Standard loading; maintenance halved with TDM.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID; use alternative.", "notes": "Specialist input." }
+    ],
+    "monitoring": "Trough levels; LFTs; visual disturbance.",
+    "alternatives": ["echinocandins", "isavuconazole (better hepatic profile)"],
+    "references": [
+      { "label": "EMA / FDA voriconazole label." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "itraconazole-hepatic",
+    "drugSlug": "itraconazole",
+    "drug": "Itraconazole",
+    "oneLiner": "Avoid in active liver disease — CYP3A4-metabolised with prominent hepatotoxicity; potent CYP3A inhibitor.",
+    "worstClassDecision": "avoid",
+    "domains": ["antimicrobials", "infectious-disease", "hepatology"],
+    "mechanism": "CYP3A4 metabolism and inhibition. Idiosyncratic hepatitis. Negative inotrope — caution in heart failure.",
+    "guidance": [
+      { "class": "A", "adjustment": "Use with caution; LFT monitoring.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose; closer monitoring.", "notes": "Many interactions." },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "LFTs; cardiac function; interactions.",
+    "alternatives": ["isavuconazole", "echinocandin per indication"],
+    "references": [
+      { "label": "BNF / SmPC itraconazole." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "tenofovir-hepatic",
+    "drugSlug": "tenofovir",
+    "drug": "Tenofovir (TDF / TAF)",
+    "oneLiner": "Renally cleared; no hepatic dose adjustment. First-line for chronic hepatitis B; useful in HIV + HBV co-infection.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["antimicrobials", "hiv", "viral-hepatitis", "hepatology"],
+    "mechanism": "Renal excretion. Used to treat HBV / HIV; particularly important in cirrhotic HBV patients (rapid hepatic decompensation if interrupted).",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose adjusted for renal function.", "notes": "Monitor renal function." },
+      { "class": "B", "adjustment": "Standard dose; monitor renal function.", "notes": "Critical for HBV cirrhosis." },
+      { "class": "C", "adjustment": "Standard dose; do not interrupt in HBV cirrhosis (flare and decompensation risk).", "notes": "" }
+    ],
+    "monitoring": "Creatinine, phosphate, urinalysis; HBV DNA / HBeAg as appropriate.",
+    "alternatives": ["entecavir (HBV)", "specialist regimen choice"],
+    "references": [
+      { "label": "EASL Clinical Practice Guidelines on HBV (2017)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "efavirenz-hepatic",
+    "drugSlug": "efavirenz",
+    "drug": "Efavirenz",
+    "oneLiner": "Avoid in moderate-severe hepatic impairment — extensive CYP metabolism, hepatotoxicity, lipid effects.",
+    "worstClassDecision": "avoid",
+    "domains": ["antimicrobials", "hiv", "hepatology"],
+    "mechanism": "CYP2B6 / CYP3A4 hepatic metabolism with active metabolites. Hepatotoxicity prominent; neuropsychiatric effects.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose with LFT monitoring.", "notes": "" },
+      { "class": "B", "adjustment": "AVOID where alternatives exist (e.g. dolutegravir).", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "LFTs; neuropsychiatric symptoms.",
+    "alternatives": ["dolutegravir-based regimen", "specialist HIV choice"],
+    "references": [
+      { "label": "EACS guidelines on ART in liver disease." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "dolutegravir-hepatic",
+    "drugSlug": "dolutegravir",
+    "drug": "Dolutegravir",
+    "oneLiner": "Standard dose in Class A/B; avoid in Class C (limited data). Preferred over efavirenz in cirrhotic HIV patients.",
+    "worstClassDecision": "avoid",
+    "domains": ["antimicrobials", "hiv", "hepatology"],
+    "mechanism": "UGT1A1 / CYP3A4 hepatic metabolism. Hepatotoxicity uncommon; integrase inhibitor with high barrier to resistance.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard 50 mg daily.", "notes": "Preferred over efavirenz in liver disease." },
+      { "class": "B", "adjustment": "Standard dose; LFT monitoring.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID (limited data per SmPC).", "notes": "Specialist HIV input." }
+    ],
+    "monitoring": "LFTs; viral load.",
+    "alternatives": ["raltegravir (similar mechanism; alternative in severe liver disease)"],
+    "references": [
+      { "label": "EMA / FDA dolutegravir label; EACS guidelines." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "raltegravir-hepatic",
+    "drugSlug": "raltegravir",
+    "drug": "Raltegravir",
+    "oneLiner": "Standard dosing in any cirrhosis — UGT1A1 metabolism with minimal CYP involvement, useful in advanced liver disease.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["antimicrobials", "hiv", "hepatology"],
+    "mechanism": "Hepatic UGT1A1 glucuronidation; minimal CYP. Lower hepatotoxicity signal than older agents.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard 400 mg BD.", "notes": "" },
+      { "class": "B", "adjustment": "Standard dose; LFT monitoring.", "notes": "" },
+      { "class": "C", "adjustment": "Standard dose with caution.", "notes": "Useful in severe hepatic impairment per EACS." }
+    ],
+    "monitoring": "LFTs; viral load.",
+    "alternatives": ["dolutegravir"],
+    "references": [
+      { "label": "EACS guidelines; EMA raltegravir label." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "atazanavir-hepatic",
+    "drugSlug": "atazanavir",
+    "drug": "Atazanavir",
+    "oneLiner": "Avoid in Class B/C — extensive hepatic metabolism, hyperbilirubinaemia (UGT1A1 inhibition) confounds monitoring.",
+    "worstClassDecision": "avoid",
+    "domains": ["antimicrobials", "hiv", "hepatology"],
+    "mechanism": "CYP3A4 metabolism; potent UGT1A1 inhibitor (causing benign unconjugated hyperbilirubinaemia that complicates assessment in cirrhotic patients).",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose; expect mild hyperbilirubinaemia.", "notes": "" },
+      { "class": "B", "adjustment": "AVOID where alternatives exist.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "Bilirubin baseline (interpret with caution), LFTs.",
+    "alternatives": ["darunavir/ritonavir (with caution)", "dolutegravir"],
+    "references": [
+      { "label": "EACS guidelines." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "darunavir-hepatic",
+    "drugSlug": "darunavir",
+    "drug": "Darunavir / ritonavir",
+    "oneLiner": "Use with caution in any liver disease — hepatotoxicity, CYP3A4 inhibition. Avoid in severe hepatic impairment.",
+    "worstClassDecision": "avoid",
+    "domains": ["antimicrobials", "hiv", "hepatology"],
+    "mechanism": "Ritonavir-boosted protease inhibitor — extensive CYP3A metabolism. Hepatotoxicity and many interactions.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose with LFT monitoring.", "notes": "" },
+      { "class": "B", "adjustment": "Use with caution; reduce dose only if specifically indicated.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "LFTs; interactions.",
+    "alternatives": ["integrase inhibitor-based regimen"],
+    "references": [
+      { "label": "EACS guidelines." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "digoxin-hepatic",
+    "drugSlug": "digoxin",
+    "drug": "Digoxin",
+    "oneLiner": "Renally cleared — no hepatic dose adjustment. Cirrhotic AKI requires reduced dose; narrow therapeutic window.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "Renal excretion. Cirrhotic patients are more prone to AKI and electrolyte derangement (hypokalaemia from diuretics) which amplify digoxin toxicity.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing with TDM.", "notes": "Watch K⁺ in patients on diuretics." },
+      { "class": "B", "adjustment": "Standard dose; closer renal / K⁺ monitoring.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose for AKI; specialist input.", "notes": "" }
+    ],
+    "monitoring": "Digoxin level; renal function; K⁺, Mg²⁺.",
+    "alternatives": ["beta-blocker for rate control"],
+    "references": [
+      { "label": "BNF digoxin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "amiodarone-hepatic",
+    "drugSlug": "amiodarone",
+    "drug": "Amiodarone",
+    "oneLiner": "Avoid in active liver disease — inherently hepatotoxic with steatohepatitis. Use only where benefit clearly outweighs risk.",
+    "worstClassDecision": "avoid",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "Extensive hepatic CYP3A4 metabolism; deposition causes steatohepatitis indistinguishable from NASH. Very long half-life (weeks).",
+    "guidance": [
+      { "class": "A", "adjustment": "Use with caution; intensive LFT monitoring.", "notes": "Stop if ALT rises persistently." },
+      { "class": "B", "adjustment": "AVOID where alternatives exist.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "LFTs at baseline and 6-monthly; TFTs; chest imaging.",
+    "alternatives": ["beta-blocker", "catheter ablation", "specialist arrhythmia care"],
+    "references": [
+      { "label": "BNF amiodarone; EASL DILI 2019." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "metoprolol-hepatic",
+    "drugSlug": "metoprolol",
+    "drug": "Metoprolol",
+    "oneLiner": "Reduce dose in cirrhosis — high hepatic first-pass extraction; clearance markedly reduced.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "Extensive CYP2D6 hepatic first-pass metabolism. Bioavailability rises in cirrhosis. CYP2D6 polymorphism adds variability.",
+    "guidance": [
+      { "class": "A", "adjustment": "Start at 50% standard dose; titrate to HR/BP.", "notes": "" },
+      { "class": "B", "adjustment": "Start at 25-50% dose with slow titration.", "notes": "" },
+      { "class": "C", "adjustment": "Start very low; titrate cautiously.", "notes": "" }
+    ],
+    "monitoring": "HR, BP.",
+    "alternatives": ["carvedilol (preferred for variceal prophylaxis)", "bisoprolol (renal excretion)"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "carvedilol-hepatic",
+    "drugSlug": "carvedilol",
+    "drug": "Carvedilol",
+    "oneLiner": "First-line non-selective β + α-blocker for variceal prophylaxis. Start low; titrate to HR/BP. Hold during decompensation.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "Hepatic CYP2D6 / CYP2C9 metabolism. Non-selective beta + alpha blockade reduces portal pressure more than propranolol at lower doses.",
+    "guidance": [
+      { "class": "A", "adjustment": "Start 6.25 mg/day; titrate to 12.5 mg/day.", "notes": "Variceal prophylaxis." },
+      { "class": "B", "adjustment": "Standard low-dose titration; monitor BP.", "notes": "" },
+      { "class": "C", "adjustment": "Use with caution — stop if refractory ascites, HRS, SBP develops, or hypotension.", "notes": "'Window hypothesis'." }
+    ],
+    "monitoring": "BP, HR, renal function.",
+    "alternatives": ["propranolol", "band ligation"],
+    "references": [
+      { "label": "Garcia-Tsao G et al. AASLD 2017." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "bisoprolol-hepatic",
+    "drugSlug": "bisoprolol",
+    "drug": "Bisoprolol",
+    "oneLiner": "Mixed renal/hepatic clearance — reduce dose modestly in advanced cirrhosis.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "Roughly 50:50 hepatic and renal clearance. Cardioselective β1 blocker — not first-choice for variceal prophylaxis (no portal-pressure benefit beyond β1).",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose modestly; titrate slowly.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose; cautious titration.", "notes": "Not for variceal prophylaxis (use carvedilol / propranolol)." }
+    ],
+    "monitoring": "HR, BP.",
+    "alternatives": ["carvedilol", "propranolol"],
+    "references": [
+      { "label": "BNF bisoprolol." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "atenolol-hepatic",
+    "drugSlug": "atenolol",
+    "drug": "Atenolol",
+    "oneLiner": "Renally cleared — no hepatic dose adjustment. Not first-line for variceal prophylaxis (cardioselective).",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "Renal excretion. Cardioselective β1 blocker.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose adjusted for renal function.", "notes": "" },
+      { "class": "B", "adjustment": "Standard dose; adjust for renal function.", "notes": "" },
+      { "class": "C", "adjustment": "Standard dose; adjust for renal function.", "notes": "" }
+    ],
+    "monitoring": "HR, BP, renal function.",
+    "alternatives": ["carvedilol (preferred for variceal prophylaxis)"],
+    "references": [
+      { "label": "BNF atenolol." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "atorvastatin-hepatic",
+    "drugSlug": "atorvastatin",
+    "drug": "Atorvastatin",
+    "oneLiner": "Compensated cirrhosis (Class A): acceptable, may improve outcomes. Decompensated: avoid.",
+    "worstClassDecision": "avoid",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "CYP3A4 hepatic metabolism. Hepatotoxicity rare but recognised.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard or reduced starting dose with LFT monitoring.", "notes": "Observational benefit in compensated cirrhosis." },
+      { "class": "B", "adjustment": "Use with caution; reduced dose; weigh benefit vs risk.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "Baseline LFTs; 4-12 weeks then 6-monthly.",
+    "alternatives": ["pravastatin / rosuvastatin (less CYP)", "ezetimibe"],
+    "references": [
+      { "label": "Bays H et al. J Clin Lipidol 2014." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "simvastatin-hepatic",
+    "drugSlug": "simvastatin",
+    "drug": "Simvastatin",
+    "oneLiner": "Avoid in active liver disease — CYP3A4 substrate with many interactions and dose-dependent hepatotoxicity at high dose.",
+    "worstClassDecision": "avoid",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "CYP3A4-dependent; high-dose simvastatin (80 mg) associated with myopathy and higher DILI risk.",
+    "guidance": [
+      { "class": "A", "adjustment": "Use with caution; reduce dose; prefer alternative statin.", "notes": "" },
+      { "class": "B", "adjustment": "AVOID.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "LFTs; CK if myopathy symptoms.",
+    "alternatives": ["pravastatin", "rosuvastatin", "ezetimibe"],
+    "references": [
+      { "label": "Bays H et al. J Clin Lipidol 2014." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "rosuvastatin-hepatic",
+    "drugSlug": "rosuvastatin",
+    "drug": "Rosuvastatin",
+    "oneLiner": "Minimal CYP metabolism — preferred statin in compensated cirrhosis; still avoid in decompensated disease.",
+    "worstClassDecision": "avoid",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "Minimal CYP2C9 hepatic metabolism; predominantly biliary excretion of unchanged drug. Lower interaction profile.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose; preferred over CYP-metabolised statins.", "notes": "" },
+      { "class": "B", "adjustment": "Use with caution; reduced dose.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "LFTs; CK.",
+    "alternatives": ["pravastatin", "ezetimibe"],
+    "references": [
+      { "label": "Bays H et al. J Clin Lipidol 2014." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "pravastatin-hepatic",
+    "drugSlug": "pravastatin",
+    "drug": "Pravastatin",
+    "oneLiner": "Minimal hepatic CYP metabolism — preferred statin in compensated cirrhosis.",
+    "worstClassDecision": "avoid",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "Hepatic uptake by OATP1B1; minimal CYP metabolism; renal excretion of metabolites. Lower DILI signal.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose; preferred statin.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose; caution.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "LFTs; CK.",
+    "alternatives": ["rosuvastatin", "ezetimibe"],
+    "references": [
+      { "label": "Bays H et al. J Clin Lipidol 2014." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ezetimibe-hepatic",
+    "drugSlug": "ezetimibe",
+    "drug": "Ezetimibe",
+    "oneLiner": "Use with caution in cirrhosis — limited data in advanced liver disease; minimal hepatic metabolism but biliary excretion.",
+    "worstClassDecision": "avoid",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "Glucuronidation in intestine and liver; biliary excretion of metabolite. Effect on enterohepatic cholesterol absorption.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard 10 mg/day.", "notes": "" },
+      { "class": "B", "adjustment": "AVOID per SmPC (limited data).", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "LFTs.",
+    "alternatives": ["dietary intervention"],
+    "references": [
+      { "label": "EMA / FDA ezetimibe label." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "lisinopril-hepatic",
+    "drugSlug": "lisinopril",
+    "drug": "Lisinopril (ACE inhibitor)",
+    "oneLiner": "Renally cleared — no hepatic dose adjustment. Avoid in decompensated cirrhosis with ascites (HRS risk; worsens renal perfusion).",
+    "worstClassDecision": "avoid",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "ACE inhibition reduces angiotensin-mediated renal perfusion that cirrhotic patients depend on. Risk of AKI / HRS / hyperkalaemia.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose with renal monitoring.", "notes": "" },
+      { "class": "B", "adjustment": "Use with caution; close renal function and K⁺ monitoring.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID — HRS / hyperkalaemia risk.", "notes": "" }
+    ],
+    "monitoring": "Creatinine, K⁺.",
+    "alternatives": ["alternative antihypertensive (avoid in advanced cirrhosis)"],
+    "references": [
+      { "label": "EASL decompensated cirrhosis guidelines 2018." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "losartan-hepatic",
+    "drugSlug": "losartan",
+    "drug": "Losartan (ARB)",
+    "oneLiner": "Reduce dose in cirrhosis (CYP2C9 metabolism). Avoid in decompensated disease — HRS / hyperkalaemia risk.",
+    "worstClassDecision": "avoid",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "CYP2C9 / CYP3A4 conversion to active metabolite. Cirrhosis reduces this conversion, lowering antihypertensive effect; AT1 blockade still affects renal perfusion.",
+    "guidance": [
+      { "class": "A", "adjustment": "Reduce starting dose (e.g. 25 mg).", "notes": "" },
+      { "class": "B", "adjustment": "Use with caution; reduced dose; renal / K⁺ monitoring.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID — HRS / hyperkalaemia risk.", "notes": "" }
+    ],
+    "monitoring": "Creatinine, K⁺.",
+    "alternatives": ["alternative antihypertensive"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "amlodipine-hepatic",
+    "drugSlug": "amlodipine",
+    "drug": "Amlodipine",
+    "oneLiner": "Reduce dose in cirrhosis — extensive hepatic CYP3A4 metabolism, half-life prolonged.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "CYP3A4 hepatic metabolism. Half-life lengthens markedly in cirrhosis.",
+    "guidance": [
+      { "class": "A", "adjustment": "Start 2.5 mg; titrate slowly.", "notes": "" },
+      { "class": "B", "adjustment": "Start 2.5 mg; up-titrate cautiously.", "notes": "" },
+      { "class": "C", "adjustment": "Start 2.5 mg; close BP monitoring.", "notes": "" }
+    ],
+    "monitoring": "BP, oedema (worsens in cirrhotic ascites).",
+    "alternatives": ["alternative antihypertensive"],
+    "references": [
+      { "label": "BNF amlodipine; Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "diltiazem-hepatic",
+    "drugSlug": "diltiazem",
+    "drug": "Diltiazem",
+    "oneLiner": "Reduce dose in cirrhosis — extensive CYP3A4 metabolism; potent CYP3A inhibitor.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "CYP3A4 metabolism and inhibition. Many interactions (statins, tacrolimus, midazolam).",
+    "guidance": [
+      { "class": "A", "adjustment": "Start low; titrate.", "notes": "Review interactions." },
+      { "class": "B", "adjustment": "Reduce dose 25-50%.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose 50%; specialist input.", "notes": "" }
+    ],
+    "monitoring": "HR, BP; LFTs; interactions.",
+    "alternatives": ["beta-blocker", "amlodipine"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "verapamil-hepatic",
+    "drugSlug": "verapamil",
+    "drug": "Verapamil",
+    "oneLiner": "Reduce dose in cirrhosis — high hepatic first-pass extraction; bioavailability greatly increased.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "Extensive CYP3A4 first-pass metabolism. Cirrhosis raises bioavailability several-fold.",
+    "guidance": [
+      { "class": "A", "adjustment": "Reduce starting dose 25-50%.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce 50%; cautious titration.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce 50-75%; specialist input.", "notes": "Constipation worsens encephalopathy risk." }
+    ],
+    "monitoring": "HR, BP, BNF interactions.",
+    "alternatives": ["beta-blocker"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "hydralazine-hepatic",
+    "drugSlug": "hydralazine",
+    "drug": "Hydralazine",
+    "oneLiner": "Reduce dose in cirrhosis — hepatic N-acetylation impaired; acetylator status affects exposure. Drug-induced lupus risk.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["cardiology", "hepatology"],
+    "mechanism": "Hepatic N-acetylation (NAT2-polymorphic). Slow acetylators have higher exposure. Drug-induced lupus and idiosyncratic hepatitis recognised.",
+    "guidance": [
+      { "class": "A", "adjustment": "Reduce starting dose.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose 25-50%.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce 50%; specialist input.", "notes": "" }
+    ],
+    "monitoring": "BP, ANA if symptoms; LFTs.",
+    "alternatives": ["alternative antihypertensive"],
+    "references": [
+      { "label": "BNF hydralazine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "warfarin-hepatic",
+    "drugSlug": "warfarin",
+    "drug": "Warfarin",
+    "oneLiner": "Difficult to use in advanced cirrhosis — baseline INR derangement, lower factor synthesis, narrow therapeutic window. LMWH usually preferred in Class B/C.",
+    "worstClassDecision": "avoid",
+    "domains": ["haematology", "cardiology", "hepatology"],
+    "mechanism": "Inhibits vitamin-K-dependent factor synthesis (II, VII, IX, X). Cirrhosis already lowers these factors; baseline INR derangement makes monitoring unreliable.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing with careful INR monitoring.", "notes": "" },
+      { "class": "B", "adjustment": "Use with caution; INR control challenging; consider LMWH alternative.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID; use LMWH.", "notes": "Baseline INR not reflective of bleeding risk." }
+    ],
+    "monitoring": "INR; bleeding; HAS-BLED.",
+    "alternatives": ["LMWH (preferred in advanced cirrhosis)"],
+    "references": [
+      { "label": "Northup PG et al. AASLD 2020." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "enoxaparin-hepatic",
+    "drugSlug": "enoxaparin",
+    "drug": "Enoxaparin (LMWH)",
+    "oneLiner": "Preferred anticoagulant in moderate-severe cirrhosis. Standard prophylactic / treatment doses; adjust for renal function and weight.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["haematology", "hepatology"],
+    "mechanism": "Predominantly renal excretion. Cirrhotic patients often have reduced antithrombin; clinical bleeding risk depends on platelets, varices, renal function.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard prophylactic / treatment dosing.", "notes": "VTE prophylaxis indicated in hospitalised cirrhotic patients." },
+      { "class": "B", "adjustment": "Standard dose; adjust per renal function; consider anti-Xa monitoring.", "notes": "" },
+      { "class": "C", "adjustment": "Use with caution; anti-Xa monitoring; specialist haematology input.", "notes": "Watch GI bleeding, varices." }
+    ],
+    "monitoring": "Renal function, platelets, anti-Xa (advanced disease), Hb.",
+    "alternatives": ["dalteparin", "unfractionated heparin"],
+    "references": [
+      { "label": "Northup PG et al. AASLD 2020." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "aspirin-hepatic",
+    "drugSlug": "aspirin",
+    "drug": "Aspirin (antiplatelet dose)",
+    "oneLiner": "Use with caution in cirrhosis — adds GI / variceal bleeding risk. Avoid in active variceal bleeding or thrombocytopenia.",
+    "worstClassDecision": "avoid",
+    "domains": ["cardiology", "haematology", "hepatology"],
+    "mechanism": "Irreversible COX-1 inhibition. Bleeding risk amplified by cirrhotic varices and thrombocytopenia.",
+    "guidance": [
+      { "class": "A", "adjustment": "Use if clear cardiovascular indication; weigh against bleeding risk.", "notes": "" },
+      { "class": "B", "adjustment": "Use with caution; PPI co-prescribed.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID with significant thrombocytopenia or known varices.", "notes": "" }
+    ],
+    "monitoring": "Hb, platelets, signs of bleeding.",
+    "alternatives": ["clopidogrel with caution"],
+    "references": [
+      { "label": "AASLD / EASL antiplatelet in cirrhosis guidance." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "clopidogrel-hepatic",
+    "drugSlug": "clopidogrel",
+    "drug": "Clopidogrel",
+    "oneLiner": "Use with caution in cirrhosis — CYP2C19-dependent prodrug activation may be impaired; bleeding risk amplified.",
+    "worstClassDecision": "avoid",
+    "domains": ["cardiology", "haematology", "hepatology"],
+    "mechanism": "CYP2C19 prodrug to active metabolite. Cirrhosis may reduce activation efficiency; bleeding risk from coagulopathy and thrombocytopenia.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose if cardiovascular indication.", "notes": "" },
+      { "class": "B", "adjustment": "Use with caution; co-prescribe PPI.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID with thrombocytopenia or varices.", "notes": "" }
+    ],
+    "monitoring": "Hb, platelets, bleeding.",
+    "alternatives": ["aspirin", "specialist cardiology input"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "gliclazide-hepatic",
+    "drugSlug": "gliclazide",
+    "drug": "Gliclazide (sulfonylurea)",
+    "oneLiner": "Reduce dose in cirrhosis; hepatic metabolism impaired with risk of prolonged hypoglycaemia. Avoid in Class C.",
+    "worstClassDecision": "avoid",
+    "domains": ["endocrinology", "hepatology"],
+    "mechanism": "Hepatic CYP2C9 metabolism. Cirrhosis prolongs half-life with risk of prolonged hypoglycaemia (impaired hepatic gluconeogenesis adds risk).",
+    "guidance": [
+      { "class": "A", "adjustment": "Start at low dose; titrate cautiously.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose 50% or avoid.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID; use insulin.", "notes": "Prolonged hypoglycaemia risk." }
+    ],
+    "monitoring": "BM, HbA1c.",
+    "alternatives": ["insulin (preferred in advanced liver disease)", "DPP-4 inhibitor with caution"],
+    "references": [
+      { "label": "BNF gliclazide; Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "linagliptin-hepatic",
+    "drugSlug": "linagliptin",
+    "drug": "Linagliptin (DPP-4 inhibitor)",
+    "oneLiner": "No dose adjustment in hepatic impairment — minimal hepatic metabolism, biliary excretion of unchanged drug. Useful in cirrhotic diabetes.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["endocrinology", "hepatology"],
+    "mechanism": "Predominantly biliary excretion of unchanged drug. Minimal hepatic metabolism. Low hypoglycaemia risk.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard 5 mg/day.", "notes": "" },
+      { "class": "B", "adjustment": "Standard dose.", "notes": "Useful in cirrhotic patient." },
+      { "class": "C", "adjustment": "Standard dose; clinical data limited in severe disease.", "notes": "" }
+    ],
+    "monitoring": "HbA1c.",
+    "alternatives": ["sitagliptin (renal adjustment)", "insulin"],
+    "references": [
+      { "label": "EMA / FDA linagliptin label." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "sitagliptin-hepatic",
+    "drugSlug": "sitagliptin",
+    "drug": "Sitagliptin (DPP-4 inhibitor)",
+    "oneLiner": "Standard dose in cirrhosis; mainly renal excretion. Useful where insulin not appropriate.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["endocrinology", "hepatology"],
+    "mechanism": "Renal excretion of unchanged drug. Minimal hepatic metabolism.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard 100 mg/day; adjust for renal function.", "notes": "" },
+      { "class": "B", "adjustment": "Standard dose; adjust for renal function.", "notes": "" },
+      { "class": "C", "adjustment": "Limited data; use with caution.", "notes": "" }
+    ],
+    "monitoring": "HbA1c, renal function.",
+    "alternatives": ["linagliptin", "insulin"],
+    "references": [
+      { "label": "EMA / FDA sitagliptin label." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "empagliflozin-hepatic",
+    "drugSlug": "empagliflozin",
+    "drug": "Empagliflozin (SGLT2 inhibitor)",
+    "oneLiner": "Standard dose in Class A/B; avoid in Class C — limited data, ketoacidosis and volume-depletion risks compound cirrhotic physiology.",
+    "worstClassDecision": "avoid",
+    "domains": ["endocrinology", "cardiology", "hepatology"],
+    "mechanism": "Hepatic glucuronidation, modest CYP. Renal glucose excretion mechanism. Volume depletion and euglycaemic DKA risks.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose; weigh CV/renal benefit.", "notes": "" },
+      { "class": "B", "adjustment": "Use with caution; lower dose; monitor volume.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "DKA, volume depletion, HRS risk." }
+    ],
+    "monitoring": "Renal function, ketones if unwell, volume status.",
+    "alternatives": ["linagliptin", "insulin"],
+    "references": [
+      { "label": "EMA / FDA empagliflozin label." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "liraglutide-hepatic",
+    "drugSlug": "liraglutide",
+    "drug": "Liraglutide / semaglutide (GLP-1 analogue)",
+    "oneLiner": "Standard dose in mild-moderate hepatic impairment; limited data in Class C. Useful where weight loss desired (NASH).",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["endocrinology", "hepatology"],
+    "mechanism": "Peptide degraded by endogenous proteases; not significantly hepatically metabolised. Improves NASH in trials; pancreatitis risk noted.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard titration.", "notes": "Beneficial in NASH." },
+      { "class": "B", "adjustment": "Standard dose; monitor LFTs and pancreatitis.", "notes": "" },
+      { "class": "C", "adjustment": "Limited data; use with caution.", "notes": "" }
+    ],
+    "monitoring": "HbA1c, LFTs, lipase if symptoms.",
+    "alternatives": ["linagliptin", "insulin"],
+    "references": [
+      { "label": "EMA / FDA liraglutide / semaglutide labels; NASH trials." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "insulin-hepatic",
+    "drugSlug": "insulin",
+    "drug": "Insulin (all formulations)",
+    "oneLiner": "PREFERRED glucose-lowering therapy in advanced liver disease. Reduce dose — hepatic gluconeogenesis impaired, hypoglycaemia risk rises.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["endocrinology", "hepatology"],
+    "mechanism": "Hepatic and renal clearance of insulin. Advanced cirrhosis reduces clearance and impairs gluconeogenesis — both raise hypoglycaemia risk.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard regimen; close BM monitoring.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce total daily dose; closer monitoring.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose substantially; intensive BM monitoring; specialist diabetes input.", "notes": "Hypoglycaemia common during decompensation." }
+    ],
+    "monitoring": "BM 4-6×/day; HbA1c interpretation limited by anaemia.",
+    "alternatives": ["—"],
+    "references": [
+      { "label": "EASD / ADA cirrhosis diabetes management." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "valproate-hepatic",
+    "drugSlug": "valproate",
+    "drug": "Valproate (sodium valproate)",
+    "oneLiner": "AVOID in active liver disease or family history of hepatic disorder — intrinsic hepatotoxicity with potentially fatal idiosyncratic injury, particularly in children and POLG mutations.",
+    "worstClassDecision": "contraindicated",
+    "domains": ["neurology", "psychiatry", "hepatology"],
+    "mechanism": "Hepatic beta-oxidation; depletes carnitine; idiosyncratic mitochondrial hepatotoxicity (highest risk young children, POLG mutations). Hyperammonaemia common.",
+    "guidance": [
+      { "class": "A", "adjustment": "Use only if essential; intensive LFT monitoring.", "notes": "" },
+      { "class": "B", "adjustment": "AVOID.", "notes": "" },
+      { "class": "C", "adjustment": "CONTRAINDICATED.", "notes": "Acute liver failure risk." }
+    ],
+    "monitoring": "LFTs intensively first 6 months; ammonia if symptomatic; valproate levels.",
+    "acuteFailureGuidance": "AVOID — valproate is itself a cause of acute liver failure.",
+    "alternatives": ["levetiracetam", "lamotrigine"],
+    "references": [
+      { "label": "EMA valproate / POLG warning; EASL DILI 2019." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "carbamazepine-hepatic",
+    "drugSlug": "carbamazepine",
+    "drug": "Carbamazepine",
+    "oneLiner": "Use with caution in cirrhosis — extensive hepatic metabolism, idiosyncratic hepatitis and cholestasis recognised. Reduce dose.",
+    "worstClassDecision": "avoid",
+    "domains": ["neurology", "psychiatry", "hepatology"],
+    "mechanism": "Hepatic CYP3A4 metabolism to active 10,11-epoxide; potent auto-inducer. Idiosyncratic hepatitis; hypersensitivity (DRESS).",
+    "guidance": [
+      { "class": "A", "adjustment": "Reduce starting dose; slow titration with LFT monitoring.", "notes": "" },
+      { "class": "B", "adjustment": "AVOID where alternatives exist.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "Drug levels, LFTs, FBC, sodium.",
+    "alternatives": ["levetiracetam", "lamotrigine"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al.; EASL DILI 2019." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "lamotrigine-hepatic",
+    "drugSlug": "lamotrigine",
+    "drug": "Lamotrigine",
+    "oneLiner": "Reduce dose 50-75% in Class B/C — hepatic glucuronidation impaired. Useful AED in cirrhosis but slow titration essential (rash risk).",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["neurology", "psychiatry", "hepatology"],
+    "mechanism": "Hepatic UGT glucuronidation. Cirrhosis reduces clearance.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard slow titration.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose 50%; very slow titration.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose 50-75% per SmPC; slow titration; specialist input.", "notes": "" }
+    ],
+    "monitoring": "Rash; lamotrigine level; LFTs.",
+    "alternatives": ["levetiracetam"],
+    "references": [
+      { "label": "EMA / FDA lamotrigine label." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "levetiracetam-hepatic",
+    "drugSlug": "levetiracetam",
+    "drug": "Levetiracetam",
+    "oneLiner": "PREFERRED AED in cirrhosis — minimal hepatic metabolism; renal excretion. No protein binding issues.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["neurology", "hepatology"],
+    "mechanism": "Mostly renal excretion of unchanged drug; minor enzymatic hydrolysis (not CYP). No protein binding interactions.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose; adjust for renal function.", "notes": "" },
+      { "class": "B", "adjustment": "Standard dose; adjust for renal function.", "notes": "Preferred AED in liver disease." },
+      { "class": "C", "adjustment": "Standard dose; adjust for renal function; reduce for AKI.", "notes": "" }
+    ],
+    "monitoring": "Renal function; mood / behaviour.",
+    "alternatives": ["lamotrigine"],
+    "references": [
+      { "label": "EMA / FDA levetiracetam label." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "topiramate-hepatic",
+    "drugSlug": "topiramate",
+    "drug": "Topiramate",
+    "oneLiner": "Reduce dose in moderate-severe cirrhosis — partially hepatic metabolism with reduced clearance.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["neurology", "hepatology"],
+    "mechanism": "Renal excretion of parent (~70%); 30% hepatic metabolism. Clearance reduced in cirrhosis.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard slow titration.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose 25-50%; slow titration.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose 50%.", "notes": "" }
+    ],
+    "monitoring": "Bicarbonate (metabolic acidosis); renal function; weight.",
+    "alternatives": ["levetiracetam"],
+    "references": [
+      { "label": "BNF topiramate; Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "gabapentin-hepatic",
+    "drugSlug": "gabapentin",
+    "drug": "Gabapentin / pregabalin",
+    "oneLiner": "Renally excreted — no hepatic dose adjustment. Adjust for renal function; sedation common in cirrhotic patient.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["neurology", "analgesia", "hepatology"],
+    "mechanism": "Renal excretion of unchanged drug. No hepatic metabolism.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose adjusted for renal function.", "notes": "" },
+      { "class": "B", "adjustment": "Standard dose adjusted for renal function; watch sedation.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose; adjust for AKI; sedation worsens encephalopathy.", "notes": "" }
+    ],
+    "monitoring": "Sedation, renal function.",
+    "alternatives": ["amitriptyline with caution"],
+    "references": [
+      { "label": "BNF gabapentin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "sertraline-hepatic",
+    "drugSlug": "sertraline",
+    "drug": "Sertraline",
+    "oneLiner": "Reduce dose 50% in Class A; avoid in Class B/C — extensive hepatic metabolism, risk of QT prolongation and hyponatraemia.",
+    "worstClassDecision": "avoid",
+    "domains": ["psychiatry", "hepatology"],
+    "mechanism": "CYP-mediated hepatic metabolism. Cirrhosis prolongs half-life. SSRI hyponatraemia compounds cirrhotic dilutional hyponatraemia.",
+    "guidance": [
+      { "class": "A", "adjustment": "Start 25 mg; titrate to 50 mg.", "notes": "" },
+      { "class": "B", "adjustment": "AVOID; consider alternative.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "Sodium, sedation, suicidality.",
+    "alternatives": ["citalopram with caution (QT)", "mirtazapine for appetite issues"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "citalopram-hepatic",
+    "drugSlug": "citalopram",
+    "drug": "Citalopram / escitalopram",
+    "oneLiner": "Reduce dose 50% in cirrhosis; max 20 mg/day citalopram (10 mg escitalopram). QT prolongation dose-dependent.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["psychiatry", "hepatology"],
+    "mechanism": "CYP2C19 / CYP3A4 hepatic metabolism. Cirrhosis prolongs half-life. QT prolongation dose-related.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose with QT monitoring; max as per SmPC.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose 50%; max 20 mg citalopram / 10 mg escitalopram.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose; specialist input.", "notes": "" }
+    ],
+    "monitoring": "ECG (QTc); Na⁺.",
+    "alternatives": ["mirtazapine"],
+    "references": [
+      { "label": "EMA citalopram / escitalopram safety updates." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "amitriptyline-hepatic",
+    "drugSlug": "amitriptyline",
+    "drug": "Amitriptyline / nortriptyline",
+    "oneLiner": "AVOID in cirrhosis — anticholinergic effects (constipation precipitates encephalopathy), sedation, cardiotoxicity in overdose.",
+    "worstClassDecision": "avoid",
+    "domains": ["psychiatry", "analgesia", "hepatology"],
+    "mechanism": "CYP2D6 / CYP3A4 hepatic metabolism with active nortriptyline. Anticholinergic and sodium-channel effects.",
+    "guidance": [
+      { "class": "A", "adjustment": "Use only at very low dose; titrate cautiously.", "notes": "" },
+      { "class": "B", "adjustment": "AVOID.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "Constipation, sedation, encephalopathy risk." }
+    ],
+    "monitoring": "ECG, sedation, mood, constipation.",
+    "alternatives": ["mirtazapine", "gabapentin for neuropathic pain"],
+    "references": [
+      { "label": "BNF amitriptyline." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "mirtazapine-hepatic",
+    "drugSlug": "mirtazapine",
+    "drug": "Mirtazapine",
+    "oneLiner": "Reduce dose 30-50% in cirrhosis; useful for sleep, appetite, mood in advanced liver disease.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["psychiatry", "hepatology", "palliative"],
+    "mechanism": "Hepatic CYP1A2 / CYP3A4 metabolism. Clearance reduced 30-40% in cirrhosis. Sedation, appetite stimulation helpful in cachectic cirrhotic patient.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard 15-45 mg nocte.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose 30-50%.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose 50%; cautious titration.", "notes": "" }
+    ],
+    "monitoring": "FBC (neutropenia rare), LFTs, weight.",
+    "alternatives": ["sertraline at low dose for non-cachectic"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "olanzapine-hepatic",
+    "drugSlug": "olanzapine",
+    "drug": "Olanzapine",
+    "oneLiner": "Reduce dose in cirrhosis — CYP1A2 metabolism. Sedation may worsen encephalopathy; weight gain / dyslipidaemia in NASH patients.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["psychiatry", "hepatology"],
+    "mechanism": "CYP1A2 / UGT hepatic metabolism. Significant metabolic and weight effects undesirable in NASH.",
+    "guidance": [
+      { "class": "A", "adjustment": "Reduce starting dose; titrate slowly.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose 25-50%.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose 50%; specialist psychiatric input.", "notes": "" }
+    ],
+    "monitoring": "Sedation, weight, lipids, glucose, LFTs.",
+    "alternatives": ["haloperidol low dose for acute agitation"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "quetiapine-hepatic",
+    "drugSlug": "quetiapine",
+    "drug": "Quetiapine",
+    "oneLiner": "Reduce dose 25-50% in cirrhosis — CYP3A4 metabolism. Useful low-dose for sleep but sedation can precipitate encephalopathy.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["psychiatry", "hepatology"],
+    "mechanism": "CYP3A4 hepatic metabolism. Sedation, hypotension; QT prolongation.",
+    "guidance": [
+      { "class": "A", "adjustment": "Start low; slow titration.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose 25-50%.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose 50%; sedation can precipitate encephalopathy.", "notes": "" }
+    ],
+    "monitoring": "Sedation, BP, ECG, glucose.",
+    "alternatives": ["haloperidol low dose"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "haloperidol-hepatic",
+    "drugSlug": "haloperidol",
+    "drug": "Haloperidol",
+    "oneLiner": "Use at reduced dose in cirrhosis — hepatic metabolism; less sedation than other antipsychotics but QT and EPS risks.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["psychiatry", "hepatology"],
+    "mechanism": "CYP3A4 / CYP2D6 hepatic metabolism. Less sedation, less hypotension than other antipsychotics — often used for delirium.",
+    "guidance": [
+      { "class": "A", "adjustment": "Reduce starting dose; titrate slowly.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose 50%; low dose (0.5-1 mg) for delirium.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose; specialist input.", "notes": "Encephalopathy mimics may confuse picture." }
+    ],
+    "monitoring": "ECG (QTc), EPS, sedation.",
+    "alternatives": ["lorazepam if hepatic encephalopathy excluded"],
+    "references": [
+      { "label": "BNF haloperidol." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "lithium-hepatic",
+    "drugSlug": "lithium",
+    "drug": "Lithium",
+    "oneLiner": "Renally cleared — no hepatic dose adjustment. Caution with diuretic-treated cirrhotic patient (volume depletion raises lithium toxicity risk).",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["psychiatry", "hepatology"],
+    "mechanism": "Renal excretion. Cirrhotic patients on diuretics are prone to volume depletion, raising lithium levels.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose with TDM.", "notes": "" },
+      { "class": "B", "adjustment": "TDM; watch volume status with diuretics.", "notes": "" },
+      { "class": "C", "adjustment": "Use with caution; intensive TDM; HRS / AKI raises toxicity risk.", "notes": "" }
+    ],
+    "monitoring": "Lithium level, renal function, thyroid.",
+    "alternatives": ["valproate contraindicated", "specialist psychiatric input"],
+    "references": [
+      { "label": "BNF lithium." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "omeprazole-hepatic",
+    "drugSlug": "omeprazole",
+    "drug": "Omeprazole / pantoprazole (PPI)",
+    "oneLiner": "Reduce dose in cirrhosis — hepatic CYP2C19 metabolism. Avoid unnecessary prolonged PPI (SBP risk).",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["gastroenterology", "hepatology"],
+    "mechanism": "Hepatic CYP2C19 metabolism. Half-life prolonged in cirrhosis. Prolonged PPI use raises spontaneous bacterial peritonitis (SBP) risk in ascites.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose for clear indication.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose; review need; PPI raises SBP risk.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose; review need actively.", "notes": "Stop if no ongoing indication." }
+    ],
+    "monitoring": "Indication, magnesium with prolonged use.",
+    "alternatives": ["H2-antagonist where appropriate"],
+    "references": [
+      { "label": "EASL decompensated cirrhosis guidelines 2018; AASLD SBP guidance." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ondansetron-hepatic",
+    "drugSlug": "ondansetron",
+    "drug": "Ondansetron",
+    "oneLiner": "Reduce max daily dose to 8 mg in moderate-severe hepatic impairment per SmPC — hepatic metabolism, QT prolongation.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["gastroenterology", "hepatology"],
+    "mechanism": "Hepatic CYP3A4 / CYP1A2 / CYP2D6 metabolism. Half-life doubles in severe hepatic impairment.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose.", "notes": "" },
+      { "class": "B", "adjustment": "Max 8 mg/day per SmPC.", "notes": "" },
+      { "class": "C", "adjustment": "Max 8 mg/day; ECG monitoring.", "notes": "" }
+    ],
+    "monitoring": "ECG (QTc).",
+    "alternatives": ["cyclizine"],
+    "references": [
+      { "label": "EMA / FDA ondansetron label." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "metoclopramide-hepatic",
+    "drugSlug": "metoclopramide",
+    "drug": "Metoclopramide",
+    "oneLiner": "Reduce dose 50% in cirrhosis — hepatic metabolism. EPS / NMS risk.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["gastroenterology", "hepatology"],
+    "mechanism": "Hepatic CYP2D6 metabolism. Half-life prolonged in cirrhosis with raised EPS / NMS risk.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard 10 mg TDS short course.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose 50%; short course only.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose 50%; short course; EPS risk.", "notes": "" }
+    ],
+    "monitoring": "EPS, mental status.",
+    "alternatives": ["ondansetron", "cyclizine"],
+    "references": [
+      { "label": "BNF metoclopramide; EMA short-course indication update." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "lactulose-hepatic",
+    "drugSlug": "lactulose",
+    "drug": "Lactulose",
+    "oneLiner": "FIRST-LINE for hepatic encephalopathy — non-absorbable disaccharide titrated to 2-3 soft stools/day. Safe across all Child-Pugh classes.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["gastroenterology", "hepatology"],
+    "mechanism": "Non-absorbed disaccharide fermented by colonic bacteria producing acidification and trapping of ammonia as ammonium for faecal excretion. Reduces nitrogen load and modulates gut flora.",
+    "guidance": [
+      { "class": "A", "adjustment": "Used prophylactically post-HE; titrate to 2-3 soft stools/day.", "notes": "" },
+      { "class": "B", "adjustment": "First-line for HE; titrate to stool target.", "notes": "" },
+      { "class": "C", "adjustment": "First-line for HE; titrate to stool target; over-dosing causes electrolyte derangement / volume loss.", "notes": "Add rifaximin if recurrent." }
+    ],
+    "monitoring": "Stool frequency / consistency; mental status; electrolytes (Na⁺, K⁺).",
+    "acuteFailureGuidance": "Used for HE in ALF — evidence weaker than chronic cirrhosis but standard of care.",
+    "alternatives": ["rifaximin (adjunct)", "polyethylene glycol (acute HE evidence)"],
+    "references": [
+      { "label": "AASLD / EASL HE guidance 2014." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "rifaximin-hepatic",
+    "drugSlug": "rifaximin",
+    "drug": "Rifaximin",
+    "oneLiner": "Standard dose in any cirrhosis — minimally absorbed; second-line / adjunct for recurrent HE.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["antimicrobials", "gastroenterology", "hepatology"],
+    "mechanism": "Non-absorbable rifamycin antibiotic acting in the gut; reduces ammonia-producing bacteria. <0.5% systemic absorption.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard 550 mg BD for recurrent HE prophylaxis.", "notes": "" },
+      { "class": "B", "adjustment": "Standard dose.", "notes": "" },
+      { "class": "C", "adjustment": "Standard dose; combined with lactulose.", "notes": "" }
+    ],
+    "monitoring": "Mental status; cost-effectiveness.",
+    "alternatives": ["lactulose (used together)"],
+    "references": [
+      { "label": "AASLD / EASL HE guidance 2014; Bass NM et al. NEJM 2010." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "methotrexate-hepatic",
+    "drugSlug": "methotrexate",
+    "drug": "Methotrexate (chronic low-dose rheumatology)",
+    "oneLiner": "AVOID in any cirrhosis — intrinsic hepatotoxicity with chronic fibrotic injury.",
+    "worstClassDecision": "contraindicated",
+    "domains": ["rheumatology", "hepatology"],
+    "mechanism": "Hepatic accumulation with chronic dosing causes fibrosis and cirrhosis. Particularly risky in pre-existing liver disease, NAFLD, alcohol use.",
+    "guidance": [
+      { "class": "A", "adjustment": "AVOID; consider only with hepatology MDT.", "notes": "" },
+      { "class": "B", "adjustment": "CONTRAINDICATED.", "notes": "" },
+      { "class": "C", "adjustment": "CONTRAINDICATED.", "notes": "" }
+    ],
+    "monitoring": "If used: LFTs, FBC, renal function; baseline + interval Fibroscan.",
+    "alternatives": ["sulfasalazine", "hydroxychloroquine", "biologics per condition"],
+    "references": [
+      { "label": "BSR / EULAR methotrexate hepatic monitoring guidance." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "azathioprine-hepatic",
+    "drugSlug": "azathioprine",
+    "drug": "Azathioprine",
+    "oneLiner": "Use with caution in cirrhosis — recognised hepatotoxicity (cholestatic, nodular regenerative hyperplasia). TPMT genotype-dosed.",
+    "worstClassDecision": "avoid",
+    "domains": ["rheumatology", "transplantation", "hepatology"],
+    "mechanism": "Prodrug to 6-mercaptopurine; TPMT-dependent inactivation. Hepatotoxicity (cholestasis, NRH, sinusoidal injury) recognised.",
+    "guidance": [
+      { "class": "A", "adjustment": "Reduce dose; TPMT testing; intensive LFT monitoring.", "notes": "" },
+      { "class": "B", "adjustment": "AVOID where alternatives exist.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "FBC, LFTs; TPMT pretreatment.",
+    "alternatives": ["mycophenolate (with caution)"],
+    "references": [
+      { "label": "BSR / EASL DILI 2019." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ciclosporin-hepatic",
+    "drugSlug": "ciclosporin",
+    "drug": "Ciclosporin",
+    "oneLiner": "Reduce dose in cirrhosis — CYP3A4 metabolism, accumulation, nephrotoxicity; many drug interactions.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["transplantation", "immunosuppression", "hepatology"],
+    "mechanism": "Extensive CYP3A4 hepatic metabolism. Cirrhosis raises exposure. Nephrotoxic, hypertensive — issues in cirrhotic patient with HRS predisposition.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing with TDM.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose 25-50%; intensive TDM.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose 50%; daily TDM during titration; specialist input.", "notes": "" }
+    ],
+    "monitoring": "Trough levels, creatinine, BP, electrolytes, LFTs.",
+    "alternatives": ["tacrolimus (different toxicity)"],
+    "references": [
+      { "label": "Periáñez-Párraga L et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "mycophenolate-hepatic",
+    "drugSlug": "mycophenolate",
+    "drug": "Mycophenolate mofetil",
+    "oneLiner": "Standard dose in moderate hepatic impairment; limited data in Class C. Useful steroid-sparing immunosuppressant.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["transplantation", "immunosuppression", "hepatology"],
+    "mechanism": "Hepatic glucuronidation; biliary and renal excretion. Cirrhosis modestly affects clearance.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dosing.", "notes": "" },
+      { "class": "B", "adjustment": "Standard dose; monitor.", "notes": "" },
+      { "class": "C", "adjustment": "Limited data; cautious dosing.", "notes": "" }
+    ],
+    "monitoring": "FBC, LFTs.",
+    "alternatives": ["tacrolimus / ciclosporin"],
+    "references": [
+      { "label": "EMA / FDA mycophenolate label." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "prednisolone-hepatic",
+    "drugSlug": "prednisolone",
+    "drug": "Prednisolone / methylprednisolone",
+    "oneLiner": "Standard dose in cirrhosis — prednisolone is the active form (prednisone requires hepatic conversion that may be impaired). Use prednisolone preferentially.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["immunosuppression", "rheumatology", "hepatology"],
+    "mechanism": "Prednisolone is the active drug. Prednisone is a prodrug requiring hepatic 11β-hydroxysteroid dehydrogenase conversion — may be reduced in cirrhosis.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose; use prednisolone in preference to prednisone.", "notes": "" },
+      { "class": "B", "adjustment": "Standard dose; monitor glucose, electrolytes, infection.", "notes": "" },
+      { "class": "C", "adjustment": "Standard dose; intensive monitoring; sodium/volume effects worsen ascites.", "notes": "" }
+    ],
+    "monitoring": "Glucose, BP, K⁺, weight, infection.",
+    "alternatives": ["dexamethasone (no mineralocorticoid effect)"],
+    "references": [
+      { "label": "EASL severe alcoholic hepatitis guidelines." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "dexamethasone-hepatic",
+    "drugSlug": "dexamethasone",
+    "drug": "Dexamethasone",
+    "oneLiner": "Standard dose in cirrhosis — fully active without hepatic conversion; minimal mineralocorticoid effect (less ascites worsening).",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["immunosuppression", "oncology", "hepatology"],
+    "mechanism": "Long-acting glucocorticoid; no mineralocorticoid activity. Hepatic metabolism but full activity does not depend on conversion.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose.", "notes": "" },
+      { "class": "B", "adjustment": "Standard dose; monitor glucose.", "notes": "" },
+      { "class": "C", "adjustment": "Standard dose; intensive monitoring of glucose / infection.", "notes": "" }
+    ],
+    "monitoring": "Glucose, infection markers.",
+    "alternatives": ["prednisolone (mineralocorticoid effect)"],
+    "references": [
+      { "label": "BNF dexamethasone." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tamsulosin-hepatic",
+    "drugSlug": "tamsulosin",
+    "drug": "Tamsulosin",
+    "oneLiner": "Use with caution in moderate hepatic impairment; avoid in severe — CYP3A4 / CYP2D6 metabolism, hypotension.",
+    "worstClassDecision": "avoid",
+    "domains": ["urology", "hepatology"],
+    "mechanism": "CYP3A4 / CYP2D6 hepatic metabolism. Alpha-1 blocker — hypotension risk in cirrhotic patient with reduced systemic vascular resistance.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard 400 mcg/day.", "notes": "" },
+      { "class": "B", "adjustment": "Use with caution; monitor BP.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID per SmPC.", "notes": "Hypotension risk." }
+    ],
+    "monitoring": "BP, symptoms.",
+    "alternatives": ["finasteride for BPH"],
+    "references": [
+      { "label": "EMA tamsulosin label." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "sildenafil-hepatic",
+    "drugSlug": "sildenafil",
+    "drug": "Sildenafil / tadalafil (PDE5 inhibitor)",
+    "oneLiner": "Reduce dose in cirrhosis — extensive CYP3A4 hepatic metabolism; consider lower starting dose.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["urology", "respiratory", "hepatology"],
+    "mechanism": "CYP3A4 hepatic metabolism. Hypotension risk in cirrhotic patient; many drug interactions.",
+    "guidance": [
+      { "class": "A", "adjustment": "Start at low dose (25 mg sildenafil); titrate.", "notes": "" },
+      { "class": "B", "adjustment": "Reduce dose; cautious titration.", "notes": "" },
+      { "class": "C", "adjustment": "Limited data; use with caution.", "notes": "" }
+    ],
+    "monitoring": "BP.",
+    "alternatives": ["—"],
+    "references": [
+      { "label": "EMA sildenafil / tadalafil labels." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "hydroxychloroquine-hepatic",
+    "drugSlug": "hydroxychloroquine",
+    "drug": "Hydroxychloroquine",
+    "oneLiner": "Standard dose in cirrhosis — modest hepatic metabolism; widely used in cirrhotic rheumatology patients.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["rheumatology", "hepatology"],
+    "mechanism": "Hepatic and renal clearance. Hepatotoxicity uncommon. Retinal toxicity is the dose-limiting feature.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard 200-400 mg/day.", "notes": "" },
+      { "class": "B", "adjustment": "Standard dose; LFT monitoring.", "notes": "" },
+      { "class": "C", "adjustment": "Standard dose; cautious monitoring.", "notes": "" }
+    ],
+    "monitoring": "LFTs; annual ophthalmology after 5 years.",
+    "alternatives": ["sulfasalazine"],
+    "references": [
+      { "label": "BSR hydroxychloroquine guidance." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "sulfasalazine-hepatic",
+    "drugSlug": "sulfasalazine",
+    "drug": "Sulfasalazine",
+    "oneLiner": "Use with caution in cirrhosis — hepatic acetylation, idiosyncratic hepatitis, marrow suppression.",
+    "worstClassDecision": "avoid",
+    "domains": ["rheumatology", "gastroenterology", "hepatology"],
+    "mechanism": "Cleaved in colon to sulfapyridine + 5-ASA. Sulfapyridine hepatic acetylation. Idiosyncratic hepatotoxicity recognised.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose with LFT / FBC monitoring.", "notes": "" },
+      { "class": "B", "adjustment": "AVOID where alternatives exist.", "notes": "" },
+      { "class": "C", "adjustment": "AVOID.", "notes": "" }
+    ],
+    "monitoring": "LFTs, FBC.",
+    "alternatives": ["hydroxychloroquine", "biologics"],
+    "references": [
+      { "label": "BSR sulfasalazine guidance." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "acyclovir-hepatic",
+    "drugSlug": "acyclovir",
+    "drug": "Aciclovir / valaciclovir",
+    "oneLiner": "Renally cleared — no hepatic dose adjustment. Reduce dose for AKI in cirrhotic patient.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["antimicrobials", "infectious-disease", "hepatology"],
+    "mechanism": "Renal excretion of unchanged drug. Crystalluria with high IV doses and dehydration.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose adjusted for renal function.", "notes": "" },
+      { "class": "B", "adjustment": "Standard dose; adjust for renal function.", "notes": "" },
+      { "class": "C", "adjustment": "Adjust for AKI; hydration with IV use.", "notes": "" }
+    ],
+    "monitoring": "Renal function; hydration.",
+    "alternatives": ["foscarnet (with caution)"],
+    "references": [
+      { "label": "BNF aciclovir." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ciprofloxacin-hepatic",
+    "drugSlug": "ciprofloxacin",
+    "drug": "Ciprofloxacin",
+    "oneLiner": "Reduce dose modestly in severe cirrhosis — mixed renal/hepatic clearance. Used for SBP prophylaxis in cirrhotic patients.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["antimicrobials", "infectious-disease", "hepatology"],
+    "mechanism": "Roughly 50% renal, 50% hepatic / biliary clearance. CYP1A2 inhibitor. Tendinopathy, dysglycaemia, QT prolongation risks.",
+    "guidance": [
+      { "class": "A", "adjustment": "Standard dose; useful for SBP prophylaxis.", "notes": "" },
+      { "class": "B", "adjustment": "Standard dose; monitor LFTs.", "notes": "" },
+      { "class": "C", "adjustment": "Reduce dose for AKI; LFT / glucose monitoring; QT.", "notes": "" }
+    ],
+    "monitoring": "LFTs, ECG, glucose, tendinopathy.",
+    "alternatives": ["co-trimoxazole (alternative SBP prophylaxis)"],
+    "references": [
+      { "label": "EASL decompensated cirrhosis guidelines 2018." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]

@@ -39,6 +39,8 @@ import { IntegrationLogModule } from './modules/integration-log/integration-log.
 import { DeveloperModule } from './modules/developer/developer.module';
 import { AgenticModule } from './modules/agentic/agentic.module';
 import { CustomRulesModule } from './modules/custom-rules/custom-rules.module';
+import { NotificationsModule } from './modules/notifications/notifications.module';
+import { ClinicalAuditsModule } from './modules/clinical-audits/clinical-audits.module';
 import { ReferenceModule } from './modules/reference/reference.module';
 
 @Module({
@@ -85,6 +87,8 @@ import { ReferenceModule } from './modules/reference/reference.module';
     DeveloperModule,
     AgenticModule,
     CustomRulesModule,
+    NotificationsModule,
+    ClinicalAuditsModule,
     ReferenceModule,
   ],
 })

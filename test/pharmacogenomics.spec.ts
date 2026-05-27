@@ -16,7 +16,7 @@ describe('PharmacogenomicsService', () => {
 
   it('loads the open pharmacogenomics catalogue from the signed bundle', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThanOrEqual(8);
+    expect(list.length).toBeGreaterThanOrEqual(100);
     expect(list.map((g) => g.slug)).toContain('hla-b5701-abacavir');
   });
 

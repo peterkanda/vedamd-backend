@@ -84,6 +84,45 @@ export class SqlIngestionService {
     };
   }
 
+  /**
+   * Public lookup used by other modules (clinical-audits) that need
+   * the raw query + mapping but their own row-walking strategy.
+   * Returns null if either id is unregistered.
+   */
+  getRegisteredQuery(queryId: string): NamedQuery | null {
+    return this.queries.get(queryId) ?? null;
+  }
+  getRegisteredConnection(connectionId: string): SqlConnectionConfig | null {
+    return this.connections.get(connectionId) ?? null;
+  }
+
+  /**
+   * Execute a registered named query and return the raw rows.
+   * Used by the clinical-audits module which evaluates rules per-row
+   * (the existing `buildContext` aggregates all rows into one patient
+   * context, which is right for CDS but wrong for audit sweeps).
+   * Still subject to the connector's read-only guard.
+   */
+  async fetchRows(
+    connectionId: string,
+    queryId: string,
+    params: Record<string, string | number>,
+  ): Promise<{ rows: Array<Record<string, unknown>>; mapping: QueryMapping }> {
+    const connection = this.connections.get(connectionId);
+    if (!connection) throw new Error(`Unknown connectionId: ${connectionId}`);
+    const query = this.queries.get(queryId);
+    if (!query) throw new Error(`Unknown queryId: ${queryId}`);
+    const connector = this.connectors[connection.dialect];
+    const rows = await connector.query(connection, query.sql, params);
+    this.log.info('agentic_sql_fetched_for_audit', {
+      connection_id: connectionId,
+      dialect: connection.dialect,
+      query_id: queryId,
+      row_count: rows.length,
+    });
+    return { rows, mapping: query.mapping };
+  }
+
   async buildContext(
     connectionId: string,
     queryId: string,

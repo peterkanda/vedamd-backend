@@ -16,7 +16,7 @@ describe('IvCompatibilityService', () => {
 
   it('loads the curated IV compatibility catalogue from the signed bundle', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThanOrEqual(20);
+    expect(list.length).toBeGreaterThanOrEqual(200);
     const slugs = list.map((p) => p.slug);
     // Anti-hallucination guard: these are the documented-deaths and
     // major-mortality pairs. If any are accidentally removed, fail loudly.

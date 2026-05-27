@@ -723,5 +723,2189 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "B"
+  },
+  {
+    "slug": "lead-edta-bal",
+    "poison": "Severe inorganic lead poisoning with encephalopathy or very high blood lead",
+    "antidote": "CaNa2EDTA (edetate calcium disodium) + dimercaprol (BAL)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "CaNa2EDTA chelates extracellular lead, mobilising it for urinary excretion; co-administered BAL prevents redistribution of lead into the CNS during initial chelation.",
+    "dosing": "Adult/paediatric encephalopathy: BAL IM first, then add CaNa2EDTA by IV infusion per protocol for 5 days; cycle as needed. Specialist (paediatric / toxicology) supervision essential.",
+    "domains": [
+      "toxicology",
+      "paediatrics",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "CDC childhood lead exposure case management; Goldfrank's Toxicologic Emergencies"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "lead-dmsa-succimer",
+    "poison": "Symptomatic lead poisoning (without encephalopathy) — oral chelation",
+    "antidote": "DMSA (succimer)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Oral water-soluble dithiol that forms a renally-excreted complex with lead; less risk of redistribution than BAL.",
+    "dosing": "10 mg/kg PO every 8h for 5 days, then every 12h for 14 days; repeat course after rebound if levels remain elevated. Confirm lead source eliminated before/during chelation.",
+    "domains": [
+      "toxicology",
+      "paediatrics",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "CDC childhood lead surveillance; WHO lead poisoning guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "arsenic-dmsa",
+    "poison": "Acute or chronic inorganic arsenic poisoning",
+    "antidote": "DMSA (succimer) — oral; BAL (dimercaprol) IM for severe/unable-to-take-oral",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Dithiol chelators bind arsenic via sulfhydryl groups, restoring function of enzymes inhibited by arsenic and accelerating urinary excretion.",
+    "dosing": "DMSA 10 mg/kg PO 8-hourly for 5 days then 12-hourly for 14 days; or BAL 3–5 mg/kg IM every 4h initially for severe poisoning, with transition to DMSA when tolerated.",
+    "domains": [
+      "toxicology",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "Goldfrank's Toxicologic Emergencies; WHO arsenic guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "mercury-inorganic-dmsa",
+    "poison": "Inorganic / elemental mercury poisoning",
+    "antidote": "DMSA (succimer) — oral; BAL contraindicated for organic methylmercury",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "DMSA chelates mercury for renal excretion. Note: BAL is contraindicated in organic methylmercury poisoning (redistributes mercury to CNS) — use DMSA only.",
+    "dosing": "DMSA 10 mg/kg PO 8-hourly for 5 days then 12-hourly for 14 days. For severe inorganic poisoning with renal failure, dialysis with chelator may be needed (specialist input).",
+    "domains": [
+      "toxicology",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "Goldfrank's Toxicologic Emergencies; WHO mercury guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "mercury-organic-dmsa",
+    "poison": "Organic methylmercury poisoning",
+    "antidote": "DMSA (succimer) — oral; BAL contraindicated",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "DMSA chelates organic mercury without the CNS redistribution risk of BAL. Treatment is largely supportive with prolonged elimination of mercury source; recovery from neurological injury is incomplete.",
+    "dosing": "DMSA per standard schedule; ensure mercury source removed (contaminated fish, occupational). Specialist neurotoxicology input.",
+    "domains": [
+      "toxicology",
+      "neurology"
+    ],
+    "references": [
+      {
+        "label": "Goldfrank's Toxicologic Emergencies; WHO mercury guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "copper-penicillamine",
+    "poison": "Copper poisoning / Wilson disease decompensation",
+    "antidote": "D-penicillamine (or trientine if intolerant)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Penicillamine chelates copper, mobilising hepatic stores for urinary excretion. Trientine is an alternative chelator with a different side-effect profile.",
+    "dosing": "Penicillamine 250 mg PO 4-times daily titrated to urinary copper response; supplement pyridoxine 25 mg/day. Specialist (hepatology) supervision required.",
+    "domains": [
+      "toxicology",
+      "hepatology"
+    ],
+    "references": [
+      {
+        "label": "EASL Clinical Practice Guidelines on Wilson disease"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "thallium-prussian-blue",
+    "poison": "Thallium poisoning",
+    "antidote": "Prussian blue (ferric hexacyanoferrate)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Ion-exchange resin that binds thallium in the gut lumen, disrupting entero-enteric recycling and accelerating faecal elimination.",
+    "dosing": "Adult: 3 g PO 3-times daily; paediatric: 1 g 3-times daily. Continue until urine thallium is acceptably low. Supportive care for neuropathy and alopecia.",
+    "domains": [
+      "toxicology",
+      "neurology"
+    ],
+    "references": [
+      {
+        "label": "FDA emergency-use guidance for Prussian blue"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "gold-bal",
+    "poison": "Gold salt toxicity (severe mucocutaneous or haematological)",
+    "antidote": "Dimercaprol (BAL)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Dithiol chelator binds gold, accelerating elimination. Stopping the gold preparation is the primary intervention; chelation reserved for severe toxicity.",
+    "dosing": "BAL 3 mg/kg IM every 4–6h initially per specialist advice; clinical use is rare now that gold therapy is largely obsolete.",
+    "domains": [
+      "toxicology",
+      "rheumatology"
+    ],
+    "references": [
+      {
+        "label": "Goldfrank's Toxicologic Emergencies"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "bismuth-dmsa",
+    "poison": "Bismuth toxicity (encephalopathy, nephrotoxicity)",
+    "antidote": "DMSA — discontinuation usually sufficient; chelation for severe disease",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "DMSA chelates bismuth for renal excretion. Bismuth encephalopathy is reversible with cessation in most cases.",
+    "dosing": "Stop bismuth-containing preparations; DMSA per standard schedule for severe encephalopathy or AKI. Supportive care.",
+    "domains": [
+      "toxicology"
+    ],
+    "references": [
+      {
+        "label": "Goldfrank's Toxicologic Emergencies"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "manganese-supportive",
+    "poison": "Manganese toxicity (occupational, parenteral nutrition)",
+    "antidote": "Removal from exposure + supportive care; chelation experimental",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Manganese deposits in basal ganglia producing a parkinsonian syndrome that responds poorly to chelation; removal from exposure and symptomatic levodopa for parkinsonian features.",
+    "dosing": "Cessation of exposure; symptomatic management for parkinsonism. CaNa2EDTA has been used experimentally — specialist input.",
+    "domains": [
+      "toxicology",
+      "occupational-medicine",
+      "neurology"
+    ],
+    "references": [
+      {
+        "label": "Goldfrank's Toxicologic Emergencies"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "chromium-supportive",
+    "poison": "Hexavalent chromium poisoning",
+    "antidote": "Supportive care; NAC may reduce oxidative injury",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Hexavalent chromium is a potent oxidiser causing GI corrosion, AKI, and hepatic injury. No specific chelator; NAC has been used to limit oxidative damage.",
+    "dosing": "Decontamination; fluid resuscitation; NAC dosing per paracetamol-style protocol has been used (specialist advice). Haemodialysis if AKI.",
+    "domains": [
+      "toxicology",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "Goldfrank's Toxicologic Emergencies"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "cadmium-supportive",
+    "poison": "Cadmium poisoning (acute inhalation, chronic occupational)",
+    "antidote": "Supportive care; chelation NOT recommended (worsens renal injury)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Cadmium accumulates in renal cortex; chelators (BAL, EDTA) mobilise cadmium to the kidney, worsening nephrotoxicity. Removal from exposure and supportive care only.",
+    "dosing": "Cessation of exposure; supportive ventilation for acute pneumonitis; renal supportive care. Avoid BAL.",
+    "domains": [
+      "toxicology",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "Goldfrank's Toxicologic Emergencies"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "caustic-acid-alkali-supportive",
+    "poison": "Caustic (strong acid or alkali) ingestion",
+    "antidote": "No specific antidote — supportive care, early endoscopy",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "No neutralising agent should be given (heat from neutralisation worsens injury). Do NOT induce vomiting and avoid charcoal. Early endoscopy stratifies injury; proton pump inhibitor and supportive care.",
+    "dosing": "NPO; analgesia; IV fluids; early upper GI endoscopy within 12–24h; surgical input if perforation. PPI may help.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "gastroenterology"
+    ],
+    "references": [
+      {
+        "label": "ESGE caustic ingestion guidance; UK Toxbase"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "button-battery-honey-removal",
+    "poison": "Button (lithium disc) battery ingestion lodged in oesophagus",
+    "antidote": "Pre-removal honey/sucralfate (mitigation); urgent endoscopic removal",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Lithium disc batteries generate hydroxide at the negative pole, causing rapid oesophageal alkali burn. Honey or sucralfate (children >12 months) may neutralise the local current and slow injury before removal.",
+    "dosing": "If <12h, age >12 months, asymptomatic, no NPO contraindication: 10 mL honey PO every 10 min up to 6 doses while transferring for endoscopy. Endoscopic removal within 2h ideal.",
+    "domains": [
+      "toxicology",
+      "paediatrics",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "National Capital Poison Center / NASPGHAN button battery guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "detergent-pod-supportive",
+    "poison": "Liquid laundry detergent pod ingestion (paediatric)",
+    "antidote": "Supportive care — observation; airway protection if depressed conscious level",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Concentrated surfactants cause CNS depression, vomiting, and respiratory injury from aspiration. No antidote; airway and supportive care.",
+    "dosing": "Wipe mouth; airway protection; observation for at least 4–6h. Endoscopy if persistent symptoms.",
+    "domains": [
+      "toxicology",
+      "paediatrics",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "AAPCC / UK Toxbase paediatric ingestion guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "uft-heparin-protamine-full",
+    "poison": "Unfractionated heparin over-anticoagulation / cardiac surgery reversal",
+    "antidote": "Protamine sulfate (full reversal)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Cationic protamine binds anionic heparin in a 1:1 stoichiometric complex with no anticoagulant activity.",
+    "dosing": "Approximately 1 mg protamine per 100 units heparin given in the prior 2–3h (reduce if >2h); slow IV to avoid hypotension and anaphylactoid reaction.",
+    "domains": [
+      "toxicology",
+      "haematology",
+      "cardiology"
+    ],
+    "references": [
+      {
+        "label": "ACC/AHA expert consensus on anticoagulation reversal"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "lmwh-protamine-partial",
+    "poison": "Low-molecular-weight heparin over-anticoagulation (enoxaparin, dalteparin)",
+    "antidote": "Protamine sulfate (partial reversal only)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Protamine neutralises ~60% of LMWH anti-Xa activity (variable by preparation). Half-doses for distant administration; specialist haematology guidance for major bleeding.",
+    "dosing": "Within 8h: 1 mg protamine per 1 mg enoxaparin (or per 100 anti-Xa units of dalteparin). After 8h: half this dose. Consider 4F-PCC adjunct for major bleeding.",
+    "domains": [
+      "toxicology",
+      "haematology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "BSH guidelines on LMWH reversal"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "fondaparinux-no-antidote",
+    "poison": "Fondaparinux life-threatening bleeding",
+    "antidote": "No specific antidote — consider activated PCC (FEIBA) or rFVIIa with haematology input",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Fondaparinux is a synthetic indirect Xa inhibitor with no specific reverser. Activated PCC (FEIBA) or recombinant factor VIIa can bypass the inhibition; risk of thrombosis must be balanced against bleeding.",
+    "dosing": "Stop drug; supportive measures, blood products. aPCC (FEIBA) 20 IU/kg or rFVIIa 90 mcg/kg has been used in case series — specialist (haematology) decision.",
+    "domains": [
+      "toxicology",
+      "haematology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "ACC expert consensus on anticoagulation reversal (2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "alteplase-cryoprecipitate",
+    "poison": "Major bleeding (especially ICH) on alteplase / tenecteplase thrombolysis",
+    "antidote": "Cryoprecipitate (replace fibrinogen) ± tranexamic acid + platelets",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Thrombolytics deplete fibrinogen and produce systemic fibrinolysis. Cryoprecipitate replaces fibrinogen (target >150 mg/dL); tranexamic acid blocks ongoing fibrinolysis; platelets if thrombocytopenic.",
+    "dosing": "Cryoprecipitate 10 units (or 0.15 units/kg) IV; tranexamic acid 10–15 mg/kg IV bolus; platelets if <100 ×10⁹/L. Neurosurgical input for ICH.",
+    "domains": [
+      "toxicology",
+      "haematology",
+      "stroke",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "AHA/ASA guidelines for management of symptomatic ICH after thrombolysis (2019)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "amiodarone-supportive",
+    "poison": "Amiodarone overdose / toxicity",
+    "antidote": "No specific antidote — supportive care",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Very large volume of distribution and long half-life (weeks) make removal impossible. Manage bradycardia (atropine, pacing), hypotension (vasopressors), and chronic toxicity (pulmonary, hepatic, thyroid).",
+    "dosing": "Stop drug; supportive cardiac and respiratory care; thyroid monitoring. Dialysis ineffective.",
+    "domains": [
+      "toxicology",
+      "cardiology"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase amiodarone monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "sotalol-magnesium-torsades",
+    "poison": "Sotalol-induced torsades de pointes / prolonged QT",
+    "antidote": "Magnesium sulfate IV (+ overdrive pacing, isoprenaline)",
+    "antidoteDrugSlug": "magnesium-sulphate",
+    "conditionSlug": null,
+    "mechanism": "Magnesium stabilises cardiac membrane and shortens QT-dependent re-entrant arrhythmia. Overdrive pacing or isoprenaline raises heart rate to shorten QT.",
+    "dosing": "Magnesium 2 g IV over 10 min, repeat; correct K⁺ to high-normal; overdrive pacing to HR ~ 90; specialist cardiology input.",
+    "domains": [
+      "toxicology",
+      "cardiology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "AHA/ACLS guidance on torsades; UK Toxbase"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "flecainide-sodium-bicarbonate",
+    "poison": "Flecainide / Class IC antiarrhythmic toxicity with QRS prolongation",
+    "antidote": "Sodium bicarbonate (+ lipid emulsion in severe cases)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Sodium loading overcomes Na-channel blockade; alkalinisation reduces free drug. IV lipid emulsion sequesters the lipophilic drug for life-threatening collapse.",
+    "dosing": "1–2 mmol/kg 8.4% sodium bicarbonate IV bolus for QRS > 100 ms; repeat to QRS narrowing or pH 7.5–7.55. ILE 1.5 mL/kg bolus then infusion for cardiac arrest/refractory collapse.",
+    "domains": [
+      "toxicology",
+      "cardiology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase flecainide monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "insulin-dextrose-hypoglycaemia",
+    "poison": "Insulin overdose / iatrogenic hypoglycaemia",
+    "antidote": "IV dextrose (+ glucagon if no IV access)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": "acute-hypoglycaemia",
+    "mechanism": "Replaces glucose; glucagon mobilises hepatic glycogen (ineffective in starvation, liver failure, or alcohol-induced glycogen depletion).",
+    "dosing": "Adult: 100 mL 20% dextrose IV (or 200 mL 10%); paediatric 2 mL/kg 10% dextrose; follow with infusion. Glucagon 1 mg IM if no IV access. Long insulin overdoses need prolonged infusion and frequent BM checks; admit for observation.",
+    "domains": [
+      "toxicology",
+      "endocrine",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "JBDS-IP / IDF hypoglycaemia guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "metformin-haemodialysis",
+    "poison": "Metformin-associated lactic acidosis (MALA)",
+    "antidote": "Haemodialysis + supportive care",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Metformin is dialysable; lactate is dialysable. Haemodialysis corrects acidosis and removes drug. Stop metformin; treat shock/sepsis precipitants.",
+    "dosing": "Haemodialysis if: lactate > 20 mmol/L; pH < 7.0; shock; failure of standard supportive care. Continue until pH > 7.35 and lactate < 3 mmol/L.",
+    "domains": [
+      "toxicology",
+      "nephrology",
+      "endocrine"
+    ],
+    "references": [
+      {
+        "label": "EXTRIP recommendations for metformin poisoning"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "bupropion-supportive",
+    "poison": "Bupropion overdose (seizures, QRS widening, QT prolongation)",
+    "antidote": "Benzodiazepines for seizures; sodium bicarbonate for QRS; supportive",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Bupropion lowers seizure threshold and blocks cardiac sodium channels (delayed onset of seizures and QRS prolongation up to 24h). No specific antidote; lipid emulsion considered for refractory collapse.",
+    "dosing": "Benzodiazepine for seizures; 1–2 mmol/kg sodium bicarbonate for QRS > 100 ms; monitor for 24h after sustained-release ingestion.",
+    "domains": [
+      "toxicology",
+      "psychiatry",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase bupropion monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "valproate-l-carnitine",
+    "poison": "Valproate overdose with hyperammonaemia or hepatotoxicity",
+    "antidote": "L-carnitine (+ haemodialysis for severe poisoning)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Valproate depletes carnitine, impairing fatty-acid oxidation and inducing hyperammonaemic encephalopathy. L-carnitine restores mitochondrial function and lowers ammonia.",
+    "dosing": "L-carnitine 100 mg/kg IV bolus then 50 mg/kg every 8h until clinical/biochemical improvement. Haemodialysis for VPA > 850–1000 mg/L, severe encephalopathy, shock, or refractory acidosis.",
+    "domains": [
+      "toxicology",
+      "neurology",
+      "hepatology"
+    ],
+    "references": [
+      {
+        "label": "EXTRIP recommendations for valproate poisoning"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "theophylline-charcoal-dialysis",
+    "poison": "Theophylline / aminophylline toxicity",
+    "antidote": "Multidose activated charcoal + haemodialysis for severe poisoning",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Theophylline undergoes enterohepatic recirculation; MDAC reduces absorption and reabsorption. Theophylline is highly dialysable; haemodialysis preferred for severe toxicity.",
+    "dosing": "Activated charcoal 50 g PO every 4h while bowel sounds present. Haemodialysis if level > 100 mg/L (acute), > 60 mg/L (chronic, elderly), seizures, ventricular arrhythmia, or refractory hypotension.",
+    "domains": [
+      "toxicology",
+      "respiratory",
+      "nephrology"
+    ],
+    "references": [
+      {
+        "label": "EXTRIP recommendations for theophylline poisoning"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "vinca-extravasation-hyaluronidase",
+    "poison": "Vinca alkaloid (vincristine, vinblastine) extravasation",
+    "antidote": "Hyaluronidase SC + warm compresses",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Hyaluronidase degrades subcutaneous hyaluronan, dispersing the extravasated vesicant and reducing local tissue concentration. Warm compresses accelerate dispersion.",
+    "dosing": "Hyaluronidase 150–300 units SC in divided doses around the extravasation site as soon as possible; warm compress 15–20 min, 4×/day for 24–48h. Do NOT cool (worsens vinca injury).",
+    "domains": [
+      "oncology",
+      "toxicology"
+    ],
+    "references": [
+      {
+        "label": "ESMO–EONS Clinical Practice Guidelines on extravasation"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "anthracycline-extravasation-dexrazoxane",
+    "poison": "Anthracycline (doxorubicin, epirubicin) extravasation",
+    "antidote": "Dexrazoxane IV (+ cold compress; remove DMSO from older protocols)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Dexrazoxane chelates iron and inhibits topoisomerase II-mediated injury at the extravasation site, dramatically reducing tissue necrosis.",
+    "dosing": "Dexrazoxane 1000 mg/m² IV (max 2000 mg) within 6h of extravasation, then 1000 mg/m² day 2 and 500 mg/m² day 3 — in the contralateral arm. Cold compress between dexrazoxane doses; do NOT apply DMSO concurrently.",
+    "domains": [
+      "oncology",
+      "toxicology"
+    ],
+    "references": [
+      {
+        "label": "ESMO–EONS Clinical Practice Guidelines on extravasation"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "vasopressor-extravasation-phentolamine",
+    "poison": "Noradrenaline / vasopressor extravasation",
+    "antidote": "Phentolamine SC (or topical nitroglycerin) infiltrated locally",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Phentolamine is a competitive alpha-adrenergic antagonist, reversing local vasoconstriction and restoring perfusion to prevent tissue necrosis.",
+    "dosing": "Phentolamine 5–10 mg in 10–15 mL saline infiltrated subcutaneously around the extravasation site within 12h; alternative: topical 2% nitroglycerin ointment to area.",
+    "domains": [
+      "toxicology",
+      "critical-care",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "ISMP / hospital pharmacy practice guidance on vasopressor extravasation"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "scorpion-antivenom",
+    "poison": "Severe scorpion envenomation (Centruroides, Leiurus, Tityus)",
+    "antidote": "Species-specific scorpion antivenom (where available)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Antibodies neutralise circulating scorpion neurotoxins (sodium channel-active peptides). Improves neuromuscular and autonomic symptoms.",
+    "dosing": "Per regional protocol and severity grade; have adrenaline ready for hypersensitivity; supportive prazosin / benzodiazepines.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "tropical"
+    ],
+    "references": [
+      {
+        "label": "WHO scorpion sting guidance; regional poison centre protocols"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "latrodectus-antivenom",
+    "poison": "Latrodectus (black widow / button spider) envenomation with severe systemic symptoms",
+    "antidote": "Latrodectus antivenom (where available) + analgesia, benzodiazepines",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Antibodies neutralise alpha-latrotoxin. Most envenomations are managed with supportive care; antivenom reserved for severe pain, autonomic storm, or pregnancy.",
+    "dosing": "One vial IV per regional protocol; have adrenaline ready. Opioid analgesia, benzodiazepines for muscle spasm.",
+    "domains": [
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "AAPCC / regional latrodectus protocols"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "loxosceles-supportive",
+    "poison": "Loxosceles (brown recluse / violin spider) envenomation",
+    "antidote": "Supportive wound care; dapsone debated; antivenom only in some regions",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Sphingomyelinase D-mediated dermonecrosis; no robust evidence for surgical excision, hyperbaric oxygen or dapsone. Regional antivenoms (South America) may help.",
+    "dosing": "Local wound care; tetanus prophylaxis; analgesia; monitor for systemic loxoscelism (haemolysis, AKI) — supportive transfusion and renal care.",
+    "domains": [
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "AAPCC loxoscelism management; WHO neglected tropical diseases"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "box-jellyfish-antivenom",
+    "poison": "Box jellyfish (Chironex fleckeri) envenomation",
+    "antidote": "CSL box jellyfish antivenom (where available) + vinegar decontamination",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Antibodies neutralise circulating box jellyfish venom; vinegar inactivates nematocysts on the skin, preventing further envenomation.",
+    "dosing": "Vinegar (4–6% acetic acid) liberally to all tentacle contact for ≥30 seconds; antivenom IV per local protocol for life-threatening envenomation; analgesia (opioid + Mg for severe pain).",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "tropical"
+    ],
+    "references": [
+      {
+        "label": "CSL Behring box jellyfish antivenom labelling; Australian Resuscitation Council guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "stonefish-antivenom",
+    "poison": "Stonefish (Synanceia) envenomation",
+    "antidote": "Stonefish antivenom + hot-water immersion",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Heat (~45°C water immersion 30–90 min) inactivates the heat-labile venom toxin; antivenom for severe systemic envenomation.",
+    "dosing": "Hot-water immersion 45°C as tolerated; stonefish antivenom IM per vial-count by number of puncture wounds (regional protocol).",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "tropical"
+    ],
+    "references": [
+      {
+        "label": "CSL Behring stonefish antivenom; Australian Resuscitation Council"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "oleander-digoxin-fab-crossreact",
+    "poison": "Oleander (Nerium oleander, yellow oleander Cascabela) cardiac glycoside poisoning",
+    "antidote": "Digoxin-specific Fab fragments (cross-react with plant cardiac glycosides)",
+    "antidoteDrugSlug": "digoxin-immune-fab",
+    "conditionSlug": null,
+    "mechanism": "Plant cardiac glycosides (oleandrin, thevetin) share the steroid-cardenolide moiety recognised by digoxin Fab; Fab binds and neutralises them.",
+    "dosing": "Empirical 5–10 vials IV for life-threatening arrhythmia or significant hyperkalaemia; serum 'digoxin' level on standard assay cross-reacts and can guide. Higher doses than digoxin overdose often needed.",
+    "domains": [
+      "toxicology",
+      "cardiology",
+      "emergency",
+      "tropical"
+    ],
+    "references": [
+      {
+        "label": "WHO yellow oleander poisoning bulletin; UK Toxbase"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "yew-supportive",
+    "poison": "Yew (Taxus baccata) ingestion — taxine alkaloids",
+    "antidote": "No specific antidote — supportive care (sodium bicarbonate, magnesium, lipid emulsion for refractory collapse)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Taxine alkaloids block cardiac sodium and calcium channels causing wide-complex bradyarrhythmia and asystole. No antidote; manage as severe sodium-channel blockade with supportive measures.",
+    "dosing": "Sodium bicarbonate for QRS widening; magnesium; pacing; IV lipid emulsion 1.5 mL/kg bolus then infusion for cardiac arrest. Activated charcoal if recent ingestion.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "cardiology"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase yew monograph; case series"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "gyromitra-pyridoxine",
+    "poison": "Gyromitra (false morel) mushroom poisoning — monomethylhydrazine (MMH)",
+    "antidote": "Pyridoxine (vitamin B6) + benzodiazepines for seizures",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Monomethylhydrazine inhibits pyridoxal-5-phosphate-dependent GABA synthesis (same mechanism as isoniazid). High-dose pyridoxine restores GABA and terminates seizures.",
+    "dosing": "Pyridoxine 70 mg/kg IV (max 5 g) for seizures; repeat as needed. Benzodiazepines concurrently; NAC for hepatic injury per paracetamol-style protocol.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "neurology"
+    ],
+    "references": [
+      {
+        "label": "Goldfrank's Toxicologic Emergencies — mushrooms"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "muscarinic-mushroom-atropine",
+    "poison": "Muscarinic mushroom poisoning (Inocybe, Clitocybe)",
+    "antidote": "Atropine (small titrated doses to reverse muscarinic excess)",
+    "antidoteDrugSlug": "atropine-sulphate",
+    "conditionSlug": null,
+    "mechanism": "Muscarine is a direct muscarinic agonist causing the SLUDGE syndrome (salivation, lacrimation, urination, defecation, GI cramps, emesis). Atropine reverses muscarinic effects.",
+    "dosing": "Atropine 0.5–1 mg IV titrated to drying of secretions and clear chest; usually small doses sufficient (unlike organophosphate toxicity). Symptoms resolve within hours.",
+    "domains": [
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "Goldfrank's Toxicologic Emergencies — mushrooms"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "psilocybin-supportive",
+    "poison": "Psilocybin / hallucinogenic mushroom ingestion",
+    "antidote": "Supportive (reassurance, quiet environment, benzodiazepines for agitation)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "5-HT2A agonism. No antidote. Manage anxiety/agitation; observe for hyperthermia.",
+    "dosing": "Quiet environment; benzodiazepines (e.g. lorazepam 1–2 mg) for severe agitation; observe.",
+    "domains": [
+      "toxicology",
+      "psychiatry",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase psilocybin monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "amanita-muscaria-supportive",
+    "poison": "Amanita muscaria / pantherina (ibotenic acid / muscimol) poisoning",
+    "antidote": "Supportive — benzodiazepines for delirium / seizures",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Muscimol is a GABA-A agonist; ibotenic acid is a glutamate analogue. Produces a mixed sedative-delirious picture. Atropine is contraindicated (worsens picture if anticholinergic).",
+    "dosing": "Benzodiazepines for agitation/seizures; supportive observation. Avoid atropine.",
+    "domains": [
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "Goldfrank's Toxicologic Emergencies — mushrooms"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "ricin-supportive",
+    "poison": "Ricin (castor bean) ingestion / inhalation",
+    "antidote": "No specific antidote — decontamination + supportive care",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Ricin is a ribosome-inactivating protein. No effective antidote. Aggressive supportive care for GI necrosis, AKI, hepatic injury; respiratory support for inhalation.",
+    "dosing": "Decontamination (skin, GI — activated charcoal if recent oral); fluid resuscitation; supportive multi-organ care.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "CDC chemical/biological terrorism — ricin"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "strychnine-benzodiazepines",
+    "poison": "Strychnine poisoning",
+    "antidote": "Benzodiazepines + non-depolarising paralysis with mechanical ventilation",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Strychnine antagonises glycine receptors in the spinal cord, producing painful muscle spasms with intact consciousness. Benzodiazepines and (if severe) paralysis with ventilation prevent rhabdomyolysis and asphyxia.",
+    "dosing": "Quiet, dark environment; benzodiazepines (e.g. diazepam 5–10 mg IV titrated); intubation, neuromuscular blockade and ventilation for severe spasms. Treat rhabdomyolysis aggressively.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase strychnine monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "hemlock-supportive",
+    "poison": "Poison hemlock (Conium maculatum) — coniine",
+    "antidote": "Supportive — benzodiazepines for seizure, mechanical ventilation for paralysis",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Coniine is a nicotinic agonist then antagonist producing initial stimulation followed by ascending paralysis (Socrates' death). No antidote; ventilation is life-saving.",
+    "dosing": "Airway protection and mechanical ventilation as paralysis ascends; supportive care; activated charcoal if recent oral ingestion.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase hemlock monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "h2s-nitrite-oxygen",
+    "poison": "Hydrogen sulfide poisoning",
+    "antidote": "Sodium nitrite + 100% oxygen (hydroxocobalamin off-label)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Nitrite induces methaemoglobinaemia, which binds free sulfide. 100% oxygen accelerates dissociation from cytochrome c oxidase. Hydroxocobalamin has been used off-label.",
+    "dosing": "100% O2 immediately; sodium nitrite 300 mg IV slow (adult) if severe; hydroxocobalamin 5 g IV considered. Hyperbaric oxygen for severe / persistent neurological injury.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase H2S monograph; CDC NIOSH"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "nerve-agent-autoinjector",
+    "poison": "Nerve-agent (sarin, VX, novichok) poisoning",
+    "antidote": "Atropine + pralidoxime + diazepam (autoinjector or IV)",
+    "antidoteDrugSlug": "atropine-sulphate",
+    "conditionSlug": null,
+    "mechanism": "Same as organophosphate poisoning but with potent, rapidly-ageing inhibitors. Triple-drug autoinjector kits provide atropine (muscarinic), pralidoxime (oxime — give before ageing), and diazepam (seizure prophylaxis).",
+    "dosing": "Field: 1–3 ComboPen / DuoDote / Mark I autoinjector kits IM by severity. Hospital: continue atropine (large doses titrated to dry chest), pralidoxime infusion, diazepam 5–10 mg IV for seizures. Decontamination essential.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "WHO chemical incident response; CDC Strategic National Stockpile"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "chlorine-gas-supportive",
+    "poison": "Chlorine gas inhalation",
+    "antidote": "Supportive — bronchodilators, humidified oxygen, NIV / mechanical ventilation",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Chlorine forms hydrochloric acid in airways causing tracheobronchitis and chemical pneumonitis. No specific antidote; nebulised sodium bicarbonate has been used off-label.",
+    "dosing": "Remove from exposure; humidified 100% O2; nebulised salbutamol; consider nebulised 4% sodium bicarbonate; observe for 24h (delayed pulmonary oedema).",
+    "domains": [
+      "toxicology",
+      "respiratory",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase chlorine monograph; CDC NIOSH"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "phosgene-supportive",
+    "poison": "Phosgene gas inhalation",
+    "antidote": "Supportive — prolonged observation for delayed pulmonary oedema",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Phosgene acylates alveolar proteins producing delayed non-cardiogenic pulmonary oedema (latency 4–48h). No specific antidote. Strict rest reduces oedema progression.",
+    "dosing": "Remove from exposure; bed rest; humidified O2; observe minimum 24h regardless of symptoms; mechanical ventilation if pulmonary oedema develops.",
+    "domains": [
+      "toxicology",
+      "respiratory",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase phosgene monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "paraquat-supportive",
+    "poison": "Paraquat herbicide poisoning",
+    "antidote": "No effective antidote — early activated charcoal / Fuller's earth + avoid supplemental oxygen + early haemoperfusion (variable benefit)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Paraquat produces redox-cycling oxidative lung injury with progressive pulmonary fibrosis. Supplemental oxygen exacerbates injury — avoid unless SpO2 < 88%. Charcoal / Fuller's earth limits absorption. Haemoperfusion offers limited benefit.",
+    "dosing": "Avoid supplemental oxygen if not hypoxaemic. Activated charcoal 1 g/kg or Fuller's earth 15% suspension; early haemoperfusion within 2–4h has been used. Glucocorticoids and cyclophosphamide use is debated. Prognosis poor for significant ingestions.",
+    "domains": [
+      "toxicology",
+      "respiratory",
+      "emergency",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "WHO paraquat poisoning guidance; UK Toxbase"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "carbamate-atropine-no-pralidoxime",
+    "poison": "Carbamate insecticide poisoning",
+    "antidote": "Atropine only — pralidoxime NOT routinely indicated",
+    "antidoteDrugSlug": "atropine-sulphate",
+    "conditionSlug": null,
+    "mechanism": "Carbamates reversibly inhibit acetylcholinesterase (spontaneous reactivation within hours — no ageing). Atropine reverses muscarinic effects; pralidoxime is generally not needed and may worsen toxicity in pure carbamate poisoning.",
+    "dosing": "Atropine titrated to dry secretions and clear chest, smaller total doses than organophosphate; supportive care. Pralidoxime only if mixed carbamate-organophosphate ingestion.",
+    "domains": [
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "WHO carbamate guidance; UK Toxbase"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "pyrethroid-supportive",
+    "poison": "Pyrethrin / pyrethroid insecticide poisoning",
+    "antidote": "Supportive — topical vitamin E for paraesthesia; benzodiazepines for seizures",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Pyrethroids prolong sodium channel opening. Most exposures cause only paraesthesia (topical) or nausea (oral); seizures rare. No specific antidote.",
+    "dosing": "Wash skin; topical vitamin E oil for facial paraesthesia; benzodiazepines for seizures; supportive observation.",
+    "domains": [
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase pyrethroid monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "neonicotinoid-supportive",
+    "poison": "Neonicotinoid insecticide poisoning (imidacloprid, acetamiprid)",
+    "antidote": "No specific antidote — supportive care",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Selective agonist at insect nicotinic acetylcholine receptors. Human toxicity usually mild (GI, drowsiness); severe ingestion may produce hypotension, seizures, respiratory failure.",
+    "dosing": "Supportive; benzodiazepines for seizures; fluid and pressor support for hypotension. Activated charcoal if recent ingestion.",
+    "domains": [
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase neonicotinoid monograph; WHO IPCS"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ethanol-supportive",
+    "poison": "Ethanol intoxication / acute alcohol poisoning",
+    "antidote": "Supportive — airway, thiamine before glucose, dextrose for hypoglycaemia",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "No reversal agent. Manage airway, prevent aspiration, treat hypoglycaemia, give thiamine before glucose to prevent Wernicke's encephalopathy in chronic users.",
+    "dosing": "Airway management; thiamine 100–250 mg IV/IM before glucose; dextrose if BM low; observe until clinically sober. Haemodialysis only for extreme ingestion / coma not improving.",
+    "domains": [
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase ethanol monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "methanol-cofactors-folate",
+    "poison": "Methanol poisoning — cofactor therapy",
+    "antidote": "Folinic acid (or folate) to accelerate formate metabolism + fomepizole + dialysis",
+    "antidoteDrugSlug": null,
+    "conditionSlug": "toxic-alcohol-poisoning",
+    "mechanism": "Folinic acid (or folate) is a cofactor for tetrahydrofolate-dependent oxidation of formate to CO2, accelerating clearance of the toxic metabolite. Always combined with fomepizole / ethanol blockade and haemodialysis for significant exposure.",
+    "dosing": "Folinic acid 1 mg/kg IV (max 50 mg) every 4–6h until methanol and formate cleared. Co-administer fomepizole; arrange haemodialysis for level > 50 mg/dL, acidosis, visual symptoms, or AKI.",
+    "domains": [
+      "toxicology",
+      "nephrology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "EXTRIP recommendations for methanol; AACT/EAPCCT methanol position paper"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ethylene-glycol-cofactors",
+    "poison": "Ethylene glycol poisoning — cofactor therapy",
+    "antidote": "Thiamine + pyridoxine to redirect metabolism + fomepizole + dialysis",
+    "antidoteDrugSlug": null,
+    "conditionSlug": "toxic-alcohol-poisoning",
+    "mechanism": "Thiamine and pyridoxine are cofactors that redirect glyoxylate to non-toxic metabolites (alpha-hydroxy-beta-ketoadipate and glycine) rather than oxalate. Combine with fomepizole / ethanol blockade and haemodialysis.",
+    "dosing": "Thiamine 100 mg IV every 6h; pyridoxine 50 mg IV every 6h. Fomepizole as per protocol. Dialysis for severe acidosis, AKI, or significant exposure.",
+    "domains": [
+      "toxicology",
+      "nephrology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "EXTRIP recommendations for ethylene glycol; AACT/EAPCCT position paper"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "isopropyl-supportive",
+    "poison": "Isopropyl alcohol (rubbing alcohol) ingestion",
+    "antidote": "Supportive — no fomepizole indicated (no toxic metabolite); dialysis for severe coma / hypotension",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Metabolised to acetone (CNS depressant; no acidosis). Distinguishes from methanol/EG by ketosis without acidosis. No need for ADH blockade.",
+    "dosing": "Airway protection; IV fluids; haemodialysis only for refractory hypotension, coma, or very high levels.",
+    "domains": [
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase isopropyl monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "propylene-glycol-supportive",
+    "poison": "Propylene glycol toxicity (high-dose IV diluent — lorazepam, phenobarbital infusions)",
+    "antidote": "Stop infusion; supportive — dialysis for severe lactic acidosis / AKI",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Propylene glycol is metabolised to lactate; large IV doses (from solvent in lorazepam, phenobarbital, diazepam infusions) cause anion-gap acidosis. Stop infusion; dialysis if severe.",
+    "dosing": "Stop the carrier infusion; switch to alternative formulation; supportive; haemodialysis for severe acidosis or AKI.",
+    "domains": [
+      "toxicology",
+      "critical-care",
+      "nephrology"
+    ],
+    "references": [
+      {
+        "label": "ISMP / hospital pharmacy practice guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "deferasirox-chronic-iron",
+    "poison": "Chronic iron overload (transfusion-dependent thalassaemia, sickle cell)",
+    "antidote": "Deferasirox (oral) — alternative deferiprone or desferrioxamine",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Oral tridentate chelator forms a stable complex with ferric iron for biliary excretion. Used for chronic iron overload — not for acute iron poisoning.",
+    "dosing": "Deferasirox 14–28 mg/kg/day (film-coated tablet) titrated to ferritin. Monitor renal function, LFTs, hearing, vision. Specialist (haematology) supervision.",
+    "domains": [
+      "haematology",
+      "toxicology"
+    ],
+    "references": [
+      {
+        "label": "Thalassaemia International Federation guidelines; UK BSH iron-overload guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "deferiprone-chronic-iron",
+    "poison": "Chronic iron overload — alternative oral chelator",
+    "antidote": "Deferiprone (oral)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Bidentate oral chelator with good penetration into cardiac myocytes; particularly used where cardiac iron overload predominates. Risk of agranulocytosis.",
+    "dosing": "Deferiprone 75–100 mg/kg/day divided 3-times daily. Weekly FBC mandatory (agranulocytosis risk). Specialist supervision.",
+    "domains": [
+      "haematology",
+      "toxicology"
+    ],
+    "references": [
+      {
+        "label": "Thalassaemia International Federation guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "dapsone-methaemoglobinaemia",
+    "poison": "Dapsone-induced methaemoglobinaemia",
+    "antidote": "Methylene blue (methylthioninium) — caution if G6PD-deficient",
+    "antidoteDrugSlug": "methylene-blue",
+    "conditionSlug": null,
+    "mechanism": "Dapsone (and its hydroxylamine metabolite) produces sustained methaemoglobinaemia; methylene blue reduces metHb but may also cause haemolysis in G6PD deficiency. Cimetidine reduces ongoing metHb formation; ascorbic acid for milder cases.",
+    "dosing": "Methylene blue 1–2 mg/kg IV over 5 min; repeat if needed. Consider cimetidine and ascorbic acid. Stop dapsone; exchange transfusion if severe and G6PD-deficient.",
+    "domains": [
+      "toxicology",
+      "haematology",
+      "infectious-disease"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase dapsone monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "colchicine-supportive",
+    "poison": "Colchicine overdose",
+    "antidote": "No specific antidote — supportive (Fab fragments investigational and not generally available)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Colchicine binds tubulin disrupting mitosis with multi-organ failure (GI, marrow, cardiovascular collapse). Triphasic course; specific Fab fragments have been used in limited cases.",
+    "dosing": "Aggressive supportive care: fluids, vasopressors, G-CSF for marrow suppression. Activated charcoal if early. Specialist (poisons centre) input; very high mortality once cardiovascular phase begins.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase colchicine monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "beta-agonist-toxicity-beta-blocker",
+    "poison": "Beta-2-agonist toxicity (high-dose salbutamol — tachycardia, hypokalaemia, lactic acidosis)",
+    "antidote": "Cautious beta-blocker (selective) + potassium repletion — only for severe symptoms",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Selective beta-1 blockade reverses tachycardia and beta-2 effects. Use cautiously in asthmatics. Most cases respond to drug cessation and supportive care.",
+    "dosing": "Stop beta-agonist; replace potassium aggressively (often large doses); cardioselective beta-blocker (e.g. metoprolol 2.5–5 mg IV) only if severe tachyarrhythmia and not in active asthma.",
+    "domains": [
+      "toxicology",
+      "respiratory",
+      "cardiology"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase salbutamol monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "malignant-hyperthermia-dantrolene",
+    "poison": "Anaesthesia-triggered malignant hyperthermia",
+    "antidote": "Dantrolene + immediate cessation of trigger + active cooling + supportive",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Dantrolene inhibits sarcoplasmic reticulum ryanodine receptor calcium release, breaking the muscle contraction → heat → rhabdomyolysis cycle.",
+    "dosing": "Dantrolene 2.5 mg/kg IV bolus, repeat every 5–10 min to 10 mg/kg (or more if needed). Stop all volatile agents and succinylcholine; switch to TIVA / non-triggering; hyperventilate with 100% O2; active cooling; treat hyperkalaemia, acidosis, rhabdomyolysis.",
+    "domains": [
+      "anaesthesia",
+      "toxicology",
+      "critical-care",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "MHAUS / EMHG malignant hyperthermia guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "alcoholic-ketoacidosis-thiamine",
+    "poison": "Alcoholic ketoacidosis",
+    "antidote": "Thiamine BEFORE glucose + IV dextrose + fluid resuscitation",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Thiamine deficiency in chronic alcohol use predisposes to Wernicke's encephalopathy; giving glucose before thiamine can precipitate it. Dextrose and fluid resuscitation reverse the ketoacidosis driven by starvation/dehydration.",
+    "dosing": "Thiamine 250–500 mg IV (Pabrinex 2 pairs three times daily for 2–3 days) before any glucose. Then 5% dextrose in saline; IV fluid resuscitation; replace K⁺, Mg²⁺, PO4³⁻.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "endocrine"
+    ],
+    "references": [
+      {
+        "label": "RCPath / NICE alcohol-related guidance; UK Toxbase"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "sympathomimetic-benzodiazepines",
+    "poison": "Sympathomimetic toxidrome (cocaine, amphetamine, MDMA, cathinones)",
+    "antidote": "Benzodiazepines (first-line) + active cooling + supportive",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Benzodiazepines reduce central sympathetic drive, agitation, hypertension, tachycardia and seizure risk. Pure beta-blockade is avoided (unopposed alpha-stimulation worsens hypertension); mixed alpha-beta blockade (labetalol) or vasodilators preferred for refractory hypertension.",
+    "dosing": "Diazepam 5–10 mg IV every 5–10 min titrated to sedation. Active cooling for hyperthermia. GTN / phentolamine for refractory hypertension. Lipid emulsion for collapse with cardiac arrest. Avoid pure beta-blockers.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "psychiatry"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase cocaine/amphetamine monographs"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ssri-supportive",
+    "poison": "SSRI overdose (without serotonin syndrome)",
+    "antidote": "Supportive — observe for QT prolongation (citalopram), seizures",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Most SSRIs in monoingestion are well-tolerated. Citalopram and escitalopram prolong QT (dose-dependent); seizures occur at high doses. Watch for serotonin syndrome with co-ingestants.",
+    "dosing": "Activated charcoal if early; ECG monitoring for citalopram > 600 mg or escitalopram > 300 mg ingestion (12–24h); benzodiazepines for seizure; treat torsades with magnesium.",
+    "domains": [
+      "toxicology",
+      "psychiatry",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase SSRI monographs"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "antipsychotic-overdose-supportive",
+    "poison": "Antipsychotic overdose (quetiapine, olanzapine, risperidone, etc.)",
+    "antidote": "Supportive — benzodiazepines, fluids; avoid Class IA/III antiarrhythmics",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Sedation, hypotension, QT prolongation, anticholinergic effects, occasional seizures. Mainly supportive. Watch for NMS with chronic / titrated dosing.",
+    "dosing": "Airway support; fluids and noradrenaline (avoid pure alpha-agonists in alpha-blocked patient); benzodiazepines for seizures; magnesium for torsades. Lipid emulsion considered for refractory collapse on lipophilic agents.",
+    "domains": [
+      "toxicology",
+      "psychiatry",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase antipsychotic monographs"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ghb-supportive",
+    "poison": "GHB / GBL / 1,4-butanediol overdose",
+    "antidote": "Supportive airway management (no specific antidote; flumazenil and naloxone ineffective)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "GABA-B and GHB receptor agonism produces profound but typically short-lasting (2–4h) CNS depression. Airway protection until self-clears; specific antagonists not clinically available.",
+    "dosing": "Airway protection and recovery position; intubation if GCS < 8 and not improving; observe until clinically clear. Beware co-ingestion (alcohol, benzodiazepines).",
+    "domains": [
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase GHB monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ketamine-supportive",
+    "poison": "Ketamine overdose / recreational",
+    "antidote": "Supportive — benzodiazepines for agitation; no reversal agent",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "NMDA antagonism. Most ingestions self-resolve; manage agitation and airway. Chronic high-dose use causes ulcerative cystitis.",
+    "dosing": "Quiet environment; benzodiazepines for agitation; airway protection if depressed; observe.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "anaesthesia"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase ketamine monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "carbamazepine-mdac",
+    "poison": "Carbamazepine overdose",
+    "antidote": "Multi-dose activated charcoal + supportive; haemodialysis for severe",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Carbamazepine undergoes enterohepatic recirculation; MDAC interrupts this and accelerates clearance. Severe toxicity (seizures, coma, cardiotoxicity) may need extracorporeal removal.",
+    "dosing": "MDAC 50 g every 4h if bowel sounds present. Haemodialysis (high-flux/high-efficiency) for refractory seizures, persistent coma, cardiotoxicity, or level > 40 mg/L.",
+    "domains": [
+      "toxicology",
+      "neurology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "EXTRIP recommendations for carbamazepine"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "phenobarbital-mdac-alkalinisation",
+    "poison": "Phenobarbital overdose",
+    "antidote": "Multi-dose activated charcoal + urinary alkalinisation; haemodialysis for severe",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Alkaline urine ion-traps phenobarbital, enhancing renal clearance. MDAC reduces ongoing absorption. Severe cases benefit from haemodialysis.",
+    "dosing": "MDAC every 4h; sodium bicarbonate to urine pH ≥ 7.5; replace K⁺. Haemodialysis for prolonged coma, hypotension, or very high levels.",
+    "domains": [
+      "toxicology",
+      "neurology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "EXTRIP recommendations for barbiturates"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "baclofen-supportive",
+    "poison": "Baclofen overdose / withdrawal",
+    "antidote": "Supportive (overdose); IV/intrathecal reintroduction (acute withdrawal); dialysis for severe overdose",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "GABA-B agonist. Overdose causes profound coma and respiratory depression; abrupt withdrawal of intrathecal baclofen causes life-threatening dysautonomia. Acute overdose responds to airway support; haemodialysis effective in renal failure.",
+    "dosing": "Airway support; mechanical ventilation as needed; haemodialysis for severe coma especially with AKI. For withdrawal (intrathecal pump failure): emergency restart, benzodiazepines, cyproheptadine for refractory dysautonomia.",
+    "domains": [
+      "toxicology",
+      "neurology",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase baclofen monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "clonidine-naloxone-supportive",
+    "poison": "Clonidine / alpha-2-agonist overdose",
+    "antidote": "Supportive — naloxone has been tried (variable response); atropine for bradycardia",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Alpha-2 central agonism causes hypotension, bradycardia, miosis, sedation (opioid-like). Naloxone trials show variable benefit. Mainly supportive.",
+    "dosing": "Atropine for symptomatic bradycardia; fluids and vasopressors for hypotension; naloxone 2 mg IV trial (response variable). Observe ≥ 24h for sustained-release.",
+    "domains": [
+      "toxicology",
+      "cardiology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase clonidine monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "venlafaxine-overdose-supportive",
+    "poison": "Venlafaxine / SNRI overdose",
+    "antidote": "Supportive — manage seizures, serotonin syndrome, cardiotoxicity",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "SNRI overdose can cause seizures, QRS widening (sodium-channel effect at high dose), and serotonin syndrome with co-ingestants. Manage as per individual features.",
+    "dosing": "Benzodiazepines for seizures; sodium bicarbonate for QRS prolongation; cyproheptadine for severe serotonin syndrome; supportive.",
+    "domains": [
+      "toxicology",
+      "psychiatry",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase venlafaxine monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "metoclopramide-dystonia-anticholinergic",
+    "poison": "Metoclopramide / antipsychotic-induced acute dystonia",
+    "antidote": "Procyclidine / benzatropine IV (or IM)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Anticholinergic agents reverse the dopamine-blockade-mediated extrapyramidal reaction.",
+    "dosing": "Adult: procyclidine 5–10 mg IV/IM; alternative benzatropine 1–2 mg IV/IM. Stop offending drug; observe.",
+    "domains": [
+      "toxicology",
+      "neurology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase / BNF on extrapyramidal reactions"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "glycine-toxicity-supportive",
+    "poison": "Transurethral resection (TUR) syndrome — glycine absorption",
+    "antidote": "Hypertonic saline + fluid restriction + supportive",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Absorption of hypotonic glycine irrigation produces dilutional hyponatraemia, hyperammonaemia, visual disturbance. Stop irrigation; correct Na⁺ cautiously; supportive.",
+    "dosing": "Stop irrigation immediately; 3% hypertonic saline for severe symptomatic hyponatraemia per standard correction limits; supportive for visual / neurological symptoms.",
+    "domains": [
+      "toxicology",
+      "urology",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "Hospital pharmacy practice; BAUS guidance on TUR syndrome"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "fluoride-calcium",
+    "poison": "Hydrofluoric acid (HF) burns / fluoride poisoning",
+    "antidote": "Calcium gluconate (topical, IV, intra-arterial)",
+    "antidoteDrugSlug": "calcium-gluconate",
+    "conditionSlug": null,
+    "mechanism": "Free fluoride ion chelates calcium and magnesium, causing local tissue necrosis, hypocalcaemia, hypomagnesaemia, hyperkalaemia and cardiac arrhythmias. Calcium binds and neutralises fluoride.",
+    "dosing": "Topical 2.5% calcium gluconate gel to skin burns; subcutaneous infiltration of 5% calcium gluconate for digital burns; intra-arterial calcium gluconate for refractory pain; IV calcium for systemic toxicity. Aggressive Mg, K, ECG monitoring.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase HF burns guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "barium-magnesium-sulphate",
+    "poison": "Soluble barium (chloride, carbonate) poisoning",
+    "antidote": "Oral magnesium / sodium sulphate (precipitates insoluble barium sulphate) + K⁺ repletion",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Sulphate precipitates barium to insoluble (and non-absorbable) barium sulphate. Profound hypokalaemia (intracellular shift) needs aggressive K⁺ replacement. Cardiac monitoring essential.",
+    "dosing": "Magnesium sulphate or sodium sulphate 30 g PO in adults (1 g/kg paediatric) to bind unabsorbed barium; potassium replacement IV titrated to ECG; supportive haemodialysis if severe.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase barium monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "nitrite-induced-methhb",
+    "poison": "Nitrite / nitrate-induced methaemoglobinaemia (in infants — 'blue baby syndrome')",
+    "antidote": "Methylene blue (after careful G6PD consideration)",
+    "antidoteDrugSlug": "methylene-blue",
+    "conditionSlug": null,
+    "mechanism": "Nitrates converted to nitrites oxidise haemoglobin (Fe2+ to Fe3+). Methylene blue accelerates reduction via NADPH-methaemoglobin reductase.",
+    "dosing": "Methylene blue 1–2 mg/kg IV over 5 min for symptomatic methHb (typically > 20–30%); careful G6PD assessment.",
+    "domains": [
+      "toxicology",
+      "paediatrics",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase nitrate/nitrite monographs"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ergot-supportive",
+    "poison": "Ergot alkaloid toxicity (ergotamine, methylergometrine — ergotism)",
+    "antidote": "Stop drug + vasodilator (nitroprusside / nitroglycerin) for severe ischaemia",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Ergot alkaloids are potent vasoconstrictors causing peripheral ischaemia and gangrene. No specific antidote; vasodilators reverse vasospasm; anticoagulation may help prevent thrombosis.",
+    "dosing": "Stop ergot; IV nitroprusside or nitroglycerin titrated to limb perfusion; consider heparin; vascular surgery input for established gangrene.",
+    "domains": [
+      "toxicology",
+      "obstetrics",
+      "vascular-surgery"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase ergotamine monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "antifreeze-pet-fomepizole",
+    "poison": "Ethylene-glycol-containing antifreeze (paediatric / veterinary scenario in households)",
+    "antidote": "Fomepizole or ethanol + thiamine + pyridoxine + dialysis",
+    "antidoteDrugSlug": "fomepizole",
+    "conditionSlug": "toxic-alcohol-poisoning",
+    "mechanism": "As ethylene-glycol entry above. Paediatric exposures are common from accessible household antifreeze; rapid recognition critical (any unexplained anion-gap acidosis, oxalate crystalluria).",
+    "dosing": "Fomepizole loading 15 mg/kg IV then per protocol; thiamine + pyridoxine; haemodialysis for significant exposure. Empirical fomepizole if methanol/EG suspected and confirmation will be delayed.",
+    "domains": [
+      "toxicology",
+      "paediatrics",
+      "emergency",
+      "nephrology"
+    ],
+    "references": [
+      {
+        "label": "EXTRIP recommendations for ethylene glycol"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "monoclonal-cytokine-tocilizumab",
+    "poison": "Severe cytokine release syndrome (CAR-T, bispecific therapy, severe infection)",
+    "antidote": "Tocilizumab (IL-6 receptor antagonist) ± corticosteroid",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "IL-6 is the central cytokine in CRS; tocilizumab blocks the receptor, rapidly improving fever, hypotension and hypoxia. Corticosteroids added for severe / neurotoxic features (ICANS).",
+    "dosing": "Tocilizumab 8 mg/kg IV (max 800 mg) for grade ≥ 2 CRS; may repeat once. Add dexamethasone 10 mg IV every 6h for grade ≥ 3 or ICANS.",
+    "domains": [
+      "oncology",
+      "toxicology",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "ASTCT consensus CRS grading / management"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "vitamin-a-toxicity-supportive",
+    "poison": "Vitamin A / retinoid hypervitaminosis",
+    "antidote": "Stop drug + supportive — manage raised intracranial pressure / hepatotoxicity",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Acute or chronic excess produces pseudotumor cerebri, hepatotoxicity, mucocutaneous changes. No antidote; cessation and supportive care.",
+    "dosing": "Stop the supplement / retinoid; manage raised ICP (acetazolamide, lumbar puncture if needed); ophthalmology / neurology input.",
+    "domains": [
+      "toxicology",
+      "neurology",
+      "dermatology"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase vitamin A monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vitamin-d-toxicity",
+    "poison": "Vitamin D hypervitaminosis (hypercalcaemia)",
+    "antidote": "Fluids + loop diuretic + corticosteroid + bisphosphonate / calcitonin for severe",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Excess vitamin D raises intestinal calcium absorption causing hypercalcaemia. Treatment is hypercalcaemia management; corticosteroids reduce 1,25-vitamin D production.",
+    "dosing": "Saline rehydration; furosemide once euvolaemic; prednisolone 20–40 mg/day; calcitonin 4 IU/kg q12h; zoledronate 4 mg IV for severe / refractory.",
+    "domains": [
+      "toxicology",
+      "endocrine"
+    ],
+    "references": [
+      {
+        "label": "Endocrine Society hypercalcaemia guidance; UK Toxbase"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "warfarin-major-bleed-4f-pcc",
+    "poison": "Warfarin / VKA major bleeding (intracranial, GI, retroperitoneal)",
+    "antidote": "4-factor prothrombin complex concentrate + IV vitamin K",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "4F-PCC immediately replaces factors II, VII, IX, X. IV vitamin K (5–10 mg) sustains correction by restoring hepatic synthesis (effect within 6–12h).",
+    "dosing": "4F-PCC 25–50 IU/kg by INR / weight; IV vitamin K 5–10 mg slow. Recheck INR at 30 min. FFP only if PCC unavailable.",
+    "domains": [
+      "toxicology",
+      "haematology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "BSH guidance on emergency warfarin reversal; ACC consensus 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "warfarin-minor-bleed-vit-k",
+    "poison": "Warfarin / VKA with elevated INR but minor / no bleeding",
+    "antidote": "Oral vitamin K + dose adjustment",
+    "antidoteDrugSlug": "vitamin-k",
+    "conditionSlug": null,
+    "mechanism": "Low-dose oral vitamin K corrects INR within 24h without complete VKA reversal (preserves ability to restart). PCC reserved for major bleeding.",
+    "dosing": "INR 4.5–10 with no bleeding: withhold warfarin, consider oral vitamin K 1–2.5 mg. INR > 10 no bleeding: withhold + oral vitamin K 2.5–5 mg. INR therapeutic + minor bleeding: hold, vitamin K only if needed.",
+    "domains": [
+      "toxicology",
+      "haematology"
+    ],
+    "references": [
+      {
+        "label": "BSH and ACCP warfarin management guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "iv-drug-extravasation-cold",
+    "poison": "Vesicant chemotherapy extravasation (general approach)",
+    "antidote": "Stop infusion, aspirate, mark area, elevate; cold for most (warm for vinca alkaloids)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Cooling reduces local diffusion of vesicant (anthracyclines, alkylators) into surrounding tissue. WARM for vinca alkaloids (promotes dispersal). Specific antidotes per agent (dexrazoxane, hyaluronidase, DMSO).",
+    "dosing": "Stop infusion, aspirate via cannula before removal; mark / photograph; elevate limb. Cold compress 15–20 min, 4×/day for 24–48h (most agents). Specific antidote per drug.",
+    "domains": [
+      "oncology",
+      "toxicology",
+      "nursing"
+    ],
+    "references": [
+      {
+        "label": "ESMO–EONS Clinical Practice Guidelines on extravasation"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "fluoroquinolone-tendon-supportive",
+    "poison": "Fluoroquinolone-induced tendon injury / rupture",
+    "antidote": "Stop drug + immobilisation + orthopaedic referral",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Quinolones impair tenocyte collagen synthesis (especially Achilles), with risk amplified by age > 60, corticosteroid co-use, transplant recipients. No antidote.",
+    "dosing": "Stop quinolone immediately at first sign of tendinopathy; rest, immobilise the affected tendon; orthopaedic referral if rupture suspected. Avoid future fluoroquinolone use.",
+    "domains": [
+      "toxicology",
+      "infectious-disease",
+      "orthopaedics"
+    ],
+    "references": [
+      {
+        "label": "FDA / EMA fluoroquinolone safety review; BNF cautions"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ammonia-supportive",
+    "poison": "Ammonia gas inhalation",
+    "antidote": "Supportive — humidified O2, bronchodilators, decontamination",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Highly water-soluble irritant gas producing immediate upper-airway and ocular injury. No antidote; airway protection and supportive care.",
+    "dosing": "Remove from exposure; copious eye and skin irrigation; humidified O2; nebulised salbutamol; intubation if airway oedema developing.",
+    "domains": [
+      "toxicology",
+      "respiratory",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase ammonia monograph"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "smoke-inhalation-combined",
+    "poison": "Smoke inhalation (combined CO + cyanide + irritant gases)",
+    "antidote": "100% O2 + empirical hydroxocobalamin for cyanide if shock/acidosis + airway management",
+    "antidoteDrugSlug": "hydroxocobalamin",
+    "conditionSlug": null,
+    "mechanism": "Combustion of synthetic polymers generates cyanide and CO simultaneously; shocked / acidotic smoke-inhalation victims may have toxic cyanide levels. Hydroxocobalamin can be given empirically (does not interfere with CO management).",
+    "dosing": "100% O2 immediately; intubate for stridor, soot in oropharynx, severe inhalation; hydroxocobalamin 5 g IV (paeds 70 mg/kg) for hypotension / lactate > 10 / loss of consciousness; consider hyperbaric O2 for severe COHb.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "respiratory"
+    ],
+    "references": [
+      {
+        "label": "European Resuscitation Council; UK Toxbase"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "marine-tetrodotoxin-supportive",
+    "poison": "Tetrodotoxin (puffer fish, blue-ringed octopus, some newts)",
+    "antidote": "Supportive — mechanical ventilation until toxin clears",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Sodium-channel blocker producing ascending paralysis with intact consciousness. No antivenom; ventilatory support is life-saving until toxin clears (24–72h).",
+    "dosing": "Airway protection, intubation and ventilation as paralysis ascends; supportive care; activated charcoal if recent ingestion.",
+    "domains": [
+      "toxicology",
+      "critical-care",
+      "emergency",
+      "tropical"
+    ],
+    "references": [
+      {
+        "label": "WHO marine biotoxins; UK Toxbase"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ciguatera-supportive",
+    "poison": "Ciguatera fish poisoning",
+    "antidote": "Supportive (mannitol benefit uncertain; gabapentin / amitriptyline for neuropathy)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Ciguatoxin activates voltage-gated sodium channels causing GI symptoms then characteristic cold allodynia and neuropathic pain. No proven antidote; IV mannitol used historically but evidence weak.",
+    "dosing": "Supportive rehydration; gabapentin or amitriptyline for prolonged neuropathic symptoms; avoid alcohol, fish, nuts for months (recurrence trigger).",
+    "domains": [
+      "toxicology",
+      "tropical",
+      "neurology"
+    ],
+    "references": [
+      {
+        "label": "WHO marine biotoxins; CDC ciguatera guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "scombroid-antihistamine",
+    "poison": "Scombroid (histamine) fish poisoning",
+    "antidote": "H1 + H2 antihistamines",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Bacterial decarboxylation of histidine in spoilt fish produces histamine — mimics anaphylaxis but no IgE involvement. H1 + H2 blockade resolves symptoms rapidly.",
+    "dosing": "Chlorphenamine 10 mg IV/IM + ranitidine 50 mg IV (or oral cetirizine 10 mg + famotidine 20 mg); usually resolves within hours.",
+    "domains": [
+      "toxicology",
+      "allergy",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "WHO marine biotoxins; UK Toxbase"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "snake-coral-monovalent",
+    "poison": "Coral snake (Micrurus) envenomation",
+    "antidote": "Monovalent coral snake antivenom + ventilation support",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Coral snake venom is primarily neurotoxic causing delayed descending paralysis. Antivenom prevents progression; once paralysis established, mechanical ventilation until recovery (may be days).",
+    "dosing": "Antivenom early per regional protocol; intubation and ventilation for established neuromuscular weakness. Have adrenaline ready for antivenom reactions.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "tropical",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "WHO snake antivenom guidance; regional poison centres"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "snake-elapid-polyvalent",
+    "poison": "Elapid (cobra, mamba, krait) envenomation",
+    "antidote": "Regional polyvalent / monovalent elapid antivenom + supportive ventilation",
+    "antidoteDrugSlug": "polyvalent-snake-antivenom-saimr",
+    "conditionSlug": null,
+    "mechanism": "Elapid venoms produce neurotoxicity (post-synaptic neuromuscular blockade) with risk of respiratory paralysis. Antivenom neutralises circulating toxin; intubation may still be needed.",
+    "dosing": "Antivenom IV per regional protocol; ventilation for respiratory paralysis until toxin clears or antivenom takes effect. Have adrenaline ready.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "tropical",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "WHO snake antivenom guidance; regional protocols"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "snake-viperid-coagulopathy",
+    "poison": "Viperid (Russell's viper, saw-scaled viper, rattlesnake) envenomation with coagulopathy",
+    "antidote": "Regional polyvalent viperid antivenom + blood product support",
+    "antidoteDrugSlug": "polyvalent-snake-antivenom-saimr",
+    "conditionSlug": null,
+    "mechanism": "Viperid venoms produce venom-induced consumption coagulopathy, AKI, capillary leak. Antivenom neutralises circulating toxins; blood products replace fibrinogen, platelets if bleeding.",
+    "dosing": "Antivenom IV per regional protocol; 20-minute whole-blood clotting test to track response and re-dose; supportive blood products only if active bleeding (factor replacement otherwise consumed by ongoing venom activity).",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "tropical",
+      "haematology"
+    ],
+    "references": [
+      {
+        "label": "WHO snake antivenom guidance; SE Asia/Africa regional protocols"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "stingray-supportive",
+    "poison": "Stingray envenomation",
+    "antidote": "Hot-water immersion + analgesia + tetanus + wound exploration",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Heat (~45°C 30–90 min) inactivates the heat-labile venom protein. Wound exploration / X-ray to find retained barb; tetanus, antibiotics for marine wound pathogens.",
+    "dosing": "Hot-water immersion 45°C as tolerated; analgesia; explore for retained spine; tetanus update; consider doxycycline + ciprofloxacin cover for Vibrio if seawater exposure.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "tropical"
+    ],
+    "references": [
+      {
+        "label": "Australian Resuscitation Council marine envenomation; CDC marine wounds"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "tcm-aconite-supportive",
+    "poison": "Aconite (Aconitum napellus, monkshood — traditional medicine) toxicity",
+    "antidote": "Supportive — antiarrhythmics (amiodarone), sodium bicarbonate, lipid emulsion for refractory arrest",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Aconitine activates voltage-gated sodium channels producing refractory ventricular tachyarrhythmia and bradyarrhythmia. No specific antidote; manage as severe sodium-channel poisoning.",
+    "dosing": "Amiodarone or magnesium for arrhythmia; sodium bicarbonate; lipid emulsion 1.5 mL/kg bolus + infusion for cardiac arrest; cardiopulmonary support (ECMO has been used).",
+    "domains": [
+      "toxicology",
+      "cardiology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "UK Toxbase aconite monograph; HK regional case series"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "snakebite-pre-hospital",
+    "poison": "Snakebite — pre-hospital management (any species)",
+    "antidote": "Immobilisation + pressure-immobilisation bandage (selected elapids) + rapid transport — antivenom in hospital",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Pre-hospital care minimises venom spread (elapid neurotoxins) and tissue injury (viperid cytotoxins). Avoid tourniquets, incision, suction. Pressure-immobilisation bandage useful for neurotoxic elapids in Australia / SE Asia but NOT for cytotoxic viperids.",
+    "dosing": "Remove from danger; immobilise the limb at heart level; pressure-immobilisation bandage for neurotoxic elapid bites (Australian guidance); rapid transport to facility with antivenom. Do NOT incise, suction, apply tourniquet, or attempt to capture snake.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "tropical"
+    ],
+    "references": [
+      {
+        "label": "WHO snake antivenom guidance; Australian Resuscitation Council"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "edxa-andexanet-or-pcc",
+    "poison": "Edoxaban life-threatening bleeding",
+    "antidote": "Andexanet alfa (off-label for edoxaban) or 4-factor PCC",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Edoxaban is a direct factor Xa inhibitor. Andexanet alfa is licensed for apixaban/rivaroxaban but evidence supports use for edoxaban. 4F-PCC is the widely-available alternative.",
+    "dosing": "Andexanet alfa off-label dosing per recent ingestion (similar to rivaroxaban scheme) or 4F-PCC 25–50 IU/kg. Specialist (haematology) decision.",
+    "domains": [
+      "toxicology",
+      "haematology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "ACC expert consensus on anticoagulation reversal (2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
   }
 ]

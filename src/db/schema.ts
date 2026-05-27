@@ -176,3 +176,93 @@ export const customRules = pgTable(
 
 export type CustomRuleRow = typeof customRules.$inferSelect;
 export type NewCustomRuleRow = typeof customRules.$inferInsert;
+
+/**
+ * Per-integrator outbound notification channels. A channel binds a
+ * provider (twilio / africastalking / smtp / whatsapp-direct) to the
+ * credentials needed to send through it. Credentials are stored as an
+ * AEAD-encrypted blob — the raw secrets never touch this table or
+ * any application log.
+ *
+ * Integrator-scoped only; never global; never carries patient identity.
+ * Used by audit-finding alerts and any future on-rule-fire notifications.
+ */
+export const notificationChannels = pgTable(
+  'notification_channels',
+  {
+    id: text('id').primaryKey(),
+    integratorId: text('integrator_id').notNull(),
+    name: text('name').notNull(),
+    /** 'twilio-sms' | 'twilio-whatsapp' | 'africastalking-sms' | 'smtp' | 'whatsapp-business' */
+    provider: text('provider').notNull(),
+    /** Default address (To-number / email / WhatsApp phone) used when an
+     *  alert doesn't specify one. Optional — a channel can require an
+     *  explicit per-alert recipient. */
+    defaultRecipient: text('default_recipient'),
+    /** Display label for the From / sender (e.g. "VedaMD Alerts"). */
+    senderLabel: text('sender_label'),
+    /** AES-GCM-encrypted JSON blob holding provider credentials
+     *  (apiKey, apiSecret, accountSid, etc.). Decrypted in-process at
+     *  send time; never written to logs. The format is
+     *  `<iv-hex>:<ciphertext-hex>:<authTag-hex>`. */
+    encryptedCreds: text('encrypted_creds').notNull(),
+    enabled: boolean('enabled').notNull().default(true),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+    createdBy: text('created_by'),
+    lastUsedAt: timestamp('last_used_at', { withTimezone: true }),
+  },
+  (t) => ({
+    byIntegrator: index('idx_notification_channels_integrator').on(t.integratorId),
+  }),
+);
+
+export type NotificationChannelRow = typeof notificationChannels.$inferSelect;
+export type NewNotificationChannelRow = typeof notificationChannels.$inferInsert;
+
+/**
+ * Per-integrator clinical-audit definitions. An audit binds:
+ *   - a connector + named query (where to fetch the data),
+ *   - the custom rules to evaluate against each row,
+ *   - the policy IDs to cite when a row breaches a rule,
+ *   - a numeric threshold (% of breaching rows or absolute count) that
+ *     defines a "finding worth alerting on",
+ *   - a list of notification-channel IDs to dispatch on breach.
+ *
+ * Audits are run on-demand only (no scheduler) — the developer / system
+ * hits POST /v1/clinical-audits/:id/run to execute. Findings + dispatch
+ * outcomes are returned in the response and logged to integration-log.
+ */
+export const clinicalAudits = pgTable(
+  'clinical_audits',
+  {
+    id: text('id').primaryKey(),
+    integratorId: text('integrator_id').notNull(),
+    name: text('name').notNull(),
+    description: text('description'),
+    /** Connection ID + named-query ID registered with SqlIngestionService. */
+    connectionId: text('connection_id').notNull(),
+    namedQueryId: text('named_query_id').notNull(),
+    /** Optional bound parameters for the named query (JSON object). */
+    queryParams: jsonb('query_params').notNull().default({}),
+    /** Array of custom-rule IDs to evaluate against each row. */
+    customRuleIds: text('custom_rule_ids').array().notNull().default([]),
+    /** Array of policy IDs to cite when a rule breach occurs. */
+    policyIds: text('policy_ids').array().notNull().default([]),
+    /** Threshold config: { kind: 'absolute' | 'percentage', value: number }. */
+    threshold: jsonb('threshold').notNull(),
+    /** Array of notification-channel IDs to dispatch on threshold breach. */
+    channelIds: text('channel_ids').array().notNull().default([]),
+    enabled: boolean('enabled').notNull().default(true),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+    createdBy: text('created_by'),
+    lastRunAt: timestamp('last_run_at', { withTimezone: true }),
+  },
+  (t) => ({
+    byIntegrator: index('idx_clinical_audits_integrator').on(t.integratorId),
+  }),
+);
+
+export type ClinicalAuditRow = typeof clinicalAudits.$inferSelect;
+export type NewClinicalAuditRow = typeof clinicalAudits.$inferInsert;

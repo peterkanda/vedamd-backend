@@ -16,7 +16,7 @@ describe('HepaticDoseService', () => {
 
   it('loads the hepatic-dose catalogue from the signed bundle', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThanOrEqual(12);
+    expect(list.length).toBeGreaterThanOrEqual(100);
     const slugs = list.map((r) => r.slug);
     // Anti-hallucination guard: the highest-stakes drugs in liver disease.
     for (const required of [

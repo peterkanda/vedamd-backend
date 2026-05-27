@@ -482,5 +482,3420 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "B"
+  },
+  {
+    "slug": "norepinephrine-epinephrine",
+    "drugA": "Norepinephrine (noradrenaline)",
+    "drugASlug": "norepinephrine",
+    "drugB": "Epinephrine (adrenaline)",
+    "drugBSlug": "epinephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical ICU concentrations. Both catecholamines tolerate co-infusion via the same lumen.",
+    "domains": ["critical-care", "emergency"],
+    "routeContext": ["y-site"],
+    "notes": "Both stable in NS or D5W. Y-site compatible at standard pressor concentrations. Avoid alkaline co-infusates (bicarbonate, aminophylline, furosemide) on the same lumen — catecholamine oxidation will affect both. Titrate each independently and label clearly to avoid bolus errors when one drip is being adjusted.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Norepinephrine / Epinephrine Y-site." },
+      { "label": "ASHP King Guide — catecholamine co-administration." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "norepinephrine-vasopressin",
+    "drugA": "Norepinephrine (noradrenaline)",
+    "drugASlug": "norepinephrine",
+    "drugB": "Vasopressin",
+    "drugBSlug": "vasopressin",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible — the standard septic-shock pressor pairing. Vasopressin's PVC adsorption is the only practical issue.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at clinical concentrations during simulated Y-site administration. Vasopressin adsorbs to PVC tubing — non-PVC sets preferred for titration accuracy. Often co-infused on a single central-line lumen as the standard septic-shock regimen.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vasopressin Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "norepinephrine-dobutamine",
+    "drugA": "Norepinephrine (noradrenaline)",
+    "drugASlug": "norepinephrine",
+    "drugB": "Dobutamine",
+    "drugBSlug": "dobutamine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at standard ICU concentrations — the canonical 'inopressor' combination for septic cardiomyopathy.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Both catecholamines, compatible in NS or D5W during Y-site administration. Avoid alkaline co-infusates on the shared lumen. Pink/brown discolouration over time on the shared line indicates oxidation — change set and check pressor activity.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Dobutamine Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "norepinephrine-dopamine",
+    "drugA": "Norepinephrine (noradrenaline)",
+    "drugASlug": "norepinephrine",
+    "drugB": "Dopamine",
+    "drugBSlug": "dopamine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible. Same alkaline-incompatibility caveats as for any catecholamine pair.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at typical infusion concentrations. Avoid co-administration on the same lumen with bicarbonate, aminophylline or furosemide — alkalinity will oxidise both catecholamines.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Dopamine Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "norepinephrine-phenylephrine",
+    "drugA": "Norepinephrine (noradrenaline)",
+    "drugASlug": "norepinephrine",
+    "drugB": "Phenylephrine",
+    "drugBSlug": "phenylephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at clinical pressor concentrations.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Both are catechol-like alpha agonists. Co-administration tolerated at typical concentrations in NS or D5W. Alkaline-drug caveats apply. Commonly seen in anaesthesia hand-over where phenylephrine boluses are tapered as norepinephrine is started.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Phenylephrine Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "epinephrine-vasopressin",
+    "drugA": "Epinephrine (adrenaline)",
+    "drugASlug": "epinephrine",
+    "drugB": "Vasopressin",
+    "drugBSlug": "vasopressin",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at standard ICU concentrations.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at clinical concentrations. PVC adsorption applies to vasopressin. Avoid alkaline co-infusates.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vasopressin / Epinephrine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "epinephrine-dobutamine",
+    "drugA": "Epinephrine (adrenaline)",
+    "drugASlug": "epinephrine",
+    "drugB": "Dobutamine",
+    "drugBSlug": "dobutamine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical ICU concentrations.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Both catecholamines; compatible in NS or D5W during simulated Y-site administration. Same alkalinity warnings — avoid bicarbonate / furosemide on the shared lumen.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Dobutamine Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "epinephrine-dopamine",
+    "drugA": "Epinephrine (adrenaline)",
+    "drugASlug": "epinephrine",
+    "drugB": "Dopamine",
+    "drugBSlug": "dopamine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["critical-care", "emergency"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at clinical concentrations. Both prone to oxidation in alkaline media — keep bicarbonate off the shared lumen.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Dopamine / Epinephrine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vasopressin-dobutamine",
+    "drugA": "Vasopressin",
+    "drugASlug": "vasopressin",
+    "drugB": "Dobutamine",
+    "drugBSlug": "dobutamine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at clinical concentrations during simulated Y-site administration. Vasopressin PVC-adsorption caveat applies — use non-PVC tubing where possible.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vasopressin Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vasopressin-dopamine",
+    "drugA": "Vasopressin",
+    "drugASlug": "vasopressin",
+    "drugB": "Dopamine",
+    "drugBSlug": "dopamine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical clinical concentrations.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible during simulated Y-site administration. PVC-adsorption caveat for vasopressin.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vasopressin / Dopamine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vasopressin-phenylephrine",
+    "drugA": "Vasopressin",
+    "drugASlug": "vasopressin",
+    "drugB": "Phenylephrine",
+    "drugBSlug": "phenylephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at clinical concentrations. PVC-adsorption caveat for vasopressin.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Phenylephrine / Vasopressin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "dobutamine-dopamine",
+    "drugA": "Dobutamine",
+    "drugASlug": "dobutamine",
+    "drugB": "Dopamine",
+    "drugBSlug": "dopamine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Both catecholamines; tolerate co-infusion in NS or D5W. Avoid alkaline co-infusates on the shared lumen.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Dobutamine / Dopamine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "dobutamine-phenylephrine",
+    "drugA": "Dobutamine",
+    "drugASlug": "dobutamine",
+    "drugB": "Phenylephrine",
+    "drugBSlug": "phenylephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at clinical concentrations.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated during simulated Y-site administration. Both vasoactive catechol-like agents in mild-to-moderate ICU concentrations.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Dobutamine / Phenylephrine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "dopamine-phenylephrine",
+    "drugA": "Dopamine",
+    "drugASlug": "dopamine",
+    "drugB": "Phenylephrine",
+    "drugBSlug": "phenylephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at clinical pressor concentrations.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Dopamine / Phenylephrine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "epinephrine-phenylephrine",
+    "drugA": "Epinephrine (adrenaline)",
+    "drugASlug": "epinephrine",
+    "drugB": "Phenylephrine",
+    "drugBSlug": "phenylephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible during simulated Y-site administration. Same alkalinity caveats as for any catecholamine.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Phenylephrine / Epinephrine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "propofol-fentanyl",
+    "drugA": "Propofol",
+    "drugASlug": "propofol",
+    "drugB": "Fentanyl",
+    "drugBSlug": "fentanyl",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible — one of the small list of confirmed-stable partners for the propofol lipid emulsion.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Confirmed Y-site compatible at typical sedation concentrations (propofol 10 mg/mL, fentanyl 10-50 µg/mL). Combination is the classic ICU mechanical-ventilation regimen. Pharmacodynamic synergy on hypotension and respiratory drive is the clinical issue, not chemical compatibility.",
+    "references": [
+      { "label": "Trissel LA et al. Compatibility of propofol injectable emulsion with selected drugs during simulated Y-site administration. Am J Health Syst Pharm 1997." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "propofol-midazolam",
+    "drugA": "Propofol",
+    "drugASlug": "propofol",
+    "drugB": "Midazolam",
+    "drugBSlug": "midazolam",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical sedation concentrations.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel-confirmed Y-site compatible. The lipid emulsion of propofol tolerates midazolam at clinical concentrations. Confirm visually for any oiling on a shared lumen.",
+    "references": [
+      { "label": "Trissel LA et al. Compatibility of propofol injectable emulsion with selected drugs during simulated Y-site administration. Am J Health Syst Pharm 1997." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "propofol-dexmedetomidine",
+    "drugA": "Propofol",
+    "drugASlug": "propofol",
+    "drugB": "Dexmedetomidine",
+    "drugBSlug": "dexmedetomidine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at clinical sedation concentrations.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Confirmed Y-site compatible during simulated co-administration. Commonly co-titrated during ventilator weaning where dexmedetomidine replaces deep sedation.",
+    "references": [
+      { "label": "Wagner DS et al. Compatibility of dexmedetomidine with selected medications during simulated Y-site administration. Am J Health Syst Pharm 2009." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "propofol-ketamine",
+    "drugA": "Propofol",
+    "drugASlug": "propofol",
+    "drugB": "Ketamine",
+    "drugBSlug": "ketamine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible — used as 'ketofol' for procedural sedation.",
+    "domains": ["critical-care", "emergency", "anaesthesia"],
+    "routeContext": ["y-site", "syringe"],
+    "notes": "Confirmed Y-site compatible. Often pre-mixed in the same syringe ('ketofol') for procedural sedation in the ED at varying ratios (1:1 to 4:1 propofol:ketamine). Verify the local protocol's mixing ratio and observe the syringe for any oiling before injection.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Propofol Y-site compatibility." },
+      { "label": "Andolfatto G et al. Ketamine-propofol combination (ketofol) for procedural sedation. Ann Emerg Med 2012." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "propofol-remifentanil",
+    "drugA": "Propofol",
+    "drugASlug": "propofol",
+    "drugB": "Remifentanil",
+    "drugBSlug": "remifentanil",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible — the standard TIVA pairing.",
+    "domains": ["anaesthesia", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Confirmed Y-site compatible at TIVA concentrations. The combination underpins target-controlled-infusion anaesthesia. Pharmacodynamic synergy on apnoea is the clinical risk.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Propofol / Remifentanil." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "fentanyl-dexmedetomidine",
+    "drugA": "Fentanyl",
+    "drugASlug": "fentanyl",
+    "drugB": "Dexmedetomidine",
+    "drugBSlug": "dexmedetomidine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at clinical concentrations.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Confirmed Y-site compatible in simulated co-administration studies. Common ICU pairing during weaning.",
+    "references": [
+      { "label": "Wagner DS et al. Compatibility of dexmedetomidine with selected medications during simulated Y-site administration. Am J Health Syst Pharm 2009." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "fentanyl-ketamine",
+    "drugA": "Fentanyl",
+    "drugASlug": "fentanyl",
+    "drugB": "Ketamine",
+    "drugBSlug": "ketamine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible. Both stable in NS / D5W.",
+    "domains": ["critical-care", "anaesthesia", "emergency"],
+    "routeContext": ["y-site", "syringe"],
+    "notes": "Tolerated at clinical analgo-sedation concentrations. Used together for low-dose opioid-sparing analgesia in the ED and ICU.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ketamine Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "fentanyl-remifentanil",
+    "drugA": "Fentanyl",
+    "drugASlug": "fentanyl",
+    "drugB": "Remifentanil",
+    "drugBSlug": "remifentanil",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible. Co-administration is rarely clinically indicated but chemically tolerated.",
+    "domains": ["anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Stable at clinical concentrations. Note the additive respiratory depression risk if both are used at full doses.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Remifentanil." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "midazolam-dexmedetomidine",
+    "drugA": "Midazolam",
+    "drugASlug": "midazolam",
+    "drugB": "Dexmedetomidine",
+    "drugBSlug": "dexmedetomidine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical ICU concentrations.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Confirmed compatible in simulated Y-site studies at typical ICU concentrations.",
+    "references": [
+      { "label": "Wagner DS et al. Compatibility of dexmedetomidine with selected medications during simulated Y-site administration. Am J Health Syst Pharm 2009." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "midazolam-ketamine",
+    "drugA": "Midazolam",
+    "drugASlug": "midazolam",
+    "drugB": "Ketamine",
+    "drugBSlug": "ketamine",
+    "status": "compatible",
+    "oneLiner": "Y-site and syringe compatible — commonly co-administered for procedural sedation.",
+    "domains": ["critical-care", "anaesthesia", "emergency"],
+    "routeContext": ["y-site", "syringe"],
+    "notes": "Tolerated together at clinical sedation concentrations. Frequently drawn together in the same syringe for paediatric and procedural sedation. Watch for emergence reactions if midazolam is too low relative to ketamine.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ketamine / Midazolam." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "midazolam-remifentanil",
+    "drugA": "Midazolam",
+    "drugASlug": "midazolam",
+    "drugB": "Remifentanil",
+    "drugBSlug": "remifentanil",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["anaesthesia", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Stable at clinical concentrations in NS or D5W.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Remifentanil." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "dexmedetomidine-ketamine",
+    "drugA": "Dexmedetomidine",
+    "drugASlug": "dexmedetomidine",
+    "drugB": "Ketamine",
+    "drugBSlug": "ketamine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at clinical concentrations.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible in simulated Y-site studies. Used together as opioid-sparing sedation in the ICU.",
+    "references": [
+      { "label": "Wagner DS et al. Compatibility of dexmedetomidine with selected medications during simulated Y-site administration. Am J Health Syst Pharm 2009." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "dexmedetomidine-remifentanil",
+    "drugA": "Dexmedetomidine",
+    "drugASlug": "dexmedetomidine",
+    "drugB": "Remifentanil",
+    "drugBSlug": "remifentanil",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["anaesthesia", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at clinical concentrations. Commonly co-titrated for awake fibre-optic intubation and ICU sedation weaning.",
+    "references": [
+      { "label": "Wagner DS et al. Compatibility of dexmedetomidine with selected medications during simulated Y-site administration. Am J Health Syst Pharm 2009." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ketamine-remifentanil",
+    "drugA": "Ketamine",
+    "drugASlug": "ketamine",
+    "drugB": "Remifentanil",
+    "drugBSlug": "remifentanil",
+    "status": "no-data",
+    "oneLiner": "No formal Y-site compatibility data; treat as incompatible until pharmacy confirms.",
+    "domains": ["anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel's does not list a direct Y-site study for this pair. If co-administration is required, run via separate lumens, or pause-flush-give-flush on a single line.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Remifentanil / Ketamine (no direct study)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "vancomycin-fentanyl",
+    "drugA": "Vancomycin",
+    "drugASlug": "vancomycin",
+    "drugB": "Fentanyl",
+    "drugBSlug": "fentanyl",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical infusion concentrations.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel-confirmed compatible at typical concentrations (vancomycin ≤ 10 mg/mL, fentanyl 10-50 µg/mL). Useful when ICU line access is limited.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vancomycin Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vancomycin-midazolam",
+    "drugA": "Vancomycin",
+    "drugASlug": "vancomycin",
+    "drugB": "Midazolam",
+    "drugBSlug": "midazolam",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at clinical concentrations.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at typical infusion concentrations during simulated Y-site administration.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vancomycin Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vancomycin-propofol",
+    "drugA": "Vancomycin",
+    "drugASlug": "vancomycin",
+    "drugB": "Propofol",
+    "drugBSlug": "propofol",
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate / emulsion disruption — do not co-infuse at Y-site.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Vancomycin is acidic and destabilises the propofol lipid emulsion at Y-site. Trissel lists this as incompatible. Use a separate lumen for vancomycin; if single-line, pause propofol, flush, run vancomycin, flush, resume.",
+    "alternative": "Separate lumen. If single-line: pause-flush sequence.",
+    "references": [
+      { "label": "Trissel LA et al. Compatibility of propofol injectable emulsion with selected drugs during simulated Y-site administration. Am J Health Syst Pharm 1997." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "vancomycin-norepinephrine",
+    "drugA": "Vancomycin",
+    "drugASlug": "vancomycin",
+    "drugB": "Norepinephrine (noradrenaline)",
+    "drugBSlug": "norepinephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical infusion concentrations.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at typical ICU concentrations during simulated Y-site administration. Acceptable when ICU lines are constrained, but observe for any precipitate as vancomycin is acidic.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vancomycin Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vancomycin-cefepime",
+    "drugA": "Vancomycin",
+    "drugASlug": "vancomycin",
+    "drugB": "Cefepime",
+    "drugBSlug": "cefepime",
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate at Y-site at typical clinical concentrations.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel lists Y-site precipitation between vancomycin and cefepime at standard infusion concentrations. Use separate lines or stagger dosing with NS flush.",
+    "alternative": "Separate lines or stagger with NS flush.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vancomycin / Cefepime." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vancomycin-meropenem",
+    "drugA": "Vancomycin",
+    "drugASlug": "vancomycin",
+    "drugB": "Meropenem",
+    "drugBSlug": "meropenem",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at clinical concentrations (NS diluent for both).",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at clinical concentrations during simulated Y-site administration when both are diluted in NS. Useful for empiric ICU regimens where pip-tazo is contraindicated.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vancomycin / Meropenem." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vancomycin-ceftriaxone",
+    "drugA": "Vancomycin",
+    "drugASlug": "vancomycin",
+    "drugB": "Ceftriaxone",
+    "drugBSlug": "ceftriaxone",
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate / cloudiness at Y-site — separate lines.",
+    "domains": ["antimicrobials", "critical-care", "emergency"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel lists Y-site incompatibility (cloudiness, precipitate) between vancomycin and ceftriaxone at typical infusion concentrations. Frequently relevant in empiric meningitis regimens — give via separate lines or stagger with NS flush.",
+    "alternative": "Separate lines or stagger with NS flush between doses.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vancomycin / Ceftriaxone." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "meropenem-norepinephrine",
+    "drugA": "Meropenem",
+    "drugASlug": "meropenem",
+    "drugB": "Norepinephrine (noradrenaline)",
+    "drugBSlug": "norepinephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical ICU concentrations.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated during simulated Y-site administration. Stability-in-bag of meropenem is the limiting factor — use NS, change bag every 3-4 h for extended-infusion regimens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Meropenem Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "meropenem-propofol",
+    "drugA": "Meropenem",
+    "drugASlug": "meropenem",
+    "drugB": "Propofol",
+    "drugBSlug": "propofol",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at clinical concentrations.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel lists this as compatible during simulated Y-site administration. Common ICU pairing.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies. Am J Health Syst Pharm 1997." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "piperacillin-tazobactam-sedation",
+    "drugA": "Piperacillin-tazobactam",
+    "drugASlug": "piperacillin-tazobactam",
+    "drugB": "Common ICU sedation infusions (fentanyl, midazolam, propofol, dexmedetomidine)",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Y-site compatible with fentanyl, midazolam, propofol and dexmedetomidine at clinical concentrations.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at typical infusion concentrations during simulated Y-site administration. Pip-tazo + vancomycin remains the prominent exception (see vancomycin-piperacillin-tazobactam record).",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Piperacillin-tazobactam Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ceftriaxone-fentanyl",
+    "drugA": "Ceftriaxone",
+    "drugASlug": "ceftriaxone",
+    "drugB": "Fentanyl",
+    "drugBSlug": "fentanyl",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at clinical concentrations.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated during simulated Y-site administration at typical infusion concentrations. Distinct from the ceftriaxone + calcium / Ringer's incompatibility which is the major safety issue for this agent.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ceftriaxone Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ceftriaxone-ringers",
+    "drugA": "Ceftriaxone",
+    "drugASlug": "ceftriaxone",
+    "drugB": "Ringer's lactate / Hartmann's solution",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Ringer's / Hartmann's contains calcium — same incompatibility as for any Ca-containing fluid. Use NS or D5W as diluent / flush.",
+    "domains": ["antimicrobials", "emergency", "paediatrics"],
+    "routeContext": ["y-site", "additive", "all"],
+    "notes": "Manufacturer labelling specifies that ceftriaxone must NOT be diluted in or co-administered with calcium-containing solutions including Ringer's lactate / Hartmann's. Crystalline ceftriaxone-calcium precipitate is the documented mechanism. Use NS or D5W for reconstitution and as the line flush.",
+    "alternative": "Use NS or D5W as diluent and as flush fluid. Switch maintenance fluid off Ringer's during ceftriaxone administration.",
+    "references": [
+      { "label": "FDA Safety Communication: Ceftriaxone — calcium incompatibility. 2009." },
+      { "label": "Ceftriaxone (Rocephin) — manufacturer prescribing information." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ceftriaxone-aminophylline",
+    "drugA": "Ceftriaxone",
+    "drugASlug": "ceftriaxone",
+    "drugB": "Aminophylline",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate at Y-site — separate lines.",
+    "domains": ["antimicrobials", "respiratory"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel-listed Y-site incompatible. Aminophylline is strongly alkaline; ceftriaxone destabilises in alkaline media.",
+    "alternative": "Separate lines or NS flush between administrations.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ceftriaxone." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cefepime-aminoglycoside",
+    "drugA": "Cefepime",
+    "drugASlug": "cefepime",
+    "drugB": "Aminoglycosides (gentamicin, tobramycin, amikacin)",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Y-site incompatible — physical incompatibility (precipitate) AND chemical inactivation of the aminoglycoside on prolonged contact. Separate lines or flush thoroughly.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Beta-lactam + aminoglycoside in the same line is the canonical 'physical-then-chemical' compatibility issue: at Y-site contact there can be visible precipitate at typical infusion concentrations, AND when mixed in a bag the beta-lactam (especially cefepime, piperacillin) inactivates the aminoglycoside by acyl bond formation. Always separate lines or use a thorough NS flush between staggered doses. Never mix in the same bag or syringe.",
+    "alternative": "Separate lines / lumens; or stagger with NS flush.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Cefepime / Aminoglycosides." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "piperacillin-tazobactam-aminoglycoside",
+    "drugA": "Piperacillin-tazobactam",
+    "drugASlug": "piperacillin-tazobactam",
+    "drugB": "Aminoglycosides (gentamicin, tobramycin, amikacin)",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Inactivation of the aminoglycoside in solution by the beta-lactam — separate lines, never mix.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Piperacillin (like other penicillins) chemically inactivates aminoglycosides on prolonged contact in solution. Visible precipitate at Y-site is also possible at high infusion concentrations. Never mix in the same bag or syringe; separate lines for co-administration.",
+    "alternative": "Separate lines / lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Piperacillin / Aminoglycosides." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "gentamicin-ampicillin",
+    "drugA": "Gentamicin",
+    "drugASlug": "gentamicin",
+    "drugB": "Ampicillin",
+    "drugBSlug": "ampicillin",
+    "status": "incompatible",
+    "oneLiner": "Inactivation of gentamicin by ampicillin in solution — separate lines / sequence with flush.",
+    "domains": ["antimicrobials", "neonatology", "paediatrics"],
+    "routeContext": ["y-site", "additive", "syringe"],
+    "notes": "Penicillins inactivate aminoglycosides on prolonged contact. Especially relevant in neonatal sepsis regimens (ampicillin + gentamicin) — administer through separate lines, or sequence on the same line with a thorough NS flush in between, and never draw in the same syringe.",
+    "alternative": "Separate lines / lumens; or NS flush between staggered doses.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ampicillin / Gentamicin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "gentamicin-ceftriaxone",
+    "drugA": "Gentamicin",
+    "drugASlug": "gentamicin",
+    "drugB": "Ceftriaxone",
+    "drugBSlug": "ceftriaxone",
+    "status": "incompatible",
+    "oneLiner": "Y-site precipitate / cefalosporin-aminoglycoside inactivation — separate lines.",
+    "domains": ["antimicrobials"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Same beta-lactam / aminoglycoside inactivation pattern. Use separate lines or stagger with NS flush.",
+    "alternative": "Separate lines.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ceftriaxone / Gentamicin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ciprofloxacin-heparin",
+    "drugA": "Ciprofloxacin (IV)",
+    "drugASlug": "ciprofloxacin",
+    "drugB": "Heparin (unfractionated)",
+    "drugBSlug": "heparin",
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate at Y-site — use separate lines.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Acidic ciprofloxacin precipitates on contact with heparin solutions at clinical concentrations.",
+    "alternative": "Separate lines or NS flush.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ciprofloxacin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ciprofloxacin-furosemide",
+    "drugA": "Ciprofloxacin (IV)",
+    "drugASlug": "ciprofloxacin",
+    "drugB": "Furosemide",
+    "drugBSlug": "furosemide",
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate at Y-site (acid-alkaline pair).",
+    "domains": ["antimicrobials"],
+    "routeContext": ["y-site"],
+    "notes": "Acidic ciprofloxacin + alkaline furosemide precipitate on contact. Use separate lines.",
+    "alternative": "Separate lines.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ciprofloxacin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "kcl-norepinephrine",
+    "drugA": "Potassium chloride (KCl)",
+    "drugASlug": null,
+    "drugB": "Norepinephrine (noradrenaline)",
+    "drugBSlug": "norepinephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical concentrations (KCl ≤ 40 mmol/L on shared lumen).",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at typical ICU concentrations. The dominant safety concern with KCl remains rate / concentration rather than chemical compatibility with vasopressors.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Potassium chloride Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "kcl-insulin",
+    "drugA": "Potassium chloride (KCl)",
+    "drugASlug": null,
+    "drugB": "Insulin (regular human IV)",
+    "drugBSlug": "insulin-regular",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible. Co-administration is routine for DKA / hyperkalaemia management.",
+    "domains": ["critical-care", "endocrinology", "emergency"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Tolerated at clinical concentrations. KCl is often added to the maintenance fluid running alongside an insulin infusion in DKA / HHS. Beware the PVC adsorption of insulin (see insulin-line-adsorption record).",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Potassium chloride / Insulin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "kcl-heparin",
+    "drugA": "Potassium chloride (KCl)",
+    "drugASlug": null,
+    "drugB": "Heparin (unfractionated)",
+    "drugBSlug": "heparin",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical concentrations.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at clinical concentrations during simulated Y-site administration.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Potassium chloride Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "kcl-bicarbonate",
+    "drugA": "Potassium chloride (KCl)",
+    "drugASlug": null,
+    "drugB": "Sodium bicarbonate (NaHCO₃)",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "incompatible",
+    "oneLiner": "Do not mix in the same bag or push through the same line without flush — risk of precipitate with concentrated bicarbonate and unstable mixture.",
+    "domains": ["critical-care", "emergency"],
+    "routeContext": ["additive", "y-site"],
+    "notes": "Concentrated KCl and bicarbonate should not be mixed in the same bag; if both are required (e.g. severe metabolic acidosis with hypokalaemia), give bicarbonate first on its own (separate access), then resume KCl. On a single line, flush thoroughly between.",
+    "alternative": "Separate lumens; sequence with NS flush.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Potassium chloride / Sodium bicarbonate." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "calcium-phosphate",
+    "drugA": "Calcium (gluconate or chloride)",
+    "drugASlug": null,
+    "drugB": "Phosphate (sodium or potassium phosphate)",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Calcium-phosphate solubility curve — co-administration risks insoluble calcium phosphate precipitate. Do NOT push together; in TPN, only pharmacy-compounded with verified solubility.",
+    "domains": ["critical-care", "neonatology", "nutrition"],
+    "routeContext": ["additive", "y-site", "syringe"],
+    "notes": "Calcium and phosphate form insoluble Ca₃(PO₄)₂. In TPN, the pharmacy uses solubility nomograms (concentration, pH, organic vs inorganic phosphate, temperature) to keep both in solution; never add Ca or PO₄ at the bedside. At Y-site, visible precipitate forms rapidly. For replacement therapy: give Ca and PO₄ via separate lines, ideally separated in time.",
+    "alternative": "Separate lines, separated in time. For TPN: pharmacy-compounded only.",
+    "references": [
+      { "label": "ASHP King Guide — Calcium / Phosphate." },
+      { "label": "ASPEN parenteral nutrition safety consensus recommendations." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "magnesium-furosemide",
+    "drugA": "Magnesium sulfate",
+    "drugASlug": "magnesium-sulfate",
+    "drugB": "Furosemide",
+    "drugBSlug": "furosemide",
+    "status": "no-data",
+    "oneLiner": "Limited Y-site data — treat as conditional. Furosemide's alkalinity is the practical concern; use separate lines where possible.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel reports limited / variable data. Furosemide is alkaline (pH 8.5-9) and precipitates with many drugs. Where both are needed, give on separate lumens or flush thoroughly between administrations.",
+    "alternative": "Separate lines.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Magnesium sulfate." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "magnesium-norepinephrine",
+    "drugA": "Magnesium sulfate",
+    "drugASlug": "magnesium-sulfate",
+    "drugB": "Norepinephrine (noradrenaline)",
+    "drugBSlug": "norepinephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical clinical concentrations.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated during simulated Y-site administration at typical infusion concentrations.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Magnesium sulfate Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "magnesium-heparin",
+    "drugA": "Magnesium sulfate",
+    "drugASlug": "magnesium-sulfate",
+    "drugB": "Heparin (unfractionated)",
+    "drugBSlug": "heparin",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at typical clinical concentrations.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Magnesium sulfate / Heparin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "magnesium-insulin",
+    "drugA": "Magnesium sulfate",
+    "drugASlug": "magnesium-sulfate",
+    "drugB": "Insulin (regular human IV)",
+    "drugBSlug": "insulin-regular",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["critical-care", "obstetrics"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at typical clinical concentrations. Relevant when treating pre-eclampsia + intercurrent hyperglycaemia / gestational diabetes.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Magnesium sulfate / Insulin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "calcium-chloride-vs-gluconate",
+    "drugA": "Calcium chloride",
+    "drugASlug": null,
+    "drugB": "Calcium gluconate",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Both deliver elemental calcium but at different ratios — CaCl₂ ≈ 3 × Ca²⁺ of equal-volume gluconate, more irritant, central-line preferred. Don't substitute mL-for-mL.",
+    "domains": ["emergency", "critical-care"],
+    "routeContext": ["all"],
+    "notes": "Calcium chloride 10% (1 g / 10 mL) contains ~ 270 mg elemental Ca²⁺ per gram (~ 13.6 mEq Ca²⁺ per 10 mL). Calcium gluconate 10% (1 g / 10 mL) contains ~ 90 mg elemental Ca²⁺ per gram (~ 4.5 mEq per 10 mL). CaCl₂ is more bioavailable and faster-acting (preferred in arrest, hyperkalaemia, citrate intoxication during massive transfusion) but markedly more irritant — extravasation causes severe necrosis. Use a central line where possible; if peripheral, use a large vein with dilution. Calcium gluconate is preferred peripherally and in routine repletion. Same precipitation rules apply to both forms (bicarbonate, phosphate, ceftriaxone).",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Calcium chloride / Calcium gluconate." },
+      { "label": "AHA ACLS — calcium administration." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "calcium-ceftriaxone-pediatric",
+    "drugA": "Calcium (gluconate or chloride)",
+    "drugASlug": null,
+    "drugB": "Ceftriaxone (paediatric > 28 days)",
+    "drugBSlug": "ceftriaxone",
+    "status": "incompatible",
+    "oneLiner": "Same crystalline precipitate as in neonates — never mix in the same line / bag. Sequential dosing on the same line is acceptable only with a thorough flush.",
+    "domains": ["paediatrics", "antimicrobials"],
+    "routeContext": ["y-site", "additive", "syringe"],
+    "notes": "Outside the neonatal absolute contraindication, ceftriaxone and Ca-containing solutions can be given sequentially via the same line only if the line is thoroughly flushed with a compatible fluid (NS or D5W) between infusions. Never mix in the same bag or syringe. Same crystalline precipitate mechanism.",
+    "alternative": "Sequence with NS flush, or separate lines.",
+    "references": [
+      { "label": "FDA Safety Communication: Ceftriaxone — calcium incompatibility. 2009." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "insulin-tpn",
+    "drugA": "Insulin (regular human IV)",
+    "drugASlug": "insulin-regular",
+    "drugB": "Total parenteral nutrition (TPN)",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Insulin is one of the few drugs documented compatible at Y-site with TPN, and is commonly added to the TPN bag by pharmacy.",
+    "domains": ["critical-care", "nutrition", "endocrinology"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Regular insulin is compatible at Y-site with 3-in-1 TPN admixtures, and is also routinely compounded into the TPN bag by pharmacy. The known PVC adsorption (up to ~ 30% loss) means doses calculated for separate infusion don't translate directly to bag-mixed; the local TPN pharmacy adjusts.",
+    "references": [
+      { "label": "ASPEN parenteral nutrition safety consensus recommendations. JPEN 2014." },
+      { "label": "ASHP King Guide — TPN / Insulin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "insulin-dextrose",
+    "drugA": "Insulin (regular human IV)",
+    "drugASlug": "insulin-regular",
+    "drugB": "Dextrose-containing IV fluids",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Compatible — but rate of dextrose vs rate of insulin determines glucose trajectory. Routine for DKA / HHS / hyperkalaemia management.",
+    "domains": ["critical-care", "endocrinology", "emergency"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Insulin is stable when co-infused with dextrose solutions. The PVC adsorption issue applies. Standard DKA protocols start dextrose-containing fluid once glucose drops to ~ 14 mmol/L (250 mg/dL) while continuing insulin to clear ketones — Y-site compatibility supports this.",
+    "references": [
+      { "label": "JBDS-IP guideline: Management of DKA in adults." },
+      { "label": "ADA Position Statement: Hyperglycemic Crises in Adult Patients with Diabetes." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "insulin-norepinephrine",
+    "drugA": "Insulin (regular human IV)",
+    "drugASlug": "insulin-regular",
+    "drugB": "Norepinephrine (noradrenaline)",
+    "drugBSlug": "norepinephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical ICU concentrations.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at typical infusion concentrations during simulated Y-site administration.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Insulin Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "heparin-norepinephrine",
+    "drugA": "Heparin (unfractionated)",
+    "drugASlug": "heparin",
+    "drugB": "Norepinephrine (noradrenaline)",
+    "drugBSlug": "norepinephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical ICU concentrations.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated during simulated Y-site administration. Common ICU pairing on a shared central-line lumen.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Heparin Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "heparin-fentanyl",
+    "drugA": "Heparin (unfractionated)",
+    "drugASlug": "heparin",
+    "drugB": "Fentanyl",
+    "drugBSlug": "fentanyl",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at clinical concentrations during simulated Y-site administration.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Heparin / Fentanyl." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "heparin-midazolam",
+    "drugA": "Heparin (unfractionated)",
+    "drugASlug": "heparin",
+    "drugB": "Midazolam",
+    "drugBSlug": "midazolam",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical infusion concentrations.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated during simulated Y-site administration.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Heparin / Midazolam." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "heparin-propofol",
+    "drugA": "Heparin (unfractionated)",
+    "drugASlug": "heparin",
+    "drugB": "Propofol",
+    "drugBSlug": "propofol",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at clinical concentrations.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel-listed compatible at typical clinical concentrations during simulated Y-site administration.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "heparin-amiodarone",
+    "drugA": "Heparin (unfractionated)",
+    "drugASlug": "heparin",
+    "drugB": "Amiodarone",
+    "drugBSlug": "amiodarone",
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate at Y-site — use separate lines.",
+    "domains": ["critical-care", "cardiology"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel-listed Y-site incompatibility. Particularly relevant in the post-arrest ICU patient who needs both. Use separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Amiodarone Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "heparin-gentamicin",
+    "drugA": "Heparin (unfractionated)",
+    "drugASlug": "heparin",
+    "drugB": "Gentamicin",
+    "drugBSlug": "gentamicin",
+    "status": "incompatible",
+    "oneLiner": "Loss of gentamicin potency at high heparin concentrations; precipitate possible at clinical Y-site concentrations.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Documented inactivation of aminoglycoside at high heparin concentrations. Clinical relevance of small heparin concentrations (line locks, low-dose infusions) is debated, but the safe practice is separate lines.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Heparin / Gentamicin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "hypertonic-saline-line",
+    "drugA": "Hypertonic saline (3% or 7.5% NaCl)",
+    "drugASlug": null,
+    "drugB": "Peripheral vs central administration considerations",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Hypertonic saline is highly osmolar — central line preferred for sustained infusion; peripheral access tolerated for short emergency boluses with close site monitoring.",
+    "domains": ["critical-care", "neurology", "emergency"],
+    "routeContext": ["all"],
+    "notes": "3% NaCl is hypertonic (osmolality ~ 1027 mOsm/kg) and 7.5% even more so. Central-line administration is the standard for sustained infusion (e.g. raised intracranial pressure protocols). Bolus doses (e.g. 250 mL of 3%, or 30 mL of 23.4%) may be given peripherally in emergencies via a large-bore vein with close monitoring for extravasation, but extravasation causes severe tissue injury. Chemical Y-site compatibility data is sparse — keep on a dedicated lumen where possible.",
+    "alternative": "Central line for sustained infusion; large-bore peripheral with monitoring for emergency boluses only.",
+    "references": [
+      { "label": "Neurocritical Care Society guidelines on osmotherapy." },
+      { "label": "Trissel's Handbook on Injectable Drugs — Sodium chloride (concentrated)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "bicarbonate-most-catecholamines",
+    "drugA": "Sodium bicarbonate (NaHCO₃)",
+    "drugASlug": "sodium-bicarbonate",
+    "drugB": "All catecholamines (norepinephrine, epinephrine, dopamine, dobutamine, isoprenaline)",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Class-wide incompatibility — bicarbonate's alkalinity oxidises every catecholamine. Separate lumen or pause-flush-bicarb-flush-resume.",
+    "domains": ["critical-care", "emergency"],
+    "routeContext": ["y-site", "additive", "all"],
+    "notes": "Alkaline bicarbonate solution drives oxidation of any catecholamine (visible browning, loss of pressor activity). Applies to norepinephrine, epinephrine, dopamine, dobutamine, isoprenaline and phenylephrine. Always use a separate lumen; if forced onto a single line in a crash situation, pause the pressor, flush with NS, push the bicarbonate, flush, then resume the pressor.",
+    "alternative": "Dedicated bicarbonate lumen; pause-flush sequence on single-lumen access.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Sodium bicarbonate." },
+      { "label": "AHA ACLS — drug compatibility considerations during cardiac arrest." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "bicarbonate-fentanyl",
+    "drugA": "Sodium bicarbonate (NaHCO₃)",
+    "drugASlug": "sodium-bicarbonate",
+    "drugB": "Fentanyl",
+    "drugBSlug": "fentanyl",
+    "status": "no-data",
+    "oneLiner": "Limited Y-site data for this pair — treat as conditional and use separate lumens where possible.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel does not list a definitive Y-site study at clinical concentrations. Practical advice: separate lumen for bicarbonate; pause-flush-bicarb-flush-resume if on a single lumen.",
+    "alternative": "Separate lumen.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Sodium bicarbonate Y-site (limited data)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "bicarbonate-midazolam",
+    "drugA": "Sodium bicarbonate (NaHCO₃)",
+    "drugASlug": "sodium-bicarbonate",
+    "drugB": "Midazolam",
+    "drugBSlug": "midazolam",
+    "status": "incompatible",
+    "oneLiner": "Midazolam is acidic — precipitates on contact with bicarbonate.",
+    "domains": ["critical-care", "emergency"],
+    "routeContext": ["y-site"],
+    "notes": "Midazolam solution is buffered acidic; in alkaline bicarbonate it precipitates as the free base. Use a separate lumen, or pause-flush-bicarb-flush sequence.",
+    "alternative": "Separate lumen.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Midazolam." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "furosemide-norepinephrine",
+    "drugA": "Furosemide",
+    "drugASlug": "furosemide",
+    "drugB": "Norepinephrine (noradrenaline)",
+    "drugBSlug": "norepinephrine",
+    "status": "incompatible",
+    "oneLiner": "Alkaline furosemide oxidises catecholamine on contact — visible discolouration, loss of potency.",
+    "domains": ["critical-care", "cardiology"],
+    "routeContext": ["y-site"],
+    "notes": "Same mechanism as bicarbonate + catecholamine. Use a separate lumen for furosemide; on a single line, pause-flush-furosemide-flush-resume.",
+    "alternative": "Separate lumen.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Furosemide / Norepinephrine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "furosemide-dobutamine",
+    "drugA": "Furosemide",
+    "drugASlug": "furosemide",
+    "drugB": "Dobutamine",
+    "drugBSlug": "dobutamine",
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate / catecholamine oxidation at Y-site.",
+    "domains": ["critical-care", "cardiology"],
+    "routeContext": ["y-site"],
+    "notes": "Particularly relevant in decompensated heart failure where furosemide diuresis and dobutamine inotropy are co-prescribed. Separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Furosemide / Dobutamine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "furosemide-midazolam",
+    "drugA": "Furosemide",
+    "drugASlug": "furosemide",
+    "drugB": "Midazolam",
+    "drugBSlug": "midazolam",
+    "status": "incompatible",
+    "oneLiner": "Acidic midazolam + alkaline furosemide → precipitate.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Acid-base incompatibility; visible precipitate at Y-site.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Furosemide." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "furosemide-propofol",
+    "drugA": "Furosemide",
+    "drugASlug": "furosemide",
+    "drugB": "Propofol",
+    "drugBSlug": "propofol",
+    "status": "no-data",
+    "oneLiner": "Limited published Y-site data. Treat as incompatible (alkaline furosemide is known to destabilise many lipid emulsions).",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel does not list a definitive compatible Y-site study at clinical concentrations. The general rule that propofol's lipid vehicle is destabilised by extremes of pH applies. Use separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Propofol Y-site (limited data with furosemide)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "furosemide-vancomycin",
+    "drugA": "Furosemide",
+    "drugASlug": "furosemide",
+    "drugB": "Vancomycin",
+    "drugBSlug": "vancomycin",
+    "status": "incompatible",
+    "oneLiner": "Acid-alkaline precipitate at Y-site.",
+    "domains": ["critical-care", "antimicrobials"],
+    "routeContext": ["y-site"],
+    "notes": "Vancomycin is acidic; furosemide is strongly alkaline. Visible precipitate at Y-site at clinical concentrations.",
+    "alternative": "Separate lumens or NS flush between staggered doses.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Furosemide / Vancomycin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "amiodarone-ns-only",
+    "drugA": "Amiodarone",
+    "drugASlug": "amiodarone",
+    "drugB": "Diluent selection — D5W only (not NS)",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Already a documented incompatibility (see amiodarone-saline) — this record reiterates the D5W-only rule and adds the > 2 mg/mL central-line cap.",
+    "domains": ["cardiology", "emergency"],
+    "routeContext": ["additive", "all"],
+    "notes": "Amiodarone is poorly soluble in saline and precipitates as fine crystals in NS. Use D5W only. Peripheral infusion limited to ≤ 2 mg/mL; > 2 mg/mL central. PVC tubing leaches plasticisers — non-PVC sets preferred. In-line 0.22 µm filter is recommended to trap micro-particulate.",
+    "alternative": "Use D5W. Central line for > 2 mg/mL.",
+    "references": [
+      { "label": "Cordarone IV (amiodarone HCl) — manufacturer prescribing information." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "amiodarone-norepinephrine",
+    "drugA": "Amiodarone",
+    "drugASlug": "amiodarone",
+    "drugB": "Norepinephrine (noradrenaline)",
+    "drugBSlug": "norepinephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible (when amiodarone is in D5W and norepinephrine at typical concentration).",
+    "domains": ["critical-care", "cardiology"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at clinical concentrations on a shared central-line lumen. Common combination during peri-arrest care. Confirm that amiodarone is in D5W (NS will precipitate before any Y-site issue arises).",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Amiodarone Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "amiodarone-furosemide",
+    "drugA": "Amiodarone",
+    "drugASlug": "amiodarone",
+    "drugB": "Furosemide",
+    "drugBSlug": "furosemide",
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate at Y-site — separate lumens.",
+    "domains": ["critical-care", "cardiology"],
+    "routeContext": ["y-site"],
+    "notes": "Documented Y-site incompatibility (precipitate). Both are common in decompensated cardiac patients — keep on separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Amiodarone." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "phenytoin-line-filter",
+    "drugA": "Phenytoin (parenteral)",
+    "drugASlug": "phenytoin",
+    "drugB": "In-line filter requirement and rate cap",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Phenytoin requires an in-line 0.22-0.45 µm filter and a maximum infusion rate (adult ≤ 50 mg/min). Already covered in phenytoin-dextrose; this record makes the rate / filter rule discoverable on its own.",
+    "domains": ["neurology", "emergency", "patient-safety"],
+    "routeContext": ["all"],
+    "notes": "Phenytoin is a highly alkaline propylene-glycol-vehicle solution. Even in NS the drug may micro-precipitate; an in-line filter is mandated to catch the particulate. Adult infusion rate ≤ 50 mg/min (reduce to 25 mg/min in elderly / cardiac disease — hypotension and arrhythmia risk). Paediatric ≤ 1 mg/kg/min, max 50 mg/min. Fosphenytoin (pro-drug, water-soluble) doesn't require a filter and tolerates faster rates (≤ 150 mg PE/min).",
+    "alternative": "Use fosphenytoin where available.",
+    "references": [
+      { "label": "Phenytoin sodium injection SmPC." },
+      { "label": "ASHP Therapeutic Position Statement on the use of fosphenytoin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "phenytoin-other-drugs",
+    "drugA": "Phenytoin (parenteral)",
+    "drugASlug": "phenytoin",
+    "drugB": "Y-site co-administration with most drugs",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Phenytoin precipitates with almost everything at Y-site — dedicated line is the only safe option.",
+    "domains": ["neurology", "emergency", "patient-safety"],
+    "routeContext": ["y-site"],
+    "notes": "The combination of pH 12 phenytoin solution and propylene glycol vehicle makes phenytoin incompatible with the vast majority of drugs at Y-site (precipitate, drug binding to propylene glycol). Use a dedicated peripheral / central line for phenytoin loading; once loading is complete, flush the line thoroughly before any other use.",
+    "alternative": "Dedicated line; fosphenytoin if multi-drug ICU access required.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Phenytoin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "pantoprazole-norepinephrine",
+    "drugA": "Pantoprazole (IV)",
+    "drugASlug": "pantoprazole",
+    "drugB": "Norepinephrine (noradrenaline)",
+    "drugBSlug": "norepinephrine",
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate at Y-site (alkaline pantoprazole + acidic catecholamine).",
+    "domains": ["critical-care", "gastroenterology"],
+    "routeContext": ["y-site"],
+    "notes": "Pantoprazole is buffered alkaline (stable at pH ≥ 9); norepinephrine is acidic. Visible precipitate on contact at clinical concentrations. Use separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Pantoprazole." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "pantoprazole-midazolam",
+    "drugA": "Pantoprazole (IV)",
+    "drugASlug": "pantoprazole",
+    "drugB": "Midazolam",
+    "drugBSlug": "midazolam",
+    "status": "incompatible",
+    "oneLiner": "Acid-alkaline precipitate at Y-site.",
+    "domains": ["critical-care", "gastroenterology"],
+    "routeContext": ["y-site"],
+    "notes": "Acidic midazolam + alkaline pantoprazole → visible precipitate at typical clinical concentrations. Separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Pantoprazole." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "pantoprazole-calcium",
+    "drugA": "Pantoprazole (IV)",
+    "drugASlug": "pantoprazole",
+    "drugB": "Calcium (gluconate or chloride)",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate at Y-site.",
+    "domains": ["critical-care", "gastroenterology"],
+    "routeContext": ["y-site"],
+    "notes": "Divalent cation precipitates with the alkaline pantoprazole formulation. Use separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Pantoprazole." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "pantoprazole-heparin",
+    "drugA": "Pantoprazole (IV)",
+    "drugASlug": "pantoprazole",
+    "drugB": "Heparin (unfractionated)",
+    "drugBSlug": "heparin",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible — one of the few documented partners for pantoprazole.",
+    "domains": ["critical-care", "gastroenterology"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at typical concentrations during simulated Y-site administration.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Pantoprazole / Heparin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ondansetron-furosemide",
+    "drugA": "Ondansetron",
+    "drugASlug": "ondansetron",
+    "drugB": "Furosemide",
+    "drugBSlug": "furosemide",
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate at Y-site.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Acid-alkaline precipitate at typical clinical concentrations. Use separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ondansetron / Furosemide." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ondansetron-pantoprazole",
+    "drugA": "Ondansetron",
+    "drugASlug": "ondansetron",
+    "drugB": "Pantoprazole (IV)",
+    "drugBSlug": "pantoprazole",
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate / haze at Y-site.",
+    "domains": ["critical-care", "gastroenterology"],
+    "routeContext": ["y-site"],
+    "notes": "Acidic ondansetron + alkaline pantoprazole → visible precipitate. Separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Pantoprazole / Ondansetron." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ondansetron-fentanyl",
+    "drugA": "Ondansetron",
+    "drugASlug": "ondansetron",
+    "drugB": "Fentanyl",
+    "drugBSlug": "fentanyl",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at clinical concentrations.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site", "syringe"],
+    "notes": "Tolerated at typical concentrations during simulated Y-site administration; drawn together in PCA syringes in some institutional protocols (verify locally).",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ondansetron / Fentanyl." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ondansetron-propofol",
+    "drugA": "Ondansetron",
+    "drugASlug": "ondansetron",
+    "drugB": "Propofol",
+    "drugBSlug": "propofol",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible — listed in the small confirmed-stable propofol partner set.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Confirmed Y-site compatible at typical infusion concentrations during simulated administration.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ondansetron-bicarbonate",
+    "drugA": "Ondansetron",
+    "drugASlug": "ondansetron",
+    "drugB": "Sodium bicarbonate (NaHCO₃)",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate at Y-site.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Acid-alkaline precipitate. Separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ondansetron." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "morphine-fentanyl",
+    "drugA": "Morphine",
+    "drugASlug": "morphine",
+    "drugB": "Fentanyl",
+    "drugBSlug": "fentanyl",
+    "status": "compatible",
+    "oneLiner": "Y-site and syringe compatible. Co-administration is uncommon clinically (overlapping mu agonism).",
+    "domains": ["critical-care", "anaesthesia", "palliative"],
+    "routeContext": ["y-site", "syringe"],
+    "notes": "Tolerated at clinical opioid concentrations. Pharmacodynamic overlap means the combination is rarely indicated.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Morphine / Fentanyl." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "morphine-midazolam",
+    "drugA": "Morphine",
+    "drugASlug": "morphine",
+    "drugB": "Midazolam",
+    "drugBSlug": "midazolam",
+    "status": "compatible",
+    "oneLiner": "Y-site and syringe compatible — common syringe-driver combination in palliative care.",
+    "domains": ["palliative", "critical-care"],
+    "routeContext": ["y-site", "syringe"],
+    "notes": "Stable in NS, D5W and at the high concentrations used in subcutaneous syringe drivers. Routine palliative-care combination.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Morphine / Midazolam." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "morphine-norepinephrine",
+    "drugA": "Morphine",
+    "drugASlug": "morphine",
+    "drugB": "Norepinephrine (noradrenaline)",
+    "drugBSlug": "norepinephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at typical clinical concentrations during simulated Y-site administration.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Morphine Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "morphine-propofol",
+    "drugA": "Morphine",
+    "drugASlug": "morphine",
+    "drugB": "Propofol",
+    "drugBSlug": "propofol",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible — listed among Trissel-confirmed propofol partners.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Confirmed Y-site compatible at clinical concentrations during simulated administration.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies. Am J Health Syst Pharm 1997." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "hydromorphone-midazolam",
+    "drugA": "Hydromorphone",
+    "drugASlug": "hydromorphone",
+    "drugB": "Midazolam",
+    "drugBSlug": "midazolam",
+    "status": "compatible",
+    "oneLiner": "Y-site and syringe compatible — common PCA / syringe-driver pairing.",
+    "domains": ["palliative", "critical-care"],
+    "routeContext": ["y-site", "syringe"],
+    "notes": "Stable in clinical-strength combinations. Used in palliative-care syringe drivers and ICU bridging analgesia-sedation.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Hydromorphone / Midazolam." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "hydromorphone-propofol",
+    "drugA": "Hydromorphone",
+    "drugASlug": "hydromorphone",
+    "drugB": "Propofol",
+    "drugBSlug": "propofol",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Listed among Trissel-confirmed propofol partners.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "lorazepam-midazolam",
+    "drugA": "Lorazepam",
+    "drugASlug": "lorazepam",
+    "drugB": "Midazolam",
+    "drugBSlug": "midazolam",
+    "status": "no-data",
+    "oneLiner": "No clinical reason to co-infuse two benzodiazepines; formal Y-site data is limited. Treat as conditional.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Pharmacodynamic redundancy. If both ever needed (transitions of care), use separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Lorazepam." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "lorazepam-propofol",
+    "drugA": "Lorazepam",
+    "drugASlug": "lorazepam",
+    "drugB": "Propofol",
+    "drugBSlug": "propofol",
+    "status": "conditional",
+    "oneLiner": "Some studies confirm Y-site compatibility; others report variable results. Verify locally before sharing a lumen.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Lorazepam's polyethylene-glycol-vehicle interacts variably with the propofol lipid emulsion. Some Trissel-cited studies report Y-site compatibility, others report droplet enlargement. Where possible, use separate lumens; if shared, use the pause-flush sequence and verify with local pharmacy.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies (variable results with lorazepam)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "fluconazole-many-compatible",
+    "drugA": "Fluconazole (IV)",
+    "drugASlug": "fluconazole",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Fluconazole is Y-site compatible with the bulk of common ICU drugs.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel-confirmed compatible at typical infusion concentrations with norepinephrine, fentanyl, midazolam, propofol, dexmedetomidine, vancomycin, metronidazole, piperacillin-tazobactam, meropenem, heparin, KCl, magnesium sulfate, ondansetron, hydrocortisone. Few major incompatibilities documented.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Fluconazole Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "azithromycin-many",
+    "drugA": "Azithromycin (IV)",
+    "drugASlug": "azithromycin",
+    "drugB": "Common Y-site partners",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Azithromycin IV has limited compatibility — manufacturer recommends a dedicated line for the infusion.",
+    "domains": ["antimicrobials"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Manufacturer prescribing information directs administration via a dedicated line — do not mix or co-infuse with other drugs. Limited published Y-site data; precipitation reported with several agents. Use a separate line.",
+    "alternative": "Dedicated line for azithromycin infusion.",
+    "references": [
+      { "label": "Azithromycin IV (Zithromax) — manufacturer prescribing information." },
+      { "label": "Trissel's Handbook on Injectable Drugs — Azithromycin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "linezolid-many-compatible",
+    "drugA": "Linezolid (IV)",
+    "drugASlug": "linezolid",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Linezolid is Y-site compatible with most common ICU partners; a few documented incompatibilities (amphotericin B, ceftriaxone, diazepam, erythromycin, phenytoin).",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, midazolam, dexmedetomidine, vancomycin, metronidazole, heparin, KCl, magnesium sulfate, ondansetron. Documented incompatible: amphotericin B, ceftriaxone, diazepam, erythromycin, phenytoin. Manufacturer instructs flushing the line before and after.",
+    "references": [
+      { "label": "Linezolid (Zyvox) — manufacturer prescribing information." },
+      { "label": "Trissel's Handbook on Injectable Drugs — Linezolid." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "aciclovir-many",
+    "drugA": "Aciclovir (IV)",
+    "drugASlug": "aciclovir",
+    "drugB": "Common partners (notable incompatibilities)",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Aciclovir is alkaline (pH ~ 11) — precipitates with many acidic drugs at Y-site.",
+    "domains": ["antimicrobials"],
+    "routeContext": ["y-site"],
+    "notes": "Y-site incompatible with most catecholamines, ondansetron, dobutamine, dopamine, fentanyl (variable), midazolam, morphine (variable), aminoglycosides, vancomycin (precipitate). Compatible with metronidazole, ceftriaxone, heparin, KCl. Best practice: dedicated line; if shared, flush thoroughly before and after.",
+    "alternative": "Dedicated line; NS flush between staggered doses.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Acyclovir." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "hydrocortisone-many",
+    "drugA": "Hydrocortisone (sodium succinate)",
+    "drugASlug": "hydrocortisone",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Hydrocortisone is Y-site compatible with most common ICU drugs.",
+    "domains": ["critical-care", "endocrinology"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, vasopressin, fentanyl, midazolam, propofol, dexmedetomidine, vancomycin, metronidazole, piperacillin-tazobactam, meropenem, heparin, KCl, magnesium sulfate, insulin. Documented Y-site incompatible: ciprofloxacin, diazepam, phenytoin, midazolam (some studies — variable).",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Hydrocortisone Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "methylprednisolone-propofol",
+    "drugA": "Methylprednisolone (sodium succinate)",
+    "drugASlug": "methylprednisolone",
+    "drugB": "Propofol",
+    "drugBSlug": "propofol",
+    "status": "incompatible",
+    "oneLiner": "Y-site incompatible — destabilises propofol lipid emulsion.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel-listed propofol Y-site incompatibility. Use separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies. Am J Health Syst Pharm 1997." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ketamine-norepinephrine",
+    "drugA": "Ketamine",
+    "drugASlug": "ketamine",
+    "drugB": "Norepinephrine (noradrenaline)",
+    "drugBSlug": "norepinephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical clinical concentrations.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated during simulated Y-site administration. Common ICU combination for analgo-sedation with concurrent vasopressor support.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ketamine Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ketamine-vasopressors-general",
+    "drugA": "Ketamine",
+    "drugASlug": "ketamine",
+    "drugB": "Vasopressor infusions (general)",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Y-site compatible with the standard ICU pressors (norepinephrine, epinephrine, vasopressin).",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at clinical concentrations. Useful in vasoplegic patients where ketamine's sympathomimetic effect is desired.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ketamine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "nicardipine-norepinephrine",
+    "drugA": "Nicardipine",
+    "drugASlug": "nicardipine",
+    "drugB": "Norepinephrine (noradrenaline)",
+    "drugBSlug": "norepinephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["critical-care", "cardiology", "neurology"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated during simulated Y-site administration. Combination occurs in haemorrhagic stroke patients where BP control needs both up-titration and rapid down-titration capability.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Nicardipine Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "nitroglycerin-common",
+    "drugA": "Nitroglycerin (IV)",
+    "drugASlug": "nitroglycerin",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Y-site compatible with most ICU drugs. Adsorbs to PVC — use non-PVC tubing for accurate dosing.",
+    "domains": ["critical-care", "cardiology"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, midazolam, propofol, dexmedetomidine, heparin, KCl, magnesium sulfate, vancomycin, metronidazole, ondansetron. Adsorbs significantly onto PVC tubing — use non-PVC (polyethylene, polyolefin) sets to deliver the labelled dose.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Nitroglycerin Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "esmolol-common",
+    "drugA": "Esmolol",
+    "drugASlug": "esmolol",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Y-site compatible with most ICU drugs at typical concentrations.",
+    "domains": ["critical-care", "cardiology"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, midazolam, propofol, dexmedetomidine, heparin, KCl, magnesium sulfate, vancomycin, metronidazole. Documented incompatible: furosemide, sodium bicarbonate, diazepam, thiopental.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Esmolol Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "labetalol-common",
+    "drugA": "Labetalol",
+    "drugASlug": "labetalol",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Y-site compatible with most ICU drugs at typical concentrations. Incompatible with furosemide, bicarbonate.",
+    "domains": ["critical-care", "obstetrics", "cardiology"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, midazolam, propofol (variable — verify locally), dexmedetomidine, heparin, KCl, magnesium sulfate. Documented incompatible: furosemide, sodium bicarbonate, nafcillin, thiopental.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Labetalol Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "tranexamic-acid-blood",
+    "drugA": "Tranexamic acid",
+    "drugASlug": "tranexamic-acid",
+    "drugB": "Packed red cells / FFP / platelets / cryoprecipitate",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Do not mix in the same line or bag — local antifibrinolytic activity risks clot formation in transfused product.",
+    "domains": ["haematology", "emergency", "obstetrics"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Tranexamic acid blocks plasmin-mediated fibrinolysis; in the line, this can promote clot formation in transfused product before delivery to the patient. Use a separate line for TXA when transfusing.",
+    "alternative": "Separate line for TXA during transfusion.",
+    "references": [
+      { "label": "Tranexamic acid injection — manufacturer SmPC." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "calcium-blood",
+    "drugA": "Calcium (gluconate or chloride)",
+    "drugASlug": null,
+    "drugB": "Citrated blood products",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Do not co-administer through the same line — calcium reverses the citrate anticoagulation and forms a clot in the line.",
+    "domains": ["haematology", "emergency"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Citrate in stored blood chelates calcium to prevent clotting in the bag; adding calcium back upstream reverses this and produces a clot in the line. In massive transfusion where calcium replacement is needed (citrate-induced hypocalcaemia), give calcium via a separate access — never the transfusion line.",
+    "alternative": "Separate line for calcium replacement during massive transfusion.",
+    "references": [
+      { "label": "AABB Technical Manual — massive transfusion." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "rl-blood",
+    "drugA": "Ringer's lactate / Hartmann's solution",
+    "drugASlug": null,
+    "drugB": "Citrated blood products",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Calcium in Ringer's reverses citrate anticoagulation — clot in the line. Use NS as the running fluid for transfusion.",
+    "domains": ["haematology", "emergency"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Long-standing transfusion teaching: do not run packed red cells in the same line as Ringer's lactate or any calcium-containing fluid — the calcium reverses citrate anticoagulation. Practical evidence on the absolute size of the risk is mixed for modern leukoreduced product, but the standard remains NS as the transfusion fluid.",
+    "alternative": "Use NS as the running fluid for transfusions.",
+    "references": [
+      { "label": "AABB Technical Manual — administration of blood components." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "lipid-emulsion-most-drugs",
+    "drugA": "IV lipid emulsion (20% Intralipid as LAST antidote, or as TPN component)",
+    "drugASlug": null,
+    "drugB": "Most other IV drugs at Y-site",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Lipid emulsion is destabilised by most drugs — when given as LAST antidote, use a dedicated line.",
+    "domains": ["emergency", "critical-care", "anaesthesia"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "20% lipid emulsion (Intralipid) is the antidote for local anaesthetic systemic toxicity (LAST) and is also a TPN component. Same compatibility limitations as propofol's lipid vehicle — most drugs destabilise the emulsion (lipid coalescence, droplet enlargement). When administering as LAST antidote, use a dedicated line; the patient is usually already in arrest with multiple other lines available.",
+    "alternative": "Dedicated line for lipid bolus / infusion.",
+    "references": [
+      { "label": "ASRA Practice Advisory on Local Anesthetic Systemic Toxicity. 2018." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tpn-insulin-additive",
+    "drugA": "Total parenteral nutrition (TPN)",
+    "drugASlug": null,
+    "drugB": "Insulin (regular human IV) — bag additive",
+    "drugBSlug": "insulin-regular",
+    "status": "compatible",
+    "oneLiner": "Insulin may be compounded into the TPN bag by pharmacy — routine practice for hyperglycaemia on TPN.",
+    "domains": ["critical-care", "nutrition", "endocrinology"],
+    "routeContext": ["additive"],
+    "notes": "Pharmacy-compounded insulin in the TPN bag (typically 0.05-0.15 unit per gram of dextrose, individualised) is routine. Adsorption to PVC reduces delivered dose vs labelled; the local TPN service adjusts. Do not add insulin to the bag at the bedside.",
+    "references": [
+      { "label": "ASPEN parenteral nutrition safety consensus recommendations. JPEN 2014." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tpn-octreotide",
+    "drugA": "Total parenteral nutrition (TPN)",
+    "drugASlug": null,
+    "drugB": "Octreotide",
+    "drugBSlug": "octreotide",
+    "status": "compatible",
+    "oneLiner": "Octreotide is Y-site compatible with TPN at typical infusion concentrations.",
+    "domains": ["critical-care", "gastroenterology", "nutrition"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at typical clinical concentrations during simulated Y-site administration. Useful for chylothorax / high-output fistula patients on TPN.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Octreotide / TPN." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "tpn-h2-blocker",
+    "drugA": "Total parenteral nutrition (TPN)",
+    "drugASlug": null,
+    "drugB": "H2 blockers (ranitidine, famotidine)",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Y-site compatible with TPN at typical infusion concentrations.",
+    "domains": ["critical-care", "gastroenterology", "nutrition"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Tolerated during simulated Y-site administration; some institutions compound famotidine / ranitidine into the TPN bag.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — TPN / H2 blockers." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "diazepam-line",
+    "drugA": "Diazepam (parenteral)",
+    "drugASlug": "diazepam",
+    "drugB": "Most IV drugs and PVC tubing",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Diazepam is highly lipophilic and adsorbs heavily to PVC; precipitates on dilution and with most co-infusates. Use a dedicated route, push slowly into a large vein.",
+    "domains": ["neurology", "emergency"],
+    "routeContext": ["y-site", "additive", "all"],
+    "notes": "Diazepam in propylene-glycol vehicle precipitates on contact with most aqueous solutions and adsorbs significantly to PVC tubing. Do not mix in infusion bags. Push slowly (≤ 5 mg/min) directly into a large vein, ideally close to the IV catheter. Lorazepam or midazolam are preferred where IV access is the limiting factor.",
+    "alternative": "Use lorazepam or midazolam instead.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Diazepam." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "valproate-meropenem",
+    "drugA": "Sodium valproate (IV)",
+    "drugASlug": "sodium-valproate",
+    "drugB": "Meropenem (or any carbapenem)",
+    "drugBSlug": "meropenem",
+    "status": "incompatible",
+    "oneLiner": "Clinical (not chemical) interaction: carbapenems dramatically reduce valproate plasma levels — seizure breakthrough risk.",
+    "domains": ["antimicrobials", "neurology", "critical-care"],
+    "routeContext": ["all"],
+    "notes": "Mechanism is enhanced glucuronidation and intracellular distribution of valproate triggered by carbapenems. Levels can drop > 50 % within 24 h. Avoid the combination in valproate-treated epilepsy patients; if a carbapenem is essential, switch the anticonvulsant or use levetiracetam cover.",
+    "alternative": "Use cefepime or pip-tazo if anti-pseudomonal cover is needed; or load with an alternative anticonvulsant.",
+    "references": [
+      { "label": "Park MK et al. Meropenem-valproate interaction. Am J Health Syst Pharm 2012." },
+      { "label": "BNF / meropenem-valproate interaction." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "albumin-most-drugs",
+    "drugA": "Human albumin (4-5% or 20-25%)",
+    "drugASlug": "albumin",
+    "drugB": "Most IV drugs",
+    "drugBSlug": null,
+    "status": "no-data",
+    "oneLiner": "Y-site data with most drugs is limited — manufacturer recommends not mixing with other infusions in the same container.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Albumin is a complex protein solution; mixing risks denaturation. Manufacturer SmPC instructs that albumin should not be mixed with other medicinal products. At Y-site, very few formal compatibility studies; default to a separate line.",
+    "alternative": "Separate line for albumin infusion.",
+    "references": [
+      { "label": "Human albumin solution — manufacturer SmPC." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "mannitol-most-drugs",
+    "drugA": "Mannitol (20%)",
+    "drugASlug": "mannitol",
+    "drugB": "Most IV drugs at Y-site",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Mannitol crystallises in solution if cooled — warm to dissolve before use, and use an in-line filter. Limited Y-site data; default to a separate line.",
+    "domains": ["critical-care", "neurology"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "20 % mannitol may crystallise on storage or cooling — inspect each bag and warm to redissolve crystals before infusion. Use an in-line filter (0.22 µm) to catch any residual crystal. Limited Y-site data with most drugs; use a separate line for osmotherapy.",
+    "alternative": "Dedicated lumen.",
+    "references": [
+      { "label": "Mannitol — manufacturer prescribing information." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "remifentanil-norepinephrine",
+    "drugA": "Remifentanil",
+    "drugASlug": "remifentanil",
+    "drugB": "Norepinephrine (noradrenaline)",
+    "drugBSlug": "norepinephrine",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at clinical concentrations.",
+    "domains": ["anaesthesia", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Tolerated at typical infusion concentrations during simulated Y-site administration.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Remifentanil Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "alfentanil-propofol",
+    "drugA": "Alfentanil",
+    "drugASlug": "alfentanil",
+    "drugB": "Propofol",
+    "drugBSlug": "propofol",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible — listed among Trissel-confirmed propofol partners.",
+    "domains": ["anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Confirmed Y-site compatible at clinical concentrations during simulated administration.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "sufentanil-propofol",
+    "drugA": "Sufentanil",
+    "drugASlug": "sufentanil",
+    "drugB": "Propofol",
+    "drugBSlug": "propofol",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible.",
+    "domains": ["anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Listed among Trissel-confirmed propofol partners. Standard TIVA component.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "naloxone-propofol",
+    "drugA": "Naloxone",
+    "drugASlug": "naloxone",
+    "drugB": "Propofol",
+    "drugBSlug": "propofol",
+    "status": "compatible",
+    "oneLiner": "Y-site compatible — listed among Trissel-confirmed propofol partners.",
+    "domains": ["emergency", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Confirmed Y-site compatible at clinical concentrations during simulated administration. Clinically uncommon scenario, but documented compatible.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ciprofloxacin-aminophylline",
+    "drugA": "Ciprofloxacin (IV)",
+    "drugASlug": "ciprofloxacin",
+    "drugB": "Aminophylline",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate at Y-site (acidic ciprofloxacin + alkaline aminophylline).",
+    "domains": ["antimicrobials", "respiratory"],
+    "routeContext": ["y-site"],
+    "notes": "Documented Y-site incompatibility. Use separate lines.",
+    "alternative": "Separate lines.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ciprofloxacin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ciprofloxacin-propofol",
+    "drugA": "Ciprofloxacin (IV)",
+    "drugASlug": "ciprofloxacin",
+    "drugB": "Propofol",
+    "drugBSlug": "propofol",
+    "status": "incompatible",
+    "oneLiner": "Destabilises propofol emulsion at Y-site — use separate lumens.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel-listed propofol Y-site incompatibility (acidic ciprofloxacin destabilises the lipid emulsion).",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies. Am J Health Syst Pharm 1997." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ciprofloxacin-dexamethasone",
+    "drugA": "Ciprofloxacin (IV)",
+    "drugASlug": "ciprofloxacin",
+    "drugB": "Dexamethasone (phosphate)",
+    "drugBSlug": "dexamethasone",
+    "status": "incompatible",
+    "oneLiner": "Visible precipitate at Y-site.",
+    "domains": ["antimicrobials"],
+    "routeContext": ["y-site"],
+    "notes": "Documented Y-site precipitate at typical clinical concentrations. Separate lines.",
+    "alternative": "Separate lines.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ciprofloxacin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ampicillin-aminoglycoside-syringe",
+    "drugA": "Ampicillin",
+    "drugASlug": "ampicillin",
+    "drugB": "Gentamicin / tobramycin / amikacin — same syringe",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Never draw a penicillin + aminoglycoside in the same syringe — chemical inactivation of the aminoglycoside.",
+    "domains": ["antimicrobials", "neonatology"],
+    "routeContext": ["syringe", "additive"],
+    "notes": "Penicillins inactivate aminoglycosides on prolonged contact in solution; the inactivation accelerates at the high concentrations found in syringes pre-administration. Never combine in a single syringe — draw and administer separately.",
+    "alternative": "Separate syringes; flush line between.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ampicillin / Gentamicin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "neonatal-line-considerations",
+    "drugA": "Neonatal IV access",
+    "drugASlug": null,
+    "drugB": "Multi-drug compatibility constraints",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Neonates often have a single UVC / peripheral cannula carrying TPN + lipid + multiple drugs — verify each pair before adding, never extrapolate adult data without checking pharmacy.",
+    "domains": ["neonatology", "paediatrics", "patient-safety"],
+    "routeContext": ["all"],
+    "notes": "Neonatal IV management compresses many simultaneous infusions onto very limited access. Recurring high-mortality patterns: ceftriaxone + Ca (absolute contraindication < 28 days), ampicillin + gentamicin syringe co-mix (inactivation), insulin adsorption on micro-bore PVC. The local NICU pharmacy maintains a compatibility chart — defer to it rather than to adult Trissel summaries.",
+    "alternative": "Defer to local NICU compatibility chart for each pair.",
+    "references": [
+      { "label": "Neonatal Formulary / BNFc — IV compatibility." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "octreotide-many-compatible",
+    "drugA": "Octreotide",
+    "drugASlug": "octreotide",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Octreotide is Y-site compatible with most common ICU drugs and TPN.",
+    "domains": ["critical-care", "gastroenterology"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, midazolam, propofol, heparin, KCl, magnesium sulfate, ondansetron, vancomycin, metronidazole, TPN.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Octreotide." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "metoclopramide-common",
+    "drugA": "Metoclopramide",
+    "drugASlug": "metoclopramide",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Y-site compatible with most ICU drugs. Notable incompatibilities: furosemide, sodium bicarbonate, pantoprazole.",
+    "domains": ["critical-care", "gastroenterology"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, midazolam, propofol (variable), heparin, KCl, magnesium sulfate, ondansetron, vancomycin, metronidazole. Incompatible: furosemide, sodium bicarbonate, pantoprazole, cisplatin, ampicillin (variable).",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Metoclopramide." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "dexamethasone-common",
+    "drugA": "Dexamethasone (phosphate)",
+    "drugASlug": "dexamethasone",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Y-site compatible with most ICU drugs. Incompatible at Y-site with ciprofloxacin, diphenhydramine (some studies), midazolam (variable).",
+    "domains": ["critical-care", "oncology"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, propofol, heparin, KCl, magnesium sulfate, ondansetron, vancomycin, metronidazole. Incompatible: ciprofloxacin, glycopyrrolate, midazolam (variable — verify locally).",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Dexamethasone Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "diphenhydramine-common",
+    "drugA": "Diphenhydramine",
+    "drugASlug": "diphenhydramine",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Y-site compatible with most ICU drugs.",
+    "domains": ["critical-care", "emergency"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, midazolam, ondansetron, vancomycin, heparin, KCl. Documented incompatibilities are sparse but include some cephalosporins and dexamethasone (variable).",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Diphenhydramine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "clindamycin-common",
+    "drugA": "Clindamycin (IV)",
+    "drugASlug": "clindamycin",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Clindamycin is Y-site compatible with most common ICU drugs.",
+    "domains": ["antimicrobials"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, midazolam, propofol, vancomycin (some studies), metronidazole, heparin, KCl, magnesium sulfate, ondansetron. Documented Y-site incompatible: aminophylline, ceftriaxone (some studies), phenytoin.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Clindamycin Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "aztreonam-common",
+    "drugA": "Aztreonam",
+    "drugASlug": "aztreonam",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Aztreonam is Y-site compatible with most common ICU drugs and many other antibiotics.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, midazolam, propofol, vancomycin, metronidazole, heparin, KCl, magnesium sulfate, ondansetron. Same aminoglycoside-inactivation rule applies in solution (separate lines).",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Aztreonam Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "imipenem-cilastatin-common",
+    "drugA": "Imipenem-cilastatin",
+    "drugASlug": "imipenem-cilastatin",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Y-site compatible with most ICU drugs. Stability in solution limits hang time — use NS, reconstitute fresh.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, midazolam, vancomycin, metronidazole, heparin, KCl. Like meropenem, stability in solution is the limiting factor — use NS, change bag every 4 h. Aminoglycoside inactivation in solution rule applies.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Imipenem-cilastatin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cefepime-common",
+    "drugA": "Cefepime",
+    "drugASlug": "cefepime",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Cefepime is Y-site compatible with most ICU sedation / pressor lines; incompatible with vancomycin, aminoglycosides, metronidazole (some studies).",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, midazolam, propofol, heparin, KCl, magnesium sulfate, ondansetron. Documented incompatible: vancomycin, aminoglycosides (separate lines), metronidazole (variable — verify locally).",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Cefepime Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ceftazidime-common",
+    "drugA": "Ceftazidime",
+    "drugASlug": "ceftazidime",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Ceftazidime is Y-site compatible with most ICU drugs. Aminoglycoside-inactivation rule applies.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, midazolam, propofol, vancomycin (most studies), heparin, KCl, magnesium sulfate, ondansetron, metronidazole. Aminoglycosides: separate lines.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Ceftazidime Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "phenytoin-saline-only",
+    "drugA": "Phenytoin (parenteral)",
+    "drugASlug": "phenytoin",
+    "drugB": "Saline diluent only (the NS-only rule)",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Phenytoin must be diluted in NS only and infused within 1 h of preparation; precipitates in dextrose or on prolonged standing.",
+    "domains": ["neurology", "emergency"],
+    "routeContext": ["additive", "all"],
+    "notes": "Diluent: 0.9% NaCl only. Final concentration ≤ 10 mg/mL. Infuse within 1 h of dilution. Visually inspect for any precipitate before and during infusion — discard if cloudy. Use an in-line 0.22-0.45 µm filter. Maximum rate ≤ 50 mg/min adult.",
+    "alternative": "Fosphenytoin (compatible with any standard fluid; no filter required).",
+    "references": [
+      { "label": "Phenytoin sodium injection SmPC." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "fosphenytoin-flexible",
+    "drugA": "Fosphenytoin",
+    "drugASlug": "fosphenytoin",
+    "drugB": "Diluent flexibility and rate",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Fosphenytoin (water-soluble phenytoin pro-drug) is compatible with both NS and D5W, requires no in-line filter, and can be loaded faster than phenytoin.",
+    "domains": ["neurology", "emergency"],
+    "routeContext": ["additive", "y-site", "all"],
+    "notes": "Loading rate up to 150 mg PE/min adult (3 mg PE/kg/min paediatric). NS or D5W diluent. Y-site compatibility profile broadly favourable. Preferred over phenytoin where available, particularly in patients with difficult IV access or who need other drugs on the same line.",
+    "references": [
+      { "label": "ASHP Therapeutic Position Statement on the use of fosphenytoin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "levetiracetam-common",
+    "drugA": "Levetiracetam (IV)",
+    "drugASlug": "levetiracetam",
+    "drugB": "Common ICU partners",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Y-site compatible with most ICU drugs. No major documented incompatibilities at clinical concentrations.",
+    "domains": ["neurology", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Compatible at Y-site with norepinephrine, fentanyl, midazolam, propofol, dexmedetomidine, vancomycin, metronidazole, heparin, KCl, magnesium sulfate, ondansetron. Stable in NS or D5W.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Levetiracetam Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "insulin-bicarbonate",
+    "drugA": "Insulin (regular human IV)",
+    "drugASlug": "insulin-regular",
+    "drugB": "Sodium bicarbonate (NaHCO₃)",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "no-data",
+    "oneLiner": "Limited Y-site data — treat as conditional, separate lumens where possible.",
+    "domains": ["critical-care", "endocrinology"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel does not list a definitive Y-site study. Practical advice: keep bicarbonate on a separate lumen from the insulin infusion in DKA where bicarbonate is occasionally used.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Insulin (limited bicarbonate data)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "ns-vs-d5w-summary",
+    "drugA": "Diluent choice: NS vs D5W vs Ringer's",
+    "drugASlug": null,
+    "drugB": "Drug-specific stability checklist",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Always check the drug-specific diluent — wrong fluid degrades some drugs rapidly. Key examples: amiodarone D5W only, phenytoin NS only, ceftriaxone never in Ca-containing fluid.",
+    "domains": ["critical-care", "patient-safety"],
+    "routeContext": ["additive", "all"],
+    "notes": "Heuristic — but always verify the SmPC: amiodarone D5W only (precipitates in NS); phenytoin NS only (precipitates in D5W); ceftriaxone NS or D5W, never Ringer's / Hartmann's; pantoprazole NS or D5W; ampicillin NS only (poor D5W stability); most aminoglycosides NS or D5W; most beta-lactams NS or D5W. Lipid emulsions (propofol, Intralipid) destabilise in many diluents — give undiluted via dedicated lumen.",
+    "references": [
+      { "label": "BNF / SmPC of each individual drug — diluent compatibility section." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ampicillin-d5w",
+    "drugA": "Ampicillin",
+    "drugASlug": "ampicillin",
+    "drugB": "Dextrose-containing IV fluids",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Ampicillin has poor stability in dextrose — degrades within hours. Use NS, prepare fresh, infuse promptly.",
+    "domains": ["antimicrobials"],
+    "routeContext": ["additive", "all"],
+    "notes": "Ampicillin in NS is stable at room temperature for several hours; in D5W stability is much shorter (degradation > 10 % within a few hours). Use NS as diluent and infuse promptly after reconstitution.",
+    "alternative": "Use NS; infuse within 1 h of reconstitution.",
+    "references": [
+      { "label": "Ampicillin sodium injection — manufacturer prescribing information." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "potassium-phosphate-line",
+    "drugA": "Potassium phosphate",
+    "drugASlug": null,
+    "drugB": "Calcium-containing solutions and lines",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Phosphate + calcium precipitates as Ca₃(PO₄)₂. Do not co-administer; pharmacy-compound only for TPN.",
+    "domains": ["critical-care", "nutrition"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Standard precipitation issue. Phosphate-containing IV replacement must use a different lumen from calcium replacement, separated in time.",
+    "alternative": "Separate lumens, separated in time.",
+    "references": [
+      { "label": "ASPEN — calcium/phosphate solubility in PN." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "magnesium-bicarbonate",
+    "drugA": "Magnesium sulfate",
+    "drugASlug": "magnesium-sulfate",
+    "drugB": "Sodium bicarbonate (NaHCO₃)",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "incompatible",
+    "oneLiner": "Risk of magnesium carbonate / hydroxide precipitate in concentrated mixtures.",
+    "domains": ["critical-care", "obstetrics"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Concentrated magnesium and bicarbonate together can precipitate as Mg(OH)₂ / MgCO₃. Use separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Magnesium sulfate / Sodium bicarbonate." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "kcl-bag-mix",
+    "drugA": "Potassium chloride (KCl)",
+    "drugASlug": null,
+    "drugB": "Maintenance bag preparation — pre-mixed bags preferred",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Pre-mixed bags (e.g. 20 / 40 mmol KCl in NS or D5W) are preferred over bedside addition — bedside mixing is a known cause of fatal layering errors.",
+    "domains": ["critical-care", "patient-safety"],
+    "routeContext": ["additive"],
+    "notes": "When KCl is added to a hanging bag at the bedside and not adequately mixed, concentrated KCl layers at the bottom (denser than NS / D5W); the first portion infused delivers a near-bolus and has caused cardiac arrests. ISMP and WHO recommend pharmacy-prepared pre-mixed bags. If bedside addition is unavoidable, invert the bag at least 10 times to ensure complete mixing before hanging.",
+    "alternative": "Pharmacy-prepared pre-mixed KCl bags.",
+    "references": [
+      { "label": "ISMP High-Alert Medications list — concentrated potassium chloride." },
+      { "label": "WHO List of High Alert Medications." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "lipid-tpn-3in1-drugs",
+    "drugA": "3-in-1 TPN (with lipid emulsion)",
+    "drugASlug": null,
+    "drugB": "Y-site administration of most drugs",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Lipid-containing 3-in-1 TPN destabilises with most co-infusates — use a dedicated lumen.",
+    "domains": ["critical-care", "nutrition"],
+    "routeContext": ["y-site"],
+    "notes": "Same compatibility issues as propofol's lipid vehicle but compounded by the dextrose + amino acid + electrolytes already in the bag. Use a dedicated lumen; the few Y-site compatible additions (insulin, octreotide, ranitidine, famotidine) are the only exceptions.",
+    "alternative": "Dedicated TPN lumen.",
+    "references": [
+      { "label": "ASPEN parenteral nutrition safety consensus recommendations." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "vasopressin-line-stability",
+    "drugA": "Vasopressin",
+    "drugASlug": "vasopressin",
+    "drugB": "Line / tubing material",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Vasopressin adsorbs to PVC tubing (~ 10-20 % loss). Use non-PVC tubing for titration accuracy in septic shock.",
+    "domains": ["critical-care"],
+    "routeContext": ["all"],
+    "notes": "Tubing-related delivery loss matters most when small fixed doses are titrated; for the typical 0.03 unit/min infusion in septic shock, a 10-20 % loss can be clinically meaningful. Polyolefin or polyurethane sets reduce the loss substantially.",
+    "alternative": "Non-PVC tubing.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vasopressin (PVC adsorption)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "amiodarone-pvc",
+    "drugA": "Amiodarone",
+    "drugASlug": "amiodarone",
+    "drugB": "PVC tubing and DEHP leaching",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Amiodarone in PVC tubing leaches DEHP plasticiser; use non-PVC (polyolefin) sets for prolonged infusion.",
+    "domains": ["cardiology", "critical-care"],
+    "routeContext": ["all"],
+    "notes": "Amiodarone is a powerful solvent for the DEHP plasticiser in PVC tubing. For short emergency infusions (loading dose) PVC is acceptable, but prolonged maintenance infusions should use non-DEHP / polyolefin tubing where available, both to limit DEHP exposure and to maintain dose accuracy.",
+    "alternative": "Non-PVC tubing for maintenance infusion.",
+    "references": [
+      { "label": "Cordarone IV (amiodarone HCl) — manufacturer prescribing information." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "nitroglycerin-pvc",
+    "drugA": "Nitroglycerin (IV)",
+    "drugASlug": "nitroglycerin",
+    "drugB": "PVC tubing adsorption",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Nitroglycerin adsorbs significantly to PVC (~ 40-80% loss in standard sets). Use non-PVC tubing.",
+    "domains": ["critical-care", "cardiology"],
+    "routeContext": ["all"],
+    "notes": "Standard PVC tubing absorbs a large fraction of the infused nitroglycerin (40-80% depending on rate and length of tubing). Non-PVC tubing (polyethylene-lined, polyolefin) is required to deliver the labelled dose. This is a longstanding manufacturer warning.",
+    "alternative": "Non-PVC tubing.",
+    "references": [
+      { "label": "Nitroglycerin injection — manufacturer prescribing information." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tacrolimus-pvc",
+    "drugA": "Tacrolimus (IV)",
+    "drugASlug": "tacrolimus",
+    "drugB": "PVC tubing adsorption / lipid vehicle",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Tacrolimus IV adsorbs to PVC and leaches phthalates — use non-PVC tubing and glass containers.",
+    "domains": ["transplant", "critical-care"],
+    "routeContext": ["all"],
+    "notes": "Manufacturer requires dilution in glass or non-PVC bag and administration via non-PVC tubing due to phthalate leaching and adsorption. Standard PVC reduces delivered dose.",
+    "alternative": "Glass / non-PVC bag and tubing.",
+    "references": [
+      { "label": "Tacrolimus IV — manufacturer prescribing information." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "fentanyl-bicarbonate",
+    "drugA": "Fentanyl",
+    "drugASlug": "fentanyl",
+    "drugB": "Sodium bicarbonate (NaHCO₃)",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "no-data",
+    "oneLiner": "Limited Y-site data — separate lumens preferred.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel does not list a definitive Y-site study. Separate lumen for bicarbonate boluses; pause-flush sequence on a single line.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Sodium bicarbonate (limited data)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "morphine-bicarbonate",
+    "drugA": "Morphine",
+    "drugASlug": "morphine",
+    "drugB": "Sodium bicarbonate (NaHCO₃)",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "incompatible",
+    "oneLiner": "Morphine precipitates in alkaline solution (free-base separation).",
+    "domains": ["critical-care", "emergency"],
+    "routeContext": ["y-site"],
+    "notes": "Acidic morphine salt precipitates as free base in alkaline media. Use separate lumens; pause-flush sequence on single-line access.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Morphine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vancomycin-bicarbonate",
+    "drugA": "Vancomycin",
+    "drugASlug": "vancomycin",
+    "drugB": "Sodium bicarbonate (NaHCO₃)",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "incompatible",
+    "oneLiner": "Acidic vancomycin precipitates with alkaline bicarbonate at Y-site.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Visible precipitate at typical clinical concentrations. Use separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vancomycin / Sodium bicarbonate." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vancomycin-aminoglycoside",
+    "drugA": "Vancomycin",
+    "drugASlug": "vancomycin",
+    "drugB": "Gentamicin / tobramycin / amikacin",
+    "drugBSlug": null,
+    "status": "compatible",
+    "oneLiner": "Y-site compatible at typical infusion concentrations — but never mix in the same bag or syringe.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel-listed compatible at typical clinical concentrations during simulated Y-site administration. Mixing in the same bag is NOT recommended (binding / inactivation on prolonged contact). Useful when only two lumens available and pip-tazo cannot be used.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vancomycin Y-site." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vancomycin-heparin-flush",
+    "drugA": "Vancomycin",
+    "drugASlug": "vancomycin",
+    "drugB": "Heparin-locked central line",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Heparin lock fluid + vancomycin can precipitate — flush thoroughly with NS before and after vancomycin administration.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["all"],
+    "notes": "Even small residual heparin lock concentrations in the line can produce a visible precipitate with vancomycin. Flush the lumen with at least 10 mL NS before starting and after finishing the vancomycin infusion.",
+    "alternative": "NS flush before and after vancomycin on heparin-locked lines.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vancomycin / Heparin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "propofol-incompatibles-summary",
+    "drugA": "Propofol",
+    "drugASlug": "propofol",
+    "drugB": "Documented Y-site incompatibles (summary)",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Confirmed Y-site INCOMPATIBLE list: ciprofloxacin, vancomycin, methylprednisolone, gentamicin, tobramycin, magnesium sulfate (concentrated), calcium chloride, methotrexate, bicarbonate, bretylium.",
+    "domains": ["critical-care", "anaesthesia", "patient-safety"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel-confirmed propofol Y-site incompatibilities (visible oiling / lipid coalescence within minutes at clinical concentrations). All other drugs without a confirmed-compatible Trissel study should be treated as incompatible. Always inspect a shared lumen visually for any oiling.",
+    "alternative": "Separate lumens. Pause-flush-give-flush on single-line.",
+    "references": [
+      { "label": "Trissel LA et al. Compatibility of propofol injectable emulsion with selected drugs during simulated Y-site administration. Am J Health Syst Pharm 1997." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "propofol-magnesium",
+    "drugA": "Propofol",
+    "drugASlug": "propofol",
+    "drugB": "Magnesium sulfate (concentrated)",
+    "drugBSlug": "magnesium-sulfate",
+    "status": "incompatible",
+    "oneLiner": "Concentrated magnesium destabilises propofol lipid emulsion at Y-site.",
+    "domains": ["critical-care", "obstetrics"],
+    "routeContext": ["y-site"],
+    "notes": "Particularly relevant in pre-eclamptic patients on magnesium who require intubation / sedation. Use separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "propofol-calcium-chloride",
+    "drugA": "Propofol",
+    "drugASlug": "propofol",
+    "drugB": "Calcium chloride",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Calcium chloride destabilises propofol lipid emulsion — separate lumens.",
+    "domains": ["critical-care", "emergency"],
+    "routeContext": ["y-site"],
+    "notes": "Divalent cations promote droplet coalescence in the propofol emulsion. Use separate lumens; if single-line, pause-flush sequence.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "propofol-gentamicin",
+    "drugA": "Propofol",
+    "drugASlug": "propofol",
+    "drugB": "Gentamicin",
+    "drugBSlug": "gentamicin",
+    "status": "incompatible",
+    "oneLiner": "Documented Y-site incompatible — emulsion destabilisation.",
+    "domains": ["critical-care", "antimicrobials"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel-listed propofol Y-site incompatibility. Separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "propofol-tobramycin",
+    "drugA": "Propofol",
+    "drugASlug": "propofol",
+    "drugB": "Tobramycin",
+    "drugBSlug": "tobramycin",
+    "status": "incompatible",
+    "oneLiner": "Documented Y-site incompatible.",
+    "domains": ["critical-care", "antimicrobials"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel-listed propofol Y-site incompatibility.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel LA et al. Propofol Y-site compatibility studies." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "bicarbonate-many-summary",
+    "drugA": "Sodium bicarbonate (NaHCO₃)",
+    "drugASlug": "sodium-bicarbonate",
+    "drugB": "General incompatibility profile",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Bicarbonate is incompatible with the great majority of IV drugs at Y-site (catecholamines, calcium, magnesium, midazolam, morphine, vancomycin, KCl in concentrated mix, most acidic drugs).",
+    "domains": ["critical-care", "emergency"],
+    "routeContext": ["y-site", "additive"],
+    "notes": "Bicarbonate's high pH and the carbonate equilibrium make it incompatible with almost every clinically important co-infusate. Y-site COMPATIBLE list is short: heparin, insulin (limited data — treat as conditional), some chemo agents. Best practice: dedicated lumen for bicarbonate boluses or infusion. In crash scenarios, pause-flush-bicarb-flush-resume on a single line.",
+    "alternative": "Dedicated lumen; pause-flush sequence.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Sodium bicarbonate." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "kcl-rate-cap",
+    "drugA": "Potassium chloride (KCl)",
+    "drugASlug": null,
+    "drugB": "Infusion rate and concentration limits",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Peripheral: ≤ 40 mmol/L concentration, ≤ 10 mmol/h rate. Central: ≤ 100 mmol/L, ≤ 20 mmol/h, on cardiac monitoring.",
+    "domains": ["critical-care", "patient-safety"],
+    "routeContext": ["all"],
+    "notes": "Bolus IV push of neat KCl is rapidly fatal — never administer as a push. Higher rates than the central cap (e.g. 40 mmol/h) are sometimes used in life-threatening hypokalaemia with continuous ECG monitoring; this is intensivist-led practice with explicit written orders.",
+    "references": [
+      { "label": "ISMP High-Alert Medications list — concentrated potassium chloride." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "vancomycin-rate-cap",
+    "drugA": "Vancomycin",
+    "drugASlug": "vancomycin",
+    "drugB": "Infusion rate (red-man / red-person syndrome)",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Infuse at ≤ 10 mg/min (or ≥ 60 min for a 1 g dose) to avoid red-person syndrome (histamine-mediated flushing, hypotension).",
+    "domains": ["antimicrobials"],
+    "routeContext": ["all"],
+    "notes": "Red-person syndrome is rate-related (not allergic) — it can be prevented by extending the infusion (≥ 60 min for 1 g, ≥ 90 min for 1.5 g, ≥ 120 min for ≥ 2 g) and pre-treatment with H1 antihistamines if there is a prior history.",
+    "alternative": "Slow the infusion; pre-treat with diphenhydramine if recurrent.",
+    "references": [
+      { "label": "Vancomycin HCl injection — manufacturer prescribing information." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "phenytoin-rate-cap",
+    "drugA": "Phenytoin (parenteral)",
+    "drugASlug": "phenytoin",
+    "drugB": "Infusion rate cap (haemodynamic)",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "≤ 50 mg/min adult; reduce to ≤ 25 mg/min in elderly / cardiac patients. Hypotension and arrhythmia at higher rates are propylene glycol mediated.",
+    "domains": ["neurology", "emergency"],
+    "routeContext": ["all"],
+    "notes": "Faster infusion rates risk hypotension, bradycardia, and ventricular arrhythmia largely attributable to the propylene glycol vehicle (and direct phenytoin myocardial effects). Continuous ECG and BP monitoring during loading.",
+    "references": [
+      { "label": "Phenytoin sodium injection SmPC." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "amiodarone-rate-conc",
+    "drugA": "Amiodarone",
+    "drugASlug": "amiodarone",
+    "drugB": "Concentration / central-line rule",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "≤ 2 mg/mL via peripheral (high phlebitis risk); > 2 mg/mL MUST be central. In-line 0.22 µm filter recommended.",
+    "domains": ["cardiology", "critical-care"],
+    "routeContext": ["all"],
+    "notes": "Phlebitis risk is significant even at ≤ 2 mg/mL peripherally — consider central access early for any prolonged infusion. Non-PVC tubing preferred for maintenance.",
+    "references": [
+      { "label": "Cordarone IV (amiodarone HCl) — manufacturer prescribing information." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "dobutamine-bicarbonate",
+    "drugA": "Dobutamine",
+    "drugASlug": "dobutamine",
+    "drugB": "Sodium bicarbonate (NaHCO₃)",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "incompatible",
+    "oneLiner": "Catecholamine oxidised in alkaline bicarbonate — separate lumens or pause-flush sequence.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Same mechanism as norepinephrine + bicarbonate. Visible browning, loss of inotropy.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Dobutamine / Sodium bicarbonate." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "dopamine-bicarbonate",
+    "drugA": "Dopamine",
+    "drugASlug": "dopamine",
+    "drugB": "Sodium bicarbonate (NaHCO₃)",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "incompatible",
+    "oneLiner": "Oxidised in alkaline bicarbonate — separate lumens or pause-flush sequence.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Catecholamine oxidation in alkaline media. Visible browning and loss of pressor activity.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Dopamine / Sodium bicarbonate." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "phenylephrine-bicarbonate",
+    "drugA": "Phenylephrine",
+    "drugASlug": "phenylephrine",
+    "drugB": "Sodium bicarbonate (NaHCO₃)",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "incompatible",
+    "oneLiner": "Oxidised in alkaline bicarbonate — separate lumens.",
+    "domains": ["critical-care", "anaesthesia"],
+    "routeContext": ["y-site"],
+    "notes": "Same alkaline-incompatibility pattern as other catecholamine-like agents.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Phenylephrine." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "dobutamine-furosemide",
+    "drugA": "Dobutamine",
+    "drugASlug": "dobutamine",
+    "drugB": "Furosemide",
+    "drugBSlug": "furosemide",
+    "status": "incompatible",
+    "oneLiner": "Catecholamine oxidation by alkaline furosemide; separate lumens.",
+    "domains": ["critical-care", "cardiology"],
+    "routeContext": ["y-site"],
+    "notes": "Visible discolouration and loss of inotropy. Common pairing in decompensated HF — keep on separate lumens.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Dobutamine / Furosemide." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "epinephrine-furosemide",
+    "drugA": "Epinephrine (adrenaline)",
+    "drugASlug": "epinephrine",
+    "drugB": "Furosemide",
+    "drugBSlug": "furosemide",
+    "status": "incompatible",
+    "oneLiner": "Alkaline furosemide oxidises catecholamine — separate lumens.",
+    "domains": ["critical-care", "cardiology"],
+    "routeContext": ["y-site"],
+    "notes": "Same alkaline-catecholamine incompatibility pattern.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Epinephrine / Furosemide." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "dopamine-furosemide",
+    "drugA": "Dopamine",
+    "drugASlug": "dopamine",
+    "drugB": "Furosemide",
+    "drugBSlug": "furosemide",
+    "status": "incompatible",
+    "oneLiner": "Catecholamine oxidation by alkaline furosemide; separate lumens.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Visible discolouration on Y-site contact at clinical concentrations.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Dopamine / Furosemide." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vasopressin-bicarbonate",
+    "drugA": "Vasopressin",
+    "drugASlug": "vasopressin",
+    "drugB": "Sodium bicarbonate (NaHCO₃)",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "no-data",
+    "oneLiner": "No formal Y-site study — separate lumens preferred.",
+    "domains": ["critical-care"],
+    "routeContext": ["y-site"],
+    "notes": "Trissel does not list a definitive Y-site study. Best practice: keep bicarbonate on a separate lumen.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Vasopressin (limited bicarbonate data)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "midazolam-bicarbonate-detail",
+    "drugA": "Midazolam",
+    "drugASlug": "midazolam",
+    "drugB": "Sodium bicarbonate (NaHCO₃) — detail",
+    "drugBSlug": "sodium-bicarbonate",
+    "status": "incompatible",
+    "oneLiner": "Midazolam is buffered acidic; alkaline bicarbonate produces visible precipitate at Y-site.",
+    "domains": ["critical-care", "emergency"],
+    "routeContext": ["y-site"],
+    "notes": "Documented incompatibility. Use a separate lumen for bicarbonate boluses; pause-flush-bicarb-flush-resume on single-line access.",
+    "alternative": "Separate lumens.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Midazolam." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "calcium-magnesium-detail",
+    "drugA": "Calcium (gluconate or chloride)",
+    "drugASlug": null,
+    "drugB": "Magnesium sulfate — bag mixing",
+    "drugBSlug": "magnesium-sulfate",
+    "status": "incompatible",
+    "oneLiner": "Already covered in magnesium-calcium — this duplicate flags the bag-mixing scenario: never premix Ca and Mg in a single bag.",
+    "domains": ["obstetrics", "emergency", "critical-care"],
+    "routeContext": ["additive"],
+    "notes": "Even if Y-site administration is occasionally tolerated at very low concentrations, bag-mixing (additive) of Ca and Mg produces a precipitate at typical replacement concentrations. Compound separately.",
+    "alternative": "Separate bags / separate lines.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Magnesium / Calcium." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "calcium-chloride-extravasation",
+    "drugA": "Calcium chloride",
+    "drugASlug": null,
+    "drugB": "Peripheral IV extravasation",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Calcium chloride extravasation causes severe tissue necrosis — central administration preferred. Calcium gluconate is the peripheral form of choice.",
+    "domains": ["emergency", "critical-care"],
+    "routeContext": ["all"],
+    "notes": "10% CaCl₂ is highly hypertonic and irritant. Extravasation can require surgical debridement. Use a central line where feasible; if peripheral is the only option (emergency hyperkalaemia, arrest), use a large vein, dilute when time allows, and inspect the site frequently.",
+    "alternative": "Calcium gluconate peripherally; CaCl₂ centrally.",
+    "references": [
+      { "label": "Calcium chloride 10% injection — manufacturer prescribing information." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "midazolam-fentanyl-syringe",
+    "drugA": "Midazolam",
+    "drugASlug": "midazolam",
+    "drugB": "Fentanyl — same-syringe procedural sedation",
+    "drugBSlug": "fentanyl",
+    "status": "compatible",
+    "oneLiner": "Tolerated in the same syringe for procedural sedation. Pharmacodynamic synergy on apnoea is the safety concern, not chemistry.",
+    "domains": ["emergency", "anaesthesia"],
+    "routeContext": ["syringe"],
+    "notes": "Common ED / endoscopy practice; observed to be physically stable in the syringe over the short hold time before administration. Titrate slowly and monitor for additive respiratory depression.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Midazolam / Fentanyl." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ketamine-propofol-ketofol",
+    "drugA": "Ketamine",
+    "drugASlug": "ketamine",
+    "drugB": "Propofol (pre-mixed 'ketofol' syringe)",
+    "drugBSlug": "propofol",
+    "status": "compatible",
+    "oneLiner": "Stable in the same syringe at the standard ED ketofol ratios (1:1 to 4:1 propofol:ketamine). Use within the hold-time specified by your protocol.",
+    "domains": ["emergency", "anaesthesia"],
+    "routeContext": ["syringe", "y-site"],
+    "notes": "Visually inspect the syringe for any oiling immediately before injection. Common protocol: 5 mg/mL propofol + 5 mg/mL ketamine (1:1 by volume of standard concentrations), titrated in 1-2 mL aliquots. Pharmacodynamic synergy on sedation depth; ketamine offsets propofol's respiratory and haemodynamic suppression.",
+    "references": [
+      { "label": "Andolfatto G et al. Ketamine-propofol combination (ketofol) for procedural sedation. Ann Emerg Med 2012." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "drug-shortage-substitution",
+    "drugA": "Drug-shortage substitution",
+    "drugASlug": null,
+    "drugB": "Compatibility considerations when switching brand / formulation",
+    "drugBSlug": null,
+    "status": "conditional",
+    "oneLiner": "Generic switches can change the diluent, vehicle, pH and buffer — re-verify compatibility tables when a brand changes.",
+    "domains": ["critical-care", "patient-safety"],
+    "routeContext": ["all"],
+    "notes": "Different manufacturers use different vehicles (e.g. propofol's lipid composition differs by brand; diazepam's propylene-glycol content varies). When a brand or formulation changes during a shortage, check the new SmPC and the local pharmacy's compatibility table — the previous Y-site profile may not apply.",
+    "alternative": "Verify the new SmPC; consult local pharmacy.",
+    "references": [
+      { "label": "ASHP — Drug Shortages and Medication Safety." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "amphotericin-b-line",
+    "drugA": "Amphotericin B (conventional)",
+    "drugASlug": "amphotericin-b",
+    "drugB": "Y-site / additive compatibility",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Conventional amphotericin B (deoxycholate) precipitates in saline and with most drugs at Y-site — dilute in D5W only, run on dedicated line.",
+    "domains": ["antimicrobials", "critical-care"],
+    "routeContext": ["additive", "y-site"],
+    "notes": "Conventional ampB is a colloidal suspension stabilised by deoxycholate; it aggregates in saline and on contact with most acidic / divalent-cation co-infusates. Use D5W as diluent, dedicated line, in-line filter generally avoided (clogs). Lipid formulations (liposomal, lipid complex) have different but still restrictive compatibility profiles — check each.",
+    "alternative": "Liposomal amphotericin B has a slightly broader compatibility profile (still dedicate the line). Use D5W diluent.",
+    "references": [
+      { "label": "Amphotericin B deoxycholate — manufacturer prescribing information." },
+      { "label": "Trissel's Handbook on Injectable Drugs — Amphotericin B." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "nafcillin-many-incompatible",
+    "drugA": "Nafcillin (or other anti-staphylococcal penicillins)",
+    "drugASlug": "nafcillin",
+    "drugB": "Many Y-site partners",
+    "drugBSlug": null,
+    "status": "incompatible",
+    "oneLiner": "Nafcillin has a narrow Y-site compatibility window — precipitates with many common drugs.",
+    "domains": ["antimicrobials"],
+    "routeContext": ["y-site"],
+    "notes": "Documented Y-site incompatible: aminoglycosides (inactivation rule), labetalol, midazolam (variable), vancomycin (variable), pantoprazole, ciprofloxacin, hydromorphone (variable). Best practice: dedicated line, NS diluent.",
+    "alternative": "Dedicated line.",
+    "references": [
+      { "label": "Trissel's Handbook on Injectable Drugs — Nafcillin." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
   }
 ]
