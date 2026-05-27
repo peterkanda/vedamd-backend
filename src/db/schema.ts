@@ -334,3 +334,47 @@ export const sqlNamedQueries = pgTable(
 
 export type SqlNamedQueryRow = typeof sqlNamedQueries.$inferSelect;
 export type NewSqlNamedQueryRow = typeof sqlNamedQueries.$inferInsert;
+
+/**
+ * CDS card feedback (CDS Hooks 1.0 §6 — Feedback) — per-integrator
+ * capture of clinician outcomes on cards we returned. Lets the
+ * platform track override rates per rule and surface "alert fatigue"
+ * signals so the editorial board can retire false-positive rules.
+ *
+ * PHI-free by construction: we record only the card UUID we generated,
+ * the rule ID it came from, the service id, the outcome (accepted /
+ * overridden), the override-reason code (typically from a closed list
+ * the EMR exposes), an optional clinician comment, and a timestamp.
+ * No patient identifier, no clinical context, no card detail text.
+ */
+export const cdsCardFeedback = pgTable(
+  'cds_card_feedback',
+  {
+    id: text('id').primaryKey(),
+    integratorId: text('integrator_id').notNull(),
+    /** UUID we assigned to the card on the original /cds-services response. */
+    cardUuid: text('card_uuid').notNull(),
+    /** Bundle rule id (e.g. "ddi-check") — null if the card came from an agentic-only flow. */
+    ruleId: text('rule_id'),
+    /** CDS service that produced the card (vedamd-medication-prescribe, vedamd-order-sign, etc.). */
+    serviceId: text('service_id').notNull(),
+    /** Originating CDS Hook (patient-view, medication-prescribe, order-select, order-sign). */
+    hook: text('hook').notNull(),
+    /** "accepted" | "overridden" — CDS Hooks 1.0 spec values. */
+    outcome: text('outcome').notNull(),
+    /** Override reason code (closed list from the EMR's UI, opaque to us). */
+    overrideReasonCode: text('override_reason_code'),
+    /** Override reason display (human-readable label that accompanied the code). */
+    overrideReasonDisplay: text('override_reason_display'),
+    /** Optional clinician free-text comment. Length-capped + PHI-scrubbed at write time. */
+    userComment: text('user_comment'),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    byIntegrator: index('idx_cds_card_feedback_integrator').on(t.integratorId),
+    byRule: index('idx_cds_card_feedback_rule').on(t.integratorId, t.ruleId),
+  }),
+);
+
+export type CdsCardFeedbackRow = typeof cdsCardFeedback.$inferSelect;
+export type NewCdsCardFeedbackRow = typeof cdsCardFeedback.$inferInsert;

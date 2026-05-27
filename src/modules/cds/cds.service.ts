@@ -1,5 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { randomUUID } from 'node:crypto';
 import type {
   CdsCard,
   CdsHookRequest,
@@ -11,6 +12,21 @@ import { CdsStrategyRegistry } from './strategies/registry';
 import { KnowledgeService } from '../knowledge/knowledge.service';
 import { PHI_FREE_LOGGER, type PhiFreeLogger } from '../../common/phi-free-logger';
 import type { AppConfig } from '../../config/configuration';
+
+/**
+ * Bounded in-memory mapping of card UUID → (rule, service, hook) so the
+ * CDS Hooks feedback endpoint can resolve a clinician override back to
+ * the rule that fired. PHI-free by construction — we store rule/service
+ * ids only, never the card's clinical text. FIFO-evicted at 10,000
+ * entries (≈ the last ~1-2 hours of high-volume traffic).
+ */
+export interface CardLookup {
+  ruleId: string | null;
+  serviceId: string;
+  hook: string;
+  createdAt: number;
+}
+const CARD_REGISTRY_MAX = 10_000;
 
 /**
  * Stateless evaluation service. Patient context arrives in the request,
@@ -513,12 +529,20 @@ export class CdsService {
     },
   ];
 
+  /** Card UUID → metadata, kept so /feedback can resolve the rule. */
+  private readonly cardRegistry = new Map<string, CardLookup>();
+
   constructor(
     private readonly config: ConfigService<AppConfig, true>,
     @Inject(PHI_FREE_LOGGER) private readonly log: PhiFreeLogger,
     private readonly knowledge: KnowledgeService,
     private readonly registry: CdsStrategyRegistry,
   ) {}
+
+  /** Resolve a card UUID back to its rule for feedback ingest. Null if expired / unknown. */
+  lookupCard(uuid: string): CardLookup | null {
+    return this.cardRegistry.get(uuid) ?? null;
+  }
 
   listServices(): CdsServiceDescriptor[] {
     return this.services;
@@ -594,6 +618,21 @@ export class CdsService {
             const ext = card.extension?.['http://vedamd.io/Card/recommendation'];
             if (ext && !ext.reviewStatus) {
               ext.reviewStatus = rule.reviewStatus;
+            }
+          }
+          // Assign a UUID per card and remember the lookup so /feedback
+          // can attribute clinician overrides back to this rule. PHI-free.
+          for (const card of ruleCards) {
+            if (!card.uuid) card.uuid = randomUUID();
+            this.cardRegistry.set(card.uuid, {
+              ruleId: rule.id,
+              serviceId,
+              hook: req.hook,
+              createdAt: Date.now(),
+            });
+            if (this.cardRegistry.size > CARD_REGISTRY_MAX) {
+              const oldest = this.cardRegistry.keys().next().value;
+              if (oldest) this.cardRegistry.delete(oldest);
             }
           }
           cards.push(...ruleCards);
