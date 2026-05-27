@@ -22,6 +22,7 @@ import { ReferenceRangesModule } from './modules/reference-ranges/reference-rang
 import { AntidotesModule } from './modules/antidotes/antidotes.module';
 import { IntegrationsModule } from './modules/integrations/integrations.module';
 import { DoseProtocolsModule } from './modules/dose-protocols/dose-protocols.module';
+import { ClinicalToolsModule } from './modules/clinical-tools/clinical-tools.module';
 import { LlmModule } from './modules/llm/llm.module';
 import { AuditModule } from './modules/audit/audit.module';
 import { BundlesModule } from './modules/bundles/bundles.module';
@@ -61,6 +62,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     AntidotesModule,
     IntegrationsModule,
     DoseProtocolsModule,
+    ClinicalToolsModule,
     LlmModule,
     AuditModule,
     BundlesModule,
