@@ -16,7 +16,7 @@ describe('DrugDiseaseService', () => {
 
   it('loads the open drug-disease catalogue from the signed bundle', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThan(15);
+    expect(list.length).toBeGreaterThanOrEqual(250);
     expect(list.map((i) => i.slug)).toContain('metformin--acute-kidney-injury');
   });
 

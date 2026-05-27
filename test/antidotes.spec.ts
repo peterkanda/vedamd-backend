@@ -16,7 +16,7 @@ describe('AntidotesService', () => {
 
   it('loads the open antidote catalogue from the signed bundle', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThan(12);
+    expect(list.length).toBeGreaterThanOrEqual(120);
     expect(list.map((a) => a.slug)).toContain('paracetamol-nac');
   });
 
