@@ -266,3 +266,71 @@ export const clinicalAudits = pgTable(
 
 export type ClinicalAuditRow = typeof clinicalAudits.$inferSelect;
 export type NewClinicalAuditRow = typeof clinicalAudits.$inferInsert;
+
+/**
+ * Per-integrator SQL connection registrations. Mirrors
+ * `SqlConnectionConfig` from agentic/connectors but persisted so
+ * developers can register at runtime (env-var-only is the legacy
+ * path). The connection URL — which holds the database password —
+ * is AEAD-encrypted via the secrets vault with the integratorId as
+ * AAD, so a leaked row from tenant A cannot be decrypted as tenant B.
+ *
+ * Integrator-scoped only; never global; never carries patient data.
+ */
+export const sqlConnections = pgTable(
+  'sql_connections',
+  {
+    id: text('id').primaryKey(),
+    integratorId: text('integrator_id').notNull(),
+    name: text('name').notNull(),
+    /** 'postgres' | 'mysql' | 'mssql' | 'oracle' */
+    dialect: text('dialect').notNull(),
+    /** AEAD-encrypted connection URL — never returned over the API. */
+    encryptedUrl: text('encrypted_url').notNull(),
+    ssl: boolean('ssl').notNull().default(false),
+    maxRows: integer('max_rows').notNull().default(10000),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+    createdBy: text('created_by'),
+    lastUsedAt: timestamp('last_used_at', { withTimezone: true }),
+  },
+  (t) => ({
+    byIntegrator: index('idx_sql_connections_integrator').on(t.integratorId),
+  }),
+);
+
+export type SqlConnectionRow = typeof sqlConnections.$inferSelect;
+export type NewSqlConnectionRow = typeof sqlConnections.$inferInsert;
+
+/**
+ * Per-integrator named queries. The SELECT is stored as-is (read-only
+ * enforcement happens at execution time via the `assertReadOnly()`
+ * guard, not at storage time). The declarative mapping is stored as
+ * JSONB so the UI can edit it without schema churn.
+ *
+ * Integrator-scoped only.
+ */
+export const sqlNamedQueries = pgTable(
+  'sql_named_queries',
+  {
+    id: text('id').primaryKey(),
+    integratorId: text('integrator_id').notNull(),
+    /** Stable lookup key (e.g. "elderly-polypharmacy"). Surfaced to clinical-audits via this id. */
+    queryKey: text('query_key').notNull(),
+    name: text('name').notNull(),
+    description: text('description'),
+    connectionId: text('connection_id'),
+    sql: text('sql').notNull(),
+    /** QueryMapping JSON — patient columns + med/dx/allergy/lab columns. */
+    mapping: jsonb('mapping').notNull(),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+    createdBy: text('created_by'),
+  },
+  (t) => ({
+    byIntegrator: index('idx_sql_named_queries_integrator').on(t.integratorId),
+  }),
+);
+
+export type SqlNamedQueryRow = typeof sqlNamedQueries.$inferSelect;
+export type NewSqlNamedQueryRow = typeof sqlNamedQueries.$inferInsert;

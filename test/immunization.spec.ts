@@ -16,7 +16,7 @@ describe('ImmunizationService', () => {
 
   it('loads the open WHO EPI schedule from the signed bundle', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThan(10);
+    expect(list.length).toBeGreaterThanOrEqual(80);
     expect(list.map((e) => e.slug)).toContain('bcg');
   });
 

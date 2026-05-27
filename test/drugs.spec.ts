@@ -12,13 +12,23 @@ describe('DrugsService', () => {
 
   it('lists summaries without the deep content fields', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThan(0);
+    expect(list.length).toBeGreaterThanOrEqual(700);
     for (const summary of list) {
       expect(summary.slug).toBeTruthy();
       expect(summary.inn).toBeTruthy();
       expect('indications' in summary).toBe(false);
       expect('dosing' in summary).toBe(false);
     }
+  });
+
+  it('bundle contains the expanded interaction catalogue', () => {
+    const drugs = svc.list();
+    // pick any two existing slugs and ensure interaction catalogue is populated
+    const slugs = drugs.map((d) => d.slug);
+    expect(slugs.length).toBeGreaterThanOrEqual(700);
+    // Sanity: known interaction pair
+    const res = svc.checkInteractions(['warfarin', 'amiodarone']);
+    expect(res.interactions.length).toBeGreaterThanOrEqual(1);
   });
 
   it('filters by ATC code (exact)', () => {

@@ -962,5 +962,2406 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "hexavalent-uk-2-3-4mo",
+    "vaccine": "Hexavalent vaccine (DTaP-IPV-Hib-HepB) — UK 2/3/4-month schedule",
+    "abbrev": "Hexa (UK)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Diphtheria",
+      "Tetanus",
+      "Pertussis (acellular)",
+      "Poliomyelitis",
+      "Haemophilus influenzae type b",
+      "Hepatitis B"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "child-health"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "8 weeks of age",
+        "route": "IM"
+      },
+      {
+        "dose": "Dose 2",
+        "timing": "12 weeks of age",
+        "route": "IM"
+      },
+      {
+        "dose": "Dose 3",
+        "timing": "16 weeks of age",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "UK routine infant immunisation schedule (Infanrix hexa)."
+    },
+    "catchUp": "DTaP/IPV/Hib booster at 3 years 4 months; Td/IPV at 14 years.",
+    "notes": "UKHSA Green Book chapter 24 (pertussis), chapter 18 (Hib), chapter 26 (polio).",
+    "references": [
+      {
+        "label": "UKHSA Green Book — Immunisation against infectious disease (complete current edition)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hexavalent-us-2-4-6mo",
+    "vaccine": "Hexavalent vaccine (DTaP-IPV-Hib-HepB) — US 2/4/6-month schedule",
+    "abbrev": "Hexa (US)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Diphtheria",
+      "Tetanus",
+      "Pertussis (acellular)",
+      "Poliomyelitis",
+      "Haemophilus influenzae type b",
+      "Hepatitis B"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "child-health"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "2 months",
+        "route": "IM"
+      },
+      {
+        "dose": "Dose 2",
+        "timing": "4 months",
+        "route": "IM"
+      },
+      {
+        "dose": "Dose 3",
+        "timing": "6 months",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "US routine schedule (Vaxelis)."
+    },
+    "catchUp": "DTaP booster at 15-18 months and 4-6 years; IPV at 4-6 years; Tdap at 11-12 years.",
+    "notes": "Vaxelis approved by CDC ACIP for the primary series at 2, 4, 6 months.",
+    "references": [
+      {
+        "label": "CDC ACIP recommended childhood immunization schedule (current year)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "pcv-paediatric-us",
+    "vaccine": "Pneumococcal conjugate vaccine — paediatric (PCV13/PCV15/PCV20)",
+    "abbrev": "PCV13/15/20",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Invasive pneumococcal disease",
+      "Pneumococcal pneumonia",
+      "Pneumococcal otitis media"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "child-health",
+      "respiratory"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "2 months",
+        "route": "IM"
+      },
+      {
+        "dose": "Dose 2",
+        "timing": "4 months",
+        "route": "IM"
+      },
+      {
+        "dose": "Dose 3",
+        "timing": "6 months",
+        "route": "IM"
+      },
+      {
+        "dose": "Booster",
+        "timing": "12-15 months",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "US 3+1 schedule for healthy infants. PCV15 and PCV20 are interchangeable with PCV13 for the series."
+    },
+    "catchUp": "Catch-up doses per ACIP age-specific tables up to 59 months (or 71 months for high-risk children).",
+    "notes": "PCV20 covers serotypes 1,3,4,5,6A,6B,7F,8,9V,10A,11A,12F,14,15B,18C,19A,19F,22F,23F,33F. PCV15 adds 22F and 33F to PCV13.",
+    "references": [
+      {
+        "label": "CDC ACIP pneumococcal vaccination recommendations (Kobayashi et al., MMWR 2023)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "pcv-uk-2plus1",
+    "vaccine": "Pneumococcal conjugate vaccine — UK 1+1 schedule (PCV13)",
+    "abbrev": "PCV13 (UK)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Invasive pneumococcal disease"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "child-health"
+    ],
+    "doses": [
+      {
+        "dose": "Primary dose",
+        "timing": "12 weeks of age",
+        "route": "IM"
+      },
+      {
+        "dose": "Booster",
+        "timing": "12-13 months",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "UK adopted a 1+1 schedule from January 2020 (JCVI advice, herd protection from established programme)."
+    },
+    "catchUp": "High-risk children receive a 2+1 schedule. See Green Book chapter 25.",
+    "notes": "JCVI advised that herd immunity allowed reduction from 2+1 to 1+1.",
+    "references": [
+      {
+        "label": "UKHSA Green Book chapter 25 (Pneumococcal); JCVI statement on PCV schedule"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "menb-uk",
+    "vaccine": "Meningococcal B vaccine (4CMenB / Bexsero) — UK infant schedule",
+    "abbrev": "MenB",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Invasive meningococcal disease serogroup B"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "child-health"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "8 weeks",
+        "route": "IM"
+      },
+      {
+        "dose": "Dose 2",
+        "timing": "16 weeks",
+        "route": "IM"
+      },
+      {
+        "dose": "Booster",
+        "timing": "12-13 months",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "UK routine since September 2015. Prophylactic paracetamol recommended with the first two doses to reduce post-vaccination fever."
+    },
+    "catchUp": null,
+    "notes": "Bexsero (4CMenB) is given simultaneously with hexavalent, PCV13, rotavirus.",
+    "references": [
+      {
+        "label": "UKHSA Green Book chapter 22 (Meningococcal)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hib-monovalent",
+    "vaccine": "Haemophilus influenzae type b (Hib) monovalent",
+    "abbrev": "Hib",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Haemophilus influenzae type b invasive disease"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "child-health"
+    ],
+    "doses": [
+      {
+        "dose": "Primary series",
+        "timing": "3 doses 4-8 weeks apart starting from 6 weeks (where not in pentavalent/hexavalent)",
+        "route": "IM"
+      },
+      {
+        "dose": "Booster",
+        "timing": "12-18 months (or 12 months in UK Hib/MenC combined)",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Used where Hib is not delivered in a combination product; also for catch-up and high-risk groups (asplenia, complement deficiency, SOT/HSCT)."
+    },
+    "catchUp": "Single dose adequate after 12 months in unvaccinated previously healthy children. Asplenic adults need 1 dose if not previously vaccinated.",
+    "notes": "All licensed Hib conjugates (PRP-T, PRP-OMP, PRP-CRM) are interchangeable for the primary series.",
+    "references": [
+      {
+        "label": "WHO Hib position paper (Weekly Epidemiological Record, 2013)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "rotavirus-rv1",
+    "vaccine": "Rotavirus vaccine RV1 (Rotarix, monovalent G1P[8])",
+    "abbrev": "RV1",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Rotavirus gastroenteritis"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "child-health",
+      "gastroenterology"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "From 6 weeks, no later than 14 weeks 6 days",
+        "route": "oral"
+      },
+      {
+        "dose": "Dose 2",
+        "timing": "≥4 weeks after dose 1, no later than 24 weeks 0 days",
+        "route": "oral"
+      }
+    ],
+    "population": {
+      "notes": "Live attenuated oral vaccine. Contraindicated in SCID and history of intussusception. Used in UK schedule at 8 and 12 weeks."
+    },
+    "catchUp": "Do not start the series after 15 weeks; do not give any dose after 24 weeks (intussusception risk).",
+    "notes": "Avoid in infants of severely immunocompromised mothers within 6 weeks of biologic exposure (e.g. anti-TNF) — see UKHSA Green Book chapter 27b.",
+    "references": [
+      {
+        "label": "UKHSA Green Book chapter 27b (Rotavirus); WHO Rotavirus position paper 2021"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "rotavirus-rv5",
+    "vaccine": "Rotavirus vaccine RV5 (RotaTeq, pentavalent)",
+    "abbrev": "RV5",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Rotavirus gastroenteritis"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "child-health",
+      "gastroenterology"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "2 months (6-14 weeks 6 days)",
+        "route": "oral"
+      },
+      {
+        "dose": "Dose 2",
+        "timing": "4 months",
+        "route": "oral"
+      },
+      {
+        "dose": "Dose 3",
+        "timing": "6 months (last dose ≤8 months 0 days)",
+        "route": "oral"
+      }
+    ],
+    "population": {
+      "notes": "Pentavalent human-bovine reassortant; US standard rotavirus product."
+    },
+    "catchUp": "Do not start series after 14 weeks 6 days; do not give any dose after 8 months 0 days.",
+    "notes": "Switching between RV1 and RV5 is not recommended; if products are mixed, total of 3 doses given.",
+    "references": [
+      {
+        "label": "CDC ACIP rotavirus vaccination recommendations (Cortese et al., MMWR 2009)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "mmr-second-dose",
+    "vaccine": "MMR — second (booster) dose",
+    "abbrev": "MMR2",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Measles",
+      "Mumps",
+      "Rubella"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "child-health"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 2",
+        "timing": "3 years 4 months in UK; 4-6 years in US (minimum 28 days after dose 1)",
+        "route": "subcutaneous or IM"
+      }
+    ],
+    "population": {
+      "notes": "Two-dose schedule needed for ≥97% measles protection."
+    },
+    "catchUp": "Two doses given ≥28 days apart count as a complete course at any age.",
+    "notes": "Live attenuated — contraindicated in pregnancy and severe immunosuppression.",
+    "references": [
+      {
+        "label": "WHO Measles vaccines: position paper 2017"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "varicella-2-dose",
+    "vaccine": "Varicella vaccine — 2-dose schedule",
+    "abbrev": "VZV",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Varicella (chickenpox)"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "child-health"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "12-15 months",
+        "route": "subcutaneous"
+      },
+      {
+        "dose": "Dose 2",
+        "timing": "4-6 years (minimum 3 months later in children <13)",
+        "route": "subcutaneous"
+      }
+    ],
+    "population": {
+      "notes": "Live attenuated; routine in US since 1995. Two-dose schedule since 2007 for higher effectiveness against breakthrough varicella."
+    },
+    "catchUp": "Adolescents/adults aged ≥13: two doses ≥28 days apart.",
+    "notes": "MMRV combination acceptable at 4-6 y; for first dose at 12-15 months, separate MMR + varicella preferred due to slightly higher febrile-seizure risk with MMRV.",
+    "references": [
+      {
+        "label": "CDC ACIP varicella vaccination recommendations (Marin et al., MMWR 2007)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hpv-9-valent",
+    "vaccine": "HPV 9-valent vaccine (Gardasil-9)",
+    "abbrev": "9vHPV",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "HPV-related cervical cancer and precancer",
+      "Anal, vulvar, vaginal, penile, and oropharyngeal cancer",
+      "Anogenital warts"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "adolescent-health",
+      "oncology"
+    ],
+    "doses": [
+      {
+        "dose": "2-dose schedule",
+        "timing": "If initiated 9 to <15 years: 2 doses 6-12 months apart",
+        "route": "IM"
+      },
+      {
+        "dose": "3-dose schedule",
+        "timing": "If initiated ≥15 years or immunocompromised at any age: 0, 1-2, 6 months",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Covers HPV types 6, 11, 16, 18, 31, 33, 45, 52, 58."
+    },
+    "catchUp": "ACIP catch-up to age 26; shared decision-making 27-45 years. WHO single-dose schedule recommended for 9-20 year girls in many programmes (2022).",
+    "notes": "Single-dose HPV vaccination is non-inferior in immunocompetent 9-20 y olds (WHO SAGE 2022).",
+    "references": [
+      {
+        "label": "WHO HPV position paper 2022 (single-dose schedule); CDC ACIP recommendations"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tdap-adolescent",
+    "vaccine": "Tdap booster — adolescent",
+    "abbrev": "Tdap",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Tetanus",
+      "Diphtheria",
+      "Pertussis"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "adolescent-health"
+    ],
+    "doses": [
+      {
+        "dose": "Single dose",
+        "timing": "11-12 years (US ACIP); 13-18 years catch-up if missed",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Boostrix or Adacel are licensed."
+    },
+    "catchUp": "Adolescents who never received Tdap should receive a single dose at any age, followed by Td or Tdap every 10 years.",
+    "notes": "Pertussis component is lower-dose than paediatric DTaP.",
+    "references": [
+      {
+        "label": "CDC ACIP Tdap recommendations (Liang et al., MMWR 2018)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "menacwy-adolescent-us",
+    "vaccine": "Meningococcal ACWY conjugate — adolescent US schedule",
+    "abbrev": "MenACWY",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Invasive meningococcal disease (serogroups A, C, W, Y)"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "adolescent-health"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "11-12 years",
+        "route": "IM"
+      },
+      {
+        "dose": "Booster",
+        "timing": "16 years",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Adolescent peak incidence; the 16-year booster covers university/college entry."
+    },
+    "catchUp": "If first dose received at 13-15 years: booster at 16-18 years. If first dose at ≥16 years: no booster needed.",
+    "notes": "MenACWY-D (Menactra), MenACWY-CRM (Menveo), MenACWY-TT (MenQuadfi) are licensed.",
+    "references": [
+      {
+        "label": "CDC ACIP meningococcal vaccination recommendations (Mbaeyi et al., MMWR 2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "influenza-paediatric",
+    "vaccine": "Influenza vaccine — paediatric (≥6 months)",
+    "abbrev": "Flu (paeds)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Seasonal influenza"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "child-health",
+      "respiratory"
+    ],
+    "doses": [
+      {
+        "dose": "Annual",
+        "timing": "Once each influenza season from 6 months of age",
+        "route": "IM (IIV) or intranasal (LAIV4) for ≥2 y"
+      },
+      {
+        "dose": "Two-dose primary",
+        "timing": "Children 6 months to 8 years receiving flu vaccine for the first time: 2 doses ≥4 weeks apart in the first season",
+        "route": "IM or intranasal"
+      }
+    ],
+    "population": {
+      "notes": "LAIV4 contraindicated in <2 y, immunocompromised, severe asthma, and during salicylate therapy."
+    },
+    "catchUp": "Subsequent seasons: single annual dose suffices.",
+    "notes": "Cell-based and recombinant options exist; egg allergy is not a contraindication.",
+    "references": [
+      {
+        "label": "CDC ACIP influenza vaccination recommendations (current season)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "covid-19-adolescent",
+    "vaccine": "COVID-19 vaccine — adolescent",
+    "abbrev": "COVID-19 (adol)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "COVID-19"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "adolescent-health",
+      "respiratory"
+    ],
+    "doses": [
+      {
+        "dose": "Annual updated dose",
+        "timing": "Updated formulation once yearly per WHO SAGE / national guidance",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Healthy adolescents 12-17 y: a single dose of the current strain-updated mRNA vaccine; additional doses for immunocompromised."
+    },
+    "catchUp": "Immunocompromised adolescents may receive an additional dose ≥2 months later.",
+    "notes": "Myocarditis risk slightly increased in adolescent males; typically mild, self-limited.",
+    "references": [
+      {
+        "label": "WHO SAGE roadmap for COVID-19 vaccination (current update)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "influenza-high-dose-elderly",
+    "vaccine": "Influenza vaccine — high-dose / adjuvanted / recombinant (≥65 years)",
+    "abbrev": "HD-IIV / aIIV / RIV",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Seasonal influenza"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "geriatrics",
+      "respiratory"
+    ],
+    "doses": [
+      {
+        "dose": "Annual",
+        "timing": "Once each season; preferential use of HD-IIV4 (Fluzone HD), aIIV4 (Fluad), or RIV4 (Flublok) in adults ≥65 (CDC ACIP 2022)",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "If none of the three preferred products are available, any age-appropriate IIV4 is acceptable rather than delaying vaccination."
+    },
+    "catchUp": null,
+    "notes": "High-dose IIV contains 60 mcg HA per strain (4×standard). Adjuvanted vaccine uses MF59.",
+    "references": [
+      {
+        "label": "CDC ACIP preferential recommendation for adults ≥65 (Grohskopf et al., MMWR 2022)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "pneumococcal-adult-pcv20",
+    "vaccine": "Pneumococcal adult — PCV20 single-dose option",
+    "abbrev": "PCV20 adult",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Invasive pneumococcal disease",
+      "Pneumococcal pneumonia"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "geriatrics",
+      "respiratory"
+    ],
+    "doses": [
+      {
+        "dose": "Single dose",
+        "timing": "Adults ≥65 not previously vaccinated; or 19-64 with risk conditions",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "ACIP 2023 updated recommendation: PCV20 alone, OR PCV15 followed ≥1 year later by PPSV23, are both acceptable."
+    },
+    "catchUp": "Adults previously vaccinated with PCV13 or PPSV23 only — see ACIP shared clinical decision-making.",
+    "notes": "PCV21 (Capvaxive, adults only) is an additional 2024 option.",
+    "references": [
+      {
+        "label": "CDC ACIP adult pneumococcal recommendations (Kobayashi et al., MMWR 2023)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "pneumococcal-adult-pcv15-ppsv23",
+    "vaccine": "Pneumococcal adult — PCV15 followed by PPSV23",
+    "abbrev": "PCV15+PPSV23",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Invasive pneumococcal disease",
+      "Pneumococcal pneumonia"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "geriatrics",
+      "respiratory"
+    ],
+    "doses": [
+      {
+        "dose": "PCV15",
+        "timing": "Single dose",
+        "route": "IM"
+      },
+      {
+        "dose": "PPSV23",
+        "timing": "≥1 year after PCV15 (≥8 weeks for immunocompromised, asplenia, CSF leak, cochlear implant)",
+        "route": "IM or subcutaneous"
+      }
+    ],
+    "population": {
+      "notes": "Acceptable alternative to single-dose PCV20."
+    },
+    "catchUp": null,
+    "notes": "PPSV23 (Pneumovax 23) covers serotypes 1, 2, 3, 4, 5, 6B, 7F, 8, 9N, 9V, 10A, 11A, 12F, 14, 15B, 17F, 18C, 19A, 19F, 20, 22F, 23F, 33F.",
+    "references": [
+      {
+        "label": "CDC ACIP adult pneumococcal recommendations (Kobayashi et al., MMWR 2023)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tdap-adult-replacement",
+    "vaccine": "Tdap — adult one-time replacement of Td",
+    "abbrev": "Tdap (adult)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Tetanus",
+      "Diphtheria",
+      "Pertussis"
+    ],
+    "domains": [
+      "vaccine-preventable"
+    ],
+    "doses": [
+      {
+        "dose": "Single Tdap",
+        "timing": "Once in adult life, replacing one Td booster, if not previously received Tdap",
+        "route": "IM"
+      },
+      {
+        "dose": "Td or Tdap booster",
+        "timing": "Every 10 years thereafter",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Either Tdap or Td may be used for routine decennial boosters."
+    },
+    "catchUp": "Adults without a documented primary series: 3 doses of Td/Tdap (0, 4 weeks, 6-12 months) with one being Tdap.",
+    "notes": "Tdap given in every pregnancy regardless of prior history.",
+    "references": [
+      {
+        "label": "CDC ACIP Tdap/Td recommendations (Havers et al., MMWR 2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "rsv-older-adult",
+    "vaccine": "RSV vaccine — older adult (Arexvy, Abrysvo, mRESVIA)",
+    "abbrev": "RSV (≥60)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "RSV lower respiratory tract infection in older adults"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "geriatrics",
+      "respiratory"
+    ],
+    "doses": [
+      {
+        "dose": "Single dose",
+        "timing": "Adults ≥75 years (routine) or 60-74 at increased risk (CDC ACIP 2024)",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Single dose only — re-vaccination not currently recommended."
+    },
+    "catchUp": null,
+    "notes": "Arexvy (GSK, adjuvanted), Abrysvo (Pfizer, bivalent), mRESVIA (Moderna, mRNA-1345) are licensed. Optimal season is late summer/early autumn.",
+    "references": [
+      {
+        "label": "CDC ACIP RSV in adults recommendations (Britton et al., MMWR 2024)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "zoster-shingrix-adult",
+    "vaccine": "Recombinant zoster vaccine (Shingrix) — 2-dose adult schedule",
+    "abbrev": "RZV",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Herpes zoster",
+      "Post-herpetic neuralgia"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "geriatrics"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "Adults ≥50 years (or ≥19 if immunocompromised)",
+        "route": "IM"
+      },
+      {
+        "dose": "Dose 2",
+        "timing": "2-6 months after dose 1 (1-2 months for immunocompromised)",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Recommended regardless of prior zoster, prior zoster vaccination (Zostavax), or unknown varicella history."
+    },
+    "catchUp": "If interval >6 months has elapsed, give dose 2 without restarting series.",
+    "notes": "Adjuvanted with AS01B; high reactogenicity (~80% local, ~50% systemic) but >90% efficacy.",
+    "references": [
+      {
+        "label": "CDC ACIP zoster vaccination recommendations (Anderson et al., MMWR 2022)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "covid-19-adult-boosters",
+    "vaccine": "COVID-19 vaccine — adult annual booster",
+    "abbrev": "COVID-19 (adult)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "COVID-19"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "respiratory"
+    ],
+    "doses": [
+      {
+        "dose": "Annual updated dose",
+        "timing": "Once each autumn; additional doses for ≥65 y and immunocompromised per CDC/JCVI",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Per CDC 2024: adults ≥65 and immunocompromised may receive an additional dose ≥4 months after their most recent dose."
+    },
+    "catchUp": null,
+    "notes": "Strain composition updated annually based on WHO Technical Advisory Group on COVID-19 Vaccine Composition.",
+    "references": [
+      {
+        "label": "WHO SAGE roadmap for COVID-19 vaccination (current)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hepatitis-b-adult-high-risk",
+    "vaccine": "Hepatitis B vaccine — adult high-risk schedule",
+    "abbrev": "HepB (adult)",
+    "vaccineDrugSlug": "hepatitis-b-vaccine",
+    "targetDisease": [
+      "Hepatitis B"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "hepatology",
+      "occupational-health"
+    ],
+    "doses": [
+      {
+        "dose": "Standard 3-dose",
+        "timing": "0, 1, 6 months",
+        "route": "IM"
+      },
+      {
+        "dose": "Heplisav-B 2-dose",
+        "timing": "0 and 1 month (adults ≥18 years)",
+        "route": "IM"
+      },
+      {
+        "dose": "Accelerated",
+        "timing": "0, 1, 2 months with booster at 12 months (e.g. travel, post-exposure)",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "ACIP 2022: universal vaccination of all adults 19-59. ≥60 vaccinate if at risk."
+    },
+    "catchUp": "Check anti-HBs 1-2 months after series for HCWs, immunocompromised, sexual partners of HBV+. Revaccinate non-responders with second 3-dose series.",
+    "notes": "Heplisav-B (HepB-CpG) gives faster, higher seroprotection than conventional vaccine; preferred in dialysis.",
+    "references": [
+      {
+        "label": "CDC ACIP universal adult HepB vaccination recommendation (Weng et al., MMWR 2022)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hepatitis-a-adult",
+    "vaccine": "Hepatitis A vaccine — adult schedule",
+    "abbrev": "HepA (adult)",
+    "vaccineDrugSlug": "hepatitis-a-vaccine",
+    "targetDisease": [
+      "Hepatitis A"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "hepatology",
+      "travel-medicine"
+    ],
+    "doses": [
+      {
+        "dose": "Dose 1",
+        "timing": "Adults at risk (travel, MSM, PWID, CLD, occupational, homelessness)",
+        "route": "IM"
+      },
+      {
+        "dose": "Dose 2",
+        "timing": "6-18 months after dose 1",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Single dose provides ~95% seroprotection by 4 weeks for healthy travellers."
+    },
+    "catchUp": "Two doses ≥6 months apart at any time complete the series.",
+    "notes": "Twinrix (HAV+HBV) requires 3 doses (0, 1, 6 months) or accelerated 4-dose schedule for travel.",
+    "references": [
+      {
+        "label": "CDC ACIP hepatitis A recommendations (Nelson et al., MMWR 2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "mmr-adult-catchup",
+    "vaccine": "MMR — adult catch-up",
+    "abbrev": "MMR (adult)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Measles",
+      "Mumps",
+      "Rubella"
+    ],
+    "domains": [
+      "vaccine-preventable"
+    ],
+    "doses": [
+      {
+        "dose": "1 or 2 doses",
+        "timing": "Adults born ≥1957 without evidence of immunity: at least 1 dose. HCWs, students, international travellers, post-exposure: 2 doses ≥28 days apart",
+        "route": "subcutaneous or IM"
+      }
+    ],
+    "population": {
+      "notes": "Evidence of immunity = documented vaccination, laboratory evidence, or birth before 1957 in the US (different cut-offs elsewhere)."
+    },
+    "catchUp": "Pregnant women without immunity: vaccinate postpartum (contraindicated in pregnancy).",
+    "notes": "Outbreak response: 2 doses for adults at risk regardless of birth year.",
+    "references": [
+      {
+        "label": "CDC ACIP MMR recommendations (McLean et al., MMWR 2013)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "meningococcal-adult-high-risk",
+    "vaccine": "Meningococcal vaccine — adult high-risk groups",
+    "abbrev": "MenACWY/MenB (adult)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Invasive meningococcal disease"
+    ],
+    "domains": [
+      "vaccine-preventable"
+    ],
+    "doses": [
+      {
+        "dose": "MenACWY 2-dose series",
+        "timing": "Asplenia (functional or anatomical), complement deficiency, eculizumab/ravulizumab, HIV, persistent travel, lab workers handling Neisseria meningitidis: 2 doses 8 weeks apart, then booster every 5 years",
+        "route": "IM"
+      },
+      {
+        "dose": "MenB 2-dose series",
+        "timing": "Same indications: 2 doses of 4CMenB (Bexsero) ≥1 month apart, OR 3 doses MenB-FHbp (Trumenba) at 0, 1-2, 6 months",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Penta- or hexa-valent meningococcal (MenABCWY, Penbraya) now available as 2024 option."
+    },
+    "catchUp": "Boosters of MenB every 2-3 years for ongoing risk (eculizumab); annual prophylactic ciprofloxacin or penicillin V also recommended.",
+    "notes": "Eculizumab markedly increases invasive meningococcal disease risk — vaccinate ≥2 weeks before therapy and consider antibiotic prophylaxis.",
+    "references": [
+      {
+        "label": "CDC ACIP meningococcal recommendations (Mbaeyi et al., MMWR 2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tdap-pregnancy",
+    "vaccine": "Tdap in pregnancy",
+    "abbrev": "Tdap (pregnancy)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Pertussis (neonatal protection)",
+      "Tetanus",
+      "Diphtheria"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "obstetrics"
+    ],
+    "doses": [
+      {
+        "dose": "Single dose every pregnancy",
+        "timing": "27-36 weeks gestation (preferably earlier in this window for highest antibody transfer)",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "UK programme uses 16-32 weeks (Green Book chapter 24)."
+    },
+    "catchUp": "If not given antenatally, give immediately postpartum before discharge.",
+    "notes": "Inactivated; safe in pregnancy; primary purpose is to confer transplacental antibody protecting the infant from severe pertussis in the first months of life.",
+    "references": [
+      {
+        "label": "CDC ACIP Tdap in pregnancy (Liang et al., MMWR 2018); UKHSA Green Book chapter 24"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "influenza-pregnancy",
+    "vaccine": "Influenza vaccine in pregnancy",
+    "abbrev": "Flu (pregnancy)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Seasonal influenza"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "obstetrics",
+      "respiratory"
+    ],
+    "doses": [
+      {
+        "dose": "Single dose each season",
+        "timing": "Any trimester, as early as vaccine becomes available",
+        "route": "IM (inactivated only)"
+      }
+    ],
+    "population": {
+      "notes": "LAIV (live attenuated nasal) is contraindicated in pregnancy."
+    },
+    "catchUp": null,
+    "notes": "Influenza in pregnancy carries higher risk of severe disease and preterm delivery; vaccination reduces maternal and infant illness in the first months of life.",
+    "references": [
+      {
+        "label": "CDC ACIP influenza in pregnancy (current season); WHO position paper on influenza vaccines 2022"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "rsv-pregnancy",
+    "vaccine": "Maternal RSV vaccine (Abrysvo) in pregnancy",
+    "abbrev": "RSV (maternal)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "RSV lower respiratory tract infection in infants"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "obstetrics",
+      "respiratory",
+      "neonatology"
+    ],
+    "doses": [
+      {
+        "dose": "Single dose",
+        "timing": "32-36 weeks gestation, seasonally (Sept-Jan in northern hemisphere)",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Abrysvo bivalent prefusion-F vaccine. Either maternal RSV or infant nirsevimab is given — not both routinely."
+    },
+    "catchUp": null,
+    "notes": "Provides ~70% protection against medically attended severe RSV-LRTI in infants in first 6 months. CDC ACIP 2023.",
+    "references": [
+      {
+        "label": "CDC ACIP maternal RSV recommendations (Fleming-Dutra et al., MMWR 2023)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "covid-19-pregnancy",
+    "vaccine": "COVID-19 vaccine in pregnancy",
+    "abbrev": "COVID-19 (pregnancy)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "COVID-19"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "obstetrics",
+      "respiratory"
+    ],
+    "doses": [
+      {
+        "dose": "Updated annual dose",
+        "timing": "Any trimester; preferably as soon as eligible in the current season",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Strongly recommended — COVID-19 in pregnancy doubles the risk of ICU admission and increases preterm birth."
+    },
+    "catchUp": null,
+    "notes": "Maternal vaccination confers transplacental antibody to neonates and reduces infant hospitalisation in the first 6 months.",
+    "references": [
+      {
+        "label": "ACOG / SMFM joint statement on COVID-19 vaccination in pregnancy; CDC pregnancy guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "anti-d-rh-immunoglobulin",
+    "vaccine": "Anti-D (Rh) immunoglobulin",
+    "abbrev": "Anti-D Ig",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Rhesus alloimmunisation / haemolytic disease of the fetus and newborn"
+    ],
+    "domains": [
+      "obstetrics",
+      "passive-immunisation"
+    ],
+    "doses": [
+      {
+        "dose": "Routine antenatal prophylaxis (RAADP)",
+        "timing": "1500 IU at 28 weeks (single-dose) OR 500 IU at 28 + 34 weeks (two-dose) for RhD-negative pregnant women",
+        "route": "IM"
+      },
+      {
+        "dose": "Postpartum",
+        "timing": "500 IU within 72 hours of delivery of an RhD-positive infant (dose increased per Kleihauer/flow cytometry if large feto-maternal haemorrhage)",
+        "route": "IM"
+      },
+      {
+        "dose": "Sensitising event",
+        "timing": "After any potentially sensitising event in pregnancy (e.g. miscarriage ≥12 weeks, ectopic, ECV, abdominal trauma, amniocentesis)",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Not required in RhD-negative women carrying confirmed RhD-negative fetus (cffDNA testing)."
+    },
+    "catchUp": null,
+    "notes": "Passive immunoglobulin, not a vaccine. Reduces risk of RhD alloimmunisation from ~1% to <0.1%.",
+    "references": [
+      {
+        "label": "NICE TA156 Routine antenatal anti-D prophylaxis; RCOG Green-top 22"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "yellow-fever-single-dose-lifelong",
+    "vaccine": "Yellow fever — single lifelong dose (WHO 2016)",
+    "abbrev": "YF",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Yellow fever"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "travel-medicine"
+    ],
+    "doses": [
+      {
+        "dose": "Single dose",
+        "timing": "≥10 days before entry to endemic country (ICVP validity from day 10)",
+        "route": "subcutaneous or IM"
+      }
+    ],
+    "population": {
+      "notes": "Live attenuated 17D vaccine. Contraindicated in <6 months, severe immunosuppression, thymus disorders. Caution in ≥60 years (higher risk of YEL-AVD)."
+    },
+    "catchUp": "Booster recommended only in selected populations: persons vaccinated <2 years of age, pregnant when first vaccinated, HIV-infected, HSCT recipients (WHO 2013).",
+    "notes": "WHO 2016: single dose confers lifelong protection in immunocompetent adults; ICVP now indefinitely valid.",
+    "references": [
+      {
+        "label": "WHO position paper — Yellow fever vaccines 2013; amended 2016"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "japanese-encephalitis-traveller",
+    "vaccine": "Japanese encephalitis vaccine (IXIARO / JEEV / Imojev) — traveller schedule",
+    "abbrev": "JE",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Japanese encephalitis"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "travel-medicine"
+    ],
+    "doses": [
+      {
+        "dose": "IXIARO primary (Vero cell inactivated)",
+        "timing": "Adults 18-65: 2 doses 28 days apart (or accelerated 0, 7 days). Booster ≥1 year before re-exposure",
+        "route": "IM"
+      },
+      {
+        "dose": "Imojev (live attenuated)",
+        "timing": "Single dose; booster 1-2 years later in children",
+        "route": "subcutaneous"
+      }
+    ],
+    "population": {
+      "notes": "Recommended for travellers spending ≥1 month in JE-endemic Asia during transmission season, or shorter stays with rural exposure."
+    },
+    "catchUp": "IXIARO accelerated 0+7 day schedule licensed for travellers 18-65.",
+    "notes": "Live Imojev contraindicated in immunosuppression and pregnancy.",
+    "references": [
+      {
+        "label": "WHO position paper — Japanese encephalitis vaccines 2015"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "typhoid-vi-polysaccharide",
+    "vaccine": "Typhoid Vi polysaccharide / Vi-TT conjugate / oral Ty21a",
+    "abbrev": "Typhoid",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Typhoid fever (Salmonella Typhi)"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "travel-medicine"
+    ],
+    "doses": [
+      {
+        "dose": "Vi polysaccharide (Typhim Vi)",
+        "timing": "Single IM dose ≥2 weeks before exposure; booster every 3 years",
+        "route": "IM"
+      },
+      {
+        "dose": "Vi-TT conjugate (Typbar TCV)",
+        "timing": "Single dose from 6 months of age; WHO-recommended for endemic countries since 2017",
+        "route": "IM"
+      },
+      {
+        "dose": "Oral Ty21a (Vivotif)",
+        "timing": "4 capsules on alternate days (1, 3, 5, 7); booster every 5 years",
+        "route": "oral"
+      }
+    ],
+    "population": {
+      "notes": "TCV provides higher and longer-lasting protection and is preferred where available."
+    },
+    "catchUp": null,
+    "notes": "Ty21a is live attenuated — contraindicated in immunosuppression, pregnancy, and concurrent antibiotics.",
+    "references": [
+      {
+        "label": "WHO position paper — Typhoid vaccines 2018"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cholera-oral-detail",
+    "vaccine": "Oral cholera vaccines (Dukoral, Shanchol, Euvichol, Euvichol-Plus)",
+    "abbrev": "OCV",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Cholera (Vibrio cholerae O1/O139)"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "travel-medicine",
+      "outbreak-response"
+    ],
+    "doses": [
+      {
+        "dose": "Dukoral (WC-rBS)",
+        "timing": "Adults: 2 doses 1-6 weeks apart. Children 2-5 y: 3 doses ≥1 week apart. Booster every 2 years",
+        "route": "oral (with buffer)"
+      },
+      {
+        "dose": "Shanchol / Euvichol-Plus (WC-killed bivalent)",
+        "timing": "2 doses ≥14 days apart from ≥1 year of age. Booster every 3 years",
+        "route": "oral"
+      }
+    ],
+    "population": {
+      "notes": "WHO global stockpile of Euvichol-Plus is the primary product used in outbreak response."
+    },
+    "catchUp": "In acute outbreak with limited supply, single-dose campaigns provide short-term protection.",
+    "notes": "Dukoral also provides modest protection against ETEC traveller's diarrhoea.",
+    "references": [
+      {
+        "label": "WHO position paper — Cholera vaccines 2017"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "rabies-prep-3-dose",
+    "vaccine": "Rabies pre-exposure prophylaxis — 3-dose IM",
+    "abbrev": "Rabies PrEP",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Rabies"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "travel-medicine",
+      "occupational-health"
+    ],
+    "doses": [
+      {
+        "dose": "Classical IM",
+        "timing": "Days 0, 7, and 21 or 28",
+        "route": "IM"
+      },
+      {
+        "dose": "WHO updated 2-dose ID",
+        "timing": "Days 0 and 7, intradermal (0.1 mL × 2 sites per visit), since 2018",
+        "route": "intradermal"
+      }
+    ],
+    "population": {
+      "notes": "Indicated for travellers to rabies-endemic regions, vets, animal handlers, lab workers, spelunkers."
+    },
+    "catchUp": "Boosters not routinely needed; serology and booster every 6-12 months for high-risk continuous exposure (lab workers).",
+    "notes": "Pre-exposure simplifies post-exposure regimen (no RIG needed; just 2 vaccine doses on days 0 and 3).",
+    "references": [
+      {
+        "label": "WHO position paper — Rabies vaccines 2018; updated PrEP/PEP schedules"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "rabies-pep",
+    "vaccine": "Rabies post-exposure prophylaxis (PEP)",
+    "abbrev": "Rabies PEP",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Rabies"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "emergency-medicine"
+    ],
+    "doses": [
+      {
+        "dose": "Essen IM regimen (no prior PrEP)",
+        "timing": "Days 0, 3, 7, 14 (4 doses) for immunocompetent; add day 28 for immunosuppressed",
+        "route": "IM"
+      },
+      {
+        "dose": "WHO ID 2-site regimen (no prior PrEP)",
+        "timing": "Days 0, 3, 7 (0.1 mL × 2 sites per visit)",
+        "route": "intradermal"
+      },
+      {
+        "dose": "Booster (prior PrEP)",
+        "timing": "Days 0 and 3 only; no RIG required",
+        "route": "IM or ID"
+      },
+      {
+        "dose": "Human rabies immunoglobulin (HRIG/ERIG)",
+        "timing": "Category III exposure (transdermal bite, scratch with bleeding, mucosal contact) in non-PrEP individuals: 20 IU/kg HRIG or 40 IU/kg ERIG infiltrated around the wound",
+        "route": "wound infiltration ± IM"
+      }
+    ],
+    "population": {
+      "notes": "Wound washing with soap and water for 15 minutes is the single most important first-aid step."
+    },
+    "catchUp": null,
+    "notes": "WHO 2018: 1-week ID regimens are non-inferior and now preferred globally. RIG omitted in fully PrEP-vaccinated patients.",
+    "references": [
+      {
+        "label": "WHO position paper — Rabies vaccines 2018; WHO Expert Consultation on Rabies (3rd report)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tick-borne-encephalitis",
+    "vaccine": "Tick-borne encephalitis vaccine (FSME-IMMUN, Encepur)",
+    "abbrev": "TBE",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Tick-borne encephalitis"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "travel-medicine"
+    ],
+    "doses": [
+      {
+        "dose": "Conventional primary",
+        "timing": "3 doses: 0, 1-3 months, 5-12 months",
+        "route": "IM"
+      },
+      {
+        "dose": "Accelerated",
+        "timing": "0, 14 days, 5-12 months (for last-minute travellers)",
+        "route": "IM"
+      },
+      {
+        "dose": "Booster",
+        "timing": "Every 3-5 years (every 3 years if ≥60 years)",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Recommended for travellers to TBE-endemic forested areas in central/eastern Europe and northern Asia, particularly with hiking, camping, or seasonal outdoor activity."
+    },
+    "catchUp": null,
+    "notes": "Two licensed inactivated vaccines (FSME-IMMUN, Encepur). Pediatric formulations licensed from 1 year.",
+    "references": [
+      {
+        "label": "WHO position paper — Vaccines against tick-borne encephalitis 2011"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "menacwy-hajj",
+    "vaccine": "Meningococcal ACWY for Hajj/Umrah pilgrims",
+    "abbrev": "MenACWY (Hajj)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Invasive meningococcal disease (serogroups A, C, W, Y)"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "travel-medicine"
+    ],
+    "doses": [
+      {
+        "dose": "Single dose",
+        "timing": "Quadrivalent ACWY conjugate vaccine 10 days to 3 years before travel; required for visa entry to Saudi Arabia",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Mandatory entry requirement from Saudi Arabia Ministry of Health for all pilgrims ≥1 year."
+    },
+    "catchUp": null,
+    "notes": "Polysaccharide vaccine accepted (validity 3 years); conjugate vaccine preferred (validity 5 years).",
+    "references": [
+      {
+        "label": "Saudi Arabia Ministry of Health Hajj entry requirements (annual); WHO travel advice"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "polio-traveller-booster",
+    "vaccine": "Polio booster for travellers to endemic regions",
+    "abbrev": "IPV (traveller)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Poliomyelitis"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "travel-medicine"
+    ],
+    "doses": [
+      {
+        "dose": "Single IPV booster",
+        "timing": "Adults previously fully vaccinated: one lifetime IPV booster before travel to polio-endemic/outbreak countries",
+        "route": "IM"
+      },
+      {
+        "dose": "Long-term residents",
+        "timing": "Per WHO IHR Temporary Recommendation: IPV or OPV 4 weeks to 12 months before international travel from infected countries",
+        "route": "IM (IPV) or oral (OPV)"
+      }
+    ],
+    "population": {
+      "notes": "Affected countries listed under WHO IHR Emergency Committee on the international spread of poliovirus (updated quarterly)."
+    },
+    "catchUp": "Unvaccinated adults: 3-dose IPV primary series (0, 1-2, 6-12 months).",
+    "notes": "WHO documentation may be required on exit from polio-affected countries.",
+    "references": [
+      {
+        "label": "WHO IHR Temporary Recommendations on polio (current)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "anthrax-occupational",
+    "vaccine": "Anthrax vaccine (AVA / AVP) — occupational",
+    "abbrev": "Anthrax",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Anthrax (Bacillus anthracis)"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "occupational-health"
+    ],
+    "doses": [
+      {
+        "dose": "Pre-exposure primary (AVA, BioThrax)",
+        "timing": "0, 1, 6 months IM (US schedule, since 2008)",
+        "route": "IM"
+      },
+      {
+        "dose": "Boosters",
+        "timing": "6 and 12 months after primary, then annual boosters during continued risk",
+        "route": "IM"
+      },
+      {
+        "dose": "Post-exposure",
+        "timing": "3 doses (0, 2, 4 weeks) combined with 60 days of antibiotic prophylaxis (cipro/doxycycline)",
+        "route": "subcutaneous"
+      }
+    ],
+    "population": {
+      "notes": "Recommended for laboratory workers handling B. anthracis, certain veterinarians, military personnel deploying to high-risk areas, emergency responders to bioterrorism events."
+    },
+    "catchUp": null,
+    "notes": "Not licensed in most countries for general use; restricted occupational/military programmes.",
+    "references": [
+      {
+        "label": "CDC ACIP anthrax vaccination (Bower et al., MMWR 2019)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hiv-live-vaccines",
+    "vaccine": "Live vaccines in HIV — CD4 thresholds",
+    "abbrev": "HIV / live vax",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Vaccine-preventable diseases in HIV"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "immunocompromised",
+      "infectious-disease"
+    ],
+    "doses": [
+      {
+        "dose": "MMR / varicella",
+        "timing": "Permitted if CD4 ≥200 cells/μL (adults) or CD4% ≥15% (children)",
+        "route": "subcutaneous"
+      },
+      {
+        "dose": "Yellow fever",
+        "timing": "Consider if CD4 ≥200 cells/μL and clinical/virological stability; contraindicated if CD4 <200",
+        "route": "subcutaneous"
+      },
+      {
+        "dose": "Zoster (Shingrix, RZV)",
+        "timing": "Recombinant zoster (non-live) recommended ≥19 years regardless of CD4",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Live vaccines contraindicated in severe immunosuppression (CD4 <200 or CD4% <15)."
+    },
+    "catchUp": "Following immune reconstitution on ART (CD4 ≥200 sustained ≥6 months), live vaccines may be given.",
+    "notes": "Inactivated vaccines (Tdap, HPV, HepB, flu, PCV20, MenACWY/B) per standard adult schedule; consider additional doses for low CD4.",
+    "references": [
+      {
+        "label": "CDC ACIP altered immunocompetence general best practice (Rubin et al., CID 2014)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "post-hsct-revaccination",
+    "vaccine": "Post-haematopoietic stem cell transplant revaccination",
+    "abbrev": "HSCT revax",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Multiple vaccine-preventable diseases"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "immunocompromised",
+      "haematology"
+    ],
+    "doses": [
+      {
+        "dose": "Inactivated series",
+        "timing": "Start at 6-12 months post-HSCT (Tdap × 3, IPV × 3, HepB × 3, PCV13/15 × 3 then PPSV23 or PCV20, Hib × 3, MenACWY × 2, MenB series, flu annual)",
+        "route": "IM"
+      },
+      {
+        "dose": "Live vaccines",
+        "timing": "MMR and varicella deferred to ≥24 months post-HSCT, no GVHD or immunosuppression, no recent IVIG",
+        "route": "subcutaneous"
+      }
+    ],
+    "population": {
+      "notes": "Both autologous and allogeneic HSCT patients lose pre-transplant immunity and require complete revaccination."
+    },
+    "catchUp": "Programme typically completed over 12-24 months. Resume earlier if local outbreak (e.g. measles).",
+    "notes": "Avoid live vaccines on active immunosuppression for GVHD.",
+    "references": [
+      {
+        "label": "EBMT/ASTCT and IDSA guidelines on vaccination of HSCT recipients (Rubin et al., CID 2014)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "solid-organ-transplant-vax",
+    "vaccine": "Vaccination for solid organ transplant candidates and recipients",
+    "abbrev": "SOT vax",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Multiple vaccine-preventable diseases"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "immunocompromised",
+      "transplant"
+    ],
+    "doses": [
+      {
+        "dose": "Pre-transplant",
+        "timing": "Complete all indicated live and inactivated vaccines ideally ≥4 weeks before transplant",
+        "route": "varies"
+      },
+      {
+        "dose": "Post-transplant",
+        "timing": "Restart inactivated vaccines (flu, PCV, HepB, Tdap, RZV) from 3-6 months post-transplant once on stable maintenance immunosuppression",
+        "route": "IM"
+      },
+      {
+        "dose": "Live vaccines post-transplant",
+        "timing": "Contraindicated in essentially all SOT recipients",
+        "route": "—"
+      }
+    ],
+    "population": {
+      "notes": "Annual influenza and SARS-CoV-2 boosters, RZV from age 19, household contact vaccination important."
+    },
+    "catchUp": "Higher-dose flu vaccine preferred. Hepatitis B post-vaccine anti-HBs check, revaccinate non-responders.",
+    "notes": "Household contacts should be vaccinated (including with live vaccines, except oral polio).",
+    "references": [
+      {
+        "label": "AST Infectious Diseases Community of Practice (Danziger-Isakov et al., AJT 2019)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "asplenia-vaccination",
+    "vaccine": "Asplenia vaccination package",
+    "abbrev": "Asplenia vax",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Encapsulated organism sepsis (S. pneumoniae, H. influenzae b, N. meningitidis)"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "immunocompromised",
+      "haematology"
+    ],
+    "doses": [
+      {
+        "dose": "Pneumococcal",
+        "timing": "PCV20 alone, OR PCV15 followed by PPSV23 ≥8 weeks later; second PPSV23 dose at 5 years",
+        "route": "IM"
+      },
+      {
+        "dose": "Hib",
+        "timing": "Single dose if not previously vaccinated",
+        "route": "IM"
+      },
+      {
+        "dose": "MenACWY",
+        "timing": "2 doses 8 weeks apart, booster every 5 years",
+        "route": "IM"
+      },
+      {
+        "dose": "MenB",
+        "timing": "Bexsero 2 doses ≥1 month apart, OR Trumenba 3 doses (0, 1-2, 6 months)",
+        "route": "IM"
+      },
+      {
+        "dose": "Influenza",
+        "timing": "Annually",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Ideally complete ≥2 weeks before elective splenectomy. Post-emergency splenectomy: start ≥14 days after surgery."
+    },
+    "catchUp": "Lifelong prophylactic penicillin V (or amoxicillin/macrolide) plus emergency standby antibiotic.",
+    "notes": "Includes functional asplenia (sickle cell, coeliac, IBD with splenic dysfunction) and anatomical asplenia.",
+    "references": [
+      {
+        "label": "BSH guidelines on prevention and treatment of infection in asplenia (Davies et al., 2011); CDC ACIP"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "immunosuppressed-biologics",
+    "vaccine": "Vaccination in patients on chemo, biologics, JAK inhibitors",
+    "abbrev": "IS / biologics vax",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Multiple vaccine-preventable diseases"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "immunocompromised"
+    ],
+    "doses": [
+      {
+        "dose": "Inactivated",
+        "timing": "Per standard schedule; ideally complete ≥2-4 weeks before immunosuppression starts. Annual flu, COVID-19, RZV ≥19 years, PCV20, Tdap",
+        "route": "IM"
+      },
+      {
+        "dose": "Live vaccines",
+        "timing": "Generally contraindicated during and for 3 months after biologic/chemo, 1 month after high-dose steroids (≥20 mg prednisolone for ≥14 days)",
+        "route": "—"
+      }
+    ],
+    "population": {
+      "notes": "B-cell depleting therapies (rituximab, ocrelizumab) blunt vaccine response — vaccinate ≥4 weeks before infusion when possible."
+    },
+    "catchUp": "Recombinant zoster (Shingrix) safe and recommended; preferred over live Zostavax which is contraindicated.",
+    "notes": "Methotrexate hold around influenza/COVID-19 vaccination (2 weeks) may improve response per ACR guidance.",
+    "references": [
+      {
+        "label": "ACR / IDSA recommendations on vaccination of immunocompromised adults (Rubin et al., CID 2014)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "esrd-dialysis-vax",
+    "vaccine": "Vaccination in ESRD and dialysis",
+    "abbrev": "ESRD vax",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Multiple vaccine-preventable diseases"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "nephrology"
+    ],
+    "doses": [
+      {
+        "dose": "Hepatitis B high-dose",
+        "timing": "40 mcg Engerix-B at 0, 1, 2, 6 months OR Heplisav-B 0, 1 month; check anti-HBs annually, revaccinate when <10 mIU/mL",
+        "route": "IM"
+      },
+      {
+        "dose": "Pneumococcal",
+        "timing": "PCV20 alone or PCV15 + PPSV23 (≥8 weeks later); booster PPSV23 at 5 years",
+        "route": "IM"
+      },
+      {
+        "dose": "Influenza (annual)",
+        "timing": "High-dose or adjuvanted preferred",
+        "route": "IM"
+      },
+      {
+        "dose": "RZV",
+        "timing": "≥19 years",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Dialysis patients have impaired vaccine response and persistent risk of bloodborne virus transmission."
+    },
+    "catchUp": null,
+    "notes": "Dialysis units in many jurisdictions screen patients monthly for HBsAg/anti-HCV.",
+    "references": [
+      {
+        "label": "CDC ACIP Hepatitis B recommendations (Weng et al., MMWR 2022); KDIGO"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "pregnancy-live-contraindications",
+    "vaccine": "Live vaccines contraindicated in pregnancy",
+    "abbrev": "Live vax contra (pregnancy)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Multiple vaccine-preventable diseases"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "obstetrics"
+    ],
+    "doses": [
+      {
+        "dose": "Avoid throughout pregnancy",
+        "timing": "MMR, varicella, herpes zoster (live Zostavax), yellow fever (relative — give if travel risk outweighs), oral typhoid Ty21a, oral polio (OPV), live attenuated influenza (LAIV), BCG, dengue vaccines",
+        "route": "—"
+      },
+      {
+        "dose": "Pre- and postpartum strategy",
+        "timing": "Screen for rubella/varicella immunity preconception; vaccinate ≥4 weeks before conception or immediately postpartum",
+        "route": "subcutaneous"
+      }
+    ],
+    "population": {
+      "notes": "Inadvertent live-virus vaccination during pregnancy is not itself an indication for termination — registries show no congenital syndrome."
+    },
+    "catchUp": "Yellow fever may be given to pregnant women travelling to high-risk areas where exposure cannot be avoided.",
+    "notes": "Avoid pregnancy for ≥4 weeks after MMR or varicella vaccination.",
+    "references": [
+      {
+        "label": "CDC ACIP general best practices guidelines on vaccination; ACOG"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "egg-allergy-flu",
+    "vaccine": "Influenza vaccination in egg allergy",
+    "abbrev": "Flu / egg allergy",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Seasonal influenza"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "allergy"
+    ],
+    "doses": [
+      {
+        "dose": "Any age-appropriate flu vaccine",
+        "timing": "ACIP 2023: persons with egg allergy of any severity may receive any flu vaccine (egg-based or non-egg-based) without additional precautions beyond those for any other vaccine",
+        "route": "IM or intranasal"
+      },
+      {
+        "dose": "Egg-free alternatives",
+        "timing": "Cell-culture-based (Flucelvax) and recombinant (Flublok) flu vaccines are egg-free",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Anaphylaxis to a previous influenza vaccine remains an absolute contraindication."
+    },
+    "catchUp": null,
+    "notes": "CDC ACIP 2023 update removed the historical requirement to observe egg-allergic patients for 30 minutes after vaccination.",
+    "references": [
+      {
+        "label": "CDC ACIP influenza recommendations 2023-24 (Grohskopf et al., MMWR 2023)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "latex-allergy-vaccines",
+    "vaccine": "Latex allergy and vaccine devices",
+    "abbrev": "Latex / vax",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "—"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "allergy"
+    ],
+    "doses": [
+      {
+        "dose": "Severe (anaphylactic) latex allergy",
+        "timing": "Use only vaccines with no latex in the vial closure or pre-filled syringe; consult product insert",
+        "route": "varies"
+      },
+      {
+        "dose": "Non-anaphylactic latex allergy (contact)",
+        "timing": "Vaccines may be administered with usual precautions",
+        "route": "varies"
+      }
+    ],
+    "population": {
+      "notes": "Many influenza, HepA, HepB, and travel vaccines have natural-rubber stoppers; pre-filled syringes have variable latex content."
+    },
+    "catchUp": null,
+    "notes": "ACIP General Best Practice Guidelines — check current product inserts for latex content.",
+    "references": [
+      {
+        "label": "CDC ACIP General Best Practice Guidelines for Immunization (Kroger et al., 2023)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cholera-reactive-outbreak",
+    "vaccine": "Cholera reactive vaccination — outbreak response",
+    "abbrev": "OCV (outbreak)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Cholera"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "outbreak-response"
+    ],
+    "doses": [
+      {
+        "dose": "Single-dose campaign",
+        "timing": "Single dose of Euvichol-Plus during cholera outbreak; second dose ideally given ≥6 months later if supply allows",
+        "route": "oral"
+      }
+    ],
+    "population": {
+      "notes": "ICG (International Coordinating Group) approves stockpile release in real time during outbreaks."
+    },
+    "catchUp": "Cholera vaccination is an adjunct to — not a replacement for — WASH interventions, case management, and surveillance.",
+    "notes": "Global OCV demand exceeds stockpile; WHO temporarily switched from 2-dose to 1-dose campaigns from October 2022.",
+    "references": [
+      {
+        "label": "WHO/ICG framework for the international coordination of cholera vaccine stockpile"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "yellow-fever-outbreak-response",
+    "vaccine": "Yellow fever outbreak response vaccination",
+    "abbrev": "YF (outbreak)",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Yellow fever"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "outbreak-response"
+    ],
+    "doses": [
+      {
+        "dose": "Fractional dose",
+        "timing": "1/5 fractional dose (0.1 mL ID) acceptable in outbreak response per WHO when supplies are limited (since 2016 DRC/Angola outbreak)",
+        "route": "intradermal"
+      },
+      {
+        "dose": "Standard dose",
+        "timing": "Single subcutaneous full dose for routine outbreak campaigns",
+        "route": "subcutaneous"
+      }
+    ],
+    "population": {
+      "notes": "EYE Strategy (Eliminate Yellow fever Epidemics by 2026) — WHO/GAVI/UNICEF."
+    },
+    "catchUp": null,
+    "notes": "Fractional dosing provides ≥1 year protection but is not recognised by ICVP for international travel.",
+    "references": [
+      {
+        "label": "WHO Yellow fever EYE strategy; SAGE recommendations on fractional dosing 2016"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "men-a-campaign-africa",
+    "vaccine": "MenAfriVac campaign — sub-Saharan Africa",
+    "abbrev": "MenA",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Invasive meningococcal disease serogroup A"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "outbreak-response"
+    ],
+    "doses": [
+      {
+        "dose": "Single dose",
+        "timing": "All persons 1-29 years in the African meningitis belt during mass campaigns (since 2010)",
+        "route": "IM"
+      },
+      {
+        "dose": "Routine EPI integration",
+        "timing": "Single dose at 9-18 months in countries that have introduced MenAfriVac into routine EPI",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "MenAfriVac (PsA-TT) — first vaccine developed specifically for Africa."
+    },
+    "catchUp": null,
+    "notes": "Replaced by Men5CV (MenACWYX, pentavalent conjugate, prequalified by WHO 2023) — single dose recommended for the belt.",
+    "references": [
+      {
+        "label": "WHO position paper — Meningococcal vaccines 2024"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "polio-outbreak-mopv2-nopv2",
+    "vaccine": "Polio outbreak response: mOPV2 and nOPV2",
+    "abbrev": "mOPV2 / nOPV2",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Circulating vaccine-derived poliovirus type 2 (cVDPV2)"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "outbreak-response"
+    ],
+    "doses": [
+      {
+        "dose": "nOPV2 (novel oral polio vaccine type 2)",
+        "timing": "Authorised under WHO EUL since 2020; preferred for cVDPV2 outbreak response due to lower risk of seeding new vaccine-derived strains",
+        "route": "oral"
+      },
+      {
+        "dose": "mOPV2 (monovalent)",
+        "timing": "Used historically (2016-2020) for cVDPV2 outbreaks under SAGE approval; carries higher risk of generating new VDPV2",
+        "route": "oral"
+      }
+    ],
+    "population": {
+      "notes": "Used in synchronised mass campaigns in affected countries; access restricted via Global Polio Eradication Initiative."
+    },
+    "catchUp": null,
+    "notes": "Type-2 component was removed from routine OPV in April 2016 (the 'switch'); cVDPV2 outbreaks have continued.",
+    "references": [
+      {
+        "label": "WHO position paper — Polio vaccines 2022; GPEI nOPV2 use guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hepatitis-b-postexposure",
+    "vaccine": "Hepatitis B post-exposure prophylaxis (HBV PEP)",
+    "abbrev": "HBV PEP",
+    "vaccineDrugSlug": "hepatitis-b-vaccine",
+    "targetDisease": [
+      "Hepatitis B"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "emergency-medicine",
+      "occupational-health"
+    ],
+    "doses": [
+      {
+        "dose": "HBIG + accelerated vaccine",
+        "timing": "Within 24 h of exposure (up to 7 days for percutaneous, 14 days for sexual): HBIG 0.06 mL/kg IM PLUS HepB vaccine 0, 1, 2 months with 12-month booster — for non-immune individuals exposed to HBsAg+ source",
+        "route": "IM"
+      },
+      {
+        "dose": "Vaccine only",
+        "timing": "For non-immune individuals exposed to source of unknown status or low-risk",
+        "route": "IM"
+      },
+      {
+        "dose": "No PEP",
+        "timing": "For documented responders (anti-HBs ≥10 mIU/mL post-vaccination)",
+        "route": "—"
+      }
+    ],
+    "population": {
+      "notes": "Source testing for HBsAg should be done urgently."
+    },
+    "catchUp": "Check anti-HBs at 1-2 months after series completion for high-risk individuals.",
+    "notes": "Perinatal exposure: infant born to HBsAg+ mother receives HBIG + HepB vaccine within 12 hours of birth.",
+    "references": [
+      {
+        "label": "CDC ACIP HBV PEP guidance (Schillie et al., MMWR 2018)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tetanus-wound-management",
+    "vaccine": "Tetanus wound management — TIG and Tdap/Td",
+    "abbrev": "Tetanus PEP",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Tetanus"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "emergency-medicine"
+    ],
+    "doses": [
+      {
+        "dose": "Clean minor wound",
+        "timing": "Tdap/Td if last dose >10 years ago and patient ≥7 y (only if ≥3 prior doses)",
+        "route": "IM"
+      },
+      {
+        "dose": "Dirty / contaminated wound",
+        "timing": "Tdap/Td if last dose >5 years ago. Add TIG 250 IU IM if uncertain history of ≥3 prior doses",
+        "route": "IM"
+      },
+      {
+        "dose": "Uncertain or incomplete primary",
+        "timing": "Start/complete 3-dose primary series; give TIG for tetanus-prone wounds",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Tetanus-prone: contamination with soil/faeces, devitalised tissue, puncture wounds, animal bites, burns, frostbite, sepsis."
+    },
+    "catchUp": null,
+    "notes": "TIG and tetanus vaccine should be given at different sites with different syringes.",
+    "references": [
+      {
+        "label": "CDC ACIP Tdap/Td recommendations (Havers et al., MMWR 2020); UKHSA Green Book chapter 30"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "varicella-postexposure",
+    "vaccine": "Varicella post-exposure prophylaxis",
+    "abbrev": "VZV PEP",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Varicella"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "emergency-medicine"
+    ],
+    "doses": [
+      {
+        "dose": "Vaccine PEP",
+        "timing": "Susceptible immunocompetent persons ≥12 months: varicella vaccine within 3-5 days of exposure",
+        "route": "subcutaneous"
+      },
+      {
+        "dose": "Varicella zoster immunoglobulin (VZIG)",
+        "timing": "Susceptible high-risk persons (immunocompromised, pregnant, neonates whose mother had varicella ±7 d of delivery) within 10 days of exposure",
+        "route": "IM (VZIG) or IV (IVIG alternative)"
+      }
+    ],
+    "population": {
+      "notes": "Significant exposure = household, face-to-face ≥5 min, or shared room ≥15 min with infectious case."
+    },
+    "catchUp": "Acyclovir prophylaxis from day 7-14 post-exposure is an alternative when immunoglobulin is unavailable.",
+    "notes": "Pregnant women with significant varicella exposure should be tested for VZV IgG urgently.",
+    "references": [
+      {
+        "label": "UKHSA Green Book chapter 34 (Varicella); CDC ACIP varicella recommendations"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "measles-postexposure",
+    "vaccine": "Measles post-exposure prophylaxis",
+    "abbrev": "MMR PEP",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Measles"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "emergency-medicine"
+    ],
+    "doses": [
+      {
+        "dose": "MMR vaccine",
+        "timing": "Susceptible immunocompetent persons ≥6 months: MMR within 72 hours of exposure",
+        "route": "subcutaneous"
+      },
+      {
+        "dose": "Human normal immunoglobulin (HNIG)",
+        "timing": "Within 6 days of exposure for: infants <6 months, pregnant women without immunity, severely immunocompromised. Dose 0.5 mL/kg IM (max 15 mL) or 400 mg/kg IV",
+        "route": "IM or IV"
+      }
+    ],
+    "population": {
+      "notes": "Infants 6-11 months given MMR for PEP still need 2 routine doses ≥12 months."
+    },
+    "catchUp": null,
+    "notes": "Outbreak control may include MMR for healthcare workers and contacts regardless of birth year.",
+    "references": [
+      {
+        "label": "CDC measles prevention recommendations; UKHSA Green Book chapter 21"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hepatitis-a-postexposure",
+    "vaccine": "Hepatitis A post-exposure prophylaxis",
+    "abbrev": "HepA PEP",
+    "vaccineDrugSlug": "hepatitis-a-vaccine",
+    "targetDisease": [
+      "Hepatitis A"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "emergency-medicine"
+    ],
+    "doses": [
+      {
+        "dose": "HepA vaccine",
+        "timing": "Within 2 weeks of exposure for healthy persons 12 months-40 years",
+        "route": "IM"
+      },
+      {
+        "dose": "Immunoglobulin (HNIG) ± vaccine",
+        "timing": "Within 2 weeks: persons >40 y, immunocompromised, chronic liver disease, infants <12 months, or unable to receive vaccine. 0.1 mL/kg IM",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Indications: household contacts, sexual contacts, IDU sharing partners, outbreak settings."
+    },
+    "catchUp": "If vaccine and immunoglobulin both given, may be co-administered at different sites.",
+    "notes": "ACIP 2018 update permits vaccine alone for healthy adults to 40; before then vaccine was preferred only for those <40.",
+    "references": [
+      {
+        "label": "CDC ACIP HepA post-exposure prophylaxis (Nelson et al., MMWR 2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "preterm-infant-immunisation",
+    "vaccine": "Immunisation of preterm infants",
+    "abbrev": "Preterm vax",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "Multiple"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "neonatology",
+      "child-health"
+    ],
+    "doses": [
+      {
+        "dose": "Routine schedule",
+        "timing": "Preterm/low-birth-weight infants vaccinated according to chronological age at full doses (not corrected for gestation)",
+        "route": "varies"
+      },
+      {
+        "dose": "Hepatitis B birth dose",
+        "timing": "Infants <2 kg born to HBsAg-negative mothers: first dose at 1 month or hospital discharge; HBsAg+ mother: same as term — within 12 hours with HBIG, plus extra dose so 4 total",
+        "route": "IM"
+      },
+      {
+        "dose": "Apnoea monitoring",
+        "timing": "Monitor for 48-72 h after primary immunisation in infants <31 weeks GA or with ongoing respiratory issues",
+        "route": "—"
+      }
+    ],
+    "population": {
+      "notes": "Preterm infants have higher risk of vaccine-preventable disease but also higher risk of post-immunisation apnoea/bradycardia."
+    },
+    "catchUp": null,
+    "notes": "Rotavirus vaccine schedule windows are by chronological age — don't miss the upper age limit.",
+    "references": [
+      {
+        "label": "AAP Red Book — Immunization of preterm and low-birth-weight infants; UKHSA Green Book chapter 11"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "covid-19-immunocompromised-additional",
+    "vaccine": "COVID-19 — additional dose for immunocompromised",
+    "abbrev": "COVID-19 IC",
+    "vaccineDrugSlug": null,
+    "targetDisease": [
+      "COVID-19"
+    ],
+    "domains": [
+      "vaccine-preventable",
+      "immunocompromised"
+    ],
+    "doses": [
+      {
+        "dose": "Additional dose",
+        "timing": "Moderately or severely immunocompromised persons ≥6 months: additional dose(s) of updated COVID-19 vaccine ≥2 months after the most recent dose",
+        "route": "IM"
+      }
+    ],
+    "population": {
+      "notes": "Includes solid tumour or haematologic malignancy under treatment, SOT and HSCT, advanced HIV, primary immunodeficiency, B-cell depleting therapy, high-dose steroids."
+    },
+    "catchUp": null,
+    "notes": "Additional doses improve seroconversion; for B-cell depleted patients consider timing relative to anti-CD20 infusion.",
+    "references": [
+      {
+        "label": "CDC guidance on COVID-19 vaccination in moderately or severely immunocompromised persons (current)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]

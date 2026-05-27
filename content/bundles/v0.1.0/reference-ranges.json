@@ -3897,5 +3897,2525 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hs-ctni-abbott-male",
+    "analyte": "High-sensitivity troponin I (Abbott ARCHITECT, male 99th centile)",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 34,
+    "unit": "ng/L",
+    "loinc": "89579-7",
+    "category": "cardiac",
+    "sex": "male",
+    "notes": "Manufacturer-quoted 99th-centile URL for Abbott ARCHITECT hs-cTnI in males. Serial change (delta) and clinical context drive ACS rule-in/rule-out.",
+    "references": [
+      {
+        "label": "Abbott ARCHITECT STAT High Sensitive Troponin-I package insert; ESC 0/1 h algorithm"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hs-ctni-abbott-female",
+    "analyte": "High-sensitivity troponin I (Abbott ARCHITECT, female 99th centile)",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 16,
+    "unit": "ng/L",
+    "loinc": "89579-7",
+    "category": "cardiac",
+    "sex": "female",
+    "notes": "Sex-specific upper limit; using a single non-sex-specific cut-off under-diagnoses MI in women.",
+    "references": [
+      {
+        "label": "Abbott ARCHITECT STAT High Sensitive Troponin-I package insert"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hs-ctnt-roche-male",
+    "analyte": "High-sensitivity troponin T (Roche Elecsys, male 99th centile)",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 22,
+    "unit": "ng/L",
+    "loinc": "67151-1",
+    "category": "cardiac",
+    "sex": "male",
+    "notes": "Roche 5th-generation hs-cTnT; limit of detection 5 ng/L, 99th-centile 14 ng/L overall, sex-specific cut-offs as listed.",
+    "references": [
+      {
+        "label": "Roche Elecsys Troponin T hs package insert; ESC 0/1 h algorithm"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hs-ctnt-roche-female",
+    "analyte": "High-sensitivity troponin T (Roche Elecsys, female 99th centile)",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 14,
+    "unit": "ng/L",
+    "loinc": "67151-1",
+    "category": "cardiac",
+    "sex": "female",
+    "notes": "Lower 99th-centile in women reflects smaller left ventricular mass.",
+    "references": [
+      {
+        "label": "Roche Elecsys Troponin T hs package insert"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "nt-probnp-hf-rule-in-under-50",
+    "analyte": "NT-proBNP — acute HF rule-in cut-off, age <50",
+    "specimen": "plasma",
+    "low": null,
+    "high": null,
+    "unit": "ng/L",
+    "loinc": "33762-6",
+    "category": "cardiac",
+    "sex": "any",
+    "notes": "Age-banded acute HF rule-in thresholds (Januzzi 2018 / ICON): >450 in <50, >900 in 50-75, >1800 in >75. Universal rule-out <300.",
+    "references": [
+      {
+        "label": "ESC 2021 heart failure guidelines; ICON / ICON-RELOADED studies"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "nt-probnp-hf-rule-in-50-75",
+    "analyte": "NT-proBNP — acute HF rule-in cut-off, age 50-75",
+    "specimen": "plasma",
+    "low": null,
+    "high": null,
+    "unit": "ng/L",
+    "loinc": "33762-6",
+    "category": "cardiac",
+    "sex": "any",
+    "notes": "Rule-in threshold 900 ng/L for acute decompensated HF in age 50-75.",
+    "references": [
+      {
+        "label": "ICON study (Januzzi et al., Eur Heart J 2006); ESC 2021 HF"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "nt-probnp-hf-rule-in-over-75",
+    "analyte": "NT-proBNP — acute HF rule-in cut-off, age >75",
+    "specimen": "plasma",
+    "low": null,
+    "high": null,
+    "unit": "ng/L",
+    "loinc": "33762-6",
+    "category": "cardiac",
+    "sex": "any",
+    "notes": "Rule-in threshold 1800 ng/L in age >75. Lower specificity in elderly due to age-related rise.",
+    "references": [
+      {
+        "label": "ICON study (Januzzi et al., Eur Heart J 2006); ESC 2021 HF"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "nt-probnp-chronic-hf-rule-out",
+    "analyte": "NT-proBNP — chronic HF rule-out (non-acute)",
+    "specimen": "plasma",
+    "low": null,
+    "high": 125,
+    "unit": "ng/L",
+    "loinc": "33762-6",
+    "category": "cardiac",
+    "sex": "any",
+    "notes": "Non-acute setting: <125 ng/L rules out chronic HF (NPV >99%). ESC 2021.",
+    "references": [
+      {
+        "label": "ESC 2021 heart failure guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "bnp-acute-hf",
+    "analyte": "BNP — acute heart failure cut-off",
+    "specimen": "plasma",
+    "low": null,
+    "high": 100,
+    "unit": "pg/mL",
+    "loinc": "30934-4",
+    "category": "cardiac",
+    "sex": "any",
+    "notes": "Acute setting: <100 rules out, >400 rules in; 100-400 indeterminate. Falsely low in obesity (BMI >35) — adjust threshold downward.",
+    "references": [
+      {
+        "label": "Breathing Not Properly study (Maisel et al., NEJM 2002); ESC 2021 HF"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "st2-sst2",
+    "analyte": "Soluble ST2 (sST2)",
+    "specimen": "serum",
+    "low": null,
+    "high": 35,
+    "unit": "ng/mL",
+    "loinc": "82163-7",
+    "category": "cardiac",
+    "sex": "any",
+    "notes": "Prognostic biomarker in heart failure; >35 ng/mL associated with increased risk of HF hospitalisation and mortality.",
+    "references": [
+      {
+        "label": "ACC/AHA 2022 heart failure guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "galectin-3",
+    "analyte": "Galectin-3",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 17.8,
+    "unit": "ng/mL",
+    "loinc": "76507-3",
+    "category": "cardiac",
+    "sex": "any",
+    "notes": "Prognostic biomarker in HF (FDA-cleared); elevated levels associated with increased mortality.",
+    "references": [
+      {
+        "label": "ACC/AHA 2022 heart failure guidelines; HF-ACTION substudy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "copeptin",
+    "analyte": "Copeptin",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 10,
+    "unit": "pmol/L",
+    "loinc": "82323-7",
+    "category": "endocrine",
+    "sex": "any",
+    "notes": "C-terminal portion of vasopressin precursor; differentiating polyuria — central DI <2.6, primary polydipsia 2.6-21.4. Used with hypertonic saline test (>4.9 excludes central DI).",
+    "references": [
+      {
+        "label": "Fenske et al., NEJM 2018 (copeptin in differential diagnosis of diabetes insipidus)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "procalcitonin-sepsis",
+    "analyte": "Procalcitonin — sepsis thresholds",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": null,
+    "unit": "ng/mL",
+    "loinc": "75241-0",
+    "category": "infection",
+    "sex": "any",
+    "notes": "<0.25 low likelihood of bacterial sepsis; >0.5 supports bacterial infection; >2 strongly supports sepsis. Antibiotic stewardship: discontinue when <0.25 or 80% fall from peak.",
+    "references": [
+      {
+        "label": "IDSA / SCCM Surviving Sepsis 2021; Schuetz et al. Cochrane 2017"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "procalcitonin-lrti",
+    "analyte": "Procalcitonin — LRTI antibiotic decision threshold",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 0.25,
+    "unit": "ng/mL",
+    "loinc": "75241-0",
+    "category": "infection",
+    "sex": "any",
+    "notes": "In community-acquired lower respiratory tract infection: <0.25 ng/mL suggests withholding antibiotics; >0.5 favours antibiotic treatment.",
+    "references": [
+      {
+        "label": "ProACT trial (Huang et al., NEJM 2018); ATS/IDSA CAP 2019"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "il-6-baseline",
+    "analyte": "Interleukin-6 (baseline)",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 7,
+    "unit": "pg/mL",
+    "loinc": "26881-3",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Assay-dependent. Markedly elevated in sepsis, CRS, severe COVID-19. >1000 pg/mL supports severe CRS warranting tocilizumab.",
+    "references": [
+      {
+        "label": "Lee et al., Blood 2014 (CRS grading); ASTCT 2019 consensus on CRS"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ferritin-hlh",
+    "analyte": "Ferritin — HLH-2004 threshold",
+    "specimen": "serum",
+    "low": null,
+    "high": 500,
+    "unit": "ng/mL",
+    "loinc": "2276-4",
+    "category": "haematology",
+    "sex": "any",
+    "notes": "HLH-2004 criteria: ferritin ≥500 (1 of 8 criteria). Ferritin >10000 has high specificity for HLH/MAS in children. Use H-score in adults.",
+    "references": [
+      {
+        "label": "HLH-2004 diagnostic criteria (Henter et al., Pediatr Blood Cancer 2007); Allen et al. (HLH ferritin)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "beta-2-microglobulin",
+    "analyte": "Beta-2 microglobulin",
+    "specimen": "serum",
+    "low": 1.1,
+    "high": 2.4,
+    "unit": "mg/L",
+    "loinc": "1952-1",
+    "category": "oncology",
+    "sex": "any",
+    "notes": "ISS staging of multiple myeloma: stage I <3.5 (with albumin ≥35), stage III ≥5.5. Elevated in lymphoma and renal failure.",
+    "references": [
+      {
+        "label": "International Staging System for myeloma (Greipp et al., JCO 2005)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "c3-complement",
+    "analyte": "Complement C3",
+    "specimen": "serum",
+    "low": 0.9,
+    "high": 1.8,
+    "unit": "g/L",
+    "loinc": "4485-1",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Low in active SLE, post-streptococcal GN, MPGN, cryoglobulinaemia, atypical HUS. C3 is an acute phase reactant — rises in acute infection.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "c4-complement",
+    "analyte": "Complement C4",
+    "specimen": "serum",
+    "low": 0.1,
+    "high": 0.4,
+    "unit": "g/L",
+    "loinc": "4498-4",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Low in SLE, hereditary angioedema (C1-INH deficiency), cryoglobulinaemia. Persistently low C4 with normal C3 raises suspicion of HAE.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ch50",
+    "analyte": "Total haemolytic complement (CH50)",
+    "specimen": "serum",
+    "low": 30,
+    "high": 75,
+    "unit": "U/mL",
+    "loinc": "4532-0",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Functional assay of the classical pathway. Markedly low (<10) suggests complement deficiency — relevant to recurrent neisserial infection.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "igg-total",
+    "analyte": "IgG (total)",
+    "specimen": "serum",
+    "low": 7.0,
+    "high": 16.0,
+    "unit": "g/L",
+    "loinc": "2465-3",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Low in CVID, hypogammaglobulinaemia, B-cell lymphoma, protein-losing states. Replacement IVIG/SCIG aim for trough >5-7 g/L.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "igm",
+    "analyte": "IgM",
+    "specimen": "serum",
+    "low": 0.4,
+    "high": 2.3,
+    "unit": "g/L",
+    "loinc": "2472-9",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Elevated in Waldenström macroglobulinaemia (often >30), primary biliary cholangitis, hyper-IgM syndrome, viral infections.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "iga",
+    "analyte": "IgA",
+    "specimen": "serum",
+    "low": 0.7,
+    "high": 4.0,
+    "unit": "g/L",
+    "loinc": "2458-8",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Selective IgA deficiency (<0.07 g/L) is the commonest primary immunodeficiency; coeliac screening with anti-tTG IgA must be checked against IgA level.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ige-total",
+    "analyte": "IgE (total)",
+    "specimen": "serum",
+    "low": null,
+    "high": 100,
+    "unit": "kU/L",
+    "loinc": "19113-0",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Elevated in atopy, parasitic infection, ABPA (often >1000), hyper-IgE syndrome (Job's, >2000). Specific IgE to identified allergens via ImmunoCAP.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ana-titre",
+    "analyte": "Antinuclear antibody (ANA) titre",
+    "specimen": "serum",
+    "low": null,
+    "high": null,
+    "unit": "{titer}",
+    "loinc": "5048-4",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Positive ≥1:80 on HEp-2 IIF; high specificity for connective tissue disease at ≥1:320. Pattern (homogeneous, speckled, nucleolar, centromere) directs follow-up testing.",
+    "references": [
+      {
+        "label": "ACR/EULAR 2019 classification criteria for SLE; ICAP nomenclature on ANA patterns"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-dsdna",
+    "analyte": "Anti-double-stranded DNA antibody",
+    "specimen": "serum",
+    "low": null,
+    "high": 7,
+    "unit": "IU/mL",
+    "loinc": "5131-8",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Highly specific for SLE; titres correlate with disease activity (especially lupus nephritis). Crithidia luciliae IIF is alternative confirmatory method.",
+    "references": [
+      {
+        "label": "ACR/EULAR 2019 SLE classification criteria"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-ccp",
+    "analyte": "Anti-cyclic citrullinated peptide antibody",
+    "specimen": "serum",
+    "low": null,
+    "high": 20,
+    "unit": "U/mL",
+    "loinc": "32623-1",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Highly specific for rheumatoid arthritis (95%); 3× ULN is one of the ACR/EULAR 2010 RA classification criteria.",
+    "references": [
+      {
+        "label": "ACR/EULAR 2010 RA classification criteria"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-ro-ssa",
+    "analyte": "Anti-Ro/SSA antibody",
+    "specimen": "serum",
+    "low": null,
+    "high": 7,
+    "unit": "IU/mL",
+    "loinc": "13971-7",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Sjögren syndrome (~70%), SLE (~30%), subacute cutaneous lupus, neonatal lupus with congenital heart block. Maternal anti-Ro mandates fetal cardiac monitoring.",
+    "references": [
+      {
+        "label": "ACR/EULAR 2016 Sjögren classification criteria"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-la-ssb",
+    "analyte": "Anti-La/SSB antibody",
+    "specimen": "serum",
+    "low": null,
+    "high": 7,
+    "unit": "IU/mL",
+    "loinc": "11572-5",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Often paired with anti-Ro; Sjögren syndrome, neonatal lupus.",
+    "references": [
+      {
+        "label": "ACR/EULAR 2016 Sjögren classification criteria"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-smith",
+    "analyte": "Anti-Smith antibody",
+    "specimen": "serum",
+    "low": null,
+    "high": 7,
+    "unit": "IU/mL",
+    "loinc": "13970-9",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Highly specific for SLE (~30% sensitivity); part of ACR/EULAR 2019 SLE criteria.",
+    "references": [
+      {
+        "label": "ACR/EULAR 2019 SLE classification criteria"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-xa-rivaroxaban",
+    "analyte": "Anti-Xa (rivaroxaban-calibrated)",
+    "specimen": "plasma",
+    "low": null,
+    "high": null,
+    "unit": "ng/mL",
+    "loinc": "93810-0",
+    "category": "coagulation",
+    "sex": "any",
+    "notes": "Routine monitoring not indicated. Approximate on-therapy peaks: 184 ng/mL (15 mg BD), 215 ng/mL (20 mg OD); troughs 22-44 ng/mL. Levels for bleed/urgent surgery thresholds.",
+    "references": [
+      {
+        "label": "Cuker et al. ASH 2018 (DOAC laboratory monitoring); ISTH 2018 communication"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-xa-apixaban",
+    "analyte": "Anti-Xa (apixaban-calibrated)",
+    "specimen": "plasma",
+    "low": null,
+    "high": null,
+    "unit": "ng/mL",
+    "loinc": "93811-8",
+    "category": "coagulation",
+    "sex": "any",
+    "notes": "Routine monitoring not indicated. Expected peak ~170 ng/mL (5 mg BD); trough ~50-100 ng/mL.",
+    "references": [
+      {
+        "label": "Cuker et al. ASH 2018; ISTH 2018"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-xa-edoxaban",
+    "analyte": "Anti-Xa (edoxaban-calibrated)",
+    "specimen": "plasma",
+    "low": null,
+    "high": null,
+    "unit": "ng/mL",
+    "loinc": "93812-6",
+    "category": "coagulation",
+    "sex": "any",
+    "notes": "Routine monitoring not indicated. Expected peak ~234 ng/mL (60 mg OD); trough ~36 ng/mL.",
+    "references": [
+      {
+        "label": "Cuker et al. ASH 2018; ISTH 2018"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-xa-ufh",
+    "analyte": "Anti-Xa (unfractionated heparin-calibrated)",
+    "specimen": "plasma",
+    "low": 0.3,
+    "high": 0.7,
+    "unit": "IU/mL",
+    "loinc": "3263-1",
+    "category": "coagulation",
+    "sex": "any",
+    "notes": "Therapeutic target for UFH infusion 0.3-0.7 IU/mL. Use anti-Xa rather than APTT in lupus anticoagulant, factor deficiency, or APTT-resistant states.",
+    "references": [
+      {
+        "label": "CHEST / ACCP guidelines on heparin monitoring"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "act-bedside",
+    "analyte": "Activated clotting time (ACT)",
+    "specimen": "whole blood",
+    "low": 70,
+    "high": 180,
+    "unit": "s",
+    "loinc": "3187-2",
+    "category": "coagulation",
+    "sex": "any",
+    "notes": "Bedside heparin monitoring in cardiac surgery (target 400-480 s on CPB), interventional cardiology (target 250-350 s for PCI), and ECMO (target 180-220 s).",
+    "references": [
+      {
+        "label": "ELSO guidelines on ECMO anticoagulation; STS cardiac surgery guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "protein-c-activity",
+    "analyte": "Protein C activity",
+    "specimen": "plasma",
+    "low": 70,
+    "high": 140,
+    "unit": "%",
+    "loinc": "27818-4",
+    "category": "coagulation",
+    "sex": "any",
+    "notes": "Inherited deficiency (heterozygous) <55%; acquired causes — warfarin, liver disease, DIC, acute thrombosis. Do not test during acute event or on warfarin.",
+    "references": [
+      {
+        "label": "BSH guidelines on testing for thrombophilia (Baglin et al., 2010)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "protein-s-activity",
+    "analyte": "Protein S activity",
+    "specimen": "plasma",
+    "low": 65,
+    "high": 140,
+    "unit": "%",
+    "loinc": "27819-2",
+    "category": "coagulation",
+    "sex": "any",
+    "notes": "Falls in pregnancy, oestrogens, warfarin, acute thrombosis. Free protein S antigen often used; functional assay confirms.",
+    "references": [
+      {
+        "label": "BSH guidelines on testing for thrombophilia (Baglin et al., 2010)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "antithrombin-activity",
+    "analyte": "Antithrombin activity",
+    "specimen": "plasma",
+    "low": 80,
+    "high": 120,
+    "unit": "%",
+    "loinc": "27812-7",
+    "category": "coagulation",
+    "sex": "any",
+    "notes": "Heparin resistance suggested if <60-70%; replace with AT concentrate if needed in critical heparin use. Falls in heparin therapy, DIC, liver disease, nephrotic syndrome.",
+    "references": [
+      {
+        "label": "BSH guidelines on testing for thrombophilia (Baglin et al., 2010)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "fibrinogen-clauss",
+    "analyte": "Fibrinogen (Clauss method)",
+    "specimen": "plasma",
+    "low": 2.0,
+    "high": 4.0,
+    "unit": "g/L",
+    "loinc": "3255-7",
+    "category": "coagulation",
+    "sex": "any",
+    "notes": "Acute phase reactant; <1.5 g/L in trauma/postpartum haemorrhage indicates need for cryoprecipitate or fibrinogen concentrate (PPH target ≥2 g/L).",
+    "references": [
+      {
+        "label": "BSH PPH guidelines; European trauma haemorrhage guidelines (Spahn et al., Crit Care 2019)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lupus-anticoagulant-drvvt-ratio",
+    "analyte": "Lupus anticoagulant — DRVVT ratio",
+    "specimen": "plasma",
+    "low": null,
+    "high": 1.2,
+    "unit": "{ratio}",
+    "loinc": "13590-5",
+    "category": "coagulation",
+    "sex": "any",
+    "notes": "DRVVT screen/confirm ratio >1.2 supports lupus anticoagulant; integrate with anticardiolipin and anti-β2GP1 for antiphospholipid syndrome. Test off anticoagulation where possible.",
+    "references": [
+      {
+        "label": "ISTH SSC criteria for lupus anticoagulant testing (Pengo et al., 2020)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "he4",
+    "analyte": "Human epididymis protein 4 (HE4)",
+    "specimen": "serum",
+    "low": null,
+    "high": 70,
+    "unit": "pmol/L",
+    "loinc": "55180-9",
+    "category": "oncology",
+    "sex": "female",
+    "notes": "Combined with CA-125 in the ROMA algorithm to estimate ovarian malignancy risk in pre- vs postmenopausal women.",
+    "references": [
+      {
+        "label": "FDA-approved ROMA algorithm; Moore et al., Gynecol Oncol 2009"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "serum-free-light-chain-kappa",
+    "analyte": "Serum free light chains — kappa",
+    "specimen": "serum",
+    "low": 3.3,
+    "high": 19.4,
+    "unit": "mg/L",
+    "loinc": "36916-5",
+    "category": "oncology",
+    "sex": "any",
+    "notes": "Used with lambda + ratio for myeloma/MGUS/amyloidosis screening (Freelite assay). Renal failure raises both; use renal-adjusted ratio 0.37-3.1.",
+    "references": [
+      {
+        "label": "IMWG consensus guidelines on serum free light chain analysis (Dispenzieri et al., Leukemia 2009)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "serum-free-light-chain-lambda",
+    "analyte": "Serum free light chains — lambda",
+    "specimen": "serum",
+    "low": 5.7,
+    "high": 26.3,
+    "unit": "mg/L",
+    "loinc": "33944-0",
+    "category": "oncology",
+    "sex": "any",
+    "notes": "Reference range applies to Freelite assay.",
+    "references": [
+      {
+        "label": "IMWG consensus guidelines (Dispenzieri et al., Leukemia 2009)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "serum-free-light-chain-ratio",
+    "analyte": "Serum free light chain kappa:lambda ratio",
+    "specimen": "serum",
+    "low": 0.26,
+    "high": 1.65,
+    "unit": "{ratio}",
+    "loinc": "48378-4",
+    "category": "oncology",
+    "sex": "any",
+    "notes": "Abnormal ratio strongly suggests clonal plasma cell disorder. Ratio ≥100 is an IMWG criterion for myeloma-defining event.",
+    "references": [
+      {
+        "label": "IMWG updated criteria for myeloma (Rajkumar et al., Lancet Oncol 2014)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "thyroglobulin-post-thyroidectomy",
+    "analyte": "Thyroglobulin — post-thyroidectomy",
+    "specimen": "serum",
+    "low": null,
+    "high": 0.2,
+    "unit": "ng/mL",
+    "loinc": "3013-0",
+    "category": "oncology",
+    "sex": "any",
+    "notes": "Post-total thyroidectomy + RAI ablation: Tg should be <0.2 ng/mL on TSH suppression. Rising Tg suggests differentiated thyroid cancer recurrence. Check anti-Tg antibodies which interfere.",
+    "references": [
+      {
+        "label": "ATA 2015 management guidelines for adult patients with thyroid nodules and differentiated thyroid cancer"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-thyroglobulin-antibody",
+    "analyte": "Anti-thyroglobulin antibody",
+    "specimen": "serum",
+    "low": null,
+    "high": 40,
+    "unit": "IU/mL",
+    "loinc": "8099-4",
+    "category": "endocrine",
+    "sex": "any",
+    "notes": "Interferes with Tg assays — must be reported alongside Tg post-thyroidectomy. Present in autoimmune thyroid disease.",
+    "references": [
+      {
+        "label": "ATA 2015 thyroid cancer guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "chromogranin-a",
+    "analyte": "Chromogranin A",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 100,
+    "unit": "ng/mL",
+    "loinc": "20121-0",
+    "category": "oncology",
+    "sex": "any",
+    "notes": "Neuroendocrine tumour marker. Falsely elevated by PPIs (cease ≥2 weeks before testing), renal impairment, chronic atrophic gastritis, heart failure.",
+    "references": [
+      {
+        "label": "ENETS 2016 consensus guidelines on neuroendocrine tumour markers"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urinary-5-hiaa",
+    "analyte": "Urinary 5-hydroxyindoleacetic acid (5-HIAA)",
+    "specimen": "urine 24h",
+    "low": null,
+    "high": 40,
+    "unit": "umol/24h",
+    "loinc": "1695-6",
+    "category": "oncology",
+    "sex": "any",
+    "notes": "Carcinoid syndrome marker. Diet of bananas, pineapple, plantains, kiwi, plums, tomatoes, walnuts must be avoided for 48 h before and during collection (serotonin-rich).",
+    "references": [
+      {
+        "label": "ENETS 2016 consensus guidelines; NANETS guidelines on carcinoid syndrome"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "plasma-metanephrine",
+    "analyte": "Plasma free metanephrine",
+    "specimen": "plasma",
+    "low": null,
+    "high": 0.49,
+    "unit": "nmol/L",
+    "loinc": "3119-5",
+    "category": "endocrine",
+    "sex": "any",
+    "notes": "First-line for phaeochromocytoma screening (high sensitivity). Collect supine after 30 min rest to avoid false positives. Avoid TCAs, paracetamol, labetalol.",
+    "references": [
+      {
+        "label": "Endocrine Society 2014 phaeochromocytoma and paraganglioma guideline (Lenders et al., JCEM 2014)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "plasma-normetanephrine",
+    "analyte": "Plasma free normetanephrine",
+    "specimen": "plasma",
+    "low": null,
+    "high": 0.89,
+    "unit": "nmol/L",
+    "loinc": "29569-1",
+    "category": "endocrine",
+    "sex": "any",
+    "notes": "Age-banded upper limits; >4× ULN strongly supports phaeochromocytoma. Beta-blockers may falsely elevate.",
+    "references": [
+      {
+        "label": "Endocrine Society 2014 phaeochromocytoma guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urinary-vma",
+    "analyte": "Urinary vanillylmandelic acid (VMA)",
+    "specimen": "urine 24h",
+    "low": null,
+    "high": 35,
+    "unit": "umol/24h",
+    "loinc": "2299-6",
+    "category": "oncology",
+    "sex": "any",
+    "notes": "Catecholamine end-product. Used historically for phaeochromocytoma and as paediatric neuroblastoma marker (urinary HVA + VMA).",
+    "references": [
+      {
+        "label": "Endocrine Society 2014 phaeochromocytoma guideline; SIOPEN neuroblastoma protocols"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "neonatal-17ohp",
+    "analyte": "17-hydroxyprogesterone (newborn screen)",
+    "specimen": "dried blood spot",
+    "low": null,
+    "high": 30,
+    "unit": "nmol/L",
+    "loinc": "1668-3",
+    "category": "newborn-screening",
+    "sex": "any",
+    "notes": "Newborn screening for congenital adrenal hyperplasia (21-hydroxylase deficiency). Higher cut-offs for preterm/sick infants — false positives common.",
+    "references": [
+      {
+        "label": "Endocrine Society 2018 congenital adrenal hyperplasia guideline (Speiser et al., JCEM 2018)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "newborn-irt",
+    "analyte": "Immunoreactive trypsinogen (newborn screen)",
+    "specimen": "dried blood spot",
+    "low": null,
+    "high": 60,
+    "unit": "ng/mL",
+    "loinc": "39432-0",
+    "category": "newborn-screening",
+    "sex": "any",
+    "notes": "Newborn screening for cystic fibrosis (IRT-DNA algorithm). Cut-off varies by programme; ≥99.5th centile triggers CFTR mutation analysis.",
+    "references": [
+      {
+        "label": "CFF/ECFS newborn screening guidelines; UK NHS newborn bloodspot screening programme"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "newborn-phenylalanine",
+    "analyte": "Phenylalanine (newborn screen)",
+    "specimen": "dried blood spot",
+    "low": null,
+    "high": 120,
+    "unit": "umol/L",
+    "loinc": "35572-7",
+    "category": "newborn-screening",
+    "sex": "any",
+    "notes": "Newborn screening for phenylketonuria. >120 umol/L triggers confirmatory testing; >600 umol/L = classic PKU requiring immediate dietary intervention.",
+    "references": [
+      {
+        "label": "American College of Medical Genetics PKU guidelines; ESPKU"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "newborn-tsh",
+    "analyte": "TSH (newborn screen, dried blood spot)",
+    "specimen": "dried blood spot",
+    "low": null,
+    "high": 10,
+    "unit": "mU/L",
+    "loinc": "29575-8",
+    "category": "newborn-screening",
+    "sex": "any",
+    "notes": "Newborn screening for congenital hypothyroidism. Cut-off varies (8-20 mU/L) by programme; raised TSH on day 5-8 sample triggers confirmation and immediate L-thyroxine if confirmed.",
+    "references": [
+      {
+        "label": "ESPE Consensus on congenital hypothyroidism (Léger et al., JCEM 2014)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "newborn-biotinidase",
+    "analyte": "Biotinidase (newborn screen)",
+    "specimen": "dried blood spot",
+    "low": 30,
+    "high": null,
+    "unit": "%",
+    "loinc": "57729-1",
+    "category": "newborn-screening",
+    "sex": "any",
+    "notes": "Newborn screen for biotinidase deficiency. <10% mean normal activity = profound deficiency; 10-30% = partial. Daily biotin supplementation prevents neurological damage.",
+    "references": [
+      {
+        "label": "ACMG ACT sheet on biotinidase deficiency"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "newborn-galt",
+    "analyte": "Galactose-1-phosphate uridyltransferase (GALT, newborn screen)",
+    "specimen": "dried blood spot",
+    "low": 3.5,
+    "high": null,
+    "unit": "U/g[Hb]",
+    "loinc": "29571-7",
+    "category": "newborn-screening",
+    "sex": "any",
+    "notes": "Newborn screen for classic galactosaemia. Markedly low/absent activity confirmed by GALT gene analysis. Immediate lactose-free diet prevents acute crisis.",
+    "references": [
+      {
+        "label": "GalNet international guideline on galactosaemia (Welling et al., JIMD 2017)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "caffeine-neonatal",
+    "analyte": "Caffeine (neonatal apnoea of prematurity)",
+    "specimen": "serum/plasma",
+    "low": 5,
+    "high": 25,
+    "unit": "mg/L",
+    "loinc": "3437-1",
+    "category": "therapeutic-drug-monitoring",
+    "sex": "any",
+    "notes": "Therapeutic range for caffeine citrate in apnoea of prematurity. Toxicity >40 mg/L (tachycardia, agitation, seizures). Routine monitoring not usually needed.",
+    "references": [
+      {
+        "label": "NeoFax / Micromedex Neonatal; CAP trial (Schmidt et al., NEJM 2006)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "tobramycin-peak",
+    "analyte": "Tobramycin peak (conventional dosing)",
+    "specimen": "serum/plasma",
+    "low": 5,
+    "high": 10,
+    "unit": "mg/L",
+    "loinc": "20585-6",
+    "category": "therapeutic-drug-monitoring",
+    "sex": "any",
+    "notes": "Peak 30 min post-30-min infusion. Once-daily 5-7 mg/kg dosing uses 24-h trough <1 mg/L and AUC monitoring instead.",
+    "references": [
+      {
+        "label": "Sanford Guide; ASHP/IDSA guidelines on aminoglycoside dosing"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "tobramycin-trough",
+    "analyte": "Tobramycin trough (conventional dosing)",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 2,
+    "unit": "mg/L",
+    "loinc": "20586-4",
+    "category": "therapeutic-drug-monitoring",
+    "sex": "any",
+    "notes": "Trough <2 mg/L on twice/thrice daily dosing; <1 mg/L on once-daily extended-interval dosing.",
+    "references": [
+      {
+        "label": "Sanford Guide; ASHP/IDSA aminoglycoside dosing guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "amikacin-peak",
+    "analyte": "Amikacin peak (conventional dosing)",
+    "specimen": "serum/plasma",
+    "low": 20,
+    "high": 30,
+    "unit": "mg/L",
+    "loinc": "3320-9",
+    "category": "therapeutic-drug-monitoring",
+    "sex": "any",
+    "notes": "Higher peaks (40-60) used in mycobacterial disease. Once-daily 15-20 mg/kg dosing for serious Gram-negative infection uses target peak 60-80.",
+    "references": [
+      {
+        "label": "Sanford Guide; ATS/CDC/ERS/IDSA NTM treatment guideline 2020"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "amikacin-trough",
+    "analyte": "Amikacin trough",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 5,
+    "unit": "mg/L",
+    "loinc": "3321-7",
+    "category": "therapeutic-drug-monitoring",
+    "sex": "any",
+    "notes": "<5 mg/L on conventional dosing; <1 mg/L preferred on once-daily extended-interval dosing.",
+    "references": [
+      {
+        "label": "Sanford Guide; ASHP/IDSA aminoglycoside guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "voriconazole-trough",
+    "analyte": "Voriconazole trough",
+    "specimen": "serum/plasma",
+    "low": 1.0,
+    "high": 5.5,
+    "unit": "mg/L",
+    "loinc": "67710-4",
+    "category": "therapeutic-drug-monitoring",
+    "sex": "any",
+    "notes": "Therapeutic 1.0-5.5; toxicity (visual disturbance, hepatotoxicity, neurotoxicity) more common >5.5. CYP2C19 metaboliser status affects levels — check trough on day 5 (steady state).",
+    "references": [
+      {
+        "label": "IDSA 2016 candidiasis and aspergillosis guidelines; BSMM TDM consensus 2014"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "posaconazole-trough",
+    "analyte": "Posaconazole trough",
+    "specimen": "serum/plasma",
+    "low": 0.7,
+    "high": null,
+    "unit": "mg/L",
+    "loinc": "76561-0",
+    "category": "therapeutic-drug-monitoring",
+    "sex": "any",
+    "notes": "Prophylaxis target ≥0.7; treatment target ≥1.0-1.25. Delayed-release tablet/IV achieves higher levels than oral suspension.",
+    "references": [
+      {
+        "label": "IDSA 2016 aspergillosis guidelines (Patterson et al., CID 2016); BSMM TDM consensus 2014"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "itraconazole-trough",
+    "analyte": "Itraconazole trough",
+    "specimen": "serum/plasma",
+    "low": 0.5,
+    "high": null,
+    "unit": "mg/L",
+    "loinc": "13554-1",
+    "category": "therapeutic-drug-monitoring",
+    "sex": "any",
+    "notes": "Target ≥0.5 mg/L (HPLC) for prophylaxis; ≥1.0 mg/L for treatment of invasive disease. Bioassay values are ~2× HPLC.",
+    "references": [
+      {
+        "label": "BSMM TDM consensus 2014"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "tacrolimus-renal-tx",
+    "analyte": "Tacrolimus trough — renal transplant maintenance",
+    "specimen": "whole blood",
+    "low": 5,
+    "high": 10,
+    "unit": "ug/L",
+    "loinc": "29247-4",
+    "category": "therapeutic-drug-monitoring",
+    "sex": "any",
+    "notes": "Target depends on era post-transplant, immunological risk, combination immunosuppression. Early (0-3 months) target 8-12; >3 months 5-10; long-term 4-8.",
+    "references": [
+      {
+        "label": "KDIGO 2009 transplant care guideline; BTS post-transplant guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "tacrolimus-liver-tx",
+    "analyte": "Tacrolimus trough — liver transplant maintenance",
+    "specimen": "whole blood",
+    "low": 5,
+    "high": 10,
+    "unit": "ug/L",
+    "loinc": "29247-4",
+    "category": "therapeutic-drug-monitoring",
+    "sex": "any",
+    "notes": "Early target 8-12; ≥6 months 5-8. Lower targets in HCV-positive (pre-DAA era) and elderly to reduce nephrotoxicity.",
+    "references": [
+      {
+        "label": "AASLD/ILTS practice guideline on long-term liver transplant care"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ciclosporin-c0",
+    "analyte": "Ciclosporin C0 (trough)",
+    "specimen": "whole blood",
+    "low": 100,
+    "high": 300,
+    "unit": "ug/L",
+    "loinc": "3520-4",
+    "category": "therapeutic-drug-monitoring",
+    "sex": "any",
+    "notes": "Era and indication-specific. C2 (2-h post-dose, peak) monitoring better predicts AUC and efficacy (target ~1500 first month, ~800 maintenance).",
+    "references": [
+      {
+        "label": "KDIGO 2009 transplant care guideline; CONCERT consensus on C2 monitoring"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "sirolimus-trough",
+    "analyte": "Sirolimus trough",
+    "specimen": "whole blood",
+    "low": 4,
+    "high": 12,
+    "unit": "ug/L",
+    "loinc": "29245-8",
+    "category": "therapeutic-drug-monitoring",
+    "sex": "any",
+    "notes": "Maintenance target 4-12 (combined immunosuppression). Levels >15 increase risk of pneumonitis, dyslipidaemia, cytopenias.",
+    "references": [
+      {
+        "label": "KDIGO 2009 transplant care guideline; mTOR inhibitor TDM consensus"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "everolimus-trough",
+    "analyte": "Everolimus trough",
+    "specimen": "whole blood",
+    "low": 3,
+    "high": 8,
+    "unit": "ug/L",
+    "loinc": "78427-2",
+    "category": "therapeutic-drug-monitoring",
+    "sex": "any",
+    "notes": "Renal/liver transplant maintenance target 3-8; higher (5-10) when used without calcineurin inhibitor. Different targets in oncology.",
+    "references": [
+      {
+        "label": "BTS/RA UK transplant guidance; manufacturer SmPC (Certican)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "mycophenolate-trough",
+    "analyte": "Mycophenolic acid trough",
+    "specimen": "plasma",
+    "low": 1.0,
+    "high": 3.5,
+    "unit": "mg/L",
+    "loinc": "29250-8",
+    "category": "therapeutic-drug-monitoring",
+    "sex": "any",
+    "notes": "Routine monitoring not standard. AUC0-12h target 30-60 mg·h/L is better predictor of efficacy/toxicity than single trough.",
+    "references": [
+      {
+        "label": "Transplantation Society consensus on mycophenolate TDM (Tett et al., Ther Drug Monit 2011)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ammonia-adult-detail",
+    "analyte": "Ammonia (adult)",
+    "specimen": "plasma",
+    "low": null,
+    "high": 50,
+    "unit": "umol/L",
+    "loinc": "33178-5",
+    "category": "metabolic",
+    "sex": "any",
+    "notes": "Pre-analytical critical: sample on ice, separated within 15 min, measured promptly. >150-200 in adult is a red flag for hyperammonaemic encephalopathy.",
+    "references": [
+      {
+        "label": "AASLD guideline on acute liver failure; Pagana Mosby Diagnostic Tests"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ammonia-neonatal",
+    "analyte": "Ammonia (neonate)",
+    "specimen": "plasma",
+    "low": null,
+    "high": 110,
+    "unit": "umol/L",
+    "loinc": "33178-5",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "Neonates have higher physiological levels; >150 umol/L in symptomatic neonate suggests urea cycle disorder or organic acidaemia — emergency.",
+    "references": [
+      {
+        "label": "BIMDG emergency guidelines on hyperammonaemia in neonates"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "beta-hydroxybutyrate",
+    "analyte": "Beta-hydroxybutyrate",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 0.6,
+    "unit": "mmol/L",
+    "loinc": "53060-5",
+    "category": "metabolic",
+    "sex": "any",
+    "notes": "DKA diagnosis: ≥3 mmol/L (with glucose >11 and pH <7.3 / HCO3 <15). Used for monitoring DKA resolution — discontinue insulin infusion when ketones <0.6.",
+    "references": [
+      {
+        "label": "JBDS-IP DKA in adults (UK 2022); ADA DKA position statement"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anion-gap-corrected",
+    "analyte": "Anion gap — albumin-corrected",
+    "specimen": "calculated",
+    "low": 8,
+    "high": 16,
+    "unit": "mmol/L",
+    "loinc": "41276-7",
+    "category": "metabolic",
+    "sex": "any",
+    "notes": "Corrected AG = measured AG + 2.5 × (40 − measured albumin g/L). Low albumin lowers measured AG by ~2.5 per 10 g/L drop — may mask a true HAGMA.",
+    "references": [
+      {
+        "label": "Figge et al., Crit Care Med 1998; AKI/acid-base review (Berend, NEJM 2014)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "delta-ratio",
+    "analyte": "Delta ratio (acid-base)",
+    "specimen": "calculated",
+    "low": 0.8,
+    "high": 2.0,
+    "unit": "{ratio}",
+    "loinc": null,
+    "category": "metabolic",
+    "sex": "any",
+    "notes": "Delta-delta = ΔAG / ΔHCO3 (where reference AG=12, HCO3=24). 0.8-2.0 pure HAGMA. <0.4 mixed HAGMA + NAGMA. >2.0 mixed HAGMA + metabolic alkalosis or compensated respiratory acidosis.",
+    "references": [
+      {
+        "label": "Berend, NEJM 2014 (clinical approach to acid-base)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urea-creatinine-ratio",
+    "analyte": "Urea:creatinine ratio (GI bleed)",
+    "specimen": "calculated",
+    "low": null,
+    "high": null,
+    "unit": "{ratio}",
+    "loinc": "3097-3",
+    "category": "renal",
+    "sex": "any",
+    "notes": "Marked disproportionate rise in urea (urea-mmol:creatinine-umol ratio >0.1, or BUN-mg:creat-mg >30) supports upper GI bleed or pre-renal AKI. SI units: ratio >100 (umol-creatinine ratio).",
+    "references": [
+      {
+        "label": "Pagana Mosby Diagnostic Tests; NICE NG12 acute upper GI bleeding"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "osmolar-gap",
+    "analyte": "Osmolar gap",
+    "specimen": "calculated",
+    "low": null,
+    "high": 10,
+    "unit": "mOsm/kg",
+    "loinc": "19223-7",
+    "category": "metabolic",
+    "sex": "any",
+    "notes": "Measured osmolality − calculated osmolality (2×Na + glucose + urea, all mmol/L). >10 raises concern for unmeasured osmoles: methanol, ethylene glycol, isopropanol, ethanol, mannitol, propylene glycol.",
+    "references": [
+      {
+        "label": "AACT/EAPCCT methanol/ethylene glycol guidelines; Berend, NEJM 2014"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "methaemoglobin-percent",
+    "analyte": "Methaemoglobin (% of total Hb)",
+    "specimen": "whole blood",
+    "low": null,
+    "high": 1.5,
+    "unit": "%",
+    "loinc": "2614-6",
+    "category": "blood-gas",
+    "sex": "any",
+    "notes": "Symptoms by level: cyanosis 10-20%, fatigue/headache 20-30%, dyspnoea/confusion 30-50%, coma/seizure >50%, death >70%. Treat ≥20% (or symptomatic) with methylene blue 1-2 mg/kg IV.",
+    "references": [
+      {
+        "label": "Wright et al., Crit Care 2005; UpToDate methaemoglobinaemia"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "reticulocyte-production-index",
+    "analyte": "Reticulocyte production index (RPI)",
+    "specimen": "calculated",
+    "low": null,
+    "high": null,
+    "unit": "{ratio}",
+    "loinc": null,
+    "category": "haematology",
+    "sex": "any",
+    "notes": "RPI = (retic% × patient Hct / 45%) / maturation factor (1.0 at Hct 45, 1.5 at 35, 2.0 at 25, 2.5 at 15). RPI <2 in anaemia = inadequate marrow response; >3 = appropriate response (haemolysis/blood loss).",
+    "references": [
+      {
+        "label": "Hillman/Finch nomogram; Pagana Mosby Diagnostic Tests"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hb-neonatal-term-day1",
+    "analyte": "Haemoglobin (term neonate, day 1)",
+    "specimen": "whole blood",
+    "low": 140,
+    "high": 200,
+    "unit": "g/L",
+    "loinc": "718-7",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "Physiological nadir at 8-12 weeks (~95-110 g/L term, lower in preterm). Anaemia of prematurity is normocytic.",
+    "references": [
+      {
+        "label": "BSH paediatric haematology reference ranges; Nathan and Oski's Hematology of Infancy and Childhood"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hb-infant-6mo",
+    "analyte": "Haemoglobin (infant 6 months)",
+    "specimen": "whole blood",
+    "low": 105,
+    "high": 140,
+    "unit": "g/L",
+    "loinc": "718-7",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "Lower limit ~105; iron deficiency anaemia screening at 9-12 months (CDC; UK NICE PHE).",
+    "references": [
+      {
+        "label": "WHO haemoglobin concentrations for the diagnosis of anaemia; Nathan and Oski's"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "platelets-neonatal",
+    "analyte": "Platelets (term neonate)",
+    "specimen": "whole blood",
+    "low": 150,
+    "high": 450,
+    "unit": "10*9/L",
+    "loinc": "777-3",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "<150 = neonatal thrombocytopenia. Early-onset (<72 h) often placental/maternal; late-onset (>72 h) typically sepsis/NEC.",
+    "references": [
+      {
+        "label": "BSH guideline on neonatal transfusion; Nathan and Oski's"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "crp-neonatal",
+    "analyte": "CRP (neonate)",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 10,
+    "unit": "mg/L",
+    "loinc": "1988-5",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "Rises 6-12 h after onset of infection; single normal CRP in early neonatal sepsis does not exclude infection. Serial values over 24-48 h have higher NPV.",
+    "references": [
+      {
+        "label": "NICE NG195 Neonatal infection; Hofer et al., Eur J Pediatr 2012"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "vitamin-d-paediatric",
+    "analyte": "25-OH vitamin D — paediatric thresholds",
+    "specimen": "serum",
+    "low": 50,
+    "high": null,
+    "unit": "nmol/L",
+    "loinc": "62292-8",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "ESPGHAN/AAP: deficiency <30, insufficiency 30-50, sufficient ≥50, possible toxicity >250. Routine 400 IU/day supplementation in infants and at-risk children.",
+    "references": [
+      {
+        "label": "Global Consensus on prevention and management of nutritional rickets (Munns et al., 2016); AAP"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anc-paediatric-neutropenia",
+    "analyte": "Absolute neutrophil count — paediatric neutropenia threshold",
+    "specimen": "whole blood",
+    "low": 1.5,
+    "high": null,
+    "unit": "10*9/L",
+    "loinc": "751-8",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "Neutropenia: mild 1.0-1.5, moderate 0.5-1.0, severe <0.5. Lower limit physiologically lower in some populations (benign ethnic neutropenia, common in African ancestry — down to 1.0).",
+    "references": [
+      {
+        "label": "BSH paediatric neutropenia guideline; Lakshman et al., Arch Dis Child 2014"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "venous-lactate",
+    "analyte": "Lactate (venous)",
+    "specimen": "venous blood",
+    "low": null,
+    "high": 2.2,
+    "unit": "mmol/L",
+    "loinc": "32693-4",
+    "category": "blood-gas",
+    "sex": "any",
+    "notes": "Venous lactate is ~0.1-0.5 higher than arterial. Venous >2 may warrant arterial confirmation. Sepsis bundle uses venous or arterial — >2 triggers source control and fluid response.",
+    "references": [
+      {
+        "label": "Surviving Sepsis Campaign 2021; UK Sepsis Trust"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lp-pla2-activity",
+    "analyte": "Lipoprotein-associated phospholipase A2 activity",
+    "specimen": "plasma",
+    "low": null,
+    "high": 195,
+    "unit": "nmol/min/mL",
+    "loinc": "53127-2",
+    "category": "cardiac",
+    "sex": "any",
+    "notes": "Marker of vascular inflammation; >225 nmol/min/mL associated with elevated CV risk. FDA-cleared for risk assessment but not routinely used.",
+    "references": [
+      {
+        "label": "AHA/ACC scientific statement on CV biomarkers (2018)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hb-electrophoresis-newborn-hbf",
+    "analyte": "Newborn Hb electrophoresis — HbF",
+    "specimen": "whole blood",
+    "low": 65,
+    "high": 95,
+    "unit": "%",
+    "loinc": "4577-5",
+    "category": "newborn-screening",
+    "sex": "any",
+    "notes": "At birth: HbF dominant (60-80%), HbA 10-40%, HbA2 <1%. Sickle cell screen: FAS (carrier), FS (sickle disease), FSC (HbSC), F-only (β-thalassaemia major or HPFH).",
+    "references": [
+      {
+        "label": "UK NHS sickle cell and thalassaemia newborn screening programme"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "bilirubin-bhutani-phototherapy",
+    "analyte": "Bilirubin — Bhutani nomogram phototherapy threshold",
+    "specimen": "serum",
+    "low": null,
+    "high": null,
+    "unit": "umol/L",
+    "loinc": "14631-6",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "Hour-of-life specific phototherapy thresholds (NICE CG98 / AAP 2022). E.g. 24-h-old term healthy infant: threshold ~200 umol/L; 72-h ~300 umol/L. Lower for prematurity / haemolysis / sepsis.",
+    "references": [
+      {
+        "label": "NICE CG98 Jaundice in newborn babies under 28 days; AAP clinical practice guideline 2022 (Kemper et al., Pediatrics 2022)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "bilirubin-bhutani-exchange",
+    "analyte": "Bilirubin — Bhutani nomogram exchange transfusion threshold",
+    "specimen": "serum",
+    "low": null,
+    "high": null,
+    "unit": "umol/L",
+    "loinc": "14631-6",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "Hour-of-life specific exchange thresholds (NICE CG98 / AAP 2022). At 72 h in healthy term: ~450 umol/L. Acute bilirubin encephalopathy or rapid rise warrants immediate exchange transfusion regardless of curve.",
+    "references": [
+      {
+        "label": "NICE CG98 Jaundice in newborn babies under 28 days; AAP 2022 (Kemper et al., Pediatrics)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-mpo-anca",
+    "analyte": "Anti-myeloperoxidase (MPO) ANCA",
+    "specimen": "serum",
+    "low": null,
+    "high": 3.5,
+    "unit": "IU/mL",
+    "loinc": "31037-4",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "p-ANCA pattern on IIF, MPO specific by ELISA. Associated with microscopic polyangiitis, EGPA, drug-induced vasculitis (hydralazine, propylthiouracil).",
+    "references": [
+      {
+        "label": "Chapel Hill 2012 vasculitis nomenclature; EULAR/ERA-EDTA guideline on ANCA-vasculitis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-pr3-anca",
+    "analyte": "Anti-proteinase 3 (PR3) ANCA",
+    "specimen": "serum",
+    "low": null,
+    "high": 2.0,
+    "unit": "IU/mL",
+    "loinc": "47383-5",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "c-ANCA pattern; PR3 specific by ELISA. Strongly associated with granulomatosis with polyangiitis (Wegener's).",
+    "references": [
+      {
+        "label": "Chapel Hill 2012 vasculitis nomenclature; EULAR/ERA-EDTA guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-gbm",
+    "analyte": "Anti-glomerular basement membrane antibody",
+    "specimen": "serum",
+    "low": null,
+    "high": 7,
+    "unit": "U/mL",
+    "loinc": "16139-5",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Diagnostic of Goodpasture disease (RPGN + pulmonary haemorrhage). Plasma exchange + cyclophosphamide + steroids urgently.",
+    "references": [
+      {
+        "label": "KDIGO 2021 glomerular diseases guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-pla2r",
+    "analyte": "Anti-phospholipase A2 receptor antibody",
+    "specimen": "serum",
+    "low": null,
+    "high": 14,
+    "unit": "RU/mL",
+    "loinc": "78005-6",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Highly specific for primary membranous nephropathy (~70% sensitive). Titres correlate with disease activity and predict response to immunosuppression.",
+    "references": [
+      {
+        "label": "KDIGO 2021 glomerular diseases guideline; Beck et al., NEJM 2009"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "haptoglobin",
+    "analyte": "Haptoglobin",
+    "specimen": "serum",
+    "low": 0.3,
+    "high": 2.0,
+    "unit": "g/L",
+    "loinc": "4542-7",
+    "category": "haematology",
+    "sex": "any",
+    "notes": "Low/absent in intravascular haemolysis (binds free Hb). Acute phase reactant — may be normal in mild haemolysis with concurrent inflammation. Congenital ahaptoglobinaemia is common in some populations.",
+    "references": [
+      {
+        "label": "Pagana Mosby Diagnostic Tests; BSH guidance on haemolytic anaemia"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "g6pd-quantitative",
+    "analyte": "Glucose-6-phosphate dehydrogenase activity",
+    "specimen": "whole blood",
+    "low": 7.0,
+    "high": 20.5,
+    "unit": "U/g[Hb]",
+    "loinc": "2390-3",
+    "category": "haematology",
+    "sex": "any",
+    "notes": "Quantitative assay; <30% normal mean activity = G6PD deficient. Avoid testing during/shortly after haemolytic episode (reticulocytes have higher enzyme activity — false normal).",
+    "references": [
+      {
+        "label": "WHO classification of G6PD variants; BSH guideline on G6PD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "vitamin-b1-thiamine",
+    "analyte": "Thiamine (vitamin B1, whole blood)",
+    "specimen": "whole blood",
+    "low": 75,
+    "high": 200,
+    "unit": "nmol/L",
+    "loinc": "29572-5",
+    "category": "vitamins",
+    "sex": "any",
+    "notes": "Whole-blood thiamine pyrophosphate (TPP) is the preferred assay. Deficiency causes Wernicke encephalopathy / beriberi — treat empirically without waiting on level.",
+    "references": [
+      {
+        "label": "Royal College of Physicians on Wernicke encephalopathy; Pagana Mosby Diagnostic Tests"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "vitamin-b6-plp",
+    "analyte": "Vitamin B6 (pyridoxal-5-phosphate)",
+    "specimen": "plasma",
+    "low": 20,
+    "high": 125,
+    "unit": "nmol/L",
+    "loinc": "2675-7",
+    "category": "vitamins",
+    "sex": "any",
+    "notes": "Deficiency causes peripheral neuropathy, seborrhoeic dermatitis, sideroblastic anaemia. Isoniazid + alcohol are common causes. Excess (>250 sustained) causes sensory neuropathy.",
+    "references": [
+      {
+        "label": "Pagana Mosby Diagnostic Tests"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "homocysteine",
+    "analyte": "Homocysteine (total)",
+    "specimen": "plasma",
+    "low": null,
+    "high": 15,
+    "unit": "umol/L",
+    "loinc": "13965-9",
+    "category": "metabolic",
+    "sex": "any",
+    "notes": "Elevated in B12/folate/B6 deficiency, renal failure, MTHFR variants, homocystinuria (>100). Mild elevation 15-30 common with B-vitamin deficiency.",
+    "references": [
+      {
+        "label": "Pagana Mosby Diagnostic Tests; BSH guideline on B12 and folate"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "methylmalonic-acid",
+    "analyte": "Methylmalonic acid (serum)",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 0.4,
+    "unit": "umol/L",
+    "loinc": "13977-4",
+    "category": "metabolic",
+    "sex": "any",
+    "notes": "Elevated MMA + homocysteine confirms B12 deficiency in indeterminate cases (B12 100-200 pmol/L). MMA rises in renal failure — interpret with caution.",
+    "references": [
+      {
+        "label": "BSH guideline on diagnosis and treatment of B12 and folate disorders 2014"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ck-rhabdo-threshold",
+    "analyte": "Creatine kinase — rhabdomyolysis threshold",
+    "specimen": "serum",
+    "low": null,
+    "high": null,
+    "unit": "U/L",
+    "loinc": "2157-6",
+    "category": "muscle",
+    "sex": "any",
+    "notes": "Rhabdomyolysis defined as CK >5× ULN (~>1000 U/L). >5000 substantially raises AKI risk; aggressive IV fluid resuscitation with target urine output 200-300 mL/h.",
+    "references": [
+      {
+        "label": "Bosch et al., NEJM 2009 (rhabdomyolysis); ICS UK guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "myoglobin-serum",
+    "analyte": "Myoglobin (serum)",
+    "specimen": "serum/plasma",
+    "low": null,
+    "high": 90,
+    "unit": "ug/L",
+    "loinc": "2638-5",
+    "category": "muscle",
+    "sex": "any",
+    "notes": "Earlier marker of muscle injury than CK but non-specific. Renal cleared — half-life 1-3 h. Used in rhabdomyolysis but largely superseded by serial CK.",
+    "references": [
+      {
+        "label": "Pagana Mosby Diagnostic Tests"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-tissue-transglutaminase-iga",
+    "analyte": "Anti-tissue transglutaminase IgA",
+    "specimen": "serum",
+    "low": null,
+    "high": 7,
+    "unit": "U/mL",
+    "loinc": "31017-6",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "First-line coeliac screen. Must check total IgA simultaneously — selective IgA deficiency causes false negatives. ESPGHAN: no-biopsy diagnosis if tTG-IgA >10× ULN + EMA positive in symptomatic child.",
+    "references": [
+      {
+        "label": "ESPGHAN 2020 coeliac disease diagnosis guideline; NICE NG20"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-mitochondrial-m2",
+    "analyte": "Anti-mitochondrial antibody (M2)",
+    "specimen": "serum",
+    "low": null,
+    "high": 7,
+    "unit": "U/mL",
+    "loinc": "31019-2",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Highly specific for primary biliary cholangitis (95%). Diagnostic together with cholestatic LFTs ± compatible biopsy.",
+    "references": [
+      {
+        "label": "EASL 2017 PBC clinical practice guidelines; AASLD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-smooth-muscle",
+    "analyte": "Anti-smooth muscle antibody",
+    "specimen": "serum",
+    "low": null,
+    "high": null,
+    "unit": "{titer}",
+    "loinc": "8089-5",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Type 1 autoimmune hepatitis marker (≥1:80 in adults, ≥1:40 in children). F-actin specificity increases specificity.",
+    "references": [
+      {
+        "label": "EASL 2015 autoimmune hepatitis guidelines; AASLD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-lkm1",
+    "analyte": "Anti-liver-kidney microsomal type 1 antibody",
+    "specimen": "serum",
+    "low": null,
+    "high": null,
+    "unit": "{titer}",
+    "loinc": "13921-2",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Type 2 autoimmune hepatitis marker, more common in children. Recognises CYP2D6.",
+    "references": [
+      {
+        "label": "EASL 2015 autoimmune hepatitis guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "cryoglobulin",
+    "analyte": "Cryoglobulins",
+    "specimen": "serum (37 °C transport)",
+    "low": null,
+    "high": null,
+    "unit": "%",
+    "loinc": "13991-5",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Sample must be kept at 37 °C from collection to clotting and serum separation; cryocrit measured after refrigeration. Mixed cryos in HCV, monoclonal in lymphoproliferation.",
+    "references": [
+      {
+        "label": "Roccatello et al., Nat Rev Dis Primers 2018 (cryoglobulinaemic vasculitis)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "tryptase-baseline",
+    "analyte": "Tryptase — baseline",
+    "specimen": "serum",
+    "low": null,
+    "high": 11.4,
+    "unit": "ug/L",
+    "loinc": "29547-3",
+    "category": "immunology",
+    "sex": "any",
+    "notes": "Baseline >20 supports systemic mastocytosis (WHO B-finding). For anaphylaxis: serial samples (acute, 1-2 h, ≥24 h baseline) — diagnostic criterion is acute > 1.2 × baseline + 2 ug/L.",
+    "references": [
+      {
+        "label": "WHO Classification of mast cell disorders 2022; EAACI anaphylaxis position paper"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ace-serum",
+    "analyte": "Angiotensin-converting enzyme (serum)",
+    "specimen": "serum",
+    "low": 8,
+    "high": 53,
+    "unit": "U/L",
+    "loinc": "1786-3",
+    "category": "respiratory",
+    "sex": "any",
+    "notes": "Elevated in 50-75% of active sarcoidosis. Not diagnostic alone — used for monitoring activity. ACE inhibitor therapy suppresses levels.",
+    "references": [
+      {
+        "label": "ATS/ERS/WASOG sarcoidosis statement; Pagana Mosby Diagnostic Tests"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "renin-supine",
+    "analyte": "Plasma renin activity (supine)",
+    "specimen": "plasma",
+    "low": 0.2,
+    "high": 1.6,
+    "unit": "ng/mL/h",
+    "loinc": "2916-5",
+    "category": "endocrine",
+    "sex": "any",
+    "notes": "Aldosterone-to-renin ratio is the standard screening test for primary aldosteronism. ARR >30 (with aldosterone >15 ng/dL) is suggestive — confirm with saline infusion or fludrocortisone suppression.",
+    "references": [
+      {
+        "label": "Endocrine Society 2016 primary aldosteronism guideline (Funder et al., JCEM 2016)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "aldosterone-supine",
+    "analyte": "Plasma aldosterone (supine)",
+    "specimen": "plasma",
+    "low": 30,
+    "high": 440,
+    "unit": "pmol/L",
+    "loinc": "1763-2",
+    "category": "endocrine",
+    "sex": "any",
+    "notes": "Withdraw spironolactone, eplerenone, amiloride ≥4 weeks before testing. Maintain potassium >4 mmol/L for accurate interpretation.",
+    "references": [
+      {
+        "label": "Endocrine Society 2016 primary aldosteronism guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "dheas",
+    "analyte": "Dehydroepiandrosterone sulfate (DHEAS)",
+    "specimen": "serum",
+    "low": null,
+    "high": null,
+    "unit": "umol/L",
+    "loinc": "2191-5",
+    "category": "endocrine",
+    "sex": "any",
+    "notes": "Age- and sex-dependent. Markedly elevated (>20 umol/L) suggests adrenal source of androgen excess (tumour or CAH). Adrenal origin (vs ovarian) in hirsute woman.",
+    "references": [
+      {
+        "label": "Endocrine Society 2018 hirsutism guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "shbg",
+    "analyte": "Sex hormone-binding globulin (SHBG)",
+    "specimen": "serum",
+    "low": 18,
+    "high": 144,
+    "unit": "nmol/L",
+    "loinc": "13967-5",
+    "category": "endocrine",
+    "sex": "any",
+    "notes": "Calculated free testosterone uses SHBG + albumin + total testosterone. Low SHBG: obesity, insulin resistance, hypothyroidism, androgens. High SHBG: hyperthyroidism, oestrogens, ageing, hepatic disease.",
+    "references": [
+      {
+        "label": "Endocrine Society 2018 testosterone deficiency guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "amh-female",
+    "analyte": "Anti-Müllerian hormone (female)",
+    "specimen": "serum",
+    "low": null,
+    "high": null,
+    "unit": "pmol/L",
+    "loinc": "38476-8",
+    "category": "endocrine",
+    "sex": "female",
+    "notes": "Ovarian reserve marker. Markedly low <1 pmol/L suggests diminished reserve / impending menopause; high >50 supports PCOS; very high possible granulosa cell tumour.",
+    "references": [
+      {
+        "label": "ESHRE 2023 PCOS evidence-based guideline; ASRM ovarian reserve testing"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "calcitonin",
+    "analyte": "Calcitonin",
+    "specimen": "serum",
+    "low": null,
+    "high": 10,
+    "unit": "ng/L",
+    "loinc": "2026-3",
+    "category": "endocrine",
+    "sex": "any",
+    "notes": "Marker of medullary thyroid cancer. Basal >100 ng/L highly suspicious; pentagastrin/calcium stimulation test used in indeterminate cases. Smoking, PPIs, renal failure cause modest elevations.",
+    "references": [
+      {
+        "label": "ATA 2015 medullary thyroid cancer guideline (Wells et al., Thyroid 2015)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "csf-igg-index",
+    "analyte": "CSF IgG index",
+    "specimen": "csf + serum",
+    "low": null,
+    "high": 0.66,
+    "unit": "{ratio}",
+    "loinc": "1768-1",
+    "category": "csf",
+    "sex": "any",
+    "notes": "(CSF IgG/serum IgG) / (CSF albumin/serum albumin). Elevated in MS, neurosarcoidosis, neuro-Behçet, autoimmune encephalitis. Oligoclonal bands (CSF without serum bands) more sensitive for MS.",
+    "references": [
+      {
+        "label": "McDonald 2017 criteria for MS diagnosis (Thompson et al., Lancet Neurol 2018)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "csf-xanthochromia",
+    "analyte": "CSF xanthochromia (net bilirubin absorbance)",
+    "specimen": "csf",
+    "low": null,
+    "high": 0.007,
+    "unit": "AU",
+    "loinc": "13473-2",
+    "category": "csf",
+    "sex": "any",
+    "notes": "Spectrophotometric assay 12 h to 2 weeks after suspected SAH onset. Net bilirubin absorbance >0.007 AU positive. Protect sample from light, deliver promptly.",
+    "references": [
+      {
+        "label": "UK National External Quality Assessment Service (NEQAS) guidance; ABN guidance on SAH"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ascitic-saag",
+    "analyte": "Serum-ascites albumin gradient (SAAG)",
+    "specimen": "ascitic fluid + serum",
+    "low": null,
+    "high": null,
+    "unit": "g/L",
+    "loinc": "32294-1",
+    "category": "fluid-analysis",
+    "sex": "any",
+    "notes": "SAAG = serum albumin − ascitic albumin. ≥11 g/L (or ≥1.1 g/dL): portal hypertension (cirrhosis, HF, Budd-Chiari). <11 g/L: non-portal-hypertensive causes (peritoneal carcinomatosis, TB, pancreatitis).",
+    "references": [
+      {
+        "label": "AASLD 2021 ascites guidelines; EASL 2018 decompensated cirrhosis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ascitic-fluid-neutrophil",
+    "analyte": "Ascitic fluid neutrophil count — SBP threshold",
+    "specimen": "ascitic fluid",
+    "low": null,
+    "high": 250,
+    "unit": "10*6/L",
+    "loinc": "32136-4",
+    "category": "fluid-analysis",
+    "sex": "any",
+    "notes": "≥250 polymorphonuclear cells/mm³ in ascitic fluid is diagnostic of spontaneous bacterial peritonitis — start empiric antibiotics immediately and add IV albumin.",
+    "references": [
+      {
+        "label": "AASLD 2021 ascites guidelines; EASL 2018 decompensated cirrhosis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "pleural-light-ldh",
+    "analyte": "Pleural fluid LDH (Light's criterion)",
+    "specimen": "pleural fluid",
+    "low": null,
+    "high": null,
+    "unit": "U/L",
+    "loinc": "30257-0",
+    "category": "fluid-analysis",
+    "sex": "any",
+    "notes": "Exudate if any of: pleural LDH > 2/3 of serum ULN; pleural:serum LDH > 0.6; pleural:serum protein > 0.5.",
+    "references": [
+      {
+        "label": "BTS 2010 pleural disease guideline; Light et al., Ann Intern Med 1972"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "pleural-fluid-ph-empyema",
+    "analyte": "Pleural fluid pH — complicated parapneumonic threshold",
+    "specimen": "pleural fluid",
+    "low": null,
+    "high": 7.20,
+    "unit": "{pH}",
+    "loinc": "2745-9",
+    "category": "fluid-analysis",
+    "sex": "any",
+    "notes": "pH <7.20 in parapneumonic effusion indicates drainage. Measure on heparinised blood-gas syringe within 1 h. Glucose <2.2 mmol/L and LDH >1000 are additional drainage criteria.",
+    "references": [
+      {
+        "label": "BTS 2010 pleural disease guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "synovial-wbc-septic",
+    "analyte": "Synovial fluid WBC — septic arthritis threshold",
+    "specimen": "synovial fluid",
+    "low": null,
+    "high": null,
+    "unit": "10*9/L",
+    "loinc": "26466-3",
+    "category": "fluid-analysis",
+    "sex": "any",
+    "notes": "Native joint: >50 × 10⁹/L with >75% neutrophils suggests septic arthritis (but no value reliably excludes — treat empirically if clinical suspicion). Prosthetic joint: >3.0 × 10⁹/L threshold (MSIS criteria).",
+    "references": [
+      {
+        "label": "BSR/BHPR 2017 hot swollen joint guideline; MSIS 2018 PJI criteria"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "fecal-calprotectin",
+    "analyte": "Faecal calprotectin",
+    "specimen": "stool",
+    "low": null,
+    "high": 50,
+    "unit": "ug/g",
+    "loinc": "38445-3",
+    "category": "gastroenterology",
+    "sex": "any",
+    "notes": "<50 normal; 50-250 borderline (repeat); >250 active IBD likely. Used to distinguish IBD from IBS and monitor IBD activity (mucosal healing).",
+    "references": [
+      {
+        "label": "NICE DG11 faecal calprotectin; BSG 2019 IBD guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "fecal-elastase-pancreatic",
+    "analyte": "Faecal elastase-1",
+    "specimen": "stool",
+    "low": 200,
+    "high": null,
+    "unit": "ug/g",
+    "loinc": "30139-0",
+    "category": "gastroenterology",
+    "sex": "any",
+    "notes": ">200 normal; 100-200 mild-moderate exocrine pancreatic insufficiency; <100 severe insufficiency. Not affected by pancreatic enzyme replacement.",
+    "references": [
+      {
+        "label": "BSG 2018 chronic pancreatitis guidelines; UEG/EPC EPI guidelines 2017"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "csf-lactate-meningitis-threshold",
+    "analyte": "CSF lactate — bacterial meningitis threshold",
+    "specimen": "csf",
+    "low": null,
+    "high": null,
+    "unit": "mmol/L",
+    "loinc": "30242-2",
+    "category": "csf",
+    "sex": "any",
+    "notes": "CSF lactate >3.5 mmol/L strongly supports bacterial meningitis (sensitivity ~93%, specificity ~96%) even after partial antibiotic treatment. Less reliable in post-neurosurgical patients.",
+    "references": [
+      {
+        "label": "Sakushima et al., J Infect 2011 (meta-analysis of CSF lactate); IDSA bacterial meningitis guidelines (Tunkel et al., CID 2004)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
   }
 ]
