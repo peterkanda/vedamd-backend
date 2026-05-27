@@ -16,7 +16,7 @@ describe('ClinicalScoresService', () => {
 
   it('loads the open clinical-scores catalogue from the signed bundle', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThan(10);
+    expect(list.length).toBeGreaterThanOrEqual(200);
     expect(list.map((s) => s.slug)).toContain('cha2ds2-vasc');
   });
 

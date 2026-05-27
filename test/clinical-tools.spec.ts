@@ -9,9 +9,9 @@ describe('ClinicalToolsService', () => {
     expect(out).toHaveProperty('doseDrugs');
     expect(out).toHaveProperty('vitals');
     expect(out).toHaveProperty('scoringSystems');
-    expect(out.doseDrugs.length).toBeGreaterThanOrEqual(9);
-    expect(out.vitals.length).toBeGreaterThanOrEqual(7);
-    expect(out.scoringSystems.length).toBe(4);
+    expect(out.doseDrugs.length).toBeGreaterThanOrEqual(20);
+    expect(out.vitals.length).toBeGreaterThanOrEqual(12);
+    expect(out.scoringSystems.length).toBeGreaterThanOrEqual(12);
   });
 
   it('paediatric dose drugs include WHO IMCI staples', () => {

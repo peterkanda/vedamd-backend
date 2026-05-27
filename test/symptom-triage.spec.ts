@@ -16,7 +16,7 @@ describe('SymptomTriageService', () => {
 
   it('loads the symptom-triage catalogue from the signed bundle', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThanOrEqual(8);
+    expect(list.length).toBeGreaterThanOrEqual(80);
     const slugs = list.map((r) => r.slug);
     // Anti-hallucination guard: the most-common chief complaints with
     // catastrophic differentials. If a content edit drops one, fail loudly.
