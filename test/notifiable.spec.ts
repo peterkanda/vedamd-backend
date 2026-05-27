@@ -16,7 +16,7 @@ describe('NotifiableService', () => {
 
   it('loads the open notifiable-disease reference from the signed bundle', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThan(15);
+    expect(list.length).toBeGreaterThanOrEqual(100);
     expect(list.map((n) => n.slug)).toContain('cholera');
   });
 

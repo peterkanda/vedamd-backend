@@ -16,7 +16,7 @@ describe('AllergyService', () => {
 
   it('loads the open allergy cross-reactivity catalogue from the signed bundle', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThan(8);
+    expect(list.length).toBeGreaterThanOrEqual(60);
     expect(list.map((a) => a.slug)).toContain('penicillin-cephalosporin');
   });
 
