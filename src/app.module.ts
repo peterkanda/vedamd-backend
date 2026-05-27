@@ -42,6 +42,7 @@ import { CustomRulesModule } from './modules/custom-rules/custom-rules.module';
 import { NotificationsModule } from './modules/notifications/notifications.module';
 import { ClinicalAuditsModule } from './modules/clinical-audits/clinical-audits.module';
 import { DataSourcesModule } from './modules/data-sources/data-sources.module';
+import { CdsFeedbackModule } from './modules/cds-feedback/cds-feedback.module';
 import { ReferenceModule } from './modules/reference/reference.module';
 
 @Module({
@@ -91,6 +92,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     NotificationsModule,
     ClinicalAuditsModule,
     DataSourcesModule,
+    CdsFeedbackModule,
     ReferenceModule,
   ],
 })

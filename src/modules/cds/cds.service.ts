@@ -1,5 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { randomUUID } from 'node:crypto';
 import type {
   CdsCard,
   CdsHookRequest,
@@ -11,6 +12,21 @@ import { CdsStrategyRegistry } from './strategies/registry';
 import { KnowledgeService } from '../knowledge/knowledge.service';
 import { PHI_FREE_LOGGER, type PhiFreeLogger } from '../../common/phi-free-logger';
 import type { AppConfig } from '../../config/configuration';
+
+/**
+ * Bounded in-memory mapping of card UUID → (rule, service, hook) so the
+ * CDS Hooks feedback endpoint can resolve a clinician override back to
+ * the rule that fired. PHI-free by construction — we store rule/service
+ * ids only, never the card's clinical text. FIFO-evicted at 10,000
+ * entries (≈ the last ~1-2 hours of high-volume traffic).
+ */
+export interface CardLookup {
+  ruleId: string | null;
+  serviceId: string;
+  hook: string;
+  createdAt: number;
+}
+const CARD_REGISTRY_MAX = 10_000;
 
 /**
  * Stateless evaluation service. Patient context arrives in the request,
@@ -34,6 +50,20 @@ export class CdsService {
       title: 'VedaMD prescribing safety',
       description:
         'Drug-drug interactions, dose checking, pediatric/renal/hepatic adjustments, AWaRe stewardship.',
+    },
+    {
+      id: 'vedamd-order-select',
+      hook: 'order-select',
+      title: 'VedaMD order-select safety',
+      description:
+        'Same safety checks as medication-prescribe (DDI, renal/hepatic dose adjustment, paediatric dosing, pregnancy safety, AWaRe stewardship) fired earlier in the order workflow — when the clinician picks orders but has not yet signed. Cards returned here let the EHR offer alternative drafts before the order is committed.',
+    },
+    {
+      id: 'vedamd-order-sign',
+      hook: 'order-sign',
+      title: 'VedaMD order-sign final safety gate',
+      description:
+        'Last-chance evaluation before the clinician commits the order. Re-runs the prescribing-safety rule set (DDI, dose checks, pregnancy / renal / hepatic safety, stewardship) so an interaction added late in the session is still caught. Critical-indicator cards here are intended to soft-block until acknowledged.',
     },
     {
       id: 'vedamd-patient-view',
@@ -499,12 +529,20 @@ export class CdsService {
     },
   ];
 
+  /** Card UUID → metadata, kept so /feedback can resolve the rule. */
+  private readonly cardRegistry = new Map<string, CardLookup>();
+
   constructor(
     private readonly config: ConfigService<AppConfig, true>,
     @Inject(PHI_FREE_LOGGER) private readonly log: PhiFreeLogger,
     private readonly knowledge: KnowledgeService,
     private readonly registry: CdsStrategyRegistry,
   ) {}
+
+  /** Resolve a card UUID back to its rule for feedback ingest. Null if expired / unknown. */
+  lookupCard(uuid: string): CardLookup | null {
+    return this.cardRegistry.get(uuid) ?? null;
+  }
 
   listServices(): CdsServiceDescriptor[] {
     return this.services;
@@ -534,11 +572,30 @@ export class CdsService {
     let rulesFired = 0;
 
     if (known) {
+      // CDS Hooks 1.0: order-select and order-sign fire the same safety
+      // checks as medication-prescribe — same medical question (is this
+      // order safe?), different point in the EHR workflow. Re-using the
+      // existing 89 medication-prescribe rules avoids content duplication
+      // and keeps a single source of truth. The strategies (DDI, renal,
+      // hepatic, pregnancy, AWaRe stewardship) already read context fields
+      // that accept both medication-prescribe and order-select/order-sign
+      // payload shapes (see ddi.strategy.ts — accepts proposed / draft /
+      // current variants).
+      const hookMatches = (ruleHook: string | null | undefined): boolean => {
+        if (ruleHook === known.hook) return true;
+        if (
+          (known.hook === 'order-select' || known.hook === 'order-sign') &&
+          ruleHook === 'medication-prescribe'
+        ) {
+          return true;
+        }
+        return false;
+      };
       const applicableRules = this.knowledge
         .getCdsRules()
         .filter(
           (rule) =>
-            rule.hook === known.hook &&
+            hookMatches(rule.hook) &&
             (rule.services === undefined || rule.services.includes(known.id)),
         );
 
@@ -561,6 +618,21 @@ export class CdsService {
             const ext = card.extension?.['http://vedamd.io/Card/recommendation'];
             if (ext && !ext.reviewStatus) {
               ext.reviewStatus = rule.reviewStatus;
+            }
+          }
+          // Assign a UUID per card and remember the lookup so /feedback
+          // can attribute clinician overrides back to this rule. PHI-free.
+          for (const card of ruleCards) {
+            if (!card.uuid) card.uuid = randomUUID();
+            this.cardRegistry.set(card.uuid, {
+              ruleId: rule.id,
+              serviceId,
+              hook: req.hook,
+              createdAt: Date.now(),
+            });
+            if (this.cardRegistry.size > CARD_REGISTRY_MAX) {
+              const oldest = this.cardRegistry.keys().next().value;
+              if (oldest) this.cardRegistry.delete(oldest);
             }
           }
           cards.push(...ruleCards);
