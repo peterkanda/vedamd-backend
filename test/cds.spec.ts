@@ -194,6 +194,53 @@ describe('CdsService', () => {
       valueBoolean: true,
     });
   });
+
+  it('advertises all four CDS Hooks 1.0 services (patient-view, medication-prescribe, order-select, order-sign)', () => {
+    const services = makeService().listServices();
+    const hooks = new Set(services.map((s) => s.hook));
+    expect(hooks.has('patient-view')).toBe(true);
+    expect(hooks.has('medication-prescribe')).toBe(true);
+    expect(hooks.has('order-select')).toBe(true);
+    expect(hooks.has('order-sign')).toBe(true);
+    expect(services.find((s) => s.id === 'vedamd-order-select')).toBeDefined();
+    expect(services.find((s) => s.id === 'vedamd-order-sign')).toBeDefined();
+  });
+});
+
+describe('CdsService.evaluateHook — order-select / order-sink fallthrough', () => {
+  it('fires the DDI rule on order-select for paracetamol + warfarin (same check as medication-prescribe)', async () => {
+    const res = await makeService().evaluateHook('vedamd-order-select', {
+      hook: 'order-select',
+      hookInstance: 'order-select-1',
+      context: { draftMedications: ['paracetamol', 'warfarin'] },
+    });
+    expect(res.cards.length).toBe(1);
+    expect(res.cards[0].indicator).toBe('warning');
+    expect(res.cards[0].summary.toLowerCase()).toContain('paracetamol');
+    expect(res.cards[0].summary.toLowerCase()).toContain('warfarin');
+  });
+
+  it('fires the DDI rule on order-sign as the final safety gate', async () => {
+    const res = await makeService().evaluateHook('vedamd-order-sign', {
+      hook: 'order-sign',
+      hookInstance: 'order-sign-1',
+      context: { draftMedications: ['paracetamol', 'warfarin'] },
+    });
+    expect(res.cards.length).toBe(1);
+    expect(res.cards[0].indicator).toBe('warning');
+  });
+
+  it('does not fire patient-view-only rules on order-select / order-sign', async () => {
+    const res = await makeService().evaluateHook('vedamd-order-select', {
+      hook: 'order-select',
+      hookInstance: 'order-select-2',
+      // patient-view rules typically look at ageMonths / temperatureC etc.;
+      // supplying those without draft meds must NOT cause a fire.
+      context: { ageMonths: 24, temperatureC: 39 },
+    });
+    // No draft meds + no DDI inputs → no medication-prescribe rule fires.
+    expect(res.cards.length).toBe(0);
+  });
 });
 
 describe('CdsService.evaluateHook — drug-drug interaction rule (end-to-end)', () => {

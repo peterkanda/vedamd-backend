@@ -12,7 +12,7 @@ describe('ConditionsService', () => {
 
   it('lists summaries without the deep content fields', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThan(0);
+    expect(list.length).toBeGreaterThanOrEqual(1500);
     for (const summary of list) {
       expect(summary.slug).toBeTruthy();
       expect(summary.title).toBeTruthy();
