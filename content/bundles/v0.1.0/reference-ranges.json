@@ -737,5 +737,3165 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "calcium-total",
+    "analyte": "Calcium (total)",
+    "specimen": "serum",
+    "low": 2.15,
+    "high": 2.55,
+    "unit": "mmol/L",
+    "loinc": "17861-6",
+    "category": "bone-metabolic",
+    "sex": "any",
+    "notes": "Correct for albumin in hypoalbuminaemia; ionised calcium is the physiologically active fraction.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "calcium-ionised",
+    "analyte": "Calcium (ionised)",
+    "specimen": "whole blood",
+    "low": 1.15,
+    "high": 1.32,
+    "unit": "mmol/L",
+    "loinc": "1995-0",
+    "category": "bone-metabolic",
+    "sex": "any",
+    "notes": "Preferred in critically ill, transfused or hypoalbuminaemic patients; sample anaerobically on ice.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anion-gap",
+    "analyte": "Anion gap",
+    "specimen": "serum/plasma",
+    "low": 8,
+    "high": 16,
+    "unit": "mmol/L",
+    "loinc": "1863-0",
+    "category": "electrolytes",
+    "sex": "any",
+    "notes": "Calculated as (Na) - (Cl + HCO3); raised gap suggests lactic acidosis, ketoacidosis, uraemia or toxin ingestion.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "osmolality-serum",
+    "analyte": "Osmolality (serum)",
+    "specimen": "serum",
+    "low": 275,
+    "high": 295,
+    "unit": "mosm/kg",
+    "loinc": "2692-2",
+    "category": "electrolytes",
+    "sex": "any",
+    "notes": "Measured-calculated gap >10 suggests unmeasured osmoles (e.g. methanol, ethylene glycol, mannitol).",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urate",
+    "analyte": "Urate (uric acid)",
+    "specimen": "serum",
+    "low": 200,
+    "high": 430,
+    "unit": "umol/L",
+    "loinc": "3084-1",
+    "category": "renal",
+    "sex": "male",
+    "notes": "Adult male range; target <360 umol/L during gout urate-lowering therapy (300 if tophi/erosive disease).",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urate-female",
+    "analyte": "Urate (uric acid)",
+    "specimen": "serum",
+    "low": 140,
+    "high": 360,
+    "unit": "umol/L",
+    "loinc": "3084-1",
+    "category": "renal",
+    "sex": "female",
+    "notes": "Adult female range; target <360 umol/L during gout urate-lowering therapy.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urine-protein-creatinine-ratio",
+    "analyte": "Urine protein:creatinine ratio (uPCR)",
+    "specimen": "urine",
+    "low": null,
+    "high": 15,
+    "unit": "mg/mmol",
+    "loinc": "2890-2",
+    "category": "renal",
+    "sex": "any",
+    "notes": "Spot sample. >50 mg/mmol equates to roughly >0.5 g/day proteinuria; >100 is nephrotic-range when persistent.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urine-albumin-creatinine-ratio",
+    "analyte": "Urine albumin:creatinine ratio (uACR)",
+    "specimen": "urine",
+    "low": null,
+    "high": 3,
+    "unit": "mg/mmol",
+    "loinc": "9318-7",
+    "category": "renal",
+    "sex": "any",
+    "notes": "Early-morning sample preferred. KDIGO A1 <3, A2 3-30, A3 >30 mg/mmol. Confirm with repeat sample.",
+    "references": [
+      {
+        "label": "KDIGO 2024 clinical practice guideline for the evaluation and management of CKD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urinary-sodium",
+    "analyte": "Urinary sodium (spot)",
+    "specimen": "urine",
+    "low": null,
+    "high": null,
+    "unit": "mmol/L",
+    "loinc": "2955-3",
+    "category": "renal",
+    "sex": "any",
+    "notes": "<20 suggests pre-renal/hypovolaemic state, >40 supports intrinsic AKI; interpret only off diuretics.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urine-osmolality",
+    "analyte": "Urine osmolality",
+    "specimen": "urine",
+    "low": 300,
+    "high": 900,
+    "unit": "mosm/kg",
+    "loinc": "2695-5",
+    "category": "renal",
+    "sex": "any",
+    "notes": "Maximally concentrated urine reaches ~1200 mosm/kg in young adults; <300 with hyperosmolar serum suggests diabetes insipidus.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "fractional-excretion-sodium",
+    "analyte": "Fractional excretion of sodium (FeNa)",
+    "specimen": "calculated",
+    "low": null,
+    "high": null,
+    "unit": "%",
+    "loinc": null,
+    "category": "renal",
+    "sex": "any",
+    "notes": "<1% supports pre-renal AKI; >2% supports intrinsic AKI (acute tubular necrosis). Unreliable on diuretics — use FeUrea instead.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "bilirubin-direct",
+    "analyte": "Bilirubin (direct/conjugated)",
+    "specimen": "serum",
+    "low": 0,
+    "high": 5,
+    "unit": "umol/L",
+    "loinc": "1968-7",
+    "category": "liver",
+    "sex": "any",
+    "notes": "Conjugated fraction >20% of total suggests hepatocellular or cholestatic process rather than haemolysis.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "total-protein",
+    "analyte": "Total protein",
+    "specimen": "serum",
+    "low": 60,
+    "high": 80,
+    "unit": "g/L",
+    "loinc": "2885-2",
+    "category": "liver",
+    "sex": "any",
+    "notes": null,
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "globulin",
+    "analyte": "Globulin",
+    "specimen": "serum",
+    "low": 20,
+    "high": 35,
+    "unit": "g/L",
+    "loinc": "10834-0",
+    "category": "liver",
+    "sex": "any",
+    "notes": "Calculated (total protein - albumin); raised in chronic infection, autoimmune liver disease, paraproteinaemia.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ammonia",
+    "analyte": "Ammonia",
+    "specimen": "plasma",
+    "low": 10,
+    "high": 47,
+    "unit": "umol/L",
+    "loinc": "32664-5",
+    "category": "liver",
+    "sex": "any",
+    "notes": "Sample on ice, separate and analyse within 30 min — delays falsely elevate. Marked elevations in urea cycle disorders and hepatic encephalopathy.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lactate-dehydrogenase",
+    "analyte": "Lactate dehydrogenase",
+    "specimen": "serum",
+    "low": 135,
+    "high": 250,
+    "unit": "U/L",
+    "loinc": "14804-9",
+    "category": "liver",
+    "sex": "any",
+    "notes": "Haemolysis falsely elevates. Marked rises in haemolysis, tumour lysis, lymphoma and large infarcts.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "glucose-random",
+    "analyte": "Glucose (random)",
+    "specimen": "plasma",
+    "low": 3.9,
+    "high": 7.8,
+    "unit": "mmol/L",
+    "loinc": "2345-7",
+    "category": "diabetes",
+    "sex": "any",
+    "notes": ">=11.1 mmol/L with classic symptoms is diagnostic of diabetes.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hba1c-target-diabetic",
+    "analyte": "HbA1c target (established diabetes)",
+    "specimen": "whole blood",
+    "low": null,
+    "high": 53,
+    "unit": "mmol/mol",
+    "loinc": "4548-4",
+    "category": "diabetes",
+    "sex": "any",
+    "notes": "Typical target 48-53 mmol/mol (6.5-7.0%); individualise — relax in frailty, hypoglycaemia unawareness, limited life expectancy.",
+    "references": [
+      {
+        "label": "NICE NG28 Type 2 diabetes in adults: management"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "c-peptide",
+    "analyte": "C-peptide (fasting)",
+    "specimen": "serum",
+    "low": 0.27,
+    "high": 1.27,
+    "unit": "nmol/L",
+    "loinc": "1986-9",
+    "category": "diabetes",
+    "sex": "any",
+    "notes": "Useful for distinguishing type 1 (low/undetectable) from type 2 diabetes. Interpret with concurrent glucose.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "insulin-fasting",
+    "analyte": "Insulin (fasting)",
+    "specimen": "serum",
+    "low": 18,
+    "high": 173,
+    "unit": "pmol/L",
+    "loinc": "20448-7",
+    "category": "diabetes",
+    "sex": "any",
+    "notes": "Highly assay-dependent; interpret only with paired fasting glucose. Used in hypoglycaemia and insulinoma work-up.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "fructosamine",
+    "analyte": "Fructosamine",
+    "specimen": "serum",
+    "low": 205,
+    "high": 285,
+    "unit": "umol/L",
+    "loinc": "1558-6",
+    "category": "diabetes",
+    "sex": "any",
+    "notes": "Reflects 2-3 week glycaemia; useful when HbA1c is unreliable (haemoglobinopathy, recent transfusion, pregnancy).",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ketones-blood",
+    "analyte": "Beta-hydroxybutyrate (capillary)",
+    "specimen": "whole blood",
+    "low": 0,
+    "high": 0.6,
+    "unit": "mmol/L",
+    "loinc": "53060-7",
+    "category": "diabetes",
+    "sex": "any",
+    "notes": ">=3.0 mmol/L with acidosis is DKA. Used to monitor resolution; check hourly until <0.6 mmol/L.",
+    "references": [
+      {
+        "label": "Joint British Diabetes Societies (JBDS) DKA guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "cholesterol-total",
+    "analyte": "Cholesterol (total)",
+    "specimen": "serum",
+    "low": null,
+    "high": 5.0,
+    "unit": "mmol/L",
+    "loinc": "14647-2",
+    "category": "lipids",
+    "sex": "any",
+    "notes": "Use non-HDL cholesterol or apolipoprotein B for risk stratification; total cholesterol alone underestimates risk.",
+    "references": [
+      {
+        "label": "NICE CG181 Cardiovascular disease: risk assessment and reduction"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ldl-cholesterol",
+    "analyte": "LDL cholesterol",
+    "specimen": "serum",
+    "low": null,
+    "high": 3.0,
+    "unit": "mmol/L",
+    "loinc": "13457-7",
+    "category": "lipids",
+    "sex": "any",
+    "notes": "Secondary-prevention target <1.4 mmol/L; primary-prevention target <2.6. Calculated (Friedewald) unreliable when triglycerides >4.5.",
+    "references": [
+      {
+        "label": "ESC/EAS 2019 guideline on dyslipidaemias"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hdl-cholesterol-male",
+    "analyte": "HDL cholesterol",
+    "specimen": "serum",
+    "low": 1.0,
+    "high": null,
+    "unit": "mmol/L",
+    "loinc": "2085-9",
+    "category": "lipids",
+    "sex": "male",
+    "notes": "Very high HDL (>2.3) does not provide additional cardiovascular protection and may signal underlying lipid disorder.",
+    "references": [
+      {
+        "label": "ESC/EAS 2019 guideline on dyslipidaemias"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hdl-cholesterol-female",
+    "analyte": "HDL cholesterol",
+    "specimen": "serum",
+    "low": 1.2,
+    "high": null,
+    "unit": "mmol/L",
+    "loinc": "2085-9",
+    "category": "lipids",
+    "sex": "female",
+    "notes": "Very high HDL (>2.3) does not provide additional cardiovascular protection.",
+    "references": [
+      {
+        "label": "ESC/EAS 2019 guideline on dyslipidaemias"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "triglycerides",
+    "analyte": "Triglycerides (fasting)",
+    "specimen": "serum",
+    "low": null,
+    "high": 1.7,
+    "unit": "mmol/L",
+    "loinc": "2571-8",
+    "category": "lipids",
+    "sex": "any",
+    "notes": ">10 mmol/L is a pancreatitis risk; fasting >9 h preferred for accuracy.",
+    "references": [
+      {
+        "label": "ESC/EAS 2019 guideline on dyslipidaemias"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "non-hdl-cholesterol",
+    "analyte": "Non-HDL cholesterol",
+    "specimen": "serum",
+    "low": null,
+    "high": 3.8,
+    "unit": "mmol/L",
+    "loinc": "43396-1",
+    "category": "lipids",
+    "sex": "any",
+    "notes": "Total minus HDL; preferred by NICE for cardiovascular risk and lipid-lowering therapy targets.",
+    "references": [
+      {
+        "label": "NICE CG181 Cardiovascular disease: risk assessment and reduction"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "apolipoprotein-b",
+    "analyte": "Apolipoprotein B",
+    "specimen": "serum",
+    "low": null,
+    "high": 1.0,
+    "unit": "g/L",
+    "loinc": "1884-6",
+    "category": "lipids",
+    "sex": "any",
+    "notes": "Counts the atherogenic particle burden; preferred when triglycerides high or LDL near target.",
+    "references": [
+      {
+        "label": "ESC/EAS 2019 guideline on dyslipidaemias"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lipoprotein-a",
+    "analyte": "Lipoprotein(a)",
+    "specimen": "serum",
+    "low": null,
+    "high": 75,
+    "unit": "nmol/L",
+    "loinc": "43583-4",
+    "category": "lipids",
+    "sex": "any",
+    "notes": "Largely genetically determined; measure once in adult life. >125 nmol/L is independent cardiovascular risk factor.",
+    "references": [
+      {
+        "label": "European Atherosclerosis Society 2022 consensus on lipoprotein(a)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "haematocrit-male",
+    "analyte": "Haematocrit",
+    "specimen": "whole blood",
+    "low": 0.40,
+    "high": 0.52,
+    "unit": "1",
+    "loinc": "4544-3",
+    "category": "haematology",
+    "sex": "male",
+    "notes": "Reported as a fraction (0.40 = 40%).",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "haematocrit-female",
+    "analyte": "Haematocrit",
+    "specimen": "whole blood",
+    "low": 0.36,
+    "high": 0.46,
+    "unit": "1",
+    "loinc": "4544-3",
+    "category": "haematology",
+    "sex": "female",
+    "notes": "Reported as a fraction (0.36 = 36%).",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lymphocytes-absolute",
+    "analyte": "Lymphocytes (absolute)",
+    "specimen": "whole blood",
+    "low": 1.0,
+    "high": 4.0,
+    "unit": "10*9/L",
+    "loinc": "731-0",
+    "category": "haematology",
+    "sex": "any",
+    "notes": "Persistent lymphocytosis >5 in adults warrants flow cytometry to exclude CLL.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "eosinophils-absolute",
+    "analyte": "Eosinophils (absolute)",
+    "specimen": "whole blood",
+    "low": 0,
+    "high": 0.5,
+    "unit": "10*9/L",
+    "loinc": "711-2",
+    "category": "haematology",
+    "sex": "any",
+    "notes": ">1.5 sustained is hypereosinophilia — consider parasites, drug reactions, vasculitis, haematological clonal disease.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "basophils-absolute",
+    "analyte": "Basophils (absolute)",
+    "specimen": "whole blood",
+    "low": 0,
+    "high": 0.1,
+    "unit": "10*9/L",
+    "loinc": "704-7",
+    "category": "haematology",
+    "sex": "any",
+    "notes": "Persistent basophilia raises suspicion of chronic myeloid leukaemia.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "monocytes-absolute",
+    "analyte": "Monocytes (absolute)",
+    "specimen": "whole blood",
+    "low": 0.2,
+    "high": 1.0,
+    "unit": "10*9/L",
+    "loinc": "742-7",
+    "category": "haematology",
+    "sex": "any",
+    "notes": "Sustained monocytosis >1.0 (>3 months) raises CMML suspicion.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "mcv",
+    "analyte": "Mean cell volume (MCV)",
+    "specimen": "whole blood",
+    "low": 80,
+    "high": 100,
+    "unit": "fL",
+    "loinc": "787-2",
+    "category": "haematology",
+    "sex": "any",
+    "notes": "<80 microcytic (iron deficiency, thalassaemia); >100 macrocytic (B12/folate, alcohol, hypothyroidism, MDS).",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "mch",
+    "analyte": "Mean cell haemoglobin (MCH)",
+    "specimen": "whole blood",
+    "low": 27,
+    "high": 32,
+    "unit": "pg",
+    "loinc": "785-6",
+    "category": "haematology",
+    "sex": "any",
+    "notes": null,
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "mchc",
+    "analyte": "Mean cell haemoglobin concentration (MCHC)",
+    "specimen": "whole blood",
+    "low": 320,
+    "high": 360,
+    "unit": "g/L",
+    "loinc": "786-4",
+    "category": "haematology",
+    "sex": "any",
+    "notes": "Elevated MCHC suggests spherocytosis or cold agglutinins (spurious).",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "rdw",
+    "analyte": "Red cell distribution width (RDW)",
+    "specimen": "whole blood",
+    "low": 11.5,
+    "high": 14.5,
+    "unit": "%",
+    "loinc": "788-0",
+    "category": "haematology",
+    "sex": "any",
+    "notes": "Raised in mixed deficiency (iron + B12/folate) and in early iron deficiency before MCV falls.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "reticulocytes-percentage",
+    "analyte": "Reticulocytes (percentage)",
+    "specimen": "whole blood",
+    "low": 0.5,
+    "high": 2.5,
+    "unit": "%",
+    "loinc": "4679-7",
+    "category": "haematology",
+    "sex": "any",
+    "notes": "Correct for anaemia (corrected reticulocyte count = % x patient Hct / 0.45).",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "reticulocytes-absolute",
+    "analyte": "Reticulocytes (absolute)",
+    "specimen": "whole blood",
+    "low": 25,
+    "high": 100,
+    "unit": "10*9/L",
+    "loinc": "60474-4",
+    "category": "haematology",
+    "sex": "any",
+    "notes": "Low in marrow failure/aplasia; high in haemolysis or recovery after blood loss.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "prothrombin-time",
+    "analyte": "Prothrombin time",
+    "specimen": "plasma",
+    "low": 11,
+    "high": 14,
+    "unit": "s",
+    "loinc": "5902-2",
+    "category": "coagulation",
+    "sex": "any",
+    "notes": "Always report alongside INR. Prolonged in vitamin-K deficiency, warfarin, liver disease, DIC.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "inr-target-warfarin-standard",
+    "analyte": "INR target (warfarin, standard indication)",
+    "specimen": "plasma",
+    "low": 2.0,
+    "high": 3.0,
+    "unit": "{INR}",
+    "loinc": "6301-6",
+    "category": "coagulation",
+    "sex": "any",
+    "notes": "Target 2-3 for AF, VTE, biological valves. Mechanical mitral valve target 2.5-3.5. Recheck within 1 week of any dose change.",
+    "references": [
+      {
+        "label": "BSH guidelines on oral anticoagulation with warfarin"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "d-dimer",
+    "analyte": "D-dimer",
+    "specimen": "plasma",
+    "low": null,
+    "high": 500,
+    "unit": "ng/mL",
+    "loinc": "48066-5",
+    "category": "coagulation",
+    "sex": "any",
+    "notes": "Use age-adjusted cut-off (age x 10 ng/mL) over 50 years. Negative D-dimer with low pre-test probability excludes VTE.",
+    "references": [
+      {
+        "label": "NICE NG158 Venous thromboembolic diseases"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-xa-prophylactic",
+    "analyte": "Anti-Xa (LMWH prophylactic target)",
+    "specimen": "plasma",
+    "low": 0.2,
+    "high": 0.5,
+    "unit": "U/mL",
+    "loinc": "3258-1",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Sample 4 h post once-daily LMWH dose. Routine monitoring not required except in renal impairment, extremes of weight, pregnancy.",
+    "references": [
+      {
+        "label": "BSH guideline on monitoring LMWH"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "anti-xa-therapeutic",
+    "analyte": "Anti-Xa (LMWH therapeutic target)",
+    "specimen": "plasma",
+    "low": 0.6,
+    "high": 1.0,
+    "unit": "U/mL",
+    "loinc": "3258-1",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Sample 4 h post once-daily LMWH dose. Twice-daily regimens target ~0.6-1.0 U/mL peak. Adjust dose if outside range.",
+    "references": [
+      {
+        "label": "BSH guideline on monitoring LMWH"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "thrombin-time",
+    "analyte": "Thrombin time",
+    "specimen": "plasma",
+    "low": 14,
+    "high": 21,
+    "unit": "s",
+    "loinc": "3243-3",
+    "category": "coagulation",
+    "sex": "any",
+    "notes": "Prolonged by unfractionated heparin, dabigatran and severe hypofibrinogenaemia.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ferritin-male",
+    "analyte": "Ferritin",
+    "specimen": "serum",
+    "low": 30,
+    "high": 400,
+    "unit": "ug/L",
+    "loinc": "2276-4",
+    "category": "iron-studies",
+    "sex": "male",
+    "notes": "<30 ug/L diagnostic of iron deficiency. Raised as an acute-phase reactant — interpret with CRP.",
+    "references": [
+      {
+        "label": "BSH guideline on the laboratory diagnosis of functional iron deficiency"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ferritin-female",
+    "analyte": "Ferritin",
+    "specimen": "serum",
+    "low": 15,
+    "high": 200,
+    "unit": "ug/L",
+    "loinc": "2276-4",
+    "category": "iron-studies",
+    "sex": "female",
+    "notes": "<30 ug/L diagnostic of iron deficiency (some use <15 in non-pregnant menstruating women). Interpret with CRP.",
+    "references": [
+      {
+        "label": "BSH guideline on the laboratory diagnosis of functional iron deficiency"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "serum-iron",
+    "analyte": "Serum iron",
+    "specimen": "serum",
+    "low": 10,
+    "high": 30,
+    "unit": "umol/L",
+    "loinc": "2498-4",
+    "category": "iron-studies",
+    "sex": "any",
+    "notes": "Diurnal variation — sample morning, fasting. Not interpretable alone; always pair with transferrin/TIBC and ferritin.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "total-iron-binding-capacity",
+    "analyte": "Total iron-binding capacity (TIBC)",
+    "specimen": "serum",
+    "low": 45,
+    "high": 80,
+    "unit": "umol/L",
+    "loinc": "2500-7",
+    "category": "iron-studies",
+    "sex": "any",
+    "notes": "Raised in iron deficiency, low in anaemia of chronic disease.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "transferrin-saturation",
+    "analyte": "Transferrin saturation",
+    "specimen": "serum",
+    "low": 20,
+    "high": 50,
+    "unit": "%",
+    "loinc": "2502-3",
+    "category": "iron-studies",
+    "sex": "any",
+    "notes": "<20% supports iron deficiency. >45% (men) or >40% (women) on fasting sample raises suspicion of haemochromatosis.",
+    "references": [
+      {
+        "label": "BSH guidelines on the diagnosis and management of hereditary haemochromatosis"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "vitamin-b12",
+    "analyte": "Vitamin B12 (cobalamin)",
+    "specimen": "serum",
+    "low": 180,
+    "high": null,
+    "unit": "ng/L",
+    "loinc": "2132-9",
+    "category": "vitamin-mineral",
+    "sex": "any",
+    "notes": "Borderline 180-250 ng/L: check methylmalonic acid or homocysteine if clinical suspicion. Treat empirically if symptomatic.",
+    "references": [
+      {
+        "label": "BSH guidelines on diagnosis and treatment of cobalamin and folate disorders"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "folate-serum",
+    "analyte": "Folate (serum)",
+    "specimen": "serum",
+    "low": 7,
+    "high": null,
+    "unit": "nmol/L",
+    "loinc": "2284-8",
+    "category": "vitamin-mineral",
+    "sex": "any",
+    "notes": "Reflects short-term intake; one missed meal can drop the value. Red-cell folate gives a longer-term picture.",
+    "references": [
+      {
+        "label": "BSH guidelines on diagnosis and treatment of cobalamin and folate disorders"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "folate-rbc",
+    "analyte": "Folate (red cell)",
+    "specimen": "whole blood",
+    "low": 340,
+    "high": null,
+    "unit": "nmol/L",
+    "loinc": "2285-5",
+    "category": "vitamin-mineral",
+    "sex": "any",
+    "notes": "Better estimate of tissue folate stores than serum folate; falsely low in B12 deficiency.",
+    "references": [
+      {
+        "label": "BSH guidelines on diagnosis and treatment of cobalamin and folate disorders"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "vitamin-d-25oh",
+    "analyte": "25-hydroxyvitamin D",
+    "specimen": "serum",
+    "low": 50,
+    "high": null,
+    "unit": "nmol/L",
+    "loinc": "1989-3",
+    "category": "vitamin-mineral",
+    "sex": "any",
+    "notes": "<25 nmol/L deficient; 25-50 insufficient; >50 replete. UK guidance recommends supplementation if deficient.",
+    "references": [
+      {
+        "label": "NICE NG209 Vitamin D deficiency in adults"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "vitamin-a",
+    "analyte": "Vitamin A (retinol)",
+    "specimen": "serum",
+    "low": 1.05,
+    "high": 2.45,
+    "unit": "umol/L",
+    "loinc": "2923-1",
+    "category": "vitamin-mineral",
+    "sex": "any",
+    "notes": "Falls as a negative acute-phase reactant; interpret with CRP. Toxicity above 3.0 umol/L.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "vitamin-e",
+    "analyte": "Vitamin E (alpha-tocopherol)",
+    "specimen": "serum",
+    "low": 12,
+    "high": 42,
+    "unit": "umol/L",
+    "loinc": "1828-3",
+    "category": "vitamin-mineral",
+    "sex": "any",
+    "notes": "Interpret relative to total lipids (vitamin E/cholesterol ratio) in hyperlipidaemia.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "zinc-serum",
+    "analyte": "Zinc",
+    "specimen": "serum",
+    "low": 10,
+    "high": 18,
+    "unit": "umol/L",
+    "loinc": "5763-8",
+    "category": "vitamin-mineral",
+    "sex": "any",
+    "notes": "Use a trace-element-free tube. Falls in acute illness; interpret with CRP and albumin.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "copper-serum",
+    "analyte": "Copper",
+    "specimen": "serum",
+    "low": 11,
+    "high": 22,
+    "unit": "umol/L",
+    "loinc": "5631-7",
+    "category": "vitamin-mineral",
+    "sex": "any",
+    "notes": "Paired with caeruloplasmin in Wilson disease work-up; raised by pregnancy/oestrogen.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "selenium-serum",
+    "analyte": "Selenium",
+    "specimen": "serum",
+    "low": 0.85,
+    "high": 1.65,
+    "unit": "umol/L",
+    "loinc": "5763-8",
+    "category": "vitamin-mineral",
+    "sex": "any",
+    "notes": "Low in long-term parenteral nutrition without supplementation.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "free-t3",
+    "analyte": "Free tri-iodothyronine (T3)",
+    "specimen": "serum",
+    "low": 3.5,
+    "high": 6.5,
+    "unit": "pmol/L",
+    "loinc": "3051-0",
+    "category": "thyroid",
+    "sex": "any",
+    "notes": "Falls in non-thyroidal illness (sick euthyroid). Not first-line for thyroid screening — use TSH +/- FT4.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "total-t4",
+    "analyte": "Total thyroxine (T4)",
+    "specimen": "serum",
+    "low": 60,
+    "high": 150,
+    "unit": "nmol/L",
+    "loinc": "3026-2",
+    "category": "thyroid",
+    "sex": "any",
+    "notes": "Raised in pregnancy and oestrogen use because of higher thyroid-binding globulin; free T4 preferred.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "total-t3",
+    "analyte": "Total tri-iodothyronine (T3)",
+    "specimen": "serum",
+    "low": 1.2,
+    "high": 2.7,
+    "unit": "nmol/L",
+    "loinc": "3053-6",
+    "category": "thyroid",
+    "sex": "any",
+    "notes": null,
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "tpo-antibodies",
+    "analyte": "Thyroid peroxidase antibodies (anti-TPO)",
+    "specimen": "serum",
+    "low": null,
+    "high": 35,
+    "unit": "kU/L",
+    "loinc": "8099-4",
+    "category": "thyroid",
+    "sex": "any",
+    "notes": "Highly assay-dependent. Positive in autoimmune thyroiditis (Hashimoto's and Graves') and in subclinical hypothyroidism predicting progression.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "thyroglobulin",
+    "analyte": "Thyroglobulin",
+    "specimen": "serum",
+    "low": null,
+    "high": 55,
+    "unit": "ug/L",
+    "loinc": "3014-8",
+    "category": "thyroid",
+    "sex": "any",
+    "notes": "Used post-thyroidectomy/RAI for differentiated thyroid cancer surveillance; always co-measure anti-thyroglobulin antibodies.",
+    "references": [
+      {
+        "label": "ATA 2015 management guidelines for thyroid nodules and differentiated thyroid cancer"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "cortisol-am",
+    "analyte": "Cortisol (09:00)",
+    "specimen": "serum",
+    "low": 140,
+    "high": 540,
+    "unit": "nmol/L",
+    "loinc": "2143-6",
+    "category": "hormones",
+    "sex": "any",
+    "notes": ">350 nmol/L makes adrenal insufficiency unlikely; <100 nmol/L is highly suggestive. Confirm with Short Synacthen Test.",
+    "references": [
+      {
+        "label": "Endocrine Society 2016 guideline on primary adrenal insufficiency"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "cortisol-random",
+    "analyte": "Cortisol (random/stress)",
+    "specimen": "serum",
+    "low": null,
+    "high": null,
+    "unit": "nmol/L",
+    "loinc": "2143-6",
+    "category": "hormones",
+    "sex": "any",
+    "notes": "In acute critical illness >500-550 nmol/L excludes adrenal insufficiency; <250 nmol/L suggests it.",
+    "references": [
+      {
+        "label": "Endocrine Society 2016 guideline on primary adrenal insufficiency"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "acth",
+    "analyte": "Adrenocorticotropic hormone (ACTH)",
+    "specimen": "plasma",
+    "low": 2,
+    "high": 11,
+    "unit": "pmol/L",
+    "loinc": "14834-6",
+    "category": "hormones",
+    "sex": "any",
+    "notes": "Collect in EDTA on ice, separate immediately. Marked diurnal variation — 09:00 sample standard.",
+    "references": [
+      {
+        "label": "Endocrine Society 2016 guideline on primary adrenal insufficiency"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "prolactin",
+    "analyte": "Prolactin",
+    "specimen": "serum",
+    "low": null,
+    "high": 500,
+    "unit": "mU/L",
+    "loinc": "15082-1",
+    "category": "hormones",
+    "sex": "any",
+    "notes": ">5000 mU/L suggests macroprolactinoma; modest elevations seen with antipsychotics, metoclopramide, stress.",
+    "references": [
+      {
+        "label": "Endocrine Society 2011 guideline on hyperprolactinaemia"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "parathyroid-hormone",
+    "analyte": "Parathyroid hormone (intact)",
+    "specimen": "plasma",
+    "low": 1.6,
+    "high": 6.9,
+    "unit": "pmol/L",
+    "loinc": "2731-8",
+    "category": "hormones",
+    "sex": "any",
+    "notes": "Interpret with paired calcium and vitamin D. Targets in CKD-MBD differ (see KDIGO).",
+    "references": [
+      {
+        "label": "Endocrine Society 2014 guideline on primary hyperparathyroidism"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "igf-1",
+    "analyte": "Insulin-like growth factor 1 (IGF-1)",
+    "specimen": "serum",
+    "low": null,
+    "high": null,
+    "unit": "nmol/L",
+    "loinc": "2484-4",
+    "category": "hormones",
+    "sex": "any",
+    "notes": "Strongly age-dependent — interpret against age-specific reference range. Raised in acromegaly; low in adult growth-hormone deficiency.",
+    "references": [
+      {
+        "label": "Endocrine Society 2014 guideline on acromegaly"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "growth-hormone",
+    "analyte": "Growth hormone (random)",
+    "specimen": "serum",
+    "low": null,
+    "high": null,
+    "unit": "ug/L",
+    "loinc": "2964-5",
+    "category": "hormones",
+    "sex": "any",
+    "notes": "Highly pulsatile — single value rarely diagnostic. Use OGTT (suppress to <0.4 ug/L excludes acromegaly).",
+    "references": [
+      {
+        "label": "Endocrine Society 2014 guideline on acromegaly"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "testosterone-male",
+    "analyte": "Testosterone (total)",
+    "specimen": "serum",
+    "low": 8.0,
+    "high": 30.0,
+    "unit": "nmol/L",
+    "loinc": "2986-8",
+    "category": "hormones",
+    "sex": "male",
+    "notes": "Morning fasting sample (09:00) on two occasions to diagnose hypogonadism. Confirm low total with SHBG/free testosterone calculation.",
+    "references": [
+      {
+        "label": "Endocrine Society 2018 guideline on testosterone therapy in men with hypogonadism"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "testosterone-female",
+    "analyte": "Testosterone (total)",
+    "specimen": "serum",
+    "low": 0.3,
+    "high": 1.7,
+    "unit": "nmol/L",
+    "loinc": "2986-8",
+    "category": "hormones",
+    "sex": "female",
+    "notes": "Raised in PCOS; >5 nmol/L in a woman warrants imaging for androgen-secreting tumour.",
+    "references": [
+      {
+        "label": "Endocrine Society 2013 PCOS guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "oestradiol-follicular",
+    "analyte": "Oestradiol (follicular phase)",
+    "specimen": "serum",
+    "low": 110,
+    "high": 440,
+    "unit": "pmol/L",
+    "loinc": "14715-7",
+    "category": "hormones",
+    "sex": "female",
+    "notes": "Cycle days 1-10. Postmenopausal range typically <100 pmol/L.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "oestradiol-luteal",
+    "analyte": "Oestradiol (luteal phase)",
+    "specimen": "serum",
+    "low": 180,
+    "high": 1100,
+    "unit": "pmol/L",
+    "loinc": "14715-7",
+    "category": "hormones",
+    "sex": "female",
+    "notes": "Cycle days 14-28. Useful with day-21 progesterone to confirm ovulation.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lh-follicular",
+    "analyte": "Luteinising hormone (follicular phase)",
+    "specimen": "serum",
+    "low": 2,
+    "high": 10,
+    "unit": "U/L",
+    "loinc": "10501-5",
+    "category": "hormones",
+    "sex": "female",
+    "notes": "Mid-cycle surge typical 30-100 U/L. Postmenopausal range typically 15-65 U/L.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "fsh-follicular",
+    "analyte": "Follicle-stimulating hormone (follicular phase)",
+    "specimen": "serum",
+    "low": 3,
+    "high": 10,
+    "unit": "U/L",
+    "loinc": "15067-2",
+    "category": "hormones",
+    "sex": "female",
+    "notes": ">25 U/L on two samples 4-6 weeks apart in women >45 supports menopause; not reliable on combined hormonal contraception.",
+    "references": [
+      {
+        "label": "NICE NG23 Menopause: diagnosis and management"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "beta-hcg-non-pregnant",
+    "analyte": "Beta-hCG (non-pregnant)",
+    "specimen": "serum",
+    "low": null,
+    "high": 5,
+    "unit": "IU/L",
+    "loinc": "19080-1",
+    "category": "hormones",
+    "sex": "any",
+    "notes": "Low-level positivity in non-pregnant adults: consider germ-cell or trophoblastic tumour, recent miscarriage, or assay interference.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "beta-hcg-early-pregnancy",
+    "analyte": "Beta-hCG (early pregnancy, expected doubling)",
+    "specimen": "serum",
+    "low": null,
+    "high": null,
+    "unit": "IU/L",
+    "loinc": "19080-1",
+    "category": "pregnancy",
+    "sex": "female",
+    "notes": "In viable intrauterine pregnancy <6 weeks beta-hCG roughly doubles every 48-72 h. Sub-optimal rise raises ectopic/non-viable concerns.",
+    "references": [
+      {
+        "label": "RCOG Green-top Guideline No. 21 Diagnosis and management of ectopic pregnancy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "beta-hcg-4-6-weeks",
+    "analyte": "Beta-hCG (pregnancy, 4-6 weeks gestation)",
+    "specimen": "serum",
+    "low": 1000,
+    "high": 50000,
+    "unit": "IU/L",
+    "loinc": "19080-1",
+    "category": "pregnancy",
+    "sex": "female",
+    "notes": "Wide normal range — single value is rarely diagnostic. Discriminatory level for visible IUP on TVS is approximately 1500-2000 IU/L.",
+    "references": [
+      {
+        "label": "RCOG Green-top Guideline No. 21 Diagnosis and management of ectopic pregnancy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "beta-hcg-7-12-weeks",
+    "analyte": "Beta-hCG (pregnancy, 7-12 weeks gestation)",
+    "specimen": "serum",
+    "low": 50000,
+    "high": 290000,
+    "unit": "IU/L",
+    "loinc": "19080-1",
+    "category": "pregnancy",
+    "sex": "female",
+    "notes": "Peaks at around 10 weeks; thereafter declines. Markedly elevated values raise suspicion of molar pregnancy or multiple gestation.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "beta-hcg-2nd-3rd-trimester",
+    "analyte": "Beta-hCG (pregnancy, 2nd-3rd trimester)",
+    "specimen": "serum",
+    "low": 1400,
+    "high": 53000,
+    "unit": "IU/L",
+    "loinc": "19080-1",
+    "category": "pregnancy",
+    "sex": "female",
+    "notes": "Used in aneuploidy screening with PAPP-A/AFP; clinically interpret with gestational age.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "troponin-i-hs",
+    "analyte": "Troponin I (high-sensitivity)",
+    "specimen": "serum",
+    "low": null,
+    "high": null,
+    "unit": "ng/L",
+    "loinc": "89579-7",
+    "category": "cardiac",
+    "sex": "any",
+    "notes": "Assay-specific and sex-specific 99th-centile cut-offs; many assays use ~16 ng/L female / 34 ng/L male upper limit. Always apply local thresholds and 0/1- or 0/3-hour delta protocols.",
+    "references": [
+      {
+        "label": "ESC 2023 guideline on acute coronary syndromes"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "troponin-t-hs",
+    "analyte": "Troponin T (high-sensitivity)",
+    "specimen": "serum",
+    "low": null,
+    "high": 14,
+    "unit": "ng/L",
+    "loinc": "67151-1",
+    "category": "cardiac",
+    "sex": "any",
+    "notes": "Assay-specific 99th-centile upper limit typically 14 ng/L. Interpret with serial measurement and clinical context (renal disease causes chronic elevation).",
+    "references": [
+      {
+        "label": "ESC 2023 guideline on acute coronary syndromes"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ck",
+    "analyte": "Creatine kinase (total)",
+    "specimen": "serum",
+    "low": 30,
+    "high": 200,
+    "unit": "U/L",
+    "loinc": "2157-6",
+    "category": "cardiac",
+    "sex": "any",
+    "notes": "Marked elevation (>5x ULN) suggests rhabdomyolysis — risk of AKI when >5000 U/L. Modest elevation common after exercise or IM injection.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ck-mb",
+    "analyte": "Creatine kinase MB fraction",
+    "specimen": "serum",
+    "low": null,
+    "high": 25,
+    "unit": "U/L",
+    "loinc": "13969-1",
+    "category": "cardiac",
+    "sex": "any",
+    "notes": "Superseded by high-sensitivity troponin for acute MI diagnosis; retains a niche role in re-infarction within 48-72 h.",
+    "references": [
+      {
+        "label": "ESC 2023 guideline on acute coronary syndromes"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "bnp",
+    "analyte": "B-type natriuretic peptide (BNP)",
+    "specimen": "plasma",
+    "low": null,
+    "high": 100,
+    "unit": "ng/L",
+    "loinc": "30934-4",
+    "category": "cardiac",
+    "sex": "any",
+    "notes": "NICE rule-out threshold for HF <100 ng/L; >400 ng/L warrants urgent echocardiography. Lowered by obesity, raised by AF and renal impairment.",
+    "references": [
+      {
+        "label": "NICE NG106 Chronic heart failure in adults"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "nt-probnp",
+    "analyte": "N-terminal pro-BNP",
+    "specimen": "plasma",
+    "low": null,
+    "high": 400,
+    "unit": "ng/L",
+    "loinc": "33762-6",
+    "category": "cardiac",
+    "sex": "any",
+    "notes": "NICE rule-out threshold <400 ng/L; >2000 ng/L warrants urgent specialist assessment within 2 weeks. Rises with age and renal impairment.",
+    "references": [
+      {
+        "label": "NICE NG106 Chronic heart failure in adults"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "esr-male",
+    "analyte": "Erythrocyte sedimentation rate (ESR)",
+    "specimen": "whole blood",
+    "low": 0,
+    "high": 15,
+    "unit": "mm/h",
+    "loinc": "30341-2",
+    "category": "inflammation",
+    "sex": "male",
+    "notes": "Rises with age (use age/2 as a rough upper limit in older adults).",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "esr-female",
+    "analyte": "Erythrocyte sedimentation rate (ESR)",
+    "specimen": "whole blood",
+    "low": 0,
+    "high": 20,
+    "unit": "mm/h",
+    "loinc": "30341-2",
+    "category": "inflammation",
+    "sex": "female",
+    "notes": "Rises with age and in pregnancy ((age+10)/2 as a rough upper limit in older women).",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "procalcitonin",
+    "analyte": "Procalcitonin",
+    "specimen": "serum",
+    "low": null,
+    "high": 0.5,
+    "unit": "ug/L",
+    "loinc": "33959-8",
+    "category": "inflammation",
+    "sex": "any",
+    "notes": "<0.25 ug/L: bacterial infection unlikely. >2 ug/L: high probability of severe bacterial infection/sepsis. Use to guide antibiotic stewardship.",
+    "references": [
+      {
+        "label": "Surviving Sepsis Campaign 2021 guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "il-6",
+    "analyte": "Interleukin-6 (IL-6)",
+    "specimen": "serum",
+    "low": null,
+    "high": 7,
+    "unit": "ng/L",
+    "loinc": "26881-3",
+    "category": "inflammation",
+    "sex": "any",
+    "notes": "Used in cytokine release syndrome, COVID-19 risk stratification, and tocilizumab decisions. Highly assay-dependent.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ph-arterial",
+    "analyte": "pH (arterial)",
+    "specimen": "arterial blood",
+    "low": 7.35,
+    "high": 7.45,
+    "unit": "1",
+    "loinc": "2744-1",
+    "category": "blood-gas",
+    "sex": "any",
+    "notes": "Critical values <7.20 or >7.55 demand urgent attention.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "paco2",
+    "analyte": "Arterial PCO2",
+    "specimen": "arterial blood",
+    "low": 4.7,
+    "high": 6.0,
+    "unit": "kPa",
+    "loinc": "2019-8",
+    "category": "blood-gas",
+    "sex": "any",
+    "notes": "Equivalent range 35-45 mm Hg. Acute rise raises pH-dependent acidosis concerns; chronic rise (Type 2 respiratory failure) is compensated.",
+    "references": [
+      {
+        "label": "BTS Guideline for oxygen use in healthcare and emergency settings"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "pao2",
+    "analyte": "Arterial PO2",
+    "specimen": "arterial blood",
+    "low": 10.6,
+    "high": 13.3,
+    "unit": "kPa",
+    "loinc": "2703-7",
+    "category": "blood-gas",
+    "sex": "any",
+    "notes": "Equivalent range 80-100 mm Hg on room air. <8 kPa defines respiratory failure. Adjust expectation for FiO2.",
+    "references": [
+      {
+        "label": "BTS Guideline for oxygen use in healthcare and emergency settings"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "bicarbonate-arterial",
+    "analyte": "Bicarbonate (arterial, calculated)",
+    "specimen": "arterial blood",
+    "low": 22,
+    "high": 26,
+    "unit": "mmol/L",
+    "loinc": "1959-6",
+    "category": "blood-gas",
+    "sex": "any",
+    "notes": "Calculated from Henderson-Hasselbalch. Use serum bicarbonate (venous) for compensation calculations.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "base-excess",
+    "analyte": "Base excess",
+    "specimen": "arterial blood",
+    "low": -2,
+    "high": 2,
+    "unit": "mmol/L",
+    "loinc": "1925-7",
+    "category": "blood-gas",
+    "sex": "any",
+    "notes": "Negative base excess indicates metabolic acidosis. <-6 in trauma is a marker of significant haemorrhage.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lactate-arterial",
+    "analyte": "Lactate (arterial)",
+    "specimen": "arterial blood",
+    "low": 0.5,
+    "high": 1.6,
+    "unit": "mmol/L",
+    "loinc": "32132-3",
+    "category": "blood-gas",
+    "sex": "any",
+    "notes": ">=4 mmol/L in sepsis indicates severe tissue hypoperfusion and triggers protocolised resuscitation.",
+    "references": [
+      {
+        "label": "Surviving Sepsis Campaign 2021 guidelines"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "oxygen-saturation-arterial",
+    "analyte": "Oxygen saturation (arterial, SaO2)",
+    "specimen": "arterial blood",
+    "low": 95,
+    "high": 100,
+    "unit": "%",
+    "loinc": "2708-6",
+    "category": "blood-gas",
+    "sex": "any",
+    "notes": "SpO2 (pulse oximetry) generally agrees within 2-3% but is unreliable in poor perfusion, dyshaemoglobinaemia and darker skin tones at low saturations.",
+    "references": [
+      {
+        "label": "BTS Guideline for oxygen use in healthcare and emergency settings"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "carboxyhaemoglobin",
+    "analyte": "Carboxyhaemoglobin",
+    "specimen": "arterial blood",
+    "low": 0,
+    "high": 2,
+    "unit": "%",
+    "loinc": "20563-3",
+    "category": "blood-gas",
+    "sex": "any",
+    "notes": "Smokers up to 10%. >15% symptomatic CO poisoning; >25% severe (consider hyperbaric O2). SpO2 will read normal in CO poisoning.",
+    "references": [
+      {
+        "label": "TOXBASE/UK NPIS guidance on carbon monoxide poisoning"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "methaemoglobin",
+    "analyte": "Methaemoglobin",
+    "specimen": "arterial blood",
+    "low": 0,
+    "high": 2,
+    "unit": "%",
+    "loinc": "2614-6",
+    "category": "blood-gas",
+    "sex": "any",
+    "notes": ">20% symptomatic; >50% life-threatening — treat with methylene blue. Causes include dapsone, nitrites, local anaesthetics.",
+    "references": [
+      {
+        "label": "TOXBASE/UK NPIS guidance on methaemoglobinaemia"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urine-ph",
+    "analyte": "Urine pH",
+    "specimen": "urine",
+    "low": 4.5,
+    "high": 8.0,
+    "unit": "1",
+    "loinc": "5803-2",
+    "category": "urinalysis",
+    "sex": "any",
+    "notes": "Persistently >5.5 in metabolic acidosis suggests distal renal tubular acidosis.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urine-specific-gravity",
+    "analyte": "Urine specific gravity",
+    "specimen": "urine",
+    "low": 1.003,
+    "high": 1.030,
+    "unit": "1",
+    "loinc": "5811-5",
+    "category": "urinalysis",
+    "sex": "any",
+    "notes": "Surrogate for urine concentration. Fixed ~1.010 suggests loss of concentrating ability (chronic kidney disease).",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urine-glucose",
+    "analyte": "Urine glucose (dipstick)",
+    "specimen": "urine",
+    "low": null,
+    "high": null,
+    "unit": "1",
+    "loinc": "5792-7",
+    "category": "urinalysis",
+    "sex": "any",
+    "notes": "Normally negative. Glycosuria appears when blood glucose exceeds renal threshold (~10 mmol/L) or in SGLT2 inhibitor use and renal glycosuria.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urine-protein-dipstick",
+    "analyte": "Urine protein (dipstick)",
+    "specimen": "urine",
+    "low": null,
+    "high": null,
+    "unit": "1",
+    "loinc": "5804-0",
+    "category": "urinalysis",
+    "sex": "any",
+    "notes": "Normally negative or trace. Persistent >=1+ should be quantified with uPCR/uACR.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urine-ketones",
+    "analyte": "Urine ketones (dipstick)",
+    "specimen": "urine",
+    "low": null,
+    "high": null,
+    "unit": "1",
+    "loinc": "5797-6",
+    "category": "urinalysis",
+    "sex": "any",
+    "notes": "Dipstick detects acetoacetate but not beta-hydroxybutyrate — use capillary blood ketones in suspected DKA.",
+    "references": [
+      {
+        "label": "Joint British Diabetes Societies (JBDS) DKA guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urine-leukocyte-esterase",
+    "analyte": "Urine leukocyte esterase (dipstick)",
+    "specimen": "urine",
+    "low": null,
+    "high": null,
+    "unit": "1",
+    "loinc": "5799-2",
+    "category": "urinalysis",
+    "sex": "any",
+    "notes": "Combined with nitrite, predicts urinary tract infection. Send urine MC&S to confirm and guide antibiotics.",
+    "references": [
+      {
+        "label": "NICE NG109 Urinary tract infection (lower) in adults"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urine-nitrite",
+    "analyte": "Urine nitrite (dipstick)",
+    "specimen": "urine",
+    "low": null,
+    "high": null,
+    "unit": "1",
+    "loinc": "5802-4",
+    "category": "urinalysis",
+    "sex": "any",
+    "notes": "Specific for Enterobacteriaceae UTI; positive nitrite needs only 4 h bladder dwell time so first-morning sample most sensitive.",
+    "references": [
+      {
+        "label": "NICE NG109 Urinary tract infection (lower) in adults"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "urine-blood",
+    "analyte": "Urine blood (dipstick)",
+    "specimen": "urine",
+    "low": null,
+    "high": null,
+    "unit": "1",
+    "loinc": "5794-3",
+    "category": "urinalysis",
+    "sex": "any",
+    "notes": "Detects haem (haemoglobin, myoglobin and intact RBCs). Persistent unexplained haematuria warrants urology referral.",
+    "references": [
+      {
+        "label": "NICE NG12 Suspected cancer: recognition and referral"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "csf-opening-pressure",
+    "analyte": "CSF opening pressure",
+    "specimen": "csf",
+    "low": 6,
+    "high": 25,
+    "unit": "cm[H2O]",
+    "loinc": null,
+    "category": "csf",
+    "sex": "any",
+    "notes": "Measured supine. >25 supports idiopathic intracranial hypertension; markedly raised pressure mandates caution before LP (consider imaging first).",
+    "references": [
+      {
+        "label": "ABN/NICE guidance on lumbar puncture"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "csf-white-cells-adult",
+    "analyte": "CSF white cell count (adult)",
+    "specimen": "csf",
+    "low": 0,
+    "high": 5,
+    "unit": "10*6/L",
+    "loinc": "26464-8",
+    "category": "csf",
+    "sex": "any",
+    "notes": "All cells in healthy CSF are mononuclear. >5 cells/uL is abnormal; neutrophil-predominant raises bacterial meningitis suspicion.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "csf-protein-adult",
+    "analyte": "CSF protein (adult)",
+    "specimen": "csf",
+    "low": 0.15,
+    "high": 0.45,
+    "unit": "g/L",
+    "loinc": "2880-3",
+    "category": "csf",
+    "sex": "any",
+    "notes": "Raised in bacterial meningitis (often >1.0 g/L), Guillain-Barre (albuminocytological dissociation), MS and many viral encephalitides.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "csf-glucose-ratio",
+    "analyte": "CSF/plasma glucose ratio",
+    "specimen": "csf",
+    "low": 0.6,
+    "high": null,
+    "unit": "1",
+    "loinc": "13935-2",
+    "category": "csf",
+    "sex": "any",
+    "notes": "<0.4 strongly supports bacterial meningitis; also low in TB/fungal meningitis and CNS malignancy.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "csf-lactate",
+    "analyte": "CSF lactate",
+    "specimen": "csf",
+    "low": 1.1,
+    "high": 2.4,
+    "unit": "mmol/L",
+    "loinc": "30242-2",
+    "category": "csf",
+    "sex": "any",
+    "notes": ">3.5 mmol/L supports bacterial meningitis; useful when antibiotics have been given before LP.",
+    "references": [
+      {
+        "label": "Typical adult reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "phenytoin-total",
+    "analyte": "Phenytoin (total)",
+    "specimen": "serum",
+    "low": 40,
+    "high": 80,
+    "unit": "umol/L",
+    "loinc": "3968-5",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Therapeutic 40-80 umol/L (10-20 mg/L). Sample as trough (immediately before next dose) at steady state (5-7 days). Toxicity above 80 umol/L; nystagmus, ataxia, drowsiness.",
+    "references": [
+      {
+        "label": "BNF therapeutic drug monitoring guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "phenytoin-free",
+    "analyte": "Phenytoin (free)",
+    "specimen": "serum",
+    "low": 4,
+    "high": 8,
+    "unit": "umol/L",
+    "loinc": "3970-1",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Use when albumin <30 g/L, renal failure, pregnancy or displacing drugs. Sample as trough.",
+    "references": [
+      {
+        "label": "BNF therapeutic drug monitoring guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "valproate",
+    "analyte": "Valproate (sodium valproate)",
+    "specimen": "serum",
+    "low": 350,
+    "high": 700,
+    "unit": "umol/L",
+    "loinc": "4086-5",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Therapeutic 350-700 umol/L (50-100 mg/L). Sample as trough at steady state. Routine monitoring not required if seizures controlled — measure for toxicity or adherence concerns.",
+    "references": [
+      {
+        "label": "BNF therapeutic drug monitoring guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "carbamazepine",
+    "analyte": "Carbamazepine",
+    "specimen": "serum",
+    "low": 17,
+    "high": 50,
+    "unit": "umol/L",
+    "loinc": "3432-2",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Therapeutic 17-50 umol/L (4-12 mg/L). Sample as trough at steady state (2-4 weeks because of autoinduction). Toxicity: ataxia, diplopia, drowsiness above 50 umol/L.",
+    "references": [
+      {
+        "label": "BNF therapeutic drug monitoring guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lamotrigine",
+    "analyte": "Lamotrigine",
+    "specimen": "serum",
+    "low": 10,
+    "high": 60,
+    "unit": "umol/L",
+    "loinc": "29251-6",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Therapeutic 10-60 umol/L (2.5-15 mg/L). Sample as trough at steady state. Routine monitoring not required; check in pregnancy because of marked clearance changes.",
+    "references": [
+      {
+        "label": "BNF therapeutic drug monitoring guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lithium-maintenance",
+    "analyte": "Lithium (maintenance target)",
+    "specimen": "serum",
+    "low": 0.4,
+    "high": 0.8,
+    "unit": "mmol/L",
+    "loinc": "14334-7",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Sample 12 h post dose (trough). Maintenance 0.4-0.8 mmol/L; aim 0.8-1.0 in poor responders. Check every 3-6 months once stable plus renal/thyroid function.",
+    "references": [
+      {
+        "label": "NICE CG185 Bipolar disorder: assessment and management"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lithium-acute",
+    "analyte": "Lithium (acute episode target)",
+    "specimen": "serum",
+    "low": 0.8,
+    "high": 1.0,
+    "unit": "mmol/L",
+    "loinc": "14334-7",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Sample 12 h post dose (trough). >1.5 mmol/L is toxic; >2.0 is severely toxic — consider haemodialysis. Symptoms: tremor, drowsiness, ataxia, confusion.",
+    "references": [
+      {
+        "label": "NICE CG185 Bipolar disorder: assessment and management"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "digoxin",
+    "analyte": "Digoxin",
+    "specimen": "serum",
+    "low": 0.8,
+    "high": 2.0,
+    "unit": "nmol/L",
+    "loinc": "10535-3",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Sample at least 6 h after dose (preferably 12 h). For heart failure aim 0.8-1.2 nmol/L; >2.6 nmol/L toxic. Hypokalaemia potentiates toxicity.",
+    "references": [
+      {
+        "label": "BNF therapeutic drug monitoring guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "vancomycin-trough",
+    "analyte": "Vancomycin (trough)",
+    "specimen": "serum",
+    "low": 10,
+    "high": 20,
+    "unit": "mg/L",
+    "loinc": "20578-1",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Sample immediately before next dose. Target 15-20 mg/L for serious MRSA infections; 10-15 mg/L for most other indications. AUC/MIC 400-600 preferred where available.",
+    "references": [
+      {
+        "label": "BSAC/IDSA 2020 vancomycin therapeutic monitoring consensus"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "gentamicin-peak",
+    "analyte": "Gentamicin (peak, conventional dosing)",
+    "specimen": "serum",
+    "low": 5,
+    "high": 10,
+    "unit": "mg/L",
+    "loinc": "3663-2",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Sample 1 h after IV bolus / end of infusion in multiple-daily-dose regimens. Not applicable to once-daily dosing — use a Hartford-style nomogram.",
+    "references": [
+      {
+        "label": "BNF aminoglycoside monitoring guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "gentamicin-trough",
+    "analyte": "Gentamicin (trough)",
+    "specimen": "serum",
+    "low": null,
+    "high": 1,
+    "unit": "mg/L",
+    "loinc": "3663-2",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Sample immediately before next dose. <1 mg/L for conventional dosing; <0.5 for once-daily endocarditis dosing. Persistently elevated trough = accumulation, increase interval.",
+    "references": [
+      {
+        "label": "BNF aminoglycoside monitoring guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "theophylline",
+    "analyte": "Theophylline",
+    "specimen": "serum",
+    "low": 55,
+    "high": 110,
+    "unit": "umol/L",
+    "loinc": "4049-3",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Therapeutic 55-110 umol/L (10-20 mg/L); sample 4-6 h post oral dose. Narrow therapeutic index — interactions with macrolides, fluoroquinolones, smoking. Toxicity: tachyarrhythmia, seizures.",
+    "references": [
+      {
+        "label": "BNF therapeutic drug monitoring guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "paracetamol-toxic-line",
+    "analyte": "Paracetamol (treatment line, 4 h post-ingestion)",
+    "specimen": "serum",
+    "low": null,
+    "high": 100,
+    "unit": "mg/L",
+    "loinc": "3461-1",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Treat with acetylcysteine if level >=100 mg/L at 4 h post-ingestion in UK; the nomogram drops with time. For staggered/uncertain timing, treat all symptomatic or large overdoses.",
+    "references": [
+      {
+        "label": "TOXBASE/UK NPIS paracetamol overdose guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "salicylate-therapeutic",
+    "analyte": "Salicylate (anti-inflammatory therapeutic)",
+    "specimen": "serum",
+    "low": 150,
+    "high": 300,
+    "unit": "mg/L",
+    "loinc": "4023-8",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Therapeutic for anti-inflammatory use. Toxicity above 350 mg/L (acute) — see salicylate-toxic record.",
+    "references": [
+      {
+        "label": "BNF therapeutic drug monitoring guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "salicylate-toxic",
+    "analyte": "Salicylate (toxic threshold)",
+    "specimen": "serum",
+    "low": null,
+    "high": 350,
+    "unit": "mg/L",
+    "loinc": "4023-8",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "Acute overdose: >500 mg/L moderate-severe (urinary alkalinisation); >700 mg/L life-threatening (haemodialysis). Repeat level at 2 h; absorption can be delayed.",
+    "references": [
+      {
+        "label": "TOXBASE/UK NPIS salicylate poisoning guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ethanol",
+    "analyte": "Ethanol",
+    "specimen": "serum",
+    "low": 0,
+    "high": null,
+    "unit": "mg/dL",
+    "loinc": "5640-8",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": "UK legal limit (driving, England) 80 mg/dL. Severe intoxication >300 mg/dL; coma typically >400 mg/dL in non-tolerant adults.",
+    "references": [
+      {
+        "label": "TOXBASE/UK NPIS ethanol toxicity guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "methanol-toxic",
+    "analyte": "Methanol (toxic threshold)",
+    "specimen": "serum",
+    "low": null,
+    "high": 20,
+    "unit": "mg/dL",
+    "loinc": "5675-4",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": ">20 mg/dL warrants fomepizole/ethanol antidote; >50 mg/dL is an indication for haemodialysis. Osmolar gap raised acutely; anion-gap acidosis follows.",
+    "references": [
+      {
+        "label": "TOXBASE/UK NPIS toxic alcohol poisoning guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ethylene-glycol-toxic",
+    "analyte": "Ethylene glycol (toxic threshold)",
+    "specimen": "serum",
+    "low": null,
+    "high": 20,
+    "unit": "mg/dL",
+    "loinc": "11051-0",
+    "category": "drug-level",
+    "sex": "any",
+    "notes": ">20 mg/dL warrants fomepizole/ethanol antidote; haemodialysis for severe acidosis, AKI or level >50 mg/dL. Calcium oxalate crystalluria is a clue.",
+    "references": [
+      {
+        "label": "TOXBASE/UK NPIS toxic alcohol poisoning guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "psa-50-59",
+    "analyte": "Prostate-specific antigen (age 50-59)",
+    "specimen": "serum",
+    "low": null,
+    "high": 3.0,
+    "unit": "ug/L",
+    "loinc": "2857-1",
+    "category": "tumour-marker",
+    "sex": "male",
+    "notes": "Asymptomatic PSA screening is not routinely recommended in unselected populations; use only with clinical indication. Age-band upper limit 3.0 ug/L (PCRMP).",
+    "references": [
+      {
+        "label": "PHE Prostate Cancer Risk Management Programme (PCRMP)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "psa-60-69",
+    "analyte": "Prostate-specific antigen (age 60-69)",
+    "specimen": "serum",
+    "low": null,
+    "high": 4.0,
+    "unit": "ug/L",
+    "loinc": "2857-1",
+    "category": "tumour-marker",
+    "sex": "male",
+    "notes": "Asymptomatic PSA screening is not routinely recommended in unselected populations; use only with clinical indication. Age-band upper limit 4.0 ug/L (PCRMP).",
+    "references": [
+      {
+        "label": "PHE Prostate Cancer Risk Management Programme (PCRMP)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "psa-70-plus",
+    "analyte": "Prostate-specific antigen (age 70+)",
+    "specimen": "serum",
+    "low": null,
+    "high": 5.0,
+    "unit": "ug/L",
+    "loinc": "2857-1",
+    "category": "tumour-marker",
+    "sex": "male",
+    "notes": "Asymptomatic PSA screening is not routinely recommended in unselected populations; use only with clinical indication. Age-band upper limit 5.0 ug/L (PCRMP).",
+    "references": [
+      {
+        "label": "PHE Prostate Cancer Risk Management Programme (PCRMP)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "psa-under-50",
+    "analyte": "Prostate-specific antigen (age <50)",
+    "specimen": "serum",
+    "low": null,
+    "high": 2.5,
+    "unit": "ug/L",
+    "loinc": "2857-1",
+    "category": "tumour-marker",
+    "sex": "male",
+    "notes": "Asymptomatic PSA screening is not routinely recommended; reserve for symptomatic men or those with a strong family history. Younger-age threshold 2.5 ug/L (some guidelines).",
+    "references": [
+      {
+        "label": "PHE Prostate Cancer Risk Management Programme (PCRMP)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "cea-non-smoker",
+    "analyte": "Carcinoembryonic antigen (CEA, non-smoker)",
+    "specimen": "serum",
+    "low": null,
+    "high": 3.0,
+    "unit": "ug/L",
+    "loinc": "2039-6",
+    "category": "tumour-marker",
+    "sex": "any",
+    "notes": "Not for screening; use only for established colorectal cancer follow-up. Smokers have higher baseline (up to ~5 ug/L). Raised in many benign conditions.",
+    "references": [
+      {
+        "label": "NICE NG151 Colorectal cancer"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ca-125",
+    "analyte": "CA-125",
+    "specimen": "serum",
+    "low": null,
+    "high": 35,
+    "unit": "kU/L",
+    "loinc": "10334-1",
+    "category": "tumour-marker",
+    "sex": "female",
+    "notes": "Not for asymptomatic screening. Use with clinical indication (e.g. suspected ovarian cancer with pelvic symptoms — NICE NG12). Raised in endometriosis, menses, pregnancy, ascites of any cause.",
+    "references": [
+      {
+        "label": "NICE NG12 Suspected cancer: recognition and referral"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ca-19-9",
+    "analyte": "CA 19-9",
+    "specimen": "serum",
+    "low": null,
+    "high": 37,
+    "unit": "kU/L",
+    "loinc": "24108-3",
+    "category": "tumour-marker",
+    "sex": "any",
+    "notes": "Not a screening test. Used for pancreatic and biliary cancer prognostication. Raised in cholangitis, biliary obstruction; not produced in Lewis-antigen-negative patients (5-10%).",
+    "references": [
+      {
+        "label": "NCCN Pancreatic Adenocarcinoma guideline"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ca-15-3",
+    "analyte": "CA 15-3",
+    "specimen": "serum",
+    "low": null,
+    "high": 30,
+    "unit": "kU/L",
+    "loinc": "6875-9",
+    "category": "tumour-marker",
+    "sex": "female",
+    "notes": "Not a screening test. Used in metastatic breast-cancer treatment monitoring; raised in benign breast disease, hepatitis, pregnancy.",
+    "references": [
+      {
+        "label": "NICE NG101 Early and locally advanced breast cancer"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "afp-non-pregnant",
+    "analyte": "Alpha-fetoprotein (non-pregnant)",
+    "specimen": "serum",
+    "low": null,
+    "high": 10,
+    "unit": "ug/L",
+    "loinc": "1834-1",
+    "category": "tumour-marker",
+    "sex": "any",
+    "notes": "Not for general screening; surveillance in cirrhosis paired with US for hepatocellular carcinoma. Raised in pregnancy and germ-cell tumours. Threshold for HCC suspicion typically >20 ug/L.",
+    "references": [
+      {
+        "label": "EASL Clinical Practice Guidelines on hepatocellular carcinoma"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "neonatal-bilirubin-72h-term",
+    "analyte": "Total bilirubin (term neonate, 72 h)",
+    "specimen": "serum",
+    "low": null,
+    "high": 250,
+    "unit": "umol/L",
+    "loinc": "14631-6",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "Treatment thresholds depend on gestational age and hour of life — use NICE CG98 phototherapy/exchange transfusion graphs. >450 umol/L at any age is a critical value.",
+    "references": [
+      {
+        "label": "NICE CG98 Jaundice in newborn babies under 28 days"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "neonatal-bilirubin-24h-term",
+    "analyte": "Total bilirubin (term neonate, first 24 h)",
+    "specimen": "serum",
+    "low": null,
+    "high": 100,
+    "unit": "umol/L",
+    "loinc": "14631-6",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "Any visible jaundice within 24 h of birth is pathological and requires urgent measurement. Apply NICE CG98 treatment thresholds by hour-of-life.",
+    "references": [
+      {
+        "label": "NICE CG98 Jaundice in newborn babies under 28 days"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "glucose-neonatal",
+    "analyte": "Glucose (neonatal, term)",
+    "specimen": "whole blood",
+    "low": 2.6,
+    "high": 6.0,
+    "unit": "mmol/L",
+    "loinc": "2339-0",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "Operational threshold for neonatal hypoglycaemia <2.6 mmol/L; lower thresholds may apply in the first 4 h. Symptomatic infants warrant treatment at any low value (BAPM).",
+    "references": [
+      {
+        "label": "BAPM Framework on identification and management of neonatal hypoglycaemia"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hb-paediatric-6mo-5y",
+    "analyte": "Haemoglobin (children 6 months-5 years)",
+    "specimen": "whole blood",
+    "low": 110,
+    "high": 140,
+    "unit": "g/L",
+    "loinc": "718-7",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "WHO threshold for anaemia in this age band is <110 g/L. Lower bound rises in older children (115 g/L at 5-11 y, 120 g/L at 12-14 y).",
+    "references": [
+      {
+        "label": "WHO Haemoglobin concentrations for the diagnosis of anaemia"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hb-paediatric-12-14y",
+    "analyte": "Haemoglobin (children 12-14 years)",
+    "specimen": "whole blood",
+    "low": 120,
+    "high": 160,
+    "unit": "g/L",
+    "loinc": "718-7",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "WHO threshold for anaemia at 12-14 years is <120 g/L for both sexes.",
+    "references": [
+      {
+        "label": "WHO Haemoglobin concentrations for the diagnosis of anaemia"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "calcium-paediatric",
+    "analyte": "Calcium (total, paediatric 1-18 y)",
+    "specimen": "serum",
+    "low": 2.20,
+    "high": 2.70,
+    "unit": "mmol/L",
+    "loinc": "17861-6",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "Children and adolescents tolerate (and require) slightly higher calcium because of bone modelling. Neonatal range is lower (1.9-2.6 mmol/L).",
+    "references": [
+      {
+        "label": "Typical paediatric reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "alp-paediatric",
+    "analyte": "Alkaline phosphatase (paediatric 1-18 y)",
+    "specimen": "serum",
+    "low": 100,
+    "high": 500,
+    "unit": "U/L",
+    "loinc": "6768-6",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "Markedly higher than adults because of growth-related bone isoenzyme; peaks at pubertal growth spurt. Adult range applies from late adolescence.",
+    "references": [
+      {
+        "label": "Typical paediatric reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "creatinine-paediatric-1-5y",
+    "analyte": "Creatinine (children 1-5 y)",
+    "specimen": "serum/plasma",
+    "low": 20,
+    "high": 45,
+    "unit": "umol/L",
+    "loinc": "14682-9",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "Strongly age-dependent; use age-specific reference range and the Schwartz/CKiD formulas for eGFR in children.",
+    "references": [
+      {
+        "label": "KDIGO 2024 clinical practice guideline for the evaluation and management of CKD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "creatinine-paediatric-6-12y",
+    "analyte": "Creatinine (children 6-12 y)",
+    "specimen": "serum/plasma",
+    "low": 30,
+    "high": 65,
+    "unit": "umol/L",
+    "loinc": "14682-9",
+    "category": "paediatric",
+    "sex": "any",
+    "notes": "Use Schwartz/CKiD eGFR formulas for children rather than adult MDRD/CKD-EPI.",
+    "references": [
+      {
+        "label": "KDIGO 2024 clinical practice guideline for the evaluation and management of CKD"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "tsh-1st-trimester",
+    "analyte": "TSH (1st trimester of pregnancy)",
+    "specimen": "serum",
+    "low": 0.1,
+    "high": 2.5,
+    "unit": "mU/L",
+    "loinc": "3016-3",
+    "category": "pregnancy",
+    "sex": "female",
+    "notes": "Trimester-specific reference ranges; suppressed values in 1st trimester are usually physiological (hCG cross-reactivity). Treat hypothyroidism aggressively.",
+    "references": [
+      {
+        "label": "ATA 2017 guidelines on thyroid disease in pregnancy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "tsh-2nd-3rd-trimester",
+    "analyte": "TSH (2nd-3rd trimester of pregnancy)",
+    "specimen": "serum",
+    "low": 0.2,
+    "high": 3.0,
+    "unit": "mU/L",
+    "loinc": "3016-3",
+    "category": "pregnancy",
+    "sex": "female",
+    "notes": "Trimester-specific reference ranges. Levothyroxine requirements rise ~30% in pregnancy — anticipate dose increase.",
+    "references": [
+      {
+        "label": "ATA 2017 guidelines on thyroid disease in pregnancy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "alp-pregnancy-3rd-trimester",
+    "analyte": "Alkaline phosphatase (3rd-trimester pregnancy)",
+    "specimen": "serum",
+    "low": 80,
+    "high": 350,
+    "unit": "U/L",
+    "loinc": "6768-6",
+    "category": "pregnancy",
+    "sex": "female",
+    "notes": "Placental ALP isoenzyme rises substantially from mid-pregnancy. Use GGT to confirm a true cholestatic pattern in pregnancy.",
+    "references": [
+      {
+        "label": "Typical pregnancy reference intervals; confirm against the local laboratory's method-specific ranges"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "d-dimer-pregnancy-3rd-trimester",
+    "analyte": "D-dimer (3rd-trimester pregnancy)",
+    "specimen": "plasma",
+    "low": null,
+    "high": null,
+    "unit": "ng/mL",
+    "loinc": "48066-5",
+    "category": "pregnancy",
+    "sex": "female",
+    "notes": "Conventional D-dimer cut-offs are not reliable in pregnancy — values rise progressively from mid-pregnancy and remain elevated postpartum. Use clinical assessment and imaging for suspected VTE.",
+    "references": [
+      {
+        "label": "RCOG Green-top Guideline No. 37b Thromboembolic disease in pregnancy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "platelets-pregnancy",
+    "analyte": "Platelets (pregnancy)",
+    "specimen": "whole blood",
+    "low": 115,
+    "high": 400,
+    "unit": "10*9/L",
+    "loinc": "777-3",
+    "category": "pregnancy",
+    "sex": "female",
+    "notes": "Gestational thrombocytopenia is the commonest cause of platelets 100-150 in pregnancy; <100 warrants work-up for pre-eclampsia/HELLP, ITP, microangiopathic process.",
+    "references": [
+      {
+        "label": "BSH guideline on thrombocytopenia in pregnancy"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
   }
 ]
