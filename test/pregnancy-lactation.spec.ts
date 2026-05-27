@@ -16,7 +16,7 @@ describe('PregnancyLactationService', () => {
 
   it('loads the PLLR catalogue from the signed bundle', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThanOrEqual(15);
+    expect(list.length).toBeGreaterThanOrEqual(250);
     const slugs = list.map((r) => r.slug);
     // Anti-hallucination guard: highest-stakes records — teratogens, the
     // gold-standard safe alternatives, and the most-asked-about agents.

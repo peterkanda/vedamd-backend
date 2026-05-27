@@ -16,7 +16,7 @@ describe('ToxidromesService', () => {
 
   it('loads the toxidrome catalogue from the signed bundle', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThanOrEqual(8);
+    expect(list.length).toBeGreaterThanOrEqual(30);
     const slugs = list.map((t) => t.slug);
     // Anti-hallucination guard: these eight syndromes are the patient-safety
     // floor; if a content edit accidentally drops one, the test fails loudly.
@@ -59,7 +59,7 @@ describe('ToxidromesService', () => {
   });
 
   it('filters by domain', () => {
-    expect(svc.list({ domain: 'toxicology' }).length).toBeGreaterThanOrEqual(8);
+    expect(svc.list({ domain: 'toxicology' }).length).toBeGreaterThanOrEqual(30);
     expect(svc.list({ domain: 'psychiatry' }).map((t) => t.slug)).toContain('serotonin-syndrome');
   });
 

@@ -16,7 +16,7 @@ describe('AnticoagulantReversalService', () => {
 
   it('loads the reversal catalogue from the signed bundle', () => {
     const list = svc.list();
-    expect(list.length).toBeGreaterThanOrEqual(9);
+    expect(list.length).toBeGreaterThanOrEqual(30);
     const slugs = list.map((r) => r.slug);
     // Anti-hallucination guard: these nine reversal records are the
     // patient-safety floor — every anticoagulant a clinician will see
