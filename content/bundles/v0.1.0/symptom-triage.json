@@ -1,0 +1,531 @@
+[
+  {
+    "slug": "adult-chest-pain",
+    "chiefComplaint": "Adult chest pain",
+    "oneLiner": "Three killer DDx — ACS, PE, aortic dissection — must be excluded before discharge. Risk-stratify with HEART score; image based on clinical suspicion.",
+    "domains": ["cardiology", "emergency", "respiratory"],
+    "populationScope": "adult",
+    "framing": "One of the highest-volume ED chief complaints. Roughly 10-15% have acute coronary syndrome; the remainder split between musculoskeletal, GI, anxiety, pleural, and the rare-but-deadly aortic dissection and tension pneumothorax.",
+    "keyHistory": [
+      "Character (crushing / pleuritic / tearing / burning) and radiation (jaw / arm / back / shoulder)",
+      "Onset (sudden vs gradual), duration, provocation/relief, time course",
+      "Associated dyspnoea, syncope, sweating, nausea",
+      "Cardiac risk factors (smoking, hypertension, diabetes, dyslipidaemia, family history, prior MI)",
+      "PE risk factors (immobility, recent surgery, malignancy, OCP / pregnancy, prior VTE)",
+      "Aortic dissection risk factors (Marfan, bicuspid valve, hypertension, cocaine use, pregnancy)",
+      "Pleuritic features (worse with inspiration / cough)",
+      "GI features (worse lying, related to food, regurgitation)"
+    ],
+    "keyExam": [
+      "Vitals — HR, BP both arms, RR, SpO₂, temp",
+      "Cardiovascular — heart sounds, murmurs, JVP, peripheral pulses (asymmetry), peripheral oedema",
+      "Respiratory — breath sounds, percussion, focal findings",
+      "Chest wall reproducibility (lowers but does not exclude ACS)",
+      "Calf swelling / tenderness (DVT)"
+    ],
+    "differential": [
+      { "diagnosis": "Acute coronary syndrome (STEMI / NSTEMI / unstable angina)", "conditionSlug": "acute-coronary-syndrome", "likelihood": "must-not-miss", "pointers": "Pressure / crushing pain ± radiation; risk factors; new ECG changes; troponin rise.", "investigation": "12-lead ECG within 10 min; serial troponin (hs-cTn 0-1 h or 0-3 h); HEART score; bedside echo." },
+      { "diagnosis": "Pulmonary embolism", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Pleuritic pain + dyspnoea + tachycardia; VTE risk factors; clear chest with hypoxia.", "investigation": "Wells / Geneva score; D-dimer if PERC fails; CTPA if Wells > 4 or D-dimer positive; ECHO for RV strain." },
+      { "diagnosis": "Aortic dissection", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Sudden tearing pain radiating to back; pulse deficit; new diastolic murmur; widened mediastinum on CXR; SBP differential > 20 mmHg between arms.", "investigation": "CT angiogram aorta (gold standard); TOE if unstable; D-dimer high sensitivity but not specific." },
+      { "diagnosis": "Tension pneumothorax", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Sudden pleuritic pain + dyspnoea + tracheal deviation + hyperresonance + absent breath sounds; shock if tension.", "investigation": "Bedside ultrasound (faster than CXR if tension); immediate needle decompression / chest drain if tension." },
+      { "diagnosis": "Oesophageal rupture (Boerhaave)", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Sudden chest pain after vomiting; subcutaneous emphysema; pleural effusion.", "investigation": "CT with oral contrast; surgical emergency." },
+      { "diagnosis": "Pericarditis / myocarditis", "conditionSlug": null, "likelihood": "consider", "pointers": "Pleuritic, worse lying, relieved by sitting forward; recent viral illness; diffuse ST elevation + PR depression.", "investigation": "ECG, troponin, echo, CRP/ESR; MRI if myocarditis suspected." },
+      { "diagnosis": "Musculoskeletal / costochondritis", "conditionSlug": null, "likelihood": "common", "pointers": "Reproducible on palpation; trauma history; positional; no risk factors.", "investigation": "Diagnosis of exclusion." },
+      { "diagnosis": "GORD / oesophageal spasm", "conditionSlug": null, "likelihood": "common", "pointers": "Burning, related to food, regurgitation, response to PPI / antacids.", "investigation": "Trial PPI; gastroscopy if alarm features." },
+      { "diagnosis": "Anxiety / panic disorder", "conditionSlug": null, "likelihood": "common", "pointers": "Younger, no risk factors, hyperventilation, perioral paraesthesia. Diagnosis of exclusion in any new-onset chest pain.", "investigation": "Rule out ACS/PE first." }
+    ],
+    "redFlags": [
+      "Haemodynamic instability (SBP < 90, HR > 120)",
+      "Hypoxia (SpO₂ < 92% on air)",
+      "New ECG ischaemic changes (ST elevation/depression, T-wave inversion, new LBBB)",
+      "Syncope at onset",
+      "Tearing back pain with pulse deficit",
+      "Tracheal deviation, absent breath sounds",
+      "Subcutaneous emphysema (oesophageal rupture)"
+    ],
+    "initialInvestigations": [
+      "12-lead ECG within 10 minutes of arrival",
+      "Bedside vitals + SpO₂ + glucose",
+      "Troponin (serial — repeat per local hs-cTn protocol)",
+      "CXR (mediastinum, pneumothorax, effusion, infiltrate)",
+      "FBC, U&E, glucose; D-dimer if PE / dissection considered AND high-sensitivity scoring rule supports",
+      "Bedside echo if available (RV strain / pericardial effusion / regional wall motion)"
+    ],
+    "disposition": "Admit any patient with ACS, PE, dissection, pneumothorax, oesophageal rupture, sustained haemodynamic instability or hypoxia. HEART score 0-3 with negative serial troponin + normal ECG may be safe for outpatient follow-up with GP review in 48-72 h and safety-net advice (return if pain returns, worsens, or new symptoms emerge).",
+    "references": [
+      { "label": "Six AJ et al. Chest pain in the emergency room — value of the HEART score. Neth Heart J 2008." },
+      { "label": "ESC 2020 Guidelines for the management of acute coronary syndromes." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "adult-shortness-of-breath",
+    "chiefComplaint": "Adult acute shortness of breath",
+    "oneLiner": "Differential is wide — work systematically: airway / heart / lungs / blood / brain / body. PE, anaphylaxis, tension pneumothorax, pulmonary oedema, acute asthma and severe pneumonia are the time-critical exclusions.",
+    "domains": ["respiratory", "cardiology", "emergency"],
+    "populationScope": "adult",
+    "framing": "Most common acute respiratory presentations in adults: acute exacerbation of asthma / COPD, pneumonia, acute pulmonary oedema, pulmonary embolism. Sudden onset + pleuritic = PE or pneumothorax. Onset over hours-to-days + sputum / fever = pneumonia. Onset over days + orthopnoea + leg swelling = heart failure.",
+    "keyHistory": [
+      "Onset (sudden / gradual), duration, time course",
+      "Provoking factors (exertion, allergen, cold air, infection, pregnancy)",
+      "Associated chest pain (cardiac vs pleuritic vs musculoskeletal)",
+      "Cough (productive, blood-stained), fever, weight loss, sweats",
+      "Orthopnoea, paroxysmal nocturnal dyspnoea, peripheral oedema",
+      "Wheeze (and prior asthma / COPD history)",
+      "VTE risk factors (immobility, recent surgery, malignancy)",
+      "Smoking, occupational exposure",
+      "Medication adherence (heart failure, asthma)"
+    ],
+    "keyExam": [
+      "Vitals + SpO₂ (room air and supplemented); RR is the most under-recorded vital",
+      "Mental status (CO₂ retention, hypoxia)",
+      "Cyanosis, tracheal position, accessory muscle use, tripoding",
+      "Breath sounds (wheeze, crackles bilateral / focal, absent), percussion",
+      "JVP, heart sounds, peripheral oedema, leg swelling",
+      "Pulse character (paradoxus, regular vs irregular)"
+    ],
+    "differential": [
+      { "diagnosis": "Acute pulmonary oedema (cardiogenic)", "conditionSlug": "acute-heart-failure", "likelihood": "common", "pointers": "Bilateral basal crackles, raised JVP, gallop rhythm, peripheral oedema, history of HF / ACS / arrhythmia.", "investigation": "BNP/NT-proBNP, ECG, CXR, bedside echo, troponin." },
+      { "diagnosis": "Pulmonary embolism", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Sudden onset, pleuritic pain, tachycardia, hypoxia disproportionate to clear chest, VTE risk factors.", "investigation": "Wells score; D-dimer if PERC fails; CTPA." },
+      { "diagnosis": "Acute asthma / COPD exacerbation", "conditionSlug": null, "likelihood": "common", "pointers": "Wheeze, prolonged expiration, prior diagnosis, triggers identified.", "investigation": "Peak flow / FEV1, ABG if severe, CXR to exclude pneumothorax / consolidation." },
+      { "diagnosis": "Community-acquired pneumonia", "conditionSlug": "pneumonia-curb65-treatment", "likelihood": "common", "pointers": "Fever, productive cough, focal crackles or bronchial breathing, CRP elevated.", "investigation": "CXR, CRP, FBC, U&E, blood and sputum cultures, urinary Legionella/pneumococcal antigens." },
+      { "diagnosis": "Tension pneumothorax", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Sudden pleuritic pain, tracheal deviation, hyperresonance, absent breath sounds, haemodynamic compromise.", "investigation": "Bedside ultrasound > CXR; immediate needle decompression if tension." },
+      { "diagnosis": "Anaphylaxis", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Sudden onset minutes after exposure; urticaria, angioedema, wheeze, hypotension.", "investigation": "Clinical diagnosis — DO NOT delay adrenaline." },
+      { "diagnosis": "Acute exacerbation of pulmonary fibrosis / ILD", "conditionSlug": null, "likelihood": "consider", "pointers": "Known ILD or new bilateral fine crackles + clubbing; progressive dyspnoea over weeks.", "investigation": "HRCT, ABG, echo, MDT review." },
+      { "diagnosis": "Metabolic acidosis (DKA, lactic acidosis, salicylate)", "conditionSlug": "diabetic-ketoacidosis", "likelihood": "must-not-miss", "pointers": "Kussmaul breathing, fruity breath (DKA), tinnitus (salicylates), abdominal pain.", "investigation": "Glucose, ketones, ABG, lactate, salicylate level if clinical concern." },
+      { "diagnosis": "Severe anaemia / massive haemorrhage", "conditionSlug": null, "likelihood": "consider", "pointers": "Pallor, tachycardia, postural drop, melaena / haematuria / vaginal bleeding.", "investigation": "FBC, group and screen, CT to localise bleed if suspected." }
+    ],
+    "redFlags": [
+      "SpO₂ < 92% on air, or < 88% in known COPD on room air",
+      "RR > 30 or < 8",
+      "Unable to speak in full sentences",
+      "Cyanosis or altered mental status",
+      "Silent chest in known asthma",
+      "Hypotension (SBP < 90)"
+    ],
+    "initialInvestigations": [
+      "ABG / VBG with lactate",
+      "12-lead ECG",
+      "CXR",
+      "FBC, U&E, CRP, troponin if cardiac picture",
+      "BNP / NT-proBNP if heart failure differential",
+      "D-dimer if PE possible AND PERC criteria fail"
+    ],
+    "disposition": "Admit any patient with hypoxia, marked tachypnoea, haemodynamic instability, raised lactate, or known progressive disease. Acute asthma: discharge when peak flow > 75% predicted, SpO₂ > 94% air, able to manage at home, with rescue pack + 24-h GP follow-up.",
+    "references": [
+      { "label": "NICE NG191 — COVID-19 rapid guideline: managing the long-term effects of COVID-19." },
+      { "label": "BTS / SIGN British guideline on the management of asthma." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "adult-abdominal-pain",
+    "chiefComplaint": "Adult acute abdominal pain",
+    "oneLiner": "Site + onset + character locate the cause. Must-not-miss: ruptured AAA, mesenteric ischaemia, ectopic pregnancy, perforation, sepsis. β-hCG in any female of reproductive age presenting with abdominal pain.",
+    "domains": ["gastroenterology", "general-surgery", "obstetrics", "emergency"],
+    "populationScope": "adult",
+    "framing": "One of the broadest differentials in medicine. History + exam direct investigations more than the other way around. The classic catastrophic causes (AAA rupture, mesenteric ischaemia, ectopic) are missed when the picture is atypical.",
+    "keyHistory": [
+      "Site of pain (epigastric / RUQ / LUQ / RLQ / LLQ / suprapubic / generalised / radiating)",
+      "Onset (sudden — perforation, AAA, ovarian torsion, embolic mesenteric; vs gradual — appendicitis, diverticulitis, cholecystitis)",
+      "Character (colicky vs constant; relieved by anything)",
+      "Associated nausea, vomiting (bilious? blood?), bowel habit change, melaena, haematochezia",
+      "LMP (any female 12-55); contraceptive use; pregnancy possibility",
+      "Cardiovascular risk factors (mesenteric ischaemia in AF, recent embolic event)",
+      "Alcohol intake (pancreatitis), gallstones (cholecystitis, pancreatitis)",
+      "Previous abdominal surgery (adhesions, hernias)",
+      "Anticoagulant use (retroperitoneal haematoma)"
+    ],
+    "keyExam": [
+      "Vitals: tachycardia, hypotension (perforation, ruptured AAA, sepsis)",
+      "Inspection: distension, scars, hernias, bruising (Cullen/Grey-Turner in pancreatitis/AAA)",
+      "Palpation: localised tenderness, peritonism (rebound, guarding, rigidity), Murphy's sign, McBurney's tenderness, expansile mass (AAA)",
+      "Percussion: tympany (obstruction), shifting dullness (ascites)",
+      "PR / PV if indicated (PR bleeding, gynae source); β-hCG in any female of reproductive age",
+      "Pulses (femoral, foot) — AAA, mesenteric ischaemia"
+    ],
+    "differential": [
+      { "diagnosis": "Ruptured abdominal aortic aneurysm", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Sudden severe abdominal/back pain in patient > 60, hypotension, pulsatile expansile mass, vascular risk factors. Misdiagnosed as renal colic in 30%.", "investigation": "Bedside ultrasound (FAST + abdominal aorta diameter); CT angiogram if stable. EMERGENCY vascular consult." },
+      { "diagnosis": "Mesenteric ischaemia", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Severe abdominal pain out of proportion to exam; AF / recent embolic event / vascular disease; bloody diarrhoea (late); high lactate.", "investigation": "Lactate, CT angiogram mesenteric vessels. Surgical / interventional emergency." },
+      { "diagnosis": "Ectopic pregnancy (rupture or threatened)", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Female of reproductive age, lower abdominal pain ± shoulder-tip (diaphragmatic irritation from haemoperitoneum), PV bleeding, syncope.", "investigation": "Serum β-hCG, transvaginal ultrasound. EMERGENCY gynae." },
+      { "diagnosis": "Perforated viscus (peptic ulcer, diverticulum, appendix)", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Sudden generalised pain → peritonism → board-like rigidity; sepsis features; free air on imaging.", "investigation": "Erect CXR (free air); CT abdomen if equivocal. Urgent surgical." },
+      { "diagnosis": "Acute appendicitis", "conditionSlug": null, "likelihood": "common", "pointers": "Periumbilical pain migrating to RIF; anorexia, low-grade fever; RIF tenderness, Rovsing's sign, psoas sign. Alvarado score.", "investigation": "Clinical ± ultrasound (young women), CT (older / atypical)." },
+      { "diagnosis": "Acute pancreatitis", "conditionSlug": "acute-pancreatitis", "likelihood": "common", "pointers": "Epigastric pain radiating to back, vomiting; alcohol or gallstones; lipase ≥ 3× ULN. Severity by Glasgow / APACHE-II.", "investigation": "Lipase / amylase, LFTs, CRP, calcium, glucose, ABG, ultrasound for gallstones." },
+      { "diagnosis": "Cholecystitis / biliary colic / ascending cholangitis", "conditionSlug": null, "likelihood": "common", "pointers": "RUQ pain, Murphy's positive (cholecystitis); fever + jaundice + RUQ pain (Charcot's triad — cholangitis).", "investigation": "Ultrasound, LFTs, FBC, CRP, blood cultures. ERCP urgent if cholangitis." },
+      { "diagnosis": "Diverticulitis", "conditionSlug": null, "likelihood": "common", "pointers": "LLQ pain, fever, elderly, raised inflammatory markers. CT for complications (abscess, perforation).", "investigation": "CT abdomen with contrast; FBC, CRP, blood cultures if sepsis." },
+      { "diagnosis": "Renal / ureteric colic", "conditionSlug": null, "likelihood": "common", "pointers": "Loin to groin pain in waves; haematuria; restless patient (vs lying still in peritonism).", "investigation": "Urinalysis, CT KUB, U&E. CAUTION — AAA mimics this in elderly." },
+      { "diagnosis": "Small bowel obstruction", "conditionSlug": null, "likelihood": "common", "pointers": "Colicky central pain, vomiting (bilious early in SBO), abdominal distension, absolute constipation late; previous surgery.", "investigation": "AXR (distended small bowel loops), CT (level, transition point, cause)." },
+      { "diagnosis": "Gynae causes (ovarian cyst rupture/torsion, PID, endometriosis)", "conditionSlug": null, "likelihood": "consider", "pointers": "Sudden severe pain (torsion / cyst rupture); fever + cervical motion tenderness (PID); cyclical (endometriosis).", "investigation": "TVUS, β-hCG, STI screen, gynae review." },
+      { "diagnosis": "MI presenting as epigastric pain", "conditionSlug": "acute-coronary-syndrome", "likelihood": "must-not-miss", "pointers": "Diabetic, elderly, female — atypical ACS presentations; epigastric pain mimicking dyspepsia.", "investigation": "ECG, troponin in any older patient with epigastric pain." }
+    ],
+    "redFlags": [
+      "Hypotension + tachycardia (sepsis, AAA rupture, perforation)",
+      "Board-like rigidity (perforation peritonitis)",
+      "Expansile pulsatile abdominal mass",
+      "Severe pain out of proportion to exam (mesenteric ischaemia)",
+      "Bilious vomiting in adult (obstruction)",
+      "Melaena / haematochezia with haemodynamic compromise",
+      "Positive β-hCG with abdominal pain — exclude ectopic"
+    ],
+    "initialInvestigations": [
+      "β-hCG in any female of reproductive age",
+      "FBC, U&E, LFTs, lipase, CRP, lactate, glucose, group and screen",
+      "Urinalysis ± urine M,C&S",
+      "ECG (epigastric / older patient)",
+      "Erect CXR (free air)",
+      "Bedside ultrasound (FAST, biliary, aortic) — extends physical examination",
+      "CT abdomen with contrast — gold standard for most acute abdomen scenarios"
+    ],
+    "disposition": "Admit any patient with peritonism, haemodynamic instability, intractable pain, vomiting precluding oral intake, raised lactate, or where surgical/gynae intervention may be needed. Acute appendicitis, cholecystitis, diverticulitis, SBO → surgical admission. Discharge with safety-netting if benign cause identified and pain controlled.",
+    "references": [
+      { "label": "Royal College of Surgeons. Emergency Surgery Standards for unscheduled care." },
+      { "label": "ACR Appropriateness Criteria — Right Lower Quadrant Pain." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "adult-headache",
+    "chiefComplaint": "Adult acute headache",
+    "oneLiner": "Most are primary (migraine, tension); the must-not-miss secondary causes are SAH, meningitis, GCA, raised ICP (mass / abscess / venous thrombosis), and CO poisoning. Thunderclap onset = SAH until proven otherwise.",
+    "domains": ["neurology", "emergency"],
+    "populationScope": "adult",
+    "framing": "Headache is one of the most common presentations and one of the most diagnostically delicate. The diagnosis hinges on careful history + focused exam, NOT routine imaging.",
+    "keyHistory": [
+      "Onset (thunderclap < 1 min to peak = SAH until proven otherwise; gradual over days = mass / venous thrombosis / GCA in elderly)",
+      "Worst-ever / first-ever quality (suspicious for SAH or other secondary)",
+      "Triggers (Valsalva, exercise, sex, position — raised ICP)",
+      "Time of day (worse on waking = raised ICP)",
+      "Associated features: visual changes, focal neurology, confusion, neck stiffness, fever, jaw claudication (GCA), vomiting",
+      "Recent trauma (chronic subdural; SDH)",
+      "Pregnancy / postpartum (eclampsia, cerebral venous thrombosis, PRES)",
+      "Anticoagulant use",
+      "Carbon monoxide exposure (winter, faulty heating, multiple household members affected)",
+      "Medication overuse (analgesic overuse headache)"
+    ],
+    "keyExam": [
+      "Vitals incl. temp, BP both arms",
+      "GCS, full neurological exam (cranial nerves, limbs, reflexes, cerebellar)",
+      "Fundoscopy (papilloedema), pupillary response",
+      "Neck stiffness, Kernig's, Brudzinski's",
+      "Scalp tenderness, temporal artery tenderness/thickening (GCA)",
+      "Skin (rash — meningococcal)",
+      "Mental status, level of arousal"
+    ],
+    "differential": [
+      { "diagnosis": "Subarachnoid haemorrhage", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Thunderclap onset, worst ever, neck stiffness, decreased consciousness, focal signs.", "investigation": "Non-contrast CT brain within 6 h (sensitivity > 98%); lumbar puncture for xanthochromia if CT negative and > 6 h, OR if equivocal." },
+      { "diagnosis": "Bacterial meningitis / encephalitis", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Fever, neck stiffness, photophobia, altered mental status, petechial rash (meningococcal).", "investigation": "Blood cultures + lumbar puncture (with CT first if focal signs / immunocompromise / reduced GCS); empirical antibiotics within 1 h of suspicion — do NOT delay for LP." },
+      { "diagnosis": "Giant cell (temporal) arteritis", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Age > 50, jaw claudication, scalp tenderness, visual disturbance, ESR > 50, PMR features.", "investigation": "ESR, CRP, temporal artery biopsy. START high-dose prednisolone (40-60 mg) IMMEDIATELY if visual symptoms — do not wait for biopsy; visual loss is permanent." },
+      { "diagnosis": "Raised intracranial pressure (mass, abscess, IIH, venous thrombosis)", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Worse on waking, worse with Valsalva, projectile vomiting, focal signs, papilloedema. CVT in pregnancy / OCP / dehydration.", "investigation": "MRI brain (with MRV for CVT); CT venogram if MRV unavailable." },
+      { "diagnosis": "Carbon monoxide poisoning", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Winter, faulty heating, multiple household members affected. Cherry-red skin LATE / unreliable. Symptoms improve away from source.", "investigation": "ABG with co-oximetry (COHb); ECG for ischaemia. Hyperbaric O₂ if severe / pregnant / cardiac signs." },
+      { "diagnosis": "Migraine", "conditionSlug": null, "likelihood": "common", "pointers": "Unilateral throbbing, photophobia, phonophobia, nausea, aura (visual scintillation), prior similar episodes.", "investigation": "Clinical. Image if first attack > 50, focal signs, atypical features." },
+      { "diagnosis": "Tension-type headache", "conditionSlug": null, "likelihood": "common", "pointers": "Band-like, bilateral, mild-moderate, no nausea/photophobia, related to stress/posture.", "investigation": "Clinical." },
+      { "diagnosis": "Cluster headache", "conditionSlug": null, "likelihood": "consider", "pointers": "Strictly unilateral periorbital, severe (suicide headache), autonomic features (lacrimation, rhinorrhoea, conjunctival injection, Horner's), clustering in time.", "investigation": "Clinical." },
+      { "diagnosis": "Sinusitis", "conditionSlug": null, "likelihood": "common", "pointers": "Facial pain worse on bending forward, nasal congestion, fever, purulent discharge.", "investigation": "Clinical; CT only if complications suspected." },
+      { "diagnosis": "Medication overuse headache", "conditionSlug": null, "likelihood": "common", "pointers": "Daily / near-daily headache, regular use of analgesics (paracetamol > 15 days/month, triptans > 10 days/month).", "investigation": "History; manage by analgesic washout." },
+      { "diagnosis": "Hypertensive emergency", "conditionSlug": null, "likelihood": "consider", "pointers": "Severe headache + SBP > 180 + papilloedema / focal neurology / chest pain / pulmonary oedema.", "investigation": "BP, ECG, troponin, U&E, urine for haematuria/proteinuria, CT brain if neurology. IV antihypertensive in resus." }
+    ],
+    "redFlags": [
+      "Thunderclap onset (peak within 1 min)",
+      "Worst-ever / first-ever headache",
+      "New focal neurological signs",
+      "Reduced consciousness / GCS drop",
+      "Fever + neck stiffness ± rash (meningitis)",
+      "Visual disturbance + age > 50 (GCA)",
+      "Headache worse on waking + vomiting (raised ICP)",
+      "Postpartum or pregnant patient (eclampsia, CVT, PRES)",
+      "Immunocompromised (atypical infection, lymphoma)",
+      "Anticoagulant use"
+    ],
+    "initialInvestigations": [
+      "Vitals + GCS + neuro exam + fundoscopy",
+      "FBC, U&E, CRP, ESR (GCA), glucose",
+      "ECG (hypertensive emergency / cardiac mimic)",
+      "Non-contrast CT brain if any red flag",
+      "Lumbar puncture (xanthochromia for SAH; cell count + protein + glucose + culture for meningitis) after CT clear",
+      "BP both arms in elderly (rule out dissection presenting as headache)"
+    ],
+    "disposition": "Admit any red-flag headache pending investigation. Discharge with safety-netting if primary headache identified, well, normal exam, with GP follow-up. Provide written safety-net advice.",
+    "references": [
+      { "label": "NICE CG150 — Headaches in over 12s: diagnosis and management." },
+      { "label": "Connolly ES Jr et al. AHA / ASA guidelines for the management of aneurysmal subarachnoid hemorrhage." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "paediatric-fever-under5",
+    "chiefComplaint": "Febrile child under 5",
+    "oneLiner": "Apply NICE traffic-light system. Red = immediate intervention, amber = senior review, green = home with safety-net. Always check for meningococcal rash, encephalopathy, dehydration, respiratory distress, UTI in any febrile child without obvious focus.",
+    "domains": ["paediatrics", "infectious-disease", "emergency"],
+    "populationScope": "paediatric",
+    "framing": "Most febrile children have self-limiting viral illness. The challenge is identifying the small fraction with serious bacterial infection (SBI) or invasive meningococcal disease before they decompensate. NICE NG143 traffic-light system is the standard UK approach; WHO IMCI applies in LMIC settings.",
+    "keyHistory": [
+      "Duration and pattern of fever (response to antipyretics is NOT a reliable marker of bacterial vs viral)",
+      "Focal symptoms (cough, ear pain, rash, dysuria, diarrhoea, joint swelling)",
+      "Feeding and urine output (dehydration)",
+      "Activity / responsiveness — parental concern is a sensitive indicator",
+      "Recent travel, sick contacts, immunisations (pneumococcal, Hib, meningococcal, MMR)",
+      "Antibiotic use in last 2 weeks (may mask classical signs)",
+      "Immunocompromise (sickle cell, splenectomy, oncology, primary immunodeficiency)",
+      "Age (< 3 months — much higher SBI risk regardless of presentation)"
+    ],
+    "keyExam": [
+      "Vitals: HR, RR, BP, SpO₂, temp, capillary refill (age-band specific)",
+      "Mental status / responsiveness / consolability",
+      "Hydration: skin turgor, fontanelle, mucous membranes, urine output",
+      "Skin: rash (non-blanching purpura = emergency), petechiae, mottling",
+      "Respiratory: nasal flaring, recessions, grunting, accessory muscles",
+      "Throat (Strep, EBV); ears (otitis media); meningism (Brudzinski's, neck stiffness, full fontanelle)",
+      "Abdomen (intussusception, surgical), genitourinary (testicular torsion)"
+    ],
+    "differential": [
+      { "diagnosis": "Viral upper respiratory tract infection", "conditionSlug": null, "likelihood": "common", "pointers": "Coryza, sore throat, cough, low-grade fever; well between fevers; preserved feeding.", "investigation": "Clinical." },
+      { "diagnosis": "Otitis media", "conditionSlug": null, "likelihood": "common", "pointers": "Ear pulling, distress, bulging red tympanic membrane.", "investigation": "Otoscopy." },
+      { "diagnosis": "Urinary tract infection", "conditionSlug": null, "likelihood": "common", "pointers": "ANY febrile infant < 3 months OR febrile child with no clear focus needs urine sample (clean-catch / catheter / SPA per age and clinical state).", "investigation": "Urine dip, urine M,C&S." },
+      { "diagnosis": "Pneumonia", "conditionSlug": null, "likelihood": "common", "pointers": "Tachypnoea (WHO age-band cut-offs), focal crackles, intercostal recessions, low SpO₂.", "investigation": "Clinical ± CXR if uncertain, FBC, CRP." },
+      { "diagnosis": "Meningococcal sepsis / meningitis", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Non-blanching purpura, mottling, leg pain, cold extremities (early), then shock, decreased GCS, neck stiffness, photophobia.", "investigation": "Bedside glucose; IV access; antibiotic FIRST (ceftriaxone) before LP; PCR; LP after stabilisation if no contraindication." },
+      { "diagnosis": "Encephalitis", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Altered mental status, seizures, focal neurology, behavioural change.", "investigation": "Bedside glucose; FBC, U&E, ammonia, blood gas; IV aciclovir + ceftriaxone if suspected; LP + MRI when stable." },
+      { "diagnosis": "Septicaemia (any bacterial cause)", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Lethargy, poor feeding, mottled, prolonged CRT > 3 s, tachycardia, hypotension late.", "investigation": "Septic screen: blood cultures, FBC, CRP, lactate, urine, ± CSF; antibiotics within 1 h." },
+      { "diagnosis": "Kawasaki disease", "conditionSlug": null, "likelihood": "consider", "pointers": "≥ 5 days fever + 4 of: bilateral non-purulent conjunctivitis, mucosal changes (red cracked lips, strawberry tongue), polymorphic rash, peripheral changes (oedema/desquamation), cervical lymphadenopathy.", "investigation": "Echocardiography (coronary aneurysm); IVIG + aspirin." },
+      { "diagnosis": "Appendicitis (older child)", "conditionSlug": null, "likelihood": "consider", "pointers": "RIF tenderness, peritonism, fever, atypical in young children.", "investigation": "Ultrasound, CT if unclear." },
+      { "diagnosis": "Septic arthritis / osteomyelitis", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Limp, refusal to weight-bear, joint swelling, fever.", "investigation": "X-ray (often normal early), MRI, FBC, CRP, blood cultures, joint aspiration." }
+    ],
+    "redFlags": [
+      "Non-blanching purpuric rash",
+      "Mottled, ashen or blue appearance",
+      "No response to social cues; appears ill to a healthcare professional",
+      "Grunting respirations or chest indrawing",
+      "Reduced level of consciousness",
+      "Status epilepticus or focal seizures",
+      "Bulging fontanelle / neck stiffness",
+      "Age < 3 months with any fever (≥ 38°C rectal)"
+    ],
+    "initialInvestigations": [
+      "Vital signs by age-appropriate ranges (RCPCH/APLS)",
+      "Urine dip / culture in any infant < 3 months with fever, OR child without focus",
+      "Bedside glucose if poor feeding / altered mental status",
+      "FBC, CRP, blood cultures if traffic-light amber/red",
+      "Lactate if shock features",
+      "LP if meningitis / encephalitis suspected (after antibiotics, after stabilisation)",
+      "CXR if respiratory features"
+    ],
+    "disposition": "RED (NICE traffic-light): immediate IV access + senior review + investigations + empiric antibiotics + transfer for paediatric assessment. AMBER: senior review; consider observation, watch for progression. GREEN: home with written safety-net advice, parental return criteria (fever > 48 h, new rash, behavioural change, poor feeding, breathing changes), and GP follow-up.",
+    "references": [
+      { "label": "NICE NG143 — Fever in under 5s: assessment and initial management." },
+      { "label": "WHO IMCI guidelines (LMIC contexts)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "adult-acute-back-pain",
+    "chiefComplaint": "Adult acute back pain",
+    "oneLiner": "Most is mechanical low-back pain (red-flag-free); the must-not-miss are cauda equina, spinal infection, malignancy, fracture, AAA, and aortic dissection. Cauda equina symptoms = same-day MRI.",
+    "domains": ["musculoskeletal", "emergency", "neurology"],
+    "populationScope": "adult",
+    "framing": "Up to 90% of acute low back pain is non-specific and self-limits within 6 weeks. Imaging unnecessary unless red flags. The diagnostic task is to recognise the 1-2% with sinister cause early enough to prevent permanent neurological injury or to identify a vascular catastrophe.",
+    "keyHistory": [
+      "Onset (sudden — fracture, AAA; gradual — discogenic, infection, malignancy)",
+      "Trauma (even low-energy in osteoporotic / steroid-user)",
+      "Saddle anaesthesia, urinary retention or incontinence, bowel disturbance, sexual dysfunction (cauda equina)",
+      "Weight loss, night pain, night sweats, history of cancer (metastatic disease)",
+      "Fever, IV drug use, recent infection, immunocompromise (spinal infection / epidural abscess)",
+      "Steroid use, age > 70, osteoporosis history (vertebral fracture)",
+      "Cardiovascular risk factors, sudden tearing pain to back (AAA, dissection)",
+      "Functional impact (radiation, paraesthesia, weakness)"
+    ],
+    "keyExam": [
+      "Inspection (scoliosis, kyphosis, deformity)",
+      "Palpation of spinous processes (tenderness suggests fracture, infection, malignancy)",
+      "Range of movement",
+      "Neurological exam of lower limbs (power, reflexes, sensation in dermatomes L2-S1)",
+      "Straight leg raise, cross straight leg raise",
+      "PR exam if cauda equina suspected (anal tone, perianal sensation)",
+      "Abdominal palpation for AAA (pulsatile expansile mass)",
+      "Pulses, femoral, foot"
+    ],
+    "differential": [
+      { "diagnosis": "Cauda equina syndrome", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Bilateral sciatica, saddle anaesthesia, urinary retention (post-void residual > 200 mL), faecal incontinence, lax anal tone.", "investigation": "Urgent (within hours) MRI spine. Neurosurgical emergency — operative decompression within 24-48 h preserves function." },
+      { "diagnosis": "Spinal epidural abscess / discitis / vertebral osteomyelitis", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Severe localised pain, fever, neurological deficit, IV drug user, immunocompromised, recent bacteraemia. CRP elevated.", "investigation": "MRI spine with contrast; blood cultures; FBC, CRP, ESR. URGENT spinal surgery / ID." },
+      { "diagnosis": "Vertebral fracture (osteoporotic, traumatic, pathological)", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Sudden onset, history of trauma (even minor), steroid use, age > 70, prior fracture, tenderness over spinous process.", "investigation": "X-ray spine; MRI if neurological deficit / pathological suspected." },
+      { "diagnosis": "Metastatic spinal cord compression", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Cancer history, progressive thoracic / lumbar pain, neurological deficit, sphincter disturbance.", "investigation": "Urgent whole-spine MRI; dexamethasone 16 mg IV stat; oncology / spinal surgery." },
+      { "diagnosis": "Abdominal aortic aneurysm (leaking / rupture)", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Sudden severe back / loin / abdominal pain in patient > 60, vascular risk factors; can mimic renal colic. Hypotension late.", "investigation": "Bedside ultrasound abdominal aorta; CT angiogram. Vascular emergency." },
+      { "diagnosis": "Aortic dissection", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Sudden tearing chest + interscapular back pain; pulse deficit; new aortic regurgitation; widened mediastinum; SBP differential between arms.", "investigation": "CT angiogram chest/abdomen." },
+      { "diagnosis": "Mechanical / non-specific low back pain", "conditionSlug": null, "likelihood": "common", "pointers": "Onset with movement, no neurological signs, normal exam, no red flags. Lumbar paraspinal spasm.", "investigation": "None routinely; reassurance + early mobilisation + simple analgesia." },
+      { "diagnosis": "Radiculopathy / herniated disc", "conditionSlug": null, "likelihood": "common", "pointers": "Sciatica (L5/S1 distribution most common), positive straight leg raise, dermatomal sensory loss, motor weakness in single nerve root.", "investigation": "Clinical diagnosis; MRI if persistent > 6 weeks despite conservative or if progressive neurological deficit." },
+      { "diagnosis": "Pyelonephritis / renal colic", "conditionSlug": null, "likelihood": "common", "pointers": "Loin pain, fever (pyelo), haematuria (colic), nausea, vomiting.", "investigation": "Urinalysis, U&E, CT KUB for stones, blood cultures + antibiotics for pyelo." }
+    ],
+    "redFlags": [
+      "Cauda equina symptoms (bilateral sciatica, saddle anaesthesia, urinary / bowel dysfunction)",
+      "Progressive neurological deficit (weakness, sensory loss in dermatomal distribution)",
+      "Fever / IV drug use / immunocompromise + back pain (spinal infection)",
+      "Weight loss / night pain / history of cancer (metastatic disease)",
+      "Trauma in osteoporotic patient / chronic steroid user",
+      "Sudden tearing back pain in patient with vascular risk factors (AAA / dissection)",
+      "Pulsatile abdominal mass"
+    ],
+    "initialInvestigations": [
+      "Vitals — look for haemodynamic compromise (AAA)",
+      "Bladder scan / post-void residual if cauda equina suspected (> 200 mL is suspicious)",
+      "Urinalysis (UTI, pyelo, blood in urine)",
+      "FBC, U&E, CRP, ESR if infection / malignancy suspected",
+      "X-ray spine if fracture suspected",
+      "Urgent MRI spine (same day) if cauda equina, spinal infection, or metastatic cord compression suspected",
+      "Bedside ultrasound abdominal aorta in any > 60 with sudden back / abdominal pain"
+    ],
+    "disposition": "Cauda equina → emergency neurosurgical referral + MRI same day. Spinal infection / metastatic compression → admission + urgent specialty. Mechanical low back pain with no red flags → simple analgesia, early mobilisation, NICE-style safety-net advice, GP follow-up if not resolving in 6 weeks.",
+    "references": [
+      { "label": "NICE NG59 — Low back pain and sciatica in over 16s." },
+      { "label": "Greenhalgh S et al. Red flags for cauda equina syndrome. Manual Ther 2018." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "adult-syncope",
+    "chiefComplaint": "Adult syncope / transient loss of consciousness",
+    "oneLiner": "Distinguish reflex (vasovagal), orthostatic, cardiac, neurological. Cardiac syncope has high mortality — exertional / unprovoked / with abnormal ECG = admit. The Canadian Syncope Risk Score risk-stratifies ED disposition.",
+    "domains": ["cardiology", "neurology", "emergency"],
+    "populationScope": "adult",
+    "framing": "Lifetime incidence ~ 35%. Most episodes are benign vasovagal; the diagnostic priority is excluding cardiac syncope (arrhythmia, structural disease, PE) which carries a 1-year mortality up to 30%.",
+    "keyHistory": [
+      "Witness account (essential — collateral history)",
+      "Prodrome (warm, lightheaded, nausea, sweating — vasovagal; vs nothing — cardiac)",
+      "Position at onset (standing / lying / changing position)",
+      "Trigger (cough, micturition, prolonged standing, emotion, exertion)",
+      "Duration of LOC, post-event confusion (suggestive of seizure)",
+      "Associated chest pain, palpitations, dyspnoea, neurological symptoms",
+      "Trauma sustained (suggests no warning — concerning)",
+      "Cardiac history, family history of sudden death, medications (QT-prolonging, antihypertensives)",
+      "Recent volume loss (vomiting, diarrhoea, blood loss)"
+    ],
+    "keyExam": [
+      "Vitals incl. postural BP (lying and standing 1 + 3 min)",
+      "Cardiovascular — heart sounds (aortic stenosis murmur), gallop, JVP, peripheral pulses, peripheral oedema",
+      "Carotid bruits",
+      "Neurological exam (focal signs)",
+      "Per rectum if melaena suspected",
+      "Skin (pallor, mucous membrane)"
+    ],
+    "differential": [
+      { "diagnosis": "Vasovagal / neurally-mediated", "conditionSlug": null, "likelihood": "common", "pointers": "Prodrome (lightheaded, nausea, sweating); trigger (emotion, pain, prolonged standing, micturition, cough); quick recovery; younger.", "investigation": "Clinical." },
+      { "diagnosis": "Orthostatic hypotension", "conditionSlug": null, "likelihood": "common", "pointers": "On standing; medication-induced (antihypertensives, diuretics, vasodilators); volume depletion; autonomic failure (Parkinson's, diabetes).", "investigation": "Postural BP." },
+      { "diagnosis": "Cardiac arrhythmia (brady — sinus, AV block; tachy — VT, SVT)", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "No / minimal warning, exertional, in lying position, palpitations preceding, family history of sudden death.", "investigation": "12-lead ECG + telemetry; Holter if intermittent; loop recorder if intermittent and unexplained; ICD assessment if structural heart disease." },
+      { "diagnosis": "Structural cardiac disease (aortic stenosis, hypertrophic cardiomyopathy, ARVC, anomalous coronary)", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Exertional syncope, ejection systolic murmur, family history of sudden death.", "investigation": "Echocardiography; cardiac MRI if HCM/ARVC." },
+      { "diagnosis": "Pulmonary embolism (massive)", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Syncope with persistent hypoxia / RV strain on ECG / hypotension; VTE risk factors.", "investigation": "Wells score, D-dimer, CTPA, echo." },
+      { "diagnosis": "Aortic dissection", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Tearing pain, pulse deficit, neurological signs.", "investigation": "CT angiogram aorta." },
+      { "diagnosis": "Subarachnoid haemorrhage", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Thunderclap headache, residual neurological signs, neck stiffness.", "investigation": "Non-contrast CT brain." },
+      { "diagnosis": "Hypoglycaemia", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Diabetic on insulin / sulfonylurea; recent missed meal; rapid recovery with glucose.", "investigation": "Bedside glucose at scene + on arrival." },
+      { "diagnosis": "Seizure", "conditionSlug": null, "likelihood": "consider", "pointers": "Tongue biting (lateral), incontinence, prolonged post-ictal confusion, witnessed tonic-clonic movement.", "investigation": "Clinical; EEG / MRI brain if first seizure." },
+      { "diagnosis": "GI haemorrhage (silent)", "conditionSlug": null, "likelihood": "consider", "pointers": "Melaena, anaemia, anticoagulant use, prior PUD.", "investigation": "Hb, group + screen, PR exam, OGD." },
+      { "diagnosis": "Ruptured AAA / ectopic pregnancy", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Hypotension + abdominal pain; female of reproductive age with positive β-hCG.", "investigation": "Bedside ultrasound; β-hCG; CT." }
+    ],
+    "redFlags": [
+      "Syncope during exertion",
+      "Syncope while lying or sitting",
+      "No prodrome",
+      "Trauma sustained (no warning)",
+      "Family history of sudden cardiac death < 40",
+      "Abnormal ECG (long QT, Brugada, WPW, AV block, LVH, bradycardia)",
+      "Known structural heart disease",
+      "Persistent abnormal vitals after recovery",
+      "New focal neurology"
+    ],
+    "initialInvestigations": [
+      "12-lead ECG (essential in every syncope patient)",
+      "Vitals incl. postural BP",
+      "Bedside glucose",
+      "FBC, U&E, troponin, magnesium",
+      "β-hCG in any female of reproductive age",
+      "Bedside echo if structural disease / PE suspected",
+      "CT head if neurological signs or sudden severe headache"
+    ],
+    "disposition": "ADMIT: any high-risk feature (Canadian Syncope Risk Score). DISCHARGE: low-risk vasovagal with normal vitals, normal ECG, no red flags, safe to manage at home with written safety-net advice. INTERMEDIATE: observation unit / monitored bed for 6-24 h with telemetry.",
+    "references": [
+      { "label": "Brignole M et al. 2018 ESC Guidelines for the diagnosis and management of syncope." },
+      { "label": "Thiruganasambandamoorthy V et al. Canadian Syncope Risk Score. CMAJ 2016." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "adult-altered-mental-status",
+    "chiefComplaint": "Adult altered mental status / confusion",
+    "oneLiner": "Use a structured approach: AEIOUTIPS (Alcohol, Endocrine/Encephalopathy, Insulin, Opiates/Overdose, Uraemia, Trauma, Infection, Psychiatric/Poison, Stroke/Seizure/SAH). Glucose, oxygen, naloxone, thiamine — the 'coma cocktail'.",
+    "domains": ["neurology", "emergency", "critical-care", "geriatrics"],
+    "populationScope": "adult",
+    "framing": "Common presentation; the differential is vast and the order of investigation matters. Treatable + reversible causes first (glucose, opioid, thiamine), then structural, then metabolic. In older adults, delirium is often the FIRST sign of acute illness (UTI, pneumonia, AKI, MI).",
+    "keyHistory": [
+      "Time course (sudden = vascular / hypoglycaemia / overdose; over hours = sepsis / hypoxia; over days = metabolic, delirium)",
+      "Recent illness, fever, focal symptoms (UTI in elderly common)",
+      "Medications (anticholinergics, opioids, benzodiazepines, lithium)",
+      "Alcohol or drug use; access to medications (overdose)",
+      "Trauma history (subdural, especially elderly on anticoagulants)",
+      "Diabetes (hypo/hyperglycaemia)",
+      "Liver / renal disease (encephalopathy / uraemia)",
+      "Prior cognitive baseline (dementia vs delirium)"
+    ],
+    "keyExam": [
+      "ABC + vitals + SpO₂ + temp + bedside glucose",
+      "GCS or AVPU; pupillary response (pinpoint = opioid / pontine; mid-position fixed = midbrain; one dilated = uncal herniation)",
+      "Focal neurology, neck stiffness",
+      "Skin (rash, pallor, jaundice, track marks)",
+      "Breath (alcohol, ketones, fetor hepaticus)",
+      "Mini cognitive assessment (orientation, attention)",
+      "Look for trauma signs (battle's, raccoon eyes, haemotympanum)"
+    ],
+    "differential": [
+      { "diagnosis": "Hypoglycaemia", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Diabetes treated with insulin / sulfonylurea; missed meal; sweating, tremor, then confusion / coma.", "investigation": "BEDSIDE GLUCOSE — first thing always." },
+      { "diagnosis": "Hypoxia / hypercapnia", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Respiratory disease, COPD with type 2 failure, narcosis.", "investigation": "SpO₂, ABG." },
+      { "diagnosis": "Opioid overdose", "conditionSlug": "opioid-toxidrome", "likelihood": "must-not-miss", "pointers": "Miosis, bradypnoea, low GCS, track marks.", "investigation": "Trial naloxone — see toxidromes record." },
+      { "diagnosis": "Stroke (ischaemic / haemorrhagic)", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Sudden focal neurology; thunderclap headache (SAH); risk factors.", "investigation": "Non-contrast CT brain; consider thrombolysis / thrombectomy." },
+      { "diagnosis": "Subarachnoid / subdural haemorrhage", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Trauma (even minor in elderly anticoagulated); thunderclap headache; declining GCS.", "investigation": "CT brain." },
+      { "diagnosis": "Meningitis / encephalitis", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Fever, neck stiffness, photophobia, focal seizures, immunocompromise.", "investigation": "Antibiotics + aciclovir empirically before LP; CT then LP." },
+      { "diagnosis": "Sepsis", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Fever, tachycardia, hypotension, raised lactate. Delirium often the only sign in elderly.", "investigation": "Sepsis screen, cultures, broad-spectrum antibiotics within 1 h." },
+      { "diagnosis": "Hepatic encephalopathy", "conditionSlug": null, "likelihood": "consider", "pointers": "Chronic liver disease, asterixis, fetor hepaticus, raised ammonia, precipitated by GI bleed / infection / constipation / sedatives.", "investigation": "Ammonia, LFTs, treat precipitant + lactulose + rifaximin." },
+      { "diagnosis": "Uraemic encephalopathy", "conditionSlug": null, "likelihood": "consider", "pointers": "Known CKD or AKI, raised urea, asterixis, myoclonus.", "investigation": "U&E; dialysis if severe." },
+      { "diagnosis": "Wernicke's encephalopathy", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Alcoholic / malnourished / hyperemesis / post-bariatric; triad confusion + ophthalmoplegia + ataxia (often incomplete).", "investigation": "TREAT EMPIRICALLY with IV thiamine (Pabrinex) for any alcoholic / malnourished with altered mental status; do not wait for confirmation." },
+      { "diagnosis": "Drug toxicity (anticholinergic, serotonin, NMS, lithium)", "conditionSlug": null, "likelihood": "consider", "pointers": "Specific toxidrome patterns; medication history.", "investigation": "See toxidromes records." },
+      { "diagnosis": "Hyperglycaemic emergency (DKA, HHS)", "conditionSlug": "diabetic-ketoacidosis", "likelihood": "must-not-miss", "pointers": "Polyuria, dehydration, Kussmaul breathing, fruity breath (DKA); marked hyperglycaemia + hyperosmolar (HHS).", "investigation": "Glucose, ketones, ABG, electrolytes." },
+      { "diagnosis": "Hyponatraemia (severe)", "conditionSlug": null, "likelihood": "must-not-miss", "pointers": "Confusion, seizures at Na < 120; thiazide use, SIADH, hypovolaemia, congestive failure.", "investigation": "Na, paired serum + urine osmolality + urine Na." },
+      { "diagnosis": "Post-ictal state / non-convulsive status epilepticus", "conditionSlug": null, "likelihood": "consider", "pointers": "Witnessed seizure or unexplained confusion in known epilepsy.", "investigation": "EEG if no improvement; consider benzodiazepine trial." },
+      { "diagnosis": "Delirium (multifactorial, often elderly)", "conditionSlug": null, "likelihood": "common", "pointers": "Fluctuating, often worse at night; UTI, pneumonia, AKI, constipation, pain, polypharmacy.", "investigation": "Look for precipitants — septic screen, urine, CXR, U&E, calcium, B12, TFT, drugs." }
+    ],
+    "redFlags": [
+      "GCS ≤ 8 (airway at risk)",
+      "Focal neurology",
+      "Sudden onset",
+      "Seizure activity",
+      "Severe hypoglycaemia, hyperthermia, or hypothermia",
+      "Signs of raised ICP (cushing's triad)",
+      "Suspected meningococcal sepsis (purpura)",
+      "Anticoagulant use + altered mental status (intracranial bleed)"
+    ],
+    "initialInvestigations": [
+      "Bedside glucose, GCS, SpO₂, vitals, temperature",
+      "ECG, FBC, U&E, LFTs, Ca, Mg, glucose, TFTs, CRP, lactate, ABG",
+      "Toxicology screen + paracetamol + salicylate + ethanol + ammonia + osmolality",
+      "Urine dip + M,C&S, β-hCG",
+      "CT brain if focal signs / declining GCS / trauma / on anticoagulant",
+      "LP if CNS infection suspected (after CT clear)",
+      "EEG if non-convulsive status suspected"
+    ],
+    "disposition": "Admit. Coma cocktail empirically when relevant: oxygen, glucose, naloxone, thiamine. Address airway + ABC first. Resus / HDU level if GCS ≤ 8, refractory hypotension, status epilepticus, or unstable physiology. Senior + ICU input early.",
+    "references": [
+      { "label": "NICE CG103 — Delirium: diagnosis, prevention and management." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  }
+]

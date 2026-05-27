@@ -14,6 +14,7 @@ import type { AnticoagulantReversal } from '../anticoagulant-reversal/anticoagul
 import type { IvCompatibility } from '../iv-compatibility/iv-compatibility.types';
 import type { PregnancyLactationRecord } from '../pregnancy-lactation/pregnancy-lactation.types';
 import type { HepaticDoseRecord } from '../hepatic-dose/hepatic-dose.types';
+import type { SymptomTriageRecord } from '../symptom-triage/symptom-triage.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import type { ContentStats, ValidationViolation } from './bundle-validator';
 
@@ -88,6 +89,8 @@ export interface LoadedBundle {
   pregnancyLactation: PregnancyLactationRecord[];
   /** Optional — bundles signed before hepatic-dose.json existed return []. */
   hepaticDose: HepaticDoseRecord[];
+  /** Optional — bundles signed before symptom-triage.json existed return []. */
+  symptomTriage: SymptomTriageRecord[];
   /** Optional — bundles signed before terminology.json existed return an empty TerminologyBundle. */
   terminology: TerminologyBundle;
 }

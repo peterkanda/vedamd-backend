@@ -61,6 +61,7 @@ interface Bundle {
   ivCompatibility?: ExtendedRecord[];
   pregnancyLactation?: ExtendedRecord[];
   hepaticDose?: ExtendedRecord[];
+  symptomTriage?: ExtendedRecord[];
 }
 
 const KNOWN_STATUSES: readonly ReviewStatus[] = ['draft', 'review', 'approved', 'deprecated'];
@@ -126,6 +127,7 @@ export function validateBundle(bundle: Bundle): ValidationResult {
     ['iv-compatibility', bundle.ivCompatibility],
     ['pregnancy-lactation', bundle.pregnancyLactation],
     ['hepatic-dose', bundle.hepaticDose],
+    ['symptom-triage', bundle.symptomTriage],
   ];
   let extendedCount = 0;
   for (const [domain, set] of extendedSets) {

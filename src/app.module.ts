@@ -25,6 +25,7 @@ import { AnticoagulantReversalModule } from './modules/anticoagulant-reversal/an
 import { IvCompatibilityModule } from './modules/iv-compatibility/iv-compatibility.module';
 import { PregnancyLactationModule } from './modules/pregnancy-lactation/pregnancy-lactation.module';
 import { HepaticDoseModule } from './modules/hepatic-dose/hepatic-dose.module';
+import { SymptomTriageModule } from './modules/symptom-triage/symptom-triage.module';
 import { IntegrationsModule } from './modules/integrations/integrations.module';
 import { DoseProtocolsModule } from './modules/dose-protocols/dose-protocols.module';
 import { ClinicalToolsModule } from './modules/clinical-tools/clinical-tools.module';
@@ -70,6 +71,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     IvCompatibilityModule,
     PregnancyLactationModule,
     HepaticDoseModule,
+    SymptomTriageModule,
     IntegrationsModule,
     DoseProtocolsModule,
     ClinicalToolsModule,

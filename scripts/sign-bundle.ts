@@ -80,6 +80,7 @@ const fileEntries = files.map((name) => {
     ivCompatibility: readOptional('iv-compatibility.json'),
     pregnancyLactation: readOptional('pregnancy-lactation.json'),
     hepaticDose: readOptional('hepatic-dose.json'),
+    symptomTriage: readOptional('symptom-triage.json'),
   };
   const validation = validateBundle(bundle);
   const stats = validation.stats;
