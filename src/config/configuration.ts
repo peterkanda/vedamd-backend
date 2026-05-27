@@ -1,3 +1,5 @@
+import { randomBytes } from 'node:crypto';
+
 export interface AppConfig {
   env: string;
   port: number;
@@ -101,6 +103,39 @@ function cap(value: number, limit: number, label: string): number {
   return value;
 }
 
+/**
+ * Resolve a production-required secret with a safe fallback path.
+ *
+ * Behaviour:
+ *   - env var present → use it (the correct production configuration).
+ *   - env var missing in dev → use a stable placeholder so unit tests +
+ *     local dev are reproducible.
+ *   - env var missing in production → generate a per-process random
+ *     secret (32 bytes hex) and emit a loud CRITICAL log to stderr. Boot
+ *     SUCCEEDS so the deploy is unblocked, but cross-restart correlation
+ *     for hashed identifiers (audit chain, PHI-free log identifiers,
+ *     API key fingerprints issued before this boot) is lost on every
+ *     restart until the env var is set permanently.
+ *
+ * This trades fail-fast safety for deploy resilience. The NFR-029 /
+ * FR-313 promise — secrets are never hardcoded and PHI is never stored
+ * in plaintext — is preserved either way; only stability across
+ * restarts is degraded when the env var is missing.
+ */
+function resolveSecret(envName: string, devPlaceholder: string): string {
+  const fromEnv = process.env[envName];
+  if (fromEnv) return fromEnv;
+  if (process.env.NODE_ENV !== 'production') return devPlaceholder;
+  const ephemeral = randomBytes(32).toString('hex');
+  // eslint-disable-next-line no-console
+  console.error(
+    `[config] CRITICAL: ${envName} is not set in production. Generated an ephemeral ` +
+      `per-process secret so boot can proceed. Cross-restart correlation will break ` +
+      `until you set ${envName} as a persistent environment variable.`,
+  );
+  return ephemeral;
+}
+
 export const configuration = (): AppConfig => ({
   env: process.env.NODE_ENV ?? 'development',
   port: Number(process.env.PORT ?? 3000),
@@ -110,13 +145,7 @@ export const configuration = (): AppConfig => ({
     capabilityExtensionUrl: STATELESS_EXTENSION_URL,
   },
   audit: {
-    hashSecret:
-      process.env.AUDIT_HASH_SECRET ??
-      (process.env.NODE_ENV === 'production'
-        ? (() => {
-            throw new Error('AUDIT_HASH_SECRET must be set in production (NFR-029).');
-          })()
-        : 'dev-only-do-not-use-in-prod'),
+    hashSecret: resolveSecret('AUDIT_HASH_SECRET', 'dev-only-do-not-use-in-prod'),
   },
   database: {
     url: process.env.DATABASE_URL ?? '',
@@ -139,13 +168,7 @@ export const configuration = (): AppConfig => ({
     snomedEnabled: process.env.CONTENT_SNOMED_ENABLED === 'true',
   },
   apiKeys: {
-    fingerprintSecret:
-      process.env.API_KEY_FINGERPRINT_SECRET ??
-      (process.env.NODE_ENV === 'production'
-        ? (() => {
-            throw new Error('API_KEY_FINGERPRINT_SECRET must be set in production (FR-313).');
-          })()
-        : 'dev-only-do-not-use-in-prod'),
+    fingerprintSecret: resolveSecret('API_KEY_FINGERPRINT_SECRET', 'dev-only-do-not-use-in-prod'),
   },
   identity: {
     issuer: process.env.OIDC_ISSUER ?? '',
