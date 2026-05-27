@@ -47,4 +47,35 @@ describe('ClinicalScoresService', () => {
   it('returns null for an unknown slug', () => {
     expect(svc.get('not-a-real-score')).toBeNull();
   });
+
+  it('carries the priority-1 scoring tools added per the gap-analysis (anti-hallucination guard)', () => {
+    const slugs = svc.list().map((s) => s.slug);
+    // If a content edit accidentally drops one of these the test fails
+    // loudly — these are the scores clinicians use daily.
+    for (const required of [
+      'pews',               // paediatric early warning
+      'psofa',              // paediatric organ-failure score
+      'ascvd-pce',          // US 10-year CVD risk (Pooled Cohort)
+      'qrisk3',             // UK 10-year CVD risk
+      'glasgow-blatchford', // upper GI bleed risk
+      'spesi',              // simplified PE severity
+      'apache-ii',          // ICU mortality
+      'sirs-criteria',      // sepsis screen (legacy but still in EHRs)
+      'nihss',              // stroke severity
+      'mascc',              // febrile neutropenia risk
+    ]) {
+      expect(slugs).toContain(required);
+    }
+  });
+
+  it('exposes formula-method scores (ASCVD, QRISK3, APACHE-II) without inventing point values', () => {
+    // Formula-based scores must declare method "formula" — manual summation
+    // is wrong and dangerous; the test fence-posts against silent re-coding.
+    for (const slug of ['ascvd-pce', 'qrisk3', 'apache-ii']) {
+      const s = svc.get(slug);
+      expect(s).not.toBeNull();
+      expect(s!.scoring.method).toBe('formula');
+      expect(s!.scoring.notes).toBeDefined();
+    }
+  });
 });

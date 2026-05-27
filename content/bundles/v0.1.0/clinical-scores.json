@@ -2680,5 +2680,347 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "pews",
+    "title": "Paediatric Early Warning Score (PEWS)",
+    "abbrev": "PEWS",
+    "purpose": "Bedside aggregate score for early recognition of clinical deterioration in paediatric inpatients. Drives nursing-led escalation pathways.",
+    "domains": ["paediatrics", "critical-care", "patient-safety"],
+    "population": { "notes": "Children up to 16 years. Age-band specific vital-sign thresholds required (use APLS / RCPCH age bands)." },
+    "items": [
+      { "label": "Behaviour: 0 = playing/appropriate; 1 = sleeping; 2 = irritable; 3 = lethargic/confused or reduced response to pain", "points": 3 },
+      { "label": "Cardiovascular: 0 = pink or CRT 1–2 s; 1 = pale or CRT 3 s; 2 = grey or CRT 4 s, tachycardia 20 above normal; 3 = grey + mottled or CRT ≥5 s, tachycardia 30 above normal or bradycardia", "points": 3 },
+      { "label": "Respiratory: 0 = within normal range, no recession; 1 = rate >10 above normal, using accessory muscles, FiO₂ 30% or 3 L/min; 2 = rate >20 above normal, recessions, FiO₂ 40% or 6 L/min; 3 = rate ≥5 below normal with sternal recession/grunting, FiO₂ ≥50% or 8 L/min", "points": 3 }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 9,
+      "notes": "Add 2 if quarter-hourly nebulisers; add 2 for persistent vomiting post-surgery. Age-band vital-sign normals must be applied; do not use adult ranges. Many UK trusts use a modified PEWS (Bedside PEWS) with additional parameters (SpO₂, blood pressure, capillary refill discrete points)."
+    },
+    "interpretation": [
+      { "band": "0–2", "meaning": "Routine observation", "action": "Standard ward observations frequency." },
+      { "band": "3", "meaning": "Increased monitoring", "action": "Inform nurse-in-charge; increase observation frequency to hourly. Consider medical review." },
+      { "band": "4", "meaning": "Urgent medical review within 30 min", "action": "Senior nurse + medical team review; reassess airway, breathing, circulation. Escalate to registrar." },
+      { "band": "≥5", "meaning": "Critical — emergency review", "action": "Immediate medical team / outreach activation. Consider PICU referral. ABC priorities." }
+    ],
+    "caution": "Single-point PEWS scores miss the patient who is critically ill but does not breach a band (e.g. compensated shock with normal HR). Use trend, parental concern, and clinical gestalt alongside the score. ALWAYS apply age-band vital-sign normals (RCPCH).",
+    "references": [
+      { "label": "RCPCH National PEWS Implementation Programme." },
+      { "label": "Parshuram CS et al. Effect of a paediatric early warning system on all-cause mortality in hospitalised paediatric patients (EPOCH cluster RCT). JAMA 2018." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "psofa",
+    "title": "Paediatric Sequential Organ Failure Assessment (pSOFA)",
+    "abbrev": "pSOFA",
+    "purpose": "Organ-dysfunction score for children, adapted from adult SOFA — used to identify and risk-stratify paediatric sepsis (Phoenix Sepsis Criteria 2024 are now preferred for definition; pSOFA remains widely used for severity).",
+    "domains": ["paediatrics", "critical-care"],
+    "population": { "notes": "Birth to 18 years. Use age-adjusted MAP and creatinine cut-offs (see Matics & Sanchez-Pinto 2017)." },
+    "items": [
+      { "label": "Respiration (PaO₂/FiO₂ or SpO₂/FiO₂): 0 = ≥400/≥292; 1 = 300–399/264–291; 2 = 200–299/221–263; 3 = 100–199 with ventilation/148–220; 4 = <100 with ventilation/<148", "points": 4 },
+      { "label": "Coagulation (platelets ×10⁹/L): 0 = ≥150; 1 = 100–149; 2 = 50–99; 3 = 20–49; 4 = <20", "points": 4 },
+      { "label": "Liver (bilirubin µmol/L): 0 = <20; 1 = 20–32; 2 = 33–101; 3 = 102–204; 4 = >204", "points": 4 },
+      { "label": "Cardiovascular (age-adjusted MAP or vasopressor): 0 = no hypotension; 1 = MAP < age cut-off; 2 = dopamine ≤5 or dobutamine any; 3 = dopamine >5 or adrenaline/noradrenaline ≤0.1; 4 = dopamine >15 or adrenaline/noradrenaline >0.1 µg/kg/min", "points": 4 },
+      { "label": "CNS (Glasgow Coma Scale): 0 = 15; 1 = 13–14; 2 = 10–12; 3 = 6–9; 4 = <6", "points": 4 },
+      { "label": "Renal (creatinine, age-adjusted µmol/L): 0 = <age cut-off; 1–4 = increasing categories per Matics & Sanchez-Pinto table", "points": 4 }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 24,
+      "notes": "Sum of 6 organ-system sub-scores (0–4 each). Calculated daily during ICU admission. Age-adjusted MAP and creatinine cut-offs are essential — see source paper."
+    },
+    "interpretation": [
+      { "band": "Increase ≥2 from baseline", "meaning": "Sepsis-3 paediatric adaptation (Schlapbach 2018; superseded by Phoenix 2024)", "action": "Initiate sepsis bundle. Consider source identification, empiric antimicrobials, fluid resuscitation per local protocol." },
+      { "band": "Maximum pSOFA ≥4 in first 24 h", "meaning": "Higher mortality in PICU cohorts", "action": "Senior intensive care input." }
+    ],
+    "caution": "Phoenix Sepsis Criteria (Schlapbach JAMA 2024) replaced the SIRS / paediatric Sepsis-3 / pSOFA framework as the consensus paediatric sepsis definition. pSOFA remains useful for ICU organ-dysfunction tracking; do not use it as the sole sepsis-screening tool in 2024+ — see Phoenix instead.",
+    "references": [
+      { "label": "Matics TJ, Sanchez-Pinto LN. Adaptation and validation of a pediatric sequential organ failure assessment score and evaluation of the Sepsis-3 definitions in critically ill children. JAMA Pediatrics 2017;171:e172352." },
+      { "label": "Schlapbach LJ et al. International consensus criteria for pediatric sepsis and septic shock (Phoenix). JAMA 2024;331:665-674." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ascvd-pce",
+    "title": "ASCVD 10-year risk (Pooled Cohort Equations)",
+    "abbrev": "ASCVD",
+    "purpose": "Estimate 10-year risk of first atherosclerotic cardiovascular disease event (non-fatal MI, CHD death, fatal or non-fatal stroke) in primary prevention. Drives statin initiation decisions per ACC/AHA.",
+    "domains": ["cardiology", "primary-care"],
+    "population": { "notes": "Adults 40–79 years without clinical ASCVD or LDL ≥190 mg/dL (4.9 mmol/L). Validated in non-Hispanic White and African-American populations; calibration in other groups variable." },
+    "items": [
+      { "label": "Age (40–79)", "points": 0 },
+      { "label": "Sex (male / female)", "points": 0 },
+      { "label": "Race (white / African-American / other)", "points": 0 },
+      { "label": "Total cholesterol (mg/dL)", "points": 0 },
+      { "label": "HDL cholesterol (mg/dL)", "points": 0 },
+      { "label": "Systolic blood pressure (mmHg)", "points": 0 },
+      { "label": "On treatment for hypertension (yes/no)", "points": 0 },
+      { "label": "Diabetes (yes/no)", "points": 0 },
+      { "label": "Current smoker (yes/no)", "points": 0 }
+    ],
+    "scoring": {
+      "method": "formula",
+      "min": 0,
+      "max": 100,
+      "notes": "Sex- and race-specific regression equations from Goff DC et al. 2014 (Circulation 129:S49-73). Cannot be reproduced by manual summation — use the ACC/AHA risk calculator (https://tools.acc.org/ascvd-risk-estimator-plus) or any validated implementation. The PREVENT equations (AHA 2023, Khan SS et al. Circulation) are the modern successor — estimate 10y/30y total CVD risk in adults 30–79; do not require race; include kidney function and metabolic factors."
+    },
+    "interpretation": [
+      { "band": "<5%", "meaning": "Low risk", "action": "Lifestyle counselling; reassess in 4–6 years." },
+      { "band": "5 to <7.5%", "meaning": "Borderline risk", "action": "Risk discussion; consider risk enhancers (family history premature CVD, CKD, inflammatory disease, South Asian ancestry, LDL ≥160). Consider CAC scoring if uncertain." },
+      { "band": "7.5 to <20%", "meaning": "Intermediate risk", "action": "Moderate-intensity statin recommended after shared decision-making. CAC scoring may reclassify." },
+      { "band": "≥20%", "meaning": "High risk", "action": "High-intensity statin recommended." }
+    ],
+    "caution": "Overestimates risk in some contemporary cohorts. Avoid sole reliance — incorporate risk enhancers and shared decision-making. PREVENT equations are increasingly preferred for new patients.",
+    "references": [
+      { "label": "Goff DC Jr et al. 2013 ACC/AHA Guideline on the Assessment of Cardiovascular Risk. Circulation 2014;129:S49-S73." },
+      { "label": "Khan SS et al. Novel Prediction Equations for Absolute Risk Assessment of Total Cardiovascular Disease (PREVENT). Circulation 2023." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "qrisk3",
+    "title": "QRISK3 10-year cardiovascular risk",
+    "abbrev": "QRISK3",
+    "purpose": "10-year risk of MI or stroke in UK adults — drives statin initiation decisions in NICE guideline NG238 / CG181.",
+    "domains": ["cardiology", "primary-care"],
+    "population": { "notes": "Adults 25–84 years in the UK without prior CVD, type 1 diabetes, or familial hypercholesterolaemia." },
+    "items": [
+      { "label": "Age (25–84)", "points": 0 },
+      { "label": "Sex", "points": 0 },
+      { "label": "Ethnicity (9 categories — adjusts risk by ancestry)", "points": 0 },
+      { "label": "Postcode-derived Townsend deprivation score", "points": 0 },
+      { "label": "Smoking status (5-level)", "points": 0 },
+      { "label": "Diabetes type (none / type 2)", "points": 0 },
+      { "label": "First-degree relative with CHD < 60 y", "points": 0 },
+      { "label": "Chronic kidney disease (stage 3, 4 or 5)", "points": 0 },
+      { "label": "Atrial fibrillation, on antihypertensive treatment, migraine, rheumatoid arthritis, SLE, severe mental illness, atypical antipsychotic, regular steroids, erectile dysfunction", "points": 0 },
+      { "label": "Cholesterol/HDL ratio", "points": 0 },
+      { "label": "Systolic BP and SD of SBP readings", "points": 0 },
+      { "label": "BMI", "points": 0 }
+    ],
+    "scoring": {
+      "method": "formula",
+      "min": 0,
+      "max": 100,
+      "notes": "Cox regression with sex-specific coefficients (Hippisley-Cox J et al. BMJ 2017). Cannot be calculated by hand — use the official QRISK3 calculator (https://qrisk.org/) or any UK clinical system implementation."
+    },
+    "interpretation": [
+      { "band": "<10%", "meaning": "Below treatment threshold", "action": "Lifestyle advice; reassess in 5 years (or earlier if change in risk factors)." },
+      { "band": "≥10%", "meaning": "Statin therapy recommended after shared decision-making", "action": "Atorvastatin 20 mg OD per NICE NG238 (primary prevention)." }
+    ],
+    "caution": "Threshold may be lowered (e.g. 5%) for patients with strong risk enhancers (premature family history, South Asian ancestry, raised lipoprotein(a)). QRISK3 includes more risk factors than QRISK2 — outputs differ. Re-run for any documented change in risk factors.",
+    "references": [
+      { "label": "Hippisley-Cox J, Coupland C, Brindle P. Development and validation of QRISK3 risk prediction algorithm. BMJ 2017;357:j2099." },
+      { "label": "NICE NG238 — Cardiovascular Disease: Risk Assessment and Reduction." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "glasgow-blatchford",
+    "title": "Glasgow-Blatchford Bleeding Score (GBS)",
+    "abbrev": "GBS",
+    "purpose": "Risk-stratify upper GI bleeding at presentation — identify patients who can be safely managed as outpatients without urgent endoscopy.",
+    "domains": ["gastroenterology", "emergency"],
+    "population": { "notes": "Adults presenting with acute upper GI bleed. Pre-endoscopy decision aid." },
+    "items": [
+      { "label": "Urea (mmol/L): <6.5 = 0; 6.5–7.9 = 2; 8–9.9 = 3; 10–24.9 = 4; ≥25 = 6", "points": 6 },
+      { "label": "Haemoglobin men (g/L): ≥130 = 0; 120–129 = 1; 100–119 = 3; <100 = 6", "points": 6 },
+      { "label": "Haemoglobin women (g/L): ≥120 = 0; 100–119 = 1; <100 = 6", "points": 6 },
+      { "label": "Systolic BP (mmHg): ≥110 = 0; 100–109 = 1; 90–99 = 2; <90 = 3", "points": 3 },
+      { "label": "Pulse ≥100/min", "points": 1 },
+      { "label": "Melaena present", "points": 1 },
+      { "label": "Syncope present", "points": 2 },
+      { "label": "Hepatic disease present", "points": 2 },
+      { "label": "Cardiac failure present", "points": 2 }
+    ],
+    "scoring": { "method": "sum", "min": 0, "max": 23, "notes": "Score 0 with no clinical concern → very low rebleeding/mortality; consider outpatient management with early endoscopy." },
+    "interpretation": [
+      { "band": "0", "meaning": "Very low risk (~1% need intervention)", "action": "Consider outpatient management; outpatient OGD within 24–72 h if appropriate." },
+      { "band": "1–5", "meaning": "Low-intermediate", "action": "Admit; OGD within 24 h; supportive care." },
+      { "band": "6–11", "meaning": "Intermediate-high", "action": "Admit; urgent OGD; group and screen; consider HDU." },
+      { "band": "≥12", "meaning": "High — significant risk of intervention or death", "action": "Resuscitate; urgent endoscopy with IR / surgical backup; ICU review." }
+    ],
+    "references": [
+      { "label": "Blatchford O et al. A risk score to predict need for treatment for upper-gastrointestinal haemorrhage. Lancet 2000." },
+      { "label": "NICE CG141 — Acute upper gastrointestinal bleeding." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "spesi",
+    "title": "Simplified Pulmonary Embolism Severity Index (sPESI)",
+    "abbrev": "sPESI",
+    "purpose": "Stratify 30-day mortality risk in acute pulmonary embolism — identify low-risk patients suitable for outpatient or early-discharge management.",
+    "domains": ["cardiology", "emergency", "respiratory"],
+    "population": { "notes": "Confirmed acute PE. Validated for predicting all-cause 30-day mortality." },
+    "items": [
+      { "label": "Age > 80 years", "points": 1 },
+      { "label": "History of cancer", "points": 1 },
+      { "label": "Chronic cardiopulmonary disease (heart failure or chronic lung disease)", "points": 1 },
+      { "label": "Heart rate ≥ 110/min", "points": 1 },
+      { "label": "Systolic BP < 100 mmHg", "points": 1 },
+      { "label": "Oxygen saturation < 90% (room air)", "points": 1 }
+    ],
+    "scoring": { "method": "sum", "min": 0, "max": 6, "notes": "Any single criterion present = score ≥ 1 = NOT low risk." },
+    "interpretation": [
+      { "band": "0", "meaning": "Low risk (~1% 30-day mortality)", "action": "Consider outpatient anticoagulation (DOAC) per local pathway, after excluding RV dysfunction / haemodynamic instability." },
+      { "band": "≥1", "meaning": "Not low risk", "action": "Admit. Assess RV function (echo, BNP, troponin). Stratify intermediate-low / intermediate-high / high using ESC algorithm; consider thrombolysis for high-risk." }
+    ],
+    "caution": "Even sPESI 0 patients with RV dysfunction or elevated cardiac biomarkers should not be discharged. Use within the full ESC PE risk stratification, not as a sole decision aid.",
+    "references": [
+      { "label": "Jiménez D et al. Simplification of the pulmonary embolism severity index for prognostication in patients with acute symptomatic pulmonary embolism. Arch Intern Med 2010;170:1383-9." },
+      { "label": "Konstantinides SV et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "apache-ii",
+    "title": "APACHE II",
+    "abbrev": "APACHE II",
+    "purpose": "Assess severity of illness and predict ICU mortality. Calculated within the first 24 h of ICU admission.",
+    "domains": ["critical-care"],
+    "population": { "notes": "Adults in ICU within first 24 h of admission. Not validated for paediatrics; use PRISM / PIM for children." },
+    "items": [
+      { "label": "Acute physiology score: temperature, MAP, heart rate, respiratory rate, FiO₂-adjusted oxygenation, arterial pH, sodium, potassium, creatinine (×2 if AKI), haematocrit, WBC, GCS (15 − actual) — each 0–4 points", "points": 60 },
+      { "label": "Age points: <45 = 0; 45–54 = 2; 55–64 = 3; 65–74 = 5; ≥75 = 6", "points": 6 },
+      { "label": "Chronic health: severe organ failure / immunocompromise = 5 if emergency surgery or non-operative; = 2 if elective postoperative", "points": 5 }
+    ],
+    "scoring": {
+      "method": "formula",
+      "min": 0,
+      "max": 71,
+      "notes": "Sum APS + age + chronic health points. Look up predicted mortality via the disease-specific table (Knaus 1985). Modern ICUs use APACHE IV or SAPS 3 (better calibration); APACHE II remains widely cited and used for case-mix adjustment."
+    },
+    "interpretation": [
+      { "band": "0–4", "meaning": "Mortality ~ 4%", "action": "Standard ICU care." },
+      { "band": "5–9", "meaning": "Mortality ~ 8%", "action": "Standard ICU care." },
+      { "band": "10–14", "meaning": "Mortality ~ 15%", "action": "Standard ICU care." },
+      { "band": "15–19", "meaning": "Mortality ~ 25%", "action": "Aggressive monitoring." },
+      { "band": "20–24", "meaning": "Mortality ~ 40%", "action": "Senior intensive care input." },
+      { "band": "25–29", "meaning": "Mortality ~ 55%", "action": "Consider goals-of-care discussion alongside aggressive treatment." },
+      { "band": "≥30", "meaning": "Mortality > 70%", "action": "Goals-of-care discussion with family; consider limits of escalation." }
+    ],
+    "caution": "Risk prediction is for COHORTS, not individuals — do not withdraw care on the basis of an APACHE score for any single patient. Modern calibration is poor in some populations; consider APACHE IV / SAPS 3 / MPM if available.",
+    "references": [
+      { "label": "Knaus WA et al. APACHE II: a severity of disease classification system. Crit Care Med 1985;13:818-29." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "sirs-criteria",
+    "title": "Systemic Inflammatory Response Syndrome (SIRS)",
+    "abbrev": "SIRS",
+    "purpose": "Historical sepsis-screening criteria. Now SUPERSEDED by qSOFA / Sepsis-3 for sepsis definition, but still widely used for ICU screening and present in many EHR alerts.",
+    "domains": ["critical-care", "emergency", "antimicrobials"],
+    "population": { "notes": "Adults. Not for paediatric sepsis screening — use Phoenix Sepsis Criteria 2024." },
+    "items": [
+      { "label": "Temperature > 38 °C or < 36 °C", "points": 1 },
+      { "label": "Heart rate > 90/min", "points": 1 },
+      { "label": "Respiratory rate > 20/min or PaCO₂ < 32 mmHg (4.3 kPa)", "points": 1 },
+      { "label": "WBC > 12 ×10⁹/L, < 4 ×10⁹/L, or > 10% bands", "points": 1 }
+    ],
+    "scoring": { "method": "sum", "min": 0, "max": 4, "notes": "≥ 2 met = SIRS positive. Sepsis (old Sepsis-1 definition) = SIRS + suspected infection." },
+    "interpretation": [
+      { "band": "< 2 met", "meaning": "Not SIRS", "action": "Sepsis less likely; continue clinical assessment." },
+      { "band": "≥ 2 met", "meaning": "SIRS positive", "action": "If infection suspected, evaluate as possible sepsis: send cultures, lactate, full sepsis bundle; do NOT delay antibiotics for definitive imaging. Use qSOFA / NEWS2 for severity grading per Sepsis-3 / Surviving Sepsis Campaign." }
+    ],
+    "caution": "Sepsis-3 (2016) replaced SIRS with qSOFA + clinical suspicion. SIRS lacks specificity (very high false-positive rate — pneumonia, dehydration, post-op patients all trigger). Use as a TRIGGER for further evaluation, not as a sepsis diagnosis.",
+    "references": [
+      { "label": "Bone RC et al. Definitions for sepsis and organ failure. Chest 1992;101:1644-55." },
+      { "label": "Singer M et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA 2016;315:801-10." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "nihss",
+    "title": "National Institutes of Health Stroke Scale (NIHSS)",
+    "abbrev": "NIHSS",
+    "purpose": "Quantify stroke severity at presentation; drives thrombolysis / thrombectomy decisions and monitors clinical evolution.",
+    "domains": ["neurology", "emergency"],
+    "population": { "notes": "Adults with suspected acute ischaemic stroke. Requires certified training for inter-rater reliability." },
+    "items": [
+      { "label": "1a. Level of consciousness (0 alert → 3 unresponsive)", "points": 3 },
+      { "label": "1b. LOC questions (month, age): 0 both correct → 2 neither correct", "points": 2 },
+      { "label": "1c. LOC commands (open/close eyes, grip): 0 both → 2 neither", "points": 2 },
+      { "label": "2. Best gaze (0 normal → 2 forced deviation)", "points": 2 },
+      { "label": "3. Visual fields (0 normal → 3 bilateral hemianopia)", "points": 3 },
+      { "label": "4. Facial palsy (0 normal → 3 complete)", "points": 3 },
+      { "label": "5a. Motor arm — left (0 no drift → 4 no movement; 9 amputation/joint fusion)", "points": 4 },
+      { "label": "5b. Motor arm — right (same scale)", "points": 4 },
+      { "label": "6a. Motor leg — left (0 no drift → 4 no movement)", "points": 4 },
+      { "label": "6b. Motor leg — right (same scale)", "points": 4 },
+      { "label": "7. Limb ataxia (0 absent → 2 in two limbs; 9 amputation)", "points": 2 },
+      { "label": "8. Sensory (0 normal → 2 severe loss)", "points": 2 },
+      { "label": "9. Best language (0 normal → 3 mute, global aphasia)", "points": 3 },
+      { "label": "10. Dysarthria (0 normal → 2 severe; 9 intubated)", "points": 2 },
+      { "label": "11. Extinction/inattention (0 normal → 2 profound)", "points": 2 }
+    ],
+    "scoring": { "method": "sum", "min": 0, "max": 42, "notes": "Items scored 9 (amputation, intubated, etc.) are EXCLUDED from total (not zeroed). Reassess every 15 min during thrombolysis, hourly first 6 h, then per local pathway." },
+    "interpretation": [
+      { "band": "0", "meaning": "No stroke symptoms", "action": "Continue investigation if clinical suspicion remains." },
+      { "band": "1–4", "meaning": "Minor stroke", "action": "Consider thrombolysis on individual basis (debate around minor non-disabling stroke; ENCHANTED-2 / PRISMS studies)." },
+      { "band": "5–15", "meaning": "Moderate stroke", "action": "Thrombolysis if within window and no contraindication. Consider mechanical thrombectomy if proximal large-vessel occlusion." },
+      { "band": "16–20", "meaning": "Moderate-to-severe stroke", "action": "Thrombolysis + mechanical thrombectomy assessment urgent." },
+      { "band": "21–42", "meaning": "Severe stroke", "action": "Mechanical thrombectomy assessment; aggressive medical optimisation; ICU." }
+    ],
+    "caution": "Heavily weighted to dominant-hemisphere cortical signs — a posterior circulation stroke or right-hemisphere lesion can be devastating with a low NIHSS. Do NOT use NIHSS alone to deny thrombolysis. Posterior circulation imaging threshold should be low.",
+    "references": [
+      { "label": "Brott T et al. Measurements of acute cerebral infarction: a clinical examination scale. Stroke 1989;20:864-70." },
+      { "label": "Powers WJ et al. 2019 AHA/ASA guidelines for the early management of acute ischemic stroke." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "mascc",
+    "title": "MASCC Risk Index — Febrile Neutropenia",
+    "abbrev": "MASCC",
+    "purpose": "Stratify risk in adults with febrile neutropenia. Low-risk patients may be eligible for oral antibiotics and early discharge per IDSA / ESMO.",
+    "domains": ["oncology", "antimicrobials", "emergency"],
+    "population": { "notes": "Adults with chemotherapy-induced febrile neutropenia (ANC < 0.5 ×10⁹/L + temp ≥ 38.3 °C once, or ≥ 38 °C for ≥ 1 h)." },
+    "items": [
+      { "label": "Burden of illness — no or mild symptoms", "points": 5 },
+      { "label": "Burden of illness — moderate symptoms (intermediate; choose ONE of mild/moderate/severe burden)", "points": 3 },
+      { "label": "No hypotension (systolic BP > 90 mmHg)", "points": 5 },
+      { "label": "No COPD (active emphysema, chronic bronchitis, oxygen therapy)", "points": 4 },
+      { "label": "Solid tumour, or haematologic malignancy with no previous fungal infection", "points": 4 },
+      { "label": "No dehydration requiring parenteral fluids", "points": 3 },
+      { "label": "Outpatient status at onset of fever", "points": 3 },
+      { "label": "Age < 60 years", "points": 2 }
+    ],
+    "scoring": { "method": "sum", "min": 0, "max": 26, "notes": "Burden of illness: pick ONE of mild (5) / moderate (3) / severe (0)." },
+    "interpretation": [
+      { "band": "≥ 21", "meaning": "Low risk", "action": "Consider oral antibiotics (e.g. amoxicillin-clavulanate + ciprofloxacin) and outpatient management with daily review and 24/7 access to care, provided no clinical instability." },
+      { "band": "< 21", "meaning": "High risk", "action": "Admit; empirical broad-spectrum IV antibiotics within 1 h (anti-pseudomonal beta-lactam ± vancomycin if indicated); evaluate source." }
+    ],
+    "caution": "Local MDR resistance patterns and patient-specific risk factors override the score. Discuss outpatient management with the patient's oncology team before discharge.",
+    "references": [
+      { "label": "Klastersky J et al. The Multinational Association for Supportive Care in Cancer risk index. JCO 2000;18:3038-51." },
+      { "label": "IDSA Guideline: Clinical Practice Guideline for the Use of Antimicrobial Agents in Neutropenic Patients with Cancer. CID 2011." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
   }
 ]
