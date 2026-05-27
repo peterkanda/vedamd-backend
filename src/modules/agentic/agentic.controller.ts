@@ -42,7 +42,7 @@ export class AgenticController {
   capabilities() {
     return {
       agenticEnabled: this.router.anyConfigured(),
-      provider: process.env.AGENTIC_PROVIDER ?? 'anthropic',
+      provider: this.router.advertisedProvider(),
       connectors: this.sql.availability(),
       ingestionModes: ['rest', 'fhir', 'sql', 'cds-hooks'],
       schemaPresetPlatforms: ['openmrs', 'bahmni', 'openemr', 'dhis2-tracker', 'fhir-sql'],
