@@ -11,6 +11,7 @@ import type { ReferenceRange } from '../reference-ranges/reference-ranges.types'
 import type { Antidote } from '../antidotes/antidotes.types';
 import type { Toxidrome } from '../toxidromes/toxidromes.types';
 import type { AnticoagulantReversal } from '../anticoagulant-reversal/anticoagulant-reversal.types';
+import type { IvCompatibility } from '../iv-compatibility/iv-compatibility.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import type { ContentStats, ValidationViolation } from './bundle-validator';
 
@@ -79,6 +80,8 @@ export interface LoadedBundle {
   toxidromes: Toxidrome[];
   /** Optional — bundles signed before anticoagulant-reversal.json existed return []. */
   anticoagulantReversal: AnticoagulantReversal[];
+  /** Optional — bundles signed before iv-compatibility.json existed return []. */
+  ivCompatibility: IvCompatibility[];
   /** Optional — bundles signed before terminology.json existed return an empty TerminologyBundle. */
   terminology: TerminologyBundle;
 }

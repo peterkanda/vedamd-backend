@@ -153,6 +153,10 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.anticoagulantReversal;
   }
 
+  getIvCompatibility() {
+    return this.bundle.ivCompatibility;
+  }
+
   getTerminology() {
     return this.bundle.terminology;
   }

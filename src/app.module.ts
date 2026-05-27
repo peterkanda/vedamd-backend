@@ -22,6 +22,7 @@ import { ReferenceRangesModule } from './modules/reference-ranges/reference-rang
 import { AntidotesModule } from './modules/antidotes/antidotes.module';
 import { ToxidromesModule } from './modules/toxidromes/toxidromes.module';
 import { AnticoagulantReversalModule } from './modules/anticoagulant-reversal/anticoagulant-reversal.module';
+import { IvCompatibilityModule } from './modules/iv-compatibility/iv-compatibility.module';
 import { IntegrationsModule } from './modules/integrations/integrations.module';
 import { DoseProtocolsModule } from './modules/dose-protocols/dose-protocols.module';
 import { ClinicalToolsModule } from './modules/clinical-tools/clinical-tools.module';
@@ -64,6 +65,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     AntidotesModule,
     ToxidromesModule,
     AnticoagulantReversalModule,
+    IvCompatibilityModule,
     IntegrationsModule,
     DoseProtocolsModule,
     ClinicalToolsModule,

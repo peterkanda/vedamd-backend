@@ -14,6 +14,7 @@ import type { ReferenceRange } from '../reference-ranges/reference-ranges.types'
 import type { Antidote } from '../antidotes/antidotes.types';
 import type { Toxidrome } from '../toxidromes/toxidromes.types';
 import type { AnticoagulantReversal } from '../anticoagulant-reversal/anticoagulant-reversal.types';
+import type { IvCompatibility } from '../iv-compatibility/iv-compatibility.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import { nonApprovedCount, validateBundle } from './bundle-validator';
 import type {
@@ -151,6 +152,8 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
     toxidromes: (parsed['toxidromes.json'] as Toxidrome[] | undefined) ?? [],
     anticoagulantReversal:
       (parsed['anticoagulant-reversal.json'] as AnticoagulantReversal[] | undefined) ?? [],
+    ivCompatibility:
+      (parsed['iv-compatibility.json'] as IvCompatibility[] | undefined) ?? [],
     terminology:
       (parsed['terminology.json'] as TerminologyBundle | undefined) ??
       ({ version: '0.0.0-absent', codeSystems: [], valueSets: [] } as TerminologyBundle),
@@ -228,6 +231,7 @@ export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBun
     antidotes: [],
     toxidromes: [],
     anticoagulantReversal: [],
+    ivCompatibility: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }
@@ -272,6 +276,7 @@ function failOrReturn(
     antidotes: [],
     toxidromes: [],
     anticoagulantReversal: [],
+    ivCompatibility: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }

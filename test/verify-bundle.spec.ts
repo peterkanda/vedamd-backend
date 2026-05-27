@@ -45,6 +45,7 @@ function copyBundle(): string {
     'antidotes.json',
     'toxidromes.json',
     'anticoagulant-reversal.json',
+    'iv-compatibility.json',
   ]) {
     copyFileSync(resolve(REAL_BUNDLE, f), resolve(dir, f));
   }
