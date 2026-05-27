@@ -13,6 +13,7 @@ import type { Toxidrome } from '../toxidromes/toxidromes.types';
 import type { AnticoagulantReversal } from '../anticoagulant-reversal/anticoagulant-reversal.types';
 import type { IvCompatibility } from '../iv-compatibility/iv-compatibility.types';
 import type { PregnancyLactationRecord } from '../pregnancy-lactation/pregnancy-lactation.types';
+import type { HepaticDoseRecord } from '../hepatic-dose/hepatic-dose.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import type { ContentStats, ValidationViolation } from './bundle-validator';
 
@@ -85,6 +86,8 @@ export interface LoadedBundle {
   ivCompatibility: IvCompatibility[];
   /** Optional — bundles signed before pregnancy-lactation.json existed return []. */
   pregnancyLactation: PregnancyLactationRecord[];
+  /** Optional — bundles signed before hepatic-dose.json existed return []. */
+  hepaticDose: HepaticDoseRecord[];
   /** Optional — bundles signed before terminology.json existed return an empty TerminologyBundle. */
   terminology: TerminologyBundle;
 }

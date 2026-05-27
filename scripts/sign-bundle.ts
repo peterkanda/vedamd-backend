@@ -79,6 +79,7 @@ const fileEntries = files.map((name) => {
     anticoagulantReversal: readOptional('anticoagulant-reversal.json'),
     ivCompatibility: readOptional('iv-compatibility.json'),
     pregnancyLactation: readOptional('pregnancy-lactation.json'),
+    hepaticDose: readOptional('hepatic-dose.json'),
   };
   const validation = validateBundle(bundle);
   const stats = validation.stats;

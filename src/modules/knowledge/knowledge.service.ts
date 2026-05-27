@@ -161,6 +161,10 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.pregnancyLactation;
   }
 
+  getHepaticDose() {
+    return this.bundle.hepaticDose;
+  }
+
   getTerminology() {
     return this.bundle.terminology;
   }
