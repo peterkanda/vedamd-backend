@@ -1094,5 +1094,128 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2c19-voriconazole",
+    "gene": "CYP2C19",
+    "variant": "CYP2C19 *2, *3 (loss-of-function), *17 (gain-of-function)",
+    "drugSlug": "voriconazole",
+    "drug": "Voriconazole",
+    "domains": ["antimicrobials", "infectious-disease", "critical-care"],
+    "phenotypes": [
+      { "phenotype": "Poor metaboliser (*2/*2, *2/*3, *3/*3)", "implication": "Markedly elevated voriconazole concentrations → hepatotoxicity, visual disturbance, neurotoxicity.", "recommendation": "AVOID voriconazole in adults if alternative azole available (e.g. isavuconazole, posaconazole). If voriconazole required, start at 50% standard dose with therapeutic drug monitoring (target trough 1–5.5 mg/L).", "strength": "Strong" },
+      { "phenotype": "Intermediate metaboliser (one LOF allele)", "implication": "Higher concentrations than normal.", "recommendation": "Use standard dosing with TDM; adjust based on trough levels.", "strength": "Moderate" },
+      { "phenotype": "Normal metaboliser (*1/*1)", "implication": "Expected concentrations.", "recommendation": "Standard dosing with TDM.", "strength": "Strong" },
+      { "phenotype": "Rapid (*1/*17) or ultrarapid metaboliser (*17/*17)", "implication": "Subtherapeutic concentrations → treatment failure, breakthrough invasive fungal infection.", "recommendation": "Consider alternative azole (isavuconazole, posaconazole) not metabolised primarily by CYP2C19. If voriconazole used, may require higher doses + close TDM.", "strength": "Moderate" }
+    ],
+    "testing": "Pre-emptive testing recommended in adults before invasive fungal infection prophylaxis or treatment, particularly in haematology / transplant. ALWAYS combine with TDM (essential regardless of genotype — target trough 1–5.5 mg/L).",
+    "references": [
+      { "label": "CPIC Guideline for CYP2C19 and Voriconazole Therapy (2017, updated)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cftr-ivacaftor",
+    "gene": "CFTR",
+    "variant": "Gating mutations (G551D, G178R, S549N/R, G1244E, G1349D, S1251N, S1255P) and residual function variants",
+    "drugSlug": "ivacaftor",
+    "drug": "Ivacaftor (and combination therapies: lumacaftor/ivacaftor, tezacaftor/ivacaftor, elexacaftor/tezacaftor/ivacaftor)",
+    "domains": ["respiratory", "cystic-fibrosis", "rare-disease"],
+    "phenotypes": [
+      { "phenotype": "Gating mutation (e.g. G551D) — homozygous or heterozygous with one F508del", "implication": "Pronounced response to ivacaftor (CFTR potentiator).", "recommendation": "Ivacaftor monotherapy ≥ 6 months of age. Sweat chloride and pulmonary function improve markedly.", "strength": "Strong" },
+      { "phenotype": "F508del homozygous", "implication": "Requires both corrector and potentiator.", "recommendation": "Triple-combination elexacaftor/tezacaftor/ivacaftor (Trikafta/Kaftrio) — landmark efficacy in this population.", "strength": "Strong" },
+      { "phenotype": "Residual function or minimal function mutations", "implication": "Variable response.", "recommendation": "Variant-specific — consult FDA / EMA label or CF clinic geneticist. Combination therapies increasingly approved for broader mutation spectrum." },
+      { "phenotype": "No approved CFTR mutation", "implication": "No response expected.", "recommendation": "Symptomatic CF therapy; trial enrolment for novel modulators." }
+    ],
+    "testing": "CFTR genotype is part of newborn screening confirmation; required before initiating any CFTR modulator. Specific mutation determines which modulator is licensed.",
+    "references": [
+      { "label": "FDA label — Ivacaftor (Kalydeco), elexacaftor/tezacaftor/ivacaftor (Trikafta)." },
+      { "label": "Middleton PG et al. Elexacaftor-tezacaftor-ivacaftor for cystic fibrosis with a single Phe508del allele. NEJM 2019." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2c9-nsaids",
+    "gene": "CYP2C9",
+    "variant": "CYP2C9 *2, *3 (and other reduced-function alleles)",
+    "drugSlug": "celecoxib",
+    "drug": "Celecoxib, ibuprofen, flurbiprofen, lornoxicam, meloxicam, piroxicam, tenoxicam (CYP2C9-substrate NSAIDs)",
+    "domains": ["analgesia", "rheumatology"],
+    "phenotypes": [
+      { "phenotype": "Poor metaboliser (*3/*3 or *2/*3)", "implication": "Substantially elevated NSAID exposure → increased GI bleeding, AKI, hypertension.", "recommendation": "AVOID CYP2C9-substrate NSAIDs OR start at 25–50% standard dose with close monitoring (GI symptoms, BP, renal function, platelet count). Prefer non-CYP2C9 NSAIDs (paracetamol, topical NSAID) if available.", "strength": "Moderate" },
+      { "phenotype": "Intermediate metaboliser (one reduced-function allele)", "implication": "Modestly increased exposure.", "recommendation": "Start at lower end of dose range; titrate to effect with usual GI / renal monitoring.", "strength": "Optional" },
+      { "phenotype": "Normal metaboliser (*1/*1)", "implication": "Expected exposure.", "recommendation": "Standard dosing.", "strength": "Strong" }
+    ],
+    "testing": "Pre-emptive testing not routine; consider in patients with unexplained NSAID adverse effects, AKI, or planned long-term therapy.",
+    "references": [
+      { "label": "CPIC Guideline for CYP2C9 and Non-Steroidal Anti-Inflammatory Drugs (2020)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cyp2d6-opioids-non-codeine",
+    "gene": "CYP2D6",
+    "variant": "CYP2D6 phenotype (PM, IM, NM, RM, UM)",
+    "drugSlug": "oxycodone",
+    "drug": "Oxycodone, hydrocodone (CYP2D6-substrate opioids beyond codeine/tramadol)",
+    "domains": ["analgesia", "anaesthesia"],
+    "phenotypes": [
+      { "phenotype": "Poor metaboliser", "implication": "Reduced conversion of oxycodone to oxymorphone, hydrocodone to hydromorphone — may have REDUCED analgesia compared with normal metabolisers. Less clinically obvious than the codeine PM issue, because parent compound retains intrinsic activity.", "recommendation": "Standard initial dose; if inadequate analgesia despite titration, consider non-CYP2D6 opioid (morphine, hydromorphone, fentanyl, methadone, buprenorphine).", "strength": "Optional" },
+      { "phenotype": "Normal metaboliser", "implication": "Standard.", "recommendation": "Standard dosing.", "strength": "Strong" },
+      { "phenotype": "Ultrarapid metaboliser", "implication": "Theoretical increased active metabolite exposure → sedation, respiratory depression. Less profound than the codeine UM risk because parent compound retains analgesic activity (single-source effect).", "recommendation": "Standard cautious titration. Consider non-CYP2D6 opioid in opioid-naive patient at risk of respiratory depression.", "strength": "Optional" }
+    ],
+    "testing": "Pre-emptive testing not required. Consider in patients with unexplained opioid intolerance / inadequate response despite escalation.",
+    "references": [
+      { "label": "CPIC Guideline for CYP2D6, OPRM1, and COMT genotypes and select opioids (2021)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cyp2d6-metoprolol",
+    "gene": "CYP2D6",
+    "variant": "CYP2D6 phenotype (PM, IM, NM, RM, UM)",
+    "drugSlug": "metoprolol",
+    "drug": "Metoprolol (and other CYP2D6-metabolised beta-blockers: carvedilol partially, propafenone)",
+    "domains": ["cardiology"],
+    "phenotypes": [
+      { "phenotype": "Poor metaboliser", "implication": "Up to 5-fold higher metoprolol exposure → bradycardia, hypotension, fatigue.", "recommendation": "Start metoprolol at 25% standard dose and titrate slowly with vital-sign monitoring. Alternative: bisoprolol (not CYP2D6-metabolised) for chronic use.", "strength": "Moderate" },
+      { "phenotype": "Intermediate metaboliser", "implication": "Higher exposure than normal.", "recommendation": "Start at 50–75% standard dose; usual titration.", "strength": "Optional" },
+      { "phenotype": "Normal metaboliser", "implication": "Standard.", "recommendation": "Standard dosing.", "strength": "Strong" },
+      { "phenotype": "Ultrarapid metaboliser", "implication": "Subtherapeutic effect at standard doses.", "recommendation": "Consider alternative (bisoprolol, atenolol) not dependent on CYP2D6. If metoprolol used, higher doses may be needed.", "strength": "Optional" }
+    ],
+    "testing": "Pre-emptive testing not routine. Consider in patients with marked bradycardia / hypotension on standard metoprolol doses, or inadequate rate control despite up-titration.",
+    "references": [
+      { "label": "DPWG (Dutch Pharmacogenetics Working Group) — CYP2D6 and metoprolol." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cyp3a5-cyclosporine",
+    "gene": "CYP3A5",
+    "variant": "CYP3A5 *3 (loss-of-function; high frequency in non-African ancestry); *1 (functional)",
+    "drugSlug": "cyclosporine",
+    "drug": "Cyclosporine (ciclosporin)",
+    "domains": ["transplantation", "immunosuppression"],
+    "phenotypes": [
+      { "phenotype": "Expresser (*1/*1 or *1/*3) — typically African ancestry", "implication": "Higher cyclosporine clearance; needs higher doses to achieve target trough.", "recommendation": "Standard starting dose with frequent TDM; many patients require dose escalation 1.5–2× to reach target. Less well established for cyclosporine than for tacrolimus.", "strength": "Optional" },
+      { "phenotype": "Non-expresser (*3/*3)", "implication": "Standard cyclosporine clearance.", "recommendation": "Standard dosing with routine TDM.", "strength": "Strong" }
+    ],
+    "testing": "Genotype testing less commonly performed for cyclosporine than for tacrolimus (CPIC guideline exists for tacrolimus, evidence weaker for cyclosporine). Use TDM as the primary tool. Genotype-informed dosing in transplant centres with the capability.",
+    "references": [
+      { "label": "Birdwell KA et al. CPIC Guideline for CYP3A5 Genotype and Tacrolimus Dosing (2015) — analogous reasoning informs cyclosporine practice." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
   }
 ]
