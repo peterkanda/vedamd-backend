@@ -2,11 +2,13 @@ import { Controller, Get, NotFoundException, Param, Query, UseGuards } from '@ne
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { SymptomTriageService } from './symptom-triage.service';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';
+import { ImmutableContent } from '../../common/http-cache';
 
 @ApiTags('symptom-triage')
 @Controller('v1/symptom-triage')
 @UseGuards(ApiKeyGuard)
 @ApiBearerAuth()
+@ImmutableContent()
 export class SymptomTriageController {
   constructor(private readonly svc: SymptomTriageService) {}
 

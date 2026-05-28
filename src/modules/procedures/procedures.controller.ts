@@ -2,11 +2,13 @@ import { Controller, Get, NotFoundException, Param, Query, UseGuards } from '@ne
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ProceduresService } from './procedures.service';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';
+import { ImmutableContent } from '../../common/http-cache';
 
 @ApiTags('procedures')
 @Controller('v1/procedures')
 @UseGuards(ApiKeyGuard)
 @ApiBearerAuth()
+@ImmutableContent()
 export class ProceduresController {
   constructor(private readonly procedures: ProceduresService) {}
 

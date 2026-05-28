@@ -14,6 +14,7 @@ import { ArrayMinSize, IsArray, IsNumber, IsOptional, IsString, Max, Min } from 
 import { DrugsService } from './drugs.service';
 import type { AwareCategory } from './drugs.types';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';
+import { ImmutableContent } from '../../common/http-cache';
 
 class InteractionsRequestDto {
   @IsArray()
@@ -53,6 +54,7 @@ class DosingRequestDto {
 @Controller('v1/drugs')
 @UseGuards(ApiKeyGuard)
 @ApiBearerAuth()
+@ImmutableContent()
 export class DrugsController {
   constructor(private readonly drugs: DrugsService) {}
 

@@ -32,6 +32,7 @@
     "ci": "npm run typecheck && npm run lint -- --max-warnings=0 && npm run audit:stateless && npm test"
   },
   "dependencies": {
+    "@fastify/compress": "^8.3.1",
     "@fastify/helmet": "^13.0.0",
     "@fastify/rate-limit": "^10.2.1",
     "@fastify/static": "^8.0.0",

@@ -2,11 +2,13 @@ import { Controller, Get, NotFoundException, Param, Query, UseGuards } from '@ne
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ToxidromesService } from './toxidromes.service';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';
+import { ImmutableContent } from '../../common/http-cache';
 
 @ApiTags('toxidromes')
 @Controller('v1/toxidromes')
 @UseGuards(ApiKeyGuard)
 @ApiBearerAuth()
+@ImmutableContent()
 export class ToxidromesController {
   constructor(private readonly toxidromes: ToxidromesService) {}
 

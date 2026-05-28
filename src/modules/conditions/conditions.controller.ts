@@ -2,11 +2,13 @@ import { Controller, Get, NotFoundException, Param, Query, UseGuards } from '@ne
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ConditionsService } from './conditions.service';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';
+import { ImmutableContent } from '../../common/http-cache';
 
 @ApiTags('conditions')
 @Controller('v1/conditions')
 @UseGuards(ApiKeyGuard)
 @ApiBearerAuth()
+@ImmutableContent()
 export class ConditionsController {
   constructor(private readonly conditions: ConditionsService) {}
 

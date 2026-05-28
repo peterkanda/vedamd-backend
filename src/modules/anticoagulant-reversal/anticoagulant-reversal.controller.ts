@@ -2,11 +2,13 @@ import { Controller, Get, NotFoundException, Param, Query, UseGuards } from '@ne
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AnticoagulantReversalService } from './anticoagulant-reversal.service';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';
+import { ImmutableContent } from '../../common/http-cache';
 
 @ApiTags('anticoagulant-reversal')
 @Controller('v1/anticoagulant-reversal')
 @UseGuards(ApiKeyGuard)
 @ApiBearerAuth()
+@ImmutableContent()
 export class AnticoagulantReversalController {
   constructor(private readonly reversal: AnticoagulantReversalService) {}
 

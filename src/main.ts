@@ -6,8 +6,10 @@ import { ConfigService } from '@nestjs/config';
 import { SwaggerModule } from '@nestjs/swagger';
 import helmet from '@fastify/helmet';
 import rateLimit from '@fastify/rate-limit';
+import compress from '@fastify/compress';
 import { AppModule } from './app.module';
 import { applyApiPrefix, swaggerConfig } from './openapi.config';
+import { REDIS, type MaybeRedis } from './common/cache';
 import type { AppConfig } from './config/configuration';
 
 async function bootstrap() {
@@ -34,12 +36,27 @@ async function bootstrap() {
     referrerPolicy: { policy: 'no-referrer' },
   });
 
-  // Per-IP rate limit. For per-API-key limits, a separate guard reads
-  // x-vedamd-key-id and decrements an account-scoped Redis counter.
+  // Response compression. Content payloads are large (conditions ≈ 4.6 MB,
+  // drugs ≈ 1.4 MB) and ship as JSON; gzip/brotli cuts the wire size by
+  // ~85-90%. Only compresses above a threshold so tiny CDS-card responses
+  // aren't penalised by the compression overhead. Brotli preferred when the
+  // client advertises it, gzip/deflate otherwise.
+  await app.register(compress as never, {
+    global: true,
+    threshold: 1024,
+    encodings: ['br', 'gzip', 'deflate'],
+  });
+
+  // Per-IP rate limit. When REDIS_URL is set we back the limiter with the
+  // shared ioredis client so the limit holds ACROSS pods (the in-memory
+  // default counts per-process, letting an N-pod deployment serve N× the
+  // intended rate). Falls back to in-memory when Redis is absent.
+  const redis = app.get<MaybeRedis>(REDIS, { strict: false });
   await app.register(rateLimit as never, {
     max: Number(process.env.RATE_LIMIT_MAX ?? 1000),
     timeWindow: process.env.RATE_LIMIT_WINDOW ?? '1 minute',
     cache: 10_000,
+    ...(redis ? { redis } : {}),
     allowList: (process.env.RATE_LIMIT_ALLOWLIST ?? '').split(',').filter(Boolean),
   });
 
