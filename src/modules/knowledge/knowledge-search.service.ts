@@ -163,6 +163,34 @@ export class KnowledgeSearchService {
         route: () => `/app/tools`,
         title: (r) => str(r.title),
       },
+      {
+        domain: 'clinical-procedures',
+        records: () => k.getClinicalProcedures() as unknown[],
+        route: (s) => `/app/clinical-procedures/${s}`,
+        title: (r) => str(r.title),
+        snippet: (r) => str(r.category),
+      },
+      {
+        domain: 'bedside-interpretation',
+        records: () => k.getBedsideInterpretation() as unknown[],
+        route: (s) => `/app/bedside-interpretation/${s}`,
+        title: (r) => str(r.title),
+        snippet: (r) => str(r.category),
+      },
+      {
+        domain: 'preventive-care',
+        records: () => k.getPreventiveCare() as unknown[],
+        route: (s) => `/app/preventive-care/${s}`,
+        title: (r) => str(r.title),
+        snippet: (r) => str(r.category),
+      },
+      {
+        domain: 'growth-development',
+        records: () => k.getGrowthDevelopment() as unknown[],
+        route: (s) => `/app/growth-development/${s}`,
+        title: (r) => str(r.title),
+        snippet: (r) => str(r.category),
+      },
     ];
   }
 

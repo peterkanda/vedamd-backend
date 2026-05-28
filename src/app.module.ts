@@ -27,6 +27,7 @@ import { IvCompatibilityModule } from './modules/iv-compatibility/iv-compatibili
 import { PregnancyLactationModule } from './modules/pregnancy-lactation/pregnancy-lactation.module';
 import { HepaticDoseModule } from './modules/hepatic-dose/hepatic-dose.module';
 import { SymptomTriageModule } from './modules/symptom-triage/symptom-triage.module';
+import { ClinicalReferenceModule } from './modules/clinical-reference/clinical-reference.module';
 import { IntegrationsModule } from './modules/integrations/integrations.module';
 import { DoseProtocolsModule } from './modules/dose-protocols/dose-protocols.module';
 import { ClinicalToolsModule } from './modules/clinical-tools/clinical-tools.module';
@@ -80,6 +81,7 @@ import { UsageModule } from './modules/usage/usage.module';
     PregnancyLactationModule,
     HepaticDoseModule,
     SymptomTriageModule,
+    ClinicalReferenceModule,
     IntegrationsModule,
     DoseProtocolsModule,
     ClinicalToolsModule,

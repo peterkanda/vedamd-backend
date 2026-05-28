@@ -62,6 +62,10 @@ interface Bundle {
   pregnancyLactation?: ExtendedRecord[];
   hepaticDose?: ExtendedRecord[];
   symptomTriage?: ExtendedRecord[];
+  clinicalProcedures?: ExtendedRecord[];
+  bedsideInterpretation?: ExtendedRecord[];
+  preventiveCare?: ExtendedRecord[];
+  growthDevelopment?: ExtendedRecord[];
 }
 
 const KNOWN_STATUSES: readonly ReviewStatus[] = ['draft', 'review', 'approved', 'deprecated'];
@@ -128,6 +132,10 @@ export function validateBundle(bundle: Bundle): ValidationResult {
     ['pregnancy-lactation', bundle.pregnancyLactation],
     ['hepatic-dose', bundle.hepaticDose],
     ['symptom-triage', bundle.symptomTriage],
+    ['clinical-procedures', bundle.clinicalProcedures],
+    ['bedside-interpretation', bundle.bedsideInterpretation],
+    ['preventive-care', bundle.preventiveCare],
+    ['growth-development', bundle.growthDevelopment],
   ];
   let extendedCount = 0;
   for (const [domain, set] of extendedSets) {

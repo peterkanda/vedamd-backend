@@ -169,6 +169,22 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.symptomTriage;
   }
 
+  getClinicalProcedures() {
+    return this.bundle.clinicalProcedures;
+  }
+
+  getBedsideInterpretation() {
+    return this.bundle.bedsideInterpretation;
+  }
+
+  getPreventiveCare() {
+    return this.bundle.preventiveCare;
+  }
+
+  getGrowthDevelopment() {
+    return this.bundle.growthDevelopment;
+  }
+
   getTerminology() {
     return this.bundle.terminology;
   }
