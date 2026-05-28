@@ -25,15 +25,14 @@ services:
     branch: main
     deploy_on_push: true # auto-deploy on push to main
 
-  # Buildpack build (matches the proven recipe). VedaMD is a standard
-  # NestJS app: `nest build` → dist/main.js. The signed content bundle
-  # lives in the repo under content/ and ships with the build.
-  # (Alternative: this repo also has a Dockerfile — to build via Docker
-  #  instead, delete build_command/run_command/environment_slug and set
-  #  `dockerfile_path: Dockerfile`.)
+  # Buildpack build (no Docker). VedaMD is a standard NestJS app:
+  # `nest build` → dist/main.js, then the Procfile / run_command starts
+  # it. The signed content bundle lives in the repo under content/ and
+  # ships with the build. NPM_CONFIG_PRODUCTION=false (below) keeps the
+  # nest CLI (a devDependency) available during the build.
   environment_slug: node-js
   build_command: npm install && npm run build
-  run_command: npm run start:prod
+  run_command: npm run start:prod # mirrors the Procfile
 
   http_port: 8080 # MUST equal the PORT env below
   instance_count: 1
@@ -53,7 +52,7 @@ services:
   # --- runtime/platform (non-secret) ---
   - { key: NODE_ENV, value: production, scope: RUN_AND_BUILD_TIME }
   - { key: NPM_CONFIG_PRODUCTION, value: "false", scope: RUN_AND_BUILD_TIME } # keep devDeps so `nest build` works
-  - { key: PORT, value: "8080", scope: RUN_AND_BUILD_TIME } # equals http_port
+  # PORT is injected by DO to match http_port (8080) — do not set it manually.
 
   # --- database: Supabase (non-secret tuning) ---
   - { key: DATABASE_SSL, value: "true", scope: RUN_TIME }
