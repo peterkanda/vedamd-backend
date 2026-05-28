@@ -268,6 +268,48 @@ describe('CdsService.evaluateHook — VHF suspected-isolation (public-health eme
   });
 });
 
+describe('CdsService.evaluateHook — emergency content rules via content-library (Phase 4)', () => {
+  it('renders the hyperkalaemia emergency card on request, as a critical card', async () => {
+    const res = await makeService().evaluateHook('vedamd-content-library', {
+      hook: 'patient-view',
+      hookInstance: 'cl-hyperk',
+      context: { ruleIds: ['hyperkalaemia-emergency-cds'] },
+    });
+    expect(res.cards.length).toBeGreaterThan(0);
+    const card = res.cards[0];
+    expect(card.indicator).toBe('critical');
+    expect(card.detail?.toLowerCase()).toContain('calcium');
+    expect(
+      card.extension?.['http://vedamd.io/Card/recommendation'].ruleId,
+    ).toBe('hyperkalaemia-emergency-cds');
+  });
+
+  it('renders a stewardship guidance card on request', async () => {
+    const res = await makeService().evaluateHook('vedamd-content-library', {
+      hook: 'patient-view',
+      hookInstance: 'cl-aware',
+      context: { ruleIds: ['aware-stewardship-guidance-cds'] },
+    });
+    expect(res.cards.length).toBeGreaterThan(0);
+    expect(res.cards[0].extension?.['http://vedamd.io/Card/recommendation'].ruleId).toBe(
+      'aware-stewardship-guidance-cds',
+    );
+  });
+
+  it('does NOT fire these on the aggregate patient-view hook (no flood)', async () => {
+    const res = await makeService().evaluateHook('vedamd-patient-view', {
+      hook: 'patient-view',
+      hookInstance: 'pv-noflood',
+      context: {},
+    });
+    expect(
+      res.cards.some(
+        (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'hyperkalaemia-emergency-cds',
+      ),
+    ).toBe(false);
+  });
+});
+
 describe('CdsService.evaluateHook — order-select / order-sink fallthrough', () => {
   it('fires the DDI rule on order-select for paracetamol + warfarin (same check as medication-prescribe)', async () => {
     const res = await makeService().evaluateHook('vedamd-order-select', {
