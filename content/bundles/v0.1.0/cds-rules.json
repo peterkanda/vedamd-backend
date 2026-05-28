@@ -5682,14 +5682,19 @@
     "id": "vhf-suspected-isolation",
     "hook": "patient-view",
     "type": "vhf-suspected-isolation",
-    "services": [
-      "vedamd-vhf-suspected"
-    ],
     "title": "Suspected viral haemorrhagic fever — isolation + public health",
     "description": "Fires for fever + travel from / residence in VHF-endemic area (Ebola, Marburg, Lassa, CCHF, Yellow Fever) ± bleeding / multi-organ involvement. Recommends IMMEDIATE single-room isolation with PPE (gown, FFP3, double gloves, eye protection); NOTIFY public health before sample collection; supportive care; specific antivirals (ribavirin for Lassa / CCHF; monoclonals for Ebola / Marburg). Reads context.travelEndemicArea, context.fever, context.bleeding, context.contactWithCase — never patient identity.",
     "references": [
       {
-        "label": "WHO Clinical management of VHF"
+        "label": "WHO Clinical management of viral haemorrhagic fevers — pocket guide / clinical care",
+        "url": "https://www.who.int/health-topics/haemorrhagic-fevers-viral"
+      },
+      {
+        "label": "IHR (2005) — immediate notification of public-health events of international concern",
+        "url": "https://www.who.int/health-topics/international-health-regulations"
+      },
+      {
+        "label": "Kenya MOH Integrated Disease Surveillance and Response (IDSR) — VHF / Ebola contingency plan"
       }
     ],
     "ruleVersion": "0.1.0",
@@ -5702,8 +5707,7 @@
         "display": "Ebola virus disease",
         "kind": "diagnosis"
       }
-    ],
-    "documentationOnly": true
+    ]
   },
   {
     "id": "pjp-empirical-trimethoprim",
@@ -22489,6 +22493,101 @@
         "code": "C50.9",
         "display": "Malignant neoplasm of breast",
         "kind": "condition"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "id": "ebola-vhf-management-protocol",
+    "title": "Ebola / viral haemorrhagic fever — full clinical management protocol",
+    "hook": "patient-view",
+    "type": null,
+    "description": "Comprehensive WHO + Kenya MOH IDSR protocol for a confirmed/probable viral haemorrhagic fever (Ebola, Marburg, Lassa, CCHF). Addressable on demand via the content-library service. Covers IPC/PPE, supportive care, specific therapeutics, vaccination, notification, contact tracing, safe/dignified burial, laboratory safety, and survivor care.",
+    "outcomes": [
+      {
+        "indicator": "critical",
+        "summary": "Isolation + infection prevention & control (IPC)",
+        "detail": "Single isolation room with dedicated latrine/commode; cohort confirmed cases separately from suspected. One trained, dedicated clinical team; minimise the number of staff entering. Full PPE (fluid-resistant coverall/gown, double gloves, fluid-shield mask + goggles/face-shield, boots) donned and doffed with a trained observer. Dedicated, disinfectable equipment. Safe sharps + waste handling, no needle re-sheathing. Maintain an entry/exit log.",
+        "suggestion": "Use a buddy/checklist system for doffing — most healthcare transmission happens during PPE removal."
+      },
+      {
+        "indicator": "critical",
+        "summary": "Aggressive supportive care (the mainstay)",
+        "detail": "VHF patients lose large volumes of GI fluid (5–10 L/day). Give aggressive oral + IV fluid and electrolyte replacement; correct K/Mg/Ca and hypoglycaemia. Treat concurrent malaria and bacterial sepsis empirically. Paracetamol for fever/pain. AVOID aspirin, NSAIDs and anticoagulants (bleeding risk) and avoid unnecessary IM injections.",
+        "suggestion": "Point-of-care lactate/glucose/electrolytes guide resuscitation where available."
+      },
+      {
+        "indicator": "critical",
+        "summary": "Specific therapeutics",
+        "detail": "Zaire ebolavirus: monoclonal antibody therapy — Inmazeb (atoltivimab/maftivimab/odesivimab) or Ebanga (ansuvimab-zykl), single IV dose, started as early as possible (PALM trial mortality benefit). Lassa fever and CCHF: consider IV ribavirin early per protocol. Marburg/Sudan ebolavirus: no licensed antibody — enrol in trial/MEURI where available; supportive care.",
+        "suggestion": "Specific therapy does not replace aggressive supportive care — give both."
+      },
+      {
+        "indicator": "warning",
+        "summary": "Vaccination — outbreak response",
+        "detail": "Zaire ebolavirus outbreaks: rVSV-ZEBOV (Ervebo) ring vaccination of contacts, contacts-of-contacts and frontline/healthcare + burial workers; Ad26.ZEBOV/MVA-BN-Filo (Zabdeno/Mvabea) prime-boost for pre-exposure. Coordinate through the national outbreak response.",
+        "suggestion": "Vaccinate healthcare and burial teams early — they are highest risk."
+      },
+      {
+        "indicator": "critical",
+        "summary": "Notification + contact tracing",
+        "detail": "VHF is immediately notifiable. Notify the facility IPC lead and the county/national IHR focal point (Kenya MOH IDSR) immediately; WHO IHR assessment within 24 h. List all contacts back 21 days from symptom onset; monitor each daily for 21 days and isolate on first symptom.",
+        "suggestion": "Start the contact line-list at the moment of suspicion, not after confirmation."
+      },
+      {
+        "indicator": "warning",
+        "summary": "Safe & dignified burial",
+        "detail": "Bodies are highly infectious. Use trained safe-and-dignified burial teams with full PPE; no traditional washing/touching of the body. Engage the family + community to balance dignity with transmission control.",
+        "suggestion": "Community engagement reduces unsafe burials — the major amplifier of EVD outbreaks."
+      },
+      {
+        "indicator": "warning",
+        "summary": "Laboratory safety",
+        "detail": "Minimise blood draws. Send only essential diagnostics (Ebola/Marburg/Lassa/CCHF RT-PCR) through the designated reference laboratory using UN3373/category-A triple packaging with the lab pre-notified. Use point-of-care testing inside the isolation unit where possible to avoid sample transport.",
+        "suggestion": "Malaria RDT at the bedside — common alternative diagnosis and frequent co-infection."
+      },
+      {
+        "indicator": "info",
+        "summary": "Survivor care & viral persistence",
+        "detail": "Survivors need follow-up for post-Ebola syndrome: arthralgia, uveitis (urgent ophthalmology — sight-threatening), hearing loss, fatigue, and depression/PTSD. Virus persists in immune-privileged sites; counsel barrier contraception and semen testing per protocol (persistence in semen can last many months).",
+        "suggestion": "Screen survivors for uveitis and mental-health sequelae at every visit."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Optimized Supportive Care for Ebola Virus Disease — clinical management guideline",
+        "url": "https://www.who.int/publications/i/item/9789241516068"
+      },
+      {
+        "label": "WHO Therapeutics for Ebola virus disease (2022) — Inmazeb / Ebanga",
+        "url": "https://www.who.int/publications/i/item/9789240055742"
+      },
+      {
+        "label": "PALM trial, NEJM 2019 (mAb124/REGN-EB3 mortality benefit)"
+      },
+      {
+        "label": "IHR (2005) — immediate notification",
+        "url": "https://www.who.int/health-topics/international-health-regulations"
+      },
+      {
+        "label": "Kenya MOH Integrated Disease Surveillance and Response (IDSR) — Ebola/VHF contingency plan",
+        "url": "https://www.health.go.ke"
+      }
+    ],
+    "codings": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "A98.4",
+        "display": "Ebola virus disease",
+        "kind": "diagnosis"
+      },
+      {
+        "system": "http://id.who.int/icd/release/11/mms",
+        "code": "1D60.2",
+        "display": "Ebola virus disease",
+        "kind": "diagnosis"
       }
     ],
     "ruleVersion": "0.1.0",
