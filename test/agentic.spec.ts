@@ -35,6 +35,25 @@ describe('Agentic — knowledge retriever', () => {
     expect(k.conditions.some((c) => c.slug === 'eclampsia')).toBe(true);
   });
 
+  it('links a disease-phrased question to the drugs that treat it', () => {
+    // No drug is named — only the disease. The retriever must still pull in
+    // the antimalarials (with their dosing) via indication linkage so the
+    // grounded LLM has something to cite.
+    const k = retriever.retrieve({
+      question: 'I want to prescribe malaria drugs for a 15 year old 60 kg',
+    });
+    expect(k.conditions.some((c) => c.slug.includes('malaria'))).toBe(true);
+    expect(k.drugs.some((d) => d.slug === 'artemether-lumefantrine')).toBe(true);
+  });
+
+  it('still retrieves a drug named explicitly in the free-text question', () => {
+    const k = retriever.retrieve({
+      question: 'Is it safe to co-prescribe clarithromycin with simvastatin?',
+    });
+    expect(k.drugs.some((d) => d.slug === 'clarithromycin')).toBe(true);
+    expect(k.drugs.some((d) => d.slug === 'simvastatin')).toBe(true);
+  });
+
   it('caps retrieval to bounded sizes', () => {
     const k = retriever.retrieve({ medications: ['a', 'b', 'c'] }, { drugs: 2, ddis: 2, conditions: 2, procedures: 2, rules: 2 });
     expect(k.drugs.length).toBeLessThanOrEqual(2);

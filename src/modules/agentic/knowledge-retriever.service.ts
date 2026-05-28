@@ -39,7 +39,10 @@ export class KnowledgeRetrieverService {
     );
   }
 
-  retrieve(ctx: AgenticClinicalContext, caps = { drugs: 25, ddis: 40, conditions: 20, procedures: 10, rules: 15 }): RetrievedKnowledge {
+  retrieve(
+    ctx: AgenticClinicalContext,
+    caps = { drugs: 25, ddis: 40, conditions: 20, procedures: 10, rules: 15 },
+  ): RetrievedKnowledge {
     const medTerms = norm(ctx.medications ?? []);
     const dxTerms = norm(ctx.diagnoses ?? []);
     const allergyTerms = norm(ctx.allergies ?? []);
@@ -57,38 +60,91 @@ export class KnowledgeRetrieverService {
     // Lowercased haystack for whole-name drug mentions anywhere in the thread.
     const textHay = `${ctx.question ?? ''} ${conversationText}`.toLowerCase();
 
-    // --- Drugs: match by slug / inn / trade / class against med + allergy terms,
-    //     OR by a drug name explicitly mentioned in the question / conversation. ---
+    // --- Conditions: match by slug / title / codings + token overlap.
+    //     Computed FIRST so a disease-phrased query can also pull in the
+    //     drugs that TREAT the matched condition (see indication pass). ---
+    const scoredConditions = this.knowledge
+      .getConditions()
+      .map((c) => ({ rec: c, score: conditionScore(c, dxTerms, freeTokens) }))
+      .filter((x) => x.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, caps.conditions);
+
+    // Disease signals drawn from the conditions the QUESTION actually names
+    // (a condition-title token that is also present in the free text). These
+    // drive the indication-linkage drug pass below, so "prescribe malaria
+    // drugs for a 60 kg child" surfaces the antimalarials — WITH their
+    // weight-banded dosing — even though no drug was named explicitly.
+    const freeTokenSet = new Set(freeTokens);
+    const linkIcd10 = new Set<string>();
+    const diseaseTokens = new Set<string>();
+    for (const { rec } of scoredConditions) {
+      const titleTokens = tokenize(rec.title).filter(
+        (t) => freeTokenSet.has(t) && !GENERIC_TOKENS.has(t),
+      );
+      if (titleTokens.length === 0) continue;
+      for (const t of titleTokens) diseaseTokens.add(t);
+      for (const code of rec.icd10 ?? []) linkIcd10.add(code.toUpperCase());
+    }
+
+    // --- Drugs ---
     const matchedDrugSlugs = new Set<string>();
-    const drugs = this.knowledge
-      .getDrugs()
-      .filter((d) => {
-        const hay = [d.slug, d.inn, d.drugClass, ...(d.tradeNames ?? [])].map((s) => s?.toLowerCase());
-        const structuredHit = [...medTerms, ...allergyTerms].some((t) =>
-          hay.some((h) => h && (h === t || h.includes(t) || t.includes(h))),
-        );
-        // Only the specific names (slug/inn/trade) are matched against free
-        // text — NOT drugClass, which is too broad and would over-retrieve.
-        const namedHit =
-          !structuredHit &&
-          [d.slug, d.inn, ...(d.tradeNames ?? [])]
-            .map((s) => s?.toLowerCase())
-            .some((h) => h && h.length > 3 && textHay.includes(h));
-        const hit = structuredHit || namedHit;
-        if (hit) matchedDrugSlugs.add(d.slug);
-        return hit;
-      })
-      .slice(0, caps.drugs)
-      .map((d) => ({
-        slug: d.slug,
-        inn: d.inn,
-        summary: drugSummary(d),
-      }));
+    const drugs: Array<{ slug: string; inn: string; summary: string }> = [];
+    const allDrugs = this.knowledge.getDrugs();
+
+    // Pass 1 — EXPLICIT hits: structured med/allergy terms, or a drug name
+    // written into the question / conversation. These always take priority.
+    for (const d of allDrugs) {
+      if (drugs.length >= caps.drugs) break;
+      const hay = [d.slug, d.inn, d.drugClass, ...(d.tradeNames ?? [])].map((s) =>
+        s?.toLowerCase(),
+      );
+      const structuredHit = [...medTerms, ...allergyTerms].some((t) =>
+        hay.some((h) => h && (h === t || h.includes(t) || t.includes(h))),
+      );
+      // Only the specific names (slug/inn/trade) are matched against free
+      // text — NOT drugClass, which is too broad and would over-retrieve.
+      const namedHit =
+        !structuredHit &&
+        [d.slug, d.inn, ...(d.tradeNames ?? [])]
+          .map((s) => s?.toLowerCase())
+          .some((h) => h && h.length > 3 && textHay.includes(h));
+      if (!structuredHit && !namedHit) continue;
+      matchedDrugSlugs.add(d.slug);
+      drugs.push({ slug: d.slug, inn: d.inn, summary: drugSummary(d) });
+    }
+
+    // Pass 2 — INDICATION linkage: pull the drugs that treat a disease the
+    // question named (ICD-10 overlap with a matched condition, or the
+    // indication text mentioning the disease). Without this, a request that
+    // names a disease/class instead of a specific drug retrieves no drug
+    // records, the LLM has no grounded dosing to cite, and the answer is
+    // empty.
+    if ((linkIcd10.size > 0 || diseaseTokens.size > 0) && drugs.length < caps.drugs) {
+      for (const d of allDrugs) {
+        if (drugs.length >= caps.drugs) break;
+        if (matchedDrugSlugs.has(d.slug)) continue;
+        const indicationHit = (d.indications ?? []).some((ind) => {
+          if (ind.icd10 && linkIcd10.has(ind.icd10.toUpperCase())) return true;
+          const text = ind.text?.toLowerCase() ?? '';
+          return [...diseaseTokens].some((t) => text.includes(t));
+        });
+        if (!indicationHit) continue;
+        matchedDrugSlugs.add(d.slug);
+        drugs.push({ slug: d.slug, inn: d.inn, summary: drugSummary(d) });
+      }
+    }
 
     // --- DDIs: any interaction touching a matched drug slug ---
     const interactions = this.knowledge
       .getInteractions()
-      .filter((i) => matchedDrugSlugs.has(i.slugA) || matchedDrugSlugs.has(i.slugB) || medTerms.includes(i.slugA) || medTerms.includes(i.slugB))
+      .filter(
+        (i) =>
+          matchedDrugSlugs.has(i.slugA) ||
+          matchedDrugSlugs.has(i.slugB) ||
+          medTerms.includes(i.slugA) ||
+          medTerms.includes(i.slugB),
+      )
       .slice(0, caps.ddis)
       .map((i) => ({
         slugA: i.slugA,
@@ -98,23 +154,19 @@ export class KnowledgeRetrieverService {
         management: i.management,
       }));
 
-    // --- Conditions: match by slug / title / codings + token overlap ---
-    const conditions = this.knowledge
-      .getConditions()
-      .map((c) => ({ rec: c, score: conditionScore(c, dxTerms, freeTokens) }))
-      .filter((x) => x.score > 0)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, caps.conditions)
-      .map((x) => ({
-        slug: x.rec.slug,
-        title: x.rec.title,
-        summary: conditionSummary(x.rec),
-      }));
+    const conditions = scoredConditions.map((x) => ({
+      slug: x.rec.slug,
+      title: x.rec.title,
+      summary: conditionSummary(x.rec),
+    }));
 
     // --- Procedures: token overlap with question + diagnoses ---
     const procedures = this.knowledge
       .getProcedures()
-      .map((p) => ({ rec: p, score: tokenOverlap([p.slug, p.title, ...(p.domains ?? [])].join(' '), freeTokens) }))
+      .map((p) => ({
+        rec: p,
+        score: tokenOverlap([p.slug, p.title, ...(p.domains ?? [])].join(' '), freeTokens),
+      }))
       .filter((x) => x.score > 0)
       .sort((a, b) => b.score - a.score)
       .slice(0, caps.procedures)
@@ -124,7 +176,10 @@ export class KnowledgeRetrieverService {
     const ruleHay = freeTokens.concat(tokenize(ctx.hook ?? ''));
     const rules = this.knowledge
       .getCdsRules()
-      .map((r) => ({ rec: r, score: tokenOverlap([r.id, r.title, r.description ?? ''].join(' '), ruleHay) }))
+      .map((r) => ({
+        rec: r,
+        score: tokenOverlap([r.id, r.title, r.description ?? ''].join(' '), ruleHay),
+      }))
       .filter((x) => x.score > 0)
       .sort((a, b) => b.score - a.score)
       .slice(0, caps.rules)
@@ -133,6 +188,57 @@ export class KnowledgeRetrieverService {
     return { drugs, interactions, conditions, procedures, rules };
   }
 }
+
+/**
+ * Condition-title tokens too generic to identify a DISEASE on their own —
+ * they describe the population, acuity, or care step. Excluded from the
+ * indication-linkage signal so e.g. "adult" or "treatment" in a question
+ * doesn't pull in unrelated drugs.
+ */
+const GENERIC_TOKENS = new Set([
+  'adult',
+  'adults',
+  'child',
+  'children',
+  'paediatric',
+  'pediatric',
+  'infant',
+  'infants',
+  'neonate',
+  'neonatal',
+  'acute',
+  'chronic',
+  'severe',
+  'uncomplicated',
+  'complicated',
+  'mild',
+  'moderate',
+  'management',
+  'treatment',
+  'therapy',
+  'prescribe',
+  'patient',
+  'patients',
+  'disease',
+  'syndrome',
+  'complete',
+  'pathway',
+  'policy',
+  'first',
+  'line',
+  'second',
+  'dose',
+  'dosing',
+  'drug',
+  'drugs',
+  'years',
+  'year',
+  'female',
+  'male',
+  'with',
+  'without',
+  'pre',
+]);
 
 function norm(arr: string[]): string[] {
   return arr.map((s) => s.toLowerCase().trim()).filter(Boolean);
@@ -171,15 +277,55 @@ function conditionScore(
 function drugSummary(d: {
   drugClass: string;
   awareCategory?: string;
+  indications?: { icd10?: string; text: string }[];
+  dosing?: {
+    adult?: { route: string; regimen: string; notes?: string }[];
+    paediatric?: {
+      mgPerKgPerDose?: number;
+      maxMgPerKgPerDay?: number;
+      maxMgPerDose?: number;
+      minWeightKg?: number;
+      route?: string;
+      frequency?: string;
+      notes?: string;
+    };
+    renal?: unknown[];
+    individualised?: boolean;
+  };
   pregnancy?: { contraindicated?: boolean; notes?: string };
-  renal?: unknown[];
   warnings?: string[];
 }): string {
   const parts = [`class=${d.drugClass}`];
   if (d.awareCategory) parts.push(`AWaRe=${d.awareCategory}`);
+  if (d.indications?.length)
+    parts.push(`indications: ${truncate(d.indications.map((i) => i.text).join('; '), 160)}`);
+  // Dosing — the actual numbers a prescribing question needs to be
+  // answerable. Without these in the prompt, the strictly-grounded
+  // reasoner cannot cite a dose and returns nothing.
+  const adult = d.dosing?.adult ?? [];
+  if (adult.length)
+    parts.push(
+      `adult dose: ${truncate(
+        adult.map((a) => `${a.regimen}${a.notes ? ` (${a.notes})` : ''}`).join(' | '),
+        320,
+      )}`,
+    );
+  const paed = d.dosing?.paediatric;
+  if (paed) {
+    const pbits: string[] = [];
+    if (paed.mgPerKgPerDose != null) pbits.push(`${paed.mgPerKgPerDose} mg/kg/dose`);
+    if (paed.maxMgPerKgPerDay != null) pbits.push(`max ${paed.maxMgPerKgPerDay} mg/kg/day`);
+    if (paed.maxMgPerDose != null) pbits.push(`max ${paed.maxMgPerDose} mg/dose`);
+    if (paed.frequency) pbits.push(paed.frequency);
+    if (paed.minWeightKg != null) pbits.push(`min weight ${paed.minWeightKg} kg`);
+    if (paed.notes) pbits.push(truncate(paed.notes, 220));
+    if (pbits.length) parts.push(`paediatric dose: ${pbits.join(', ')}`);
+  }
+  if (d.dosing?.individualised) parts.push('dosing: individualised (titrate to response)');
+  if (Array.isArray(d.dosing?.renal) && d.dosing.renal.length)
+    parts.push('has renal-dose-adjustment');
   if (d.pregnancy?.contraindicated) parts.push('PREGNANCY-CONTRAINDICATED');
   else if (d.pregnancy?.notes) parts.push(`pregnancy: ${truncate(d.pregnancy.notes, 120)}`);
-  if (Array.isArray(d.renal) && d.renal.length) parts.push('has renal-dose-adjustment');
   if (d.warnings?.length) parts.push(`warnings: ${truncate(d.warnings.join('; '), 200)}`);
   return parts.join(' | ');
 }
@@ -200,10 +346,7 @@ function conditionSummary(c: {
   return parts.join(' | ');
 }
 
-function procedureSummary(p: {
-  domains?: string[];
-  redFlags?: string[];
-}): string {
+function procedureSummary(p: { domains?: string[]; redFlags?: string[] }): string {
   const parts: string[] = [];
   if (p.domains?.length) parts.push(`domains: ${p.domains.join(',')}`);
   if (p.redFlags?.length) parts.push(`red flags: ${truncate(p.redFlags.join('; '), 200)}`);
