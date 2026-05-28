@@ -49,6 +49,10 @@ function copyBundle(): string {
     'pregnancy-lactation.json',
     'hepatic-dose.json',
     'symptom-triage.json',
+    'clinical-procedures.json',
+    'bedside-interpretation.json',
+    'preventive-care.json',
+    'growth-development.json',
   ]) {
     copyFileSync(resolve(REAL_BUNDLE, f), resolve(dir, f));
   }

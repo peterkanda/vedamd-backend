@@ -13,6 +13,7 @@ import type { NotifiableDisease } from '../notifiable/notifiable.types';
 import type { ReferenceRange } from '../reference-ranges/reference-ranges.types';
 import type { Antidote } from '../antidotes/antidotes.types';
 import type { Toxidrome } from '../toxidromes/toxidromes.types';
+import type { ReferenceCard } from '../clinical-reference/clinical-reference.types';
 import type { AnticoagulantReversal } from '../anticoagulant-reversal/anticoagulant-reversal.types';
 import type { IvCompatibility } from '../iv-compatibility/iv-compatibility.types';
 import type { PregnancyLactationRecord } from '../pregnancy-lactation/pregnancy-lactation.types';
@@ -162,6 +163,13 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
     hepaticDose: (parsed['hepatic-dose.json'] as HepaticDoseRecord[] | undefined) ?? [],
     symptomTriage:
       (parsed['symptom-triage.json'] as SymptomTriageRecord[] | undefined) ?? [],
+    clinicalProcedures:
+      (parsed['clinical-procedures.json'] as ReferenceCard[] | undefined) ?? [],
+    bedsideInterpretation:
+      (parsed['bedside-interpretation.json'] as ReferenceCard[] | undefined) ?? [],
+    preventiveCare: (parsed['preventive-care.json'] as ReferenceCard[] | undefined) ?? [],
+    growthDevelopment:
+      (parsed['growth-development.json'] as ReferenceCard[] | undefined) ?? [],
     terminology:
       (parsed['terminology.json'] as TerminologyBundle | undefined) ??
       ({ version: '0.0.0-absent', codeSystems: [], valueSets: [] } as TerminologyBundle),
@@ -243,6 +251,10 @@ export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBun
     pregnancyLactation: [],
     hepaticDose: [],
     symptomTriage: [],
+    clinicalProcedures: [],
+    bedsideInterpretation: [],
+    preventiveCare: [],
+    growthDevelopment: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }
@@ -291,6 +303,10 @@ function failOrReturn(
     pregnancyLactation: [],
     hepaticDose: [],
     symptomTriage: [],
+    clinicalProcedures: [],
+    bedsideInterpretation: [],
+    preventiveCare: [],
+    growthDevelopment: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }

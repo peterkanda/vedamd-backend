@@ -15,6 +15,7 @@ import type { IvCompatibility } from '../iv-compatibility/iv-compatibility.types
 import type { PregnancyLactationRecord } from '../pregnancy-lactation/pregnancy-lactation.types';
 import type { HepaticDoseRecord } from '../hepatic-dose/hepatic-dose.types';
 import type { SymptomTriageRecord } from '../symptom-triage/symptom-triage.types';
+import type { ReferenceCard } from '../clinical-reference/clinical-reference.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import type { ContentStats, ValidationViolation } from './bundle-validator';
 
@@ -91,6 +92,11 @@ export interface LoadedBundle {
   hepaticDose: HepaticDoseRecord[];
   /** Optional — bundles signed before symptom-triage.json existed return []. */
   symptomTriage: SymptomTriageRecord[];
+  /** Optional clinical-reference domains (unified ReferenceCard schema). */
+  clinicalProcedures: ReferenceCard[];
+  bedsideInterpretation: ReferenceCard[];
+  preventiveCare: ReferenceCard[];
+  growthDevelopment: ReferenceCard[];
   /** Optional — bundles signed before terminology.json existed return an empty TerminologyBundle. */
   terminology: TerminologyBundle;
 }

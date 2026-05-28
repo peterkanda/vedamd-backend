@@ -81,6 +81,10 @@ const fileEntries = files.map((name) => {
     pregnancyLactation: readOptional('pregnancy-lactation.json'),
     hepaticDose: readOptional('hepatic-dose.json'),
     symptomTriage: readOptional('symptom-triage.json'),
+    clinicalProcedures: readOptional('clinical-procedures.json'),
+    bedsideInterpretation: readOptional('bedside-interpretation.json'),
+    preventiveCare: readOptional('preventive-care.json'),
+    growthDevelopment: readOptional('growth-development.json'),
   };
   const validation = validateBundle(bundle);
   const stats = validation.stats;
