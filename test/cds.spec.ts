@@ -73,6 +73,7 @@ import { UtiTreatmentStrategy } from '../src/modules/cds/strategies/uti-treatmen
 import { AsthmaStepUpStrategy } from '../src/modules/cds/strategies/asthma-step-up.strategy';
 import { AnaemiaIronReplacementStrategy } from '../src/modules/cds/strategies/anaemia-iron-replacement.strategy';
 import { HypothyroidismInitStrategy } from '../src/modules/cds/strategies/hypothyroidism-init.strategy';
+import { VhfSuspectedIsolationStrategy } from '../src/modules/cds/strategies/vhf-suspected-isolation.strategy';
 import { BundleOutcomeStrategy } from '../src/modules/cds/strategies/bundle-outcome.strategy';
 import { PhiFreeLogger } from '../src/common/phi-free-logger';
 import type { AppConfig } from '../src/config/configuration';
@@ -163,6 +164,7 @@ function makeService(): CdsService {
     new AsthmaStepUpStrategy(),
     new AnaemiaIronReplacementStrategy(),
     new HypothyroidismInitStrategy(),
+    new VhfSuspectedIsolationStrategy(),
     new BundleOutcomeStrategy(),
   );
   return new CdsService(config, log, knowledge, registry);
@@ -206,6 +208,63 @@ describe('CdsService', () => {
     expect(hooks.has('order-sign')).toBe(true);
     expect(services.find((s) => s.id === 'vedamd-order-select')).toBeDefined();
     expect(services.find((s) => s.id === 'vedamd-order-sign')).toBeDefined();
+  });
+});
+
+describe('CdsService.evaluateHook — VHF suspected-isolation (public-health emergency)', () => {
+  it('fires a CRITICAL isolate+notify card on fever + VHF epi-link', async () => {
+    const res = await makeService().evaluateHook('vedamd-patient-view', {
+      hook: 'patient-view',
+      hookInstance: 'vhf-1',
+      context: { feverPresent: true, vhfEndemicTravel21d: true },
+    });
+    const vhf = res.cards.filter(
+      (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'vhf-suspected-isolation',
+    );
+    expect(vhf.length).toBe(1);
+    expect(vhf[0].indicator).toBe('critical');
+    expect(vhf[0].summary).toMatch(/HAEMORRHAGIC FEVER/i);
+    expect(vhf[0].detail).toMatch(/ISOLATE/i);
+    expect(vhf[0].detail).toMatch(/notif/i);
+  });
+
+  it('fires on the explicit suspectedVhf sentinel alone', async () => {
+    const res = await makeService().evaluateHook('vedamd-patient-view', {
+      hook: 'patient-view',
+      hookInstance: 'vhf-2',
+      context: { suspectedVhf: true },
+    });
+    expect(
+      res.cards.some(
+        (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'vhf-suspected-isolation',
+      ),
+    ).toBe(true);
+  });
+
+  it('fires on fever + unexplained bleeding (no travel link)', async () => {
+    const res = await makeService().evaluateHook('vedamd-patient-view', {
+      hook: 'patient-view',
+      hookInstance: 'vhf-3',
+      context: { feverPresent: true, unexplainedBleeding: true },
+    });
+    expect(
+      res.cards.some(
+        (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'vhf-suspected-isolation',
+      ),
+    ).toBe(true);
+  });
+
+  it('does NOT fire on fever alone without an epi-link or bleeding', async () => {
+    const res = await makeService().evaluateHook('vedamd-patient-view', {
+      hook: 'patient-view',
+      hookInstance: 'vhf-4',
+      context: { feverPresent: true },
+    });
+    expect(
+      res.cards.some(
+        (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'vhf-suspected-isolation',
+      ),
+    ).toBe(false);
   });
 });
 

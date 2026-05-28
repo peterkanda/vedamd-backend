@@ -69,6 +69,7 @@ import { UtiTreatmentStrategy } from './uti-treatment.strategy';
 import { AsthmaStepUpStrategy } from './asthma-step-up.strategy';
 import { AnaemiaIronReplacementStrategy } from './anaemia-iron-replacement.strategy';
 import { HypothyroidismInitStrategy } from './hypothyroidism-init.strategy';
+import { VhfSuspectedIsolationStrategy } from './vhf-suspected-isolation.strategy';
 import { BundleOutcomeStrategy } from './bundle-outcome.strategy';
 import type { CdsRuleStrategy } from './types';
 
@@ -152,6 +153,7 @@ export class CdsStrategyRegistry {
     asthmaStepUp: AsthmaStepUpStrategy,
     anaemiaIron: AnaemiaIronReplacementStrategy,
     hypothyroidismInit: HypothyroidismInitStrategy,
+    vhfSuspectedIsolation: VhfSuspectedIsolationStrategy,
     private readonly bundleOutcome: BundleOutcomeStrategy,
   ) {
     this.register(ddi);
@@ -224,6 +226,7 @@ export class CdsStrategyRegistry {
     this.register(asthmaStepUp);
     this.register(anaemiaIron);
     this.register(hypothyroidismInit);
+    this.register(vhfSuspectedIsolation);
   }
 
   register(s: CdsRuleStrategy): void {

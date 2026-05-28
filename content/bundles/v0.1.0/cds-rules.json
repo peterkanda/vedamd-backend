@@ -5682,14 +5682,19 @@
     "id": "vhf-suspected-isolation",
     "hook": "patient-view",
     "type": "vhf-suspected-isolation",
-    "services": [
-      "vedamd-vhf-suspected"
-    ],
     "title": "Suspected viral haemorrhagic fever — isolation + public health",
     "description": "Fires for fever + travel from / residence in VHF-endemic area (Ebola, Marburg, Lassa, CCHF, Yellow Fever) ± bleeding / multi-organ involvement. Recommends IMMEDIATE single-room isolation with PPE (gown, FFP3, double gloves, eye protection); NOTIFY public health before sample collection; supportive care; specific antivirals (ribavirin for Lassa / CCHF; monoclonals for Ebola / Marburg). Reads context.travelEndemicArea, context.fever, context.bleeding, context.contactWithCase — never patient identity.",
     "references": [
       {
-        "label": "WHO Clinical management of VHF"
+        "label": "WHO Clinical management of viral haemorrhagic fevers — pocket guide / clinical care",
+        "url": "https://www.who.int/health-topics/haemorrhagic-fevers-viral"
+      },
+      {
+        "label": "IHR (2005) — immediate notification of public-health events of international concern",
+        "url": "https://www.who.int/health-topics/international-health-regulations"
+      },
+      {
+        "label": "Kenya MOH Integrated Disease Surveillance and Response (IDSR) — VHF / Ebola contingency plan"
       }
     ],
     "ruleVersion": "0.1.0",
@@ -5702,8 +5707,7 @@
         "display": "Ebola virus disease",
         "kind": "diagnosis"
       }
-    ],
-    "documentationOnly": true
+    ]
   },
   {
     "id": "pjp-empirical-trimethoprim",
