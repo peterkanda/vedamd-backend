@@ -69,6 +69,7 @@ import { UtiTreatmentStrategy } from './uti-treatment.strategy';
 import { AsthmaStepUpStrategy } from './asthma-step-up.strategy';
 import { AnaemiaIronReplacementStrategy } from './anaemia-iron-replacement.strategy';
 import { HypothyroidismInitStrategy } from './hypothyroidism-init.strategy';
+import { BundleOutcomeStrategy } from './bundle-outcome.strategy';
 import type { CdsRuleStrategy } from './types';
 
 /**
@@ -151,6 +152,7 @@ export class CdsStrategyRegistry {
     asthmaStepUp: AsthmaStepUpStrategy,
     anaemiaIron: AnaemiaIronReplacementStrategy,
     hypothyroidismInit: HypothyroidismInitStrategy,
+    private readonly bundleOutcome: BundleOutcomeStrategy,
   ) {
     this.register(ddi);
     this.register(renal);
@@ -228,7 +230,23 @@ export class CdsStrategyRegistry {
     this.byType.set(s.type, s);
   }
 
-  get(type: string): CdsRuleStrategy | null {
+  get(type: string | null | undefined): CdsRuleStrategy | null {
+    if (type == null) return null;
     return this.byType.get(type) ?? null;
+  }
+
+  /** All bespoke strategy type keys (excludes the generic outcome fallback). */
+  registeredTypes(): string[] {
+    return [...this.byType.keys()];
+  }
+
+  /**
+   * Generic renderer for content-only rules. CdsService uses it when
+   * `get(rule.type)` is null but the rule carries `outcomes[]`, so a
+   * rule whose declared type has no bespoke strategy still surfaces its
+   * pre-written cards instead of being silently skipped.
+   */
+  outcomeFallback(): BundleOutcomeStrategy {
+    return this.bundleOutcome;
   }
 }

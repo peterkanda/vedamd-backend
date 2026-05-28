@@ -1767,5 +1767,339 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "vitamin-k-reversal",
+    "anticoagulant": "Vitamin K (phytomenadione) — routes and doses",
+    "anticoagulantDrugSlug": null,
+    "drugClass": "Reversal adjunct for vitamin K antagonists",
+    "oneLiner": "Choose route by urgency: IV (5-10 mg, diluted, over ≥ 30 min) with PCC for major bleed; oral (1-5 mg) for supratherapeutic INR without bleeding. Avoid SC (erratic) and never give undiluted IV bolus (anaphylactoid risk).",
+    "domains": ["haematology", "emergency", "pharmacy"],
+    "mechanism": "Phytomenadione is the cofactor for hepatic γ-carboxylation of factors II, VII, IX, X and proteins C/S. It restores endogenous synthesis of functional factors over 4-6 h (IV) to 24 h (oral) — it does NOT replace factors directly, so it is an adjunct, not a stand-alone agent, for active major bleeding.",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "Vitamin K IV (with 4F-PCC)",
+        "agentDrugSlug": null,
+        "dosing": "5-10 mg IV, diluted, infused slowly (manufacturer max rate 1 mg/min; in practice infuse over ≥ 30 min) — always co-administered with 4F-PCC. Vitamin K sustains reversal once the PCC factors decay (PCC duration up to ~ 8 h); without it, INR rebounds at 12-24 h.",
+        "adjuncts": [
+          "4F-PCC dosed by INR/weight for the actual reversal — vitamin K alone is too slow for life-threatening bleeding.",
+          "Manage anaphylactoid reaction (rare, ~ 3 per 10,000 IV doses): stop infusion, adrenaline, IV fluids."
+        ],
+        "monitoring": "INR begins to fall within 4-6 h of IV vitamin K; recheck at 6 h and 24 h.",
+        "cautions": [
+          "Never give undiluted rapid IV bolus — anaphylactoid reactions are associated with rapid infusion.",
+          "Subcutaneous vitamin K is unreliable (erratic absorption) — do not use for reversal."
+        ]
+      },
+      {
+        "urgency": "minor-bleed-or-supratherapeutic-no-bleed",
+        "agent": "Vitamin K oral",
+        "agentDrugSlug": null,
+        "dosing": "Oral phytomenadione 1-2.5 mg lowers an INR of 5-9 into range within 24-48 h; for INR > 10 without bleeding, 5 mg PO may be more appropriate. Oral route is preferred when no major bleed because IV carries anaphylactoid risk and SC is erratic.",
+        "cautions": [
+          "Avoid large doses (≥ 10 mg) in patients needing ongoing warfarin — causes prolonged warfarin resistance for days."
+        ]
+      }
+    ],
+    "pitfalls": [
+      "Vitamin K alone takes 4-6 h (IV) or up to 24 h (oral) to act — never rely on it for active life-threatening bleeding; give PCC for the acute reversal.",
+      "Subcutaneous administration is erratic and should not be used.",
+      "Failing to co-administer vitamin K with PCC leads to INR rebound at 12-24 h as PCC factors decay.",
+      "Routine vitamin K for INR 4.5-10 without bleeding is unnecessary and can cause sub-therapeutic INR — holding the dose usually suffices."
+    ],
+    "references": [
+      { "label": "Ageno W et al. ACCP CHEST: Oral anticoagulant therapy. Chest 2012;141(2 Suppl):e44S-e88S." },
+      { "label": "BSH guideline: Reversal of antithrombotic therapy in patients with major bleeding. Br J Haematol 2018." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "desmopressin-antiplatelet-uraemic-bleed",
+    "anticoagulant": "Desmopressin (DDAVP) — antiplatelet / uraemic bleeding",
+    "anticoagulantDrugSlug": null,
+    "drugClass": "Reversal adjunct (platelet-function enhancer)",
+    "oneLiner": "Single dose desmopressin 0.3 micrograms/kg IV over ~ 30 min for uraemic bleeding or antiplatelet-associated haemorrhage (including ICH). Effect lasts 4-6 h; restrict fluids and watch for hyponatraemia.",
+    "domains": ["haematology", "emergency", "nephrology", "neurology"],
+    "mechanism": "Desmopressin releases von Willebrand factor and factor VIII from endothelial stores, improving platelet adhesion. It improves platelet function in uraemia and partially counteracts the platelet defect from antiplatelet agents (e.g. aspirin).",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "Desmopressin (DDAVP)",
+        "agentDrugSlug": null,
+        "dosing": "0.3 micrograms/kg IV in 50 mL normal saline over ~ 30 min, single dose. Current neurocritical care guidance gives a conditional recommendation to consider a single dose of IV desmopressin for antiplatelet-associated intracranial haemorrhage (low-quality evidence). Same dose improves platelet function in uraemic bleeding.",
+        "adjuncts": [
+          "For antiplatelet-associated ICH: do NOT routinely add platelet transfusion (PATCH signal of harm).",
+          "Treat the underlying uraemia (dialysis, correct anaemia) for sustained benefit.",
+          "Local haemostasis, blood-pressure control, neurosurgical consult for ICH."
+        ],
+        "monitoring": "Effect lasts ~ 4-6 h. Monitor serum sodium — repeated dosing causes hyponatraemia / water intoxication.",
+        "cautions": [
+          "Mandatory fluid restriction to prevent hyponatraemia, especially in elderly / uraemic patients.",
+          "Tachyphylaxis: repeated doses lose effect as endothelial stores deplete.",
+          "Use cautiously in unstable cardiovascular disease (vasodilation, hypotension on rapid infusion)."
+        ]
+      }
+    ],
+    "pitfalls": [
+      "Desmopressin is an adjunct, not a primary reversal agent — it does not replace specific anticoagulant reversal.",
+      "Hyponatraemia from antidiuretic effect can precipitate seizures — restrict free water and monitor sodium.",
+      "Evidence for antiplatelet-associated ICH is low quality (conditional recommendation) — weigh against thrombotic risk.",
+      "Tachyphylaxis after ~ 1-2 doses limits repeat use."
+    ],
+    "references": [
+      { "label": "Frontera JA et al. Neurocritical Care Society / SCCM Guideline for reversal of antithrombotics in intracranial haemorrhage. Neurocrit Care 2016;24:6-46." },
+      { "label": "Kapapa M et al. Effect of desmopressin on platelet dysfunction during antiplatelet therapy: a systematic review. Neurocrit Care 2020." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "platelet-transfusion-antiplatelet-ich",
+    "anticoagulant": "Platelet transfusion in antiplatelet-associated ICH",
+    "anticoagulantDrugSlug": null,
+    "drugClass": "Reversal consideration (antiplatelet-associated bleeding)",
+    "oneLiner": "Do NOT routinely transfuse platelets for spontaneous intracerebral haemorrhage in patients on antiplatelet therapy — the PATCH trial showed harm (increased death/dependence). Reserve platelets for those proceeding to neurosurgery.",
+    "domains": ["haematology", "emergency", "neurology", "critical-care"],
+    "mechanism": "Antiplatelet agents (aspirin, P2Y12 inhibitors) impair platelet aggregation. Transfusing functional platelets was hypothesised to restore haemostasis, but the PATCH randomised trial found a signal of harm in spontaneous ICH.",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "Avoid routine platelet transfusion (PATCH); consider only for neurosurgery",
+        "agentDrugSlug": null,
+        "dosing": "Spontaneous (non-traumatic) ICH on antiplatelets: do NOT routinely transfuse platelets — PATCH (n=190) showed platelet transfusion increased death or dependence at 3 months vs standard care. Platelet transfusion may still be considered when the patient is proceeding to neurosurgical evacuation (extrapolated practice).",
+        "adjuncts": [
+          "Consider desmopressin 0.3 micrograms/kg IV as an alternative platelet-function adjunct.",
+          "Blood-pressure control, neurosurgical consultation, reverse any concomitant anticoagulant.",
+          "Note ticagrelor is reversibly bound — transfused platelets are rapidly inhibited by circulating drug, so transfusion is of limited value."
+        ],
+        "monitoring": "Serial CT for haematoma expansion; neurological observations.",
+        "cautions": [
+          "PATCH applied to spontaneous supratentorial ICH within 6 h on antiplatelets — extrapolate cautiously to traumatic ICH or neurosurgical candidates.",
+          "Platelet transfusion for ticagrelor is largely ineffective (drug rebinds new platelets) — bentracimab is the specific reversal agent where available."
+        ]
+      }
+    ],
+    "pitfalls": [
+      "Reflexively transfusing platelets for any antiplatelet-associated ICH can cause harm — PATCH demonstrated worse outcomes.",
+      "Ticagrelor's reversible binding means transfused platelets are quickly inhibited — transfusion does not restore function.",
+      "Do not delay blood-pressure control or neurosurgical referral while debating transfusion."
+    ],
+    "references": [
+      { "label": "Baharoglu MI et al. Platelet transfusion versus standard care after acute stroke due to spontaneous cerebral haemorrhage associated with antiplatelet therapy (PATCH). Lancet 2016;387:2605-13." },
+      { "label": "Frontera JA et al. Neurocritical Care Society / SCCM Guideline for reversal of antithrombotics in ICH. Neurocrit Care 2016." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "tenecteplase-reversal",
+    "anticoagulant": "Tenecteplase (TNK)",
+    "anticoagulantDrugSlug": null,
+    "drugClass": "Fibrin-specific fibrinolytic (tissue plasminogen activator)",
+    "oneLiner": "Bleeding after tenecteplase: stop any heparin, give cryoprecipitate 10 units IV (target fibrinogen ≥ 150 mg/dL) + tranexamic acid 1 g IV. Same fibrinolysis-reversal principle as alteplase.",
+    "domains": ["haematology", "emergency", "cardiology", "neurology"],
+    "mechanism": "Tenecteplase is a fibrin-specific plasminogen activator (modified tPA) that generates plasmin, lysing clot and depleting fibrinogen. Reversal replaces fibrinogen (cryoprecipitate) and inhibits ongoing plasmin activity (tranexamic acid).",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "Cryoprecipitate + tranexamic acid",
+        "agentDrugSlug": null,
+        "dosing": "Stop the fibrinolytic and any concurrent heparin. Cryoprecipitate 10 units IV (send fibrinogen; give further cryoprecipitate to reach fibrinogen ≥ 150 mg/dL, ≥ 200 mg/dL desirable for ICH). Tranexamic acid 1 g IV over 10 min. Consider FFP 2-4 units if cryoprecipitate unavailable.",
+        "adjuncts": [
+          "Neurosurgical consult immediately for intracranial haemorrhage.",
+          "Red cells / platelets per haemorrhage management; reverse lethal triad.",
+          "Recheck fibrinogen 30 min after cryoprecipitate; redose as needed."
+        ],
+        "monitoring": "Fibrinogen level, clinical bleeding endpoint, repeat imaging for ICH.",
+        "cautions": [
+          "Intracranial haemorrhage complicates ~ 1-2% of thrombolysis; major non-cerebral bleeding ~ 4-6%.",
+          "There is no specific antidote to tenecteplase — management is factor replacement plus antifibrinolytic."
+        ]
+      },
+      {
+        "urgency": "major-non-life-threatening-bleed",
+        "agent": "Stop fibrinolytic; cryoprecipitate / TXA if needed",
+        "agentDrugSlug": null,
+        "dosing": "Stop infusion of any adjunctive anticoagulant; local haemostasis. Cryoprecipitate 10 units and/or tranexamic acid 1 g IV if bleeding significant or fibrinogen low."
+      }
+    ],
+    "pitfalls": [
+      "No specific antidote exists — replace fibrinogen and inhibit plasmin.",
+      "Cryoprecipitate is preferred over FFP for fibrinogen replacement (concentrated, lower volume).",
+      "Tranexamic acid is procoagulant — weigh thrombotic risk, especially if the indication for thrombolysis was arterial occlusion.",
+      "Half-life of tenecteplase is short, but its fibrinogen-depleting effect outlasts the drug."
+    ],
+    "references": [
+      { "label": "AHA/ASA Hemorrhagic Stroke Toolkit — tPA / thrombolytic reversal guideline." },
+      { "label": "Yaghi S et al. Treatment and outcome of haemorrhagic transformation after IV alteplase: AHA/ASA scientific statement. Stroke 2017;48:e343-e361." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "warfarin-intracranial-haemorrhage",
+    "anticoagulant": "Warfarin — intracranial haemorrhage",
+    "anticoagulantDrugSlug": "warfarin",
+    "drugClass": "Vitamin K antagonist (VKA) — ICH-specific pathway",
+    "oneLiner": "VKA-associated ICH: 4F-PCC dosed by INR/weight (25-50 IU/kg) IV immediately + vitamin K 10 mg IV. Aim INR < 1.3-1.5 fast. 4F-PCC is superior to FFP (faster correction, less haematoma expansion).",
+    "domains": ["haematology", "emergency", "neurology", "critical-care"],
+    "mechanism": "Warfarin depletes functional factors II, VII, IX, X. In ICH, every minute of coagulopathy risks haematoma expansion, so rapid factor replacement (PCC) plus restored synthesis (vitamin K) is the priority.",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "4F-PCC + vitamin K (immediate)",
+        "agentDrugSlug": null,
+        "dosing": "4F-PCC by INR/weight: INR 2-3.9 → 25 IU/kg (max 2,500 IU); INR 4-6 → 35 IU/kg (max 3,500 IU); INR > 6 → 50 IU/kg (max 5,000 IU). Give IV over 10-30 min. PLUS vitamin K 10 mg IV slowly. Do not wait for INR if VKA exposure is known — treat empirically on history.",
+        "adjuncts": [
+          "4F-PCC is superior to plasma for warfarin-associated ICH — give plasma only if PCC unavailable.",
+          "Blood-pressure control per ICH guideline; neurosurgical consultation.",
+          "Recheck INR 30 min post-PCC; redose if INR not < 1.5."
+        ],
+        "monitoring": "INR at 30 min, 6 h, 24 h (vitamin K prevents the 12-24 h rebound). Serial CT for haematoma expansion.",
+        "cautions": [
+          "Give vitamin K with PCC — PCC duration (~ 8 h) is shorter than warfarin's, so INR rebounds without vitamin K.",
+          "Mechanical valve / recent VTE: thrombosis risk after reversal — restart anticoagulation once bleeding controlled (timing individualised)."
+        ]
+      }
+    ],
+    "pitfalls": [
+      "Using FFP first-line wastes critical time and worsens volume status — PCC is the standard for VKA-associated ICH.",
+      "Omitting vitamin K causes INR rebound at 12-24 h.",
+      "Waiting for INR before treating delays reversal — treat on the basis of known VKA exposure.",
+      "Forgetting blood-pressure control and neurosurgical referral while focused on reversal."
+    ],
+    "references": [
+      { "label": "Greenberg SM et al. 2022 AHA/ASA Guideline for the management of patients with spontaneous intracerebral haemorrhage. Stroke 2022." },
+      { "label": "Frontera JA et al. Neurocritical Care Society / SCCM Guideline for reversal of antithrombotics in ICH. Neurocrit Care 2016." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "doac-xa-intracranial-haemorrhage",
+    "anticoagulant": "Factor Xa inhibitor — intracranial haemorrhage",
+    "anticoagulantDrugSlug": null,
+    "drugClass": "DOAC-Xa (apixaban / rivaroxaban / edoxaban) — ICH-specific pathway",
+    "oneLiner": "Xa-inhibitor-associated ICH: andexanet alfa (ANNEXA-I dosing) is reasonable; where unavailable, 4F-PCC 50 IU/kg IV. Anticipate ~ 10% thrombotic event rate with andexanet — restart anticoagulation when safe.",
+    "domains": ["haematology", "emergency", "neurology", "critical-care"],
+    "mechanism": "Direct factor Xa inhibitors are sequestered by andexanet alfa (a recombinant decoy Xa) or bypassed by 4F-PCC. Treat when clinically significant drug levels are likely from type/timing of dosing — don't wait for assays.",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "Andexanet alfa (ANNEXA-I)",
+        "agentDrugSlug": null,
+        "dosing": "Low dose (last dose ≥ 8 h ago, or apixaban ≤ 5 mg / rivaroxaban ≤ 10 mg): 400 mg IV bolus over 15 min, then 4 mg/min for up to 120 min. High dose (last dose < 8 h, or higher dose): 800 mg IV bolus over 30 min, then 8 mg/min for up to 120 min. ANNEXA-I showed superior haemostatic efficacy vs usual care in acute ICH.",
+        "adjuncts": [
+          "Where andexanet unavailable: 4F-PCC 50 IU/kg IV (max 5,000 IU).",
+          "Blood-pressure control per ICH guideline; neurosurgical consultation.",
+          "Restart anticoagulation when bleeding controlled — andexanet roughly doubled thrombotic events (~ 10.3% vs 5.6% in ANNEXA-I)."
+        ],
+        "monitoring": "Serial CT for haematoma expansion; thrombosis surveillance (ischaemic stroke, MI). Anti-Xa is unreliable during andexanet (assay interference).",
+        "cautions": [
+          "Andexanet thrombotic risk is substantial (ANNEXA-I ~ 10% vs ~ 6%) — particularly arterial events.",
+          "Treat on the basis of drug type and timing rather than awaiting assays.",
+          "Dabigatran-associated ICH uses idarucizumab, NOT andexanet."
+        ]
+      }
+    ],
+    "pitfalls": [
+      "Anti-Xa assays are unreliable during/after andexanet — do not use them to titrate.",
+      "Failing to plan anticoagulation restart leaves a substantial thrombotic window after andexanet.",
+      "Using andexanet for dabigatran (a IIa inhibitor) — wrong agent; use idarucizumab.",
+      "Delaying reversal to await confirmatory levels."
+    ],
+    "references": [
+      { "label": "Connolly SJ et al. Andexanet for factor Xa inhibitor-associated acute intracerebral haemorrhage (ANNEXA-I). N Engl J Med 2024;390:1745-1755." },
+      { "label": "Greenberg SM et al. 2022 AHA/ASA Guideline for spontaneous intracerebral haemorrhage. Stroke 2022." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "periprocedural-bridging-anticoagulation",
+    "anticoagulant": "Periprocedural bridging — warfarin / heparin",
+    "anticoagulantDrugSlug": "warfarin",
+    "drugClass": "Peri-operative anticoagulation management",
+    "oneLiner": "Most warfarin patients do NOT need bridging (BRIDGE: no-bridge non-inferior for thromboembolism, less major bleeding). Reserve therapeutic-dose LMWH/heparin bridging for genuinely high thrombotic risk (e.g. mechanical mitral valve, recent VTE/stroke < 3 months).",
+    "domains": ["haematology", "cardiology", "surgery", "internal-medicine"],
+    "mechanism": "Bridging substitutes a short-acting parenteral anticoagulant during the period that warfarin is sub-therapeutic peri-operatively. The aim is to minimise the thromboembolism-free window, but it increases bleeding — so it is reserved for high thrombotic risk.",
+    "protocols": [
+      {
+        "urgency": "urgent-surgery-or-procedure",
+        "agent": "Risk-stratified bridging decision",
+        "agentDrugSlug": null,
+        "dosing": "Stop warfarin ~ 5 days before surgery. LOW/MODERATE thrombotic risk (e.g. AF with low CHA2DS2-VASc, bileaflet aortic mechanical valve without other risk factors): do NOT bridge (BRIDGE trial — no-bridge non-inferior for arterial thromboembolism, ~ 3x less major bleeding). HIGH thrombotic risk (older-generation or mitral mechanical valve, mechanical valve with stroke risk factors, VTE/stroke within 3 months): bridge with therapeutic-dose LMWH (e.g. dalteparin 100 IU/kg BD) or IV UFH.",
+        "adjuncts": [
+          "Stop therapeutic LMWH ~ 24 h pre-op (last dose at half); stop IV UFH 4-6 h pre-op.",
+          "Restart bridging post-op only once surgical haemostasis secure (delay 48-72 h after high-bleeding-risk surgery).",
+          "Resume warfarin the evening of/day after surgery; continue bridge until INR therapeutic."
+        ],
+        "monitoring": "INR pre-op (target < 1.5 for major surgery); anti-Xa or aPTT for parenteral bridge if used.",
+        "cautions": [
+          "Bridging roughly triples major-bleeding risk without reducing arterial thromboembolism in most AF patients.",
+          "DOACs generally do NOT require bridging — their short half-life means timed holding suffices."
+        ]
+      }
+    ],
+    "pitfalls": [
+      "Reflex bridging of all warfarin patients causes excess bleeding — most do not benefit (BRIDGE).",
+      "Restarting therapeutic bridging too early after high-bleeding-risk surgery causes post-operative haemorrhage.",
+      "Bridging DOACs is almost never indicated — confirm the agent.",
+      "Mechanical mitral valves and recent thromboembolism are the clearest indications to bridge — do not omit bridging there."
+    ],
+    "references": [
+      { "label": "Douketis JD et al. Perioperative bridging anticoagulation in patients with atrial fibrillation (BRIDGE). N Engl J Med 2015;373:823-833." },
+      { "label": "Douketis JD et al. Perioperative management of antithrombotic therapy: ACCP CHEST guideline. Chest 2022." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "recombinant-factor-viia-reversal-caution",
+    "anticoagulant": "Recombinant factor VIIa — reversal caution",
+    "anticoagulantDrugSlug": null,
+    "drugClass": "Bypassing agent (last-resort reversal adjunct)",
+    "oneLiner": "rFVIIa is NOT a first-line anticoagulant reversal agent — thrombosis complicates use in up to ~ 7% of cases and efficacy against DOACs is unreliable. Use specific agents (idarucizumab/andexanet) and 4F-PCC first.",
+    "domains": ["haematology", "emergency", "critical-care"],
+    "mechanism": "rFVIIa drives thrombin generation at the site of tissue-factor exposure, bypassing the deficient pathway. It can partially normalise coagulation tests but does not reliably reverse DOAC clinical effect and carries significant arterial/venous thrombotic risk.",
+    "protocols": [
+      {
+        "urgency": "life-threatening-bleed",
+        "agent": "rFVIIa — reserve as last resort",
+        "agentDrugSlug": null,
+        "dosing": "Not recommended as first-line for anticoagulant reversal. If used as salvage after specific agents and 4F-PCC have failed, this is off-label and should follow specialist haematology direction; do not substitute it for idarucizumab, andexanet, or 4F-PCC.",
+        "adjuncts": [
+          "Use the specific reversal agent first: idarucizumab (dabigatran), andexanet (Xa inhibitors), 4F-PCC (warfarin / DOAC-Xa where andexanet unavailable).",
+          "Correct lethal triad (hypothermia, acidosis, hypocalcaemia) — rFVIIa is ineffective in acidosis."
+        ],
+        "monitoring": "Clinical bleeding; aggressive thrombosis surveillance.",
+        "cautions": [
+          "Thrombosis complicates rFVIIa use in up to ~ 7% of cases (arterial and venous).",
+          "rFVIIa barely affects dabigatran-induced clotting prolongation at therapeutic concentrations; aPCC reverses rivaroxaban more effectively than rFVIIa.",
+          "Normalising a lab test does not equal clinical reversal."
+        ]
+      }
+    ],
+    "pitfalls": [
+      "Treating rFVIIa as an equivalent alternative to PCC or specific agents — it is not, and adds thrombotic risk.",
+      "Using rFVIIa to 'correct' a coagulation test rather than treating clinical bleeding.",
+      "Expecting reliable DOAC reversal — efficacy is inconsistent."
+    ],
+    "references": [
+      { "label": "Levi M et al. Recombinant factor VIIa as an antidote for anticoagulant treatment. Semin Hematol 2004." },
+      { "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
   }
 ]

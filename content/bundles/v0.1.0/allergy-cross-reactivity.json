@@ -1108,5 +1108,966 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "A"
+  },
+  {
+    "slug": "aminopenicillin-aminocephalosporin-sidechain",
+    "allergen": "Aminopenicillins (amoxicillin, ampicillin)",
+    "crossReactsWith": "Aminocephalosporins sharing an identical R1 side chain (cefadroxil, cefprozil, cefatrizine, cephalexin, cefaclor, cephradine)",
+    "risk": "moderate",
+    "mechanism": "Amoxicillin shares an identical R1 side chain with cefadroxil/cefprozil/cefatrizine; ampicillin shares an identical R1 side chain with cephalexin/cefaclor/cephradine. Cross-reactivity tracks the shared side chain, not the beta-lactam core (cefadroxil cross-reactivity in amoxicillin-allergic patients ~35%; aminocephalosporins as a group ~16.5%).",
+    "recommendation": "After aminopenicillin allergy, avoid cephalosporins with an identical R1 side chain or use them only via supervised graded challenge/induction of tolerance. Cephalosporins with dissimilar side chains carry much lower risk.",
+    "drugSlugs": ["amoxicillin", "ampicillin", "cephalexin", "cefaclor"],
+    "domains": ["allergy", "immunology", "infectious-disease"],
+    "references": [
+      { "label": "Romano A et al. / cephalosporin side-chain cross-reactivity. J Allergy Clin Immunol Pract 2015." },
+      { "label": "Pichon-Riviere A et al. Penicillin and cephalosporin cross-reactivity: role of side chain. Clin Transl Allergy 2020 (PMC7716594)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cefazolin-unique-sidechain-safe",
+    "allergen": "Penicillins / other cephalosporins",
+    "crossReactsWith": "Cefazolin",
+    "risk": "negligible",
+    "mechanism": "Cefazolin has unique R1 and R2 side chains not shared with any penicillin or other cephalosporin in clinical use; pooled cross-reactivity with penicillin is ~0.7% and likely near zero.",
+    "recommendation": "Cefazolin is appropriate for surgical prophylaxis in patients with a penicillin allergy label (excluding confirmed cefazolin-specific allergy); do not default to inferior second-line agents for a penicillin label alone.",
+    "drugSlugs": ["cefazolin", "benzylpenicillin"],
+    "domains": ["allergy", "immunology", "surgery"],
+    "references": [
+      { "label": "Sousa-Pinto B et al. Safety of cefazolin in penicillin-allergic patients (meta-analysis). J Allergy Clin Immunol Pract 2021." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cephalosporin-aminothiazole-methoxyimino",
+    "allergen": "Third/fourth-generation cephalosporins (ceftriaxone, cefotaxime, cefepime, cefuroxime)",
+    "crossReactsWith": "Other cephalosporins sharing the aminothiazole / methoxyimino side chain",
+    "risk": "moderate",
+    "mechanism": "Ceftriaxone, cefotaxime, cefepime, cefuroxime and cefpodoxime share an aminothiazolyl-methoxyimino R1 side chain, so cross-reactivity clusters within this group rather than across all cephalosporins.",
+    "recommendation": "After allergy to one of these agents, avoid the others sharing the side chain; a cephalosporin with a dissimilar side chain (e.g. cefazolin) is usually tolerated.",
+    "drugSlugs": ["ceftriaxone", "cefotaxime", "cefepime", "cefuroxime"],
+    "domains": ["allergy", "immunology", "infectious-disease"],
+    "references": [
+      { "label": "Pichichero ME, Zagursky R. Cephalosporin side-chain cross-reactivity. Diagn Microbiol Infect Dis 2014." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ceftazidime-aztreonam-sidechain",
+    "allergen": "Ceftazidime",
+    "crossReactsWith": "Aztreonam (monobactam)",
+    "risk": "moderate",
+    "mechanism": "Ceftazidime and aztreonam share an identical R1 side chain, making them the one notable exception to aztreonam's otherwise excellent safety in beta-lactam allergy.",
+    "recommendation": "In a patient with confirmed ceftazidime allergy, avoid aztreonam (and vice versa) or use only under specialist supervision; aztreonam remains safe for allergy to other beta-lactams.",
+    "drugSlugs": ["ceftazidime"],
+    "domains": ["allergy", "immunology", "infectious-disease"],
+    "references": [
+      { "label": "Frumin J, Gallagher JC. Allergic cross-sensitivity between penicillins, cephalosporins, and monobactams. Ann Pharmacother 2009." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "carbapenem-penicillin-low-risk",
+    "allergen": "Penicillins (confirmed IgE-mediated allergy)",
+    "crossReactsWith": "Carbapenems (meropenem, imipenem, ertapenem)",
+    "risk": "negligible",
+    "mechanism": "In penicillin skin-test-positive cohorts, cross-reactivity to carbapenems is ~1% or less (meta-analysis ~0.3% to meropenem); shared beta-lactam ring alone is a weak driver.",
+    "recommendation": "Carbapenems can generally be given to penicillin-allergic patients; in confirmed severe IgE allergy, an initial graded challenge or specialist input is reasonable but routine avoidance is not warranted.",
+    "drugSlugs": ["meropenem", "ertapenem", "benzylpenicillin"],
+    "domains": ["allergy", "immunology", "infectious-disease"],
+    "references": [
+      { "label": "Romano A et al. Tolerability of aztreonam and carbapenems in penicillin IgE allergy. J Allergy Clin Immunol 2015." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "sulfonamide-antibiotic-arylamine-detail",
+    "allergen": "Sulfonamide antibiotics (sulfamethoxazole / co-trimoxazole)",
+    "crossReactsWith": "Non-antibiotic sulfonamides (loop/thiazide diuretics, sulfonylureas, acetazolamide, celecoxib)",
+    "risk": "negligible",
+    "mechanism": "Sulfonamide-antibiotic hypersensitivity is directed at the N4 aromatic arylamine group and the N1 substituent, both absent from non-antibiotic sulfonamides; a large cohort (Strom 2003) found subsequent reactions reflect a general predisposition to allergy, not true cross-reactivity.",
+    "recommendation": "A sulfonamide-antibiotic allergy is NOT a reason to withhold diuretics, sulfonylureas, acetazolamide or celecoxib. Persistent myth to dispel.",
+    "drugSlugs": ["cotrimoxazole", "furosemide", "hydrochlorothiazide", "acetazolamide"],
+    "domains": ["allergy", "immunology"],
+    "references": [
+      { "label": "Strom BL et al. Absence of cross-reactivity between sulfonamide antibiotics and sulfonamide nonantibiotics. NEJM 2003." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "nsaid-cross-reactive-vs-selective",
+    "allergen": "NSAIDs / aspirin",
+    "crossReactsWith": "Other NSAIDs — pattern depends on phenotype (cross-reactive vs single-drug selective)",
+    "risk": "moderate",
+    "mechanism": "EAACI/WAO classify NSAID hypersensitivity into cross-reactive (COX-1-mediated: NERD, NSAID-exacerbated cutaneous disease, NIUA) where chemically unrelated NSAIDs cross-react, versus selective (immunological: single-NSAID urticaria/anaphylaxis or SNIDR) where other chemically unrelated NSAIDs are tolerated.",
+    "recommendation": "Determine the phenotype before advising. Cross-reactive types: avoid all COX-1 inhibitors, COX-2 selectives usually tolerated under supervision. Selective single-drug types: avoid only the culprit (and close structural relatives); other NSAID classes are usually safe.",
+    "drugSlugs": ["aspirin", "ibuprofen", "naproxen", "celecoxib"],
+    "domains": ["allergy", "immunology"],
+    "references": [
+      { "label": "Kowalski ML et al. EAACI/GA2LEN classification and approach to NSAID hypersensitivity. Allergy 2013." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "nerd-cox2-tolerance",
+    "allergen": "Aspirin / non-selective NSAIDs in NSAID-exacerbated respiratory disease (NERD/AERD, Samter's triad)",
+    "crossReactsWith": "All COX-1 inhibitors (cross-react); selective COX-2 inhibitors generally tolerated",
+    "risk": "high",
+    "mechanism": "NERD is a pharmacological (non-IgE) reaction driven by COX-1 inhibition with cysteinyl-leukotriene overproduction; reactions cross-react across chemically unrelated COX-1 inhibitors. Selective COX-2 inhibitors (celecoxib, etoricoxib) spare COX-1 and are usually tolerated.",
+    "recommendation": "Avoid aspirin and all non-selective NSAIDs in NERD. Paracetamol (low dose) and selective COX-2 inhibitors are usually safe; introduce a COX-2 inhibitor under supervised challenge if needed.",
+    "drugSlugs": ["aspirin", "ibuprofen", "naproxen", "celecoxib"],
+    "domains": ["allergy", "respiratory", "immunology"],
+    "references": [
+      { "label": "White AA, Stevenson DD. Aspirin-Exacerbated Respiratory Disease. NEJM 2018." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "local-anaesthetic-amide-low-crossreactivity",
+    "allergen": "Amide local anaesthetics (lidocaine, bupivacaine, articaine, mepivacaine)",
+    "crossReactsWith": "Other amide local anaesthetics (variable, low)",
+    "risk": "low",
+    "mechanism": "True IgE allergy to amide local anaesthetics is rare; most reported reactions are vasovagal, to adrenaline, or to preservatives (methylparaben/metabisulfite). When true allergy exists, cross-reactivity between amides is inconsistent.",
+    "recommendation": "Most 'LA allergy' is not true allergy. If genuine amide allergy is confirmed, allergy testing can identify a tolerated alternative amide; esters do not cross-react with amides.",
+    "drugSlugs": ["lidocaine", "bupivacaine"],
+    "domains": ["allergy", "anaesthesia", "immunology"],
+    "references": [
+      { "label": "Eggleston ST, Lush LW. Understanding allergic reactions to local anesthetics. Ann Pharmacother 1996." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "neuromuscular-blocker-quaternary-ammonium",
+    "allergen": "Neuromuscular blocking agents (rocuronium, succinylcholine, vecuronium)",
+    "crossReactsWith": "Other NMBAs via shared quaternary/tertiary ammonium epitope",
+    "risk": "moderate",
+    "mechanism": "IgE recognises the substituted ammonium ion common to NMBAs, so cross-reactivity is frequent: after rocuronium anaphylaxis ~44% test positive to succinylcholine and ~40% to vecuronium. Succinylcholine and rocuronium carry the highest anaphylaxis incidence.",
+    "recommendation": "After perioperative NMBA anaphylaxis, refer for skin testing of the whole class to identify a tolerated agent; do not assume a different NMBA is safe without testing.",
+    "drugSlugs": ["rocuronium", "suxamethonium", "vecuronium", "atracurium"],
+    "domains": ["allergy", "anaesthesia", "immunology"],
+    "references": [
+      { "label": "Reddy JI et al. Anaphylaxis is more common with rocuronium and succinylcholine than atracurium. Anesthesiology 2015." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "pholcodine-nmba-sensitisation",
+    "allergen": "Pholcodine (cough suppressant)",
+    "crossReactsWith": "Neuromuscular blocking agents (sensitisation)",
+    "risk": "moderate",
+    "mechanism": "Pholcodine shares the substituted ammonium epitope of NMBAs and can sensitise IgE, increasing the risk of NMBA anaphylaxis; this prompted its withdrawal from the European market.",
+    "recommendation": "Pholcodine has been withdrawn in many countries owing to its link with NMBA sensitisation; consider prior pholcodine exposure when investigating perioperative anaphylaxis.",
+    "drugSlugs": ["rocuronium", "suxamethonium"],
+    "domains": ["allergy", "anaesthesia", "immunology"],
+    "references": [
+      { "label": "Florvaag E, Johansson SGO. The pholcodine story. Immunol Allergy Clin North Am 2009; EMA referral 2023." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "iodinated-contrast-gadolinium-no-crossreact",
+    "allergen": "Iodinated radiocontrast media",
+    "crossReactsWith": "Gadolinium-based contrast agents",
+    "risk": "low",
+    "mechanism": "No true structural cross-reactivity (different molecules); however a prior iodinated-contrast reaction confers ~4-fold higher risk of a gadolinium reaction, reflecting a general atopic predisposition rather than cross-reactivity.",
+    "recommendation": "Iodinated-contrast allergy is not a contraindication to gadolinium and vice versa. In patients with a prior contrast reaction, consider a different agent and/or premedication; assess the index reaction rather than assuming cross-reactivity.",
+    "drugSlugs": [],
+    "domains": ["allergy", "radiology", "immunology"],
+    "references": [
+      { "label": "ACR Manual on Contrast Media (2023). Allergic-like reactions and cross-reactivity." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "iodinated-contrast-povidone-iodine-myth",
+    "allergen": "Iodinated radiocontrast media",
+    "crossReactsWith": "Povidone-iodine / topical iodine skin antiseptic",
+    "risk": "negligible",
+    "mechanism": "Reactions to iodinated contrast are not IgE-to-elemental-iodine; topical povidone-iodine reactions (usually irritant/contact dermatitis) do not predict contrast reactions. 'Iodine allergy' is a misnomer.",
+    "recommendation": "A povidone-iodine skin reaction does not contraindicate iodinated contrast. Document the actual culprit and reaction type rather than labelling 'iodine allergy'. Myth to dispel.",
+    "drugSlugs": [],
+    "domains": ["allergy", "radiology", "immunology"],
+    "references": [
+      { "label": "Schabelman E, Witting M. The relationship of radiocontrast, iodine, and seafood allergies. J Emerg Med 2010." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "opioid-mrgprx2-pseudoallergy",
+    "allergen": "Opioids (morphine, codeine) — pseudoallergy",
+    "crossReactsWith": "Histamine-releasing opioids via MRGPRX2 (non-IgE)",
+    "risk": "low",
+    "mechanism": "Morphine and codeine directly activate the mast-cell receptor MRGPRX2, releasing histamine (flushing, itch, wheal) without IgE or prior sensitisation. This is not antagonised by naloxone. Potency ranges from strong (morphine) to negligible (fentanyl).",
+    "recommendation": "Distinguish MRGPRX2-mediated pseudoallergy (predictable, dose/rate-related, no anaphylaxis features) from true IgE allergy. For pseudoallergy, slow administration or switch to a low-histamine agent (e.g. fentanyl); true allergy needs class-aware substitution.",
+    "drugSlugs": ["morphine", "codeine", "fentanyl"],
+    "domains": ["allergy", "pain"],
+    "references": [
+      { "label": "Mertes PM et al. Opioid toxicity: histamine, hypersensitivity, and MRGPRX2. Arch Toxicol 2022." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "opioid-structural-classes-true-allergy",
+    "allergen": "Opioids — true IgE allergy",
+    "crossReactsWith": "Within structural class (phenanthrenes / phenylpiperidines / diphenylheptanes)",
+    "risk": "low",
+    "mechanism": "Genuine IgE-mediated opioid allergy is rare and tends to cross-react within the same chemical class: phenanthrenes (morphine, codeine, oxycodone, hydromorphone), phenylpiperidines (fentanyl, pethidine), diphenylheptanes (methadone).",
+    "recommendation": "For confirmed true opioid allergy, switch to a different structural class (e.g. from a phenanthrene to fentanyl or methadone) rather than within-class.",
+    "drugSlugs": ["morphine", "oxycodone", "fentanyl", "methadone"],
+    "domains": ["allergy", "pain"],
+    "references": [
+      { "label": "Baldo BA, Pham NH. Histamine-releasing and allergenic properties of opioid analgesic drugs. Clin Exp Pharmacol Physiol 2012." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "egg-allergy-influenza-no-precautions",
+    "allergen": "Egg allergy",
+    "crossReactsWith": "Inactivated influenza vaccine (egg-based)",
+    "risk": "negligible",
+    "mechanism": "Egg-based influenza vaccines contain only trace ovalbumin (typically <=1 microgram/0.5 mL dose); large series show no excess severe reactions even with severe egg allergy.",
+    "recommendation": "From the 2023-24 season, ACIP advises NO additional precautions for influenza vaccination of egg-allergic people beyond those for any vaccine, regardless of prior reaction severity. Do not defer or special-site the vaccine for egg allergy.",
+    "drugSlugs": ["influenza-vaccine"],
+    "domains": ["allergy", "vaccine-preventable", "immunology"],
+    "references": [
+      { "label": "Grohskopf LA et al. ACIP Influenza Vaccination Recommendations 2023-24. MMWR 2023." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "egg-allergy-yellow-fever-caution",
+    "allergen": "Egg allergy",
+    "crossReactsWith": "Yellow fever vaccine (egg-propagated)",
+    "risk": "moderate",
+    "mechanism": "Yellow fever vaccine is propagated in hen eggs and contains substantial egg protein (~2.4-4.4 micrograms/mL), unlike influenza/MMR; egg allergy is a listed precaution/contraindication on label.",
+    "recommendation": "In egg-allergic patients needing yellow fever vaccine, refer for skin testing; if positive, give graded doses under supervision able to manage anaphylaxis. Many egg-allergic patients can still be vaccinated safely with a protocol.",
+    "drugSlugs": ["yellow-fever-vaccine"],
+    "domains": ["allergy", "vaccine-preventable", "immunology"],
+    "references": [
+      { "label": "BSACI guidance: Yellow fever vaccine and egg allergy." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "egg-allergy-mmr-safe-detail",
+    "allergen": "Egg allergy",
+    "crossReactsWith": "MMR vaccine",
+    "risk": "negligible",
+    "mechanism": "MMR is cultured in chick embryo fibroblasts and contains negligible egg protein; large series (e.g. 500 egg-allergic children) show no anaphylaxis.",
+    "recommendation": "Egg allergy is NOT a contraindication to MMR; vaccinate as routine in the usual setting. Myth to dispel.",
+    "drugSlugs": ["mmr-vaccine"],
+    "domains": ["allergy", "vaccine-preventable", "paediatrics"],
+    "references": [
+      { "label": "Public Health England Green Book Chapter 21 — MMR; Clark AT et al." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "latex-fruit-syndrome-hevein-detail",
+    "allergen": "Natural rubber latex (hevein, Hev b 6.02)",
+    "crossReactsWith": "Banana, avocado, kiwi, chestnut (class I chitinases)",
+    "risk": "moderate",
+    "mechanism": "Latex hevein shares ~70-80% sequence homology with hevein-like chitin-binding domains of fruit class I chitinases; 30-70% of latex-allergic patients show fruit sensitisation (avocado, banana, chestnut, kiwi most frequent).",
+    "recommendation": "Ask latex-allergic patients about banana/avocado/kiwi/chestnut reactions and vice versa; counsel on cross-reactive foods and ensure latex-safe environments. Severity varies from oral symptoms to anaphylaxis.",
+    "drugSlugs": [],
+    "domains": ["allergy", "immunology", "occupational-medicine"],
+    "references": [
+      { "label": "Blanco C et al. Latex-fruit syndrome. Curr Allergy Asthma Rep 2003." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vancomycin-flushing-vs-true-allergy",
+    "allergen": "Vancomycin",
+    "crossReactsWith": "Vancomycin infusion (flushing/'red man' syndrome) vs true IgE allergy",
+    "risk": "low",
+    "mechanism": "Vancomycin flushing reaction is a rate-dependent, non-IgE direct mast-cell histamine release (worse with rapid/high-dose infusion: 8/10 at 1 h vs 3/10 at 2 h); it is distinct from rare true IgE anaphylaxis and from delayed DRESS/SJS.",
+    "recommendation": "For flushing reaction, slow the infusion (>=1 hour per gram) and pre-treat with antihistamine — this is not a true allergy and does not require avoidance. Reserve avoidance/teicoplanin for true IgE allergy or severe delayed reactions.",
+    "drugSlugs": ["vancomycin"],
+    "domains": ["allergy", "infectious-disease", "immunology"],
+    "references": [
+      { "label": "Sivagnanam S, Deleu D. Red man syndrome. Crit Care 2003; Wallace MR et al. AAC 1991." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "aromatic-aed-hlab1502-crossreactivity",
+    "allergen": "Aromatic antiepileptic drugs (carbamazepine, oxcarbazepine, phenytoin)",
+    "crossReactsWith": "Other aromatic AEDs in HLA-B*15:02 carriers (SJS/TEN)",
+    "risk": "high",
+    "mechanism": "HLA-B*15:02 (common in Han Chinese / Southeast Asians) strongly predisposes to carbamazepine SJS/TEN, with moderate cross-risk for oxcarbazepine, phenytoin, lamotrigine and phenobarbital sharing the aromatic ring/arene-oxide pathway.",
+    "recommendation": "Screen HLA-B*15:02 before carbamazepine in at-risk ancestries; if positive or after SJS/TEN to one aromatic AED, avoid the others and choose a non-aromatic agent (levetiracetam, valproate, gabapentin).",
+    "drugSlugs": ["carbamazepine", "phenytoin", "phenobarbital", "lamotrigine"],
+    "domains": ["allergy", "neurology", "dermatology"],
+    "references": [
+      { "label": "Phillips EJ et al. CPIC Guideline for HLA-B genotype and carbamazepine dosing. Clin Pharmacol Ther 2018." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "allopurinol-hlab5801-distinct",
+    "allergen": "Allopurinol (severe cutaneous adverse reaction)",
+    "crossReactsWith": "Distinct HLA-B*58:01 risk — not the aromatic-AED HLA-B*15:02 pathway",
+    "risk": "high",
+    "mechanism": "Allopurinol SCAR/DRESS is strongly associated with HLA-B*58:01 (~93% of allopurinol-SCAR cases carry it), a different allele and oxypurinol-driven mechanism than the HLA-B*15:02 aromatic-anticonvulsant pathway.",
+    "recommendation": "Consider HLA-B*58:01 screening before allopurinol in high-prevalence ancestries (e.g. Han Chinese, Korean, Thai). After allopurinol SCAR, avoid allopurinol; febuxostat is an alternative urate-lowering agent (with its own assessment).",
+    "drugSlugs": ["allopurinol"],
+    "domains": ["allergy", "dermatology", "rheumatology"],
+    "references": [
+      { "label": "Saksit N et al. HLA-B*58:01 and allopurinol-induced SCAR in Thai population. Pharmacogenet Genomics 2017." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "aminoglycoside-class-crossreactivity-detail",
+    "allergen": "Aminoglycosides (neomycin, gentamicin, tobramycin)",
+    "crossReactsWith": "Other aminoglycosides (delayed contact and systemic)",
+    "risk": "moderate",
+    "mechanism": "Aminoglycosides share aminocyclitol/aminosugar structures; cross-reactivity is well recognised for delayed (type IV) contact hypersensitivity, classically topical neomycin cross-reacting with gentamicin/tobramycin.",
+    "recommendation": "After aminoglycoside contact or systemic hypersensitivity, avoid the class where feasible; if essential, specialist patch/skin testing can guide selection of a structurally distinct member.",
+    "drugSlugs": ["gentamicin", "amikacin", "streptomycin"],
+    "domains": ["allergy", "immunology", "dermatology"],
+    "references": [
+      { "label": "Schorr WF. Cross-sensitization to neomycin and related aminoglycosides. Contact Dermatitis literature." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "fluoroquinolone-class-low-crossreactivity",
+    "allergen": "Fluoroquinolones (ciprofloxacin, levofloxacin, moxifloxacin)",
+    "crossReactsWith": "Other fluoroquinolones (low, unpredictable)",
+    "risk": "low",
+    "mechanism": "In-class immediate cross-reactivity is low and variable (ciprofloxacin ~2.5%, levofloxacin ~2.0%, moxifloxacin ~5.3%); moxifloxacin carries the highest anaphylaxis risk and tolerance to one fluoroquinolone after reaction to another is common.",
+    "recommendation": "After a fluoroquinolone reaction, a different fluoroquinolone may be tolerated but is not guaranteed; for severe reactions prefer an alternative class or specialist-guided challenge.",
+    "drugSlugs": ["ciprofloxacin", "levofloxacin", "moxifloxacin"],
+    "domains": ["allergy", "immunology", "infectious-disease"],
+    "references": [
+      { "label": "Doña I et al. / fluoroquinolone immediate hypersensitivity cohort. Open Forum Infect Dis 2022." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "chlorhexidine-biguanide-crossreactivity",
+    "allergen": "Chlorhexidine (IgE-mediated allergy)",
+    "crossReactsWith": "Other biguanide antiseptics (polyhexanide/PHMB; octenidine partial)",
+    "risk": "moderate",
+    "mechanism": "IgE reactivity to the biguanide/hexamethylene moiety is detectable in ~15-33% of chlorhexidine-allergic patients, giving cross-reactivity with polyhexanide; octenidine shares hexamethylene groups (in-vitro cross-reactivity) but appears low-risk in vivo.",
+    "recommendation": "In confirmed chlorhexidine anaphylaxis, avoid chlorhexidine on all routes (including impregnated devices) and avoid polyhexanide; octenidine or povidone-iodine are usual alternatives with allergist input.",
+    "drugSlugs": ["chlorhexidine"],
+    "domains": ["allergy", "anaesthesia", "immunology"],
+    "references": [
+      { "label": "Opstrup MS et al. IgE-mediated chlorhexidine allergy — cross-reactivity with biguanide disinfectants. Clin Exp Allergy 2020." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "alpha-gal-cetuximab-crossreactivity",
+    "allergen": "Alpha-gal (galactose-alpha-1,3-galactose) sensitisation",
+    "crossReactsWith": "Cetuximab and mammalian-derived products",
+    "risk": "high",
+    "mechanism": "Pre-existing IgE to alpha-gal (often from tick bites, e.g. lone star tick) binds the alpha-gal oligosaccharide on the Fab portion of cetuximab, causing first-dose anaphylaxis; the same IgE causes delayed mammalian-meat allergy.",
+    "recommendation": "In patients with alpha-gal syndrome or high tick-bite exposure, recognise risk of immediate cetuximab anaphylaxis; consider alpha-gal IgE testing and use mammalian-free alternatives where possible.",
+    "drugSlugs": ["cetuximab"],
+    "domains": ["allergy", "oncology", "immunology"],
+    "references": [
+      { "label": "Chung CH et al. Cetuximab-induced anaphylaxis and IgE specific for galactose-alpha-1,3-galactose. NEJM 2008." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ace-arb-angioedema-crossreactivity",
+    "allergen": "ACE inhibitor-induced angioedema",
+    "crossReactsWith": "Angiotensin receptor blockers (ARBs) and sacubitril/valsartan (ARNI)",
+    "risk": "low",
+    "mechanism": "ACE-inhibitor angioedema is bradykinin-mediated; ARBs do not inhibit bradykinin breakdown so cross-reactivity is low, but a minority of patients have recurrent angioedema on an ARB. Sacubitril (neprilysin inhibition) raises bradykinin and is contraindicated after ACE-inhibitor angioedema.",
+    "recommendation": "After ACE-inhibitor angioedema, an ARB may be used with caution if needed (low recurrence). Do NOT use sacubitril/valsartan after any ACE-inhibitor/ARB angioedema, and observe a 36-hour washout when switching ACE inhibitor to ARNI.",
+    "drugSlugs": ["lisinopril", "ramipril", "losartan", "valsartan"],
+    "domains": ["allergy", "cardiology"],
+    "references": [
+      { "label": "Brown T et al. ACE inhibitor-induced angioedema: a review. J Clin Hypertens 2017." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "peg-polysorbate-crossreactivity",
+    "allergen": "Polyethylene glycol (PEG / macrogol)",
+    "crossReactsWith": "Polysorbate 80 (partial, PEG moiety)",
+    "risk": "moderate",
+    "mechanism": "PEG is an underrecognised cause of immediate hypersensitivity/anaphylaxis (laxatives, depot steroids, mRNA COVID-19 vaccines); polysorbate 80 contains PEG-like moieties and can cross-react in some PEG-allergic patients, though many tolerate polysorbate-containing products.",
+    "recommendation": "In suspected PEG anaphylaxis, review all PEGylated products and seek allergist testing; polysorbate-containing vaccines may be tolerated but should be given under supervision after assessment.",
+    "drugSlugs": [],
+    "domains": ["allergy", "immunology"],
+    "references": [
+      { "label": "Stone CA et al. Immediate hypersensitivity to PEG and polysorbates. J Allergy Clin Immunol Pract 2019." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "pollen-food-syndrome-betv1",
+    "allergen": "Birch pollen (Bet v 1, PR-10 protein)",
+    "crossReactsWith": "Rosaceae fruits and others (apple Mal d 1, cherry, apricot, hazelnut, celery)",
+    "risk": "low",
+    "mechanism": "Pollen-food (oral allergy) syndrome: IgE to birch Bet v 1 cross-reacts with homologous PR-10 proteins in apple, cherry, hazelnut, celery. These allergens are heat- and pepsin-labile, so symptoms are usually limited to oral itch/swelling.",
+    "recommendation": "Counsel that cooked/processed forms are usually tolerated; systemic reactions are uncommon but possible (especially hazelnut). Profilin sensitisation broadens cross-reactivity. Carry antihistamine; adrenaline if prior systemic reaction.",
+    "drugSlugs": [],
+    "domains": ["allergy", "immunology"],
+    "references": [
+      { "label": "Werfel T et al. Position paper on pollen-food allergy syndrome. Allergy 2015." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cephalosporin-penicillin-generation-detail",
+    "allergen": "Penicillins",
+    "crossReactsWith": "Cephalosporins by generation (first > later)",
+    "risk": "low",
+    "mechanism": "The historical '10% cross-reactivity' figure is a myth. Pooled cross-reactivity is ~1% with first-generation cephalosporins (which more often share side chains with older penicillins) and negligible (OR ~1.1) with second- and later-generation agents; side-chain similarity, not generation per se, drives risk.",
+    "recommendation": "For penicillin allergy, later-generation cephalosporins with dissimilar side chains carry negligible risk. Do not blanket-avoid all cephalosporins; assess shared side chains and reaction severity.",
+    "drugSlugs": ["benzylpenicillin", "cefuroxime", "ceftriaxone"],
+    "domains": ["allergy", "immunology", "infectious-disease"],
+    "references": [
+      { "label": "Pichichero ME. A review of evidence supporting use of selected cephalosporins in penicillin-allergic patients. Pediatrics 2005." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "platinum-chemo-crossreactivity-detail",
+    "allergen": "Platinum chemotherapy (carboplatin, oxaliplatin)",
+    "crossReactsWith": "Other platinum agents (carboplatin <-> oxaliplatin), cisplatin usually spared",
+    "risk": "moderate",
+    "mechanism": "Platinum agents cause IgE-mediated hypersensitivity, typically after repeated cycles. Cross-reactivity is ~45% carboplatin in oxaliplatin-allergic and ~37% oxaliplatin in carboplatin-allergic patients, but cisplatin cross-reactivity is low (0-7%).",
+    "recommendation": "After hypersensitivity to one platinum, skin testing guides substitution; cisplatin is frequently tolerated after carboplatin/oxaliplatin reactions. Consider desensitisation if the platinum is essential.",
+    "drugSlugs": ["carboplatin", "oxaliplatin", "cisplatin"],
+    "domains": ["allergy", "oncology", "immunology"],
+    "references": [
+      { "label": "Caiado J et al. Low cross-reactivity between cisplatin and other platinum salts. J Allergy Clin Immunol Pract 2019." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "heparin-lmwh-delayed-crossreactivity",
+    "allergen": "Heparins (unfractionated and LMWH)",
+    "crossReactsWith": "Other heparins/LMWH (delayed-type cutaneous hypersensitivity); fondaparinux usually spared",
+    "risk": "moderate",
+    "mechanism": "Delayed-type (type IV) hypersensitivity to subcutaneous heparins shows broad cross-reactivity across UFH and LMWHs independent of molecular weight; fondaparinux (synthetic pentasaccharide) is tolerated in the great majority (cross-reactivity ~6%).",
+    "recommendation": "For delayed-type heparin skin reactions, intradermal testing identifies a tolerated agent; fondaparinux is the usual alternative. This delayed hypersensitivity is distinct from HIT (an antibody-mediated prothrombotic disorder).",
+    "drugSlugs": ["enoxaparin", "dalteparin", "fondaparinux"],
+    "domains": ["allergy", "haematology", "immunology"],
+    "references": [
+      { "label": "Ludwig RJ et al. Delayed-type hypersensitivity to heparins and heparinoids: cross-reactivity. J Am Acad Dermatol 2007." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "macrolide-class-low-crossreactivity",
+    "allergen": "Macrolides (erythromycin, clarithromycin, azithromycin)",
+    "crossReactsWith": "Other macrolides (limited, structure-dependent)",
+    "risk": "low",
+    "mechanism": "Macrolide allergy is uncommon. There is no robust evidence for class-wide cross-reactivity; case reports describe cross-reactivity within the 14-membered ring agents (erythromycin/clarithromycin) and with the 15-membered azithromycin, but many patients tolerate a different macrolide.",
+    "recommendation": "After a macrolide reaction, an alternative macrolide is often tolerated but not guaranteed; for severe reactions choose another class or use specialist-guided challenge. Macrolides do not cross-react with other antibiotic classes.",
+    "drugSlugs": ["erythromycin", "clarithromycin", "azithromycin"],
+    "domains": ["allergy", "immunology", "infectious-disease"],
+    "references": [
+      { "label": "Barni S et al. Macrolide allergic reactions. Pharmaceuticals 2019 (PMC6789826)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "tetracycline-class-crossreactivity",
+    "allergen": "Tetracyclines (doxycycline, minocycline)",
+    "crossReactsWith": "Other tetracyclines (inconsistent)",
+    "risk": "low",
+    "mechanism": "Tetracycline hypersensitivity is rare. Cross-reactivity between doxycycline and minocycline is inconsistent in the literature (both cross-reactivity and lack of it reported), including for fixed drug eruption; minocycline carries the highest severe-reaction burden.",
+    "recommendation": "After a tetracycline reaction a different tetracycline may be tolerated but cannot be assumed safe; skin testing and graded challenge help when the index reaction was non-severe.",
+    "drugSlugs": ["doxycycline", "minocycline"],
+    "domains": ["allergy", "immunology", "infectious-disease"],
+    "references": [
+      { "label": "Raja H et al. Hypersensitivity to tetracyclines: skin testing, challenge, desensitization. Ann Allergy Asthma Immunol 2020." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "hymenoptera-venom-ccd-crossreactivity",
+    "allergen": "Honeybee venom",
+    "crossReactsWith": "Vespid (wasp/hornet) venom",
+    "risk": "moderate",
+    "mechanism": "Over half of venom-allergic patients are double-positive to bee and vespid venom. Much apparent cross-reactivity is due to cross-reactive carbohydrate determinants (CCDs, alpha-1,3-fucosylated N-glycans) and homologous hyaluronidases (Api m 2/Ves v 2) rather than true dual protein allergy.",
+    "recommendation": "In double-positive patients, use recombinant component testing (e.g. Api m 1 vs Ves v 5) and CCD inhibition to distinguish true dual sensitisation from CCD cross-reactivity before selecting venom immunotherapy.",
+    "drugSlugs": [],
+    "domains": ["allergy", "immunology"],
+    "references": [
+      { "label": "Sturm GJ et al. EAACI guideline on Hymenoptera venom allergy; Hemmer W. Allergy 2008." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "hdm-shellfish-tropomyosin-detail",
+    "allergen": "House dust mite (Der p 10 tropomyosin)",
+    "crossReactsWith": "Shrimp/crustacean tropomyosin (Pen a 1)",
+    "risk": "low",
+    "mechanism": "Mite, crustacean and cockroach tropomyosins share ~75-80% sequence identity; IgE to mite Der p 10 cross-reacts with shrimp Pen a 1. Only ~10% of mite-allergic patients are Der p 10-sensitised, and sensitisation does not always mean clinical shellfish allergy.",
+    "recommendation": "Der p 10 sensitisation flags risk of crustacean cross-reactivity, but diagnose clinical shellfish allergy by history/challenge, not mite sensitisation alone. Shellfish allergy is also not a contraindication to iodinated contrast.",
+    "drugSlugs": [],
+    "domains": ["allergy", "immunology", "respiratory"],
+    "references": [
+      { "label": "Boquete M et al. Tropomyosin sensitization in house dust mite allergic patients. Ann Allergy Asthma Immunol 2011." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cow-milk-goat-sheep-crossreactivity",
+    "allergen": "Cow's milk protein allergy",
+    "crossReactsWith": "Goat and sheep milk (high cross-reactivity)",
+    "risk": "high",
+    "mechanism": "Goat and sheep alpha-S1-caseins share ~85-88% identity with cow casein and cross-react in >90% of cow's-milk-allergic patients via shared kappa-casein epitopes; goat/sheep milk are NOT safe substitutes.",
+    "recommendation": "Do not substitute goat or sheep milk for cow's milk allergy. Use an extensively hydrolysed or amino-acid formula (infants) or plant-based alternatives; mare/donkey milk is occasionally tolerated but unverified per patient.",
+    "drugSlugs": [],
+    "domains": ["allergy", "immunology", "paediatrics"],
+    "references": [
+      { "label": "Restani P et al. Cross-reactivity between mammalian milk proteins. Clin Exp Allergy 1999." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "cow-milk-beef-low-crossreactivity",
+    "allergen": "Cow's milk protein allergy",
+    "crossReactsWith": "Beef (bovine serum albumin)",
+    "risk": "low",
+    "mechanism": "Cross-reactivity to beef occurs in only ~10% of cow's-milk-allergic patients (mediated by heat-labile bovine serum albumin); thoroughly cooked beef is usually tolerated.",
+    "recommendation": "Most milk-allergic patients tolerate beef, especially well-cooked. Do not routinely exclude beef for milk allergy; assess by history. (Distinct from alpha-gal mammalian-meat allergy.)",
+    "drugSlugs": [],
+    "domains": ["allergy", "immunology", "paediatrics"],
+    "references": [
+      { "label": "Werfel SJ et al. Clinical reactivity to beef in milk-allergic children. J Allergy Clin Immunol 1997." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "peanut-legume-sensitisation-vs-allergy",
+    "allergen": "Peanut allergy",
+    "crossReactsWith": "Other legumes (soy, lentil, chickpea, lupine)",
+    "risk": "low",
+    "mechanism": "Serological co-sensitisation between peanut and other legumes is common (e.g. soy ~87%, lupine ~82%) but clinically relevant allergy occurs in a minority (~29-35% by challenge); lupine and chickpea/lentil pairs are the more clinically relevant.",
+    "recommendation": "Do not routinely exclude all legumes for peanut allergy based on sensitisation tests alone; confirm clinical reactivity. Counsel specifically about lupine flour, which can cause reactions in peanut-allergic patients.",
+    "drugSlugs": [],
+    "domains": ["allergy", "immunology"],
+    "references": [
+      { "label": "Mueller GA et al. Cross-reactivity of peanut allergens. Curr Allergy Asthma Rep 2014." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "monobactam-aztreonam-safe-general",
+    "allergen": "Penicillins and most cephalosporins",
+    "crossReactsWith": "Aztreonam (monobactam) — generally safe",
+    "risk": "negligible",
+    "mechanism": "Aztreonam's monocyclic beta-lactam lacks the bicyclic structure and shares no immunogenic side chain with penicillins or most cephalosporins (sole exception: ceftazidime); skin-test studies in penicillin-allergic patients are negative.",
+    "recommendation": "Aztreonam is a safe gram-negative option in penicillin/cephalosporin allergy, except in patients allergic to ceftazidime (shared side chain). Useful when carbapenems are also to be avoided.",
+    "drugSlugs": ["aztreonam"],
+    "domains": ["allergy", "immunology", "infectious-disease"],
+    "references": [
+      { "label": "Patriarca G et al. Tolerability of aztreonam in penicillin-allergic patients. Int J Immunopathol Pharmacol 2008." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "sulfasalazine-sulfonamide-antibiotic",
+    "allergen": "Sulfonamide antibiotics (sulfamethoxazole)",
+    "crossReactsWith": "Sulfasalazine (contains a sulfapyridine antibiotic moiety)",
+    "risk": "moderate",
+    "mechanism": "Unlike non-antibiotic sulfonamides, sulfasalazine is metabolised to sulfapyridine, an arylamine sulfonamide antibiotic; it can therefore cross-react with sulfonamide-antibiotic allergy (distinct from the diuretic/sulfonylurea myth).",
+    "recommendation": "Use sulfasalazine with caution in confirmed sulfonamide-antibiotic allergy. This is a genuine exception to the rule that non-antibiotic sulfonamides do not cross-react.",
+    "drugSlugs": ["sulfasalazine", "cotrimoxazole"],
+    "domains": ["allergy", "immunology", "rheumatology"],
+    "references": [
+      { "label": "Brackett CC et al. Likelihood of cross-allergenicity among sulfonamides. Pharmacotherapy 2004." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "local-anaesthetic-ester-paba-detail",
+    "allergen": "Ester local anaesthetics (procaine, benzocaine, tetracaine)",
+    "crossReactsWith": "Other esters and PABA-related compounds (some sunscreens, sulfonamides debated)",
+    "risk": "moderate",
+    "mechanism": "Ester local anaesthetics are metabolised to para-aminobenzoic acid (PABA), the common allergenic determinant, so esters cross-react with each other; cross-reactivity to amide local anaesthetics does not occur.",
+    "recommendation": "After an ester local anaesthetic reaction, avoid all esters and use an amide (e.g. lidocaine, bupivacaine), which do not share the PABA determinant.",
+    "drugSlugs": ["lidocaine", "bupivacaine"],
+    "domains": ["allergy", "anaesthesia", "immunology"],
+    "references": [
+      { "label": "Eggleston ST, Lush LW. Understanding allergic reactions to local anesthetics. Ann Pharmacother 1996." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "neomycin-vaccine-trace-crossreactivity",
+    "allergen": "Neomycin (delayed contact allergy)",
+    "crossReactsWith": "Vaccines containing trace neomycin (e.g. MMR, some others)",
+    "risk": "negligible",
+    "mechanism": "Neomycin contact allergy is delayed (type IV); trace neomycin in vaccines is not a contraindication and at most causes a delayed local reaction, not anaphylaxis. A history of anaphylaxis to neomycin (rare) is the only relevant precaution.",
+    "recommendation": "Delayed-type neomycin contact allergy is NOT a contraindication to neomycin-containing vaccines; proceed with routine vaccination. Reserve precautions for the rare true neomycin anaphylaxis.",
+    "drugSlugs": ["mmr-vaccine"],
+    "domains": ["allergy", "vaccine-preventable", "dermatology"],
+    "references": [
+      { "label": "CDC General Best Practice Guidelines for Immunization — allergy/contraindications." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "carbamazepine-tricyclic-crossreactivity",
+    "allergen": "Carbamazepine",
+    "crossReactsWith": "Tricyclic antidepressants / oxcarbazepine (structural relatives)",
+    "risk": "low",
+    "mechanism": "Carbamazepine shares a dibenzazepine tricyclic structure with oxcarbazepine and (more loosely) tricyclic antidepressants; cross-hypersensitivity is best established with oxcarbazepine (~25-30% in carbamazepine-hypersensitive patients).",
+    "recommendation": "After carbamazepine hypersensitivity, avoid oxcarbazepine where possible (significant cross-reactivity); choose a structurally unrelated antiepileptic. TCA cross-reactivity is theoretical and rarely clinically relevant.",
+    "drugSlugs": ["carbamazepine"],
+    "domains": ["allergy", "neurology", "dermatology"],
+    "references": [
+      { "label": "Hyson C, Sadler M. Cross-reactivity of skin rashes with carbamazepine and oxcarbazepine. Can J Neurol Sci 1997." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "abacavir-hlab5701",
+    "allergen": "Abacavir",
+    "crossReactsWith": "HLA-B*57:01-restricted hypersensitivity (drug-specific, no other-drug cross-reactivity)",
+    "risk": "high",
+    "mechanism": "Abacavir hypersensitivity is strongly and specifically linked to HLA-B*57:01, which alters self-peptide presentation; the reaction is abacavir-specific and does not cross-react with other antiretrovirals.",
+    "recommendation": "Screen HLA-B*57:01 before starting abacavir; if positive, do NOT use abacavir (and never rechallenge after a reaction — rechallenge can be fatal). Other NRTIs do not cross-react.",
+    "drugSlugs": ["abacavir"],
+    "domains": ["allergy", "infectious-disease", "immunology"],
+    "references": [
+      { "label": "Mallal S et al. HLA-B*5701 screening for hypersensitivity to abacavir (PREDICT-1). NEJM 2008." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "radiocontrast-prior-reaction-crossreactivity",
+    "allergen": "Iodinated contrast (prior immediate reaction)",
+    "crossReactsWith": "Other iodinated contrast agents (variable; some share side chains)",
+    "risk": "moderate",
+    "mechanism": "Recent data show some iodinated contrast immediate reactions are IgE/skin-test positive with cross-reactivity clustering among agents sharing structural features; a prior reaction is the strongest predictor of a future reaction.",
+    "recommendation": "After an immediate contrast reaction, switch to a different (ideally skin-test-negative) iodinated agent and/or premedicate; assess the index reaction rather than relying on 'iodine/shellfish allergy'.",
+    "drugSlugs": [],
+    "domains": ["allergy", "radiology", "immunology"],
+    "references": [
+      { "label": "Clement O et al. Cross-reactivity in hypersensitivity reactions to contrast agents. Eur Radiol 2024." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "iv-iron-hypersensitivity-crossreactivity",
+    "allergen": "IV iron preparations",
+    "crossReactsWith": "Other IV iron products (mostly complement-mediated, not true cross-allergy)",
+    "risk": "low",
+    "mechanism": "Most IV iron infusion reactions are complement activation-related pseudo-allergy (CARPA) to the carbohydrate shell rather than IgE; true cross-reactivity between products is low and a reaction to one does not reliably predict reactions to a different formulation.",
+    "recommendation": "Manage iron infusion reactions by slowing/stopping the infusion; a reaction to one IV iron does not mandate lifelong avoidance of all IV iron, but switch product and reduce rate. Distinguish from true anaphylaxis.",
+    "drugSlugs": [],
+    "domains": ["allergy", "haematology", "immunology"],
+    "references": [
+      { "label": "Rampton D et al. Hypersensitivity reactions to IV iron: guidance. Haematologica 2014." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "propofol-egg-soy-myth",
+    "allergen": "Egg or soy allergy",
+    "crossReactsWith": "Propofol (lipid emulsion containing egg lecithin / soybean oil)",
+    "risk": "negligible",
+    "mechanism": "Propofol allergy is rare and usually due to the phenol/isopropyl moiety; egg allergy is typically to egg-white proteins (ovalbumin), whereas propofol contains purified egg-yolk lecithin. Evidence does not support meaningful cross-reactivity with egg or soy allergy.",
+    "recommendation": "Egg or soy allergy is NOT a reason to withhold propofol in most patients (current anaesthesia guidance). Reserve caution for confirmed severe egg/soy anaphylaxis and discuss with anaesthesia. Myth to dispel.",
+    "drugSlugs": ["propofol"],
+    "domains": ["allergy", "anaesthesia", "immunology"],
+    "references": [
+      { "label": "Asserhoj LL et al. No evidence for contraindicating propofol in egg/soy/peanut allergy. Br J Anaesth 2016." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "monoclonal-antibody-infusion-reaction",
+    "allergen": "Therapeutic monoclonal antibodies (e.g. rituximab, infliximab)",
+    "crossReactsWith": "Class effect (infusion reactions) and chimeric/murine components",
+    "risk": "moderate",
+    "mechanism": "Many mAb infusion reactions are cytokine-release or complement-mediated rather than IgE; chimeric/murine antibodies (e.g. infliximab, cetuximab) carry higher immunogenicity. True IgE cross-reactivity is product-specific, not a uniform class effect.",
+    "recommendation": "Distinguish infusion/cytokine-release reactions (manage by slowing infusion, premedication) from true IgE anaphylaxis. A reaction to one mAb does not preclude an unrelated mAb; switching to a humanised/fully human agent may help.",
+    "drugSlugs": ["rituximab", "infliximab"],
+    "domains": ["allergy", "immunology", "oncology"],
+    "references": [
+      { "label": "Picard M, Galvao VR. Current knowledge and management of hypersensitivity to mAbs. J Allergy Clin Immunol Pract 2017." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ppi-class-crossreactivity-detail",
+    "allergen": "Proton pump inhibitors (omeprazole, esomeprazole)",
+    "crossReactsWith": "Other PPIs (benzimidazole core)",
+    "risk": "moderate",
+    "mechanism": "PPIs share a substituted benzimidazole core; IgE-mediated cross-reactivity is reported, with the closest cross-reactivity between enantiomer pairs (omeprazole/esomeprazole) and somewhat less to structurally distinct PPIs (e.g. pantoprazole).",
+    "recommendation": "After PPI hypersensitivity, a structurally more distant PPI (e.g. pantoprazole after an omeprazole-group reaction) may be tolerated but should be introduced cautiously / with skin testing; an H2 antagonist is an alternative.",
+    "drugSlugs": ["omeprazole", "esomeprazole", "pantoprazole"],
+    "domains": ["allergy", "immunology", "gastroenterology"],
+    "references": [
+      { "label": "Bose S et al. Hypersensitivity to proton pump inhibitors and cross-reactivity. Ann Allergy Asthma Immunol literature." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "vancomycin-teicoplanin-crossreactivity",
+    "allergen": "Vancomycin (true delayed/immune hypersensitivity)",
+    "crossReactsWith": "Teicoplanin (glycopeptide)",
+    "risk": "low",
+    "mechanism": "Teicoplanin is a glycopeptide structurally related to vancomycin; cross-reactivity occurs in a minority (case series suggest most vancomycin-hypersensitive patients tolerate teicoplanin), but severe delayed reactions (DRESS) can cross-react.",
+    "recommendation": "Teicoplanin is often tolerated in vancomycin hypersensitivity but is not guaranteed safe — introduce cautiously, especially after severe delayed reactions (DRESS/SJS). Note: the rate-dependent flushing reaction is not a true allergy.",
+    "drugSlugs": ["vancomycin", "teicoplanin"],
+    "domains": ["allergy", "immunology", "infectious-disease"],
+    "references": [
+      { "label": "Hsiao SH et al. Teicoplanin in patients with vancomycin hypersensitivity. Int J Antimicrob Agents 2010." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "wheat-grain-crossreactivity-detail",
+    "allergen": "Wheat allergy",
+    "crossReactsWith": "Other gluten-containing grains (barley, rye) and grass pollen",
+    "risk": "moderate",
+    "mechanism": "Wheat, barley and rye share homologous gluten/prolamin and other proteins giving variable cross-reactivity; grass-pollen profilin and CCDs can also cross-react. Wheat allergy is distinct from coeliac disease and from non-IgE wheat intolerance.",
+    "recommendation": "Assess clinical reactivity to individual grains rather than excluding all on sensitisation alone. Consider wheat-dependent exercise-induced anaphylaxis (omega-5-gliadin) in exertional reactions. Distinguish from coeliac disease.",
+    "drugSlugs": [],
+    "domains": ["allergy", "immunology"],
+    "references": [
+      { "label": "Cianferoni A. Wheat allergy: diagnosis and management. J Asthma Allergy 2016." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "insulin-excipient-crossreactivity",
+    "allergen": "Insulin (suspected allergy)",
+    "crossReactsWith": "Excipients (protamine, metacresol, zinc) more often than insulin itself",
+    "risk": "low",
+    "mechanism": "True allergy to modern human/analogue insulin is rare; most local reactions are to excipients such as protamine (also relevant to protamine reversal of heparin), metacresol or zinc rather than the insulin molecule.",
+    "recommendation": "For suspected insulin allergy, change preparation/device and test for excipient sensitisation; protamine-containing (NPH) insulin allergy also flags risk with protamine used to reverse heparin. Desensitisation is available if no alternative.",
+    "drugSlugs": ["insulin"],
+    "domains": ["allergy", "endocrinology", "immunology"],
+    "references": [
+      { "label": "Heinzerling L et al. Insulin allergy: clinical manifestations and management. Allergy 2008." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "nsaid-single-drug-selective",
+    "allergen": "Single-NSAID-induced urticaria/anaphylaxis (selective phenotype)",
+    "crossReactsWith": "Does NOT cross-react with chemically unrelated NSAIDs",
+    "risk": "low",
+    "mechanism": "In the selective (SNIUAA/SNIDR) immunological phenotype, the reaction is specific to one NSAID (or its close structural relatives) and other chemically unrelated COX-1 inhibitors are tolerated — opposite to the cross-reactive COX-1 phenotype.",
+    "recommendation": "Confirm phenotype: for selective single-NSAID reactors, avoid only the culprit and structurally related agents; other NSAID classes (including COX-1 inhibitors) are usually safe under specialist guidance.",
+    "drugSlugs": ["ibuprofen", "diclofenac", "naproxen"],
+    "domains": ["allergy", "immunology"],
+    "references": [
+      { "label": "Kowalski ML et al. EAACI/GA2LEN classification of NSAID hypersensitivity. Allergy 2013." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "lamotrigine-aromatic-aed-rash",
+    "allergen": "Lamotrigine",
+    "crossReactsWith": "Aromatic antiepileptic drugs (cross-hypersensitivity for severe rash)",
+    "risk": "moderate",
+    "mechanism": "Lamotrigine causes dose/titration-related rash and can participate in aromatic-AED cross-hypersensitivity (SJS/TEN), with HLA-B*15:02 a weaker risk factor than for carbamazepine; rapid dose escalation increases risk.",
+    "recommendation": "Titrate lamotrigine slowly. After SJS/TEN or DRESS to an aromatic AED, avoid lamotrigine and other aromatic agents; choose a non-aromatic alternative (levetiracetam, valproate).",
+    "drugSlugs": ["lamotrigine", "carbamazepine"],
+    "domains": ["allergy", "neurology", "dermatology"],
+    "references": [
+      { "label": "Hirsch LJ et al. Cross-sensitivity of skin rashes with antiepileptic drugs. Neurology 2008." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "succinylcholine-isolated-allergy",
+    "allergen": "Succinylcholine (suxamethonium)",
+    "crossReactsWith": "Other neuromuscular blockers (variable, via ammonium epitope)",
+    "risk": "moderate",
+    "mechanism": "Succinylcholine is a leading cause of perioperative anaphylaxis (incidence ~1:2080) via IgE to the quaternary ammonium ion; cross-reactivity with aminosteroidal NMBAs (rocuronium, vecuronium) is common but not universal.",
+    "recommendation": "After succinylcholine anaphylaxis, perform skin testing across the NMBA class to find a tolerated agent for future anaesthesia; do not assume any specific alternative NMBA is safe without testing.",
+    "drugSlugs": ["suxamethonium", "rocuronium", "atracurium"],
+    "domains": ["allergy", "anaesthesia", "immunology"],
+    "references": [
+      { "label": "Reddy JI et al. Anaphylaxis with rocuronium and succinylcholine. Anesthesiology 2015; NAP6 (RCoA 2018)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "chlorhexidine-impregnated-devices",
+    "allergen": "Chlorhexidine (IgE allergy)",
+    "crossReactsWith": "Chlorhexidine-coated medical devices (central lines, dressings, lubricant gels)",
+    "risk": "high",
+    "mechanism": "Chlorhexidine is a hidden allergen in coated central venous catheters, antimicrobial dressings and urinary catheter lubricant gels; parenteral/mucosal exposure in a sensitised patient can cause anaphylaxis with no obvious culprit.",
+    "recommendation": "In confirmed chlorhexidine allergy, flag all chlorhexidine-coated devices, dressings and gels as well as antiseptic solutions; use chlorhexidine-free alternatives across the whole care pathway.",
+    "drugSlugs": ["chlorhexidine"],
+    "domains": ["allergy", "anaesthesia", "critical-care"],
+    "references": [
+      { "label": "NAP6 — Perioperative anaphylaxis (RCoA 2018); MHRA chlorhexidine alert." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "corticosteroid-coopman-crossreactivity",
+    "allergen": "Topical corticosteroids (contact allergy)",
+    "crossReactsWith": "Other corticosteroids by Coopman structural group (A/B/C/D)",
+    "risk": "moderate",
+    "mechanism": "Corticosteroid contact allergy cross-reacts predominantly within Coopman structural groups (A hydrocortisone/tixocortol type; B acetonides incl. budesonide; C betamethasone type; D esters). Budesonide is unusual, cross-reacting across groups B and D.",
+    "recommendation": "After corticosteroid contact allergy, patch test with tixocortol pivalate and budesonide as screeners and select a steroid from a non-cross-reacting group; budesonide reactivity warrants avoiding both acetonides and esters.",
+    "drugSlugs": ["hydrocortisone", "budesonide"],
+    "domains": ["allergy", "dermatology", "immunology"],
+    "references": [
+      { "label": "Baeck M et al. Allergic hypersensitivity to topical and systemic corticosteroids: a review. Allergy 2009." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "sulfite-sensitivity-not-sulfonamide",
+    "allergen": "Sulfite / metabisulfite sensitivity",
+    "crossReactsWith": "NOT sulfonamide antibiotics, sulfates, or elemental sulfur",
+    "risk": "low",
+    "mechanism": "Sulfite sensitivity (e.g. metabisulfite preservative in foods, wine, and some drug formulations) is a non-IgE intolerance that can trigger bronchospasm in ~5% of asthmatics; it is unrelated to sulfonamide-antibiotic allergy and to sulfates.",
+    "recommendation": "Do not conflate sulfite sensitivity with sulfonamide allergy — they are different. Sulfite-sensitive (often asthmatic) patients should avoid sulfite-preserved products but need not avoid sulfonamide antibiotics, sulfates or sulfur.",
+    "drugSlugs": [],
+    "domains": ["allergy", "respiratory", "immunology"],
+    "references": [
+      { "label": "ASCIA. Sulfite sensitivity patient information; Vally H, Misso NLA. Adverse reactions to dietary sulfites." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "aspirin-desensitisation-cardiac-nerd",
+    "allergen": "Aspirin hypersensitivity",
+    "crossReactsWith": "Cross-reactive NSAID phenotype (NERD) — but desensitisation enables continuous therapy",
+    "risk": "moderate",
+    "mechanism": "Aspirin desensitisation induces a refractory state allowing continuous daily aspirin despite cross-reactive (COX-1) hypersensitivity; effective for NERD (improves sinonasal/asthma control after polypectomy) and to enable essential antiplatelet therapy in coronary disease.",
+    "recommendation": "For patients with aspirin hypersensitivity who have a compelling indication (NERD needing control, or coronary disease needing aspirin), refer for supervised aspirin desensitisation; the protective effect requires uninterrupted daily dosing.",
+    "drugSlugs": ["aspirin"],
+    "domains": ["allergy", "respiratory", "cardiology"],
+    "references": [
+      { "label": "Rossini R et al. Aspirin desensitization in patients with coronary artery disease. Circ Cardiovasc Interv 2017; White AA, Stevenson DD. NEJM 2018." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
   }
 ]

@@ -103,7 +103,16 @@ export type CdsRuleType =
   | 'schistosomiasis-treatment'
   | 'imci-ear-infection'
   | 'neonatal-sepsis'
-  | 'heat-stroke';
+  | 'heat-stroke'
+  /**
+   * Content-only rules carry `type: null` (no bespoke strategy) — they
+   * are rendered by BundleOutcomeStrategy from their `outcomes[]`, or are
+   * `documentationOnly`. Arbitrary strings are tolerated for rules whose
+   * declared type does not (yet) have a registered strategy; the coverage
+   * test flags those unless they are documentationOnly.
+   */
+  | (string & {})
+  | null;
 
 export type CdsHook =
   | 'patient-view'
@@ -164,6 +173,37 @@ export interface CdsRule extends ContentReviewMetadata {
    * AMA CPT, and US NDC.
    */
   codings?: CodedReference[];
+  /**
+   * Self-contained card content declared directly in the bundle. When a
+   * rule's `type` has no bespoke strategy registered, the generic
+   * BundleOutcomeStrategy renders one CDS card per outcome straight from
+   * this array — no per-rule TypeScript needed. Each outcome is already
+   * cited via the rule's `references`.
+   *
+   * A rule that has a bespoke strategy AND outcomes would double-fire, so
+   * the convention is: bespoke-strategy rules leave this empty; content-
+   * only rules populate it.
+   */
+  outcomes?: RuleOutcome[];
+  /**
+   * Marks a rule as reference/documentation content that is intentionally
+   * NOT meant to fire a CDS card (it has neither a strategy nor outcomes).
+   * The coverage test allows these; anything else without a strategy or
+   * outcomes is a bug (a "dark" rule that loads but can never surface).
+   */
+  documentationOnly?: boolean;
+}
+
+/**
+ * A single card's worth of content declared in the bundle. Rendered
+ * verbatim by BundleOutcomeStrategy when the rule has no bespoke strategy.
+ */
+export interface RuleOutcome {
+  indicator: 'info' | 'warning' | 'critical';
+  summary: string;
+  detail?: string;
+  /** Optional management suggestion appended to the card detail. */
+  suggestion?: string;
 }
 
 export interface ConditionSummary {

@@ -2907,5 +2907,477 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "B"
+  },
+  {
+    "slug": "cyanide-sodium-thiosulfate",
+    "poison": "Cyanide poisoning",
+    "antidote": "Sodium thiosulfate",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Acts as a sulfur donor for the endogenous enzyme rhodanese (thiosulfate sulfurtransferase), which transfers sulfur to cyanide to form the relatively non-toxic, renally-excreted thiocyanate. Onset is slow, so it is usually combined with a faster-acting antidote (sodium nitrite or hydroxocobalamin).",
+    "dosing": "Conventionally part of the cyanide antidote kit, given IV after/with sodium nitrite; doses transcribed from local protocol/label (e.g. 12.5 g IV in adults). Repeat at half dose if poisoning recurs.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "Sodium thiosulfate (antidote) monograph; CHEMM/HHS countermeasure database; WHO antidote guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cyanide-sodium-nitrite",
+    "poison": "Cyanide poisoning",
+    "antidote": "Sodium nitrite",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Oxidises haemoglobin to methaemoglobin, whose ferric iron preferentially binds cyanide as cyanomethaemoglobin, drawing cyanide off cytochrome oxidase; also generates nitric oxide. Given before sodium thiosulfate in the classic cyanide antidote kit.",
+    "dosing": "Adult 300 mg IV (10 mL of 3% solution); reduce dose with anaemia and use caution in young infants (fetal haemoglobin) and smoke-inhalation victims (avoid excessive methaemoglobin). Doses per label/local protocol.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "Sodium nitrite injection FDA label; CHEMM/HHS countermeasure database; WHO antidote guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cyanide-amyl-nitrite-firstaid",
+    "poison": "Cyanide poisoning (first aid, when IV access unavailable)",
+    "antidote": "Amyl nitrite (inhaled)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Inhaled nitrite induces some methaemoglobin (which binds cyanide) and causes vasodilation; produces only ~5% methaemoglobin so is a temporising first-aid measure superseded by IV sodium nitrite or hydroxocobalamin.",
+    "dosing": "Crush 1 ampoule into gauze and have the patient inhale ~30 seconds per minute as a stopgap until definitive IV antidote; largely historical where hydroxocobalamin is available. Per local protocol.",
+    "domains": [
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "CHEMM/HHS amyl nitrite countermeasure; Goldfrank's Toxicologic Emergencies"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "cyanide-dicobalt-edetate",
+    "poison": "Severe cyanide poisoning (Europe)",
+    "antidote": "Dicobalt edetate (Kelocyanor)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Cobalt forms stable, relatively non-toxic complexes directly with cyanide, removing it from cytochrome oxidase faster than methaemoglobin-forming antidotes. Itself toxic (seizures, hypotension, airway oedema) if given without significant cyanide present.",
+    "dosing": "Reserved for confirmed serious cyanide poisoning; given IV per label/local protocol followed by glucose. Avoid empirically without confirmed exposure due to cobalt toxicity.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "Hall AH et al. Cyanide antidotes in clinical use: dicobalt EDTA (Kelocyanor); UK Toxbase"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "ccb-bb-high-dose-insulin",
+    "poison": "Calcium-channel-blocker or beta-blocker overdose (cardiogenic shock)",
+    "antidote": "High-dose insulin euglycaemia therapy (HIET)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Insulin improves myocardial contractility via PI3K signalling and corrects the impaired myocardial glucose uptake/utilisation caused by CCB/BB toxicity; positive inotropy without raising systemic vascular resistance. Onset of inotropic effect takes 20-30 minutes.",
+    "dosing": "Regular insulin bolus 1 unit/kg with dextrose 0.5 g/kg, then infusion 1 unit/kg/hour titrated upward; co-administer dextrose and monitor for hypoglycaemia and hypokalaemia. Doses per toxicology protocol.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "cardiology"
+    ],
+    "references": [
+      {
+        "label": "Engebretsen KM et al. High-dose insulin therapy in beta-blocker and CCB poisoning. Clin Toxicol; LITFL CCC toxicology"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ccb-calcium-chloride-vs-gluconate",
+    "poison": "Calcium-channel-blocker overdose (calcium salt selection)",
+    "antidote": "IV calcium (calcium chloride vs calcium gluconate)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Increasing extracellular calcium partially overcomes CCB blockade of L-type calcium channels. Calcium chloride 10% delivers ~3x the elemental calcium of calcium gluconate 10% per gram but is a vesicant requiring central access; gluconate is safer peripherally.",
+    "dosing": "Calcium chloride 10% (preferably central line) or calcium gluconate 10% (peripheral) repeated/infused with ionised-calcium monitoring; a temporising measure pending inotropes/HIET. Doses per protocol.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "cardiology"
+    ],
+    "references": [
+      {
+        "label": "St-Onge M et al. Calcium-channel blocker toxicity management; Goldfrank's Toxicologic Emergencies"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "hyperkalaemia-calcium-membrane",
+    "poison": "Severe hyperkalaemia with ECG changes (incl. drug-induced)",
+    "antidote": "IV calcium (gluconate or chloride)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Calcium raises the cardiac myocyte action-potential threshold and restores conduction velocity in hyperkalaemia ('membrane stabilisation'), protecting against malignant arrhythmia. It does NOT lower serum potassium, so shift/removal therapies are needed alongside.",
+    "dosing": "Calcium gluconate 10% 10-30 mL IV over 2-5 min (or calcium chloride 10% via central access), repeat in 5-10 min if ECG changes persist; onset ~3 min, duration 30-60 min. Doses per protocol.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "nephrology"
+    ],
+    "references": [
+      {
+        "label": "Calcium gluconate StatPearls; ACEP hyperkalaemia pharmacology resource"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "heavy-metal-dmps-unithiol",
+    "poison": "Arsenic, mercury and other heavy-metal poisoning",
+    "antidote": "DMPS (unithiol, 2,3-dimercapto-1-propanesulfonate)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Water-soluble dithiol derivative of dimercaprol; its two thiol groups chelate arsenic, mercury, bismuth and other heavy metals into water-soluble complexes excreted in urine. Can be given orally or IV (unlike intramuscular-only BAL).",
+    "dosing": "Oral or IV per protocol for arsenic and mercury poisoning; specialist/poison-centre guided. Transcribe doses from local antidote guidance.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "nephrology",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "Kosnett MJ. The role of chelation in arsenic and mercury poisoning; unithiol (DMPS) literature"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "heavy-metal-dimercaprol-bal",
+    "poison": "Arsenic, inorganic mercury, gold and acute lead encephalopathy",
+    "antidote": "Dimercaprol (British anti-Lewisite, BAL)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Dithiol chelator whose two sulfhydryl groups bind heavy metals (arsenic, mercury, gold, lead), forming complexes excreted renally; lipophilic so penetrates the CNS, used with EDTA in acute lead encephalopathy. Given by painful IM injection.",
+    "dosing": "Deep IM injection per protocol (e.g. with calcium disodium EDTA in lead encephalopathy); monitor renal function and blood pressure. Transcribe doses from local guidance.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "neurology",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "Dimercaprol StatPearls; Goldfrank's Toxicologic Emergencies"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "heavy-metal-d-penicillamine",
+    "poison": "Copper (Wilson disease) and lead poisoning",
+    "antidote": "D-penicillamine",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Oral chelator that binds copper, lead and mercury, increasing their urinary excretion; in Wilson disease it also induces hepatic metallothionein. Co-administer pyridoxine (vitamin B6) because penicillamine antagonises it.",
+    "dosing": "Oral, titrated upward per protocol (with pyridoxine supplementation); largely superseded by DMSA for paediatric lead poisoning. Transcribe doses from local guidance.",
+    "domains": [
+      "toxicology",
+      "neurology",
+      "hepatology",
+      "occupational-medicine"
+    ],
+    "references": [
+      {
+        "label": "Penicillamine StatPearls; AASLD Wilson disease guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "transuranic-dtpa-chelation",
+    "poison": "Internal contamination with plutonium, americium or curium",
+    "antidote": "Pentetate calcium/zinc trisodium (Ca-DTPA / Zn-DTPA)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "DTPA chelates transuranic elements by ion exchange (its calcium or zinc is replaced by plutonium/americium/curium), forming stable complexes rapidly excreted in urine. Ca-DTPA is ~10x more effective in the first 24 hours; efficacy falls as metal deposits in bone/liver.",
+    "dosing": "IV (or nebulised for inhalation contamination) as early as possible after exposure, per radiation-emergency protocol; Ca-DTPA first then Zn-DTPA for prolonged courses. Doses per label/REMM guidance.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "radiation-medicine"
+    ],
+    "references": [
+      {
+        "label": "CDC/REMM DTPA radiation countermeasure guidance; FDA pentetate calcium/zinc trisodium label"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "toxic-alcohol-ethanol-adh",
+    "poison": "Methanol or ethylene glycol poisoning (when fomepizole unavailable)",
+    "antidote": "Ethanol (IV or oral)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Competitively inhibits alcohol dehydrogenase, for which it has far higher affinity than methanol/ethylene glycol, preventing formation of toxic metabolites (formate; glycolate/oxalate). Less convenient than fomepizole (requires level monitoring, causes intoxication).",
+    "dosing": "Loading then maintenance infusion titrated to a target blood ethanol concentration that saturates alcohol dehydrogenase; co-treat with cofactors and dialysis. Doses per toxicology protocol.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "nephrology"
+    ],
+    "references": [
+      {
+        "label": "McMartin K et al. Antidotes for poisoning by alcohols that form toxic metabolites. Br J Clin Pharmacol 2016"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "amatoxin-silibinin-mechanism",
+    "poison": "Amatoxin (Amanita phalloides) mushroom poisoning",
+    "antidote": "IV silibinin (Legalon SIL)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Competitively inhibits hepatocyte uptake of amatoxin via the OATP1B3 (and NTCP) transporters, interrupting enterohepatic recirculation and reducing hepatocyte exposure; high-dose penicillin G works by the same transporter mechanism but is weaker.",
+    "dosing": "IV silibinin per protocol alongside N-acetylcysteine and aggressive supportive care; transcribe doses from local antidote guidance.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "hepatology"
+    ],
+    "references": [
+      {
+        "label": "Letschert K et al. Inhibition of amanitin uptake into human hepatocytes. Toxicol Sci 2006; Legalon SIL data"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "botulism-heptavalent-antitoxin",
+    "poison": "Botulism (foodborne, wound, adult intestinal — toxin types A-G)",
+    "antidote": "Heptavalent botulism antitoxin (BAT, equine)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Equine-derived antibody fragments bind and clear circulating botulinum neurotoxin (all seven serotypes A-G) before it binds nerve terminals; neutralises only free toxin, so it limits progression but does not reverse established paralysis — give as early as possible.",
+    "dosing": "Single IV infusion per label/public-health protocol; give early on clinical suspicion without waiting for confirmation. Anaphylaxis precautions (equine product).",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "neurology",
+      "infectious-disease"
+    ],
+    "references": [
+      {
+        "label": "BAT (botulism antitoxin heptavalent) FDA package insert; CDC botulism guidance"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "infant-botulism-big-iv",
+    "poison": "Infant botulism (toxin types A and B)",
+    "antidote": "Human botulism immune globulin IV (BIG-IV, BabyBIG)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Human-derived antibodies neutralise circulating botulinum toxin types A and B in infants; reduces duration of hospitalisation and mechanical ventilation. Preferred over equine antitoxin in infants for types A/B.",
+    "dosing": "Single IV infusion per protocol as soon as infant botulism is suspected; obtained via the designated infant botulism treatment programme.",
+    "domains": [
+      "toxicology",
+      "paediatrics",
+      "neurology",
+      "infectious-disease"
+    ],
+    "references": [
+      {
+        "label": "Arnon SS et al. Human botulism immune globulin for infant botulism. NEJM 2006; BabyBIG product information"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "pit-viper-crotalidae-fab",
+    "poison": "North American pit viper (rattlesnake, copperhead, cottonmouth) envenomation",
+    "antidote": "Crotalidae polyvalent immune Fab (e.g. CroFab; or F(ab')2 product)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Ovine venom-specific Fab fragments bind and neutralise crotalid venom toxins; the small fragments distribute rapidly into tissue. Short Fab half-life can cause recurrent coagulopathy/thrombocytopenia, requiring maintenance dosing and follow-up.",
+    "dosing": "Initial control dose then scheduled maintenance doses per product protocol; monitor for recurrent coagulopathy. F(ab')2 products have longer half-life. Doses per label.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "haematology",
+      "tropical"
+    ],
+    "references": [
+      {
+        "label": "Crotalidae polyvalent immune Fab (ovine) prescribing information; Crotalidae envenomation StatPearls"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "lipophilic-drug-lipid-emulsion",
+    "poison": "Severe lipophilic drug toxicity (e.g. TCAs, bupropion, verapamil) with cardiovascular collapse",
+    "antidote": "Intravenous lipid emulsion (20%)",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Creates an intravascular lipid phase that sequesters highly lipophilic drugs away from target tissues ('lipid sink/shuttle') and may provide a myocardial energy substrate; reported rescue in cardiac arrest/shock from TCAs, bupropion, and calcium-channel blockers refractory to standard care.",
+    "dosing": "20% lipid emulsion bolus ~1.5 mL/kg over 1 minute then infusion ~15 mL/kg/hour, per ASRA/AAGBI LAST-derived protocol; reserve for life-threatening toxicity. Doses per protocol.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "cardiology"
+    ],
+    "references": [
+      {
+        "label": "Cave G, Harvey M. IV lipid emulsion as antidote beyond local anaesthetic toxicity: systematic review. Acad Emerg Med 2009"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "opioid-nalmefene-long-acting",
+    "poison": "Opioid overdose (long-acting reversal scenarios)",
+    "antidote": "Nalmefene",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Competitive mu-opioid receptor antagonist like naloxone but with higher receptor affinity and a much longer duration of action (~8-12 hours). Long action risks prolonged precipitated withdrawal; expert bodies advise it should not replace naloxone as the first-line antidote.",
+    "dosing": "Up to ~1-2 mg per label is the maximum clinically useful reversal dose; titrate to ventilation. Naloxone remains preferred first-line. Doses per label/protocol.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "psychiatry"
+    ],
+    "references": [
+      {
+        "label": "ACMT & AACT Joint Position Statement on nalmefene (2023); nalmefene prescribing information"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "nmba-sugammadex-reversal",
+    "poison": "Excessive/prolonged rocuronium or vecuronium neuromuscular blockade",
+    "antidote": "Sugammadex",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Modified gamma-cyclodextrin that encapsulates aminosteroidal neuromuscular blockers (rocuronium > vecuronium) in a 1:1 complex, lowering free drug at the neuromuscular junction and reversing blockade rapidly, including from profound depth. Does not reverse benzylisoquinolinium agents.",
+    "dosing": "IV per depth of block (e.g. higher doses for profound/immediate reversal) as per anaesthesia protocol; can rarely cause anaphylaxis. Doses per label.",
+    "domains": [
+      "toxicology",
+      "anaesthesia",
+      "emergency",
+      "critical-care"
+    ],
+    "references": [
+      {
+        "label": "Sugammadex prescribing information; OpenAnesthesia reversal of neuromuscular blockade"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "decontamination-single-dose-charcoal",
+    "poison": "Recent ingestion of a charcoal-adsorbable toxin (general GI decontamination)",
+    "antidote": "Single-dose activated charcoal",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Adsorbs many drugs/toxins onto its large surface area within the gut, preventing systemic absorption; greatest benefit within 1 hour of ingestion. Does not bind metals, iron, lithium, alcohols, acids or alkalis, and should not be given routinely.",
+    "dosing": "Consider only if a potentially toxic, charcoal-adsorbable ingestion occurred within ~1 hour and the airway is protected; adult ~50 g orally. Per AACT/EAPCCT position statement.",
+    "domains": [
+      "toxicology",
+      "emergency"
+    ],
+    "references": [
+      {
+        "label": "AACT/EAPCCT Position Statement: Single-Dose Activated Charcoal (updated)"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "enhanced-elimination-urinary-alkalinisation",
+    "poison": "Salicylate and other weak-acid poisonings (e.g. some herbicides)",
+    "antidote": "Urinary alkalinisation with sodium bicarbonate",
+    "antidoteDrugSlug": null,
+    "conditionSlug": null,
+    "mechanism": "Raising urine pH (>=7.5) ionises filtered weak acids ('ion trapping'), preventing their tubular reabsorption and enhancing renal elimination; first-line for moderate salicylate poisoning not meeting dialysis criteria. Monitor potassium (hypokalaemia impairs alkalinisation).",
+    "dosing": "IV sodium bicarbonate (e.g. 1-2 mEq/kg) then bicarbonate-containing fluids titrated to urine pH 7.5-8.5 with potassium repletion. Doses per AACT/EAPCCT position paper.",
+    "domains": [
+      "toxicology",
+      "emergency",
+      "nephrology"
+    ],
+    "references": [
+      {
+        "label": "AACT/EAPCCT Position Paper on Urine Alkalinization. J Toxicol Clin Toxicol"
+      }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
   }
 ]
