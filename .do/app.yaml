@@ -1,0 +1,93 @@
+# DigitalOcean App Platform spec — VedaMD API (backend).
+# Single source of truth for the api.vedamd.io deployment.
+#
+# Apply:
+#   doctl apps update <APP_ID> --spec .do/app.yaml
+#   (or DO dashboard → App → Settings → "Edit App Spec" — review the diff first)
+#
+# Real secret VALUES are NEVER stored here. Vars marked `type: SECRET`
+# are entered once in the DO dashboard (App → Settings → Environment
+# Variables) or via `doctl`. This file only declares that they exist.
+#
+# NOTE: this is a STATEFUL declarative spec. Applying it to the existing
+# app REPLACES config — make sure `domains:`, `region`, and
+# `instance_size_slug` below match the live app before you apply, or DO
+# will change them. Verify the diff the dashboard/doctl shows you.
+
+name: vedamd-backend
+region: lon # immutable after app creation; ignored on update if it differs
+
+services:
+- name: api
+  source_dir: /
+  github:
+    repo: peterkanda/vedamd-backend
+    branch: main
+    deploy_on_push: true # auto-deploy on push to main
+
+  # Buildpack build (matches the proven recipe). VedaMD is a standard
+  # NestJS app: `nest build` → dist/main.js. The signed content bundle
+  # lives in the repo under content/ and ships with the build.
+  # (Alternative: this repo also has a Dockerfile — to build via Docker
+  #  instead, delete build_command/run_command/environment_slug and set
+  #  `dockerfile_path: Dockerfile`.)
+  environment_slug: node-js
+  build_command: npm install && npm run build
+  run_command: npm run start:prod
+
+  http_port: 8080 # MUST equal the PORT env below
+  instance_count: 1
+  instance_size_slug: basic-xs # placeholder — set to your current plan
+
+  routes:
+  - path: /
+
+  health_check:
+    http_path: /health # public route, outside the /api prefix; returns 200
+    initial_delay_seconds: 90 # give Nest + bundle verification time to boot
+    period_seconds: 15
+    timeout_seconds: 10
+    failure_threshold: 6
+
+  envs:
+  # --- runtime/platform (non-secret) ---
+  - { key: NODE_ENV, value: production, scope: RUN_AND_BUILD_TIME }
+  - { key: NPM_CONFIG_PRODUCTION, value: "false", scope: RUN_AND_BUILD_TIME } # keep devDeps so `nest build` works
+  - { key: PORT, value: "8080", scope: RUN_AND_BUILD_TIME } # equals http_port
+
+  # --- database: Supabase (non-secret tuning) ---
+  - { key: DATABASE_SSL, value: "true", scope: RUN_TIME }
+  - { key: DATABASE_POOL_MAX, value: "10", scope: RUN_TIME }
+
+  # --- redis: Redis Cloud (non-secret tuning) ---
+  - { key: REDIS_CDS_TTL_SECONDS, value: "60", scope: RUN_TIME }
+
+  # --- agentic LLM (non-secret) ---
+  - { key: AGENTIC_PROVIDER, value: openai, scope: RUN_TIME }
+
+  # --- operator identity: Supabase Auth (public URLs, not secret) ---
+  # Without these the OperatorAuthGuard accepts UNVERIFIED JWTs.
+  - { key: OIDC_ISSUER, value: "https://dtaoztfmksdktdrlifoo.supabase.co/auth/v1", scope: RUN_TIME }
+  - { key: OIDC_JWKS_URL, value: "https://dtaoztfmksdktdrlifoo.supabase.co/auth/v1/.well-known/jwks.json", scope: RUN_TIME }
+  - { key: OIDC_AUDIENCE, value: authenticated, scope: RUN_TIME }
+  - { key: OIDC_INTEGRATOR_ID_CLAIM, value: sub, scope: RUN_TIME }
+
+  # --- content bundle ---
+  - { key: CONTENT_BUNDLE_DIR, value: content/bundles/v0.1.0, scope: RUN_TIME }
+
+  # --- CORS allowlist (in-app; comma-separated). The app sets CORS
+  #     headers itself, so do NOT add a DO platform-level `cors:` block
+  #     too — that would emit duplicate headers and browsers reject them.
+  - { key: CORS_ORIGINS, value: "https://vedamd.io,https://www.vedamd.io,https://app.vedamd.io,https://sea-turtle-app-9s2oj.ondigitalocean.app", scope: RUN_TIME }
+
+  # --- SECRETS: values entered in the DO dashboard, never in this file ---
+  - { key: DATABASE_URL, scope: RUN_TIME, type: SECRET } # Supabase session pooler (port 5432)
+  - { key: REDIS_URL, scope: RUN_TIME, type: SECRET } # Redis Cloud connection string
+  - { key: OPENAI_API_KEY, scope: RUN_TIME, type: SECRET } # enables agentic reasoning
+  - { key: ANTHROPIC_API_KEY, scope: RUN_TIME, type: SECRET } # optional fallback provider
+  - { key: AUDIT_HASH_SECRET, scope: RUN_TIME, type: SECRET } # MUST be a stable random value in prod
+  - { key: API_KEY_FINGERPRINT_SECRET, scope: RUN_TIME, type: SECRET } # MUST be stable or issued API keys break on restart
+
+domains:
+- domain: api.vedamd.io
+  type: PRIMARY
