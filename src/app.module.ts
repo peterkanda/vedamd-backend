@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { configuration } from './config/configuration';
 import { DatabaseModule } from './db/database.module';
 import { CacheModule } from './common/cache';
+import { HttpCacheModule } from './common/http-cache';
 import { PhiFreeLoggerModule } from './common/phi-free-logger';
 import { HealthModule } from './health/health.module';
 import { CdsModule } from './modules/cds/cds.module';
@@ -55,6 +56,7 @@ import { UsageModule } from './modules/usage/usage.module';
     }),
     DatabaseModule,
     CacheModule,
+    HttpCacheModule,
     PhiFreeLoggerModule,
     HealthModule,
     CdsModule,
