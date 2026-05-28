@@ -43,6 +43,7 @@ import { NotificationsModule } from './modules/notifications/notifications.modul
 import { ClinicalAuditsModule } from './modules/clinical-audits/clinical-audits.module';
 import { DataSourcesModule } from './modules/data-sources/data-sources.module';
 import { CdsFeedbackModule } from './modules/cds-feedback/cds-feedback.module';
+import { GovernanceModule } from './modules/governance/governance.module';
 import { ReferenceModule } from './modules/reference/reference.module';
 
 @Module({
@@ -93,6 +94,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     ClinicalAuditsModule,
     DataSourcesModule,
     CdsFeedbackModule,
+    GovernanceModule,
     ReferenceModule,
   ],
 })
