@@ -73,6 +73,7 @@ import { UtiTreatmentStrategy } from '../src/modules/cds/strategies/uti-treatmen
 import { AsthmaStepUpStrategy } from '../src/modules/cds/strategies/asthma-step-up.strategy';
 import { AnaemiaIronReplacementStrategy } from '../src/modules/cds/strategies/anaemia-iron-replacement.strategy';
 import { HypothyroidismInitStrategy } from '../src/modules/cds/strategies/hypothyroidism-init.strategy';
+import { BundleOutcomeStrategy } from '../src/modules/cds/strategies/bundle-outcome.strategy';
 import { PhiFreeLogger } from '../src/common/phi-free-logger';
 import type { AppConfig } from '../src/config/configuration';
 import { makeKnowledgeService } from './helpers/knowledge';
@@ -161,6 +162,7 @@ function makeService(): CdsService {
     new AsthmaStepUpStrategy(),
     new AnaemiaIronReplacementStrategy(),
     new HypothyroidismInitStrategy(),
+    new BundleOutcomeStrategy(),
   );
   return new CdsService(config, log, knowledge, registry);
 }

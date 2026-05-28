@@ -73,6 +73,7 @@ import { UtiTreatmentStrategy } from '../src/modules/cds/strategies/uti-treatmen
 import { AsthmaStepUpStrategy } from '../src/modules/cds/strategies/asthma-step-up.strategy';
 import { AnaemiaIronReplacementStrategy } from '../src/modules/cds/strategies/anaemia-iron-replacement.strategy';
 import { HypothyroidismInitStrategy } from '../src/modules/cds/strategies/hypothyroidism-init.strategy';
+import { BundleOutcomeStrategy } from '../src/modules/cds/strategies/bundle-outcome.strategy';
 import { PhiFreeLogger } from '../src/common/phi-free-logger';
 import type { AppConfig } from '../src/config/configuration';
 import { makeKnowledgeService } from './helpers/knowledge';
@@ -162,6 +163,7 @@ function makeService(): CdsService {
     new AsthmaStepUpStrategy(),
     new AnaemiaIronReplacementStrategy(),
     new HypothyroidismInitStrategy(),
+    new BundleOutcomeStrategy(),
   );
   return new CdsService(config, log, knowledge, registry);
 }
@@ -228,6 +230,39 @@ describe('CdsService.evaluateHook — order-select / order-sink fallthrough', ()
     });
     expect(res.cards.length).toBe(1);
     expect(res.cards[0].indicator).toBe('warning');
+  });
+
+  it('content-library renders outcome cards ONLY for explicitly requested rule ids', async () => {
+    const svc = makeService();
+    // No ruleIds → never floods, returns nothing.
+    const empty = await svc.evaluateHook('vedamd-content-library', {
+      hook: 'patient-view',
+      hookInstance: 'cl-0',
+      context: {},
+    });
+    expect(empty.cards.length).toBe(0);
+
+    // Named rule → its pre-written outcome cards render via the fallback.
+    const named = await svc.evaluateHook('vedamd-content-library', {
+      hook: 'patient-view',
+      hookInstance: 'cl-1',
+      context: { ruleIds: ['neonatal-hypoglycaemia-recognition'] },
+    });
+    expect(named.cards.length).toBeGreaterThan(0);
+    expect(named.cards[0].summary).toBeTruthy();
+    expect(named.cards[0].extension?.['http://vedamd.io/Card/recommendation'].ruleId).toBe(
+      'neonatal-hypoglycaemia-recognition',
+    );
+  });
+
+  it('aggregate patient-view is unaffected by content rules (no flood)', async () => {
+    const res = await makeService().evaluateHook('vedamd-patient-view', {
+      hook: 'patient-view',
+      hookInstance: 'pv-flood-check',
+      context: {},
+    });
+    // The aggregate must stay small — content-library rules do not leak in.
+    expect(res.cards.length).toBeLessThan(5);
   });
 
   it('does not fire patient-view-only rules on order-select / order-sign', async () => {

@@ -1912,5 +1912,849 @@
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
     "evidenceLevel": "C"
+  },
+  {
+    "slug": "isoniazid-toxicity",
+    "name": "Isoniazid (INH) toxicity",
+    "oneLiner": "Classic triad: refractory seizures + metabolic (lactic) acidosis + coma after INH overdose. Pyridoxine is the antidote — give gram-for-gram with the ingested INH (or 70 mg/kg, max 5 g, if dose unknown).",
+    "domains": ["toxicology", "emergency", "critical-care", "neurology"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia",
+      "bloodPressure": "normal or hypotension in severe cases",
+      "respiratoryRate": "tachypnoea (compensating for metabolic acidosis)",
+      "temperature": "normothermia or hyperthermia with status epilepticus",
+      "pupils": "usually normal; mydriasis with seizures",
+      "skin": "normal; may be diaphoretic",
+      "mentalStatus": "agitation → seizures (often status, anticonvulsant-refractory) → coma",
+      "bowelSounds": "nausea, vomiting common early",
+      "other": ["high anion-gap metabolic (lactic) acidosis", "seizures typically within 30-120 min of large ingestion"]
+    },
+    "causativeAgents": [
+      "isoniazid (anti-tuberculous therapy) — acute overdose, often intentional",
+      "co-ingestion with other anti-TB drugs (rifampicin, pyrazinamide)"
+    ],
+    "differentialDiagnosis": [
+      "other causes of status epilepticus (other toxins, structural, metabolic)",
+      "theophylline toxicity (seizures + acidosis)",
+      "hypoglycaemia",
+      "tricyclic / sympathomimetic seizures"
+    ],
+    "management": [
+      "ABC; protect airway; IV access; continuous monitoring; check glucose, lactate, blood gas.",
+      "Pyridoxine (vitamin B6) IV: 1 g pyridoxine per 1 g isoniazid ingested if the dose is known; if unknown, 70 mg/kg up to a maximum of 5 g IV. Repeat if seizures recur.",
+      "Benzodiazepines (e.g. diazepam / lorazepam) for seizures — synergistic with pyridoxine; INH seizures are often refractory to anticonvulsants without pyridoxine.",
+      "Treat metabolic acidosis — usually resolves once seizures controlled; sodium bicarbonate if severe.",
+      "Activated charcoal 1 g/kg if early presentation AND airway protected.",
+      "Haemodialysis is rarely needed but can remove INH in massive ingestion with renal impairment."
+    ],
+    "antidote": "Pyridoxine (vitamin B6) IV — gram-for-gram with ingested INH, or 70 mg/kg (max 5 g) if dose unknown. Replenishes GABA synthesis to terminate seizures.",
+    "redFlags": [
+      "Status epilepticus refractory to benzodiazepines — give/repeat pyridoxine immediately.",
+      "Severe high-anion-gap (lactic) acidosis.",
+      "Coma / airway compromise — intubate.",
+      "Massive ingestion with renal impairment — consider haemodialysis."
+    ],
+    "references": [
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Antituberculous Medications (isoniazid)." },
+      { "label": "Morrow LE et al. Pyridoxine for isoniazid-induced seizures — poison centre experience. Am J Emerg Med 2018." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "methaemoglobinaemia",
+    "name": "Methaemoglobinaemia",
+    "oneLiner": "Cyanosis unresponsive to oxygen + 'chocolate-brown' blood + saturation gap (SpO₂ ~ 85% that won't rise). Methylene blue 1-2 mg/kg IV slowly — but withhold/seek alternative in G6PD deficiency.",
+    "domains": ["toxicology", "emergency", "critical-care"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia",
+      "bloodPressure": "normal; hypotension in severe cases",
+      "respiratoryRate": "tachypnoea, dyspnoea",
+      "temperature": "normothermia",
+      "pupils": "normal",
+      "skin": "central cyanosis (slate-grey) that does NOT improve with supplemental oxygen",
+      "mentalStatus": "headache, fatigue → confusion, coma at high methaemoglobin levels",
+      "bowelSounds": "normal",
+      "other": ["chocolate-brown arterial blood", "pulse-oximetry 'saturation gap' (SpO₂ plateaus ~ 85%)", "normal PaO₂ on blood gas despite cyanosis", "symptoms broadly correlate with MetHb %: > 20% symptomatic, > 50% severe, > 70% potentially fatal"]
+    },
+    "causativeAgents": [
+      "oxidising drugs: dapsone, local anaesthetics (benzocaine, prilocaine, lidocaine), nitrates/nitrites, sulfonamides, metoclopramide, primaquine",
+      "rasburicase (contraindicated in G6PD deficiency)",
+      "aniline dyes, nitrobenzene, naphthalene",
+      "amyl/sodium nitrite (including cyanide-kit use)"
+    ],
+    "differentialDiagnosis": [
+      "hypoxaemic respiratory failure (but PaO₂ normal here)",
+      "sulfhaemoglobinaemia",
+      "cyanide toxicity (also cyanosis with normal PaO₂)",
+      "shock / poor perfusion"
+    ],
+    "management": [
+      "High-flow oxygen; remove the offending agent; IV access; co-oximetry to measure methaemoglobin (standard pulse oximetry is unreliable).",
+      "Methylene blue 1-2 mg/kg IV over ~ 5 min for symptomatic methaemoglobinaemia (commonly MetHb > 20-30%, or lower if symptomatic/comorbid); may repeat after 30-60 min if needed.",
+      "If G6PD deficiency known or suspected: methylene blue is relatively contraindicated (ineffective and risks haemolysis) — use ascorbic acid (vitamin C), and consider exchange transfusion / hyperbaric oxygen for severe cases.",
+      "Avoid more than ~ 2 doses of methylene blue (paradoxical methaemoglobinaemia and haemolysis at high cumulative dose).",
+      "Supportive care; treat the specific causative toxin (e.g. dapsone — see dapsone toxicity)."
+    ],
+    "antidote": "Methylene blue 1-2 mg/kg IV slowly (acts via NADPH-dependent reduction of methaemoglobin). Ascorbic acid is the alternative when methylene blue is contraindicated (e.g. G6PD deficiency).",
+    "redFlags": [
+      "Methaemoglobin > 30% or symptomatic — give methylene blue.",
+      "G6PD deficiency — methylene blue ineffective/harmful; use ascorbic acid / exchange transfusion.",
+      "Persistent or recurrent methaemoglobinaemia (long-acting agents e.g. dapsone) — anticipate repeat dosing.",
+      "Failure to respond to methylene blue — reconsider G6PD deficiency, sulfhaemoglobinaemia, or ongoing absorption."
+    ],
+    "references": [
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Methemoglobin Inducers." },
+      { "label": "Cortazzo JA, Lichtman AD. Methemoglobinemia: a review and recommendations for management. J Cardiothorac Vasc Anesth 2014." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "valproate-toxicity",
+    "name": "Valproic acid (sodium valproate) toxicity",
+    "oneLiner": "CNS depression + hyperammonaemia (even with normal LFTs) ± metabolic acidosis after VPA overdose. Supportive care; L-carnitine for hyperammonaemic encephalopathy / hepatotoxicity; haemodialysis for massive/severe poisoning.",
+    "domains": ["toxicology", "emergency", "critical-care", "neurology"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia",
+      "bloodPressure": "hypotension in severe overdose",
+      "respiratoryRate": "depressed in CNS depression",
+      "temperature": "normothermia",
+      "pupils": "miosis may occur",
+      "skin": "normal",
+      "mentalStatus": "drowsiness → coma; hyperammonaemic encephalopathy (confusion, asterixis) even without hepatic failure",
+      "bowelSounds": "nausea, vomiting",
+      "other": ["hyperammonaemia", "high anion-gap metabolic acidosis", "hypernatraemia (sodium load)", "hypocalcaemia", "thrombocytopenia / bone marrow suppression", "cerebral oedema in severe cases"]
+    },
+    "causativeAgents": [
+      "sodium valproate / valproic acid / divalproex — acute overdose",
+      "chronic supratherapeutic dosing (hyperammonaemia can occur at therapeutic levels too)"
+    ],
+    "differentialDiagnosis": [
+      "other sedative / anticonvulsant overdose",
+      "hepatic encephalopathy from other causes",
+      "other causes of high anion-gap acidosis"
+    ],
+    "management": [
+      "ABC; protect airway in coma; IV access; monitor; serial VPA levels, ammonia, LFTs, lactate, blood gas, electrolytes, FBC.",
+      "Activated charcoal 1 g/kg if early ingestion AND airway protected; multi-dose charcoal may be considered for large enteric-coated/extended-release ingestions.",
+      "L-carnitine (levocarnitine) for hyperammonaemic encephalopathy, hepatotoxicity, or significant VPA toxicity: a reported regimen is 100 mg/kg IV (max ~ 6 g) loading, then 50 mg/kg (max 3 g) IV every 8 h until clinical improvement and falling ammonia. Optimal dose/route not firmly established.",
+      "Haemodialysis for severe poisoning (e.g. very high VPA levels, coma, refractory acidosis, shock, hyperammonaemia not responding) — VPA is dialysable at toxic levels (saturated protein binding).",
+      "Supportive care: correct electrolytes, support blood pressure, manage cerebral oedema."
+    ],
+    "antidote": "L-carnitine (levocarnitine) IV for valproate-induced hyperammonaemia / hepatotoxicity — replenishes carnitine to restore the urea cycle and fatty-acid oxidation. Not a complete antidote; supportive care and dialysis remain key.",
+    "redFlags": [
+      "Coma / airway compromise.",
+      "Hyperammonaemic encephalopathy — give L-carnitine.",
+      "Very high VPA level, refractory acidosis, shock, cerebral oedema — urgent haemodialysis.",
+      "Hepatotoxicity or bone-marrow suppression."
+    ],
+    "references": [
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Valproic Acid." },
+      { "label": "Perrott J et al. L-carnitine for acute valproic acid overdose: a systematic review of published cases. Ann Pharmacother 2010." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "superwarfarin-rodenticide-toxicity",
+    "name": "Superwarfarin (long-acting anticoagulant rodenticide) poisoning",
+    "oneLiner": "Brodifacoum and other 'superwarfarins' cause profound, PROLONGED coagulopathy (weeks to months). Treat bleeding with vitamin K1 + factors; expect to need very high-dose oral vitamin K1 for weeks-to-months, guided by INR.",
+    "domains": ["toxicology", "emergency", "haematology", "critical-care"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "normal unless bleeding/shock",
+      "bloodPressure": "normal; hypotension if haemorrhagic shock",
+      "respiratoryRate": "normal",
+      "temperature": "normothermia",
+      "pupils": "normal",
+      "skin": "bruising, ecchymoses, bleeding gums, haematuria",
+      "mentalStatus": "normal unless intracranial haemorrhage",
+      "bowelSounds": "normal; GI bleeding may occur",
+      "other": ["markedly prolonged INR/PT (factors II, VII, IX, X)", "delayed onset (peak coagulopathy ~ 1-2 days)", "brodifacoum half-life up to 20-30 days → coagulopathy persists for weeks to months"]
+    },
+    "causativeAgents": [
+      "brodifacoum, difenacoum, bromadiolone, difethialone (second-generation anticoagulant rodenticides)",
+      "intentional ingestion, contaminated illicit drugs (synthetic cannabinoid outbreaks), accidental paediatric ingestion"
+    ],
+    "differentialDiagnosis": [
+      "warfarin overdose (shorter duration)",
+      "vitamin K deficiency / malabsorption",
+      "liver failure coagulopathy (other factors abnormal)",
+      "disseminated intravascular coagulation"
+    ],
+    "management": [
+      "ABC; IV access; check INR/PT, aPTT, FBC; type and screen if bleeding.",
+      "Active bleeding: 4-factor PCC and/or fresh frozen plasma for immediate factor replacement, PLUS vitamin K1 (phytomenadione) IV.",
+      "No bleeding but elevated INR: high-dose oral vitamin K1; a single paediatric ingestion of a small amount often does not require treatment — observe and check INR at 48-72 h.",
+      "Confirmed superwarfarin poisoning needs PROLONGED high-dose oral vitamin K1 — reported maintenance requirements average ~ 60 mg/day (range 15-600 mg/day), titrated to INR, sometimes for 3 months or more.",
+      "Serial INR monitoring (after vitamin K1 stopped, recheck to detect rebound); brodifacoum serum levels guide duration if available.",
+      "Do NOT give vitamin K1 prophylactically before INR rises in an asymptomatic single ingestion — it masks the diagnostic INR; follow INR instead."
+    ],
+    "antidote": "Vitamin K1 (phytomenadione) — high dose and PROLONGED (weeks to months), titrated to INR. PCC/FFP for active bleeding.",
+    "redFlags": [
+      "Intracranial or other major haemorrhage — PCC/FFP + IV vitamin K1, urgent.",
+      "Stopping vitamin K1 too early — coagulopathy rebounds for weeks; taper guided by INR.",
+      "Very large oral vitamin K1 doses (tens of tablets/day) — adherence is a major challenge.",
+      "Intentional/contaminated exposures — consider co-ingestants and toxicology/haematology referral."
+    ],
+    "references": [
+      { "label": "King N, Tran MH. Long-acting anticoagulant rodenticide (superwarfarin) poisoning: pathophysiology to laboratory-guided clinical management. Transfus Med Rev 2015." },
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Antithrombotics / rodenticides." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "hydrofluoric-acid-toxicity",
+    "name": "Hydrofluoric acid (HF) exposure",
+    "oneLiner": "Severe, often delayed pain out of proportion to a deceptively minor-looking burn; fluoride chelates calcium/magnesium → life-threatening hypocalcaemia, hypomagnesaemia, hyperkalaemia and arrhythmia. Calcium is the antidote (topical gel, then SC/IV/intra-arterial).",
+    "domains": ["toxicology", "emergency", "critical-care", "occupational-health"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "arrhythmias (VT/VF) from hypocalcaemia/hyperkalaemia",
+      "bloodPressure": "hypotension in systemic toxicity",
+      "respiratoryRate": "tachypnoea; pulmonary oedema with inhalation",
+      "temperature": "normothermia",
+      "pupils": "normal",
+      "skin": "burn may look minor initially; severe deep pain; whitening/blistering develops; pain out of proportion to appearance",
+      "mentalStatus": "anxiety, then obtundation if profound electrolyte derangement",
+      "bowelSounds": "vomiting with ingestion",
+      "other": ["hypocalcaemia (Chvostek/Trousseau, prolonged QT)", "hypomagnesaemia", "hyperkalaemia", "ECG changes / arrhythmia"]
+    },
+    "causativeAgents": [
+      "industrial and domestic hydrofluoric acid (glass etching, rust removers, semiconductor cleaning, wheel cleaners)",
+      "ammonium bifluoride and related fluoride compounds"
+    ],
+    "differentialDiagnosis": [
+      "other acid/chemical burns (less delayed pain, less systemic Ca derangement)",
+      "thermal burn",
+      "other causes of hypocalcaemia / arrhythmia"
+    ],
+    "management": [
+      "Staff PPE; remove contaminated clothing; copious irrigation of skin with water for ≥ 15-30 min.",
+      "Topical calcium gluconate gel (e.g. 2.5% — prepared by mixing calcium gluconate into a water-soluble lubricant) massaged into dermal exposures.",
+      "Persistent pain despite topical: intradermal/subcutaneous calcium gluconate infiltration (10% calcium gluconate, NOT calcium chloride — chloride causes tissue necrosis); intra-arterial or Bier-block calcium gluconate for digital/hand burns refractory to topical.",
+      "Systemic / large-area / ingestion / inhalation exposure: IV calcium gluconate and IV magnesium; correct potassium; treat hypocalcaemia even empirically in high-risk exposures before levels return.",
+      "Continuous ECG monitoring; monitor ionised calcium, magnesium, potassium frequently; treat arrhythmias.",
+      "Large surface-area (> ~ 1% BSA concentrated, or any systemic features) — admit to ICU; haemodialysis can help refractory hypocalcaemia / fluoride load."
+    ],
+    "antidote": "Calcium (gluconate) — topical gel first, then SC infiltration, intra-arterial / IV for systemic toxicity. Magnesium and potassium correction as needed.",
+    "redFlags": [
+      "Concentrated HF or large body-surface-area exposure — anticipate fatal hypocalcaemia/arrhythmia.",
+      "Severe pain despite normal-looking skin — do not under-treat.",
+      "Hypocalcaemia / prolonged QT / hyperkalaemia on ECG — IV calcium, ICU.",
+      "Inhalation — airway oedema and pulmonary toxicity; ingestion — corrosive plus systemic fluoride."
+    ],
+    "references": [
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Hydrofluoric Acid and Fluorides." },
+      { "label": "McKee D et al. A review of hydrofluoric acid burn management. Plast Surg (Oakv) 2014." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "dapsone-toxicity",
+    "name": "Dapsone toxicity",
+    "oneLiner": "Methaemoglobinaemia + haemolytic anaemia from a very long-acting oxidant (half-life prolonged by enterohepatic recycling). Methylene blue for methaemoglobinaemia + multi-dose activated charcoal to shorten the half-life.",
+    "domains": ["toxicology", "emergency", "critical-care", "haematology"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia",
+      "bloodPressure": "usually normal",
+      "respiratoryRate": "tachypnoea, dyspnoea",
+      "temperature": "normothermia",
+      "pupils": "normal",
+      "skin": "cyanosis (methaemoglobinaemia) unresponsive to oxygen; pallor/jaundice from haemolysis",
+      "mentalStatus": "headache, lethargy → confusion in severe methaemoglobinaemia",
+      "bowelSounds": "nausea, vomiting",
+      "other": ["recurrent/prolonged methaemoglobinaemia (dapsone half-life up to ~ 80 h with enterohepatic recirculation)", "haemolytic anaemia (Heinz bodies)", "saturation gap on pulse oximetry"]
+    },
+    "causativeAgents": [
+      "dapsone (leprosy, dermatitis herpetiformis, PCP prophylaxis) — overdose or therapeutic accumulation",
+      "higher risk in G6PD deficiency"
+    ],
+    "differentialDiagnosis": [
+      "other oxidant-induced methaemoglobinaemia (see methaemoglobinaemia)",
+      "other causes of haemolysis",
+      "cyanide / hypoxaemia"
+    ],
+    "management": [
+      "High-flow oxygen; IV access; co-oximetry for methaemoglobin; FBC, reticulocytes, LDH, haptoglobin, G6PD where feasible.",
+      "Methylene blue ~ 1-2 mg/kg IV slowly for significant/symptomatic methaemoglobinaemia; an infusion (rather than repeated boluses) may better control levels given dapsone's long half-life. Avoid excessive cumulative methylene blue (risk of haemolysis) — generally limit to ~ 2 doses.",
+      "Multi-dose activated charcoal — markedly shortens dapsone half-life (reported reduction from ~ 77 h to ~ 13 h) by interrupting enterohepatic recirculation.",
+      "Caution: methylene blue may worsen haemolysis and is ineffective/contraindicated in G6PD deficiency — use ascorbic acid / exchange transfusion if needed.",
+      "Supportive care; transfuse for severe haemolytic anaemia; admit for prolonged monitoring (rebound methaemoglobinaemia)."
+    ],
+    "antidote": "Methylene blue (1-2 mg/kg IV) for methaemoglobinaemia, plus multi-dose activated charcoal to enhance dapsone elimination. Ascorbic acid / exchange transfusion if methylene blue contraindicated.",
+    "redFlags": [
+      "Rebound methaemoglobinaemia hours later — long half-life mandates extended monitoring.",
+      "G6PD deficiency — methylene blue ineffective/harmful.",
+      "Severe haemolysis — transfusion, supportive care.",
+      "High methaemoglobin with end-organ hypoxia."
+    ],
+    "references": [
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Methemoglobin Inducers (dapsone)." },
+      { "label": "Hall AH et al. Dapsone overdose / methemoglobinemia management. Clinical toxicology literature." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "baclofen-toxicity",
+    "name": "Baclofen toxicity",
+    "oneLiner": "GABA-B agonist overdose: profound CNS depression, respiratory depression, seizures, can mimic brain death — but recovers. No antidote; supportive ICU care. Reinstate baclofen on recovery to prevent dangerous withdrawal.",
+    "domains": ["toxicology", "emergency", "critical-care", "neurology"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "bradycardia (or tachycardia)",
+      "bloodPressure": "hypotension (or hypertension)",
+      "respiratoryRate": "respiratory depression",
+      "temperature": "hypothermia",
+      "pupils": "miosis or mydriasis (variable)",
+      "skin": "normal",
+      "mentalStatus": "rapid coma; may appear brain-dead (absent brainstem reflexes) yet recover after 24-48 h",
+      "bowelSounds": "reduced",
+      "other": ["seizures", "flaccidity or hyperreflexia", "delayed neurological recovery", "withdrawal 24-72 h later if chronic use stopped abruptly"]
+    },
+    "causativeAgents": [
+      "oral baclofen overdose",
+      "intrathecal baclofen pump malfunction / programming error",
+      "abrupt withdrawal (especially intrathecal) — distinct, life-threatening syndrome"
+    ],
+    "differentialDiagnosis": [
+      "other sedative-hypnotic overdose",
+      "GHB/GBL overdose",
+      "structural brain injury / brain death (do NOT diagnose brain death during acute baclofen overdose)",
+      "opioid overdose"
+    ],
+    "management": [
+      "ABC; intubate for airway protection/respiratory depression; IV access; continuous monitoring.",
+      "Supportive care is the mainstay — there is NO specific antidote; even apparently brain-dead patients may recover after 24-48 h, so do not pursue brain-death determination or organ donation during acute toxicity.",
+      "IV fluids ± vasopressors for hypotension; benzodiazepines for seizures; atropine for symptomatic bradycardia.",
+      "Activated charcoal if early ingestion AND airway protected.",
+      "Reinstate the patient's regular baclofen once recovered — abrupt cessation causes withdrawal (seizures, hallucinations, dyskinesia, autonomic instability) 24-72 h later.",
+      "Intrathecal pump problems: involve the implanting team; intrathecal withdrawal may need restoration of intrathecal baclofen, high-dose benzodiazepines, supportive ICU care."
+    ],
+    "antidote": "None — supportive care. Reinstate baclofen on recovery to prevent withdrawal.",
+    "redFlags": [
+      "Apparent brain death during acute overdose — DO NOT conclude brain death; recovery is common.",
+      "Respiratory depression / coma — intubate, ICU.",
+      "Abrupt baclofen withdrawal (especially intrathecal) — potentially fatal; restore drug urgently.",
+      "Refractory seizures."
+    ],
+    "references": [
+      { "label": "Leung NY et al. Baclofen overdose: defining the spectrum of toxicity. Emerg Med Australas 2006." },
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Muscle relaxants (baclofen)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "clonidine-imidazoline-toxicity",
+    "name": "Clonidine / imidazoline toxicity",
+    "oneLiner": "Opioid-mimic toxidrome: miosis + CNS depression + bradycardia + hypotension (transient early hypertension possible). Mostly supportive; naloxone can be tried (often high doses, variable response), atropine for bradycardia.",
+    "domains": ["toxicology", "emergency", "paediatrics", "cardiology"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "bradycardia",
+      "bloodPressure": "hypotension (brief paradoxical hypertension may precede it)",
+      "respiratoryRate": "respiratory depression, apnoea",
+      "temperature": "hypothermia",
+      "pupils": "miosis (pinpoint)",
+      "skin": "pale, cool",
+      "mentalStatus": "lethargy → coma; waxing/waning sedation; arousable with stimulation",
+      "bowelSounds": "reduced",
+      "other": ["mimics opioid toxidrome", "children especially sensitive (small ingestion can be serious)", "transdermal patch ingestion = prolonged toxicity"]
+    },
+    "causativeAgents": [
+      "clonidine (oral, transdermal patch ingestion)",
+      "other central α2-agonists: guanfacine, tizanidine, dexmedetomidine, methyldopa",
+      "imidazoline decongestants: oxymetazoline, tetrahydrozoline, naphazoline (paediatric ingestion)"
+    ],
+    "differentialDiagnosis": [
+      "opioid overdose (very similar — miosis, CNS/respiratory depression)",
+      "sedative-hypnotic overdose",
+      "organophosphate (but no SLUDGE / fasciculations here)",
+      "calcium-channel-blocker / beta-blocker overdose (bradycardia + hypotension)"
+    ],
+    "management": [
+      "ABC; airway support / ventilation for respiratory depression; IV access; continuous cardiac monitoring; check glucose.",
+      "Supportive care is the mainstay: IV fluids for hypotension (vasopressors e.g. noradrenaline/dopamine if refractory); atropine for symptomatic bradycardia.",
+      "Naloxone may reverse CNS/respiratory depression in some patients — response is variable and higher-than-usual doses are often needed (titrated, paediatric dosing 0.1 mg/kg up to 2 mg/dose, repeated); a trial is reasonable given the safety profile.",
+      "Do NOT treat the transient early hypertension aggressively — it is short-lived and hypotension follows.",
+      "Remove any ingested transdermal patches (including from the GI tract); observe for prolonged effect.",
+      "Activated charcoal if early ingestion AND airway protected."
+    ],
+    "antidote": "No definitive antidote; naloxone may help (variable, often high dose). Supportive care, atropine for bradycardia, fluids/vasopressors for hypotension.",
+    "redFlags": [
+      "Children — small ingestions can cause significant toxicity; low threshold to admit.",
+      "Apnoea / coma — airway and ventilatory support.",
+      "Refractory bradycardia / hypotension.",
+      "Transdermal patch ingestion — prolonged, delayed toxicity."
+    ],
+    "references": [
+      { "label": "Seger DL, Loden JK. Naloxone reversal of clonidine toxicity: dose, dose, dose. Clin Toxicol 2018." },
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Clonidine and central-acting antihypertensives." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "arsenic-toxicity",
+    "name": "Acute arsenic poisoning",
+    "oneLiner": "Severe gastroenteritis ('rice-water' diarrhoea) + hypotension + QT prolongation/arrhythmia early; later peripheral neuropathy and pancytopenia. Chelate promptly — DMSA/DMPS preferred; dimercaprol (BAL) for severe acute cases when oral route impossible.",
+    "domains": ["toxicology", "emergency", "critical-care", "nephrology"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia; arrhythmias (prolonged QT, torsades)",
+      "bloodPressure": "hypotension (capillary leak, fluid loss)",
+      "respiratoryRate": "tachypnoea; ARDS in severe cases",
+      "temperature": "normothermia or low",
+      "pupils": "normal",
+      "skin": "later: hyperkeratosis, hyperpigmentation, Mees' lines on nails (chronic/subacute)",
+      "mentalStatus": "encephalopathy, delirium in severe poisoning",
+      "bowelSounds": "profuse vomiting and 'rice-water' diarrhoea; abdominal pain; garlic odour",
+      "other": ["prolonged QT / ventricular arrhythmia", "acute kidney injury", "haemolysis", "later peripheral sensorimotor neuropathy and pancytopenia"]
+    },
+    "causativeAgents": [
+      "arsenic trioxide, sodium arsenite/arsenate (pesticides, herbicides, wood preservatives, ant baits)",
+      "arsine gas (industrial — predominantly haemolysis)",
+      "contaminated water/food, intentional poisoning, some traditional/herbal remedies"
+    ],
+    "differentialDiagnosis": [
+      "other heavy-metal poisoning (mercury, thallium)",
+      "severe gastroenteritis / cholera (rice-water stool)",
+      "other causes of long-QT / torsades",
+      "Guillain-Barré (for the later neuropathy)"
+    ],
+    "management": [
+      "ABC; aggressive IV fluid resuscitation for GI losses/hypotension; continuous ECG (QT) monitoring; correct potassium/magnesium; treat torsades (magnesium, overdrive pacing).",
+      "Confirm with 24-h urinary arsenic (and blood); start treatment on clinical grounds in severe acute poisoning without waiting.",
+      "Chelation — begin as early as possible (efficacy falls with delay): oral DMSA (succimer) or DMPS are preferred (water-soluble, less toxic). In severe acute poisoning where the oral route is unreliable (vomiting, shock), use dimercaprol (BAL) by deep IM injection, transitioning to oral DMSA/DMPS when tolerated.",
+      "Haemodialysis does not remove arsenic well but is indicated for renal failure (and removes the arsenic-chelate complex in that setting).",
+      "Arsine gas exposure: predominantly massive haemolysis → supportive care, exchange transfusion; chelation is of limited value."
+    ],
+    "antidote": "Chelation: DMSA (succimer) or DMPS preferred; dimercaprol (BAL) for severe acute poisoning when oral therapy not feasible. Start early.",
+    "redFlags": [
+      "Hypotension + profuse GI losses — aggressive resuscitation.",
+      "Prolonged QT / torsades / ventricular arrhythmia.",
+      "Acute kidney injury / haemolysis.",
+      "Encephalopathy or evolving neuropathy."
+    ],
+    "references": [
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Arsenic." },
+      { "label": "Kosnett MJ. The role of chelation in the treatment of arsenic and mercury poisoning. J Med Toxicol 2013." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "lead-toxicity",
+    "name": "Lead poisoning (plumbism)",
+    "oneLiner": "Abdominal pain + anaemia + neuropathy; in children, encephalopathy is the dread complication. Encephalopathy or BLL very high: dimercaprol (BAL) FIRST, then CaNa₂EDTA. Less severe: oral succimer (DMSA).",
+    "domains": ["toxicology", "emergency", "paediatrics", "neurology"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "normal",
+      "bloodPressure": "may be elevated (chronic)",
+      "respiratoryRate": "normal",
+      "temperature": "normothermia",
+      "pupils": "normal",
+      "skin": "pallor (anaemia); 'lead line' on gums (Burton's line) in chronic exposure",
+      "mentalStatus": "irritability, cognitive impairment; severe (esp. children): encephalopathy, seizures, coma",
+      "bowelSounds": "colicky abdominal pain, constipation ('lead colic')",
+      "other": ["microcytic/normocytic anaemia with basophilic stippling", "peripheral motor neuropathy (wrist/foot drop)", "raised blood lead level (BLL)", "renal impairment"]
+    },
+    "causativeAgents": [
+      "occupational (battery, smelting, paint stripping, radiator repair, demolition)",
+      "lead-based paint (children — pica), contaminated water, lead-glazed pottery",
+      "traditional medicines/cosmetics, contaminated illicit substances, retained lead bullets"
+    ],
+    "differentialDiagnosis": [
+      "other causes of abdominal pain (acute abdomen)",
+      "iron-deficiency / other microcytic anaemia",
+      "other heavy-metal poisoning",
+      "porphyria (also abdominal pain + neuropathy)"
+    ],
+    "management": [
+      "Remove from exposure; identify and abate the source (especially for children).",
+      "Check blood lead level (BLL), FBC/blood film, renal function; abdominal X-ray if recent ingestion (radio-opaque foreign body / pica); whole-bowel irrigation for visualised lead in gut.",
+      "Encephalopathy or very high BLL (children BLL ≥ 70 µg/dL or encephalopathy; adults symptomatic with high levels): start dimercaprol (BAL) IM FIRST, then CaNa₂EDTA ~ 4 h later — giving EDTA before BAL can redistribute lead into the brain and worsen encephalopathy.",
+      "Symptomatic without encephalopathy / children BLL 45-69 µg/dL: oral succimer (DMSA).",
+      "Supportive care: control seizures (benzodiazepines), manage cerebral oedema, treat anaemia.",
+      "Public-health notification; screen exposed contacts (e.g. household children)."
+    ],
+    "antidote": "Chelation: dimercaprol (BAL) FIRST then CaNa₂EDTA for encephalopathy / very high BLL; oral succimer (DMSA) for less severe poisoning.",
+    "redFlags": [
+      "Lead encephalopathy (especially children) — neurological emergency; BAL first, then EDTA.",
+      "Giving CaNa₂EDTA before BAL in encephalopathy — can worsen cerebral lead loading.",
+      "Seizures / raised intracranial pressure.",
+      "Ongoing exposure source not removed — chelation alone fails."
+    ],
+    "references": [
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Lead." },
+      { "label": "ATSDR / CDC. Lead toxicity: medical management guidelines." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "mercury-toxicity",
+    "name": "Acute mercury poisoning",
+    "oneLiner": "Form matters: inhaled elemental Hg vapour → chemical pneumonitis; ingested inorganic Hg salts → corrosive gastroenteritis + acute tubular necrosis. Chelate inorganic/elemental poisoning early with DMSA or DMPS.",
+    "domains": ["toxicology", "emergency", "critical-care", "nephrology"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia",
+      "bloodPressure": "hypotension (corrosive salt ingestion → fluid loss/shock)",
+      "respiratoryRate": "cough, dyspnoea; chemical pneumonitis / ARDS after vapour inhalation",
+      "temperature": "fever, chills (metal-fume-like illness from vapour)",
+      "pupils": "normal",
+      "skin": "metallic taste; later acrodynia (pink, painful extremities) in children",
+      "mentalStatus": "headache, tremor, neuropsychiatric changes",
+      "bowelSounds": "corrosive stomatitis, severe abdominal pain, bloody diarrhoea (inorganic salt ingestion)",
+      "other": ["acute tubular necrosis / AKI", "tremor, gingivostomatitis", "elemental vapour primarily pulmonary + CNS; inorganic salts primarily GI + renal"]
+    },
+    "causativeAgents": [
+      "elemental mercury vapour (broken thermometers heated, gold extraction, industrial)",
+      "inorganic mercury salts (mercuric chloride) — corrosive, nephrotoxic",
+      "organic mercury (methylmercury) — chronic neurotoxicity, NOT effectively chelated the same way"
+    ],
+    "differentialDiagnosis": [
+      "other heavy-metal poisoning (arsenic, lead)",
+      "other causes of corrosive ingestion / AKI",
+      "metal fume fever / other inhalational pneumonitis"
+    ],
+    "management": [
+      "Remove from exposure; staff PPE; supportive care; airway/oxygen for pneumonitis.",
+      "Inorganic salt ingestion: aggressive IV fluid resuscitation for shock; do NOT induce emesis; manage as corrosive ingestion; monitor renal function closely.",
+      "Chelation for acute inorganic or elemental mercury poisoning — start as early as possible (efficacy declines with delay): DMSA (succimer) or DMPS; dimercaprol (BAL) has been used but is relatively contraindicated for organic (methyl) mercury as it may worsen CNS distribution.",
+      "Renal support / haemodialysis for AKI (also removes the chelate complex in renal failure).",
+      "Whole-bowel irrigation / careful removal if a large elemental mercury reservoir is ingested (usually low oral bioavailability, but pulmonary aspiration is dangerous)."
+    ],
+    "antidote": "Chelation with DMSA (succimer) or DMPS for elemental/inorganic mercury; start early. (Dimercaprol relatively contraindicated for organic mercury.)",
+    "redFlags": [
+      "Severe chemical pneumonitis / ARDS after vapour inhalation.",
+      "Corrosive GI injury + shock from inorganic salt ingestion.",
+      "Acute kidney injury — may need dialysis.",
+      "Do not use BAL for organic (methyl)mercury — worsens CNS distribution."
+    ],
+    "references": [
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Mercury." },
+      { "label": "Kosnett MJ. The role of chelation in the treatment of arsenic and mercury poisoning. J Med Toxicol 2013." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "paraquat-toxicity",
+    "name": "Paraquat poisoning",
+    "oneLiner": "Highly lethal herbicide: caustic mucosal burns early, then progressive pulmonary fibrosis and multi-organ failure. NO antidote. Crucially, AVOID supplemental oxygen unless hypoxic (it accelerates lung injury). Early decontamination; specialist/poison-centre advice.",
+    "domains": ["toxicology", "emergency", "critical-care", "nephrology"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia",
+      "bloodPressure": "hypotension in severe poisoning",
+      "respiratoryRate": "progressive dyspnoea/tachypnoea as fibrosis develops (often days later)",
+      "temperature": "normothermia",
+      "pupils": "normal",
+      "skin": "chemical burns where contacted",
+      "mentalStatus": "alert early; deteriorates with multi-organ failure",
+      "bowelSounds": "painful oral/oesophageal ulceration, vomiting, abdominal pain",
+      "other": ["progressive pulmonary fibrosis (hallmark, often fatal)", "acute kidney injury", "hepatotoxicity", "high mortality with significant ingestion"]
+    },
+    "causativeAgents": [
+      "paraquat (and the related bipyridyl herbicide diquat) — agricultural herbicide, usually deliberate self-poisoning"
+    ],
+    "differentialDiagnosis": [
+      "other caustic ingestion",
+      "other herbicide / pesticide poisoning",
+      "other causes of progressive ARDS / pulmonary fibrosis"
+    ],
+    "management": [
+      "AVOID supplemental oxygen unless the patient is hypoxic — oxygen generates reactive species that accelerate paraquat-induced lung injury; titrate to lowest acceptable saturations.",
+      "Early GI decontamination: activated charcoal (or Fuller's earth) as soon as possible after ingestion — though survival benefit is unproven, reducing absorption is the rationale.",
+      "Aggressive IV fluids; monitor renal and hepatic function; manage as a chemical burn for mucosal injury.",
+      "Estimate prognosis from plasma paraquat concentration / time and the urine dithionite test; contact a poison centre and specialist toxicology service early.",
+      "Immunosuppression (corticosteroids ± cyclophosphamide) and haemoperfusion/haemodialysis have been used but evidence of benefit is weak — under specialist direction only.",
+      "Supportive/palliative care for large ingestions where survival is not feasible."
+    ],
+    "antidote": "None. Avoid oxygen unless hypoxic; early decontamination; specialist toxicology / poison-centre guidance.",
+    "redFlags": [
+      "Giving high-flow oxygen routinely — accelerates fatal lung injury; restrict to hypoxia.",
+      "Large ingestion (plasma level above the survival line) — usually fatal; involve toxicology early.",
+      "Progressive dyspnoea heralding pulmonary fibrosis.",
+      "Acute kidney / liver injury."
+    ],
+    "references": [
+      { "label": "Gawarammana IB, Buckley NA. Medical management of paraquat ingestion. Br J Clin Pharmacol 2011." },
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Herbicides (paraquat)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "acute-ethanol-intoxication",
+    "name": "Acute ethanol intoxication",
+    "oneLiner": "CNS depression, ataxia, slurred speech, depressed conscious level; main danger is airway compromise/aspiration and unmasked occult pathology. Supportive care; thiamine before glucose in at-risk patients; always look for co-ingestants and trauma.",
+    "domains": ["toxicology", "emergency", "addiction-medicine"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia",
+      "bloodPressure": "normal or low (vasodilation)",
+      "respiratoryRate": "depressed in severe intoxication",
+      "temperature": "hypothermia (vasodilation + environmental exposure)",
+      "pupils": "normal or sluggish",
+      "skin": "warm, flushed; diaphoretic",
+      "mentalStatus": "disinhibition → ataxia, slurred speech → drowsiness → coma",
+      "bowelSounds": "vomiting (aspiration risk)",
+      "other": ["hypoglycaemia (especially children and the malnourished)", "raised osmolar gap", "nystagmus", "risk of occult head injury masked by intoxication"]
+    },
+    "causativeAgents": [
+      "ethanol (beverages, hand sanitiser, mouthwash, some colognes)",
+      "co-ingestion with sedatives/opioids — synergistic respiratory depression"
+    ],
+    "differentialDiagnosis": [
+      "toxic alcohols (methanol, ethylene glycol — high osmolar AND anion gap, see those entries)",
+      "head injury / intracranial bleed",
+      "hypoglycaemia, DKA, sepsis, post-ictal state",
+      "other sedative-hypnotic intoxication"
+    ],
+    "management": [
+      "ABC; protect airway (lateral/recovery position; intubate if GCS low / unable to protect airway); the leading risk is aspiration.",
+      "Check capillary glucose immediately; treat hypoglycaemia.",
+      "Thiamine 100 mg IV before/with glucose in malnourished/alcohol-dependent patients to prevent precipitating Wernicke's encephalopathy.",
+      "IV fluids if dehydrated/hypotensive; correct electrolytes; keep warm (treat hypothermia).",
+      "Actively search for and treat co-ingestants, trauma (especially head injury), and metabolic mimics — do not attribute all obtundation to alcohol.",
+      "No role for routine 'sobering' agents; flumazenil/naloxone only if a specific co-ingestant suspected. Consider toxic-alcohol screen (osmolar/anion gap) if the picture doesn't fit."
+    ],
+    "antidote": "None (no antidote for ethanol itself). Supportive care; thiamine + glucose for hypoglycaemia/Wernicke risk.",
+    "redFlags": [
+      "Depressed conscious level not improving as expected — exclude head injury, hypoglycaemia, toxic alcohols, co-ingestants.",
+      "Inability to protect airway — intubate; high aspiration risk.",
+      "Hypoglycaemia (children, malnourished).",
+      "Raised osmolar/anion gap suggesting methanol or ethylene glycol co-ingestion."
+    ],
+    "references": [
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Ethanol." },
+      { "label": "Vonghia L et al. Acute alcohol intoxication. Eur J Intern Med 2008." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "C"
+  },
+  {
+    "slug": "colchicine-toxicity",
+    "name": "Colchicine toxicity",
+    "oneLiner": "Deceptively well early, then catastrophic: GI phase → multi-organ failure/shock/marrow suppression (peak day 2-7) → recovery if survived. NO antidote; doses > 0.8 mg/kg approach 100% mortality. Early charcoal + aggressive ICU support.",
+    "domains": ["toxicology", "emergency", "critical-care"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia; later cardiogenic shock / arrhythmia",
+      "bloodPressure": "hypotension / distributive + cardiogenic shock in systemic phase",
+      "respiratoryRate": "tachypnoea; ARDS",
+      "temperature": "fever (sepsis from marrow suppression)",
+      "pupils": "normal",
+      "skin": "later: alopecia (recovery phase)",
+      "mentalStatus": "alert early; confusion/coma with multi-organ failure",
+      "bowelSounds": "phase 1 (0-24 h): severe vomiting, profuse diarrhoea, abdominal pain, dehydration",
+      "other": ["phase 2 (1-7 days): multi-organ failure, bone-marrow suppression (pancytopenia), shock, rhabdomyolysis, lactic acidosis", "phase 3: recovery with rebound leukocytosis and alopecia", "lethality: > 0.5-0.8 mg/kg severe, > 0.8 mg/kg near-100% mortality"]
+    },
+    "causativeAgents": [
+      "colchicine (gout, familial Mediterranean fever) — acute overdose",
+      "Colchicum autumnale (autumn crocus) and Gloriosa superba (glory lily) plants"
+    ],
+    "differentialDiagnosis": [
+      "severe gastroenteritis / sepsis (early phase)",
+      "other causes of multi-organ failure / pancytopenia",
+      "other cytotoxic / chemotherapy overdose"
+    ],
+    "management": [
+      "Recognise that a well-appearing early patient with significant ingestion can deteriorate catastrophically — admit and monitor; estimate dose in mg/kg for risk.",
+      "Activated charcoal 1 g/kg if early AND airway protected; multi-dose charcoal may interrupt enterohepatic recirculation.",
+      "Aggressive supportive ICU care: fluid resuscitation, vasopressors/inotropes for shock, ventilation for ARDS, correct electrolytes and acidosis.",
+      "Treat bone-marrow suppression: G-CSF for neutropenia; transfusion support; broad-spectrum antibiotics for neutropenic sepsis.",
+      "There is NO proven antidote (colchicine-specific Fab fragments are not commercially available); haemodialysis does not remove colchicine effectively (large volume of distribution). Plasma exchange/ECMO have been reported as salvage.",
+      "Early discussion with poison centre / toxicology."
+    ],
+    "antidote": "None commercially available — supportive ICU care; G-CSF for marrow suppression. (Colchicine-specific Fab is investigational/unavailable.)",
+    "redFlags": [
+      "Ingested dose > 0.5-0.8 mg/kg — anticipate severe/fatal course despite a well-looking patient early.",
+      "Transition from GI phase to multi-organ failure (day 1-7).",
+      "Pancytopenia / neutropenic sepsis.",
+      "Cardiogenic shock / arrhythmia."
+    ],
+    "references": [
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Colchicine, Podophyllin and the Vinca Alkaloids." },
+      { "label": "Finkelstein Y et al. Colchicine poisoning: the dark side of an ancient drug. Clin Toxicol 2010." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "metformin-lactic-acidosis",
+    "name": "Metformin toxicity / metformin-associated lactic acidosis (MALA)",
+    "oneLiner": "Severe high-anion-gap lactic acidosis ± hypotension and altered mental status, especially with renal impairment or massive overdose. No antidote; sodium bicarbonate for severe acidosis and early haemodialysis for the sickest (pH ≤ 7.0, lactate > 20, shock).",
+    "domains": ["toxicology", "emergency", "critical-care", "nephrology", "endocrinology"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia",
+      "bloodPressure": "hypotension / shock in severe MALA",
+      "respiratoryRate": "tachypnoea / Kussmaul breathing (compensating for acidosis)",
+      "temperature": "often hypothermia in severe cases",
+      "pupils": "normal",
+      "skin": "cool, poorly perfused if shocked",
+      "mentalStatus": "lethargy → confusion → coma with worsening acidosis",
+      "bowelSounds": "nausea, vomiting, abdominal pain, diarrhoea",
+      "other": ["severe high-anion-gap metabolic (lactic) acidosis", "hyperlactataemia", "acute kidney injury (cause and consequence)", "hypoglycaemia uncommon with metformin alone (unlike sulfonylureas)"]
+    },
+    "causativeAgents": [
+      "metformin — acute overdose, or therapeutic use with acute kidney injury / dehydration / sepsis (MALA)",
+      "co-ingestants (especially other glucose-lowering agents)"
+    ],
+    "differentialDiagnosis": [
+      "other causes of high-anion-gap lactic acidosis (sepsis, ischaemia, toxic alcohols, cyanide)",
+      "DKA",
+      "other overdose causing shock/acidosis"
+    ],
+    "management": [
+      "ABC; IV access; large-bore; check glucose, lactate, blood gas (pH, anion gap), renal function, electrolytes; continuous monitoring.",
+      "Activated charcoal if early presentation after acute overdose AND airway protected.",
+      "Aggressive supportive care: IV fluids, vasopressors for shock, treat the precipitant (sepsis, AKI, dehydration).",
+      "Sodium bicarbonate infusion for severe acidosis (e.g. pH < 7.1-7.2), particularly with haemodynamic compromise.",
+      "Haemodialysis (preferred over CRRT when stable enough; CRRT/sustained therapies if unstable) for severe MALA — EXTRIP criteria: lactate > 20 mmol/L, pH ≤ 7.0, shock, failure of supportive measures, or decreased conscious level. Dialysis removes metformin and lactate and corrects acidosis.",
+      "Treat hypoglycaemia if co-ingestant present (metformin alone rarely causes it)."
+    ],
+    "antidote": "None — supportive care, sodium bicarbonate for severe acidosis, and early haemodialysis (per EXTRIP criteria) are definitive.",
+    "redFlags": [
+      "pH ≤ 7.0, lactate > 20 mmol/L, shock, or reduced conscious level — urgent haemodialysis.",
+      "Acute kidney injury driving metformin accumulation.",
+      "Massive ingestion (reported median acute ingestions in grams).",
+      "Refractory shock / profound acidosis."
+    ],
+    "references": [
+      { "label": "Calello DP et al. EXTRIP workgroup. Extracorporeal treatment for metformin poisoning. Crit Care Med 2015." },
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Antidiabetics (biguanides)." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cardiac-glycoside-plant-toxicity",
+    "name": "Cardiac glycoside plant poisoning (oleander, foxglove)",
+    "oneLiner": "Digoxin-like toxidrome from plants: GI upset + bradyarrhythmias/heart block + hyperkalaemia. Digoxin-specific antibody (Fab) fragments rapidly reverse arrhythmias and hyperkalaemia (often higher empiric doses than for digoxin).",
+    "domains": ["toxicology", "emergency", "cardiology", "critical-care"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "bradycardia, AV block; also ventricular arrhythmias",
+      "bloodPressure": "hypotension in severe poisoning",
+      "respiratoryRate": "normal",
+      "temperature": "normothermia",
+      "pupils": "normal",
+      "skin": "normal",
+      "mentalStatus": "lethargy, confusion; visual disturbance (xanthopsia) reported",
+      "bowelSounds": "nausea, vomiting, abdominal pain, diarrhoea",
+      "other": ["hyperkalaemia (marker of severity in acute poisoning)", "any dysrhythmia possible (classically bradyarrhythmia/heart block with ectopy)", "serum digoxin assay may cross-react but levels do NOT correlate with severity and a negative assay does not exclude plant glycosides"]
+    },
+    "causativeAgents": [
+      "Nerium oleander and Thevetia peruviana (yellow oleander)",
+      "Digitalis purpurea / lanata (foxglove)",
+      "lily of the valley (Convallaria), Urginea (squill), and other cardiac-glycoside-containing plants"
+    ],
+    "differentialDiagnosis": [
+      "digoxin toxicity (pharmaceutical)",
+      "other causes of bradyarrhythmia / heart block (beta-blocker, calcium-channel blocker, ACS)",
+      "hyperkalaemia from other causes"
+    ],
+    "management": [
+      "ABC; continuous cardiac monitoring; IV access; check potassium and renal function; 12-lead ECG.",
+      "Activated charcoal if early AND airway protected; multi-dose charcoal has been used (interrupts enterohepatic recirculation, e.g. in yellow-oleander poisoning).",
+      "Digoxin-specific antibody (Fab) fragments for life-threatening dysrhythmias, haemodynamic instability, or significant hyperkalaemia — they rapidly reverse oleander/foxglove toxicity; because levels don't correlate, empiric (often larger) dosing is guided by clinical severity.",
+      "Atropine for symptomatic bradycardia; temporary pacing if needed (use cautiously).",
+      "Manage hyperkalaemia supportively; correct hypokalaemia/hypomagnesaemia which potentiate toxicity. (Caution with IV calcium in cardiac-glycoside hyperkalaemia — traditionally avoided; treat the toxicity with Fab.)",
+      "Treat ventricular arrhythmias (e.g. lidocaine, magnesium); avoid agents that worsen conduction."
+    ],
+    "antidote": "Digoxin-specific antibody (Fab) fragments — rapidly reverse cardiac glycoside plant toxicity; dose empirically by clinical severity (levels unreliable).",
+    "redFlags": [
+      "Hyperkalaemia in acute poisoning — marker of severe toxicity; give Fab.",
+      "High-grade AV block / bradyarrhythmia / ventricular arrhythmia.",
+      "Haemodynamic instability.",
+      "Do not rely on a serum digoxin level to grade plant-glycoside severity."
+    ],
+    "references": [
+      { "label": "Eddleston M et al. Anti-digoxin Fab fragments in cardiotoxicity induced by yellow oleander poisoning. Lancet 2000." },
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Cardioactive Steroids." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "caustic-ingestion",
+    "name": "Caustic (corrosive) ingestion — acid / alkali",
+    "oneLiner": "Alkalis cause liquefactive oesophageal injury; acids cause coagulative gastric injury. Do NOT induce emesis, give charcoal, or 'neutralise' (exothermic). Secure airway; early endoscopy (12-24 h) to grade injury.",
+    "domains": ["toxicology", "emergency", "critical-care"],
+    "antidoteSlug": null,
+    "features": {
+      "heartRate": "tachycardia (pain/distress); shock if perforation",
+      "bloodPressure": "hypotension if perforation/mediastinitis",
+      "respiratoryRate": "stridor / respiratory distress with airway injury or aspiration",
+      "temperature": "fever if perforation/mediastinitis develops",
+      "pupils": "normal",
+      "skin": "oral/perioral burns; drooling",
+      "mentalStatus": "usually alert; distressed by pain",
+      "bowelSounds": "odynophagia, dysphagia, drooling, retrosternal/epigastric pain, vomiting (sometimes haematemesis)",
+      "other": ["airway oedema (stridor, hoarseness) — life-threatening", "risk of oesophageal/gastric perforation, mediastinitis, peritonitis", "late oesophageal strictures; long-term oesophageal cancer risk"]
+    },
+    "causativeAgents": [
+      "alkalis: drain/oven cleaners (sodium/potassium hydroxide), dishwasher detergents, ammonia, button batteries, bleach (usually milder)",
+      "acids: toilet-bowl/rust removers, descalers (hydrochloric, sulfuric), some pool chemicals"
+    ],
+    "differentialDiagnosis": [
+      "thermal injury",
+      "hydrofluoric acid (special systemic toxicity — see separate entry)",
+      "foreign body / button battery (impaction with rapid burn)",
+      "other causes of acute dysphagia / chest pain"
+    ],
+    "management": [
+      "ABC — airway is the priority: assess for stridor/hoarseness/oedema; early intubation (ideally awake/fibreoptic) by experienced clinician before swelling progresses; have surgical airway backup.",
+      "Do NOT induce vomiting, do NOT give activated charcoal (doesn't bind, obscures endoscopy), and do NOT attempt chemical neutralisation (exothermic reaction worsens injury).",
+      "Nil by mouth; IV fluids; analgesia; antiemetics; PPI commonly given.",
+      "Upright positioning; avoid blind nasogastric tube insertion.",
+      "Upper GI endoscopy within ~ 12-24 h (up to ~ 48 h) to grade injury and prognosticate; AVOID endoscopy in the ~ 5-15 day window (highest perforation risk). CT chest/abdomen if perforation suspected.",
+      "Surgery for perforation/transmural necrosis; involve GI/surgery/ENT early; monitor for late stricture; consider ophthalmology/dermatology for associated external burns."
+    ],
+    "antidote": "None — supportive care; airway protection and endoscopic grading are central. Neutralisation and charcoal are contraindicated.",
+    "redFlags": [
+      "Airway compromise (stridor, hoarseness, drooling) — secure airway early.",
+      "Signs of perforation / mediastinitis / peritonitis — surgical emergency.",
+      "Button battery in oesophagus — rapid burn; emergency removal.",
+      "Attempts at neutralisation / emesis / charcoal — contraindicated and harmful."
+    ],
+    "references": [
+      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Caustics." },
+      { "label": "Hoffman RS et al. Ingestion of caustic substances. N Engl J Med 2020;382:1739-1748." }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
   }
 ]
