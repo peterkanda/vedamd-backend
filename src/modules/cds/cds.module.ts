@@ -74,6 +74,7 @@ import { UtiTreatmentStrategy } from './strategies/uti-treatment.strategy';
 import { AsthmaStepUpStrategy } from './strategies/asthma-step-up.strategy';
 import { AnaemiaIronReplacementStrategy } from './strategies/anaemia-iron-replacement.strategy';
 import { HypothyroidismInitStrategy } from './strategies/hypothyroidism-init.strategy';
+import { BundleOutcomeStrategy } from './strategies/bundle-outcome.strategy';
 import { DeveloperModule } from '../developer/developer.module';
 import { DrugsModule } from '../drugs/drugs.module';
 
@@ -153,6 +154,7 @@ import { DrugsModule } from '../drugs/drugs.module';
     AsthmaStepUpStrategy,
     AnaemiaIronReplacementStrategy,
     HypothyroidismInitStrategy,
+    BundleOutcomeStrategy,
   ],
   exports: [CdsService],
 })

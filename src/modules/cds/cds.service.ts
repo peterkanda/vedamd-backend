@@ -52,6 +52,13 @@ export class CdsService {
         'Drug-drug interactions, dose checking, pediatric/renal/hepatic adjustments, AWaRe stewardship.',
     },
     {
+      id: 'vedamd-content-library',
+      hook: 'patient-view',
+      title: 'VedaMD clinical content library (on-demand)',
+      description:
+        'Addressable access to VedaMD’s pre-written clinical pathway cards (sepsis bundles, neonatal pathways, emergency protocols, etc.). Unlike the aggregate patient-view service, this NEVER fires unsolicited — the caller must name which pathways to render via context.ruleIds (array of rule ids). This keeps the content reachable without flooding the chart-open hook. Returns one card per outcome of each requested rule.',
+    },
+    {
       id: 'vedamd-order-select',
       hook: 'order-select',
       title: 'VedaMD order-select safety',
@@ -591,16 +598,42 @@ export class CdsService {
         }
         return false;
       };
-      const applicableRules = this.knowledge
-        .getCdsRules()
-        .filter(
-          (rule) =>
-            hookMatches(rule.hook) &&
-            (rule.services === undefined || rule.services.includes(known.id)),
+      // The content-library service renders pre-written outcome cards, but
+      // ONLY for the rule ids the caller explicitly names — never the whole
+      // patient-view rule set (that would flood the chart-open hook and
+      // drive the very alert-fatigue the feedback loop guards against).
+      const isContentLibrary = known.id === 'vedamd-content-library';
+      const requestedIds = isContentLibrary
+        ? new Set(
+            (Array.isArray((req.context as Record<string, unknown>)?.ruleIds)
+              ? ((req.context as Record<string, unknown>).ruleIds as unknown[])
+              : []
+            ).filter((x): x is string => typeof x === 'string'),
+          )
+        : null;
+
+      const applicableRules = this.knowledge.getCdsRules().filter((rule) => {
+        if (isContentLibrary) {
+          // Content library: only the explicitly requested outcome rules.
+          return (
+            requestedIds!.has(rule.id) && (rule.outcomes?.length ?? 0) > 0
+          );
+        }
+        return (
+          hookMatches(rule.hook) &&
+          (rule.services === undefined || rule.services.includes(known.id))
         );
+      });
 
       for (const rule of applicableRules) {
-        const strategy = this.registry.get(rule.type);
+        // Resolve the bespoke strategy by type; otherwise (content-library
+        // only) fall back to the generic outcome renderer. Aggregate hooks
+        // never use the fallback, so their behaviour is unchanged.
+        const strategy =
+          this.registry.get(rule.type) ??
+          (isContentLibrary && (rule.outcomes?.length ?? 0) > 0
+            ? this.registry.outcomeFallback()
+            : null);
         if (!strategy) continue;
         rulesEvaluated += 1;
         try {
