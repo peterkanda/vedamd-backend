@@ -6,6 +6,7 @@ import {
 import { CdsFeedbackService } from './cds-feedback.service';
 import { CdsModule } from '../cds/cds.module';
 import { IdentityModule } from '../identity/identity.module';
+import { DeveloperModule } from '../developer/developer.module';
 import { OperatorAuthGuard } from '../../common/operator-auth';
 
 /**
@@ -19,7 +20,7 @@ import { OperatorAuthGuard } from '../../common/operator-auth';
  * false-positive content.
  */
 @Module({
-  imports: [CdsModule, IdentityModule],
+  imports: [CdsModule, IdentityModule, DeveloperModule],
   controllers: [CdsFeedbackSpecController, CdsFeedbackOperatorController],
   providers: [CdsFeedbackService, OperatorAuthGuard],
   exports: [CdsFeedbackService],
