@@ -54,6 +54,13 @@ CARD RULES:
 - Do not duplicate a deterministic check the integrator will already get — instead add value (e.g. sequencing, monitoring plan, alternative agent from the knowledge).
 - Never include patient identifiers. Never echo back raw context you were given beyond what is clinically necessary.
 
+CONVERSATION CONTEXT (multi-turn safety):
+- The user message may include a "CONVERSATION SO FAR" section: the prior turns of this clinical thread, oldest first. The "TASK" line holds the CURRENT question.
+- Treat the current question as a CONTINUATION of that thread. Resolve pronouns and ellipsis ("they", "it", "the child", "after 3 days", "if that fails", "what about the dose") against the patient and clinical scenario already established earlier in the conversation. Do NOT silently switch to a different patient, drug, or disease.
+- The same GROUND-TRUTH rule still applies to every turn: if continuing the thread leads somewhere the provided VEDAMD KNOWLEDGE does not cover (e.g. a second-line agent that isn't in the bundle), say so explicitly and recommend the formulary / specialist — never invent the next step from memory just to keep the conversation going.
+- If a follow-up is genuinely ambiguous and the conversation does NOT disambiguate it, emit a single "info" card asking the one clarifying question you need, rather than guessing. A wrong assumption carried across turns is a serious safety risk.
+- Stay consistent: do not contradict a correct earlier answer unless new information in the thread justifies it (then state what changed).
+
 ANTI-HALLUCINATION GUARDRAILS (PATIENT-SAFETY CRITICAL — VIOLATIONS CAN KILL):
 - If you cannot cite a specific knowledge record for a claim, DO NOT include the claim. Silence is safer than fabrication.
 - Prefer "not covered by VedaMD knowledge — consult formulary / specialist" over creative synthesis. Saying "I don't know" is a correct + valuable answer.
@@ -139,13 +146,37 @@ export function buildUserMessage(
     }
   }
 
+  const conversationSection: string[] = [];
+  const turns = ctx.conversation ?? [];
+  if (turns.length) {
+    // Render the most recent turns (bounded for prompt size), oldest first.
+    const recent = turns.slice(-MAX_RENDERED_TURNS);
+    conversationSection.push(
+      '\n## CONVERSATION SO FAR (oldest first — the current question continues this thread)',
+    );
+    for (const turn of recent) {
+      const who = turn.role === 'assistant' ? 'VedaMD' : 'Clinician';
+      conversationSection.push(`- ${who}: ${truncate(turn.content, MAX_TURN_CHARS)}`);
+    }
+  }
+
   const task = [
     '\n## TASK',
     ctx.question
-      ? `Clinician question: "${ctx.question}"`
+      ? turns.length
+        ? `Current clinician question (continues the conversation above): "${ctx.question}"`
+        : `Clinician question: "${ctx.question}"`
       : 'Evaluate this context for clinical safety issues, gaps, and actionable recommendations.',
     'Return ONLY the JSON object specified in your instructions.',
   ];
 
-  return [...k, ...c, ...policySection, ...task].join('\n');
+  return [...k, ...c, ...policySection, ...conversationSection, ...task].join('\n');
+}
+
+/** Bound how much conversation we replay into the prompt. */
+const MAX_RENDERED_TURNS = 16;
+const MAX_TURN_CHARS = 1500;
+
+function truncate(s: string, n: number): string {
+  return s.length > n ? `${s.slice(0, n)}…` : s;
 }

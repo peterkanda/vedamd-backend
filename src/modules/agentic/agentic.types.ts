@@ -40,6 +40,15 @@ export interface AgenticClinicalContext {
   minConfidence?: number;
   /** Caller-supplied free-text reason / question to evaluate (optional). */
   question?: string;
+  /**
+   * Prior turns of the conversation (oldest first), EXCLUDING the
+   * current `question`. Used to (a) keep the LLM in context on
+   * follow-up questions and (b) widen knowledge retrieval so a terse
+   * follow-up ("and if it doesn't improve?") still grounds against the
+   * drugs/conditions established earlier in the thread. Anonymous —
+   * never logged or persisted (FR-088 still holds for the request).
+   */
+  conversation?: Array<{ role: 'user' | 'assistant'; content: string }>;
   /** Anonymous patient signals — age, sex, weight, key labs, comorbidities. */
   patient?: {
     ageYears?: number;

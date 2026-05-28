@@ -45,6 +45,7 @@ import { DataSourcesModule } from './modules/data-sources/data-sources.module';
 import { CdsFeedbackModule } from './modules/cds-feedback/cds-feedback.module';
 import { GovernanceModule } from './modules/governance/governance.module';
 import { ReferenceModule } from './modules/reference/reference.module';
+import { UsageModule } from './modules/usage/usage.module';
 
 @Module({
   imports: [
@@ -96,6 +97,7 @@ import { ReferenceModule } from './modules/reference/reference.module';
     CdsFeedbackModule,
     GovernanceModule,
     ReferenceModule,
+    UsageModule,
   ],
 })
 export class AppModule {}

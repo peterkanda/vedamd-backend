@@ -43,17 +43,38 @@ export class KnowledgeRetrieverService {
     const medTerms = norm(ctx.medications ?? []);
     const dxTerms = norm(ctx.diagnoses ?? []);
     const allergyTerms = norm(ctx.allergies ?? []);
-    const freeTokens = tokenize([ctx.question ?? '', ...(ctx.diagnoses ?? [])].join(' '));
 
-    // --- Drugs: match by slug / inn / trade / class against med + allergy terms ---
+    // Conversation text widens retrieval for follow-ups. A terse
+    // follow-up ("and if after 3 days they don't get better?") carries
+    // almost no clinical tokens on its own, so without this the
+    // retriever returns nothing and the LLM is left to hallucinate.
+    // Folding in the prior turns re-grounds the answer against the
+    // drugs / conditions established earlier in the thread.
+    const conversationText = (ctx.conversation ?? []).map((m) => m.content).join(' ');
+    const freeTokens = tokenize(
+      [ctx.question ?? '', conversationText, ...(ctx.diagnoses ?? [])].join(' '),
+    );
+    // Lowercased haystack for whole-name drug mentions anywhere in the thread.
+    const textHay = `${ctx.question ?? ''} ${conversationText}`.toLowerCase();
+
+    // --- Drugs: match by slug / inn / trade / class against med + allergy terms,
+    //     OR by a drug name explicitly mentioned in the question / conversation. ---
     const matchedDrugSlugs = new Set<string>();
     const drugs = this.knowledge
       .getDrugs()
       .filter((d) => {
         const hay = [d.slug, d.inn, d.drugClass, ...(d.tradeNames ?? [])].map((s) => s?.toLowerCase());
-        const hit = [...medTerms, ...allergyTerms].some((t) =>
+        const structuredHit = [...medTerms, ...allergyTerms].some((t) =>
           hay.some((h) => h && (h === t || h.includes(t) || t.includes(h))),
         );
+        // Only the specific names (slug/inn/trade) are matched against free
+        // text — NOT drugClass, which is too broad and would over-retrieve.
+        const namedHit =
+          !structuredHit &&
+          [d.slug, d.inn, ...(d.tradeNames ?? [])]
+            .map((s) => s?.toLowerCase())
+            .some((h) => h && h.length > 3 && textHay.includes(h));
+        const hit = structuredHit || namedHit;
         if (hit) matchedDrugSlugs.add(d.slug);
         return hit;
       })

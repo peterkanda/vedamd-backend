@@ -378,3 +378,47 @@ export const cdsCardFeedback = pgTable(
 
 export type CdsCardFeedbackRow = typeof cdsCardFeedback.$inferSelect;
 export type NewCdsCardFeedbackRow = typeof cdsCardFeedback.$inferInsert;
+
+/**
+ * Usage events — product analytics for "who used what". One row per
+ * authenticated (or operator-identified) API request: which endpoint,
+ * which category (chat / search / reference / cds / api), latency and
+ * status. This powers the per-integrator usage dashboard so admins can
+ * see how clinicians use the chat, what references they check, and how
+ * their API key traffic breaks down.
+ *
+ * PHI-free by construction: we store the route TEMPLATE (no path
+ * params, no query string, no body), a coarse category, and a hashed
+ * actor id — never the question text, never a patient identifier.
+ */
+export const usageEvents = pgTable(
+  'usage_events',
+  {
+    id: bigserial('id', { mode: 'number' }).primaryKey(),
+    occurredAt: timestamp('occurred_at', { withTimezone: true }).notNull().defaultNow(),
+    /** Integrator the request acted on behalf of (null for unauthenticated reference browsing). */
+    integratorId: text('integrator_id'),
+    /** "operator" (web app / OIDC) | "api_key" (developer integration) | "anonymous". */
+    actorType: text('actor_type').notNull(),
+    /** HMAC of the operator sub, or the API key fingerprint. Non-reversible. Null when anonymous. */
+    actorHash: text('actor_hash'),
+    /** HTTP method. */
+    method: text('method').notNull(),
+    /** Route template, e.g. "/api/v1/agentic/evaluate" — never includes params, query or body. */
+    endpoint: text('endpoint').notNull(),
+    /** Coarse bucket: chat | search | reference | cds | developer | api. */
+    category: text('category').notNull().default('api'),
+    statusCode: integer('status_code').notNull(),
+    latencyMs: integer('latency_ms').notNull(),
+    /** "sandbox" | "production" | null (operator / anonymous). */
+    environment: text('environment'),
+  },
+  (t) => ({
+    byIntegrator: index('idx_usage_events_integrator').on(t.integratorId, t.occurredAt),
+    byCategory: index('idx_usage_events_category').on(t.integratorId, t.category),
+    byTime: index('idx_usage_events_time').on(t.occurredAt),
+  }),
+);
+
+export type UsageEventRow = typeof usageEvents.$inferSelect;
+export type NewUsageEventRow = typeof usageEvents.$inferInsert;

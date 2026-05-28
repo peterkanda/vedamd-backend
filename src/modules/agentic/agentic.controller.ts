@@ -98,6 +98,7 @@ export class AgenticController {
     const ctx = fhirToContext(dto.resource, dto.hook, dto.question);
     ctx.mode = dto.mode;
     ctx.minConfidence = dto.minConfidence;
+    ctx.conversation = dto.conversation;
     ctx.integratorId = req.apiKey?.integratorId;
     try {
       return await this.agentic.evaluate(ctx);

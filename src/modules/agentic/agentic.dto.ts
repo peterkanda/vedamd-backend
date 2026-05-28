@@ -9,9 +9,29 @@ import {
   IsObject,
   IsOptional,
   IsString,
+  MaxLength,
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
+
+/**
+ * One prior turn in a multi-turn clinical conversation. Lets the
+ * reasoner resolve follow-up questions ("and if after 3 days they
+ * don't get better?") against the established scenario instead of
+ * losing context and hallucinating. Content is plain text — for
+ * assistant turns the caller passes a readable digest of the cards
+ * (summary + detail), NOT raw JSON. Still anonymous: no identifiers.
+ */
+class ConversationTurnDto {
+  @ApiProperty({ enum: ['user', 'assistant'] })
+  @IsIn(['user', 'assistant'])
+  role!: 'user' | 'assistant';
+
+  @ApiProperty({ description: 'Plain-text content of the turn.' })
+  @IsString()
+  @MaxLength(6000)
+  content!: string;
+}
 
 class PatientDto {
   @ApiPropertyOptional({ description: 'Age in years.', example: 42 })
@@ -99,6 +119,18 @@ export class AgenticEvaluateDto {
   @IsOptional()
   @IsString()
   question?: string;
+
+  @ApiPropertyOptional({
+    type: [ConversationTurnDto],
+    description:
+      'Prior turns of the conversation, oldest first, EXCLUDING the current `question`. Lets the reasoner keep context across follow-up questions. Anonymous — no patient identifiers. Capped at 40 turns.',
+  })
+  @IsOptional()
+  @IsArray()
+  @ArrayMaxSize(40)
+  @ValidateNested({ each: true })
+  @Type(() => ConversationTurnDto)
+  conversation?: ConversationTurnDto[];
 
   @ApiPropertyOptional({
     enum: ['deterministic', 'agentic', 'auto'],
@@ -220,6 +252,17 @@ export class AgenticFhirEvaluateDto {
   @IsOptional()
   @IsString()
   question?: string;
+
+  @ApiPropertyOptional({
+    type: [ConversationTurnDto],
+    description: 'Prior conversation turns (oldest first), excluding the current question.',
+  })
+  @IsOptional()
+  @IsArray()
+  @ArrayMaxSize(40)
+  @ValidateNested({ each: true })
+  @Type(() => ConversationTurnDto)
+  conversation?: ConversationTurnDto[];
 
   @ApiPropertyOptional({ enum: ['deterministic', 'agentic', 'auto'] })
   @IsOptional()
