@@ -6,7 +6,8 @@ import { CustomRulesModule } from '../custom-rules/custom-rules.module';
 import { PoliciesModule } from '../policies/policies.module';
 import { NotificationsModule } from '../notifications/notifications.module';
 import { IdentityModule } from '../identity/identity.module';
-import { OperatorAuthGuard } from '../../common/operator-auth';
+import { DeveloperModule } from '../developer/developer.module';
+import { OperatorOrApiKeyGuard } from '../../common/operator-auth';
 
 /**
  * Per-integrator on-demand clinical audits. Binds a named query
@@ -24,9 +25,10 @@ import { OperatorAuthGuard } from '../../common/operator-auth';
     PoliciesModule,
     NotificationsModule,
     IdentityModule,
+    DeveloperModule,
   ],
   controllers: [ClinicalAuditsController],
-  providers: [ClinicalAuditsService, OperatorAuthGuard],
+  providers: [ClinicalAuditsService, OperatorOrApiKeyGuard],
   exports: [ClinicalAuditsService],
 })
 export class ClinicalAuditsModule {}

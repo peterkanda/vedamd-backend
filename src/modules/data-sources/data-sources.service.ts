@@ -3,6 +3,7 @@ import { and, desc, eq } from 'drizzle-orm';
 import { DRIZZLE, type MaybeDrizzle } from '../../db/database.module';
 import { sqlConnections as connsTable, sqlNamedQueries as queriesTable } from '../../db/schema';
 import { decryptSecret, encryptSecret } from '../../common/secrets-vault';
+import { assertHostAllowedLiteral, ssrfOptionsFromEnv } from '../../common/ssrf-guard';
 import { SqlIngestionService } from '../agentic/connectors/sql-ingestion.service';
 import { assertReadOnly, type QueryMapping, type SqlDialect } from '../agentic/connectors/sql-connector.types';
 import type {
@@ -150,6 +151,10 @@ export class DataSourcesService implements OnModuleInit {
       throw new Error('dialect must be postgres / mysql / mssql / oracle.');
     }
     if (!dto.url?.trim()) throw new Error('url is required (will be encrypted).');
+    // SSRF: reject connections pointing at loopback/private/link-local
+    // hosts (or hosts outside the configured allowlist) before we store
+    // or register them. DNS-aware re-check happens again at connect time.
+    assertHostAllowedLiteral(dto.url.trim(), ssrfOptionsFromEnv());
 
     const encryptedUrl = encryptSecret(dto.url.trim(), integratorId);
     const now = new Date().toISOString();
@@ -202,6 +207,7 @@ export class DataSourcesService implements OnModuleInit {
   ): Promise<ConnectionSummary> {
     const existing = await this.findConnInternal(integratorId, id);
     if (!existing) throw new NotFoundException(`Connection not found: ${id}`);
+    if (dto.url?.trim()) assertHostAllowedLiteral(dto.url.trim(), ssrfOptionsFromEnv());
     const encryptedUrl = dto.url ? encryptSecret(dto.url.trim(), integratorId) : existing.encryptedUrl;
     const merged: ConnectionMem = {
       ...existing,

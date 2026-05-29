@@ -7,6 +7,11 @@ import type {
   SmtpCreds,
 } from '../notifications.types';
 import type { NotificationProviderAdapter } from './notification-provider.interface';
+import {
+  assertHostAllowedLiteral,
+  assertHostAllowedResolved,
+  ssrfOptionsFromEnv,
+} from '../../../common/ssrf-guard';
 
 /**
  * Minimal SMTP-over-TLS adapter using only the Node standard library
@@ -31,6 +36,9 @@ export class SmtpProvider implements NotificationProviderAdapter {
     if (typeof c.port !== 'number' || c.port < 1 || c.port > 65535) {
       throw new Error('SMTP port must be 1-65535.');
     }
+    // SSRF: block SMTP hosts that point at loopback/private/link-local
+    // (e.g. the cloud metadata endpoint) or fall outside the allowlist.
+    assertHostAllowedLiteral(c.host, ssrfOptionsFromEnv());
     if (typeof c.secure !== 'boolean') throw new Error('SMTP secure must be a boolean.');
     if (!c.username || typeof c.username !== 'string') throw new Error('SMTP username required.');
     if (!c.password || typeof c.password !== 'string') throw new Error('SMTP password required.');
@@ -67,6 +75,7 @@ export class SmtpProvider implements NotificationProviderAdapter {
       'Content-Transfer-Encoding: 8bit\r\n\r\n';
 
     try {
+      await assertHostAllowedResolved(creds.host, ssrfOptionsFromEnv());
       const result = await smtpSend(creds, fromHeader, to, headers + bodyText);
       return { ok: true, to, providerMessageId: result.messageId, status: 'queued' };
     } catch (err) {

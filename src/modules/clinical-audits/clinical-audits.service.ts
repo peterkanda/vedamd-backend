@@ -107,6 +107,21 @@ export class ClinicalAuditsService implements OnModuleInit {
     createdBy?: string,
   ): Promise<AuditSummary> {
     validateThreshold(dto.threshold);
+    // Validate the referenced connection + named query actually exist
+    // before persisting, so a misconfigured audit fails loudly at create
+    // time rather than silently at "Run now".
+    const connectionId = dto.connectionId.trim();
+    const namedQueryId = dto.namedQueryId.trim();
+    if (!this.sql.getRegisteredConnection(connectionId)) {
+      throw new NotFoundException(
+        `Connection "${connectionId}" is not registered. Add it under Data sources first.`,
+      );
+    }
+    if (!this.sql.getRegisteredQuery(namedQueryId)) {
+      throw new NotFoundException(
+        `Named query "${namedQueryId}" is not registered. Add it under Data sources first.`,
+      );
+    }
     const id = randomUUID();
     const now = new Date().toISOString();
     const row: MemRow = {
