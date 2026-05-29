@@ -13,7 +13,8 @@ export type ApiKeyScope =
   | 'drug-info:read'
   | 'terminology:read'
   | 'bundles:read'
-  | 'integration-log:read';
+  | 'integration-log:read'
+  | 'clinical-audit:run';
 
 export type ApiKeyEnvironment = 'sandbox' | 'production';
 

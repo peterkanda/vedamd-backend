@@ -35,6 +35,7 @@ const SCOPES: ApiKeyScope[] = [
   'terminology:read',
   'bundles:read',
   'integration-log:read',
+  'clinical-audit:run',
 ];
 
 class CreateApiKeyDto {

@@ -12,7 +12,8 @@ import {
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import type { FastifyRequest } from 'fastify';
-import { OperatorAuthGuard } from '../../common/operator-auth';
+import { OperatorOrApiKeyGuard } from '../../common/operator-auth';
+import { RequireScope } from '../../common/api-key-auth';
 import { ClinicalAuditsService } from './clinical-audits.service';
 import type { AuditCreateDto, AuditUpdateDto } from './clinical-audits.types';
 
@@ -22,7 +23,8 @@ type OperatorRequest = FastifyRequest & {
 
 @ApiTags('clinical-audits')
 @Controller('v1/clinical-audits')
-@UseGuards(OperatorAuthGuard)
+@UseGuards(OperatorOrApiKeyGuard)
+@RequireScope('clinical-audit:run')
 @ApiBearerAuth()
 export class ClinicalAuditsController {
   constructor(private readonly svc: ClinicalAuditsService) {}
