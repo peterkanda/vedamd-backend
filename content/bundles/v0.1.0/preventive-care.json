@@ -1726,5 +1726,748 @@
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
     "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "missed-pill-rules-coc",
+    "title": "Missed combined oral contraceptive (COC) pill rules",
+    "category": "contraception",
+    "domains": ["reproductive-health", "family-planning"],
+    "summary": "A combined pill is 'missed' when it is more than 24 hours late (i.e. 48 hours or more since the last pill). The action depends on how many pills are missed and where in the pack, because the greatest risk is lengthening the hormone-free interval (the start/end of the pack).",
+    "sections": [
+      { "heading": "FSRH missed-pill rules", "steps": [
+        { "step": "One pill missed (anywhere)", "detail": "Take the missed pill as soon as remembered (even if two on one day), continue the rest as usual. NO extra precautions and NO emergency contraception needed." },
+        { "step": "Two or more pills missed", "detail": "Take the most recent missed pill now, continue the pack, and use condoms (or abstain) until 7 consecutive active pills have been taken." },
+        { "step": "Missed in week 1 (days 1-7)", "detail": "Consider emergency contraception if unprotected sex occurred during the hormone-free interval or in week 1." },
+        { "step": "Missed in week 3 (days 15-21)", "detail": "Omit the pill-free break: finish active pills and start the next pack straight away (no break / skip placebos)." }
+      ] }
+    ],
+    "redFlags": ["Two or more missed pills with unprotected sex in week 1 or during the pill-free interval - assess for emergency contraception", "Repeated missed pills - consider a method less reliant on daily adherence (LARC)"],
+    "references": [
+      { "label": "FSRH CEU Guidance: Recommended Actions after Incorrect Use of Combined Hormonal Contraception", "url": "https://www.fsrh.org/standards-and-guidance/documents/combined-hormonal-contraception/" },
+      { "label": "CDC Recommended Actions After Late or Missed Combined Oral Contraceptives (2024)", "url": "https://www.cdc.gov/contraception/media/pdfs/2024/07/recommended-action-late-missed-contraception-508.pdf" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "missed-pill-rules-pop",
+    "title": "Missed/late progestogen-only pill (POP) rules",
+    "category": "contraception",
+    "domains": ["reproductive-health", "family-planning"],
+    "summary": "For the progestogen-only pill, the 'late' window depends on the progestogen: the rules apply once the pill is taken outside its window. After a late/missed POP, take it at once, continue, and use backup for 48 hours.",
+    "sections": [
+      { "heading": "Late/missed POP windows by type", "items": ["Traditional POP (levonorgestrel or norethisterone): late if more than 3 hours past the usual time (rules apply beyond 3 hours)", "Desogestrel POP: late if more than 12 hours past the usual time", "Drospirenone POP: late if more than 24 hours past the usual time"] },
+      { "heading": "Action when a POP is missed/late", "steps": [
+        { "step": "Take it now", "detail": "Take the late/missed pill as soon as remembered (even if it means two in one day) and continue the next pill at the usual time." },
+        { "step": "Use backup", "detail": "Use condoms or abstain for the next 48 hours (until pills have been taken correctly for 2 days)." },
+        { "step": "Consider EC", "detail": "If unprotected sex occurred in the 48 hours before realising or during the backup period, consider emergency contraception." }
+      ] }
+    ],
+    "redFlags": ["Unprotected sex around the time of a missed/late POP - consider emergency contraception", "Vomiting within 2-3 hours or severe diarrhoea - treat as a missed pill"],
+    "references": [
+      { "label": "FSRH Guideline: Progestogen-only Pills (August 2022)", "url": "https://www.fsrh.org/standards-and-guidance/documents/cec-ceu-guidance-pop/" },
+      { "label": "CDC Recommended Actions After Late or Missed Progestin-only Pills (2024)", "url": "https://www.cdc.gov/contraception/media/pdfs/2024/07/recommended-action-late-missed-progestin-508.pdf" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "quick-start-contraception",
+    "title": "Quick starting and switching contraceptive methods",
+    "category": "contraception",
+    "domains": ["reproductive-health", "family-planning"],
+    "summary": "Quick starting means beginning a method on the day of presentation (rather than waiting for the next period) once pregnancy can be reasonably excluded, to avoid leaving the person unprotected. Backup is needed unless the method is started within the early-cycle window for immediate cover.",
+    "sections": [
+      { "heading": "Starting and backup windows", "items": ["COC, POP, implant, DMPA: immediately effective if started up to day 5 of the cycle; if started later, use condoms for the required period (7 days for COC/implant/DMPA; 2 days for POP)", "Cu-IUD: effective immediately whenever inserted (pregnancy excluded)", "LNG-IUS: effective immediately if inserted up to day 7; otherwise backup for 7 days", "Quick start any time if pregnancy reasonably excluded; do a follow-up pregnancy test ~3 weeks after the last unprotected sex if needed"] },
+      { "heading": "Switching methods", "steps": [
+        { "step": "Avoid a gap", "detail": "When switching, overlap or bridge methods to avoid an unprotected interval (e.g. start the new method before stopping the old, or use the appropriate backup)." },
+        { "step": "After ulipristal EC", "detail": "Hormonal contraception started immediately after ulipristal may be less effective; FSRH advises waiting 5 days after ulipristal before (re)starting hormonal contraception, using condoms meanwhile." }
+      ] }
+    ],
+    "redFlags": ["Cannot reasonably exclude pregnancy - may still quick start but arrange a follow-up pregnancy test ~3 weeks later", "Recent ulipristal use - delay hormonal method start by 5 days"],
+    "references": [
+      { "label": "FSRH Guideline: Quick Starting Contraception", "url": "https://www.fsrh.org/standards-and-guidance/documents/fsrh-guideline-quick-starting-contraception/" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "postpartum-contraception-timing",
+    "title": "Postpartum contraception: timing of methods",
+    "category": "contraception",
+    "domains": ["reproductive-health", "family-planning", "maternal-health"],
+    "summary": "Fertility can return from about day 21 postpartum in non-breastfeeding women, so contraception should be addressed early. Progestogen-only methods can start from birth; combined methods are restricted in the early postpartum because of VTE risk.",
+    "sections": [
+      { "heading": "Timing by method (FSRH)", "items": ["Progestogen-only pill, implant, DMPA: can be started from birth (any time postpartum), including while breastfeeding", "Combined hormonal contraception: avoid before day 21 (VTE risk); from day 21-42 depends on additional VTE/breastfeeding risk factors; generally not before 6 weeks if breastfeeding", "Cu-IUD and LNG-IUS: insert within 48 hours of birth, OR from 4 weeks postpartum (FSRH); avoid insertion between 48 hours and 4 weeks", "Lactational amenorrhoea method (LAM): up to ~98% effective if fully breastfeeding, amenorrhoeic, and infant under 6 months"] },
+      { "heading": "Practice points", "steps": [
+        { "step": "Start cover by day 21", "detail": "If starting a hormonal method after day 21 and cycles/sex have resumed, exclude pregnancy and use backup as per the method." },
+        { "step": "Offer LARC early", "detail": "Immediate postpartum LARC (implant from birth; IUD within 48h) improves uptake and reduces rapid-repeat pregnancy." }
+      ] }
+    ],
+    "redFlags": ["Combined hormonal contraception before day 21 postpartum (VTE risk) - avoid", "IUD/IUS insertion between 48 hours and 4 weeks postpartum - higher expulsion/perforation risk, avoid", "Reliance on LAM once any criterion is lost"],
+    "references": [
+      { "label": "FSRH Guideline: Contraception After Pregnancy", "url": "https://www.fsrh.org/standards-and-guidance/documents/contraception-after-pregnancy-guideline/" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "post-abortion-contraception",
+    "title": "Post-abortion contraception",
+    "category": "contraception",
+    "domains": ["reproductive-health", "family-planning"],
+    "summary": "Ovulation can return within 2-3 weeks of an abortion, so contraception should be started immediately to prevent rapid repeat pregnancy. Most methods, including LARC, can be started on the day of a surgical abortion or the day the first medical-abortion pill is taken.",
+    "sections": [
+      { "heading": "Immediate start by method", "items": ["Hormonal methods (COC, POP, implant, DMPA) and the Cu-IUD started within 5 days of (or at the time of) abortion are immediately effective", "Implant can be inserted at a medical or surgical abortion (quick-starting the implant does not reduce mifepristone efficacy)", "Cu-IUD can be inserted immediately after a surgical abortion (including under anaesthetic) and is effective at once", "LNG-IUS is immediately effective if inserted within 5 days of the abortion"] },
+      { "heading": "Practice", "steps": [
+        { "step": "Offer same-day LARC", "detail": "Immediate post-abortion IUD/implant insertion reduces unintended pregnancy versus delayed insertion and has high continuation - offer at the time of the procedure." },
+        { "step": "Counsel and confirm", "detail": "Confirm the abortion is complete (ongoing pregnancy is a contraindication to IUD insertion); counsel on bleeding and follow-up." }
+      ] }
+    ],
+    "redFlags": ["Suspected incomplete abortion or ongoing pregnancy - do not insert an IUD until resolved", "Signs of post-abortion infection (fever, pain, offensive discharge) - treat before/with IUD per protocol"],
+    "references": [
+      { "label": "FSRH Guideline: Contraception After Pregnancy (post-abortion)", "url": "https://www.fsrh.org/standards-and-guidance/documents/contraception-after-pregnancy-guideline/" },
+      { "label": "ACOG Access to Postabortion Contraception", "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/08/access-to-postabortion-contraception" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "contraception-over-40-perimenopause",
+    "title": "Contraception over 40 and in the perimenopause",
+    "category": "contraception",
+    "domains": ["reproductive-health", "family-planning", "menopause"],
+    "summary": "Fertility declines with age but contraception is still needed until natural sterility. FSRH advises that all women can stop contraception at 55, when spontaneous conception is exceptionally rare; before that, stopping depends on age and amenorrhoea. Method choice also considers age-related risks and non-contraceptive benefits.",
+    "sections": [
+      { "heading": "When to stop contraception (FSRH)", "items": ["All women can stop at age 55 (conception above 55 is exceptionally rare, even with bleeding)", "Age 50 or over: can stop after 1 year of amenorrhoea on a non-hormonal method", "Under 50: can stop after 2 years of amenorrhoea on a non-hormonal method", "Hormonal methods can mask menopause; if needed, FSH levels can help in women >=50 using progestogen-only methods (not reliable with combined methods)"] },
+      { "heading": "Method considerations over 40", "steps": [
+        { "step": "Non-contraceptive benefits", "detail": "COC (if no contraindications) can help vasomotor symptoms and bleeding up to age 50; the 52 mg LNG-IUS provides contraception, manages heavy bleeding, and can be the progestogen component of HRT." },
+        { "step": "Age-related cautions", "detail": "Avoid combined hormonal contraception from age 50 (switch to a progestogen-only or non-hormonal method); reassess cardiovascular risk, migraine and VTE risk with age." },
+        { "step": "Extended LARC use", "detail": "A 52 mg LNG-IUS inserted at age 45+ for contraception can be used until 55 (unless used as HRT progestogen); the Cu-IUD inserted at 40+ can stay until menopause/55." }
+      ] }
+    ],
+    "redFlags": ["Combined hormonal contraception continued at/after age 50 - switch method", "New migraine with aura, uncontrolled hypertension, or VTE risk developing with age on combined methods - stop/switch", "Postmenopausal bleeding (not on cyclical HRT) - investigate"],
+    "references": [
+      { "label": "FSRH Guideline: Contraception for Women Aged Over 40 Years", "url": "https://www.fsrh.org/standards-and-guidance/documents/fsrh-guidance-contraception-for-women-aged-over-40-years-2017/" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "contraception-enzyme-inducers",
+    "title": "Contraception and enzyme-inducing drugs",
+    "category": "contraception",
+    "domains": ["reproductive-health", "family-planning", "pharmacology"],
+    "summary": "Enzyme-inducing drugs (e.g. rifampicin/rifabutin, carbamazepine, phenytoin, some other antiepileptics, and St John's wort) increase metabolism of steroid hormones and can reduce the efficacy of combined and most progestogen-only methods, the implant, and oral emergency contraception. DMPA and intrauterine methods are unaffected.",
+    "sections": [
+      { "heading": "Effect on methods (FSRH)", "items": ["AFFECTED (efficacy reduced): all combined hormonal contraception, progestogen-only pill, etonogestrel implant, and oral emergency contraception", "NOT affected: DMPA injection, copper IUD, and the LNG-IUS - these are preferred during and after enzyme inducers", "Induction begins within ~2 days and is maximal within ~1 week; the effect persists for about 4 weeks after stopping the inducer"] },
+      { "heading": "Advice", "steps": [
+        { "step": "Rifampicin / rifabutin (potent inducers)", "detail": "Do NOT rely on combined or progestogen-only pills or the implant; recommend DMPA, Cu-IUD or LNG-IUS instead. The effect persists ~4 weeks after stopping." },
+        { "step": "Other enzyme inducers (longer term, e.g. some antiepileptics)", "detail": "Recommend a method unaffected by enzyme inducers (DMPA, Cu-IUD, LNG-IUS). Short-term pill 'dose increase' workarounds are not reliable - prefer changing method." },
+        { "step": "Emergency contraception", "detail": "Oral EC efficacy is reduced - a copper IUD is the preferred EC; if oral EC is used, a double dose of levonorgestrel (3 mg) is advised (ulipristal is not recommended with enzyme inducers)." }
+      ] }
+    ],
+    "redFlags": ["Reliance on the pill or implant while on rifampicin/rifabutin or enzyme-inducing antiepileptics - switch to an unaffected method", "Need for emergency contraception on an enzyme inducer - offer copper IUD (or double-dose levonorgestrel if IUD declined)"],
+    "references": [
+      { "label": "FSRH Clinical Guidance: Drug Interactions with Hormonal Contraception", "url": "https://www.fsrh.org/standards-and-guidance/documents/ceu-clinical-guidance-drug-interactions-with-hormonal/" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "dmpa-bone-density-counselling",
+    "title": "DMPA and bone mineral density counselling",
+    "category": "contraception",
+    "domains": ["reproductive-health", "family-planning", "endocrinology"],
+    "summary": "DMPA is associated with a reversible reduction in bone mineral density (BMD) during use, which recovers substantially or fully after stopping. It carries an FDA black-box warning, but professional bodies advise that, for most users, the contraceptive benefits outweigh the bone concern with appropriate counselling.",
+    "sections": [
+      { "heading": "Key counselling points", "items": ["DMPA reduces BMD during use, but the loss is substantially or fully reversible after discontinuation in most users (including adolescents)", "The FDA black-box warning notes possible significant BMD loss that may not be fully reversible - discuss it, but it should not automatically prevent use", "ACOG/Society for Adolescent Medicine: do not restrict to short-term use solely on bone grounds; continue if it is the preferred effective method, with counselling", "Optimise bone health: adequate calcium and vitamin D, weight-bearing exercise, no smoking, limit alcohol"] },
+      { "heading": "Who needs extra consideration", "steps": [
+        { "step": "Review periodically", "detail": "Reassess the balance of benefits/risks at routine reviews, but routine DXA scanning is not recommended for healthy users." },
+        { "step": "Higher-risk individuals", "detail": "Take extra care and consider alternatives in those with significant osteoporosis risk factors (e.g. chronic steroids, eating disorder, other strong risks)." }
+      ] }
+    ],
+    "redFlags": ["Significant independent osteoporosis risk factors (long-term steroids, eating disorder, low BMI, malabsorption) - consider an alternative method", "Do not deny effective contraception solely because of the reversible BMD effect"],
+    "references": [
+      { "label": "ACOG Committee Opinion: Depot Medroxyprogesterone Acetate and Bone Effects", "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2014/06/depot-medroxyprogesterone-acetate-and-bone-effects" },
+      { "label": "Society for Adolescent Medicine position paper: DMPA and BMD - the black box warning (J Adolesc Health)", "url": "https://www.jahonline.org/article/S1054-139X(06)00098-X/fulltext" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "emergency-contraception-choice",
+    "title": "Emergency contraception: choice algorithm",
+    "category": "contraception",
+    "domains": ["reproductive-health", "family-planning", "emergency"],
+    "summary": "Three emergency contraception (EC) options exist: the copper IUD (most effective), ulipristal acetate 30 mg, and levonorgestrel 1.5 mg. Choice depends on time since unprotected sex, where the woman is in her cycle, body weight, recent hormone use, enzyme inducers, and acceptability - and the copper IUD should be offered to all eligible women.",
+    "sections": [
+      { "heading": "Choice algorithm (FSRH)", "steps": [
+        { "step": "Offer the copper IUD first", "detail": "The Cu-IUD is by far the most effective EC (works after ovulation, prevents fertilisation and implantation) and gives ongoing contraception. Insert within 120 hours of unprotected sex, or up to 5 days after the earliest estimated ovulation. Offer to all eligible women." },
+        { "step": "Oral EC: prefer ulipristal", "detail": "If oral EC is chosen, ulipristal acetate 30 mg is generally preferred (effective closer to ovulation and up to 120 hours) over levonorgestrel." },
+        { "step": "Body weight / BMI", "detail": "Oral EC may be less effective at higher weight; FSRH advises considering a double dose of levonorgestrel (3 mg) if BMI > 26 kg/m2 or weight > 70 kg (the Cu-IUD is unaffected by weight)." },
+        { "step": "Recent/ongoing hormones and inducers", "detail": "Ulipristal is less suitable if progestogen was taken in the previous 7 days or will be (re)started within 5 days; avoid ulipristal with enzyme inducers (use Cu-IUD, or double-dose levonorgestrel if IUD declined)." }
+      ] }
+    ],
+    "redFlags": ["Always offer the copper IUD as the most effective option, especially if multiple acts, mid-cycle, or higher BMI", "Do not give ulipristal and levonorgestrel together, and avoid mixing ulipristal with progestogen within 5 days", "Pregnancy test if the next period is >7 days late or abnormal"],
+    "references": [
+      { "label": "FSRH Guideline: Emergency Contraception (March 2017, amended 2023)", "url": "https://www.fsrh.org/standards-and-guidance/documents/ceu-clinical-guidance-emergency-contraception-march-2017/" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "penicillin-cephalosporin-cross-reactivity",
+    "title": "Penicillin-cephalosporin cross-reactivity in stewardship",
+    "category": "stewardship",
+    "domains": ["antimicrobial-stewardship", "allergy", "infection"],
+    "summary": "Historic teaching of ~10% penicillin-cephalosporin cross-reactivity was falsely inflated by penicillin contamination of early cephalosporins. True cross-reactivity is low (overall <2%) and is driven by similarity of the beta-lactam SIDE CHAINS, not the shared beta-lactam ring. Over-avoidance of beta-lactams drives broader, worse prescribing.",
+    "sections": [
+      { "heading": "Key facts", "items": ["True cross-reactivity between penicillins and cephalosporins is overall around 2% or less (and <1% in patients not skin-test positive)", "Risk is determined by R1 SIDE-CHAIN similarity, not simply the shared beta-lactam ring; cephalosporins with dissimilar side chains carry very low risk", "Most patients labelled 'penicillin allergic' (~95%) are not truly allergic - the label leads to broader-spectrum, less effective, costlier antibiotics"] },
+      { "heading": "Stewardship application", "steps": [
+        { "step": "Risk-stratify the history", "detail": "Distinguish low-risk reactions (non-specific rash, GI upset, remote/vague history, family-only history) from high-risk reactions (anaphylaxis, SJS/TEN/DRESS)." },
+        { "step": "Choose a dissimilar side chain", "detail": "In low-risk penicillin allergy, a cephalosporin with a dissimilar side chain can usually be used safely; consult local allergy/side-chain guidance." },
+        { "step": "Do not blanket-avoid", "detail": "Avoid reflexively withholding all beta-lactams; refer for de-labelling/testing to restore first-line options." }
+      ] }
+    ],
+    "redFlags": ["History of anaphylaxis or severe cutaneous adverse reaction (SJS/TEN/DRESS) to a beta-lactam - avoid the class and seek specialist allergy advice; do not re-challenge", "Reaction to a cephalosporin/penicillin with a similar side chain - avoid agents sharing that side chain"],
+    "references": [
+      { "label": "Penicillin and Cephalosporin Cross-Reactivity and Risk for Allergic Reaction (EBMconsult)", "url": "https://www.ebmconsult.com/articles/penicillin-allergy-cross-reactivity-cephalosporin-antibiotics" },
+      { "label": "Cephalosporin Side Chain Cross-reactivity (J Allergy Clin Immunol Pract)", "url": "https://www.jaci-inpractice.org/article/S2213-2198(15)00513-9/fulltext" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "sepsis-empirical-then-review",
+    "title": "Sepsis: empirical broad-spectrum then prompt review",
+    "category": "stewardship",
+    "domains": ["antimicrobial-stewardship", "infection", "critical-care"],
+    "summary": "In suspected sepsis, give timely broad-spectrum empirical antibiotics (after taking cultures) to cover likely pathogens, then review at 48-72 hours to de-escalate, switch or stop based on culture results and clinical response. Early appropriate therapy saves lives; failing to review drives resistance.",
+    "sections": [
+      { "heading": "Start (empirical phase)", "items": ["Recognise sepsis early; take blood cultures and relevant samples BEFORE antibiotics where possible, but do not delay antibiotics in high-risk sepsis (give within 1 hour)", "Choose empirical broad-spectrum cover guided by likely source, local resistance and patient factors; give source control (drain/remove) where indicated", "Document indication, drug, dose, route and a review date"] },
+      { "heading": "Then review (focus phase)", "steps": [
+        { "step": "Reassess at 48-72h", "detail": "Review microbiology and clinical trajectory; confirm sepsis was the diagnosis." },
+        { "step": "Act on the review", "detail": "De-escalate to the narrowest effective agent, switch IV to oral if criteria met, stop if infection excluded, and set/confirm the shortest effective duration." }
+      ] }
+    ],
+    "redFlags": ["High-risk sepsis/septic shock - do not delay empirical antibiotics for investigations (give within 1 hour)", "Failure to review and de-escalate by 48-72 hours - drives resistance and C. difficile", "Missing source control (undrained collection) - antibiotics alone will fail"],
+    "references": [
+      { "label": "NICE NG15 Antimicrobial stewardship", "url": "https://www.nice.org.uk/guidance/ng15" },
+      { "label": "UKHSA Start Smart Then Focus antimicrobial stewardship toolkit", "url": "https://www.gov.uk/government/publications/antimicrobial-stewardship-start-smart-then-focus" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "redundant-anaerobic-cover",
+    "title": "Avoiding redundant anaerobic cover",
+    "category": "stewardship",
+    "domains": ["antimicrobial-stewardship", "infection"],
+    "summary": "Double anaerobic cover (e.g. adding metronidazole to an agent that already has good anaerobic activity) is a common, avoidable prescribing error. It adds toxicity and cost, broadens the spectrum unnecessarily, and increases C. difficile risk without benefit.",
+    "sections": [
+      { "heading": "Agents with inherent anaerobic activity", "items": ["Co-amoxiclav (amoxicillin-clavulanate)", "Piperacillin-tazobactam", "Carbapenems (e.g. meropenem, imipenem, ertapenem)", "Metronidazole and clindamycin (dedicated anaerobic agents)", "Moxifloxacin (among fluoroquinolones, has anaerobic activity)"] },
+      { "heading": "Stewardship action", "steps": [
+        { "step": "Check before adding metronidazole", "detail": "Do NOT add metronidazole to co-amoxiclav, piperacillin-tazobactam, or a carbapenem for anaerobic cover - the base agent already covers anaerobes." },
+        { "step": "Review at 48-72h", "detail": "Identify and stop redundant anaerobic agents on the antimicrobial review; document the rationale." }
+      ] }
+    ],
+    "redFlags": ["Metronidazole co-prescribed with co-amoxiclav, piperacillin-tazobactam, or a carbapenem (redundant) - stop the metronidazole unless a specific indication exists (e.g. confirmed C. difficile or a specific protocol)"],
+    "references": [
+      { "label": "NICE NG15 Antimicrobial stewardship", "url": "https://www.nice.org.uk/guidance/ng15" },
+      { "label": "WHO AWaRe (Access, Watch, Reserve) classification of antibiotics", "url": "https://www.who.int/publications/i/item/B09489" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "double-gram-negative-cover",
+    "title": "Double (empirical) Gram-negative cover: when and when not",
+    "category": "stewardship",
+    "domains": ["antimicrobial-stewardship", "infection", "critical-care"],
+    "summary": "Empirical combination therapy with two Gram-negative-active agents (e.g. a beta-lactam plus an aminoglycoside) is sometimes used in severe sepsis to broaden the chance of covering a resistant organism. Routine prolonged double cover, however, adds toxicity and resistance pressure without consistent mortality benefit and should be de-escalated.",
+    "sections": [
+      { "heading": "Principles", "items": ["The main rationale for empirical double Gram-negative cover is to increase the likelihood of adequate initial coverage in severe sepsis where resistant Gram-negatives are plausible (e.g. neutropenic sepsis, known multidrug-resistant colonisation, local resistance)", "It is NOT reliably shown to improve outcomes through 'synergy' for most infections and increases nephrotoxicity (aminoglycosides) and resistance selection", "Once susceptibilities are known, de-escalate to a single effective agent"] },
+      { "heading": "Stewardship action", "steps": [
+        { "step": "Use selectively", "detail": "Reserve empirical double cover for defined high-risk scenarios per local guidelines; do not use routinely." },
+        { "step": "De-escalate early", "detail": "At 48-72h, stop the second agent (e.g. the aminoglycoside) once the organism is identified and susceptible to a single agent." }
+      ] }
+    ],
+    "redFlags": ["Prolonged empirical double Gram-negative cover without de-escalation - toxicity and resistance with no added benefit", "Continuing an aminoglycoside beyond a few days without TDM and renal monitoring", "Using combination therapy as a substitute for getting cultures and reviewing"],
+    "references": [
+      { "label": "NICE NG15 Antimicrobial stewardship", "url": "https://www.nice.org.uk/guidance/ng15" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "vancomycin-tdm-dosing",
+    "title": "Vancomycin therapeutic drug monitoring (TDM)",
+    "category": "stewardship",
+    "domains": ["antimicrobial-stewardship", "infection", "pharmacology"],
+    "summary": "Vancomycin requires therapeutic drug monitoring to balance efficacy against nephrotoxicity. Current guidance favours AUC-guided dosing (target AUC/MIC 400-600 mg.h/L), commonly using Bayesian software or two-level (peak and trough) estimation, with a loading dose in serious infection.",
+    "sections": [
+      { "heading": "Targets and method", "items": ["Preferred target: AUC/MIC 400-600 mg.h/L (assuming MIC 1 mg/L), estimated by Bayesian software (gold standard) or two-concentration kinetics", "Trough-only monitoring is the older approach; AUC-guided dosing reduces nephrotoxicity for similar efficacy", "TDM is indicated for essentially all patients expected to receive vancomycin beyond ~48 hours, and earlier in unstable renal function or serious infection"] },
+      { "heading": "Practice", "steps": [
+        { "step": "Loading dose", "detail": "Give a weight-based loading dose in serious infection to reach therapeutic levels quickly, then maintenance dosing by renal function." },
+        { "step": "Monitor and adjust", "detail": "Check levels at the appropriate time, monitor renal function regularly, and adjust dose to keep within target while avoiding accumulation." }
+      ] }
+    ],
+    "redFlags": ["Rising creatinine / acute kidney injury on vancomycin (especially with other nephrotoxins e.g. aminoglycosides, piperacillin-tazobactam) - review dose and target", "Subtherapeutic levels in serious infection (e.g. MRSA bacteraemia, endocarditis) - risk of failure", "Dosing without TDM beyond 48 hours"],
+    "references": [
+      { "label": "Introductory Guide to Therapeutic Drug Monitoring for Vancomycin AUC (PrecisePK summary of ASHP/IDSA guidance)", "url": "https://www.precisepk.com/blogs/introductory-guide-to-therapeutic-drug-monitoring-whats-new-in-vancomycin-auc-and-best-practices-for-other-therapeutic-areas" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "aminoglycoside-tdm-dosing",
+    "title": "Aminoglycoside (gentamicin) dosing and TDM",
+    "category": "stewardship",
+    "domains": ["antimicrobial-stewardship", "infection", "pharmacology"],
+    "summary": "Aminoglycosides are concentration-dependent bactericidal agents usually given as once-daily (extended-interval) dosing (e.g. gentamicin ~5-7 mg/kg) to maximise the high peak that drives killing while allowing a drug-free trough that limits nephro- and ototoxicity. Levels must be monitored and renal function tracked.",
+    "sections": [
+      { "heading": "Dosing and monitoring", "items": ["Once-daily (extended-interval) dosing, e.g. gentamicin ~5-7 mg/kg, has largely replaced multiple daily dosing for most indications", "Monitor with a single timed level plotted on a nomogram (e.g. Hartford / Barnes-Jewish), or measure trough; aim for a low/undetectable trough (commonly <1 mg/L) before the next dose to allow renal recovery", "Use ideal/adjusted body weight for dosing and dose by renal function; extended-interval dosing is generally avoided in pregnancy, significant renal impairment, endocarditis (synergy regimens), and major burns - use divided-dose monitoring there"] },
+      { "heading": "Stewardship and safety", "steps": [
+        { "step": "Limit duration", "detail": "Keep courses short; aminoglycoside toxicity is cumulative - review the need daily and stop/de-escalate at 48-72h." },
+        { "step": "Monitor toxicity", "detail": "Check renal function regularly and ask about ototoxicity/vestibular symptoms; hold or adjust if the trough is high or renal function worsens." }
+      ] }
+    ],
+    "redFlags": ["High pre-dose (trough) level or rising creatinine - withhold/extend interval (risk of nephrotoxicity)", "New hearing loss, tinnitus, or vertigo - possible ototoxicity, reassess", "Prolonged aminoglycoside therapy without TDM and renal monitoring"],
+    "references": [
+      { "label": "Gentamicin: dose regimens and monitoring (The Pharmaceutical Journal)", "url": "https://pharmaceutical-journal.com/article/ld/gentamicin-dose-regimens-and-monitoring" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "antifungal-stewardship",
+    "title": "Antifungal stewardship basics",
+    "category": "stewardship",
+    "domains": ["antimicrobial-stewardship", "infection", "mycology"],
+    "summary": "Antifungal stewardship promotes appropriate diagnosis, choice, route, duration and de-escalation of antifungals. Invasive candidiasis is commonly oversuspected yet underdiagnosed, leading to overuse; structured review and de-escalation (e.g. echinocandin to fluconazole) reduce consumption, toxicity, interactions and cost.",
+    "sections": [
+      { "heading": "Principles", "items": ["Confirm/refute fungal infection with appropriate sampling and tests (cultures, susceptibilities, biomarkers such as beta-D-glucan/mannan where available)", "Echinocandins are often preferred empirically in unstable/critically ill patients with suspected invasive candidiasis", "De-escalation: switch from an echinocandin to fluconazole (when the isolate is fluconazole-susceptible, the patient is stable and source-controlled, and blood cultures clear) - typically within a few days", "Stop empirical antifungals if invasive infection is not supported by tests and the patient is improving"] },
+      { "heading": "Stewardship actions", "steps": [
+        { "step": "Review at 48-72h / day 5", "detail": "Reassess the indication, results and response; de-escalate, switch IV to oral, or stop as appropriate." },
+        { "step": "Specialist input", "detail": "Involve microbiology/infection specialists for invasive fungal disease, resistant isolates, and choice/duration of therapy." }
+      ] }
+    ],
+    "redFlags": ["Empirical antifungal continued without confirmed infection in an improving patient with negative tests - stop", "Echinocandin continued when step-down to fluconazole is appropriate (susceptible isolate, stable, source controlled)", "Resistant or unusual fungal isolate - specialist advice"],
+    "references": [
+      { "label": "Antifungal stewardship with an emphasis on candidaemia (ScienceDirect)", "url": "https://www.sciencedirect.com/science/article/abs/pii/S2213716519301407" },
+      { "label": "Antifungal stewardship in critically ill patients (Intensive Care Med, PMC)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10037399/" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "restricted-antibiotic-approval",
+    "title": "Restricted-antibiotic approval and ward audit basics",
+    "category": "stewardship",
+    "domains": ["antimicrobial-stewardship", "infection", "governance"],
+    "summary": "Antimicrobial stewardship programmes restrict access to broad-spectrum/last-line agents (WHO Watch and especially Reserve groups) via approval or pre-authorisation, and use prospective audit and feedback to improve prescribing. These are core, evidence-based stewardship interventions.",
+    "sections": [
+      { "heading": "Restriction / pre-authorisation", "items": ["Require specialist (microbiology/infection) approval before, or shortly after, starting restricted agents (typically Watch and Reserve antibiotics, e.g. carbapenems, colistin, linezolid)", "Approval ensures the indication is appropriate and an alternative narrower agent is not suitable, and sets a review/stop date", "Aligns with WHO AWaRe: maximise Access-group use; restrict and monitor Watch/Reserve"] },
+      { "heading": "Prospective audit and feedback (ward audit)", "steps": [
+        { "step": "Audit prescriptions", "detail": "Stewardship/pharmacy teams review active antimicrobial prescriptions on the ward against documented indication, guideline concordance, allergy status, dose/route, and review date." },
+        { "step": "Feedback and act", "detail": "Give prescribers timely feedback with recommendations (stop, de-escalate, IV-to-oral switch, set duration); track metrics (e.g. % Access-group use, point-prevalence) to drive improvement." }
+      ] }
+    ],
+    "redFlags": ["Reserve-group antibiotic used without specialist approval/review", "Restricted antibiotic continued past its review date without documented justification", "Poor documentation of indication, allergy, or stop/review date on audit"],
+    "references": [
+      { "label": "NICE NG15 Antimicrobial stewardship: systems and processes", "url": "https://www.nice.org.uk/guidance/ng15" },
+      { "label": "WHO AWaRe (Access, Watch, Reserve) classification of antibiotics", "url": "https://www.who.int/publications/i/item/B09489" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "pain-assessment-tools",
+    "title": "Pain assessment tools",
+    "category": "palliative",
+    "domains": ["palliative-care", "pain", "symptom-control"],
+    "summary": "Pain is what the patient says it is; structured tools improve consistency of assessment and response monitoring. Choose the tool to match the patient's communication and cognitive ability - self-report scales for those who can communicate, and validated observational/behavioural scales for those who cannot.",
+    "sections": [
+      { "heading": "Self-report scales (preferred when able)", "items": ["Numeric Rating Scale (NRS): patient rates pain 0 (no pain) to 10 (worst imaginable)", "Visual Analogue Scale (VAS): mark on a 10 cm line", "Verbal Rating Scale (VRS): none / mild / moderate / severe", "Wong-Baker FACES scale: faces from happy to crying - useful for children and some adults"] },
+      { "heading": "Observational tools for non-verbal patients", "items": ["FLACC (Face, Legs, Activity, Cry, Consolability): observational scale for young children and non-verbal patients", "PAINAD (Pain Assessment in Advanced Dementia): five behavioural indicators scored 0-10 over a short observation period", "Abbey Pain Scale: behavioural pain assessment in people with advanced dementia"] },
+      { "heading": "Assessment principles", "steps": [
+        { "step": "Characterise the pain", "detail": "Use a structured approach (e.g. site, onset, character, radiation, associations, timing, exacerbating/relieving factors, severity) and assess for neuropathic features and total/holistic pain." },
+        { "step": "Reassess after intervention", "detail": "Use the same tool to track response to analgesia and titrate; document scores over time." }
+      ] }
+    ],
+    "redFlags": ["New severe or rapidly escalating pain - reassess for a treatable cause (e.g. fracture, cord compression, obstruction)", "Unrecognised pain in non-verbal patients - use a validated observational tool, do not assume absence of pain"],
+    "references": [
+      { "label": "Pain Assessment in Advanced Dementia Scale (PAINAD)", "url": "https://geriatricpain.org/sites/geriatricpain.org/files/2023-06/PAINAD_Final%20with%20logo2.pdf" },
+      { "label": "Pain assessment tools in paediatric palliative care: systematic review (PMC)", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8796159/" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "opioid-side-effect-management",
+    "title": "Opioid side-effect management",
+    "category": "palliative",
+    "domains": ["palliative-care", "pain", "symptom-control"],
+    "summary": "Most opioid side effects (nausea, drowsiness) are common at initiation and on dose increase but improve with tolerance over days - except constipation, which persists and must be managed throughout. Anticipating and treating side effects improves adherence and comfort.",
+    "sections": [
+      { "heading": "Common side effects and management", "items": ["Constipation: does NOT improve with tolerance - co-prescribe a regular laxative (e.g. stimulant +/- softener/osmotic) from the start", "Nausea/vomiting: common on starting/increasing - often transient; offer a regular antiemetic (e.g. haloperidol or metoclopramide) for the first days, then review", "Drowsiness/sedation: common initially and after dose increases, usually settles in a few days; warn about driving", "Dry mouth: frequent - mouth care, sips/sprays", "Pruritus, sweating, myoclonus (at higher doses) - consider opioid switch if troublesome"] },
+      { "heading": "Toxicity vs tolerance", "steps": [
+        { "step": "Recognise toxicity", "detail": "Persistent/increasing drowsiness, confusion, vivid dreams/hallucinations, myoclonic jerks, pinpoint pupils and reduced respiratory rate suggest opioid toxicity (consider accumulation, e.g. in renal impairment)." },
+        { "step": "Act", "detail": "Reduce/hold the dose, ensure hydration, treat reversible causes; in severe respiratory depression give titrated naloxone. Consider opioid rotation for persistent intolerable effects." }
+      ] }
+    ],
+    "redFlags": ["Reduced respiratory rate, pinpoint pupils, increasing drowsiness/confusion or myoclonus - opioid toxicity; hold opioid, treat, titrated naloxone if severe", "Worsening function in renal impairment (morphine metabolite accumulation) - consider dose reduction or an alternative opioid", "Uncontrolled constipation / impaction"],
+    "references": [
+      { "label": "NICE CG140 Palliative care for adults: strong opioids for pain relief", "url": "https://www.nice.org.uk/guidance/cg140" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "methadone-caution-palliative",
+    "title": "Methadone in palliative care: cautions",
+    "category": "palliative",
+    "domains": ["palliative-care", "pain", "pharmacology"],
+    "summary": "Methadone can be valuable for complex/neuropathic cancer pain but is high-risk: it has a long and highly variable half-life, a variable (non-linear) conversion ratio from other opioids, and a risk of QT prolongation. Initiation and opioid rotation to methadone should be specialist-led.",
+    "sections": [
+      { "heading": "Why methadone needs caution", "items": ["Long and variable half-life (roughly 15-150 hours): dose changes can take more than 3 days to reach full effect, with a risk of accumulation, sedation and respiratory depression", "Conversion from other opioids is variable and dose-dependent (NOT a fixed ratio) - standard equianalgesic tables do not apply reliably", "Risk of QT-interval prolongation and torsades de pointes, especially at higher doses, IV use, with other QT-prolonging drugs or electrolyte disturbance", "Many drug interactions via hepatic metabolism"] },
+      { "heading": "Safe use", "steps": [
+        { "step": "Specialist-led", "detail": "Restrict initiation and opioid rotation to methadone to clinicians with palliative/pain expertise; do not switch using simple equianalgesic conversion." },
+        { "step": "Monitor", "detail": "Consider baseline and follow-up ECG (QTc) where appropriate, correct electrolytes, review interacting/QT-prolonging drugs, and titrate slowly with close monitoring for accumulation." }
+      ] }
+    ],
+    "redFlags": ["Increasing sedation/respiratory depression days after a dose change (accumulation due to long half-life)", "QTc prolongation, syncope, or co-prescribed QT-prolonging drugs/electrolyte disturbance", "Non-specialist conversion to methadone using standard equianalgesic ratios"],
+    "references": [
+      { "label": "Methadone for the Treatment of Pain (Palliative Care Network of Wisconsin Fast Fact)", "url": "https://www.mypcnow.org/fast-fact/methadone-for-the-treatment-of-pain/" },
+      { "label": "Practical Guide for Using Methadone in Pain and Palliative Care Practice (PMC)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5806302/" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "syringe-driver-drug-compatibility",
+    "title": "Syringe driver (subcutaneous infusion) drug compatibility",
+    "category": "palliative",
+    "domains": ["palliative-care", "symptom-control", "pharmacology"],
+    "summary": "A continuous subcutaneous infusion via syringe driver delivers symptom-control drugs when the oral route fails. Mixing drugs risks physical/chemical incompatibility (e.g. precipitation), and the risk rises with the number of drugs and their concentrations - always check a compatibility resource before combining.",
+    "sections": [
+      { "heading": "Diluent and compatibility principles", "items": ["Common diluents are water for injection or sodium chloride 0.9%; choice depends on the drugs (0.9% saline is closer to physiological tonicity and may reduce site irritation)", "Cyclizine should be diluted with WATER for injection - it precipitates with saline and at higher concentrations (e.g. above ~10 mg/mL or with higher diamorphine concentrations)", "Incompatibility risk increases with more drugs and higher concentrations in the syringe", "Inspect the syringe regularly for cloudiness, precipitation, or discolouration and discard if seen"] },
+      { "heading": "Practice", "steps": [
+        { "step": "Check before mixing", "detail": "Always consult a recognised syringe-driver compatibility chart/resource for the specific drug combination, diluent and concentrations before preparing the infusion." },
+        { "step": "Manage incompatibility", "detail": "If drugs are incompatible (e.g. cyclizine with high-dose diamorphine), use a separate syringe driver or an alternative agent (e.g. levomepromazine as a single daily SC injection)." }
+      ] }
+    ],
+    "redFlags": ["Cloudiness/precipitation or discolouration in the syringe - discard and re-prepare; do not infuse", "Combining cyclizine with saline or high diamorphine concentrations (precipitation)", "Site reaction/poor absorption - rotate the site and review the diluent"],
+    "references": [
+      { "label": "Scottish Palliative Care Guidelines: syringe pump compatibility and stability tables", "url": "https://www.rightdecisions.scot.nhs.uk/scottish-palliative-care-guidelines/syringe-pump-driver-guidelines/syringe-pump-driver-compatibles/compatibility-and-stability-tables-for-subcutaneous-infusion-2a-to-7/" },
+      { "label": "Syringe Drivers: Subcutaneous (SC) Drug Infusion (Patient.info professional)", "url": "https://patient.info/doctor/syringe-drivers" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "hypercalcaemia-of-malignancy",
+    "title": "Hypercalcaemia of malignancy",
+    "category": "palliative",
+    "domains": ["palliative-care", "oncology", "emergency"],
+    "summary": "Hypercalcaemia is a common metabolic emergency in advanced cancer, causing nausea, constipation, polyuria, thirst, confusion and drowsiness. Mainstay treatment is vigorous IV rehydration with 0.9% saline followed by an IV bisphosphonate; always interpret the corrected (albumin-adjusted) calcium.",
+    "sections": [
+      { "heading": "Recognition", "items": ["Symptoms ('stones, bones, groans, moans'): nausea/vomiting, constipation, polyuria and thirst, fatigue, confusion, drowsiness; can progress to coma", "Use the corrected (albumin-adjusted) calcium; treat symptomatic hypercalcaemia or markedly raised levels", "Common in myeloma and breast, lung and squamous cancers (often via PTHrP)"] },
+      { "heading": "Management", "steps": [
+        { "step": "Rehydrate", "detail": "IV 0.9% sodium chloride to restore intravascular volume and promote calciuresis (e.g. several litres/24h, adjusted for cardiac/renal status) - the first and most urgent step." },
+        { "step": "Bisphosphonate", "detail": "After rehydration give an IV bisphosphonate (e.g. zoledronic acid, dose-adjusted for renal function); calcium falls over ~2-4 days with maximal effect by ~5-7 days, lasting weeks." },
+        { "step": "Consider prognosis and alternatives", "detail": "Bisphosphonates may be inappropriate if prognosis is very short (effect is delayed). Consider denosumab if bisphosphonate-refractory or contraindicated; treat the underlying cancer where feasible." }
+      ] }
+    ],
+    "redFlags": ["Drowsiness, confusion, or coma with hypercalcaemia - emergency, urgent rehydration", "Markedly raised corrected calcium (e.g. >=3.0 mmol/L) - treat promptly", "Renal impairment - adjust bisphosphonate dose and rehydrate carefully"],
+    "references": [
+      { "label": "Hypercalcemia of Malignancy (Palliative Care Network of Wisconsin Fast Fact)", "url": "https://www.mypcnow.org/fast-fact/hypercalcemia-of-malignancy/" },
+      { "label": "Treatment of hypercalcaemia of malignancy in adults (PMC)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10541286/" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "malignant-bowel-obstruction",
+    "title": "Malignant bowel obstruction (palliative)",
+    "category": "palliative",
+    "domains": ["palliative-care", "oncology", "symptom-control"],
+    "summary": "Malignant bowel obstruction in advanced cancer is often managed medically when surgery or stenting is not appropriate. The aim is to control pain, nausea/vomiting and colic. Antisecretory, antiemetic, anti-inflammatory and analgesic drugs are combined and given by the subcutaneous route.",
+    "sections": [
+      { "heading": "Medical (conservative) management", "items": ["Assess for surgery, stenting or venting where appropriate; medical management is for inoperable/unfit patients", "Pain: opioid analgesia (continuous SC infusion); for colic, an antispasmodic/antisecretory antimuscarinic (e.g. hyoscine butylbromide) and AVOID prokinetics in complete obstruction", "Nausea/vomiting: antiemetic - haloperidol or, for complete obstruction, an antisecretory approach; metoclopramide may help in incomplete obstruction without colic but should be stopped if colic worsens", "Reduce secretions: hyoscine butylbromide or octreotide (somatostatin analogue) to reduce GI secretions and vomiting", "Dexamethasone may help relieve obstruction (reduces bowel-wall oedema) and acts as an antiemetic"] },
+      { "heading": "Practice", "steps": [
+        { "step": "Combine and route", "detail": "Deliver drugs by continuous subcutaneous infusion (oral route unreliable); a common combination is an antiemetic + antisecretory agent +/- dexamethasone + opioid." },
+        { "step": "Review and support", "detail": "Treat dry mouth and thirst with mouth care/sips; consider venting gastrostomy or NG tube for refractory vomiting; reassess regularly." }
+      ] }
+    ],
+    "redFlags": ["Use of a prokinetic (e.g. metoclopramide) or stimulant laxative in COMPLETE obstruction - can worsen colic/perforation risk, avoid", "Signs of strangulation/perforation (severe constant pain, peritonism, sepsis) - urgent surgical review", "Refractory vomiting - consider octreotide and venting decompression"],
+    "references": [
+      { "label": "MASCC multidisciplinary recommendations for management of malignant bowel obstruction (Support Care Cancer 2022)", "url": "https://link.springer.com/article/10.1007/s00520-022-06889-8" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "spinal-cord-compression-palliative",
+    "title": "Malignant spinal cord compression (palliative emergency)",
+    "category": "palliative",
+    "domains": ["palliative-care", "oncology", "emergency", "neurology"],
+    "summary": "Malignant spinal cord (or cauda equina) compression is an oncological emergency. Outcome depends on speed of treatment, so suspect it early in any cancer patient with new or worsening back pain or neurological signs. Give high-dose dexamethasone immediately and arrange urgent whole-spine MRI within 24 hours.",
+    "sections": [
+      { "heading": "Recognition (red flags)", "items": ["New or progressive back pain (often the earliest symptom), especially band-like, worse on lying/straining, or thoracic", "Radicular pain, limb weakness, sensory level or sensory loss, gait disturbance", "Bladder/bowel dysfunction (urinary retention/incontinence, faecal incontinence) - late and ominous", "Known malignancy (commonly prostate, breast, lung, myeloma) raises suspicion"] },
+      { "heading": "Immediate management", "steps": [
+        { "step": "Start dexamethasone now", "detail": "Give high-dose corticosteroid as soon as MSCC is suspected (e.g. dexamethasone 16 mg/day, often 8 mg twice daily) with gastroprotection (PPI) and monitor glucose - do not wait for imaging." },
+        { "step": "Urgent whole-spine MRI", "detail": "Arrange MRI of the WHOLE spine within 24 hours (multiple levels may be involved) to confirm and guide treatment." },
+        { "step": "Definitive treatment and care", "detail": "Refer urgently for radiotherapy and/or surgical decompression per the MSCC pathway; flat bed rest / spinal precautions until instability is excluded, analgesia, thromboprophylaxis, and catheter if retention." }
+      ] }
+    ],
+    "redFlags": ["New/worsening back pain or any neurological deficit in a cancer patient - treat as MSCC until excluded", "Bladder or bowel dysfunction - late sign, act immediately", "Delay in steroids or MRI - risks irreversible paralysis"],
+    "references": [
+      { "label": "NICE NG234 (formerly CG75): Spinal cord compression in adults with cancer", "url": "https://www.nice.org.uk/guidance/ng234" },
+      { "label": "Malignant Spinal Cord Compression (MSCC) - GGC Medicines handbook", "url": "https://handbook.ggcmedicines.org.uk/guidelines/oncological-emergencies/malignant-spinal-cord-compression-mscc/" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "bereavement-support",
+    "title": "Bereavement support",
+    "category": "palliative",
+    "domains": ["palliative-care", "psychology", "family-support"],
+    "summary": "Grief is a normal, individual response to loss; most bereaved people adapt with the support of family and community and do not need specialist intervention. Care involves acknowledging the loss, providing information and practical support, and identifying the minority who need additional or specialist help.",
+    "sections": [
+      { "heading": "Principles and tiered support", "items": ["Most bereaved people cope with support from family, friends and community (no formal intervention needed) - normalise and validate grief", "Offer information, signposting to bereavement services, and practical guidance (e.g. what to do after a death)", "Some need additional support (e.g. peer/volunteer or counselling); a minority with complex/prolonged grief or mental-health problems need specialist input", "Tailor support to culture, faith and the individual; pay particular attention to children and to anticipated 'high-risk' grief (sudden death, dependent relationship, poor support)"] },
+      { "heading": "Practice", "steps": [
+        { "step": "Acknowledge and assess", "detail": "Express condolence, listen, and assess coping, support and risk; recognise warning signs of complicated/prolonged grief or depression." },
+        { "step": "Signpost and follow up", "detail": "Provide written information and contacts for bereavement services; arrange follow-up and refer to specialist bereavement or mental-health services when indicated." }
+      ] }
+    ],
+    "redFlags": ["Prolonged, intense, or disabling grief (e.g. persisting beyond expected, impairing function) - refer for specialist bereavement support", "Suicidal ideation, severe depression, or psychosis - urgent mental-health assessment", "Bereaved children or dependants needing dedicated support"],
+    "references": [
+      { "label": "WHO Palliative care (family and bereavement support)", "url": "https://www.who.int/news-room/fact-sheets/detail/palliative-care" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "paediatric-palliative-principles",
+    "title": "Paediatric palliative care: principles",
+    "category": "palliative",
+    "domains": ["palliative-care", "paediatrics", "family-support"],
+    "summary": "Paediatric palliative care is active, holistic care of the child's body, mind and spirit and support for the family, beginning at diagnosis and continuing regardless of whether the child receives disease-directed treatment. It differs from adult care in its developmental, family-centred and long-trajectory nature.",
+    "sections": [
+      { "heading": "Core principles (WHO)", "items": ["Active total care of the child and support of the family, addressing physical, psychological, social and spiritual needs", "Begins when illness is diagnosed and continues alongside curative/disease-directed treatment - not only end of life", "Provided across settings (home, hospital, hospice) with a multidisciplinary team", "Family-centred: parents and siblings are part of the unit of care, including bereavement support"] },
+      { "heading": "Distinctive features and practice", "steps": [
+        { "step": "Developmental and communication needs", "detail": "Assessment and communication must be developmentally appropriate; use age-appropriate pain tools (e.g. FLACC, Wong-Baker FACES) and involve the child in decisions as appropriate." },
+        { "step": "Broad and long conditions", "detail": "Conditions span far beyond cancer (e.g. severe neurodisability, metabolic, congenital and organ-failure conditions) and trajectories may last years; weight-based dosing and specialist input are essential." },
+        { "step": "Support the whole family", "detail": "Provide practical, psychological and respite support, advance/parallel planning, and continuity, including support for siblings and after death." }
+      ] }
+    ],
+    "redFlags": ["Uncontrolled symptoms (pain, seizures, breathlessness, distress) - escalate to specialist paediatric palliative care", "Family distress, carer breakdown, or unmet sibling needs", "Transitions of care (settings, or to adult services) without continuity planning"],
+    "references": [
+      { "label": "WHO Palliative care (definition for children)", "url": "https://www.who.int/news-room/fact-sheets/detail/palliative-care" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "discharge-medication-counselling",
+    "title": "Discharge medication counselling",
+    "category": "counselling",
+    "domains": ["patient-education", "medicines-safety", "prevention"],
+    "summary": "Clear counselling at discharge and accurate medicines reconciliation reduce errors, readmissions and harm. The patient (or carer) should leave understanding what each medicine is for, how and when to take it, what has changed, and what to watch for.",
+    "sections": [
+      { "heading": "What to cover", "items": ["Reconcile the list: compare pre-admission and discharge medicines; clearly flag what is new, changed, stopped, or time-limited (and why)", "For each medicine: name, purpose, dose, route, timing, and how long to take it", "Key side effects and what to do, plus important interactions and foods/alcohol to avoid", "How to obtain ongoing supplies and any monitoring required (e.g. bloods, INR)", "Use teach-back: ask the patient to explain the plan back to confirm understanding"] },
+      { "heading": "Communication and safety", "steps": [
+        { "step": "Tailor and support", "detail": "Use plain language, consider health literacy/language needs, provide written information and a clear medication list, and address adherence aids (e.g. dosette) where helpful." },
+        { "step": "Ensure continuity", "detail": "Communicate changes to the GP/community pharmacist, give clear safety-netting (when and who to contact), and arrange follow-up/monitoring." }
+      ] }
+    ],
+    "redFlags": ["High-risk medicines (e.g. anticoagulants, insulin, opioids, methotrexate, lithium) without clear instructions and monitoring", "Duplicate or omitted medicines after reconciliation", "Patient unable to teach-back the plan, or no continuity/follow-up arranged"],
+    "references": [
+      { "label": "NICE NG5: Medicines optimisation (medicines reconciliation and self-management)", "url": "https://www.nice.org.uk/guidance/ng5" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "warfarin-inr-diet-counselling",
+    "title": "Warfarin: INR and diet counselling",
+    "category": "counselling",
+    "domains": ["patient-education", "anticoagulation", "medicines-safety"],
+    "summary": "Warfarin's effect is monitored by the INR and is sensitive to vitamin K intake, alcohol, illness and many drugs. The dietary message is CONSISTENCY, not avoidance: keep vitamin K intake (mainly from green leafy vegetables) steady rather than cutting it out.",
+    "sections": [
+      { "heading": "Diet and lifestyle", "items": ["Do NOT avoid green leafy vegetables - keep your usual amount steady from week to week (sudden large changes in vitamin K alter the INR)", "Major vitamin K sources: kale, spinach, broccoli, Brussels sprouts, lettuce", "Avoid binge drinking and large swings in alcohol; cranberry/grapefruit juice can increase bleeding risk - be cautious", "Tell any prescriber/pharmacist you take warfarin before starting/stopping medicines or herbal products (many interact); avoid OTC NSAIDs/aspirin unless advised"] },
+      { "heading": "Monitoring and safety", "steps": [
+        { "step": "Take and monitor", "detail": "Take warfarin at the same time each day (commonly evening); attend regular INR checks and follow the recorded dose; more frequent INR checks are needed during illness, antibiotics, or diet changes." },
+        { "step": "Know your INR and recognise bleeding", "detail": "Carry an anticoagulant alert card/booklet; report signs of bleeding (see red flags). If a dose is missed, follow advice - do not double up without guidance." }
+      ] }
+    ],
+    "redFlags": ["Signs of bleeding: blood in urine/stool (or black stools), coughing/vomiting blood, prolonged nosebleeds/gum bleeding, heavy or unusual bruising, severe headache - seek urgent medical advice", "High INR or recent change in medicines/diet/illness - check INR and review dose", "Pregnancy or possible pregnancy (warfarin is teratogenic) - urgent review"],
+    "references": [
+      { "label": "Warfarin, your diet, and vitamin K foods (University of Iowa Health Care)", "url": "https://uihc.org/educational-resources/warfarin-your-diet-and-vitamin-k-foods" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "steroid-sick-day-rules",
+    "title": "Steroid sick-day rules (adrenal insufficiency)",
+    "category": "counselling",
+    "domains": ["patient-education", "endocrinology", "medicines-safety"],
+    "summary": "People with adrenal insufficiency (primary, secondary, or on long-term steroids that suppress the axis) cannot mount a cortisol stress response and must increase their steroid dose during illness, injury or surgery to prevent a life-threatening adrenal crisis. They should carry a steroid emergency card and an emergency hydrocortisone injection.",
+    "sections": [
+      { "heading": "Sick-day rules (oral, minor illness)", "items": ["Fever/infection (temperature >=38C), or significant illness: take DOUBLE (or 2-3x) the usual oral glucocorticoid (e.g. hydrocortisone) for the duration of the illness, then return to normal", "Diarrhoea without vomiting: double the dose until it settles", "Vomiting: if a dose is vomited within ~30 minutes, repeat it; if vomiting continues / oral dose cannot be kept down, give the emergency IM injection and seek urgent care", "Minor procedures/major stress: extra/parenteral steroid cover is needed - plan with the team"] },
+      { "heading": "Emergency (adrenal crisis)", "steps": [
+        { "step": "Recognise crisis", "detail": "Severe weakness, vomiting, abdominal pain, drowsiness/confusion, hypotension/collapse - this is an emergency." },
+        { "step": "Act", "detail": "Give 100 mg hydrocortisone by IM (or IV) injection immediately, call emergency services stating 'adrenal crisis', and arrange hospital admission for IV hydrocortisone and IV 0.9% saline." },
+        { "step": "Be prepared", "detail": "Patient/carers should be trained to give the emergency injection and carry a steroid emergency card and the injection kit at all times." }
+      ] }
+    ],
+    "redFlags": ["Persistent vomiting/diarrhoea preventing oral steroid absorption - give IM hydrocortisone and seek urgent care", "Signs of adrenal crisis (collapse, drowsiness, severe vomiting, hypotension) - 100 mg IM/IV hydrocortisone and emergency admission", "Stopping long-term steroids abruptly - risk of adrenal crisis"],
+    "references": [
+      { "label": "Society for Endocrinology: adrenal insufficiency / steroid sick-day rules (patient information)", "url": "https://www.endocrinology.org/media/4169/ai-and-exogenous-steroids_patient-information-sheet.pdf" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "asthma-action-plan",
+    "title": "Personalised asthma action plan counselling",
+    "category": "counselling",
+    "domains": ["patient-education", "respiratory", "prevention"],
+    "summary": "A written personalised asthma action plan, developed with the patient, improves outcomes and reduces attacks and admissions. It commonly uses a traffic-light (green/amber/red) structure based on symptoms and/or peak flow against the person's personal best.",
+    "sections": [
+      { "heading": "Traffic-light zones", "items": ["GREEN (well controlled): no/minimal symptoms, peak flow ~80-100% of personal best - continue regular preventer (and reliever as prescribed)", "AMBER (worsening): more symptoms, waking at night, needing reliever more, peak flow ~50-80% of best - follow the step-up instructions (e.g. increase treatment as advised) and seek review", "RED (emergency): severe breathlessness, reliever not helping/needed very often, peak flow <50% of best, difficulty speaking - use reliever and get emergency help (call emergency services)"] },
+      { "heading": "What the plan includes", "steps": [
+        { "step": "Personalise", "detail": "Record the person's regular medicines (preventer/reliever), personal-best peak flow, triggers, and exactly what to do in each zone, in their own plan." },
+        { "step": "Skills and review", "detail": "Check and correct inhaler technique, confirm understanding of when to step up and seek help, and review the plan at every asthma contact and after any attack." }
+      ] }
+    ],
+    "redFlags": ["Reliever needed very frequently or not lasting, peak flow <50% of best, too breathless to speak/eat, blue lips - emergency, call for help", "Frequent reliever use / running out of reliever inhalers - poor control, urgent review", "Any asthma attack - review and update the action plan and inhaler technique"],
+    "references": [
+      { "label": "American Lung Association: Create an Asthma Action Plan", "url": "https://www.lung.org/lung-health-diseases/lung-disease-lookup/asthma/managing-asthma/create-an-asthma-action-plan" },
+      { "label": "Personalised asthma action plans for adults with asthma (PMC)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6478068/" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "epilepsy-safety-counselling",
+    "title": "Epilepsy safety counselling",
+    "category": "counselling",
+    "domains": ["patient-education", "neurology", "prevention"],
+    "summary": "Counselling people with epilepsy on everyday safety reduces seizure-related injury and the risk of sudden unexpected death in epilepsy (SUDEP). Key areas are medication adherence, water safety, driving, heights/heat, and recognising and reducing personal risks.",
+    "sections": [
+      { "heading": "Everyday safety advice", "items": ["Water: shower rather than bath where possible (reduces drowning risk), use lukewarm water, do not lock the bathroom door, and avoid swimming alone (use the buddy system / supervision)", "Driving: must meet the legal/licensing seizure-free requirements and inform the driving authority; do not drive if seizures are uncontrolled or medication causes impairing side effects", "Heights, machinery and heat: take care with ladders/heights, dangerous machinery, and cooking (use back hob rings, guard against burns)", "At home/work: consider seizure alarms for nocturnal seizures and tell people nearby what to do (seizure first aid)"] },
+      { "heading": "Reducing seizures and SUDEP risk", "steps": [
+        { "step": "Adherence and triggers", "detail": "Take antiseizure medication consistently and do NOT stop abruptly (a major risk factor for seizures and SUDEP); manage sleep deprivation, alcohol and other personal triggers." },
+        { "step": "Review and plan", "detail": "Aim for the best achievable seizure control, review regularly, discuss SUDEP, and give individualised safety and first-aid advice to the person and family." }
+      ] }
+    ],
+    "redFlags": ["Abrupt cessation of antiseizure medication - risk of seizures, status epilepticus and SUDEP", "Convulsive seizure lasting >5 minutes or repeated seizures without recovery (status epilepticus) - emergency", "Driving against medical/legal advice; swimming or bathing unsupervised with uncontrolled seizures"],
+    "references": [
+      { "label": "Epilepsy Foundation: Staying Safe with Seizures / Preventing SUDEP", "url": "https://www.epilepsy.com/preparedness-safety/staying-safe" },
+      { "label": "Epilepsy Action: Safety advice for people with epilepsy", "url": "https://www.epilepsy.org.uk/living/safety" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ssri-depression-counselling",
+    "title": "Depression and SSRI counselling",
+    "category": "counselling",
+    "domains": ["patient-education", "psychiatry", "medicines-safety"],
+    "summary": "When starting an SSRI for depression, clear counselling improves adherence and safety. Key messages: the antidepressant effect is delayed (weeks); some side effects occur early and often settle; suicidal thoughts may increase early (especially in young people); and the drug must not be stopped abruptly.",
+    "sections": [
+      { "heading": "Key counselling points", "items": ["Delayed benefit: mood improvement usually takes a few weeks (often 2-4 weeks to start, with fuller benefit by ~6-8 weeks at therapeutic dose) - keep taking it even if you feel no better at first", "Early side effects: nausea, GI upset, headache, restlessness/anxiety, and sleep changes are common early and often settle within ~1-2 weeks", "Suicidality: there can be a small increase in suicidal thoughts early in treatment, particularly in those under 25 - arrange early review and clear safety-netting", "Do NOT stop abruptly: stopping suddenly can cause discontinuation symptoms - any planned stop should be a gradual, supervised taper"] },
+      { "heading": "Practice", "steps": [
+        { "step": "Review early", "detail": "Review within ~1-2 weeks of starting (and sooner / more closely in under-25s or those at higher risk); assess response, side effects and suicidality." },
+        { "step": "Safety-net and continue", "detail": "Tell the patient what to do if thoughts of self-harm worsen, continue treatment for an adequate period after recovery to reduce relapse, and taper rather than stop suddenly when discontinuing." }
+      ] }
+    ],
+    "redFlags": ["New or worsening suicidal thoughts, agitation, or self-harm (especially early and in under-25s) - urgent review", "Features of serotonin syndrome (agitation, tremor, sweating, fever, clonus) - especially with other serotonergic drugs - urgent assessment", "Abrupt discontinuation causing discontinuation symptoms"],
+    "references": [
+      { "label": "NICE NG222: Depression in adults - treatment and management", "url": "https://www.nice.org.uk/guidance/ng222" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "cvd-risk-lifestyle-counselling",
+    "title": "Lifestyle and cardiovascular-risk counselling",
+    "category": "counselling",
+    "domains": ["patient-education", "cardiovascular", "prevention"],
+    "summary": "Lifestyle change is the foundation of cardiovascular disease prevention. Counselling targets the modifiable risk factors - smoking, diet, physical activity, weight, alcohol, blood pressure, lipids and glucose - alongside formal risk assessment to guide whether drug therapy (e.g. a statin) is also indicated.",
+    "sections": [
+      { "heading": "Modifiable risk factors to address", "items": ["Smoking: the single most important modifiable risk - offer cessation support (the strongest lifestyle intervention)", "Diet: more fruit/vegetables, wholegrains, oily fish and unsaturated fats; reduce salt, saturated/trans fat and sugary foods", "Physical activity: aim for the recommended level (e.g. ~150 minutes/week of moderate activity) plus reducing sedentary time", "Weight: achieve/maintain a healthy weight and waist circumference", "Alcohol: keep within recommended low-risk limits", "Manage blood pressure, lipids and diabetes; assess CVD risk with a validated tool (e.g. QRISK) to guide statin/other therapy"] },
+      { "heading": "Counselling approach", "steps": [
+        { "step": "Assess and personalise", "detail": "Calculate cardiovascular risk and tailor advice to the individual's risk factors, readiness to change and circumstances; agree realistic goals." },
+        { "step": "Support change and combine with treatment", "detail": "Use behaviour-change support and follow-up; lifestyle advice complements (does not replace) indicated drug therapy such as statins or antihypertensives." }
+      ] }
+    ],
+    "redFlags": ["Established CVD or very high estimated risk - ensure secondary prevention (e.g. statin, antiplatelet/BP control as indicated), not lifestyle advice alone", "Chest pain on exertion, breathlessness, or other cardiac symptoms - assess/refer, do not treat as lifestyle counselling only", "Severe hypertension or markedly abnormal lipids/glucose - act promptly"],
+    "references": [
+      { "label": "NICE CG181: Cardiovascular disease - risk assessment and reduction, including lipid modification", "url": "https://www.nice.org.uk/guidance/cg181" },
+      { "label": "WHO Cardiovascular diseases fact sheet (risk factors)", "url": "https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "alcohol-brief-intervention-frames",
+    "title": "Alcohol brief intervention (FRAMES)",
+    "category": "counselling",
+    "domains": ["patient-education", "addiction", "prevention"],
+    "summary": "A brief intervention is a short (typically 5-15 minute) structured conversation, usually after screening (e.g. AUDIT), to help someone with risky or harmful alcohol use cut down. The FRAMES model summarises its effective components; brief interventions reduce consumption in non-dependent drinkers.",
+    "sections": [
+      { "heading": "FRAMES components", "items": ["Feedback: give personalised feedback on the person's drinking and its risks/harms (e.g. from the screening result)", "Responsibility: emphasise that change is the person's own choice and responsibility", "Advice: give clear advice to cut down or stop", "Menu of options: offer a range of practical strategies/options to change", "Empathy: use a warm, reflective, non-judgemental style (not confrontation)", "Self-efficacy: build the person's confidence and belief that they can change"] },
+      { "heading": "Practice", "steps": [
+        { "step": "Screen then intervene", "detail": "Screen with a validated tool (e.g. AUDIT / AUDIT-C); deliver the brief intervention to those with risky/harmful (non-dependent) use." },
+        { "step": "Refer when needed", "detail": "Brief intervention is for non-dependent drinkers; refer those with possible dependence or complex needs for specialist assessment and treatment (and manage withdrawal safely)." }
+      ] }
+    ],
+    "redFlags": ["Signs of alcohol dependence (craving, tolerance, withdrawal, loss of control) - refer for specialist assessment; brief intervention alone is insufficient", "Risk of severe withdrawal / delirium tremens or withdrawal seizures - do not advise abrupt cessation without medical support", "Co-existing depression, suicidality, or safeguarding concerns"],
+    "references": [
+      { "label": "FRAMES - brief intervention for risky or harmful alcohol consumption (DACAS)", "url": "https://www.dacas.org.au/clinical-resources/screening-assessment/frames" },
+      { "label": "WHO/ASSIST brief intervention for substance use (PMC review)", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5844156/" }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
   }
 ]
