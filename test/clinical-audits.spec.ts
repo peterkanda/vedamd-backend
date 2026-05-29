@@ -23,6 +23,8 @@ function makeService(opts: {
   }));
 
   const sql = {
+    getRegisteredConnection: vi.fn(() => ({ id: 'conn', dialect: 'postgres', url: 'postgresql://db.example.com/app' })),
+    getRegisteredQuery: vi.fn(() => ({ id: 'q', sql: 'SELECT 1', mapping: {} })),
     fetchRows: vi.fn(async () => ({
       rows: opts.rows,
       mapping: {
@@ -69,6 +71,31 @@ describe('ClinicalAuditsService — CRUD', () => {
     expect(list.map((a) => a.id)).toContain(created.id);
     // Other tenant cannot see it.
     expect((await svc.list('tenant-B')).map((a) => a.id)).not.toContain(created.id);
+  });
+
+  it('rejects an audit whose connection is not registered', async () => {
+    const sql = {
+      getRegisteredConnection: vi.fn(() => null),
+      getRegisteredQuery: vi.fn(() => ({ id: 'q', sql: 'SELECT 1', mapping: {} })),
+      fetchRows: vi.fn(),
+    } as unknown as SqlIngestionService;
+    const svc = new ClinicalAuditsService(
+      null,
+      sql,
+      { evaluate: vi.fn() } as unknown as CustomRulesService,
+      { findRelevant: vi.fn() } as unknown as PoliciesService,
+      { send: vi.fn() } as unknown as NotificationsService,
+    );
+    svc.onModuleInit();
+    await expect(
+      svc.create('tenant-A', {
+        name: 'no conn',
+        connectionId: 'ghost',
+        namedQueryId: 'q',
+        customRuleIds: [],
+        threshold: { kind: 'absolute', value: 1 },
+      }),
+    ).rejects.toThrow(/not registered/);
   });
 
   it('rejects an invalid threshold at create time', async () => {
@@ -163,6 +190,8 @@ describe('ClinicalAuditsService — on-demand run', () => {
 
   it('returns the error inline when the named-query fetch fails', async () => {
     const failingSql = {
+      getRegisteredConnection: vi.fn(() => ({ id: 'bad-conn', dialect: 'postgres', url: 'postgresql://db.example.com/app' })),
+      getRegisteredQuery: vi.fn(() => ({ id: 'q', sql: 'SELECT 1', mapping: {} })),
       fetchRows: vi.fn(async () => {
         throw new Error('Unknown connectionId: bad-conn');
       }),

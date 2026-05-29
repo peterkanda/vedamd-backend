@@ -2,6 +2,7 @@ import { Inject, Injectable, Logger } from '@nestjs/common';
 import { PostgresConnector } from './postgres.connector';
 import { MysqlConnector, MssqlConnector, OracleConnector } from './optional-connectors';
 import { PHI_FREE_LOGGER, type PhiFreeLogger } from '../../../common/phi-free-logger';
+import { assertHostAllowedResolved, ssrfOptionsFromEnv } from '../../../common/ssrf-guard';
 import type {
   NamedQuery,
   QueryMapping,
@@ -112,6 +113,9 @@ export class SqlIngestionService {
     if (!connection) throw new Error(`Unknown connectionId: ${connectionId}`);
     const query = this.queries.get(queryId);
     if (!query) throw new Error(`Unknown queryId: ${queryId}`);
+    // DNS-aware SSRF re-check immediately before we open the socket —
+    // closes the rebinding window between registration and connect.
+    await assertHostAllowedResolved(connection.url, ssrfOptionsFromEnv());
     const connector = this.connectors[connection.dialect];
     const rows = await connector.query(connection, query.sql, params);
     this.log.info('agentic_sql_fetched_for_audit', {
@@ -139,6 +143,7 @@ export class SqlIngestionService {
     if (!connector.isAvailable()) {
       throw new Error(`Driver for dialect '${connection.dialect}' is not installed.`);
     }
+    await assertHostAllowedResolved(connection.url, ssrfOptionsFromEnv());
 
     const rows = await connector.query(connection, query.sql, params);
     this.log.info('agentic_sql_ingested', {
