@@ -11315,71 +11315,95 @@
       "pregnancyApplicable": true
     },
     "presentation": [
-      "Incubation 2–21 days; presents with abrupt high fever, malaise, myalgia, headache",
-      "GI phase (day 3–10): vomiting, profuse diarrhoea, abdominal pain",
-      "Late: haemorrhagic features in some — petechiae, conjunctival haemorrhage, GI bleed",
-      "Africa endemic foci: DR Congo, Uganda, Sudan, Guinea, Sierra Leone, Liberia"
+      "Filovirus genus Ebolavirus — six species: Zaire (EBOV, highest CFR ~75%), Sudan (SUDV ~53%), Bundibugyo (BDBV), Taï Forest (TAFV) and Bombali (BOMV); Reston (RESTV) is not pathogenic in humans",
+      "Incubation 2–21 days (typically 7–11); patients are NOT infectious during incubation — infectivity begins at symptom onset and rises with disease severity",
+      "Dry phase (day 1–3): abrupt high fever, intense fatigue, myalgia, headache, sore throat",
+      "Wet phase (day 3–10): profuse vomiting and watery diarrhoea (5–10 L/day GI losses), abdominal pain — hypovolaemic shock and electrolyte loss drive most deaths",
+      "Late/severe: haemorrhage in a minority — petechiae, conjunctival/mucosal bleeding, GI bleed; confusion, multi-organ failure",
+      "Average case-fatality ~50% (range 25–90% across outbreaks), substantially reduced by early optimized supportive care plus species-matched monoclonals",
+      "Endemic foci: DR Congo, Uganda, South Sudan, Guinea, Sierra Leone, Liberia"
     ],
     "redFlags": [
-      "Travel / contact from outbreak zone within 21 days",
-      "Healthcare worker exposure",
-      "Funeral attendance with body contact",
-      "Severe dehydration / shock",
-      "Bleeding",
-      "Pregnancy (high maternal + fetal mortality)"
+      "Travel to or residence in an active outbreak zone within 21 days (current PHEIC: Bundibugyo virus in DR Congo + Uganda, declared 17 May 2026)",
+      "Contact with a confirmed/suspected case, their body fluids, or contaminated surfaces",
+      "Healthcare-worker exposure without full PPE",
+      "Funeral / burial with body contact — corpses are highly infectious",
+      "Needlestick or mucosal splash from a suspected case",
+      "Severe dehydration, hypovolaemic shock, or any bleeding",
+      "Pregnancy (very high maternal and fetal mortality)"
     ],
     "diagnostics": [
       {
-        "test": "ISOLATE patient immediately on suspicion",
-        "rationale": "single private room + PPE + dedicated equipment; notify national IHR focal point + WHO"
+        "test": "ISOLATE immediately on clinical + epidemiological suspicion — do not wait for confirmation",
+        "rationale": "single room + barrier nursing + full PPE + dedicated equipment; notify the national IHR focal point and WHO"
       },
       {
-        "test": "Ebola RT-PCR on whole blood / oral swab (in ill / deceased)",
-        "rationale": "definitive; sensitivity rises after day 3 of symptoms"
+        "test": "Ebola RT-PCR on whole blood (EDTA)",
+        "rationale": "definitive; viral RNA may be undetectable in the first 72 h — if the initial test is negative but suspicion persists, repeat ≥72 h after symptom onset before de-isolating"
       },
       {
-        "test": "Rapid antigen RDT (where PCR not available)",
-        "rationale": "field triage in outbreak"
+        "test": "Rapid antigen RDT where PCR is unavailable",
+        "rationale": "field triage in outbreak settings; confirm positives by PCR"
       },
       {
-        "test": "Malaria + typhoid + bacterial cultures",
-        "rationale": "common alternative diagnoses — never delay isolation while testing"
+        "test": "Malaria RDT/film, blood cultures and other endemic-fever work-up",
+        "rationale": "co-infection and alternative diagnoses are common — investigate in parallel but NEVER delay isolation"
+      },
+      {
+        "test": "Baseline U&E, glucose, FBC, coagulation and lactate where available",
+        "rationale": "guides aggressive electrolyte and fluid correction — the main modifiable driver of mortality"
       }
     ],
     "management": [
       {
-        "step": "Isolation + IPC",
-        "detail": "Single room with bathroom. Strict PPE per WHO algorithm. Cohort confirmed cases. No needle re-sheathing. Safe waste handling. Dedicated team. Restrict visitors."
+        "step": "Isolation + infection prevention and control",
+        "detail": "Single room with dedicated bathroom; cohort confirmed cases. Full PPE per WHO algorithm (impermeable gown, double gloves, eye protection, respirator). No needle re-sheathing. Safe sharps/waste handling and safe, dignified burials. Restrict and log all visitors."
       },
       {
-        "step": "Aggressive supportive care",
-        "detail": "Aggressive fluid replacement (oral + IV) — patients lose 5–10 L/day GI fluid. Correct electrolytes (K, Mg, Ca). Empirical antibiotics for septic shock. Antipyretic (paracetamol — AVOID aspirin/NSAIDs)."
+        "step": "Aggressive optimized supportive care (highest-impact intervention)",
+        "detail": "Replace large GI fluid losses (oral + IV) — patients can lose 5–10 L/day. Correct K, Mg, Ca and glucose. Treat septic shock empirically. Paracetamol for fever — AVOID aspirin and NSAIDs (bleeding risk). Per WHO Optimized Supportive Care for EVD."
       },
       {
-        "step": "Specific antibody therapy",
-        "detail": "For Zaire ebolavirus: Inmazeb (atoltivimab/maftivimab/odesivimab) or Ebanga (ansuvimab) — single IV dose, 50 mg/kg per component. Substantial mortality reduction (PALM trial 2019)."
+        "step": "Species-matched monoclonal antibody therapy — confirm the species first",
+        "detail": "For Zaire ebolavirus (EBOV): WHO strongly recommends mAb114 (ansuvimab, Ebanga) or REGN-EB3 (atoltivimab/maftivimab/odesivimab, Inmazeb) as a single IV dose, given as early as possible (PALM trial, NEJM 2019). CRITICAL: these monoclonals are Zaire-specific and are NOT established as effective against Sudan or Bundibugyo virus — for non-Zaire species use optimized supportive care plus investigational agents under the outbreak protocol."
       },
       {
         "step": "Vaccination — outbreak response",
-        "detail": "rVSV-ZEBOV (Ervebo) ring vaccination of contacts + healthcare workers. Cervarix Ad26/MVA prime-boost in pre-exposure."
+        "detail": "Ervebo (rVSV-ZEBOV) ring vaccination of contacts and frontline workers protects against Zaire ebolavirus only (licensed from 12 months of age); Zabdeno/Mvabea (Ad26.ZEBOV + MVA-BN-Filo) is a two-dose prophylactic regimen. There is NO licensed vaccine for Sudan or Bundibugyo virus — the current 2026 Bundibugyo PHEIC relies on IPC, supportive care and trial vaccines/therapeutics."
       },
       {
         "step": "Notification + contact tracing",
-        "detail": "WHO + IHR within 24 h. Identify contacts back 21 days; monitor daily for 21 days."
+        "detail": "Notify WHO/IHR within 24 h. List contacts back 21 days; monitor each daily for 21 days from last exposure."
       },
       {
         "step": "Survivor care",
-        "detail": "Late sequelae: arthralgia, uveitis (referral), depression. Viral persistence in semen — counsel barrier contraception for ≥ 12 months."
+        "detail": "Late sequelae: arthralgia, uveitis (urgent ophthalmology referral), hearing loss, depression. Virus persists in immune-privileged sites — semen for months — counsel barrier contraception and provide structured survivor follow-up."
       }
     ],
     "references": [
+      {
+        "label": "WHO Ebola disease fact sheet (2025)",
+        "url": "https://www.who.int/news-room/fact-sheets/detail/ebola-disease"
+      },
+      {
+        "label": "WHO Therapeutics for Ebola virus disease — guideline (mAb114 + REGN-EB3), 2022",
+        "url": "https://www.who.int/news/item/19-08-2022-who-makes-new-recommendations-for-ebola-treatments-----calls-for-improved-access"
+      },
+      {
+        "label": "WHO Optimized supportive care for Ebola virus disease (clinical management SOPs)",
+        "url": "https://www.who.int/publications/i/item/optimized-supportive-care-for-ebola-virus-disease"
+      },
       {
         "label": "WHO EVD Clinical Care Guidelines 2024",
         "url": "https://www.who.int/publications/i/item/9789240089229"
       },
       {
-        "label": "PALM trial NEJM 2019",
+        "label": "PALM randomized controlled trial of Ebola therapeutics, NEJM 2019",
         "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1910993"
+      },
+      {
+        "label": "WHO Disease Outbreak News — Ebola (Bundibugyo virus), DRC & Uganda; PHEIC declared 17 May 2026",
+        "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON603"
       },
       {
         "label": "Kenya Integrated Disease Surveillance and Response (IDSR) Technical Guidelines, 3rd edition (MOH)"
