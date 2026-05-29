@@ -3,18 +3,39 @@
     "slug": "ecg-systematic-approach",
     "title": "Systematic approach to reading a 12-lead ECG",
     "category": "ecg",
-    "domains": ["cardiology", "emergency-medicine"],
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
     "summary": "A reproducible, sequential method for interpreting any 12-lead ECG. Reading every trace in the same order (rate, rhythm, axis, intervals, then morphology) reduces missed findings. Always interpret in the context of the patient and compare with prior ECGs where available.",
     "sections": [
       {
         "heading": "Sequential reading steps",
         "steps": [
-          { "step": "Confirm details and calibration", "detail": "Check patient name, date/time and that paper speed is 25 mm/s and calibration is 10 mm/mV. At 25 mm/s each small (1 mm) square = 0.04 s and each large (5 mm) square = 0.20 s." },
-          { "step": "Rate", "detail": "If regular, 300 divided by the number of large squares between R waves, or count QRS complexes in a 10-second rule-of-300/6-second strip x 10 if irregular. Normal resting rate 60-100/min." },
-          { "step": "Rhythm", "detail": "Is it regular or irregular? Is there a P wave before every QRS and a QRS after every P? Are P waves uniform and upright in II? Establish sinus vs non-sinus." },
-          { "step": "Axis", "detail": "Look at leads I and aVF. Normal axis: QRS positive in both I and aVF (-30 to +90 degrees). Left axis deviation: positive I, negative aVF. Right axis deviation: negative I, positive aVF." },
-          { "step": "Intervals", "detail": "PR 120-200 ms (3-5 small squares); QRS <120 ms (<3 small squares); QT corrected for rate (see long QT entry)." },
-          { "step": "Morphology", "detail": "Assess P-wave, QRS (Q waves, R-wave progression, hypertrophy), ST segments (elevation/depression), T waves and U waves systematically lead by lead and by territory." }
+          {
+            "step": "Confirm details and calibration",
+            "detail": "Check patient name, date/time and that paper speed is 25 mm/s and calibration is 10 mm/mV. At 25 mm/s each small (1 mm) square = 0.04 s and each large (5 mm) square = 0.20 s."
+          },
+          {
+            "step": "Rate",
+            "detail": "If regular, 300 divided by the number of large squares between R waves, or count QRS complexes in a 10-second rule-of-300/6-second strip x 10 if irregular. Normal resting rate 60-100/min."
+          },
+          {
+            "step": "Rhythm",
+            "detail": "Is it regular or irregular? Is there a P wave before every QRS and a QRS after every P? Are P waves uniform and upright in II? Establish sinus vs non-sinus."
+          },
+          {
+            "step": "Axis",
+            "detail": "Look at leads I and aVF. Normal axis: QRS positive in both I and aVF (-30 to +90 degrees). Left axis deviation: positive I, negative aVF. Right axis deviation: negative I, positive aVF."
+          },
+          {
+            "step": "Intervals",
+            "detail": "PR 120-200 ms (3-5 small squares); QRS <120 ms (<3 small squares); QT corrected for rate (see long QT entry)."
+          },
+          {
+            "step": "Morphology",
+            "detail": "Assess P-wave, QRS (Q waves, R-wave progression, hypertrophy), ST segments (elevation/depression), T waves and U waves systematically lead by lead and by territory."
+          }
         ]
       },
       {
@@ -29,7 +50,10 @@
       }
     ],
     "references": [
-      { "label": "AHA/ACCF/HRS Recommendations for the Standardization and Interpretation of the Electrocardiogram (Circulation 2007)", "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.106.180200" }
+      {
+        "label": "AHA/ACCF/HRS Recommendations for the Standardization and Interpretation of the Electrocardiogram (Circulation 2007)",
+        "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.106.180200"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -39,7 +63,9 @@
     "slug": "ecg-normal-intervals-reference",
     "title": "Normal ECG intervals and reference values",
     "category": "ecg",
-    "domains": ["cardiology"],
+    "domains": [
+      "cardiology"
+    ],
     "summary": "Reference values for the standard ECG intervals and durations at a paper speed of 25 mm/s. These provide the baseline against which abnormalities (block, pre-excitation, prolongation) are judged.",
     "sections": [
       {
@@ -56,7 +82,10 @@
       }
     ],
     "references": [
-      { "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part IV: ST/T/QT (Circulation 2009)", "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191096" }
+      {
+        "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part IV: ST/T/QT (Circulation 2009)",
+        "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191096"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -66,7 +95,10 @@
     "slug": "ecg-stemi-territory",
     "title": "ST-elevation myocardial infarction (STEMI) - recognition by territory",
     "category": "ecg",
-    "domains": ["cardiology", "emergency-medicine"],
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
     "summary": "STEMI is identified by new ST-segment elevation at the J point in two contiguous leads exceeding sex/age and lead-specific thresholds, usually with reciprocal ST depression. It mandates immediate reperfusion (primary PCI or fibrinolysis). Localising the territory predicts the culprit artery and complications.",
     "sections": [
       {
@@ -96,8 +128,14 @@
       "New LBBB with ischaemic symptoms -> treat as STEMI-equivalent"
     ],
     "references": [
-      { "label": "2023 ESC Guidelines for the management of acute coronary syndromes (Eur Heart J)", "url": "https://academic.oup.com/eurheartj/article/44/38/3720/7243210" },
-      { "label": "Fourth Universal Definition of Myocardial Infarction (2018)", "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000000617" }
+      {
+        "label": "2023 ESC Guidelines for the management of acute coronary syndromes (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/44/38/3720/7243210"
+      },
+      {
+        "label": "Fourth Universal Definition of Myocardial Infarction (2018)",
+        "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000000617"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -107,7 +145,10 @@
     "slug": "ecg-nstemi-ischaemia",
     "title": "NSTEMI / myocardial ischaemia on ECG",
     "category": "ecg",
-    "domains": ["cardiology", "emergency-medicine"],
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
     "summary": "Non-ST-elevation acute coronary syndrome shows ischaemic ECG changes without persistent diagnostic ST elevation. The ECG may be normal; diagnosis relies on serial ECGs, troponin and the clinical picture. Dynamic or new changes carry the most weight.",
     "sections": [
       {
@@ -126,7 +167,10 @@
       "ST depression >=8 leads plus aVR elevation -> consider left main / triple-vessel disease"
     ],
     "references": [
-      { "label": "2023 ESC Guidelines for the management of acute coronary syndromes (Eur Heart J)", "url": "https://academic.oup.com/eurheartj/article/44/38/3720/7243210" }
+      {
+        "label": "2023 ESC Guidelines for the management of acute coronary syndromes (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/44/38/3720/7243210"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -136,15 +180,28 @@
     "slug": "ecg-hyperkalaemia",
     "title": "Hyperkalaemia on ECG",
     "category": "ecg",
-    "domains": ["cardiology", "nephrology", "emergency-medicine"],
+    "domains": [
+      "cardiology",
+      "nephrology",
+      "emergency-medicine"
+    ],
     "summary": "Hyperkalaemia produces a progressive sequence of ECG changes that broadly correlate with severity but are not reliable enough to exclude dangerous hyperkalaemia. Any ECG change in a patient with known/suspected hyperkalaemia is an emergency requiring membrane stabilisation with calcium.",
     "sections": [
       {
         "heading": "Progression of changes (roughly by rising K+)",
         "steps": [
-          { "step": "Early", "detail": "Tall, peaked, narrow-based, symmetrical T waves; shortened QT." },
-          { "step": "Moderate", "detail": "P-wave flattening/widening then loss of P waves; PR prolongation; progressive QRS widening." },
-          { "step": "Severe", "detail": "Markedly broad QRS merging with T to form a sine-wave pattern; bradycardia; risk of VF or asystole." }
+          {
+            "step": "Early",
+            "detail": "Tall, peaked, narrow-based, symmetrical T waves; shortened QT."
+          },
+          {
+            "step": "Moderate",
+            "detail": "P-wave flattening/widening then loss of P waves; PR prolongation; progressive QRS widening."
+          },
+          {
+            "step": "Severe",
+            "detail": "Markedly broad QRS merging with T to form a sine-wave pattern; bradycardia; risk of VF or asystole."
+          }
         ]
       }
     ],
@@ -153,7 +210,10 @@
       "Sine-wave QRS or bradyarrhythmia -> peri-arrest, treat without waiting for confirmatory potassium"
     ],
     "references": [
-      { "label": "Resuscitation Council UK - Emergency treatment of hyperkalaemia (2023)", "url": "https://www.resus.org.uk/library/additional-guidance/guidance-emergency-treatment-hyperkalaemia" }
+      {
+        "label": "Resuscitation Council UK - Emergency treatment of hyperkalaemia (2023)",
+        "url": "https://www.resus.org.uk/library/additional-guidance/guidance-emergency-treatment-hyperkalaemia"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -163,7 +223,10 @@
     "slug": "ecg-hypokalaemia",
     "title": "Hypokalaemia on ECG",
     "category": "ecg",
-    "domains": ["cardiology", "nephrology"],
+    "domains": [
+      "cardiology",
+      "nephrology"
+    ],
     "summary": "Low serum potassium prolongs repolarisation and predisposes to ventricular arrhythmia, particularly when combined with other QT-prolonging factors or hypomagnesaemia. ECG changes are not sensitive and severity should be judged on measured potassium.",
     "sections": [
       {
@@ -181,7 +244,10 @@
       "Hypokalaemia in a patient on digoxin -> markedly increased risk of digoxin toxicity and arrhythmia"
     ],
     "references": [
-      { "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part IV (Circulation 2009)", "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191096" }
+      {
+        "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part IV (Circulation 2009)",
+        "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191096"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -191,7 +257,9 @@
     "slug": "ecg-atrial-fibrillation",
     "title": "Atrial fibrillation on ECG",
     "category": "ecg",
-    "domains": ["cardiology"],
+    "domains": [
+      "cardiology"
+    ],
     "summary": "Atrial fibrillation is the commonest sustained arrhythmia, characterised by disorganised atrial activity with an irregularly irregular ventricular response. Recognition matters for rate/rhythm control and, critically, stroke-prevention anticoagulation decisions.",
     "sections": [
       {
@@ -210,7 +278,10 @@
       "Irregular broad-complex tachycardia with very fast rates (>200-250/min) and varying QRS -> consider AF with pre-excitation (WPW); avoid AV-nodal blocking drugs"
     ],
     "references": [
-      { "label": "2024 ESC Guidelines for the management of atrial fibrillation (Eur Heart J)", "url": "https://academic.oup.com/eurheartj/article/45/36/3314/7738779" }
+      {
+        "label": "2024 ESC Guidelines for the management of atrial fibrillation (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/45/36/3314/7738779"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -220,7 +291,9 @@
     "slug": "ecg-atrial-flutter",
     "title": "Atrial flutter on ECG",
     "category": "ecg",
-    "domains": ["cardiology"],
+    "domains": [
+      "cardiology"
+    ],
     "summary": "Atrial flutter is a macro-reentrant atrial tachycardia, typically with an atrial rate around 300/min. The classic sawtooth flutter waves and rates that are simple fractions of 300 (150, 100, 75) help distinguish it from other tachycardias.",
     "sections": [
       {
@@ -238,7 +311,10 @@
       "Flutter with instability -> synchronised cardioversion; anticoagulation considerations mirror those for AF"
     ],
     "references": [
-      { "label": "2019 ESC Guidelines for supraventricular tachycardia (Eur Heart J)", "url": "https://academic.oup.com/eurheartj/article/41/5/655/5556821" }
+      {
+        "label": "2019 ESC Guidelines for supraventricular tachycardia (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/41/5/655/5556821"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -248,7 +324,10 @@
     "slug": "ecg-svt",
     "title": "Supraventricular tachycardia (regular narrow-complex)",
     "category": "ecg",
-    "domains": ["cardiology", "emergency-medicine"],
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
     "summary": "Paroxysmal SVT (most commonly AVNRT or AVRT) presents as a regular narrow-complex tachycardia, usually 150-250/min, often with no visible or retrograde P waves. Vagal manoeuvres and adenosine are both diagnostic and therapeutic in the stable patient.",
     "sections": [
       {
@@ -266,8 +345,14 @@
       "Do not assume a broad-complex regular tachycardia is SVT with aberrancy - default to treating as VT unless a clear prior diagnosis exists"
     ],
     "references": [
-      { "label": "2019 ESC Guidelines for supraventricular tachycardia (Eur Heart J)", "url": "https://academic.oup.com/eurheartj/article/41/5/655/5556821" },
-      { "label": "Resuscitation Council UK - Adult tachycardia algorithm (2021)", "url": "https://www.resus.org.uk/library/2021-resuscitation-guidelines/adult-advanced-life-support-guidelines" }
+      {
+        "label": "2019 ESC Guidelines for supraventricular tachycardia (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/41/5/655/5556821"
+      },
+      {
+        "label": "Resuscitation Council UK - Adult tachycardia algorithm (2021)",
+        "url": "https://www.resus.org.uk/library/2021-resuscitation-guidelines/adult-advanced-life-support-guidelines"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -277,7 +362,10 @@
     "slug": "ecg-ventricular-tachycardia",
     "title": "Ventricular tachycardia (VT) on ECG",
     "category": "ecg",
-    "domains": ["cardiology", "emergency-medicine"],
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
     "summary": "VT is a broad-complex tachycardia originating below the AV node and is a life-threatening emergency. Any regular broad-complex tachycardia should be treated as VT unless there is clear evidence of an alternative supraventricular cause.",
     "sections": [
       {
@@ -296,8 +384,14 @@
       "Polymorphic VT with long QT (torsades) -> IV magnesium and correct precipitants"
     ],
     "references": [
-      { "label": "Resuscitation Council UK - Adult Advanced Life Support guidelines (2021)", "url": "https://www.resus.org.uk/library/2021-resuscitation-guidelines/adult-advanced-life-support-guidelines" },
-      { "label": "2022 ESC Guidelines for ventricular arrhythmias and prevention of sudden cardiac death (Eur Heart J)", "url": "https://academic.oup.com/eurheartj/article/43/40/3997/6675633" }
+      {
+        "label": "Resuscitation Council UK - Adult Advanced Life Support guidelines (2021)",
+        "url": "https://www.resus.org.uk/library/2021-resuscitation-guidelines/adult-advanced-life-support-guidelines"
+      },
+      {
+        "label": "2022 ESC Guidelines for ventricular arrhythmias and prevention of sudden cardiac death (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/43/40/3997/6675633"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -307,7 +401,10 @@
     "slug": "ecg-ventricular-fibrillation",
     "title": "Ventricular fibrillation (VF) on ECG",
     "category": "ecg",
-    "domains": ["cardiology", "emergency-medicine"],
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
     "summary": "VF is chaotic, disorganised ventricular electrical activity producing no effective cardiac output. It is a shockable cardiac arrest rhythm requiring immediate defibrillation and CPR.",
     "sections": [
       {
@@ -324,7 +421,10 @@
       "VF on the monitor in a pulseless patient -> immediate defibrillation, high-quality CPR, follow ALS algorithm"
     ],
     "references": [
-      { "label": "Resuscitation Council UK - Adult Advanced Life Support guidelines (2021)", "url": "https://www.resus.org.uk/library/2021-resuscitation-guidelines/adult-advanced-life-support-guidelines" }
+      {
+        "label": "Resuscitation Council UK - Adult Advanced Life Support guidelines (2021)",
+        "url": "https://www.resus.org.uk/library/2021-resuscitation-guidelines/adult-advanced-life-support-guidelines"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -334,16 +434,31 @@
     "slug": "ecg-heart-block",
     "title": "Atrioventricular (heart) block - first, second and third degree",
     "category": "ecg",
-    "domains": ["cardiology", "emergency-medicine"],
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
     "summary": "AV block describes impaired conduction between atria and ventricles, graded by severity. Distinguishing the type matters because Mobitz II and complete (third-degree) block carry a high risk of asystole and usually require pacing.",
     "sections": [
       {
         "heading": "Types and recognition",
         "steps": [
-          { "step": "First degree", "detail": "PR interval prolonged >200 ms (>1 large square), constant, with every P conducted. Usually benign." },
-          { "step": "Second degree Mobitz I (Wenckebach)", "detail": "Progressive PR lengthening until a P wave fails to conduct (dropped QRS), then the cycle repeats. Often benign." },
-          { "step": "Second degree Mobitz II", "detail": "Constant PR interval with intermittent non-conducted P waves (dropped QRS) without prior PR lengthening. High risk of progression to complete block." },
-          { "step": "Third degree (complete)", "detail": "Complete AV dissociation: P waves and QRS complexes are independent, with a slower escape rhythm (narrow junctional or broad ventricular)." }
+          {
+            "step": "First degree",
+            "detail": "PR interval prolonged >200 ms (>1 large square), constant, with every P conducted. Usually benign."
+          },
+          {
+            "step": "Second degree Mobitz I (Wenckebach)",
+            "detail": "Progressive PR lengthening until a P wave fails to conduct (dropped QRS), then the cycle repeats. Often benign."
+          },
+          {
+            "step": "Second degree Mobitz II",
+            "detail": "Constant PR interval with intermittent non-conducted P waves (dropped QRS) without prior PR lengthening. High risk of progression to complete block."
+          },
+          {
+            "step": "Third degree (complete)",
+            "detail": "Complete AV dissociation: P waves and QRS complexes are independent, with a slower escape rhythm (narrow junctional or broad ventricular)."
+          }
         ]
       }
     ],
@@ -352,8 +467,14 @@
       "Any AV block with bradycardia and adverse signs (shock, syncope, heart failure, myocardial ischaemia) -> follow bradycardia algorithm (atropine, then pacing)"
     ],
     "references": [
-      { "label": "2021 ESC Guidelines on cardiac pacing and cardiac resynchronization therapy (Eur Heart J)", "url": "https://academic.oup.com/eurheartj/article/42/35/3427/6358547" },
-      { "label": "Resuscitation Council UK - Adult bradycardia algorithm (2021)", "url": "https://www.resus.org.uk/library/2021-resuscitation-guidelines/adult-advanced-life-support-guidelines" }
+      {
+        "label": "2021 ESC Guidelines on cardiac pacing and cardiac resynchronization therapy (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/42/35/3427/6358547"
+      },
+      {
+        "label": "Resuscitation Council UK - Adult bradycardia algorithm (2021)",
+        "url": "https://www.resus.org.uk/library/2021-resuscitation-guidelines/adult-advanced-life-support-guidelines"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -363,7 +484,9 @@
     "slug": "ecg-lbbb",
     "title": "Left bundle branch block (LBBB)",
     "category": "ecg",
-    "domains": ["cardiology"],
+    "domains": [
+      "cardiology"
+    ],
     "summary": "LBBB widens the QRS due to delayed left ventricular activation. New LBBB with ischaemic symptoms is a STEMI-equivalent, and the abnormal repolarisation makes standard ST-segment interpretation unreliable (Sgarbossa criteria are used instead).",
     "sections": [
       {
@@ -382,7 +505,10 @@
       "Concordant ST elevation/depression or excessively discordant ST elevation (Sgarbossa) -> acute MI"
     ],
     "references": [
-      { "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part III: Intraventricular Conduction (Circulation 2009)", "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191095" }
+      {
+        "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part III: Intraventricular Conduction (Circulation 2009)",
+        "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191095"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -392,7 +518,9 @@
     "slug": "ecg-rbbb",
     "title": "Right bundle branch block (RBBB)",
     "category": "ecg",
-    "domains": ["cardiology"],
+    "domains": [
+      "cardiology"
+    ],
     "summary": "RBBB delays right ventricular activation, widening the QRS with a characteristic terminal pattern. Unlike LBBB, RBBB does not by itself preclude interpretation of left-sided ST changes, but new RBBB can accompany acute LAD occlusion or PE.",
     "sections": [
       {
@@ -411,7 +539,10 @@
       "New RBBB with right heart strain features may indicate acute pulmonary embolism"
     ],
     "references": [
-      { "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part III: Intraventricular Conduction (Circulation 2009)", "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191095" }
+      {
+        "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part III: Intraventricular Conduction (Circulation 2009)",
+        "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191095"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -421,7 +552,9 @@
     "slug": "ecg-lvh",
     "title": "Left ventricular hypertrophy (LVH) on ECG",
     "category": "ecg",
-    "domains": ["cardiology"],
+    "domains": [
+      "cardiology"
+    ],
     "summary": "ECG criteria estimate increased LV muscle mass by QRS voltage and associated repolarisation changes. The ECG is specific but insensitive; echocardiography is the reference standard. The Sokolow-Lyon and Cornell voltage criteria are the most widely cited.",
     "sections": [
       {
@@ -436,7 +569,10 @@
       }
     ],
     "references": [
-      { "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part V: Chamber Hypertrophy (Circulation 2009)", "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191097" }
+      {
+        "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part V: Chamber Hypertrophy (Circulation 2009)",
+        "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191097"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -446,7 +582,9 @@
     "slug": "ecg-long-qt",
     "title": "Long QT interval on ECG",
     "category": "ecg",
-    "domains": ["cardiology"],
+    "domains": [
+      "cardiology"
+    ],
     "summary": "A prolonged corrected QT (QTc) reflects delayed ventricular repolarisation and predisposes to torsades de pointes. Causes include drugs, electrolyte disturbance (low K+, Mg2+, Ca2+) and congenital long-QT syndromes. Measure QT and correct for rate (e.g. Bazett: QTc = QT / square root of RR in seconds).",
     "sections": [
       {
@@ -465,7 +603,10 @@
       "Torsades de pointes (polymorphic VT with long QT) -> IV magnesium sulphate"
     ],
     "references": [
-      { "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part IV: ST/T/QT (Circulation 2009)", "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191096" }
+      {
+        "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part IV: ST/T/QT (Circulation 2009)",
+        "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191096"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -475,7 +616,10 @@
     "slug": "ecg-pericarditis",
     "title": "Acute pericarditis on ECG",
     "category": "ecg",
-    "domains": ["cardiology", "emergency-medicine"],
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
     "summary": "Acute pericarditis produces widespread (non-territorial) ST elevation and PR depression from epicardial inflammation. The key bedside task is distinguishing it from STEMI, where ST elevation is territorial with reciprocal change.",
     "sections": [
       {
@@ -502,7 +646,10 @@
       "Pericarditis with effusion and haemodynamic compromise -> consider cardiac tamponade"
     ],
     "references": [
-      { "label": "2015 ESC Guidelines for the diagnosis and management of pericardial diseases (Eur Heart J)", "url": "https://academic.oup.com/eurheartj/article/36/42/2921/2293375" }
+      {
+        "label": "2015 ESC Guidelines for the diagnosis and management of pericardial diseases (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/36/42/2921/2293375"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -512,7 +659,11 @@
     "slug": "ecg-pulmonary-embolism",
     "title": "Pulmonary embolism / right heart strain on ECG",
     "category": "ecg",
-    "domains": ["cardiology", "respiratory", "emergency-medicine"],
+    "domains": [
+      "cardiology",
+      "respiratory",
+      "emergency-medicine"
+    ],
     "summary": "The ECG in PE is neither sensitive nor specific; sinus tachycardia is the commonest finding. ECG signs of acute right heart strain support the diagnosis but a normal ECG does not exclude PE - use a validated pre-test probability score and definitive imaging.",
     "sections": [
       {
@@ -531,7 +682,10 @@
       "A normal ECG never excludes PE - rely on pre-test probability (e.g. Wells) and CTPA/V-Q imaging"
     ],
     "references": [
-      { "label": "2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism (Eur Heart J)", "url": "https://academic.oup.com/eurheartj/article/41/4/543/5556136" }
+      {
+        "label": "2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/41/4/543/5556136"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -541,7 +695,10 @@
     "slug": "ecg-digoxin-effect",
     "title": "Digoxin effect and toxicity on ECG",
     "category": "ecg",
-    "domains": ["cardiology", "toxicology"],
+    "domains": [
+      "cardiology",
+      "toxicology"
+    ],
     "summary": "Therapeutic digoxin produces characteristic repolarisation changes ('digoxin effect') that are not in themselves toxic. Digoxin toxicity, by contrast, causes a wide range of arrhythmias and is potentiated by hypokalaemia, hypomagnesaemia and renal impairment.",
     "sections": [
       {
@@ -568,7 +725,10 @@
       "Hyperkalaemia in acute digoxin toxicity is a marker of severity"
     ],
     "references": [
-      { "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part IV: ST/T/QT (Circulation 2009)", "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191096" }
+      {
+        "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part IV: ST/T/QT (Circulation 2009)",
+        "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191096"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -578,7 +738,9 @@
     "slug": "ecg-wpw",
     "title": "Wolff-Parkinson-White (WPW) pre-excitation",
     "category": "ecg",
-    "domains": ["cardiology"],
+    "domains": [
+      "cardiology"
+    ],
     "summary": "WPW pattern reflects an accessory pathway that pre-excites the ventricle, producing a short PR and a delta wave. The danger is pre-excited atrial fibrillation, where AV-nodal blocking drugs can accelerate conduction down the accessory pathway and precipitate VF.",
     "sections": [
       {
@@ -597,7 +759,10 @@
       "Pre-excited AF with instability -> synchronised cardioversion"
     ],
     "references": [
-      { "label": "2019 ESC Guidelines for supraventricular tachycardia (Eur Heart J)", "url": "https://academic.oup.com/eurheartj/article/41/5/655/5556821" }
+      {
+        "label": "2019 ESC Guidelines for supraventricular tachycardia (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/41/5/655/5556821"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -607,24 +772,52 @@
     "slug": "abg-systematic-interpretation",
     "title": "Systematic interpretation of arterial/venous blood gas",
     "category": "blood-gas",
-    "domains": ["respiratory", "critical-care", "emergency-medicine"],
+    "domains": [
+      "respiratory",
+      "critical-care",
+      "emergency-medicine"
+    ],
     "summary": "A stepwise method to classify any acid-base disturbance. Reading the pH, then CO2 and HCO3 in a fixed order, identifies the primary disorder, whether compensation is appropriate, and whether more than one disorder coexists. Always interpret alongside the clinical picture.",
     "sections": [
       {
         "heading": "Stepwise method",
         "steps": [
-          { "step": "Assess oxygenation", "detail": "Look at PaO2 and SpO2 with the inspired oxygen. Hypoxaemia (PaO2 <8 kPa / 60 mmHg on air) defines respiratory failure; combined with raised CO2 it is type 2." },
-          { "step": "Is the pH acidaemic or alkalaemic?", "detail": "Normal arterial pH 7.35-7.45. pH <7.35 = acidaemia; pH >7.45 = alkalaemia. This sets the direction of the primary process." },
-          { "step": "Look at the CO2 (respiratory component)", "detail": "Normal PaCO2 4.7-6.0 kPa (35-45 mmHg). A high CO2 with low pH = respiratory acidosis; a low CO2 with high pH = respiratory alkalosis." },
-          { "step": "Look at the HCO3 / base excess (metabolic component)", "detail": "Normal HCO3 22-26 mmol/L. Low HCO3 with low pH = metabolic acidosis; high HCO3 with high pH = metabolic alkalosis." },
-          { "step": "Decide the primary disorder", "detail": "The component (CO2 or HCO3) that has changed in the same direction as the pH abnormality is the primary disorder." },
-          { "step": "Assess compensation and mixed disorders", "detail": "Apply expected-compensation rules (e.g. Winter's formula for metabolic acidosis). If compensation is outside the expected range, or both components shift pH the same way, a mixed disorder is present." },
-          { "step": "Calculate the anion gap", "detail": "In metabolic acidosis, compute the anion gap (and correct for albumin) to separate raised-gap from normal-gap causes." }
+          {
+            "step": "Assess oxygenation",
+            "detail": "Look at PaO2 and SpO2 with the inspired oxygen. Hypoxaemia (PaO2 <8 kPa / 60 mmHg on air) defines respiratory failure; combined with raised CO2 it is type 2."
+          },
+          {
+            "step": "Is the pH acidaemic or alkalaemic?",
+            "detail": "Normal arterial pH 7.35-7.45. pH <7.35 = acidaemia; pH >7.45 = alkalaemia. This sets the direction of the primary process."
+          },
+          {
+            "step": "Look at the CO2 (respiratory component)",
+            "detail": "Normal PaCO2 4.7-6.0 kPa (35-45 mmHg). A high CO2 with low pH = respiratory acidosis; a low CO2 with high pH = respiratory alkalosis."
+          },
+          {
+            "step": "Look at the HCO3 / base excess (metabolic component)",
+            "detail": "Normal HCO3 22-26 mmol/L. Low HCO3 with low pH = metabolic acidosis; high HCO3 with high pH = metabolic alkalosis."
+          },
+          {
+            "step": "Decide the primary disorder",
+            "detail": "The component (CO2 or HCO3) that has changed in the same direction as the pH abnormality is the primary disorder."
+          },
+          {
+            "step": "Assess compensation and mixed disorders",
+            "detail": "Apply expected-compensation rules (e.g. Winter's formula for metabolic acidosis). If compensation is outside the expected range, or both components shift pH the same way, a mixed disorder is present."
+          },
+          {
+            "step": "Calculate the anion gap",
+            "detail": "In metabolic acidosis, compute the anion gap (and correct for albumin) to separate raised-gap from normal-gap causes."
+          }
         ]
       }
     ],
     "references": [
-      { "label": "Merck Manual Professional - Acid-Base Regulation and Disorders", "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/acid-base-regulation-and-disorders" }
+      {
+        "label": "Merck Manual Professional - Acid-Base Regulation and Disorders",
+        "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/acid-base-regulation-and-disorders"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -634,7 +827,10 @@
     "slug": "abg-respiratory-acidosis",
     "title": "Respiratory acidosis",
     "category": "blood-gas",
-    "domains": ["respiratory", "critical-care"],
+    "domains": [
+      "respiratory",
+      "critical-care"
+    ],
     "summary": "Respiratory acidosis is a primary rise in PaCO2 (alveolar hypoventilation) producing acidaemia. Distinguishing acute from chronic depends on the degree of renal (bicarbonate) compensation, which takes 3-5 days to develop fully.",
     "sections": [
       {
@@ -652,7 +848,10 @@
       "Rising CO2 with declining pH despite oxygen therapy in COPD -> reassess oxygen target and need for NIV"
     ],
     "references": [
-      { "label": "Merck Manual Professional - Respiratory Acidosis", "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/acid-base-regulation-and-disorders/respiratory-acidosis" }
+      {
+        "label": "Merck Manual Professional - Respiratory Acidosis",
+        "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/acid-base-regulation-and-disorders/respiratory-acidosis"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -662,7 +861,10 @@
     "slug": "abg-respiratory-alkalosis",
     "title": "Respiratory alkalosis",
     "category": "blood-gas",
-    "domains": ["respiratory", "critical-care"],
+    "domains": [
+      "respiratory",
+      "critical-care"
+    ],
     "summary": "Respiratory alkalosis is a primary fall in PaCO2 (alveolar hyperventilation) producing alkalaemia. It is common and often reflects an underlying problem (hypoxia, sepsis, PE, anxiety, salicylate toxicity) that must be identified.",
     "sections": [
       {
@@ -680,7 +882,10 @@
       "Mixed respiratory alkalosis and raised-gap metabolic acidosis -> consider salicylate poisoning"
     ],
     "references": [
-      { "label": "Merck Manual Professional - Respiratory Alkalosis", "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/acid-base-regulation-and-disorders/respiratory-alkalosis" }
+      {
+        "label": "Merck Manual Professional - Respiratory Alkalosis",
+        "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/acid-base-regulation-and-disorders/respiratory-alkalosis"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -690,16 +895,32 @@
     "slug": "abg-metabolic-acidosis",
     "title": "Metabolic acidosis - raised vs normal anion gap",
     "category": "blood-gas",
-    "domains": ["critical-care", "nephrology", "emergency-medicine"],
+    "domains": [
+      "critical-care",
+      "nephrology",
+      "emergency-medicine"
+    ],
     "summary": "Metabolic acidosis is a primary fall in bicarbonate. Calculating the anion gap separates the differential into raised-anion-gap (added acid) and normal-anion-gap (hyperchloraemic, bicarbonate loss) causes, which guides the search for a cause.",
     "sections": [
       {
         "heading": "Recognition and approach",
         "steps": [
-          { "step": "Confirm", "detail": "pH <7.35 with HCO3 <22 mmol/L. Expect compensatory respiratory drop in CO2." },
-          { "step": "Anion gap", "detail": "Anion gap = Na - (Cl + HCO3); normal ~8-12 mmol/L. Correct for albumin: add ~2.5 mmol/L to the gap for every 10 g/L the albumin is below 40 g/L." },
-          { "step": "Raised anion gap causes", "detail": "Lactic acidosis, ketoacidosis (diabetic/alcoholic/starvation), renal failure (uraemia), and toxins (methanol, ethylene glycol, salicylates) - mnemonic GOLD MARK / MUDPILES." },
-          { "step": "Normal anion gap (hyperchloraemic) causes", "detail": "Gastrointestinal HCO3 loss (diarrhoea), renal tubular acidosis, carbonic anhydrase inhibitors, and large-volume saline resuscitation." }
+          {
+            "step": "Confirm",
+            "detail": "pH <7.35 with HCO3 <22 mmol/L. Expect compensatory respiratory drop in CO2."
+          },
+          {
+            "step": "Anion gap",
+            "detail": "Anion gap = Na - (Cl + HCO3); normal ~8-12 mmol/L. Correct for albumin: add ~2.5 mmol/L to the gap for every 10 g/L the albumin is below 40 g/L."
+          },
+          {
+            "step": "Raised anion gap causes",
+            "detail": "Lactic acidosis, ketoacidosis (diabetic/alcoholic/starvation), renal failure (uraemia), and toxins (methanol, ethylene glycol, salicylates) - mnemonic GOLD MARK / MUDPILES."
+          },
+          {
+            "step": "Normal anion gap (hyperchloraemic) causes",
+            "detail": "Gastrointestinal HCO3 loss (diarrhoea), renal tubular acidosis, carbonic anhydrase inhibitors, and large-volume saline resuscitation."
+          }
         ]
       }
     ],
@@ -708,7 +929,10 @@
       "Severe lactic acidosis -> identify and treat the cause of tissue hypoperfusion/hypoxia urgently"
     ],
     "references": [
-      { "label": "Merck Manual Professional - Metabolic Acidosis", "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/acid-base-regulation-and-disorders/metabolic-acidosis" }
+      {
+        "label": "Merck Manual Professional - Metabolic Acidosis",
+        "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/acid-base-regulation-and-disorders/metabolic-acidosis"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -718,7 +942,10 @@
     "slug": "abg-metabolic-alkalosis",
     "title": "Metabolic alkalosis",
     "category": "blood-gas",
-    "domains": ["critical-care", "nephrology"],
+    "domains": [
+      "critical-care",
+      "nephrology"
+    ],
     "summary": "Metabolic alkalosis is a primary rise in bicarbonate producing alkalaemia. Classifying by urinary chloride (saline-responsive vs saline-resistant) directs management and is the standard diagnostic approach.",
     "sections": [
       {
@@ -736,7 +963,10 @@
       "Persistent alkalosis with hypokalaemia and hypertension -> investigate for mineralocorticoid excess"
     ],
     "references": [
-      { "label": "Merck Manual Professional - Metabolic Alkalosis", "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/acid-base-regulation-and-disorders/metabolic-alkalosis" }
+      {
+        "label": "Merck Manual Professional - Metabolic Alkalosis",
+        "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/acid-base-regulation-and-disorders/metabolic-alkalosis"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -746,7 +976,10 @@
     "slug": "abg-mixed-disorders",
     "title": "Mixed acid-base disorders",
     "category": "blood-gas",
-    "domains": ["critical-care", "emergency-medicine"],
+    "domains": [
+      "critical-care",
+      "emergency-medicine"
+    ],
     "summary": "A mixed disorder is the coexistence of two or more primary acid-base disturbances. They are detected when compensation falls outside the expected range or when both components push the pH in the same direction. The delta-ratio helps detect a second metabolic process.",
     "sections": [
       {
@@ -763,7 +996,10 @@
       "A 'normal' pH can hide two severe opposing disorders - always check CO2 and HCO3 independently"
     ],
     "references": [
-      { "label": "Merck Manual Professional - Acid-Base Regulation and Disorders (Mixed Disorders)", "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/acid-base-regulation-and-disorders" }
+      {
+        "label": "Merck Manual Professional - Acid-Base Regulation and Disorders (Mixed Disorders)",
+        "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/acid-base-regulation-and-disorders"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -773,7 +1009,10 @@
     "slug": "abg-winters-formula",
     "title": "Compensation rules and Winter's formula",
     "category": "blood-gas",
-    "domains": ["critical-care", "nephrology"],
+    "domains": [
+      "critical-care",
+      "nephrology"
+    ],
     "summary": "Compensation formulae predict the expected secondary response to a primary acid-base disorder. A measured value matching the prediction indicates appropriate single-disorder compensation; deviation signals a mixed disorder. Winter's formula is the standard for metabolic acidosis.",
     "sections": [
       {
@@ -792,7 +1031,10 @@
       "If measured CO2 is higher than Winter's prediction -> coexisting respiratory acidosis (inadequate compensation); if lower -> coexisting respiratory alkalosis"
     ],
     "references": [
-      { "label": "Winters' Formula for Metabolic Acidosis Compensation (MDCalc)", "url": "https://www.mdcalc.com/calc/117/winters-formula-metabolic-acidosis-compensation" }
+      {
+        "label": "Winters' Formula for Metabolic Acidosis Compensation (MDCalc)",
+        "url": "https://www.mdcalc.com/calc/117/winters-formula-metabolic-acidosis-compensation"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -802,7 +1044,10 @@
     "slug": "abg-oxygenation-aa-gradient",
     "title": "Oxygenation and the alveolar-arterial (A-a) gradient",
     "category": "blood-gas",
-    "domains": ["respiratory", "critical-care"],
+    "domains": [
+      "respiratory",
+      "critical-care"
+    ],
     "summary": "The A-a gradient compares calculated alveolar oxygen with measured arterial oxygen and helps classify hypoxaemia. A raised gradient indicates a gas-exchange problem (V/Q mismatch, shunt, diffusion defect), whereas a normal gradient points to hypoventilation or low inspired oxygen.",
     "sections": [
       {
@@ -821,7 +1066,10 @@
       "Acute hypoxaemia with a raised A-a gradient and clear chest -> consider pulmonary embolism"
     ],
     "references": [
-      { "label": "StatPearls - Physiology, Alveolar to Arterial Oxygen Gradient (NCBI)", "url": "https://www.ncbi.nlm.nih.gov/books/NBK545153/" }
+      {
+        "label": "StatPearls - Physiology, Alveolar to Arterial Oxygen Gradient (NCBI)",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK545153/"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -831,7 +1079,11 @@
     "slug": "abg-lactate-interpretation",
     "title": "Lactate interpretation",
     "category": "blood-gas",
-    "domains": ["critical-care", "emergency-medicine", "sepsis"],
+    "domains": [
+      "critical-care",
+      "emergency-medicine",
+      "sepsis"
+    ],
     "summary": "Lactate is a marker of tissue hypoperfusion and metabolic stress. An elevated and especially a rising lactate is associated with worse outcomes; serial measurement and lactate clearance guide resuscitation, notably in sepsis.",
     "sections": [
       {
@@ -850,7 +1102,10 @@
       "Rising lactate despite treatment -> ongoing hypoperfusion; escalate care"
     ],
     "references": [
-      { "label": "Surviving Sepsis Campaign Guidelines 2021 (Critical Care Medicine)", "url": "https://journals.lww.com/ccmjournal/fulltext/2021/11000/surviving_sepsis_campaign__international.21.aspx" }
+      {
+        "label": "Surviving Sepsis Campaign Guidelines 2021 (Critical Care Medicine)",
+        "url": "https://journals.lww.com/ccmjournal/fulltext/2021/11000/surviving_sepsis_campaign__international.21.aspx"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -860,7 +1115,11 @@
     "slug": "abg-carboxyhaemoglobin",
     "title": "Carboxyhaemoglobin and carbon monoxide poisoning",
     "category": "blood-gas",
-    "domains": ["toxicology", "emergency-medicine", "critical-care"],
+    "domains": [
+      "toxicology",
+      "emergency-medicine",
+      "critical-care"
+    ],
     "summary": "Carbon monoxide binds haemoglobin with high affinity, forming carboxyhaemoglobin (COHb) and impairing oxygen delivery. Standard pulse oximetry reads falsely normal; co-oximetry on a blood gas is required. COHb level confirms exposure but correlates poorly with symptom severity.",
     "sections": [
       {
@@ -879,7 +1138,10 @@
       "Loss of consciousness, neurological signs, cardiac ischaemia, pregnancy or high COHb -> discuss hyperbaric oxygen with toxicology"
     ],
     "references": [
-      { "label": "ATS - Practice Recommendations in the Diagnosis, Management, and Prevention of Carbon Monoxide Poisoning (AJRCCM)", "url": "https://www.atsjournals.org/doi/full/10.1164/rccm.201207-1284ci" }
+      {
+        "label": "ATS - Practice Recommendations in the Diagnosis, Management, and Prevention of Carbon Monoxide Poisoning (AJRCCM)",
+        "url": "https://www.atsjournals.org/doi/full/10.1164/rccm.201207-1284ci"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -889,16 +1151,32 @@
     "slug": "lab-hyponatraemia-workup",
     "title": "Hyponatraemia - diagnostic workup",
     "category": "lab-interpretation",
-    "domains": ["nephrology", "endocrinology", "acute-medicine"],
+    "domains": [
+      "nephrology",
+      "endocrinology",
+      "acute-medicine"
+    ],
     "summary": "Hyponatraemia (serum sodium <135 mmol/L) is the commonest electrolyte disturbance. Assessment hinges on serum/plasma osmolality, then volume status, then urine sodium and osmolality. Severity and speed of onset drive the urgency; correction must be controlled to avoid osmotic demyelination.",
     "sections": [
       {
         "heading": "Stepwise approach",
         "steps": [
-          { "step": "Confirm true hyponatraemia", "detail": "Measure serum osmolality. Hypotonic (<275 mOsm/kg) hyponatraemia is true; exclude pseudohyponatraemia (high lipids/protein) and hypertonic causes (hyperglycaemia, mannitol)." },
-          { "step": "Assess volume status", "detail": "Hypovolaemic, euvolaemic or hypervolaemic on clinical examination." },
-          { "step": "Urine sodium and osmolality", "detail": "Hypovolaemic with urine Na <30 -> extra-renal loss; urine Na >30 -> renal/diuretic loss. Euvolaemic with high urine osmolality and urine Na >30 -> SIADH (diagnosis of exclusion; check thyroid and cortisol)." },
-          { "step": "Hypervolaemic causes", "detail": "Heart failure, cirrhosis, nephrotic syndrome, renal failure (low urine Na in the first three)." }
+          {
+            "step": "Confirm true hyponatraemia",
+            "detail": "Measure serum osmolality. Hypotonic (<275 mOsm/kg) hyponatraemia is true; exclude pseudohyponatraemia (high lipids/protein) and hypertonic causes (hyperglycaemia, mannitol)."
+          },
+          {
+            "step": "Assess volume status",
+            "detail": "Hypovolaemic, euvolaemic or hypervolaemic on clinical examination."
+          },
+          {
+            "step": "Urine sodium and osmolality",
+            "detail": "Hypovolaemic with urine Na <30 -> extra-renal loss; urine Na >30 -> renal/diuretic loss. Euvolaemic with high urine osmolality and urine Na >30 -> SIADH (diagnosis of exclusion; check thyroid and cortisol)."
+          },
+          {
+            "step": "Hypervolaemic causes",
+            "detail": "Heart failure, cirrhosis, nephrotic syndrome, renal failure (low urine Na in the first three)."
+          }
         ]
       }
     ],
@@ -907,7 +1185,10 @@
       "Correct sodium no faster than ~10 mmol/L in 24 h (less if chronic/high-risk) to avoid osmotic demyelination syndrome"
     ],
     "references": [
-      { "label": "European clinical practice guideline on diagnosis and treatment of hyponatraemia (Eur J Endocrinol 2014)", "url": "https://academic.oup.com/ejendo/article/170/3/G1/6661531" }
+      {
+        "label": "European clinical practice guideline on diagnosis and treatment of hyponatraemia (Eur J Endocrinol 2014)",
+        "url": "https://academic.oup.com/ejendo/article/170/3/G1/6661531"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -917,7 +1198,11 @@
     "slug": "lab-hyperkalaemia-causes",
     "title": "Hyperkalaemia - causes and next steps",
     "category": "lab-interpretation",
-    "domains": ["nephrology", "acute-medicine", "emergency-medicine"],
+    "domains": [
+      "nephrology",
+      "acute-medicine",
+      "emergency-medicine"
+    ],
     "summary": "Hyperkalaemia (serum potassium >5.5 mmol/L) is potentially life-threatening through cardiac arrhythmia. First exclude a spurious (haemolysed) sample, then assess severity, obtain an ECG, and identify the cause to guide treatment.",
     "sections": [
       {
@@ -935,7 +1220,10 @@
       "ECG changes of hyperkalaemia, or K+ >=6.5 mmol/L -> emergency treatment: IV calcium for cardioprotection, then insulin-glucose +/- salbutamol to shift, and measures to remove potassium"
     ],
     "references": [
-      { "label": "Resuscitation Council UK - Emergency treatment of hyperkalaemia (2023)", "url": "https://www.resus.org.uk/library/additional-guidance/guidance-emergency-treatment-hyperkalaemia" }
+      {
+        "label": "Resuscitation Council UK - Emergency treatment of hyperkalaemia (2023)",
+        "url": "https://www.resus.org.uk/library/additional-guidance/guidance-emergency-treatment-hyperkalaemia"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -945,15 +1233,27 @@
     "slug": "lab-aki-kdigo-staging",
     "title": "Raised creatinine / acute kidney injury - KDIGO staging",
     "category": "lab-interpretation",
-    "domains": ["nephrology", "acute-medicine"],
+    "domains": [
+      "nephrology",
+      "acute-medicine"
+    ],
     "summary": "Acute kidney injury is staged by the KDIGO criteria using the rise in serum creatinine and/or fall in urine output, taking the highest stage met by either criterion. Staging guides monitoring, drug review and nephrology referral, and the cause is classified as pre-renal, intrinsic renal or post-renal.",
     "sections": [
       {
         "heading": "KDIGO staging (highest criterion met)",
         "steps": [
-          { "step": "Stage 1", "detail": "Creatinine 1.5-1.9x baseline OR rise >=26.5 micromol/L (>=0.3 mg/dL) within 48 h; OR urine output <0.5 mL/kg/h for 6-12 h." },
-          { "step": "Stage 2", "detail": "Creatinine 2.0-2.9x baseline; OR urine output <0.5 mL/kg/h for >=12 h." },
-          { "step": "Stage 3", "detail": "Creatinine >=3.0x baseline OR creatinine >=353.6 micromol/L (>=4.0 mg/dL) OR initiation of renal replacement therapy; OR urine output <0.3 mL/kg/h for >=24 h OR anuria >=12 h." }
+          {
+            "step": "Stage 1",
+            "detail": "Creatinine 1.5-1.9x baseline OR rise >=26.5 micromol/L (>=0.3 mg/dL) within 48 h; OR urine output <0.5 mL/kg/h for 6-12 h."
+          },
+          {
+            "step": "Stage 2",
+            "detail": "Creatinine 2.0-2.9x baseline; OR urine output <0.5 mL/kg/h for >=12 h."
+          },
+          {
+            "step": "Stage 3",
+            "detail": "Creatinine >=3.0x baseline OR creatinine >=353.6 micromol/L (>=4.0 mg/dL) OR initiation of renal replacement therapy; OR urine output <0.3 mL/kg/h for >=24 h OR anuria >=12 h."
+          }
         ]
       },
       {
@@ -971,7 +1271,10 @@
       "AKI with anuria -> urgently exclude obstruction"
     ],
     "references": [
-      { "label": "KDIGO Clinical Practice Guideline for Acute Kidney Injury (2012)", "url": "https://kdigo.org/wp-content/uploads/2016/10/KDIGO-2012-AKI-Guideline-English.pdf" }
+      {
+        "label": "KDIGO Clinical Practice Guideline for Acute Kidney Injury (2012)",
+        "url": "https://kdigo.org/wp-content/uploads/2016/10/KDIGO-2012-AKI-Guideline-English.pdf"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -981,7 +1284,11 @@
     "slug": "lab-abnormal-lfts",
     "title": "Abnormal liver function tests - hepatocellular vs cholestatic",
     "category": "lab-interpretation",
-    "domains": ["gastroenterology", "hepatology", "acute-medicine"],
+    "domains": [
+      "gastroenterology",
+      "hepatology",
+      "acute-medicine"
+    ],
     "summary": "An abnormal liver panel is first characterised as predominantly hepatocellular (transaminase-dominant) or cholestatic (ALP/GGT-dominant), which directs the differential. True liver synthetic function is judged by albumin, bilirubin and clotting (INR), not transaminases.",
     "sections": [
       {
@@ -1000,7 +1307,10 @@
       "Markedly raised transaminases (thousands) -> consider paracetamol toxicity, ischaemic or viral hepatitis"
     ],
     "references": [
-      { "label": "BSG/EASL - guidance on the management of abnormal liver blood tests (Gut 2018)", "url": "https://gut.bmj.com/content/67/1/6" }
+      {
+        "label": "BSG/EASL - guidance on the management of abnormal liver blood tests (Gut 2018)",
+        "url": "https://gut.bmj.com/content/67/1/6"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1010,7 +1320,11 @@
     "slug": "lab-raised-troponin",
     "title": "Raised troponin - causes beyond type 1 MI",
     "category": "lab-interpretation",
-    "domains": ["cardiology", "acute-medicine", "emergency-medicine"],
+    "domains": [
+      "cardiology",
+      "acute-medicine",
+      "emergency-medicine"
+    ],
     "summary": "Troponin is a sensitive and specific marker of myocardial injury but not of its mechanism. A rise indicates cardiomyocyte damage and must be interpreted with the clinical context, ECG and the rise/fall pattern. Many non-coronary conditions elevate troponin.",
     "sections": [
       {
@@ -1029,7 +1343,10 @@
       "Always interpret troponin against pre-test probability - do not use a single value in isolation to diagnose or exclude MI"
     ],
     "references": [
-      { "label": "Fourth Universal Definition of Myocardial Infarction (2018)", "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000000617" }
+      {
+        "label": "Fourth Universal Definition of Myocardial Infarction (2018)",
+        "url": "https://www.ahajournals.org/doi/10.1161/CIR.0000000000000617"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1039,15 +1356,27 @@
     "slug": "lab-anaemia-mcv",
     "title": "Anaemia - classification by MCV",
     "category": "lab-interpretation",
-    "domains": ["haematology", "acute-medicine"],
+    "domains": [
+      "haematology",
+      "acute-medicine"
+    ],
     "summary": "Anaemia is efficiently classified by red cell size (mean corpuscular volume) into microcytic, normocytic and macrocytic, each with a characteristic differential. The reticulocyte count and blood film refine the assessment, distinguishing reduced production from increased loss/destruction.",
     "sections": [
       {
         "heading": "Classification by MCV",
         "steps": [
-          { "step": "Microcytic (MCV <80 fL)", "detail": "Iron deficiency (commonest), thalassaemia, anaemia of chronic disease (can be normo- or microcytic), sideroblastic anaemia, lead poisoning. Check ferritin/iron studies." },
-          { "step": "Normocytic (MCV 80-100 fL)", "detail": "Acute blood loss, anaemia of chronic disease, renal anaemia, mixed deficiency, early iron deficiency, haemolysis, marrow disorders. Use reticulocyte count to separate production vs loss/destruction." },
-          { "step": "Macrocytic (MCV >100 fL)", "detail": "Megaloblastic (B12 or folate deficiency) vs non-megaloblastic (alcohol, liver disease, hypothyroidism, myelodysplasia, certain drugs, reticulocytosis)." }
+          {
+            "step": "Microcytic (MCV <80 fL)",
+            "detail": "Iron deficiency (commonest), thalassaemia, anaemia of chronic disease (can be normo- or microcytic), sideroblastic anaemia, lead poisoning. Check ferritin/iron studies."
+          },
+          {
+            "step": "Normocytic (MCV 80-100 fL)",
+            "detail": "Acute blood loss, anaemia of chronic disease, renal anaemia, mixed deficiency, early iron deficiency, haemolysis, marrow disorders. Use reticulocyte count to separate production vs loss/destruction."
+          },
+          {
+            "step": "Macrocytic (MCV >100 fL)",
+            "detail": "Megaloblastic (B12 or folate deficiency) vs non-megaloblastic (alcohol, liver disease, hypothyroidism, myelodysplasia, certain drugs, reticulocytosis)."
+          }
         ]
       }
     ],
@@ -1056,7 +1385,10 @@
       "New unexplained iron-deficiency anaemia in an adult -> investigate for gastrointestinal blood loss/malignancy"
     ],
     "references": [
-      { "label": "Merck Manual Professional - Evaluation of Anemia", "url": "https://www.merckmanuals.com/professional/hematology-and-oncology/approach-to-the-patient-with-anemia/evaluation-of-anemia" }
+      {
+        "label": "Merck Manual Professional - Evaluation of Anemia",
+        "url": "https://www.merckmanuals.com/professional/hematology-and-oncology/approach-to-the-patient-with-anemia/evaluation-of-anemia"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1066,7 +1398,10 @@
     "slug": "lab-thrombocytopenia",
     "title": "Thrombocytopenia - approach to a low platelet count",
     "category": "lab-interpretation",
-    "domains": ["haematology", "acute-medicine"],
+    "domains": [
+      "haematology",
+      "acute-medicine"
+    ],
     "summary": "A low platelet count is approached by first excluding spurious (clumping) results on a blood film, then classifying by mechanism: reduced production, increased destruction/consumption, or sequestration. Bleeding risk rises sharply at very low counts, and some causes are medical emergencies.",
     "sections": [
       {
@@ -1086,7 +1421,10 @@
       "Active bleeding with a very low platelet count -> urgent haematology input and supportive transfusion"
     ],
     "references": [
-      { "label": "Merck Manual Professional - Thrombocytopenia: Overview", "url": "https://www.merckmanuals.com/professional/hematology-and-oncology/thrombocytopenia-and-platelet-dysfunction/thrombocytopenia-overview" }
+      {
+        "label": "Merck Manual Professional - Thrombocytopenia: Overview",
+        "url": "https://www.merckmanuals.com/professional/hematology-and-oncology/thrombocytopenia-and-platelet-dysfunction/thrombocytopenia-overview"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1096,7 +1434,11 @@
     "slug": "lab-raised-wcc-neutrophilia",
     "title": "Raised white cell count / neutrophilia",
     "category": "lab-interpretation",
-    "domains": ["haematology", "acute-medicine", "infectious-disease"],
+    "domains": [
+      "haematology",
+      "acute-medicine",
+      "infectious-disease"
+    ],
     "summary": "A raised white cell count is interpreted by which cell line is elevated. Neutrophilia is most often reactive (infection, inflammation, stress, steroids) but a markedly raised or persistently abnormal count, or abnormal cells on film, raises concern for a haematological process.",
     "sections": [
       {
@@ -1116,7 +1458,10 @@
       "Blasts on the film or extreme leucocytosis -> urgent haematology referral (possible acute leukaemia)"
     ],
     "references": [
-      { "label": "Merck Manual Professional - Approach to the Patient With Increased White Blood Cells (Leukocytosis)", "url": "https://www.merckmanuals.com/professional/hematology-and-oncology/leukopenias-and-leukocytosis/leukocytosis" }
+      {
+        "label": "Merck Manual Professional - Approach to the Patient With Increased White Blood Cells (Leukocytosis)",
+        "url": "https://www.merckmanuals.com/professional/hematology-and-oncology/leukopenias-and-leukocytosis/leukocytosis"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1126,7 +1471,11 @@
     "slug": "lab-raised-crp",
     "title": "Raised C-reactive protein (CRP)",
     "category": "lab-interpretation",
-    "domains": ["acute-medicine", "infectious-disease", "rheumatology"],
+    "domains": [
+      "acute-medicine",
+      "infectious-disease",
+      "rheumatology"
+    ],
     "summary": "CRP is an acute-phase reactant that rises with inflammation, infection and tissue injury. It is sensitive but non-specific and lags behind clinical onset; it cannot by itself diagnose infection or distinguish bacterial from non-bacterial causes. Interpret trends alongside the clinical picture.",
     "sections": [
       {
@@ -1143,7 +1492,10 @@
       "Do not rely on CRP to rule out serious infection in an unwell patient, especially early in the illness - treat on clinical grounds"
     ],
     "references": [
-      { "label": "NICE NG51 - Sepsis: recognition, diagnosis and early management", "url": "https://www.nice.org.uk/guidance/ng51" }
+      {
+        "label": "NICE NG51 - Sepsis: recognition, diagnosis and early management",
+        "url": "https://www.nice.org.uk/guidance/ng51"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1153,7 +1505,10 @@
     "slug": "lab-abnormal-tfts",
     "title": "Abnormal thyroid function tests",
     "category": "lab-interpretation",
-    "domains": ["endocrinology", "acute-medicine"],
+    "domains": [
+      "endocrinology",
+      "acute-medicine"
+    ],
     "summary": "Thyroid function is interpreted from the pattern of TSH and free T4 (and T3). TSH is the most sensitive first-line test in stable outpatients; the combination of TSH and free T4 distinguishes primary from secondary disorders and overt from subclinical disease. Avoid testing during acute illness if possible (sick euthyroid).",
     "sections": [
       {
@@ -1173,7 +1528,10 @@
       "Profound hypothyroidism with hypothermia and reduced consciousness -> consider myxoedema coma, an emergency"
     ],
     "references": [
-      { "label": "NICE NG145 - Thyroid disease: assessment and management", "url": "https://www.nice.org.uk/guidance/ng145" }
+      {
+        "label": "NICE NG145 - Thyroid disease: assessment and management",
+        "url": "https://www.nice.org.uk/guidance/ng145"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1183,7 +1541,11 @@
     "slug": "lab-hypercalcaemia",
     "title": "Raised calcium (hypercalcaemia)",
     "category": "lab-interpretation",
-    "domains": ["endocrinology", "acute-medicine", "oncology"],
+    "domains": [
+      "endocrinology",
+      "acute-medicine",
+      "oncology"
+    ],
     "summary": "Always interpret an albumin-corrected calcium. Around 90% of hypercalcaemia is due to primary hyperparathyroidism (often in well outpatients) or malignancy (often in unwell, hospitalised patients). PTH measurement is the pivotal next test.",
     "sections": [
       {
@@ -1201,7 +1563,10 @@
       "Hypercalcaemia with dehydration, confusion or arrhythmia -> medical emergency"
     ],
     "references": [
-      { "label": "Endotext - Hypercalcemia (NCBI Bookshelf)", "url": "https://www.ncbi.nlm.nih.gov/books/NBK279037/" }
+      {
+        "label": "Endotext - Hypercalcemia (NCBI Bookshelf)",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK279037/"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1211,7 +1576,11 @@
     "slug": "lab-hypocalcaemia",
     "title": "Low calcium (hypocalcaemia)",
     "category": "lab-interpretation",
-    "domains": ["endocrinology", "acute-medicine", "nephrology"],
+    "domains": [
+      "endocrinology",
+      "acute-medicine",
+      "nephrology"
+    ],
     "summary": "Confirm hypocalcaemia with an albumin-corrected calcium (or ionised calcium). The differential is organised by PTH (low in hypoparathyroidism; high in vitamin D deficiency and chronic kidney disease). Symptoms relate to neuromuscular irritability.",
     "sections": [
       {
@@ -1230,7 +1599,10 @@
       "Always check and correct magnesium - hypocalcaemia will not correct while magnesium is low"
     ],
     "references": [
-      { "label": "Merck Manual Professional - Hypocalcemia", "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/electrolyte-disorders/hypocalcemia" }
+      {
+        "label": "Merck Manual Professional - Hypocalcemia",
+        "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/electrolyte-disorders/hypocalcemia"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1240,7 +1612,11 @@
     "slug": "lab-raised-inr",
     "title": "Raised INR / prolonged prothrombin time",
     "category": "lab-interpretation",
-    "domains": ["haematology", "acute-medicine", "hepatology"],
+    "domains": [
+      "haematology",
+      "acute-medicine",
+      "hepatology"
+    ],
     "summary": "A raised INR reflects impaired extrinsic/common pathway clotting. In a patient on a vitamin K antagonist it usually reflects over-anticoagulation; otherwise consider liver disease, vitamin K deficiency, DIC or other coagulopathy. Management depends on the cause and on whether the patient is bleeding.",
     "sections": [
       {
@@ -1259,7 +1635,10 @@
       "Prolonged INR with low fibrinogen, low platelets and a precipitating illness -> consider DIC"
     ],
     "references": [
-      { "label": "British Society for Haematology - Guidelines on oral anticoagulation with warfarin (Br J Haematol)", "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1365-2141.2011.08753.x" }
+      {
+        "label": "British Society for Haematology - Guidelines on oral anticoagulation with warfarin (Br J Haematol)",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1365-2141.2011.08753.x"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1269,7 +1648,11 @@
     "slug": "lab-raised-amylase-lipase",
     "title": "Raised amylase / lipase",
     "category": "lab-interpretation",
-    "domains": ["gastroenterology", "acute-medicine", "emergency-medicine"],
+    "domains": [
+      "gastroenterology",
+      "acute-medicine",
+      "emergency-medicine"
+    ],
     "summary": "Markedly raised pancreatic enzymes support a diagnosis of acute pancreatitis, but lesser elevations are non-specific. Lipase is more sensitive and specific than amylase. The diagnosis of acute pancreatitis requires at least two of three criteria; enzyme level does not predict severity.",
     "sections": [
       {
@@ -1287,7 +1670,10 @@
       "Severe abdominal pain with raised amylase but atypical features -> consider bowel ischaemia or perforation"
     ],
     "references": [
-      { "label": "Merck Manual Professional - Acute Pancreatitis", "url": "https://www.merckmanuals.com/professional/gastrointestinal-disorders/pancreatitis/acute-pancreatitis" }
+      {
+        "label": "Merck Manual Professional - Acute Pancreatitis",
+        "url": "https://www.merckmanuals.com/professional/gastrointestinal-disorders/pancreatitis/acute-pancreatitis"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1297,7 +1683,10 @@
     "slug": "lab-ferritin-interpretation",
     "title": "Ferritin interpretation",
     "category": "lab-interpretation",
-    "domains": ["haematology", "acute-medicine"],
+    "domains": [
+      "haematology",
+      "acute-medicine"
+    ],
     "summary": "Ferritin reflects body iron stores but is also an acute-phase reactant, so it rises with inflammation, liver disease and malignancy. A low ferritin is highly specific for iron deficiency; a normal or raised ferritin does not exclude it when inflammation is present.",
     "sections": [
       {
@@ -1314,7 +1703,10 @@
       "Markedly elevated ferritin with fever, cytopenias and organ dysfunction -> consider haemophagocytic lymphohistiocytosis (HLH), a life-threatening hyperinflammatory syndrome"
     ],
     "references": [
-      { "label": "NICE CKS - Anaemia - iron deficiency (diagnosis)", "url": "https://cks.nice.org.uk/topics/anaemia-iron-deficiency/" }
+      {
+        "label": "NICE CKS - Anaemia - iron deficiency (diagnosis)",
+        "url": "https://cks.nice.org.uk/topics/anaemia-iron-deficiency/"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1324,7 +1716,11 @@
     "slug": "lab-raised-d-dimer",
     "title": "Raised D-dimer",
     "category": "lab-interpretation",
-    "domains": ["haematology", "emergency-medicine", "respiratory"],
+    "domains": [
+      "haematology",
+      "emergency-medicine",
+      "respiratory"
+    ],
     "summary": "D-dimer is a fibrin degradation product that is sensitive but very non-specific for venous thromboembolism. Its value is in ruling OUT VTE in patients with low/non-high pre-test probability; it should not be used to rule in VTE or ordered without a pre-test probability assessment.",
     "sections": [
       {
@@ -1342,7 +1738,10 @@
       "Do not use D-dimer to exclude VTE in high pre-test probability patients - arrange definitive imaging"
     ],
     "references": [
-      { "label": "NICE NG158 - Venous thromboembolic diseases: diagnosis, management and thrombophilia testing", "url": "https://www.nice.org.uk/guidance/ng158" }
+      {
+        "label": "NICE NG158 - Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+        "url": "https://www.nice.org.uk/guidance/ng158"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1352,7 +1751,11 @@
     "slug": "imaging-suspected-pe",
     "title": "Suspected pulmonary embolism - imaging selection",
     "category": "imaging-selection",
-    "domains": ["respiratory", "emergency-medicine", "radiology"],
+    "domains": [
+      "respiratory",
+      "emergency-medicine",
+      "radiology"
+    ],
     "summary": "Imaging for suspected PE is driven by a validated pre-test probability (Wells score) combined with D-dimer. The two-level Wells score determines whether to image directly or to use D-dimer first; CT pulmonary angiography (CTPA) is the usual first-line test, with V/Q (or V/Q SPECT) reserved for specific situations.",
     "sections": [
       {
@@ -1381,7 +1784,10 @@
       "Suspected PE with haemodynamic instability (hypotension) -> high-risk PE; consider immediate bedside echo and emergency reperfusion - do not delay for elective imaging"
     ],
     "references": [
-      { "label": "NICE NG158 - Venous thromboembolic diseases: diagnosis and management", "url": "https://www.nice.org.uk/guidance/ng158" }
+      {
+        "label": "NICE NG158 - Venous thromboembolic diseases: diagnosis and management",
+        "url": "https://www.nice.org.uk/guidance/ng158"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1391,7 +1797,11 @@
     "slug": "imaging-head-injury-ct",
     "title": "Head injury - when to CT the head",
     "category": "imaging-selection",
-    "domains": ["emergency-medicine", "neurosurgery", "radiology"],
+    "domains": [
+      "emergency-medicine",
+      "neurosurgery",
+      "radiology"
+    ],
     "summary": "Validated rules (NICE head injury criteria; Canadian CT Head Rule) identify which adults with head injury need CT to detect clinically important brain injury. Selecting on these criteria avoids missing serious injury while limiting unnecessary imaging.",
     "sections": [
       {
@@ -1419,7 +1829,10 @@
       "Anticoagulated head injury -> low threshold for CT even with a normal GCS"
     ],
     "references": [
-      { "label": "NICE NG232 - Head injury: assessment and early management", "url": "https://www.nice.org.uk/guidance/ng232" }
+      {
+        "label": "NICE NG232 - Head injury: assessment and early management",
+        "url": "https://www.nice.org.uk/guidance/ng232"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1429,7 +1842,11 @@
     "slug": "imaging-suspected-stroke",
     "title": "Suspected acute stroke - imaging selection",
     "category": "imaging-selection",
-    "domains": ["neurology", "emergency-medicine", "radiology"],
+    "domains": [
+      "neurology",
+      "emergency-medicine",
+      "radiology"
+    ],
     "summary": "Suspected acute stroke needs urgent brain imaging to distinguish ischaemic from haemorrhagic stroke before reperfusion treatment. Non-contrast CT is the immediate first-line study; CT angiography and perfusion imaging guide thrombectomy decisions in eligible patients.",
     "sections": [
       {
@@ -1447,7 +1864,10 @@
       "Imaging showing haemorrhage -> stop/avoid antithrombotics and arrange urgent neurosurgical/stroke review"
     ],
     "references": [
-      { "label": "NICE NG128 - Stroke and transient ischaemic attack in over 16s: diagnosis and initial management", "url": "https://www.nice.org.uk/guidance/ng128" }
+      {
+        "label": "NICE NG128 - Stroke and transient ischaemic attack in over 16s: diagnosis and initial management",
+        "url": "https://www.nice.org.uk/guidance/ng128"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1457,15 +1877,28 @@
     "slug": "imaging-cervical-spine",
     "title": "Cervical spine - when to image (Canadian C-spine / NEXUS)",
     "category": "imaging-selection",
-    "domains": ["emergency-medicine", "radiology", "trauma"],
+    "domains": [
+      "emergency-medicine",
+      "radiology",
+      "trauma"
+    ],
     "summary": "Two validated rules identify alert, stable blunt-trauma patients who do not need cervical spine imaging: the Canadian C-Spine Rule and the NEXUS criteria. CT is the preferred imaging modality when imaging is indicated in significant trauma.",
     "sections": [
       {
         "heading": "Canadian C-Spine Rule (alert, stable, GCS 15)",
         "steps": [
-          { "step": "High-risk factors -> imaging", "detail": "Age >=65 years; dangerous mechanism (fall from >=1 m / 5 stairs, axial load to head, high-speed MVC >100 km/h, rollover/ejection, motorised recreational vehicle, bicycle collision); or paraesthesia in the extremities." },
-          { "step": "Low-risk factors -> assess range of motion", "detail": "If no high-risk factor and at least one low-risk factor present (simple rear-end collision, sitting position in ED, ambulatory at any time, delayed onset of neck pain, absence of midline tenderness), test active rotation." },
-          { "step": "Range of motion", "detail": "If the patient can actively rotate the neck 45 degrees left and right, no imaging is needed. If unable, image." }
+          {
+            "step": "High-risk factors -> imaging",
+            "detail": "Age >=65 years; dangerous mechanism (fall from >=1 m / 5 stairs, axial load to head, high-speed MVC >100 km/h, rollover/ejection, motorised recreational vehicle, bicycle collision); or paraesthesia in the extremities."
+          },
+          {
+            "step": "Low-risk factors -> assess range of motion",
+            "detail": "If no high-risk factor and at least one low-risk factor present (simple rear-end collision, sitting position in ED, ambulatory at any time, delayed onset of neck pain, absence of midline tenderness), test active rotation."
+          },
+          {
+            "step": "Range of motion",
+            "detail": "If the patient can actively rotate the neck 45 degrees left and right, no imaging is needed. If unable, image."
+          }
         ]
       },
       {
@@ -1483,7 +1916,10 @@
       "Any high-risk feature, focal neurology, or failure of a clearance rule -> immobilise and image (CT preferred in significant trauma)"
     ],
     "references": [
-      { "label": "Stiell IG et al. The Canadian C-Spine Rule versus the NEXUS Low-Risk Criteria (NEJM 2003)", "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa031375" }
+      {
+        "label": "Stiell IG et al. The Canadian C-Spine Rule versus the NEXUS Low-Risk Criteria (NEJM 2003)",
+        "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa031375"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1493,7 +1929,11 @@
     "slug": "imaging-suspected-appendicitis",
     "title": "Suspected appendicitis - imaging selection",
     "category": "imaging-selection",
-    "domains": ["surgery", "emergency-medicine", "radiology"],
+    "domains": [
+      "surgery",
+      "emergency-medicine",
+      "radiology"
+    ],
     "summary": "Imaging in suspected appendicitis is tailored to age, sex and pregnancy. Ultrasound is preferred first-line in children and pregnant women (no ionising radiation); CT has the highest accuracy in adults; MRI is an alternative in pregnancy when ultrasound is inconclusive.",
     "sections": [
       {
@@ -1510,7 +1950,10 @@
       "Peritonitis, haemodynamic instability or features of perforation -> urgent surgical assessment; do not delay for imaging if the patient needs theatre"
     ],
     "references": [
-      { "label": "ACR Appropriateness Criteria - Right Lower Quadrant Pain / Suspected Appendicitis", "url": "https://acsearch.acr.org/docs/69357/Narrative/" }
+      {
+        "label": "ACR Appropriateness Criteria - Right Lower Quadrant Pain / Suspected Appendicitis",
+        "url": "https://acsearch.acr.org/docs/69357/Narrative/"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1520,7 +1963,11 @@
     "slug": "imaging-renal-colic",
     "title": "Suspected renal colic - imaging selection",
     "category": "imaging-selection",
-    "domains": ["urology", "emergency-medicine", "radiology"],
+    "domains": [
+      "urology",
+      "emergency-medicine",
+      "radiology"
+    ],
     "summary": "For suspected renal/ureteric colic, low-dose non-contrast CT of the kidneys, ureters and bladder (CT KUB) is the investigation of choice in adults because of its high sensitivity for stones. Ultrasound is preferred first-line in pregnancy and in children.",
     "sections": [
       {
@@ -1538,7 +1985,10 @@
       "Older patient with 'renal colic' and cardiovascular risk -> actively exclude a leaking abdominal aortic aneurysm"
     ],
     "references": [
-      { "label": "NICE NG118 - Renal and ureteric stones: assessment and management", "url": "https://www.nice.org.uk/guidance/ng118" }
+      {
+        "label": "NICE NG118 - Renal and ureteric stones: assessment and management",
+        "url": "https://www.nice.org.uk/guidance/ng118"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1548,7 +1998,11 @@
     "slug": "imaging-suspected-sah",
     "title": "Suspected subarachnoid haemorrhage - imaging selection",
     "category": "imaging-selection",
-    "domains": ["neurology", "emergency-medicine", "radiology"],
+    "domains": [
+      "neurology",
+      "emergency-medicine",
+      "radiology"
+    ],
     "summary": "In suspected aneurysmal SAH (sudden severe 'thunderclap' headache), urgent non-contrast CT head is first-line. CT sensitivity is highest very early; a negative CT performed within 6 hours of a non-traumatic thunderclap headache effectively excludes SAH in many patients, with lumbar puncture used when CT is later or equivocal.",
     "sections": [
       {
@@ -1566,7 +2020,10 @@
       "Confirmed SAH -> urgent neurosurgical referral and blood pressure/rebleeding management"
     ],
     "references": [
-      { "label": "Perry JJ et al. Sensitivity of computed tomography for acute subarachnoid haemorrhage (BMJ 2011)", "url": "https://www.bmj.com/content/343/bmj.d4277" }
+      {
+        "label": "Perry JJ et al. Sensitivity of computed tomography for acute subarachnoid haemorrhage (BMJ 2011)",
+        "url": "https://www.bmj.com/content/343/bmj.d4277"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1576,7 +2033,11 @@
     "slug": "imaging-ottawa-ankle-knee",
     "title": "Ankle and knee injury - Ottawa rules for X-ray",
     "category": "imaging-selection",
-    "domains": ["emergency-medicine", "orthopaedics", "radiology"],
+    "domains": [
+      "emergency-medicine",
+      "orthopaedics",
+      "radiology"
+    ],
     "summary": "The Ottawa Ankle and Foot Rules and the Ottawa Knee Rule are highly sensitive decision rules that identify which acute injuries require X-ray, safely reducing imaging in low-risk patients. They are validated in adults (and the ankle rules in children over ~5 years).",
     "sections": [
       {
@@ -1598,7 +2059,10 @@
       }
     ],
     "references": [
-      { "label": "Stiell IG et al. Ottawa ankle rules / knee rule (validated decision rules; summarised in Physiopedia clinical reference)", "url": "https://www.physio-pedia.com/Ottawa_Ankle_Rules" }
+      {
+        "label": "Stiell IG et al. Ottawa ankle rules / knee rule (validated decision rules; summarised in Physiopedia clinical reference)",
+        "url": "https://www.physio-pedia.com/Ottawa_Ankle_Rules"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1608,7 +2072,11 @@
     "slug": "imaging-chest-xray-indications",
     "title": "Chest X-ray - common indications",
     "category": "imaging-selection",
-    "domains": ["respiratory", "emergency-medicine", "radiology"],
+    "domains": [
+      "respiratory",
+      "emergency-medicine",
+      "radiology"
+    ],
     "summary": "The chest radiograph is a first-line study for many cardiorespiratory presentations and for confirming device/line position. Knowing the appropriate indications (and the limits of plain film) directs efficient imaging, with CT reserved for problems the plain film cannot resolve.",
     "sections": [
       {
@@ -1629,7 +2097,10 @@
       "Nasogastric tube feeding must not begin until correct position is confirmed (pH test or X-ray per protocol)"
     ],
     "references": [
-      { "label": "Royal College of Radiologists - iRefer: Making the best use of clinical radiology", "url": "https://www.rcr.ac.uk/our-services/all-our-publications/clinical-radiology-publications/irefer/" }
+      {
+        "label": "Royal College of Radiologists - iRefer: Making the best use of clinical radiology",
+        "url": "https://www.rcr.ac.uk/our-services/all-our-publications/clinical-radiology-publications/irefer/"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
@@ -1639,7 +2110,11 @@
     "slug": "imaging-bowel-obstruction",
     "title": "Suspected bowel obstruction - abdominal imaging",
     "category": "imaging-selection",
-    "domains": ["surgery", "emergency-medicine", "radiology"],
+    "domains": [
+      "surgery",
+      "emergency-medicine",
+      "radiology"
+    ],
     "summary": "For suspected bowel obstruction, contrast-enhanced CT of the abdomen and pelvis is the investigation of choice in adults: it confirms obstruction, identifies the level and cause, and detects complications such as ischaemia or perforation. Plain films are less sensitive and largely superseded by CT.",
     "sections": [
       {
@@ -1658,7 +2133,1732 @@
       "Closed-loop obstruction or volvulus -> high risk of ischaemia, requires urgent surgical management"
     ],
     "references": [
-      { "label": "ACR Appropriateness Criteria - Suspected Small-Bowel Obstruction", "url": "https://acsearch.acr.org/docs/69476/Narrative/" }
+      {
+        "label": "ACR Appropriateness Criteria - Suspected Small-Bowel Obstruction",
+        "url": "https://acsearch.acr.org/docs/69476/Narrative/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-paced-rhythm",
+    "title": "Paced rhythms on ECG",
+    "category": "ecg",
+    "domains": [
+      "cardiology"
+    ],
+    "summary": "Cardiac pacing produces electrical pacing spikes followed by a paced complex. Recognising atrial, ventricular and dual-chamber pacing, and confirming appropriate capture and sensing, is the bedside task. Right ventricular pacing produces an LBBB-like morphology, which obscures standard ischaemia interpretation (use modified Sgarbossa criteria).",
+    "sections": [
+      {
+        "heading": "Recognition",
+        "items": [
+          "Pacing spike: a narrow, vertical deflection immediately preceding the captured complex",
+          "Atrial pacing: spike before a P wave (capture confirmed by a following P wave)",
+          "Ventricular pacing: spike before a broad QRS, typically LBBB-like morphology with left axis when paced from the RV apex",
+          "Dual-chamber (DDD) pacing: an atrial spike then a ventricular spike (AV sequential)",
+          "Appropriate capture: every pacing spike is followed by the expected depolarisation; appropriate sensing: pacing is inhibited by intrinsic beats"
+        ]
+      },
+      {
+        "heading": "Pacemaker malfunction patterns",
+        "items": [
+          "Failure to capture: pacing spike not followed by depolarisation",
+          "Failure to sense (undersensing): pacing spikes appear despite intrinsic beats",
+          "Oversensing: expected pacing spikes are absent because the device misreads other signals as intrinsic activity",
+          "Ventricular-paced rhythm mimics LBBB - use modified Sgarbossa criteria to assess for acute MI"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Failure to capture in a pacemaker-dependent patient -> bradycardia/asystole risk; urgent cardiology and consider transcutaneous pacing",
+      "Wide-complex tachycardia with pacing spikes -> consider pacemaker-mediated tachycardia and apply a magnet / seek device interrogation"
+    ],
+    "references": [
+      {
+        "label": "LITFL ECG Library - Pacemaker Rhythms (Normal and Malfunction)",
+        "url": "https://litfl.com/pacemaker-malfunction-ecg-library/"
+      },
+      {
+        "label": "2021 ESC Guidelines on cardiac pacing and cardiac resynchronization therapy (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/42/35/3427/6358547"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-junctional-rhythm",
+    "title": "Junctional rhythm on ECG",
+    "category": "ecg",
+    "domains": [
+      "cardiology"
+    ],
+    "summary": "A junctional rhythm arises from the AV junction when the sinus node fails or is suppressed. The escape rate is typically 40-60/min with a narrow QRS and absent, inverted or retrograde P waves. It is usually an escape mechanism, so the priority is to identify and treat the cause of sinus node failure or AV block.",
+    "sections": [
+      {
+        "heading": "Key findings",
+        "items": [
+          "Narrow QRS (junctional origin) at a regular rate",
+          "P waves absent, or inverted in the inferior leads (II, III, aVF), occurring just before, during or just after the QRS (retrograde atrial activation)",
+          "Junctional escape rate ~40-60/min; accelerated junctional rhythm ~60-100/min; junctional tachycardia >100/min",
+          "Often seen with increased vagal tone, sick sinus syndrome, inferior MI, digoxin toxicity or after cardiac surgery"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Junctional rhythm with bradycardia and adverse signs (shock, syncope, heart failure, ischaemia) -> follow bradycardia algorithm",
+      "Accelerated junctional rhythm in a patient on digoxin -> consider digoxin toxicity"
+    ],
+    "references": [
+      {
+        "label": "LITFL ECG Library - Junctional Escape Rhythm",
+        "url": "https://litfl.com/junctional-escape-rhythm-ecg-library/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-multifocal-atrial-tachycardia",
+    "title": "Multifocal atrial tachycardia (MAT)",
+    "category": "ecg",
+    "domains": [
+      "cardiology",
+      "respiratory"
+    ],
+    "summary": "MAT is an irregular supraventricular tachycardia arising from multiple atrial ectopic foci, defined by at least three distinct non-sinus P-wave morphologies in a single lead with an atrial rate >100/min. It is strongly associated with COPD and other pulmonary disease, and management is primarily of the underlying condition.",
+    "sections": [
+      {
+        "heading": "Diagnostic criteria",
+        "items": [
+          "Atrial rate >100/min",
+          "At least three distinct non-sinus P-wave morphologies in a single lead",
+          "Irregular PP, PR and RR intervals with an isoelectric baseline between P waves",
+          "Distinguish from atrial fibrillation: MAT has discrete, identifiable (if varying) P waves, whereas AF has no organised P waves"
+        ]
+      }
+    ],
+    "redFlags": [
+      "MAT usually reflects severe underlying illness (decompensated COPD, sepsis, hypoxia, electrolyte disturbance) - treat the cause",
+      "AV-nodal blocking drugs are often ineffective and beta-blockers may be contraindicated in bronchospasm"
+    ],
+    "references": [
+      {
+        "label": "StatPearls - Multifocal Atrial Tachycardia (NCBI)",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK459152/"
+      },
+      {
+        "label": "LITFL ECG Library - Multifocal Atrial Tachycardia (MAT)",
+        "url": "https://litfl.com/multifocal-atrial-tachycardia-mat-ecg-library/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-avnrt-vs-avrt",
+    "title": "Distinguishing AVNRT from AVRT",
+    "category": "ecg",
+    "domains": [
+      "cardiology"
+    ],
+    "summary": "AVNRT and orthodromic AVRT are the two commonest paroxysmal regular narrow-complex SVTs. Both present as a regular tachycardia ~150-250/min, but the position of the retrograde P wave relative to the QRS helps distinguish them. Definitive distinction is electrophysiological; the acute treatment (vagal manoeuvres, adenosine) is the same.",
+    "sections": [
+      {
+        "heading": "Distinguishing features",
+        "items": [
+          "AVNRT (re-entry within the AV node): P wave usually buried in or very close to the QRS; may produce a pseudo-R' in V1 or pseudo-S in inferior leads (very short RP)",
+          "Orthodromic AVRT (re-entry via an accessory pathway): retrograde P wave clearly separated after the QRS (longer RP), often inverted in inferior leads",
+          "AVRT implies an accessory pathway - look for a delta wave / WPW pattern on a resting ECG once in sinus rhythm",
+          "Both terminate with vagal manoeuvres or adenosine, which is also diagnostic"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Any SVT with haemodynamic instability -> synchronised cardioversion",
+      "If a resting ECG shows pre-excitation (WPW), avoid AV-nodal blockers if the patient ever develops irregular pre-excited AF"
+    ],
+    "references": [
+      {
+        "label": "2019 ESC Guidelines for supraventricular tachycardia (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/41/5/655/5556821"
+      },
+      {
+        "label": "LITFL ECG Library - AV Nodal Reentry Tachycardia (AVNRT)",
+        "url": "https://litfl.com/av-nodal-reentry-tachycardia-avnrt-ecg-library/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-wellens-syndrome",
+    "title": "Wellens syndrome",
+    "category": "ecg",
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
+    "summary": "Wellens syndrome is a pattern of deeply inverted or biphasic T waves in V2-V3 that is highly specific for critical proximal LAD stenosis. Patients are often pain-free at the time of the ECG with normal or minimally raised troponin, but are at high risk of an impending large anterior MI. Stress testing is dangerous; angiography is indicated.",
+    "sections": [
+      {
+        "heading": "Key findings",
+        "items": [
+          "Type A (~25%): biphasic T waves in V2-V3",
+          "Type B (~75%): deeply and symmetrically inverted T waves in V2-V3 (may extend to V1-V6)",
+          "Recorded typically when the patient is pain-free (a pain-free interval after recent anginal chest pain)",
+          "Little or no ST elevation; no pathological precordial Q waves; preserved R-wave progression; normal or minimally elevated troponin"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Wellens pattern -> critical proximal LAD stenosis; refer for urgent invasive coronary angiography",
+      "Avoid stress testing - it can precipitate an extensive anterior infarction"
+    ],
+    "references": [
+      {
+        "label": "StatPearls - Wellens Syndrome (NCBI)",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK482490/"
+      },
+      {
+        "label": "LITFL ECG Library - Wellens Syndrome",
+        "url": "https://litfl.com/wellens-syndrome-ecg-library/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-brugada-syndrome",
+    "title": "Brugada syndrome / pattern",
+    "category": "ecg",
+    "domains": [
+      "cardiology"
+    ],
+    "summary": "Brugada syndrome is an inherited sodium-channelopathy associated with sudden cardiac death from polymorphic VT/VF. Only the type 1 (coved) pattern is diagnostic. The pattern is dynamic and can be unmasked by fever, sodium-channel-blocking drugs and other provocations, so a normal ECG does not exclude it.",
+    "sections": [
+      {
+        "heading": "ECG patterns",
+        "items": [
+          "Type 1 (diagnostic): coved ST-segment elevation >=2 mm in >=1 right precordial lead (V1-V2), with the ST segment descending into an inverted T wave",
+          "Type 2: 'saddleback' ST elevation with >=0.5 mm elevation (not diagnostic alone)",
+          "The pattern is dynamic; it may be intermittent or concealed",
+          "Provoking factors: fever, sodium-channel blockers (e.g. flecainide), tricyclics, cocaine, electrolyte disturbance"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Type 1 Brugada pattern, especially with syncope or a family history of sudden death -> urgent cardiology/electrophysiology referral for risk stratification",
+      "Treat fever promptly with antipyretics, as fever can unmask the pattern and precipitate arrhythmia"
+    ],
+    "references": [
+      {
+        "label": "StatPearls - Brugada Syndrome (NCBI)",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK519568/"
+      },
+      {
+        "label": "LITFL ECG Library - Brugada Syndrome",
+        "url": "https://litfl.com/brugada-syndrome-ecg-library/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-osborn-j-waves-hypothermia",
+    "title": "Osborn (J) waves and hypothermia",
+    "category": "ecg",
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
+    "summary": "The Osborn (J) wave is a positive deflection at the J point (the QRS-ST junction), classically seen in hypothermia, where its amplitude broadly increases as temperature falls. Hypothermia also causes bradycardia, interval prolongation and a high risk of ventricular arrhythmia with rough handling.",
+    "sections": [
+      {
+        "heading": "Key findings",
+        "items": [
+          "Osborn (J) wave: a notch or hump at the J point, best seen in the inferior and lateral leads; amplitude tends to increase with deeper hypothermia",
+          "Bradycardia (sinus bradycardia, slow AF)",
+          "Prolongation of PR, QRS and QT intervals",
+          "Shivering or muscle-tremor artefact on the baseline",
+          "Osborn waves are not specific to hypothermia (also seen in hypercalcaemia, severe CNS injury, early repolarisation)"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Severe hypothermia -> myocardium is irritable; minimise rough handling and unnecessary movement to avoid precipitating VF",
+      "Bradyarrhythmia in hypothermia may be refractory until the patient is rewarmed"
+    ],
+    "references": [
+      {
+        "label": "LITFL ECG Library - Hypothermia (Osborn J waves)",
+        "url": "https://litfl.com/osborn-wave-j-wave-ecg-library/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-electrical-alternans-tamponade",
+    "title": "Electrical alternans and cardiac tamponade",
+    "category": "ecg",
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
+    "summary": "Electrical alternans is a beat-to-beat alternation in QRS amplitude caused by the heart swinging within a large pericardial effusion. In the right context it strongly suggests pericardial effusion with possible tamponade, which is a clinical and echocardiographic diagnosis requiring urgent assessment.",
+    "sections": [
+      {
+        "heading": "Key findings",
+        "items": [
+          "Beat-to-beat alternation in QRS amplitude (and sometimes P/T waves) at a constant rate",
+          "Often accompanied by low QRS voltage and sinus tachycardia in a large effusion",
+          "The triad of electrical alternans, low voltage and tachycardia is suggestive of a large pericardial effusion",
+          "Tamponade is a clinical/echocardiographic diagnosis (hypotension, raised JVP, muffled heart sounds, pulsus paradoxus); the ECG is only supportive"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Electrical alternans with haemodynamic compromise -> suspect cardiac tamponade; urgent echocardiography and consider pericardiocentesis",
+      "Pulseless electrical activity with a known large effusion -> consider tamponade as a reversible cause of arrest"
+    ],
+    "references": [
+      {
+        "label": "2015 ESC Guidelines for the diagnosis and management of pericardial diseases (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/36/42/2921/2293375"
+      },
+      {
+        "label": "LITFL ECG Library - Electrical Alternans",
+        "url": "https://litfl.com/electrical-alternans-ecg-library/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-torsades-de-pointes",
+    "title": "Torsades de pointes",
+    "category": "ecg",
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
+    "summary": "Torsades de pointes is a polymorphic ventricular tachycardia occurring on a background of QT prolongation, characterised by QRS complexes that appear to twist around the baseline. It can self-terminate or degenerate into VF. IV magnesium and correction of precipitants are the priorities.",
+    "sections": [
+      {
+        "heading": "Key findings",
+        "items": [
+          "Polymorphic VT with a continuously changing QRS axis - complexes appear to twist around the isoelectric baseline",
+          "Occurs in the context of a prolonged QT interval (drug-induced, electrolyte disturbance, congenital long QT)",
+          "Often initiated by a premature ventricular beat falling on the T wave (R-on-T), frequently after a pause (pause-dependent)",
+          "Rate typically 200-250/min; episodes may be self-limiting or sustained"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Torsades de pointes -> give IV magnesium sulphate; stop QT-prolonging drugs and correct potassium/magnesium",
+      "Sustained torsades with a pulse and instability, or degeneration to VF -> defibrillate / cardiovert per ALS",
+      "Recurrent pause-dependent torsades -> consider overdrive pacing or isoprenaline to raise the heart rate"
+    ],
+    "references": [
+      {
+        "label": "2022 ESC Guidelines for ventricular arrhythmias and prevention of sudden cardiac death (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/43/40/3997/6675633"
+      },
+      {
+        "label": "LITFL ECG Library - Polymorphic VT and Torsades de Pointes",
+        "url": "https://litfl.com/polymorphic-vt-and-torsades-de-pointes-tdp/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-sgarbossa-criteria",
+    "title": "Sgarbossa criteria - diagnosing MI in LBBB or paced rhythm",
+    "category": "ecg",
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
+    "summary": "Because LBBB (and ventricular pacing) produce secondary ST/T changes, standard STEMI criteria cannot be applied. The Sgarbossa criteria, and the Smith-modified version, identify acute MI in this setting. The modified third criterion uses a proportional (ST/S ratio) cut-off and is markedly more sensitive.",
+    "sections": [
+      {
+        "heading": "Criteria",
+        "items": [
+          "Concordant ST elevation >=1 mm in a lead with a positive (upward) QRS - highly specific (original score 5)",
+          "Concordant ST depression >=1 mm in V1, V2 or V3 (original score 3)",
+          "Original third criterion: discordant ST elevation >=5 mm in a lead with a negative QRS (less specific; original score 2)",
+          "Modified (Smith) third criterion: discordant ST elevation that is proportionally excessive, ST elevation >=25% of the depth of the preceding S wave (ST/S ratio <= -0.25)",
+          "Original criteria specific (~98%) but insensitive (~20%); the modified criteria improve sensitivity to ~80% while keeping specificity ~99%"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Any positive Sgarbossa/Smith-modified criterion in a patient with ischaemic symptoms and LBBB or ventricular pacing -> treat as acute coronary occlusion and activate the reperfusion pathway",
+      "A negative score does not exclude MI - use serial ECGs, troponin and the clinical picture"
+    ],
+    "references": [
+      {
+        "label": "Sgarbossa EB et al. Electrocardiographic diagnosis of evolving acute MI in the presence of LBBB (NEJM 1996)",
+        "url": "https://www.nejm.org/doi/full/10.1056/NEJM199602223340801"
+      },
+      {
+        "label": "Meyers HP, Smith SW et al. Validation of the modified Sgarbossa criteria (original Smith derivation 2012)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/22939607/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "abg-delta-ratio",
+    "title": "Delta ratio (delta-delta gap)",
+    "category": "blood-gas",
+    "domains": [
+      "critical-care",
+      "nephrology",
+      "emergency-medicine"
+    ],
+    "summary": "In a high-anion-gap metabolic acidosis, the delta ratio compares the rise in the anion gap with the fall in bicarbonate to detect a coexisting second metabolic disorder. It assumes that, in a pure high-anion-gap acidosis, each added acid consumes roughly one bicarbonate.",
+    "sections": [
+      {
+        "heading": "Calculation and interpretation",
+        "items": [
+          "Delta ratio = (measured anion gap - normal anion gap) / (normal HCO3 - measured HCO3), using a normal anion gap of ~12 and normal HCO3 of ~24 mmol/L",
+          "Ratio <0.4: pure normal-anion-gap (hyperchloraemic) metabolic acidosis",
+          "Ratio 0.4-1: a coexisting normal-anion-gap acidosis alongside the high-anion-gap acidosis",
+          "Ratio 1-2: pure high-anion-gap metabolic acidosis (the expected range)",
+          "Ratio >2: a coexisting metabolic alkalosis or a pre-existing high HCO3 (e.g. chronic respiratory acidosis)"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Use the delta ratio only after confirming a raised anion gap; it is an adjunct, interpreted with the clinical picture and the other compensation rules"
+    ],
+    "references": [
+      {
+        "label": "LITFL CCC - Delta Ratio",
+        "url": "https://litfl.com/delta-ratio/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "abg-osmolar-gap",
+    "title": "Osmolar (osmolal) gap",
+    "category": "blood-gas",
+    "domains": [
+      "toxicology",
+      "critical-care",
+      "emergency-medicine"
+    ],
+    "summary": "The osmolar gap is the difference between the measured serum osmolality and the calculated osmolarity. A raised gap indicates unmeasured osmotically active solutes, classically the toxic alcohols (methanol, ethylene glycol). It is most useful early, before the alcohol is metabolised to its acid (which then raises the anion gap).",
+    "sections": [
+      {
+        "heading": "Calculation and interpretation",
+        "items": [
+          "Calculated osmolarity (mmol/L) = 2 x Na + glucose + urea (all in mmol/L); add ethanol (mmol/L) if measured",
+          "Osmolar gap = measured osmolality - calculated osmolarity",
+          "Normal osmolar gap is approximately <10-15 mOsm/kg (a normal gap does not exclude toxic alcohol ingestion)",
+          "Causes of a raised gap: methanol, ethylene glycol, ethanol, isopropanol, propylene glycol, mannitol, severe ketoacidosis/lactic acidosis",
+          "Sequence in toxic alcohols: early high osmolar gap with normal anion gap; later, as the parent alcohol is metabolised, the osmolar gap falls and a high anion gap (acid) appears"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Raised osmolar gap with a high-anion-gap metabolic acidosis -> strongly suspect methanol or ethylene glycol poisoning; this is time-critical (fomepizole/ethanol, dialysis)",
+      "A normal osmolar gap does not exclude toxic alcohol poisoning, especially late after ingestion"
+    ],
+    "references": [
+      {
+        "label": "UI Health Care - Osmolality Gap: Calculation and Interpretation",
+        "url": "https://www.healthcare.uiowa.edu/path_handbook/appendix/chem/osmo_gap.html"
+      },
+      {
+        "label": "EMCrit PulmCrit - The osmolal gap in toxicology",
+        "url": "https://emcrit.org/pulmcrit/osmolal-gap/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "abg-salicylate-mixed-picture",
+    "title": "Salicylate poisoning - mixed acid-base picture",
+    "category": "blood-gas",
+    "domains": [
+      "toxicology",
+      "emergency-medicine",
+      "critical-care"
+    ],
+    "summary": "Salicylate (aspirin) toxicity produces a characteristic mixed acid-base disturbance: an early primary respiratory alkalosis from direct stimulation of the respiratory centre, combined with a high-anion-gap metabolic acidosis. Recognising this pattern in a patient with hyperventilation, tinnitus and confusion should prompt a salicylate level.",
+    "sections": [
+      {
+        "heading": "Key findings",
+        "items": [
+          "Classic mixed picture: primary respiratory alkalosis AND high-anion-gap metabolic acidosis occurring together",
+          "Early: respiratory alkalosis predominates (low PaCO2, raised pH) from direct medullary stimulation",
+          "Later: high-anion-gap metabolic acidosis develops (raised lactate, ketones, salicylate) and may dominate, especially in children and severe poisoning",
+          "A near-normal or falling pH in salicylate poisoning is a worrying sign of decompensation",
+          "Associated clinical clues: tinnitus, hyperventilation, sweating, vomiting, agitation, hyperthermia"
+        ]
+      }
+    ],
+    "redFlags": [
+      "A falling pH (acidaemia) in salicylate poisoning is dangerous - acidaemia increases CNS salicylate penetration; avoid hypoventilation where possible and seek toxicology advice",
+      "Severe poisoning, CNS features, acidaemia or very high levels -> urgent discussion regarding urinary alkalinisation and haemodialysis"
+    ],
+    "references": [
+      {
+        "label": "Merck Manual Professional - Aspirin and Other Salicylate Poisoning",
+        "url": "https://www.merckmanuals.com/professional/injuries-poisoning/poisoning/aspirin-and-other-salicylate-poisoning"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "abg-methaemoglobinaemia",
+    "title": "Methaemoglobinaemia on co-oximetry",
+    "category": "blood-gas",
+    "domains": [
+      "toxicology",
+      "critical-care",
+      "emergency-medicine"
+    ],
+    "summary": "Methaemoglobin contains iron in the ferric (Fe3+) state, which cannot carry oxygen and shifts the dissociation curve, impairing delivery. Standard pulse oximetry is unreliable and tends to read toward ~85%; the diagnosis is made by co-oximetry on a blood gas. Cyanosis unresponsive to oxygen with a normal PaO2 is the classic clue.",
+    "sections": [
+      {
+        "heading": "Key findings",
+        "items": [
+          "Co-oximetry reports an elevated methaemoglobin fraction (normal <1-2%)",
+          "PaO2 (dissolved oxygen) is normal despite clinical cyanosis - oxygen content is reduced because functional haemoglobin is low",
+          "Pulse oximetry is unreliable and classically tends toward ~85% regardless of true saturation",
+          "'Chocolate-brown' arterial blood that does not redden on exposure to air is a classic sign",
+          "Common precipitants: dapsone, local anaesthetics (benzocaine, prilocaine), nitrites/nitrates, some antimalarials"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Symptomatic methaemoglobinaemia (typically levels >20-30%, or lower if comorbid) -> consider IV methylene blue and stop the offending agent",
+      "Avoid methylene blue in known G6PD deficiency (ineffective and may cause haemolysis) - seek toxicology advice"
+    ],
+    "references": [
+      {
+        "label": "StatPearls - Methemoglobinemia (NCBI)",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK537317/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "abg-base-excess",
+    "title": "Base excess and standard base excess",
+    "category": "blood-gas",
+    "domains": [
+      "critical-care",
+      "emergency-medicine"
+    ],
+    "summary": "Base excess (BE) quantifies the metabolic component of an acid-base disturbance: the amount of acid or base needed to return blood pH to 7.40 at a PaCO2 of 40 mmHg. It is independent of the respiratory component and is a useful quick marker of metabolic acidosis or alkalosis severity.",
+    "sections": [
+      {
+        "heading": "Interpretation",
+        "items": [
+          "Normal base excess: approximately -2 to +2 mmol/L",
+          "Negative base excess (base deficit) more negative than -2: a metabolic acidosis",
+          "Positive base excess greater than +2: a metabolic alkalosis",
+          "Standard base excess (SBE) is calculated for the whole extracellular fluid and is more stable across changing PaCO2",
+          "A large base deficit in trauma/shock correlates with the degree of hypoperfusion and is a useful resuscitation marker (interpret alongside lactate)"
+        ]
+      }
+    ],
+    "redFlags": [
+      "A large and worsening base deficit in a shocked patient -> ongoing tissue hypoperfusion; escalate resuscitation and seek the cause"
+    ],
+    "references": [
+      {
+        "label": "LITFL CCC - Base Excess",
+        "url": "https://litfl.com/base-excess/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "abg-vbg-vs-abg-agreement",
+    "title": "Venous vs arterial blood gas - agreement and limits",
+    "category": "blood-gas",
+    "domains": [
+      "emergency-medicine",
+      "critical-care",
+      "respiratory"
+    ],
+    "summary": "A venous blood gas (VBG) is a reasonable substitute for an arterial gas for pH and bicarbonate in many settings, sparing an arterial puncture. However, the agreement breaks down for oxygenation and at the extremes of carbon dioxide, so a VBG must be interpreted with these limits in mind.",
+    "sections": [
+      {
+        "heading": "What agrees and what does not",
+        "items": [
+          "pH: venous pH runs slightly lower than arterial, by roughly 0.03-0.04 units; generally good agreement and adequate for trend",
+          "Bicarbonate: venous HCO3 agrees closely with arterial (typically within ~1-2 mmol/L)",
+          "PvCO2: runs a few mmHg higher than arterial; a normal venous CO2 makes significant arterial hypercapnia unlikely, but agreement is poor when CO2 is high (do not rely on a VBG to titrate CO2 in hypercapnic respiratory failure)",
+          "Oxygenation: venous PO2 and saturation do NOT reflect arterial oxygenation - use an arterial sample or SpO2 to assess oxygenation",
+          "A VBG is useful for pH, HCO3, lactate, electrolytes and to screen out hypercapnia; an ABG is needed when accurate PaO2 or PaCO2 is essential"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Never assess oxygenation from a venous gas",
+      "Do not rely on a VBG to exclude or quantify hypercapnia in a patient with respiratory failure - confirm with an arterial sample"
+    ],
+    "references": [
+      {
+        "label": "Byrne AL et al. Peripheral venous and arterial blood gas analysis in adults: a systematic review (Respirology 2014)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/24383789/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ecg-arvc",
+    "title": "Arrhythmogenic right ventricular cardiomyopathy (ARVC) on ECG",
+    "category": "ecg",
+    "domains": [
+      "cardiology"
+    ],
+    "summary": "ARVC is an inherited cardiomyopathy with fibrofatty replacement of the right ventricle, predisposing to ventricular arrhythmias and sudden death, particularly in young people and athletes. ECG features are part of the Task Force diagnostic criteria; the epsilon wave and right precordial T-wave inversion are characteristic.",
+    "sections": [
+      {
+        "heading": "Key findings",
+        "items": [
+          "Epsilon wave: a small reproducible deflection at the end of the QRS in the right precordial leads (V1-V3) - a major criterion",
+          "T-wave inversion in the right precordial leads (V1-V3) beyond age 14, without RBBB",
+          "Localised QRS prolongation / terminal activation delay in V1-V3",
+          "Ventricular ectopy and VT with a left bundle branch block morphology (RV origin), classically superior axis"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Young patient or athlete with syncope, exertional palpitations or VT of LBBB morphology -> consider ARVC; urgent cardiology referral",
+      "Family history of sudden cardiac death plus right precordial ECG changes -> investigate for inherited cardiomyopathy"
+    ],
+    "references": [
+      {
+        "label": "Marcus FI et al. Revised Task Force Criteria for ARVC (Circulation 2010)",
+        "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.840827"
+      },
+      {
+        "label": "LITFL ECG Library - Arrhythmogenic Right Ventricular Cardiomyopathy",
+        "url": "https://litfl.com/arrhythmogenic-right-ventricular-cardiomyopathy-arvc-ecg-library/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ecg-low-voltage",
+    "title": "Low QRS voltage on ECG",
+    "category": "ecg",
+    "domains": [
+      "cardiology"
+    ],
+    "summary": "Low QRS voltage describes abnormally small QRS amplitudes and may reflect either reduced cardiac signal (infiltration, effusion) or attenuation between heart and electrodes (obesity, emphysema, oedema). It is a clue, not a diagnosis, and is interpreted with the clinical context.",
+    "sections": [
+      {
+        "heading": "Definition and causes",
+        "items": [
+          "Limb-lead low voltage: QRS amplitude <5 mm in all limb leads",
+          "Precordial low voltage: QRS amplitude <10 mm in all precordial leads",
+          "Attenuation (extracardiac): obesity, pericardial effusion, large pleural effusion, emphysema/COPD, subcutaneous oedema (anasarca)",
+          "Reduced myocardial signal: infiltrative disease (amyloidosis), extensive infarction, myxoedema, end-stage cardiomyopathy",
+          "Low voltage with sinus tachycardia and electrical alternans suggests a large pericardial effusion"
+        ]
+      }
+    ],
+    "redFlags": [
+      "New low voltage with sinus tachycardia, raised JVP and hypotension -> consider pericardial effusion / tamponade and obtain urgent echocardiography"
+    ],
+    "references": [
+      {
+        "label": "LITFL ECG Library - Low QRS Voltage",
+        "url": "https://litfl.com/low-qrs-voltage-ecg-library/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-p-mitrale-p-pulmonale",
+    "title": "P-mitrale and P-pulmonale (atrial enlargement) on ECG",
+    "category": "ecg",
+    "domains": [
+      "cardiology"
+    ],
+    "summary": "Abnormal P-wave morphology reflects atrial enlargement. P-mitrale indicates left atrial enlargement (classically mitral valve disease) and P-pulmonale indicates right atrial enlargement (classically pulmonary disease / pulmonary hypertension). The P wave is best assessed in lead II and V1.",
+    "sections": [
+      {
+        "heading": "Key findings",
+        "items": [
+          "P-mitrale (left atrial enlargement): broad (>120 ms), notched, 'M-shaped' P wave in lead II (bifid with >40 ms between peaks); a deep, broad negative terminal portion of the P wave in V1",
+          "P-pulmonale (right atrial enlargement): tall, peaked P wave >2.5 mm in the inferior leads (II, III, aVF)",
+          "Right atrial enlargement may also show a prominent initial positive deflection of the biphasic P wave in V1",
+          "Biatrial enlargement: features of both may coexist"
+        ]
+      }
+    ],
+    "references": [
+      {
+        "label": "LITFL ECG Library - P Wave (Atrial Enlargement)",
+        "url": "https://litfl.com/p-wave-ecg-library/"
+      },
+      {
+        "label": "AHA/ACCF/HRS Standardization and Interpretation of the ECG Part V: Chamber Hypertrophy (Circulation 2009)",
+        "url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.108.191097"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-bifascicular-block",
+    "title": "Bifascicular block on ECG",
+    "category": "ecg",
+    "domains": [
+      "cardiology"
+    ],
+    "summary": "Bifascicular block is the combination of RBBB with block of one of the left bundle's fascicles (anterior or posterior). It indicates significant conduction system disease and, particularly with symptoms or first-degree AV block ('trifascicular' pattern), carries a risk of progression to complete heart block.",
+    "sections": [
+      {
+        "heading": "Key findings",
+        "items": [
+          "RBBB + left anterior fascicular block: RBBB morphology with marked left axis deviation (approximately -45 to -90 degrees)",
+          "RBBB + left posterior fascicular block: RBBB morphology with right axis deviation (and other causes of right axis excluded)",
+          "Addition of first-degree AV block (prolonged PR) is sometimes termed 'trifascicular block' pattern",
+          "Left anterior fascicular block alone: left axis deviation with small q in I/aVL and small r in inferior leads, QRS <120 ms"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Bifascicular block with syncope or with intermittent advanced AV block -> high risk of progression to complete heart block; urgent cardiology assessment and consider pacing",
+      "New bifascicular block in the context of acute MI is a marker of extensive disease"
+    ],
+    "references": [
+      {
+        "label": "LITFL ECG Library - Bifascicular Block",
+        "url": "https://litfl.com/bifascicular-block-ecg-library/"
+      },
+      {
+        "label": "2021 ESC Guidelines on cardiac pacing and cardiac resynchronization therapy (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/42/35/3427/6358547"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-accelerated-idioventricular-rhythm",
+    "title": "Accelerated idioventricular rhythm (AIVR)",
+    "category": "ecg",
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
+    "summary": "AIVR is a benign ventricular rhythm at a rate of roughly 40-120/min, classically seen as a reperfusion rhythm after successful thrombolysis or PCI in acute MI. It is usually self-limiting and well tolerated, and is not treated like VT - suppression can be harmful if it is the dominant rhythm.",
+    "sections": [
+      {
+        "heading": "Key findings",
+        "items": [
+          "Regular broad-complex (ventricular) rhythm at a rate of approximately 40-120/min (slower than VT)",
+          "Often appears as the ventricular rate accelerates to overtake a slowing sinus rate, with fusion and capture beats at onset/offset",
+          "Commonly a reperfusion rhythm after coronary reperfusion in acute MI; also seen in cardiomyopathy and digoxin toxicity",
+          "Usually transient and haemodynamically well tolerated"
+        ]
+      }
+    ],
+    "redFlags": [
+      "AIVR itself is usually benign and self-limiting - do not treat it as VT; avoid suppressing it if it is the only effective rhythm",
+      "If loss of AV synchrony causes haemodynamic compromise, treat the underlying cause rather than the rhythm itself"
+    ],
+    "references": [
+      {
+        "label": "LITFL ECG Library - Accelerated Idioventricular Rhythm (AIVR)",
+        "url": "https://litfl.com/accelerated-idioventricular-rhythm-aivr/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-early-repolarisation",
+    "title": "Early repolarisation pattern on ECG",
+    "category": "ecg",
+    "domains": [
+      "cardiology"
+    ],
+    "summary": "Early repolarisation is a common pattern of J-point elevation and notching/slurring, often a normal variant in young, fit individuals. The main bedside task is distinguishing it from STEMI and pericarditis. A subset (early repolarisation syndrome) is associated with idiopathic VF, so the pattern is interpreted with the clinical picture.",
+    "sections": [
+      {
+        "heading": "Key findings",
+        "items": [
+          "J-point elevation with notching or slurring of the terminal QRS, typically in the inferior and/or lateral leads",
+          "Concave-upward ST elevation, usually <2 mm, often most prominent in V2-V5",
+          "Tall, slightly asymmetric T waves; the ST/T changes are stable rather than evolving",
+          "More common in young adults, athletes and men",
+          "Distinguish from STEMI (territorial, evolving, reciprocal change) and pericarditis (diffuse with PR depression)"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Do not assume J-point elevation is benign in a patient with ischaemic symptoms - use serial ECGs, troponin and comparison with prior tracings",
+      "Inferolateral early repolarisation with unexplained syncope or a family history of sudden death -> consider early repolarisation syndrome and refer"
+    ],
+    "references": [
+      {
+        "label": "LITFL ECG Library - Benign Early Repolarisation",
+        "url": "https://litfl.com/benign-early-repolarisation-ecg-library/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-atrial-ectopics-pvcs",
+    "title": "Ectopic beats - atrial ectopics and premature ventricular complexes",
+    "category": "ecg",
+    "domains": [
+      "cardiology"
+    ],
+    "summary": "Premature atrial complexes (PACs) and premature ventricular complexes (PVCs) are common, usually benign extra beats. Recognising them and distinguishing narrow (supraventricular) from broad (ventricular) ectopy is the bedside task; frequent or repetitive ventricular ectopy occasionally signals underlying disease.",
+    "sections": [
+      {
+        "heading": "Recognition",
+        "items": [
+          "Premature atrial complex (PAC): early P wave of abnormal morphology, narrow QRS, usually followed by an incomplete compensatory pause",
+          "Premature ventricular complex (PVC): early broad QRS with no preceding P wave, abnormal/bizarre morphology, usually followed by a full compensatory pause",
+          "Patterns: bigeminy (every other beat ectopic), trigeminy (every third), couplets (two in a row), triplets, salvos",
+          "Interpolated PVC: sandwiched between two sinus beats without a compensatory pause"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Very frequent PVCs, runs of >=3 (non-sustained VT), multiform PVCs, or R-on-T phenomenon -> consider underlying structural heart disease, ischaemia or electrolyte disturbance",
+      "Ectopy in the setting of syncope, known cardiomyopathy or a family history of sudden death warrants cardiology assessment"
+    ],
+    "references": [
+      {
+        "label": "LITFL ECG Library - Premature Ventricular Complex (PVC)",
+        "url": "https://litfl.com/premature-ventricular-complex-pvc-ecg-library/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "ecg-dextrocardia-lead-misplacement",
+    "title": "Dextrocardia and limb-lead misplacement",
+    "category": "ecg",
+    "domains": [
+      "cardiology"
+    ],
+    "summary": "An unexpected pattern of negative complexes in lead I with poor R-wave progression should prompt consideration of dextrocardia or, far more commonly, lead misplacement (especially left-right arm reversal). Recognising this prevents misdiagnosis and unnecessary investigation; the fix is to check lead placement and repeat the ECG.",
+    "sections": [
+      {
+        "heading": "Recognition and differentiation",
+        "items": [
+          "Dextrocardia: negative P, QRS and T in lead I; inverted/reversed precordial R-wave progression (R waves get smaller from V1 to V6); right axis deviation",
+          "Left-right arm lead reversal mimics some of these limb-lead findings (inverted P/QRS in I, aVR looks like a 'normal' lead II) BUT precordial R-wave progression is normal",
+          "Key discriminator: in true dextrocardia, precordial leads also show reversed/poor R-wave progression; in arm-lead reversal, the precordial leads are normal",
+          "If dextrocardia is suspected, repeat with right-sided precordial leads (and reversed limb leads) for proper interpretation"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Always exclude lead misplacement before diagnosing dextrocardia or before acting on bizarre limb-lead findings - check electrode placement and repeat the ECG"
+    ],
+    "references": [
+      {
+        "label": "LITFL ECG Library - Dextrocardia",
+        "url": "https://litfl.com/dextrocardia-ecg-library/"
+      },
+      {
+        "label": "LITFL ECG Library - Limb Lead Reversal",
+        "url": "https://litfl.com/lead-positioning-errors-ecg-library/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lab-hypomagnesaemia",
+    "title": "Hypomagnesaemia - causes and interpretation",
+    "category": "lab-interpretation",
+    "domains": [
+      "nephrology",
+      "critical-care",
+      "endocrinology"
+    ],
+    "summary": "Low serum magnesium is common in hospitalised patients and frequently coexists with, and perpetuates, hypokalaemia and hypocalcaemia. It must be corrected to allow successful repletion of those electrolytes and to reduce arrhythmia risk, particularly torsades de pointes.",
+    "sections": [
+      {
+        "heading": "Causes and associations",
+        "items": [
+          "Reduced intake/absorption: malnutrition, alcohol excess, malabsorption, chronic diarrhoea, proton pump inhibitors (long-term)",
+          "Renal loss: loop and thiazide diuretics, alcohol, hypercalcaemia, tubular disorders, drugs (aminoglycosides, amphotericin, cisplatin)",
+          "Refractory hypokalaemia and hypocalcaemia that will not correct until magnesium is replaced",
+          "Serum magnesium is a poor reflection of total body stores; suspect depletion clinically even with borderline levels"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Hypomagnesaemia with prolonged QT or ventricular arrhythmia (including torsades) -> give IV magnesium",
+      "Potassium that will not correct despite replacement -> check and replace magnesium"
+    ],
+    "references": [
+      {
+        "label": "Merck Manual Professional - Hypomagnesemia",
+        "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/electrolyte-disorders/hypomagnesemia"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lab-hypophosphataemia",
+    "title": "Hypophosphataemia - causes and interpretation",
+    "category": "lab-interpretation",
+    "domains": [
+      "nephrology",
+      "critical-care",
+      "endocrinology"
+    ],
+    "summary": "Low serum phosphate impairs cellular energy (ATP) and 2,3-DPG, and when severe can cause muscle weakness (including respiratory), haemolysis and arrhythmia. A classic and dangerous context is refeeding syndrome, where insulin drives phosphate into cells.",
+    "sections": [
+      {
+        "heading": "Causes and mechanisms",
+        "items": [
+          "Intracellular shift: refeeding syndrome, treatment of diabetic ketoacidosis (insulin), respiratory alkalosis, recovery phase of illness",
+          "Reduced intake/absorption: malnutrition, alcohol excess, chronic antacid/phosphate-binder use, vitamin D deficiency",
+          "Renal loss: hyperparathyroidism, Fanconi syndrome, diuretics, post-transplant",
+          "Severe (<0.3 mmol/L) hypophosphataemia can cause rhabdomyolysis, respiratory muscle weakness, haemolysis and arrhythmia"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Severe hypophosphataemia with respiratory muscle weakness or arrhythmia -> IV phosphate replacement",
+      "Patient at refeeding risk (prolonged starvation, alcohol excess, very low BMI) -> monitor and replace phosphate, potassium and magnesium and give thiamine before/with feeding"
+    ],
+    "references": [
+      {
+        "label": "Merck Manual Professional - Hypophosphatemia",
+        "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/electrolyte-disorders/hypophosphatemia"
+      },
+      {
+        "label": "NICE CG32 - Nutrition support for adults (refeeding syndrome)",
+        "url": "https://www.nice.org.uk/guidance/cg32"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lab-raised-alp",
+    "title": "Raised alkaline phosphatase (ALP) - bone vs liver source",
+    "category": "lab-interpretation",
+    "domains": [
+      "gastroenterology",
+      "endocrinology"
+    ],
+    "summary": "ALP arises mainly from liver and bone, so a raised level requires identifying the source. A concurrently raised gamma-glutamyl transferase (GGT) points to a hepatobiliary source; an isolated raised ALP with normal GGT points to bone (or pregnancy/placenta).",
+    "sections": [
+      {
+        "heading": "Localising the source",
+        "items": [
+          "Raised ALP with raised GGT -> hepatobiliary source (cholestasis: biliary obstruction, drugs, infiltration, primary biliary cholangitis)",
+          "Raised ALP with normal GGT -> bone source (Paget disease, osteomalacia, healing fracture, bone metastases, hyperparathyroidism) or physiological",
+          "Physiological causes of raised ALP: growing children/adolescents and the third trimester of pregnancy (placental ALP)",
+          "If unclear, ALP isoenzymes can separate bone from liver fractions"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Markedly raised ALP with jaundice and a dilated biliary tree -> biliary obstruction; arrange imaging and consider biliary sepsis",
+      "Isolated raised ALP with bone pain or hypercalcaemia -> investigate for malignancy or metabolic bone disease"
+    ],
+    "references": [
+      {
+        "label": "Merck Manual Professional - Evaluation of the Patient With a Liver Disorder (Liver tests)",
+        "url": "https://www.merckmanuals.com/professional/hepatic-and-biliary-disorders/testing-for-hepatic-and-biliary-disorders/laboratory-tests-of-the-liver-and-gallbladder"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lab-tsh-algorithm",
+    "title": "Abnormal TSH - interpretation algorithm",
+    "category": "lab-interpretation",
+    "domains": [
+      "endocrinology"
+    ],
+    "summary": "TSH is the most sensitive first-line test of thyroid status in stable outpatients. Interpreting TSH with free T4 (and free T3 where relevant) classifies the disturbance as overt or subclinical hypo- or hyperthyroidism, and flags rarer central (pituitary) patterns. Acute illness distorts thyroid tests, so avoid testing in unwell inpatients unless thyroid disease is the question.",
+    "sections": [
+      {
+        "heading": "Interpretation pattern",
+        "items": [
+          "High TSH + low free T4 -> primary hypothyroidism",
+          "High TSH + normal free T4 -> subclinical hypothyroidism",
+          "Low TSH + high free T4 (and/or free T3) -> primary hyperthyroidism",
+          "Low TSH + normal free T4 and free T3 -> subclinical hyperthyroidism",
+          "Low/normal TSH + low free T4 -> consider central (secondary) hypothyroidism or non-thyroidal illness",
+          "High TSH + high free T4 -> consider TSH-secreting adenoma, thyroid hormone resistance, or assay interference (rare)"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Suspected myxoedema coma (severe hypothyroidism with hypothermia and reduced consciousness) or thyroid storm (severe thyrotoxicosis with fever, tachyarrhythmia, agitation) -> medical emergencies",
+      "Avoid interpreting thyroid function tests during acute non-thyroidal illness (sick euthyroid pattern) unless thyroid disease is strongly suspected"
+    ],
+    "references": [
+      {
+        "label": "Merck Manual Professional - Overview of Thyroid Function (Laboratory testing)",
+        "url": "https://www.merckmanuals.com/professional/endocrine-and-metabolic-disorders/thyroid-disorders/overview-of-thyroid-function"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lab-raised-ck-rhabdomyolysis",
+    "title": "Raised creatine kinase and rhabdomyolysis",
+    "category": "lab-interpretation",
+    "domains": [
+      "nephrology",
+      "emergency-medicine",
+      "critical-care"
+    ],
+    "summary": "Creatine kinase (CK) rises with skeletal (and cardiac) muscle injury. Rhabdomyolysis is diagnosed by a markedly elevated CK in the right clinical context and matters because myoglobin release can cause acute kidney injury, hyperkalaemia and other dangerous electrolyte shifts.",
+    "sections": [
+      {
+        "heading": "Interpretation",
+        "items": [
+          "Rhabdomyolysis: CK typically >5 times the upper limit of normal (often quoted as >1000 U/L) with a compatible history",
+          "CK >5000 U/L is often used to define severe rhabdomyolysis; AKI risk rises with higher CK and is especially likely above ~15000-20000 U/L or with dehydration/sepsis",
+          "Causes: crush/compression injury, prolonged immobility, seizures, extreme exertion, drugs/toxins (statins, alcohol, stimulants), severe hypophosphataemia, infections",
+          "Associated findings: myoglobinuria (urine dip positive for blood with few red cells), raised potassium and phosphate, low calcium, raised urate"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Rhabdomyolysis with hyperkalaemia -> emergency; treat the potassium and protect the heart",
+      "Marked CK rise -> start aggressive IV fluid resuscitation early to prevent/limit acute kidney injury and monitor electrolytes"
+    ],
+    "references": [
+      {
+        "label": "Merck Manual Professional - Rhabdomyolysis",
+        "url": "https://www.merckmanuals.com/professional/genitourinary-disorders/acute-kidney-injury/rhabdomyolysis"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lab-hyperbilirubinaemia",
+    "title": "Hyperbilirubinaemia - conjugated vs unconjugated",
+    "category": "lab-interpretation",
+    "domains": [
+      "gastroenterology",
+      "haematology"
+    ],
+    "summary": "Jaundice is classified by whether the raised bilirubin is predominantly unconjugated (pre-hepatic / impaired conjugation) or conjugated (hepatocellular or cholestatic). The split-bilirubin result, alongside the liver enzyme pattern, directs the differential and investigation.",
+    "sections": [
+      {
+        "heading": "Classification",
+        "items": [
+          "Predominantly UNCONJUGATED (indirect) hyperbilirubinaemia: increased production (haemolysis, large haematoma resorption, ineffective erythropoiesis) or impaired conjugation (Gilbert syndrome, neonatal jaundice)",
+          "Predominantly CONJUGATED (direct) hyperbilirubinaemia: hepatocellular disease or cholestasis (intrahepatic or extrahepatic biliary obstruction)",
+          "Conjugated hyperbilirubinaemia produces dark urine (bilirubinuria) and, with biliary obstruction, pale stools",
+          "Interpret with the enzyme pattern: hepatocellular (ALT/AST predominant) vs cholestatic (ALP/GGT predominant)"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Conjugated hyperbilirubinaemia with fever and right upper quadrant pain -> consider ascending cholangitis (a surgical/biliary emergency)",
+      "Jaundice with coagulopathy and encephalopathy -> consider acute liver failure"
+    ],
+    "references": [
+      {
+        "label": "Merck Manual Professional - Jaundice",
+        "url": "https://www.merckmanuals.com/professional/hepatic-and-biliary-disorders/approach-to-the-patient-with-liver-disease/jaundice"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lab-raised-urate",
+    "title": "Raised serum urate (hyperuricaemia)",
+    "category": "lab-interpretation",
+    "domains": [
+      "rheumatology",
+      "nephrology"
+    ],
+    "summary": "Hyperuricaemia results from urate overproduction or underexcretion. It is associated with gout and uric acid nephrolithiasis, and a rapidly rising urate with other metabolic derangements should raise concern for tumour lysis syndrome. A normal urate during an acute attack does not exclude gout.",
+    "sections": [
+      {
+        "heading": "Causes and interpretation",
+        "items": [
+          "Underexcretion: chronic kidney disease, diuretics (thiazides/loop), low-dose aspirin, alcohol, ciclosporin",
+          "Overproduction: high cell turnover (haematological malignancy, tumour lysis, psoriasis), purine-rich diet, fructose excess",
+          "Gout is a clinical diagnosis confirmed by joint-fluid crystals; serum urate may be normal during an acute flare, so do not exclude gout on a normal level",
+          "Markedly raised urate with raised potassium, phosphate and low calcium after chemotherapy -> consider tumour lysis syndrome"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Rapidly rising urate with hyperkalaemia, hyperphosphataemia, hypocalcaemia and AKI (typically post-chemotherapy) -> tumour lysis syndrome, a medical emergency"
+    ],
+    "references": [
+      {
+        "label": "Merck Manual Professional - Hyperuricemia and Gout",
+        "url": "https://www.merckmanuals.com/professional/musculoskeletal-and-connective-tissue-disorders/crystal-induced-arthritides/gout"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lab-low-albumin",
+    "title": "Low serum albumin (hypoalbuminaemia)",
+    "category": "lab-interpretation",
+    "domains": [
+      "gastroenterology",
+      "nephrology",
+      "critical-care"
+    ],
+    "summary": "Albumin is a negative acute-phase protein, so a low level often reflects acute illness/inflammation rather than malnutrition alone. It also affects interpretation of other tests: total calcium must be corrected for albumin, and the anion gap should be adjusted in hypoalbuminaemia.",
+    "sections": [
+      {
+        "heading": "Causes and interpretation",
+        "items": [
+          "Reduced synthesis: chronic liver disease, malnutrition",
+          "Increased loss: nephrotic syndrome (heavy proteinuria), protein-losing enteropathy, severe burns",
+          "Redistribution/dilution: acute inflammation/sepsis (negative acute-phase response), capillary leak, fluid overload",
+          "Correct total calcium for albumin (add ~0.02 mmol/L to calcium for each 1 g/L albumin below ~40 g/L, lab-dependent), or measure ionised calcium",
+          "Correct the anion gap upward by ~2.5 mmol/L for each 10 g/L the albumin is below 40 g/L"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Low albumin with heavy proteinuria and oedema -> investigate for nephrotic syndrome",
+      "Do not act on a 'normal' total calcium in a hypoalbuminaemic patient without correcting it or checking ionised calcium"
+    ],
+    "references": [
+      {
+        "label": "Merck Manual Professional - Hypoproteinemia / Protein metabolism overview",
+        "url": "https://www.merckmanuals.com/professional/nutritional-disorders/malnutrition/protein-energy-undernutrition-peu"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lab-raised-ammonia",
+    "title": "Raised ammonia and hepatic encephalopathy",
+    "category": "lab-interpretation",
+    "domains": [
+      "gastroenterology",
+      "critical-care",
+      "neurology"
+    ],
+    "summary": "Ammonia is a neurotoxin normally cleared by the liver. A raised level supports hepatic encephalopathy or an inborn/acquired urea-cycle problem, but hepatic encephalopathy is primarily a clinical diagnosis - ammonia levels correlate poorly with severity and a normal level does not exclude it. Sampling artefact commonly causes falsely high results.",
+    "sections": [
+      {
+        "heading": "Interpretation",
+        "items": [
+          "Hepatic encephalopathy is a CLINICAL diagnosis (altered mental state, asterixis, in a patient with liver disease or portosystemic shunting); ammonia supports but does not define it",
+          "Ammonia levels correlate poorly with the grade of encephalopathy; a normal level does not exclude it",
+          "Pre-analytical errors commonly cause spuriously high ammonia (delayed/warm transport, tourniquet, fist clenching) - sample on ice and process promptly",
+          "Very high ammonia without obvious chronic liver disease -> consider urea-cycle disorder, valproate toxicity or acute liver failure"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Encephalopathy with acute liver failure and rapidly rising ammonia -> risk of cerebral oedema; manage in a high-dependency/transplant-aware setting",
+      "Always look for and treat the precipitant of hepatic encephalopathy (GI bleed, infection, constipation, electrolyte disturbance, sedatives)"
+    ],
+    "references": [
+      {
+        "label": "Merck Manual Professional - Hepatic Encephalopathy",
+        "url": "https://www.merckmanuals.com/professional/hepatic-and-biliary-disorders/approach-to-the-patient-with-liver-disease/hepatic-encephalopathy"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lab-procalcitonin",
+    "title": "Procalcitonin interpretation",
+    "category": "lab-interpretation",
+    "domains": [
+      "infectious-disease",
+      "critical-care",
+      "respiratory"
+    ],
+    "summary": "Procalcitonin (PCT) rises in systemic bacterial infection and is mainly used to support decisions to start and, more reliably, to stop antibiotics, rather than as a stand-alone diagnostic test. It must always be interpreted with the clinical picture; values are influenced by non-infective causes.",
+    "sections": [
+      {
+        "heading": "Interpretation and use",
+        "items": [
+          "PCT rises within hours in significant bacterial infection and falls with effective treatment, making serial trends useful for antibiotic stewardship (especially de-escalation/stopping)",
+          "Higher values increase the probability of bacterial infection/sepsis, but no single cut-off reliably rules infection in or out",
+          "Non-infective causes of a raised PCT: major surgery/trauma, burns, cardiac arrest, severe shock, some cancers, the first days of life",
+          "A low PCT does not exclude localised infection (e.g. empyema, abscess); never withhold treatment from a clinically septic patient based on PCT alone"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Do not use procalcitonin to overrule clinical judgement - treat sepsis on clinical grounds regardless of the PCT value"
+    ],
+    "references": [
+      {
+        "label": "NICE DG18 - Procalcitonin testing for diagnosing and monitoring sepsis",
+        "url": "https://www.nice.org.uk/guidance/dg18"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lab-esr-vs-crp",
+    "title": "ESR vs CRP - interpreting the inflammatory markers",
+    "category": "lab-interpretation",
+    "domains": [
+      "rheumatology",
+      "infectious-disease",
+      "general-medicine"
+    ],
+    "summary": "CRP and ESR both rise in inflammation but with different kinetics. CRP rises and falls quickly (hours), tracking acute inflammation, whereas ESR rises and falls slowly (days-weeks) and is influenced by many non-inflammatory factors. Marked discordance can itself be informative.",
+    "sections": [
+      {
+        "heading": "Comparison and interpretation",
+        "items": [
+          "CRP: rises within ~6-12 h, peaks ~48 h, falls quickly once inflammation resolves - good for acute monitoring",
+          "ESR: rises and falls slowly over days to weeks; influenced by age, sex, anaemia, pregnancy, and immunoglobulin/fibrinogen levels",
+          "ESR is raised non-specifically by anaemia, paraproteinaemia (e.g. myeloma) and pregnancy independent of acute inflammation",
+          "A very high ESR with a normal/low CRP -> consider paraproteinaemia (e.g. multiple myeloma) or other causes of raised plasma proteins",
+          "A markedly raised ESR is part of the assessment of suspected giant cell arteritis / polymyalgia rheumatica"
+        ]
+      }
+    ],
+    "redFlags": [
+      "New headache or visual symptoms with a very high ESR/CRP in an older patient -> suspect giant cell arteritis; do not delay corticosteroids while awaiting biopsy"
+    ],
+    "references": [
+      {
+        "label": "Merck Manual Professional - Acute Phase Reactants (ESR and CRP)",
+        "url": "https://www.merckmanuals.com/professional/musculoskeletal-and-connective-tissue-disorders/approach-to-the-patient-with-joint-disease/laboratory-tests-for-rheumatic-disorders"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lab-eosinophilia",
+    "title": "Eosinophilia - causes and interpretation",
+    "category": "lab-interpretation",
+    "domains": [
+      "haematology",
+      "infectious-disease",
+      "allergy"
+    ],
+    "summary": "Eosinophilia is an absolute eosinophil count above the normal range. The differential is broad, captured by the mnemonic of allergy/atopy, drugs, parasitic infection, connective tissue/vasculitis, and haematological/neoplastic causes. Marked or sustained eosinophilia risks end-organ damage and needs investigation.",
+    "sections": [
+      {
+        "heading": "Grading and causes",
+        "items": [
+          "Grading: mild ~0.5-1.5, moderate ~1.5-5.0, severe >5.0 x10^9/L (hypereosinophilia is >1.5 x10^9/L)",
+          "Common causes: allergy/atopy (asthma, eczema, rhinitis), drug reactions, parasitic (helminth) infection",
+          "Less common: vasculitis (e.g. eosinophilic granulomatosis with polyangiitis), connective tissue disease, adrenal insufficiency",
+          "Haematological/neoplastic: clonal eosinophilia, myeloproliferative disorders, lymphoma, some solid tumours",
+          "Sustained hypereosinophilia can cause end-organ damage (heart, lungs, skin, nerves) - the hypereosinophilic syndromes"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Eosinophilia with fever, rash, lymphadenopathy and organ dysfunction after a new drug -> consider DRESS (drug reaction with eosinophilia and systemic symptoms), a medical emergency",
+      "Marked persistent eosinophilia with cardiac or neurological involvement -> urgent haematology referral"
+    ],
+    "references": [
+      {
+        "label": "Merck Manual Professional - Eosinophilia",
+        "url": "https://www.merckmanuals.com/professional/hematology-and-oncology/eosinophilic-disorders/eosinophilia"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lab-pancytopenia",
+    "title": "Pancytopenia - approach and interpretation",
+    "category": "lab-interpretation",
+    "domains": [
+      "haematology"
+    ],
+    "summary": "Pancytopenia is the reduction of all three cell lines (anaemia, leucopenia and thrombocytopenia). The mechanism is either reduced production (marrow failure/infiltration) or increased peripheral destruction/sequestration (e.g. hypersplenism). It can signal serious marrow disease and demands prompt evaluation, often including a blood film and marrow examination.",
+    "sections": [
+      {
+        "heading": "Causes and approach",
+        "items": [
+          "Reduced production: aplastic anaemia, marrow infiltration (leukaemia, lymphoma, myeloma, metastases, myelofibrosis), severe B12/folate deficiency, drugs/chemotherapy, radiation",
+          "Increased destruction/sequestration: hypersplenism, severe sepsis, haemophagocytic lymphohistiocytosis, autoimmune disease",
+          "Review the blood film for blasts, dysplasia or other clues; check B12/folate, reticulocyte count and LDH",
+          "Reticulocyte count helps separate marrow failure (low) from peripheral consumption (often higher)"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Pancytopenia with circulating blasts, or with neutropenic fever -> haematological emergency; urgent haematology referral and treat neutropenic sepsis empirically",
+      "Severe thrombocytopenia with bleeding, or symptomatic anaemia -> urgent transfusion support and investigation"
+    ],
+    "references": [
+      {
+        "label": "Merck Manual Professional - Approach to the Patient With Cytopenias / Aplastic Anemia",
+        "url": "https://www.merckmanuals.com/professional/hematology-and-oncology/anemias-caused-by-deficient-erythropoiesis/aplastic-anemia"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "lab-bnp-nt-probnp",
+    "title": "B-type natriuretic peptide (BNP / NT-proBNP) interpretation",
+    "category": "lab-interpretation",
+    "domains": [
+      "cardiology",
+      "emergency-medicine"
+    ],
+    "summary": "BNP and NT-proBNP are released by stretched ventricular myocardium and are used mainly to rule OUT heart failure because of their high negative predictive value. Levels are affected by age, renal function, obesity and atrial fibrillation, so they are interpreted alongside echocardiography and the clinical picture.",
+    "sections": [
+      {
+        "heading": "Thresholds and interpretation",
+        "items": [
+          "Acute setting (suspected acute heart failure): a low value makes heart failure unlikely - common rule-out cut-offs are BNP <100 pg/mL and NT-proBNP <300 pg/mL",
+          "Chronic/non-acute (referral) setting: NICE uses BNP >=100 pg/mL or NT-proBNP >=400 pg/mL to prompt echocardiography; ESC uses lower thresholds (BNP >=35, NT-proBNP >=125 pg/mL)",
+          "Levels rise with age, renal impairment, atrial fibrillation, sepsis and right heart strain",
+          "Levels are LOWER (falsely reassuring) in obesity and may be lowered by treatment such as sacubitril/valsartan (affects NT-proBNP and BNP differently)",
+          "Natriuretic peptides support but do not replace echocardiography for diagnosing heart failure"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Markedly raised natriuretic peptide with breathlessness -> assess urgently for decompensated heart failure (and other causes of raised levels such as PE)",
+      "Do not exclude heart failure on a borderline level in an obese patient - levels are attenuated"
+    ],
+    "references": [
+      {
+        "label": "NICE NG106 - Chronic heart failure in adults: diagnosis and management (natriuretic peptide thresholds)",
+        "url": "https://www.nice.org.uk/guidance/ng106"
+      },
+      {
+        "label": "2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/42/36/3599/6358045"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "imaging-suspected-aortic-dissection",
+    "title": "Imaging for suspected acute aortic dissection",
+    "category": "imaging-selection",
+    "domains": [
+      "cardiology",
+      "emergency-medicine",
+      "radiology"
+    ],
+    "summary": "Acute aortic dissection is a time-critical emergency. In a haemodynamically stable patient, ECG-gated CT angiography of the whole aorta is the first-line investigation because it is fast, widely available and accurate. Transoesophageal echocardiography or MRI are alternatives depending on stability and local expertise.",
+    "sections": [
+      {
+        "heading": "Modality selection",
+        "items": [
+          "Stable patient with suspected acute aortic syndrome -> CT angiography of the chest, abdomen and pelvis (whole aorta) is first-line",
+          "Unstable patient who cannot be moved to CT -> bedside transoesophageal echocardiography (TOE) is the alternative",
+          "MRI is highly accurate but is generally reserved for stable patients and follow-up due to availability and acquisition time",
+          "A normal D-dimer may help lower probability in low-risk patients but does not replace imaging where clinical suspicion is significant",
+          "A normal chest X-ray (e.g. no widened mediastinum) does NOT exclude dissection"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Sudden severe tearing chest/back pain with pulse or blood-pressure differential, new aortic regurgitation, or malperfusion -> arrange immediate aortic imaging and involve cardiothoracic surgery",
+      "Do not delay definitive imaging for a normal chest X-ray or D-dimer if clinical suspicion is high"
+    ],
+    "references": [
+      {
+        "label": "2014 ESC Guidelines on the diagnosis and treatment of aortic diseases (Eur Heart J)",
+        "url": "https://academic.oup.com/eurheartj/article/35/41/2873/407693"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "imaging-suspected-cauda-equina",
+    "title": "Imaging for suspected cauda equina syndrome",
+    "category": "imaging-selection",
+    "domains": [
+      "neurosurgery",
+      "emergency-medicine",
+      "radiology"
+    ],
+    "summary": "Cauda equina syndrome is a surgical emergency. When red flags are present, an urgent MRI of the whole spine (lumbosacral, ideally whole spine) is the definitive investigation and should be obtained emergently - including out of hours - so that decompression can occur as soon as safely possible.",
+    "sections": [
+      {
+        "heading": "Red flags and imaging",
+        "items": [
+          "Red flags: bilateral sciatica, saddle (perineal) anaesthesia, bladder or bowel dysfunction (urinary retention or incontinence, faecal incontinence), reduced anal tone, and severe or progressive bilateral neurological deficit",
+          "Suspected cauda equina syndrome -> EMERGENCY MRI of the spine, available at the admitting hospital and out of hours",
+          "MRI is the definitive test; do not rely on plain films or CT, which can miss the diagnosis",
+          "If MRI is contraindicated or unavailable, urgent transfer/discussion with the spinal/neurosurgical service is required - CT myelography is an alternative"
+        ]
+      }
+    ],
+    "redFlags": [
+      "New urinary retention, saddle anaesthesia or bilateral leg symptoms with back pain -> emergency MRI and immediate neurosurgical/spinal referral; delay risks permanent bladder, bowel and sexual dysfunction"
+    ],
+    "references": [
+      {
+        "label": "NICE CKS - Sciatica (lumbar radiculopathy): cauda equina red flags",
+        "url": "https://cks.nice.org.uk/topics/sciatica-lumbar-radiculopathy/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "imaging-first-trimester-bleeding",
+    "title": "Imaging for first-trimester vaginal bleeding",
+    "category": "imaging-selection",
+    "domains": [
+      "obstetrics-gynaecology",
+      "emergency-medicine",
+      "radiology"
+    ],
+    "summary": "In early pregnancy with bleeding or pain, the priority is to exclude ectopic pregnancy. Pelvic (transvaginal) ultrasound, interpreted alongside serum beta-hCG, is the first-line investigation to locate the pregnancy and assess viability. A pregnancy of unknown location requires careful follow-up.",
+    "sections": [
+      {
+        "heading": "Approach",
+        "items": [
+          "First-line imaging: transvaginal pelvic ultrasound to determine pregnancy location (intrauterine vs extrauterine) and viability",
+          "Interpret ultrasound with serum beta-hCG; above the discriminatory zone an intrauterine pregnancy is usually visible if present",
+          "No intrauterine pregnancy on scan with a positive hCG = 'pregnancy of unknown location' -> follow up with serial hCG and repeat scan via an early pregnancy assessment service",
+          "Free fluid in the pelvis with an empty uterus and a positive pregnancy test is highly concerning for ectopic"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Haemodynamic instability with a positive pregnancy test -> suspect ruptured ectopic pregnancy; resuscitate and arrange emergency gynaecology/surgical input - do not delay for imaging",
+      "Significant pain or adnexal mass with free fluid -> urgent gynaecology referral"
+    ],
+    "references": [
+      {
+        "label": "NICE NG126 - Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "url": "https://www.nice.org.uk/guidance/ng126"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "imaging-suspected-dvt",
+    "title": "Imaging for suspected deep vein thrombosis (DVT)",
+    "category": "imaging-selection",
+    "domains": [
+      "haematology",
+      "emergency-medicine",
+      "radiology"
+    ],
+    "summary": "Suspected lower-limb DVT is investigated using the two-level Wells score to stratify risk, combined with D-dimer and proximal leg vein ultrasound (Doppler). The pathway avoids unnecessary imaging in low-probability patients with a negative D-dimer.",
+    "sections": [
+      {
+        "heading": "Two-level Wells pathway (NICE)",
+        "items": [
+          "Calculate the two-level DVT Wells score: 'DVT likely' = 2 points or more; 'DVT unlikely' = 1 point or less",
+          "DVT likely (>=2): offer a proximal leg vein ultrasound, ideally within 4 hours; if it cannot be done within 4 hours, give interim anticoagulation, do a D-dimer, and scan within 24 hours",
+          "If the proximal ultrasound is negative but the D-dimer is positive in a 'likely' patient, repeat the ultrasound 6-8 days later",
+          "DVT unlikely (<=1): perform a D-dimer; if negative, DVT is excluded; if positive, proceed to proximal leg vein ultrasound (within 4 hours, or anticoagulate and scan within 24 hours)"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Signs of associated pulmonary embolism (breathlessness, chest pain, hypoxia, tachycardia) -> investigate for PE in parallel",
+      "Phlegmasia (massive proximal DVT with a swollen, painful, discoloured limb and threatened limb viability) -> emergency vascular input"
+    ],
+    "references": [
+      {
+        "label": "NICE NG158 - Venous thromboembolic diseases: diagnosis, management and thrombophilia testing",
+        "url": "https://www.nice.org.uk/guidance/ng158/chapter/recommendations"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "imaging-paediatric-head-injury-pecarn",
+    "title": "Imaging for paediatric head injury (PECARN)",
+    "category": "imaging-selection",
+    "domains": [
+      "paediatrics",
+      "emergency-medicine",
+      "radiology"
+    ],
+    "summary": "The PECARN rule identifies children at very low risk of clinically important traumatic brain injury (ciTBI) after minor head trauma, in whom CT can be safely avoided. It uses age-specific (under 2 years and 2 years and older) predictors. The rule is unidirectional: meeting no criteria allows CT to be avoided, but meeting a criterion does not mandate CT.",
+    "sections": [
+      {
+        "heading": "PECARN predictors by age group",
+        "items": [
+          "Under 2 years: GCS <15 or other signs of altered mental status, palpable skull fracture, loss of consciousness >=5 seconds, non-frontal (occipital/parietal/temporal) scalp haematoma, severe mechanism of injury, or acting abnormally per parent",
+          "2 years and older: GCS <15 or other signs of altered mental status, signs of basilar skull fracture, history of loss of consciousness, vomiting, severe mechanism of injury, or severe headache",
+          "Severe mechanism: high-speed road traffic collision (ejection, death of another occupant, rollover), pedestrian/cyclist without helmet struck by a vehicle, fall >0.9 m (under 2 years) or >1.5 m (2 years and older), or head struck by a high-impact object",
+          "Highest-risk features (GCS <15, altered mental status, palpable skull fracture under 2 / signs of basilar skull fracture 2+) -> CT recommended; lower-risk features -> CT vs observation, using clinician experience, multiple findings, worsening, age <3 months and parental preference"
+        ]
+      }
+    ],
+    "redFlags": [
+      "GCS <15, focal neurology, suspected open/depressed or basilar skull fracture, post-traumatic seizure or worsening symptoms -> urgent CT head",
+      "PECARN is a guide for very-low-risk identification, not a substitute for serial clinical assessment; also use the local national guideline (e.g. NICE NG232 in the UK)"
+    ],
+    "references": [
+      {
+        "label": "Kuppermann N et al. PECARN - Identification of children at very low risk of clinically-important brain injuries (Lancet 2009)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/19758692/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "imaging-nai-skeletal-survey",
+    "title": "Skeletal survey for suspected non-accidental injury (NAI)",
+    "category": "imaging-selection",
+    "domains": [
+      "paediatrics",
+      "radiology",
+      "safeguarding"
+    ],
+    "summary": "When physical abuse is suspected, a full skeletal survey is the standard imaging to detect occult and healing fractures. It is mandatory in children under 2 years (and in older children with poor verbal ability/developmental delay). It is a structured set of individual radiographs - never a single whole-body 'babygram'.",
+    "sections": [
+      {
+        "heading": "Principles",
+        "items": [
+          "Indicated when physical abuse is suspected, and is mandatory in children under 2 years of age (and in older children unable to reliably report injury)",
+          "A full skeletal survey is a defined series of dedicated, separately coned radiographs covering the whole skeleton - a single whole-body 'babygram' is not acceptable",
+          "Performed by trained radiographers and reported by radiologists with relevant expertise; CT head is added where intracranial injury is suspected",
+          "A follow-up limited skeletal survey is recommended approximately 11-14 days later to detect healing fractures not initially visible"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Suspected physical abuse is a safeguarding emergency -> involve the safeguarding/child protection team and senior paediatrician immediately, alongside imaging",
+      "Certain fractures (e.g. metaphyseal corner, posterior rib, multiple fractures of differing ages) are strongly associated with abuse and require expert review"
+    ],
+    "references": [
+      {
+        "label": "Royal College of Radiologists / RCPCH - The radiological investigation of suspected physical abuse in children (2018)",
+        "url": "https://www.rcr.ac.uk/our-services/all-our-publications/clinical-radiology-publications/the-radiological-investigation-of-suspected-physical-abuse-in-children/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "imaging-biliary-ultrasound",
+    "title": "Imaging for biliary colic and suspected cholecystitis",
+    "category": "imaging-selection",
+    "domains": [
+      "gastroenterology",
+      "surgery",
+      "radiology"
+    ],
+    "summary": "For right-upper-quadrant pain suggestive of gallstone disease, abdominal ultrasound is the first-line investigation. It is widely available, radiation-free, and reliably detects gallstones and signs of cholecystitis. It also identifies biliary dilatation that may indicate ductal obstruction.",
+    "sections": [
+      {
+        "heading": "Approach",
+        "items": [
+          "First-line imaging: right upper quadrant / abdominal ultrasound to look for gallstones, gallbladder wall thickening, pericholecystic fluid and a sonographic Murphy sign (cholecystitis)",
+          "Ultrasound also assesses the common bile duct calibre - dilatation suggests ductal stones/obstruction",
+          "If ductal stones are suspected (dilated duct, deranged liver tests) -> MRCP (or endoscopic ultrasound) to image the biliary tree",
+          "If ultrasound is equivocal for acute cholecystitis -> consider further imaging (CT, MRI, or cholescintigraphy); in pregnancy, MRI is the preferred second-line test"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Right upper quadrant pain with fever and jaundice (Charcot triad) -> suspect ascending cholangitis; arrange urgent imaging and biliary drainage",
+      "Signs of severe/complicated cholecystitis (gangrene, perforation, sepsis) -> urgent surgical referral"
+    ],
+    "references": [
+      {
+        "label": "ACR Appropriateness Criteria - Right Upper Quadrant Pain (2022 Update)",
+        "url": "https://www.jacr.org/article/S1546-1440(19)30153-X/fulltext"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "imaging-suspected-pulmonary-tb",
+    "title": "Imaging for suspected pulmonary tuberculosis",
+    "category": "imaging-selection",
+    "domains": [
+      "respiratory",
+      "infectious-disease",
+      "radiology"
+    ],
+    "summary": "A chest X-ray is the key initial imaging test in suspected active pulmonary tuberculosis and helps prioritise infection control and microbiological sampling. Imaging supports but never replaces microbiological confirmation (sputum smear, culture and nucleic acid amplification testing).",
+    "sections": [
+      {
+        "heading": "Approach",
+        "items": [
+          "First-line imaging: posteroanterior chest X-ray when active pulmonary TB is suspected",
+          "Classic (reactivation) findings: upper-lobe or apical consolidation, cavitation, fibronodular change, and lymphadenopathy; miliary TB shows diffuse fine nodules",
+          "Imaging is supportive - send respiratory samples for smear, culture and rapid molecular testing (e.g. nucleic acid amplification) to confirm and assess drug resistance",
+          "CT may clarify equivocal X-ray findings or complications; a normal chest X-ray makes active pulmonary TB unlikely but does not exclude it in immunocompromised patients"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Suspected infectious pulmonary TB (cough, weight loss, night sweats, haemoptysis, cavitation) -> institute airborne infection control (respiratory isolation) immediately while investigating",
+      "Notify public health and screen contacts when TB is confirmed or strongly suspected"
+    ],
+    "references": [
+      {
+        "label": "NICE NG33 - Tuberculosis: diagnosis and management",
+        "url": "https://www.nice.org.uk/guidance/ng33"
+      },
+      {
+        "label": "WHO consolidated guidelines on tuberculosis: systematic screening (chest radiography)",
+        "url": "https://www.who.int/publications/i/item/9789240022676"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "expert-consensus"
+  },
+  {
+    "slug": "imaging-contrast-egfr-threshold",
+    "title": "Contrast-associated AKI and the eGFR threshold for iodinated contrast",
+    "category": "imaging-selection",
+    "domains": [
+      "radiology",
+      "nephrology",
+      "emergency-medicine"
+    ],
+    "summary": "Iodinated contrast for CT carries a small risk of contrast-associated acute kidney injury (CA-AKI), concentrated in patients with significantly reduced renal function. Current ACR/NKF guidance reassures that the risk in patients with an eGFR at or above 30 mL/min/1.73 m2 is low, so contrast should not be unduly withheld when the scan is clinically important.",
+    "sections": [
+      {
+        "heading": "Risk and thresholds",
+        "items": [
+          "Patients with eGFR >=30 mL/min/1.73 m2 (and no acute kidney injury) are at low risk of CA-AKI from intravenous iodinated contrast",
+          "Patients with eGFR <30 mL/min/1.73 m2, or with acute kidney injury, are the higher-risk group requiring individualised assessment and consideration of prophylactic IV fluids",
+          "Weigh the risk of withholding a clinically necessary contrast study (delayed/missed diagnosis) against a generally small and often reversible AKI risk",
+          "Metformin: in patients with eGFR >=30 and no AKI, metformin does not need to be stopped before IV iodinated contrast and no post-contrast renal check is needed; review/withhold below this threshold or with AKI",
+          "Use the patient's clinical condition: AKI, dehydration and nephrotoxins increase risk independent of baseline eGFR"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Do not withhold time-critical contrast-enhanced imaging (e.g. suspected aortic dissection, major trauma, stroke thrombectomy work-up) for renal-function concerns alone - the diagnostic benefit usually outweighs the risk"
+    ],
+    "references": [
+      {
+        "label": "ACR / National Kidney Foundation Consensus Statements - Use of Intravenous Iodinated Contrast Media in Patients with Kidney Disease (Radiology 2020)",
+        "url": "https://pubs.rsna.org/doi/full/10.1148/radiol.2019192094"
+      }
+    ],
+    "reviewStatus": "draft",
+    "ruleVersion": "0.1.0",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "imaging-mri-safety-contraindications",
+    "title": "MRI safety - contraindications and screening",
+    "category": "imaging-selection",
+    "domains": [
+      "radiology",
+      "emergency-medicine"
+    ],
+    "summary": "MRI uses a powerful static magnetic field and radiofrequency energy, creating hazards from ferromagnetic objects, certain implants and projectiles. Rigorous safety screening before every scan is essential. Many modern implants are MR-conditional, but each must be verified against its labelling before scanning.",
+    "sections": [
+      {
+        "heading": "Key safety considerations",
+        "items": [
+          "Screen for implanted electronic/active devices: pacemakers, implantable defibrillators, neurostimulators, cochlear implants, programmable shunts and infusion pumps - scan only if confirmed MR-conditional and per protocol",
+          "Ferromagnetic hazards: intraocular/intracranial metallic foreign bodies, certain aneurysm clips, some older implants, and loose ferromagnetic objects that can become projectiles",
+          "Ask about recent surgery/implants and obtain device documentation; many implants are MR-conditional but require specific field strength and scanning conditions",
+          "Gadolinium contrast: use with caution in severe renal impairment (risk of nephrogenic systemic fibrosis with older agents); avoid unnecessary use in pregnancy",
+          "Remove all ferromagnetic objects; the static field is always on even when not scanning"
+        ]
+      }
+    ],
+    "redFlags": [
+      "Never take a patient or unscreened equipment into the MRI scanner room without completing safety screening - projectile and device hazards can be fatal",
+      "Suspected metallic intraocular foreign body (e.g. previous grinding/metalwork injury) -> screen (e.g. orbital X-ray) before MRI"
+    ],
+    "references": [
+      {
+        "label": "ACR Manual on MR Safety (American College of Radiology)",
+        "url": "https://www.acr.org/Clinical-Resources/Radiology-Safety/MR-Safety"
+      }
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
