@@ -125263,5 +125263,1382 @@
     "icd10": [
       "K52.8"
     ]
+  },
+  {
+    "slug": "pregnancy",
+    "title": "Pregnancy (supervision of normal pregnancy)",
+    "icd10": [
+      "Z34"
+    ],
+    "icd11": [
+      "QA40"
+    ],
+    "domains": [
+      "obstetrics",
+      "general"
+    ],
+    "population": {
+      "minAgeYears": 11,
+      "maxAgeYears": 55,
+      "sex": "female",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "A pregnant state; used as a flag for drug-pregnancy safety lookups and antenatal care planning."
+    ],
+    "redFlags": [
+      "Drug categorised as teratogenic or fetotoxic — review against pregnancy-lactation record before prescribing."
+    ],
+    "diagnostics": [
+      {
+        "test": "Confirm pregnancy and estimate gestational age",
+        "rationale": "Drives drug-safety risk tier and dose adjustments."
+      }
+    ],
+    "management": [
+      {
+        "step": "Antenatal care",
+        "detail": "WHO recommends a minimum of 8 antenatal contacts; first contact ≤12 weeks. Avoid contraindicated drugs; use the Pregnancy & Lactation safety record for each medicine."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO recommendations on antenatal care for a positive pregnancy experience (2016, updated)",
+        "url": "https://www.who.int/publications/i/item/9789241549912"
+      },
+      {
+        "label": "WHO ICD-10 — Z34 Supervision of normal pregnancy",
+        "url": "https://icd.who.int/browse10/2019/en#/Z34"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "coagulopathy",
+    "title": "Coagulopathy (bleeding disorder, unspecified)",
+    "icd10": [
+      "D68.9"
+    ],
+    "icd11": [
+      "3B65.Z"
+    ],
+    "domains": [
+      "haematology",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Inherited or acquired impairment of coagulation; bleeding tendency, prolonged PT/aPTT, or elevated INR."
+    ],
+    "redFlags": [
+      "Active major bleeding, intracranial bleeding, or planned surgery within 7 days."
+    ],
+    "diagnostics": [
+      {
+        "test": "FBC, PT/INR, aPTT, fibrinogen",
+        "rationale": "Quantify the defect; identify reversible causes (DIC, liver failure, vitamin K deficiency, anticoagulant effect)."
+      }
+    ],
+    "management": [
+      {
+        "step": "Avoid bleeding-risk medications",
+        "detail": "Withhold or substitute NSAIDs, antiplatelets and anticoagulants where clinically possible; consult haematology before invasive procedures."
+      }
+    ],
+    "references": [
+      {
+        "label": "BSH guideline — management of bleeding in patients with haematological disorders",
+        "url": "https://b-s-h.org.uk/guidelines/"
+      },
+      {
+        "label": "WHO ICD-10 — D68 Other coagulation defects",
+        "url": "https://icd.who.int/browse10/2019/en#/D68"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "B",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "surgery-perioperative",
+    "title": "Perioperative state (major surgery within 7 days)",
+    "icd10": [
+      "Z40.9"
+    ],
+    "icd11": [
+      "QA01"
+    ],
+    "domains": [
+      "surgery",
+      "general"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Scheduled major surgery requires medication review for bleeding, thrombosis and renal/hepatic stress."
+    ],
+    "redFlags": [
+      "Antiplatelet, anticoagulant or NSAID continuation without review before a major procedure."
+    ],
+    "diagnostics": [
+      {
+        "test": "Medication reconciliation + surgical risk stratification",
+        "rationale": "Drives withhold/bridge/continue decisions per drug class."
+      }
+    ],
+    "management": [
+      {
+        "step": "Perioperative medication review",
+        "detail": "Use the published institutional protocol; ESC guidance covers DOAC interruption windows and bridging where indicated."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC 2022 guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery",
+        "url": "https://academic.oup.com/eurheartj/article/43/39/3826/6675693"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "diabetes-type-2",
+    "title": "Type 2 diabetes mellitus",
+    "icd10": [
+      "E11"
+    ],
+    "icd11": [
+      "5A11"
+    ],
+    "domains": [
+      "endocrine",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 10,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Chronic hyperglycaemia from insulin resistance ± relative insulin deficiency; HbA1c ≥ 6.5% or fasting glucose ≥ 7.0 mmol/L confirms diagnosis (WHO)."
+    ],
+    "redFlags": [
+      "DKA, HHS, severe hypoglycaemia, or new diabetic foot ulcer."
+    ],
+    "diagnostics": [
+      {
+        "test": "HbA1c, fasting plasma glucose, renal function, lipid panel",
+        "rationale": "Baseline for therapy choice and complication screening."
+      }
+    ],
+    "management": [
+      {
+        "step": "First-line therapy",
+        "detail": "Lifestyle plus metformin remain the standard first-line per WHO PEN and most national guidelines; escalate per HbA1c, cardiovascular and renal status."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO Package of Essential Noncommunicable (PEN) disease interventions",
+        "url": "https://www.who.int/publications/i/item/9789240009226"
+      },
+      {
+        "label": "WHO ICD-10 — E11 Type 2 diabetes mellitus",
+        "url": "https://icd.who.int/browse10/2019/en#/E11"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "diabetic-ketoacidosis",
+    "title": "Diabetic ketoacidosis (DKA)",
+    "icd10": [
+      "E10.1",
+      "E11.1"
+    ],
+    "icd11": [
+      "5A22"
+    ],
+    "domains": [
+      "endocrine",
+      "emergency",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Hyperglycaemia (> 11 mmol/L), ketonaemia (≥ 3 mmol/L) or significant ketonuria, and metabolic acidosis (pH < 7.3 or HCO₃ < 15) — classic triad.",
+      "Vomiting, polyuria, abdominal pain, Kussmaul breathing, dehydration and altered mental status."
+    ],
+    "redFlags": [
+      "GCS ≤ 12, pH < 7.0, K⁺ < 3.5, suspected cerebral oedema in children."
+    ],
+    "diagnostics": [
+      {
+        "test": "Capillary blood ketones, VBG, glucose, U&E, FBC, urinalysis",
+        "rationale": "Confirm DKA and screen for precipitant (infection, missed insulin)."
+      }
+    ],
+    "management": [
+      {
+        "step": "Resuscitation + insulin infusion",
+        "detail": "IV fluids, fixed-rate IV insulin per local protocol, careful potassium replacement, treat the precipitant (typically infection or missed insulin) — JBDS-IP and ISPAD 2022."
+      }
+    ],
+    "references": [
+      {
+        "label": "JBDS-IP Guideline — Management of DKA in adults (2023)",
+        "url": "https://abcd.care/joint-british-diabetes-societies-jbds-inpatient-care-group"
+      },
+      {
+        "label": "ISPAD 2022 — Diabetic ketoacidosis in children and adolescents",
+        "url": "https://www.ispad.org/page/ISPADGuidelines2022"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "cardiovascular-disease",
+    "title": "Cardiovascular disease (chronic ischaemic heart disease)",
+    "icd10": [
+      "I25.9"
+    ],
+    "icd11": [
+      "BA40"
+    ],
+    "domains": [
+      "cardiology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Atherosclerotic disease of the coronary, cerebral or peripheral vasculature — flag for secondary prevention and drug interaction screening."
+    ],
+    "redFlags": [
+      "Unstable chest pain, new neurological deficit, acute limb ischaemia."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG, lipid panel, HbA1c, renal function",
+        "rationale": "Baseline for secondary prevention and rationalising QT-prolonging or pro-arrhythmic drugs."
+      }
+    ],
+    "management": [
+      {
+        "step": "Secondary prevention",
+        "detail": "Antiplatelet, statin, ACE-inhibitor/ARB and risk-factor control per ESC 2024 chronic coronary syndromes guidance."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC 2024 Guidelines for the management of chronic coronary syndromes",
+        "url": "https://academic.oup.com/eurheartj/article/45/36/3415/7754995"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "frailty",
+    "title": "Frailty (age-related debility)",
+    "icd10": [
+      "R54"
+    ],
+    "icd11": [
+      "MG2A"
+    ],
+    "domains": [
+      "geriatrics",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 65,
+      "maxAgeYears": 120,
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Reduced physiological reserve and vulnerability to stressors — typically older adults with multimorbidity and polypharmacy."
+    ],
+    "redFlags": [
+      "New delirium, falls, weight loss, or rapid functional decline."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical Frailty Scale (Rockwood) or equivalent",
+        "rationale": "Calibrates prescribing risk; high frailty mandates dose reduction or avoidance of CNS-active and anticholinergic drugs."
+      }
+    ],
+    "management": [
+      {
+        "step": "Comprehensive geriatric assessment",
+        "detail": "Deprescribe high-risk medicines (benzodiazepines, anticholinergics, sulfonylureas with hypoglycaemia risk) per STOPP/START v3."
+      }
+    ],
+    "references": [
+      {
+        "label": "STOPP/START criteria version 3 (2023) for potentially inappropriate prescribing",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37196661/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "atrial-fibrillation",
+    "title": "Atrial fibrillation",
+    "icd10": [
+      "I48"
+    ],
+    "icd11": [
+      "BC81"
+    ],
+    "domains": [
+      "cardiology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Irregularly irregular pulse; absent P waves with irregular RR intervals on ECG."
+    ],
+    "redFlags": [
+      "Haemodynamic instability, acute heart failure or pre-excited AF."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG; transthoracic echocardiogram; thyroid + renal function",
+        "rationale": "Confirm rhythm, characterise underlying heart disease and stratify stroke risk."
+      }
+    ],
+    "management": [
+      {
+        "step": "Anticoagulation per CHA₂DS₂-VASc + rate or rhythm control",
+        "detail": "Oral anticoagulant (DOAC preferred over warfarin in most non-valvular cases) when stroke risk justifies; rate or rhythm control per ESC 2024."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC 2024 Guidelines for the management of atrial fibrillation",
+        "url": "https://academic.oup.com/eurheartj/article/45/36/3314/7740704"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "anaphylaxis",
+    "title": "Anaphylaxis",
+    "icd10": [
+      "T78.2"
+    ],
+    "icd11": [
+      "4A84"
+    ],
+    "domains": [
+      "emergency",
+      "allergy",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Acute onset (minutes-to-hours) of multi-system involvement: skin/mucosa plus airway compromise, breathing difficulty or hypotension after an exposure."
+    ],
+    "redFlags": [
+      "Airway swelling, stridor, oxygen saturation < 92%, systolic BP fall ≥ 30%."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis; serum tryptase at 1 hr and ≥ 24 hr",
+        "rationale": "Confirms mast-cell-mediated anaphylaxis retrospectively; supports allergy clinic referral."
+      }
+    ],
+    "management": [
+      {
+        "step": "IM adrenaline (epinephrine) immediately",
+        "detail": "0.5 mg IM mid-anterolateral thigh in adults (0.15 mg < 30 kg; 0.3 mg 30–50 kg); repeat at 5 min if needed; lay flat, high-flow O₂, IV fluid challenge — Resuscitation Council UK 2021."
+      }
+    ],
+    "references": [
+      {
+        "label": "Resuscitation Council UK — Emergency treatment of anaphylaxis (2021)",
+        "url": "https://www.resus.org.uk/library/additional-guidance/guidance-anaphylaxis"
+      },
+      {
+        "label": "World Allergy Organization Anaphylaxis Guidance 2020",
+        "url": "https://www.worldallergy.org/UserFiles/file/WAOAnaphylaxisGuidance2020.pdf"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "copd",
+    "title": "Chronic obstructive pulmonary disease (COPD)",
+    "icd10": [
+      "J44"
+    ],
+    "icd11": [
+      "CA22"
+    ],
+    "domains": [
+      "respiratory",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 30,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Chronic productive cough, progressive dyspnoea and post-bronchodilator FEV₁/FVC < 0.70 in an at-risk adult (typically tobacco exposure)."
+    ],
+    "redFlags": [
+      "Acute exacerbation with confusion, peripheral oedema or SpO₂ < 88% on air."
+    ],
+    "diagnostics": [
+      {
+        "test": "Post-bronchodilator spirometry",
+        "rationale": "Confirms persistent airflow limitation; staging per GOLD 2024."
+      }
+    ],
+    "management": [
+      {
+        "step": "Pharmacotherapy ladder",
+        "detail": "LABA + LAMA dual bronchodilator for symptomatic disease; add inhaled corticosteroid when eosinophilic phenotype or frequent exacerbations — GOLD 2024."
+      }
+    ],
+    "references": [
+      {
+        "label": "GOLD 2024 — Global Strategy for the Diagnosis, Management and Prevention of COPD",
+        "url": "https://goldcopd.org/2024-gold-report/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "acute-heart-failure",
+    "title": "Acute heart failure",
+    "icd10": [
+      "I50.9"
+    ],
+    "icd11": [
+      "BD10"
+    ],
+    "domains": [
+      "cardiology",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Dyspnoea, orthopnoea and peripheral oedema with raised JVP; new or worsened over hours-to-days."
+    ],
+    "redFlags": [
+      "Cardiogenic shock, hypoxia despite oxygen, life-threatening arrhythmia."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG, troponin, NT-proBNP, chest X-ray, point-of-care echo",
+        "rationale": "Confirms congestion, screens for ACS and aetiology."
+      }
+    ],
+    "management": [
+      {
+        "step": "Decongestion + treat precipitant",
+        "detail": "IV loop diuretic, oxygen for SpO₂ < 92%, vasodilator for hypertensive AHF; identify the trigger (ACS, AF, infection, non-compliance) — ESC 2021 HF guideline."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC 2021 Guidelines for the diagnosis and treatment of acute and chronic heart failure",
+        "url": "https://academic.oup.com/eurheartj/article/42/36/3599/6358045"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "adult-syncope",
+    "title": "Syncope (adult)",
+    "icd10": [
+      "R55"
+    ],
+    "icd11": [
+      "MG44"
+    ],
+    "domains": [
+      "cardiology",
+      "emergency"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Transient loss of consciousness with rapid, spontaneous recovery from global cerebral hypoperfusion."
+    ],
+    "redFlags": [
+      "Syncope on exertion, with chest pain, palpitations, or after sudden cardiac death in family."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG and orthostatic vitals at first contact",
+        "rationale": "Identifies high-risk arrhythmic and structural causes."
+      }
+    ],
+    "management": [
+      {
+        "step": "Risk stratification",
+        "detail": "Use Canadian Syncope Risk Score or ESC criteria; admit high-risk patients for telemetry, discharge low-risk with safety advice — ESC 2018."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC 2018 Guidelines for the diagnosis and management of syncope",
+        "url": "https://academic.oup.com/eurheartj/article/39/21/1883/4939241"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "angina-stable",
+    "title": "Stable angina",
+    "icd10": [
+      "I20.8"
+    ],
+    "icd11": [
+      "BA40"
+    ],
+    "domains": [
+      "cardiology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Predictable chest discomfort on exertion or stress, relieved by rest or sublingual nitrate."
+    ],
+    "redFlags": [
+      "Crescendo pattern, rest pain, or new haemodynamic compromise — suspect ACS."
+    ],
+    "diagnostics": [
+      {
+        "test": "Resting ECG and structured functional or anatomic imaging",
+        "rationale": "Confirms ischaemia and stratifies obstructive disease."
+      }
+    ],
+    "management": [
+      {
+        "step": "Anti-anginal + secondary prevention",
+        "detail": "Beta-blocker or CCB first-line for symptoms; antiplatelet + high-intensity statin + ACEi as indicated — ESC 2024 CCS."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC 2024 chronic coronary syndromes guideline",
+        "url": "https://academic.oup.com/eurheartj/article/45/36/3415/7754995"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "bradyarrhythmia",
+    "title": "Bradyarrhythmia",
+    "icd10": [
+      "R00.1"
+    ],
+    "icd11": [
+      "BC65"
+    ],
+    "domains": [
+      "cardiology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Resting heart rate < 50 bpm with symptoms of low cardiac output (dizziness, syncope, fatigue) or symptomatic high-grade AV block."
+    ],
+    "redFlags": [
+      "Haemodynamic instability, complete heart block, ventricular escape rhythm."
+    ],
+    "diagnostics": [
+      {
+        "test": "12-lead ECG; review rate-slowing medications",
+        "rationale": "Identifies sinus node disease vs AV block; reversible iatrogenic causes are common."
+      }
+    ],
+    "management": [
+      {
+        "step": "Stop offending drugs; pace if persistent",
+        "detail": "Withhold beta-blockers, non-DHP CCB, digoxin and ivabradine; permanent pacing per ESC 2021 pacing guideline if symptomatic persistent bradycardia."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC 2021 Guidelines on cardiac pacing and cardiac resynchronization therapy",
+        "url": "https://academic.oup.com/eurheartj/article/42/35/3427/6358547"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "cardiomyopathy",
+    "title": "Cardiomyopathy",
+    "icd10": [
+      "I42"
+    ],
+    "icd11": [
+      "BC43"
+    ],
+    "domains": [
+      "cardiology"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Structural and functional myocardial disease — dilated, hypertrophic, restrictive or arrhythmogenic."
+    ],
+    "redFlags": [
+      "Syncope, sustained ventricular arrhythmia, or familial sudden cardiac death."
+    ],
+    "diagnostics": [
+      {
+        "test": "Transthoracic echocardiogram; cardiac MRI when phenotype uncertain",
+        "rationale": "Establishes morphology and function; supports family screening."
+      }
+    ],
+    "management": [
+      {
+        "step": "Phenotype-directed therapy",
+        "detail": "Heart-failure pharmacotherapy where LVEF reduced; avoid negative inotropes in obstructive HCM — ESC 2023 cardiomyopathy guideline."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC 2023 Guidelines for the management of cardiomyopathies",
+        "url": "https://academic.oup.com/eurheartj/article/44/37/3503/7246608"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "dementia-lewy-body",
+    "title": "Lewy body dementia",
+    "icd10": [
+      "G31.8"
+    ],
+    "icd11": [
+      "8A22.1"
+    ],
+    "domains": [
+      "neurology",
+      "geriatrics"
+    ],
+    "population": {
+      "minAgeYears": 50,
+      "maxAgeYears": 120,
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Cognitive decline with prominent fluctuating attention, visual hallucinations and spontaneous parkinsonism."
+    ],
+    "redFlags": [
+      "Severe neuroleptic sensitivity — antipsychotics can precipitate rigidity, autonomic instability and death."
+    ],
+    "diagnostics": [
+      {
+        "test": "DAT-SPECT or MIBG cardiac scintigraphy where available",
+        "rationale": "Supports diagnosis; clinical criteria per 2017 DLB consortium."
+      }
+    ],
+    "management": [
+      {
+        "step": "Avoid first-generation antipsychotics",
+        "detail": "Use cholinesterase inhibitors for cognition; treat psychotic symptoms cautiously with quetiapine if essential — McKeith 2017."
+      }
+    ],
+    "references": [
+      {
+        "label": "Diagnosis and management of DLB — Fourth Consensus Report (McKeith, Neurology 2017)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28592453/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "electrolyte-imbalance",
+    "title": "Electrolyte imbalance",
+    "icd10": [
+      "E87"
+    ],
+    "icd11": [
+      "5C70"
+    ],
+    "domains": [
+      "endocrine",
+      "critical-care"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Abnormal serum sodium, potassium, calcium or magnesium with clinical features (arrhythmia, seizure, weakness)."
+    ],
+    "redFlags": [
+      "Severe hyperkalaemia with ECG changes, sodium change > 10 mmol/L per 24 h."
+    ],
+    "diagnostics": [
+      {
+        "test": "U&E, magnesium, calcium, phosphate, VBG",
+        "rationale": "Quantifies the disturbance and identifies acid-base context."
+      }
+    ],
+    "management": [
+      {
+        "step": "Correct the imbalance and cause",
+        "detail": "Rate of correction depends on severity and chronicity; avoid rapid sodium correction risk of osmotic demyelination — UK Renal Association 2016."
+      }
+    ],
+    "references": [
+      {
+        "label": "UK Renal Association — Hyponatraemia clinical practice guideline (2016, current)",
+        "url": "https://ukkidney.org/health-professionals/guidelines/guidelines-commentaries"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "B",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "fungal-infection",
+    "title": "Invasive fungal infection",
+    "icd10": [
+      "B49"
+    ],
+    "icd11": [
+      "1F2Z"
+    ],
+    "domains": [
+      "infection"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Suspected or confirmed invasive mycosis — candidaemia, invasive aspergillosis, cryptococcosis, mucormycosis or endemic mycosis."
+    ],
+    "redFlags": [
+      "Neutropenia, transplant recipient, or sepsis with disseminated disease."
+    ],
+    "diagnostics": [
+      {
+        "test": "Blood cultures, biomarkers (β-D-glucan, galactomannan), CT chest",
+        "rationale": "Confirms pathogen and target organ."
+      }
+    ],
+    "management": [
+      {
+        "step": "Antifungal per pathogen",
+        "detail": "Echinocandin for candidaemia; voriconazole for invasive aspergillosis; liposomal amphotericin B for mucormycosis — IDSA 2016 candidiasis; ESCMID 2017 aspergillosis."
+      }
+    ],
+    "references": [
+      {
+        "label": "IDSA Clinical Practice Guideline — Candidiasis (2016)",
+        "url": "https://www.idsociety.org/practice-guideline/candidiasis/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "gastro-oesophageal-reflux",
+    "title": "Gastro-oesophageal reflux disease",
+    "icd10": [
+      "K21"
+    ],
+    "icd11": [
+      "DA22"
+    ],
+    "domains": [
+      "gastroenterology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Troublesome heartburn ± regurgitation occurring on ≥ 2 days/week."
+    ],
+    "redFlags": [
+      "Dysphagia, weight loss, GI bleeding or anaemia — urgent endoscopy."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical diagnosis; endoscopy when alarm features",
+        "rationale": "Excludes oesophagitis, stricture and Barrett oesophagus."
+      }
+    ],
+    "management": [
+      {
+        "step": "Lifestyle measures plus PPI",
+        "detail": "Standard-dose PPI for 4–8 weeks; review interactions with concurrent medicines (clopidogrel, rilpivirine) — ACG 2022."
+      }
+    ],
+    "references": [
+      {
+        "label": "ACG Clinical Guideline — Diagnosis and Management of GERD (2022)",
+        "url": "https://journals.lww.com/ajg/Fulltext/2022/01000/ACG_Clinical_Guideline_for_the_Diagnosis_and.14.aspx"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "glaucoma-open-angle",
+    "title": "Open-angle glaucoma",
+    "icd10": [
+      "H40.1"
+    ],
+    "icd11": [
+      "9C61"
+    ],
+    "domains": [
+      "ophthalmology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Progressive optic neuropathy with characteristic visual-field loss; intraocular pressure typically elevated but may be normal."
+    ],
+    "redFlags": [
+      "New visual-field defect; eye pain (suspect closed-angle crisis instead)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Tonometry, gonioscopy, optic-nerve OCT, visual fields",
+        "rationale": "Confirms diagnosis and stages."
+      }
+    ],
+    "management": [
+      {
+        "step": "IOP-lowering therapy",
+        "detail": "Prostaglandin analogue eye drops first-line; avoid systemic corticosteroids that raise IOP — EGS 2020 / NICE NG81."
+      }
+    ],
+    "references": [
+      {
+        "label": "NICE NG81 — Glaucoma: diagnosis and management",
+        "url": "https://www.nice.org.uk/guidance/ng81"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "hypertension-essential",
+    "title": "Essential (primary) hypertension",
+    "icd10": [
+      "I10"
+    ],
+    "icd11": [
+      "BA00"
+    ],
+    "domains": [
+      "cardiology",
+      "primary-care"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Office BP ≥ 140/90 mmHg on two visits, with no identifiable secondary cause; confirm with ambulatory or home BP monitoring."
+    ],
+    "redFlags": [
+      "Accelerated hypertension (BP > 180/120 with retinal haemorrhages or AKI) — admit."
+    ],
+    "diagnostics": [
+      {
+        "test": "U&E, urine ACR, ECG, fasting glucose, lipids",
+        "rationale": "Baseline organ-damage screen and CV risk stratification."
+      }
+    ],
+    "management": [
+      {
+        "step": "Stepped pharmacotherapy",
+        "detail": "ACEi/ARB or CCB first-line; add thiazide-like diuretic for combination; target ≤ 140/90 (≤ 130/80 in diabetes) — ESC/ESH 2023."
+      }
+    ],
+    "references": [
+      {
+        "label": "ESC/ESH 2023 Guidelines for the management of arterial hypertension",
+        "url": "https://academic.oup.com/eurheartj/article/45/38/3912/7741010"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "opioid-toxidrome",
+    "title": "Opioid toxidrome",
+    "icd10": [
+      "T40.2"
+    ],
+    "icd11": [
+      "QD8C"
+    ],
+    "domains": [
+      "emergency",
+      "toxicology"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Triad of pinpoint pupils, depressed respiration and reduced consciousness following opioid exposure."
+    ],
+    "redFlags": [
+      "Apnoea, cyanosis, GCS ≤ 8."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical recognition; consider blood gas if available",
+        "rationale": "Hypoventilation drives mortality; no test should delay naloxone."
+      }
+    ],
+    "management": [
+      {
+        "step": "Naloxone titrated to respiration",
+        "detail": "IM/IV/IN naloxone 0.4 mg, repeat every 2–3 min until adequate respiration — avoid full reversal of analgesia where opioid was therapeutic; observe for re-sedation."
+      }
+    ],
+    "references": [
+      {
+        "label": "WHO — Community management of opioid overdose (2014, current)",
+        "url": "https://www.who.int/publications/i/item/9789241548816"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "pneumonia-curb65-treatment",
+    "title": "Community-acquired pneumonia (adult)",
+    "icd10": [
+      "J18.9"
+    ],
+    "icd11": [
+      "CA40"
+    ],
+    "domains": [
+      "respiratory",
+      "infection"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Acute lower respiratory tract infection with new infiltrate on chest imaging plus fever, cough, sputum or pleuritic pain."
+    ],
+    "redFlags": [
+      "SpO₂ < 92%, bilateral infiltrates, sepsis, or CURB-65 ≥ 3."
+    ],
+    "diagnostics": [
+      {
+        "test": "Chest X-ray, FBC, U&E, CRP, blood cultures if severe",
+        "rationale": "Confirms diagnosis and stratifies severity."
+      }
+    ],
+    "management": [
+      {
+        "step": "Severity-stratified antibiotics",
+        "detail": "Amoxicillin for low severity, beta-lactam + macrolide for moderate-severe, follow CURB-65 / IDSA-ATS 2019."
+      }
+    ],
+    "references": [
+      {
+        "label": "IDSA/ATS — Diagnosis and Treatment of Adults with CAP (2019)",
+        "url": "https://www.thoracic.org/statements/resources/tb-opi/cap-guideline.pdf"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "raynaud-phenomenon",
+    "title": "Raynaud's phenomenon",
+    "icd10": [
+      "I73.0"
+    ],
+    "icd11": [
+      "BD42"
+    ],
+    "domains": [
+      "rheumatology",
+      "vascular"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Episodic digital vasospasm: triphasic colour change (white-blue-red) precipitated by cold or stress."
+    ],
+    "redFlags": [
+      "Digital ulceration, persistent ischaemia, or features suggesting secondary cause (scleroderma)."
+    ],
+    "diagnostics": [
+      {
+        "test": "Capillaroscopy + ANA panel when secondary suspected",
+        "rationale": "Distinguishes primary from secondary; supports connective-tissue diagnosis."
+      }
+    ],
+    "management": [
+      {
+        "step": "Avoid triggers; dihydropyridine CCB if disabling",
+        "detail": "Beta-blockers may worsen vasospasm — choose alternative for comorbid disease — EULAR 2017."
+      }
+    ],
+    "references": [
+      {
+        "label": "EULAR Recommendations for the treatment of systemic sclerosis (2017 update)",
+        "url": "https://ard.bmj.com/content/76/8/1327"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "B",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "retinopathy",
+    "title": "Retinopathy (drug-induced)",
+    "icd10": [
+      "H35.0"
+    ],
+    "icd11": [
+      "9B71"
+    ],
+    "domains": [
+      "ophthalmology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Retinal toxicity from chronic medication (hydroxychloroquine, ethambutol, tamoxifen, vigabatrin) — central or paracentral scotomas."
+    ],
+    "redFlags": [
+      "New visual symptoms during high-risk drug therapy."
+    ],
+    "diagnostics": [
+      {
+        "test": "Baseline + annual macular OCT and 10-2 visual fields",
+        "rationale": "Detects early hydroxychloroquine toxicity per AAO 2016 screening."
+      }
+    ],
+    "management": [
+      {
+        "step": "Stop offending drug; ophthalmology review",
+        "detail": "Hydroxychloroquine retinopathy is irreversible once established — minimise cumulative dose < 5 mg/kg actual body weight/day."
+      }
+    ],
+    "references": [
+      {
+        "label": "AAO 2016 — Hydroxychloroquine screening recommendations (revised)",
+        "url": "https://www.aao.org/clinical-statement/recommendations-on-screening-chloroquine-hydroxychl"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "sensorineural-hearing-loss",
+    "title": "Sensorineural hearing loss",
+    "icd10": [
+      "H90.5"
+    ],
+    "icd11": [
+      "AB51"
+    ],
+    "domains": [
+      "ent"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Permanent cochlear or retro-cochlear hearing loss — drug exposure (aminoglycosides, platinum, loop diuretics) is a key reversible-or-preventable cause."
+    ],
+    "redFlags": [
+      "Sudden sensorineural hearing loss (within 72 h) — refer urgently for steroid trial."
+    ],
+    "diagnostics": [
+      {
+        "test": "Pure-tone audiometry; OAEs in infants",
+        "rationale": "Confirms type and severity; baseline before ototoxic therapy."
+      }
+    ],
+    "management": [
+      {
+        "step": "Minimise ototoxic exposure",
+        "detail": "Use single-daily-dose aminoglycoside, monitor levels, avoid co-administration with loop diuretics where possible."
+      }
+    ],
+    "references": [
+      {
+        "label": "ATA / IDSA aminoglycoside dosing guidance",
+        "url": "https://www.idsociety.org/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "B",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "sleep-apnoea-obstructive",
+    "title": "Obstructive sleep apnoea",
+    "icd10": [
+      "G47.33"
+    ],
+    "icd11": [
+      "7A41"
+    ],
+    "domains": [
+      "respiratory",
+      "neurology"
+    ],
+    "population": {
+      "minAgeYears": 18,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Loud snoring, witnessed apnoeas, daytime sleepiness; AHI ≥ 5 on polysomnography or home sleep test."
+    ],
+    "redFlags": [
+      "Severe daytime sleepiness with driving or operating machinery."
+    ],
+    "diagnostics": [
+      {
+        "test": "Home sleep apnoea testing or polysomnography",
+        "rationale": "Confirms diagnosis and severity."
+      }
+    ],
+    "management": [
+      {
+        "step": "Avoid sedatives and opioids; CPAP for moderate–severe",
+        "detail": "Benzodiazepines and opioids worsen nocturnal hypoxia — review at every clinical visit — AASM 2019."
+      }
+    ],
+    "references": [
+      {
+        "label": "AASM Clinical Practice Guideline — Treatment of adult OSA with PAP (2019)",
+        "url": "https://aasm.org/clinical-resources/practice-standards/practice-guidelines/"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "tendinopathy",
+    "title": "Tendinopathy",
+    "icd10": [
+      "M77.9"
+    ],
+    "icd11": [
+      "FB7Z"
+    ],
+    "domains": [
+      "musculoskeletal"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Painful, often degenerative tendon disorder; fluoroquinolone exposure raises rupture risk especially of the Achilles."
+    ],
+    "redFlags": [
+      "Sudden, severe pain with palpable gap — suspect rupture."
+    ],
+    "diagnostics": [
+      {
+        "test": "Clinical assessment; ultrasound if rupture suspected",
+        "rationale": "Identifies partial or complete tendon discontinuity."
+      }
+    ],
+    "management": [
+      {
+        "step": "Stop fluoroquinolone if symptoms develop",
+        "detail": "EMA / FDA boxed warning; consider alternative antibiotic — risk persists for weeks after stopping."
+      }
+    ],
+    "references": [
+      {
+        "label": "FDA Drug Safety Communication — Fluoroquinolones (2018)",
+        "url": "https://www.fda.gov/drugs/drug-safety-and-availability/fda-reinforces-safety-information-about-serious-low-blood-sugar-levels-and-mental-health-side"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
+  },
+  {
+    "slug": "urolithiasis",
+    "title": "Urolithiasis (kidney stones)",
+    "icd10": [
+      "N20"
+    ],
+    "icd11": [
+      "GB70"
+    ],
+    "domains": [
+      "urology",
+      "nephrology"
+    ],
+    "population": {
+      "minAgeYears": 0,
+      "maxAgeYears": 99,
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Renal or ureteric calculi presenting with severe loin-to-groin pain, haematuria and nausea."
+    ],
+    "redFlags": [
+      "Obstructed infected kidney — urgent decompression."
+    ],
+    "diagnostics": [
+      {
+        "test": "Non-contrast CT KUB; urinalysis; renal function",
+        "rationale": "Confirms calculus, location and complications."
+      }
+    ],
+    "management": [
+      {
+        "step": "Hydration + analgesia; medical expulsive therapy for distal ureteric stones",
+        "detail": "NSAIDs preferred analgesic when not contraindicated; alpha-blockers for stones 5–10 mm — EAU 2024."
+      }
+    ],
+    "references": [
+      {
+        "label": "EAU 2024 Guidelines on Urolithiasis",
+        "url": "https://uroweb.org/guidelines/urolithiasis"
+      }
+    ],
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0"
   }
 ]
