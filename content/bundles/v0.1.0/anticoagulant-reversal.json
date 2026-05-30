@@ -5,7 +5,11 @@
     "anticoagulantDrugSlug": "warfarin",
     "drugClass": "Vitamin K antagonist (VKA)",
     "oneLiner": "Life-threatening bleed: 4F-PCC 25-50 IU/kg IV + vitamin K 5-10 mg IV slow. INR > 10 without bleeding: oral vitamin K 1-5 mg + hold. Never use FFP if PCC is available.",
-    "domains": ["haematology", "emergency", "cardiology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "cardiology"
+    ],
     "mechanism": "Inhibits vitamin K epoxide reductase → depletes functional factors II, VII, IX, X and proteins C/S. Reversal restores those factors directly (PCC) or via the liver over hours-to-days (vitamin K).",
     "protocols": [
       {
@@ -59,8 +63,12 @@
       "Mechanical valve patients have a substantial early thrombosis risk after reversal — restart anticoagulation as soon as bleeding controlled, ideally with heparin bridge."
     ],
     "references": [
-      { "label": "BSH guideline: Reversal of antithrombotic therapy in patients with major bleeding. Br J Haematol 2018." },
-      { "label": "Neurocritical Care Society / Society of Critical Care Medicine: Guideline for reversal of antithrombotics in intracranial haemorrhage. 2016." }
+      {
+        "label": "BSH guideline: Reversal of antithrombotic therapy in patients with major bleeding. Br J Haematol 2018."
+      },
+      {
+        "label": "Neurocritical Care Society / Society of Critical Care Medicine: Guideline for reversal of antithrombotics in intracranial haemorrhage. 2016."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -72,7 +80,11 @@
     "anticoagulantDrugSlug": "dabigatran",
     "drugClass": "Direct thrombin (factor IIa) inhibitor (DOAC-IIa)",
     "oneLiner": "Life-threatening bleed or urgent surgery: idarucizumab 5 g IV (two 2.5 g vials). If idarucizumab unavailable: 4F-PCC 50 IU/kg + dialysis (dabigatran is dialysable, ~ 60% removal in 4 h).",
-    "domains": ["haematology", "emergency", "cardiology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "cardiology"
+    ],
     "mechanism": "Direct, reversible thrombin (IIa) inhibitor. Renally cleared (~ 80%) — accumulates in CKD. Half-life 12-17 h normal renal function; > 24 h if CrCl < 30 mL/min.",
     "protocols": [
       {
@@ -114,8 +126,12 @@
       "Restart anticoagulation as soon as bleeding controlled to avoid thromboembolic complications (median 4-7 days post-bleed in published series)."
     ],
     "references": [
-      { "label": "Pollack CV Jr et al. Idarucizumab for dabigatran reversal — full cohort analysis. NEJM 2017;377:431-41." },
-      { "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020." }
+      {
+        "label": "Pollack CV Jr et al. Idarucizumab for dabigatran reversal — full cohort analysis. NEJM 2017;377:431-41."
+      },
+      {
+        "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -127,7 +143,11 @@
     "anticoagulantDrugSlug": "apixaban",
     "drugClass": "Direct factor Xa inhibitor (DOAC-Xa)",
     "oneLiner": "Life-threatening bleed: andexanet alfa (where available, dose by last apixaban dose + time since) OR 4F-PCC 50 IU/kg. Andexanet is procoagulant — anticipate VTE risk and rebound thrombosis.",
-    "domains": ["haematology", "emergency", "cardiology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "cardiology"
+    ],
     "mechanism": "Direct, reversible factor Xa inhibitor. ~ 27% renal clearance; half-life 12 h. Reversal by sequestration (andexanet decoy receptor) or by bypassing (PCC supplies factor II/IX/X/VII).",
     "protocols": [
       {
@@ -187,8 +207,12 @@
       "Renal dose-reduction criteria (any 2 of: age ≥ 80, weight ≤ 60 kg, creatinine ≥ 133 µmol/L) — confirm dose was appropriate; supratherapeutic dosing in elderly is a common cause of bleeding."
     ],
     "references": [
-      { "label": "Connolly SJ et al. Andexanet alfa for acute major bleeding associated with factor Xa inhibitors (ANNEXA-4). NEJM 2019;380:1326-35." },
-      { "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020." }
+      {
+        "label": "Connolly SJ et al. Andexanet alfa for acute major bleeding associated with factor Xa inhibitors (ANNEXA-4). NEJM 2019;380:1326-35."
+      },
+      {
+        "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -200,7 +224,11 @@
     "anticoagulantDrugSlug": "rivaroxaban",
     "drugClass": "Direct factor Xa inhibitor (DOAC-Xa)",
     "oneLiner": "Same approach as apixaban: andexanet alfa where available (low/high dose by last dose + time), or 4F-PCC 50 IU/kg. Activated charcoal within 8 h of ingestion (longer absorption window than apixaban).",
-    "domains": ["haematology", "emergency", "cardiology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "cardiology"
+    ],
     "mechanism": "Direct, reversible factor Xa inhibitor. ~ 33% renal clearance; half-life 5-13 h (longer in elderly / renal impairment). Highly protein-bound — not dialysable.",
     "protocols": [
       {
@@ -248,8 +276,12 @@
       "DOAC-on-DOAC bridging is common in errors — confirm the agent before reversal."
     ],
     "references": [
-      { "label": "Connolly SJ et al. ANNEXA-4. NEJM 2019." },
-      { "label": "ISTH guidance: When and how to use idarucizumab and andexanet alfa. J Thromb Haemost 2020." }
+      {
+        "label": "Connolly SJ et al. ANNEXA-4. NEJM 2019."
+      },
+      {
+        "label": "ISTH guidance: When and how to use idarucizumab and andexanet alfa. J Thromb Haemost 2020."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -261,7 +293,11 @@
     "anticoagulantDrugSlug": "edoxaban",
     "drugClass": "Direct factor Xa inhibitor (DOAC-Xa)",
     "oneLiner": "Andexanet not formally licensed for edoxaban in all jurisdictions; off-label use is reported. 4F-PCC 50 IU/kg is the practical reversal where andexanet unavailable.",
-    "domains": ["haematology", "emergency", "cardiology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "cardiology"
+    ],
     "mechanism": "Direct, reversible factor Xa inhibitor. ~ 50% renal clearance; half-life 10-14 h. Reduced efficacy in patients with CrCl > 95 mL/min (paradoxically) — labelled for CrCl 15-95.",
     "protocols": [
       {
@@ -302,8 +338,12 @@
       "Andexanet labelling does not include edoxaban in many jurisdictions — use is off-label."
     ],
     "references": [
-      { "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020." },
-      { "label": "ISTH guidance 2020." }
+      {
+        "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020."
+      },
+      {
+        "label": "ISTH guidance 2020."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -315,7 +355,12 @@
     "anticoagulantDrugSlug": "heparin",
     "drugClass": "Indirect antithrombin-mediated anticoagulant",
     "oneLiner": "Protamine sulfate 1 mg IV per 100 units of heparin given in the last 2-3 h, max 50 mg per dose, IV slowly. Anaphylaxis + hypotension common with rapid administration.",
-    "domains": ["haematology", "emergency", "cardiology", "surgery"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "cardiology",
+      "surgery"
+    ],
     "mechanism": "Heparin potentiates antithrombin to inactivate thrombin (IIa) and factor Xa. Protamine binds heparin directly, forming an inactive complex.",
     "protocols": [
       {
@@ -347,8 +392,12 @@
       "Anaphylaxis risk: prior CABG, NPH insulin (contains protamine), fish allergy."
     ],
     "references": [
-      { "label": "Bates SM, Weitz JI. The mechanism of action of thrombin inhibitors. J Invasive Cardiol 2000." },
-      { "label": "Local trust protocol / BCSH guidelines." }
+      {
+        "label": "Bates SM, Weitz JI. The mechanism of action of thrombin inhibitors. J Invasive Cardiol 2000."
+      },
+      {
+        "label": "Local trust protocol / BCSH guidelines."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -360,7 +409,11 @@
     "anticoagulantDrugSlug": "enoxaparin",
     "drugClass": "Indirect factor Xa-dominant inhibitor (LMWH)",
     "oneLiner": "Protamine partially reverses LMWH (~ 60-75% anti-Xa neutralisation): 1 mg protamine per 1 mg enoxaparin (or per 100 anti-Xa units of other LMWH) given in the last 8 h; half-dose if 8-12 h ago.",
-    "domains": ["haematology", "emergency", "obstetrics"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "obstetrics"
+    ],
     "mechanism": "Antithrombin-potentiated anti-Xa activity > anti-IIa. Renal clearance — accumulates in CKD. Protamine fully reverses anti-IIa but only partially reverses anti-Xa (~ 60-75%) because of LMWH chain length variability.",
     "protocols": [
       {
@@ -401,8 +454,12 @@
       "aPTT is not a reliable monitor for LMWH — use anti-Xa (drawn 4 h post-dose, peak)."
     ],
     "references": [
-      { "label": "Tran HA et al. New oral anticoagulants — clinical management and reversal. Med J Aust 2014." },
-      { "label": "BCSH guideline: Reversal of antithrombotic therapy. Br J Haematol 2018." }
+      {
+        "label": "Tran HA et al. New oral anticoagulants — clinical management and reversal. Med J Aust 2014."
+      },
+      {
+        "label": "BCSH guideline: Reversal of antithrombotic therapy. Br J Haematol 2018."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -414,7 +471,10 @@
     "anticoagulantDrugSlug": "fondaparinux",
     "drugClass": "Synthetic pentasaccharide, indirect factor Xa inhibitor",
     "oneLiner": "No specific antidote — protamine ineffective. Activated PCC (aPCC / FEIBA) 20 IU/kg or recombinant factor VIIa (rFVIIa) 90 µg/kg for life-threatening bleed; supportive care otherwise.",
-    "domains": ["haematology", "emergency"],
+    "domains": [
+      "haematology",
+      "emergency"
+    ],
     "mechanism": "Synthetic pentasaccharide that binds antithrombin selectively to inactivate factor Xa. Renally cleared; half-life 17-21 h (longer in elderly / renal impairment).",
     "protocols": [
       {
@@ -455,8 +515,12 @@
       "Contraindicated in severe renal impairment (CrCl < 30) — if reversal needed in a CKD patient, switch to UFH for future anticoagulation."
     ],
     "references": [
-      { "label": "Bijsterveld NR et al. Recombinant factor VIIa reverses the anticoagulant effect of the long-acting pentasaccharide idraparinux. Br J Haematol 2004." },
-      { "label": "BCSH guideline 2018." }
+      {
+        "label": "Bijsterveld NR et al. Recombinant factor VIIa reverses the anticoagulant effect of the long-acting pentasaccharide idraparinux. Br J Haematol 2004."
+      },
+      {
+        "label": "BCSH guideline 2018."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -468,7 +532,12 @@
     "anticoagulantDrugSlug": "alteplase",
     "drugClass": "Fibrinolytic (recombinant tissue plasminogen activator)",
     "oneLiner": "Symptomatic intracranial haemorrhage post-tPA: stop infusion, cryoprecipitate 10 units IV + tranexamic acid 1-2 g IV. Neurosurgical consult immediately.",
-    "domains": ["haematology", "emergency", "neurology", "cardiology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "neurology",
+      "cardiology"
+    ],
     "mechanism": "Converts plasminogen to plasmin, lysing fibrin in clots. Causes systemic fibrinogenolysis; bleeding complications mediated by hypofibrinogenaemia and breakdown of haemostatic plugs.",
     "protocols": [
       {
@@ -505,8 +574,12 @@
       "After successful reversal, anticoagulation restart depends on indication for thrombolysis — defer for ≥ 72 h post-haemorrhage unless competing thrombotic risk dominates."
     ],
     "references": [
-      { "label": "Frontera JA et al. Guideline for reversal of antithrombotics in intracranial haemorrhage. Neurocrit Care 2016;24:6-46." },
-      { "label": "Powers WJ et al. AHA/ASA 2019 guideline for the early management of acute ischemic stroke." }
+      {
+        "label": "Frontera JA et al. Guideline for reversal of antithrombotics in intracranial haemorrhage. Neurocrit Care 2016;24:6-46."
+      },
+      {
+        "label": "Powers WJ et al. AHA/ASA 2019 guideline for the early management of acute ischemic stroke."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -518,7 +591,11 @@
     "anticoagulantDrugSlug": "clopidogrel",
     "drugClass": "Antiplatelet — irreversible P2Y12 receptor antagonist (thienopyridine prodrug)",
     "oneLiner": "No specific antidote. Life-threatening bleed: stop drug + platelet transfusion (1 adult dose / 5 units RDP) — efficacy modest because circulating active metabolite continues to inhibit transfused platelets for ~ 6 h after last dose. Desmopressin 0.3 µg/kg IV is an adjunct.",
-    "domains": ["haematology", "emergency", "cardiology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "cardiology"
+    ],
     "mechanism": "Prodrug activated by hepatic CYP2C19; active metabolite irreversibly binds the P2Y12 ADP receptor on platelets. Effect lasts the lifespan of the affected platelets (7-10 days). Active metabolite has short plasma half-life (~ 30 min) but continues to be generated for hours after last dose.",
     "protocols": [
       {
@@ -566,8 +643,12 @@
       "Dual antiplatelet therapy (clopidogrel + aspirin) post-stent: stopping both prematurely risks stent thrombosis — discuss with interventional cardiology."
     ],
     "references": [
-      { "label": "Baharoglu MI et al. Platelet transfusion vs standard care for acute stroke due to spontaneous cerebral haemorrhage associated with antiplatelet therapy (PATCH). Lancet 2016;387:2605-13." },
-      { "label": "Levy JH et al. Reversal agents for non-vitamin K antagonist oral anticoagulants. Nat Rev Cardiol 2018." }
+      {
+        "label": "Baharoglu MI et al. Platelet transfusion vs standard care for acute stroke due to spontaneous cerebral haemorrhage associated with antiplatelet therapy (PATCH). Lancet 2016;387:2605-13."
+      },
+      {
+        "label": "Levy JH et al. Reversal agents for non-vitamin K antagonist oral anticoagulants. Nat Rev Cardiol 2018."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -579,7 +660,11 @@
     "anticoagulantDrugSlug": "ticagrelor",
     "drugClass": "Antiplatelet — reversible P2Y12 receptor antagonist (cyclopentyl-triazolopyrimidine)",
     "oneLiner": "Bentracimab (PB2452) is the specific reversal agent (where available) for life-threatening bleed. Otherwise stop drug, platelet transfusion limited by free circulating drug + active metabolite, tranexamic acid + supportive care.",
-    "domains": ["haematology", "emergency", "cardiology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "cardiology"
+    ],
     "mechanism": "Reversible, non-competitive P2Y12 receptor antagonist. Parent drug + active metabolite (AR-C124910XX) both circulate. Half-life 7-9 h (parent) and 8-12 h (metabolite). Platelet transfusion less effective than for clopidogrel because circulating drug also inhibits transfused platelets.",
     "protocols": [
       {
@@ -627,8 +712,12 @@
       "Cangrelor (IV, short-acting, reversible P2Y12) is sometimes used as a bridge in cardiac surgery — its effect washes out within 1 h of stopping infusion."
     ],
     "references": [
-      { "label": "Bhatt DL et al. Antibody-based ticagrelor reversal agent in healthy volunteers (REVERSE-IT). NEJM 2019;380:1825-33." },
-      { "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020." }
+      {
+        "label": "Bhatt DL et al. Antibody-based ticagrelor reversal agent in healthy volunteers (REVERSE-IT). NEJM 2019;380:1825-33."
+      },
+      {
+        "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -640,7 +729,11 @@
     "anticoagulantDrugSlug": "prasugrel",
     "drugClass": "Antiplatelet — irreversible P2Y12 receptor antagonist (thienopyridine prodrug, more potent than clopidogrel)",
     "oneLiner": "Like clopidogrel, irreversible — no specific antidote. Life-threatening bleed: stop drug + platelet transfusion (often 2 adult doses required because of greater inhibition). Active metabolite has very short plasma half-life (< 30 min) so transfused platelets less impaired by residual drug than with clopidogrel.",
-    "domains": ["haematology", "emergency", "cardiology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "cardiology"
+    ],
     "mechanism": "Prodrug rapidly converted by intestinal and hepatic esterases / CYP3A4-CYP2B6 to an active thiolactone that irreversibly binds P2Y12. More potent and consistent inhibition than clopidogrel; less variability between patients.",
     "protocols": [
       {
@@ -686,8 +779,12 @@
       "Irreversible inhibition — no antidote. Drug-free interval required."
     ],
     "references": [
-      { "label": "Wiviott SD et al. Prasugrel versus clopidogrel in patients with acute coronary syndromes (TRITON-TIMI 38). NEJM 2007;357:2001-15." },
-      { "label": "BSH guideline 2018." }
+      {
+        "label": "Wiviott SD et al. Prasugrel versus clopidogrel in patients with acute coronary syndromes (TRITON-TIMI 38). NEJM 2007;357:2001-15."
+      },
+      {
+        "label": "BSH guideline 2018."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -699,7 +796,11 @@
     "anticoagulantDrugSlug": "aspirin",
     "drugClass": "Antiplatelet — irreversible COX-1 inhibitor (also salicylate at high dose)",
     "oneLiner": "Low-dose antiplatelet bleed: stop drug + platelet transfusion for life-threatening / intracranial bleed (PATCH caution for spontaneous ICH). Desmopressin 0.3 µg/kg IV is a useful adjunct. High-dose (analgesic / overdose) — also consider salicylate toxicity management.",
-    "domains": ["haematology", "emergency", "cardiology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "cardiology"
+    ],
     "mechanism": "Irreversibly acetylates COX-1 → ↓ thromboxane A2 → impaired platelet aggregation for the platelet lifespan (7-10 days). Effect at antiplatelet dose is selective for platelet COX-1.",
     "protocols": [
       {
@@ -746,8 +847,12 @@
       "Recent primary-prevention deprescribing trends — confirm indication before reversal."
     ],
     "references": [
-      { "label": "Baharoglu MI et al. PATCH. Lancet 2016." },
-      { "label": "BSH guideline 2018." }
+      {
+        "label": "Baharoglu MI et al. PATCH. Lancet 2016."
+      },
+      {
+        "label": "BSH guideline 2018."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -759,7 +864,11 @@
     "anticoagulantDrugSlug": "dipyridamole",
     "drugClass": "Antiplatelet — phosphodiesterase / adenosine reuptake inhibitor (often combined with aspirin)",
     "oneLiner": "Modest antiplatelet effect; usually co-formulated with aspirin (Aggrenox / Asasantin). Stop drug; manage bleeding largely as for aspirin (platelet transfusion only for severe bleed, desmopressin adjunct).",
-    "domains": ["haematology", "emergency", "neurology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "neurology"
+    ],
     "mechanism": "Inhibits platelet phosphodiesterase (↑ cAMP) and adenosine reuptake (↑ extracellular adenosine acting on A2A receptors) → vasodilation + mild antiplatelet effect. Half-life ~ 10 h (extended-release).",
     "protocols": [
       {
@@ -800,8 +909,12 @@
       "Use with adenosine in cardiac stress testing — potentiates effect; do not co-administer therapeutic adenosine."
     ],
     "references": [
-      { "label": "Diener HC et al. European Stroke Prevention Study 2 (ESPS-2). J Neurol Sci 1996." },
-      { "label": "BSH guideline 2018." }
+      {
+        "label": "Diener HC et al. European Stroke Prevention Study 2 (ESPS-2). J Neurol Sci 1996."
+      },
+      {
+        "label": "BSH guideline 2018."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -813,7 +926,11 @@
     "anticoagulantDrugSlug": "cilostazol",
     "drugClass": "Antiplatelet / vasodilator — phosphodiesterase-3 inhibitor",
     "oneLiner": "Used for intermittent claudication. Modest antiplatelet effect; stop drug for any bleed, platelet transfusion only for life-threatening haemorrhage. Half-life 11-13 h.",
-    "domains": ["haematology", "emergency", "vascular"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "vascular"
+    ],
     "mechanism": "Selective phosphodiesterase-3 inhibitor → ↑ platelet cAMP (antiplatelet) and vascular smooth-muscle relaxation (vasodilation). CYP3A4 and CYP2C19 substrate.",
     "protocols": [
       {
@@ -856,8 +973,12 @@
       "Effect on hard cardiovascular endpoints is modest; main use is claudication symptom relief."
     ],
     "references": [
-      { "label": "Bedenis R et al. Cilostazol for intermittent claudication. Cochrane Database Syst Rev 2014." },
-      { "label": "BSH guideline 2018." }
+      {
+        "label": "Bedenis R et al. Cilostazol for intermittent claudication. Cochrane Database Syst Rev 2014."
+      },
+      {
+        "label": "BSH guideline 2018."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -869,7 +990,11 @@
     "anticoagulantDrugSlug": "argatroban",
     "drugClass": "Parenteral direct thrombin (IIa) inhibitor — short-acting",
     "oneLiner": "No specific antidote. Half-life 40-50 min (longer in hepatic impairment). Life-threatening bleed: stop infusion + supportive; consider 4F-PCC 25-50 IU/kg or rFVIIa as last resort. Used primarily in HIT.",
-    "domains": ["haematology", "emergency", "critical-care"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "critical-care"
+    ],
     "mechanism": "Synthetic, reversible, direct inhibitor of thrombin (free and clot-bound). Hepatic clearance via CYP3A — accumulates in hepatic impairment. Short half-life 40-50 min; effect dissipates rapidly after stopping.",
     "protocols": [
       {
@@ -914,8 +1039,12 @@
       "Not dialysable; no specific antidote."
     ],
     "references": [
-      { "label": "Linkins LA et al. Treatment and prevention of heparin-induced thrombocytopenia (CHEST). 2012;141(2 Suppl):e495S-e530S." },
-      { "label": "Cuker A et al. American Society of Hematology 2018 guidelines for management of venous thromboembolism: HIT. Blood Adv 2018." }
+      {
+        "label": "Linkins LA et al. Treatment and prevention of heparin-induced thrombocytopenia (CHEST). 2012;141(2 Suppl):e495S-e530S."
+      },
+      {
+        "label": "Cuker A et al. American Society of Hematology 2018 guidelines for management of venous thromboembolism: HIT. Blood Adv 2018."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -927,7 +1056,12 @@
     "anticoagulantDrugSlug": "bivalirudin",
     "drugClass": "Parenteral direct thrombin (IIa) inhibitor — short-acting",
     "oneLiner": "No specific antidote. Very short half-life (~ 25 min, normal renal function). Stop infusion + supportive care; effect wanes within 1-2 h. 4F-PCC as last resort. Commonly used in PCI and HIT.",
-    "domains": ["haematology", "emergency", "cardiology", "critical-care"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "cardiology",
+      "critical-care"
+    ],
     "mechanism": "Synthetic bivalent direct thrombin inhibitor — binds both the catalytic and substrate-recognition sites of thrombin. Primarily proteolytic / renal clearance. Half-life ~ 25 min (1 h if CrCl 30-60; 3-4 h if dialysis-dependent).",
     "protocols": [
       {
@@ -972,8 +1106,12 @@
       "Used in HIT — bleeding patient with thrombocytopenia: consider underlying HIT."
     ],
     "references": [
-      { "label": "Linkins LA et al. Treatment and prevention of HIT (CHEST). 2012." },
-      { "label": "Stone GW et al. Bivalirudin during primary PCI in acute myocardial infarction (HORIZONS-AMI). NEJM 2008." }
+      {
+        "label": "Linkins LA et al. Treatment and prevention of HIT (CHEST). 2012."
+      },
+      {
+        "label": "Stone GW et al. Bivalirudin during primary PCI in acute myocardial infarction (HORIZONS-AMI). NEJM 2008."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -985,7 +1123,11 @@
     "anticoagulantDrugSlug": "danaparoid",
     "drugClass": "Heparinoid — antithrombin-dependent factor Xa-dominant inhibitor",
     "oneLiner": "No specific antidote; protamine ineffective. Stop infusion + supportive; consider plasmapheresis for severe bleed (long half-life ~ 25 h). Used in HIT where available.",
-    "domains": ["haematology", "emergency", "critical-care"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "critical-care"
+    ],
     "mechanism": "Mixture of glycosaminoglycans (heparan, dermatan, chondroitin sulfate) potentiating antithrombin against factor Xa (predominantly) and IIa. Renal clearance; long anti-Xa half-life ~ 25 h. Minimal cross-reactivity with HIT antibodies (~ 10%).",
     "protocols": [
       {
@@ -1029,8 +1171,12 @@
       "Cross-reactivity with HIT antibodies in a minority — confirm serology if HIT suspected."
     ],
     "references": [
-      { "label": "Magnani HN, Gallus A. Heparin-induced thrombocytopenia (HIT): a report of 1,478 clinical outcomes of patients treated with danaparoid (Orgaran) from 1982 to mid-2004. Thromb Haemost 2006." },
-      { "label": "BSH guideline 2018." }
+      {
+        "label": "Magnani HN, Gallus A. Heparin-induced thrombocytopenia (HIT): a report of 1,478 clinical outcomes of patients treated with danaparoid (Orgaran) from 1982 to mid-2004. Thromb Haemost 2006."
+      },
+      {
+        "label": "BSH guideline 2018."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1042,7 +1188,10 @@
     "anticoagulantDrugSlug": "betrixaban",
     "drugClass": "Direct factor Xa inhibitor (DOAC-Xa) — long-acting",
     "oneLiner": "Long half-life (19-27 h), predominantly biliary clearance. 4F-PCC 50 IU/kg for life-threatening bleed; andexanet is not specifically labelled for betrixaban. Withdrawn from several markets — confirm local availability.",
-    "domains": ["haematology", "emergency"],
+    "domains": [
+      "haematology",
+      "emergency"
+    ],
     "mechanism": "Direct, reversible factor Xa inhibitor. Biliary clearance predominant (~ 80%); only ~ 11% renal — less renal-impairment dependent than other DOAC-Xa. Long half-life 19-27 h.",
     "protocols": [
       {
@@ -1086,8 +1235,12 @@
       "Andexanet labelling does NOT include betrixaban."
     ],
     "references": [
-      { "label": "Cohen AT et al. Extended thromboprophylaxis with betrixaban in acutely ill medical patients (APEX). NEJM 2016." },
-      { "label": "ISTH guidance 2020." }
+      {
+        "label": "Cohen AT et al. Extended thromboprophylaxis with betrixaban in acutely ill medical patients (APEX). NEJM 2016."
+      },
+      {
+        "label": "ISTH guidance 2020."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1099,7 +1252,11 @@
     "anticoagulantDrugSlug": "warfarin",
     "drugClass": "Vitamin K antagonist (VKA) — peri-procedural management",
     "oneLiner": "Low-bleed-risk procedures (cataract, dental extraction, joint injection, simple skin biopsy): CONTINUE warfarin where INR therapeutic; no reversal needed. Stopping risks thromboembolism.",
-    "domains": ["haematology", "surgery", "anaesthesia"],
+    "domains": [
+      "haematology",
+      "surgery",
+      "anaesthesia"
+    ],
     "mechanism": "Many minor procedures cause minimal bleeding controllable by local measures; the thromboembolic risk of stopping warfarin (especially in mechanical valves, recent VTE, CHA2DS2-VASc ≥ 4) outweighs the small bleeding increment.",
     "protocols": [
       {
@@ -1137,8 +1294,12 @@
       "Mechanical valve patients with INR therapeutic on warfarin: do NOT bridge with LMWH for minor procedures — increases bleeding without thrombosis benefit (BRIDGE trial)."
     ],
     "references": [
-      { "label": "Douketis JD et al. Perioperative bridging anticoagulation in patients with atrial fibrillation (BRIDGE). NEJM 2015;373:823-33." },
-      { "label": "ACC/AHA 2017 perioperative management of anticoagulation guideline." }
+      {
+        "label": "Douketis JD et al. Perioperative bridging anticoagulation in patients with atrial fibrillation (BRIDGE). NEJM 2015;373:823-33."
+      },
+      {
+        "label": "ACC/AHA 2017 perioperative management of anticoagulation guideline."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1150,7 +1311,12 @@
     "anticoagulantDrugSlug": "warfarin",
     "drugClass": "Vitamin K antagonist (VKA) — peri-procedural management",
     "oneLiner": "Hold warfarin 5 days pre-procedure; bridge with LMWH ONLY if high thromboembolic risk (mechanical mitral valve, recent VTE < 3 months, CHA2DS2-VASc ≥ 7 with prior stroke). BRIDGE trial: routine bridging for AF causes more bleeding without VTE benefit.",
-    "domains": ["haematology", "surgery", "anaesthesia", "cardiology"],
+    "domains": [
+      "haematology",
+      "surgery",
+      "anaesthesia",
+      "cardiology"
+    ],
     "mechanism": "High-bleed-risk procedures (major intra-abdominal, intracranial, spinal, urological, cardiothoracic) need INR < 1.5 to minimise haemorrhage. Stopping warfarin for 5 days normalises INR in most patients; thromboembolic risk during the gap is mitigated by bridging only when truly high.",
     "protocols": [
       {
@@ -1194,8 +1360,12 @@
       "Vitamin K > 5 mg pre-procedure causes prolonged warfarin resistance — use minimum effective dose (1-2 mg)."
     ],
     "references": [
-      { "label": "Douketis JD et al. BRIDGE. NEJM 2015;373:823-33." },
-      { "label": "ACC/AHA 2017 perioperative anticoagulation guideline." }
+      {
+        "label": "Douketis JD et al. BRIDGE. NEJM 2015;373:823-33."
+      },
+      {
+        "label": "ACC/AHA 2017 perioperative anticoagulation guideline."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1207,7 +1377,12 @@
     "anticoagulantDrugSlug": null,
     "drugClass": "Direct oral anticoagulants — peri-procedural management",
     "oneLiner": "DOACs DO NOT need LMWH bridging. Hold by half-life: standard risk apixaban / rivaroxaban / edoxaban 24-48 h, dabigatran 24-72 h (longer if renal). High-bleed-risk procedure: double those windows. PAUSE trial supports this approach.",
-    "domains": ["haematology", "surgery", "anaesthesia", "cardiology"],
+    "domains": [
+      "haematology",
+      "surgery",
+      "anaesthesia",
+      "cardiology"
+    ],
     "mechanism": "DOACs have short, predictable half-lives — stopping for 2-5 half-lives reduces drug effect to a level safe for surgery. Bridging is NOT required (and causes excess bleeding); it actively harmed patients in early DOAC peri-op protocols.",
     "protocols": [
       {
@@ -1253,8 +1428,12 @@
       "PAUSE trial set the modern peri-op standard — review local protocol alignment."
     ],
     "references": [
-      { "label": "Douketis JD et al. Perioperative management of patients with atrial fibrillation receiving a direct oral anticoagulant (PAUSE). JAMA Intern Med 2019;179:1469-78." },
-      { "label": "EHRA 2021 practical guide on the use of NOACs in patients with atrial fibrillation." }
+      {
+        "label": "Douketis JD et al. Perioperative management of patients with atrial fibrillation receiving a direct oral anticoagulant (PAUSE). JAMA Intern Med 2019;179:1469-78."
+      },
+      {
+        "label": "EHRA 2021 practical guide on the use of NOACs in patients with atrial fibrillation."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1266,7 +1445,12 @@
     "anticoagulantDrugSlug": "warfarin",
     "drugClass": "Vitamin K antagonist (VKA) — special scenario",
     "oneLiner": "Reverse the bleed but plan re-anticoagulation early — mechanical valves have substantial early valve thrombosis risk. 4F-PCC + minimal vitamin K (1-2 mg, avoid > 5 mg to preserve future warfarin sensitivity); IV heparin bridge restart within 24-48 h.",
-    "domains": ["haematology", "emergency", "cardiology", "cardiac-surgery"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "cardiology",
+      "cardiac-surgery"
+    ],
     "mechanism": "Mechanical valves (especially older-generation mitral valves) have a thromboembolic stroke risk of ~ 4-12% per year without anticoagulation. After reversal, valve thrombosis can occur within days; planned, time-limited reversal + early bridging is the standard.",
     "protocols": [
       {
@@ -1314,8 +1498,12 @@
       "Bridging with LMWH is acceptable for elective procedures but IV UFH is preferred for emergency / unpredictable rebleeding."
     ],
     "references": [
-      { "label": "Eikelboom JW et al. Dabigatran versus warfarin in patients with mechanical heart valves (RE-ALIGN). NEJM 2013;369:1206-14." },
-      { "label": "Nishimura RA et al. 2017 AHA/ACC focused update of the 2014 guideline for management of patients with valvular heart disease." }
+      {
+        "label": "Eikelboom JW et al. Dabigatran versus warfarin in patients with mechanical heart valves (RE-ALIGN). NEJM 2013;369:1206-14."
+      },
+      {
+        "label": "Nishimura RA et al. 2017 AHA/ACC focused update of the 2014 guideline for management of patients with valvular heart disease."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1327,7 +1515,11 @@
     "anticoagulantDrugSlug": null,
     "drugClass": "Anticoagulation in pregnancy — special scenario (LMWH preferred; warfarin / DOACs avoided)",
     "oneLiner": "Pregnancy: LMWH is the anticoagulant of choice (does not cross placenta); warfarin teratogenic in T1, DOACs avoided. Life-threatening bleed: protamine partial reversal of LMWH + obstetric haemorrhage protocol. Senior obstetric / haematology / anaesthesia input early.",
-    "domains": ["haematology", "emergency", "obstetrics"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "obstetrics"
+    ],
     "mechanism": "LMWH does not cross the placenta — safe for fetus. Warfarin crosses (teratogenic embryopathy weeks 6-12, fetal haemorrhage T3). DOACs cross placenta and are insufficiently studied — avoid. Reversal in pregnancy must account for two patients, altered pharmacokinetics, and risk of placental abruption.",
     "protocols": [
       {
@@ -1375,8 +1567,12 @@
       "Neuraxial anaesthesia + LMWH: hold ≥ 24 h (therapeutic) / ≥ 12 h (prophylactic) before block."
     ],
     "references": [
-      { "label": "WOMAN Trial Collaborators. Effect of early tranexamic acid administration on mortality, hysterectomy, and other morbidities in women with postpartum haemorrhage (WOMAN trial). Lancet 2017;389:2105-16." },
-      { "label": "RCOG Green-top Guideline 37a: Reducing the risk of venous thromboembolism during pregnancy and the puerperium." }
+      {
+        "label": "WOMAN Trial Collaborators. Effect of early tranexamic acid administration on mortality, hysterectomy, and other morbidities in women with postpartum haemorrhage (WOMAN trial). Lancet 2017;389:2105-16."
+      },
+      {
+        "label": "RCOG Green-top Guideline 37a: Reducing the risk of venous thromboembolism during pregnancy and the puerperium."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1388,7 +1584,10 @@
     "anticoagulantDrugSlug": "tranexamic-acid",
     "drugClass": "Antifibrinolytic — special-case scenario where TXA is the wrong tool",
     "oneLiner": "TXA reduces fibrinolysis — useful in trauma / PPH / surgical bleed but harmful when active thrombosis or DIC with secondary fibrinolysis. Subarachnoid haemorrhage: TXA may worsen ischaemia. Active VTE: contraindicated. Haematuria from upper urinary tract: ureteric clot obstruction risk.",
-    "domains": ["haematology", "emergency"],
+    "domains": [
+      "haematology",
+      "emergency"
+    ],
     "mechanism": "Tranexamic acid is a lysine analogue that binds plasminogen, blocking conversion to plasmin and preventing fibrin breakdown. Useful when bleeding is driven by hyperfibrinolysis; harmful when secondary fibrinolysis is a protective response to ongoing thrombosis (DIC, active VTE, MI, SAH).",
     "protocols": [
       {
@@ -1429,8 +1628,12 @@
       "Renal dose-adjustment essential — accumulation prolongs effect."
     ],
     "references": [
-      { "label": "CRASH-2 trial collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage. Lancet 2010;376:23-32." },
-      { "label": "WOMAN Trial Collaborators. Lancet 2017;389:2105-16." }
+      {
+        "label": "CRASH-2 trial collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage. Lancet 2010;376:23-32."
+      },
+      {
+        "label": "WOMAN Trial Collaborators. Lancet 2017;389:2105-16."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1442,7 +1645,11 @@
     "anticoagulantDrugSlug": null,
     "drugClass": "HIT — anticoagulant selection / reversal scenario",
     "oneLiner": "HIT is a paradoxical thrombotic disorder requiring alternative anticoagulation. STOP all heparin (including LMWH and flushes). Start argatroban (hepatic clearance) or bivalirudin (renal); fondaparinux off-label in stable. Bleeding in HIT: stop drug + supportive; avoid platelet transfusion unless absolutely needed.",
-    "domains": ["haematology", "emergency", "critical-care"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "critical-care"
+    ],
     "mechanism": "HIT is an immune reaction to heparin-PF4 complexes producing IgG antibodies that activate platelets, causing both thrombocytopenia and paradoxical pro-thrombotic state. Alternative anticoagulant choice depends on organ function and bleeding risk.",
     "protocols": [
       {
@@ -1490,8 +1697,12 @@
       "Fondaparinux is off-label for acute HIT but commonly used in stable patients — limited evidence."
     ],
     "references": [
-      { "label": "Cuker A et al. American Society of Hematology 2018 guidelines for management of venous thromboembolism: heparin-induced thrombocytopenia. Blood Adv 2018;2:3360-92." },
-      { "label": "Linkins LA et al. Treatment and prevention of HIT (CHEST). 2012;141(2 Suppl):e495S-e530S." }
+      {
+        "label": "Cuker A et al. American Society of Hematology 2018 guidelines for management of venous thromboembolism: heparin-induced thrombocytopenia. Blood Adv 2018;2:3360-92."
+      },
+      {
+        "label": "Linkins LA et al. Treatment and prevention of HIT (CHEST). 2012;141(2 Suppl):e495S-e530S."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1503,7 +1714,11 @@
     "anticoagulantDrugSlug": "rivaroxaban",
     "drugClass": "DOAC-Xa — renal-impairment-specific reversal",
     "oneLiner": "Renal impairment (CrCl 15-49) extends rivaroxaban half-life — bleeding can persist 24+ h. 4F-PCC 50 IU/kg first-line where andexanet unavailable. Dialysis NOT effective (highly protein-bound). Activated charcoal up to 8 h post-ingestion.",
-    "domains": ["haematology", "emergency", "nephrology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "nephrology"
+    ],
     "mechanism": "Rivaroxaban has ~ 33% renal clearance — CrCl 15-49 doubles AUC; CrCl < 15 not licensed. Half-life extends from 5-13 h (normal) to 9-13 h (CrCl 15-49) and longer in dialysis. Highly protein-bound (~ 95%) — not dialysable.",
     "protocols": [
       {
@@ -1549,8 +1764,12 @@
       "8-h activated charcoal window (longer than apixaban) — useful even in late presentations."
     ],
     "references": [
-      { "label": "ANNEXA-4 (Connolly et al. NEJM 2019)." },
-      { "label": "EHRA 2021 practical guide on NOAC use in AF, renal impairment section." }
+      {
+        "label": "ANNEXA-4 (Connolly et al. NEJM 2019)."
+      },
+      {
+        "label": "EHRA 2021 practical guide on NOAC use in AF, renal impairment section."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1562,7 +1781,11 @@
     "anticoagulantDrugSlug": null,
     "drugClass": "Reversal agent / antidote stock reference",
     "oneLiner": "Quick-reference inventory: idarucizumab (dabigatran), andexanet alfa (apixaban / rivaroxaban), 4F-PCC (warfarin + DOAC-Xa), vitamin K, protamine, cryoprecipitate, tranexamic acid, bentracimab (ticagrelor — where available).",
-    "domains": ["haematology", "emergency", "pharmacy"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "pharmacy"
+    ],
     "mechanism": "Each reversal agent works on a different target — knowing what is on the shelf (and what is not) is itself a patient-safety decision.",
     "protocols": [
       {
@@ -1598,8 +1821,12 @@
       "Bentracimab availability is highly variable globally — confirm local stock."
     ],
     "references": [
-      { "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020." },
-      { "label": "ISTH guidance: When and how to use idarucizumab and andexanet alfa. J Thromb Haemost 2020." }
+      {
+        "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020."
+      },
+      {
+        "label": "ISTH guidance: When and how to use idarucizumab and andexanet alfa. J Thromb Haemost 2020."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1611,7 +1838,11 @@
     "anticoagulantDrugSlug": "heparin",
     "drugClass": "Indirect antithrombin-mediated anticoagulant — prophylactic-dose subcutaneous",
     "oneLiner": "Prophylactic-dose subcutaneous UFH causes far less anticoagulation than IV therapeutic dose. Most bleeding is supportive; protamine rarely needed. Check for HIT if thrombocytopenia.",
-    "domains": ["haematology", "emergency", "internal-medicine"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "internal-medicine"
+    ],
     "mechanism": "Subcutaneous absorption is slower and lower bioavailability (~ 30%) than IV; aPTT often normal at prophylactic dose. Anti-Xa activity modest. HIT risk is similar at prophylactic vs therapeutic dose.",
     "protocols": [
       {
@@ -1655,8 +1886,12 @@
       "Subcutaneous UFH bioavailability is variable — aPTT can be unreliable; anti-Xa more accurate."
     ],
     "references": [
-      { "label": "BSH guideline 2018." },
-      { "label": "Cuker A et al. ASH 2018 HIT guideline." }
+      {
+        "label": "BSH guideline 2018."
+      },
+      {
+        "label": "Cuker A et al. ASH 2018 HIT guideline."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1668,7 +1903,11 @@
     "anticoagulantDrugSlug": null,
     "drugClass": "Direct oral anticoagulants — intentional overdose scenario",
     "oneLiner": "Massive DOAC ingestion: activated charcoal early (apixaban 2-4 h, rivaroxaban 8 h, dabigatran 2 h); haemodialysis ONLY for dabigatran (others highly protein-bound). Specific reversal (idarucizumab / andexanet) if bleeding develops; supportive otherwise.",
-    "domains": ["haematology", "emergency", "toxicology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "toxicology"
+    ],
     "mechanism": "Most DOAC overdoses do not cause immediate bleeding — drug effect is determined by absorption + clearance. Activated charcoal interrupts absorption; dialysis removes dabigatran (low protein binding) but not apixaban / rivaroxaban / edoxaban (highly protein-bound).",
     "protocols": [
       {
@@ -1715,8 +1954,12 @@
       "Concomitant ingestions (paracetamol, NSAIDs) common — screen broadly."
     ],
     "references": [
-      { "label": "ACMT position statement: Use of specific reversal agents for direct oral anticoagulant overdose. J Med Toxicol 2020." },
-      { "label": "ISTH guidance 2020." }
+      {
+        "label": "ACMT position statement: Use of specific reversal agents for direct oral anticoagulant overdose. J Med Toxicol 2020."
+      },
+      {
+        "label": "ISTH guidance 2020."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1728,7 +1971,11 @@
     "anticoagulantDrugSlug": "warfarin",
     "drugClass": "VKA — supratherapeutic INR management",
     "oneLiner": "INR 4.5-10 without bleed: hold 1-2 doses, recheck — do NOT routinely give vitamin K. INR > 10 without bleed: vitamin K 1-5 mg PO. INR < 4.5 + no bleed: reduce or skip 1 dose. Inappropriate vitamin K causes prolonged sub-therapeutic INR.",
-    "domains": ["haematology", "internal-medicine", "primary-care"],
+    "domains": [
+      "haematology",
+      "internal-medicine",
+      "primary-care"
+    ],
     "mechanism": "Supratherapeutic INR without bleeding has a low absolute bleed risk in the short term; warfarin reversal that is too aggressive produces a window of under-anticoagulation and thromboembolic risk.",
     "protocols": [
       {
@@ -1761,8 +2008,12 @@
       "Large vitamin K doses cause days of warfarin resistance — use minimum dose."
     ],
     "references": [
-      { "label": "ACCP CHEST 2018 antithrombotic therapy guideline." },
-      { "label": "BSH guideline 2018." }
+      {
+        "label": "ACCP CHEST 2018 antithrombotic therapy guideline."
+      },
+      {
+        "label": "BSH guideline 2018."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1774,7 +2025,11 @@
     "anticoagulantDrugSlug": null,
     "drugClass": "Reversal adjunct for vitamin K antagonists",
     "oneLiner": "Choose route by urgency: IV (5-10 mg, diluted, over ≥ 30 min) with PCC for major bleed; oral (1-5 mg) for supratherapeutic INR without bleeding. Avoid SC (erratic) and never give undiluted IV bolus (anaphylactoid risk).",
-    "domains": ["haematology", "emergency", "pharmacy"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "pharmacy"
+    ],
     "mechanism": "Phytomenadione is the cofactor for hepatic γ-carboxylation of factors II, VII, IX, X and proteins C/S. It restores endogenous synthesis of functional factors over 4-6 h (IV) to 24 h (oral) — it does NOT replace factors directly, so it is an adjunct, not a stand-alone agent, for active major bleeding.",
     "protocols": [
       {
@@ -1809,8 +2064,12 @@
       "Routine vitamin K for INR 4.5-10 without bleeding is unnecessary and can cause sub-therapeutic INR — holding the dose usually suffices."
     ],
     "references": [
-      { "label": "Ageno W et al. ACCP CHEST: Oral anticoagulant therapy. Chest 2012;141(2 Suppl):e44S-e88S." },
-      { "label": "BSH guideline: Reversal of antithrombotic therapy in patients with major bleeding. Br J Haematol 2018." }
+      {
+        "label": "Ageno W et al. ACCP CHEST: Oral anticoagulant therapy. Chest 2012;141(2 Suppl):e44S-e88S."
+      },
+      {
+        "label": "BSH guideline: Reversal of antithrombotic therapy in patients with major bleeding. Br J Haematol 2018."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1822,7 +2081,12 @@
     "anticoagulantDrugSlug": null,
     "drugClass": "Reversal adjunct (platelet-function enhancer)",
     "oneLiner": "Single dose desmopressin 0.3 micrograms/kg IV over ~ 30 min for uraemic bleeding or antiplatelet-associated haemorrhage (including ICH). Effect lasts 4-6 h; restrict fluids and watch for hyponatraemia.",
-    "domains": ["haematology", "emergency", "nephrology", "neurology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "nephrology",
+      "neurology"
+    ],
     "mechanism": "Desmopressin releases von Willebrand factor and factor VIII from endothelial stores, improving platelet adhesion. It improves platelet function in uraemia and partially counteracts the platelet defect from antiplatelet agents (e.g. aspirin).",
     "protocols": [
       {
@@ -1850,8 +2114,12 @@
       "Tachyphylaxis after ~ 1-2 doses limits repeat use."
     ],
     "references": [
-      { "label": "Frontera JA et al. Neurocritical Care Society / SCCM Guideline for reversal of antithrombotics in intracranial haemorrhage. Neurocrit Care 2016;24:6-46." },
-      { "label": "Kapapa M et al. Effect of desmopressin on platelet dysfunction during antiplatelet therapy: a systematic review. Neurocrit Care 2020." }
+      {
+        "label": "Frontera JA et al. Neurocritical Care Society / SCCM Guideline for reversal of antithrombotics in intracranial haemorrhage. Neurocrit Care 2016;24:6-46."
+      },
+      {
+        "label": "Kapapa M et al. Effect of desmopressin on platelet dysfunction during antiplatelet therapy: a systematic review. Neurocrit Care 2020."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1863,7 +2131,12 @@
     "anticoagulantDrugSlug": null,
     "drugClass": "Reversal consideration (antiplatelet-associated bleeding)",
     "oneLiner": "Do NOT routinely transfuse platelets for spontaneous intracerebral haemorrhage in patients on antiplatelet therapy — the PATCH trial showed harm (increased death/dependence). Reserve platelets for those proceeding to neurosurgery.",
-    "domains": ["haematology", "emergency", "neurology", "critical-care"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "neurology",
+      "critical-care"
+    ],
     "mechanism": "Antiplatelet agents (aspirin, P2Y12 inhibitors) impair platelet aggregation. Transfusing functional platelets was hypothesised to restore haemostasis, but the PATCH randomised trial found a signal of harm in spontaneous ICH.",
     "protocols": [
       {
@@ -1889,8 +2162,12 @@
       "Do not delay blood-pressure control or neurosurgical referral while debating transfusion."
     ],
     "references": [
-      { "label": "Baharoglu MI et al. Platelet transfusion versus standard care after acute stroke due to spontaneous cerebral haemorrhage associated with antiplatelet therapy (PATCH). Lancet 2016;387:2605-13." },
-      { "label": "Frontera JA et al. Neurocritical Care Society / SCCM Guideline for reversal of antithrombotics in ICH. Neurocrit Care 2016." }
+      {
+        "label": "Baharoglu MI et al. Platelet transfusion versus standard care after acute stroke due to spontaneous cerebral haemorrhage associated with antiplatelet therapy (PATCH). Lancet 2016;387:2605-13."
+      },
+      {
+        "label": "Frontera JA et al. Neurocritical Care Society / SCCM Guideline for reversal of antithrombotics in ICH. Neurocrit Care 2016."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1902,7 +2179,12 @@
     "anticoagulantDrugSlug": null,
     "drugClass": "Fibrin-specific fibrinolytic (tissue plasminogen activator)",
     "oneLiner": "Bleeding after tenecteplase: stop any heparin, give cryoprecipitate 10 units IV (target fibrinogen ≥ 150 mg/dL) + tranexamic acid 1 g IV. Same fibrinolysis-reversal principle as alteplase.",
-    "domains": ["haematology", "emergency", "cardiology", "neurology"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "cardiology",
+      "neurology"
+    ],
     "mechanism": "Tenecteplase is a fibrin-specific plasminogen activator (modified tPA) that generates plasmin, lysing clot and depleting fibrinogen. Reversal replaces fibrinogen (cryoprecipitate) and inhibits ongoing plasmin activity (tranexamic acid).",
     "protocols": [
       {
@@ -1935,8 +2217,12 @@
       "Half-life of tenecteplase is short, but its fibrinogen-depleting effect outlasts the drug."
     ],
     "references": [
-      { "label": "AHA/ASA Hemorrhagic Stroke Toolkit — tPA / thrombolytic reversal guideline." },
-      { "label": "Yaghi S et al. Treatment and outcome of haemorrhagic transformation after IV alteplase: AHA/ASA scientific statement. Stroke 2017;48:e343-e361." }
+      {
+        "label": "AHA/ASA Hemorrhagic Stroke Toolkit — tPA / thrombolytic reversal guideline."
+      },
+      {
+        "label": "Yaghi S et al. Treatment and outcome of haemorrhagic transformation after IV alteplase: AHA/ASA scientific statement. Stroke 2017;48:e343-e361."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1948,7 +2234,12 @@
     "anticoagulantDrugSlug": "warfarin",
     "drugClass": "Vitamin K antagonist (VKA) — ICH-specific pathway",
     "oneLiner": "VKA-associated ICH: 4F-PCC dosed by INR/weight (25-50 IU/kg) IV immediately + vitamin K 10 mg IV. Aim INR < 1.3-1.5 fast. 4F-PCC is superior to FFP (faster correction, less haematoma expansion).",
-    "domains": ["haematology", "emergency", "neurology", "critical-care"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "neurology",
+      "critical-care"
+    ],
     "mechanism": "Warfarin depletes functional factors II, VII, IX, X. In ICH, every minute of coagulopathy risks haematoma expansion, so rapid factor replacement (PCC) plus restored synthesis (vitamin K) is the priority.",
     "protocols": [
       {
@@ -1975,8 +2266,12 @@
       "Forgetting blood-pressure control and neurosurgical referral while focused on reversal."
     ],
     "references": [
-      { "label": "Greenberg SM et al. 2022 AHA/ASA Guideline for the management of patients with spontaneous intracerebral haemorrhage. Stroke 2022." },
-      { "label": "Frontera JA et al. Neurocritical Care Society / SCCM Guideline for reversal of antithrombotics in ICH. Neurocrit Care 2016." }
+      {
+        "label": "Greenberg SM et al. 2022 AHA/ASA Guideline for the management of patients with spontaneous intracerebral haemorrhage. Stroke 2022."
+      },
+      {
+        "label": "Frontera JA et al. Neurocritical Care Society / SCCM Guideline for reversal of antithrombotics in ICH. Neurocrit Care 2016."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1988,7 +2283,12 @@
     "anticoagulantDrugSlug": null,
     "drugClass": "DOAC-Xa (apixaban / rivaroxaban / edoxaban) — ICH-specific pathway",
     "oneLiner": "Xa-inhibitor-associated ICH: andexanet alfa (ANNEXA-I dosing) is reasonable; where unavailable, 4F-PCC 50 IU/kg IV. Anticipate ~ 10% thrombotic event rate with andexanet — restart anticoagulation when safe.",
-    "domains": ["haematology", "emergency", "neurology", "critical-care"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "neurology",
+      "critical-care"
+    ],
     "mechanism": "Direct factor Xa inhibitors are sequestered by andexanet alfa (a recombinant decoy Xa) or bypassed by 4F-PCC. Treat when clinically significant drug levels are likely from type/timing of dosing — don't wait for assays.",
     "protocols": [
       {
@@ -2016,8 +2316,12 @@
       "Delaying reversal to await confirmatory levels."
     ],
     "references": [
-      { "label": "Connolly SJ et al. Andexanet for factor Xa inhibitor-associated acute intracerebral haemorrhage (ANNEXA-I). N Engl J Med 2024;390:1745-1755." },
-      { "label": "Greenberg SM et al. 2022 AHA/ASA Guideline for spontaneous intracerebral haemorrhage. Stroke 2022." }
+      {
+        "label": "Connolly SJ et al. Andexanet for factor Xa inhibitor-associated acute intracerebral haemorrhage (ANNEXA-I). N Engl J Med 2024;390:1745-1755."
+      },
+      {
+        "label": "Greenberg SM et al. 2022 AHA/ASA Guideline for spontaneous intracerebral haemorrhage. Stroke 2022."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2029,7 +2333,12 @@
     "anticoagulantDrugSlug": "warfarin",
     "drugClass": "Peri-operative anticoagulation management",
     "oneLiner": "Most warfarin patients do NOT need bridging (BRIDGE: no-bridge non-inferior for thromboembolism, less major bleeding). Reserve therapeutic-dose LMWH/heparin bridging for genuinely high thrombotic risk (e.g. mechanical mitral valve, recent VTE/stroke < 3 months).",
-    "domains": ["haematology", "cardiology", "surgery", "internal-medicine"],
+    "domains": [
+      "haematology",
+      "cardiology",
+      "surgery",
+      "internal-medicine"
+    ],
     "mechanism": "Bridging substitutes a short-acting parenteral anticoagulant during the period that warfarin is sub-therapeutic peri-operatively. The aim is to minimise the thromboembolism-free window, but it increases bleeding — so it is reserved for high thrombotic risk.",
     "protocols": [
       {
@@ -2056,8 +2365,12 @@
       "Mechanical mitral valves and recent thromboembolism are the clearest indications to bridge — do not omit bridging there."
     ],
     "references": [
-      { "label": "Douketis JD et al. Perioperative bridging anticoagulation in patients with atrial fibrillation (BRIDGE). N Engl J Med 2015;373:823-833." },
-      { "label": "Douketis JD et al. Perioperative management of antithrombotic therapy: ACCP CHEST guideline. Chest 2022." }
+      {
+        "label": "Douketis JD et al. Perioperative bridging anticoagulation in patients with atrial fibrillation (BRIDGE). N Engl J Med 2015;373:823-833."
+      },
+      {
+        "label": "Douketis JD et al. Perioperative management of antithrombotic therapy: ACCP CHEST guideline. Chest 2022."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2069,7 +2382,11 @@
     "anticoagulantDrugSlug": null,
     "drugClass": "Bypassing agent (last-resort reversal adjunct)",
     "oneLiner": "rFVIIa is NOT a first-line anticoagulant reversal agent — thrombosis complicates use in up to ~ 7% of cases and efficacy against DOACs is unreliable. Use specific agents (idarucizumab/andexanet) and 4F-PCC first.",
-    "domains": ["haematology", "emergency", "critical-care"],
+    "domains": [
+      "haematology",
+      "emergency",
+      "critical-care"
+    ],
     "mechanism": "rFVIIa drives thrombin generation at the site of tissue-factor exposure, bypassing the deficient pathway. It can partially normalise coagulation tests but does not reliably reverse DOAC clinical effect and carries significant arterial/venous thrombotic risk.",
     "protocols": [
       {
@@ -2095,8 +2412,12 @@
       "Expecting reliable DOAC reversal — efficacy is inconsistent."
     ],
     "references": [
-      { "label": "Levi M et al. Recombinant factor VIIa as an antidote for anticoagulant treatment. Semin Hematol 2004." },
-      { "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020." }
+      {
+        "label": "Levi M et al. Recombinant factor VIIa as an antidote for anticoagulant treatment. Semin Hematol 2004."
+      },
+      {
+        "label": "Tomaselli GF et al. 2020 ACC expert consensus on management of bleeding in patients on oral anticoagulants. JACC 2020."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",

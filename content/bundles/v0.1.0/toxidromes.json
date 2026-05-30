@@ -3,7 +3,11 @@
     "slug": "anticholinergic-toxidrome",
     "name": "Anticholinergic toxidrome",
     "oneLiner": "Hot as a hare, blind as a bat, dry as a bone, red as a beet, mad as a hatter — and the bowel sounds are absent.",
-    "domains": ["toxicology", "emergency", "psychiatry"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "psychiatry"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia (often 110-160)",
@@ -14,7 +18,11 @@
       "skin": "dry, flushed, warm",
       "mentalStatus": "agitation, delirium, hallucinations (often visual, lilliputian)",
       "bowelSounds": "hypoactive or absent (ileus, urinary retention)",
-      "other": ["myoclonic jerks", "picking behaviour", "seizures in severe cases"]
+      "other": [
+        "myoclonic jerks",
+        "picking behaviour",
+        "seizures in severe cases"
+      ]
     },
     "causativeAgents": [
       "antihistamines (diphenhydramine, chlorpheniramine, promethazine)",
@@ -49,8 +57,12 @@
       "Rhabdomyolysis (CK rising, dark urine) — IV fluids + monitor K+ / renal function."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Anticholinergics" },
-      { "label": "UK National Poisons Information Service / TOXBASE — anticholinergic poisoning" }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Anticholinergics"
+      },
+      {
+        "label": "UK National Poisons Information Service / TOXBASE — anticholinergic poisoning"
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -60,7 +72,11 @@
     "slug": "cholinergic-toxidrome",
     "name": "Cholinergic toxidrome (SLUDGE / DUMBELS)",
     "oneLiner": "Wet everywhere (SLUDGE: salivation, lacrimation, urination, diarrhoea, GI cramps, emesis) with fasciculations and miosis — think organophosphate.",
-    "domains": ["toxicology", "emergency", "occupational-health"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "occupational-health"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "bradycardia (or tachycardia early)",
@@ -71,7 +87,12 @@
       "skin": "diaphoretic, profuse sweating",
       "mentalStatus": "anxiety → confusion → coma in severe cases",
       "bowelSounds": "hyperactive with cramps, vomiting, diarrhoea",
-      "other": ["muscle fasciculations", "weakness / paralysis", "seizures", "garlic / petroleum odour on patient or clothing"]
+      "other": [
+        "muscle fasciculations",
+        "weakness / paralysis",
+        "seizures",
+        "garlic / petroleum odour on patient or clothing"
+      ]
     },
     "causativeAgents": [
       "organophosphate pesticides (malathion, chlorpyrifos, parathion, dichlorvos)",
@@ -102,8 +123,12 @@
       "Type II (intermediate) syndrome 1-4 days post-exposure: proximal weakness, cranial nerve palsies → may need re-ventilation."
     ],
     "references": [
-      { "label": "WHO. The WHO recommended classification of pesticides by hazard." },
-      { "label": "Eddleston M et al. Management of acute organophosphorus pesticide poisoning. Lancet 2008;371:597-607." }
+      {
+        "label": "WHO. The WHO recommended classification of pesticides by hazard."
+      },
+      {
+        "label": "Eddleston M et al. Management of acute organophosphorus pesticide poisoning. Lancet 2008;371:597-607."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -113,7 +138,11 @@
     "slug": "opioid-toxidrome",
     "name": "Opioid toxidrome",
     "oneLiner": "Triad: pinpoint pupils + respiratory depression + depressed mental status — reverse with naloxone, titrate to ventilation not consciousness.",
-    "domains": ["toxicology", "emergency", "addiction-medicine"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "addiction-medicine"
+    ],
     "antidoteSlug": "opioid-naloxone",
     "features": {
       "heartRate": "bradycardia",
@@ -124,7 +153,11 @@
       "skin": "cool, dry, cyanotic if hypoxic",
       "mentalStatus": "somnolence, stupor, coma",
       "bowelSounds": "hypoactive (ileus, constipation)",
-      "other": ["track marks / patches / fentanyl analogue concerns", "ARDS / NCPE post-overdose", "QT prolongation with methadone"]
+      "other": [
+        "track marks / patches / fentanyl analogue concerns",
+        "ARDS / NCPE post-overdose",
+        "QT prolongation with methadone"
+      ]
     },
     "causativeAgents": [
       "heroin, fentanyl + analogues (carfentanil, nitazenes — extremely potent, may need repeat naloxone)",
@@ -157,8 +190,12 @@
       "Synthetic opioid (fentanyl analogue / nitazene) suspected — expect re-sedation, longer monitoring (≥ 6 h post last dose)."
     ],
     "references": [
-      { "label": "WHO. Community management of opioid overdose. 2014." },
-      { "label": "Boyer EW. Management of opioid analgesic overdose. NEJM 2012;367:146-55." }
+      {
+        "label": "WHO. Community management of opioid overdose. 2014."
+      },
+      {
+        "label": "Boyer EW. Management of opioid analgesic overdose. NEJM 2012;367:146-55."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -168,7 +205,11 @@
     "slug": "sympathomimetic-toxidrome",
     "name": "Sympathomimetic toxidrome",
     "oneLiner": "Hyperadrenergic state: hypertension + tachycardia + hyperthermia + mydriasis + diaphoresis + agitation — skin is sweaty, bowel sounds present (distinguishes from anticholinergic).",
-    "domains": ["toxicology", "emergency", "psychiatry"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "psychiatry"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia (often > 130)",
@@ -179,7 +220,12 @@
       "skin": "diaphoretic — KEY differentiator from anticholinergic (dry)",
       "mentalStatus": "agitation, paranoia, psychosis, hallucinations",
       "bowelSounds": "normal / hyperactive — KEY differentiator from anticholinergic (absent)",
-      "other": ["seizures", "myocardial ischaemia / infarction", "rhabdomyolysis", "intracranial haemorrhage"]
+      "other": [
+        "seizures",
+        "myocardial ischaemia / infarction",
+        "rhabdomyolysis",
+        "intracranial haemorrhage"
+      ]
     },
     "causativeAgents": [
       "cocaine (also Na-channel blockade → wide QRS)",
@@ -215,8 +261,12 @@
       "Hyponatraemia (MDMA + free water) — careful sodium correction."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Cocaine; Amphetamines." },
-      { "label": "Richards JR et al. Treatment of cocaine cardiovascular toxicity. Clin Toxicol 2016." }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Cocaine; Amphetamines."
+      },
+      {
+        "label": "Richards JR et al. Treatment of cocaine cardiovascular toxicity. Clin Toxicol 2016."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -226,7 +276,11 @@
     "slug": "sedative-hypnotic-toxidrome",
     "name": "Sedative-hypnotic toxidrome",
     "oneLiner": "CNS depression with relatively preserved vitals: somnolence + slurred speech + ataxia + nystagmus, normal pupils, normal-ish respirations (until severe).",
-    "domains": ["toxicology", "emergency", "psychiatry"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "psychiatry"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "normal or mild bradycardia",
@@ -237,7 +291,11 @@
       "skin": "normal, may be cool",
       "mentalStatus": "drowsy → stupor → coma in overdose; ataxia, slurred speech, disinhibition",
       "bowelSounds": "normal",
-      "other": ["nystagmus", "diplopia", "co-ingestion with alcohol is the main lethality multiplier"]
+      "other": [
+        "nystagmus",
+        "diplopia",
+        "co-ingestion with alcohol is the main lethality multiplier"
+      ]
     },
     "causativeAgents": [
       "benzodiazepines (diazepam, alprazolam, lorazepam, clonazepam, midazolam)",
@@ -273,8 +331,12 @@
       "Aspiration pneumonia."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Sedative-hypnotics." },
-      { "label": "Penninga EI et al. Adverse events associated with flumazenil treatment. BMC Pharmacol Toxicol 2016." }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Sedative-hypnotics."
+      },
+      {
+        "label": "Penninga EI et al. Adverse events associated with flumazenil treatment. BMC Pharmacol Toxicol 2016."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -284,7 +346,12 @@
     "slug": "serotonin-syndrome",
     "name": "Serotonin syndrome",
     "oneLiner": "Triad: mental status change + autonomic hyperactivity + neuromuscular hyperactivity (clonus, hyperreflexia — LOWER-LIMB DOMINANT). Hunter Criteria > Sternbach.",
-    "domains": ["toxicology", "emergency", "psychiatry", "neurology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "psychiatry",
+      "neurology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -295,7 +362,12 @@
       "skin": "diaphoresis, flushed",
       "mentalStatus": "agitation, restlessness, confusion → coma in severe cases",
       "bowelSounds": "hyperactive, diarrhoea",
-      "other": ["clonus — spontaneous, inducible (ankle) or ocular — KEY finding", "hyperreflexia, lower limbs > upper limbs", "muscle rigidity (severe)", "shivering, tremor"]
+      "other": [
+        "clonus — spontaneous, inducible (ankle) or ocular — KEY finding",
+        "hyperreflexia, lower limbs > upper limbs",
+        "muscle rigidity (severe)",
+        "shivering, tremor"
+      ]
     },
     "causativeAgents": [
       "SSRIs / SNRIs (fluoxetine, sertraline, paroxetine, citalopram, escitalopram, venlafaxine, duloxetine)",
@@ -332,8 +404,12 @@
       "Mixed with MDMA — also risk hyponatraemia from free-water intake."
     ],
     "references": [
-      { "label": "Boyer EW, Shannon M. The serotonin syndrome. NEJM 2005;352:1112-20." },
-      { "label": "Dunkley EJC et al. The Hunter Serotonin Toxicity Criteria. QJM 2003;96:635-42." }
+      {
+        "label": "Boyer EW, Shannon M. The serotonin syndrome. NEJM 2005;352:1112-20."
+      },
+      {
+        "label": "Dunkley EJC et al. The Hunter Serotonin Toxicity Criteria. QJM 2003;96:635-42."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -343,7 +419,12 @@
     "slug": "neuroleptic-malignant-syndrome",
     "name": "Neuroleptic malignant syndrome (NMS)",
     "oneLiner": "Tetrad over hours-to-days: lead-pipe rigidity + hyperthermia + autonomic instability + altered mental status, after dopamine antagonist exposure or dopaminergic withdrawal.",
-    "domains": ["toxicology", "emergency", "psychiatry", "neurology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "psychiatry",
+      "neurology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -354,7 +435,13 @@
       "skin": "diaphoretic, pale",
       "mentalStatus": "altered — agitation, mutism, catatonia, coma",
       "bowelSounds": "normal or hypoactive",
-      "other": ["lead-pipe / generalised rigidity (NOT clonus)", "tremor, dystonia", "elevated CK (often > 1,000)", "leukocytosis", "elevated transaminases"]
+      "other": [
+        "lead-pipe / generalised rigidity (NOT clonus)",
+        "tremor, dystonia",
+        "elevated CK (often > 1,000)",
+        "leukocytosis",
+        "elevated transaminases"
+      ]
     },
     "causativeAgents": [
       "typical antipsychotics (haloperidol, fluphenazine, chlorpromazine) — highest risk",
@@ -393,8 +480,12 @@
       "Recurrence on re-introduction of antipsychotic — wait ≥ 2 weeks and use a different class."
     ],
     "references": [
-      { "label": "Strawn JR et al. Neuroleptic malignant syndrome. Am J Psychiatry 2007;164:870-6." },
-      { "label": "Berman BD. Neuroleptic malignant syndrome: a review for neurohospitalists. Neurohospitalist 2011;1:41-7." }
+      {
+        "label": "Strawn JR et al. Neuroleptic malignant syndrome. Am J Psychiatry 2007;164:870-6."
+      },
+      {
+        "label": "Berman BD. Neuroleptic malignant syndrome: a review for neurohospitalists. Neurohospitalist 2011;1:41-7."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -404,7 +495,11 @@
     "slug": "salicylate-toxidrome",
     "name": "Salicylate toxicity",
     "oneLiner": "Mixed primary respiratory alkalosis + primary metabolic acidosis with tinnitus, hyperpnoea (Kussmaul-like), nausea, agitation, hyperthermia — even at therapeutic levels in chronic toxicity.",
-    "domains": ["toxicology", "emergency", "paediatrics"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "paediatrics"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -415,7 +510,11 @@
       "skin": "diaphoretic, may be flushed",
       "mentalStatus": "agitation → confusion → coma in severe / chronic poisoning",
       "bowelSounds": "normal or hyperactive; nausea, vomiting, haematemesis",
-      "other": ["TINNITUS / hearing loss — early sign", "non-cardiogenic pulmonary oedema in severe cases", "anion-gap metabolic acidosis with concomitant respiratory alkalosis"]
+      "other": [
+        "TINNITUS / hearing loss — early sign",
+        "non-cardiogenic pulmonary oedema in severe cases",
+        "anion-gap metabolic acidosis with concomitant respiratory alkalosis"
+      ]
     },
     "causativeAgents": [
       "aspirin (acetylsalicylic acid)",
@@ -451,8 +550,12 @@
       "Chronic toxicity in elderly — often missed, presents as confusion / acidosis."
     ],
     "references": [
-      { "label": "EXTRIP workgroup. Extracorporeal treatment for salicylate poisoning. Ann Emerg Med 2015;66:165-81." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Salicylates." }
+      {
+        "label": "EXTRIP workgroup. Extracorporeal treatment for salicylate poisoning. Ann Emerg Med 2015;66:165-81."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Salicylates."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -462,7 +565,12 @@
     "slug": "tca-overdose",
     "name": "Tricyclic antidepressant (TCA) overdose",
     "oneLiner": "Anticholinergic + α1-blockade + Na-channel blockade: wide QRS, terminal R in aVR, hypotension, seizures, coma. Sodium bicarbonate is the cornerstone — 1-2 mEq/kg IV bolus for QRS > 100 ms.",
-    "domains": ["toxicology", "emergency", "cardiology", "psychiatry"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "cardiology",
+      "psychiatry"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "sinus tachycardia early; wide-complex tachycardia / VT late",
@@ -473,7 +581,12 @@
       "skin": "dry, flushed (anticholinergic)",
       "mentalStatus": "agitation → confusion → coma; seizures common",
       "bowelSounds": "hypoactive / absent (ileus, urinary retention)",
-      "other": ["WIDE QRS (> 100 ms) — Na-channel blockade", "terminal R wave in aVR > 3 mm and R/S > 0.7 — classic ECG", "rightward terminal axis deviation", "Brugada-like pattern"]
+      "other": [
+        "WIDE QRS (> 100 ms) — Na-channel blockade",
+        "terminal R wave in aVR > 3 mm and R/S > 0.7 — classic ECG",
+        "rightward terminal axis deviation",
+        "Brugada-like pattern"
+      ]
     },
     "causativeAgents": [
       "amitriptyline, nortriptyline, imipramine, clomipramine, dosulepin (dothiepin), doxepin",
@@ -509,8 +622,12 @@
       "Coma + wide QRS — intubation, ICU."
     ],
     "references": [
-      { "label": "Body R et al. Guidelines in Emergency Medicine Network (GEMNet): guideline for the management of tricyclic antidepressant overdose. Emerg Med J 2011;28:347-68." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Cyclic Antidepressants." }
+      {
+        "label": "Body R et al. Guidelines in Emergency Medicine Network (GEMNet): guideline for the management of tricyclic antidepressant overdose. Emerg Med J 2011;28:347-68."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Cyclic Antidepressants."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -520,7 +637,12 @@
     "slug": "beta-blocker-overdose",
     "name": "Beta-blocker overdose",
     "oneLiner": "Bradycardia + AV block + hypotension + hypoglycaemia + bronchospasm + (sometimes) seizures with propranolol. High-dose insulin-euglycaemia therapy (HIET) is the modern cornerstone; glucagon historic.",
-    "domains": ["toxicology", "emergency", "cardiology", "critical-care"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "cardiology",
+      "critical-care"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "bradycardia (often < 50)",
@@ -531,7 +653,12 @@
       "skin": "cool, pale",
       "mentalStatus": "normal early; obtunded with severe hypotension or propranolol (CNS effect)",
       "bowelSounds": "normal",
-      "other": ["AV BLOCK / junctional rhythm", "hypoglycaemia (especially children, diabetics)", "wide QRS with propranolol (Na-channel blockade)", "seizures with propranolol"]
+      "other": [
+        "AV BLOCK / junctional rhythm",
+        "hypoglycaemia (especially children, diabetics)",
+        "wide QRS with propranolol (Na-channel blockade)",
+        "seizures with propranolol"
+      ]
     },
     "causativeAgents": [
       "propranolol (most lethal — lipophilic, CNS penetration, Na-channel blockade in massive OD)",
@@ -570,8 +697,12 @@
       "Co-ingestion with CCB / digoxin — additive toxicity."
     ],
     "references": [
-      { "label": "Engebretsen KM et al. High-dose insulin therapy in beta-blocker and calcium channel-blocker poisoning. Clin Toxicol 2011;49:277-83." },
-      { "label": "Graudins A et al. Calcium channel antagonist and beta-blocker overdose: antidotes and adjunct therapies. Br J Clin Pharmacol 2016;81:453-61." }
+      {
+        "label": "Engebretsen KM et al. High-dose insulin therapy in beta-blocker and calcium channel-blocker poisoning. Clin Toxicol 2011;49:277-83."
+      },
+      {
+        "label": "Graudins A et al. Calcium channel antagonist and beta-blocker overdose: antidotes and adjunct therapies. Br J Clin Pharmacol 2016;81:453-61."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -581,7 +712,12 @@
     "slug": "calcium-channel-blocker-overdose",
     "name": "Calcium channel blocker (CCB) overdose",
     "oneLiner": "Bradycardia + hypotension + HYPERGLYCAEMIA (BB usually hypoglycaemic; CCB usually hyperglycaemic — useful discriminator). HIET cornerstone; calcium, glucagon, intralipid adjuncts.",
-    "domains": ["toxicology", "emergency", "cardiology", "critical-care"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "cardiology",
+      "critical-care"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "bradycardia (verapamil, diltiazem) or reflex tachycardia (amlodipine — vasodilator predominant)",
@@ -592,7 +728,12 @@
       "skin": "warm, vasodilated (especially amlodipine)",
       "mentalStatus": "normal early; obtunded with severe hypotension",
       "bowelSounds": "hypoactive (mesenteric ischaemia in severe)",
-      "other": ["HYPERGLYCAEMIA (insulin-release inhibition) — useful discriminator from BB", "AV block / asystole (verapamil, diltiazem)", "lactic acidosis (poor perfusion)", "non-cardiogenic pulmonary oedema (amlodipine)"]
+      "other": [
+        "HYPERGLYCAEMIA (insulin-release inhibition) — useful discriminator from BB",
+        "AV block / asystole (verapamil, diltiazem)",
+        "lactic acidosis (poor perfusion)",
+        "non-cardiogenic pulmonary oedema (amlodipine)"
+      ]
     },
     "causativeAgents": [
       "non-dihydropyridines: verapamil, diltiazem (more cardiotoxic — bradycardia + AV block)",
@@ -628,8 +769,12 @@
       "Pulmonary oedema (amlodipine) — supportive ventilation."
     ],
     "references": [
-      { "label": "St-Onge M et al. Experts consensus recommendations for the management of calcium channel blocker poisoning in adults. Crit Care Med 2017;45:e306-15." },
-      { "label": "Engebretsen KM et al. Clin Toxicol 2011." }
+      {
+        "label": "St-Onge M et al. Experts consensus recommendations for the management of calcium channel blocker poisoning in adults. Crit Care Med 2017;45:e306-15."
+      },
+      {
+        "label": "Engebretsen KM et al. Clin Toxicol 2011."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -639,7 +784,11 @@
     "slug": "digoxin-toxicity",
     "name": "Digoxin toxicity",
     "oneLiner": "Nausea + visual disturbance (yellow-green halos / xanthopsia) + bradyarrhythmias / ectopy + HYPERKALAEMIA (acute) — digoxin-specific Fab fragments for severe toxicity.",
-    "domains": ["toxicology", "emergency", "cardiology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "cardiology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "bradycardia, AV block, or paradoxical tachy-arrhythmias (atrial tachycardia with block, junctional tachycardia, bidirectional VT — pathognomonic)",
@@ -650,7 +799,11 @@
       "skin": "normal",
       "mentalStatus": "confusion, delirium, hallucinations (especially elderly, chronic)",
       "bowelSounds": "nausea, vomiting, abdominal pain, diarrhoea",
-      "other": ["YELLOW-GREEN VISION / xanthopsia / halos — classic but not always present", "HYPERKALAEMIA in acute toxicity (Na/K-ATPase inhibition) — strong predictor of mortality > 5.5 mmol/L pre-Fab era", "bidirectional ventricular tachycardia"]
+      "other": [
+        "YELLOW-GREEN VISION / xanthopsia / halos — classic but not always present",
+        "HYPERKALAEMIA in acute toxicity (Na/K-ATPase inhibition) — strong predictor of mortality > 5.5 mmol/L pre-Fab era",
+        "bidirectional ventricular tachycardia"
+      ]
     },
     "causativeAgents": [
       "digoxin (prescription overdose / accumulation in renal impairment / drug interactions)",
@@ -684,8 +837,12 @@
       "Plant cardiac glycoside exposure (oleander) — Fab cross-reactivity is variable; higher doses often needed."
     ],
     "references": [
-      { "label": "Hack JB, Lewin NA. Cardioactive steroids. In: Goldfrank's Toxicologic Emergencies, 11e." },
-      { "label": "Roberts DM et al. The clinical pharmacokinetics, pharmacodynamics and clinical effectiveness of digoxin-specific antibody fragments. Clin Pharmacokinet 2016;55:1209-25." }
+      {
+        "label": "Hack JB, Lewin NA. Cardioactive steroids. In: Goldfrank's Toxicologic Emergencies, 11e."
+      },
+      {
+        "label": "Roberts DM et al. The clinical pharmacokinetics, pharmacodynamics and clinical effectiveness of digoxin-specific antibody fragments. Clin Pharmacokinet 2016;55:1209-25."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -695,7 +852,12 @@
     "slug": "lithium-toxicity",
     "name": "Lithium toxicity",
     "oneLiner": "Tremor + ataxia + dysarthria + confusion + fasciculations → seizures + coma in severe cases. GI symptoms early in acute; neurologic dominant in chronic. Haemodialysis for severe / chronic toxicity.",
-    "domains": ["toxicology", "emergency", "psychiatry", "nephrology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "psychiatry",
+      "nephrology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "normal or bradycardia; QT prolongation, T-wave flattening",
@@ -706,7 +868,12 @@
       "skin": "normal",
       "mentalStatus": "tremor → ataxia → dysarthria → confusion → seizures → coma",
       "bowelSounds": "hyperactive in acute (nausea, vomiting, diarrhoea); normal in chronic",
-      "other": ["coarse tremor, hyperreflexia, clonus, fasciculations, myoclonus", "SILENT (Syndrome of Irreversible Lithium-Effectuated NeuroToxicity) — persistent neurologic deficit", "nephrogenic diabetes insipidus", "hypothyroidism (chronic use)"]
+      "other": [
+        "coarse tremor, hyperreflexia, clonus, fasciculations, myoclonus",
+        "SILENT (Syndrome of Irreversible Lithium-Effectuated NeuroToxicity) — persistent neurologic deficit",
+        "nephrogenic diabetes insipidus",
+        "hypothyroidism (chronic use)"
+      ]
     },
     "causativeAgents": [
       "lithium carbonate (Camcolit, Priadel, Lithobid) — prescription",
@@ -740,8 +907,12 @@
       "SILENT — persistent cerebellar / extrapyramidal deficit despite normal levels."
     ],
     "references": [
-      { "label": "Decker BS et al. EXTRIP workgroup recommendations on extracorporeal treatment for lithium poisoning. Clin J Am Soc Nephrol 2015;10:875-87." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Lithium." }
+      {
+        "label": "Decker BS et al. EXTRIP workgroup recommendations on extracorporeal treatment for lithium poisoning. Clin J Am Soc Nephrol 2015;10:875-87."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Lithium."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -751,7 +922,12 @@
     "slug": "iron-toxicity",
     "name": "Iron toxicity (paediatric ingestion the classic)",
     "oneLiner": "Five phases: GI (0-6 h vomiting + bloody diarrhoea) → quiescent (6-24 h, falsely reassuring) → shock + metabolic acidosis (12-48 h) → hepatic failure (48-96 h) → late GI strictures. Desferrioxamine for severe toxicity.",
-    "domains": ["toxicology", "emergency", "paediatrics", "hepatology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "paediatrics",
+      "hepatology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia (volume loss, shock)",
@@ -762,7 +938,12 @@
       "skin": "pale, mottled in shock; jaundice late",
       "mentalStatus": "irritable → lethargic → coma",
       "bowelSounds": "early: vomiting, haematemesis, bloody diarrhoea (corrosive); late: stricture / obstruction (4-6 weeks)",
-      "other": ["RADIO-OPAQUE TABLETS ON ABDOMINAL X-RAY (helpful but not universal — chewables / paediatric forms often invisible)", "HIGH ANION GAP METABOLIC ACIDOSIS (Phase 3)", "TRANSAMINITIS / liver failure (Phase 4)", "coagulopathy"]
+      "other": [
+        "RADIO-OPAQUE TABLETS ON ABDOMINAL X-RAY (helpful but not universal — chewables / paediatric forms often invisible)",
+        "HIGH ANION GAP METABOLIC ACIDOSIS (Phase 3)",
+        "TRANSAMINITIS / liver failure (Phase 4)",
+        "coagulopathy"
+      ]
     },
     "causativeAgents": [
       "ferrous sulfate, fumarate, gluconate (prenatal vitamins, supplements)",
@@ -798,8 +979,12 @@
       "Late GI stricture / obstruction (4-6 weeks) — surveillance."
     ],
     "references": [
-      { "label": "Tenenbein M. Position statement: ipecac syrup. Clin Toxicol 2004 (now withdrawn for iron)." },
-      { "label": "Manoguerra AS et al. Iron ingestion: an evidence-based consensus guideline for out-of-hospital management. Clin Toxicol 2005;43:553-70." }
+      {
+        "label": "Tenenbein M. Position statement: ipecac syrup. Clin Toxicol 2004 (now withdrawn for iron)."
+      },
+      {
+        "label": "Manoguerra AS et al. Iron ingestion: an evidence-based consensus guideline for out-of-hospital management. Clin Toxicol 2005;43:553-70."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -809,7 +994,11 @@
     "slug": "paracetamol-overdose",
     "name": "Paracetamol (acetaminophen) overdose",
     "oneLiner": "Four phases: I (0-24 h asymptomatic / mild nausea) → II (24-72 h transaminitis, RUQ pain, may feel better) → III (72-96 h fulminant hepatic failure) → IV (recovery or transplant). N-acetylcysteine if Rumack-Matthew nomogram in toxic range or staggered ingestion / late presentation.",
-    "domains": ["toxicology", "emergency", "hepatology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "hepatology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "normal early; tachycardia with hepatic failure",
@@ -820,7 +1009,13 @@
       "skin": "normal early; jaundice late",
       "mentalStatus": "alert early; hepatic encephalopathy phase III-IV",
       "bowelSounds": "nausea, vomiting; RUQ tenderness phase II",
-      "other": ["INITIALLY ASYMPTOMATIC — major pitfall; do not be reassured", "elevated ALT/AST phase II", "INR ↑ phase II-III (marker of synthetic failure)", "renal failure (often co-occurs with hepatic in severe)", "lactic acidosis (early massive ingestion or late hepatic failure)"]
+      "other": [
+        "INITIALLY ASYMPTOMATIC — major pitfall; do not be reassured",
+        "elevated ALT/AST phase II",
+        "INR ↑ phase II-III (marker of synthetic failure)",
+        "renal failure (often co-occurs with hepatic in severe)",
+        "lactic acidosis (early massive ingestion or late hepatic failure)"
+      ]
     },
     "causativeAgents": [
       "paracetamol / acetaminophen — single-ingredient (Panadol, Tylenol)",
@@ -855,8 +1050,12 @@
       "Massive ingestion + lactic acidosis early — extra-hepatic mitochondrial toxicity; may need higher NAC and earlier transplant referral."
     ],
     "references": [
-      { "label": "MHRA paracetamol overdose treatment guidance (UK, 2012) — single 100 mg/L treatment line." },
-      { "label": "Heard KJ. Acetylcysteine for acetaminophen poisoning. NEJM 2008;359:285-92." }
+      {
+        "label": "MHRA paracetamol overdose treatment guidance (UK, 2012) — single 100 mg/L treatment line."
+      },
+      {
+        "label": "Heard KJ. Acetylcysteine for acetaminophen poisoning. NEJM 2008;359:285-92."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -866,7 +1065,12 @@
     "slug": "methanol-toxicity",
     "name": "Methanol toxicity",
     "oneLiner": "High anion gap metabolic acidosis + OSMOLAR GAP + visual disturbance (snowstorm vision, blindness) after illicit / contaminated alcohol. Fomepizole or ethanol blocks ADH; haemodialysis for severe toxicity.",
-    "domains": ["toxicology", "emergency", "ophthalmology", "nephrology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "ophthalmology",
+      "nephrology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia with acidosis",
@@ -877,7 +1081,12 @@
       "skin": "normal",
       "mentalStatus": "drunken appearance early (mild); coma late",
       "bowelSounds": "nausea, vomiting, abdominal pain",
-      "other": ["VISUAL DISTURBANCE — blurring, central scotomas, snowstorm vision, photophobia, blindness", "OSMOLAR GAP early (parent compound); ANION GAP late (formic acid metabolite)", "fundoscopy: optic disc hyperaemia early, pallor late", "putaminal haemorrhage / necrosis on imaging (delayed)"]
+      "other": [
+        "VISUAL DISTURBANCE — blurring, central scotomas, snowstorm vision, photophobia, blindness",
+        "OSMOLAR GAP early (parent compound); ANION GAP late (formic acid metabolite)",
+        "fundoscopy: optic disc hyperaemia early, pallor late",
+        "putaminal haemorrhage / necrosis on imaging (delayed)"
+      ]
     },
     "causativeAgents": [
       "windscreen washer fluid, antifreeze (some), denatured alcohol, illicit moonshine / counterfeit spirits",
@@ -910,8 +1119,12 @@
       "Delayed presentation (chronic moonshine) — patients may have advanced injury at presentation."
     ],
     "references": [
-      { "label": "Roberts DM et al. Recommendations for the role of extracorporeal treatments in the management of acute methanol poisoning. Crit Care Med 2015;43:461-72." },
-      { "label": "Brent J. Fomepizole for ethylene glycol and methanol poisoning. NEJM 2009;360:2216-23." }
+      {
+        "label": "Roberts DM et al. Recommendations for the role of extracorporeal treatments in the management of acute methanol poisoning. Crit Care Med 2015;43:461-72."
+      },
+      {
+        "label": "Brent J. Fomepizole for ethylene glycol and methanol poisoning. NEJM 2009;360:2216-23."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -921,7 +1134,11 @@
     "slug": "ethylene-glycol-toxicity",
     "name": "Ethylene glycol toxicity",
     "oneLiner": "High anion gap metabolic acidosis + OSMOLAR GAP + CALCIUM OXALATE CRYSTALS in urine + renal failure ± neurologic depression. Fomepizole + thiamine + pyridoxine; haemodialysis for severe.",
-    "domains": ["toxicology", "emergency", "nephrology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "nephrology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -932,7 +1149,12 @@
       "skin": "normal",
       "mentalStatus": "drunken early (Stage 1, 0-12 h) → cardiopulmonary (Stage 2, 12-24 h) → renal (Stage 3, 24-72 h)",
       "bowelSounds": "nausea, vomiting",
-      "other": ["URINE FLUORESCENCE under Wood's lamp (fluorescein dye in commercial antifreeze) — useful early", "CALCIUM OXALATE CRYSTALS (envelope-shaped monohydrate; needle-shaped dihydrate) in urine sediment", "HYPOCALCAEMIA from oxalate chelation — tetany, QT prolongation, seizures", "ANION GAP + OSMOLAR GAP early; gap closes as ethylene glycol metabolised"]
+      "other": [
+        "URINE FLUORESCENCE under Wood's lamp (fluorescein dye in commercial antifreeze) — useful early",
+        "CALCIUM OXALATE CRYSTALS (envelope-shaped monohydrate; needle-shaped dihydrate) in urine sediment",
+        "HYPOCALCAEMIA from oxalate chelation — tetany, QT prolongation, seizures",
+        "ANION GAP + OSMOLAR GAP early; gap closes as ethylene glycol metabolised"
+      ]
     },
     "causativeAgents": [
       "antifreeze (radiator coolant) — sweet taste, attractive to children + animals",
@@ -967,8 +1189,12 @@
       "Paediatric ingestion — sweet antifreeze appealing; calculate dose carefully."
     ],
     "references": [
-      { "label": "Brent J. Fomepizole for ethylene glycol and methanol poisoning. NEJM 2009;360:2216-23." },
-      { "label": "Ghannoum M et al. Extracorporeal treatment for ethylene glycol poisoning: EXTRIP recommendations. Crit Care Med 2018." }
+      {
+        "label": "Brent J. Fomepizole for ethylene glycol and methanol poisoning. NEJM 2009;360:2216-23."
+      },
+      {
+        "label": "Ghannoum M et al. Extracorporeal treatment for ethylene glycol poisoning: EXTRIP recommendations. Crit Care Med 2018."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -978,7 +1204,11 @@
     "slug": "carbon-monoxide-poisoning",
     "name": "Carbon monoxide (CO) poisoning",
     "oneLiner": "Headache + nausea + dizziness + confusion + (sometimes) cherry-red skin (unreliable). Pulse oximetry FALSELY NORMAL. Diagnose by carboxyhaemoglobin (COHb) co-oximetry. 100% O₂ via tight-fitting mask; hyperbaric for severe.",
-    "domains": ["toxicology", "emergency", "occupational-health"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "occupational-health"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -989,7 +1219,12 @@
       "skin": "Classically cherry-red but unreliable — most CO patients are pale or cyanotic",
       "mentalStatus": "headache → confusion → coma; delayed neuropsychiatric sequelae (DNS) weeks later",
       "bowelSounds": "nausea, vomiting",
-      "other": ["SpO₂ FALSELY NORMAL (pulse oximetry cannot distinguish COHb from O₂Hb) — measure COHb by co-oximetry", "metabolic acidosis (tissue hypoxia)", "myocardial ischaemia / arrhythmia", "non-cardiogenic pulmonary oedema in severe"]
+      "other": [
+        "SpO₂ FALSELY NORMAL (pulse oximetry cannot distinguish COHb from O₂Hb) — measure COHb by co-oximetry",
+        "metabolic acidosis (tissue hypoxia)",
+        "myocardial ischaemia / arrhythmia",
+        "non-cardiogenic pulmonary oedema in severe"
+      ]
     },
     "causativeAgents": [
       "house fire / smoke inhalation",
@@ -1028,8 +1263,12 @@
       "Delayed neuropsychiatric sequelae — warn patient, neurology follow-up."
     ],
     "references": [
-      { "label": "Buckley NA et al. Hyperbaric oxygen for carbon monoxide poisoning. Cochrane Database Syst Rev 2011." },
-      { "label": "Hampson NB et al. Practice recommendations in the diagnosis, management, and prevention of carbon monoxide poisoning. Am J Respir Crit Care Med 2012;186:1095-101." }
+      {
+        "label": "Buckley NA et al. Hyperbaric oxygen for carbon monoxide poisoning. Cochrane Database Syst Rev 2011."
+      },
+      {
+        "label": "Hampson NB et al. Practice recommendations in the diagnosis, management, and prevention of carbon monoxide poisoning. Am J Respir Crit Care Med 2012;186:1095-101."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1039,7 +1278,12 @@
     "slug": "cyanide-poisoning",
     "name": "Cyanide poisoning (smoke inhalation / industrial)",
     "oneLiner": "Tachypnoea → bradypnoea, coma, seizures, profound LACTIC ACIDOSIS in fire victim. Bitter almond breath (only ~ 60% of people perceive it). Hydroxocobalamin 5 g IV is first-line in suspected smoke-inhalation cyanide.",
-    "domains": ["toxicology", "emergency", "occupational-health", "critical-care"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "occupational-health",
+      "critical-care"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia early, bradycardia late",
@@ -1050,7 +1294,12 @@
       "skin": "cherry-red (venous SO₂ very high — cells cannot extract O₂) — but not always; cyanosis in late phase",
       "mentalStatus": "agitation → seizures → coma within minutes of significant exposure",
       "bowelSounds": "nausea, vomiting",
-      "other": ["PROFOUND LACTIC ACIDOSIS (> 10 mmol/L in fire victim) — KEY clue", "narrowed arteriovenous O₂ difference (cells cannot use O₂)", "bitter almond odour on breath (60% genetic perception)", "soot in airway / face / sputum in fire victim"]
+      "other": [
+        "PROFOUND LACTIC ACIDOSIS (> 10 mmol/L in fire victim) — KEY clue",
+        "narrowed arteriovenous O₂ difference (cells cannot use O₂)",
+        "bitter almond odour on breath (60% genetic perception)",
+        "soot in airway / face / sputum in fire victim"
+      ]
     },
     "causativeAgents": [
       "smoke inhalation (especially burning plastics, wool, silk, polyurethane) — co-exists with CO",
@@ -1087,8 +1336,12 @@
       "Hydroxocobalamin interferes with labs / dialysis machines — alert lab + dialysis team."
     ],
     "references": [
-      { "label": "Borron SW et al. Prospective study of hydroxocobalamin for acute cyanide poisoning in smoke inhalation. Ann Emerg Med 2007;49:794-801." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Cyanide and Hydrogen Sulfide." }
+      {
+        "label": "Borron SW et al. Prospective study of hydroxocobalamin for acute cyanide poisoning in smoke inhalation. Ann Emerg Med 2007;49:794-801."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Cyanide and Hydrogen Sulfide."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1098,7 +1351,11 @@
     "slug": "carbamate-pyrethroid-toxidrome",
     "name": "Carbamate / pyrethroid pesticide toxicity",
     "oneLiner": "Carbamate: short-acting reversible cholinergic — atropine yes, pralidoxime usually not. Pyrethroid: paraesthesia + agitation + sometimes seizures, mostly supportive; rarely life-threatening unless massive ingestion.",
-    "domains": ["toxicology", "emergency", "occupational-health"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "occupational-health"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "bradycardia (carbamate, milder than OP)",
@@ -1109,7 +1366,11 @@
       "skin": "diaphoretic (carbamate); paraesthesia, urticaria (pyrethroid)",
       "mentalStatus": "anxiety, confusion (carbamate); agitation, occasional seizures (pyrethroid, esp. type II)",
       "bowelSounds": "hyperactive (carbamate); normal (pyrethroid, may have nausea)",
-      "other": ["carbamate effect resolves within hours (vs OP days)", "pyrethroid: paraesthesia of face / extremities — KEY clue", "type II pyrethroids (cyhalothrin, deltamethrin, cyano group) can cause seizures"]
+      "other": [
+        "carbamate effect resolves within hours (vs OP days)",
+        "pyrethroid: paraesthesia of face / extremities — KEY clue",
+        "type II pyrethroids (cyhalothrin, deltamethrin, cyano group) can cause seizures"
+      ]
     },
     "causativeAgents": [
       "carbamates: carbaryl, methomyl, propoxur, aldicarb, carbofuran",
@@ -1139,8 +1400,12 @@
       "Co-exposure to OP + carbamate + solvent in commercial pesticide products."
     ],
     "references": [
-      { "label": "Ramirez JA et al. Acute carbamate poisoning. In: Goldfrank's Toxicologic Emergencies, 11e." },
-      { "label": "Bradberry SM et al. Poisoning due to pyrethroids. Toxicol Rev 2005;24:93-106." }
+      {
+        "label": "Ramirez JA et al. Acute carbamate poisoning. In: Goldfrank's Toxicologic Emergencies, 11e."
+      },
+      {
+        "label": "Bradberry SM et al. Poisoning due to pyrethroids. Toxicol Rev 2005;24:93-106."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1150,7 +1415,11 @@
     "slug": "mushroom-toxidromes",
     "name": "Mushroom toxidromes (amatoxin, gyromitra, muscarinic, psychoactive)",
     "oneLiner": "AMATOXIN (Amanita phalloides) is the killer: delayed (6-24 h) severe GI then hepatic failure. Early-onset GI symptoms (< 6 h) usually milder. Gyromitra: seizures + hepatic injury — pyridoxine. Muscarinic mushrooms: cholinergic — atropine. Psychoactive: supportive.",
-    "domains": ["toxicology", "emergency", "hepatology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "hepatology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "variable by class",
@@ -1161,7 +1430,9 @@
       "skin": "diaphoretic with muscarinic; normal otherwise",
       "mentalStatus": "AMATOXIN — alert early then hepatic encephalopathy. GYROMITRA — seizures. MUSCARINIC — anxious then somnolent. PSYCHOACTIVE (psilocybin, Amanita muscaria) — hallucinations, agitation. ORELLANINE — renal-only, asymptomatic 2-14 days then renal failure.",
       "bowelSounds": "AMATOXIN — severe vomiting / cholera-like diarrhoea 6-24 h post-ingestion. MUSCARINIC — hyperactive. Others variable.",
-      "other": ["TIME-OF-ONSET is the most useful clinical discriminator: < 6 h = generally mild; > 6 h = consider amatoxin / gyromitra / orellanine — POTENTIALLY LETHAL"]
+      "other": [
+        "TIME-OF-ONSET is the most useful clinical discriminator: < 6 h = generally mild; > 6 h = consider amatoxin / gyromitra / orellanine — POTENTIALLY LETHAL"
+      ]
     },
     "causativeAgents": [
       "AMATOXIN: Amanita phalloides (death cap), Amanita virosa, Galerina spp. — α-amanitin RNA polymerase II inhibitor",
@@ -1201,8 +1472,12 @@
       "Always co-screen for paracetamol (concomitant ingestion common)."
     ],
     "references": [
-      { "label": "Diaz JH. Amatoxin-containing mushroom poisonings: species, toxidromes, treatments, and outcomes. Wilderness Environ Med 2018;29:111-8." },
-      { "label": "Mengs U et al. Legalon SIL: the antidote of choice in patients with acute hepatotoxicity from amatoxin poisoning. Curr Pharm Biotechnol 2012;13:1964-70." }
+      {
+        "label": "Diaz JH. Amatoxin-containing mushroom poisonings: species, toxidromes, treatments, and outcomes. Wilderness Environ Med 2018;29:111-8."
+      },
+      {
+        "label": "Mengs U et al. Legalon SIL: the antidote of choice in patients with acute hepatotoxicity from amatoxin poisoning. Curr Pharm Biotechnol 2012;13:1964-70."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1212,7 +1487,12 @@
     "slug": "theophylline-caffeine-toxicity",
     "name": "Theophylline / caffeine toxicity (methylxanthines)",
     "oneLiner": "Tachycardia + tremor + vomiting + agitation; severe: ventricular arrhythmias, refractory seizures, profound hypokalaemia + hyperglycaemia + metabolic acidosis. Multi-dose activated charcoal; haemodialysis for severe.",
-    "domains": ["toxicology", "emergency", "cardiology", "critical-care"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "cardiology",
+      "critical-care"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia, atrial / ventricular arrhythmias",
@@ -1223,7 +1503,12 @@
       "skin": "warm, flushed, diaphoretic",
       "mentalStatus": "anxiety → agitation → seizures (often refractory)",
       "bowelSounds": "vomiting, abdominal pain (haematemesis possible)",
-      "other": ["PROFOUND HYPOKALAEMIA — intracellular shift, β2-mediated", "HYPERGLYCAEMIA, HYPOMAGNESAEMIA, HYPOPHOSPHATAEMIA", "LACTIC ACIDOSIS", "supraventricular + ventricular tachyarrhythmias"]
+      "other": [
+        "PROFOUND HYPOKALAEMIA — intracellular shift, β2-mediated",
+        "HYPERGLYCAEMIA, HYPOMAGNESAEMIA, HYPOPHOSPHATAEMIA",
+        "LACTIC ACIDOSIS",
+        "supraventricular + ventricular tachyarrhythmias"
+      ]
     },
     "causativeAgents": [
       "theophylline / aminophylline (oral, IV) — narrow therapeutic index (10-20 mg/L)",
@@ -1257,8 +1542,12 @@
       "Co-ingestion with caffeine + other stimulants common."
     ],
     "references": [
-      { "label": "Ghannoum M et al. Extracorporeal treatment for theophylline poisoning: systematic review and recommendations from the EXTRIP workgroup. Clin Toxicol 2015;53:215-29." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Methylxanthines." }
+      {
+        "label": "Ghannoum M et al. Extracorporeal treatment for theophylline poisoning: systematic review and recommendations from the EXTRIP workgroup. Clin Toxicol 2015;53:215-29."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Methylxanthines."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1268,7 +1557,12 @@
     "slug": "sulfonylurea-hypoglycaemia",
     "name": "Sulfonylurea-induced hypoglycaemia",
     "oneLiner": "Prolonged, RECURRENT hypoglycaemia (hours to days). Glucose alone is INSUFFICIENT — stimulates more insulin. Octreotide 50-75 µg SC q6h is the cornerstone (suppresses insulin secretion); dextrose for acute resuscitation; admit for ≥ 24 h.",
-    "domains": ["toxicology", "emergency", "endocrinology", "geriatrics"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "endocrinology",
+      "geriatrics"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia (catecholamine response) or normal if β-blocked",
@@ -1279,7 +1573,12 @@
       "skin": "diaphoretic, pale",
       "mentalStatus": "confusion, focal deficit (stroke mimic), seizures, coma — RECURRENT despite glucose",
       "bowelSounds": "normal",
-      "other": ["RECURRENT HYPOGLYCAEMIA — multiple episodes hours after initial resuscitation", "low glucose + high C-peptide + high insulin (endogenous secretion)", "elderly with renal impairment most at risk", "drug interactions (sulfa antibiotics, fluoroquinolones, β-blockers) potentiate effect"]
+      "other": [
+        "RECURRENT HYPOGLYCAEMIA — multiple episodes hours after initial resuscitation",
+        "low glucose + high C-peptide + high insulin (endogenous secretion)",
+        "elderly with renal impairment most at risk",
+        "drug interactions (sulfa antibiotics, fluoroquinolones, β-blockers) potentiate effect"
+      ]
     },
     "causativeAgents": [
       "long-acting sulfonylureas — glibenclamide (glyburide), chlorpropamide — highest risk",
@@ -1314,8 +1613,12 @@
       "Intentional overdose — psychiatric review."
     ],
     "references": [
-      { "label": "McLaughlin SA et al. Octreotide: an antidote for sulfonylurea-induced hypoglycemia. Ann Emerg Med 2000;36:133-8." },
-      { "label": "Glatstein M et al. Octreotide for the treatment of sulfonylurea poisoning. Clin Toxicol 2012;50:795-804." }
+      {
+        "label": "McLaughlin SA et al. Octreotide: an antidote for sulfonylurea-induced hypoglycemia. Ann Emerg Med 2000;36:133-8."
+      },
+      {
+        "label": "Glatstein M et al. Octreotide for the treatment of sulfonylurea poisoning. Clin Toxicol 2012;50:795-804."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1325,7 +1628,12 @@
     "slug": "local-anaesthetic-systemic-toxicity",
     "name": "Local anaesthetic systemic toxicity (LAST)",
     "oneLiner": "Tinnitus + perioral numbness + metallic taste → seizures → ventricular arrhythmias / cardiac arrest after regional anaesthesia or accidental IV bolus. Intralipid 20% emulsion is the cornerstone — start IMMEDIATELY at first sign.",
-    "domains": ["toxicology", "emergency", "anaesthesia", "critical-care"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "anaesthesia",
+      "critical-care"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "early: hypertension + tachycardia; late: bradycardia, asystole, VT/VF",
@@ -1336,7 +1644,11 @@
       "skin": "normal",
       "mentalStatus": "tinnitus → perioral numbness → metallic taste → agitation → seizures → coma → cardiac arrest within minutes",
       "bowelSounds": "normal",
-      "other": ["WIDE QRS, conduction block, ventricular arrhythmia — Na-channel blockade", "PROLONGED RESUSCITATION may be needed — LAST cardiac arrest can resolve over 60+ min", "bupivacaine is the worst offender — most lipophilic + cardiotoxic"]
+      "other": [
+        "WIDE QRS, conduction block, ventricular arrhythmia — Na-channel blockade",
+        "PROLONGED RESUSCITATION may be needed — LAST cardiac arrest can resolve over 60+ min",
+        "bupivacaine is the worst offender — most lipophilic + cardiotoxic"
+      ]
     },
     "causativeAgents": [
       "bupivacaine, levobupivacaine, ropivacaine — most cardiotoxic",
@@ -1373,8 +1685,12 @@
       "ECMO availability — early activation for refractory arrest."
     ],
     "references": [
-      { "label": "Neal JM et al. ASRA practice advisory on local anesthetic systemic toxicity. Reg Anesth Pain Med 2018;43:113-23." },
-      { "label": "AAGBI: Management of severe local anaesthetic toxicity (Safety Guideline) 2010." }
+      {
+        "label": "Neal JM et al. ASRA practice advisory on local anesthetic systemic toxicity. Reg Anesth Pain Med 2018;43:113-23."
+      },
+      {
+        "label": "AAGBI: Management of severe local anaesthetic toxicity (Safety Guideline) 2010."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1384,7 +1700,12 @@
     "slug": "alcohol-withdrawal-syndrome",
     "name": "Alcohol withdrawal syndrome (AWS / DTs)",
     "oneLiner": "6-24 h after last drink: tremor + tachycardia + diaphoresis + anxiety → 24-48 h alcoholic hallucinosis / withdrawal seizures → 48-96 h delirium tremens (severe autonomic + global confusion). Long-acting benzodiazepines + CIWA-Ar guided dosing. THIAMINE BEFORE GLUCOSE.",
-    "domains": ["toxicology", "emergency", "addiction-medicine", "psychiatry"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "addiction-medicine",
+      "psychiatry"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia (often > 100)",
@@ -1395,7 +1716,12 @@
       "skin": "diaphoretic",
       "mentalStatus": "anxiety → tremulousness → hallucinations (visual / tactile in alcoholic hallucinosis with intact orientation) → DELIRIUM with global confusion, agitation, fluctuating consciousness in DTs",
       "bowelSounds": "nausea, vomiting",
-      "other": ["TREMOR — coarse, postural, hands", "WITHDRAWAL SEIZURES — typically GTC, 24-48 h post-cessation; may herald DTs", "DELIRIUM TREMENS — high mortality (5-15% untreated); 48-96 h post-cessation", "Wernicke's encephalopathy: ophthalmoplegia + ataxia + confusion — give thiamine BEFORE glucose"]
+      "other": [
+        "TREMOR — coarse, postural, hands",
+        "WITHDRAWAL SEIZURES — typically GTC, 24-48 h post-cessation; may herald DTs",
+        "DELIRIUM TREMENS — high mortality (5-15% untreated); 48-96 h post-cessation",
+        "Wernicke's encephalopathy: ophthalmoplegia + ataxia + confusion — give thiamine BEFORE glucose"
+      ]
     },
     "causativeAgents": [
       "alcohol cessation in heavy chronic drinker (often inadvertent — admission for unrelated reason)",
@@ -1434,8 +1760,12 @@
       "Pregnancy + AWS — same management; benzodiazepines preferable to seizures / DTs."
     ],
     "references": [
-      { "label": "Mayo-Smith MF et al. Management of alcohol withdrawal delirium: an evidence-based practice guideline. Arch Intern Med 2004;164:1405-12." },
-      { "label": "NICE CG100: Alcohol-use disorders: diagnosis and clinical management of alcohol-related physical complications. 2010 (updated)." }
+      {
+        "label": "Mayo-Smith MF et al. Management of alcohol withdrawal delirium: an evidence-based practice guideline. Arch Intern Med 2004;164:1405-12."
+      },
+      {
+        "label": "NICE CG100: Alcohol-use disorders: diagnosis and clinical management of alcohol-related physical complications. 2010 (updated)."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1445,7 +1775,12 @@
     "slug": "opioid-withdrawal-syndrome",
     "name": "Opioid withdrawal syndrome",
     "oneLiner": "Distinct from intoxication: mydriasis + lacrimation + rhinorrhoea + piloerection + yawning + GI cramps + diarrhoea + dysphoria. Rarely life-threatening but very distressing. Buprenorphine induction (use COWS) is modern best practice.",
-    "domains": ["toxicology", "emergency", "addiction-medicine", "psychiatry"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "addiction-medicine",
+      "psychiatry"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -1456,7 +1791,11 @@
       "skin": "PILOERECTION (gooseflesh), diaphoresis, lacrimation, rhinorrhoea — autonomic features",
       "mentalStatus": "anxious, dysphoric, restless, drug-seeking; mentation intact",
       "bowelSounds": "hyperactive — abdominal cramps, nausea, vomiting, diarrhoea",
-      "other": ["yawning, sneezing, muscle aches", "COWS score quantifies severity", "neonatal abstinence syndrome in newborns of opioid-using mothers (irritability, high-pitched cry, poor feeding)"]
+      "other": [
+        "yawning, sneezing, muscle aches",
+        "COWS score quantifies severity",
+        "neonatal abstinence syndrome in newborns of opioid-using mothers (irritability, high-pitched cry, poor feeding)"
+      ]
     },
     "causativeAgents": [
       "cessation of long-term opioid use (heroin, prescription opioids, methadone, buprenorphine)",
@@ -1491,8 +1830,12 @@
       "Polysubstance use, fentanyl analogues / nitazenes — incomplete reversal common."
     ],
     "references": [
-      { "label": "WHO Guidelines for the Identification and Management of Substance Use and Substance Use Disorders in Pregnancy. 2014." },
-      { "label": "ASAM National Practice Guideline for the Treatment of Opioid Use Disorder. 2020 focused update." }
+      {
+        "label": "WHO Guidelines for the Identification and Management of Substance Use and Substance Use Disorders in Pregnancy. 2014."
+      },
+      {
+        "label": "ASAM National Practice Guideline for the Treatment of Opioid Use Disorder. 2020 focused update."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1502,7 +1845,12 @@
     "slug": "inhalant-abuse",
     "name": "Inhalant abuse (volatile solvents / huffing / sudden sniffing death)",
     "oneLiner": "Euphoria + dizziness + confusion after huffing solvents / aerosols; risk of SUDDEN SNIFFING DEATH from catecholamine-sensitised cardiac arrhythmia. Avoid catecholamines; use β-blocker for arrhythmia.",
-    "domains": ["toxicology", "emergency", "addiction-medicine", "adolescent-medicine"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "addiction-medicine",
+      "adolescent-medicine"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachyarrhythmia, sudden VF",
@@ -1513,7 +1861,10 @@
       "skin": "perioral / nasal dermatitis ('huffer's rash') — distinctive; solvent smell on breath / clothing",
       "mentalStatus": "euphoria → ataxia → confusion → coma",
       "bowelSounds": "normal",
-      "other": ["SUDDEN SNIFFING DEATH SYNDROME — catecholamine-sensitised myocardium + halogenated hydrocarbon → VF on startle / exertion", "chronic abuse: peripheral neuropathy (n-hexane), encephalopathy (toluene), hepatorenal toxicity (chlorinated hydrocarbons), bone marrow suppression (benzene)"]
+      "other": [
+        "SUDDEN SNIFFING DEATH SYNDROME — catecholamine-sensitised myocardium + halogenated hydrocarbon → VF on startle / exertion",
+        "chronic abuse: peripheral neuropathy (n-hexane), encephalopathy (toluene), hepatorenal toxicity (chlorinated hydrocarbons), bone marrow suppression (benzene)"
+      ]
     },
     "causativeAgents": [
       "halogenated hydrocarbons: 1,1-difluoroethane (computer duster, refrigerants), tetrafluoroethane — SUDDEN DEATH RISK",
@@ -1551,8 +1902,12 @@
       "Perioral 'huffer's rash' + glue smell — pathognomonic."
     ],
     "references": [
-      { "label": "Bowen SE. Two serious and challenging medical complications associated with volatile substance misuse: sudden sniffing death and fetal solvent syndrome. Subst Use Misuse 2011;46(Suppl 1):68-72." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Inhalants." }
+      {
+        "label": "Bowen SE. Two serious and challenging medical complications associated with volatile substance misuse: sudden sniffing death and fetal solvent syndrome. Subst Use Misuse 2011;46(Suppl 1):68-72."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Inhalants."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1562,7 +1917,12 @@
     "slug": "ghb-gbl-overdose",
     "name": "GHB / GBL overdose",
     "oneLiner": "Coma → ABRUPT AWAKENING 1-4 h later (the 'club drug coma'). Bradycardia, hypothermia, respiratory depression. Naloxone / flumazenil ineffective. Pure supportive care; avoid intubation if airway protected and awakening expected.",
-    "domains": ["toxicology", "emergency", "addiction-medicine", "anaesthesia"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "addiction-medicine",
+      "anaesthesia"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "bradycardia",
@@ -1573,7 +1933,11 @@
       "skin": "cool",
       "mentalStatus": "rapid-onset coma (15-30 min after dose) → ABRUPT AWAKENING 1-4 h later, often combative or confused on emergence",
       "bowelSounds": "normal",
-      "other": ["MYOCLONIC JERKS / seizure-like activity during coma — not true seizure", "rapid-onset, narrow therapeutic-toxic window", "concomitant alcohol / MDMA / methamphetamine common"]
+      "other": [
+        "MYOCLONIC JERKS / seizure-like activity during coma — not true seizure",
+        "rapid-onset, narrow therapeutic-toxic window",
+        "concomitant alcohol / MDMA / methamphetamine common"
+      ]
     },
     "causativeAgents": [
       "gamma-hydroxybutyrate (GHB) — date-rape drug, recreational, narcolepsy treatment (sodium oxybate)",
@@ -1607,8 +1971,12 @@
       "Combative emergence — anticipate, plan for environment safety."
     ],
     "references": [
-      { "label": "Liechti ME et al. Pharmacology and toxicology of gamma-hydroxybutyrate. CNS Drug Rev 2006." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — γ-Hydroxybutyric Acid." }
+      {
+        "label": "Liechti ME et al. Pharmacology and toxicology of gamma-hydroxybutyrate. CNS Drug Rev 2006."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — γ-Hydroxybutyric Acid."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1618,7 +1986,12 @@
     "slug": "datura-plant-anticholinergic",
     "name": "Datura / plant-based anticholinergic poisoning",
     "oneLiner": "Adolescent or unintentional ingestion of Datura / jimsonweed / Brugmansia: severe anticholinergic toxidrome — hours of agitated delirium with mydriasis, dry skin, hyperthermia, urinary retention. Benzodiazepines first-line; physostigmine if pure delirium + normal ECG.",
-    "domains": ["toxicology", "emergency", "psychiatry", "adolescent-medicine"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "psychiatry",
+      "adolescent-medicine"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia (often 120-160)",
@@ -1629,7 +2002,10 @@
       "skin": "dry, hot, flushed",
       "mentalStatus": "agitated delirium, picking behaviour, vivid hallucinations (lilliputian visual common), often dramatic for hours",
       "bowelSounds": "absent (ileus); urinary retention",
-      "other": ["PROLONGED COURSE — symptoms can last 24-72 h (longer than typical pharmaceutical anticholinergic) because plant alkaloids absorb slowly + persist", "seeds ('thorn-apple') and tea preparations common in adolescent recreational use"]
+      "other": [
+        "PROLONGED COURSE — symptoms can last 24-72 h (longer than typical pharmaceutical anticholinergic) because plant alkaloids absorb slowly + persist",
+        "seeds ('thorn-apple') and tea preparations common in adolescent recreational use"
+      ]
     },
     "causativeAgents": [
       "Datura stramonium (jimsonweed, thorn apple) — seeds, leaves, tea",
@@ -1666,8 +2042,12 @@
       "Adolescent recreational use — common cluster outbreaks (Datura tea recipes circulating); public health implications."
     ],
     "references": [
-      { "label": "Wiebe TH et al. Datura stramonium intoxication: a clinical and pharmacological review. Clin Toxicol 2008." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Anticholinergics." }
+      {
+        "label": "Wiebe TH et al. Datura stramonium intoxication: a clinical and pharmacological review. Clin Toxicol 2008."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Anticholinergics."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1677,7 +2057,12 @@
     "slug": "synthetic-cannabinoid-cathinone",
     "name": "Synthetic cannabinoid / synthetic cathinone (bath salts) intoxication",
     "oneLiner": "Atypical sympathomimetic — extreme agitation, paranoid psychosis, hyperthermia, rhabdomyolysis, ACUTE KIDNEY INJURY (cathinones especially), seizures. Urine drug screen negative for cannabis / amphetamine. Benzodiazepines + cooling + supportive.",
-    "domains": ["toxicology", "emergency", "psychiatry", "nephrology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "psychiatry",
+      "nephrology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia (often > 130)",
@@ -1688,7 +2073,12 @@
       "skin": "diaphoretic, agitated",
       "mentalStatus": "extreme agitation, paranoia, psychosis, hallucinations, violent behaviour",
       "bowelSounds": "hyperactive",
-      "other": ["RHABDOMYOLYSIS with renal failure — particularly cathinones (\"bath salts\") and synthetic cannabinoids (Spice / K2)", "seizures more common than with classical cannabis / amphetamines", "MDPV (cathinone) often causes prolonged psychosis / re-presentation cycles", "urine drug screen typically negative — laboratory diagnosis difficult"]
+      "other": [
+        "RHABDOMYOLYSIS with renal failure — particularly cathinones (\"bath salts\") and synthetic cannabinoids (Spice / K2)",
+        "seizures more common than with classical cannabis / amphetamines",
+        "MDPV (cathinone) often causes prolonged psychosis / re-presentation cycles",
+        "urine drug screen typically negative — laboratory diagnosis difficult"
+      ]
     },
     "causativeAgents": [
       "synthetic cannabinoids: 'Spice', 'K2', 'Black Mamba', AB-FUBINACA, MDMB-CHMICA, ADB-PINACA — potent CB1 receptor full agonists (vs partial agonist THC)",
@@ -1725,8 +2115,12 @@
       "Prolonged psychosis — psychiatric admission; reassess capacity."
     ],
     "references": [
-      { "label": "Spaderna M et al. Spicing things up: synthetic cannabinoids. Psychopharmacology 2013;228:525-40." },
-      { "label": "Prosser JM, Nelson LS. The toxicology of bath salts: a review of synthetic cathinones. J Med Toxicol 2012;8:33-42." }
+      {
+        "label": "Spaderna M et al. Spicing things up: synthetic cannabinoids. Psychopharmacology 2013;228:525-40."
+      },
+      {
+        "label": "Prosser JM, Nelson LS. The toxicology of bath salts: a review of synthetic cathinones. J Med Toxicol 2012;8:33-42."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1736,7 +2130,12 @@
     "slug": "malignant-hyperthermia",
     "name": "Malignant hyperthermia (MH) — anaesthesia trigger",
     "oneLiner": "Hypermetabolic crisis in the operating theatre: rising end-tidal CO₂ + masseter spasm + tachycardia + hyperthermia + acidosis after volatile anaesthetic or succinylcholine. DANTROLENE 2.5 mg/kg IV immediately, repeat to 10 mg/kg total. STOP trigger, switch to non-triggering agent.",
-    "domains": ["toxicology", "emergency", "anaesthesia", "critical-care"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "anaesthesia",
+      "critical-care"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia (often the earliest sign)",
@@ -1747,7 +2146,13 @@
       "skin": "diaphoretic, mottled cyanosis as O₂ extraction overwhelmed",
       "mentalStatus": "anaesthetised — diagnosed by physiology",
       "bowelSounds": "not applicable",
-      "other": ["MASSETER SPASM after succinylcholine — early clue", "HYPERCARBIA out of proportion to ventilation — KEY early sign", "metabolic + respiratory mixed acidosis", "hyperkalaemia (rhabdomyolysis)", "muscle rigidity, dark cola urine (myoglobinuria), DIC late"]
+      "other": [
+        "MASSETER SPASM after succinylcholine — early clue",
+        "HYPERCARBIA out of proportion to ventilation — KEY early sign",
+        "metabolic + respiratory mixed acidosis",
+        "hyperkalaemia (rhabdomyolysis)",
+        "muscle rigidity, dark cola urine (myoglobinuria), DIC late"
+      ]
     },
     "causativeAgents": [
       "VOLATILE ANAESTHETICS: halothane (highest risk), isoflurane, sevoflurane, desflurane, enflurane",
@@ -1789,8 +2194,12 @@
       "MHAUS / national MH hotline available 24/7 — call for guidance during a crisis."
     ],
     "references": [
-      { "label": "Glahn KP et al. Recognizing and managing a malignant hyperthermia crisis: guidelines from the European MH Group. Br J Anaesth 2010;105:417-20." },
-      { "label": "MHAUS — Malignant Hyperthermia Association of the United States (www.mhaus.org), hotline +1-800-MH-HYPER." }
+      {
+        "label": "Glahn KP et al. Recognizing and managing a malignant hyperthermia crisis: guidelines from the European MH Group. Br J Anaesth 2010;105:417-20."
+      },
+      {
+        "label": "MHAUS — Malignant Hyperthermia Association of the United States (www.mhaus.org), hotline +1-800-MH-HYPER."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1800,7 +2209,11 @@
     "slug": "strychnine-poisoning",
     "name": "Strychnine poisoning",
     "oneLiner": "AWAKE patient with painful generalised muscle spasms / opisthotonos / risus sardonicus triggered by stimuli, between attacks completely lucid (distinguishes from seizure / tetanus). Aggressive benzodiazepines + paralysis + ventilation; cooling.",
-    "domains": ["toxicology", "emergency", "critical-care"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -1811,7 +2224,12 @@
       "skin": "diaphoretic",
       "mentalStatus": "LUCID between spasms — KEY differentiator from seizure (post-ictal confusion absent)",
       "bowelSounds": "normal",
-      "other": ["RISUS SARDONICUS, OPISTHOTONOS, generalised painful spasms triggered by minor stimuli (light, sound, touch)", "spasms last 30-90 seconds then relax", "rhabdomyolysis with myoglobinuric renal failure", "high anion gap metabolic / lactic acidosis"]
+      "other": [
+        "RISUS SARDONICUS, OPISTHOTONOS, generalised painful spasms triggered by minor stimuli (light, sound, touch)",
+        "spasms last 30-90 seconds then relax",
+        "rhabdomyolysis with myoglobinuric renal failure",
+        "high anion gap metabolic / lactic acidosis"
+      ]
     },
     "causativeAgents": [
       "strychnine — rodenticide (largely phased out but persists in some countries / illegal use)",
@@ -1847,8 +2265,12 @@
       "Hyperthermia overshoot during paralysis — monitor core temperature."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Strychnine." },
-      { "label": "Wood DM et al. Case report: survival after deliberate strychnine self-poisoning. Crit Care 2002;6:456-9." }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Strychnine."
+      },
+      {
+        "label": "Wood DM et al. Case report: survival after deliberate strychnine self-poisoning. Crit Care 2002;6:456-9."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1858,7 +2280,11 @@
     "slug": "nsaid-overdose",
     "name": "NSAID overdose",
     "oneLiner": "Most NSAID overdoses are benign (nausea, abdominal pain). Severe ingestion: AKI, seizures (mefenamic acid + bupropion-class), metabolic acidosis, GI haemorrhage. Supportive care; activated charcoal early; no specific antidote.",
-    "domains": ["toxicology", "emergency", "nephrology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "nephrology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia (volume loss / acidosis)",
@@ -1869,7 +2295,13 @@
       "skin": "pallor with GI bleed",
       "mentalStatus": "normal usually; seizures with mefenamic acid; coma with massive ibuprofen",
       "bowelSounds": "hyperactive with abdominal pain; haematemesis / melaena if GI bleed",
-      "other": ["ACUTE KIDNEY INJURY — prostaglandin-dependent renal blood flow", "metabolic acidosis — high anion gap in massive ibuprofen ingestion", "SEIZURES — mefenamic acid the classical offender, often within 4-6 h of ingestion", "PEPTIC ULCER / GI HAEMORRHAGE", "rare: aseptic meningitis (ibuprofen, SLE patients)"]
+      "other": [
+        "ACUTE KIDNEY INJURY — prostaglandin-dependent renal blood flow",
+        "metabolic acidosis — high anion gap in massive ibuprofen ingestion",
+        "SEIZURES — mefenamic acid the classical offender, often within 4-6 h of ingestion",
+        "PEPTIC ULCER / GI HAEMORRHAGE",
+        "rare: aseptic meningitis (ibuprofen, SLE patients)"
+      ]
     },
     "causativeAgents": [
       "ibuprofen, naproxen, diclofenac (common over-the-counter)",
@@ -1906,8 +2338,12 @@
       "Pregnancy — premature closure of ductus arteriosus from late-T3 NSAID use; obstetric input."
     ],
     "references": [
-      { "label": "Hall AH et al. Ibuprofen overdose: 126 cases. Ann Emerg Med 1986;15:1308-13." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Nonsteroidal Anti-inflammatory Drugs." }
+      {
+        "label": "Hall AH et al. Ibuprofen overdose: 126 cases. Ann Emerg Med 1986;15:1308-13."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Nonsteroidal Anti-inflammatory Drugs."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1917,7 +2353,12 @@
     "slug": "isoniazid-toxicity",
     "name": "Isoniazid (INH) toxicity",
     "oneLiner": "Classic triad: refractory seizures + metabolic (lactic) acidosis + coma after INH overdose. Pyridoxine is the antidote — give gram-for-gram with the ingested INH (or 70 mg/kg, max 5 g, if dose unknown).",
-    "domains": ["toxicology", "emergency", "critical-care", "neurology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "neurology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -1928,7 +2369,10 @@
       "skin": "normal; may be diaphoretic",
       "mentalStatus": "agitation → seizures (often status, anticonvulsant-refractory) → coma",
       "bowelSounds": "nausea, vomiting common early",
-      "other": ["high anion-gap metabolic (lactic) acidosis", "seizures typically within 30-120 min of large ingestion"]
+      "other": [
+        "high anion-gap metabolic (lactic) acidosis",
+        "seizures typically within 30-120 min of large ingestion"
+      ]
     },
     "causativeAgents": [
       "isoniazid (anti-tuberculous therapy) — acute overdose, often intentional",
@@ -1956,8 +2400,12 @@
       "Massive ingestion with renal impairment — consider haemodialysis."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Antituberculous Medications (isoniazid)." },
-      { "label": "Morrow LE et al. Pyridoxine for isoniazid-induced seizures — poison centre experience. Am J Emerg Med 2018." }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Antituberculous Medications (isoniazid)."
+      },
+      {
+        "label": "Morrow LE et al. Pyridoxine for isoniazid-induced seizures — poison centre experience. Am J Emerg Med 2018."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -1967,7 +2415,11 @@
     "slug": "methaemoglobinaemia",
     "name": "Methaemoglobinaemia",
     "oneLiner": "Cyanosis unresponsive to oxygen + 'chocolate-brown' blood + saturation gap (SpO₂ ~ 85% that won't rise). Methylene blue 1-2 mg/kg IV slowly — but withhold/seek alternative in G6PD deficiency.",
-    "domains": ["toxicology", "emergency", "critical-care"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -1978,7 +2430,12 @@
       "skin": "central cyanosis (slate-grey) that does NOT improve with supplemental oxygen",
       "mentalStatus": "headache, fatigue → confusion, coma at high methaemoglobin levels",
       "bowelSounds": "normal",
-      "other": ["chocolate-brown arterial blood", "pulse-oximetry 'saturation gap' (SpO₂ plateaus ~ 85%)", "normal PaO₂ on blood gas despite cyanosis", "symptoms broadly correlate with MetHb %: > 20% symptomatic, > 50% severe, > 70% potentially fatal"]
+      "other": [
+        "chocolate-brown arterial blood",
+        "pulse-oximetry 'saturation gap' (SpO₂ plateaus ~ 85%)",
+        "normal PaO₂ on blood gas despite cyanosis",
+        "symptoms broadly correlate with MetHb %: > 20% symptomatic, > 50% severe, > 70% potentially fatal"
+      ]
     },
     "causativeAgents": [
       "oxidising drugs: dapsone, local anaesthetics (benzocaine, prilocaine, lidocaine), nitrates/nitrites, sulfonamides, metoclopramide, primaquine",
@@ -2007,8 +2464,12 @@
       "Failure to respond to methylene blue — reconsider G6PD deficiency, sulfhaemoglobinaemia, or ongoing absorption."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Methemoglobin Inducers." },
-      { "label": "Cortazzo JA, Lichtman AD. Methemoglobinemia: a review and recommendations for management. J Cardiothorac Vasc Anesth 2014." }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Methemoglobin Inducers."
+      },
+      {
+        "label": "Cortazzo JA, Lichtman AD. Methemoglobinemia: a review and recommendations for management. J Cardiothorac Vasc Anesth 2014."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2018,7 +2479,12 @@
     "slug": "valproate-toxicity",
     "name": "Valproic acid (sodium valproate) toxicity",
     "oneLiner": "CNS depression + hyperammonaemia (even with normal LFTs) ± metabolic acidosis after VPA overdose. Supportive care; L-carnitine for hyperammonaemic encephalopathy / hepatotoxicity; haemodialysis for massive/severe poisoning.",
-    "domains": ["toxicology", "emergency", "critical-care", "neurology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "neurology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -2029,7 +2495,14 @@
       "skin": "normal",
       "mentalStatus": "drowsiness → coma; hyperammonaemic encephalopathy (confusion, asterixis) even without hepatic failure",
       "bowelSounds": "nausea, vomiting",
-      "other": ["hyperammonaemia", "high anion-gap metabolic acidosis", "hypernatraemia (sodium load)", "hypocalcaemia", "thrombocytopenia / bone marrow suppression", "cerebral oedema in severe cases"]
+      "other": [
+        "hyperammonaemia",
+        "high anion-gap metabolic acidosis",
+        "hypernatraemia (sodium load)",
+        "hypocalcaemia",
+        "thrombocytopenia / bone marrow suppression",
+        "cerebral oedema in severe cases"
+      ]
     },
     "causativeAgents": [
       "sodium valproate / valproic acid / divalproex — acute overdose",
@@ -2055,8 +2528,12 @@
       "Hepatotoxicity or bone-marrow suppression."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Valproic Acid." },
-      { "label": "Perrott J et al. L-carnitine for acute valproic acid overdose: a systematic review of published cases. Ann Pharmacother 2010." }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Valproic Acid."
+      },
+      {
+        "label": "Perrott J et al. L-carnitine for acute valproic acid overdose: a systematic review of published cases. Ann Pharmacother 2010."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2066,7 +2543,12 @@
     "slug": "superwarfarin-rodenticide-toxicity",
     "name": "Superwarfarin (long-acting anticoagulant rodenticide) poisoning",
     "oneLiner": "Brodifacoum and other 'superwarfarins' cause profound, PROLONGED coagulopathy (weeks to months). Treat bleeding with vitamin K1 + factors; expect to need very high-dose oral vitamin K1 for weeks-to-months, guided by INR.",
-    "domains": ["toxicology", "emergency", "haematology", "critical-care"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "haematology",
+      "critical-care"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "normal unless bleeding/shock",
@@ -2077,7 +2559,11 @@
       "skin": "bruising, ecchymoses, bleeding gums, haematuria",
       "mentalStatus": "normal unless intracranial haemorrhage",
       "bowelSounds": "normal; GI bleeding may occur",
-      "other": ["markedly prolonged INR/PT (factors II, VII, IX, X)", "delayed onset (peak coagulopathy ~ 1-2 days)", "brodifacoum half-life up to 20-30 days → coagulopathy persists for weeks to months"]
+      "other": [
+        "markedly prolonged INR/PT (factors II, VII, IX, X)",
+        "delayed onset (peak coagulopathy ~ 1-2 days)",
+        "brodifacoum half-life up to 20-30 days → coagulopathy persists for weeks to months"
+      ]
     },
     "causativeAgents": [
       "brodifacoum, difenacoum, bromadiolone, difethialone (second-generation anticoagulant rodenticides)",
@@ -2105,8 +2591,12 @@
       "Intentional/contaminated exposures — consider co-ingestants and toxicology/haematology referral."
     ],
     "references": [
-      { "label": "King N, Tran MH. Long-acting anticoagulant rodenticide (superwarfarin) poisoning: pathophysiology to laboratory-guided clinical management. Transfus Med Rev 2015." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Antithrombotics / rodenticides." }
+      {
+        "label": "King N, Tran MH. Long-acting anticoagulant rodenticide (superwarfarin) poisoning: pathophysiology to laboratory-guided clinical management. Transfus Med Rev 2015."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Antithrombotics / rodenticides."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2116,7 +2606,12 @@
     "slug": "hydrofluoric-acid-toxicity",
     "name": "Hydrofluoric acid (HF) exposure",
     "oneLiner": "Severe, often delayed pain out of proportion to a deceptively minor-looking burn; fluoride chelates calcium/magnesium → life-threatening hypocalcaemia, hypomagnesaemia, hyperkalaemia and arrhythmia. Calcium is the antidote (topical gel, then SC/IV/intra-arterial).",
-    "domains": ["toxicology", "emergency", "critical-care", "occupational-health"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "occupational-health"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "arrhythmias (VT/VF) from hypocalcaemia/hyperkalaemia",
@@ -2127,7 +2622,12 @@
       "skin": "burn may look minor initially; severe deep pain; whitening/blistering develops; pain out of proportion to appearance",
       "mentalStatus": "anxiety, then obtundation if profound electrolyte derangement",
       "bowelSounds": "vomiting with ingestion",
-      "other": ["hypocalcaemia (Chvostek/Trousseau, prolonged QT)", "hypomagnesaemia", "hyperkalaemia", "ECG changes / arrhythmia"]
+      "other": [
+        "hypocalcaemia (Chvostek/Trousseau, prolonged QT)",
+        "hypomagnesaemia",
+        "hyperkalaemia",
+        "ECG changes / arrhythmia"
+      ]
     },
     "causativeAgents": [
       "industrial and domestic hydrofluoric acid (glass etching, rust removers, semiconductor cleaning, wheel cleaners)",
@@ -2154,8 +2654,12 @@
       "Inhalation — airway oedema and pulmonary toxicity; ingestion — corrosive plus systemic fluoride."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Hydrofluoric Acid and Fluorides." },
-      { "label": "McKee D et al. A review of hydrofluoric acid burn management. Plast Surg (Oakv) 2014." }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Hydrofluoric Acid and Fluorides."
+      },
+      {
+        "label": "McKee D et al. A review of hydrofluoric acid burn management. Plast Surg (Oakv) 2014."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2165,7 +2669,12 @@
     "slug": "dapsone-toxicity",
     "name": "Dapsone toxicity",
     "oneLiner": "Methaemoglobinaemia + haemolytic anaemia from a very long-acting oxidant (half-life prolonged by enterohepatic recycling). Methylene blue for methaemoglobinaemia + multi-dose activated charcoal to shorten the half-life.",
-    "domains": ["toxicology", "emergency", "critical-care", "haematology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "haematology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -2176,7 +2685,11 @@
       "skin": "cyanosis (methaemoglobinaemia) unresponsive to oxygen; pallor/jaundice from haemolysis",
       "mentalStatus": "headache, lethargy → confusion in severe methaemoglobinaemia",
       "bowelSounds": "nausea, vomiting",
-      "other": ["recurrent/prolonged methaemoglobinaemia (dapsone half-life up to ~ 80 h with enterohepatic recirculation)", "haemolytic anaemia (Heinz bodies)", "saturation gap on pulse oximetry"]
+      "other": [
+        "recurrent/prolonged methaemoglobinaemia (dapsone half-life up to ~ 80 h with enterohepatic recirculation)",
+        "haemolytic anaemia (Heinz bodies)",
+        "saturation gap on pulse oximetry"
+      ]
     },
     "causativeAgents": [
       "dapsone (leprosy, dermatitis herpetiformis, PCP prophylaxis) — overdose or therapeutic accumulation",
@@ -2202,8 +2715,12 @@
       "High methaemoglobin with end-organ hypoxia."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Methemoglobin Inducers (dapsone)." },
-      { "label": "Hall AH et al. Dapsone overdose / methemoglobinemia management. Clinical toxicology literature." }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Methemoglobin Inducers (dapsone)."
+      },
+      {
+        "label": "Hall AH et al. Dapsone overdose / methemoglobinemia management. Clinical toxicology literature."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2213,7 +2730,12 @@
     "slug": "baclofen-toxicity",
     "name": "Baclofen toxicity",
     "oneLiner": "GABA-B agonist overdose: profound CNS depression, respiratory depression, seizures, can mimic brain death — but recovers. No antidote; supportive ICU care. Reinstate baclofen on recovery to prevent dangerous withdrawal.",
-    "domains": ["toxicology", "emergency", "critical-care", "neurology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "neurology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "bradycardia (or tachycardia)",
@@ -2224,7 +2746,12 @@
       "skin": "normal",
       "mentalStatus": "rapid coma; may appear brain-dead (absent brainstem reflexes) yet recover after 24-48 h",
       "bowelSounds": "reduced",
-      "other": ["seizures", "flaccidity or hyperreflexia", "delayed neurological recovery", "withdrawal 24-72 h later if chronic use stopped abruptly"]
+      "other": [
+        "seizures",
+        "flaccidity or hyperreflexia",
+        "delayed neurological recovery",
+        "withdrawal 24-72 h later if chronic use stopped abruptly"
+      ]
     },
     "causativeAgents": [
       "oral baclofen overdose",
@@ -2253,8 +2780,12 @@
       "Refractory seizures."
     ],
     "references": [
-      { "label": "Leung NY et al. Baclofen overdose: defining the spectrum of toxicity. Emerg Med Australas 2006." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Muscle relaxants (baclofen)." }
+      {
+        "label": "Leung NY et al. Baclofen overdose: defining the spectrum of toxicity. Emerg Med Australas 2006."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Muscle relaxants (baclofen)."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2264,7 +2795,12 @@
     "slug": "clonidine-imidazoline-toxicity",
     "name": "Clonidine / imidazoline toxicity",
     "oneLiner": "Opioid-mimic toxidrome: miosis + CNS depression + bradycardia + hypotension (transient early hypertension possible). Mostly supportive; naloxone can be tried (often high doses, variable response), atropine for bradycardia.",
-    "domains": ["toxicology", "emergency", "paediatrics", "cardiology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "paediatrics",
+      "cardiology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "bradycardia",
@@ -2275,7 +2811,11 @@
       "skin": "pale, cool",
       "mentalStatus": "lethargy → coma; waxing/waning sedation; arousable with stimulation",
       "bowelSounds": "reduced",
-      "other": ["mimics opioid toxidrome", "children especially sensitive (small ingestion can be serious)", "transdermal patch ingestion = prolonged toxicity"]
+      "other": [
+        "mimics opioid toxidrome",
+        "children especially sensitive (small ingestion can be serious)",
+        "transdermal patch ingestion = prolonged toxicity"
+      ]
     },
     "causativeAgents": [
       "clonidine (oral, transdermal patch ingestion)",
@@ -2304,8 +2844,12 @@
       "Transdermal patch ingestion — prolonged, delayed toxicity."
     ],
     "references": [
-      { "label": "Seger DL, Loden JK. Naloxone reversal of clonidine toxicity: dose, dose, dose. Clin Toxicol 2018." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Clonidine and central-acting antihypertensives." }
+      {
+        "label": "Seger DL, Loden JK. Naloxone reversal of clonidine toxicity: dose, dose, dose. Clin Toxicol 2018."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Clonidine and central-acting antihypertensives."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2315,7 +2859,12 @@
     "slug": "arsenic-toxicity",
     "name": "Acute arsenic poisoning",
     "oneLiner": "Severe gastroenteritis ('rice-water' diarrhoea) + hypotension + QT prolongation/arrhythmia early; later peripheral neuropathy and pancytopenia. Chelate promptly — DMSA/DMPS preferred; dimercaprol (BAL) for severe acute cases when oral route impossible.",
-    "domains": ["toxicology", "emergency", "critical-care", "nephrology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "nephrology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia; arrhythmias (prolonged QT, torsades)",
@@ -2326,7 +2875,12 @@
       "skin": "later: hyperkeratosis, hyperpigmentation, Mees' lines on nails (chronic/subacute)",
       "mentalStatus": "encephalopathy, delirium in severe poisoning",
       "bowelSounds": "profuse vomiting and 'rice-water' diarrhoea; abdominal pain; garlic odour",
-      "other": ["prolonged QT / ventricular arrhythmia", "acute kidney injury", "haemolysis", "later peripheral sensorimotor neuropathy and pancytopenia"]
+      "other": [
+        "prolonged QT / ventricular arrhythmia",
+        "acute kidney injury",
+        "haemolysis",
+        "later peripheral sensorimotor neuropathy and pancytopenia"
+      ]
     },
     "causativeAgents": [
       "arsenic trioxide, sodium arsenite/arsenate (pesticides, herbicides, wood preservatives, ant baits)",
@@ -2354,8 +2908,12 @@
       "Encephalopathy or evolving neuropathy."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Arsenic." },
-      { "label": "Kosnett MJ. The role of chelation in the treatment of arsenic and mercury poisoning. J Med Toxicol 2013." }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Arsenic."
+      },
+      {
+        "label": "Kosnett MJ. The role of chelation in the treatment of arsenic and mercury poisoning. J Med Toxicol 2013."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2365,7 +2923,12 @@
     "slug": "lead-toxicity",
     "name": "Lead poisoning (plumbism)",
     "oneLiner": "Abdominal pain + anaemia + neuropathy; in children, encephalopathy is the dread complication. Encephalopathy or BLL very high: dimercaprol (BAL) FIRST, then CaNa₂EDTA. Less severe: oral succimer (DMSA).",
-    "domains": ["toxicology", "emergency", "paediatrics", "neurology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "paediatrics",
+      "neurology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "normal",
@@ -2376,7 +2939,12 @@
       "skin": "pallor (anaemia); 'lead line' on gums (Burton's line) in chronic exposure",
       "mentalStatus": "irritability, cognitive impairment; severe (esp. children): encephalopathy, seizures, coma",
       "bowelSounds": "colicky abdominal pain, constipation ('lead colic')",
-      "other": ["microcytic/normocytic anaemia with basophilic stippling", "peripheral motor neuropathy (wrist/foot drop)", "raised blood lead level (BLL)", "renal impairment"]
+      "other": [
+        "microcytic/normocytic anaemia with basophilic stippling",
+        "peripheral motor neuropathy (wrist/foot drop)",
+        "raised blood lead level (BLL)",
+        "renal impairment"
+      ]
     },
     "causativeAgents": [
       "occupational (battery, smelting, paint stripping, radiator repair, demolition)",
@@ -2405,8 +2973,12 @@
       "Ongoing exposure source not removed — chelation alone fails."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Lead." },
-      { "label": "ATSDR / CDC. Lead toxicity: medical management guidelines." }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Lead."
+      },
+      {
+        "label": "ATSDR / CDC. Lead toxicity: medical management guidelines."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2416,7 +2988,12 @@
     "slug": "mercury-toxicity",
     "name": "Acute mercury poisoning",
     "oneLiner": "Form matters: inhaled elemental Hg vapour → chemical pneumonitis; ingested inorganic Hg salts → corrosive gastroenteritis + acute tubular necrosis. Chelate inorganic/elemental poisoning early with DMSA or DMPS.",
-    "domains": ["toxicology", "emergency", "critical-care", "nephrology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "nephrology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -2427,7 +3004,11 @@
       "skin": "metallic taste; later acrodynia (pink, painful extremities) in children",
       "mentalStatus": "headache, tremor, neuropsychiatric changes",
       "bowelSounds": "corrosive stomatitis, severe abdominal pain, bloody diarrhoea (inorganic salt ingestion)",
-      "other": ["acute tubular necrosis / AKI", "tremor, gingivostomatitis", "elemental vapour primarily pulmonary + CNS; inorganic salts primarily GI + renal"]
+      "other": [
+        "acute tubular necrosis / AKI",
+        "tremor, gingivostomatitis",
+        "elemental vapour primarily pulmonary + CNS; inorganic salts primarily GI + renal"
+      ]
     },
     "causativeAgents": [
       "elemental mercury vapour (broken thermometers heated, gold extraction, industrial)",
@@ -2454,8 +3035,12 @@
       "Do not use BAL for organic (methyl)mercury — worsens CNS distribution."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Mercury." },
-      { "label": "Kosnett MJ. The role of chelation in the treatment of arsenic and mercury poisoning. J Med Toxicol 2013." }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Mercury."
+      },
+      {
+        "label": "Kosnett MJ. The role of chelation in the treatment of arsenic and mercury poisoning. J Med Toxicol 2013."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2465,7 +3050,12 @@
     "slug": "paraquat-toxicity",
     "name": "Paraquat poisoning",
     "oneLiner": "Highly lethal herbicide: caustic mucosal burns early, then progressive pulmonary fibrosis and multi-organ failure. NO antidote. Crucially, AVOID supplemental oxygen unless hypoxic (it accelerates lung injury). Early decontamination; specialist/poison-centre advice.",
-    "domains": ["toxicology", "emergency", "critical-care", "nephrology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "nephrology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -2476,7 +3066,12 @@
       "skin": "chemical burns where contacted",
       "mentalStatus": "alert early; deteriorates with multi-organ failure",
       "bowelSounds": "painful oral/oesophageal ulceration, vomiting, abdominal pain",
-      "other": ["progressive pulmonary fibrosis (hallmark, often fatal)", "acute kidney injury", "hepatotoxicity", "high mortality with significant ingestion"]
+      "other": [
+        "progressive pulmonary fibrosis (hallmark, often fatal)",
+        "acute kidney injury",
+        "hepatotoxicity",
+        "high mortality with significant ingestion"
+      ]
     },
     "causativeAgents": [
       "paraquat (and the related bipyridyl herbicide diquat) — agricultural herbicide, usually deliberate self-poisoning"
@@ -2502,8 +3097,12 @@
       "Acute kidney / liver injury."
     ],
     "references": [
-      { "label": "Gawarammana IB, Buckley NA. Medical management of paraquat ingestion. Br J Clin Pharmacol 2011." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Herbicides (paraquat)." }
+      {
+        "label": "Gawarammana IB, Buckley NA. Medical management of paraquat ingestion. Br J Clin Pharmacol 2011."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Herbicides (paraquat)."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2513,7 +3112,11 @@
     "slug": "acute-ethanol-intoxication",
     "name": "Acute ethanol intoxication",
     "oneLiner": "CNS depression, ataxia, slurred speech, depressed conscious level; main danger is airway compromise/aspiration and unmasked occult pathology. Supportive care; thiamine before glucose in at-risk patients; always look for co-ingestants and trauma.",
-    "domains": ["toxicology", "emergency", "addiction-medicine"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "addiction-medicine"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -2524,7 +3127,12 @@
       "skin": "warm, flushed; diaphoretic",
       "mentalStatus": "disinhibition → ataxia, slurred speech → drowsiness → coma",
       "bowelSounds": "vomiting (aspiration risk)",
-      "other": ["hypoglycaemia (especially children and the malnourished)", "raised osmolar gap", "nystagmus", "risk of occult head injury masked by intoxication"]
+      "other": [
+        "hypoglycaemia (especially children and the malnourished)",
+        "raised osmolar gap",
+        "nystagmus",
+        "risk of occult head injury masked by intoxication"
+      ]
     },
     "causativeAgents": [
       "ethanol (beverages, hand sanitiser, mouthwash, some colognes)",
@@ -2552,8 +3160,12 @@
       "Raised osmolar/anion gap suggesting methanol or ethylene glycol co-ingestion."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Ethanol." },
-      { "label": "Vonghia L et al. Acute alcohol intoxication. Eur J Intern Med 2008." }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Ethanol."
+      },
+      {
+        "label": "Vonghia L et al. Acute alcohol intoxication. Eur J Intern Med 2008."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2563,7 +3175,11 @@
     "slug": "colchicine-toxicity",
     "name": "Colchicine toxicity",
     "oneLiner": "Deceptively well early, then catastrophic: GI phase → multi-organ failure/shock/marrow suppression (peak day 2-7) → recovery if survived. NO antidote; doses > 0.8 mg/kg approach 100% mortality. Early charcoal + aggressive ICU support.",
-    "domains": ["toxicology", "emergency", "critical-care"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia; later cardiogenic shock / arrhythmia",
@@ -2574,7 +3190,11 @@
       "skin": "later: alopecia (recovery phase)",
       "mentalStatus": "alert early; confusion/coma with multi-organ failure",
       "bowelSounds": "phase 1 (0-24 h): severe vomiting, profuse diarrhoea, abdominal pain, dehydration",
-      "other": ["phase 2 (1-7 days): multi-organ failure, bone-marrow suppression (pancytopenia), shock, rhabdomyolysis, lactic acidosis", "phase 3: recovery with rebound leukocytosis and alopecia", "lethality: > 0.5-0.8 mg/kg severe, > 0.8 mg/kg near-100% mortality"]
+      "other": [
+        "phase 2 (1-7 days): multi-organ failure, bone-marrow suppression (pancytopenia), shock, rhabdomyolysis, lactic acidosis",
+        "phase 3: recovery with rebound leukocytosis and alopecia",
+        "lethality: > 0.5-0.8 mg/kg severe, > 0.8 mg/kg near-100% mortality"
+      ]
     },
     "causativeAgents": [
       "colchicine (gout, familial Mediterranean fever) — acute overdose",
@@ -2601,8 +3221,12 @@
       "Cardiogenic shock / arrhythmia."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Colchicine, Podophyllin and the Vinca Alkaloids." },
-      { "label": "Finkelstein Y et al. Colchicine poisoning: the dark side of an ancient drug. Clin Toxicol 2010." }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Colchicine, Podophyllin and the Vinca Alkaloids."
+      },
+      {
+        "label": "Finkelstein Y et al. Colchicine poisoning: the dark side of an ancient drug. Clin Toxicol 2010."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2612,7 +3236,13 @@
     "slug": "metformin-lactic-acidosis",
     "name": "Metformin toxicity / metformin-associated lactic acidosis (MALA)",
     "oneLiner": "Severe high-anion-gap lactic acidosis ± hypotension and altered mental status, especially with renal impairment or massive overdose. No antidote; sodium bicarbonate for severe acidosis and early haemodialysis for the sickest (pH ≤ 7.0, lactate > 20, shock).",
-    "domains": ["toxicology", "emergency", "critical-care", "nephrology", "endocrinology"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care",
+      "nephrology",
+      "endocrinology"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia",
@@ -2623,7 +3253,12 @@
       "skin": "cool, poorly perfused if shocked",
       "mentalStatus": "lethargy → confusion → coma with worsening acidosis",
       "bowelSounds": "nausea, vomiting, abdominal pain, diarrhoea",
-      "other": ["severe high-anion-gap metabolic (lactic) acidosis", "hyperlactataemia", "acute kidney injury (cause and consequence)", "hypoglycaemia uncommon with metformin alone (unlike sulfonylureas)"]
+      "other": [
+        "severe high-anion-gap metabolic (lactic) acidosis",
+        "hyperlactataemia",
+        "acute kidney injury (cause and consequence)",
+        "hypoglycaemia uncommon with metformin alone (unlike sulfonylureas)"
+      ]
     },
     "causativeAgents": [
       "metformin — acute overdose, or therapeutic use with acute kidney injury / dehydration / sepsis (MALA)",
@@ -2650,8 +3285,12 @@
       "Refractory shock / profound acidosis."
     ],
     "references": [
-      { "label": "Calello DP et al. EXTRIP workgroup. Extracorporeal treatment for metformin poisoning. Crit Care Med 2015." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Antidiabetics (biguanides)." }
+      {
+        "label": "Calello DP et al. EXTRIP workgroup. Extracorporeal treatment for metformin poisoning. Crit Care Med 2015."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Antidiabetics (biguanides)."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2661,7 +3300,12 @@
     "slug": "cardiac-glycoside-plant-toxicity",
     "name": "Cardiac glycoside plant poisoning (oleander, foxglove)",
     "oneLiner": "Digoxin-like toxidrome from plants: GI upset + bradyarrhythmias/heart block + hyperkalaemia. Digoxin-specific antibody (Fab) fragments rapidly reverse arrhythmias and hyperkalaemia (often higher empiric doses than for digoxin).",
-    "domains": ["toxicology", "emergency", "cardiology", "critical-care"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "cardiology",
+      "critical-care"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "bradycardia, AV block; also ventricular arrhythmias",
@@ -2672,7 +3316,11 @@
       "skin": "normal",
       "mentalStatus": "lethargy, confusion; visual disturbance (xanthopsia) reported",
       "bowelSounds": "nausea, vomiting, abdominal pain, diarrhoea",
-      "other": ["hyperkalaemia (marker of severity in acute poisoning)", "any dysrhythmia possible (classically bradyarrhythmia/heart block with ectopy)", "serum digoxin assay may cross-react but levels do NOT correlate with severity and a negative assay does not exclude plant glycosides"]
+      "other": [
+        "hyperkalaemia (marker of severity in acute poisoning)",
+        "any dysrhythmia possible (classically bradyarrhythmia/heart block with ectopy)",
+        "serum digoxin assay may cross-react but levels do NOT correlate with severity and a negative assay does not exclude plant glycosides"
+      ]
     },
     "causativeAgents": [
       "Nerium oleander and Thevetia peruviana (yellow oleander)",
@@ -2700,8 +3348,12 @@
       "Do not rely on a serum digoxin level to grade plant-glycoside severity."
     ],
     "references": [
-      { "label": "Eddleston M et al. Anti-digoxin Fab fragments in cardiotoxicity induced by yellow oleander poisoning. Lancet 2000." },
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Cardioactive Steroids." }
+      {
+        "label": "Eddleston M et al. Anti-digoxin Fab fragments in cardiotoxicity induced by yellow oleander poisoning. Lancet 2000."
+      },
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Cardioactive Steroids."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
@@ -2711,7 +3363,11 @@
     "slug": "caustic-ingestion",
     "name": "Caustic (corrosive) ingestion — acid / alkali",
     "oneLiner": "Alkalis cause liquefactive oesophageal injury; acids cause coagulative gastric injury. Do NOT induce emesis, give charcoal, or 'neutralise' (exothermic). Secure airway; early endoscopy (12-24 h) to grade injury.",
-    "domains": ["toxicology", "emergency", "critical-care"],
+    "domains": [
+      "toxicology",
+      "emergency",
+      "critical-care"
+    ],
     "antidoteSlug": null,
     "features": {
       "heartRate": "tachycardia (pain/distress); shock if perforation",
@@ -2722,7 +3378,11 @@
       "skin": "oral/perioral burns; drooling",
       "mentalStatus": "usually alert; distressed by pain",
       "bowelSounds": "odynophagia, dysphagia, drooling, retrosternal/epigastric pain, vomiting (sometimes haematemesis)",
-      "other": ["airway oedema (stridor, hoarseness) — life-threatening", "risk of oesophageal/gastric perforation, mediastinitis, peritonitis", "late oesophageal strictures; long-term oesophageal cancer risk"]
+      "other": [
+        "airway oedema (stridor, hoarseness) — life-threatening",
+        "risk of oesophageal/gastric perforation, mediastinitis, peritonitis",
+        "late oesophageal strictures; long-term oesophageal cancer risk"
+      ]
     },
     "causativeAgents": [
       "alkalis: drain/oven cleaners (sodium/potassium hydroxide), dishwasher detergents, ammonia, button batteries, bleach (usually milder)",
@@ -2750,8 +3410,12 @@
       "Attempts at neutralisation / emesis / charcoal — contraindicated and harmful."
     ],
     "references": [
-      { "label": "Goldfrank's Toxicologic Emergencies, 11e — Caustics." },
-      { "label": "Hoffman RS et al. Ingestion of caustic substances. N Engl J Med 2020;382:1739-1748." }
+      {
+        "label": "Goldfrank's Toxicologic Emergencies, 11e — Caustics."
+      },
+      {
+        "label": "Hoffman RS et al. Ingestion of caustic substances. N Engl J Med 2020;382:1739-1748."
+      }
     ],
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft",
