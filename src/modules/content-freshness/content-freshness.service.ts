@@ -67,14 +67,12 @@ export class ContentFreshnessService implements OnModuleInit, OnModuleDestroy {
 
     let files: string[];
     try {
-      files = readdirSync(bundleDir).filter(
-        (f) => f.endsWith('.json') && f !== 'manifest.json',
-      );
+      files = readdirSync(bundleDir).filter((f) => f.endsWith('.json') && f !== 'manifest.json');
     } catch (e) {
       this.nestLogger.warn(
         `Cannot read bundle dir "${bundleDir}" — freshness audit skipped: ${(e as Error).message}`,
       );
-      return (this.currentReport = emptyReport(currentYear));
+      return (this.currentReport = emptyReport());
     }
 
     for (const file of files) {
@@ -139,7 +137,7 @@ function stringOr(v: unknown, fallback: string): string {
   return typeof v === 'string' && v.length > 0 ? v : fallback;
 }
 
-function emptyReport(year: number): FreshnessReport {
+function emptyReport(): FreshnessReport {
   return {
     generatedAt: new Date().toISOString(),
     staleAfterYears: STALE_AFTER_YEARS,
