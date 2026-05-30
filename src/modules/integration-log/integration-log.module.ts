@@ -1,8 +1,9 @@
 import { Global, Module } from '@nestjs/common';
 import { IntegrationLogController } from './integration-log.controller';
 import { IntegrationLogService } from './integration-log.service';
-import { OperatorAuthGuard } from '../../common/operator-auth';
+import { OperatorOrApiKeyGuard } from '../../common/operator-auth';
 import { IdentityModule } from '../identity/identity.module';
+import { DeveloperModule } from '../developer/developer.module';
 
 /**
  * SRS §6.3.17 — Integration Telemetry & Bounded Logs.
@@ -15,9 +16,9 @@ import { IdentityModule } from '../identity/identity.module';
  */
 @Global()
 @Module({
-  imports: [IdentityModule],
+  imports: [IdentityModule, DeveloperModule],
   controllers: [IntegrationLogController],
-  providers: [IntegrationLogService, OperatorAuthGuard],
+  providers: [IntegrationLogService, OperatorOrApiKeyGuard],
   exports: [IntegrationLogService],
 })
 export class IntegrationLogModule {}
