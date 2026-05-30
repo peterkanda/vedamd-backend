@@ -836,7 +836,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "A"
+    "evidenceLevel": "A",
+    "redFlags": [
+      "Reserve-group antibiotic prescribed without specialist input — escalate to antimicrobial stewardship team.",
+      "Local microbiology data unavailable — adopt empiric WHO AWaRe Access-first defaults pending antibiogram review.",
+      "Persistent fever / clinical deterioration on empirical Access agent — escalate to infectious disease."
+    ]
   },
   {
     "slug": "start-smart-then-focus",
@@ -877,7 +882,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "A"
+    "evidenceLevel": "A",
+    "redFlags": [
+      "No microbiology sample taken before starting antibiotics — escalate to ward team for catch-up sampling.",
+      "No documented indication, dose or planned duration at 24 h — escalate to prescriber.",
+      "No 48–72 h review documented — escalate to stewardship pharmacist."
+    ]
   },
   {
     "slug": "iv-to-oral-switch",
@@ -947,7 +957,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "A"
+    "evidenceLevel": "A",
+    "redFlags": [
+      "Worsening clinical status (rising sepsis score, persistent fever) — escalate to senior review, broaden cover and source-control assessment.",
+      "Cultures positive for resistant organism on inappropriate empirical agent — escalate to infectious disease.",
+      "Antibiotic continued > 7 days without documented justification — escalate to stewardship."
+    ]
   },
   {
     "slug": "surgical-antibiotic-prophylaxis",
@@ -1026,7 +1041,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "B"
+    "evidenceLevel": "B",
+    "redFlags": [
+      "Persistent fever or rising inflammatory markers — defer de-escalation and re-evaluate source / cover.",
+      "Resistant or fastidious organism (e.g. Pseudomonas, ESBL, MDR-GN, MRSA, anaerobes) — confirm coverage adequacy with infectious diseases before narrowing.",
+      "Patient on combination therapy for synergy (e.g. endocarditis) — do not de-escalate without specialist input."
+    ]
   },
   {
     "slug": "penicillin-allergy-de-labelling",
@@ -1202,7 +1222,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "B"
+    "evidenceLevel": "B",
+    "redFlags": [
+      "Severe sepsis or septic shock — start broad and de-escalate later; do not under-treat.",
+      "Healthcare-associated infection or recent broad-spectrum exposure — initial cover often broader pending cultures.",
+      "Local antibiogram shows > 10% resistance to first-line narrow agent — escalate to stewardship for empirical revision."
+    ]
   },
   {
     "slug": "opat-basics",
@@ -1281,7 +1306,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "A"
+    "evidenceLevel": "A",
+    "redFlags": [
+      "Persistent severe pain (NRS ≥ 7) despite step-2 opioid — escalate to step 3 strong opioid.",
+      "Neuropathic features (burning, shooting, allodynia) — add adjuvant (gabapentinoid, TCA, SNRI).",
+      "New focal neurology, cauda equina symptoms or sudden severe headache — refer urgently, do not just escalate analgesia."
+    ]
   },
   {
     "slug": "opioid-initiation-titration",
@@ -1376,7 +1406,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "B"
+    "evidenceLevel": "B",
+    "redFlags": [
+      "> 4 breakthrough doses per 24 h — escalate background regimen.",
+      "Breakthrough relief inadequate at 1/6 of total daily dose — review opioid choice and route.",
+      "New, sudden severe pain unrelated to disease site — investigate for fracture, perforation, vascular event."
+    ]
   },
   {
     "slug": "opioid-conversion-principles",
@@ -1446,7 +1481,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "B"
+    "evidenceLevel": "B",
+    "redFlags": [
+      "Cord compression / cauda equina features (saddle anaesthesia, bladder/bowel dysfunction) — escalate emergently.",
+      "Adjuvant ineffective at maximal tolerated dose after 4 weeks — escalate to palliative-care specialist.",
+      "Suicidal ideation linked to pain — escalate to mental-health support."
+    ]
   },
   {
     "slug": "nausea-vomiting-palliative",
@@ -1484,7 +1524,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "expert-consensus"
+    "evidenceLevel": "expert-consensus",
+    "redFlags": [
+      "Suspected bowel obstruction (colicky pain, distension, faeculent vomitus) — escalate to surgical / palliative-care team.",
+      "Raised intracranial pressure (papilloedema, focal deficit) — escalate to neurology / palliative care.",
+      "Persistent vomiting despite a single-mechanism antiemetic — escalate to multi-mechanism regimen and palliative-care input."
+    ]
   },
   {
     "slug": "opioid-induced-constipation",
@@ -1678,7 +1723,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "expert-consensus"
+    "evidenceLevel": "expert-consensus",
+    "redFlags": [
+      "Inadequate symptom control with the prescribed anticipatory regimen — escalate to palliative-care team for review.",
+      "Family concerns about distress or under-medication — escalate to specialist palliative care for support.",
+      "Need for syringe driver — escalate to nursing team for set-up and review."
+    ]
   },
   {
     "slug": "syringe-driver-basics",
@@ -1750,7 +1800,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "expert-consensus"
+    "evidenceLevel": "expert-consensus",
+    "redFlags": [
+      "Severe candidiasis not responding to topical therapy — escalate to systemic antifungal.",
+      "Mucositis with dysphagia or aspiration risk — escalate to dietetics / SLT.",
+      "Suspected dental abscess or osteomyelitis — escalate to dentistry."
+    ]
   },
   {
     "slug": "last-days-of-life-care",
@@ -1823,7 +1878,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "expert-consensus"
+    "evidenceLevel": "expert-consensus",
+    "redFlags": [
+      "Patient lacks decisional capacity for high-stakes choices — escalate to best-interests / legal proxy framework.",
+      "Family disagreement about treatment direction — escalate to palliative-care or ethics consultation.",
+      "Documented ACP wishes inconsistent with current treatment plan — escalate to senior clinician for review."
+    ]
   },
   {
     "slug": "breaking-bad-news-spikes",
@@ -1873,7 +1933,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "expert-consensus"
+    "evidenceLevel": "expert-consensus",
+    "redFlags": [
+      "Patient suicidality or severe distress after disclosure — escalate to mental-health support immediately.",
+      "Family disagreement with patient about disclosure — escalate to senior clinician and consider mediation.",
+      "Cultural / language barriers preventing informed understanding — escalate to interpreter / cultural liaison."
+    ]
   },
   {
     "slug": "art-adherence-counselling",
@@ -2014,7 +2079,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "A"
+    "evidenceLevel": "A",
+    "redFlags": [
+      "BP ≥ 180/110 mmHg or evidence of end-organ damage — escalate to urgent / hypertensive emergency pathway.",
+      "Persistent non-adherence despite counselling — escalate to specialist for combination simplification or directly observed therapy.",
+      "Postural symptoms with current regimen — escalate to medication review and possible deprescription."
+    ]
   },
   {
     "slug": "inhaler-technique-counselling",
@@ -2198,7 +2268,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "A"
+    "evidenceLevel": "A",
+    "redFlags": [
+      "Severe nicotine withdrawal in hospital — escalate to combination NRT and consider varenicline if not contraindicated.",
+      "Concomitant alcohol or substance dependency — escalate to addiction service for integrated care.",
+      "Psychiatric instability or active suicidality — escalate to mental-health team before starting bupropion / varenicline."
+    ]
   },
   {
     "slug": "safe-medication-storage",
@@ -2437,7 +2512,12 @@
     ],
     "reviewStatus": "draft",
     "ruleVersion": "0.1.0",
-    "evidenceLevel": "expert-consensus"
+    "evidenceLevel": "expert-consensus",
+    "redFlags": [
+      "Anaphylaxis history to a previous dose or component — escalate to specialist allergy review before re-immunisation.",
+      "Concomitant severe acute febrile illness — defer and rebook.",
+      "Refusal in the face of an active outbreak — escalate to public-health colleagues for shared decision-making support."
+    ]
   },
   {
     "slug": "missed-pill-rules-coc",
