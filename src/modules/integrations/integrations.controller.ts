@@ -15,12 +15,14 @@ import { PostmanCollectionService } from './postman-collection.service';
 import { IntegrationMarkdownService } from './integration-markdown.service';
 import { CdsService } from '../cds/cds.service';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';
+import { ImmutableContent } from '../../common/http-cache';
 import type { IntegrationCategory, IntegrationMethod } from './integrations.data';
 
 @ApiTags('integrations')
 @Controller('v1/integrations')
 @UseGuards(ApiKeyGuard)
 @ApiBearerAuth()
+@ImmutableContent()
 export class IntegrationsController {
   constructor(
     private readonly integrations: IntegrationsService,

@@ -927,6 +927,47 @@
         ]
       }
     },
+    "/api/v1/content-freshness": {
+      "get": {
+        "description": "Records whose newest cited source is older than the staleness threshold (five years) or carries no parseable date are listed here as the content team's review backlog. The audit runs at boot and weekly via setInterval — call POST to re-run on demand.",
+        "operationId": "ContentFreshnessController_get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get the latest content-freshness review queue",
+        "tags": [
+          "content"
+        ]
+      }
+    },
+    "/api/v1/content-freshness/refresh": {
+      "post": {
+        "operationId": "ContentFreshnessController_refresh",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Force a re-run of the freshness audit.",
+        "tags": [
+          "content"
+        ]
+      }
+    },
     "/api/v1/policies": {
       "get": {
         "description": "Returns summaries (no full body). Each policy is a clinical SOP or external standard (JCI, ISO, WHO, NICE, company). Policies are integrator-scoped and used by the agentic engine to align recommendations.",

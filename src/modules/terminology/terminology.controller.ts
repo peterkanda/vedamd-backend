@@ -10,11 +10,13 @@ import {
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { TerminologyService } from './terminology.service';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';
+import { ImmutableContent } from '../../common/http-cache';
 
 @ApiTags('terminology')
 @Controller('v1/terminology')
 @UseGuards(ApiKeyGuard)
 @ApiBearerAuth()
+@ImmutableContent()
 export class TerminologyController {
   constructor(private readonly terminology: TerminologyService) {}
 

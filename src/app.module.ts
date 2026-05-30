@@ -29,6 +29,7 @@ import { HepaticDoseModule } from './modules/hepatic-dose/hepatic-dose.module';
 import { SymptomTriageModule } from './modules/symptom-triage/symptom-triage.module';
 import { ClinicalReferenceModule } from './modules/clinical-reference/clinical-reference.module';
 import { IntegrationsModule } from './modules/integrations/integrations.module';
+import { ContentFreshnessModule } from './modules/content-freshness/content-freshness.module';
 import { DoseProtocolsModule } from './modules/dose-protocols/dose-protocols.module';
 import { ClinicalToolsModule } from './modules/clinical-tools/clinical-tools.module';
 import { LlmModule } from './modules/llm/llm.module';
@@ -66,6 +67,7 @@ import { UsageModule } from './modules/usage/usage.module';
     DrugsModule,
     ConditionsModule,
     ProceduresModule,
+    ContentFreshnessModule,
     PoliciesModule,
     ClinicalScoresModule,
     PharmacogenomicsModule,
