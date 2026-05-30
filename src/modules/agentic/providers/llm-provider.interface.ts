@@ -22,16 +22,19 @@ export interface LlmCompletionResult {
   /** Model identifier actually used. */
   model: string;
   /** Provider name. */
-  provider: 'anthropic' | 'openai';
+  provider: LlmProviderName;
   /** Token usage (best-effort; may be undefined). */
   usage?: { inputTokens?: number; outputTokens?: number };
 }
 
 export const LLM_PROVIDER = Symbol('LLM_PROVIDER');
 
+/** All providers VedaMD's agentic engine can route to. */
+export type LlmProviderName = 'anthropic' | 'openai' | 'deepseek' | 'gemini';
+
 export interface LlmProvider {
   /** Provider identity. */
-  readonly name: 'anthropic' | 'openai';
+  readonly name: LlmProviderName;
   /** Whether the provider is configured (has API key). */
   isConfigured(): boolean;
   /** Run a single completion. Throws on provider error. */

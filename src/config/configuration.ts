@@ -74,6 +74,8 @@ export interface AppConfig {
   llm: {
     anthropicApiKey: string;
     openaiApiKey: string;
+    deepseekApiKey: string;
+    geminiApiKey: string;
   };
   redis: {
     /**
@@ -194,6 +196,8 @@ export const configuration = (): AppConfig => ({
   llm: {
     anthropicApiKey: process.env.ANTHROPIC_API_KEY ?? '',
     openaiApiKey: process.env.OPENAI_API_KEY ?? '',
+    deepseekApiKey: process.env.DEEPSEEK_API_KEY ?? '',
+    geminiApiKey: process.env.GEMINI_API_KEY ?? '',
   },
   redis: {
     url: process.env.REDIS_URL ?? '',

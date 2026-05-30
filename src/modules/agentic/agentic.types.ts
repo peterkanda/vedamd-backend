@@ -103,7 +103,7 @@ export interface AgenticEvaluationResponse {
     /** LLM model used by the agentic layer (if any). */
     llmModel?: string;
     /** LLM provider used. */
-    llmProvider?: 'anthropic' | 'openai' | 'disabled';
+    llmProvider?: 'anthropic' | 'openai' | 'deepseek' | 'gemini' | 'disabled';
     /** Whether the agentic layer ran (false if API keys not configured). */
     agenticInvoked: boolean;
     /** Total bundle records considered. */

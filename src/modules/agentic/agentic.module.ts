@@ -1,10 +1,16 @@
 import { Module } from '@nestjs/common';
 import { AgenticController } from './agentic.controller';
 import { AgenticService } from './agentic.service';
+import { LlmPreferenceController } from './llm-preference.controller';
+import { LlmPreferenceService } from './llm-preference.service';
+import { OperatorAuthGuard } from '../../common/operator-auth';
+import { IdentityModule } from '../identity/identity.module';
 import { KnowledgeRetrieverService } from './knowledge-retriever.service';
 import { ProviderRouter } from './providers/provider-router';
 import { AnthropicProvider } from './providers/anthropic.provider';
 import { OpenAiProvider } from './providers/openai.provider';
+import { DeepseekProvider } from './providers/deepseek.provider';
+import { GeminiProvider } from './providers/gemini.provider';
 import { SqlIngestionService } from './connectors/sql-ingestion.service';
 import { PostgresConnector } from './connectors/postgres.connector';
 import {
@@ -25,20 +31,24 @@ import { CustomRulesModule } from '../custom-rules/custom-rules.module';
  * (API-key guard).
  */
 @Module({
-  imports: [CdsModule, KnowledgeModule, DeveloperModule, PoliciesModule, CustomRulesModule],
-  controllers: [AgenticController],
+  imports: [CdsModule, KnowledgeModule, DeveloperModule, PoliciesModule, CustomRulesModule, IdentityModule],
+  controllers: [AgenticController, LlmPreferenceController],
   providers: [
     AgenticService,
+    LlmPreferenceService,
+    OperatorAuthGuard,
     KnowledgeRetrieverService,
     ProviderRouter,
     AnthropicProvider,
     OpenAiProvider,
+    DeepseekProvider,
+    GeminiProvider,
     SqlIngestionService,
     PostgresConnector,
     MysqlConnector,
     MssqlConnector,
     OracleConnector,
   ],
-  exports: [AgenticService, ProviderRouter, KnowledgeRetrieverService, SqlIngestionService],
+  exports: [AgenticService, ProviderRouter, KnowledgeRetrieverService, SqlIngestionService, LlmPreferenceService],
 })
 export class AgenticModule {}

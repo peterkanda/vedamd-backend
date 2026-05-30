@@ -1,76 +1,106 @@
 import { Injectable } from '@nestjs/common';
 import { AnthropicProvider } from './anthropic.provider';
 import { OpenAiProvider } from './openai.provider';
+import { DeepseekProvider } from './deepseek.provider';
+import { GeminiProvider } from './gemini.provider';
 import type {
   LlmCompletionRequest,
   LlmCompletionResult,
   LlmProvider,
+  LlmProviderName,
 } from './llm-provider.interface';
 
 /**
  * Provider router — picks the LLM provider per request so a key
  * rotation or transient outage degrades gracefully.
  *
- * AGENTIC_PROVIDER env explicitly overrides ordering:
- *   "openai"              → OpenAI first, Claude fallback
- *   "anthropic"           → Claude first, OpenAI fallback
- *   "openai-only"         → OpenAI only (no fallback)
- *   "anthropic-only"      → Claude only (no fallback)
+ * Three layers of selection (highest priority first):
+ *  1. Per-request `preferredProvider` — set by callers that have a
+ *     tenant-scoped preference (e.g. an integrator who chose "gemini"
+ *     in their developer settings).
+ *  2. `AGENTIC_PROVIDER` env var — operator-wide override, e.g.
+ *     "openai", "anthropic", "deepseek", "gemini", "openai-only" etc.
+ *  3. Auto-select — prefer OpenAI when configured, otherwise the first
+ *     configured provider in [openai, anthropic, deepseek, gemini].
  *
- * If AGENTIC_PROVIDER is unset, the router auto-selects based on
- * which keys are present: prefers OpenAI (broader model availability
- * for most integrators) if its key is set, otherwise Claude. This
- * makes a fresh deployment with only OPENAI_API_KEY work without
- * additional configuration.
+ * Whichever provider is selected, the router falls back to the next
+ * configured provider on failure (unless an "*-only" preference is
+ * set).
  */
 @Injectable()
 export class ProviderRouter {
   constructor(
     private readonly anthropic: AnthropicProvider,
     private readonly openai: OpenAiProvider,
+    private readonly deepseek: DeepseekProvider,
+    private readonly gemini: GeminiProvider,
   ) {}
 
-  /** Returns the ordered list of providers to attempt. */
-  private order(): LlmProvider[] {
+  private byName(name: LlmProviderName): LlmProvider {
+    switch (name) {
+      case 'openai': return this.openai;
+      case 'anthropic': return this.anthropic;
+      case 'deepseek': return this.deepseek;
+      case 'gemini': return this.gemini;
+    }
+  }
+
+  /** All providers, in default fallback order. */
+  private all(): LlmProvider[] {
+    return [this.openai, this.anthropic, this.deepseek, this.gemini];
+  }
+
+  /** Returns the ordered list of providers to attempt for this request. */
+  private order(preferred?: LlmProviderName): LlmProvider[] {
+    if (preferred) {
+      const first = this.byName(preferred);
+      const rest = this.all().filter((p) => p.name !== first.name);
+      return [first, ...rest];
+    }
     const pref = process.env.AGENTIC_PROVIDER?.toLowerCase();
     switch (pref) {
-      case 'openai':
-        return [this.openai, this.anthropic];
-      case 'anthropic':
-        return [this.anthropic, this.openai];
-      case 'anthropic-only':
-        return [this.anthropic];
-      case 'openai-only':
-        return [this.openai];
-      default:
-        // Auto: prefer OpenAI if configured (broader integrator
-        // availability), otherwise fall back to Claude. Both are
-        // always tried in the order [primary, fallback] when both
-        // are configured.
-        return this.openai.isConfigured()
-          ? [this.openai, this.anthropic]
-          : [this.anthropic, this.openai];
+      case 'openai':       return [this.openai, this.anthropic, this.deepseek, this.gemini];
+      case 'anthropic':    return [this.anthropic, this.openai, this.deepseek, this.gemini];
+      case 'deepseek':     return [this.deepseek, this.openai, this.anthropic, this.gemini];
+      case 'gemini':       return [this.gemini, this.openai, this.anthropic, this.deepseek];
+      case 'openai-only':  return [this.openai];
+      case 'anthropic-only': return [this.anthropic];
+      case 'deepseek-only': return [this.deepseek];
+      case 'gemini-only':  return [this.gemini];
+      default: {
+        // Auto: prefer OpenAI when configured, otherwise the first
+        // configured provider in the default order.
+        const ordered = this.all();
+        const idx = ordered.findIndex((p) => p.isConfigured());
+        if (idx <= 0) return ordered;
+        return [ordered[idx], ...ordered.slice(0, idx), ...ordered.slice(idx + 1)];
+      }
     }
   }
 
   /** True if at least one provider is configured. */
   anyConfigured(): boolean {
-    return this.anthropic.isConfigured() || this.openai.isConfigured();
+    return this.all().some((p) => p.isConfigured());
   }
 
-  /**
-   * Human-readable name of the provider that will be tried first for
-   * the next request — surfaced on the /capabilities endpoint so the
-   * UI can show the right provenance.
-   */
-  advertisedProvider(): string {
-    const first = this.order().find((p) => p.isConfigured());
+  /** Provider expected to handle the next request — for /capabilities. */
+  advertisedProvider(preferred?: LlmProviderName): string {
+    const first = this.order(preferred).find((p) => p.isConfigured());
     return first?.name ?? 'none';
   }
 
-  /** Attempt completion across providers in order; throws if all fail. */
-  async complete(req: LlmCompletionRequest): Promise<LlmCompletionResult> {
-    const providers = this.order().filter((p) => p.isConfigured());
+  /** Names + configured flags — for /capabilities and the developer UI. */
+  list(): Array<{ name: LlmProviderName; configured: boolean }> {
+    return this.all().map((p) => ({ name: p.name, configured: p.isConfigured() }));
+  }
+
+  /** Attempt completion across providers in order; throws if all fail.
+   *  Pass `preferredProvider` to steer routing for this single call. */
+  async complete(
+    req: LlmCompletionRequest,
+    opts: { preferredProvider?: LlmProviderName } = {},
+  ): Promise<LlmCompletionResult> {
+    const providers = this.order(opts.preferredProvider).filter((p) => p.isConfigured());
     if (providers.length === 0) {
       throw new Error('No LLM provider configured for agentic evaluation.');
     }
