@@ -2,6 +2,7 @@ import { Inject, Injectable, Optional } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { KnowledgeRetrieverService } from './knowledge-retriever.service';
 import { ProviderRouter } from './providers/provider-router';
+import { LlmPreferenceService } from './llm-preference.service';
 import { CdsService } from '../cds/cds.service';
 import { CacheService } from '../../common/cache';
 import type { AppConfig } from '../../config/configuration';
@@ -48,6 +49,7 @@ export class AgenticService {
     @Inject(PHI_FREE_LOGGER) private readonly log: PhiFreeLogger,
     @Optional() private readonly policies?: PoliciesService,
     @Optional() private readonly customRules?: CustomRulesService,
+    @Optional() private readonly llmPrefs?: LlmPreferenceService,
   ) {}
 
   async evaluate(ctx: AgenticClinicalContext): Promise<AgenticEvaluationResponse> {
@@ -107,7 +109,7 @@ export class AgenticService {
     let agenticCards: CdsCard[] = [];
     let citedRecords: Array<{ kind: string; id: string }> = [];
     let llmModel: string | undefined;
-    let llmProvider: 'anthropic' | 'openai' | 'disabled' = 'disabled';
+    let llmProvider: 'anthropic' | 'openai' | 'deepseek' | 'gemini' | 'disabled' = 'disabled';
     let agenticInvoked = false;
 
     const mode = ctx.mode ?? 'auto';
@@ -118,12 +120,22 @@ export class AgenticService {
 
     if (wantAgentic && this.router.anyConfigured()) {
       try {
-        const result = await this.router.complete({
-          system: CLINICAL_REASONER_SYSTEM,
-          user: buildUserMessage(ctx, knowledge, policyMatches),
-          maxTokens: 2048,
-          temperature: 0.1,
-        });
+        // Per-integrator LLM preference steers which configured
+        // provider is tried first; falls back through the rest on
+        // failure (matches the env-default behaviour).
+        const preferred =
+          ctx.integratorId && this.llmPrefs
+            ? this.llmPrefs.get(ctx.integratorId).provider ?? undefined
+            : undefined;
+        const result = await this.router.complete(
+          {
+            system: CLINICAL_REASONER_SYSTEM,
+            user: buildUserMessage(ctx, knowledge, policyMatches),
+            maxTokens: 2048,
+            temperature: 0.1,
+          },
+          { preferredProvider: preferred },
+        );
         agenticInvoked = true;
         llmModel = result.model;
         llmProvider = result.provider;

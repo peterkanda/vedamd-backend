@@ -2669,6 +2669,64 @@
         ]
       }
     },
+    "/api/v1/developer/llm-preference/providers": {
+      "get": {
+        "operationId": "LlmPreferenceController_listProviders",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List supported LLM providers and whether each is configured.",
+        "tags": [
+          "developer"
+        ]
+      }
+    },
+    "/api/v1/developer/llm-preference": {
+      "get": {
+        "operationId": "LlmPreferenceController_get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get this integrator's LLM preference.",
+        "tags": [
+          "developer"
+        ]
+      },
+      "put": {
+        "operationId": "LlmPreferenceController_set",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Set this integrator's LLM provider and optional model override.",
+        "tags": [
+          "developer"
+        ]
+      }
+    },
     "/api/v1/custom-rules": {
       "get": {
         "description": "Returns summaries (no match/card body). Each rule fires at evaluation time when the match block holds.",
