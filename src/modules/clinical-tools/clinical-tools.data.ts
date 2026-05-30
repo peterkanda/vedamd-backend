@@ -222,6 +222,128 @@ const DOSE_DRUGS: DoseDrug[] = [
     notes:
       'BNFc: 10 mg/kg once daily × 3 days for community-acquired pneumonia and pertussis (max 500 mg/day).',
   },
+  {
+    id: 'lorazepam-iv-status',
+    name: 'Lorazepam IV — status epilepticus',
+    indication: 'Convulsive status epilepticus (first-line benzodiazepine)',
+    mgPerKgPerDose: 0.1,
+    maxMgPerDose: 4,
+    frequency: 'once; repeat after 10 min if seizing',
+    route: 'IV/IO',
+    notes:
+      'APLS / BNFc: 0.1 mg/kg IV or IO, max 4 mg/dose; if no IV access use buccal midazolam first.',
+  },
+  {
+    id: 'phenytoin-iv-status',
+    name: 'Phenytoin IV — status epilepticus (2nd line)',
+    indication: 'Convulsive status not controlled after benzodiazepines',
+    mgPerKgPerDose: 20,
+    maxMgPerDose: 1500,
+    frequency: 'load over 20 min',
+    route: 'IV',
+    notes:
+      'APLS / BNFc: 20 mg/kg loading dose IV over 20 min (max 1 g, up to 1.5 g in heavier patients); cardiac-monitored, NOT in saline with high glucose. Levetiracetam 60 mg/kg (max 4.5 g) is an alternative second-line per ESETT.',
+  },
+  {
+    id: 'levetiracetam-iv-status',
+    name: 'Levetiracetam IV — status epilepticus (2nd line)',
+    indication: 'Alternative to phenytoin in established status',
+    mgPerKgPerDose: 60,
+    maxMgPerDose: 4500,
+    frequency: 'load over 5 min',
+    route: 'IV',
+    notes:
+      'ESETT (NEJM 2019) and the BNFc both support 60 mg/kg IV (max 4.5 g) over 5 min for established status; non-inferior to phenytoin and fosphenytoin.',
+  },
+  {
+    id: 'magnesium-iv-asthma',
+    name: 'Magnesium sulphate IV — severe asthma',
+    indication: 'Acute severe asthma not responsive to nebulised therapy',
+    mgPerKgPerDose: 40,
+    maxMgPerDose: 2000,
+    frequency: 'single dose over 20 min',
+    route: 'IV',
+    notes:
+      'BNFc / BTS: 40 mg/kg over 20 min (max 2 g); monitor BP — vasodilatation common. Continue salbutamol-O₂ alongside.',
+  },
+  {
+    id: 'morphine-iv-paeds',
+    name: 'Morphine IV — paediatric analgesia',
+    indication: 'Moderate-to-severe acute pain',
+    mgPerKgPerDose: 0.1,
+    maxMgPerDose: 10,
+    frequency: 'every 4 h or PRN',
+    route: 'IV',
+    notes:
+      'BNFc (1 month–12 years): 0.05–0.1 mg/kg/dose IV titrated to effect; halve dose in renal impairment, neonates, and frail patients. Reverse with naloxone.',
+    minAgeMonths: 1,
+  },
+  {
+    id: 'naloxone-paeds',
+    name: 'Naloxone IV/IM — paediatric opioid reversal',
+    indication: 'Opioid-induced respiratory depression',
+    mgPerKgPerDose: 0.01,
+    maxMgPerDose: 0.4,
+    frequency: 'titrate to respiration; repeat every 2–3 min',
+    route: 'IV/IM/IO',
+    notes:
+      'BNFc: 10 micrograms/kg IV (max 400 micrograms); repeat doses commonly required because naloxone half-life is shorter than most opioids. Consider infusion for long-acting opioid overdose.',
+  },
+  {
+    id: 'adrenaline-neb-croup',
+    name: 'Adrenaline 1:1000 nebulised — severe croup',
+    indication: 'Severe croup with stridor at rest',
+    mgPerKgPerDose: 0.5,
+    maxMgPerDose: 5,
+    frequency: 'single neb; observe for 2–4 h after',
+    route: 'NEB',
+    notes:
+      'APLS: 0.5 mg/kg (= 0.5 mL/kg of 1:1000) nebulised, max 5 mg (= 5 mL). Give with oral dexamethasone 0.15–0.6 mg/kg.',
+  },
+  {
+    id: 'furosemide-iv-paeds',
+    name: 'Furosemide IV — paediatric',
+    indication: 'Pulmonary oedema / fluid overload',
+    mgPerKgPerDose: 1,
+    maxMgPerDose: 40,
+    frequency: 'every 6–8 h',
+    route: 'IV',
+    notes:
+      'BNFc: 0.5–1 mg/kg/dose IV (slow injection); monitor electrolytes and hydration. Ototoxic in rapid infusion at high doses.',
+  },
+  {
+    id: 'atropine-iv-paeds',
+    name: 'Atropine IV — paediatric',
+    indication: 'Symptomatic bradycardia / premedication / organophosphate poisoning',
+    mgPerKgPerDose: 0.02,
+    maxMgPerDose: 0.5,
+    frequency: 'as required',
+    route: 'IV/IO',
+    notes:
+      'APLS: 20 micrograms/kg IV (min 100 micrograms, max 500 micrograms); for organophosphate poisoning much higher repeated doses are required — refer toxicology.',
+  },
+  {
+    id: 'cefotaxime-paeds',
+    name: 'Cefotaxime IV — paediatric / neonatal',
+    indication: 'Neonatal sepsis / meningitis (ceftriaxone alternative)',
+    mgPerKgPerDose: 50,
+    maxMgPerDose: 2000,
+    frequency: 'every 6–8 h (age-dependent)',
+    route: 'IV',
+    notes:
+      'BNFc: 50 mg/kg/dose IV q6–8h; preferred over ceftriaxone in neonates (< 28 days) to avoid bilirubin displacement / calcium precipitation.',
+  },
+  {
+    id: 'metronidazole-paeds',
+    name: 'Metronidazole IV/PO — paediatric',
+    indication: 'Anaerobic infection / amoebiasis / giardiasis',
+    mgPerKgPerDose: 7.5,
+    maxMgPerDose: 500,
+    frequency: 'every 8 h',
+    route: 'IV/PO',
+    notes:
+      'BNFc: 7.5 mg/kg/dose IV/PO q8h (max 500 mg/dose); 30 mg/kg/day total. Disulfiram-like reaction with alcohol.',
+  },
 ];
 
 const VITALS: VitalsBand[] = [

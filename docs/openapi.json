@@ -1,6 +1,221 @@
 {
   "openapi": "3.0.0",
   "paths": {
+    "/api/v1/knowledge/bundle": {
+      "get": {
+        "description": "Unauthenticated by design — auditors and integrators can verify which signed content bundle the platform is serving (version, signer, signedAt, per-file SHA-256, verification status). No clinical content is returned here.",
+        "operationId": "KnowledgeController_bundle",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Return the loaded content bundle metadata",
+        "tags": [
+          "knowledge"
+        ]
+      }
+    },
+    "/api/v1/knowledge/search": {
+      "get": {
+        "description": "Searches conditions, drugs, scores, antidotes, toxidromes, symptom-triage, pregnancy-lactation, hepatic-dose, reference-ranges, pharmacogenomics, allergy, notifiable, immunization, drug-disease, IV-compatibility, anticoagulant-reversal and procedures in one call. Returns route-addressable hits { domain, slug, title, route, snippet } the UI renders as a single \"In VedaMD\" result group. Anonymous + read-only; no PHI.",
+        "operationId": "KnowledgeController_searchContent",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "description": "Search term (≥ 2 chars).",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "description": "Max hits (default 40, capped 100).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Unified search across every content domain in the signed bundle",
+        "tags": [
+          "knowledge"
+        ]
+      }
+    },
+    "/api/v1/developer/api-keys": {
+      "get": {
+        "description": "Lists every key owned by the calling integrator. Secrets are never returned — only fingerprints + metadata.",
+        "operationId": "ApiKeysController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ApiKeyRecordDto"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid operator JWT."
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List API keys",
+        "tags": [
+          "developer"
+        ]
+      },
+      "post": {
+        "description": "Issues a new bearer secret. The `secret` field is returned EXACTLY ONCE; the server only stores its HMAC fingerprint. Use the secret as `Authorization: Bearer <secret>` on subsequent calls (FR-313).",
+        "operationId": "ApiKeysController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateApiKeyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCreatedOnceDto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid operator JWT."
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Create an API key",
+        "tags": [
+          "developer"
+        ]
+      }
+    },
+    "/api/v1/developer/api-keys/{id}/rotate": {
+      "post": {
+        "description": "Atomically revokes the old key and issues a new secret with the same name, scopes, and environment. Returns both the revoked metadata and the newly created key (secret shown once).",
+        "operationId": "ApiKeysController_rotate",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RotateResponseDto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid operator JWT."
+          },
+          "404": {
+            "description": "Unknown key id, foreign integrator, or already revoked."
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Rotate an API key",
+        "tags": [
+          "developer"
+        ]
+      }
+    },
+    "/api/v1/developer/api-keys/{id}": {
+      "delete": {
+        "description": "Immediately revokes the key. Any in-flight request with the old secret will be rejected on its next call.",
+        "operationId": "ApiKeysController_revoke",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyRecordDto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid operator JWT."
+          },
+          "404": {
+            "description": "Unknown key id or foreign integrator."
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Revoke an API key",
+        "tags": [
+          "developer"
+        ]
+      }
+    },
     "/health": {
       "get": {
         "operationId": "HealthController_check",
@@ -251,165 +466,6 @@
         ]
       }
     },
-    "/api/v1/developer/api-keys": {
-      "get": {
-        "description": "Lists every key owned by the calling integrator. Secrets are never returned — only fingerprints + metadata.",
-        "operationId": "ApiKeysController_list",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ApiKeyRecordDto"
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Missing or invalid operator JWT."
-          }
-        },
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "List API keys",
-        "tags": [
-          "developer"
-        ]
-      },
-      "post": {
-        "description": "Issues a new bearer secret. The `secret` field is returned EXACTLY ONCE; the server only stores its HMAC fingerprint. Use the secret as `Authorization: Bearer <secret>` on subsequent calls (FR-313).",
-        "operationId": "ApiKeysController_create",
-        "parameters": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateApiKeyDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiKeyCreatedOnceDto"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Missing or invalid operator JWT."
-          }
-        },
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "Create an API key",
-        "tags": [
-          "developer"
-        ]
-      }
-    },
-    "/api/v1/developer/api-keys/{id}/rotate": {
-      "post": {
-        "description": "Atomically revokes the old key and issues a new secret with the same name, scopes, and environment. Returns both the revoked metadata and the newly created key (secret shown once).",
-        "operationId": "ApiKeysController_rotate",
-        "parameters": [
-          {
-            "name": "id",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RotateResponseDto"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Missing or invalid operator JWT."
-          },
-          "404": {
-            "description": "Unknown key id, foreign integrator, or already revoked."
-          }
-        },
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "Rotate an API key",
-        "tags": [
-          "developer"
-        ]
-      }
-    },
-    "/api/v1/developer/api-keys/{id}": {
-      "delete": {
-        "description": "Immediately revokes the key. Any in-flight request with the old secret will be rejected on its next call.",
-        "operationId": "ApiKeysController_revoke",
-        "parameters": [
-          {
-            "name": "id",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiKeyRecordDto"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Missing or invalid operator JWT."
-          },
-          "404": {
-            "description": "Unknown key id or foreign integrator."
-          }
-        },
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "Revoke an API key",
-        "tags": [
-          "developer"
-        ]
-      }
-    },
     "/api/v1/drugs": {
       "get": {
         "description": "Filters: q (free text over slug/INN/class/trade/RxNorm/ATC), atc (exact ATC), aware (Access|Watch|Reserve), kemlOnly=true.",
@@ -553,22 +609,6 @@
         "summary": "Calculate a dose for the drug given weight / age / renal function",
         "tags": [
           "drugs"
-        ]
-      }
-    },
-    "/api/v1/knowledge/bundle": {
-      "get": {
-        "description": "Unauthenticated by design — auditors and integrators can verify which signed content bundle the platform is serving (version, signer, signedAt, per-file SHA-256, verification status). No clinical content is returned here.",
-        "operationId": "KnowledgeController_bundle",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "summary": "Return the loaded content bundle metadata",
-        "tags": [
-          "knowledge"
         ]
       }
     },
@@ -1567,6 +1607,815 @@
         ]
       }
     },
+    "/api/v1/toxidromes": {
+      "get": {
+        "description": "Open toxidrome reference: pattern → likely class of poisoning, with management and links to antidote records where applicable. Covers anticholinergic, cholinergic (SLUDGE / organophosphate), opioid, sympathomimetic, sedative-hypnotic, serotonin syndrome, NMS, salicylate. Filters: q (free text), domain. Returns summaries; fetch full details by slug.",
+        "operationId": "ToxidromesController_list",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "domain",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List toxidromes (poisoning pattern recognition)",
+        "tags": [
+          "toxidromes"
+        ]
+      }
+    },
+    "/api/v1/toxidromes/{slug}": {
+      "get": {
+        "description": "Returns the full pattern: vital signs, exam findings, common causative agents, differential diagnosis, ordered management steps, antidote (where one exists, with link to the antidote record), and red flags. Reference content only — no patient identity is processed.",
+        "operationId": "ToxidromesController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a toxidrome by slug",
+        "tags": [
+          "toxidromes"
+        ]
+      }
+    },
+    "/api/v1/anticoagulant-reversal": {
+      "get": {
+        "description": "Reversal reference for warfarin, DOACs (apixaban, rivaroxaban, edoxaban, dabigatran), unfractionated heparin, LMWH, fondaparinux, and fibrinolytics (alteplase/tPA). Each record covers life-threatening bleed, urgent surgery, major bleed and supratherapeutic-no-bleed scenarios. Filters: q, drugClass.",
+        "operationId": "AnticoagulantReversalController_list",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "drugClass",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List anticoagulant reversal protocols",
+        "tags": [
+          "anticoagulant-reversal"
+        ]
+      }
+    },
+    "/api/v1/anticoagulant-reversal/{slug}": {
+      "get": {
+        "description": "Returns the full reversal plan: mechanism, urgency-ordered protocols (agent, dose, adjuncts, monitoring, cautions), pitfalls, and citations. Reference content only — no patient identity is processed.",
+        "operationId": "AnticoagulantReversalController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get an anticoagulant reversal protocol by slug",
+        "tags": [
+          "anticoagulant-reversal"
+        ]
+      }
+    },
+    "/api/v1/iv-compatibility": {
+      "get": {
+        "description": "Curated subset of inpatient IV co-administration pairs — high-mortality / high-volume scenarios from King Guide, ASHP, FDA labelling. Includes the documented-deaths cases (ceftriaxone + calcium in neonates), common ICU mistakes (vasopressor + bicarbonate, vancomycin + pip-tazo) and the permissive defaults (norepinephrine Y-site, dexmedetomidine, metronidazole). Filters: q (free text), drug (name or slug), status (compatible|conditional|incompatible|no-data).",
+        "operationId": "IvCompatibilityController_list",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "drug",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List curated IV compatibility pairs (Y-site / additive / syringe)",
+        "tags": [
+          "iv-compatibility"
+        ]
+      }
+    },
+    "/api/v1/iv-compatibility/{slug}": {
+      "get": {
+        "description": "Returns the full pair: compatibility status, applicable routes (y-site / additive / syringe), concentration / diluent / time notes, practical alternative when incompatible, and citations. Reference content only — no patient identity is processed.",
+        "operationId": "IvCompatibilityController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get an IV compatibility pair by slug",
+        "tags": [
+          "iv-compatibility"
+        ]
+      }
+    },
+    "/api/v1/pregnancy-lactation": {
+      "get": {
+        "description": "2015 FDA PLLR structured-narrative format + LactMed-style lactation detail. Each record is keyed by drug slug and carries a clinical headline + risk summary + clinical considerations + data + reproductive-potential guidance. The retired A/B/C/D/X letter categories are stored for back-compat but should NOT be the primary decision aid. Filters: q (free text), pregnancy / lactation (preferred|acceptable|caution|avoid|contraindicated).",
+        "operationId": "PregnancyLactationController_list",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pregnancy",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lactation",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List pregnancy + lactation reference records (PLLR format)",
+        "tags": [
+          "pregnancy-lactation"
+        ]
+      }
+    },
+    "/api/v1/pregnancy-lactation/{slug}": {
+      "get": {
+        "description": "Returns the full PLLR narrative: pregnancy (risk summary, clinical considerations, data, trimester notes), lactation (risk summary, infant exposure data, alternatives), reproductive potential (pregnancy testing, contraception, infertility), and citations.",
+        "operationId": "PregnancyLactationController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a pregnancy + lactation record by slug",
+        "tags": [
+          "pregnancy-lactation"
+        ]
+      }
+    },
+    "/api/v1/pregnancy-lactation/by-drug/{drugSlug}": {
+      "get": {
+        "description": "For an integrator that has the drug slug (e.g. from a prescription) and wants the PLLR record directly. Returns 404 if no PLLR record exists for that drug.",
+        "operationId": "PregnancyLactationController_getByDrug",
+        "parameters": [
+          {
+            "name": "drugSlug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Reverse lookup by drug slug",
+        "tags": [
+          "pregnancy-lactation"
+        ]
+      }
+    },
+    "/api/v1/hepatic-dose": {
+      "get": {
+        "description": "Structured-axis hepatic dose adjustment, mirroring the renal adjustment pattern. Each record carries per-Child-Pugh-class guidance (A=mild, B=moderate, C=severe), mechanism, monitoring, acute-failure considerations, and practical alternatives. Filters: q (free text), decision (use-with-caution|reduce-dose|avoid|contraindicated).",
+        "operationId": "HepaticDoseController_list",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "decision",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List hepatic dose adjustment records (Child-Pugh-banded)",
+        "tags": [
+          "hepatic-dose"
+        ]
+      }
+    },
+    "/api/v1/hepatic-dose/{slug}": {
+      "get": {
+        "description": "Returns full Child-Pugh A/B/C guidance, mechanism, monitoring, acute-failure considerations and alternatives.",
+        "operationId": "HepaticDoseController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a hepatic dose adjustment record by slug",
+        "tags": [
+          "hepatic-dose"
+        ]
+      }
+    },
+    "/api/v1/hepatic-dose/by-drug/{drugSlug}": {
+      "get": {
+        "description": "For an integrator with the drug slug (e.g. from a prescription) — returns the hepatic dose record directly. 404 if no record exists for that drug.",
+        "operationId": "HepaticDoseController_getByDrug",
+        "parameters": [
+          {
+            "name": "drugSlug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Reverse lookup by drug slug",
+        "tags": [
+          "hepatic-dose"
+        ]
+      }
+    },
+    "/api/v1/symptom-triage": {
+      "get": {
+        "description": "Backward-chaining differential-diagnosis reference. The clinician asks \"what could this be?\" — the record returns common / consider / must-not-miss bands, key history + exam, red flags, initial investigations, and disposition. Anonymous; reference-only. Filters: q (free text), population (adult|paediatric|all-ages), domain.",
+        "operationId": "SymptomTriageController_list",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "population",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "domain",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List chief complaints with ranked differentials",
+        "tags": [
+          "symptom-triage"
+        ]
+      }
+    },
+    "/api/v1/symptom-triage/{slug}": {
+      "get": {
+        "description": "Returns the full workup: framing, key history, key exam, ranked differential (common / consider / must-not-miss with discriminating features), red flags, initial investigations, and disposition.",
+        "operationId": "SymptomTriageController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a chief-complaint workup by slug",
+        "tags": [
+          "symptom-triage"
+        ]
+      }
+    },
+    "/api/v1/clinical-reference/{domain}": {
+      "get": {
+        "description": "domain ∈ clinical-procedures | bedside-interpretation | preventive-care | growth-development. Filters: category, q. Returns summaries; fetch full sections by slug.",
+        "operationId": "ClinicalReferenceController_list",
+        "parameters": [
+          {
+            "name": "domain",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "enum": [
+                "clinical-procedures",
+                "bedside-interpretation",
+                "preventive-care",
+                "growth-development"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "category",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List reference cards in a clinical-reference domain",
+        "tags": [
+          "clinical-reference"
+        ]
+      }
+    },
+    "/api/v1/clinical-reference/{domain}/{slug}": {
+      "get": {
+        "description": "Returns the full card: summary, titled sections (bullets or ordered steps), red flags and citations. Reference content only — no patient identity is processed.",
+        "operationId": "ClinicalReferenceController_get",
+        "parameters": [
+          {
+            "name": "domain",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "enum": [
+                "clinical-procedures",
+                "bedside-interpretation",
+                "preventive-care",
+                "growth-development"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a reference card by domain + slug",
+        "tags": [
+          "clinical-reference"
+        ]
+      }
+    },
+    "/api/v1/integrations": {
+      "get": {
+        "description": "Catalogue of plugin / snippet integrations for OpenMRS, OpenEMR, Bahmni, ERPNext, GNU Health, DHIS2, OpenHIM, CommCare, Epic, Cerner / Oracle Health, Allscripts / Veradigm, athenahealth, plus pure-standard targets (HL7 v2, FHIR R4, CDS Hooks 1.0, SMART on FHIR). Filter by category (open-source / proprietary / standard), method (cds-hooks, smart-on-fhir, fhir-rest, rest, hl7v2, webhook, iframe-embed) or free-text query. Returns summaries; fetch detailed snippets + links by slug.",
+        "operationId": "IntegrationsController_list",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List EMR / HMIS integrations VedaMD supports",
+        "tags": [
+          "integrations"
+        ]
+      }
+    },
+    "/api/v1/integrations/postman-collection": {
+      "get": {
+        "description": "Generates a ready-to-import Postman v2.1 collection covering CDS Hooks discovery, every discovered CDS service (POST with realistic sample body), core content endpoints (drugs, conditions, scores, antidotes, ranges, drug-disease, immunization, allergy, notifiable, pgx), the integrations catalogue itself, and a deterministic agentic evaluate example. Bearer auth is pre-configured at the collection level — set the `apiKey` variable to your sandbox or production key after import. Also imports cleanly into Insomnia (via the Postman importer) and Bruno.",
+        "operationId": "IntegrationsController_postmanCollection",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Download a Postman v2.1 collection for the API",
+        "tags": [
+          "integrations"
+        ]
+      }
+    },
+    "/api/v1/integrations/{slug}/markdown": {
+      "get": {
+        "description": "Same content as GET /:slug, rendered as Markdown. Paste into Confluence / Notion / GitHub README / internal wiki. Plain text — no PHI, no patient data.",
+        "operationId": "IntegrationsController_getMarkdown",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get an EMR / HMIS integration as a Markdown document",
+        "tags": [
+          "integrations"
+        ]
+      }
+    },
+    "/api/v1/integrations/{slug}": {
+      "get": {
+        "description": "Returns description, supported CDS hooks, copy-paste configuration snippets, plugin / documentation links and integrator notes for the requested system.",
+        "operationId": "IntegrationsController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get an EMR / HMIS integration detail by slug",
+        "tags": [
+          "integrations"
+        ]
+      }
+    },
+    "/api/v1/dose-protocols": {
+      "get": {
+        "description": "Curated mg/kg starting points indexed by (diagnosis, treatment line, medication). Filter by `q` (free-text across diagnosis / line / medication / preparation / remarks) and/or `diagnosis` (exact or substring match). Returns the matching protocol rows plus a sorted unique-diagnosis list for navigation.",
+        "operationId": "DoseProtocolsController_list",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "diagnosis",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List weight-based dose protocols",
+        "tags": [
+          "dose-protocols"
+        ]
+      }
+    },
+    "/api/v1/dose-protocols/diagnoses": {
+      "get": {
+        "description": "Lightweight diagnosis index — used by Catalogue / Dose calculator when the full protocol bodies are not needed.",
+        "operationId": "DoseProtocolsController_diagnoses",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Sorted alphabetical list of unique dose-protocol diagnoses",
+        "tags": [
+          "dose-protocols"
+        ]
+      }
+    },
+    "/api/v1/clinical-tools": {
+      "get": {
+        "description": "Single payload powering the /app/tools calculators. Returns paediatric mg/kg dose drugs (paracetamol, ibuprofen, amoxicillin, ceftriaxone, salbutamol, prednisolone, zinc, ORS, cotrimoxazole), the IMCI/APLS vital-sign reference table, and validated scoring systems (NEWS2, qSOFA, Wells PE, CHA₂DS₂-VASc). Calculator math runs client-side; this endpoint ships only the normative reference data.",
+        "operationId": "ClinicalToolsController_all",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Bedside-calculator reference data — dose drugs + vitals + scoring systems",
+        "tags": [
+          "clinical-tools"
+        ]
+      }
+    },
+    "/api/v1/clinical-tools/scoring/{id}": {
+      "get": {
+        "description": "Sub-resource — returns just the axes + citation for the requested scoring system (news2, qsofa, wells-pe, cha2ds2-vasc).",
+        "operationId": "ClinicalToolsController_scoring",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get one scoring system by id",
+        "tags": [
+          "clinical-tools"
+        ]
+      }
+    },
     "/api/v1/bundles": {
       "get": {
         "description": "FR-147 — filter by domain, locale, country applicability.",
@@ -1972,6 +2821,692 @@
         ]
       }
     },
+    "/api/v1/notifications/channels/providers": {
+      "get": {
+        "description": "Returns the provider identifiers the platform supports (twilio-sms, twilio-whatsapp, africastalking-sms, smtp, whatsapp-business). Used by the UI channel-create form to populate the provider picker.",
+        "operationId": "NotificationsController_providers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List supported notification providers",
+        "tags": [
+          "notifications"
+        ]
+      }
+    },
+    "/api/v1/notifications/channels": {
+      "get": {
+        "operationId": "NotificationsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List configured notification channels for the calling integrator",
+        "tags": [
+          "notifications"
+        ]
+      },
+      "post": {
+        "description": "Submit provider + credentials. Credentials are AEAD-encrypted with the integratorId as additional authenticated data and never returned over the API. A channel must be tested via POST /:id/test before it can dispatch real alerts.",
+        "operationId": "NotificationsController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Create a notification channel",
+        "tags": [
+          "notifications"
+        ]
+      }
+    },
+    "/api/v1/notifications/channels/{id}": {
+      "get": {
+        "operationId": "NotificationsController_get",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a single channel (summary only — credentials never returned)",
+        "tags": [
+          "notifications"
+        ]
+      },
+      "patch": {
+        "operationId": "NotificationsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Update channel name / recipient / sender / enabled status, OR rotate credentials",
+        "tags": [
+          "notifications"
+        ]
+      },
+      "delete": {
+        "operationId": "NotificationsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Delete a channel",
+        "tags": [
+          "notifications"
+        ]
+      }
+    },
+    "/api/v1/notifications/channels/{id}/test": {
+      "post": {
+        "description": "Uses the channel default recipient unless `to` is provided. Sends a short canned message unless `body` is provided. Returns the provider delivery result.",
+        "operationId": "NotificationsController_test",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Send a test message through this channel",
+        "tags": [
+          "notifications"
+        ]
+      }
+    },
+    "/api/v1/clinical-audits": {
+      "get": {
+        "operationId": "ClinicalAuditsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List clinical audits for the calling integrator",
+        "tags": [
+          "clinical-audits"
+        ]
+      },
+      "post": {
+        "description": "Binds a named query (connectionId + namedQueryId) to a set of custom-rule IDs, optional policy IDs to cite, a threshold (absolute count or percentage), and the notification-channel IDs to dispatch on breach.",
+        "operationId": "ClinicalAuditsController_create",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Create a clinical audit",
+        "tags": [
+          "clinical-audits"
+        ]
+      }
+    },
+    "/api/v1/clinical-audits/{id}": {
+      "get": {
+        "operationId": "ClinicalAuditsController_get",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a single audit definition by id",
+        "tags": [
+          "clinical-audits"
+        ]
+      },
+      "patch": {
+        "operationId": "ClinicalAuditsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Update audit name / rules / policies / threshold / channels",
+        "tags": [
+          "clinical-audits"
+        ]
+      },
+      "delete": {
+        "operationId": "ClinicalAuditsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Delete an audit",
+        "tags": [
+          "clinical-audits"
+        ]
+      }
+    },
+    "/api/v1/clinical-audits/{id}/run": {
+      "post": {
+        "description": "Executes the configured named query against the integrator-registered connection, evaluates each row against the configured custom rules, cites uploaded policies, computes threshold breach, and dispatches alerts via configured channels when the threshold trips. Returns full structured result (row-level verdicts use anonymous row indices — never patient identifiers).",
+        "operationId": "ClinicalAuditsController_run",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Run an audit on demand",
+        "tags": [
+          "clinical-audits"
+        ]
+      }
+    },
+    "/api/v1/data-sources/connections": {
+      "get": {
+        "description": "Returns metadata only — connection URLs are AEAD-encrypted server-side and never returned over the API.",
+        "operationId": "DataSourcesController_listConnections",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List SQL connections for the calling integrator",
+        "tags": [
+          "data-sources"
+        ]
+      },
+      "post": {
+        "description": "Connection URLs are encrypted on receipt with the integratorId as AAD; the raw value never reaches the database or any application log. The connection is also pushed into the runtime ingestion registry immediately so audits + agentic flows can use it without an app restart.",
+        "operationId": "DataSourcesController_createConnection",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Register a SQL connection",
+        "tags": [
+          "data-sources"
+        ]
+      }
+    },
+    "/api/v1/data-sources/connections/{id}": {
+      "get": {
+        "operationId": "DataSourcesController_getConnection",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "data-sources"
+        ]
+      },
+      "patch": {
+        "operationId": "DataSourcesController_updateConnection",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Update a connection (rotate URL by submitting `url`)",
+        "tags": [
+          "data-sources"
+        ]
+      },
+      "delete": {
+        "operationId": "DataSourcesController_removeConnection",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "data-sources"
+        ]
+      }
+    },
+    "/api/v1/data-sources/connections/{id}/test": {
+      "post": {
+        "operationId": "DataSourcesController_testConnection",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Test the connection (issues a SELECT 1 round trip)",
+        "tags": [
+          "data-sources"
+        ]
+      }
+    },
+    "/api/v1/data-sources/queries": {
+      "get": {
+        "operationId": "DataSourcesController_listQueries",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List named queries for the calling integrator",
+        "tags": [
+          "data-sources"
+        ]
+      },
+      "post": {
+        "description": "SQL is validated read-only at submission (rejects INSERT/UPDATE/DELETE/DDL + stacked statements). The mapping is a declarative description of how the result columns map to AgenticClinicalContext (medications, diagnoses, allergies, labs).",
+        "operationId": "DataSourcesController_createQuery",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Register a named query",
+        "tags": [
+          "data-sources"
+        ]
+      }
+    },
+    "/api/v1/data-sources/queries/{id}": {
+      "get": {
+        "operationId": "DataSourcesController_getQuery",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "data-sources"
+        ]
+      },
+      "patch": {
+        "operationId": "DataSourcesController_updateQuery",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "data-sources"
+        ]
+      },
+      "delete": {
+        "operationId": "DataSourcesController_removeQuery",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "data-sources"
+        ]
+      }
+    },
+    "/cds-services/{serviceId}/feedback": {
+      "post": {
+        "description": "Accepts an array of feedback entries per CDS Hooks 1.0 §6. Each entry references a card UUID we minted in a prior /cds-services response. PHI-free — only the outcome + override-reason code + optional comment is persisted.",
+        "operationId": "CdsFeedbackSpecController_ingest",
+        "parameters": [
+          {
+            "name": "serviceId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "CDS Hooks 1.0 feedback ingest",
+        "tags": [
+          "cds-hooks"
+        ]
+      }
+    },
+    "/api/v1/cds-feedback/summary": {
+      "get": {
+        "description": "Returns total feedback, accepted, overridden, override-rate %, and the top 3 override reason codes for every rule that has feedback. Sorted by total feedback descending. Rules being overridden ≥ 50 % of the time are flagged for editorial review (use this signal to retire false-positive rules).",
+        "operationId": "CdsFeedbackOperatorController_summary",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Per-rule feedback aggregation",
+        "tags": [
+          "cds-feedback"
+        ]
+      }
+    },
+    "/api/v1/cds-feedback": {
+      "get": {
+        "operationId": "CdsFeedbackOperatorController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List feedback entries (latest first) optionally filtered by ruleId",
+        "tags": [
+          "cds-feedback"
+        ]
+      }
+    },
+    "/api/v1/governance/content-review": {
+      "get": {
+        "description": "Returns total / approved / review / draft / deprecated counts for every content domain, plus the overall approved %, and any FR-024 violations (an approved record must carry ≥ 2 reviewers and an approvedAt timestamp). Use this to drive the draft → review → approved governance workflow.",
+        "operationId": "GovernanceController_contentReview",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Per-domain content review-status coverage + FR-024 audit",
+        "tags": [
+          "governance"
+        ]
+      }
+    },
     "/api/v1/reference/summary": {
       "get": {
         "operationId": "ReferenceController_summary",
@@ -2196,6 +3731,72 @@
           "reference"
         ]
       }
+    },
+    "/api/v1/usage": {
+      "get": {
+        "operationId": "UsageController_list",
+        "parameters": [
+          {
+            "name": "limit",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "since",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Recent usage events (newest first) for the calling integrator",
+        "tags": [
+          "usage"
+        ]
+      }
+    },
+    "/api/v1/usage/summary": {
+      "get": {
+        "operationId": "UsageController_summary",
+        "parameters": [
+          {
+            "name": "since",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Usage rollup (by category, endpoint, day, actor type) for the dashboard",
+        "tags": [
+          "usage"
+        ]
+      }
     }
   },
   "info": {
@@ -2246,7 +3847,8 @@
                 "drug-info:read",
                 "terminology:read",
                 "bundles:read",
-                "integration-log:read"
+                "integration-log:read",
+                "clinical-audit:run"
               ]
             }
           },
@@ -2306,7 +3908,8 @@
                 "drug-info:read",
                 "terminology:read",
                 "bundles:read",
-                "integration-log:read"
+                "integration-log:read",
+                "clinical-audit:run"
               ]
             }
           },
@@ -2357,7 +3960,8 @@
                 "drug-info:read",
                 "terminology:read",
                 "bundles:read",
-                "integration-log:read"
+                "integration-log:read",
+                "clinical-audit:run"
               ]
             }
           },
@@ -2419,6 +4023,26 @@
       "DosingRequestDto": {
         "type": "object",
         "properties": {}
+      },
+      "ConversationTurnDto": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "user",
+              "assistant"
+            ]
+          },
+          "content": {
+            "type": "string",
+            "description": "Plain-text content of the turn."
+          }
+        },
+        "required": [
+          "role",
+          "content"
+        ]
       },
       "PatientDto": {
         "type": "object",
@@ -2513,6 +4137,13 @@
             "description": "Free-text clinical question for the agentic reasoner.",
             "example": "Is metformin safe to start in this patient?"
           },
+          "conversation": {
+            "description": "Prior turns of the conversation, oldest first, EXCLUDING the current `question`. Lets the reasoner keep context across follow-up questions. Anonymous — no patient identifiers. Capped at 40 turns.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConversationTurnDto"
+            }
+          },
           "mode": {
             "type": "string",
             "enum": [
@@ -2591,6 +4222,13 @@
             "type": "string",
             "description": "Free-text clinical question for the agentic reasoner.",
             "example": "Is metformin safe to start in this patient?"
+          },
+          "conversation": {
+            "description": "Prior turns of the conversation, oldest first, EXCLUDING the current `question`. Lets the reasoner keep context across follow-up questions. Anonymous — no patient identifiers. Capped at 40 turns.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConversationTurnDto"
+            }
           },
           "mode": {
             "type": "string",
@@ -2694,6 +4332,13 @@
           "question": {
             "type": "string",
             "example": "Is this safe for this patient?"
+          },
+          "conversation": {
+            "description": "Prior conversation turns (oldest first), excluding the current question.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConversationTurnDto"
+            }
           },
           "mode": {
             "type": "string",

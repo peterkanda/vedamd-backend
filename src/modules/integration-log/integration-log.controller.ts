@@ -2,11 +2,13 @@ import { Controller, Get, Query, Req, UseGuards } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import type { FastifyRequest } from 'fastify';
 import { IntegrationLogService } from './integration-log.service';
-import { OperatorAuthGuard } from '../../common/operator-auth';
+import { OperatorOrApiKeyGuard } from '../../common/operator-auth';
+import { RequireScope } from '../../common/api-key-auth';
 
 @ApiTags('integration-log')
 @Controller('v1/integration-log')
-@UseGuards(OperatorAuthGuard)
+@UseGuards(OperatorOrApiKeyGuard)
+@RequireScope('integration-log:read')
 @ApiBearerAuth()
 export class IntegrationLogController {
   constructor(private readonly log: IntegrationLogService) {}
