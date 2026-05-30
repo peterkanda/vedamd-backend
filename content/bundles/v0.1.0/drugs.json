@@ -14992,6 +14992,10 @@
       {
         "label": "GINA 2024",
         "url": "https://ginasthma.org/"
+      },
+      {
+        "label": "BNF — clinical content",
+        "url": "https://bnf.nice.org.uk/drugs/budesonide/"
       }
     ],
     "ruleVersion": "0.1.0",
@@ -53408,15 +53412,40 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Intermittent claudication",
+          "route": "PO",
+          "regimen": "100 mg twice daily before food (or 30 min after); review at 3 months."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Heart failure of any severity",
+      "Severe ventricular arrhythmia or recent (≤ 6 months) ACS",
+      "Active bleeding",
+      "Pregnancy"
+    ],
+    "warnings": [
+      "Headache common — start at half dose to improve tolerability.",
+      "Caution in atrial fibrillation (risk of tachyarrhythmia).",
+      "CYP3A4 / CYP2C19 substrate — reduce dose with strong inhibitors."
+    ],
+    "adverseEffects": [
+      "Headache (very common)",
+      "Diarrhoea, palpitations",
+      "Bleeding risk with antiplatelet/anticoagulant co-therapy"
+    ],
+    "monitoring": [
+      "Symptom response after 3 months — stop if no benefit"
+    ],
     "references": [
       {
         "label": "BNF — Cilostazol monograph",
+        "url": "https://bnf.nice.org.uk/drugs/cilostazol/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/cilostazol/"
       }
     ],
@@ -53595,15 +53624,48 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "PSVT / atrial fibrillation",
+          "route": "PO",
+          "regimen": "150 mg three times daily; up to 300 mg three times daily if needed."
+        },
+        {
+          "indication": "Pharmacological cardioversion (\"pill in pocket\")",
+          "route": "PO",
+          "regimen": "450–600 mg single dose under prior in-hospital observation."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Structural heart disease, post-MI",
+      "Second/third-degree AV block (no pacemaker)",
+      "Severe sinus node dysfunction",
+      "Heart failure",
+      "Severe bradycardia or hypotension",
+      "Severe COPD"
+    ],
+    "warnings": [
+      "Pro-arrhythmic — ECG monitoring during initiation.",
+      "Increases digoxin and warfarin concentrations.",
+      "Reduce dose in hepatic impairment."
+    ],
+    "adverseEffects": [
+      "Metallic taste, GI upset",
+      "Bradycardia, AV block",
+      "Pro-arrhythmia",
+      "Bronchospasm"
+    ],
+    "monitoring": [
+      "ECG before, during initiation and steady state; electrolytes"
+    ],
     "references": [
       {
         "label": "BNF — Propafenone monograph",
+        "url": "https://bnf.nice.org.uk/drugs/propafenone-hydrochloride/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/propafenone-hydrochloride/"
       }
     ],
@@ -53698,15 +53760,45 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Erectile dysfunction",
+          "route": "PO",
+          "regimen": "50 mg 1 h before sex; range 25–100 mg, once daily max."
+        },
+        {
+          "indication": "Pulmonary arterial hypertension",
+          "route": "PO",
+          "regimen": "20 mg three times daily."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Concurrent nitrate or nicorandil use",
+      "Severe hypotension or recent (< 6 months) stroke / MI",
+      "Severe hepatic impairment",
+      "Inherited degenerative retinal disorders (e.g. retinitis pigmentosa)"
+    ],
+    "warnings": [
+      "CYP3A4 substrate — reduce dose with strong inhibitors (ritonavir, ketoconazole).",
+      "Sudden visual or hearing loss — discontinue and refer."
+    ],
+    "adverseEffects": [
+      "Headache, flushing, dyspepsia",
+      "Nasal congestion",
+      "Visual disturbance (blue tinge), rare NAION",
+      "Priapism (rare; > 4 h needs urgent intervention)"
+    ],
+    "monitoring": [
+      "None routinely; PAH dosing requires echocardiogram and pulmonary haemodynamics review."
+    ],
     "references": [
       {
         "label": "BNF — Sildenafil monograph",
+        "url": "https://bnf.nice.org.uk/drugs/sildenafil/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/sildenafil/"
       }
     ],
@@ -53737,15 +53829,40 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Overactive bladder",
+          "route": "PO",
+          "regimen": "5 mg 2–3 times daily; modified-release 5–20 mg once daily."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Urinary retention",
+      "Severe ulcerative colitis or toxic megacolon",
+      "Myasthenia gravis",
+      "Closed-angle glaucoma"
+    ],
+    "warnings": [
+      "Significant anticholinergic load — caution in elderly, frail, dementia (consider mirabegron alternative).",
+      "Hyperthermia in hot weather (reduced sweating).",
+      "Reduce dose in hepatic impairment."
+    ],
+    "adverseEffects": [
+      "Dry mouth, constipation, blurred vision, dizziness",
+      "Cognitive impairment, confusion (especially in elderly)",
+      "Urinary retention, tachycardia"
+    ],
+    "monitoring": [
+      "Cognitive function in elderly; bowel function"
+    ],
     "references": [
       {
         "label": "BNF — Oxybutynin monograph",
+        "url": "https://bnf.nice.org.uk/drugs/oxybutynin-hydrochloride/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/oxybutynin-hydrochloride/"
       }
     ],
@@ -53773,18 +53890,45 @@
     ],
     "mechanism": "Selective oestrogen-receptor agonist in target tissues (combined hormonal contraception, menstrual regulation).",
     "pharmacokinetics": null,
-    "pregnancy": null,
+    "pregnancy": "Contraindicated.",
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Combined hormonal contraception",
+          "route": "PO",
+          "regimen": "20–35 micrograms daily as part of a combined formulation; 21/7 or extended regimens."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Personal or strong family history of VTE",
+      "Migraine with aura",
+      "BP ≥ 160/100 mmHg",
+      "Smoking ≥ 35 years",
+      "BMI ≥ 35 kg/m² (relative)",
+      "Liver disease, active breast cancer"
+    ],
+    "warnings": [
+      "VTE risk highest in first 3 months of starting combined hormonal contraception.",
+      "Interacts with enzyme-inducing antiepileptics, rifampicin, St John's wort — additional contraception required."
+    ],
+    "adverseEffects": [
+      "Breast tenderness, nausea",
+      "Spotting / breakthrough bleeding",
+      "Mood change, headache",
+      "Hypertension, VTE (rare but serious)"
+    ],
+    "monitoring": [
+      "BP at initiation and at least annually"
+    ],
     "references": [
       {
         "label": "BNF — Ethinylestradiol monograph",
+        "url": "https://bnf.nice.org.uk/drugs/ethinylestradiol/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/ethinylestradiol/"
       }
     ],
@@ -54226,18 +54370,44 @@
     ],
     "mechanism": "Endoperoxide bridge generates reactive radicals damaging Plasmodium proteins.",
     "pharmacokinetics": null,
-    "pregnancy": null,
+    "pregnancy": "Use in any trimester for severe malaria when benefit outweighs risk; preferred over quinine in severe disease.",
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Severe falciparum malaria (WHO first-line)",
+          "route": "IV/IM",
+          "regimen": "2.4 mg/kg at 0, 12 and 24 h, then once daily for ≥ 24 h or until oral therapy possible (minimum 3 IV/IM doses)."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Severe hypersensitivity to artemisinins",
+      "Severe G6PD deficiency (relative — monitor)"
+    ],
+    "warnings": [
+      "Delayed haemolysis 1–4 weeks after treatment in returning travellers — monitor Hb at 2, 3 and 4 weeks.",
+      "Always follow with full course of an effective oral antimalarial (e.g. artemether-lumefantrine).",
+      "Reconstitute IV solution immediately before use."
+    ],
+    "adverseEffects": [
+      "Delayed haemolytic anaemia",
+      "Transient AST/ALT elevation",
+      "Headache, dizziness",
+      "Bradycardia (rare)",
+      "Hypersensitivity reactions"
+    ],
+    "monitoring": [
+      "Parasitaemia, Hb, parasite clearance during admission",
+      "Hb weekly for 4 weeks after discharge (delayed haemolysis)"
+    ],
     "references": [
       {
         "label": "BNF — artesunate monograph",
+        "url": "https://bnf.nice.org.uk/drugs/artesunate/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/artesunate/"
       }
     ],
@@ -54307,15 +54477,34 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Asthma maintenance",
+          "route": "INH",
+          "regimen": "200–400 micrograms twice daily (low-dose ICS); 800–1000 micrograms twice daily (high dose)."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Hypersensitivity to beclometasone"
+    ],
+    "warnings": [
+      "Oral candidiasis and dysphonia — rinse mouth after use and use spacer device.",
+      "Long-term high-dose use can suppress adrenal function in adults and impair growth in children."
+    ],
+    "adverseEffects": [
+      "Oral candidiasis, hoarseness, sore throat, paradoxical bronchospasm (rare)"
+    ],
+    "monitoring": [
+      "Inhaler technique annually; growth in children"
+    ],
     "references": [
       {
         "label": "BNF — beclometasone (inhaled) monograph",
+        "url": "https://bnf.nice.org.uk/drugs/beclometasone-dipropionate/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/beclometasone-dipropionate/"
       }
     ],
@@ -54346,15 +54535,39 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Antenatal lung maturation 24–34 weeks",
+          "route": "IM",
+          "regimen": "12 mg IM, second dose at 24 h."
+        },
+        {
+          "indication": "Severe inflammatory disease",
+          "route": "PO/IM/IV",
+          "regimen": "0.5–9 mg/day in divided doses depending on indication."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Systemic infection (unless covered); known hypersensitivity"
+    ],
+    "warnings": [
+      "Long-acting steroid — prolonged use carries high risk of HPA-axis suppression.",
+      "Antenatal use requires obstetric supervision and consideration of repeat course risks."
+    ],
+    "adverseEffects": [
+      "Hyperglycaemia, weight gain, mood change, immunosuppression, osteoporosis, adrenal suppression"
+    ],
+    "monitoring": [
+      "BP, glucose, weight on prolonged use; bone density"
+    ],
     "references": [
       {
         "label": "BNF — betamethasone monograph",
+        "url": "https://bnf.nice.org.uk/drugs/betamethasone/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/betamethasone/"
       }
     ],
@@ -54443,18 +54656,47 @@
     ],
     "mechanism": "Concentrates in Plasmodium food vacuole inhibiting haem polymerisation; immunomodulatory in autoimmune disease.",
     "pharmacokinetics": null,
-    "pregnancy": null,
+    "pregnancy": "Considered safe at prophylactic and treatment doses.",
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Chloroquine-sensitive malaria prophylaxis",
+          "route": "PO",
+          "regimen": "310 mg base weekly, started 1 week before and continued 4 weeks after travel."
+        },
+        {
+          "indication": "Chloroquine-sensitive malaria treatment",
+          "route": "PO",
+          "regimen": "620 mg base at 0 and 6–8 h, then 310 mg daily for 2 days (total 1.55 g base)."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Established retinopathy",
+      "Hypersensitivity to 4-aminoquinolines"
+    ],
+    "warnings": [
+      "Cumulative dose > 100 g (typically > 5 years) increases retinopathy risk — baseline + annual ophthalmology screening.",
+      "Lowers seizure threshold; caution in epilepsy.",
+      "Hypoglycaemia risk — caution in diabetes on insulin/sulfonylureas."
+    ],
+    "adverseEffects": [
+      "GI upset, headache, pruritus (especially in darker-skinned individuals)",
+      "Retinopathy (irreversible if late)",
+      "QT prolongation",
+      "Haemolysis in severe G6PD deficiency"
+    ],
+    "monitoring": [
+      "Baseline ophthalmology and 5-yearly during chronic use; ECG before initiation when QT-prolonging drugs co-prescribed"
+    ],
     "references": [
       {
         "label": "BNF — chloroquine monograph",
+        "url": "https://bnf.nice.org.uk/drugs/chloroquine/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/chloroquine/"
       }
     ],
@@ -54482,18 +54724,41 @@
     ],
     "mechanism": "Inhibits fungal 14-α-demethylase, reducing ergosterol synthesis.",
     "pharmacokinetics": null,
-    "pregnancy": null,
+    "pregnancy": "Topical / vaginal use considered safe.",
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Vulvovaginal candidiasis",
+          "route": "Vaginal",
+          "regimen": "500 mg pessary at night, single dose; or 200 mg pessary nightly × 3."
+        },
+        {
+          "indication": "Tinea / cutaneous candidiasis",
+          "route": "Topical",
+          "regimen": "Apply 1% cream 2–3 times daily for 2–4 weeks."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Hypersensitivity to azole antifungals"
+    ],
+    "warnings": [
+      "Pessaries may damage latex condoms and diaphragms — counsel patient."
+    ],
+    "adverseEffects": [
+      "Local burning, irritation, mild skin reaction"
+    ],
+    "monitoring": [
+      "None routinely"
+    ],
     "references": [
       {
         "label": "BNF — clotrimazole monograph",
+        "url": "https://bnf.nice.org.uk/drugs/clotrimazole/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/clotrimazole/"
       }
     ],
@@ -54563,15 +54828,35 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Asthma maintenance",
+          "route": "INH",
+          "regimen": "50–250 micrograms twice daily (low to medium dose); up to 1000 micrograms/day high-dose."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Hypersensitivity to fluticasone"
+    ],
+    "warnings": [
+      "Higher potency than beclometasone — equivalent doses are lower.",
+      "Pneumonia risk in COPD; oral candidiasis common.",
+      "Strong CYP3A4 substrate — interaction with ritonavir / ketoconazole may cause systemic effects."
+    ],
+    "adverseEffects": [
+      "Oral candidiasis, hoarseness; pneumonia in COPD high-dose ICS; adrenal suppression at high doses"
+    ],
+    "monitoring": [
+      "Inhaler technique"
+    ],
     "references": [
       {
         "label": "BNF — fluticasone (inhaled) monograph",
+        "url": "https://bnf.nice.org.uk/drugs/fluticasone-propionate/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/fluticasone-propionate/"
       }
     ],
@@ -54863,15 +55148,33 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Allergic rhinitis / chronic urticaria",
+          "route": "PO",
+          "regimen": "10 mg once daily."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Hypersensitivity"
+    ],
+    "warnings": [
+      "Reduce dose in severe hepatic impairment; consider 10 mg every other day."
+    ],
+    "adverseEffects": [
+      "Headache, fatigue, dry mouth (minimal sedation)"
+    ],
+    "monitoring": [
+      "None"
+    ],
     "references": [
       {
         "label": "BNF — loratadine monograph",
+        "url": "https://bnf.nice.org.uk/drugs/loratadine/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/loratadine/"
       }
     ],
@@ -54977,18 +55280,44 @@
     ],
     "mechanism": "Selective inhibition of presynaptic serotonin reuptake; potent CYP2D6 inhibition.",
     "pharmacokinetics": null,
-    "pregnancy": null,
+    "pregnancy": "Avoid in first trimester where possible; risk of neonatal withdrawal at term.",
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Depression",
+          "route": "PO",
+          "regimen": "20 mg once daily in the morning; range 20–50 mg/day."
+        },
+        {
+          "indication": "OCD / PTSD / panic disorder",
+          "route": "PO",
+          "regimen": "Start 20 mg/day, titrate to 40 mg (60 mg for OCD)."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Concomitant MAOI use; allow 14-day washout",
+      "Severe hepatic impairment with caution"
+    ],
+    "warnings": [
+      "Highest potential for discontinuation syndrome among SSRIs — taper slowly.",
+      "Potent CYP2D6 inhibitor — interacts with tamoxifen, codeine, metoprolol.",
+      "Risk of fetal cardiac defects in first trimester."
+    ],
+    "adverseEffects": [
+      "Nausea, dry mouth, sweating, sexual dysfunction, discontinuation symptoms"
+    ],
+    "monitoring": [
+      "Mood and suicidality especially first weeks; hyponatraemia in elderly"
+    ],
     "references": [
       {
         "label": "BNF — paroxetine monograph",
+        "url": "https://bnf.nice.org.uk/drugs/paroxetine/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/paroxetine/"
       }
     ],
@@ -55317,15 +55646,42 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Depression / GAD",
+          "route": "PO",
+          "regimen": "60 mg once daily; max 120 mg/day."
+        },
+        {
+          "indication": "Diabetic peripheral neuropathic pain",
+          "route": "PO",
+          "regimen": "60 mg once daily; review after 2 months."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Concomitant MAOI",
+      "Uncontrolled hypertension",
+      "Severe hepatic impairment"
+    ],
+    "warnings": [
+      "Caution in bipolar disorder, bleeding risk and elderly (hyponatraemia).",
+      "Stop with strong CYP1A2 inhibitors (fluvoxamine, ciprofloxacin).",
+      "Discontinuation syndrome — taper gradually."
+    ],
+    "adverseEffects": [
+      "Nausea, dry mouth, constipation, sexual dysfunction, hypertension, insomnia"
+    ],
+    "monitoring": [
+      "BP, mood, hepatic function on prolonged use"
+    ],
     "references": [
       {
         "label": "BNF — duloxetine monograph",
+        "url": "https://bnf.nice.org.uk/drugs/duloxetine/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/duloxetine/"
       }
     ],
@@ -56763,15 +57119,37 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Acute migraine (limited modern use)",
+          "route": "PO",
+          "regimen": "1–2 mg at onset, repeat after 30 min if needed; max 4 mg per attack and 8 mg/week."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Pregnancy and lactation",
+      "Peripheral vascular disease, CAD, severe hypertension",
+      "Severe hepatic or renal impairment",
+      "Concomitant CYP3A inhibitor (ergotism risk)"
+    ],
+    "warnings": [
+      "Ergotism — peripheral vasoconstriction, gangrene; do not combine with triptans.",
+      "Caution with macrolide antibiotics and azole antifungals."
+    ],
+    "adverseEffects": [
+      "Nausea, vomiting, peripheral vasoconstriction; rare cardiac and CNS effects"
+    ],
+    "monitoring": [
+      "Withdraw if signs of peripheral ischaemia"
+    ],
     "references": [
       {
         "label": "BNF — ergotamine monograph",
+        "url": "https://bnf.nice.org.uk/drugs/ergotamine-tartrate/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/ergotamine-tartrate/"
       }
     ],
@@ -57564,15 +57942,38 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Asthma / COPD",
+          "route": "PO",
+          "regimen": "Modified-release 200–400 mg twice daily; individualise by level."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Hypersensitivity"
+    ],
+    "warnings": [
+      "Narrow therapeutic index (10–20 mg/L) — monitor serum levels.",
+      "Many interactions: ciprofloxacin, macrolides, fluvoxamine raise levels; rifampicin, smoking, phenytoin lower.",
+      "Reduce dose in heart failure, hepatic disease, the elderly and febrile illness."
+    ],
+    "adverseEffects": [
+      "GI upset, headache, insomnia",
+      "Palpitations, tachyarrhythmia",
+      "Seizures (toxic levels)",
+      "Hypokalaemia in overdose"
+    ],
+    "monitoring": [
+      "Serum theophylline 4–6 h after oral dose at steady state; K⁺ in acute exacerbation"
+    ],
     "references": [
       {
         "label": "BNF — theophylline monograph",
+        "url": "https://bnf.nice.org.uk/drugs/theophylline/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/theophylline/"
       }
     ],
