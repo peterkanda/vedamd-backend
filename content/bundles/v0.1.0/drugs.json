@@ -3066,6 +3066,10 @@
       {
         "label": "ASH 2020 SCD Pain Guidelines",
         "url": "https://ashpublications.org/bloodadvances/article/4/12/2656/461050"
+      },
+      {
+        "label": "BNF — clinical content",
+        "url": "https://bnf.nice.org.uk/drugs/morphine-sulfate/"
       }
     ],
     "ruleVersion": "0.1.0",
@@ -52614,18 +52618,59 @@
     ],
     "mechanism": "Selective inhibition of cyclooxygenase-2 → reduced prostaglandin synthesis in inflammation and pain.",
     "pharmacokinetics": null,
-    "pregnancy": null,
-    "lactation": null,
+    "pregnancy": "Avoid throughout pregnancy if possible; contraindicated in third trimester (premature closure of the ductus arteriosus, oligohydramnios).",
+    "lactation": "Limited data; small amounts excreted in breast milk — avoid where possible.",
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Osteoarthritis",
+          "route": "PO",
+          "regimen": "200 mg once daily or 100 mg twice daily; max 200 mg/day."
+        },
+        {
+          "indication": "Rheumatoid arthritis",
+          "route": "PO",
+          "regimen": "200 mg twice daily; max 400 mg/day."
+        },
+        {
+          "indication": "Ankylosing spondylitis",
+          "route": "PO",
+          "regimen": "200 mg once daily; up to 400 mg/day if needed."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Active peptic ulceration or GI bleeding",
+      "Severe heart failure (NYHA III–IV)",
+      "Ischaemic heart disease, peripheral arterial disease, cerebrovascular disease",
+      "Severe hepatic impairment (Child-Pugh ≥ 7)",
+      "eGFR < 30 mL/min/1.73 m²",
+      "Third trimester of pregnancy",
+      "Hypersensitivity to sulfonamides"
+    ],
+    "warnings": [
+      "Increased thrombotic risk vs non-selective NSAIDs at high doses or long courses — use the lowest effective dose for the shortest duration.",
+      "Caution in hypertension, fluid retention, mild-to-moderate heart failure.",
+      "Caution in renal impairment (NSAID-induced AKI)."
+    ],
+    "adverseEffects": [
+      "GI: dyspepsia, abdominal pain, diarrhoea",
+      "CV: hypertension, oedema, palpitations",
+      "Renal: AKI, sodium and water retention",
+      "Skin: rash; rare SJS / TEN — discontinue and refer urgently",
+      "Hypersensitivity reactions including anaphylaxis"
+    ],
+    "monitoring": [
+      "Blood pressure and renal function periodically during prolonged therapy",
+      "GI symptoms / occult bleeding in higher-risk patients"
+    ],
     "references": [
       {
         "label": "BNF — Celecoxib monograph",
+        "url": "https://bnf.nice.org.uk/drugs/celecoxib/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/celecoxib/"
       }
     ],
@@ -52653,18 +52698,52 @@
     ],
     "mechanism": "GABA-A receptor positive modulator → sedation, anxiolysis, anterograde amnesia.",
     "pharmacokinetics": null,
-    "pregnancy": null,
-    "lactation": null,
+    "pregnancy": "Use during late pregnancy may cause neonatal respiratory depression, hypotonia and \"floppy infant\" syndrome.",
+    "lactation": "Brief use during anaesthesia is acceptable; for repeated dosing monitor infant for sedation.",
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Conscious sedation (adult)",
+          "route": "IV",
+          "regimen": "Initial 2 mg slow IV over ≥ 30 s, then 0.5–1 mg every 2 min titrated; reduce in elderly to 0.5 mg initial."
+        },
+        {
+          "indication": "Status epilepticus (no IV access)",
+          "route": "Buccal",
+          "regimen": "Adult: 10 mg buccal; child dose-by-age per APLS/BNFc."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Severe respiratory depression or acute pulmonary insufficiency",
+      "Sleep apnoea syndrome",
+      "Severe hepatic impairment",
+      "Acute alcohol or CNS depressant intoxication"
+    ],
+    "warnings": [
+      "Resuscitation equipment and trained personnel must be available for procedural sedation.",
+      "Reduce dose by 50% in elderly, debilitated and renally impaired patients.",
+      "Strong CYP3A4 interactions — avoid concomitant strong inhibitors/inducers.",
+      "Driving and skilled tasks: warn the patient."
+    ],
+    "adverseEffects": [
+      "Respiratory depression, apnoea (especially with rapid IV bolus)",
+      "Hypotension and bradycardia with IV use",
+      "Sedation, amnesia",
+      "Paradoxical agitation, especially in children and the elderly",
+      "Injection-site reactions"
+    ],
+    "monitoring": [
+      "Continuous SpO₂ and ECG during IV use; have naloxone and flumazenil available",
+      "Level of consciousness and respiratory rate"
+    ],
     "references": [
       {
         "label": "BNF — Midazolam monograph",
+        "url": "https://bnf.nice.org.uk/drugs/midazolam/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/midazolam/"
       }
     ],
@@ -52692,18 +52771,53 @@
     ],
     "mechanism": "Non-selective COX inhibition → reduced prostaglandin synthesis (anti-inflammatory, analgesic).",
     "pharmacokinetics": null,
-    "pregnancy": null,
-    "lactation": null,
+    "pregnancy": "Avoid where possible; contraindicated after 30 weeks (premature ductus closure, oligohydramnios).",
+    "lactation": "Compatible with breastfeeding at therapeutic doses (small amounts in milk).",
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Mild-to-moderate pain",
+          "route": "PO",
+          "regimen": "50 mg three times daily; max 150 mg/day."
+        },
+        {
+          "indication": "Topical pain",
+          "route": "Topical",
+          "regimen": "Apply 2–4 g to affected area three to four times daily."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Active or history of recurrent GI ulceration/bleeding",
+      "Severe heart failure",
+      "Ischaemic heart disease, cerebrovascular and peripheral arterial disease (oral systemic use)",
+      "Severe renal impairment (eGFR < 15 mL/min/1.73 m²)",
+      "Severe hepatic impairment",
+      "Third trimester of pregnancy"
+    ],
+    "warnings": [
+      "Increased CV risk equivalent to selective COX-2 inhibitors — avoid in established CV disease.",
+      "Use the lowest effective dose for the shortest duration; topical preparation preferred where feasible.",
+      "Hyperkalaemia risk with ACE-inhibitor/ARB/spironolactone co-prescription."
+    ],
+    "adverseEffects": [
+      "GI ulceration, bleeding, perforation",
+      "Hypertension, fluid retention, oedema",
+      "AKI, interstitial nephritis",
+      "Hepatic enzyme elevations",
+      "Skin reactions including rare SJS/TEN"
+    ],
+    "monitoring": [
+      "Blood pressure and renal function on prolonged therapy",
+      "LFTs if hepatic dysfunction develops"
+    ],
     "references": [
       {
         "label": "BNF — Diclofenac sodium monograph",
+        "url": "https://bnf.nice.org.uk/drugs/diclofenac-sodium/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/diclofenac-sodium/"
       }
     ],
@@ -52731,18 +52845,46 @@
     ],
     "mechanism": "Competitive H1 receptor antagonism (sedating).",
     "pharmacokinetics": null,
-    "pregnancy": null,
+    "pregnancy": "Limited data; commonly used in pregnancy where indicated — sedating second-generation alternatives may be preferred.",
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Acute allergic reaction / anaphylaxis adjunct",
+          "route": "IV/IM",
+          "regimen": "10 mg slow IV or IM; repeat as required up to 40 mg/24 h."
+        },
+        {
+          "indication": "Hay fever / pruritus",
+          "route": "PO",
+          "regimen": "4 mg every 4–6 h; max 24 mg/day."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Acute porphyria"
+    ],
+    "warnings": [
+      "Causes drowsiness — warn against driving and skilled tasks.",
+      "Anticholinergic load: caution in elderly (delirium, falls), prostatic hypertrophy, glaucoma, urinary retention.",
+      "Reduce dose in hepatic impairment."
+    ],
+    "adverseEffects": [
+      "Drowsiness, sedation",
+      "Anticholinergic effects: dry mouth, blurred vision, urinary retention, constipation",
+      "Paradoxical excitation in children",
+      "IV use: hypotension, transient CNS stimulation"
+    ],
+    "monitoring": [
+      "Sedation level if regular dosing"
+    ],
     "references": [
       {
         "label": "BNF — Chlorphenamine monograph",
+        "url": "https://bnf.nice.org.uk/drugs/chlorphenamine-maleate/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/chlorphenamine-maleate/"
       }
     ],
@@ -52770,18 +52912,49 @@
     ],
     "mechanism": "μ-opioid receptor agonist plus mild anticholinergic activity; toxic metabolite norpethidine accumulates in renal impairment.",
     "pharmacokinetics": null,
-    "pregnancy": null,
+    "pregnancy": "Use during labour can cause neonatal respiratory depression — have naloxone available.",
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Moderate-to-severe acute pain",
+          "route": "IM/SC",
+          "regimen": "25–100 mg every 4 h as required (max 400 mg/24 h, lower in elderly)."
+        },
+        {
+          "indication": "Obstetric analgesia",
+          "route": "IM",
+          "regimen": "50–100 mg every 1–3 h up to 400 mg/24 h."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Concurrent MAOI use or within 14 days of stopping",
+      "Severe renal impairment (norpethidine accumulation, seizure risk)",
+      "Acute respiratory depression, raised intracranial pressure"
+    ],
+    "warnings": [
+      "Active metabolite norpethidine is neurotoxic — avoid repeated doses, especially in renal impairment and the elderly.",
+      "Not recommended for chronic pain or prolonged use.",
+      "Seizure threshold lowered — caution in epilepsy."
+    ],
+    "adverseEffects": [
+      "Respiratory depression, sedation",
+      "Nausea, vomiting, constipation",
+      "Norpethidine toxicity: tremor, twitching, agitation, seizures",
+      "Dependence with prolonged use"
+    ],
+    "monitoring": [
+      "Pain score, respiratory rate, level of consciousness",
+      "Avoid cumulative dosing > 24 h or in renal impairment"
+    ],
     "references": [
       {
         "label": "BNF — Pethidine monograph",
+        "url": "https://bnf.nice.org.uk/drugs/pethidine-hydrochloride/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/pethidine-hydrochloride/"
       }
     ],
@@ -52809,18 +52982,47 @@
     ],
     "mechanism": "Competitive antagonism of nicotinic acetylcholine receptors at the neuromuscular junction; Hofmann elimination (organ-independent).",
     "pharmacokinetics": null,
-    "pregnancy": null,
-    "lactation": null,
+    "pregnancy": "Quaternary ammonium structure limits placental transfer — used in obstetric anaesthesia.",
+    "lactation": "Use during anaesthesia is acceptable; brief separation is sufficient.",
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Intubation",
+          "route": "IV",
+          "regimen": "0.3–0.6 mg/kg IV bolus; reduce in fragile patients."
+        },
+        {
+          "indication": "Maintenance of neuromuscular block",
+          "route": "IV",
+          "regimen": "0.1–0.2 mg/kg as required, or infusion 0.3–0.6 mg/kg/h guided by TOF."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Known hypersensitivity to atracurium or other non-depolarising agents"
+    ],
+    "warnings": [
+      "Use only by anaesthetists with airway management and resuscitation equipment immediately available.",
+      "Hofmann elimination is independent of renal/hepatic function — preferred in organ failure.",
+      "Histamine release possible with rapid administration — give slowly; consider cis-atracurium for cardiovascular instability."
+    ],
+    "adverseEffects": [
+      "Skin flushing, transient hypotension, tachycardia (histamine-mediated)",
+      "Bronchospasm (rare)",
+      "Anaphylaxis (rare but reported)",
+      "Prolonged neuromuscular block in critical illness"
+    ],
+    "monitoring": [
+      "Train-of-four (TOF) peripheral nerve stimulator during prolonged use",
+      "BP and HR continuously"
+    ],
     "references": [
       {
         "label": "BNF — Atracurium besilate monograph",
+        "url": "https://bnf.nice.org.uk/drugs/atracurium-besilate/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/atracurium-besilate/"
       }
     ],
@@ -52851,15 +53053,43 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Intubation",
+          "route": "IV",
+          "regimen": "0.08–0.1 mg/kg bolus IV."
+        },
+        {
+          "indication": "Maintenance",
+          "route": "IV",
+          "regimen": "0.02–0.04 mg/kg as required or 1–2 micrograms/kg/min infusion."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Known hypersensitivity to bromides or non-depolarising blockers"
+    ],
+    "warnings": [
+      "Use only by experienced operators with full airway equipment.",
+      "Prolonged effect in hepatic impairment (biliary excretion).",
+      "Potentiated by aminoglycosides, magnesium, calcium-channel blockers, volatile anaesthetics."
+    ],
+    "adverseEffects": [
+      "Minimal cardiovascular effects (advantage over other agents)",
+      "Anaphylaxis (rare)",
+      "Prolonged neuromuscular block in renal/hepatic failure"
+    ],
+    "monitoring": [
+      "Train-of-four monitoring during prolonged use",
+      "Reverse with sugammadex or neostigmine + glycopyrronium"
+    ],
     "references": [
       {
         "label": "BNF — Vecuronium bromide monograph",
+        "url": "https://bnf.nice.org.uk/drugs/vecuronium-bromide/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/vecuronium-bromide/"
       }
     ],
@@ -52887,18 +53117,57 @@
     ],
     "mechanism": "Sequential inhibition of folate synthesis (sulfonamide on dihydropteroate synthase, trimethoprim on dihydrofolate reductase).",
     "pharmacokinetics": null,
-    "pregnancy": null,
-    "lactation": null,
+    "pregnancy": "Trimethoprim component is folate antagonist — avoid in first trimester; sulfamethoxazole increases neonatal kernicterus risk near term.",
+    "lactation": "Avoid in jaundiced, premature or G6PD-deficient infants.",
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Pneumocystis pneumonia (treatment)",
+          "route": "PO/IV",
+          "regimen": "120 mg/kg/day in 2–4 divided doses for 14–21 days."
+        },
+        {
+          "indication": "PJP prophylaxis",
+          "route": "PO",
+          "regimen": "960 mg once daily or 3 times weekly."
+        },
+        {
+          "indication": "Lower UTI",
+          "route": "PO",
+          "regimen": "960 mg twice daily for 3–5 days."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Acute porphyria",
+      "Severe renal failure (unless levels can be measured)",
+      "Severe hepatic failure",
+      "Sulfonamide hypersensitivity"
+    ],
+    "warnings": [
+      "Increased risk of hyperkalaemia with ACE inhibitors, ARBs, spironolactone, NSAIDs and in renal impairment.",
+      "Folate deficiency — supplement folinic acid for high-dose courses.",
+      "Severe cutaneous reactions (SJS, TEN, DRESS) — discontinue at first sign of rash.",
+      "Reduce dose in renal impairment."
+    ],
+    "adverseEffects": [
+      "Rash (common; rarely SJS / TEN)",
+      "Bone-marrow suppression",
+      "Hyperkalaemia, hyponatraemia",
+      "Crystalluria, renal impairment (maintain hydration)",
+      "Drug fever, hepatitis"
+    ],
+    "monitoring": [
+      "FBC, U&E and LFTs on prolonged courses",
+      "Skin reactions in early therapy"
+    ],
     "references": [
       {
         "label": "BNF — Co-trimoxazole monograph",
+        "url": "https://bnf.nice.org.uk/drugs/co-trimoxazole/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/co-trimoxazole/"
       }
     ],
@@ -52926,18 +53195,49 @@
     ],
     "mechanism": "30S ribosomal subunit binding → bactericidal inhibition of bacterial protein synthesis.",
     "pharmacokinetics": null,
-    "pregnancy": null,
-    "lactation": null,
+    "pregnancy": "Risk of fetal ototoxicity — reserve for severe infection where benefit outweighs risk.",
+    "lactation": "Minimal oral absorption from milk; compatible with breastfeeding.",
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Severe Gram-negative infection",
+          "route": "IV",
+          "regimen": "Once-daily 5–7 mg/kg adjusted by trough level (or local protocol)."
+        },
+        {
+          "indication": "Cystic fibrosis pulmonary exacerbation",
+          "route": "IV",
+          "regimen": "Higher mg/kg per CF unit protocol with TDM."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Myasthenia gravis",
+      "Known aminoglycoside hypersensitivity"
+    ],
+    "warnings": [
+      "Nephrotoxic and ototoxic — monitor levels, renal function and hearing.",
+      "Avoid concurrent loop diuretics and other nephro/ototoxins where possible.",
+      "Reduce dose / extend interval in renal impairment."
+    ],
+    "adverseEffects": [
+      "Nephrotoxicity (typically reversible)",
+      "Ototoxicity (cochlear and vestibular — may be irreversible)",
+      "Hypersensitivity, rash",
+      "Neuromuscular blockade with rapid IV administration"
+    ],
+    "monitoring": [
+      "Pre-dose serum trough level (< 1 mg/L for once-daily dosing)",
+      "Renal function (U&E) every 2–3 days during therapy",
+      "Audiometry at baseline and during prolonged therapy"
+    ],
     "references": [
       {
         "label": "BNF — Tobramycin monograph",
+        "url": "https://bnf.nice.org.uk/drugs/tobramycin/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/tobramycin/"
       }
     ],
@@ -52965,18 +53265,50 @@
     ],
     "mechanism": "30S ribosomal subunit binding → bacteriostatic inhibition of protein synthesis.",
     "pharmacokinetics": null,
-    "pregnancy": null,
-    "lactation": null,
+    "pregnancy": "Contraindicated — bone and teeth abnormalities; risk of severe maternal hepatotoxicity.",
+    "lactation": "Avoid.",
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Acne vulgaris",
+          "route": "PO",
+          "regimen": "500 mg twice daily until improvement, then maintenance 500 mg/day (typical course 3 months)."
+        },
+        {
+          "indication": "Brucellosis",
+          "route": "PO",
+          "regimen": "500 mg every 6 h for ≥ 6 weeks, combined with streptomycin or rifampicin."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Children < 12 years (permanent tooth discolouration and enamel hypoplasia)",
+      "Pregnancy and breastfeeding",
+      "Severe renal impairment",
+      "SLE (may exacerbate)"
+    ],
+    "warnings": [
+      "Avoid concurrent oral antacids, iron, calcium and magnesium salts — separate by ≥ 2 h.",
+      "Photosensitivity — counsel patients.",
+      "Risk of intracranial hypertension; avoid with isotretinoin."
+    ],
+    "adverseEffects": [
+      "GI: nausea, diarrhoea",
+      "Photosensitivity skin reactions",
+      "Hepatotoxicity (rare; doses > 2 g/day or pregnancy)",
+      "Permanent tooth discolouration if used in developing teeth",
+      "Oesophageal ulceration (take with water, remain upright)"
+    ],
+    "monitoring": [
+      "LFTs on prolonged courses or pre-existing hepatic disease"
+    ],
     "references": [
       {
         "label": "BNF — Tetracycline monograph",
+        "url": "https://bnf.nice.org.uk/drugs/tetracycline/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/tetracycline/"
       }
     ],
@@ -53004,18 +53336,48 @@
     ],
     "mechanism": "Amoxicillin inhibits cell-wall transpeptidase; clavulanic acid inhibits beta-lactamase, restoring activity against resistant organisms.",
     "pharmacokinetics": null,
-    "pregnancy": null,
-    "lactation": null,
+    "pregnancy": "Considered safe.",
+    "lactation": "Compatible.",
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Community-acquired infection",
+          "route": "PO",
+          "regimen": "500/125 mg every 8 h (or 875/125 mg every 12 h) for 5–7 days."
+        },
+        {
+          "indication": "Severe infection / intra-abdominal sepsis",
+          "route": "IV",
+          "regimen": "1.2 g every 8 h (every 6 h in severe infection); reduce in renal impairment."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "History of co-amoxiclav-associated jaundice or hepatic dysfunction",
+      "Penicillin allergy"
+    ],
+    "warnings": [
+      "Cholestatic jaundice may occur during or shortly after treatment (more frequent in older adults and prolonged courses).",
+      "Reduce dose in moderate-to-severe renal impairment.",
+      "Risk of Clostridioides difficile colitis."
+    ],
+    "adverseEffects": [
+      "Diarrhoea (common), nausea, vomiting",
+      "Rash, urticaria",
+      "Cholestatic hepatitis (uncommon, may be delayed)",
+      "C. difficile colitis"
+    ],
+    "monitoring": [
+      "LFTs on prolonged courses or pre-existing hepatic disease",
+      "Renal function in elderly or impaired patients"
+    ],
     "references": [
       {
         "label": "BNF — Co-amoxiclav monograph",
+        "url": "https://bnf.nice.org.uk/drugs/co-amoxiclav/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/co-amoxiclav/"
       }
     ],
@@ -53082,18 +53444,54 @@
     ],
     "mechanism": "Selective competitive antagonism of angiotensin II type-1 (AT₁) receptors → vasodilation and reduced aldosterone.",
     "pharmacokinetics": null,
-    "pregnancy": null,
-    "lactation": null,
+    "pregnancy": "Contraindicated after the first trimester; teratogenic and fetotoxic.",
+    "lactation": "Limited data — alternative agents preferred.",
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Hypertension",
+          "route": "PO",
+          "regimen": "80 mg once daily; titrate to 160 mg, max 320 mg/day."
+        },
+        {
+          "indication": "Heart failure (HFrEF)",
+          "route": "PO",
+          "regimen": "Start 40 mg twice daily; titrate to 160 mg twice daily as tolerated."
+        },
+        {
+          "indication": "Post-MI",
+          "route": "PO",
+          "regimen": "Start 20 mg twice daily; titrate to 160 mg twice daily."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Pregnancy (second and third trimester teratogenicity)",
+      "Bilateral renal artery stenosis",
+      "Severe hepatic impairment with cholestasis"
+    ],
+    "warnings": [
+      "Risk of hyperkalaemia with concomitant ACE inhibitor, potassium-sparing diuretic or aliskiren.",
+      "Reduce dose in moderate hepatic impairment.",
+      "Symptomatic hypotension may occur — start at lower dose in volume-depleted or elderly patients."
+    ],
+    "adverseEffects": [
+      "Dizziness, hypotension",
+      "Hyperkalaemia",
+      "Renal impairment / increased creatinine",
+      "Angioedema (rare)"
+    ],
+    "monitoring": [
+      "U&E and renal function 1–2 weeks after initiation/dose change",
+      "Potassium periodically"
+    ],
     "references": [
       {
         "label": "BNF — Valsartan monograph",
+        "url": "https://bnf.nice.org.uk/drugs/valsartan/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/valsartan/"
       }
     ],
@@ -53121,18 +53519,52 @@
     ],
     "mechanism": "Beta-1, beta-2 and alpha-1 adrenoceptor antagonism → reduced cardiac workload and afterload.",
     "pharmacokinetics": null,
-    "pregnancy": null,
+    "pregnancy": "Limited data; if maternal benefit clear, use the lowest effective dose; monitor neonate for bradycardia and hypoglycaemia.",
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Chronic heart failure",
+          "route": "PO",
+          "regimen": "Start 3.125 mg twice daily, double every 2 weeks if tolerated to target 25 mg twice daily (50 mg twice daily if > 85 kg and NYHA II/III)."
+        },
+        {
+          "indication": "Hypertension",
+          "route": "PO",
+          "regimen": "Start 12.5 mg once daily for 2 days then 25 mg once daily; max 50 mg/day."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Asthma",
+      "Second/third-degree AV block (without pacemaker)",
+      "Severe bradycardia (< 50 bpm) or sick-sinus syndrome",
+      "Cardiogenic shock",
+      "Severe hepatic impairment"
+    ],
+    "warnings": [
+      "Initiate at low dose; up-titrate slowly in heart failure to avoid decompensation.",
+      "Withdraw gradually — abrupt cessation may precipitate angina or arrhythmia.",
+      "Caution in COPD without asthmatic features (lowest selective dose)."
+    ],
+    "adverseEffects": [
+      "Bradycardia, AV block",
+      "Hypotension, dizziness",
+      "Bronchospasm",
+      "Fatigue, lethargy",
+      "Diarrhoea, nausea"
+    ],
+    "monitoring": [
+      "Heart rate, BP and signs of heart-failure decompensation at each titration step",
+      "Symptoms of fluid retention or fatigue"
+    ],
     "references": [
       {
         "label": "BNF — Carvedilol monograph",
+        "url": "https://bnf.nice.org.uk/drugs/carvedilol/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/carvedilol/"
       }
     ],
@@ -53199,18 +53631,43 @@
     ],
     "mechanism": "Competitive inhibition of HMG-CoA reductase → reduced hepatic cholesterol synthesis and LDL clearance.",
     "pharmacokinetics": null,
-    "pregnancy": null,
-    "lactation": null,
+    "pregnancy": "Contraindicated — statins are teratogenic.",
+    "lactation": "Avoid.",
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Primary or secondary prevention",
+          "route": "PO",
+          "regimen": "40 mg at night (range 10–40 mg)."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Active hepatic disease or unexplained persistent transaminase elevation",
+      "Pregnancy and breastfeeding"
+    ],
+    "warnings": [
+      "Hydrophilic statin — less CYP3A-mediated interaction than atorvastatin or simvastatin.",
+      "Myopathy risk increased by ciclosporin, gemfibrozil, niacin.",
+      "Discontinue if persistent unexplained muscle pain or CK rise > 5× ULN."
+    ],
+    "adverseEffects": [
+      "Myalgia, myositis",
+      "Rare rhabdomyolysis",
+      "Hepatic enzyme elevation",
+      "GI disturbance, headache"
+    ],
+    "monitoring": [
+      "Baseline LFTs; repeat if symptomatic or on interacting therapy",
+      "CK if muscle symptoms develop"
+    ],
     "references": [
       {
         "label": "BNF — Pravastatin monograph",
+        "url": "https://bnf.nice.org.uk/drugs/pravastatin-sodium/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/pravastatin-sodium/"
       }
     ],
@@ -53358,15 +53815,38 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Type 2 diabetes mellitus",
+          "route": "PO",
+          "regimen": "5 mg once daily (2.5 mg in moderate-severe renal impairment)."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Type 1 diabetes mellitus or DKA",
+      "Hypersensitivity"
+    ],
+    "warnings": [
+      "Caution in heart failure (modest increase in hospitalisation in SAVOR-TIMI 53).",
+      "Reduce dose to 2.5 mg in moderate-severe renal impairment."
+    ],
+    "adverseEffects": [
+      "Hypersensitivity reactions including angioedema",
+      "Acute pancreatitis (rare)",
+      "Mild GI upset",
+      "Increased HF hospitalisation in at-risk patients"
+    ],
+    "monitoring": [
+      "HbA1c every 3 months; renal function periodically"
+    ],
     "references": [
       {
         "label": "BNF — Saxagliptin monograph",
+        "url": "https://bnf.nice.org.uk/drugs/saxagliptin/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/saxagliptin/"
       }
     ],
@@ -53433,18 +53913,46 @@
     ],
     "mechanism": "Selective phosphorylation by viral thymidine kinase to monophosphate, then cellular kinases to triphosphate → herpes-virus DNA polymerase chain-termination.",
     "pharmacokinetics": null,
-    "pregnancy": null,
-    "lactation": null,
+    "pregnancy": "Treatment of severe herpes simplex / VZV in pregnancy is appropriate; benefit outweighs risk.",
+    "lactation": "Compatible.",
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Herpes zoster",
+          "route": "PO",
+          "regimen": "800 mg five times daily for 7 days, started within 72 h of rash."
+        },
+        {
+          "indication": "Herpes simplex encephalitis",
+          "route": "IV",
+          "regimen": "10 mg/kg every 8 h for 14–21 days (adjust by CrCl)."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Hypersensitivity to aciclovir or valaciclovir"
+    ],
+    "warnings": [
+      "Reduce dose in renal impairment — risk of crystalline nephropathy and neurotoxicity.",
+      "Maintain adequate hydration with IV therapy."
+    ],
+    "adverseEffects": [
+      "GI upset",
+      "Rash",
+      "Crystalline nephropathy and AKI (especially rapid IV bolus)",
+      "Neurotoxicity (confusion, hallucination) at high serum levels"
+    ],
+    "monitoring": [
+      "Renal function before and during IV therapy",
+      "Neurology in elderly or renally impaired patients"
+    ],
     "references": [
       {
         "label": "BNF — Aciclovir monograph",
+        "url": "https://bnf.nice.org.uk/drugs/aciclovir/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/aciclovir/"
       }
     ],
@@ -53472,18 +53980,51 @@
     ],
     "mechanism": "Cyclophilin-binding → calcineurin inhibition → reduced T-cell IL-2 transcription.",
     "pharmacokinetics": null,
-    "pregnancy": null,
+    "pregnancy": "Use only if benefit outweighs risk; associated with prematurity and low birthweight.",
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Adult renal transplant",
+          "route": "PO",
+          "regimen": "Initial 10–15 mg/kg/day in two divided doses, taper guided by trough levels."
+        },
+        {
+          "indication": "Severe psoriasis / atopic eczema",
+          "route": "PO",
+          "regimen": "2.5–5 mg/kg/day in two divided doses; maximum 5 mg/kg/day; review at 8 weeks."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Uncontrolled hypertension",
+      "Active malignancy (relative)",
+      "Severe renal impairment for non-transplant indications"
+    ],
+    "warnings": [
+      "Major CYP3A4 substrate and P-gp inhibitor — many interactions including statins (myopathy), grapefruit juice and azoles.",
+      "Nephrotoxicity is dose- and time-dependent; gum hyperplasia and hirsutism common.",
+      "Avoid live vaccines while immunosuppressed.",
+      "Renal cell and skin malignancy risk on long-term therapy."
+    ],
+    "adverseEffects": [
+      "Renal impairment, hypertension",
+      "Tremor, paraesthesia, headache",
+      "Hirsutism, gingival hyperplasia",
+      "Hyperkalaemia, hypomagnesaemia, hyperuricaemia",
+      "Hyperlipidaemia"
+    ],
+    "monitoring": [
+      "Trough whole-blood ciclosporin level per indication",
+      "BP, U&E, LFTs, lipids, magnesium and uric acid"
+    ],
     "references": [
       {
         "label": "BNF — Ciclosporin monograph",
+        "url": "https://bnf.nice.org.uk/drugs/ciclosporin/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/ciclosporin/"
       }
     ],
@@ -53631,15 +54172,33 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Herpes labialis",
+          "route": "Topical",
+          "regimen": "Apply five times daily for 5–10 days."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Hypersensitivity to aciclovir"
+    ],
+    "warnings": [
+      "For external use only; apply within 1 h of prodrome for best effect."
+    ],
+    "adverseEffects": [
+      "Local burning, stinging, mild erythema"
+    ],
+    "monitoring": [
+      "None"
+    ],
     "references": [
       {
         "label": "BNF — aciclovir (topical) monograph",
+        "url": "https://bnf.nice.org.uk/drugs/aciclovir/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/aciclovir/"
       }
     ],
@@ -53826,15 +54385,37 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "UTI / soft-tissue infection",
+          "route": "PO",
+          "regimen": "500 mg every 8–12 h; up to 1 g every 6 h in severe infection."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Cephalosporin hypersensitivity"
+    ],
+    "warnings": [
+      "Caution if penicillin hypersensitivity (5–10% cross-reactivity).",
+      "Reduce dose in renal impairment."
+    ],
+    "adverseEffects": [
+      "Diarrhoea, nausea",
+      "Rash, urticaria",
+      "Eosinophilia",
+      "C. difficile colitis (rare)"
+    ],
+    "monitoring": [
+      "None routinely required"
+    ],
     "references": [
       {
         "label": "BNF — cefalexin monograph",
+        "url": "https://bnf.nice.org.uk/drugs/cefalexin/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/cefalexin/"
       }
     ],
@@ -54216,15 +54797,42 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Rheumatoid / psoriatic arthritis",
+          "route": "PO",
+          "regimen": "10–20 mg once daily (loading 100 mg/day for 3 days optional)."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Pregnancy and pregnancy planning (highly teratogenic — washout required)",
+      "Breastfeeding",
+      "Severe immunodeficiency or active serious infection",
+      "Significant hepatic impairment"
+    ],
+    "warnings": [
+      "Active metabolite teriflunomide has long half-life — cholestyramine washout protocol required for pregnancy / serious adverse effect.",
+      "Hepatotoxicity — discontinue if ALT > 3× ULN.",
+      "Pulmonary fibrosis / interstitial lung disease reported."
+    ],
+    "adverseEffects": [
+      "Diarrhoea, nausea",
+      "Alopecia",
+      "Hepatic enzyme elevation, hepatitis",
+      "Hypertension",
+      "Leucopenia"
+    ],
+    "monitoring": [
+      "LFTs, FBC and BP fortnightly for 6 months, then 8-weekly"
+    ],
     "references": [
       {
         "label": "BNF — leflunomide monograph",
+        "url": "https://bnf.nice.org.uk/drugs/leflunomide/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/leflunomide/"
       }
     ],
@@ -54489,15 +55097,40 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "HIV-1 infection",
+          "route": "PO",
+          "regimen": "300 mg once daily with ritonavir 100 mg, or 400 mg once daily unboosted (ART-naive only)."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Co-administration with strong CYP3A inducers (rifampicin, St John's wort)",
+      "Severe hepatic impairment"
+    ],
+    "warnings": [
+      "Requires acidic stomach for absorption — avoid PPIs and high-dose H2 antagonists; separate antacids by 2 h.",
+      "Unconjugated hyperbilirubinaemia is common and benign.",
+      "CYP3A4 substrate and inhibitor — many interactions."
+    ],
+    "adverseEffects": [
+      "Indirect (unconjugated) hyperbilirubinaemia, jaundice",
+      "PR-interval prolongation (1st-degree AV block)",
+      "Nephrolithiasis",
+      "Cholelithiasis",
+      "Hyperglycaemia, dyslipidaemia"
+    ],
+    "monitoring": [
+      "Liver function, lipid profile, glucose; ECG before initiation in conduction disease"
+    ],
     "references": [
       {
         "label": "BNF — atazanavir monograph",
+        "url": "https://bnf.nice.org.uk/drugs/atazanavir/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/atazanavir/"
       }
     ],
@@ -54879,15 +55512,44 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Renal transplant prevention of rejection",
+          "route": "PO",
+          "regimen": "0.75 mg twice daily, with ciclosporin and corticosteroid; adjust by trough level (3–8 ng/mL)."
+        },
+        {
+          "indication": "Advanced renal cell carcinoma / other oncology",
+          "route": "PO",
+          "regimen": "10 mg once daily; reduce in hepatic impairment or toxicity."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Hypersensitivity to sirolimus or other rapamycin derivatives"
+    ],
+    "warnings": [
+      "Non-infectious pneumonitis can be life-threatening — monitor for new respiratory symptoms.",
+      "Hypercholesterolaemia, hypertriglyceridaemia and hyperglycaemia common — consider statin.",
+      "Wound healing impaired; severe immunosuppression with increased infection risk."
+    ],
+    "adverseEffects": [
+      "Pneumonitis",
+      "Stomatitis, mouth ulceration",
+      "Hyperlipidaemia",
+      "Hyperglycaemia",
+      "Thrombocytopenia, anaemia"
+    ],
+    "monitoring": [
+      "Trough whole-blood everolimus levels; FBC, lipids, glucose, renal and respiratory review"
+    ],
     "references": [
       {
         "label": "BNF — everolimus monograph",
+        "url": "https://bnf.nice.org.uk/drugs/everolimus/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/everolimus/"
       }
     ],
@@ -54918,15 +55580,39 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Renal transplant",
+          "route": "PO",
+          "regimen": "Loading 6 mg then 2 mg once daily; adjust by trough (4–12 ng/mL)."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Hypersensitivity to sirolimus"
+    ],
+    "warnings": [
+      "Severe immunosuppression — live vaccines contraindicated.",
+      "Significant CYP3A and P-gp interactions; major risk with ketoconazole, rifampicin and grapefruit.",
+      "Avoid concomitant ACE inhibitors due to angioedema risk."
+    ],
+    "adverseEffects": [
+      "Hyperlipidaemia",
+      "Anaemia, thrombocytopenia",
+      "Renal dysfunction",
+      "Stomatitis",
+      "Interstitial pneumonitis"
+    ],
+    "monitoring": [
+      "Trough whole-blood sirolimus, FBC, lipids, renal function"
+    ],
     "references": [
       {
         "label": "BNF — sirolimus monograph",
+        "url": "https://bnf.nice.org.uk/drugs/sirolimus/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/sirolimus/"
       }
     ],
@@ -55113,15 +55799,45 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "HIV-1 (ART-experienced)",
+          "route": "PO",
+          "regimen": "600 mg twice daily with ritonavir 100 mg twice daily, with food."
+        },
+        {
+          "indication": "HIV-1 (ART-naive)",
+          "route": "PO",
+          "regimen": "800 mg once daily with ritonavir 100 mg or cobicistat 150 mg, with food."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Severe hepatic impairment",
+      "Co-administration with strong CYP3A inducers (rifampicin) or contraindicated CYP3A substrates",
+      "Severe sulfonamide hypersensitivity"
+    ],
+    "warnings": [
+      "Always given boosted with ritonavir or cobicistat.",
+      "Hepatic enzyme elevations — monitor LFTs.",
+      "Cardiac conduction abnormality risk; PR prolongation possible."
+    ],
+    "adverseEffects": [
+      "Diarrhoea, nausea",
+      "Rash (rare SJS, TEN reported)",
+      "Hyperglycaemia, dyslipidaemia",
+      "Hepatic enzyme elevation"
+    ],
+    "monitoring": [
+      "LFTs, lipids, glucose periodically"
+    ],
     "references": [
       {
         "label": "BNF — darunavir monograph",
+        "url": "https://bnf.nice.org.uk/drugs/darunavir/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/darunavir/"
       }
     ],
@@ -55152,15 +55868,39 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "HIV / chronic hepatitis B",
+          "route": "PO",
+          "regimen": "245 mg once daily; reduce frequency in CrCl < 50 mL/min."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Hypersensitivity to tenofovir"
+    ],
+    "warnings": [
+      "Renal tubular dysfunction (proximal tubulopathy / Fanconi-like syndrome).",
+      "Reduces bone mineral density — consider TAF in osteopenic patients.",
+      "Risk of severe hepatitis flare on stopping in HBV-coinfected patients."
+    ],
+    "adverseEffects": [
+      "Diarrhoea, nausea",
+      "Renal impairment, proteinuria",
+      "Reduced bone mineral density",
+      "Increased creatine kinase"
+    ],
+    "monitoring": [
+      "eGFR, serum phosphate and urinary glucose/protein periodically",
+      "HBV DNA in coinfected patients on cessation"
+    ],
     "references": [
       {
         "label": "BNF — tenofovir disoproxil fumarate monograph",
+        "url": "https://bnf.nice.org.uk/drugs/tenofovir-disoproxil/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/tenofovir-disoproxil/"
       }
     ],
@@ -55230,15 +55970,40 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Renal transplant",
+          "route": "PO",
+          "regimen": "1 g twice daily, start within 72 h of transplantation; reduce in severe renal impairment."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Pregnancy (highly teratogenic)",
+      "Breastfeeding"
+    ],
+    "warnings": [
+      "Strictly contraceptive women of childbearing age — pregnancy prevention programme required.",
+      "Severe immunosuppression and increased malignancy / infection risk; avoid live vaccines.",
+      "Risk of myelosuppression — monitor FBC."
+    ],
+    "adverseEffects": [
+      "Diarrhoea, GI ulceration",
+      "Leucopenia, anaemia, thrombocytopenia",
+      "Increased risk of infection (including CMV, BK virus)",
+      "Skin malignancy with prolonged use"
+    ],
+    "monitoring": [
+      "FBC weekly for 4 weeks, then monthly",
+      "Pregnancy testing per protocol"
+    ],
     "references": [
       {
         "label": "BNF — mycophenolate mofetil monograph",
+        "url": "https://bnf.nice.org.uk/drugs/mycophenolate-mofetil/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/mycophenolate-mofetil/"
       }
     ],
@@ -55620,15 +56385,38 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Serious Gram-negative infection",
+          "route": "IV",
+          "regimen": "1–2 g every 8–12 h; severe infection up to 2 g every 6 h."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Hypersensitivity to aztreonam"
+    ],
+    "warnings": [
+      "Limited Gram-positive and anaerobic activity — combine when polymicrobial infection suspected.",
+      "Reduce dose in renal impairment.",
+      "Cross-reactivity with other beta-lactams unusual but possible (especially ceftazidime — share R1 side chain)."
+    ],
+    "adverseEffects": [
+      "Phlebitis at injection site",
+      "Rash, diarrhoea, nausea",
+      "Transient transaminase elevation",
+      "Eosinophilia"
+    ],
+    "monitoring": [
+      "Renal function in prolonged therapy"
+    ],
     "references": [
       {
         "label": "BNF — aztreonam monograph",
+        "url": "https://bnf.nice.org.uk/drugs/aztreonam/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/aztreonam/"
       }
     ],
@@ -55737,15 +56525,36 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Lower RTI / UTI",
+          "route": "PO",
+          "regimen": "250 mg every 8 h; doubled in severe infection."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Cephalosporin hypersensitivity"
+    ],
+    "warnings": [
+      "Higher rate of serum-sickness reactions in children than other cephalosporins.",
+      "Reduce dose in renal impairment."
+    ],
+    "adverseEffects": [
+      "Rash, urticaria",
+      "Serum-sickness-like reaction (especially with repeated courses)",
+      "GI disturbance"
+    ],
+    "monitoring": [
+      "None routinely required"
+    ],
     "references": [
       {
         "label": "BNF — cefaclor monograph",
+        "url": "https://bnf.nice.org.uk/drugs/cefaclor/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/cefaclor/"
       }
     ],
@@ -55776,15 +56585,37 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "UTI / soft-tissue infection",
+          "route": "PO",
+          "regimen": "500 mg every 8–12 h; up to 1 g every 6 h in severe infection."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Cephalosporin hypersensitivity"
+    ],
+    "warnings": [
+      "Caution if penicillin hypersensitivity (5–10% cross-reactivity).",
+      "Reduce dose in renal impairment."
+    ],
+    "adverseEffects": [
+      "Diarrhoea, nausea",
+      "Rash, urticaria",
+      "Eosinophilia",
+      "C. difficile colitis (rare)"
+    ],
+    "monitoring": [
+      "None routinely required"
+    ],
     "references": [
       {
         "label": "BNF — cephalexin monograph",
+        "url": "https://bnf.nice.org.uk/drugs/cefalexin/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/cefalexin/"
       }
     ],
@@ -56513,15 +57344,40 @@
     "pregnancy": null,
     "lactation": null,
     "dosing": {
-      "adult": []
+      "adult": [
+        {
+          "indication": "Serious Gram-positive infection",
+          "route": "IV/IM",
+          "regimen": "Loading 400 mg every 12 h for 3 doses, then 400 mg daily; adjust by trough levels and renal function."
+        }
+      ]
     },
-    "contraindications": [],
-    "warnings": [],
-    "adverseEffects": [],
-    "monitoring": [],
+    "contraindications": [
+      "Hypersensitivity to teicoplanin or vancomycin"
+    ],
+    "warnings": [
+      "Nephrotoxic in combination with other nephrotoxins.",
+      "Vancomycin cross-reactivity is partial — use cautiously after vancomycin reactions.",
+      "Adjust dose by renal function."
+    ],
+    "adverseEffects": [
+      "Rash, pruritus",
+      "Fever, anaphylaxis (rare)",
+      "Nephrotoxicity (less than vancomycin)",
+      "Thrombocytopenia, eosinophilia",
+      "Ototoxicity (rare)"
+    ],
+    "monitoring": [
+      "Trough level ≥ 15 mg/L for serious infections",
+      "Renal function and FBC during prolonged therapy"
+    ],
     "references": [
       {
         "label": "BNF — teicoplanin monograph",
+        "url": "https://bnf.nice.org.uk/drugs/teicoplanin/"
+      },
+      {
+        "label": "BNF — clinical content",
         "url": "https://bnf.nice.org.uk/drugs/teicoplanin/"
       }
     ],
