@@ -48,6 +48,7 @@ function copyBundle(): string {
     'iv-compatibility.json',
     'pregnancy-lactation.json',
     'hepatic-dose.json',
+    'renal-dose.json',
     'symptom-triage.json',
     'clinical-procedures.json',
     'bedside-interpretation.json',

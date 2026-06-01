@@ -1,0 +1,1037 @@
+[
+  {
+    "slug": "metformin-renal",
+    "drugSlug": "metformin",
+    "drug": "Metformin",
+    "oneLiner": "AVOID at eGFR <30 (risk of lactic acidosis); reduce dose at eGFR 30-44 and re-evaluate. Standard dose acceptable at eGFR ≥45.",
+    "worstClassDecision": "contraindicated",
+    "domains": ["endocrinology", "diabetes"],
+    "mechanism": "Renally excreted unchanged (≈90%). Accumulation in renal impairment promotes lactate production via inhibition of mitochondrial complex I, with risk of metformin-associated lactic acidosis (MALA) — a life-threatening event.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Standard dose (up to 2 g/day; max 3 g/day)." },
+      { "band": "mild", "adjustment": "Standard dose. Reassess kidney function at least annually." },
+      { "band": "moderate", "adjustment": "eGFR 45-59: continue at standard dose with closer monitoring. eGFR 30-44: reduce to maximum 1 g/day and reassess benefit/risk; do not start de novo.", "notes": "Hold for any acute illness with risk of dehydration or contrast exposure." },
+      { "band": "severe", "adjustment": "CONTRAINDICATED at eGFR <30." },
+      { "band": "esrd", "adjustment": "CONTRAINDICATED." }
+    ],
+    "monitoring": "eGFR at baseline, then at least annually (every 3-6 months if eGFR <60). Hold around iodinated contrast in eGFR <60.",
+    "akiGuidance": "Hold metformin during any AKI, sepsis, dehydration, hypoxia, or before contrast administration in CKD; resume only after recovery of renal function.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Contraindicated in dialysis-dependent ESRD. In MALA, haemodialysis is the definitive treatment.",
+    "alternatives": ["linagliptin (no renal dose adjustment)", "insulin", "repaglinide"],
+    "references": [
+      { "label": "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in CKD" },
+      { "label": "FDA Drug Safety Communication: Metformin labeling revisions (eGFR-based), 2016" },
+      { "label": "BNF (current edition) — metformin renal impairment" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "gentamicin-renal",
+    "drugSlug": "gentamicin",
+    "drug": "Gentamicin",
+    "oneLiner": "Renally cleared aminoglycoside — extend dosing interval (not reduce dose) in renal impairment; mandatory therapeutic drug monitoring (troughs <1 mg/L). Avoid prolonged courses.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["antimicrobials", "nephrology"],
+    "mechanism": "Filtered glomerularly; accumulates with falling GFR. Concentration-dependent killing favours extended-interval dosing. Cochlear/vestibular and proximal tubular toxicity rise with sustained troughs above 1 mg/L.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Once-daily 5-7 mg/kg (extended interval) using ideal/adjusted body weight; check 6-14 h post-dose level (Hartford nomogram) or trough before next dose." },
+      { "band": "mild", "adjustment": "5 mg/kg every 24 h with trough monitoring." },
+      { "band": "moderate", "adjustment": "Extend interval to 36 h (eGFR 30-59); use single-dose level-guided dosing." },
+      { "band": "severe", "adjustment": "Single dose then re-dose only when trough <1 mg/L (often every 48 h or longer); discuss with microbiology." },
+      { "band": "esrd", "adjustment": "Single dose then re-dose by trough; typically 1-1.5 mg/kg after each dialysis session." }
+    ],
+    "monitoring": "Pre-dose (trough) levels before every dose (or every 24 h on extended-interval regimens); target trough <1 mg/L. Audiometry if course >7 days. Daily creatinine.",
+    "akiGuidance": "If AKI develops on therapy: hold further doses, switch to a non-nephrotoxic agent where possible, recheck level before any further dose.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Haemodialysis removes ≈50% per session. Give dose AFTER dialysis; redose by trough level (typically 1-1.5 mg/kg post-HD, every 48-72 h).",
+    "alternatives": ["amikacin (similar class, also requires TDM)", "ceftriaxone or piperacillin-tazobactam for many indications"],
+    "references": [
+      { "label": "BNF (current edition) — gentamicin dosing and monitoring" },
+      { "label": "Sanford Guide to Antimicrobial Therapy — aminoglycoside dosing in renal impairment" },
+      { "label": "KDIGO 2012 AKI guideline (aminoglycoside avoidance where alternatives exist)" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "vancomycin-renal",
+    "drugSlug": "vancomycin",
+    "drug": "Vancomycin (IV)",
+    "oneLiner": "Standard loading dose by actual body weight; maintenance dose and interval guided by levels (target AUC24 400-600 mg·h/L or trough 15-20 mg/L for serious infection). Extend interval in CKD; haemodialysis-dependent dosing differs.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["antimicrobials", "nephrology"],
+    "mechanism": "Renally cleared (≈90% unchanged in urine). Falling GFR prolongs half-life. Nephrotoxicity rises with sustained troughs >20 mg/L and with concurrent piperacillin-tazobactam or aminoglycosides.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Loading 25-30 mg/kg (actual body weight, max 3 g); maintenance 15-20 mg/kg every 8-12 h; target AUC24 400-600 mg·h/L or trough 15-20 mg/L (serious MRSA infection)." },
+      { "band": "mild", "adjustment": "Same loading; extend interval to 12 h or use level-guided dosing." },
+      { "band": "moderate", "adjustment": "Load 25-30 mg/kg, then 15-20 mg/kg every 24 h; titrate by level." },
+      { "band": "severe", "adjustment": "Load 25-30 mg/kg, single dose then re-dose by trough (often every 24-48 h)." },
+      { "band": "esrd", "adjustment": "Load 25 mg/kg, then redose by pre-HD level — typically 7.5-10 mg/kg after each haemodialysis session." }
+    ],
+    "monitoring": "Trough (or AUC) before 4th dose, sooner if AKI risk; daily creatinine; audiology only if prolonged courses with high troughs.",
+    "akiGuidance": "Hold further doses if AKI, recheck level and re-dose only when trough acceptable. Avoid concurrent piperacillin-tazobactam where possible.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Removed by high-flux HD (≈30-40% per session). Standard regimen: 25 mg/kg loading then 7.5-10 mg/kg after each HD session; check pre-HD level weekly.",
+    "alternatives": ["teicoplanin (less nephrotoxic, fewer levels)", "linezolid (no renal adjustment, but myelosuppression)", "daptomycin (renal adjustment but no nephrotoxicity signal)"],
+    "references": [
+      { "label": "Rybak MJ et al. ASHP/IDSA/PIDS/SIDP Vancomycin Therapeutic Monitoring Consensus Guideline 2020" },
+      { "label": "BNF (current edition) — vancomycin renal dosing" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "dabigatran-renal",
+    "drugSlug": "dabigatran",
+    "drug": "Dabigatran",
+    "oneLiner": "AVOID at CrCl <30 mL/min (uncontrolled bleeding risk — 80% renally cleared); 110 mg BD at CrCl 30-50 with bleeding risk factors. Use Cockcroft-Gault, not eGFR, for assessment.",
+    "worstClassDecision": "contraindicated",
+    "domains": ["anticoagulation", "haematology"],
+    "mechanism": "Direct thrombin inhibitor; ≈80% renally excreted unchanged. Accumulation in renal impairment markedly raises bleeding risk. Dose decisions use Cockcroft-Gault CrCl (the regulatory measure), not eGFR.",
+    "guidance": [
+      { "band": "normal", "adjustment": "150 mg twice daily (AF); 110 mg BD if age ≥80 or bleeding risk." },
+      { "band": "mild", "adjustment": "150 mg twice daily." },
+      { "band": "moderate", "adjustment": "CrCl 30-50: 150 mg BD standard; consider 110 mg BD if age ≥75 or bleeding risk factors (HAS-BLED ≥3, concurrent verapamil/amiodarone)." },
+      { "band": "severe", "adjustment": "CONTRAINDICATED at CrCl <30 mL/min (EMA); FDA permits 75 mg BD at CrCl 15-30 — most guidelines recommend avoidance and switch to warfarin or apixaban." },
+      { "band": "esrd", "adjustment": "CONTRAINDICATED." }
+    ],
+    "monitoring": "Cockcroft-Gault CrCl at baseline; recheck at least annually, every 6 months if CrCl 30-60, and at any acute illness.",
+    "akiGuidance": "Hold dabigatran in AKI; consider idarucizumab if bleeding or urgent procedure.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Removed by haemodialysis (≈60% over 2-3 h) — useful in life-threatening haemorrhage if idarucizumab unavailable. Therapeutic use in dialysis is NOT recommended.",
+    "alternatives": ["apixaban (preferred DOAC in CKD)", "warfarin (any CrCl)", "low-molecular-weight heparin (dose-adjusted)"],
+    "references": [
+      { "label": "EMA Summary of Product Characteristics — Pradaxa (dabigatran)" },
+      { "label": "Steffel J et al. 2021 European Heart Rhythm Association Practical Guide on the Use of Non-Vitamin K Antagonist Oral Anticoagulants" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "rivaroxaban-renal",
+    "drugSlug": "rivaroxaban",
+    "drug": "Rivaroxaban",
+    "oneLiner": "Reduce to 15 mg OD (AF) at CrCl 15-49 mL/min; AVOID at CrCl <15 (EMA). For VTE treatment AVOID at CrCl <30. Use Cockcroft-Gault.",
+    "worstClassDecision": "avoid",
+    "domains": ["anticoagulation", "haematology"],
+    "mechanism": "Factor Xa inhibitor; ≈33% renally excreted unchanged plus active renal clearance of metabolites. Accumulation in renal impairment elevates bleeding risk.",
+    "guidance": [
+      { "band": "normal", "adjustment": "AF: 20 mg OD with food. VTE treatment: 15 mg BD x21 d then 20 mg OD." },
+      { "band": "mild", "adjustment": "AF: 20 mg OD." },
+      { "band": "moderate", "adjustment": "AF: 15 mg OD if CrCl 15-49. VTE: 15 mg BD x21 d then 20 mg OD (consider 15 mg OD if bleeding risk)." },
+      { "band": "severe", "adjustment": "AF: 15 mg OD with caution at CrCl 15-29 (EMA: use only if benefit outweighs risk). VTE: AVOID." },
+      { "band": "esrd", "adjustment": "AVOID at CrCl <15 mL/min (EMA); FDA permits 15 mg OD for AF only — not recommended by most clinical guidelines." }
+    ],
+    "monitoring": "Cockcroft-Gault CrCl at baseline; recheck at least annually and at any acute illness.",
+    "akiGuidance": "Hold during AKI. Consider andexanet alfa or 4F-PCC for life-threatening bleeding.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "Highly protein-bound — not dialyzable. Avoid in dialysis-dependent patients.",
+    "alternatives": ["apixaban (preferred DOAC in CKD)", "warfarin"],
+    "references": [
+      { "label": "EMA Summary of Product Characteristics — Xarelto (rivaroxaban)" },
+      { "label": "Steffel J et al. 2021 EHRA Practical Guide on NOACs" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "apixaban-renal",
+    "drugSlug": "apixaban",
+    "drug": "Apixaban",
+    "oneLiner": "Preferred DOAC in CKD: 5 mg BD standard; 2.5 mg BD if ≥2 of (age ≥80, weight ≤60 kg, creatinine ≥133 μmol/L). 2.5 mg BD at CrCl 15-29; data limited at CrCl <15.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["anticoagulation", "haematology"],
+    "mechanism": "Factor Xa inhibitor; ≈27% renally excreted unchanged — the least renally-cleared DOAC. Lower accumulation in CKD than dabigatran or rivaroxaban.",
+    "guidance": [
+      { "band": "normal", "adjustment": "5 mg BD (AF); 10 mg BD x7 d then 5 mg BD (VTE treatment)." },
+      { "band": "mild", "adjustment": "5 mg BD." },
+      { "band": "moderate", "adjustment": "5 mg BD unless dose-reduction criteria met (then 2.5 mg BD)." },
+      { "band": "severe", "adjustment": "2.5 mg BD at CrCl 15-29 (EMA)." },
+      { "band": "esrd", "adjustment": "5 mg BD on dialysis (US labelling); EMA does not recommend use at CrCl <15. Limited RCT data — discuss risk/benefit." }
+    ],
+    "monitoring": "Cockcroft-Gault CrCl at baseline; recheck at least annually.",
+    "akiGuidance": "Hold during AKI. Andexanet alfa or 4F-PCC for life-threatening bleeding.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "Not significantly removed by HD (≈7% over 4 h). FDA label permits 5 mg BD (or 2.5 mg BD if other dose-reduction criteria) in HD-dependent patients; EMA recommends caution / avoidance.",
+    "alternatives": ["warfarin (well-studied in HD)", "LMWH (short courses)"],
+    "references": [
+      { "label": "EMA Summary of Product Characteristics — Eliquis (apixaban)" },
+      { "label": "Steffel J et al. 2021 EHRA Practical Guide on NOACs" },
+      { "label": "Pokorney SD et al. RENAL-AF trial 2022" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "atenolol-renal",
+    "drugSlug": "atenolol",
+    "drug": "Atenolol",
+    "oneLiner": "Renally cleared beta-blocker — accumulates in CKD causing bradycardia/heart block. Reduce dose at eGFR <35; prefer metoprolol or bisoprolol in advanced CKD.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["cardiology", "hypertension"],
+    "mechanism": "Hydrophilic, ≈90% renally excreted unchanged. Half-life prolongs from 6-7 h to >24 h in severe CKD.",
+    "guidance": [
+      { "band": "normal", "adjustment": "25-100 mg once daily." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "Standard dose at eGFR ≥35; reduce to max 50 mg daily at eGFR 15-35 (BNF)." },
+      { "band": "severe", "adjustment": "Maximum 50 mg once daily or 100 mg every 2 days (eGFR 15-35); maximum 25 mg daily or 50 mg every 2 days at eGFR <15." },
+      { "band": "esrd", "adjustment": "Maximum 25 mg daily or 50 mg every 2 days; dose after dialysis on dialysis days." }
+    ],
+    "monitoring": "Heart rate and BP; ECG if bradycardia or block suspected.",
+    "akiGuidance": "Continue at usual dose initially in AKI; if HR <50 or block develops, reduce or hold.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Removed by HD (≈50%). Give after dialysis on dialysis days. Maximum 25-50 mg every 2 days.",
+    "alternatives": ["bisoprolol (hepatic+renal, simpler in CKD)", "metoprolol (hepatic clearance)", "carvedilol"],
+    "references": [
+      { "label": "BNF (current edition) — atenolol renal impairment" },
+      { "label": "KDIGO 2021 Clinical Practice Guideline for the Management of Blood Pressure in CKD" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "lisinopril-renal",
+    "drugSlug": "lisinopril",
+    "drug": "Lisinopril",
+    "oneLiner": "ACE inhibitor — renoprotective in CKD but precipitates AKI in volume-depletion / bilateral RAS / NSAIDs; expect ≤30% creatinine rise on initiation; hold for sick days. Start low, titrate up.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["cardiology", "nephrology", "hypertension"],
+    "mechanism": "Renally excreted unchanged. Reduces efferent arteriolar tone, lowering intraglomerular pressure (renoprotective long-term) but also reducing GFR acutely (a small creatinine rise is expected and tolerable).",
+    "guidance": [
+      { "band": "normal", "adjustment": "Start 5-10 mg OD; titrate to 20-40 mg OD." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "Start 2.5-5 mg OD; titrate cautiously to maximum 20 mg OD at eGFR 30-59." },
+      { "band": "severe", "adjustment": "Start 2.5 mg OD; maximum 10 mg OD at eGFR 15-29." },
+      { "band": "esrd", "adjustment": "Start 2.5 mg OD; maximum 2.5-5 mg OD; close potassium monitoring." }
+    ],
+    "monitoring": "Creatinine and potassium at baseline, 1-2 weeks after starting or each dose increase; tolerate creatinine rise ≤30% from baseline. Stop if >30% rise, or potassium >5.5 mmol/L.",
+    "akiGuidance": "Hold during AKI, volume depletion (D&V, sepsis, hypotension), and on sick days. Restart at lower dose after recovery once creatinine returns to within 25% of baseline.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Removed by HD. Give 2.5-5 mg after dialysis on dialysis days; monitor potassium closely.",
+    "alternatives": ["losartan / candesartan (ARB) — comparable renoprotection, less cough", "amlodipine (no renal adjustment)"],
+    "references": [
+      { "label": "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD" },
+      { "label": "BNF (current edition) — lisinopril renal impairment" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "enalapril-renal",
+    "drugSlug": "enalapril",
+    "drug": "Enalapril",
+    "oneLiner": "Renally cleared ACE inhibitor (active metabolite enalaprilat). Start low and titrate; hold on sick days; expect minor creatinine rise on initiation.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["cardiology", "nephrology", "hypertension"],
+    "mechanism": "Prodrug hydrolysed to enalaprilat, which is renally cleared. Accumulation in CKD prolongs the antihypertensive effect.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Start 5 mg OD; titrate to 10-20 mg BD." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "Start 2.5-5 mg OD at eGFR 30-59." },
+      { "band": "severe", "adjustment": "Start 2.5 mg OD; maximum 20 mg OD at eGFR 10-29." },
+      { "band": "esrd", "adjustment": "Start 2.5 mg OD on dialysis days; maximum 20 mg OD." }
+    ],
+    "monitoring": "Creatinine and potassium at baseline, 1-2 weeks after starting or each titration. Stop if creatinine rises >30% or K >5.5.",
+    "akiGuidance": "Hold in AKI, sepsis, hypotension, and on sick days. Restart at lower dose after recovery.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Enalaprilat removed by HD. Give 2.5 mg after dialysis on dialysis days.",
+    "alternatives": ["losartan / candesartan (ARB)", "amlodipine"],
+    "references": [
+      { "label": "BNF (current edition) — enalapril renal impairment" },
+      { "label": "KDIGO 2021 Blood Pressure in CKD" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "ramipril-renal",
+    "drugSlug": "ramipril",
+    "drug": "Ramipril",
+    "oneLiner": "Renoprotective ACE inhibitor — start low and titrate slowly in CKD. Hold for AKI / sick days. Expect ≤30% creatinine rise after initiation.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["cardiology", "nephrology", "hypertension"],
+    "mechanism": "Prodrug hydrolysed to ramiprilat — renally cleared. Half-life prolonged in renal impairment.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Start 1.25-2.5 mg OD; titrate to 5-10 mg OD." },
+      { "band": "mild", "adjustment": "Standard titration." },
+      { "band": "moderate", "adjustment": "Start 1.25 mg OD; maximum 5 mg OD at eGFR 30-59." },
+      { "band": "severe", "adjustment": "Start 1.25 mg OD; maximum 5 mg OD at eGFR 10-29 (BNF)." },
+      { "band": "esrd", "adjustment": "Start 1.25 mg OD; maximum 5 mg OD." }
+    ],
+    "monitoring": "Creatinine and potassium at baseline, 1-2 weeks after start / titration. Tolerate creatinine rise ≤30%; stop if greater or K >5.5.",
+    "akiGuidance": "Hold during AKI, volume depletion, sepsis, hypotension, sick days.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Ramiprilat removed by HD; dose after dialysis. Typical 1.25-5 mg post-HD.",
+    "alternatives": ["losartan / candesartan (ARB)", "amlodipine"],
+    "references": [
+      { "label": "BNF (current edition) — ramipril renal impairment" },
+      { "label": "KDIGO 2024 CKD Evaluation and Management Guideline" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "losartan-renal",
+    "drugSlug": "losartan",
+    "drug": "Losartan",
+    "oneLiner": "ARB — renoprotective in albuminuric CKD; same precautions as ACE inhibitors (sick-day rule, K, expect ≤30% creatinine rise). No dose reduction routinely required.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["cardiology", "nephrology", "hypertension"],
+    "mechanism": "Hepatic conversion to active metabolite EXP3174. Renal effects mirror ACEi: reduce efferent arteriolar tone, lowering intraglomerular pressure.",
+    "guidance": [
+      { "band": "normal", "adjustment": "50-100 mg OD." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "No routine adjustment; titrate from 25-50 mg OD with closer K monitoring." },
+      { "band": "severe", "adjustment": "Start 25 mg OD; titrate cautiously." },
+      { "band": "esrd", "adjustment": "Start 25 mg OD; close K monitoring." }
+    ],
+    "monitoring": "Creatinine and potassium at baseline, 1-2 weeks after start / titration. Stop if creatinine rise >30% or K >5.5.",
+    "akiGuidance": "Hold in AKI, sepsis, volume depletion, sick days.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "Not significantly removed by HD; no supplemental dose required.",
+    "alternatives": ["candesartan, valsartan (interchangeable ARBs)", "amlodipine"],
+    "references": [
+      { "label": "BNF (current edition) — losartan renal impairment" },
+      { "label": "KDIGO 2024 CKD Evaluation and Management Guideline" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "valsartan-renal",
+    "drugSlug": "valsartan",
+    "drug": "Valsartan",
+    "oneLiner": "ARB — same renoprotection and precautions as losartan; no routine renal dose reduction. Sick-day rule; hold in AKI.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["cardiology", "nephrology", "hypertension"],
+    "mechanism": "Primarily biliary excretion (≈70%); ≈30% renal. Modest accumulation in CKD.",
+    "guidance": [
+      { "band": "normal", "adjustment": "80-320 mg OD." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "No routine adjustment; titrate from 40-80 mg OD with K monitoring." },
+      { "band": "severe", "adjustment": "Start 40 mg OD; cautious titration." },
+      { "band": "esrd", "adjustment": "Start 40 mg OD; close K monitoring." }
+    ],
+    "monitoring": "Creatinine and potassium at baseline, 1-2 weeks after start / titration.",
+    "akiGuidance": "Hold in AKI, sepsis, sick days, volume depletion.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "Not significantly removed by HD; no supplemental dose required.",
+    "alternatives": ["losartan, candesartan", "amlodipine"],
+    "references": [
+      { "label": "BNF (current edition) — valsartan renal impairment" },
+      { "label": "KDIGO 2024 CKD Evaluation and Management Guideline" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "hydrochlorothiazide-renal",
+    "drugSlug": "hydrochlorothiazide",
+    "drug": "Hydrochlorothiazide",
+    "oneLiner": "Thiazide diuretic — loses antihypertensive efficacy at eGFR <30; switch to a loop diuretic (furosemide) in advanced CKD.",
+    "worstClassDecision": "avoid",
+    "domains": ["cardiology", "nephrology", "hypertension"],
+    "mechanism": "Acts on the distal convoluted tubule via NCC inhibition. Filtration delivery to the DCT falls with declining GFR, so efficacy is largely lost at low eGFR.",
+    "guidance": [
+      { "band": "normal", "adjustment": "12.5-25 mg OD." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "Effective; standard dose at eGFR 30-59." },
+      { "band": "severe", "adjustment": "Largely ineffective at eGFR <30 — switch to loop diuretic (furosemide)." },
+      { "band": "esrd", "adjustment": "Ineffective." }
+    ],
+    "monitoring": "Sodium, potassium, magnesium, urate; creatinine at start and 1-2 weeks.",
+    "akiGuidance": "Hold during AKI / volume depletion.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "Not useful in dialysis-dependent ESRD.",
+    "alternatives": ["furosemide (effective at low eGFR)", "metolazone (synergistic with loop in resistant oedema)"],
+    "references": [
+      { "label": "BNF (current edition) — hydrochlorothiazide renal impairment" },
+      { "label": "KDIGO 2021 Blood Pressure in CKD" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "spironolactone-renal",
+    "drugSlug": "spironolactone",
+    "drug": "Spironolactone",
+    "oneLiner": "Potassium-sparing diuretic — AVOID at eGFR <30 (life-threatening hyperkalaemia); cautious low dose at eGFR 30-45 with weekly K monitoring.",
+    "worstClassDecision": "avoid",
+    "domains": ["cardiology", "nephrology", "endocrinology"],
+    "mechanism": "Mineralocorticoid receptor antagonist; reduces aldosterone-driven K excretion. In CKD the kidney's reserve for K handling is reduced, predisposing to hyperkalaemia.",
+    "guidance": [
+      { "band": "normal", "adjustment": "25-100 mg OD." },
+      { "band": "mild", "adjustment": "Standard dose with K monitoring." },
+      { "band": "moderate", "adjustment": "eGFR 45-59: cautious 12.5-25 mg OD with weekly K initially. eGFR 30-44: 12.5 mg OD or alternate-day, only if K <5.0 and close monitoring possible." },
+      { "band": "severe", "adjustment": "AVOID at eGFR <30." },
+      { "band": "esrd", "adjustment": "AVOID." }
+    ],
+    "monitoring": "Potassium and creatinine at baseline, 1 week, 1 month, then every 3-6 months. Stop or reduce if K >5.5.",
+    "akiGuidance": "Hold during AKI; do not restart until creatinine within 25% of baseline.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "Not used in dialysis-dependent ESRD outside specialist settings.",
+    "alternatives": ["furosemide (no K retention)", "amlodipine"],
+    "references": [
+      { "label": "BNF (current edition) — spironolactone renal impairment" },
+      { "label": "KDIGO 2024 CKD Evaluation and Management Guideline" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "digoxin-renal",
+    "drugSlug": "digoxin",
+    "drug": "Digoxin",
+    "oneLiner": "Narrow therapeutic index, renally cleared — reduce loading and maintenance dose in CKD; target trough 0.5-0.9 ng/mL in heart failure. Toxicity worsened by hypokalaemia and amiodarone/verapamil interactions.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["cardiology"],
+    "mechanism": "≈70% renally excreted unchanged. Half-life extends from 36 h to ≈100 h in ESRD. Hypokalaemia and hypomagnesaemia potentiate toxicity.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Loading 0.5-1 mg in divided doses over 24 h; maintenance 125-250 mcg OD." },
+      { "band": "mild", "adjustment": "Maintenance 125 mcg OD; monitor levels." },
+      { "band": "moderate", "adjustment": "Reduce loading by 25-50%; maintenance 62.5-125 mcg OD." },
+      { "band": "severe", "adjustment": "Reduce loading by 50%; maintenance 62.5 mcg OD or alternate-day." },
+      { "band": "esrd", "adjustment": "Reduce loading by 50-75%; maintenance 62.5 mcg every 48 h, titrated by level." }
+    ],
+    "monitoring": "Serum digoxin level at steady state (≥7 d after dose change) — target 0.5-0.9 ng/mL in HF. Potassium, magnesium, creatinine.",
+    "akiGuidance": "Hold during AKI; recheck level before restart.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "Not significantly removed by HD (large Vd). Digoxin-Fab is the antidote for toxicity.",
+    "alternatives": ["beta-blocker for rate control", "amiodarone (interacts — reduce digoxin)"],
+    "references": [
+      { "label": "BNF (current edition) — digoxin renal impairment and monitoring" },
+      { "label": "ESC 2021 Heart Failure Guidelines" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "allopurinol-renal",
+    "drugSlug": "allopurinol",
+    "drug": "Allopurinol",
+    "oneLiner": "Active metabolite oxypurinol is renally cleared — reduce dose in CKD to limit accumulation and DRESS/SCAR risk. Start low (50-100 mg) and titrate by urate, not by CrCl alone.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["rheumatology"],
+    "mechanism": "Allopurinol → oxypurinol (active, renally cleared). Oxypurinol accumulation increases risk of severe cutaneous adverse reactions (DRESS, SJS/TEN), particularly in HLA-B*58:01 carriers.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Start 100 mg OD; titrate by urate (target <360 μmol/L) up to 900 mg/day in divided doses." },
+      { "band": "mild", "adjustment": "Start 100 mg OD; titrate slowly." },
+      { "band": "moderate", "adjustment": "Start 50-100 mg OD; titrate by urate." },
+      { "band": "severe", "adjustment": "Start 50 mg OD or alternate-day; titrate cautiously by urate." },
+      { "band": "esrd", "adjustment": "Start 50 mg every 1-2 days; give after HD on dialysis days." }
+    ],
+    "monitoring": "Urate, creatinine, FBC, LFTs at baseline and 4 weeks then 6-monthly. Screen for HLA-B*58:01 in Han Chinese, Thai, Korean ancestry per CPIC.",
+    "akiGuidance": "Hold during AKI; restart only after recovery, at the lowest dose.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Oxypurinol removed by HD. Dose 100-200 mg after each dialysis session, or 50 mg daily titrated by urate.",
+    "alternatives": ["febuxostat (hepatic clearance — caution CV risk)", "treat-acute-gout-only strategy"],
+    "references": [
+      { "label": "Stamp LK et al. ACR 2020 Guideline for the Management of Gout" },
+      { "label": "BNF (current edition) — allopurinol renal impairment" },
+      { "label": "CPIC Guideline for HLA-B and Allopurinol" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "gabapentin-renal",
+    "drugSlug": "gabapentin",
+    "drug": "Gabapentin",
+    "oneLiner": "Almost entirely renally cleared — major accumulation in CKD causes profound sedation, ataxia, myoclonus, coma. Aggressive dose reduction required; post-dialysis supplement in HD.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["neurology", "analgesia"],
+    "mechanism": "≈100% renally excreted unchanged. Half-life extends from 5-7 h to >130 h in anuria. CNS depression dominates the toxicity profile in CKD.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Titrate 300 mg OD → 300 mg TDS → up to 3600 mg/day in divided doses." },
+      { "band": "mild", "adjustment": "Standard titration; cautious maximum 2400 mg/day at CrCl 60-79 in the elderly." },
+      { "band": "moderate", "adjustment": "CrCl 30-59: 200-700 mg BD (max 1400 mg/day)." },
+      { "band": "severe", "adjustment": "CrCl 15-29: 200-700 mg OD (max 700 mg/day). CrCl <15: 100-300 mg OD (max 300 mg/day)." },
+      { "band": "esrd", "adjustment": "100-300 mg after each dialysis session (typical 200 mg post-HD), no daily dose between sessions." }
+    ],
+    "monitoring": "Drowsiness, ataxia, myoclonus, mood, falls. Creatinine. Beware co-prescription with opioids (respiratory depression).",
+    "akiGuidance": "Hold or markedly reduce during AKI; CNS toxicity may be reversible with stopping and waiting for clearance to recover.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Substantially removed by HD (≈35% per 4 h session). Loading 300-400 mg, then 200-300 mg after each HD session.",
+    "alternatives": ["pregabalin (also requires renal dose adjustment)", "duloxetine (hepatic)", "amitriptyline at low dose"],
+    "references": [
+      { "label": "BNF (current edition) — gabapentin renal impairment" },
+      { "label": "Raouf M et al. Gabapentinoid use in patients with CKD. Am J Nephrol 2017" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "pregabalin-renal",
+    "drugSlug": "pregabalin",
+    "drug": "Pregabalin",
+    "oneLiner": "Renally cleared — accumulates in CKD causing sedation, ataxia, encephalopathy. Reduce dose aggressively; supplement after HD.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["neurology", "analgesia"],
+    "mechanism": "≈98% renally excreted unchanged. Half-life extends from 6 h to >40 h in severe CKD.",
+    "guidance": [
+      { "band": "normal", "adjustment": "75 mg BD → 150-300 mg BD (max 600 mg/day)." },
+      { "band": "mild", "adjustment": "Standard titration." },
+      { "band": "moderate", "adjustment": "CrCl 30-59: 75 mg BD (max 300 mg/day)." },
+      { "band": "severe", "adjustment": "CrCl 15-29: 25-50 mg BD or 75 mg OD (max 150 mg/day). CrCl <15: 25-75 mg OD (max 75 mg/day)." },
+      { "band": "esrd", "adjustment": "25-75 mg OD; supplement single dose 25-100 mg after each HD session." }
+    ],
+    "monitoring": "Sedation, ataxia, mood, falls. Beware combinations with opioids (respiratory depression — MHRA alert 2021).",
+    "akiGuidance": "Hold or reduce during AKI; encephalopathy may resolve on cessation.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Removed by HD (≈50% per 4 h session). Give supplemental 25-100 mg after each HD session in addition to a low daily dose.",
+    "alternatives": ["duloxetine (hepatic)", "amitriptyline low dose", "topical capsaicin"],
+    "references": [
+      { "label": "BNF (current edition) — pregabalin renal impairment" },
+      { "label": "EMA Summary of Product Characteristics — Lyrica (pregabalin)" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "morphine-renal",
+    "drugSlug": "morphine",
+    "drug": "Morphine",
+    "oneLiner": "Active metabolites (M6G, M3G) are renally cleared — accumulate in CKD causing prolonged respiratory depression, sedation, myoclonus. AVOID at eGFR <30; switch to oxycodone, fentanyl, or buprenorphine.",
+    "worstClassDecision": "avoid",
+    "domains": ["analgesia", "palliative-care"],
+    "mechanism": "Glucuronidation to M6G (active analgesic, renally cleared) and M3G (neuroexcitatory, renally cleared). Both accumulate in renal failure.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Standard dose titrated to effect." },
+      { "band": "mild", "adjustment": "Standard dose with caution; small reductions in the elderly." },
+      { "band": "moderate", "adjustment": "Reduce dose by 25-50% and extend interval; monitor for accumulation." },
+      { "band": "severe", "adjustment": "AVOID — switch to oxycodone (use with caution), fentanyl, or buprenorphine." },
+      { "band": "esrd", "adjustment": "AVOID — use alfentanil or fentanyl for parenteral opioid needs." }
+    ],
+    "monitoring": "Sedation score, respiratory rate, pupil size; myoclonus (sign of metabolite accumulation).",
+    "akiGuidance": "Hold or switch immediately on AKI — metabolites accumulate quickly.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "M6G removed variably by HD but rebound occurs; not a reliable management strategy. Avoid in dialysis-dependent ESRD.",
+    "alternatives": ["oxycodone with caution (also renal but less accumulation)", "fentanyl, buprenorphine (preferred in ESRD)", "alfentanil for parenteral use"],
+    "references": [
+      { "label": "King S et al. Renal Association / Palliative Care guidelines on analgesia in renal failure" },
+      { "label": "BNF (current edition) — morphine renal impairment" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "codeine-renal",
+    "drugSlug": "codeine",
+    "drug": "Codeine",
+    "oneLiner": "Metabolised to morphine (variable by CYP2D6) — active morphine metabolites accumulate in CKD. AVOID at eGFR <30; unpredictable response means narrow safety margin.",
+    "worstClassDecision": "avoid",
+    "domains": ["analgesia"],
+    "mechanism": "Codeine → morphine by CYP2D6 (10% conversion, highly polymorphic). Morphine and its renally cleared metabolites (M6G, M3G) accumulate in CKD.",
+    "guidance": [
+      { "band": "normal", "adjustment": "30-60 mg every 4-6 h (max 240 mg/day)." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "Reduce dose by 50% and extend interval." },
+      { "band": "severe", "adjustment": "AVOID." },
+      { "band": "esrd", "adjustment": "AVOID." }
+    ],
+    "monitoring": "Sedation, respiratory rate. Avoid in known CYP2D6 ultrarapid metabolisers (CPIC) regardless of renal function.",
+    "akiGuidance": "Hold in AKI; switch to a non-morphine-precursor analgesic.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "Avoid in dialysis-dependent ESRD.",
+    "alternatives": ["paracetamol", "buprenorphine", "oxycodone with caution"],
+    "references": [
+      { "label": "BNF (current edition) — codeine renal impairment" },
+      { "label": "CPIC Guideline for CYP2D6 and Codeine 2021" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "tramadol-renal",
+    "drugSlug": "tramadol",
+    "drug": "Tramadol",
+    "oneLiner": "Active metabolite (O-desmethyltramadol) renally cleared — extend interval in CKD. AVOID at eGFR <30 in immediate-release formulations except very low dose; AVOID modified-release at eGFR <30.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["analgesia"],
+    "mechanism": "CYP2D6 conversion to active M1 metabolite; ≈30% parent renally excreted, metabolites renally cleared. Lowers seizure threshold; serotonergic.",
+    "guidance": [
+      { "band": "normal", "adjustment": "50-100 mg every 4-6 h (max 400 mg/day)." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "CrCl 30-59: extend interval to every 8 h; max 200 mg/day." },
+      { "band": "severe", "adjustment": "CrCl <30: 50 mg every 12 h immediate-release with caution; AVOID modified-release." },
+      { "band": "esrd", "adjustment": "AVOID modified-release; 50 mg every 12 h IR only if no alternative." }
+    ],
+    "monitoring": "Sedation, respiratory rate, seizure history, serotonin syndrome (with SSRIs/SNRIs).",
+    "akiGuidance": "Hold or reduce in AKI.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Removed by HD (≈7%). Single low dose post-dialysis if absolutely required.",
+    "alternatives": ["paracetamol", "buprenorphine", "low-dose oxycodone with caution"],
+    "references": [
+      { "label": "BNF (current edition) — tramadol renal impairment" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "methotrexate-renal",
+    "drugSlug": "methotrexate",
+    "drug": "Methotrexate",
+    "oneLiner": "Renally cleared, narrow therapeutic index — life-threatening myelosuppression and mucositis with accumulation. AVOID at eGFR <30 (rheumatology dose); high-dose IV requires aggressive hydration, urinary alkalinisation, and rescue.",
+    "worstClassDecision": "contraindicated",
+    "domains": ["rheumatology", "oncology", "haematology"],
+    "mechanism": "≈80-90% renally excreted unchanged. Antifolate; accumulation produces pancytopenia, mucositis, and intrarenal precipitation in high-dose use.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Rheumatology: 7.5-25 mg once weekly with folic acid." },
+      { "band": "mild", "adjustment": "Standard weekly dose with monitoring." },
+      { "band": "moderate", "adjustment": "eGFR 30-59: reduce dose by 50% (e.g. 7.5-15 mg weekly); weekly FBC/LFTs initially. AVOID at eGFR <45 in BSR guidance." },
+      { "band": "severe", "adjustment": "CONTRAINDICATED at eGFR <30." },
+      { "band": "esrd", "adjustment": "CONTRAINDICATED." }
+    ],
+    "monitoring": "FBC, U&E, LFTs at baseline; weekly during initiation, then monthly to 3-monthly. Withhold for any acute infection, AKI, or mucositis.",
+    "akiGuidance": "Hold immediately on AKI. For high-dose IV toxicity: aggressive hydration, urinary alkalinisation, leucovorin rescue, consider glucarpidase.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "High-flux HD removes methotrexate; not used therapeutically. Avoid maintenance use in HD-dependent ESRD.",
+    "alternatives": ["leflunomide (hepatic, but teratogenic and long t½)", "sulfasalazine", "hydroxychloroquine", "biologics per specialist"],
+    "references": [
+      { "label": "BSR Guideline on the Use of Methotrexate in Rheumatic Disease 2017" },
+      { "label": "BNF (current edition) — methotrexate renal impairment" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "lithium-renal",
+    "drugSlug": "lithium",
+    "drug": "Lithium",
+    "oneLiner": "Renally cleared and itself nephrotoxic — narrow therapeutic index, toxicity with dehydration, NSAIDs, ACEi/ARBs, thiazides. Monitor levels every 3-6 months and any time renal function changes; AVOID in severe CKD.",
+    "worstClassDecision": "avoid",
+    "domains": ["psychiatry"],
+    "mechanism": "≈100% renally excreted; handled like sodium in the proximal tubule. Reabsorption increases when sodium is low or GFR falls, causing toxic accumulation. Long-term use itself causes nephrogenic DI and chronic interstitial nephritis.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Dose by level (0.6-1.0 mmol/L; 0.4-0.8 mmol/L maintenance in older adults)." },
+      { "band": "mild", "adjustment": "Continue with level every 3-6 months; sick-day rule." },
+      { "band": "moderate", "adjustment": "Reduce dose and increase level monitoring to every 1-3 months; review necessity with psychiatry." },
+      { "band": "severe", "adjustment": "AVOID where possible; specialist input. If unavoidable, halve dose and check level weekly." },
+      { "band": "esrd", "adjustment": "Use only in specialist settings; dose once after each dialysis (HD removes lithium efficiently)." }
+    ],
+    "monitoring": "Lithium level 12 h post-dose every 3-6 months (more often in CKD or after dose change). Creatinine, eGFR, calcium, TSH at baseline then 6-monthly.",
+    "akiGuidance": "Hold immediately. Check level urgently; consider haemodialysis if level >4 mmol/L, or >2.5 with symptoms / poor renal function.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Haemodialysis is the definitive treatment for toxicity; rebound rises occur after intermittent HD so prolonged or CRRT is often needed. Maintenance dosing in HD: usually a single dose after each session.",
+    "alternatives": ["valproate (hepatic — caution in women of childbearing potential)", "lamotrigine", "second-generation antipsychotics"],
+    "references": [
+      { "label": "BAP Consensus Guidance on the Use of Lithium 2016" },
+      { "label": "BNF (current edition) — lithium renal impairment" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ciprofloxacin-renal",
+    "drugSlug": "ciprofloxacin",
+    "drug": "Ciprofloxacin",
+    "oneLiner": "Renally cleared fluoroquinolone — reduce dose at eGFR <50; QT-prolongation and tendon rupture risks unchanged.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["antimicrobials"],
+    "mechanism": "≈50-70% renally excreted unchanged. Accumulation increases CNS, QT, and tendon toxicity.",
+    "guidance": [
+      { "band": "normal", "adjustment": "PO 500-750 mg BD; IV 400 mg BD-TDS depending on indication." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "CrCl 30-59: PO 250-500 mg BD; IV 400 mg BD." },
+      { "band": "severe", "adjustment": "CrCl <30: PO 250-500 mg OD; IV 400 mg OD." },
+      { "band": "esrd", "adjustment": "PO 250-500 mg OD or IV 400 mg OD; give after HD on dialysis days." }
+    ],
+    "monitoring": "QT (in patients on other QT-prolongers), tendon symptoms, neuropsychiatric effects.",
+    "akiGuidance": "Reduce dose immediately in AKI; reassess daily.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Removed by HD (≈10-30%). Give dose after dialysis on dialysis days.",
+    "alternatives": ["nitrofurantoin (uncomplicated UTI only, and not in CKD)", "trimethoprim", "co-amoxiclav"],
+    "references": [
+      { "label": "BNF (current edition) — ciprofloxacin renal impairment" },
+      { "label": "Sanford Guide to Antimicrobial Therapy" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "amoxicillin-renal",
+    "drugSlug": "amoxicillin",
+    "drug": "Amoxicillin",
+    "oneLiner": "Renally cleared beta-lactam — reduce dose at eGFR <30 to avoid CNS toxicity (myoclonus, seizures, encephalopathy).",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["antimicrobials"],
+    "mechanism": "≈60-70% renally excreted unchanged. High accumulation causes neurotoxicity, particularly with IV high-dose regimens.",
+    "guidance": [
+      { "band": "normal", "adjustment": "PO 500 mg-1 g TDS; IV up to 2 g 4-hourly for severe infection." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "eGFR 30-59: standard dose (BNF). Reduce high-dose IV regimens." },
+      { "band": "severe", "adjustment": "eGFR 10-29: maximum 500 mg TDS (PO) or 1 g TDS (IV); maximum 1 g initial then 500 mg BD if eGFR <10." },
+      { "band": "esrd", "adjustment": "250-500 mg every 24 h; give after HD on dialysis days." }
+    ],
+    "monitoring": "Neurology (myoclonus, confusion) on prolonged high-dose IV; rash; LFTs on long courses.",
+    "akiGuidance": "Reduce dose in AKI; recheck function daily.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Removed by HD; supplement 250-500 mg post-HD on dialysis days.",
+    "alternatives": ["narrow-spectrum cephalosporin per local sensitivities"],
+    "references": [
+      { "label": "BNF (current edition) — amoxicillin renal impairment" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "cefalexin-renal",
+    "drugSlug": "cefalexin",
+    "drug": "Cefalexin",
+    "oneLiner": "Renally cleared first-generation cephalosporin — extend interval at eGFR <40 to avoid accumulation.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["antimicrobials"],
+    "mechanism": "≈80-100% renally excreted unchanged.",
+    "guidance": [
+      { "band": "normal", "adjustment": "250-500 mg QDS or 1-1.5 g BD." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "CrCl 40-49 or 10-40: maximum 500 mg every 8-12 h." },
+      { "band": "severe", "adjustment": "CrCl <10: maximum 250-500 mg every 12-24 h." },
+      { "band": "esrd", "adjustment": "250-500 mg every 24 h; supplement post-HD." }
+    ],
+    "monitoring": "Rash, GI tolerability, C. difficile risk on prolonged use.",
+    "akiGuidance": "Reduce dose during AKI.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Removed by HD; give 250-500 mg post-HD.",
+    "alternatives": ["nitrofurantoin (uncomplicated UTI only, eGFR ≥45)", "amoxicillin"],
+    "references": [
+      { "label": "BNF (current edition) — cefalexin renal impairment" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "nitrofurantoin-renal",
+    "drugSlug": "nitrofurantoin",
+    "drug": "Nitrofurantoin",
+    "oneLiner": "Concentrates in urine — relies on adequate filtration. AVOID at eGFR <45 (urinary levels too low for efficacy and risk of systemic toxicity: pulmonary fibrosis, peripheral neuropathy).",
+    "worstClassDecision": "contraindicated",
+    "domains": ["antimicrobials", "urology"],
+    "mechanism": "Renally concentrated; therapeutic urinary concentrations require adequate GFR. In CKD, systemic accumulation occurs with insufficient urinary levels, raising risk of pulmonary fibrosis and neuropathy.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Acute UTI: 50-100 mg QDS x3-7 d. Prophylaxis: 50-100 mg nocte." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "eGFR 45-59: may be used cautiously for short courses (3-5 d) only in acute lower UTI per MHRA — avoid in prophylaxis." },
+      { "band": "severe", "adjustment": "CONTRAINDICATED at eGFR <45 (MHRA/BNF)." },
+      { "band": "esrd", "adjustment": "CONTRAINDICATED." }
+    ],
+    "monitoring": "Symptoms of pulmonary fibrosis on long courses; peripheral neuropathy; LFTs.",
+    "akiGuidance": "Hold during AKI.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Not used in dialysis-dependent patients (no urinary excretion).",
+    "alternatives": ["trimethoprim", "cefalexin (renal-dose-adjusted)", "fosfomycin single dose (eGFR ≥10)"],
+    "references": [
+      { "label": "MHRA Drug Safety Update: Nitrofurantoin and renal impairment 2014" },
+      { "label": "BNF (current edition) — nitrofurantoin renal impairment" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "acyclovir-renal",
+    "drugSlug": "acyclovir",
+    "drug": "Aciclovir (acyclovir)",
+    "oneLiner": "Renally cleared and crystal-forming — reduce dose at eGFR <50, ensure adequate hydration (especially IV), monitor for neurotoxicity (confusion, myoclonus, hallucinations).",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["antimicrobials", "virology"],
+    "mechanism": "≈60-90% renally excreted unchanged. Crystallises in renal tubules with bolus IV dosing → AKI. Accumulation produces neurotoxicity.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Oral: 200-800 mg 5 times daily; IV: 5-10 mg/kg every 8 h." },
+      { "band": "mild", "adjustment": "Standard dose with adequate hydration." },
+      { "band": "moderate", "adjustment": "CrCl 25-50: IV 5-10 mg/kg every 12 h; oral dose intervals extended." },
+      { "band": "severe", "adjustment": "CrCl 10-25: IV 5-10 mg/kg every 24 h; oral 800 mg every 8-12 h. CrCl <10: 2.5-5 mg/kg every 24 h IV." },
+      { "band": "esrd", "adjustment": "2.5-5 mg/kg every 24 h IV; give after HD on dialysis days. Oral 200-400 mg every 12 h." }
+    ],
+    "monitoring": "Creatinine, fluid balance (especially IV); neurology if accumulation suspected.",
+    "akiGuidance": "Hold during AKI; if IV-induced crystal nephropathy, hydrate and reduce dose.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Removed by HD (≈60% per session). Give daily dose after dialysis on dialysis days.",
+    "alternatives": ["valaciclovir (also renally adjusted)", "topical aciclovir for HSV labialis"],
+    "references": [
+      { "label": "BNF (current edition) — aciclovir renal impairment" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "lamivudine-renal",
+    "drugSlug": "lamivudine",
+    "drug": "Lamivudine",
+    "oneLiner": "Renally cleared NRTI — reduce dose at CrCl <50.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["antimicrobials", "virology", "hiv"],
+    "mechanism": "≈70% renally excreted unchanged.",
+    "guidance": [
+      { "band": "normal", "adjustment": "HIV: 300 mg OD or 150 mg BD. HBV: 100 mg OD." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "CrCl 30-49: 150 mg OD (HIV); 100 mg first dose then 50 mg OD (HBV)." },
+      { "band": "severe", "adjustment": "CrCl 15-29: 150 mg first dose then 100 mg OD (HIV); 100 mg first dose then 25 mg OD (HBV). CrCl 5-14: 150 mg first dose then 50 mg OD (HIV)." },
+      { "band": "esrd", "adjustment": "CrCl <5 or HD: 50 mg first dose then 25 mg OD (HIV); 35 mg first dose then 10 mg OD (HBV)." }
+    ],
+    "monitoring": "Renal function quarterly; viral load.",
+    "akiGuidance": "Reduce dose; consult HIV pharmacy.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "Minimally removed by HD; supplemental dose not required.",
+    "alternatives": ["alternative NRTI per specialist (e.g. abacavir if HLA-B*57:01 negative)"],
+    "references": [
+      { "label": "EMA Summary of Product Characteristics — Epivir (lamivudine)" },
+      { "label": "BHIVA guidelines on HIV in CKD" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "tenofovir-disoproxil-renal",
+    "drugSlug": "tenofovir-disoproxil",
+    "drug": "Tenofovir disoproxil fumarate (TDF)",
+    "oneLiner": "Proximal tubular nephrotoxin — reduce/extend dosing at CrCl <50; AVOID at CrCl <30 (use tenofovir alafenamide / alternative). Monitor for Fanconi syndrome.",
+    "worstClassDecision": "avoid",
+    "domains": ["antimicrobials", "virology", "hiv"],
+    "mechanism": "Renally cleared and taken up into proximal tubular cells via OAT1/OAT3, causing mitochondrial toxicity → Fanconi syndrome and acute/chronic tubulointerstitial injury.",
+    "guidance": [
+      { "band": "normal", "adjustment": "245 mg OD." },
+      { "band": "mild", "adjustment": "Standard dose with renal monitoring." },
+      { "band": "moderate", "adjustment": "CrCl 30-49: 245 mg every 48 h; consider switch to TAF." },
+      { "band": "severe", "adjustment": "CrCl <30: AVOID — switch to tenofovir alafenamide or alternative NRTI." },
+      { "band": "esrd", "adjustment": "AVOID — alternative regimen per specialist." }
+    ],
+    "monitoring": "Creatinine, eGFR, urine ACR, serum phosphate, urine glucose (Fanconi) at baseline, 1 month, then every 3-6 months.",
+    "akiGuidance": "Stop immediately on AKI or tubular toxicity; consider switch to TAF.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Removed by HD. If no alternative available: 245 mg every 7 days, given after HD. Better: switch to TAF.",
+    "alternatives": ["tenofovir alafenamide (TAF) — safer renal profile", "abacavir (HLA-B*57:01 dependent)"],
+    "references": [
+      { "label": "EMA Summary of Product Characteristics — Viread (tenofovir disoproxil)" },
+      { "label": "BHIVA / EACS guidelines on HIV in renal disease" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ibuprofen-renal",
+    "drugSlug": "ibuprofen",
+    "drug": "Ibuprofen and other NSAIDs",
+    "oneLiner": "AVOID in CKD — precipitates AKI (prostaglandin-dependent renal perfusion), worsens hypertension, raises potassium, antagonises ACEi/ARB. Even short courses can tip vulnerable patients into AKI.",
+    "worstClassDecision": "avoid",
+    "domains": ["analgesia", "nephrology"],
+    "mechanism": "Prostaglandin inhibition removes vasodilatory tone on the afferent arteriole; in CKD, volume depletion, or renin-angiotensin blockade, renal perfusion becomes prostaglandin-dependent and NSAID use precipitates AKI. Also retains sodium / water and antagonises antihypertensives.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Standard dose with shortest course; avoid if other risk factors (elderly, dehydration, on ACEi/ARB+diuretic 'triple whammy')." },
+      { "band": "mild", "adjustment": "Avoid where possible; if essential, short course with renal function check before and after." },
+      { "band": "moderate", "adjustment": "AVOID." },
+      { "band": "severe", "adjustment": "AVOID." },
+      { "band": "esrd", "adjustment": "AVOID (irrespective of anuria — systemic effects persist)." }
+    ],
+    "monitoring": "If short course at eGFR ≥60: creatinine and potassium before, day 3, and at end of course.",
+    "akiGuidance": "Stop immediately and continue to avoid until full recovery.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "Not used in dialysis patients (raises CV risk, GI bleed risk; no renal benefit).",
+    "alternatives": ["paracetamol (no renal adjustment)", "topical NSAID for local pain", "weak opioid (with renal adjustment) for short courses"],
+    "references": [
+      { "label": "KDIGO 2024 CKD Evaluation and Management Guideline" },
+      { "label": "Lapi F et al. Concurrent use of diuretics, ACEi/ARB, and NSAIDs and risk of AKI: nested case-control. BMJ 2013" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "diclofenac-renal",
+    "drugSlug": "diclofenac",
+    "drug": "Diclofenac",
+    "oneLiner": "AVOID in CKD — same prostaglandin-dependent AKI risk as other NSAIDs plus the highest CV risk in the class.",
+    "worstClassDecision": "avoid",
+    "domains": ["analgesia", "nephrology", "cardiology"],
+    "mechanism": "Non-selective COX inhibition; identical renal mechanism to ibuprofen. Additionally raises CV (MI, stroke) risk versus other NSAIDs.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Avoid where possible; shortest possible course." },
+      { "band": "mild", "adjustment": "Avoid; if essential, short course only with monitoring." },
+      { "band": "moderate", "adjustment": "AVOID." },
+      { "band": "severe", "adjustment": "AVOID." },
+      { "band": "esrd", "adjustment": "AVOID." }
+    ],
+    "monitoring": "Renal function and BP if used short-term in normal/mild bands.",
+    "akiGuidance": "Stop immediately.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "Avoid.",
+    "alternatives": ["paracetamol", "topical NSAID", "naproxen has lower CV risk if NSAID essential"],
+    "references": [
+      { "label": "MHRA Drug Safety Update: Diclofenac — new contraindications and warnings 2013" },
+      { "label": "KDIGO 2024 CKD Guideline" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "naproxen-renal",
+    "drugSlug": "naproxen",
+    "drug": "Naproxen",
+    "oneLiner": "AVOID in CKD — same renal risk as other NSAIDs (lower CV risk than diclofenac, but renal risk unchanged).",
+    "worstClassDecision": "avoid",
+    "domains": ["analgesia", "nephrology"],
+    "mechanism": "Non-selective COX inhibition; prostaglandin-dependent renal perfusion mechanism identical to ibuprofen.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Standard dose, shortest course." },
+      { "band": "mild", "adjustment": "Avoid where possible." },
+      { "band": "moderate", "adjustment": "AVOID." },
+      { "band": "severe", "adjustment": "AVOID." },
+      { "band": "esrd", "adjustment": "AVOID." }
+    ],
+    "monitoring": "Renal function and BP if used.",
+    "akiGuidance": "Stop immediately.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "Avoid.",
+    "alternatives": ["paracetamol", "topical NSAID"],
+    "references": [
+      { "label": "BNF (current edition) — naproxen renal impairment" },
+      { "label": "KDIGO 2024 CKD Guideline" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "colchicine-renal",
+    "drugSlug": "colchicine",
+    "drug": "Colchicine",
+    "oneLiner": "Renally and hepatically cleared with narrow therapeutic index — life-threatening accumulation (multi-organ toxicity) in severe CKD and with strong CYP3A4 / P-gp inhibitors. Reduce dose and increase interval; AVOID at CrCl <30 with these interactions.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["rheumatology"],
+    "mechanism": "≈40-65% renally excreted unchanged; substrate of P-glycoprotein and CYP3A4. Accumulation causes pancytopenia, neuropathy, rhabdomyolysis and multi-organ failure.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Acute gout: 500 mcg BD-QDS (max 6 mg/course). Prophylaxis: 500 mcg OD-BD." },
+      { "band": "mild", "adjustment": "Standard dose with caution." },
+      { "band": "moderate", "adjustment": "Reduce prophylactic dose to 500 mcg every 24-48 h." },
+      { "band": "severe", "adjustment": "CrCl <30: 500 mcg every 48-72 h (prophylaxis); single course for acute gout only with close monitoring." },
+      { "band": "esrd", "adjustment": "500 mcg once or twice weekly (prophylaxis); avoid in acute use." }
+    ],
+    "monitoring": "Diarrhoea (the early toxicity signal — stop the drug), FBC, CK on prolonged use.",
+    "akiGuidance": "Hold immediately. Toxicity (multi-organ failure) is supportive; G-CSF for marrow suppression.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "Not significantly removed by HD (large Vd, tissue binding). Maintenance: 500 mcg once or twice weekly.",
+    "alternatives": ["short prednisolone course for acute gout", "NSAID only if eGFR ≥60 and short course"],
+    "references": [
+      { "label": "BNF (current edition) — colchicine renal impairment" },
+      { "label": "ACR 2020 Guideline for the Management of Gout" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "sotalol-renal",
+    "drugSlug": "sotalol",
+    "drug": "Sotalol",
+    "oneLiner": "Renally cleared beta-blocker with QT-prolonging class III activity — accumulation in CKD raises risk of torsades de pointes. Extend interval; AVOID at eGFR <40 unless specialist-supervised.",
+    "worstClassDecision": "avoid",
+    "domains": ["cardiology"],
+    "mechanism": "≈90% renally excreted unchanged. QT-prolongation is dose- and level-dependent; accumulation increases torsades risk.",
+    "guidance": [
+      { "band": "normal", "adjustment": "80-160 mg BD (initiate inpatient with ECG)." },
+      { "band": "mild", "adjustment": "Standard dose with ECG monitoring." },
+      { "band": "moderate", "adjustment": "CrCl 30-59: usual dose every 24 h." },
+      { "band": "severe", "adjustment": "CrCl 10-29: usual dose every 36-48 h; only with specialist input." },
+      { "band": "esrd", "adjustment": "AVOID — alternative agent." }
+    ],
+    "monitoring": "ECG (QT) at baseline, 24-48 h after each dose change. Potassium, magnesium.",
+    "akiGuidance": "Hold during AKI; recheck QT before restart.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Removed by HD. Avoid maintenance in dialysis except specialist settings.",
+    "alternatives": ["bisoprolol or metoprolol for rate control", "amiodarone (no renal adjustment but other toxicities)"],
+    "references": [
+      { "label": "BNF (current edition) — sotalol renal impairment" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B"
+  },
+  {
+    "slug": "fluconazole-renal",
+    "drugSlug": "fluconazole",
+    "drug": "Fluconazole",
+    "oneLiner": "Renally cleared triazole — give standard loading dose then halve maintenance at CrCl <50. Watch QT interval, drug interactions.",
+    "worstClassDecision": "reduce-dose",
+    "domains": ["antimicrobials"],
+    "mechanism": "≈80% renally excreted unchanged.",
+    "guidance": [
+      { "band": "normal", "adjustment": "Standard regimen per indication (e.g. 400-800 mg OD for invasive candidiasis after loading)." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "CrCl 11-50: standard loading dose; halve subsequent doses (or give standard dose every 48 h)." },
+      { "band": "severe", "adjustment": "CrCl <10 not on dialysis: standard loading then 50% of standard maintenance." },
+      { "band": "esrd", "adjustment": "Standard dose after each haemodialysis session." }
+    ],
+    "monitoring": "QT (with other QT-prolongers), LFTs on prolonged use.",
+    "akiGuidance": "Reduce maintenance during AKI.",
+    "dialyzable": true,
+    "dialysisDoseGuidance": "Removed by HD (≈50% per session). Give standard dose after each session.",
+    "alternatives": ["echinocandin (caspofungin, anidulafungin) — no renal dose adjustment"],
+    "references": [
+      { "label": "BNF (current edition) — fluconazole renal impairment" },
+      { "label": "EMA Summary of Product Characteristics — Diflucan (fluconazole)" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  },
+  {
+    "slug": "ceftriaxone-renal",
+    "drugSlug": "ceftriaxone",
+    "drug": "Ceftriaxone",
+    "oneLiner": "Dual hepatic-biliary and renal elimination — usually no renal dose adjustment needed unless combined hepatic + renal impairment, or eGFR <10. Watch for biliary sludging on prolonged courses.",
+    "worstClassDecision": "use-with-caution",
+    "domains": ["antimicrobials"],
+    "mechanism": "≈40% renally and ≈60% biliary; the dual pathway means single-organ failure rarely requires adjustment. Combined hepatic-renal failure does.",
+    "guidance": [
+      { "band": "normal", "adjustment": "1-2 g once daily; 2 g BD for meningitis." },
+      { "band": "mild", "adjustment": "Standard dose." },
+      { "band": "moderate", "adjustment": "Standard dose." },
+      { "band": "severe", "adjustment": "Standard dose; do not exceed 2 g/day at eGFR <10 combined with hepatic impairment." },
+      { "band": "esrd", "adjustment": "Maximum 2 g/day. Give after HD on dialysis days." }
+    ],
+    "monitoring": "LFTs and biliary symptoms on prolonged courses (pseudolithiasis). Calcium (do not co-administer with IV calcium in neonates)." ,
+    "akiGuidance": "No routine adjustment; reassess if combined hepatic/renal failure.",
+    "dialyzable": false,
+    "dialysisDoseGuidance": "Not significantly removed by HD; no supplemental dose required. Maximum 2 g/day.",
+    "alternatives": ["cefotaxime (similar spectrum, renally cleared — needs adjustment)"],
+    "references": [
+      { "label": "BNF (current edition) — ceftriaxone renal impairment" },
+      { "label": "EMA Summary of Product Characteristics — ceftriaxone" }
+    ],
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A"
+  }
+]

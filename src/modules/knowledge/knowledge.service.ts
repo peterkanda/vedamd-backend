@@ -165,6 +165,10 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.hepaticDose;
   }
 
+  getRenalDose() {
+    return this.bundle.renalDose;
+  }
+
   getSymptomTriage() {
     return this.bundle.symptomTriage;
   }

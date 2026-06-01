@@ -61,6 +61,7 @@ interface Bundle {
   ivCompatibility?: ExtendedRecord[];
   pregnancyLactation?: ExtendedRecord[];
   hepaticDose?: ExtendedRecord[];
+  renalDose?: ExtendedRecord[];
   symptomTriage?: ExtendedRecord[];
   clinicalProcedures?: ExtendedRecord[];
   bedsideInterpretation?: ExtendedRecord[];
@@ -131,6 +132,7 @@ export function validateBundle(bundle: Bundle): ValidationResult {
     ['iv-compatibility', bundle.ivCompatibility],
     ['pregnancy-lactation', bundle.pregnancyLactation],
     ['hepatic-dose', bundle.hepaticDose],
+    ['renal-dose', bundle.renalDose],
     ['symptom-triage', bundle.symptomTriage],
     ['clinical-procedures', bundle.clinicalProcedures],
     ['bedside-interpretation', bundle.bedsideInterpretation],

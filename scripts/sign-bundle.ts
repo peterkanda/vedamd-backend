@@ -80,6 +80,7 @@ const fileEntries = files.map((name) => {
     ivCompatibility: readOptional('iv-compatibility.json'),
     pregnancyLactation: readOptional('pregnancy-lactation.json'),
     hepaticDose: readOptional('hepatic-dose.json'),
+    renalDose: readOptional('renal-dose.json'),
     symptomTriage: readOptional('symptom-triage.json'),
     clinicalProcedures: readOptional('clinical-procedures.json'),
     bedsideInterpretation: readOptional('bedside-interpretation.json'),

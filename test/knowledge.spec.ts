@@ -31,6 +31,7 @@ function copyBundle(): string {
     'iv-compatibility.json',
     'pregnancy-lactation.json',
     'hepatic-dose.json',
+    'renal-dose.json',
     'symptom-triage.json',
     'clinical-procedures.json',
     'bedside-interpretation.json',
@@ -112,7 +113,7 @@ describe('KnowledgeService', () => {
     expect(info.verified).toBe(true);
     expect(info.version).toBe('v0.1.0');
     expect(info.signedBy).toBe('vedamd-dev-key-v0');
-    expect(info.files.length).toBe(24);
+    expect(info.files.length).toBe(25);
     expect(info.contentStats).toBeDefined();
     expect(info.contentStats!.totalRecords).toBeGreaterThan(0);
     expect(info.contentStats!.byStatus.draft).toBeGreaterThan(0);
