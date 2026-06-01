@@ -344,6 +344,121 @@ const DOSE_DRUGS: DoseDrug[] = [
     notes:
       'BNFc: 7.5 mg/kg/dose IV/PO q8h (max 500 mg/dose); 30 mg/kg/day total. Disulfiram-like reaction with alcohol.',
   },
+  // ---- Endocrine / electrolyte emergencies ----
+  {
+    id: 'hydrocortisone-iv-paeds',
+    name: 'Hydrocortisone IV — paediatric',
+    indication: 'Adrenal crisis / severe asthma / anaphylaxis adjunct',
+    mgPerKgPerDose: 4,
+    maxMgPerDose: 100,
+    frequency: 'every 6 h',
+    route: 'IV/IM',
+    notes:
+      'BNFc / APLS: 4 mg/kg/dose IV q6h (max 100 mg/dose for asthma; up to 100 mg/dose for adrenal crisis regardless of weight in older children).',
+  },
+  {
+    id: 'calcium-gluconate-iv-paeds',
+    name: 'Calcium gluconate 10% IV — paediatric',
+    indication: 'Symptomatic hypocalcaemia / hyperkalaemia cardiac protection',
+    mgPerKgPerDose: 50,
+    maxMgPerDose: 2000,
+    frequency: 'every 6 h',
+    route: 'slow IV',
+    notes:
+      'APLS / BNFc: 0.5 mL/kg of 10% (= 50 mg/kg) slow IV over 5–10 min; cardiac monitoring; max single dose 20 mL (2 g). Extravasation causes severe tissue necrosis — use central line where possible.',
+  },
+  // NB: sodium bicarbonate (mmol/kg), 3% NaCl (mL/kg), mannitol (g/kg),
+  // insulin DKA (units/kg/hr), vitamin K (flat 1 mg IM), mebendazole /
+  // albendazole (fixed PO dose), ORS (mL/kg) are intentionally NOT in
+  // this mg-per-kg table — their native units don't map to mg without
+  // a unit-mismatch hazard. They live under /app/antidotes and the
+  // condition-level protocols instead, where the right units are shown.
+  // ---- Antimicrobials (paediatric extension) ----
+  {
+    id: 'flucloxacillin-paeds',
+    name: 'Flucloxacillin IV/PO — paediatric',
+    indication: 'Staphylococcal skin / soft-tissue / bone infection',
+    mgPerKgPerDose: 25,
+    maxMgPerDose: 1000,
+    maxMgPerKgPerDay: 100,
+    frequency: 'every 6 h',
+    route: 'IV/PO',
+    notes:
+      'BNFc: 12.5–25 mg/kg/dose q6h IV/PO; 50 mg/kg/dose for severe sepsis (max 2 g/dose). Hepatotoxicity rare but reported — monitor LFTs >14d.',
+  },
+  {
+    id: 'cloxacillin-paeds',
+    name: 'Cloxacillin IV — paediatric (Kenya EML)',
+    indication: 'Staphylococcal infection (Kenya / WHO EML alternative to flucloxacillin)',
+    mgPerKgPerDose: 50,
+    maxMgPerDose: 2000,
+    maxMgPerKgPerDay: 200,
+    frequency: 'every 6 h',
+    route: 'IV',
+    notes:
+      'WHO EML / Kenya MoH: 50 mg/kg/dose IV q6h for severe staphylococcal infection (max 2 g/dose).',
+  },
+  {
+    id: 'erythromycin-paeds',
+    name: 'Erythromycin PO — paediatric',
+    indication: 'Pertussis / chlamydia / penicillin-allergic alternative',
+    mgPerKgPerDose: 12.5,
+    maxMgPerDose: 500,
+    maxMgPerKgPerDay: 50,
+    frequency: 'every 6 h',
+    route: 'PO',
+    notes:
+      'BNFc: 12.5 mg/kg/dose q6h (40–50 mg/kg/day); avoid in infants <2 weeks (pyloric stenosis risk).',
+  },
+  {
+    id: 'fluconazole-paeds',
+    name: 'Fluconazole PO/IV — paediatric',
+    indication: 'Oral / oesophageal candidiasis; cryptococcal step-down',
+    mgPerKgPerDose: 6,
+    maxMgPerDose: 400,
+    maxMgPerKgPerDay: 12,
+    frequency: 'once daily',
+    route: 'PO/IV',
+    notes:
+      'BNFc / WHO HIV: 6 mg/kg loading then 3–6 mg/kg once daily (max 400 mg). QT-prolonging — co-medication check.',
+    minAgeMonths: 0,
+  },
+  {
+    id: 'acyclovir-iv-paeds',
+    name: 'Acyclovir IV — paediatric',
+    indication: 'Neonatal HSV / VZV encephalitis',
+    mgPerKgPerDose: 20,
+    maxMgPerDose: 1000,
+    maxMgPerKgPerDay: 60,
+    frequency: 'every 8 h',
+    route: 'slow IV over 1 h',
+    notes:
+      'BNFc: 20 mg/kg/dose q8h IV for HSV/VZV CNS disease; infuse over 1 h to limit nephrotoxicity (crystalluria). Hydrate well; monitor renal function.',
+  },
+  {
+    id: 'ciprofloxacin-paeds',
+    name: 'Ciprofloxacin PO — paediatric',
+    indication: 'Severe typhoid / Pseudomonas / complicated UTI (use sparingly)',
+    mgPerKgPerDose: 15,
+    maxMgPerDose: 750,
+    maxMgPerKgPerDay: 30,
+    frequency: 'every 12 h',
+    route: 'PO',
+    notes:
+      'BNFc / WHO: 15 mg/kg/dose bd (max 750 mg) when no alternative; cartilage warning historically theoretical. Avoid with dairy / antacids within 2 h.',
+  },
+  {
+    id: 'ferrous-sulphate-paeds',
+    name: 'Ferrous sulphate PO — paediatric',
+    indication: 'Iron-deficiency anaemia treatment',
+    mgPerKgPerDose: 3, // 3 mg elemental iron/kg/dose
+    maxMgPerDose: 65,
+    maxMgPerKgPerDay: 6,
+    frequency: 'every 12 h',
+    route: 'PO',
+    notes:
+      'WHO / BNFc: 3 mg/kg/dose elemental iron bd (or 6 mg/kg once daily). 200 mg ferrous sulphate ≈ 65 mg elemental iron. Take 1 h before food; black stools expected.',
+  },
 ];
 
 const VITALS: VitalsBand[] = [

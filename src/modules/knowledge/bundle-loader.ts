@@ -18,6 +18,7 @@ import type { AnticoagulantReversal } from '../anticoagulant-reversal/anticoagul
 import type { IvCompatibility } from '../iv-compatibility/iv-compatibility.types';
 import type { PregnancyLactationRecord } from '../pregnancy-lactation/pregnancy-lactation.types';
 import type { HepaticDoseRecord } from '../hepatic-dose/hepatic-dose.types';
+import type { RenalDoseRecord } from '../renal-dose/renal-dose.types';
 import type { SymptomTriageRecord } from '../symptom-triage/symptom-triage.types';
 import type { TerminologyBundle } from '../terminology/terminology.types';
 import { nonApprovedCount, validateBundle } from './bundle-validator';
@@ -161,6 +162,7 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
     pregnancyLactation:
       (parsed['pregnancy-lactation.json'] as PregnancyLactationRecord[] | undefined) ?? [],
     hepaticDose: (parsed['hepatic-dose.json'] as HepaticDoseRecord[] | undefined) ?? [],
+    renalDose: (parsed['renal-dose.json'] as RenalDoseRecord[] | undefined) ?? [],
     symptomTriage:
       (parsed['symptom-triage.json'] as SymptomTriageRecord[] | undefined) ?? [],
     clinicalProcedures:
@@ -250,6 +252,7 @@ export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBun
     ivCompatibility: [],
     pregnancyLactation: [],
     hepaticDose: [],
+    renalDose: [],
     symptomTriage: [],
     clinicalProcedures: [],
     bedsideInterpretation: [],
@@ -302,6 +305,7 @@ function failOrReturn(
     ivCompatibility: [],
     pregnancyLactation: [],
     hepaticDose: [],
+    renalDose: [],
     symptomTriage: [],
     clinicalProcedures: [],
     bedsideInterpretation: [],
