@@ -50,6 +50,7 @@ import { CdsFeedbackModule } from './modules/cds-feedback/cds-feedback.module';
 import { GovernanceModule } from './modules/governance/governance.module';
 import { ReferenceModule } from './modules/reference/reference.module';
 import { UsageModule } from './modules/usage/usage.module';
+import { MetricsModule } from './modules/metrics/metrics.module';
 
 @Module({
   imports: [
@@ -106,6 +107,7 @@ import { UsageModule } from './modules/usage/usage.module';
     GovernanceModule,
     ReferenceModule,
     UsageModule,
+    MetricsModule,
   ],
 })
 export class AppModule {}
