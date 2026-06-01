@@ -32,6 +32,28 @@ export interface UsageSummary {
 }
 
 /**
+ * Public, anonymous-by-construction product metrics — safe to show on the
+ * marketing landing page and to share externally. All counts are
+ * k-anonymised: tenant and actor counts under 5 are reported as null, and
+ * counts under 100 are rounded to the nearest 10 (everything else to the
+ * nearest 100) so a sparse early-pilot deployment can't be reverse-mapped
+ * to specific sites or users.
+ */
+export interface PublicMetrics {
+  /** Total API requests served in the rolling window. */
+  apiRequests30d: number;
+  /** Distinct hashed actors (operator + API key fingerprint). null if <5. */
+  activeUsers30d: number | null;
+  /** Distinct integrators (tenants). null if <5. */
+  activeOrgs30d: number | null;
+  /** Successful CDS evaluations served. */
+  cdsEvaluations30d: number;
+  /** Window definition for transparency. */
+  windowDays: number;
+  generatedAt: string;
+}
+
+/**
  * Records and queries product-usage events. Writes are fire-and-forget
  * so the analytics path can never add latency to — or fail — a clinical
  * request. PHI-free: only route templates, categories, hashed actor ids
@@ -144,7 +166,79 @@ export class UsageService {
     };
   }
 
+  /**
+   * Cross-tenant aggregated metrics for the public showcase. Tenant-blind:
+   * does not filter by integrator. Counts are rounded for privacy.
+   *
+   * RLS posture: this query is intentionally NOT tenant-scoped — it sums
+   * across all integrators to produce showcase numbers. The route that
+   * exposes it is unauthenticated AND the numbers are bucketed to
+   * thwart small-N inference. No row content is returned.
+   */
+  async publicMetrics(windowDays = 30): Promise<PublicMetrics> {
+    const now = Date.now();
+    const generatedAt = new Date(now).toISOString();
+    const empty: PublicMetrics = {
+      apiRequests30d: 0,
+      activeUsers30d: null,
+      activeOrgs30d: null,
+      cdsEvaluations30d: 0,
+      windowDays,
+      generatedAt,
+    };
+    if (!this.db) return empty;
+    const since = new Date(now - windowDays * 24 * 3600 * 1000);
+
+    const [totalRow, usersRow, orgsRow, cdsRow] = await Promise.all([
+      this.db
+        .select({ c: count() })
+        .from(usageEvents)
+        .where(gte(usageEvents.occurredAt, since)),
+      this.db
+        .select({ c: sql<number>`count(distinct ${usageEvents.actorHash})` })
+        .from(usageEvents)
+        .where(gte(usageEvents.occurredAt, since)),
+      this.db
+        .select({ c: sql<number>`count(distinct ${usageEvents.integratorId})` })
+        .from(usageEvents)
+        .where(gte(usageEvents.occurredAt, since)),
+      this.db
+        .select({ c: count() })
+        .from(usageEvents)
+        .where(
+          and(
+            gte(usageEvents.occurredAt, since),
+            eq(usageEvents.category, 'cds'),
+            sql`${usageEvents.statusCode} < 400`,
+          ),
+        ),
+    ]);
+
+    return {
+      apiRequests30d: roundForPublic(Number(totalRow[0]?.c ?? 0)),
+      activeUsers30d: kAnon(Number(usersRow[0]?.c ?? 0)),
+      activeOrgs30d: kAnon(Number(orgsRow[0]?.c ?? 0)),
+      cdsEvaluations30d: roundForPublic(Number(cdsRow[0]?.c ?? 0)),
+      windowDays,
+      generatedAt,
+    };
+  }
+
   private hash(value: string): string {
     return createHmac('sha256', this.hashSecret).update(value).digest('hex');
   }
+}
+
+/** k-anonymity: don't expose counts under the k=5 threshold. */
+function kAnon(n: number): number | null {
+  if (n < 5) return null;
+  return roundForPublic(n);
+}
+
+/** Round to nearest 10 below 100, nearest 100 below 1,000, nearest 1,000 above. */
+function roundForPublic(n: number): number {
+  if (n < 10) return n;
+  if (n < 100) return Math.round(n / 10) * 10;
+  if (n < 1_000) return Math.round(n / 100) * 100;
+  return Math.round(n / 1_000) * 1_000;
 }
