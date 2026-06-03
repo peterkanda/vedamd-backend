@@ -12611,5 +12611,800 @@
     "evidenceLevel": "A",
     "ruleVersion": "0.1.0",
     "reviewStatus": "draft"
+  },
+  {
+    "slug": "cpot",
+    "title": "Critical-Care Pain Observation Tool",
+    "abbrev": "CPOT",
+    "purpose": "Behavioural pain assessment for critically ill adults unable to self-report (e.g. mechanically ventilated, sedated).",
+    "domains": [
+      "critical-care",
+      "pain"
+    ],
+    "items": [
+      {
+        "label": "Facial expression (0 relaxed, 1 tense, 2 grimacing)",
+        "points": 2,
+        "max": 2
+      },
+      {
+        "label": "Body movements (0 none/normal, 1 protection, 2 restlessness/agitation)",
+        "points": 2,
+        "max": 2
+      },
+      {
+        "label": "Muscle tension on passive flexion (0 relaxed, 1 tense/rigid, 2 very tense or rigid)",
+        "points": 2,
+        "max": 2
+      },
+      {
+        "label": "Compliance with ventilator (intubated) OR vocalisation (extubated) (0–2)",
+        "points": 2,
+        "max": 2
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 8
+    },
+    "interpretation": [
+      {
+        "band": "0–2",
+        "meaning": "No / minimal pain",
+        "action": "Reassess each shift and after any intervention."
+      },
+      {
+        "band": "≥3",
+        "meaning": "Significant pain present",
+        "action": "Treat pain (multimodal analgesia per PADIS); reassess within 30 minutes."
+      }
+    ],
+    "references": [
+      {
+        "label": "Gélinas C et al. Validation of the critical-care pain observation tool in adult patients. Am J Crit Care 2006;15:420-7."
+      },
+      {
+        "label": "Devlin JW et al. PADIS guideline. Crit Care Med 2018;46:e825-e873."
+      }
+    ],
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft"
+  },
+  {
+    "slug": "bps-behavioral-pain-scale",
+    "title": "Behavioral Pain Scale",
+    "abbrev": "BPS",
+    "purpose": "Behavioural pain assessment for sedated, mechanically ventilated adults unable to self-report; PADIS-endorsed alternative to CPOT.",
+    "domains": [
+      "critical-care",
+      "pain"
+    ],
+    "items": [
+      {
+        "label": "Facial expression (1 relaxed, 2 partially tightened, 3 fully tightened, 4 grimacing)",
+        "points": 4,
+        "max": 4
+      },
+      {
+        "label": "Upper limbs (1 no movement, 2 partially bent, 3 fully bent with finger flexion, 4 permanently retracted)",
+        "points": 4,
+        "max": 4
+      },
+      {
+        "label": "Compliance with mechanical ventilation (1 tolerating, 2 coughing but tolerating, 3 fighting ventilator, 4 unable to control ventilation)",
+        "points": 4,
+        "max": 4
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 3,
+      "max": 12
+    },
+    "interpretation": [
+      {
+        "band": "3–4",
+        "meaning": "No / minimal pain"
+      },
+      {
+        "band": "5",
+        "meaning": "Mild pain",
+        "action": "Consider intervention if persistent."
+      },
+      {
+        "band": "≥6",
+        "meaning": "Unacceptable pain",
+        "action": "Administer analgesia and reassess."
+      }
+    ],
+    "references": [
+      {
+        "label": "Payen JF et al. Assessing pain in critically ill sedated patients by using a behavioral pain scale. Crit Care Med 2001;29:2258-63."
+      },
+      {
+        "label": "Devlin JW et al. PADIS guideline. Crit Care Med 2018;46:e825-e873."
+      }
+    ],
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft"
+  },
+  {
+    "slug": "abcdef-bundle",
+    "title": "ABCDEF (A2F) ICU Liberation Bundle",
+    "abbrev": "ABCDEF",
+    "purpose": "PADIS implementation bundle to reduce ICU delirium, ventilator days and mortality; track daily compliance per element.",
+    "domains": [
+      "critical-care"
+    ],
+    "items": [
+      {
+        "label": "A — Assess, prevent and manage pain",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "B — Both spontaneous awakening trial (SAT) and spontaneous breathing trial (SBT)",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "C — Choice of analgesia and sedation (prefer non-benzodiazepine, light sedation)",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "D — Delirium: assess, prevent and manage (CAM-ICU or ICDSC)",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "E — Early mobility and exercise",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "F — Family engagement and empowerment",
+        "points": 1,
+        "max": 1
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 6,
+      "notes": "Bundle compliance (not a clinical risk score); each element scored 0 (not performed) or 1 (performed) per patient-day."
+    },
+    "interpretation": [
+      {
+        "band": "6/6",
+        "meaning": "Full bundle compliance",
+        "action": "Maintain — associated with lower mortality, delirium and ICU readmission."
+      },
+      {
+        "band": "1–5/6",
+        "meaning": "Partial compliance",
+        "action": "Identify barriers to missing elements; dose-response benefit demonstrated."
+      },
+      {
+        "band": "0/6",
+        "meaning": "No bundle elements performed",
+        "action": "Quality-improvement action required."
+      }
+    ],
+    "references": [
+      {
+        "label": "Devlin JW et al. PADIS guideline. Crit Care Med 2018;46:e825-e873."
+      },
+      {
+        "label": "Pun BT et al. Caring for critically ill patients with the ABCDEF bundle: results of the ICU Liberation Collaborative. Crit Care Med 2019;47:3-14."
+      }
+    ],
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft"
+  },
+  {
+    "slug": "gcs-motor",
+    "title": "Glasgow Coma Scale — Motor subscore",
+    "abbrev": "GCS-M",
+    "purpose": "Standalone motor component of the GCS; performs comparably to total GCS for triage of trauma and ventilated/aphasic ICU patients in whom verbal/eye scoring is unreliable.",
+    "domains": [
+      "critical-care",
+      "emergency",
+      "neurology",
+      "trauma"
+    ],
+    "items": [
+      {
+        "label": "Obeys commands",
+        "points": 6
+      },
+      {
+        "label": "Localises to pain",
+        "points": 5
+      },
+      {
+        "label": "Withdraws from pain (normal flexion)",
+        "points": 4
+      },
+      {
+        "label": "Abnormal flexion (decorticate)",
+        "points": 3
+      },
+      {
+        "label": "Extension to pain (decerebrate)",
+        "points": 2
+      },
+      {
+        "label": "No motor response",
+        "points": 1
+      }
+    ],
+    "scoring": {
+      "method": "any-criterion",
+      "min": 1,
+      "max": 6
+    },
+    "interpretation": [
+      {
+        "band": "6",
+        "meaning": "Obeys commands — low likelihood of severe brain injury"
+      },
+      {
+        "band": "4–5",
+        "meaning": "Localises or withdraws — moderate impairment",
+        "action": "Serial reassessment; airway protection if deteriorating."
+      },
+      {
+        "band": "≤3",
+        "meaning": "Abnormal flexion, extension or none — severe impairment",
+        "action": "Equivalent to total GCS ≤8 — secure airway, urgent neuroimaging."
+      }
+    ],
+    "references": [
+      {
+        "label": "Healey C et al. Improving the Glasgow Coma Scale score: motor score alone is a better predictor. J Trauma 2003;54:671-8."
+      },
+      {
+        "label": "Teasdale G, Jennett B. Assessment of coma and impaired consciousness. Lancet 1974;2:81-4."
+      }
+    ],
+    "evidenceLevel": "B",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft"
+  },
+  {
+    "slug": "riker-sas",
+    "title": "Riker Sedation-Agitation Scale",
+    "abbrev": "SAS",
+    "purpose": "Quantify sedation and agitation in adult ICU patients; PADIS-endorsed alternative to RASS.",
+    "domains": [
+      "critical-care"
+    ],
+    "items": [
+      {
+        "label": "7 — Dangerous agitation (pulling at lines, climbing over rails)",
+        "points": 7
+      },
+      {
+        "label": "6 — Very agitated (requires restraint, biting ETT)",
+        "points": 6
+      },
+      {
+        "label": "5 — Agitated (anxious, attempts to sit up, calms to verbal instructions)",
+        "points": 5
+      },
+      {
+        "label": "4 — Calm and cooperative",
+        "points": 4
+      },
+      {
+        "label": "3 — Sedated (rouses to verbal stimuli, follows simple commands)",
+        "points": 3
+      },
+      {
+        "label": "2 — Very sedated (rouses to physical stimuli only, does not follow commands)",
+        "points": 2
+      },
+      {
+        "label": "1 — Unarousable (minimal or no response to noxious stimuli)",
+        "points": 1
+      }
+    ],
+    "scoring": {
+      "method": "any-criterion",
+      "min": 1,
+      "max": 7
+    },
+    "interpretation": [
+      {
+        "band": "4",
+        "meaning": "Target — calm, cooperative"
+      },
+      {
+        "band": "3 or 5",
+        "meaning": "Acceptable for many ICU contexts",
+        "action": "Reassess goal of sedation."
+      },
+      {
+        "band": "≥6",
+        "meaning": "Agitation",
+        "action": "Treat pain/delirium; titrate sedation up only after non-pharmacological measures."
+      },
+      {
+        "band": "≤2",
+        "meaning": "Over-sedation",
+        "action": "Lighten sedation unless deliberately deep (e.g. status epilepticus, severe ARDS)."
+      }
+    ],
+    "references": [
+      {
+        "label": "Riker RR, Picard JT, Fraser GL. Prospective evaluation of the Sedation-Agitation Scale for adult critically ill patients. Crit Care Med 1999;27:1325-9."
+      },
+      {
+        "label": "Devlin JW et al. PADIS guideline. Crit Care Med 2018;46:e825-e873."
+      }
+    ],
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft"
+  },
+  {
+    "slug": "nsqip-functional-status",
+    "title": "Pre-operative Functional Status (ACS-NSQIP)",
+    "abbrev": "Functional status",
+    "purpose": "Single-axis pre-operative ADL classification used in ACS-NSQIP risk models; independent predictor of 30-day morbidity and mortality.",
+    "domains": [
+      "surgery",
+      "anaesthesia",
+      "geriatrics"
+    ],
+    "items": [
+      {
+        "label": "Independent — performs all ADLs without assistance within 30 days before surgery",
+        "points": 0
+      },
+      {
+        "label": "Partially dependent — requires help with some ADLs (e.g. bathing, dressing)",
+        "points": 1
+      },
+      {
+        "label": "Totally dependent — requires assistance with all ADLs",
+        "points": 2
+      }
+    ],
+    "scoring": {
+      "method": "any-criterion",
+      "min": 0,
+      "max": 2,
+      "notes": "Classifier only — feeds into the ACS-NSQIP Universal Surgical Risk Calculator and Gupta MICA."
+    },
+    "interpretation": [
+      {
+        "band": "Independent",
+        "meaning": "Reference / lowest risk"
+      },
+      {
+        "band": "Partially dependent",
+        "meaning": "Elevated 30-day mortality and complications (~2× baseline)",
+        "action": "Consider pre-habilitation, geriatric assessment, multidisciplinary care plan."
+      },
+      {
+        "band": "Totally dependent",
+        "meaning": "Substantially elevated risk (~3–4× baseline)",
+        "action": "Reassess goals of care; explicit shared decision making; ICU/step-down planning."
+      }
+    ],
+    "references": [
+      {
+        "label": "Bilimoria KY et al. Development and evaluation of the universal ACS NSQIP surgical risk calculator. J Am Coll Surg 2013;217:833-42."
+      },
+      {
+        "label": "Scarborough JE et al. Functional dependency and mortality in surgical patients. Ann Surg 2015;261:432-7."
+      }
+    ],
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft"
+  },
+  {
+    "slug": "apfel-ponv",
+    "title": "Apfel score for postoperative nausea and vomiting",
+    "abbrev": "Apfel PONV",
+    "purpose": "Predict the risk of postoperative nausea and vomiting (PONV) in adults receiving inhalational anaesthesia to guide multimodal antiemetic prophylaxis.",
+    "domains": [
+      "anaesthesia",
+      "surgery"
+    ],
+    "items": [
+      {
+        "label": "Female sex",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Non-smoker",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "History of PONV or motion sickness",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Use of postoperative opioids",
+        "points": 1,
+        "max": 1
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 4
+    },
+    "interpretation": [
+      {
+        "band": "0",
+        "meaning": "~10% PONV risk",
+        "action": "No routine prophylaxis."
+      },
+      {
+        "band": "1",
+        "meaning": "~21% risk",
+        "action": "Consider single-agent prophylaxis."
+      },
+      {
+        "band": "2",
+        "meaning": "~39% risk",
+        "action": "Two antiemetic interventions of different classes."
+      },
+      {
+        "band": "3",
+        "meaning": "~61% risk",
+        "action": "Multimodal prophylaxis (≥2 agents) + opioid-sparing strategy."
+      },
+      {
+        "band": "4",
+        "meaning": "~79% risk",
+        "action": "Multimodal prophylaxis (≥3 agents); consider TIVA, regional anaesthesia."
+      }
+    ],
+    "references": [
+      {
+        "label": "Apfel CC et al. A simplified risk score for predicting postoperative nausea and vomiting. Anesthesiology 1999;91:693-700."
+      },
+      {
+        "label": "Gan TJ et al. Fourth consensus guidelines for the management of postoperative nausea and vomiting. Anesth Analg 2020;131:411-48."
+      }
+    ],
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft"
+  },
+  {
+    "slug": "mallampati",
+    "title": "Modified Mallampati classification",
+    "abbrev": "Mallampati",
+    "purpose": "Pre-operative oropharyngeal exam to predict difficult laryngoscopy/intubation; component of multifactorial airway assessment.",
+    "domains": [
+      "anaesthesia",
+      "emergency"
+    ],
+    "items": [
+      {
+        "label": "Class I — soft palate, uvula, fauces, pillars visible",
+        "points": 1
+      },
+      {
+        "label": "Class II — soft palate, uvula, fauces visible",
+        "points": 2
+      },
+      {
+        "label": "Class III — soft palate and base of uvula visible",
+        "points": 3
+      },
+      {
+        "label": "Class IV — only hard palate visible",
+        "points": 4
+      }
+    ],
+    "scoring": {
+      "method": "any-criterion",
+      "min": 1,
+      "max": 4,
+      "notes": "Assessed with patient sitting, mouth open maximally, tongue protruded, without phonation."
+    },
+    "interpretation": [
+      {
+        "band": "I–II",
+        "meaning": "Predicts straightforward laryngoscopy in most patients"
+      },
+      {
+        "band": "III",
+        "meaning": "Possible difficult intubation",
+        "action": "Combine with thyromental distance, neck mobility, mouth opening; plan alternative airway technique."
+      },
+      {
+        "band": "IV",
+        "meaning": "Higher likelihood of difficult intubation",
+        "action": "Awake fibre-optic or video-laryngoscopy plan; senior anaesthetic input; full difficult-airway equipment available."
+      }
+    ],
+    "references": [
+      {
+        "label": "Mallampati SR et al. A clinical sign to predict difficult tracheal intubation: a prospective study. Can Anaesth Soc J 1985;32:429-34."
+      },
+      {
+        "label": "Samsoon GL, Young JR. Difficult tracheal intubation: a retrospective study. Anaesthesia 1987;42:487-90."
+      }
+    ],
+    "evidenceLevel": "B",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft"
+  },
+  {
+    "slug": "wilson-airway-risk",
+    "title": "Wilson Risk Sum for difficult intubation",
+    "abbrev": "Wilson",
+    "purpose": "Pre-operative composite airway assessment predicting difficult laryngoscopy.",
+    "domains": [
+      "anaesthesia"
+    ],
+    "items": [
+      {
+        "label": "Weight (0 <90 kg, 1 90–110 kg, 2 >110 kg)",
+        "points": 2,
+        "max": 2
+      },
+      {
+        "label": "Head and neck movement (0 >90°, 1 ≈90°, 2 <90°)",
+        "points": 2,
+        "max": 2
+      },
+      {
+        "label": "Jaw movement / mouth opening (0 IG ≥5 cm or SLux >0, 1 IG <5 cm and SLux =0, 2 IG <5 cm and SLux <0)",
+        "points": 2,
+        "max": 2
+      },
+      {
+        "label": "Receding mandible (0 normal, 1 moderate, 2 severe)",
+        "points": 2,
+        "max": 2
+      },
+      {
+        "label": "Buck teeth (0 normal, 1 moderate, 2 severe)",
+        "points": 2,
+        "max": 2
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 10
+    },
+    "interpretation": [
+      {
+        "band": "0–1",
+        "meaning": "Low likelihood of difficult intubation"
+      },
+      {
+        "band": "2",
+        "meaning": "Threshold — sensitivity ~75% for difficult intubation",
+        "action": "Standard preparation with backup plan."
+      },
+      {
+        "band": "≥3",
+        "meaning": "High predicted difficulty",
+        "action": "Awake fibre-optic or video-laryngoscopy; senior anaesthetic input."
+      }
+    ],
+    "references": [
+      {
+        "label": "Wilson ME et al. Predicting difficult intubation. Br J Anaesth 1988;61:211-6."
+      }
+    ],
+    "evidenceLevel": "B",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft"
+  },
+  {
+    "slug": "pospom",
+    "title": "Preoperative Score to Predict Postoperative Mortality",
+    "abbrev": "POSPOM",
+    "purpose": "Estimate in-hospital mortality after non-cardiac surgery using preoperative variables (age, comorbidities, surgery type).",
+    "domains": [
+      "surgery",
+      "anaesthesia"
+    ],
+    "items": [
+      {
+        "label": "Age (graded points up to ~9 for the oldest band)",
+        "points": 9,
+        "max": 9
+      },
+      {
+        "label": "17 weighted comorbidities (e.g. heart failure, chronic respiratory disease, cirrhosis, dementia, metastatic cancer)",
+        "points": 20,
+        "max": 20
+      },
+      {
+        "label": "Surgery category (weighted by surgical risk; e.g. cardiac, thoracic, aortic, neurosurgery)",
+        "points": 20,
+        "max": 20
+      }
+    ],
+    "scoring": {
+      "method": "weighted-sum",
+      "min": 0,
+      "max": 50,
+      "notes": "Full coefficient table required for exact scoring; expected in-hospital mortality rises roughly exponentially with score."
+    },
+    "interpretation": [
+      {
+        "band": "<10",
+        "meaning": "≈0.1% in-hospital mortality"
+      },
+      {
+        "band": "10–19",
+        "meaning": "≈0.5–2% mortality"
+      },
+      {
+        "band": "20–29",
+        "meaning": "≈3–8% mortality",
+        "action": "High-dependency post-op plan."
+      },
+      {
+        "band": "≥30",
+        "meaning": "≥10% mortality",
+        "action": "Explicit shared decision-making; consider critical-care booking and senior surgical/anaesthetic review."
+      }
+    ],
+    "references": [
+      {
+        "label": "Le Manach Y et al. Preoperative score to predict postoperative mortality (POSPOM). Anesthesiology 2016;124:570-9."
+      }
+    ],
+    "evidenceLevel": "B",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft"
+  },
+  {
+    "slug": "khorana-vte",
+    "title": "Khorana score for cancer-associated VTE",
+    "abbrev": "Khorana",
+    "purpose": "Predict risk of venous thromboembolism in ambulatory cancer patients starting chemotherapy; informs thromboprophylaxis decisions including pre-operative oncology workup.",
+    "domains": [
+      "oncology",
+      "haematology",
+      "surgery"
+    ],
+    "items": [
+      {
+        "label": "Very-high-risk cancer site (stomach, pancreas)",
+        "points": 2,
+        "max": 2
+      },
+      {
+        "label": "High-risk cancer site (lung, lymphoma, gynaecological, bladder, testicular)",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Pre-chemotherapy platelet count ≥350 ×10⁹/L",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Haemoglobin <100 g/L or use of erythropoiesis-stimulating agents",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "Pre-chemotherapy leukocyte count >11 ×10⁹/L",
+        "points": 1,
+        "max": 1
+      },
+      {
+        "label": "BMI ≥35 kg/m²",
+        "points": 1,
+        "max": 1
+      }
+    ],
+    "scoring": {
+      "method": "sum",
+      "min": 0,
+      "max": 6
+    },
+    "interpretation": [
+      {
+        "band": "0",
+        "meaning": "Low risk (~0.3–0.8% 6-month VTE)",
+        "action": "Routine education; no routine pharmacological prophylaxis."
+      },
+      {
+        "band": "1–2",
+        "meaning": "Intermediate risk (~2%)",
+        "action": "Individualised decision; consider prophylaxis in selected patients."
+      },
+      {
+        "band": "≥3",
+        "meaning": "High risk (~7%)",
+        "action": "Offer ambulatory thromboprophylaxis (apixaban/rivaroxaban/LMWH) per ASCO/ASH guidance, after bleeding risk assessment."
+      }
+    ],
+    "references": [
+      {
+        "label": "Khorana AA et al. Development and validation of a predictive model for chemotherapy-associated thrombosis. Blood 2008;111:4902-7."
+      },
+      {
+        "label": "Key NS et al. Venous thromboembolism prophylaxis and treatment in patients with cancer: ASCO guideline update. J Clin Oncol 2020;38:496-520."
+      }
+    ],
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft"
+  },
+  {
+    "slug": "sos-osa-perioperative",
+    "title": "SASM perioperative pathway for known/suspected OSA",
+    "abbrev": "SASM-OSA",
+    "purpose": "Society for Anesthesia and Sleep Medicine pathway to stratify perioperative risk in patients with known or suspected obstructive sleep apnoea (typically used downstream of STOP-BANG).",
+    "domains": [
+      "anaesthesia",
+      "surgery",
+      "respiratory"
+    ],
+    "items": [
+      {
+        "label": "Known OSA on adherent PAP therapy (low add-on risk)",
+        "points": 0
+      },
+      {
+        "label": "Known/suspected OSA, non-adherent or untreated, but no comorbid cardiopulmonary disease",
+        "points": 1
+      },
+      {
+        "label": "Known/suspected OSA PLUS uncontrolled comorbidity (HTN/HF/arrhythmia/pulmonary hypertension/hypoventilation/resting hypoxaemia)",
+        "points": 2
+      }
+    ],
+    "scoring": {
+      "method": "any-criterion",
+      "min": 0,
+      "max": 2,
+      "notes": "Classifier; combine with surgery invasiveness and anticipated postoperative opioid requirements."
+    },
+    "interpretation": [
+      {
+        "band": "0",
+        "meaning": "Optimised OSA — proceed",
+        "action": "Continue PAP perioperatively; minimise sedatives; routine post-op monitoring."
+      },
+      {
+        "band": "1",
+        "meaning": "Non-optimised OSA — elevated risk",
+        "action": "Multimodal opioid-sparing analgesia; consider extended PACU stay and continuous SpO₂ monitoring on the ward."
+      },
+      {
+        "band": "2",
+        "meaning": "OSA with uncontrolled comorbidity — high risk",
+        "action": "Defer elective surgery for optimisation if possible; otherwise plan monitored bed/HDU postoperatively; senior anaesthetic and sleep-medicine input."
+      }
+    ],
+    "references": [
+      {
+        "label": "Chung F et al. Society of Anesthesia and Sleep Medicine guidelines on preoperative screening and assessment of adult patients with obstructive sleep apnea. Anesth Analg 2016;123:452-73."
+      },
+      {
+        "label": "Memtsoudis SG et al. SASM consensus on intraoperative management of adult OSA. Anesth Analg 2018;127:967-87."
+      }
+    ],
+    "evidenceLevel": "B",
+    "ruleVersion": "0.1.0",
+    "reviewStatus": "draft"
   }
 ]
