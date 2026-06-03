@@ -2064,6 +2064,104 @@
         ]
       }
     },
+    "/api/v1/renal-dose": {
+      "get": {
+        "description": "Structured-axis renal dose adjustment, mirroring the hepatic adjustment pattern. Each record carries per-eGFR-band guidance (normal ≥90, mild 60-89, moderate 30-59, severe 15-29, esrd <15 mL/min/1.73m²), mechanism, monitoring, AKI considerations, dialyzability, dialysis dosing, and practical alternatives. Filters: q (free text), decision (use-with-caution|reduce-dose|avoid|contraindicated).",
+        "operationId": "RenalDoseController_list",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "decision",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List renal dose adjustment records (eGFR-banded)",
+        "tags": [
+          "renal-dose"
+        ]
+      }
+    },
+    "/api/v1/renal-dose/{slug}": {
+      "get": {
+        "description": "Returns full per-eGFR-band guidance, mechanism, monitoring, AKI considerations, dialyzability, dialysis dosing and alternatives.",
+        "operationId": "RenalDoseController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a renal dose adjustment record by slug",
+        "tags": [
+          "renal-dose"
+        ]
+      }
+    },
+    "/api/v1/renal-dose/by-drug/{drugSlug}": {
+      "get": {
+        "description": "For an integrator with the drug slug (e.g. from a prescription) — returns the renal dose record directly. 404 if no record exists for that drug.",
+        "operationId": "RenalDoseController_getByDrug",
+        "parameters": [
+          {
+            "name": "drugSlug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Reverse lookup by drug slug",
+        "tags": [
+          "renal-dose"
+        ]
+      }
+    },
     "/api/v1/symptom-triage": {
       "get": {
         "description": "Backward-chaining differential-diagnosis reference. The clinician asks \"what could this be?\" — the record returns common / consider / must-not-miss bands, key history + exam, red flags, initial investigations, and disposition. Anonymous; reference-only. Filters: q (free text), population (adult|paediatric|all-ages), domain.",
@@ -3615,6 +3713,11 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
         "summary": "Reference home — content counts + chat availability",
         "tags": [
           "reference"
@@ -3630,6 +3733,11 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
         "summary": "A–Z index across drugs, conditions + procedures (optionally filter by kind)",
         "tags": [
           "reference"
@@ -3654,6 +3762,11 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
         "summary": "Grouped browse. drug: class|aware|keml. condition/procedure: specialty|domain (by clinical domain tags).",
         "tags": [
           "reference"
@@ -3678,6 +3791,11 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
         "summary": "Free-text reference search across titles, slugs, classes + tags",
         "tags": [
           "reference"
@@ -3702,6 +3820,11 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
         "summary": "Mermaid management flowchart for a condition (deterministic, from signed content)",
         "tags": [
           "reference"
@@ -3726,6 +3849,11 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
         "summary": "Mermaid step flowchart for a procedure (safety-check gates highlighted)",
         "tags": [
           "reference"
@@ -3751,6 +3879,11 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
         "summary": "Drug-interaction NETWORK for a medication list (polypharmacy review) — Mermaid graph with severity-coded edges + a structured interaction list.",
         "tags": [
           "reference"
@@ -3775,6 +3908,11 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
         "summary": "Single-drug interaction map — the drug + all its interaction partners, severity-coded",
         "tags": [
           "reference"
@@ -3800,6 +3938,11 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
         "summary": "Dose calculator — weight/age/renal-based, computed from the signed bundle. Refuses + cites when inputs missing or renally contraindicated.",
         "tags": [
           "reference"
@@ -3825,6 +3968,11 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
         "summary": "Guarded clinician reference chat — answers ONLY from VedaMD references, cites every claim, refuses anything not covered or non-medical. No patient data; PHI-free.",
         "tags": [
           "reference"
@@ -3894,6 +4042,43 @@
         "summary": "Usage rollup (by category, endpoint, day, actor type) for the dashboard",
         "tags": [
           "usage"
+        ]
+      }
+    },
+    "/api/v1/usage/events/client": {
+      "post": {
+        "description": "Whitelist-gated: only the fixed enum of `event` names is accepted; metadata is NOT stored. PHI-free.",
+        "operationId": "UsageController_recordClientEvent",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Record a client-side feature use (calculator run, page view).",
+        "tags": [
+          "usage"
+        ]
+      }
+    },
+    "/api/v1/metrics/public": {
+      "get": {
+        "description": "k-anonymised aggregate counts over a rolling 30-day window plus signed content-bundle stats. Safe to publish externally; no PII, no PHI, no route or actor data.",
+        "operationId": "PublicMetricsController_get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Public, anonymised product metrics for marketing / trust signals.",
+        "tags": [
+          "metrics"
         ]
       }
     }
