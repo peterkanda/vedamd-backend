@@ -1,6 +1,7 @@
 import type {
   ClinicalToolsResponse,
   DoseDrug,
+  EquianalgesicOpioid,
   ScoringSystem,
   VitalsBand,
 } from './clinical-tools.types';
@@ -943,8 +944,139 @@ const SCORING: ScoringSystem[] = [
   },
 ];
 
+/**
+ * Equianalgesic opioid table. Values are the dose of THIS drug-route that
+ * is equivalent to 30 mg oral morphine — the AAHPM 2023 reference dose.
+ * Conservatively chosen at the high (least potent) end of published
+ * ranges where ranges exist; safer to underestimate the new opioid than
+ * to over-shoot. Methadone is intentionally NOT in this table — methadone
+ * rotation requires specialist input (non-linear, dose-dependent ratios).
+ */
+const EQUIANALGESIC_OPIOIDS: EquianalgesicOpioid[] = [
+  {
+    id: 'morphine-po',
+    name: 'Morphine PO',
+    route: 'PO',
+    doseEquivalentTo30mgOralMorphine: 30,
+    defaultDurationHours: 4,
+    notes:
+      'Reference standard. Immediate-release every 4 h or modified-release every 12 h. Renal impairment: active metabolite M6G accumulates; reduce dose or switch to fentanyl/oxycodone if eGFR <30.',
+  },
+  {
+    id: 'morphine-iv',
+    name: 'Morphine IV / SC',
+    route: 'IV',
+    doseEquivalentTo30mgOralMorphine: 10,
+    defaultDurationHours: 4,
+    notes:
+      'IV:PO ratio 1:3 (parenteral 10 mg ≡ oral 30 mg). Onset 5–10 min; peak 15–20 min IV. Same renal cautions as PO.',
+  },
+  {
+    id: 'oxycodone-po',
+    name: 'Oxycodone PO',
+    route: 'PO',
+    doseEquivalentTo30mgOralMorphine: 20,
+    defaultDurationHours: 4,
+    notes:
+      'Roughly 1.5× as potent as oral morphine. Preferred alternative in mild–moderate renal impairment (no active morphine-like metabolites). Modified-release q12h.',
+  },
+  {
+    id: 'oxycodone-iv',
+    name: 'Oxycodone IV',
+    route: 'IV',
+    doseEquivalentTo30mgOralMorphine: 10,
+    defaultDurationHours: 4,
+    notes:
+      'IV:PO ratio 1:2. Useful peri-operative when switching off PCA — convert IV oxycodone × 2 for the PO equivalent.',
+  },
+  {
+    id: 'hydromorphone-po',
+    name: 'Hydromorphone PO',
+    route: 'PO',
+    doseEquivalentTo30mgOralMorphine: 6,
+    defaultDurationHours: 4,
+    notes:
+      'About 5× as potent as oral morphine. Preferred in moderate-to-severe renal impairment; minimal active metabolites (H3G is neuroexcitatory but not opioid).',
+  },
+  {
+    id: 'hydromorphone-iv',
+    name: 'Hydromorphone IV',
+    route: 'IV',
+    doseEquivalentTo30mgOralMorphine: 1.5,
+    defaultDurationHours: 3,
+    notes:
+      'IV:PO ratio 1:4 for hydromorphone. Very small volumes — beware decimal-point error (the most common fatal hydromorphone mistake).',
+  },
+  {
+    id: 'fentanyl-iv',
+    name: 'Fentanyl IV',
+    route: 'IV',
+    doseEquivalentTo30mgOralMorphine: 0.3,
+    defaultDurationHours: 1,
+    notes:
+      'Onset 1–2 min; duration 30–60 min. Preferred in renal failure (no active metabolites) and end-of-life dyspnoea. Short half-life means PCA / infusion, not q4h dosing.',
+  },
+  {
+    id: 'fentanyl-transdermal',
+    name: 'Fentanyl transdermal patch',
+    route: 'transdermal',
+    // 25 mcg/h patch ≈ 60 mg/d oral morphine ≡ 2.5 mg/h ≈ 30 mg oral morphine per 12 h.
+    // Computed differently: per-30-mg-OME 'dose' is the daily mcg, so 25 mcg/h = 600 mcg/d.
+    doseEquivalentTo30mgOralMorphine: 12.5, // mcg/h that ≈ 30 mg/24h oral morphine
+    defaultDurationHours: 72,
+    notes:
+      'CAUTION: patch strength is mcg/HOUR, not per patch. 25 mcg/h ≈ 60 mg oral morphine/day. Reservoir effect — peak plasma 24–48 h after start; fever increases absorption. Opioid-naïve = NOT for first opioid. Take this row as mcg/h equivalence; computed dose is mcg/h, not mg.',
+  },
+  {
+    id: 'codeine-po',
+    name: 'Codeine PO',
+    route: 'PO',
+    doseEquivalentTo30mgOralMorphine: 200,
+    defaultDurationHours: 4,
+    notes:
+      'About 1/7 as potent as oral morphine. Pro-drug; CYP2D6 variability — ultra-rapid metabolisers risk fatal toxicity; poor metabolisers get no effect. Avoid in children <12 y; avoid in breastfeeding.',
+  },
+  {
+    id: 'tramadol-po',
+    name: 'Tramadol PO',
+    route: 'PO',
+    doseEquivalentTo30mgOralMorphine: 150,
+    defaultDurationHours: 4,
+    notes:
+      'About 1/5 of oral morphine. Dual SNRI + weak μ-agonist — serotonin-syndrome risk with SSRIs / MAOIs / linezolid. Ceiling 400 mg/day (300 mg in >75 y). CYP2D6 variability.',
+  },
+  {
+    id: 'tapentadol-po',
+    name: 'Tapentadol PO',
+    route: 'PO',
+    doseEquivalentTo30mgOralMorphine: 100,
+    defaultDurationHours: 4,
+    notes:
+      'Roughly 1/3 of oral morphine. Combined μ-agonist + NRI. Lower GI side-effects than morphine; not available everywhere.',
+  },
+  {
+    id: 'buprenorphine-sublingual',
+    name: 'Buprenorphine sublingual',
+    route: 'sublingual',
+    doseEquivalentTo30mgOralMorphine: 0.4,
+    defaultDurationHours: 8,
+    notes:
+      'About 75× as potent as oral morphine on a milligram basis (analgesic dosing). Partial agonist with ceiling for respiratory depression — safer in elderly / renal disease. Caution when switching FROM full agonist: may precipitate withdrawal.',
+  },
+  {
+    id: 'pethidine-iv',
+    name: 'Pethidine (meperidine) IM/IV',
+    route: 'IM',
+    doseEquivalentTo30mgOralMorphine: 75,
+    defaultDurationHours: 3,
+    notes:
+      'AVOID for routine analgesia. Active metabolite norpethidine is neurotoxic (seizures), accumulates in renal impairment, and is not naloxone-reversible. Single-dose obstetric / shivering indications only.',
+  },
+];
+
 export const CLINICAL_TOOLS_DATA: ClinicalToolsResponse = {
   doseDrugs: DOSE_DRUGS,
   vitals: VITALS,
   scoringSystems: SCORING,
+  equianalgesicOpioids: EQUIANALGESIC_OPIOIDS,
 };

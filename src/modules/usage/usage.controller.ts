@@ -32,6 +32,7 @@ const ALLOWED_CLIENT_EVENTS = new Set([
   'eq-gcs',
   'eq-meld',
   'eq-parkland',
+  'eq-opioid-conv',
   'score-news2',
   'score-qsofa',
   'score-curb65',
