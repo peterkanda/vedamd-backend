@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
@@ -42,5 +43,5 @@ export interface ProcedureGuidance extends ProcedureSummary, ContentReviewMetada
     severity: ComplicationSeverity;
     management: string;
   }[];
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

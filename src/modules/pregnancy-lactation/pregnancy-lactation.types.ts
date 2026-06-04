@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
@@ -100,5 +101,5 @@ export interface PregnancyLactationRecord
   pregnancy: PregnancyNarrative;
   lactation: LactationNarrative;
   reproductive?: ReproductiveNarrative;
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

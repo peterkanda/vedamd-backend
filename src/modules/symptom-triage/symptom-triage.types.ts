@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
@@ -61,5 +62,5 @@ export interface SymptomTriageRecord extends SymptomTriageSummary, ContentReview
   initialInvestigations: string[];
   /** Disposition decision aid — when to admit, when to discharge, what safety-net advice. */
   disposition: string;
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import { Injectable } from '@nestjs/common';
 import { KnowledgeService } from '../knowledge/knowledge.service';
 
@@ -20,7 +21,7 @@ export interface DiagramResult {
   title: string;
   format: 'mermaid';
   diagram: string;
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }
 
 @Injectable()

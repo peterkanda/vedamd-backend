@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
@@ -54,5 +55,5 @@ export interface AnticoagulantReversal extends AnticoagulantReversalSummary, Con
   protocols: ReversalProtocol[];
   /** Common pitfalls: half-life-driven decisions, time since last dose, renal clearance. */
   pitfalls: string[];
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

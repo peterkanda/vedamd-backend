@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
@@ -64,5 +65,5 @@ export interface Toxidrome extends ToxidromeSummary, ContentReviewMetadata {
   antidote?: string;
   /** Red flags that escalate to immediate ICU / specialist input. */
   redFlags: string[];
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
@@ -26,5 +27,5 @@ export interface DrugDiseaseInteraction extends DrugDiseaseSummary, ContentRevie
   drugClass?: string;
   mechanism: string;
   recommendation: string;
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

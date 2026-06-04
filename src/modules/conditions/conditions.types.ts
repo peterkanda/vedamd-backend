@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 /**
  * VedaMD condition guidance schema. Content-driven, anonymous-by-design:
  * the integrator asks "what's the management of condition X?" and gets
@@ -127,7 +128,7 @@ export interface CdsRule extends ContentReviewMetadata {
   type: CdsRuleType;
   title: string;
   description: string;
-  references: { label: string; url?: string }[];
+  references: Citation[];
   /**
    * Optional whitelist of CDS service IDs this rule applies to.
    * When absent the rule fires on any service matching `hook`
@@ -234,5 +235,5 @@ export interface ConditionGuidance extends ConditionSummary, ContentReviewMetada
   /** Ordered management steps. */
   management: { step: string; detail: string }[];
   /** Citations the integrator can show their clinician. */
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

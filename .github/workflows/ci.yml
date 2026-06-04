@@ -37,11 +37,12 @@ jobs:
       - run: npm install
       - name: verify bundle (signature + structure)
         run: npm run bundle:verify -- --bundle content/bundles/v0.1.0
-      - name: citation-source gate (blocks Wikipedia / consumer aggregators / FOAMed)
-        # Refuses the build if any record cites Wikipedia, WebMD, Drugs.com,
-        # Patient.info, LITFL, Physio-pedia or any other non-peer-reviewed
-        # source. See scripts/check-citation-sources.js for the full list.
-        run: npm run bundle:check-citations
+      - name: citation-strength gate (every ref must carry an A-D tier)
+        # We allow all source types — including consumer / wiki at tier
+        # D — but every reference MUST be scored so the UI can render a
+        # source-quality badge. Run scripts/score-citation-sources.js
+        # to auto-fill before opening a PR.
+        run: npm run bundle:check-strength
       - name: require approved-only content (main branch)
         if: github.ref == 'refs/heads/main'
         run: npm run bundle:verify -- --bundle content/bundles/v0.1.0 --require-approved
