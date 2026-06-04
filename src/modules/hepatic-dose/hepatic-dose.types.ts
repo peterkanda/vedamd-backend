@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
@@ -50,5 +51,5 @@ export interface HepaticDoseRecord extends HepaticDoseSummary, ContentReviewMeta
   acuteFailureGuidance?: string;
   /** Alternatives in advanced liver disease. */
   alternatives?: string[];
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

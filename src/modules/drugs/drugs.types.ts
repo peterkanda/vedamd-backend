@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 /**
  * VedaMD drug record schema. Slug is the API primary key; RxNorm,
  * ATC, INN are searchable secondary identifiers. The schema is
@@ -90,7 +91,7 @@ export interface DrugRecord extends DrugSummary, ContentReviewMetadata {
   warnings: string[];
   adverseEffects: { frequency: AdverseEffectFrequency; effect: string }[];
   monitoring: string[];
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }
 
 export interface DosingInput {
@@ -129,7 +130,7 @@ export interface DosingResult {
   narrative: string;
   warnings: string[];
   contraindications: string[];
-  references: { label: string; url?: string }[];
+  references: Citation[];
   ruleVersion: string;
   evidenceLevel: EvidenceLevel;
   reviewStatus: ReviewStatus;
@@ -141,5 +142,5 @@ export interface DrugInteraction extends ContentReviewMetadata {
   severity: InteractionSeverity;
   mechanism: string;
   management: string;
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

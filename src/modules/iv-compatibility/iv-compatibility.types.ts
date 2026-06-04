@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
@@ -56,5 +57,5 @@ export interface IvCompatibility extends IvCompatibilitySummary, ContentReviewMe
   notes: string;
   /** Practical alternative — what to do instead when the pair is incompatible. */
   alternative?: string;
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

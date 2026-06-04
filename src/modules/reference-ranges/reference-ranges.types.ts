@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
@@ -28,5 +29,5 @@ export interface ReferenceRange extends ReferenceRangeSummary, ContentReviewMeta
    */
   loinc?: string;
   notes?: string | null;
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

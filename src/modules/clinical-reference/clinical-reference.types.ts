@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
@@ -37,5 +38,5 @@ export interface ReferenceCardSummary {
 export interface ReferenceCard extends ReferenceCardSummary, ContentReviewMetadata {
   sections: ReferenceSection[];
   redFlags?: string[];
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

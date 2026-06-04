@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
@@ -58,5 +59,5 @@ export interface RenalDoseRecord extends RenalDoseSummary, ContentReviewMetadata
   dialysisDoseGuidance?: string;
   /** Alternatives in advanced renal disease. */
   alternatives?: string[];
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

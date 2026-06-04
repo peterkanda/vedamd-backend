@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import { Injectable } from '@nestjs/common';
 import { DrugsService } from '../drugs/drugs.service';
 import { KnowledgeService } from '../knowledge/knowledge.service';
@@ -30,7 +31,7 @@ export interface DoseCalcResult {
   contraindications: string[];
   /** The reference dosing text from the bundle (always shown for transparency). */
   referenceDosing: unknown;
-  references: { label: string; url?: string }[];
+  references: Citation[];
   evidenceLevel: string;
 }
 

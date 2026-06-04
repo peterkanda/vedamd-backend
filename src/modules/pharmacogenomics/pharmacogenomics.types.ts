@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
@@ -33,5 +34,5 @@ export interface PgxGuideline extends PgxSummary, ContentReviewMetadata {
   phenotypes: PgxPhenotype[];
   /** When/whether to test. */
   testing?: string;
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

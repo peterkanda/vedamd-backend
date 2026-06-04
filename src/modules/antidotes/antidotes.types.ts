@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
@@ -22,5 +23,5 @@ export interface AntidoteSummary {
 export interface Antidote extends AntidoteSummary, ContentReviewMetadata {
   mechanism: string;
   dosing: string;
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }

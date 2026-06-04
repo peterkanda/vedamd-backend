@@ -1,3 +1,4 @@
+import type { Citation } from '../../common/citation';
 import type { ContentReviewMetadata } from '../conditions/conditions.types';
 
 /**
@@ -23,5 +24,5 @@ export interface AllergyCrossReactivity
   recommendation: string;
   /** Related drug-record slugs, where they exist in the catalogue. */
   drugSlugs: string[];
-  references: { label: string; url?: string }[];
+  references: Citation[];
 }
