@@ -33,10 +33,22 @@ const INDICATOR_RANK: Record<CdsIndicator, number> = { critical: 0, warning: 1, 
  */
 const DEFAULT_AGENTIC_CONFIDENCE_FLOOR = 0.6;
 
+/**
+ * Optional resolver that returns the source-strength tier for a cited
+ * bundle record. The agentic service supplies one backed by the loaded
+ * KnowledgeService; tests pass a stub or omit it. When omitted citations
+ * still flow but without strength badges in the UI.
+ */
+export type CitationStrengthResolver = (
+  kind: 'drug' | 'ddi' | 'condition' | 'procedure' | 'rule',
+  id: string,
+) => 'A' | 'B' | 'C' | 'D' | undefined;
+
 export function extractCards(
   llmText: string,
   generatedAt: string,
   minConfidence: number = DEFAULT_AGENTIC_CONFIDENCE_FLOOR,
+  resolveStrength?: CitationStrengthResolver,
 ): { cards: CdsCard[]; citedRecords: Array<{ kind: string; id: string }> } {
   const json = extractJsonObject(llmText);
   if (!json) return { cards: [], citedRecords: [] };
@@ -55,7 +67,7 @@ export function extractCards(
       : 'info';
     const detail = typeof rc.detail === 'string' ? rc.detail.trim() : undefined;
     const confidence = clampConfidence(rc.confidence);
-    const citations = parseCitations(rc.citations);
+    const citations = parseCitations(rc.citations, resolveStrength);
     const suggestions = parseSuggestion(rc.suggestion);
 
     // Invalid card guards: must have a summary AND at least one citation.
@@ -95,6 +107,12 @@ export function extractCards(
           })),
         },
         'http://vedamd.io/Card/agentic-confidence': confidence,
+        // Surface the full citations including source-strength tier so
+        // the frontend can render the A/B/C/D badge next to each one.
+        // Trust calibration is a primary clinical-safety feature: a
+        // critical-severity card backed only by D-tier sources should
+        // be visibly weaker than one backed by KDIGO + NEJM (A-tier).
+        'http://vedamd.io/Card/citations': citations,
       },
     };
     cards.push(card);
@@ -144,7 +162,10 @@ function clampConfidence(raw: unknown): number {
   return Math.max(0, Math.min(1, n));
 }
 
-function parseCitations(raw: unknown): AgenticCitation[] {
+function parseCitations(
+  raw: unknown,
+  resolveStrength?: CitationStrengthResolver,
+): AgenticCitation[] {
   if (!Array.isArray(raw)) return [];
   const out: AgenticCitation[] = [];
   for (const c of raw) {
@@ -162,6 +183,7 @@ function parseCitations(raw: unknown): AgenticCitation[] {
       id,
       label: typeof obj.label === 'string' ? obj.label : id,
       url: typeof obj.url === 'string' ? obj.url : undefined,
+      strength: resolveStrength?.(validKind, id),
     });
   }
   return out;

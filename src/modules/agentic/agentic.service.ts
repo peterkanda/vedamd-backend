@@ -143,6 +143,7 @@ export class AgenticService {
           result.text,
           new Date().toISOString(),
           ctx.minConfidence ?? 0,
+          this.retriever.resolveCitationStrength,
         );
         agenticCards = extracted.cards;
         citedRecords = extracted.citedRecords;

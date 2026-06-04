@@ -21,6 +21,17 @@ import type { AgenticClinicalContext, RetrievedKnowledge } from './agentic.types
 export class KnowledgeRetrieverService {
   constructor(private readonly knowledge: KnowledgeService) {}
 
+  /**
+   * Pass-through to KnowledgeService.getCitationStrength — exposed here
+   * so callers (AgenticService, ReferenceChatService) can resolve a
+   * source-strength tier for each LLM-emitted citation without taking
+   * their own dependency on KnowledgeService.
+   */
+  resolveCitationStrength = (
+    kind: 'drug' | 'ddi' | 'condition' | 'procedure' | 'rule',
+    id: string,
+  ): 'A' | 'B' | 'C' | 'D' | undefined => this.knowledge.getCitationStrength(kind, id);
+
   totalRecords(): number {
     return (
       this.knowledge.getDrugs().length +

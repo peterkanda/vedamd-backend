@@ -113,6 +113,65 @@ export class KnowledgeService implements OnModuleInit {
     return this.bundle.cdsRules;
   }
 
+  /**
+   * Resolve the source-strength tier for a cited bundle record.
+   *
+   * Looks up the record by (kind, id), walks its references[], and
+   * returns the STRONGEST tier present (A > B > C > D). Returns
+   * undefined when the record can't be found or has no scored refs.
+   *
+   * Used by the agentic engine + reference chat to attach a strength
+   * badge to every citation it emits, so clinicians see the underlying
+   * evidence quality without leaving the card.
+   */
+  getCitationStrength(
+    kind: 'drug' | 'ddi' | 'condition' | 'procedure' | 'rule',
+    id: string,
+  ): 'A' | 'B' | 'C' | 'D' | undefined {
+    const refs = this.resolveRecordRefs(kind, id);
+    if (!refs || refs.length === 0) return undefined;
+    let best: 'A' | 'B' | 'C' | 'D' | undefined;
+    const rank: Record<'A' | 'B' | 'C' | 'D', number> = { A: 0, B: 1, C: 2, D: 3 };
+    for (const r of refs) {
+      const s = r.strength;
+      if (s !== 'A' && s !== 'B' && s !== 'C' && s !== 'D') continue;
+      if (best === undefined || rank[s] < rank[best]) best = s;
+    }
+    return best;
+  }
+
+  private resolveRecordRefs(
+    kind: 'drug' | 'ddi' | 'condition' | 'procedure' | 'rule',
+    id: string,
+  ): Array<{ strength?: string }> | undefined {
+    if (kind === 'drug') {
+      const rec = this.bundle.drugs.find((d) => d.slug === id);
+      return rec?.references;
+    }
+    if (kind === 'condition') {
+      const rec = this.bundle.conditions.find((c) => c.slug === id);
+      return rec?.references;
+    }
+    if (kind === 'procedure') {
+      const rec = this.bundle.procedures.find((p) => p.slug === id);
+      return rec?.references;
+    }
+    if (kind === 'rule') {
+      const rec = this.bundle.cdsRules.find((r) => r.id === id);
+      return rec?.references;
+    }
+    if (kind === 'ddi') {
+      // DDIs are keyed as "slugA|slugB"; allow either order.
+      const [a, b] = id.split('|');
+      const rec = this.bundle.interactions.find(
+        (d) =>
+          (d.slugA === a && d.slugB === b) || (d.slugA === b && d.slugB === a),
+      );
+      return rec?.references;
+    }
+    return undefined;
+  }
+
   getClinicalScores() {
     return this.bundle.clinicalScores;
   }
