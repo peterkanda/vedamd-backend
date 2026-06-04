@@ -195,8 +195,69 @@ export class AgenticService {
               indicator: m.rule.indicator,
             }))
           : undefined,
+        // Even when no card fires we surface the catalogue records the
+        // retriever found — so a clinician asking a broad question like
+        // "antidote for iron overdose" still gets a "Found these in the
+        // catalogue" pointer to the deferoxamine drug record + the
+        // iron-toxicity antidote. Each entry carries the strongest
+        // source-strength tier from the record's references, so the UI
+        // can render the badge inline.
+        relatedRecords: this.buildRelatedRecords(knowledge),
       },
     };
+  }
+
+  /**
+   * Build a flat, UI-friendly summary of records the retriever surfaced
+   * as relevant. Capped at 12 entries to keep responses bounded.
+   */
+  private buildRelatedRecords(knowledge: import('./agentic.types').RetrievedKnowledge): NonNullable<
+    import('./agentic.types').AgenticEvaluationResponse['meta']['relatedRecords']
+  > {
+    const out: NonNullable<
+      import('./agentic.types').AgenticEvaluationResponse['meta']['relatedRecords']
+    > = [];
+    for (const d of (knowledge.drugs ?? []).slice(0, 4)) {
+      out.push({
+        kind: 'drug',
+        id: d.slug,
+        title: d.inn,
+        summary: d.summary,
+        route: `/app/drugs/${encodeURIComponent(d.slug)}`,
+        strength: this.retriever.resolveCitationStrength('drug', d.slug),
+      });
+    }
+    for (const c of (knowledge.conditions ?? []).slice(0, 4)) {
+      out.push({
+        kind: 'condition',
+        id: c.slug,
+        title: c.title,
+        summary: c.summary,
+        route: `/app/conditions/${encodeURIComponent(c.slug)}`,
+        strength: this.retriever.resolveCitationStrength('condition', c.slug),
+      });
+    }
+    for (const p of (knowledge.procedures ?? []).slice(0, 2)) {
+      out.push({
+        kind: 'procedure',
+        id: p.slug,
+        title: p.title,
+        summary: p.summary,
+        route: `/app/procedures/${encodeURIComponent(p.slug)}`,
+        strength: this.retriever.resolveCitationStrength('procedure', p.slug),
+      });
+    }
+    for (const r of (knowledge.rules ?? []).slice(0, 2)) {
+      out.push({
+        kind: 'rule',
+        id: r.id,
+        title: r.title,
+        summary: r.description,
+        route: `/app/services?serviceId=${encodeURIComponent(r.id)}`,
+        strength: this.retriever.resolveCitationStrength('rule', r.id),
+      });
+    }
+    return out;
   }
 
   /**
