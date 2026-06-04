@@ -26,6 +26,8 @@
     "keys:generate": "ts-node --transpile-only scripts/generate-signing-keys.ts",
     "bundle:sign": "ts-node --transpile-only scripts/sign-bundle.ts",
     "bundle:verify": "ts-node --transpile-only scripts/verify-bundle.ts",
+    "bundle:check-citations": "node scripts/check-citation-sources.js",
+    "bundle:audit-urls": "node scripts/audit-urls.js",
     "openapi:generate": "ts-node --transpile-only scripts/generate-openapi.ts",
     "openapi:check": "ts-node --transpile-only scripts/generate-openapi.ts -- --check",
     "audit:stateless": "ts-node --transpile-only scripts/audit-stateless.ts",

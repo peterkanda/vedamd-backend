@@ -1,0 +1,52 @@
+name: bundle url liveness
+
+# Probes every URL in the signed content bundle and reports dead links
+# (404, ENOTFOUND, etc.). Runs nightly + on demand. Does NOT block PRs —
+# many publisher CDNs rate-limit bursts and a 429 is not a real failure;
+# we keep this advisory and review the report when it's red.
+
+on:
+  schedule:
+    - cron: '0 4 * * *' # 04:00 UTC daily
+  workflow_dispatch:
+
+jobs:
+  audit-urls:
+    name: probe every URL in the bundle
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm install
+      - name: run URL audit
+        run: npm run bundle:audit-urls
+      - name: upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: url-audit-report
+          path: docs/url-audit.json
+          retention-days: 30
+      - name: summarise to job log
+        if: always()
+        run: |
+          node -e "
+            const r = JSON.parse(require('fs').readFileSync('docs/url-audit.json','utf8'));
+            console.log('URLs probed:', r.totalUrls);
+            console.log('Summary:', JSON.stringify(r.summary,null,2));
+            if (r.dead.length > 0) {
+              console.log('\\n=== DEAD URLS (4xx other than 401/403/429) ===');
+              for (const d of r.dead) console.log(' ',d.status,'',d.url);
+            }
+            if (r.net.length > 0) {
+              console.log('\\n=== NETWORK ERRORS (DNS/refused/timeout) ===');
+              for (const e of r.net) console.log(' ',e.error,'',e.url);
+            }
+            // Fail the JOB (not the whole workflow) when we have confirmed dead links
+            // or DNS-dead domains. Blocked (403/429) is treated as advisory only.
+            if (r.dead.length > 0 || r.net.length > 0) process.exit(1);
+          "

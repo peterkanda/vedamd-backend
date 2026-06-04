@@ -37,6 +37,11 @@ jobs:
       - run: npm install
       - name: verify bundle (signature + structure)
         run: npm run bundle:verify -- --bundle content/bundles/v0.1.0
+      - name: citation-source gate (blocks Wikipedia / consumer aggregators / FOAMed)
+        # Refuses the build if any record cites Wikipedia, WebMD, Drugs.com,
+        # Patient.info, LITFL, Physio-pedia or any other non-peer-reviewed
+        # source. See scripts/check-citation-sources.js for the full list.
+        run: npm run bundle:check-citations
       - name: require approved-only content (main branch)
         if: github.ref == 'refs/heads/main'
         run: npm run bundle:verify -- --bundle content/bundles/v0.1.0 --require-approved
