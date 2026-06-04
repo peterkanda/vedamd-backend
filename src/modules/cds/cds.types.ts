@@ -98,7 +98,7 @@ export interface CdsCard {
   summary: string;
   detail?: string;
   indicator: CdsIndicator;
-  source: { label: string; url?: string; icon?: string };
+  source: { label: string; url?: string; icon?: string; strength?: 'A' | 'B' | 'C' | 'D' };
   suggestions?: unknown[];
   links?: unknown[];
   /** Non-standard VedaMD extension (FR-009). */
@@ -106,6 +106,18 @@ export interface CdsCard {
     'http://vedamd.io/Card/recommendation': VedaMdRecommendationMeta;
     /** Agentic-layer confidence (0-1). Present only on agentic cards. */
     'http://vedamd.io/Card/agentic-confidence'?: number;
+    /**
+     * Citations with their resolved source-strength tier — surfaced
+     * so the frontend can render an A/B/C/D badge next to each one,
+     * making trust calibration explicit.
+     */
+    'http://vedamd.io/Card/citations'?: Array<{
+      kind: 'drug' | 'ddi' | 'condition' | 'procedure' | 'rule';
+      id: string;
+      label: string;
+      url?: string;
+      strength?: 'A' | 'B' | 'C' | 'D';
+    }>;
   };
 }
 

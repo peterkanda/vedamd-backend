@@ -32,7 +32,7 @@ export class ReferenceChatService {
   async ask(question: string): Promise<{
     available: boolean;
     answer: string;
-    citations: Array<{ kind: string; id: string }>;
+    citations: Array<{ kind: string; id: string; strength?: 'A' | 'B' | 'C' | 'D' }>;
     model?: string;
     provider?: string;
   }> {
@@ -55,7 +55,18 @@ export class ReferenceChatService {
       temperature: 0.0,
     });
 
-    const citations = extractCitations(result.text);
+    const raw = extractCitations(result.text);
+    // Resolve a source-strength tier for every cited bundle record so
+    // the chat UI can render an A/B/C/D badge next to each citation,
+    // letting the clinician see the underlying evidence quality
+    // alongside the LLM-synthesised answer.
+    const citations = raw.map((c) => ({
+      ...c,
+      strength: this.retriever.resolveCitationStrength(
+        c.kind as 'drug' | 'ddi' | 'condition' | 'procedure' | 'rule',
+        c.id,
+      ),
+    }));
 
     this.log.info('reference_chat', {
       llm_provider: result.provider,

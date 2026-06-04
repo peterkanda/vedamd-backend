@@ -127,7 +127,7 @@ export class VteProphylaxisStrategy implements CdsRuleStrategy {
         summary: outSummary,
         indicator,
         detail: outDetail.replace(/\s+/g, ' ').trim(),
-        source: { label: ref.label, url: ref.url },
+        source: { label: ref.label, url: ref.url, strength: ref.strength },
         extension: {
           'http://vedamd.io/Card/recommendation': {
             ruleId: rule.id,

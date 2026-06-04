@@ -110,7 +110,7 @@ export class PenHypertensionScreenStrategy implements CdsRuleStrategy {
         summary,
         indicator: 'warning',
         detail,
-        source: { label: ref.label, url: ref.url },
+        source: { label: ref.label, url: ref.url, strength: ref.strength },
         extension: {
           'http://vedamd.io/Card/recommendation': {
             ruleId: rule.id,

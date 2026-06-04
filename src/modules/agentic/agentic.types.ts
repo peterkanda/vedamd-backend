@@ -173,6 +173,14 @@ export interface AgenticCitation {
   label: string;
   /** Optional external link. */
   url?: string;
+  /**
+   * Source-strength tier resolved from the cited bundle record's
+   * upstream references. When the cited record has multiple upstream
+   * sources we surface the STRONGEST tier (smallest letter) so the
+   * UI badge reflects the best evidence underpinning the claim. See
+   * docs/source-strength-rubric.md.
+   */
+  strength?: 'A' | 'B' | 'C' | 'D';
 }
 
 /**
