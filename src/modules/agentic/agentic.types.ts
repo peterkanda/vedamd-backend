@@ -131,6 +131,23 @@ export interface AgenticEvaluationResponse {
       ruleName: string;
       indicator: 'critical' | 'warning' | 'info';
     }>;
+    /**
+     * Bundle records the retriever surfaced as relevant to the inbound
+     * question, regardless of whether any card fired on them. Surfaced
+     * so the chat UI can render a "Found these in the catalogue"
+     * fallback when cards.length === 0 — clinicians get useful pointers
+     * even when no rule matched and no LLM is configured. Each entry
+     * carries the deep-link route + the strongest source-strength tier
+     * from that record's references.
+     */
+    relatedRecords?: Array<{
+      kind: 'drug' | 'condition' | 'procedure' | 'rule';
+      id: string;
+      title: string;
+      summary?: string;
+      route: string;
+      strength?: 'A' | 'B' | 'C' | 'D';
+    }>;
   };
 }
 
