@@ -111,6 +111,18 @@ export class AgenticService {
     let llmModel: string | undefined;
     let llmProvider: 'anthropic' | 'openai' | 'deepseek' | 'gemini' | 'disabled' = 'disabled';
     let agenticInvoked = false;
+    /**
+     * Raw LLM text — captured even when extractCards drops every card
+     * (no structured JSON, no bundle citations, etc.). Surfaced on the
+     * response as `meta.narrative` so the chat UI can fall back to it
+     * rather than going silent. The chat marks it clearly as
+     * "AI-assisted, unverified" — same transparency principle as the
+     * source-strength badges: communicate the trust level explicitly
+     * rather than gatekeep it.
+     */
+    let narrative: string | undefined;
+    /** Captured if the LLM call threw (timeout, provider error). */
+    let agenticError: string | undefined;
 
     const mode = ctx.mode ?? 'auto';
     const wantAgentic = mode === 'agentic' || mode === 'auto';
@@ -139,6 +151,7 @@ export class AgenticService {
         agenticInvoked = true;
         llmModel = result.model;
         llmProvider = result.provider;
+        narrative = stripJsonFromNarrative(result.text);
         const extracted = extractCards(
           result.text,
           new Date().toISOString(),
@@ -157,8 +170,13 @@ export class AgenticService {
         });
       } catch (err) {
         // Degrade to deterministic-only. Never fail the whole request.
+        // We DO capture the error class so the UI can show a clear
+        // "AI provider unavailable" hint instead of silently producing
+        // an empty response — the user reported this confusion.
+        agenticError =
+          err instanceof Error ? err.name : 'unknown';
         this.log.warn('agentic_degraded', {
-          error_category: err instanceof Error ? err.name : 'unknown',
+          error_category: agenticError,
         });
       }
     }
@@ -203,9 +221,26 @@ export class AgenticService {
         // source-strength tier from the record's references, so the UI
         // can render the badge inline.
         relatedRecords: this.buildRelatedRecords(knowledge),
+        // Raw LLM prose when the structured-card extractor dropped
+        // everything (no parseable JSON, no bundle citations). Chat
+        // surfaces this as an "AI-assisted overview, unverified" panel
+        // so the clinician sees the LLM's answer with a clear trust
+        // signal — strictly better than a silent empty box.
+        narrative: cards.length === 0 ? narrative : undefined,
+        // Error class when the LLM call itself threw. Lets the UI
+        // surface "AI provider returned an error" instead of pretending
+        // the deterministic engine "had nothing to say".
+        agenticError,
       },
     };
   }
+
+  /**
+   * Cull any leading JSON code-fence / object from the LLM output so the
+   * narrative panel doesn't render `{"cards":[…]}` verbatim. Falls back
+   * to the original text when there's no JSON to remove.
+   */
+  // (helper defined at module bottom)
 
   /**
    * Build a flat, UI-friendly summary of records the retriever surfaced
@@ -440,4 +475,21 @@ function summaryOverlap(a: string, b: string): number {
   let common = 0;
   for (const t of ta) if (tb.has(t)) common++;
   return common / Math.min(ta.size, tb.size);
+}
+
+
+/**
+ * Cull JSON code-fences / structured-card blob from LLM output so the
+ * narrative-panel rendering does not echo raw JSON to the clinician.
+ * Returns the prose around / after the JSON, or the original text when
+ * no JSON block is present.
+ */
+function stripJsonFromNarrative(text: string): string {
+  if (!text) return text;
+  // Strip ```json fenced blocks first.
+  let s = text.replace(/```(?:json)?\s*[\s\S]*?```/g, "").trim();
+  // Strip a bare top-level JSON object.
+  s = s.replace(/^\{[\s\S]*?\n\}\s*/m, "").trim();
+  if (!s) return text; // Fall back if removal stripped everything.
+  return s;
 }

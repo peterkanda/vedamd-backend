@@ -148,6 +148,24 @@ export interface AgenticEvaluationResponse {
       route: string;
       strength?: 'A' | 'B' | 'C' | 'D';
     }>;
+    /**
+     * The LLM's prose answer, captured even when the structured-card
+     * extractor dropped every card (e.g. the LLM didn't emit JSON or
+     * cited records not in the bundle). The chat UI renders this as an
+     * "AI-assisted overview" panel with a clear "unverified" banner —
+     * the user reported that an empty response was confusing and
+     * actively unhelpful. Trust calibration is still preserved via the
+     * banner + by surfacing the relatedRecords with their strength
+     * badges alongside.
+     */
+    narrative?: string;
+    /**
+     * Error class when the LLM call itself threw (provider down,
+     * timeout, missing key). Surfaced so the UI can show "AI provider
+     * returned an error" instead of pretending we silently ran
+     * deterministic-only.
+     */
+    agenticError?: string;
   };
 }
 
