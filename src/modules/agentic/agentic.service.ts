@@ -1,4 +1,4 @@
-import { Inject, Injectable, Optional } from '@nestjs/common';
+import { Inject, Injectable, Logger, Optional } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { KnowledgeRetrieverService } from './knowledge-retriever.service';
 import { ProviderRouter } from './providers/provider-router';
@@ -40,6 +40,8 @@ import type { CdsCard, CdsHookRequest } from '../cds/cds.types';
  */
 @Injectable()
 export class AgenticService {
+  private readonly nestLogger = new Logger(AgenticService.name);
+
   constructor(
     private readonly retriever: KnowledgeRetrieverService,
     private readonly router: ProviderRouter,
@@ -170,14 +172,27 @@ export class AgenticService {
         });
       } catch (err) {
         // Degrade to deterministic-only. Never fail the whole request.
-        // We DO capture the error class so the UI can show a clear
-        // "AI provider unavailable" hint instead of silently producing
-        // an empty response — the user reported this confusion.
-        agenticError =
-          err instanceof Error ? err.name : 'unknown';
+        // Capture the error message (sanitised) AND the class so the
+        // UI can show what actually went wrong — operators / pilot
+        // sites debugging a failing LLM provider need more than
+        // "Error". We strip likely-secret patterns (api key prefixes,
+        // bearer tokens) before surfacing.
+        agenticError = sanitiseErrorMessage(err);
+        // PHI-free logger only allow-lists `error_category` for log
+        // payloads. The fuller (sanitised) message is surfaced to the
+        // UI on `meta.agenticError`, where the operator can read it
+        // alongside the failing request.
         this.log.warn('agentic_degraded', {
-          error_category: agenticError,
+          error_category: err instanceof Error ? err.name : 'unknown',
         });
+        // Also write the sanitised message via the Nest logger so
+        // operators see it in process logs — helpful at pilot sites
+        // debugging "why isn't the AI answering". The PHI-free log
+        // above keeps the audit-grade signal; this one is the
+        // operator-grade diagnostic.
+        this.nestLogger.warn(
+          `LLM call failed (${err instanceof Error ? err.name : 'unknown'}): ${agenticError}`,
+        );
       }
     }
 
@@ -492,4 +507,31 @@ function stripJsonFromNarrative(text: string): string {
   s = s.replace(/^\{[\s\S]*?\n\}\s*/m, "").trim();
   if (!s) return text; // Fall back if removal stripped everything.
   return s;
+}
+
+/**
+ * Best-effort error → safe-display-string conversion for surfacing to
+ * the chat UI. Captures `err.message` (more informative than `err.name`)
+ * and scrubs likely-secret patterns. Falls back to the constructor name
+ * if no message is available.
+ *
+ * Examples:
+ *   new Error("OpenAI 429 rate_limit_exceeded")        → "OpenAI 429 rate_limit_exceeded"
+ *   new Error("Bearer sk-abc123… invalid")             → "Bearer [REDACTED] invalid"
+ *   AbortError (timeout)                               → "AbortError"
+ *   Plain string thrown                                → first 240 chars
+ */
+function sanitiseErrorMessage(err: unknown): string {
+  const raw =
+    err instanceof Error
+      ? err.message || err.name
+      : typeof err === 'string'
+        ? err
+        : 'unknown';
+  // Redact common secret patterns so we don't leak keys via the chat UI.
+  const scrubbed = raw
+    .replace(/\b(sk|vmd|Bearer)[-_]\w+/gi, '$1 [REDACTED]')
+    .replace(/api[_-]?key[=:]\s*\S+/gi, 'api_key=[REDACTED]')
+    .replace(/authorization[=:]\s*\S+/gi, 'authorization=[REDACTED]');
+  return scrubbed.length > 240 ? scrubbed.slice(0, 237) + '…' : scrubbed;
 }
