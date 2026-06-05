@@ -42,6 +42,8 @@ import { AnalyticsModule } from './modules/analytics/analytics.module';
 import { IntegrationLogModule } from './modules/integration-log/integration-log.module';
 import { DeveloperModule } from './modules/developer/developer.module';
 import { AgenticModule } from './modules/agentic/agentic.module';
+import { ModelsModule } from './modules/models/models.module';
+import { ContentDistributionModule } from './modules/content-distribution/content-distribution.module';
 import { CustomRulesModule } from './modules/custom-rules/custom-rules.module';
 import { NotificationsModule } from './modules/notifications/notifications.module';
 import { ClinicalAuditsModule } from './modules/clinical-audits/clinical-audits.module';
@@ -99,6 +101,8 @@ import { MetricsModule } from './modules/metrics/metrics.module';
     IntegrationLogModule,
     DeveloperModule,
     AgenticModule,
+    ModelsModule,
+    ContentDistributionModule,
     CustomRulesModule,
     NotificationsModule,
     ClinicalAuditsModule,

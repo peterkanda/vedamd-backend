@@ -77,6 +77,36 @@ export interface AppConfig {
     deepseekApiKey: string;
     geminiApiKey: string;
   };
+  /**
+   * On-device model distribution (FR-148 — offline AI). vedamd.io hosts
+   * the MedGemma 4B multimodal weights and always advertises the
+   * "current" build so the mobile app can download once (online) and
+   * then run the assistant fully offline. The weights themselves live
+   * behind a CDN / object store; the backend only serves the signed
+   * *manifest* (version, per-file URL + SHA-256 + size + runtime hints).
+   */
+  models: {
+    /** Public base URL the mobile app downloads weight files from. */
+    distributionBaseUrl: string;
+    /** Active MedGemma build id, e.g. "medgemma-4b-it-q4_k_m". */
+    medgemmaVersion: string;
+    /** Quantisation tag surfaced to clients, e.g. "Q4_K_M". */
+    medgemmaQuantization: string;
+    /** GGUF weight file (llama.cpp runtime). */
+    medgemmaModelFile: string;
+    medgemmaModelSizeBytes: number;
+    medgemmaModelSha256: string;
+    /** Multimodal projector (vision) file paired with the GGUF. */
+    medgemmaMmprojFile: string;
+    medgemmaMmprojSizeBytes: number;
+    medgemmaMmprojSha256: string;
+    /** Native context window the build was compiled / tuned for. */
+    medgemmaContextLength: number;
+    /** ISO date the build was published. */
+    medgemmaReleasedAt: string;
+    /** Lowest mobile app version that may run this build. */
+    medgemmaMinAppVersion: string;
+  };
   redis: {
     /**
      * Optional Redis connection string for shared cache + rate-limit
@@ -198,6 +228,20 @@ export const configuration = (): AppConfig => ({
     openaiApiKey: process.env.OPENAI_API_KEY ?? '',
     deepseekApiKey: process.env.DEEPSEEK_API_KEY ?? '',
     geminiApiKey: process.env.GEMINI_API_KEY ?? '',
+  },
+  models: {
+    distributionBaseUrl: process.env.MODELS_DISTRIBUTION_BASE_URL ?? 'https://models.vedamd.io',
+    medgemmaVersion: process.env.MEDGEMMA_VERSION ?? 'medgemma-4b-it-q4_k_m',
+    medgemmaQuantization: process.env.MEDGEMMA_QUANTIZATION ?? 'Q4_K_M',
+    medgemmaModelFile: process.env.MEDGEMMA_MODEL_FILE ?? 'medgemma-4b-it-Q4_K_M.gguf',
+    medgemmaModelSizeBytes: Number(process.env.MEDGEMMA_MODEL_SIZE_BYTES ?? 2_900_000_000),
+    medgemmaModelSha256: process.env.MEDGEMMA_MODEL_SHA256 ?? '',
+    medgemmaMmprojFile: process.env.MEDGEMMA_MMPROJ_FILE ?? 'medgemma-4b-it-mmproj-f16.gguf',
+    medgemmaMmprojSizeBytes: Number(process.env.MEDGEMMA_MMPROJ_SIZE_BYTES ?? 850_000_000),
+    medgemmaMmprojSha256: process.env.MEDGEMMA_MMPROJ_SHA256 ?? '',
+    medgemmaContextLength: Number(process.env.MEDGEMMA_CONTEXT_LENGTH ?? 4096),
+    medgemmaReleasedAt: process.env.MEDGEMMA_RELEASED_AT ?? '2026-06-01T00:00:00.000Z',
+    medgemmaMinAppVersion: process.env.MEDGEMMA_MIN_APP_VERSION ?? '0.1.0',
   },
   redis: {
     url: process.env.REDIS_URL ?? '',
