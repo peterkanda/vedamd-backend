@@ -183,7 +183,7 @@ export class AgenticService {
         // UI on `meta.agenticError`, where the operator can read it
         // alongside the failing request.
         this.log.warn('agentic_degraded', {
-          error_category: err instanceof Error ? err.name : 'unknown',
+          error_category: agenticError,
         });
         // Also write the sanitised message via the Nest logger so
         // operators see it in process logs — helpful at pilot sites
