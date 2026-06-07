@@ -197,17 +197,20 @@ export class KnowledgeSearchService {
   search(query: string, limit = 40): KnowledgeSearchHit[] {
     const q = query.trim().toLowerCase();
     if (q.length < 2) return [];
-    const hits: KnowledgeSearchHit[] = [];
-    const perDomainCap = 8;
+    const tokens = q.split(/\s+/).filter((t) => t.length >= 2);
+    if (tokens.length === 0) return [];
+
+    const perDomainCap = 10;
+    const scored: { hit: KnowledgeSearchHit; score: number }[] = [];
 
     for (const spec of this.specs()) {
-      let count = 0;
       let records: unknown[];
       try {
         records = spec.records();
       } catch {
         continue;
       }
+      let count = 0;
       for (const raw of records) {
         if (count >= perDomainCap) break;
         if (!raw || typeof raw !== 'object') continue;
@@ -215,33 +218,64 @@ export class KnowledgeSearchService {
         const slug = typeof r.slug === 'string' ? r.slug : '';
         const title = spec.title(r);
         const extra = spec.haystack ? spec.haystack(r) : [];
-        const haystack = [slug, title, ...extra]
-          .filter((x): x is string => typeof x === 'string' && x.length > 0)
-          .join(' ')
-          .toLowerCase();
-        if (!haystack.includes(q)) continue;
-        hits.push({
-          domain: spec.domain,
-          slug,
-          title: title || slug,
-          route: spec.route(slug),
-          snippet: spec.snippet?.(r) || undefined,
+
+        const titleWords = words(title);
+        const allWords = words([slug, title, ...extra].filter(Boolean).join(' '));
+
+        // Relevance gate: EVERY query token must match a word (exact or as a
+        // word prefix) somewhere in the record. Prefix-of-word matching means
+        // "morph" hits "morphine" but "art" no longer hits "heart".
+        if (!tokens.every((tok) => matchesWord(tok, allWords))) continue;
+
+        scored.push({
+          hit: {
+            domain: spec.domain,
+            slug,
+            title: title || slug,
+            route: spec.route(slug),
+            snippet: spec.snippet?.(r) || undefined,
+          },
+          score: relevance(q, tokens, title.toLowerCase(), titleWords),
         });
         count += 1;
       }
-      if (hits.length >= limit) break;
     }
 
-    // Prefix/title matches rank above mid-string matches.
-    hits.sort((a, b) => score(b, q) - score(a, q));
-    return hits.slice(0, limit);
+    scored.sort((a, b) => b.score - a.score);
+    return scored.slice(0, limit).map((s) => s.hit);
   }
 }
 
-function score(hit: KnowledgeSearchHit, q: string): number {
-  const t = hit.title.toLowerCase();
-  if (t === q) return 3;
-  if (t.startsWith(q)) return 2;
-  if (t.includes(q)) return 1;
-  return 0;
+/** Lowercased word set from a string (split on non-alphanumeric). */
+function words(s: string): string[] {
+  return s
+    .toLowerCase()
+    .split(/[^a-z0-9]+/)
+    .filter(Boolean);
+}
+
+/** A token matches if some word equals it or starts with it (autocomplete). */
+function matchesWord(token: string, wordList: string[]): boolean {
+  return wordList.some((w) => w === token || w.startsWith(token));
+}
+
+/** Higher = more relevant. Rewards exact/prefix title matches and tokens that
+ *  land in the title rather than only in secondary fields. */
+function relevance(q: string, tokens: string[], titleLower: string, titleWords: string[]): number {
+  let s = 0;
+  if (titleLower === q) s += 1000;
+  else if (titleLower.startsWith(q)) s += 500;
+  else if (titleLower.includes(q)) s += 200;
+
+  let inTitle = 0;
+  for (const tok of tokens) {
+    if (matchesWord(tok, titleWords)) {
+      s += 10;
+      inTitle += 1;
+    } else {
+      s += 2; // matched only in slug/secondary fields
+    }
+  }
+  if (inTitle === tokens.length) s += 50; // every token is in the title
+  return s;
 }

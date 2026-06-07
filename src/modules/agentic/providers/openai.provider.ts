@@ -51,19 +51,44 @@ export class OpenAiProvider implements LlmProvider {
       ],
     };
 
-    const res = await fetch(`${this.baseUrl}/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        authorization: `Bearer ${this.apiKey}`,
-      },
-      body: JSON.stringify(body),
-    });
+    // Retry transient rate-limits (429) and 5xx with backoff. A 429 that is
+    // actually "insufficient_quota" is permanent, so we stop and let the
+    // provider-router fall back to the next configured provider immediately.
+    const MAX_ATTEMPTS = 3;
+    let res: Response | null = null;
+    for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+      res = await fetch(`${this.baseUrl}/chat/completions`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          authorization: `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify(body),
+      });
+      if (res.ok) break;
 
-    if (!res.ok) {
       const status = res.status;
-      this.log.warn('agentic_llm_error', { llm_provider: 'openai', status_code: status });
-      throw new Error(`OpenAI API error: HTTP ${status}`);
+      const detail = await res.text().catch(() => '');
+      const isQuota = /insufficient_quota|exceeded your current quota/i.test(detail);
+      const retryable = (status === 429 && !isQuota) || (status >= 500 && status < 600);
+      this.log.warn('agentic_llm_error', {
+        llm_provider: 'openai',
+        status_code: status,
+        attempt,
+        retryable,
+        quota_exhausted: isQuota,
+      });
+      if (!retryable || attempt === MAX_ATTEMPTS) {
+        const reason = isQuota ? ' (insufficient_quota)' : '';
+        throw new Error(`OpenAI API error: HTTP ${status}${reason}`);
+      }
+      // Respect Retry-After when present, else exponential backoff.
+      const retryAfter = Number(res.headers.get('retry-after'));
+      const waitMs = Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : 500 * 2 ** attempt;
+      await new Promise((r) => setTimeout(r, waitMs));
+    }
+    if (!res || !res.ok) {
+      throw new Error('OpenAI API error: exhausted retries');
     }
 
     const json = (await res.json()) as {
