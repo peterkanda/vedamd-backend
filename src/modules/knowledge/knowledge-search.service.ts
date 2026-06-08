@@ -194,6 +194,24 @@ export class KnowledgeSearchService {
     ];
   }
 
+  /** Fetch the raw record for a domain+slug (for building grounding text). */
+  getRecord(domain: string, slug: string): Record<string, unknown> | null {
+    const spec = this.specs().find((s) => s.domain === domain);
+    if (!spec) return null;
+    let records: unknown[];
+    try {
+      records = spec.records();
+    } catch {
+      return null;
+    }
+    for (const raw of records) {
+      if (raw && typeof raw === 'object' && (raw as Record<string, unknown>).slug === slug) {
+        return raw as Record<string, unknown>;
+      }
+    }
+    return null;
+  }
+
   search(query: string, limit = 40): KnowledgeSearchHit[] {
     const q = query.trim().toLowerCase();
     if (q.length < 2) return [];
