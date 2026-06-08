@@ -36,4 +36,21 @@ describe('PhiFreeLogger', () => {
       }),
     ).not.toThrow();
   });
+
+  // Regression: these LLM-provider diagnostics must stay allow-listed so a
+  // provider failure logs cleanly instead of having the logger throw and mask
+  // the real "OpenAI API error: HTTP 4xx" with a phi-free-logger violation.
+  it('allows LLM provider call diagnostics through unchanged', () => {
+    const log = new PhiFreeLogger({ service: 'test', hashSecret: 's', strict: true });
+    expect(() =>
+      log.warn('agentic_llm_error', {
+        llm_provider: 'openai',
+        status_code: 429,
+        attempt: 3,
+        retryable: false,
+        quota_exhausted: true,
+        compat: 'openai',
+      }),
+    ).not.toThrow();
+  });
 });

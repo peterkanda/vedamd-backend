@@ -60,6 +60,11 @@ export const ALLOWED_FIELDS = new Set<string>([
   'llm_model',
   'llm_token_input',
   'llm_token_output',
+  // LLM provider call diagnostics (constants/counters/flags — never PHI)
+  'attempt',
+  'retryable',
+  'quota_exhausted',
+  'compat',
   // agentic engine (counts + config ids only — never PHI)
   'agentic_card_count',
   'deterministic_card_count',
