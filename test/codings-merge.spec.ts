@@ -5,6 +5,8 @@ import { DrugsService } from '../src/modules/drugs/drugs.service';
 import { CdsStrategyRegistry } from '../src/modules/cds/strategies/registry';
 import { DrugDrugInteractionStrategy } from '../src/modules/cds/strategies/ddi.strategy';
 import { RenalSafetyStrategy } from '../src/modules/cds/strategies/renal-safety.strategy';
+import { HepaticSafetyStrategy } from '../src/modules/cds/strategies/hepatic-safety.strategy';
+import { HepaticDoseService } from '../src/modules/hepatic-dose/hepatic-dose.service';
 import { PregnancySafetyStrategy } from '../src/modules/cds/strategies/pregnancy-safety.strategy';
 import { AwareStewardshipStrategy } from '../src/modules/cds/strategies/aware-stewardship.strategy';
 import { MedicationMonitoringStrategy } from '../src/modules/cds/strategies/medication-monitoring.strategy';
@@ -92,9 +94,12 @@ function makeService(): CdsService {
   const knowledge = makeKnowledgeService();
   const drugs = new DrugsService(knowledge);
   drugs.onModuleInit();
+  const hepatic = new HepaticDoseService(knowledge);
+  hepatic.onModuleInit();
   const registry = new CdsStrategyRegistry(
     new DrugDrugInteractionStrategy(drugs),
     new RenalSafetyStrategy(drugs),
+    new HepaticSafetyStrategy(hepatic),
     new PregnancySafetyStrategy(drugs),
     new AwareStewardshipStrategy(drugs),
     new MedicationMonitoringStrategy(drugs),
@@ -177,15 +182,17 @@ describe('CdsService.evaluateHook — rule-level codings merge', () => {
       context: { ageMonths: 36, recentTemperaturesC: [38.6] },
     });
     expect(res.cards.length).toBeGreaterThan(0);
-    const codings =
-      res.cards[0].extension?.['http://vedamd.io/Card/recommendation'].codings ?? [];
+    const codings = res.cards[0].extension?.['http://vedamd.io/Card/recommendation'].codings ?? [];
     expect(codings.length).toBeGreaterThanOrEqual(3);
-    expect(codings.find((c) => c.system === 'http://hl7.org/fhir/sid/icd-10' && c.code === 'R50'))
-      .toBeTruthy();
-    expect(codings.find((c) => c.system === 'http://snomed.info/sct' && c.code === '386661006'))
-      .toBeTruthy();
-    expect(codings.find((c) => c.system === 'http://loinc.org' && c.code === '8310-5'))
-      .toBeTruthy();
+    expect(
+      codings.find((c) => c.system === 'http://hl7.org/fhir/sid/icd-10' && c.code === 'R50'),
+    ).toBeTruthy();
+    expect(
+      codings.find((c) => c.system === 'http://snomed.info/sct' && c.code === '386661006'),
+    ).toBeTruthy();
+    expect(
+      codings.find((c) => c.system === 'http://loinc.org' && c.code === '8310-5'),
+    ).toBeTruthy();
   });
 
   it('DKA card emits ICD-10 E10.1 + SNOMED 420422005 from the bundle', async () => {
@@ -203,8 +210,7 @@ describe('CdsService.evaluateHook — rule-level codings merge', () => {
       },
     });
     expect(res.cards.length).toBeGreaterThan(0);
-    const codings =
-      res.cards[0].extension?.['http://vedamd.io/Card/recommendation'].codings ?? [];
+    const codings = res.cards[0].extension?.['http://vedamd.io/Card/recommendation'].codings ?? [];
     expect(codings.find((c) => c.code === 'E10.1')).toBeTruthy();
     expect(codings.find((c) => c.code === '420422005')).toBeTruthy();
     expect(codings.find((c) => c.code === '5A22')).toBeTruthy();
@@ -224,8 +230,7 @@ describe('CdsService.evaluateHook — rule-level codings merge', () => {
         bitingSpecies: 'dog',
       },
     });
-    const codings =
-      res.cards[0].extension?.['http://vedamd.io/Card/recommendation'].codings ?? [];
+    const codings = res.cards[0].extension?.['http://vedamd.io/Card/recommendation'].codings ?? [];
     expect(codings.find((c) => c.code === 'Z20.3')).toBeTruthy();
     expect(codings.find((c) => c.code === '1G40')).toBeTruthy();
     expect(codings.find((c) => c.code === '14168008')).toBeTruthy();
