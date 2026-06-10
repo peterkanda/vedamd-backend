@@ -17,24 +17,31 @@ signed off.
 | Domain | Records | Status | Inherited by |
 |---|---|---|---|
 | `antimicrobial-stewardship` | 1 | draft | all 9 countries |
+| `dosing-safety` | 1 | draft | all 9 countries |
+| `drug-interactions` | 1 | draft | all 9 countries |
 | `etat-triage` | 1 | draft | all 9 countries |
+| `family-planning` | 1 | draft | all 9 countries |
+| `hiv-art` | 1 | draft | all 9 countries |
+| `immunization-schedule` | 1 | draft | all 9 countries |
+| `malaria` | 1 | draft | all 9 countries |
 | `mhgap-mental-health` | 1 | draft | all 9 countries |
 | `ncd-diabetes` | 1 | draft | all 9 countries |
 | `ncd-hypertension` | 1 | draft | all 9 countries |
+| `tuberculosis` | 1 | draft | all 9 countries |
 
 ## Country status
 
 | Country | Locale profile | Baseline domains inherited | National overlays | Sign-off |
 |---|---|---|---|---|
-| ET | ✅ | 5 (draft) | 0 | 🟡 in-progress |
-| GH | ✅ | 5 (draft) | 0 | 🟡 in-progress |
-| MW | ✅ | 5 (draft) | 0 | 🟡 in-progress |
-| NG | ✅ | 5 (draft) | 0 | 🟡 in-progress |
-| RW | ✅ | 5 (draft) | 0 | 🟡 in-progress |
-| TZ | ✅ | 5 (draft) | 0 | 🟡 in-progress |
-| UG | ✅ | 5 (draft) | 0 | 🟡 in-progress |
-| ZA | ✅ | 5 (draft) | 0 | 🟡 in-progress |
-| ZM | ✅ | 5 (draft) | 0 | 🟡 in-progress |
+| ET | ✅ | 12 (draft) | 0 | 🟡 in-progress |
+| GH | ✅ | 12 (draft) | 0 | 🟡 in-progress |
+| MW | ✅ | 12 (draft) | 0 | 🟡 in-progress |
+| NG | ✅ | 12 (draft) | 0 | 🟡 in-progress |
+| RW | ✅ | 12 (draft) | 0 | 🟡 in-progress |
+| TZ | ✅ | 12 (draft) | 0 | 🟡 in-progress |
+| UG | ✅ | 12 (draft) | 0 | 🟡 in-progress |
+| ZA | ✅ | 12 (draft) | 0 | 🟡 in-progress |
+| ZM | ✅ | 12 (draft) | 0 | 🟡 in-progress |
 
 ## Kenya parity target (signed-bundle domains)
 
@@ -67,6 +74,6 @@ reach Kenya level:
 - `terminology`
 - `toxidromes`
 
-_Baseline domains authored so far: 5 / target 25. National
+_Baseline domains authored so far: 12 / target 25. National
 clinical authoring + clinical sign-off remain the gate to flipping any country
 to `localized`._

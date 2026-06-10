@@ -1,0 +1,43 @@
+[
+  {
+    "slug": "who-paediatric-renal-hepatic-dosing-safety",
+    "title": "Dosing safety — paediatric & renal/hepatic adjustment (draft)",
+    "domain": "dosing-safety",
+    "jurisdiction": "WHO",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B",
+    "ruleVersion": "0.1.0-draft",
+    "verifyBeforeApproval": true,
+    "summary": "Universal dosing-safety logic for weight-based paediatric dosing and dose adjustment in renal/hepatic impairment. Principle-level baseline; drug-specific dose tables are authored from public-domain sources (DailyMed/RxNorm) + national formularies during clinical review. DRAFT — clinician verification required before approval.",
+    "paediatricPrinciples": [
+      "Dose by body weight (mg/kg) using current weight; use weight bands where the national protocol provides them.",
+      "Never exceed the equivalent adult maximum dose.",
+      "Double-check high-alert medicines (opioids, insulin, anticoagulants, chemotherapy, IV electrolytes) with an independent second check.",
+      "Use a neonatal-specific reference for neonates (postmenstrual age and weight matter).",
+      "Confirm the concentration/formulation before calculating volume to administer."
+    ],
+    "renalPrinciples": [
+      "Estimate renal function (eGFR / creatinine clearance) before dosing renally-cleared drugs.",
+      "Adjust dose/interval for renally-eliminated drugs (e.g. aminoglycosides, many beta-lactams, vancomycin, DOACs).",
+      "Avoid or use with caution nephrotoxic combinations (NSAIDs, aminoglycosides, contrast, ACEi/ARB + diuretic in volume depletion).",
+      "Review and re-dose with changing renal function (AKI, recovery)."
+    ],
+    "hepaticPrinciples": [
+      "Use caution with hepatically-metabolised and hepatotoxic drugs in significant liver disease.",
+      "Avoid/limit drugs precipitating encephalopathy (sedatives) or bleeding in advanced disease.",
+      "Prefer agents with non-hepatic elimination where alternatives exist."
+    ],
+    "nationalOverlayNotes": "Per-country overlays should attach drug-specific dose tables mapped to the national EML formulations.",
+    "references": [
+      {
+        "label": "WHO Pocket book of hospital care for children, 2nd ed (weight-based paediatric dosing)",
+        "url": "https://www.who.int/publications/i/item/978-92-4-154837-3",
+        "strength": "A",
+        "year": 2013,
+        "accessedDate": "2026-06-10",
+        "sourceType": "guideline",
+        "licence": "cc-by-nc-sa"
+      }
+    ]
+  }
+]
