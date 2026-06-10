@@ -4,10 +4,17 @@ _Generated 2026-06-10 by scripts/ingest-country-content.ts. Licence-gated:
 nothing below is reproduced; cite-only sources require ORIGINAL authoring._
 
 ## Status
-`in-progress` — overlay scaffolded, not yet signed off. Ghana currently
-serves WHO/Kenya-default reference content with a "not yet localized" label.
-Authoring the domains below + clinical sign-off (overlay.json `signedOff:true`)
-flips Ghana to **localized**.
+`in-progress` — locale profile authored; clinical overlay not yet signed off.
+Ghana currently serves WHO/Kenya-default reference content with a "not yet
+localized" label. Authoring the clinical domains below + clinical sign-off
+(overlay.json `signedOff:true`) flips Ghana to **localized**.
+
+## Locale (authored)
+- Patient-facing languages: en
+- Official languages: en
+- National formulary source: `moh-gh` (cite-only)
+- National guidelines WHO-derived: yes
+
 
 ## EMBED lane — permissive base layer (safe to transform directly)
 - **HL7 FHIR specification** (HL7) — `yes`, CC0-1.0

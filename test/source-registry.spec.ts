@@ -6,7 +6,8 @@ import {
   sourceAppliesToCountry,
   sourceForUrl,
 } from '../src/modules/localization/source-registry';
-import { statusFor } from '../src/modules/localization/overlays';
+import { loadCountryProfiles, statusFor } from '../src/modules/localization/overlays';
+import { LocalizationService } from '../src/modules/localization/localization.service';
 
 describe('source registry', () => {
   const registry = loadSourceRegistry();
@@ -52,5 +53,43 @@ describe('overlay status derivation', () => {
     expect(statusFor('UG')).toBe('in-progress');
     // An entirely unknown country has no overlay → planned.
     expect(statusFor('FR')).toBe('planned');
+  });
+});
+
+describe('country profiles', () => {
+  const registry = loadSourceRegistry();
+  const profiles = loadCountryProfiles();
+  const EXPANSION = ['UG', 'TZ', 'RW', 'ET', 'NG', 'GH', 'ZA', 'ZM', 'MW'];
+
+  it('every anglophone expansion country has a well-formed profile', () => {
+    const bad: string[] = [];
+    for (const code of EXPANSION) {
+      const p = profiles[code];
+      if (!p) {
+        bad.push(`${code}: missing`);
+        continue;
+      }
+      if (p.patientFacingLanguages.length === 0) bad.push(`${code}: no patient languages`);
+      // Patient-facing + official languages must be ISO 639-1 (2-letter) so the
+      // client i18n layer can use them; majorLocalLanguages may be 639-3 where
+      // no 2-letter code exists (e.g. Bemba 'bem').
+      const strict = [...p.officialLanguages, ...p.patientFacingLanguages];
+      if (!strict.every((l) => /^[a-z]{2}$/.test(l))) bad.push(`${code}: bad ISO-639-1 code`);
+      if (!p.majorLocalLanguages.every((l) => /^[a-z]{2,3}$/.test(l)))
+        bad.push(`${code}: bad language code`);
+      // The national formulary must point at a real registry source for that country.
+      const src = registry.sources.find((s) => s.id === p.nationalFormularySource);
+      if (!src) bad.push(`${code}: formulary source ${p.nationalFormularySource} not in registry`);
+      else if (!src.countries.includes(code)) bad.push(`${code}: formulary source wrong country`);
+    }
+    expect(bad).toEqual([]);
+  });
+
+  it('the directory surfaces patient-facing languages for profiled countries', () => {
+    const dir = new LocalizationService().directory();
+    const ug = dir.countries.find((c) => c.code === 'UG')!;
+    expect(ug.languages).toEqual(['en', 'sw']);
+    expect(ug.status).toBe('in-progress');
+    expect(ug.localized).toBe(false);
   });
 });

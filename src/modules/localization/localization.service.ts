@@ -1,5 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { isLocalized as overlayIsLocalized, statusFor, type LocalizationStatus } from './overlays';
+import {
+  isLocalized as overlayIsLocalized,
+  loadOverlays,
+  statusFor,
+  type CountryOverlay,
+  type LocalizationStatus,
+} from './overlays';
 
 /**
  * Localization / jurisdiction directory.
@@ -26,6 +32,8 @@ export interface CountryOption {
   localized: boolean;
   /** Lifecycle: 'localized' | 'in-progress' (overlay scaffolded) | 'planned'. */
   status: LocalizationStatus;
+  /** ISO 639-1 patient-facing languages, from the country profile (if any). */
+  languages?: string[];
 }
 
 export interface LocalizationDirectory {
@@ -60,15 +68,21 @@ export class LocalizationService {
   private readonly byCode = new Map(COUNTRY_NAMES.map((c) => [c.code, c]));
 
   directory(): LocalizationDirectory {
+    const overlays = loadOverlays();
     return {
       defaultCountry: DEFAULT_COUNTRY,
       baseAuthority: 'WHO',
-      countries: COUNTRY_NAMES.map((c) => ({
-        code: c.code,
-        name: c.name,
-        localized: overlayIsLocalized(c.code),
-        status: statusFor(c.code),
-      })),
+      countries: COUNTRY_NAMES.map((c) => {
+        const overlay: CountryOverlay | undefined = overlays.get(c.code);
+        const languages = overlay?.profile?.patientFacingLanguages;
+        return {
+          code: c.code,
+          name: c.name,
+          localized: overlayIsLocalized(c.code, overlays),
+          status: statusFor(c.code, overlays),
+          ...(languages && languages.length > 0 ? { languages } : {}),
+        };
+      }),
     };
   }
 

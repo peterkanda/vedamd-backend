@@ -4,10 +4,17 @@ _Generated 2026-06-10 by scripts/ingest-country-content.ts. Licence-gated:
 nothing below is reproduced; cite-only sources require ORIGINAL authoring._
 
 ## Status
-`in-progress` — overlay scaffolded, not yet signed off. South Africa currently
-serves WHO/Kenya-default reference content with a "not yet localized" label.
-Authoring the domains below + clinical sign-off (overlay.json `signedOff:true`)
-flips South Africa to **localized**.
+`in-progress` — locale profile authored; clinical overlay not yet signed off.
+South Africa currently serves WHO/Kenya-default reference content with a "not yet
+localized" label. Authoring the clinical domains below + clinical sign-off
+(overlay.json `signedOff:true`) flips South Africa to **localized**.
+
+## Locale (authored)
+- Patient-facing languages: en
+- Official languages: en, zu, xh, af
+- National formulary source: `moh-za` (cite-only)
+- National guidelines WHO-derived: yes
+
 
 ## EMBED lane — permissive base layer (safe to transform directly)
 - **HL7 FHIR specification** (HL7) — `yes`, CC0-1.0

@@ -46,9 +46,19 @@ npm run bundle:check-licence              # add --enforce in CI once clean
 ```
 
 Each expansion country gets `content/overlays/<CC>/` with `overlay.json`
-(derived-localization status), `provenance.json` (per-source audit), and
-`worklist.md` (authoring checklist). A country flips to **localized** only when
-its overlay is authored and `signedOff: true`.
+(derived-localization status + factual locale profile), `provenance.json`
+(per-source audit), and `worklist.md` (authoring checklist). A country flips to
+**localized** only when its clinical overlay is authored and `signedOff: true`.
+
+### Locale profiles
+
+`country-profiles.json` holds the **safe localization layer** — factual,
+citable per-country data (official + patient-facing languages, national
+formulary linkage, WHO-derivation) merged into each overlay by the engine and
+surfaced as `languages` on the `/v1/localization` directory for client i18n. It
+contains **no clinical recommendations**: dosing/protocol overlays are authored
+separately and gated on clinical sign-off, so a populated profile does NOT by
+itself make a country localized.
 
 ## Maintaining the registry
 

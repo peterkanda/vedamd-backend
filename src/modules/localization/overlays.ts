@@ -31,6 +31,29 @@ export interface CountryOverlay {
   sources: string[];
   /** ISO timestamp the overlay scaffold was last (re)generated. */
   generatedAt: string;
+  /**
+   * Factual locale profile (languages, national formulary). Safe localization
+   * layer merged in by the ingestion engine — contains NO clinical content and
+   * does NOT by itself make a country `localized` (that needs authored,
+   * signed-off clinical domains).
+   */
+  profile?: CountryProfile;
+}
+
+/** Factual, citable per-country locale data (no clinical recommendations). */
+export interface CountryProfile {
+  name: string;
+  /** ISO 639-1 codes — official / health-system working languages. */
+  officialLanguages: string[];
+  /** Languages we ship (or will ship) patient/CHW-facing strings in. */
+  patientFacingLanguages: string[];
+  /** Other widely-spoken languages, for later localization. */
+  majorLocalLanguages: string[];
+  /** Registry source id of the national EML/STG (cite-only). */
+  nationalFormularySource: string;
+  /** Whether national guidelines are WHO-derived (informs base-layer reuse). */
+  nationalGuidelinesDeriveFromWho: boolean;
+  notes?: string;
 }
 
 /** Lifecycle a country moves through as overlays are authored. */
@@ -43,8 +66,17 @@ export type LocalizationStatus =
   | 'planned';
 
 const OVERLAYS_DIR = resolve(process.cwd(), 'content/overlays');
+const PROFILES_FILE = resolve(process.cwd(), 'content/sources/country-profiles.json');
 
 let cached: Map<string, CountryOverlay> | null = null;
+
+/** Load the per-country profiles keyed by ISO code (content/sources/country-profiles.json). */
+export function loadCountryProfiles(): Record<string, CountryProfile> {
+  const parsed = JSON.parse(readFileSync(PROFILES_FILE, 'utf8')) as {
+    profiles: Record<string, CountryProfile>;
+  };
+  return parsed.profiles;
+}
 
 /** Load every country overlay descriptor from content/overlays/<CC>/overlay.json. */
 export function loadOverlays(): Map<string, CountryOverlay> {
