@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { BundlesController } from './bundles.controller';
 import { BundlesService } from './bundles.service';
+import { KnowledgeModule } from '../knowledge/knowledge.module';
 
 /**
  * SRS §6.3.8 — Offline Rule Bundle Distribution (Embeddable Library).
@@ -15,6 +16,7 @@ import { BundlesService } from './bundles.service';
  * infrastructure.
  */
 @Module({
+  imports: [KnowledgeModule],
   controllers: [BundlesController],
   providers: [BundlesService],
   exports: [BundlesService],
