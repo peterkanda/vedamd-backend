@@ -1,4 +1,5 @@
 import type { Citation } from '../../common/citation';
+import type { Jurisdiction } from '../../common/jurisdiction';
 /**
  * VedaMD condition guidance schema. Content-driven, anonymous-by-design:
  * the integrator asks "what's the management of condition X?" and gets
@@ -41,6 +42,12 @@ export interface ContentReviewMetadata {
   reviewers?: ContentReviewer[];
   approvedAt?: string;
   lastReviewedAt?: string;
+  /**
+   * Country/authority this record applies to (ISO-3166 alpha-2, or 'WHO' for
+   * the global baseline). Absent ⇒ Kenya (the bundle is Kenya-first). Enables
+   * the multi-country base+overlay model — see src/common/jurisdiction.ts.
+   */
+  jurisdiction?: Jurisdiction;
 }
 
 /**
