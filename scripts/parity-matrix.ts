@@ -33,6 +33,15 @@ function kenyaDomains(): string[] {
     .sort();
 }
 
+type DomainClass = 'universal' | 'national-divergent' | 'mixed';
+
+/** How each Kenya domain reaches parity (content/overlays/domain-classification.json). */
+function domainClassification(): Record<string, DomainClass> {
+  const file = resolve(OVERLAYS, 'domain-classification.json');
+  if (!existsSync(file)) return {};
+  return (JSON.parse(readFileSync(file, 'utf8')).domains ?? {}) as Record<string, DomainClass>;
+}
+
 interface BaseRecord {
   slug?: string;
   domain?: string;
@@ -84,7 +93,13 @@ function generate(): string {
   const ke = kenyaDomains();
   const base = baselineDomains();
   const ccs = countries();
+  const cls = domainClassification();
   const date = new Date().toISOString().slice(0, 10);
+
+  const counts = { universal: 0, 'national-divergent': 0, mixed: 0, unclassified: 0 };
+  for (const d of ke) counts[cls[d] ?? 'unclassified'] += 1;
+  const inheritable = counts.universal;
+  const needsOverlay = counts['national-divergent'] + counts.mixed;
 
   const baselineRows = [...base.entries()]
     .sort()
@@ -128,14 +143,22 @@ ${countryRows}
 
 ## Kenya parity target (signed-bundle domains)
 
-The full domain set a country must cover (via baseline + national overlay) to
-reach Kenya level:
+Each domain reaches parity one of two ways — **universal** content is inherited
+by every country once the baseline is promoted; **national-divergent / mixed**
+content needs a per-country overlay.
 
-${ke.map((d) => `- \`${d}\``).join('\n')}
+| Domain | Path to parity |
+|---|---|
+${ke.map((d) => `| \`${d}\` | ${cls[d] ?? 'unclassified'} |`).join('\n')}
 
-_Baseline domains authored so far: ${base.size} / target ${ke.length}. National
-clinical authoring + clinical sign-off remain the gate to flipping any country
-to \`localized\`._
+## Parity summary
+
+- **${inheritable} of ${ke.length}** Kenya domains are **universal** — inheritable by all 9 countries once the baseline is promoted (no per-country authoring).
+- **${needsOverlay} of ${ke.length}** are **national-divergent / mixed** — these are the focused per-country authoring backlog (EML drug choices, immunization schedules, notifiable lists, national first-line protocols).
+- WHO baseline topic-domains authored so far: **${base.size}** (draft).
+
+_National clinical authoring + clinical sign-off remain the gate to flipping any
+country to \`localized\`._
 `;
 }
 

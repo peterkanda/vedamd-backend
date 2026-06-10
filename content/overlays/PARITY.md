@@ -45,35 +45,43 @@ signed off.
 
 ## Kenya parity target (signed-bundle domains)
 
-The full domain set a country must cover (via baseline + national overlay) to
-reach Kenya level:
+Each domain reaches parity one of two ways — **universal** content is inherited
+by every country once the baseline is promoted; **national-divergent / mixed**
+content needs a per-country overlay.
 
-- `allergy-cross-reactivity`
-- `anticoagulant-reversal`
-- `antidotes`
-- `bedside-interpretation`
-- `cds-rules`
-- `clinical-procedures`
-- `clinical-scores`
-- `conditions`
-- `drug-disease-interactions`
-- `drug-interactions`
-- `drugs`
-- `growth-development`
-- `hepatic-dose`
-- `immunization-schedule`
-- `iv-compatibility`
-- `notifiable-diseases`
-- `pharmacogenomics`
-- `pregnancy-lactation`
-- `preventive-care`
-- `procedures`
-- `reference-ranges`
-- `renal-dose`
-- `symptom-triage`
-- `terminology`
-- `toxidromes`
+| Domain | Path to parity |
+|---|---|
+| `allergy-cross-reactivity` | universal |
+| `anticoagulant-reversal` | universal |
+| `antidotes` | universal |
+| `bedside-interpretation` | universal |
+| `cds-rules` | mixed |
+| `clinical-procedures` | universal |
+| `clinical-scores` | universal |
+| `conditions` | mixed |
+| `drug-disease-interactions` | universal |
+| `drug-interactions` | universal |
+| `drugs` | national-divergent |
+| `growth-development` | universal |
+| `hepatic-dose` | universal |
+| `immunization-schedule` | national-divergent |
+| `iv-compatibility` | universal |
+| `notifiable-diseases` | national-divergent |
+| `pharmacogenomics` | universal |
+| `pregnancy-lactation` | universal |
+| `preventive-care` | mixed |
+| `procedures` | universal |
+| `reference-ranges` | universal |
+| `renal-dose` | universal |
+| `symptom-triage` | mixed |
+| `terminology` | universal |
+| `toxidromes` | universal |
 
-_Baseline domains authored so far: 12 / target 25. National
-clinical authoring + clinical sign-off remain the gate to flipping any country
-to `localized`._
+## Parity summary
+
+- **18 of 25** Kenya domains are **universal** — inheritable by all 9 countries once the baseline is promoted (no per-country authoring).
+- **7 of 25** are **national-divergent / mixed** — these are the focused per-country authoring backlog (EML drug choices, immunization schedules, notifiable lists, national first-line protocols).
+- WHO baseline topic-domains authored so far: **12** (draft).
+
+_National clinical authoring + clinical sign-off remain the gate to flipping any
+country to `localized`._
