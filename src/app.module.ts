@@ -4,6 +4,7 @@ import { configuration } from './config/configuration';
 import { DatabaseModule } from './db/database.module';
 import { CacheModule } from './common/cache';
 import { HttpCacheModule } from './common/http-cache';
+import { EvidenceModule } from './common/evidence/evidence.module';
 import { PhiFreeLoggerModule } from './common/phi-free-logger';
 import { HealthModule } from './health/health.module';
 import { CdsModule } from './modules/cds/cds.module';
@@ -65,6 +66,7 @@ import { LocalizationModule } from './modules/localization/localization.module';
     DatabaseModule,
     CacheModule,
     HttpCacheModule,
+    EvidenceModule,
     PhiFreeLoggerModule,
     HealthModule,
     CdsModule,
