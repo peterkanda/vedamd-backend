@@ -1,0 +1,57 @@
+[
+  {
+    "slug": "who-diabetes-pen-baseline",
+    "title": "Type 2 diabetes — WHO PEN baseline (draft)",
+    "domain": "ncd-diabetes",
+    "jurisdiction": "WHO",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0-draft",
+    "verifyBeforeApproval": true,
+    "summary": "WHO/global baseline decision logic for type 2 diabetes diagnosis and primary-care management (WHO PEN / WHO diabetes guidance). Universal logic every country inherits until a national overlay (drug choices to the national EML, monitoring cadence) is authored. DRAFT — clinician verification required before approval.",
+    "diagnosis": {
+      "criteria": [
+        "Fasting plasma glucose >=7.0 mmol/L (126 mg/dL).",
+        "Random plasma glucose >=11.1 mmol/L (200 mg/dL) with symptoms.",
+        "2-hour OGTT plasma glucose >=11.1 mmol/L (200 mg/dL).",
+        "HbA1c >=6.5% (48 mmol/mol) where assured testing is available."
+      ],
+      "note": "Confirm with a repeat test on a separate day unless unequivocal hyperglycaemia with symptoms."
+    },
+    "management": [
+      "Lifestyle for all: diet, weight management, physical activity, tobacco cessation.",
+      "First-line pharmacotherapy: metformin, titrated as tolerated (caution/avoid in significant renal impairment).",
+      "Add a second agent (e.g. sulfonylurea) if target not met; insulin where indicated.",
+      "Cardiovascular risk management: BP control and statin per risk; foot care and annual screening."
+    ],
+    "targets": [
+      "HbA1c <7% (53 mmol/mol) for most adults; individualise (relax in frailty/limited life expectancy).",
+      "Screen for retinopathy, nephropathy (urine albumin), and neuropathy."
+    ],
+    "redFlags": [
+      "Ketones / heavy ketonuria, vomiting, drowsiness — assess for DKA and refer.",
+      "Very high glucose with dehydration in older patients — assess for hyperosmolar hyperglycaemic state."
+    ],
+    "nationalOverlayNotes": "Per-country overlays should map agents to the national Essential Medicines List and adopt national monitoring intervals.",
+    "references": [
+      {
+        "label": "WHO Package of Essential Noncommunicable (PEN) disease interventions for primary health care",
+        "url": "https://www.who.int/publications/i/item/9789240009226",
+        "strength": "A",
+        "year": 2020,
+        "accessedDate": "2026-06-10",
+        "sourceType": "guideline",
+        "licence": "cc-by-nc-sa"
+      },
+      {
+        "label": "WHO Classification of diabetes mellitus, 2019",
+        "url": "https://www.who.int/publications/i/item/classification-of-diabetes-mellitus",
+        "strength": "A",
+        "year": 2019,
+        "accessedDate": "2026-06-10",
+        "sourceType": "guideline",
+        "licence": "cc-by-nc-sa"
+      }
+    ]
+  }
+]

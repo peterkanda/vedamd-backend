@@ -1,0 +1,70 @@
+[
+  {
+    "slug": "who-etat-emergency-triage",
+    "title": "ETAT — emergency triage assessment (draft)",
+    "domain": "etat-triage",
+    "jurisdiction": "WHO",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0-draft",
+    "verifyBeforeApproval": true,
+    "summary": "WHO Emergency Triage Assessment and Treatment (ETAT) baseline: the ABCD rapid-triage logic for identifying children needing emergency vs priority care. Universal logic every country inherits. DRAFT — clinician verification required before approval.",
+    "emergencySigns": {
+      "description": "ANY emergency sign → immediate treatment + senior help (the 'ABCD' assessment).",
+      "airwayBreathing": [
+        "Obstructed or absent breathing.",
+        "Severe respiratory distress.",
+        "Central cyanosis."
+      ],
+      "circulation": [
+        "Cold hands WITH capillary refill >3 seconds AND weak, fast pulse (shock)."
+      ],
+      "comaConvulsion": [
+        "Coma / unresponsive (AVPU = P or U).",
+        "Convulsing now."
+      ],
+      "dehydration": [
+        "Severe dehydration in a child with diarrhoea: lethargy, sunken eyes, very slow skin pinch."
+      ]
+    },
+    "prioritySigns": {
+      "description": "Priority signs (the '3TPR-MOB' mnemonic) → assess and treat ahead of the queue, no delay.",
+      "signs": [
+        "Tiny baby (<2 months)",
+        "Temperature (very high)",
+        "Trauma / urgent surgical condition",
+        "Pallor (severe)",
+        "Poisoning",
+        "Pain (severe)",
+        "Respiratory distress",
+        "Restless, irritable or lethargic",
+        "Referral (urgent)",
+        "Malnutrition (visible severe wasting)",
+        "Oedema of both feet",
+        "Burns (major)"
+      ]
+    },
+    "nonUrgent": "No emergency or priority sign → routine queue.",
+    "nationalOverlayNotes": "Per-country overlays should align with the national paediatric/ETAT+ protocol and referral pathways.",
+    "references": [
+      {
+        "label": "WHO Emergency Triage Assessment and Treatment (ETAT): manual for participants",
+        "url": "https://www.who.int/publications/i/item/9789241546874",
+        "strength": "A",
+        "year": 2005,
+        "accessedDate": "2026-06-10",
+        "sourceType": "guideline",
+        "licence": "cc-by-nc-sa"
+      },
+      {
+        "label": "WHO Pocket book of hospital care for children, 2nd ed",
+        "url": "https://www.who.int/publications/i/item/978-92-4-154837-3",
+        "strength": "A",
+        "year": 2013,
+        "accessedDate": "2026-06-10",
+        "sourceType": "guideline",
+        "licence": "cc-by-nc-sa"
+      }
+    ]
+  }
+]

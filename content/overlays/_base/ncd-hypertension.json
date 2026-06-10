@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "who-hypertension-pen-hearts",
+    "title": "Hypertension — WHO HEARTS/PEN baseline (draft)",
+    "domain": "ncd-hypertension",
+    "jurisdiction": "WHO",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0-draft",
+    "verifyBeforeApproval": true,
+    "summary": "WHO/global baseline decision logic for hypertension diagnosis and primary-care management (HEARTS technical package / WHO 2021 HTN guideline). Universal logic every country inherits until a national overlay (drug choices to the national EML, target thresholds) is authored. DRAFT — clinician verification required before approval.",
+    "diagnosis": {
+      "threshold": "Office BP >=140/90 mmHg on two separate occasions.",
+      "highRiskThreshold": "Consider pharmacotherapy at >=130/80 mmHg in established CVD, diabetes, or CKD.",
+      "stages": [
+        "Grade 1: 140-159 / 90-99",
+        "Grade 2: 160-179 / 100-109",
+        "Grade 3: >=180 / >=110"
+      ]
+    },
+    "management": [
+      "Lifestyle for all: salt reduction, weight, physical activity, tobacco/alcohol cessation.",
+      "First-line classes: thiazide/thiazide-like diuretic, long-acting CCB (e.g. amlodipine), or ACE inhibitor / ARB.",
+      "Prefer a single-pill combination of two agents for most patients to reach target.",
+      "Avoid ACEi + ARB combination. ACEi/ARB are first choice in diabetes or CKD with albuminuria."
+    ],
+    "targets": [
+      "General: <140/90 mmHg.",
+      "High CVD risk / diabetes / CKD: <130/80 mmHg if tolerated."
+    ],
+    "redFlags": [
+      "BP >=180/110 with symptoms (chest pain, breathlessness, neurological deficit, visual loss) — assess for hypertensive emergency and refer."
+    ],
+    "nationalOverlayNotes": "Per-country overlays should map first-line agents to the national Essential Medicines List and adopt national target thresholds.",
+    "references": [
+      {
+        "label": "WHO Guideline for the pharmacological treatment of hypertension in adults, 2021",
+        "url": "https://www.who.int/publications/i/item/9789240033986",
+        "strength": "A",
+        "year": 2021,
+        "accessedDate": "2026-06-10",
+        "sourceType": "guideline",
+        "licence": "cc-by-nc-sa"
+      },
+      {
+        "label": "WHO HEARTS technical package",
+        "url": "https://www.who.int/publications/i/item/9789240001367",
+        "strength": "A",
+        "year": 2020,
+        "accessedDate": "2026-06-10",
+        "sourceType": "guideline",
+        "licence": "cc-by-nc-sa"
+      }
+    ]
+  }
+]
