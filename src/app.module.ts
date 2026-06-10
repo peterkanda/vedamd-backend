@@ -54,6 +54,7 @@ import { GovernanceModule } from './modules/governance/governance.module';
 import { ReferenceModule } from './modules/reference/reference.module';
 import { UsageModule } from './modules/usage/usage.module';
 import { MetricsModule } from './modules/metrics/metrics.module';
+import { LocalizationModule } from './modules/localization/localization.module';
 
 @Module({
   imports: [
@@ -114,6 +115,7 @@ import { MetricsModule } from './modules/metrics/metrics.module';
     ReferenceModule,
     UsageModule,
     MetricsModule,
+    LocalizationModule,
   ],
 })
 export class AppModule {}
