@@ -74,18 +74,31 @@ export class DrugsService implements OnModuleInit {
     unknownSlugs: string[];
   } {
     const unique = [...new Set(slugs.map((s) => s.trim().toLowerCase()).filter(Boolean))];
-    const unknown = unique.filter((s) => !this.bySlug.has(s));
-    const known = unique.filter((s) => this.bySlug.has(s));
+    // `unknownSlugs` flags slugs with no monograph AND no interaction record,
+    // but the pair scan runs over ALL supplied slugs: some interaction records
+    // reference agents that have no monograph yet (e.g. dipyridamole, ethanol),
+    // and filtering those out before the scan silently suppressed reviewed
+    // interactions — a false "no known interactions" on a flagged combination.
+    const unknown = unique.filter((s) => !this.bySlug.has(s) && !this.slugHasInteractions(s));
 
     const found: DrugInteraction[] = [];
-    for (let i = 0; i < known.length; i++) {
-      for (let j = i + 1; j < known.length; j++) {
-        const hit = this.interactionsByPair.get(pairKey(known[i], known[j]));
+    for (let i = 0; i < unique.length; i++) {
+      for (let j = i + 1; j < unique.length; j++) {
+        const hit = this.interactionsByPair.get(pairKey(unique[i], unique[j]));
         if (hit) found.push(hit);
       }
     }
 
     return { interactions: found, unknownSlugs: unknown };
+  }
+
+  /** True when the slug appears in at least one interaction record. */
+  private slugHasInteractions(slug: string): boolean {
+    for (const key of this.interactionsByPair.keys()) {
+      const [a, b] = key.split('::');
+      if (a === slug || b === slug) return true;
+    }
+    return false;
   }
 }
 

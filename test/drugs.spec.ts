@@ -67,6 +67,17 @@ describe('DrugsService', () => {
     expect(res.interactions).toEqual([]);
   });
 
+  it('fires interactions whose agent has no drug monograph (regression)', () => {
+    // dipyridamole has no record in drugs.json, but the bundle carries a
+    // MAJOR adenosine–dipyridamole interaction. Pre-fix, the monograph
+    // filter ran before the pair scan and silently suppressed it.
+    const res = svc.checkInteractions(['adenosine', 'dipyridamole']);
+    expect(res.interactions.length).toBe(1);
+    expect(res.interactions[0].severity).toBe('major');
+    // The slug participates in interaction content, so it is not "unknown".
+    expect(res.unknownSlugs).toEqual([]);
+  });
+
   it('returns no interactions when only one drug supplied', () => {
     const res = svc.checkInteractions(['paracetamol']);
     expect(res.interactions).toEqual([]);
