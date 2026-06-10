@@ -6,6 +6,7 @@ import { CdsService } from './cds.service';
 import { CdsStrategyRegistry } from './strategies/registry';
 import { DrugDrugInteractionStrategy } from './strategies/ddi.strategy';
 import { RenalSafetyStrategy } from './strategies/renal-safety.strategy';
+import { HepaticSafetyStrategy } from './strategies/hepatic-safety.strategy';
 import { PregnancySafetyStrategy } from './strategies/pregnancy-safety.strategy';
 import { AwareStewardshipStrategy } from './strategies/aware-stewardship.strategy';
 import { MedicationMonitoringStrategy } from './strategies/medication-monitoring.strategy';
@@ -78,15 +79,17 @@ import { VhfSuspectedIsolationStrategy } from './strategies/vhf-suspected-isolat
 import { BundleOutcomeStrategy } from './strategies/bundle-outcome.strategy';
 import { DeveloperModule } from '../developer/developer.module';
 import { DrugsModule } from '../drugs/drugs.module';
+import { HepaticDoseModule } from '../hepatic-dose/hepatic-dose.module';
 
 @Module({
-  imports: [DeveloperModule, DrugsModule],
+  imports: [DeveloperModule, DrugsModule, HepaticDoseModule],
   controllers: [CdsHooksController, CdsEvaluateController, CdsCapabilityController],
   providers: [
     CdsService,
     CdsStrategyRegistry,
     DrugDrugInteractionStrategy,
     RenalSafetyStrategy,
+    HepaticSafetyStrategy,
     PregnancySafetyStrategy,
     AwareStewardshipStrategy,
     MedicationMonitoringStrategy,

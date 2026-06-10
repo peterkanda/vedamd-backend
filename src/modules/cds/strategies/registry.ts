@@ -28,6 +28,7 @@ import { PenHypertensionScreenStrategy } from './pen-hypertension-screen.strateg
 import { Phq9DepressionScreenStrategy } from './phq9-depression-screen.strategy';
 import { PregnancySafetyStrategy } from './pregnancy-safety.strategy';
 import { RenalSafetyStrategy } from './renal-safety.strategy';
+import { HepaticSafetyStrategy } from './hepatic-safety.strategy';
 import { SepsisQSofaStrategy } from './sepsis-qsofa.strategy';
 import { SevereAsthmaExacerbationStrategy } from './severe-asthma-exacerbation.strategy';
 import { SnakeBiteTriageStrategy } from './snake-bite-triage.strategy';
@@ -85,6 +86,7 @@ export class CdsStrategyRegistry {
   constructor(
     ddi: DrugDrugInteractionStrategy,
     renal: RenalSafetyStrategy,
+    hepatic: HepaticSafetyStrategy,
     pregnancy: PregnancySafetyStrategy,
     aware: AwareStewardshipStrategy,
     monitoring: MedicationMonitoringStrategy,
@@ -158,6 +160,7 @@ export class CdsStrategyRegistry {
   ) {
     this.register(ddi);
     this.register(renal);
+    this.register(hepatic);
     this.register(pregnancy);
     this.register(aware);
     this.register(monitoring);

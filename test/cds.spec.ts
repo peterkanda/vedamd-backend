@@ -5,6 +5,8 @@ import { DrugsService } from '../src/modules/drugs/drugs.service';
 import { CdsStrategyRegistry } from '../src/modules/cds/strategies/registry';
 import { DrugDrugInteractionStrategy } from '../src/modules/cds/strategies/ddi.strategy';
 import { RenalSafetyStrategy } from '../src/modules/cds/strategies/renal-safety.strategy';
+import { HepaticSafetyStrategy } from '../src/modules/cds/strategies/hepatic-safety.strategy';
+import { HepaticDoseService } from '../src/modules/hepatic-dose/hepatic-dose.service';
 import { PregnancySafetyStrategy } from '../src/modules/cds/strategies/pregnancy-safety.strategy';
 import { AwareStewardshipStrategy } from '../src/modules/cds/strategies/aware-stewardship.strategy';
 import { MedicationMonitoringStrategy } from '../src/modules/cds/strategies/medication-monitoring.strategy';
@@ -93,9 +95,12 @@ function makeService(): CdsService {
   const knowledge = makeKnowledgeService();
   const drugs = new DrugsService(knowledge);
   drugs.onModuleInit();
+  const hepatic = new HepaticDoseService(knowledge);
+  hepatic.onModuleInit();
   const registry = new CdsStrategyRegistry(
     new DrugDrugInteractionStrategy(drugs),
     new RenalSafetyStrategy(drugs),
+    new HepaticSafetyStrategy(hepatic),
     new PregnancySafetyStrategy(drugs),
     new AwareStewardshipStrategy(drugs),
     new MedicationMonitoringStrategy(drugs),
@@ -219,7 +224,8 @@ describe('CdsService.evaluateHook — VHF suspected-isolation (public-health eme
       context: { feverPresent: true, vhfEndemicTravel21d: true },
     });
     const vhf = res.cards.filter(
-      (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'vhf-suspected-isolation',
+      (c) =>
+        c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'vhf-suspected-isolation',
     );
     expect(vhf.length).toBe(1);
     expect(vhf[0].indicator).toBe('critical');
@@ -236,7 +242,9 @@ describe('CdsService.evaluateHook — VHF suspected-isolation (public-health eme
     });
     expect(
       res.cards.some(
-        (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'vhf-suspected-isolation',
+        (c) =>
+          c.extension?.['http://vedamd.io/Card/recommendation'].ruleId ===
+          'vhf-suspected-isolation',
       ),
     ).toBe(true);
   });
@@ -249,7 +257,9 @@ describe('CdsService.evaluateHook — VHF suspected-isolation (public-health eme
     });
     expect(
       res.cards.some(
-        (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'vhf-suspected-isolation',
+        (c) =>
+          c.extension?.['http://vedamd.io/Card/recommendation'].ruleId ===
+          'vhf-suspected-isolation',
       ),
     ).toBe(true);
   });
@@ -262,7 +272,9 @@ describe('CdsService.evaluateHook — VHF suspected-isolation (public-health eme
     });
     expect(
       res.cards.some(
-        (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'vhf-suspected-isolation',
+        (c) =>
+          c.extension?.['http://vedamd.io/Card/recommendation'].ruleId ===
+          'vhf-suspected-isolation',
       ),
     ).toBe(false);
   });
@@ -279,9 +291,9 @@ describe('CdsService.evaluateHook — emergency content rules via content-librar
     const card = res.cards[0];
     expect(card.indicator).toBe('critical');
     expect(card.detail?.toLowerCase()).toContain('calcium');
-    expect(
-      card.extension?.['http://vedamd.io/Card/recommendation'].ruleId,
-    ).toBe('hyperkalaemia-emergency-cds');
+    expect(card.extension?.['http://vedamd.io/Card/recommendation'].ruleId).toBe(
+      'hyperkalaemia-emergency-cds',
+    );
   });
 
   it('renders a stewardship guidance card on request', async () => {
@@ -304,7 +316,9 @@ describe('CdsService.evaluateHook — emergency content rules via content-librar
     });
     expect(
       res.cards.some(
-        (c) => c.extension?.['http://vedamd.io/Card/recommendation'].ruleId === 'hyperkalaemia-emergency-cds',
+        (c) =>
+          c.extension?.['http://vedamd.io/Card/recommendation'].ruleId ===
+          'hyperkalaemia-emergency-cds',
       ),
     ).toBe(false);
   });
