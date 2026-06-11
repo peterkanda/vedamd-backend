@@ -32,6 +32,7 @@
     "bundle:score-sources": "node scripts/score-citation-sources.js",
     "bundle:audit-urls": "node scripts/audit-urls.js",
     "content:ingest": "ts-node --transpile-only scripts/ingest-country-content.ts",
+    "overlays:scaffold": "ts-node --transpile-only scripts/scaffold-national-overlays.ts",
     "overlays:validate": "ts-node --transpile-only scripts/validate-overlays.ts",
     "parity:matrix": "ts-node --transpile-only scripts/parity-matrix.ts",
     "openapi:generate": "ts-node --transpile-only scripts/generate-openapi.ts",
