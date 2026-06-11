@@ -26,7 +26,7 @@ import type {
 export class DeepseekProvider implements LlmProvider {
   readonly name = 'deepseek' as const;
   private readonly apiKey: string;
-  private readonly model: string;
+  readonly model: string;
   private readonly baseUrl: string;
 
   constructor(

@@ -26,7 +26,7 @@ import type {
 export class AnthropicProvider implements LlmProvider {
   readonly name = 'anthropic' as const;
   private readonly apiKey: string;
-  private readonly model: string;
+  readonly model: string;
   private readonly endpoint = 'https://api.anthropic.com/v1/messages';
 
   constructor(

@@ -95,6 +95,12 @@ export class ProviderRouter {
     return first?.name ?? 'none';
   }
 
+  /** Model id the next request will use (e.g. the MedGemma id) — for /capabilities. */
+  advertisedModel(preferred?: LlmProviderName): string | null {
+    const first = this.order(preferred).find((p) => p.isConfigured());
+    return first?.model ?? null;
+  }
+
   /** Names + configured flags — for /capabilities and the developer UI. */
   list(): Array<{ name: LlmProviderName; configured: boolean }> {
     return this.all().map((p) => ({ name: p.name, configured: p.isConfigured() }));
