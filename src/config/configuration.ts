@@ -76,6 +76,7 @@ export interface AppConfig {
     openaiApiKey: string;
     deepseekApiKey: string;
     geminiApiKey: string;
+    openrouterApiKey: string;
   };
   /**
    * On-device model distribution (FR-148 — offline AI). vedamd.io hosts
@@ -228,6 +229,7 @@ export const configuration = (): AppConfig => ({
     openaiApiKey: process.env.OPENAI_API_KEY ?? '',
     deepseekApiKey: process.env.DEEPSEEK_API_KEY ?? '',
     geminiApiKey: process.env.GEMINI_API_KEY ?? '',
+    openrouterApiKey: process.env.OPENROUTER_API_KEY ?? '',
   },
   models: {
     distributionBaseUrl: process.env.MODELS_DISTRIBUTION_BASE_URL ?? 'https://models.vedamd.io',
