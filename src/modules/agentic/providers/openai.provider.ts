@@ -20,7 +20,7 @@ import type {
 export class OpenAiProvider implements LlmProvider {
   readonly name = 'openai' as const;
   private readonly apiKey: string;
-  private readonly model: string;
+  readonly model: string;
   private readonly baseUrl: string;
 
   constructor(

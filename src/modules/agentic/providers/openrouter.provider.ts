@@ -41,7 +41,7 @@ import type {
 export class OpenRouterProvider implements LlmProvider {
   readonly name = 'openrouter' as const;
   private readonly apiKey: string;
-  private readonly model: string;
+  readonly model: string;
   private readonly baseUrl: string;
   private readonly siteUrl: string;
 

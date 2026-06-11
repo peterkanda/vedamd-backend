@@ -18,6 +18,8 @@ export interface AssistantChatResponse {
   answer: string;
   sources: AssistantSource[];
   provider: string;
+  /** Actual model that produced the answer (e.g. the MedGemma id from OpenRouter). */
+  model: string;
   grounded: boolean;
 }
 
@@ -53,7 +55,7 @@ export class AssistantService {
   async chat(req: AssistantChatRequest): Promise<AssistantChatResponse> {
     const question = (req.question ?? '').trim();
     if (!question) {
-      return { answer: 'Please enter a clinical question.', sources: [], provider: 'none', grounded: false };
+      return { answer: 'Please enter a clinical question.', sources: [], provider: 'none', model: 'none', grounded: false };
     }
 
     // Retrieve relevant records and build a grounding block.
@@ -81,6 +83,6 @@ export class AssistantService {
       maxTokens: 1024,
     });
 
-    return { answer: result.text.trim(), sources, provider: result.provider, grounded };
+    return { answer: result.text.trim(), sources, provider: result.provider, model: result.model, grounded };
   }
 }

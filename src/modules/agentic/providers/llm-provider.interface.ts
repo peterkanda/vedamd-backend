@@ -35,6 +35,8 @@ export type LlmProviderName = 'anthropic' | 'openai' | 'deepseek' | 'gemini' | '
 export interface LlmProvider {
   /** Provider identity. */
   readonly name: LlmProviderName;
+  /** The model id this provider is configured to use (e.g. the MedGemma id). */
+  readonly model: string;
   /** Whether the provider is configured (has API key). */
   isConfigured(): boolean;
   /** Run a single completion. Throws on provider error. */

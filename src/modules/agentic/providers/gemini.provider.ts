@@ -37,7 +37,7 @@ import type {
 export class GeminiProvider implements LlmProvider {
   readonly name = 'gemini' as const;
   private readonly apiKey: string;
-  private readonly model: string;
+  readonly model: string;
   private readonly baseUrl: string;
   private readonly useOpenAiCompatible: boolean;
 
