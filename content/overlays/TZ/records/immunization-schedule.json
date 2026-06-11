@@ -1,0 +1,198 @@
+[
+  {
+    "slug": "bcg",
+    "vaccine": "BCG (Bacille Calmette-Guérin) vaccine",
+    "abbrev": "BCG",
+    "vaccineDrugSlug": null,
+    "targetDisease": ["Tuberculosis (severe paediatric forms)"],
+    "domains": ["vaccine-preventable", "child-health", "tb"],
+    "jurisdiction": "TZ",
+    "doses": [{ "dose": "Single dose", "timing": "At birth", "route": "intradermal" }],
+    "population": { "notes": "Tanzania routine childhood schedule (IVD programme)." },
+    "catchUp": "Give at first contact if missed and child is well.",
+    "notes": "Tanzania national immunization schedule (Immunization and Vaccine Development programme). DRAFT — verify exact antigens/timing against the current national schedule before approval.",
+    "references": [
+      {
+        "label": "Tanzania Immunization and Vaccine Development (IVD) national immunization schedule, Ministry of Health",
+        "url": "https://www.moh.go.tz/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "opv",
+    "vaccine": "Oral polio vaccine (+ IPV)",
+    "abbrev": "OPV/IPV",
+    "vaccineDrugSlug": null,
+    "targetDisease": ["Poliomyelitis"],
+    "domains": ["vaccine-preventable", "child-health"],
+    "jurisdiction": "TZ",
+    "doses": [
+      { "dose": "OPV-0", "timing": "At birth", "route": "oral" },
+      { "dose": "OPV 1–3", "timing": "4, 8 and 12 weeks", "route": "oral" },
+      { "dose": "IPV", "timing": "with the national-schedule visit", "route": "intramuscular" }
+    ],
+    "population": { "notes": "Tanzania routine childhood schedule." },
+    "catchUp": null,
+    "notes": "DRAFT — Tanzania has historically used a 4/8/12-week primary series; CONFIRM the current primary-series timing and IPV dose against the national schedule before approval.",
+    "references": [
+      {
+        "label": "Tanzania Immunization and Vaccine Development (IVD) national immunization schedule, Ministry of Health",
+        "url": "https://www.moh.go.tz/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "pentavalent",
+    "vaccine": "Pentavalent (DPT-HepB-Hib) vaccine",
+    "abbrev": "Penta",
+    "vaccineDrugSlug": null,
+    "targetDisease": ["Diphtheria", "Pertussis", "Tetanus", "Hepatitis B", "Haemophilus influenzae type b"],
+    "domains": ["vaccine-preventable", "child-health"],
+    "jurisdiction": "TZ",
+    "doses": [{ "dose": "Dose 1–3", "timing": "4, 8 and 12 weeks", "route": "intramuscular" }],
+    "population": { "notes": "Tanzania routine childhood schedule." },
+    "catchUp": null,
+    "notes": "DRAFT — confirm the primary-series timing (Tanzania has used 4/8/12 weeks) against the current national schedule before approval.",
+    "references": [
+      {
+        "label": "Tanzania Immunization and Vaccine Development (IVD) national immunization schedule, Ministry of Health",
+        "url": "https://www.moh.go.tz/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "pcv",
+    "vaccine": "Pneumococcal conjugate vaccine",
+    "abbrev": "PCV",
+    "vaccineDrugSlug": null,
+    "targetDisease": ["Streptococcus pneumoniae disease"],
+    "domains": ["vaccine-preventable", "child-health"],
+    "jurisdiction": "TZ",
+    "doses": [{ "dose": "Dose 1–3", "timing": "primary series (per national schedule)", "route": "intramuscular" }],
+    "population": { "notes": "Tanzania routine childhood schedule." },
+    "catchUp": null,
+    "notes": "DRAFT — verify timing against the current national schedule before approval.",
+    "references": [
+      {
+        "label": "Tanzania Immunization and Vaccine Development (IVD) national immunization schedule, Ministry of Health",
+        "url": "https://www.moh.go.tz/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "rotavirus",
+    "vaccine": "Rotavirus vaccine",
+    "abbrev": "Rota",
+    "vaccineDrugSlug": null,
+    "targetDisease": ["Rotavirus gastroenteritis"],
+    "domains": ["vaccine-preventable", "child-health"],
+    "jurisdiction": "TZ",
+    "doses": [{ "dose": "Primary series", "timing": "per national schedule", "route": "oral" }],
+    "population": { "notes": "Tanzania routine childhood schedule." },
+    "catchUp": null,
+    "notes": "DRAFT — confirm number of doses/age limits against the current national schedule before approval.",
+    "references": [
+      {
+        "label": "Tanzania Immunization and Vaccine Development (IVD) national immunization schedule, Ministry of Health",
+        "url": "https://www.moh.go.tz/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "measles-rubella",
+    "vaccine": "Measles-Rubella vaccine",
+    "abbrev": "MR",
+    "vaccineDrugSlug": null,
+    "targetDisease": ["Measles", "Rubella"],
+    "domains": ["vaccine-preventable", "child-health"],
+    "jurisdiction": "TZ",
+    "doses": [
+      { "dose": "MR1", "timing": "9 months", "route": "subcutaneous" },
+      { "dose": "MR2", "timing": "18 months", "route": "subcutaneous" }
+    ],
+    "population": { "notes": "Tanzania routine childhood schedule." },
+    "catchUp": "Per national campaigns / catch-up guidance.",
+    "notes": "DRAFT — verify against the current national schedule before approval.",
+    "references": [
+      {
+        "label": "Tanzania Immunization and Vaccine Development (IVD) national immunization schedule, Ministry of Health",
+        "url": "https://www.moh.go.tz/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "hpv",
+    "vaccine": "Human papillomavirus vaccine",
+    "abbrev": "HPV",
+    "vaccineDrugSlug": null,
+    "targetDisease": ["HPV-related cervical cancer"],
+    "domains": ["vaccine-preventable", "adolescent-health", "cancer-prevention"],
+    "jurisdiction": "TZ",
+    "doses": [{ "dose": "Per national schedule", "timing": "Adolescent girls (~14 years)", "route": "intramuscular" }],
+    "population": { "sex": "female", "notes": "Adolescent girls per national HPV programme." },
+    "catchUp": null,
+    "notes": "DRAFT — confirm target age and dose schedule against the current national HPV programme before approval.",
+    "references": [
+      {
+        "label": "Tanzania Immunization and Vaccine Development (IVD) national immunization schedule, Ministry of Health",
+        "url": "https://www.moh.go.tz/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  }
+]
