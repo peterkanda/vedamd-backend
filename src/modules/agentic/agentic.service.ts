@@ -111,7 +111,8 @@ export class AgenticService {
     let agenticCards: CdsCard[] = [];
     let citedRecords: Array<{ kind: string; id: string }> = [];
     let llmModel: string | undefined;
-    let llmProvider: 'anthropic' | 'openai' | 'deepseek' | 'gemini' | 'disabled' = 'disabled';
+    let llmProvider: 'anthropic' | 'openai' | 'deepseek' | 'gemini' | 'openrouter' | 'disabled' =
+      'disabled';
     let agenticInvoked = false;
     /**
      * Raw LLM text — captured even when extractCards drops every card

@@ -11,6 +11,7 @@ import { AnthropicProvider } from './providers/anthropic.provider';
 import { OpenAiProvider } from './providers/openai.provider';
 import { DeepseekProvider } from './providers/deepseek.provider';
 import { GeminiProvider } from './providers/gemini.provider';
+import { OpenRouterProvider } from './providers/openrouter.provider';
 import { SqlIngestionService } from './connectors/sql-ingestion.service';
 import { PostgresConnector } from './connectors/postgres.connector';
 import {
@@ -43,6 +44,7 @@ import { CustomRulesModule } from '../custom-rules/custom-rules.module';
     OpenAiProvider,
     DeepseekProvider,
     GeminiProvider,
+    OpenRouterProvider,
     SqlIngestionService,
     PostgresConnector,
     MysqlConnector,

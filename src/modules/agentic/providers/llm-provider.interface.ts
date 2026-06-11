@@ -30,7 +30,7 @@ export interface LlmCompletionResult {
 export const LLM_PROVIDER = Symbol('LLM_PROVIDER');
 
 /** All providers VedaMD's agentic engine can route to. */
-export type LlmProviderName = 'anthropic' | 'openai' | 'deepseek' | 'gemini';
+export type LlmProviderName = 'anthropic' | 'openai' | 'deepseek' | 'gemini' | 'openrouter';
 
 export interface LlmProvider {
   /** Provider identity. */

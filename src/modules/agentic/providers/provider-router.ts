@@ -3,6 +3,7 @@ import { AnthropicProvider } from './anthropic.provider';
 import { OpenAiProvider } from './openai.provider';
 import { DeepseekProvider } from './deepseek.provider';
 import { GeminiProvider } from './gemini.provider';
+import { OpenRouterProvider } from './openrouter.provider';
 import type {
   LlmCompletionRequest,
   LlmCompletionResult,
@@ -34,10 +35,12 @@ export class ProviderRouter {
     private readonly openai: OpenAiProvider,
     private readonly deepseek: DeepseekProvider,
     private readonly gemini: GeminiProvider,
+    private readonly openrouter: OpenRouterProvider,
   ) {}
 
   private byName(name: LlmProviderName): LlmProvider {
     switch (name) {
+      case 'openrouter': return this.openrouter;
       case 'openai': return this.openai;
       case 'anthropic': return this.anthropic;
       case 'deepseek': return this.deepseek;
@@ -45,9 +48,10 @@ export class ProviderRouter {
     }
   }
 
-  /** All providers, in default fallback order. */
+  /** All providers, in default fallback order. OpenRouter (MedGemma) leads, so
+   *  it is the default and every other provider is a fallback behind it. */
   private all(): LlmProvider[] {
-    return [this.openai, this.anthropic, this.deepseek, this.gemini];
+    return [this.openrouter, this.openai, this.anthropic, this.deepseek, this.gemini];
   }
 
   /** Returns the ordered list of providers to attempt for this request. */
@@ -59,17 +63,19 @@ export class ProviderRouter {
     }
     const pref = process.env.AGENTIC_PROVIDER?.toLowerCase();
     switch (pref) {
-      case 'openai':       return [this.openai, this.anthropic, this.deepseek, this.gemini];
-      case 'anthropic':    return [this.anthropic, this.openai, this.deepseek, this.gemini];
-      case 'deepseek':     return [this.deepseek, this.openai, this.anthropic, this.gemini];
-      case 'gemini':       return [this.gemini, this.openai, this.anthropic, this.deepseek];
+      case 'openrouter':   return [this.openrouter, this.openai, this.anthropic, this.deepseek, this.gemini];
+      case 'openai':       return [this.openai, this.openrouter, this.anthropic, this.deepseek, this.gemini];
+      case 'anthropic':    return [this.anthropic, this.openrouter, this.openai, this.deepseek, this.gemini];
+      case 'deepseek':     return [this.deepseek, this.openrouter, this.openai, this.anthropic, this.gemini];
+      case 'gemini':       return [this.gemini, this.openrouter, this.openai, this.anthropic, this.deepseek];
+      case 'openrouter-only': return [this.openrouter];
       case 'openai-only':  return [this.openai];
       case 'anthropic-only': return [this.anthropic];
       case 'deepseek-only': return [this.deepseek];
       case 'gemini-only':  return [this.gemini];
       default: {
-        // Auto: prefer OpenAI when configured, otherwise the first
-        // configured provider in the default order.
+        // Auto: prefer OpenRouter (MedGemma) when configured, otherwise the
+        // first configured provider in the default fallback order.
         const ordered = this.all();
         const idx = ordered.findIndex((p) => p.isConfigured());
         if (idx <= 0) return ordered;
