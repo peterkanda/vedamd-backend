@@ -40,7 +40,7 @@ signed off.
 | RW | ✅ | 12 (draft) | 2 | 🟡 in-progress |
 | TZ | ✅ | 12 (draft) | 2 | 🟡 in-progress |
 | UG | ✅ | 12 (draft) | 2 | 🟡 in-progress |
-| ZA | ✅ | 12 (draft) | 0 | 🟡 in-progress |
+| ZA | ✅ | 12 (draft) | 2 | 🟡 in-progress |
 | ZM | ✅ | 12 (draft) | 0 | 🟡 in-progress |
 
 ## Kenya parity target (signed-bundle domains)
