@@ -1,0 +1,40 @@
+[
+  {
+    "slug": "baseline-major-drug-interactions",
+    "title": "Drug–drug interactions — high-priority baseline (draft)",
+    "domain": "drug-interactions",
+    "jurisdiction": "WHO",
+    "reviewStatus": "draft",
+    "evidenceLevel": "B",
+    "ruleVersion": "0.1.0-draft",
+    "verifyBeforeApproval": true,
+    "summary": "Baseline high-priority drug–drug interaction logic, assembled from public-domain sources (the US ONC high-priority DDI list) plus original curation. Severity-graded; the full interaction set is authored from DailyMed/RxNorm/ONC during clinical review. DRAFT — clinician verification required before approval.",
+    "principles": [
+      "Check interactions at prescribing and dispensing; reconcile the full medication list including OTC and herbal products.",
+      "Classify by severity (contraindicated / major / moderate) and act on the highest.",
+      "Prefer a non-interacting alternative; if co-prescription is necessary, adjust dose and monitor."
+    ],
+    "highPriorityExamples": [
+      { "pair": "Warfarin + NSAIDs", "effect": "Increased bleeding risk", "severity": "major" },
+      { "pair": "Warfarin + azole antifungals / macrolides", "effect": "Raised INR, bleeding", "severity": "major" },
+      { "pair": "QT-prolonging drug + QT-prolonging drug (e.g. some fluoroquinolones + ondansetron + antipsychotics)", "effect": "Additive QT prolongation / torsades", "severity": "major" },
+      { "pair": "Serotonergic drug + serotonergic drug (SSRI/SNRI + MAOI/tramadol/linezolid)", "effect": "Serotonin syndrome", "severity": "contraindicated/major" },
+      { "pair": "Strong CYP3A4 inhibitor + simvastatin/lovastatin", "effect": "Myopathy / rhabdomyolysis", "severity": "major" },
+      { "pair": "ACEi/ARB + potassium-sparing diuretic / potassium supplement", "effect": "Hyperkalaemia", "severity": "major" },
+      { "pair": "Methotrexate + trimethoprim (or NSAIDs)", "effect": "Methotrexate toxicity / myelosuppression", "severity": "major" },
+      { "pair": "Rifampicin + many substrates (e.g. DTG, hormonal contraceptives, warfarin)", "effect": "Reduced efficacy via enzyme induction", "severity": "major" }
+    ],
+    "nationalOverlayNotes": "Per-country overlays should constrain examples to the national formulary and add locally-relevant pairs.",
+    "references": [
+      {
+        "label": "ONC high-priority drug-drug interaction list (US, public domain)",
+        "url": "https://www.healthit.gov/",
+        "strength": "A",
+        "year": 2016,
+        "accessedDate": "2026-06-10",
+        "sourceType": "guideline",
+        "licence": "public-domain"
+      }
+    ]
+  }
+]

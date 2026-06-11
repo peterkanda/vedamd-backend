@@ -1,0 +1,87 @@
+{
+  "description": "Per-country localization profiles: factual, citable locale data the ingestion engine merges into each country's overlay.json. This is the SAFE localization layer — official/patient-facing languages, national formulary linkage (by registry source id), and whether national guidelines derive from WHO. It deliberately contains NO clinical recommendations; dosing/protocol overlays are authored separately and gated on clinical sign-off. ISO 639-1 language codes; nationalFormularySource references content/sources/registry.json ids.",
+  "updated": "2026-06-10",
+  "profiles": {
+    "UG": {
+      "name": "Uganda",
+      "officialLanguages": ["en", "sw"],
+      "patientFacingLanguages": ["en", "sw"],
+      "majorLocalLanguages": ["lg"],
+      "nationalFormularySource": "moh-ug",
+      "nationalGuidelinesDeriveFromWho": true,
+      "notes": "Uganda Clinical Guidelines (UCG) and EMHSLU; English is the health-system working language, Swahili is co-official."
+    },
+    "TZ": {
+      "name": "Tanzania",
+      "officialLanguages": ["sw", "en"],
+      "patientFacingLanguages": ["sw", "en"],
+      "majorLocalLanguages": [],
+      "nationalFormularySource": "moh-tz",
+      "nationalGuidelinesDeriveFromWho": true,
+      "notes": "Standard Treatment Guidelines + NEMLIT; Swahili is the primary national language, English used in clinical practice."
+    },
+    "RW": {
+      "name": "Rwanda",
+      "officialLanguages": ["rw", "en", "fr", "sw"],
+      "patientFacingLanguages": ["en", "rw"],
+      "majorLocalLanguages": [],
+      "nationalFormularySource": "moh-rw",
+      "nationalGuidelinesDeriveFromWho": true,
+      "notes": "English is the medium of health-professional training; Kinyarwanda for patient-facing content. French and Swahili also official."
+    },
+    "ET": {
+      "name": "Ethiopia",
+      "officialLanguages": ["am", "en"],
+      "patientFacingLanguages": ["am", "en"],
+      "majorLocalLanguages": ["om"],
+      "nationalFormularySource": "moh-et",
+      "nationalGuidelinesDeriveFromWho": true,
+      "notes": "Amharic is the federal working language; English is used in higher/medical education. Oromo is a major additional language."
+    },
+    "NG": {
+      "name": "Nigeria",
+      "officialLanguages": ["en"],
+      "patientFacingLanguages": ["en"],
+      "majorLocalLanguages": ["ha", "yo", "ig"],
+      "nationalFormularySource": "moh-ng",
+      "nationalGuidelinesDeriveFromWho": true,
+      "notes": "English is the official and clinical language; Hausa, Yoruba and Igbo are major languages for later patient-facing localization."
+    },
+    "GH": {
+      "name": "Ghana",
+      "officialLanguages": ["en"],
+      "patientFacingLanguages": ["en"],
+      "majorLocalLanguages": ["ak"],
+      "nationalFormularySource": "moh-gh",
+      "nationalGuidelinesDeriveFromWho": true,
+      "notes": "English is the official and clinical language; Akan/Twi is the most widely spoken local language."
+    },
+    "ZA": {
+      "name": "South Africa",
+      "officialLanguages": ["en", "zu", "xh", "af"],
+      "patientFacingLanguages": ["en"],
+      "majorLocalLanguages": ["zu", "xh", "af", "st", "tn"],
+      "nationalFormularySource": "moh-za",
+      "nationalGuidelinesDeriveFromWho": true,
+      "notes": "English is the clinical lingua franca; South Africa has 12 official languages. STGs + EDL by PHC/hospital level."
+    },
+    "ZM": {
+      "name": "Zambia",
+      "officialLanguages": ["en"],
+      "patientFacingLanguages": ["en"],
+      "majorLocalLanguages": ["bem", "ny"],
+      "nationalFormularySource": "moh-zm",
+      "nationalGuidelinesDeriveFromWho": true,
+      "notes": "English is the official and clinical language; Bemba and Nyanja are major local languages."
+    },
+    "MW": {
+      "name": "Malawi",
+      "officialLanguages": ["en", "ny"],
+      "patientFacingLanguages": ["en", "ny"],
+      "majorLocalLanguages": [],
+      "nationalFormularySource": "moh-mw",
+      "nationalGuidelinesDeriveFromWho": true,
+      "notes": "English is the official language; Chichewa (ny) is the most widely spoken and used for patient-facing content."
+    }
+  }
+}

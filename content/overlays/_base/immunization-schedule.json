@@ -1,0 +1,39 @@
+[
+  {
+    "slug": "who-epi-baseline-schedule",
+    "title": "Immunization — WHO/EPI baseline schedule (draft)",
+    "domain": "immunization-schedule",
+    "jurisdiction": "WHO",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "ruleVersion": "0.1.0-draft",
+    "verifyBeforeApproval": true,
+    "summary": "WHO Expanded Programme on Immunization (EPI) baseline routine schedule. National schedules vary (antigens, timing, conditional antigens like yellow fever/MenA) and MUST be authored as national overlays — this baseline is the WHO-recommended reference. DRAFT — clinician verification required before approval.",
+    "schedule": [
+      { "age": "Birth", "antigens": ["BCG", "OPV-0 (birth dose)", "Hepatitis B birth dose"] },
+      { "age": "6 weeks", "antigens": ["DTP-HepB-Hib (pentavalent) 1", "OPV-1", "PCV-1", "Rotavirus-1"] },
+      { "age": "10 weeks", "antigens": ["Pentavalent 2", "OPV-2", "PCV-2", "Rotavirus-2"] },
+      { "age": "14 weeks", "antigens": ["Pentavalent 3", "OPV-3 / IPV", "PCV-3", "Rotavirus-3 (schedule-dependent)"] },
+      { "age": "9 months", "antigens": ["Measles-containing vaccine (MCV1)", "Yellow fever (endemic countries)", "MenA (where applicable)"] },
+      { "age": "15-18 months", "antigens": ["MCV2", "DTP booster (schedule-dependent)"] },
+      { "age": "9-14 years (girls)", "antigens": ["HPV vaccine"] }
+    ],
+    "principles": [
+      "Give all due antigens at a visit; do not miss opportunities to vaccinate.",
+      "Minimum intervals between doses must be respected; resume (do not restart) interrupted schedules.",
+      "Check and record on the national immunization card / registry."
+    ],
+    "nationalOverlayNotes": "Per-country overlays MUST replace this with the national EPI schedule (antigens, exact timing, conditional antigens, catch-up).",
+    "references": [
+      {
+        "label": "WHO recommendations for routine immunization — summary tables",
+        "url": "https://www.who.int/teams/immunization-vaccines-and-biologicals/policies/who-recommendations-for-routine-immunization---summary-tables",
+        "strength": "A",
+        "year": 2023,
+        "accessedDate": "2026-06-10",
+        "sourceType": "guideline",
+        "licence": "cc-by-nc-sa"
+      }
+    ]
+  }
+]

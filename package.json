@@ -27,12 +27,16 @@
     "bundle:sign": "ts-node --transpile-only scripts/sign-bundle.ts",
     "bundle:verify": "ts-node --transpile-only scripts/verify-bundle.ts",
     "bundle:check-strength": "node scripts/check-citation-strength.js",
+    "bundle:check-licence": "node scripts/check-licence-compliance.js",
     "bundle:score-sources": "node scripts/score-citation-sources.js",
     "bundle:audit-urls": "node scripts/audit-urls.js",
+    "content:ingest": "ts-node --transpile-only scripts/ingest-country-content.ts",
+    "overlays:validate": "ts-node --transpile-only scripts/validate-overlays.ts",
+    "parity:matrix": "ts-node --transpile-only scripts/parity-matrix.ts",
     "openapi:generate": "ts-node --transpile-only scripts/generate-openapi.ts",
     "openapi:check": "ts-node --transpile-only scripts/generate-openapi.ts -- --check",
     "audit:stateless": "ts-node --transpile-only scripts/audit-stateless.ts",
-    "ci": "npm run typecheck && npm run lint -- --max-warnings=0 && npm run audit:stateless && npm test"
+    "ci": "npm run typecheck && npm run lint -- --max-warnings=0 && npm run audit:stateless && npm run bundle:check-licence && npm test"
   },
   "dependencies": {
     "@fastify/compress": "^8.3.1",
