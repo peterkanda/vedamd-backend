@@ -36,7 +36,7 @@ signed off.
 | ET | ✅ | 12 (draft) | 2 | 🟡 in-progress |
 | GH | ✅ | 12 (draft) | 0 | 🟡 in-progress |
 | MW | ✅ | 12 (draft) | 0 | 🟡 in-progress |
-| NG | ✅ | 12 (draft) | 0 | 🟡 in-progress |
+| NG | ✅ | 12 (draft) | 2 | 🟡 in-progress |
 | RW | ✅ | 12 (draft) | 2 | 🟡 in-progress |
 | TZ | ✅ | 12 (draft) | 2 | 🟡 in-progress |
 | UG | ✅ | 12 (draft) | 2 | 🟡 in-progress |
