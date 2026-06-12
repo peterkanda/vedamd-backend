@@ -12,11 +12,14 @@ describe('LocalizationService', () => {
     expect(d.countries.length).toBeGreaterThan(1);
   });
 
-  it('only Kenya is localized today; expansion targets are selectable but not', () => {
+  it('countries with authored overlays are localized; unsupported codes are not', () => {
+    // Kenya is default-authored; Uganda has authored national overlays, so with
+    // the sign-off gate removed it is localized. An unknown code is unsupported.
     expect(svc.isLocalized('KE')).toBe(true);
-    expect(svc.isLocalized('UG')).toBe(false);
+    expect(svc.isLocalized('UG')).toBe(true);
     expect(svc.isSupported('UG')).toBe(true);
     expect(svc.isSupported('ZZ')).toBe(false);
+    expect(svc.isLocalized('ZZ')).toBe(false);
   });
 
   it('is case-insensitive', () => {
@@ -24,9 +27,9 @@ describe('LocalizationService', () => {
     expect(svc.isSupported('ug')).toBe(true);
   });
 
-  it('resolve(): localized country serves itself; un-localized falls back to default+flag', () => {
+  it('resolve(): a localized country serves its own content; unknown falls back to default', () => {
     expect(svc.resolve('KE')).toEqual({ requested: 'KE', effective: 'KE', localized: true });
-    expect(svc.resolve('UG')).toEqual({ requested: 'UG', effective: 'KE', localized: false });
+    expect(svc.resolve('UG')).toEqual({ requested: 'UG', effective: 'UG', localized: true });
     expect(svc.resolve()).toEqual({ requested: 'KE', effective: 'KE', localized: true });
     expect(svc.resolve('zz')).toEqual({ requested: 'ZZ', effective: 'KE', localized: false });
   });

@@ -1,6 +1,6 @@
 # Parity matrix — 9 anglophone countries toward Kenya level
 
-_Generated 2026-06-11 by `npm run parity:matrix`. Goal: every country supported
+_Generated 2026-06-12 by `npm run parity:matrix`. Goal: every country supported
 to the same level as Kenya._
 
 ## Parity model
@@ -39,7 +39,7 @@ signed off.
 | NG | ✅ | 12 (draft) | 2 | 🟡 in-progress |
 | RW | ✅ | 12 (draft) | 2 | 🟡 in-progress |
 | TZ | ✅ | 12 (draft) | 2 | 🟡 in-progress |
-| UG | ✅ | 12 (draft) | 2 | 🟡 in-progress |
+| UG | ✅ | 12 (draft) | 3 | 🟡 in-progress |
 | ZA | ✅ | 12 (draft) | 2 | 🟡 in-progress |
 | ZM | ✅ | 12 (draft) | 2 | 🟡 in-progress |
 
