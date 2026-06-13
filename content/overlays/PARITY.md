@@ -34,14 +34,14 @@ signed off.
 | Country | Locale profile | Baseline domains inherited | National overlays | Sign-off |
 |---|---|---|---|---|
 | ET | ✅ | 12 (draft) | 3 | 🟡 in-progress |
-| GH | ✅ | 12 (draft) | 2 | 🟡 in-progress |
-| MW | ✅ | 12 (draft) | 2 | 🟡 in-progress |
-| NG | ✅ | 12 (draft) | 2 | 🟡 in-progress |
+| GH | ✅ | 12 (draft) | 3 | 🟡 in-progress |
+| MW | ✅ | 12 (draft) | 3 | 🟡 in-progress |
+| NG | ✅ | 12 (draft) | 3 | 🟡 in-progress |
 | RW | ✅ | 12 (draft) | 3 | 🟡 in-progress |
 | TZ | ✅ | 12 (draft) | 3 | 🟡 in-progress |
 | UG | ✅ | 12 (draft) | 3 | 🟡 in-progress |
-| ZA | ✅ | 12 (draft) | 2 | 🟡 in-progress |
-| ZM | ✅ | 12 (draft) | 2 | 🟡 in-progress |
+| ZA | ✅ | 12 (draft) | 3 | 🟡 in-progress |
+| ZM | ✅ | 12 (draft) | 3 | 🟡 in-progress |
 
 ## Kenya parity target (signed-bundle domains)
 

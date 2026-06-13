@@ -1,6 +1,6 @@
 # Zambia (ZM) — content authoring worklist
 
-_Generated 2026-06-11 by scripts/ingest-country-content.ts. Licence-gated:
+_Generated 2026-06-13 by scripts/ingest-country-content.ts. Licence-gated:
 nothing below is reproduced; cite-only sources require ORIGINAL authoring._
 
 ## Status

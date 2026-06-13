@@ -1,0 +1,428 @@
+[
+  {
+    "slug": "malaria-uncomplicated-adult",
+    "title": "Uncomplicated malaria (adult) — Zambia",
+    "icd10": [
+      "B54",
+      "B50",
+      "B51"
+    ],
+    "domains": [
+      "infectious-disease",
+      "tropical",
+      "national-first-line"
+    ],
+    "jurisdiction": "ZM",
+    "population": {
+      "minAgeYears": 12,
+      "sex": "any",
+      "pregnancyApplicable": false
+    },
+    "presentation": [
+      "Fever or history of fever, chills, headache, myalgia.",
+      "Residence in / travel to a malaria-endemic area."
+    ],
+    "redFlags": [
+      "Impaired consciousness, convulsions, prostration.",
+      "Respiratory distress, jaundice, dark urine, severe anaemia, shock.",
+      "Inability to tolerate orals or repeated vomiting."
+    ],
+    "diagnostics": [
+      {
+        "test": "Malaria RDT or microscopy",
+        "rationale": "Confirm parasitologically before treatment — do not treat on clinical suspicion alone."
+      }
+    ],
+    "management": [
+      {
+        "step": "Confirm before treating",
+        "detail": "Treat only after a positive RDT or microscopy."
+      },
+      {
+        "step": "National first-line: artemether-lumefantrine (AL)",
+        "detail": "AL is the first-line ACT for uncomplicated falciparum malaria per the Zambia Standard Treatment Guidelines, Ministry of Health. Dosing is weight-banded — use the national weight-based dosing chart; do not estimate. Take with fatty food."
+      },
+      {
+        "step": "Counsel + follow up",
+        "detail": "Return immediately if fever persists or any red flag appears."
+      }
+    ],
+    "references": [
+      {
+        "label": "Zambia Standard Treatment Guidelines, Ministry of Health",
+        "url": "https://www.moh.gov.zm/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      },
+      {
+        "label": "WHO Guidelines for malaria",
+        "url": "https://www.who.int/publications/i/item/guidelines-for-malaria",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "cc-by-nc-sa",
+        "year": 2023,
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "malaria-severe",
+    "title": "Severe malaria — Zambia",
+    "icd10": [
+      "B50.0",
+      "B50.8"
+    ],
+    "domains": [
+      "infectious-disease",
+      "tropical",
+      "emergency",
+      "national-first-line"
+    ],
+    "jurisdiction": "ZM",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Confirmed/suspected malaria PLUS any danger sign (coma, convulsions, respiratory distress, shock, severe anaemia, jaundice, hypoglycaemia, inability to tolerate orals)."
+    ],
+    "redFlags": [
+      "Any feature of severe malaria is itself an emergency — treat and refer."
+    ],
+    "diagnostics": [
+      {
+        "test": "RDT/microscopy + blood glucose",
+        "rationale": "Confirm parasitaemia; exclude/treat hypoglycaemia."
+      }
+    ],
+    "management": [
+      {
+        "step": "National first-line: parenteral artesunate",
+        "detail": "IV/IM artesunate is the treatment of choice for severe malaria. Dose is weight-based — use the national chart; do not estimate."
+      },
+      {
+        "step": "Pre-referral (children, if referral delayed)",
+        "detail": "Give pre-referral rectal artesunate where injectable treatment/transport is delayed."
+      },
+      {
+        "step": "Complete with an ACT",
+        "detail": "After ≥24h parenteral therapy and able to tolerate orals, complete a full oral ACT course."
+      },
+      {
+        "step": "Manage complications + refer",
+        "detail": "Treat hypoglycaemia, seizures, severe anaemia; refer urgently."
+      }
+    ],
+    "references": [
+      {
+        "label": "Zambia Standard Treatment Guidelines, Ministry of Health",
+        "url": "https://www.moh.gov.zm/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      },
+      {
+        "label": "WHO Guidelines for malaria",
+        "url": "https://www.who.int/publications/i/item/guidelines-for-malaria",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "cc-by-nc-sa",
+        "year": 2023,
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "pneumonia-childhood",
+    "title": "Childhood pneumonia (under-5) — Zambia",
+    "icd10": [
+      "J18",
+      "J15"
+    ],
+    "domains": [
+      "respiratory",
+      "child-health",
+      "imci",
+      "national-first-line"
+    ],
+    "jurisdiction": "ZM",
+    "population": {
+      "maxAgeYears": 5,
+      "sex": "any"
+    },
+    "presentation": [
+      "Cough or difficult breathing with fast breathing for age (IMCI)."
+    ],
+    "redFlags": [
+      "General danger signs: unable to drink/breastfeed, vomiting everything, convulsions, lethargic/unconscious.",
+      "Chest indrawing, stridor in a calm child, central cyanosis — severe pneumonia, refer."
+    ],
+    "diagnostics": [
+      {
+        "test": "Respiratory rate + danger-sign assessment (IMCI); pulse oximetry if available",
+        "rationale": "Classify non-severe vs severe to decide oral vs referral."
+      }
+    ],
+    "management": [
+      {
+        "step": "Non-severe pneumonia: oral amoxicillin (first-line)",
+        "detail": "Per IMCI/national guidance, treat fast-breathing pneumonia with oral amoxicillin. Dose is weight/age-banded — use the national dosing chart; do not estimate."
+      },
+      {
+        "step": "Severe pneumonia: refer",
+        "detail": "Give a first dose of an appropriate antibiotic and oxygen if available, then refer urgently."
+      },
+      {
+        "step": "Supportive care + follow-up",
+        "detail": "Continue feeding/fluids; review in 3 days or sooner if worse."
+      }
+    ],
+    "references": [
+      {
+        "label": "Zambia Standard Treatment Guidelines, Ministry of Health",
+        "url": "https://www.moh.gov.zm/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      },
+      {
+        "label": "WHO Pocket book of hospital care for children, 2nd ed",
+        "url": "https://www.who.int/publications/i/item/978-92-4-154837-3",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "cc-by-nc-sa",
+        "year": 2013,
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "diarrhoea-acute-childhood",
+    "title": "Acute diarrhoea + dehydration (under-5) — Zambia",
+    "icd10": [
+      "A09",
+      "A00"
+    ],
+    "domains": [
+      "gastrointestinal",
+      "child-health",
+      "imci",
+      "national-first-line"
+    ],
+    "jurisdiction": "ZM",
+    "population": {
+      "maxAgeYears": 5,
+      "sex": "any"
+    },
+    "presentation": [
+      "Loose/watery stools; assess hydration status (IMCI)."
+    ],
+    "redFlags": [
+      "Severe dehydration (lethargy, sunken eyes, very slow skin pinch), blood in stool, persistent diarrhoea, severe malnutrition — refer/escalate."
+    ],
+    "diagnostics": [
+      {
+        "test": "IMCI hydration assessment",
+        "rationale": "Classify no/some/severe dehydration to select Plan A/B/C."
+      }
+    ],
+    "management": [
+      {
+        "step": "Rehydration (ORS) + zinc",
+        "detail": "Low-osmolarity ORS per IMCI plan (A/B/C) plus zinc for 10–14 days. Use the national age/weight-based amounts; do not estimate."
+      },
+      {
+        "step": "Continue feeding",
+        "detail": "Continue breastfeeding/feeding throughout."
+      },
+      {
+        "step": "Antibiotics only when indicated",
+        "detail": "Antibiotics only for dysentery (bloody stool) or cholera per national guidance — not for routine watery diarrhoea."
+      },
+      {
+        "step": "Severe dehydration: IV + refer",
+        "detail": "Plan C IV rehydration and refer if not improving."
+      }
+    ],
+    "references": [
+      {
+        "label": "Zambia Standard Treatment Guidelines, Ministry of Health",
+        "url": "https://www.moh.gov.zm/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      },
+      {
+        "label": "WHO Pocket book of hospital care for children, 2nd ed",
+        "url": "https://www.who.int/publications/i/item/978-92-4-154837-3",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "cc-by-nc-sa",
+        "year": 2013,
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "tuberculosis-pulmonary",
+    "title": "Pulmonary tuberculosis — Zambia",
+    "icd10": [
+      "A15",
+      "A16"
+    ],
+    "domains": [
+      "infectious-disease",
+      "respiratory",
+      "national-first-line"
+    ],
+    "jurisdiction": "ZM",
+    "population": {
+      "sex": "any"
+    },
+    "presentation": [
+      "Cough ≥2 weeks, fever, night sweats, weight loss; or any duration in a person living with HIV / close contact."
+    ],
+    "redFlags": [
+      "Haemoptysis, respiratory distress, suspected TB meningitis or miliary TB — escalate."
+    ],
+    "diagnostics": [
+      {
+        "test": "Rapid molecular test (Xpert MTB/RIF Ultra)",
+        "rationale": "WHO-recommended initial test, incl. rifampicin resistance."
+      },
+      {
+        "test": "HIV test",
+        "rationale": "Test all people with TB for HIV."
+      }
+    ],
+    "management": [
+      {
+        "step": "National first-line regimen: 2HRZE / 4HR",
+        "detail": "Drug-susceptible pulmonary TB: 2 months HRZE then 4 months HR, per the national TB programme. Use weight-band fixed-dose combinations from the national chart; do not estimate."
+      },
+      {
+        "step": "TB/HIV co-management",
+        "detail": "Start ART in all TB/HIV patients; give cotrimoxazole preventive therapy."
+      },
+      {
+        "step": "Adherence + DR-TB pathway",
+        "detail": "Support adherence; refer rifampicin-resistant/MDR-TB to the programme pathway."
+      }
+    ],
+    "references": [
+      {
+        "label": "Zambia Standard Treatment Guidelines, Ministry of Health",
+        "url": "https://www.moh.gov.zm/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      },
+      {
+        "label": "WHO consolidated guidelines on tuberculosis",
+        "url": "https://www.who.int/teams/global-tuberculosis-programme/tb-reports",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "cc-by-nc-sa",
+        "year": 2022,
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "hiv-art-first-line",
+    "title": "HIV — first-line ART — Zambia",
+    "icd10": [
+      "B20",
+      "Z21"
+    ],
+    "domains": [
+      "infectious-disease",
+      "hiv",
+      "national-first-line"
+    ],
+    "jurisdiction": "ZM",
+    "population": {
+      "sex": "any",
+      "pregnancyApplicable": true
+    },
+    "presentation": [
+      "Confirmed HIV (national testing algorithm). Assess for TB, cryptococcal disease and other OIs at diagnosis."
+    ],
+    "redFlags": [
+      "Advanced HIV disease with new headache/fever/neurology — assess for cryptococcal/TB meningitis and refer."
+    ],
+    "diagnostics": [
+      {
+        "test": "Confirmatory HIV testing + baseline CD4 + viral load",
+        "rationale": "Confirm diagnosis; assess advanced disease; establish monitoring baseline."
+      }
+    ],
+    "management": [
+      {
+        "step": "Test and treat",
+        "detail": "Offer ART to all people living with HIV regardless of CD4; rapid initiation once ready."
+      },
+      {
+        "step": "National first-line: TLD (TDF + 3TC + DTG)",
+        "detail": "Dolutegravir-based TLD is the preferred first-line regimen. Use the national fixed-dose formulation; paediatric regimens per national weight bands — do not estimate."
+      },
+      {
+        "step": "Prophylaxis + monitoring",
+        "detail": "Cotrimoxazole and TPT where indicated; viral load at 6 and 12 months then annually (target <1000 copies/mL)."
+      },
+      {
+        "step": "Prevention",
+        "detail": "PrEP for substantial risk; PEP within 72h; lifelong ART in pregnancy/breastfeeding (PMTCT)."
+      }
+    ],
+    "references": [
+      {
+        "label": "Zambia Standard Treatment Guidelines, Ministry of Health",
+        "url": "https://www.moh.gov.zm/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      },
+      {
+        "label": "WHO consolidated guidelines on HIV, 2021",
+        "url": "https://www.who.int/publications/i/item/9789240031593",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "cc-by-nc-sa",
+        "year": 2021,
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  }
+]
