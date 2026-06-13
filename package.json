@@ -39,7 +39,8 @@
     "openapi:generate": "ts-node --transpile-only scripts/generate-openapi.ts",
     "openapi:check": "ts-node --transpile-only scripts/generate-openapi.ts -- --check",
     "audit:stateless": "ts-node --transpile-only scripts/audit-stateless.ts",
-    "ci": "npm run typecheck && npm run lint -- --max-warnings=0 && npm run audit:stateless && npm run bundle:check-licence && node scripts/check-clinical-safety.js --strict && npm test && npm run test:e2e"
+    "ci": "npm run typecheck && npm run lint -- --max-warnings=0 && npm run audit:stateless && npm run bundle:check-licence && node scripts/check-clinical-safety.js --strict && npm test && npm run test:e2e",
+    "validate:medgemma": "ts-node --transpile-only scripts/validate-with-medgemma.ts"
   },
   "dependencies": {
     "@fastify/compress": "^8.3.1",
