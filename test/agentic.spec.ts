@@ -112,6 +112,22 @@ describe('Agentic — card extractor', () => {
     expect(cards[1].extension?.['http://vedamd.io/Card/agentic-confidence']).toBe(1);
   });
 
+  it('caps confidence by cited evidence strength (grounded, not self-reported)', () => {
+    const text = JSON.stringify({
+      cards: [
+        // model says 0.95 but the only source is C-tier → capped to 0.7
+        { summary: 'weakly-sourced', indicator: 'warning', confidence: 0.95, citations: [{ kind: 'drug', id: 'x', label: 'X' }] },
+        // model says 0.95 and an A-tier source backs it → stays high
+        { summary: 'well-sourced', indicator: 'warning', confidence: 0.95, citations: [{ kind: 'rule', id: 'y', label: 'Y' }] },
+      ],
+    });
+    const resolve = (_kind: string, id: string) => (id === 'y' ? ('A' as const) : ('C' as const));
+    const { cards } = extractCards(text, now, 0, resolve);
+    const byId = (s: string) => cards.find((c) => c.summary === s)!;
+    expect(byId('weakly-sourced').extension?.['http://vedamd.io/Card/agentic-confidence']).toBeCloseTo(0.7);
+    expect(byId('well-sourced').extension?.['http://vedamd.io/Card/agentic-confidence']).toBeCloseTo(0.95);
+  });
+
   it('drops cards below the confidence floor', () => {
     const text = JSON.stringify({
       cards: [
