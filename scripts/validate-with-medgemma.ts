@@ -1,17 +1,19 @@
 #!/usr/bin/env ts-node
 /**
- * Validate authored clinical content against MedGemma (automated second opinion).
+ * Validate authored clinical content with a medical LLM reviewer (second opinion).
  *
- *   npm run validate:medgemma -- --dry-run        # build prompts, no network
- *   npm run validate:medgemma -- --country UG     # review Uganda overlays
- *   npm run validate:medgemma -- --all            # all country overlays
+ *   npm run validate:medgemma -- --dry-run         # build prompts, no network
+ *   npm run validate:claude                        # review all overlays with Claude
+ *   npm run validate:medgemma -- --country UG      # review one country
  *
- * Sends each record to the configured MedGemma endpoint (same env as the
- * OpenRouter provider: OPENROUTER_API_KEY + AGENTIC_OPENROUTER_MODEL +
- * AGENTIC_OPENROUTER_BASE_URL) and asks it to flag medical inaccuracies,
- * especially drug choice / dosing. Writes content/validation/medgemma-review.{json,md}.
+ * Reviewer backend (auto-selected, or force with --reviewer claude|medgemma):
+ *   - Claude:   set ANTHROPIC_API_KEY (+ ANTHROPIC_REVIEW_MODEL, default Opus).
+ *   - MedGemma: set OPENROUTER_API_KEY + AGENTIC_OPENROUTER_BASE_URL/MODEL
+ *               (a self-hosted, OpenAI-compatible MedGemma endpoint).
+ * Asks the model to flag medical inaccuracies (esp. drug choice / dosing) and
+ * writes content/validation/medgemma-review.{json,md}.
  *
- * IMPORTANT: this is a SCREEN, not an oracle — MedGemma is itself an LLM. A
+ * IMPORTANT: this is a SCREEN, not an oracle — the reviewer is itself an LLM. A
  * flag means "a human should look", an "ok" means "no concern raised", neither
  * is approval. Records are cross-checked for citations alongside the verdict.
  */
@@ -70,12 +72,41 @@ function loadOverlayRecords(country?: string): Array<ReviewableRecord & { file: 
   return out;
 }
 
-async function review(rec: ReviewableRecord, env: { key: string; model: string; baseUrl: string }): Promise<ReviewResult> {
-  const res = await fetch(`${env.baseUrl}/chat/completions`, {
+interface ReviewerCfg {
+  backend: 'openai' | 'anthropic';
+  key: string;
+  model: string;
+  baseUrl: string;
+}
+
+/** Dispatch to the configured reviewer model (MedGemma via OpenAI-compatible, or Claude). */
+async function reviewOne(rec: ReviewableRecord, cfg: ReviewerCfg): Promise<ReviewResult> {
+  if (cfg.backend === 'anthropic') {
+    const res = await fetch(`${cfg.baseUrl}/v1/messages`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-api-key': cfg.key,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: cfg.model,
+        max_tokens: 600,
+        temperature: 0,
+        system: MEDGEMMA_REVIEW_SYSTEM,
+        messages: [{ role: 'user', content: buildReviewPrompt(rec) }],
+      }),
+    });
+    if (!res.ok) throw new Error(`Anthropic review HTTP ${res.status}`);
+    const json = (await res.json()) as { content?: Array<{ text?: string }> };
+    return parseReviewVerdict(json.content?.[0]?.text ?? '');
+  }
+  // OpenAI-compatible (MedGemma via vLLM / OpenRouter / etc.)
+  const res = await fetch(`${cfg.baseUrl}/chat/completions`, {
     method: 'POST',
-    headers: { 'content-type': 'application/json', authorization: `Bearer ${env.key}` },
+    headers: { 'content-type': 'application/json', authorization: `Bearer ${cfg.key}` },
     body: JSON.stringify({
-      model: env.model,
+      model: cfg.model,
       temperature: 0,
       max_tokens: 600,
       messages: [
@@ -87,6 +118,32 @@ async function review(rec: ReviewableRecord, env: { key: string; model: string; 
   if (!res.ok) throw new Error(`Review endpoint HTTP ${res.status}`);
   const json = (await res.json()) as { choices?: Array<{ message?: { content?: string } }> };
   return parseReviewVerdict(json.choices?.[0]?.message?.content ?? '');
+}
+
+/** Resolve which reviewer to use from flags + env. Returns null when none configured. */
+function resolveReviewer(args: string[]): ReviewerCfg | null {
+  const ri = args.indexOf('--reviewer');
+  const pref = ri >= 0 ? args[ri + 1] : '';
+  const anthropicKey = process.env.ANTHROPIC_API_KEY ?? '';
+  const openaiKey = process.env.OPENROUTER_API_KEY ?? '';
+  const wantAnthropic = pref === 'anthropic' || pref === 'claude' || (!pref && !openaiKey && anthropicKey);
+  if (wantAnthropic && anthropicKey) {
+    return {
+      backend: 'anthropic',
+      key: anthropicKey,
+      model: process.env.ANTHROPIC_REVIEW_MODEL ?? 'claude-opus-4-8',
+      baseUrl: process.env.ANTHROPIC_BASE_URL ?? 'https://api.anthropic.com',
+    };
+  }
+  if (openaiKey) {
+    return {
+      backend: 'openai',
+      key: openaiKey,
+      model: process.env.AGENTIC_OPENROUTER_MODEL ?? 'google/medgemma-27b-text-it',
+      baseUrl: process.env.AGENTIC_OPENROUTER_BASE_URL ?? 'https://openrouter.ai/api/v1',
+    };
+  }
+  return null;
 }
 
 async function run() {
@@ -108,21 +165,24 @@ async function run() {
     return;
   }
 
-  const key = process.env.OPENROUTER_API_KEY ?? '';
-  const model = process.env.AGENTIC_OPENROUTER_MODEL ?? 'google/medgemma-27b-text-it';
-  const baseUrl = process.env.AGENTIC_OPENROUTER_BASE_URL ?? 'https://openrouter.ai/api/v1';
-  if (!key) {
-    console.error(
-      'No endpoint configured. Set OPENROUTER_API_KEY (+ AGENTIC_OPENROUTER_BASE_URL / AGENTIC_OPENROUTER_MODEL\n' +
-        'pointing at a reachable MedGemma endpoint), or use --dry-run.',
-    );
-    process.exit(1);
+  const cfg = resolveReviewer(args);
+  if (!cfg) {
+    const msg =
+      'No reviewer configured. Set ANTHROPIC_API_KEY (Claude reviewer) OR ' +
+      'OPENROUTER_API_KEY + AGENTIC_OPENROUTER_BASE_URL/MODEL (MedGemma endpoint), or use --dry-run.';
+    if (args.includes('--require-endpoint')) {
+      console.error(msg);
+      process.exit(1);
+    }
+    console.log(`Skipped — ${msg}`);
+    return;
   }
+  console.log(`Reviewer: ${cfg.backend} (${cfg.model}).`);
 
   const results: Array<{ rec: ReviewableRecord & { file: string }; r: ReviewResult }> = [];
   for (const rec of records) {
     try {
-      const r = await review(rec, { key, model, baseUrl });
+      const r = await reviewOne(rec, cfg);
       results.push({ rec, r });
       process.stdout.write(r.verdict === 'ok' ? '.' : r.verdict === 'error' ? 'E' : '?');
     } catch (e) {
@@ -139,12 +199,12 @@ async function run() {
   mkdirSync(OUT_DIR, { recursive: true });
   writeFileSync(
     resolve(OUT_DIR, 'medgemma-review.json'),
-    `${JSON.stringify({ model, reviewedAt: new Date().toISOString(), total: results.length, flagged: flagged.length, results: results.map(({ rec, r }) => ({ file: rec.file, slug: rec.slug, jurisdiction: rec.jurisdiction, ...r, cited: (rec.references?.length ?? 0) > 0 })) }, null, 2)}\n`,
+    `${JSON.stringify({ model: cfg.model, reviewedAt: new Date().toISOString(), total: results.length, flagged: flagged.length, results: results.map(({ rec, r }) => ({ file: rec.file, slug: rec.slug, jurisdiction: rec.jurisdiction, ...r, cited: (rec.references?.length ?? 0) > 0 })) }, null, 2)}\n`,
   );
   const md = [
     `# MedGemma content review`,
     ``,
-    `Model: \`${model}\` · reviewed ${results.length} records · **${flagged.length} flagged** for human review.`,
+    `Model: \`${cfg.model}\` · reviewed ${results.length} records · **${flagged.length} flagged** for human review.`,
     `_Automated screen — a flag is "look here", not a fact; "ok" is not approval._`,
     ``,
     `| Verdict | Dosing | Record | Issues |`,
@@ -153,6 +213,13 @@ async function run() {
   ].join('\n');
   writeFileSync(resolve(OUT_DIR, 'medgemma-review.md'), `${md}\n`);
   console.log(`Reviewed ${results.length}; ${flagged.length} flagged → content/validation/medgemma-review.md`);
+
+  // CI gate: fail when MedGemma flags a likely medical ERROR (not mere concerns).
+  const errors = results.filter(({ r }) => r.verdict === 'error');
+  if (args.includes('--fail-on-error') && errors.length > 0) {
+    console.error(`\nFAILED (--fail-on-error): ${errors.length} record(s) flagged as likely error.`);
+    process.exit(1);
+  }
 }
 
 run();
