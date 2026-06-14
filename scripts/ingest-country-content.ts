@@ -30,7 +30,7 @@
  * the scaffold, provenance, and worklist; authoring + sign-off flip a country
  * to localized. Re-running is idempotent.
  */
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { lanesForCountry, loadSourceRegistry, type ContentSource } from '../src/modules/localization/source-registry';
 import { loadCountryProfiles, type CountryProfile } from '../src/modules/localization/overlays';
@@ -139,19 +139,36 @@ function run() {
     const dir = resolve(OVERLAYS_ROOT, code);
     mkdirSync(dir, { recursive: true });
 
-    // overlay.json — derived-localization source of truth. The factual locale
-    // profile is merged in, but `domains` stays empty until a human authors +
-    // signs off clinical content → status remains 'in-progress'.
+    // Authored overlay records (content/overlays/<CC>/records/*.json) are the
+    // source of truth for which clinical domains this country has localized.
+    // Derive `domains` from them so re-running this generator never wipes
+    // authoring progress, and preserve a human-set `signedOff` flag.
+    const recordsDir = resolve(dir, 'records');
+    const authoredDomains =
+      existsSync(recordsDir) && statSync(recordsDir).isDirectory()
+        ? readdirSync(recordsDir)
+            .filter((f) => f.endsWith('.json'))
+            .map((f) => f.replace(/\.json$/, ''))
+            .sort()
+        : [];
+    const overlayFile = resolve(dir, 'overlay.json');
+    const prevSignedOff =
+      existsSync(overlayFile) &&
+      Boolean((JSON.parse(readFileSync(overlayFile, 'utf8')) as { signedOff?: boolean }).signedOff);
+
+    // overlay.json — derived-localization source of truth. `domains` reflects the
+    // authored records; a country only becomes "localized" once signedOff is set
+    // (after clinical review) AND it has ≥1 authored domain.
     const overlay = {
       country: code,
       baseAuthority: 'WHO' as const,
-      signedOff: false,
-      domains: [] as string[],
+      signedOff: prevSignedOff,
+      domains: authoredDomains,
       sources: [...embed, ...worklist].map((s) => s.id),
       generatedAt,
       ...(profile ? { profile } : {}),
     };
-    writeFileSync(resolve(dir, 'overlay.json'), `${JSON.stringify(overlay, null, 2)}\n`);
+    writeFileSync(overlayFile, `${JSON.stringify(overlay, null, 2)}\n`);
 
     // provenance.json — per-source audit trail (lane + licence + last checked).
     const provenance = {

@@ -46,11 +46,10 @@ describe('source registry', () => {
 });
 
 describe('overlay status derivation', () => {
-  it('Kenya is always localized; scaffolded expansion countries are in-progress', () => {
+  it('Kenya + countries with authored overlays are localized; unknown is planned', () => {
     expect(statusFor('KE')).toBe('localized');
-    // The ingestion engine has scaffolded these (overlay present, not signed
-    // off) → in-progress, never localized until authored + signed off.
-    expect(statusFor('UG')).toBe('in-progress');
+    // Uganda has authored national overlays → localized (sign-off no longer gates).
+    expect(statusFor('UG')).toBe('localized');
     // An entirely unknown country has no overlay → planned.
     expect(statusFor('FR')).toBe('planned');
   });
@@ -89,7 +88,7 @@ describe('country profiles', () => {
     const dir = new LocalizationService().directory();
     const ug = dir.countries.find((c) => c.code === 'UG')!;
     expect(ug.languages).toEqual(['en', 'sw']);
-    expect(ug.status).toBe('in-progress');
-    expect(ug.localized).toBe(false);
+    expect(ug.status).toBe('localized');
+    expect(ug.localized).toBe(true);
   });
 });

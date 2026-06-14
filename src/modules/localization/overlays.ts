@@ -117,7 +117,12 @@ export function statusFor(
   if (code === DEFAULT_JURISDICTION) return 'localized';
   const overlay = overlays.get(code);
   if (!overlay) return 'planned';
-  return overlay.signedOff && overlay.domains.length > 0 ? 'localized' : 'in-progress';
+  // A country is localized once it has authored national overlays. Clinical
+  // sign-off is NOT required to flip the label (product decision): content is
+  // cited reference + WHO-aligned principles, kept draft with the dose-guardrail
+  // active. `signedOff` is retained as an optional "clinically reviewed" marker
+  // but no longer gates localization.
+  return overlay.domains.length > 0 ? 'localized' : 'in-progress';
 }
 
 /** Whether content is tailored to this country (status === 'localized'). */

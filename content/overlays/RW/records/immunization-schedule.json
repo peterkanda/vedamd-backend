@@ -1,0 +1,198 @@
+[
+  {
+    "slug": "bcg",
+    "vaccine": "BCG (Bacille Calmette-Guérin) vaccine",
+    "abbrev": "BCG",
+    "vaccineDrugSlug": null,
+    "targetDisease": ["Tuberculosis (severe paediatric forms)"],
+    "domains": ["vaccine-preventable", "child-health", "tb"],
+    "jurisdiction": "RW",
+    "doses": [{ "dose": "Single dose", "timing": "At birth", "route": "intradermal" }],
+    "population": { "notes": "Rwanda routine childhood schedule (RBC/EPI)." },
+    "catchUp": "Give at first contact if missed and child is well.",
+    "notes": "Rwanda national immunization schedule (Rwanda Biomedical Centre EPI). DRAFT — verify exact antigens/timing against the current national schedule before approval.",
+    "references": [
+      {
+        "label": "Rwanda national immunization (EPI) schedule, Ministry of Health / Rwanda Biomedical Centre",
+        "url": "https://www.moh.gov.rw/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "opv",
+    "vaccine": "Oral polio vaccine (+ IPV)",
+    "abbrev": "OPV/IPV",
+    "vaccineDrugSlug": null,
+    "targetDisease": ["Poliomyelitis"],
+    "domains": ["vaccine-preventable", "child-health"],
+    "jurisdiction": "RW",
+    "doses": [
+      { "dose": "OPV-0", "timing": "At birth", "route": "oral" },
+      { "dose": "OPV 1–3", "timing": "6, 10 and 14 weeks", "route": "oral" },
+      { "dose": "IPV", "timing": "14 weeks (with OPV-3)", "route": "intramuscular" }
+    ],
+    "population": { "notes": "Rwanda routine childhood schedule." },
+    "catchUp": null,
+    "notes": "DRAFT — confirm IPV dose count/timing against the current national schedule before approval.",
+    "references": [
+      {
+        "label": "Rwanda national immunization (EPI) schedule, Ministry of Health / Rwanda Biomedical Centre",
+        "url": "https://www.moh.gov.rw/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "pentavalent",
+    "vaccine": "Pentavalent (DPT-HepB-Hib) vaccine",
+    "abbrev": "Penta",
+    "vaccineDrugSlug": null,
+    "targetDisease": ["Diphtheria", "Pertussis", "Tetanus", "Hepatitis B", "Haemophilus influenzae type b"],
+    "domains": ["vaccine-preventable", "child-health"],
+    "jurisdiction": "RW",
+    "doses": [{ "dose": "Dose 1–3", "timing": "6, 10 and 14 weeks", "route": "intramuscular" }],
+    "population": { "notes": "Rwanda routine childhood schedule." },
+    "catchUp": null,
+    "notes": "DRAFT — verify against the current national schedule before approval.",
+    "references": [
+      {
+        "label": "Rwanda national immunization (EPI) schedule, Ministry of Health / Rwanda Biomedical Centre",
+        "url": "https://www.moh.gov.rw/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "pcv",
+    "vaccine": "Pneumococcal conjugate vaccine",
+    "abbrev": "PCV",
+    "vaccineDrugSlug": null,
+    "targetDisease": ["Streptococcus pneumoniae disease"],
+    "domains": ["vaccine-preventable", "child-health"],
+    "jurisdiction": "RW",
+    "doses": [{ "dose": "Dose 1–3", "timing": "6, 10 and 14 weeks", "route": "intramuscular" }],
+    "population": { "notes": "Rwanda routine childhood schedule." },
+    "catchUp": null,
+    "notes": "DRAFT — verify against the current national schedule before approval.",
+    "references": [
+      {
+        "label": "Rwanda national immunization (EPI) schedule, Ministry of Health / Rwanda Biomedical Centre",
+        "url": "https://www.moh.gov.rw/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "rotavirus",
+    "vaccine": "Rotavirus vaccine",
+    "abbrev": "Rota",
+    "vaccineDrugSlug": null,
+    "targetDisease": ["Rotavirus gastroenteritis"],
+    "domains": ["vaccine-preventable", "child-health"],
+    "jurisdiction": "RW",
+    "doses": [{ "dose": "Primary series", "timing": "per national schedule", "route": "oral" }],
+    "population": { "notes": "Rwanda routine childhood schedule." },
+    "catchUp": null,
+    "notes": "DRAFT — confirm number of doses/age limits against the current national schedule before approval.",
+    "references": [
+      {
+        "label": "Rwanda national immunization (EPI) schedule, Ministry of Health / Rwanda Biomedical Centre",
+        "url": "https://www.moh.gov.rw/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "measles-rubella",
+    "vaccine": "Measles-Rubella vaccine",
+    "abbrev": "MR",
+    "vaccineDrugSlug": null,
+    "targetDisease": ["Measles", "Rubella"],
+    "domains": ["vaccine-preventable", "child-health"],
+    "jurisdiction": "RW",
+    "doses": [
+      { "dose": "MR1", "timing": "9 months", "route": "subcutaneous" },
+      { "dose": "MR2", "timing": "15–18 months", "route": "subcutaneous" }
+    ],
+    "population": { "notes": "Rwanda routine childhood schedule." },
+    "catchUp": "Per national campaigns / catch-up guidance.",
+    "notes": "DRAFT — verify MR2 timing against the current national schedule before approval.",
+    "references": [
+      {
+        "label": "Rwanda national immunization (EPI) schedule, Ministry of Health / Rwanda Biomedical Centre",
+        "url": "https://www.moh.gov.rw/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  },
+  {
+    "slug": "hpv",
+    "vaccine": "Human papillomavirus vaccine",
+    "abbrev": "HPV",
+    "vaccineDrugSlug": null,
+    "targetDisease": ["HPV-related cervical cancer"],
+    "domains": ["vaccine-preventable", "adolescent-health", "cancer-prevention"],
+    "jurisdiction": "RW",
+    "doses": [{ "dose": "Per national schedule", "timing": "Adolescent girls (~12 years, school-based)", "route": "intramuscular" }],
+    "population": { "sex": "female", "notes": "Rwanda was an early national HPV-programme adopter (school-based, girls)." },
+    "catchUp": null,
+    "notes": "DRAFT — confirm target age and dose schedule against the current national HPV programme before approval.",
+    "references": [
+      {
+        "label": "Rwanda national immunization (EPI) schedule, Ministry of Health / Rwanda Biomedical Centre",
+        "url": "https://www.moh.gov.rw/",
+        "strength": "A",
+        "sourceType": "guideline",
+        "licence": "moh-restricted",
+        "accessedDate": "2026-06-11"
+      }
+    ],
+    "ruleVersion": "0.1.0-draft",
+    "reviewStatus": "draft",
+    "evidenceLevel": "A",
+    "verifyBeforeApproval": true
+  }
+]

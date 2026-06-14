@@ -66,8 +66,15 @@ export function extractCards(
       ? (rc.indicator as CdsIndicator)
       : 'info';
     const detail = typeof rc.detail === 'string' ? rc.detail.trim() : undefined;
-    const confidence = clampConfidence(rc.confidence);
     const citations = parseCitations(rc.citations, resolveStrength);
+    // Evidence-grounded confidence: the LLM's self-reported number is capped by
+    // what the cited sources actually support (source-strength tier), so the
+    // displayed score reflects EVIDENCE, not just the model's opinion. Taking
+    // the min is conservative — we never show more confidence than either the
+    // model OR its evidence justifies. When no strength signal is available
+    // (resolver not wired), evidence does not cap (defers to the model).
+    const selfReported = clampConfidence(rc.confidence);
+    const confidence = Math.min(selfReported, evidenceCeiling(citations));
     const suggestions = parseSuggestion(rc.suggestion);
 
     // Invalid card guards: must have a summary AND at least one citation.
@@ -160,6 +167,29 @@ function clampConfidence(raw: unknown): number {
   const n = typeof raw === 'number' ? raw : Number(raw);
   if (Number.isNaN(n)) return 0.5;
   return Math.max(0, Math.min(1, n));
+}
+
+/**
+ * Confidence ceiling implied by the strength of the cited evidence. A card can
+ * be no more trustworthy than its best supporting source: A-tier (international
+ * guideline / regulator / Cochrane / top journal) supports high confidence;
+ * D-tier (consumer/wiki) caps it low. Returns 1 (no cap) when NO citation has a
+ * resolved strength — we only down-weight when we actually have a signal, so
+ * environments without the strength resolver behave as before.
+ */
+const STRENGTH_CEILING: Record<'A' | 'B' | 'C' | 'D', number> = {
+  A: 0.95,
+  B: 0.85,
+  C: 0.7,
+  D: 0.5,
+};
+
+function evidenceCeiling(citations: AgenticCitation[]): number {
+  const tiers = citations
+    .map((c) => c.strength)
+    .filter((s): s is 'A' | 'B' | 'C' | 'D' => s === 'A' || s === 'B' || s === 'C' || s === 'D');
+  if (tiers.length === 0) return 1;
+  return Math.max(...tiers.map((t) => STRENGTH_CEILING[t]));
 }
 
 function parseCitations(
