@@ -33,15 +33,15 @@ signed off.
 
 | Country | Locale profile | Baseline domains inherited | National overlays | Sign-off |
 |---|---|---|---|---|
-| ET | ✅ | 12 (draft) | 4 | 🟡 in-progress |
-| GH | ✅ | 12 (draft) | 4 | 🟡 in-progress |
-| MW | ✅ | 12 (draft) | 4 | 🟡 in-progress |
-| NG | ✅ | 12 (draft) | 4 | 🟡 in-progress |
-| RW | ✅ | 12 (draft) | 4 | 🟡 in-progress |
-| TZ | ✅ | 12 (draft) | 4 | 🟡 in-progress |
-| UG | ✅ | 12 (draft) | 4 | 🟡 in-progress |
-| ZA | ✅ | 12 (draft) | 4 | 🟡 in-progress |
-| ZM | ✅ | 12 (draft) | 4 | 🟡 in-progress |
+| ET | ✅ | 12 (draft) | 5 | 🟡 in-progress |
+| GH | ✅ | 12 (draft) | 5 | 🟡 in-progress |
+| MW | ✅ | 12 (draft) | 5 | 🟡 in-progress |
+| NG | ✅ | 12 (draft) | 5 | 🟡 in-progress |
+| RW | ✅ | 12 (draft) | 5 | 🟡 in-progress |
+| TZ | ✅ | 12 (draft) | 5 | 🟡 in-progress |
+| UG | ✅ | 12 (draft) | 5 | 🟡 in-progress |
+| ZA | ✅ | 12 (draft) | 5 | 🟡 in-progress |
+| ZM | ✅ | 12 (draft) | 5 | 🟡 in-progress |
 
 ## Kenya parity target (signed-bundle domains)
 

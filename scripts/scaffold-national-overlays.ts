@@ -342,6 +342,68 @@ function essentialMedicines(c: CountryParam) {
   }));
 }
 
+/**
+ * Preventive-care reference overlay — national screening / antenatal / growth /
+ * family-planning recommendations at the PRINCIPLE level (no doses), WHO-aligned
+ * (which these countries adopt), cited to the national programme + WHO.
+ */
+function preventiveCare(c: CountryParam) {
+  const natl = moh(c, `${c.name} national preventive & reproductive health guidelines, Ministry of Health`);
+  const who = (label: string, url: string, year: number) => ({
+    label, url, strength: 'A' as const, sourceType: 'guideline' as const, licence: 'cc-by-nc-sa' as const, year, accessedDate: '2026-06-14',
+  });
+  const card = (slug: string, title: string, domains: string[], recommendations: string[], whoRef: object) => ({
+    slug, title: `${title} — ${c.name}`, domain: 'preventive-care', domains, jurisdiction: c.code,
+    recommendations,
+    notes: `${c.name} preventive-care reference. DRAFT — verify against the current national programme guidance before approval.`,
+    references: [natl, whoRef], ...META,
+  });
+  return [
+    card('antenatal-care', 'Antenatal care', ['maternal-newborn', 'preventive'], [
+      'A minimum of eight ANC contacts (WHO 2016 model).',
+      'Iron and folic acid supplementation throughout pregnancy.',
+      'Intermittent preventive treatment in pregnancy (IPTp-SP) in malaria-transmission areas.',
+      'Tetanus-diphtheria (Td) vaccination per schedule.',
+      'HIV and syphilis testing; PMTCT for HIV-positive women.',
+      'Blood pressure and proteinuria check each visit (pre-eclampsia screening).',
+    ], who('WHO recommendations on antenatal care for a positive pregnancy experience', 'https://www.who.int/publications/i/item/9789241549912', 2016)),
+    card('cervical-cancer-screening', 'Cervical cancer screening', ['cancer-prevention', 'women-health', 'preventive'], [
+      'Screen with HPV DNA testing where available (or VIA per national programme).',
+      'HPV vaccination of adolescent girls (see immunization overlay).',
+      'Screen women living with HIV earlier and more frequently.',
+      'Treat screen-positive lesions (thermal ablation / referral) per national pathway.',
+    ], who('WHO guideline for screening and treatment of cervical pre-cancer lesions', 'https://www.who.int/publications/i/item/9789240030824', 2021)),
+    card('hiv-testing-prevention', 'HIV testing & prevention', ['hiv', 'preventive'], [
+      'Provider-initiated HIV testing and counselling (PITC) at clinical contacts.',
+      'PrEP for people at substantial risk of HIV.',
+      'PEP started as soon as possible, within 72 hours of exposure.',
+      'Condom promotion and STI screening/treatment.',
+    ], who('WHO consolidated guidelines on HIV testing services', 'https://www.who.int/publications/i/item/9789240031593', 2021)),
+    card('tb-screening', 'TB screening', ['tb', 'preventive'], [
+      'Screen for TB symptoms (cough, fever, night sweats, weight loss) at every contact for people living with HIV and household contacts.',
+      'TB preventive treatment (TPT) for eligible contacts and PLHIV.',
+      'Refer presumptive TB for a rapid molecular test (see TB condition overlay).',
+    ], who('WHO consolidated guidelines on tuberculosis (screening)', 'https://www.who.int/teams/global-tuberculosis-programme/tb-reports', 2021)),
+    card('growth-monitoring', 'Child growth monitoring & nutrition', ['child-health', 'nutrition', 'preventive'], [
+      'Routine weight and length/height monitoring on the national growth chart.',
+      'MUAC and oedema check to screen for acute malnutrition; refer severe acute malnutrition.',
+      'Vitamin A supplementation and deworming per national schedule.',
+      'Promote exclusive breastfeeding to 6 months, then continued breastfeeding with complementary feeding.',
+    ], who('WHO child growth standards', 'https://www.who.int/tools/child-growth-standards', 2006)),
+    card('ncd-screening', 'NCD risk screening', ['ncd', 'preventive'], [
+      'Opportunistic blood-pressure measurement in adults (hypertension screening).',
+      'Blood glucose screening in at-risk adults (diabetes).',
+      'Total cardiovascular-risk assessment per WHO PEN/HEARTS.',
+      'Tobacco and harmful-alcohol screening with brief advice.',
+    ], who('WHO Package of Essential NCD interventions (PEN)', 'https://www.who.int/publications/i/item/9789240009226', 2020)),
+    card('family-planning', 'Family planning provision', ['reproductive-health', 'preventive'], [
+      'Offer the full method mix; select methods using the WHO Medical Eligibility Criteria (see FP-MEC baseline).',
+      'Counsel on effectiveness, dual protection (STI/HIV) and side effects; support informed choice.',
+      'Provide post-partum and post-abortion family planning.',
+    ], who('WHO Medical eligibility criteria for contraceptive use, 5th edition', 'https://www.who.int/publications/i/item/9789241549158', 2015)),
+  ];
+}
+
 const COUNTRY_PARAMS: Record<string, CountryParam> = {
   UG: {
     code: 'UG', name: 'Uganda', mohUrl: 'https://www.health.go.ug/',
@@ -451,6 +513,7 @@ function run() {
   const args = process.argv.slice(2);
   const conditionsOnly = args.includes('--conditions-only');
   const emlOnly = args.includes('--eml-only');
+  const preventiveOnly = args.includes('--preventive-only');
   const codes = args.map((a) => a.toUpperCase()).filter((a) => !a.startsWith('-'));
   const targets = codes.length ? codes : Object.keys(COUNTRY_PARAMS);
   for (const code of targets) {
@@ -462,7 +525,10 @@ function run() {
     const dir = resolve(OVERLAYS, code, 'records');
     mkdirSync(dir, { recursive: true });
     let wrote;
-    if (emlOnly) {
+    if (preventiveOnly) {
+      writeFileSync(resolve(dir, 'preventive-care.json'), `${JSON.stringify(preventiveCare(c), null, 2)}\n`);
+      wrote = 'preventive-care';
+    } else if (emlOnly) {
       writeFileSync(resolve(dir, 'essential-medicines.json'), `${JSON.stringify(essentialMedicines(c), null, 2)}\n`);
       wrote = 'essential-medicines';
     } else if (conditionsOnly) {
@@ -473,7 +539,8 @@ function run() {
       writeFileSync(resolve(dir, 'notifiable-diseases.json'), `${JSON.stringify(notifiable(c), null, 2)}\n`);
       writeFileSync(resolve(dir, 'conditions.json'), `${JSON.stringify(conditions(c), null, 2)}\n`);
       writeFileSync(resolve(dir, 'essential-medicines.json'), `${JSON.stringify(essentialMedicines(c), null, 2)}\n`);
-      wrote = 'immunization + notifiable + conditions + essential-medicines';
+      writeFileSync(resolve(dir, 'preventive-care.json'), `${JSON.stringify(preventiveCare(c), null, 2)}\n`);
+      wrote = 'immunization + notifiable + conditions + essential-medicines + preventive-care';
     }
     console.log(`✓ ${code} (${c.name}): ${wrote} overlay(s) scaffolded`);
   }
