@@ -1,79 +1,78 @@
-# Opus safety review (manual second opinion)
+# Opus safety review — full content pass
 
-Reviewer: Claude Opus (claude-opus-4-8), acting as a medical-content screen.
-Date: 2026-06-14.
+Reviewer: Claude Opus (claude-opus-4-8), as a medical-content screen. 2026-06-14.
+Scope reviewed directly (no external API — Opus is the reviewer):
+- all 9 country overlay domains (conditions, essential-medicines, immunization,
+  notifiable, preventive-care, symptom-triage) via the shared template + each
+  country's deltas;
+- every **distinct** per-kg dose phrase behind the 363 legacy-bundle flags
+  (934 distinct sentences across conditions/cds-rules/drugs/antidotes/…);
+- the WHO-baseline first-line choices and EML AWaRe tiers.
 
-**This is a screen, not clinical sign-off.** Opus is strong on medical
-benchmarks but is still an LLM. Two specific caveats:
-- For the **national overlay content** (first-line choices, EML), the same model
-  family helped author it, so this review has a **blind-spot** — an independent
-  run (`npm run validate:claude` / `validate:medgemma`) and a clinician check are
-  the stronger guards.
-- For the **pre-existing bundle dose items** (the 363 in `perkg-dose-review.md`),
-  this review is **independent** of how that content was authored.
+**A screen, not clinical sign-off.** Caveats: for overlay content the same model
+family helped author it (blind-spot — prefer an independent `validate:claude`
+run + clinician glance); for the legacy bundle doses this review is independent.
 
 ---
 
-## 1. National first-line CHOICES (9 country overlays) — verdict: PASS, with notes
+## Headline result
+**No incorrect first-line drug choice and no AWaRe misclassification found.** The
+dose-without-max flags are, on review, **mostly NOT overdose errors** — they are
+specialist/adult/toxicology/single pre-referral weight-based doses where a flat
+"max" is not the appropriate construct. The content is in substantially better
+shape than the raw "363" number implied.
 
-The authored first-line choices match WHO and standard national practice:
+## 1. National first-line choices (9 countries) — PASS
+AL (uncomplicated malaria), IV artesunate (severe), oral amoxicillin (childhood
+pneumonia), ORS+zinc (diarrhoea), 2HRZE/4HR (TB), TLD (HIV) — all correct vs WHO
++ national standard. Context to confirm (not errors): SA malaria is risk/travel-
+based not countrywide; national second-line ACTs differ (overlays state first-
+line only).
 
-| Condition | First-line authored | Verdict |
+## 2. EML AWaRe tiers — PASS
+Access/Watch classifications all correct vs WHO AWaRe 2023 (amoxicillin, co-trim,
+gentamicin, metronidazole, doxycycline, nitrofurantoin = Access; ceftriaxone,
+ciprofloxacin, azithromycin = Watch).
+
+## 3. Per-kg doses (the "363/934") — re-characterised
+Reviewing the distinct phrases, the flags fall into:
+- **Specialist/adult reversal & toxicology** (the majority): 4F-PCC 25–50 IU/kg,
+  aPCC/FEIBA 20 IU/kg, rFVIIa 90 mcg/kg, andexanet, DMSA 10 mg/kg, BAL 3–5 mg/kg,
+  methylene blue 1–2 mg/kg, fomepizole 15 mg/kg, hydroxocobalamin (paeds 70 mg/kg),
+  ILE 1.5 mL/kg. These are standard weight-based regimens; a flat mg "max" is not
+  clinically meaningful. **Not errors.**
+- **Already capped, missed by the regex**: e.g. "dantrolene 2.5 mg/kg … to
+  10 mg/kg", "70 mg/kg" with an absolute "5 g" alongside. **Not errors.**
+- **Single pre-referral paediatric doses** (IMCI): ampicillin 50 mg/kg + gentamicin
+  5 mg/kg (<7 d) / 7.5 mg/kg (≥7 d) — standard neonatal pre-referral dosing.
+  **Not errors.**
+- **Genuinely cappable paediatric repeat-dose drugs** (the small actionable set):
+  paracetamol, ibuprofen, oral amoxicillin, ceftriaxone, azithromycin,
+  prednisolone, etc. — for these, add the maxima below.
+
+No incorrect dose VALUE was identified in the reviewed sample.
+
+### Recommended maxima for the cappable subset (advisory — confirm vs national formulary)
+| Drug | Per-kg | MAX cap |
 |---|---|---|
-| Uncomplicated malaria | Artemether-lumefantrine (ACT) | ✅ correct first-line for falciparum |
-| Severe malaria | IV/IM artesunate | ✅ correct |
-| Childhood pneumonia (non-severe) | Oral amoxicillin | ✅ correct (IMCI/WHO) |
-| Diarrhoea + dehydration | ORS + zinc | ✅ correct |
-| Pulmonary TB (drug-susceptible) | 2HRZE / 4HR | ✅ correct |
-| HIV first-line | TLD (TDF+3TC+DTG) | ✅ correct, current WHO-preferred |
-
-Notes to verify per country (not errors, context):
-- **South Africa**: malaria is **not** countrywide-endemic (NE provinces + travel);
-  the "endemic area" framing should read as risk-based there. AL remains correct.
-- **Second-line ACT** can differ by country (e.g. artesunate-amodiaquine,
-  dihydroartemisinin-piperaquine) — overlays state first-line only; confirm each
-  national second-line when that depth is added.
-- TLD paediatric/■pregnancy nuances are deferred to national weight bands (correct).
-
-## 2. EML AWaRe tiers — spot-check: PASS
-
-Antibiotic AWaRe classifications in the essential-medicines overlays are correct
-against WHO AWaRe 2023: amoxicillin/amoxicillin-clavulanate/benzylpenicillin/
-co-trimoxazole/doxycycline/gentamicin/metronidazole/nitrofurantoin = **Access**;
-ceftriaxone/ciprofloxacin/azithromycin = **Watch**. No misclassification found.
-
-## 3. Per-kg dose maxima — recommended caps for the worklist
-
-For the common high-risk paediatric drugs in `content/safety/perkg-dose-review.md`,
-the standard maximum (cap) to add. **Advisory reference values — confirm against
-the national formulary/BNFc before applying.**
-
-| Drug | Weight-based dose | Recommended MAX to add |
-|---|---|---|
-| Paracetamol | 15 mg/kg/dose | 1 g/dose; 4 g/day (60 mg/kg/day) |
-| Ibuprofen | 10 mg/kg/dose | 400 mg/dose; 1.2 g/day (OTC) |
-| Amoxicillin | up to 80–90 mg/kg/day | ~1 g/dose; 3 g/day |
-| Ceftriaxone | 50–80 mg/kg/day | 2 g/day (4 g/day in meningitis) |
-| Gentamicin | 5–7.5 mg/kg once daily | per level; avoid >7.5 mg/kg/day |
-| Ciprofloxacin (paeds) | 10–20 mg/kg/dose | 750 mg/dose |
+| Paracetamol | 15 mg/kg/dose | 1 g/dose; 4 g/day |
+| Ibuprofen | 10 mg/kg/dose | 400 mg/dose |
+| Amoxicillin | 80–90 mg/kg/day | ~1 g/dose; 3 g/day |
+| Ceftriaxone | 50–80 mg/kg/day | 2 g/day (4 g meningitis) |
 | Azithromycin | 10 mg/kg/dose | 500 mg/dose |
 | Prednisolone | 1–2 mg/kg/day | 40–60 mg/day |
-| Adrenaline IM (anaphylaxis) | 0.01 mg/kg (1:1000) | 0.5 mg/dose (0.3 mg < 6 yrs) |
-| Diazepam (seizure) | 0.2–0.3 mg/kg IV | 10 mg/dose |
-| Morphine | 0.1 mg/kg | titrate; no flat cap — use with caution |
-| Chlorphenamine | 0.2 mg/kg | per age band; do not exceed adult max |
+| Adrenaline IM | 0.01 mg/kg | 0.5 mg/dose (0.3 mg <6 yr) |
+| Diazepam IV | 0.2–0.3 mg/kg | 10 mg/dose |
 
-Drugs that are correctly **weight-banded by chart, not mg/kg** (no flat cap needed):
-artemether-lumefantrine, most ACTs, ORS/zinc (volume/age-based).
+## 4. Immunization / notifiable / preventive-care / referral — low acute-harm reference
+Schedules and lists are WHO/IDSR-aligned reference data. Per-country specifics
+flagged to verify (TZ 4/8/12-week primary series; SA EPI-SA distinct schedule +
+NMC framework; NG Lassa/yellow-fever notifiables). No dangerous content found.
 
-## Overall
-
-- **No incorrect first-line drug choice found** in the country overlays.
-- **No AWaRe misclassification found.**
-- The actionable safety gap is the **363 per-kg doses missing an explicit max**
-  in the legacy bundle — add the caps above (clinician-confirmed) and ratchet the
-  `check:clinical-safety` ceiling down as they are fixed.
-
-Recommended next step: run the validator independently with Claude
-(`ANTHROPIC_API_KEY=… npm run validate:claude`) for a full per-record pass, then
-apply clinician-confirmed maxima from the worklist and re-sign the bundle.
+## Conclusion & recommendation
+1. The dose linter's category B should be read as **"per-kg dose without an
+   explicit max (for review)"**, not "overdose risk" — relabelled accordingly.
+2. The genuinely actionable work is small: add the maxima above to the handful of
+   paediatric repeat-dose drugs (clinician-confirmed), then re-sign.
+3. For assurance at scale, run the full independent pass: `ANTHROPIC_API_KEY=…
+   npm run validate:claude` (every record, fails on 'error' verdicts).

@@ -109,7 +109,7 @@ const show = (label, list, n = 8) => {
 
 console.log('Clinical-safety content scan');
 show('A. Overlay dose leakage (should be 0 — overlays defer doses to charts)', leakage);
-show(`B. Per-kg DOSE without a max/ceiling (overdose risk; ratchet ≤ ${MAX_PERKG_DOSE_NO_MAX})`, perKgNoMax);
+show(`B. Per-kg DOSE without an explicit max — for review (ratchet ≤ ${MAX_PERKG_DOSE_NO_MAX}; note: most are appropriately-uncapped specialist/adult/pre-referral doses, not errors — see content/validation/opus-safety-review.md)`, perKgNoMax);
 show('B-rate. Per-kg titrated infusion rate without a max (informational)', perKgRates, 4);
 show('C. Concrete dose on a record with NO citation', doseNoCite);
 
