@@ -267,7 +267,91 @@ function conditions(c: CountryParam) {
   ];
 }
 
+/**
+ * Essential-medicines (EML) reference overlay — a curated list of core
+ * primary-care medicines a country's Essential Medicines List carries. These
+ * countries adopt the WHO Model List with national adaptations, so the core is
+ * shared; per-country it's cited to the national EML + WHO Model EML. Reference
+ * only: drug + class + AWaRe tier (antibiotics) + WHO EML section. NO doses
+ * (deferred to weight-based charts + the guardrail).
+ */
+type Eml = [drug: string, drugClass: string, section: string, aware?: 'Access' | 'Watch' | 'Reserve'];
+const EML_CORE: Eml[] = [
+  ['Amoxicillin', 'Beta-lactam (penicillin)', 'Antibacterials', 'Access'],
+  ['Amoxicillin + clavulanic acid', 'Beta-lactam + beta-lactamase inhibitor', 'Antibacterials', 'Access'],
+  ['Benzylpenicillin', 'Beta-lactam (penicillin)', 'Antibacterials', 'Access'],
+  ['Cloxacillin', 'Beta-lactam (anti-staphylococcal penicillin)', 'Antibacterials', 'Access'],
+  ['Ceftriaxone', 'Third-generation cephalosporin', 'Antibacterials', 'Watch'],
+  ['Ciprofloxacin', 'Fluoroquinolone', 'Antibacterials', 'Watch'],
+  ['Azithromycin', 'Macrolide', 'Antibacterials', 'Watch'],
+  ['Metronidazole', 'Nitroimidazole', 'Antibacterials', 'Access'],
+  ['Sulfamethoxazole + trimethoprim (co-trimoxazole)', 'Folate-pathway inhibitor', 'Antibacterials', 'Access'],
+  ['Doxycycline', 'Tetracycline', 'Antibacterials', 'Access'],
+  ['Gentamicin', 'Aminoglycoside', 'Antibacterials', 'Access'],
+  ['Nitrofurantoin', 'Nitrofuran (urinary)', 'Antibacterials', 'Access'],
+  ['Artemether + lumefantrine', 'Artemisinin-based combination therapy', 'Antimalarials'],
+  ['Artesunate (injection)', 'Artemisinin derivative', 'Antimalarials'],
+  ['Sulfadoxine + pyrimethamine', 'Antifolate antimalarial (IPTp)', 'Antimalarials'],
+  ['Isoniazid + rifampicin + pyrazinamide + ethambutol (FDC)', 'First-line anti-TB fixed-dose combination', 'Antituberculosis'],
+  ['Tenofovir + lamivudine + dolutegravir (TLD)', 'First-line antiretroviral FDC', 'Antiretrovirals'],
+  ['Paracetamol', 'Non-opioid analgesic / antipyretic', 'Analgesics & palliative care'],
+  ['Ibuprofen', 'NSAID', 'Analgesics & palliative care'],
+  ['Acetylsalicylic acid (aspirin)', 'Antiplatelet / analgesic', 'Analgesics & palliative care'],
+  ['Morphine', 'Opioid analgesic (controlled)', 'Analgesics & palliative care'],
+  ['Amlodipine', 'Calcium-channel blocker', 'Cardiovascular'],
+  ['Hydrochlorothiazide', 'Thiazide diuretic', 'Cardiovascular'],
+  ['Enalapril', 'ACE inhibitor', 'Cardiovascular'],
+  ['Atenolol', 'Beta-blocker', 'Cardiovascular'],
+  ['Simvastatin', 'Statin', 'Cardiovascular'],
+  ['Metformin', 'Biguanide', 'Endocrine (diabetes)'],
+  ['Glibenclamide', 'Sulfonylurea', 'Endocrine (diabetes)'],
+  ['Insulin (soluble / regular)', 'Short-acting insulin', 'Endocrine (diabetes)'],
+  ['Insulin (intermediate / NPH)', 'Intermediate-acting insulin', 'Endocrine (diabetes)'],
+  ['Salbutamol (inhaler)', 'Short-acting beta-2 agonist', 'Respiratory'],
+  ['Beclometasone (inhaler)', 'Inhaled corticosteroid', 'Respiratory'],
+  ['Prednisolone', 'Oral corticosteroid', 'Respiratory'],
+  ['Oral rehydration salts (ORS)', 'Oral rehydration', 'Gastrointestinal'],
+  ['Zinc sulfate', 'Zinc supplement (diarrhoea)', 'Gastrointestinal'],
+  ['Omeprazole', 'Proton-pump inhibitor', 'Gastrointestinal'],
+  ['Oxytocin', 'Uterotonic', 'Maternal & emergency'],
+  ['Magnesium sulfate', 'Anticonvulsant (eclampsia)', 'Maternal & emergency'],
+  ['Adrenaline (epinephrine)', 'Sympathomimetic (anaphylaxis/arrest)', 'Maternal & emergency'],
+  ['Diazepam', 'Benzodiazepine (seizures)', 'Maternal & emergency'],
+  ['Ferrous salt + folic acid', 'Haematinic', 'Blood & nutrition'],
+  ['Vitamin A', 'Micronutrient', 'Blood & nutrition'],
+];
+
+function essentialMedicines(c: CountryParam) {
+  const natl = moh(c, `${c.name} Essential Medicines List, Ministry of Health`);
+  const whoEml = {
+    label: 'WHO Model List of Essential Medicines',
+    url: 'https://www.who.int/publications/i/item/WHO-MHP-HPS-EML-2023.02',
+    strength: 'A' as const, sourceType: 'guideline' as const, licence: 'cc-by-nc-sa' as const, year: 2023, accessedDate: '2026-06-14',
+  };
+  const slugify = (s: string) => s.toLowerCase().replace(/\([^)]*\)/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 48);
+  return EML_CORE.map(([drug, drugClass, section, aware]) => ({
+    slug: `eml-${slugify(drug)}`,
+    drug,
+    drugClass,
+    section,
+    ...(aware ? { awareTier: aware } : {}),
+    jurisdiction: c.code,
+    notes: `Listed on the ${c.name} Essential Medicines List (national adaptation of the WHO Model List). Reference only — no doses; use the national weight-based dosing chart. DRAFT — verify national listing/level-of-care before approval.`,
+    references: [natl, whoEml],
+    ...META,
+  }));
+}
+
 const COUNTRY_PARAMS: Record<string, CountryParam> = {
+  UG: {
+    code: 'UG', name: 'Uganda', mohUrl: 'https://www.health.go.ug/',
+    epiSource: 'Uganda National Expanded Programme on Immunisation (UNEPI) schedule, Ministry of Health',
+    survSource: 'Uganda Integrated Disease Surveillance and Response (IDSR) technical guidelines, Ministry of Health',
+    natlGuideline: 'Uganda Clinical Guidelines, Ministry of Health',
+    primarySeries: '6, 10 and 14 weeks',
+    measles: { slug: 'measles-rubella', vaccine: 'Measles-Rubella vaccine', abbrev: 'MR', mcv1: '9 months', mcv2: '18 months' },
+    hpvTiming: 'Adolescent girls (~10 years)',
+  },
   TZ: {
     code: 'TZ', name: 'Tanzania', mohUrl: 'https://www.moh.go.tz/',
     epiSource: 'Tanzania Immunization and Vaccine Development (IVD) national immunization schedule, Ministry of Health',
@@ -366,6 +450,7 @@ const OVERLAYS = resolve(process.cwd(), 'content/overlays');
 function run() {
   const args = process.argv.slice(2);
   const conditionsOnly = args.includes('--conditions-only');
+  const emlOnly = args.includes('--eml-only');
   const codes = args.map((a) => a.toUpperCase()).filter((a) => !a.startsWith('-'));
   const targets = codes.length ? codes : Object.keys(COUNTRY_PARAMS);
   for (const code of targets) {
@@ -376,14 +461,21 @@ function run() {
     }
     const dir = resolve(OVERLAYS, code, 'records');
     mkdirSync(dir, { recursive: true });
-    if (!conditionsOnly) {
+    let wrote;
+    if (emlOnly) {
+      writeFileSync(resolve(dir, 'essential-medicines.json'), `${JSON.stringify(essentialMedicines(c), null, 2)}\n`);
+      wrote = 'essential-medicines';
+    } else if (conditionsOnly) {
+      writeFileSync(resolve(dir, 'conditions.json'), `${JSON.stringify(conditions(c), null, 2)}\n`);
+      wrote = 'conditions';
+    } else {
       writeFileSync(resolve(dir, 'immunization-schedule.json'), `${JSON.stringify(immunization(c), null, 2)}\n`);
       writeFileSync(resolve(dir, 'notifiable-diseases.json'), `${JSON.stringify(notifiable(c), null, 2)}\n`);
+      writeFileSync(resolve(dir, 'conditions.json'), `${JSON.stringify(conditions(c), null, 2)}\n`);
+      writeFileSync(resolve(dir, 'essential-medicines.json'), `${JSON.stringify(essentialMedicines(c), null, 2)}\n`);
+      wrote = 'immunization + notifiable + conditions + essential-medicines';
     }
-    writeFileSync(resolve(dir, 'conditions.json'), `${JSON.stringify(conditions(c), null, 2)}\n`);
-    console.log(
-      `✓ ${code} (${c.name}): ${conditionsOnly ? 'conditions' : 'immunization + notifiable + conditions'} overlay(s) scaffolded`,
-    );
+    console.log(`✓ ${code} (${c.name}): ${wrote} overlay(s) scaffolded`);
   }
 }
 
