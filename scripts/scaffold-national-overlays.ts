@@ -404,6 +404,82 @@ function preventiveCare(c: CountryParam) {
   ];
 }
 
+/**
+ * Symptom-triage / referral reference overlay — the national health-system
+ * facility tiers plus emergency and maternal-newborn referral criteria
+ * (principle-level, no doses). Facility-tier structures are public facts;
+ * referral criteria are WHO-aligned (ETAT / IMCI / obstetric danger signs).
+ */
+const FACILITY_TIERS: Record<string, string[]> = {
+  UG: ['Village Health Team (VHT/community)', 'Health Centre II', 'Health Centre III', 'Health Centre IV', 'General / Regional Referral Hospital', 'National Referral Hospital'],
+  TZ: ['Community / dispensary', 'Health Centre', 'District Hospital', 'Regional Referral Hospital', 'Zonal / National Hospital'],
+  RW: ['Community health worker / Health Post', 'Health Centre', 'District Hospital', 'Provincial Hospital', 'Referral / National Hospital'],
+  ET: ['Health Post', 'Health Centre', 'Primary Hospital', 'General Hospital', 'Specialized (tertiary) Hospital'],
+  NG: ['Primary Health Centre (PHC)', 'General / Secondary Hospital', 'Tertiary (Teaching / Federal Medical Centre)'],
+  GH: ['CHPS compound (community)', 'Health Centre', 'District Hospital', 'Regional Hospital', 'Teaching (tertiary) Hospital'],
+  ZA: ['Clinic', 'Community Health Centre', 'District Hospital', 'Regional Hospital', 'Tertiary / Central Hospital'],
+  ZM: ['Health Post', 'Rural / Urban Health Centre', 'District Hospital', 'Provincial / General Hospital', 'Central (tertiary) Hospital'],
+  MW: ['Health Post', 'Health Centre', 'Community / District Hospital', 'Central (tertiary) Hospital'],
+};
+
+function referral(c: CountryParam) {
+  const natl = moh(c, `${c.name} health-sector referral guidelines, Ministry of Health`);
+  const whoEtat = {
+    label: 'WHO Pocket book of hospital care for children (ETAT / IMCI referral)',
+    url: 'https://www.who.int/publications/i/item/978-92-4-154837-3',
+    strength: 'A' as const, sourceType: 'guideline' as const, licence: 'cc-by-nc-sa' as const, year: 2013, accessedDate: '2026-06-14',
+  };
+  const tiers = FACILITY_TIERS[c.code] ?? ['Community', 'Primary care', 'District hospital', 'Referral hospital'];
+  return [
+    {
+      slug: 'health-system-tiers',
+      title: `Health-system referral tiers — ${c.name}`,
+      domain: 'symptom-triage',
+      domains: ['health-system', 'referral'],
+      jurisdiction: c.code,
+      tiers,
+      recommendations: [
+        `National facility tiers (lowest → highest): ${tiers.join(' → ')}.`,
+        'Refer upward when the presentation exceeds the current level’s capacity; stabilise first.',
+        'Communicate referral (call ahead / referral note) and arrange safe transport.',
+      ],
+      notes: `${c.name} health-system tiers. DRAFT — verify tier names/capabilities against current national policy before approval.`,
+      references: [natl],
+      ...META,
+    },
+    {
+      slug: 'emergency-referral-criteria',
+      title: `Emergency referral criteria — ${c.name}`,
+      domain: 'symptom-triage',
+      domains: ['emergency', 'referral', 'imci'],
+      jurisdiction: c.code,
+      recommendations: [
+        'Refer urgently for any ETAT emergency sign: obstructed/absent breathing, severe respiratory distress, central cyanosis, shock, coma, convulsions, severe dehydration.',
+        'Refer IMCI severe classifications (e.g. severe pneumonia, severe dehydration, very severe febrile disease, severe acute malnutrition with complications).',
+        'Give pre-referral treatment and stabilise (airway, oxygen, fluids, pre-referral antimalarial/antibiotic) before transport.',
+      ],
+      notes: `${c.name} emergency referral reference (WHO ETAT/IMCI-aligned). DRAFT — verify against national protocol before approval.`,
+      references: [natl, whoEtat],
+      ...META,
+    },
+    {
+      slug: 'maternal-newborn-referral',
+      title: `Maternal & newborn referral criteria — ${c.name}`,
+      domain: 'symptom-triage',
+      domains: ['maternal-newborn', 'emergency', 'referral'],
+      jurisdiction: c.code,
+      recommendations: [
+        'Refer obstetric danger signs: severe bleeding, severe headache/visual disturbance with high BP (pre-eclampsia/eclampsia), convulsions, prolonged/obstructed labour, high fever, reduced fetal movements.',
+        'Refer sick newborns: not feeding, convulsions, fast/difficult breathing, severe chest indrawing, hypothermia/fever, very low birth weight.',
+        'Give pre-referral care (e.g. magnesium sulfate for eclampsia, warmth/KMC for newborns) and refer urgently.',
+      ],
+      notes: `${c.name} maternal/newborn referral reference (WHO-aligned). DRAFT — verify against national protocol before approval.`,
+      references: [natl, whoEtat],
+      ...META,
+    },
+  ];
+}
+
 const COUNTRY_PARAMS: Record<string, CountryParam> = {
   UG: {
     code: 'UG', name: 'Uganda', mohUrl: 'https://www.health.go.ug/',
@@ -514,6 +590,7 @@ function run() {
   const conditionsOnly = args.includes('--conditions-only');
   const emlOnly = args.includes('--eml-only');
   const preventiveOnly = args.includes('--preventive-only');
+  const referralOnly = args.includes('--referral-only');
   const codes = args.map((a) => a.toUpperCase()).filter((a) => !a.startsWith('-'));
   const targets = codes.length ? codes : Object.keys(COUNTRY_PARAMS);
   for (const code of targets) {
@@ -525,7 +602,10 @@ function run() {
     const dir = resolve(OVERLAYS, code, 'records');
     mkdirSync(dir, { recursive: true });
     let wrote;
-    if (preventiveOnly) {
+    if (referralOnly) {
+      writeFileSync(resolve(dir, 'symptom-triage.json'), `${JSON.stringify(referral(c), null, 2)}\n`);
+      wrote = 'symptom-triage / referral';
+    } else if (preventiveOnly) {
       writeFileSync(resolve(dir, 'preventive-care.json'), `${JSON.stringify(preventiveCare(c), null, 2)}\n`);
       wrote = 'preventive-care';
     } else if (emlOnly) {
@@ -540,7 +620,8 @@ function run() {
       writeFileSync(resolve(dir, 'conditions.json'), `${JSON.stringify(conditions(c), null, 2)}\n`);
       writeFileSync(resolve(dir, 'essential-medicines.json'), `${JSON.stringify(essentialMedicines(c), null, 2)}\n`);
       writeFileSync(resolve(dir, 'preventive-care.json'), `${JSON.stringify(preventiveCare(c), null, 2)}\n`);
-      wrote = 'immunization + notifiable + conditions + essential-medicines + preventive-care';
+      writeFileSync(resolve(dir, 'symptom-triage.json'), `${JSON.stringify(referral(c), null, 2)}\n`);
+      wrote = 'immunization + notifiable + conditions + essential-medicines + preventive-care + symptom-triage';
     }
     console.log(`✓ ${code} (${c.name}): ${wrote} overlay(s) scaffolded`);
   }
