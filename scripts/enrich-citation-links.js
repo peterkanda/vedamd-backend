@@ -72,6 +72,13 @@ const RULES = [
   [/\bDPWG\b|Dutch Pharmacogenetics/i, 'https://www.pharmgkb.org/page/dpwg'],
   [/\bAAGBI\b|Association of Anaesthetists/i, 'https://anaesthetists.org/Home/Resources-publications/Guidelines'],
   [/Royal College of Surgeons|\bRCS\b/i, 'https://www.rcseng.ac.uk/'],
+  [/\bRCOG\b|Green-top/i, 'https://www.rcog.org.uk/guidance/'],
+  [/\bFSRH\b/i, 'https://www.fsrh.org/standards-and-guidance/'],
+  [/\bACOG\b/i, 'https://www.acog.org/clinical'],
+  [/AHA\/ACC|\bACC\b|American Heart Association/i, 'https://www.acc.org/guidelines'],
+  [/\bISTH\b/i, 'https://www.isth.org/page/Guidance'],
+  [/\bPHE\b|Public Health England/i, 'https://www.gov.uk/government/organisations/public-health-england'],
+  [/CF Foundation|Cystic Fibrosis Foundation/i, 'https://www.cff.org/medical-professionals/clinical-care-guidelines'],
   [/International Health Regulations/i, 'https://www.who.int/health-topics/international-health-regulations-ihr'],
   [/\bWHO\b|World Health Organization/i, 'https://www.who.int/publications'],
   // Journal-authority fallback (links to the correct journal, not the exact paper).
@@ -86,6 +93,9 @@ const RULES = [
 function targetFor(label) {
   if (!label) return null;
   const l = label.trim();
+  // 0. A URL embedded in the label text is the exact source — extract it.
+  const embedded = l.match(/https?:\/\/[^\s)\]]+/);
+  if (embedded) return embedded[0].replace(/[.,;]+$/, '');
   if (EXACT.has(l)) return EXACT.get(l);
   for (const [re, url] of RULES) if (re.test(l)) return url;
   return null; // leave ambiguous labels (e.g. lab reference intervals) untouched
