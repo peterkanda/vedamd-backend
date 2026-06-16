@@ -104,6 +104,19 @@ export class DrugsController {
     return this.drugs.checkInteractions(body.slugs);
   }
 
+  @Post('safety-review')
+  @RequireScope('drug-info:read')
+  @ApiOperation({
+    summary: 'Holistic medication safety review for a med list',
+    description:
+      'Body: { slugs: [...] }. One point-of-care panel: pairwise drug-drug interactions, ' +
+      'antimicrobial-stewardship flags (WHO AWaRe Watch/Reserve), duplicate-therapy ' +
+      '(same drug class), unresolved slugs, and a severity summary. Deterministic; no LLM.',
+  })
+  safetyReview(@Body() body: InteractionsRequestDto) {
+    return this.drugs.safetyReview(body.slugs);
+  }
+
   @Post(':slug/dosing')
   @RequireScope('drug-info:read')
   @ApiOperation({

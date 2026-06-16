@@ -92,6 +92,63 @@ export class DrugsService implements OnModuleInit {
     return { interactions: found, unknownSlugs: unknown };
   }
 
+  /**
+   * Holistic medication safety review for a med list — the point-of-care panel
+   * a world-class CDS (Medscape/UpToDate-style) gives: pairwise interactions
+   * PLUS antimicrobial-stewardship (AWaRe Watch/Reserve) flags and
+   * duplicate-therapy (same drug class) detection, in one call. Deterministic,
+   * derived from the signed drug records — no LLM.
+   */
+  safetyReview(slugs: string[]): {
+    interactions: DrugInteraction[];
+    stewardship: Array<{ slug: string; inn: string; awareCategory: AwareCategory }>;
+    duplicateTherapy: Array<{ drugClass: string; slugs: string[] }>;
+    unknownSlugs: string[];
+    summary: {
+      drugs: number;
+      interactions: number;
+      majorInteractions: number;
+      watchReserve: number;
+      duplicateClasses: number;
+    };
+  } {
+    const { interactions, unknownSlugs } = this.checkInteractions(slugs);
+    const unique = [...new Set(slugs.map((s) => s.trim().toLowerCase()).filter(Boolean))];
+    const resolved = unique.map((s) => this.bySlug.get(s)).filter((d): d is DrugRecord => !!d);
+
+    const stewardship = resolved
+      .filter((d) => d.awareCategory === 'Watch' || d.awareCategory === 'Reserve')
+      .map((d) => ({ slug: d.slug, inn: d.inn, awareCategory: d.awareCategory! }));
+
+    const byClass = new Map<string, DrugRecord[]>();
+    for (const d of resolved) {
+      if (!d.drugClass) continue;
+      const key = d.drugClass.toLowerCase();
+      const g = byClass.get(key);
+      if (g) g.push(d);
+      else byClass.set(key, [d]);
+    }
+    const duplicateTherapy = [...byClass.values()]
+      .filter((g) => g.length > 1)
+      .map((g) => ({ drugClass: g[0].drugClass, slugs: g.map((d) => d.slug) }));
+
+    return {
+      interactions,
+      stewardship,
+      duplicateTherapy,
+      unknownSlugs,
+      summary: {
+        drugs: unique.length,
+        interactions: interactions.length,
+        majorInteractions: interactions.filter(
+          (i) => i.severity === 'severe' || i.severity === 'major',
+        ).length,
+        watchReserve: stewardship.length,
+        duplicateClasses: duplicateTherapy.length,
+      },
+    };
+  }
+
   /** True when the slug appears in at least one interaction record. */
   private slugHasInteractions(slug: string): boolean {
     for (const key of this.interactionsByPair.keys()) {
