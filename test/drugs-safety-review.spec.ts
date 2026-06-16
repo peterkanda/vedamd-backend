@@ -8,7 +8,13 @@ import type { DrugInteraction, DrugRecord } from '../src/modules/drugs/drugs.typ
  * duplicate-therapy in one panel (the world-class point-of-care feature).
  */
 
-const drug = (slug: string, inn: string, drugClass: string, aware: DrugRecord['awareCategory']) =>
+const drug = (
+  slug: string,
+  inn: string,
+  drugClass: string,
+  aware: DrugRecord['awareCategory'],
+  pregnancyContraindicated = false,
+) =>
   ({
     slug,
     inn,
@@ -16,6 +22,10 @@ const drug = (slug: string, inn: string, drugClass: string, aware: DrugRecord['a
     awareCategory: aware,
     atc: [],
     tradeNames: [],
+    pregnancy: {
+      contraindicated: pregnancyContraindicated,
+      notes: pregnancyContraindicated ? 'Teratogenic — avoid in pregnancy.' : 'No specific risk.',
+    },
   }) as unknown as DrugRecord;
 
 const drugs: DrugRecord[] = [
@@ -23,6 +33,7 @@ const drugs: DrugRecord[] = [
   drug('flucloxacillin', 'Flucloxacillin', 'Penicillin', 'Access'),
   drug('ciprofloxacin', 'Ciprofloxacin', 'Fluoroquinolone', 'Watch'),
   drug('ceftriaxone', 'Ceftriaxone', 'Cephalosporin', 'Watch'),
+  drug('warfarin', 'Warfarin', 'Vitamin K antagonist', 'Not-classified', true),
 ];
 const interactions = [
   { slugA: 'ciprofloxacin', slugB: 'ceftriaxone', severity: 'major' },
@@ -44,12 +55,13 @@ describe('DrugsService.safetyReview', () => {
     svc = makeService();
   });
 
-  it('returns interactions, stewardship, duplicate-therapy and a summary', () => {
+  it('returns interactions, stewardship, duplicate-therapy, pregnancy flags and a summary', () => {
     const r = svc.safetyReview([
       'amoxicillin',
       'flucloxacillin',
       'ciprofloxacin',
       'ceftriaxone',
+      'warfarin',
       'bogusdrug',
     ]);
 
@@ -65,15 +77,20 @@ describe('DrugsService.safetyReview', () => {
     expect(r.duplicateTherapy[0].drugClass).toBe('Penicillin');
     expect(r.duplicateTherapy[0].slugs.sort()).toEqual(['amoxicillin', 'flucloxacillin']);
 
+    // pregnancy-contraindicated drug flagged
+    expect(r.pregnancyContraindications.map((p) => p.slug)).toEqual(['warfarin']);
+    expect(r.summary.pregnancyContraindicated).toBe(1);
+
     // unresolved slug surfaced, not silently dropped
     expect(r.unknownSlugs).toContain('bogusdrug');
-    expect(r.summary.drugs).toBe(5);
+    expect(r.summary.drugs).toBe(6);
   });
 
   it('clean list → no flags', () => {
     const r = svc.safetyReview(['amoxicillin', 'ciprofloxacin']);
     expect(r.duplicateTherapy).toHaveLength(0);
     expect(r.interactions).toHaveLength(0);
+    expect(r.pregnancyContraindications).toHaveLength(0);
     expect(r.stewardship.map((s) => s.slug)).toEqual(['ciprofloxacin']);
   });
 });

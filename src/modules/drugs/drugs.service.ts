@@ -103,6 +103,12 @@ export class DrugsService implements OnModuleInit {
     interactions: DrugInteraction[];
     stewardship: Array<{ slug: string; inn: string; awareCategory: AwareCategory }>;
     duplicateTherapy: Array<{ drugClass: string; slugs: string[] }>;
+    pregnancyContraindications: Array<{
+      slug: string;
+      inn: string;
+      category?: string;
+      notes: string;
+    }>;
     unknownSlugs: string[];
     summary: {
       drugs: number;
@@ -110,6 +116,7 @@ export class DrugsService implements OnModuleInit {
       majorInteractions: number;
       watchReserve: number;
       duplicateClasses: number;
+      pregnancyContraindicated: number;
     };
   } {
     const { interactions, unknownSlugs } = this.checkInteractions(slugs);
@@ -132,10 +139,23 @@ export class DrugsService implements OnModuleInit {
       .filter((g) => g.length > 1)
       .map((g) => ({ drugClass: g[0].drugClass, slugs: g.map((d) => d.slug) }));
 
+    // Pregnancy safety — surface drugs flagged broadly contraindicated in
+    // pregnancy. The structured `contraindicated` flag is authoritative;
+    // trimester-specific nuance stays in the narrative notes.
+    const pregnancyContraindications = resolved
+      .filter((d) => d.pregnancy?.contraindicated)
+      .map((d) => ({
+        slug: d.slug,
+        inn: d.inn,
+        category: d.pregnancy.category,
+        notes: d.pregnancy.notes,
+      }));
+
     return {
       interactions,
       stewardship,
       duplicateTherapy,
+      pregnancyContraindications,
       unknownSlugs,
       summary: {
         drugs: unique.length,
@@ -145,6 +165,7 @@ export class DrugsService implements OnModuleInit {
         ).length,
         watchReserve: stewardship.length,
         duplicateClasses: duplicateTherapy.length,
+        pregnancyContraindicated: pregnancyContraindications.length,
       },
     };
   }

@@ -111,7 +111,8 @@ export class DrugsController {
     description:
       'Body: { slugs: [...] }. One point-of-care panel: pairwise drug-drug interactions, ' +
       'antimicrobial-stewardship flags (WHO AWaRe Watch/Reserve), duplicate-therapy ' +
-      '(same drug class), unresolved slugs, and a severity summary. Deterministic; no LLM.',
+      '(same drug class), pregnancy-contraindicated drugs, unresolved slugs, and a ' +
+      'severity summary. Deterministic; no LLM.',
   })
   safetyReview(@Body() body: InteractionsRequestDto) {
     return this.drugs.safetyReview(body.slugs);
