@@ -1,5 +1,5 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
-import { calculateDose } from './drugs.dosing';
+import { calculateDose, matchRenal } from './drugs.dosing';
 import { KnowledgeService } from '../knowledge/knowledge.service';
 import type {
   AwareCategory,
@@ -99,7 +99,10 @@ export class DrugsService implements OnModuleInit {
    * duplicate-therapy (same drug class) detection, in one call. Deterministic,
    * derived from the signed drug records — no LLM.
    */
-  safetyReview(slugs: string[]): {
+  safetyReview(
+    slugs: string[],
+    crClMlMin?: number,
+  ): {
     interactions: DrugInteraction[];
     stewardship: Array<{ slug: string; inn: string; awareCategory: AwareCategory }>;
     duplicateTherapy: Array<{ drugClass: string; slugs: string[] }>;
@@ -109,6 +112,14 @@ export class DrugsService implements OnModuleInit {
       category?: string;
       notes: string;
     }>;
+    renalFlags: Array<{
+      slug: string;
+      inn: string;
+      crClMlMin: number;
+      prohibited: boolean;
+      adjustment: string;
+    }>;
+    hepaticGuidance: Array<{ slug: string; inn: string; guidance: string }>;
     unknownSlugs: string[];
     summary: {
       drugs: number;
@@ -117,6 +128,7 @@ export class DrugsService implements OnModuleInit {
       watchReserve: number;
       duplicateClasses: number;
       pregnancyContraindicated: number;
+      renalProhibited: number;
     };
   } {
     const { interactions, unknownSlugs } = this.checkInteractions(slugs);
@@ -151,11 +163,37 @@ export class DrugsService implements OnModuleInit {
         notes: d.pregnancy.notes,
       }));
 
+    // Renal flags — only when a CrCl is supplied. Reuses the same band-match
+    // the dosing calculator uses, so the two never disagree. A `prohibited`
+    // band is a hard contraindication at this renal function; a non-prohibited
+    // match is a dose-adjustment advisory.
+    const renalFlags =
+      crClMlMin === undefined
+        ? []
+        : resolved
+            .map((d) => ({ d, band: matchRenal(d.dosing?.renal, crClMlMin) }))
+            .filter((x): x is { d: DrugRecord; band: NonNullable<typeof x.band> } => !!x.band)
+            .map(({ d, band }) => ({
+              slug: d.slug,
+              inn: d.inn,
+              crClMlMin,
+              prohibited: !!band.prohibited,
+              adjustment: band.adjustment,
+            }));
+
+    // Hepatic guidance — no lab input to match against, so surface the
+    // record's hepatic note for any drug that carries one (informational).
+    const hepaticGuidance = resolved
+      .filter((d) => d.dosing?.hepatic)
+      .map((d) => ({ slug: d.slug, inn: d.inn, guidance: d.dosing.hepatic! }));
+
     return {
       interactions,
       stewardship,
       duplicateTherapy,
       pregnancyContraindications,
+      renalFlags,
+      hepaticGuidance,
       unknownSlugs,
       summary: {
         drugs: unique.length,
@@ -166,6 +204,7 @@ export class DrugsService implements OnModuleInit {
         watchReserve: stewardship.length,
         duplicateClasses: duplicateTherapy.length,
         pregnancyContraindicated: pregnancyContraindications.length,
+        renalProhibited: renalFlags.filter((r) => r.prohibited).length,
       },
     };
   }

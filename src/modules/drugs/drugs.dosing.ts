@@ -194,7 +194,7 @@ function adultResult(
   };
 }
 
-function matchRenal(
+export function matchRenal(
   bands: RenalAdjustment[] | undefined,
   crClMlMin: number | undefined,
 ): RenalAdjustment | null {

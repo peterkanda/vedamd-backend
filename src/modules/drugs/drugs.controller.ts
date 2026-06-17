@@ -23,6 +23,15 @@ class InteractionsRequestDto {
   slugs!: string[];
 }
 
+class SafetyReviewRequestDto extends InteractionsRequestDto {
+  /** Optional estimated creatinine clearance (mL/min) to drive renal flags. */
+  @IsOptional()
+  @IsNumber()
+  @Min(0)
+  @Max(200)
+  crClMlMin?: number;
+}
+
 class DosingRequestDto {
   @IsNumber()
   @Min(0.5)
@@ -109,13 +118,15 @@ export class DrugsController {
   @ApiOperation({
     summary: 'Holistic medication safety review for a med list',
     description:
-      'Body: { slugs: [...] }. One point-of-care panel: pairwise drug-drug interactions, ' +
-      'antimicrobial-stewardship flags (WHO AWaRe Watch/Reserve), duplicate-therapy ' +
-      '(same drug class), pregnancy-contraindicated drugs, unresolved slugs, and a ' +
-      'severity summary. Deterministic; no LLM.',
+      'Body: { slugs: [...], crClMlMin? }. One point-of-care panel: pairwise drug-drug ' +
+      'interactions, antimicrobial-stewardship flags (WHO AWaRe Watch/Reserve), ' +
+      'duplicate-therapy (same drug class), pregnancy-contraindicated drugs, and — when ' +
+      'crClMlMin is supplied — renal dose-adjustment / contraindication flags plus ' +
+      'hepatic guidance. Returns unresolved slugs and a severity summary. ' +
+      'Deterministic; no LLM.',
   })
-  safetyReview(@Body() body: InteractionsRequestDto) {
-    return this.drugs.safetyReview(body.slugs);
+  safetyReview(@Body() body: SafetyReviewRequestDto) {
+    return this.drugs.safetyReview(body.slugs, body.crClMlMin);
   }
 
   @Post(':slug/dosing')

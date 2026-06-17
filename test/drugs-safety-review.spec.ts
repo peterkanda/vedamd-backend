@@ -5,15 +5,27 @@ import type { DrugInteraction, DrugRecord } from '../src/modules/drugs/drugs.typ
 
 /**
  * Holistic medication safety review — interactions + AWaRe stewardship +
- * duplicate-therapy in one panel (the world-class point-of-care feature).
+ * duplicate-therapy + pregnancy + renal/hepatic in one panel (the
+ * world-class point-of-care feature).
  */
+
+type DrugOpts = {
+  pregnancyContraindicated?: boolean;
+  renal?: Array<{
+    crClMinMlMin?: number;
+    crClMaxMlMin?: number;
+    adjustment: string;
+    prohibited?: boolean;
+  }>;
+  hepatic?: string;
+};
 
 const drug = (
   slug: string,
   inn: string,
   drugClass: string,
   aware: DrugRecord['awareCategory'],
-  pregnancyContraindicated = false,
+  opts: DrugOpts = {},
 ) =>
   ({
     slug,
@@ -23,9 +35,12 @@ const drug = (
     atc: [],
     tradeNames: [],
     pregnancy: {
-      contraindicated: pregnancyContraindicated,
-      notes: pregnancyContraindicated ? 'Teratogenic — avoid in pregnancy.' : 'No specific risk.',
+      contraindicated: !!opts.pregnancyContraindicated,
+      notes: opts.pregnancyContraindicated
+        ? 'Teratogenic — avoid in pregnancy.'
+        : 'No specific risk.',
     },
+    dosing: { adult: [], renal: opts.renal, hepatic: opts.hepatic },
   }) as unknown as DrugRecord;
 
 const drugs: DrugRecord[] = [
@@ -33,7 +48,15 @@ const drugs: DrugRecord[] = [
   drug('flucloxacillin', 'Flucloxacillin', 'Penicillin', 'Access'),
   drug('ciprofloxacin', 'Ciprofloxacin', 'Fluoroquinolone', 'Watch'),
   drug('ceftriaxone', 'Ceftriaxone', 'Cephalosporin', 'Watch'),
-  drug('warfarin', 'Warfarin', 'Vitamin K antagonist', 'Not-classified', true),
+  drug('warfarin', 'Warfarin', 'Vitamin K antagonist', 'Not-classified', {
+    pregnancyContraindicated: true,
+  }),
+  drug('nitrofurantoin', 'Nitrofurantoin', 'Nitrofuran', 'Access', {
+    renal: [
+      { crClMaxMlMin: 45, adjustment: 'Contraindicated when CrCl < 45 mL/min.', prohibited: true },
+    ],
+    hepatic: 'Use with caution in hepatic impairment; discontinue if hepatotoxicity.',
+  }),
 ];
 const interactions = [
   { slugA: 'ciprofloxacin', slugB: 'ceftriaxone', severity: 'major' },
@@ -91,6 +114,26 @@ describe('DrugsService.safetyReview', () => {
     expect(r.duplicateTherapy).toHaveLength(0);
     expect(r.interactions).toHaveLength(0);
     expect(r.pregnancyContraindications).toHaveLength(0);
+    expect(r.renalFlags).toHaveLength(0);
     expect(r.stewardship.map((s) => s.slug)).toEqual(['ciprofloxacin']);
+  });
+
+  it('flags a renal contraindication only when a CrCl is supplied', () => {
+    // No CrCl → no renal flags, but hepatic guidance still surfaces.
+    const withoutCrCl = svc.safetyReview(['nitrofurantoin', 'amoxicillin']);
+    expect(withoutCrCl.renalFlags).toHaveLength(0);
+    expect(withoutCrCl.hepaticGuidance.map((h) => h.slug)).toEqual(['nitrofurantoin']);
+
+    // CrCl in the prohibited band → hard renal contraindication.
+    const lowCrCl = svc.safetyReview(['nitrofurantoin', 'amoxicillin'], 20);
+    expect(lowCrCl.renalFlags).toHaveLength(1);
+    expect(lowCrCl.renalFlags[0].slug).toBe('nitrofurantoin');
+    expect(lowCrCl.renalFlags[0].prohibited).toBe(true);
+    expect(lowCrCl.summary.renalProhibited).toBe(1);
+
+    // CrCl above the band → no renal flag.
+    const goodCrCl = svc.safetyReview(['nitrofurantoin', 'amoxicillin'], 90);
+    expect(goodCrCl.renalFlags).toHaveLength(0);
+    expect(goodCrCl.summary.renalProhibited).toBe(0);
   });
 });
