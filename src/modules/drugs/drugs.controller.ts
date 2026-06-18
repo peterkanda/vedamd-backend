@@ -30,6 +30,13 @@ class SafetyReviewRequestDto extends InteractionsRequestDto {
   @Min(0)
   @Max(200)
   crClMlMin?: number;
+
+  /** Optional patient weight (kg) to drive paediatric weight-based dosing. */
+  @IsOptional()
+  @IsNumber()
+  @Min(0.5)
+  @Max(300)
+  weightKg?: number;
 }
 
 class DosingRequestDto {
@@ -118,15 +125,16 @@ export class DrugsController {
   @ApiOperation({
     summary: 'Holistic medication safety review for a med list',
     description:
-      'Body: { slugs: [...], crClMlMin? }. One point-of-care panel: pairwise drug-drug ' +
-      'interactions, antimicrobial-stewardship flags (WHO AWaRe Watch/Reserve), ' +
-      'duplicate-therapy (same drug class), pregnancy-contraindicated drugs, and — when ' +
-      'crClMlMin is supplied — renal dose-adjustment / contraindication flags plus ' +
-      'hepatic guidance. Returns unresolved slugs and a severity summary. ' +
-      'Deterministic; no LLM.',
+      'Body: { slugs: [...], crClMlMin?, weightKg? }. One point-of-care panel: pairwise ' +
+      'drug-drug interactions, antimicrobial-stewardship flags (WHO AWaRe Watch/Reserve), ' +
+      'duplicate-therapy (same drug class), pregnancy-contraindicated drugs, hepatic ' +
+      'guidance, and — when crClMlMin is supplied — renal dose-adjustment / ' +
+      'contraindication flags, and — when a paediatric weightKg is supplied — ' +
+      'weight-based dosing with overdose-cap warnings. Returns unresolved slugs and a ' +
+      'severity summary. Deterministic; no LLM.',
   })
   safetyReview(@Body() body: SafetyReviewRequestDto) {
-    return this.drugs.safetyReview(body.slugs, body.crClMlMin);
+    return this.drugs.safetyReview(body.slugs, body.crClMlMin, body.weightKg);
   }
 
   @Post(':slug/dosing')

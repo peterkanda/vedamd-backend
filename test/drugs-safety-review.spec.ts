@@ -18,6 +18,14 @@ type DrugOpts = {
     prohibited?: boolean;
   }>;
   hepatic?: string;
+  paediatric?: {
+    mgPerKgPerDose: number;
+    maxMgPerKgPerDay?: number;
+    maxMgPerDose?: number;
+    minWeightKg?: number;
+    route: string;
+    frequency: string;
+  };
 };
 
 const drug = (
@@ -40,7 +48,12 @@ const drug = (
         ? 'Teratogenic — avoid in pregnancy.'
         : 'No specific risk.',
     },
-    dosing: { adult: [], renal: opts.renal, hepatic: opts.hepatic },
+    dosing: {
+      adult: [],
+      renal: opts.renal,
+      hepatic: opts.hepatic,
+      paediatric: opts.paediatric,
+    },
   }) as unknown as DrugRecord;
 
 const drugs: DrugRecord[] = [
@@ -56,6 +69,19 @@ const drugs: DrugRecord[] = [
       { crClMaxMlMin: 45, adjustment: 'Contraindicated when CrCl < 45 mL/min.', prohibited: true },
     ],
     hepatic: 'Use with caution in hepatic impairment; discontinue if hepatotoxicity.',
+  }),
+  drug('paracetamol', 'Paracetamol', 'Analgesic', 'Not-classified', {
+    paediatric: {
+      mgPerKgPerDose: 15,
+      maxMgPerKgPerDay: 60,
+      maxMgPerDose: 1000,
+      route: 'oral',
+      frequency: 'every 6 h',
+    },
+  }),
+  drug('gentamicin', 'Gentamicin', 'Aminoglycoside', 'Watch', {
+    // No maxMgPerDose → uncapped, flagged for senior review.
+    paediatric: { mgPerKgPerDose: 7, route: 'IV', frequency: 'once daily' },
   }),
 ];
 const interactions = [
@@ -135,5 +161,29 @@ describe('DrugsService.safetyReview', () => {
     const goodCrCl = svc.safetyReview(['nitrofurantoin', 'amoxicillin'], 90);
     expect(goodCrCl.renalFlags).toHaveLength(0);
     expect(goodCrCl.summary.renalProhibited).toBe(0);
+  });
+
+  it('computes paediatric weight-based dosing and flags uncapped drugs', () => {
+    // 20 kg child — both paracetamol (capped) and gentamicin (uncapped) dose.
+    const child = svc.safetyReview(['paracetamol', 'gentamicin'], undefined, 20);
+    const bySlug = new Map(child.paediatricDosing.map((p) => [p.slug, p]));
+
+    // paracetamol: 20 kg × 15 mg/kg = 300 mg; daily max 60 × 20 = 1200 mg; capped.
+    expect(bySlug.get('paracetamol')?.mgPerDose).toBe(300);
+    expect(bySlug.get('paracetamol')?.maxMgPerDay).toBe(1200);
+    expect(bySlug.get('paracetamol')?.uncapped).toBe(false);
+
+    // gentamicin: 20 kg × 7 mg/kg = 140 mg; no absolute ceiling → uncapped.
+    expect(bySlug.get('gentamicin')?.mgPerDose).toBe(140);
+    expect(bySlug.get('gentamicin')?.uncapped).toBe(true);
+    expect(child.summary.paediatricUncapped).toBe(1);
+  });
+
+  it('omits paediatric dosing without a weight or for adult weights', () => {
+    expect(svc.safetyReview(['paracetamol', 'gentamicin']).paediatricDosing).toHaveLength(0);
+    // 70 kg → adult path, no paediatric dosing.
+    expect(
+      svc.safetyReview(['paracetamol', 'gentamicin'], undefined, 70).paediatricDosing,
+    ).toHaveLength(0);
   });
 });

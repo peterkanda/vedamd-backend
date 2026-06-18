@@ -102,6 +102,7 @@ export class DrugsService implements OnModuleInit {
   safetyReview(
     slugs: string[],
     crClMlMin?: number,
+    weightKg?: number,
   ): {
     interactions: DrugInteraction[];
     stewardship: Array<{ slug: string; inn: string; awareCategory: AwareCategory }>;
@@ -120,6 +121,16 @@ export class DrugsService implements OnModuleInit {
       adjustment: string;
     }>;
     hepaticGuidance: Array<{ slug: string; inn: string; guidance: string }>;
+    paediatricDosing: Array<{
+      slug: string;
+      inn: string;
+      mgPerDose: number;
+      maxMgPerDay?: number;
+      route: string;
+      frequency: string;
+      uncapped: boolean;
+      belowMinWeight: boolean;
+    }>;
     unknownSlugs: string[];
     summary: {
       drugs: number;
@@ -129,6 +140,7 @@ export class DrugsService implements OnModuleInit {
       duplicateClasses: number;
       pregnancyContraindicated: number;
       renalProhibited: number;
+      paediatricUncapped: number;
     };
   } {
     const { interactions, unknownSlugs } = this.checkInteractions(slugs);
@@ -187,6 +199,35 @@ export class DrugsService implements OnModuleInit {
       .filter((d) => d.dosing?.hepatic)
       .map((d) => ({ slug: d.slug, inn: d.inn, guidance: d.dosing.hepatic! }));
 
+    // Paediatric weight-based dosing — only when a child weight is supplied
+    // (< PAEDIATRIC_MAX_WEIGHT_KG, mirroring the dosing calculator's adult
+    // threshold). Reuses calculateDose() so the per-kg maths and caps match
+    // the dose endpoint exactly. `uncapped` flags drugs with no absolute
+    // single-dose ceiling — an overdose risk at higher weights that warrants
+    // senior review; `belowMinWeight` flags doses below the validated range.
+    const paediatricDosing =
+      weightKg === undefined || weightKg <= 0 || weightKg >= PAEDIATRIC_MAX_WEIGHT_KG
+        ? []
+        : resolved
+            .filter((d) => d.dosing?.paediatric?.mgPerKgPerDose !== undefined)
+            .map((d) => {
+              const result = calculateDose(d, { weightKg });
+              const cd = result.calculatedDose;
+              if (!cd || result.protocol !== 'paediatric') return null;
+              const paed = d.dosing.paediatric!;
+              return {
+                slug: d.slug,
+                inn: d.inn,
+                mgPerDose: cd.mgPerDose,
+                maxMgPerDay: cd.maxMgPerDay,
+                route: cd.route,
+                frequency: cd.frequency,
+                uncapped: paed.maxMgPerDose === undefined,
+                belowMinWeight: paed.minWeightKg !== undefined && weightKg < paed.minWeightKg,
+              };
+            })
+            .filter((x): x is NonNullable<typeof x> => !!x);
+
     return {
       interactions,
       stewardship,
@@ -194,6 +235,7 @@ export class DrugsService implements OnModuleInit {
       pregnancyContraindications,
       renalFlags,
       hepaticGuidance,
+      paediatricDosing,
       unknownSlugs,
       summary: {
         drugs: unique.length,
@@ -205,6 +247,7 @@ export class DrugsService implements OnModuleInit {
         duplicateClasses: duplicateTherapy.length,
         pregnancyContraindicated: pregnancyContraindications.length,
         renalProhibited: renalFlags.filter((r) => r.prohibited).length,
+        paediatricUncapped: paediatricDosing.filter((p) => p.uncapped).length,
       },
     };
   }
@@ -218,6 +261,9 @@ export class DrugsService implements OnModuleInit {
     return false;
   }
 }
+
+/** Weight at/above which the dosing calculator treats a patient as an adult. */
+const PAEDIATRIC_MAX_WEIGHT_KG = 50;
 
 function pairKey(a: string, b: string): string {
   return [a.toLowerCase(), b.toLowerCase()].sort().join('::');
