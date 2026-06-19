@@ -1,7 +1,7 @@
 {
   "$schema": "./registry.schema.md",
   "description": "Machine-readable content-source & licence registry. Operationalises the Kenya/SSA CDS content-sourcing analysis: every upstream source carries a licence tier and an embeddable verdict that the ingestion engine and the licence-compliance CI gate enforce. `citationLicence` maps each source onto the shared CitationLicence enum (src/common/citation.ts) so citation hosts can be checked against it. NOTHING is embedded from a source whose embeddable verdict is not 'yes'.",
-  "updated": "2026-06-10",
+  "updated": "2026-06-19",
   "tiers": {
     "1": "Safe to embed in a commercial product with attribution (public-domain / permissive).",
     "2": "High value but licence-uncertain — verify per source/repo before embedding.",
@@ -17,10 +17,16 @@
       "format": "spec",
       "spdxOrName": "CC0-1.0",
       "citationLicence": "public-domain",
-      "countries": ["*"],
-      "domains": ["interoperability"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "interoperability"
+      ],
       "url": "https://hl7.org/fhir/",
-      "hosts": ["hl7.org"],
+      "hosts": [
+        "hl7.org"
+      ],
       "lastChecked": "2026-06-10"
     },
     {
@@ -32,10 +38,17 @@
       "format": "api",
       "spdxOrName": "US-Public-Domain",
       "citationLicence": "public-domain",
-      "countries": ["*"],
-      "domains": ["drugs", "drug-label"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "drugs",
+        "drug-label"
+      ],
       "url": "https://dailymed.nlm.nih.gov/dailymed/",
-      "hosts": ["dailymed.nlm.nih.gov"],
+      "hosts": [
+        "dailymed.nlm.nih.gov"
+      ],
       "lastChecked": "2026-06-10"
     },
     {
@@ -47,10 +60,20 @@
       "format": "api",
       "spdxOrName": "US-Public-Domain",
       "citationLicence": "public-domain",
-      "countries": ["*"],
-      "domains": ["drugs", "drug-label", "pharmacovigilance"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "drugs",
+        "drug-label",
+        "pharmacovigilance"
+      ],
       "url": "https://open.fda.gov/",
-      "hosts": ["open.fda.gov", "api.fda.gov", "accessdata.fda.gov"],
+      "hosts": [
+        "open.fda.gov",
+        "api.fda.gov",
+        "accessdata.fda.gov"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Public domain. Do not imply FDA endorsement."
     },
@@ -63,10 +86,18 @@
       "format": "api",
       "spdxOrName": "UMLS-RxNorm (no restriction)",
       "citationLicence": "public-domain",
-      "countries": ["*"],
-      "domains": ["drugs", "terminology"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "drugs",
+        "terminology"
+      ],
       "url": "https://www.nlm.nih.gov/research/umls/rxnorm/",
-      "hosts": ["rxnav.nlm.nih.gov", "nlm.nih.gov"],
+      "hosts": [
+        "rxnav.nlm.nih.gov",
+        "nlm.nih.gov"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Free via UMLS licence. Filter restricted UMLS source vocabularies (categories 1-4) before embedding."
     },
@@ -79,10 +110,17 @@
       "format": "bulk",
       "spdxOrName": "LOINC-License",
       "citationLicence": "cc-by",
-      "countries": ["*"],
-      "domains": ["terminology", "labs"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "terminology",
+        "labs"
+      ],
       "url": "https://loinc.org/",
-      "hosts": ["loinc.org"],
+      "hosts": [
+        "loinc.org"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Commercial use permitted with attribution; do not alter codes."
     },
@@ -95,10 +133,16 @@
       "format": "fhir-ig",
       "spdxOrName": "US-Public-Domain",
       "citationLicence": "public-domain",
-      "countries": ["*"],
-      "domains": ["cds-rules"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "cds-rules"
+      ],
       "url": "https://cds.ahrq.gov/cdsconnect",
-      "hosts": ["cds.ahrq.gov"],
+      "hosts": [
+        "cds.ahrq.gov"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Check per-artifact for embedded third-party content."
     },
@@ -111,10 +155,16 @@
       "format": "bulk",
       "spdxOrName": "US-Public-Domain",
       "citationLicence": "public-domain",
-      "countries": ["*"],
-      "domains": ["drug-interactions"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "drug-interactions"
+      ],
       "url": "https://www.healthit.gov/",
-      "hosts": ["healthit.gov"],
+      "hosts": [
+        "healthit.gov"
+      ],
       "lastChecked": "2026-06-10"
     },
     {
@@ -126,10 +176,17 @@
       "format": "bulk",
       "spdxOrName": "CC0-1.0",
       "citationLicence": "public-domain",
-      "countries": ["*"],
-      "domains": ["drugs", "terminology"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "drugs",
+        "terminology"
+      ],
       "url": "https://go.drugbank.com/releases/latest#open-data",
-      "hosts": ["go.drugbank.com"],
+      "hosts": [
+        "go.drugbank.com"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Open Data subset is CC0 (names/IDs/structures). Full database is CC BY-NC — see drugbank-full."
     },
@@ -142,10 +199,23 @@
       "format": "fhir-ig",
       "spdxOrName": "mixed (Apache-2.0 tooling / CC BY-NC-SA 3.0 IGO content)",
       "citationLicence": "cc-by-nc-sa",
-      "countries": ["*"],
-      "domains": ["anc", "immunization", "family-planning", "hiv", "tb", "sti", "cervical-cancer"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "anc",
+        "immunization",
+        "family-planning",
+        "hiv",
+        "tb",
+        "sti",
+        "cervical-cancer"
+      ],
       "url": "https://smart.who.int/",
-      "hosts": ["smart.who.int", "worldhealthorganization.github.io"],
+      "hosts": [
+        "smart.who.int",
+        "worldhealthorganization.github.io"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "HIGHEST-LEVERAGE verify task. Code (Apache-2.0) and clinical content (WHO terms) are licensed separately; open LICENSE/NOTICE per repo (smart-anc, smart-immunizations, smart-family-planning, smart-hiv, smart-tb, smart-base) before embedding. If content is CC BY-NC-SA, rebuild equivalent logic rather than copying."
     },
@@ -158,10 +228,17 @@
       "format": "api",
       "spdxOrName": "platform open-source; hosted content per-source",
       "citationLicence": "unknown",
-      "countries": ["*"],
-      "domains": ["terminology"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "terminology"
+      ],
       "url": "https://openconceptlab.org/",
-      "hosts": ["openconceptlab.org", "api.openconceptlab.org"],
+      "hosts": [
+        "openconceptlab.org",
+        "api.openconceptlab.org"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Hosting confers no licence; assess CIEL terms specifically. Mirrored SNOMED/LOINC/ICD retain source licences."
     },
@@ -174,10 +251,18 @@
       "format": "api",
       "spdxOrName": "CC BY-ND 3.0 IGO",
       "citationLicence": "cc-by-nc-nd",
-      "countries": ["*"],
-      "domains": ["terminology", "diagnosis"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "terminology",
+        "diagnosis"
+      ],
       "url": "https://icd.who.int/icdapi",
-      "hosts": ["icd.who.int", "id.who.int"],
+      "hosts": [
+        "icd.who.int",
+        "id.who.int"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Actually CC BY-ND (commercial OK, NO derivatives). Unmodified classification embeddable with attribution; distributing a modified classification is forbidden. citationLicence approximated to the nearest ND enum value."
     },
@@ -190,10 +275,23 @@
       "format": "pdf",
       "spdxOrName": "CC BY-NC-SA 3.0 IGO",
       "citationLicence": "cc-by-nc-sa",
-      "countries": ["*"],
-      "domains": ["essential-medicines", "imci", "mental-health", "amr", "family-planning"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "essential-medicines",
+        "imci",
+        "mental-health",
+        "amr",
+        "family-planning"
+      ],
       "url": "https://www.who.int/publications",
-      "hosts": ["who.int", "iris.who.int", "apps.who.int", "aware.essentialmeds.org"],
+      "hosts": [
+        "who.int",
+        "iris.who.int",
+        "apps.who.int",
+        "aware.essentialmeds.org"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "NC blocks commercial embedding; SA would force the licence onto derivatives. Reference/link, and rebuild equivalent logic from underlying clinical facts; never copy protected text/figures. Commercial reuse needs written WHO permission (permissions@who.int)."
     },
@@ -206,10 +304,18 @@
       "format": "html",
       "spdxOrName": "NICE UK Open Content Licence",
       "citationLicence": "open-gov",
-      "countries": ["*"],
-      "domains": ["guidelines"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "guidelines"
+      ],
       "url": "https://www.nice.org.uk/",
-      "hosts": ["nice.org.uk", "cks.nice.org.uk", "bnf.nice.org.uk"],
+      "hosts": [
+        "nice.org.uk",
+        "cks.nice.org.uk",
+        "bnf.nice.org.uk"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Non-commercial, UK-focused; commercial/international embedding needs a separate paid NICE licence."
     },
@@ -222,10 +328,17 @@
       "format": "html",
       "spdxOrName": "CC BY-NC-ND 4.0 (verify variant)",
       "citationLicence": "cc-by-nc-nd",
-      "countries": ["*"],
-      "domains": ["reference"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "reference"
+      ],
       "url": "https://www.ncbi.nlm.nih.gov/books/NBK430685/",
-      "hosts": ["ncbi.nlm.nih.gov", "statpearls.com"],
+      "hosts": [
+        "ncbi.nlm.nih.gov",
+        "statpearls.com"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "NC + ND → not embeddable. Cite/link only."
     },
@@ -238,10 +351,17 @@
       "format": "html",
       "spdxOrName": "free non-commercial; permission for commercial",
       "citationLicence": "proprietary",
-      "countries": ["*"],
-      "domains": ["guidelines", "emergency"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "guidelines",
+        "emergency"
+      ],
       "url": "https://medicalguidelines.msf.org/",
-      "hosts": ["medicalguidelines.msf.org"],
+      "hosts": [
+        "medicalguidelines.msf.org"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Commercial embedding requires MSF permission."
     },
@@ -254,10 +374,18 @@
       "format": "pdf",
       "spdxOrName": "CC BY-NC-SA",
       "citationLicence": "cc-by-nc-sa",
-      "countries": ["*"],
-      "domains": ["community-health", "patient-education"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "community-health",
+        "patient-education"
+      ],
       "url": "https://hesperian.org/",
-      "hosts": ["hesperian.org", "store.hesperian.org"],
+      "hosts": [
+        "hesperian.org",
+        "store.hesperian.org"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Non-commercial; permission required for commercial use."
     },
@@ -270,10 +398,17 @@
       "format": "video",
       "spdxOrName": "CC BY-NC-ND",
       "citationLicence": "cc-by-nc-nd",
-      "countries": ["*"],
-      "domains": ["patient-education", "training"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "patient-education",
+        "training"
+      ],
       "url": "https://globalhealthmedia.org/",
-      "hosts": ["globalhealthmedia.org"],
+      "hosts": [
+        "globalhealthmedia.org"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "NC + ND; bundling in a paid product needs direct permission."
     },
@@ -286,10 +421,17 @@
       "format": "html",
       "spdxOrName": "CC BY-NC-SA",
       "citationLicence": "cc-by-nc-sa",
-      "countries": ["*"],
-      "domains": ["radiology", "reference"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "radiology",
+        "reference"
+      ],
       "url": "https://radiopaedia.org/",
-      "hosts": ["radiopaedia.org"],
+      "hosts": [
+        "radiopaedia.org"
+      ],
       "lastChecked": "2026-06-10"
     },
     {
@@ -301,10 +443,17 @@
       "format": "html",
       "spdxOrName": "CC BY-NC-SA",
       "citationLicence": "cc-by-nc-sa",
-      "countries": ["*"],
-      "domains": ["emergency", "reference"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "emergency",
+        "reference"
+      ],
       "url": "https://litfl.com/",
-      "hosts": ["litfl.com"],
+      "hosts": [
+        "litfl.com"
+      ],
       "lastChecked": "2026-06-10"
     },
     {
@@ -316,10 +465,25 @@
       "format": "html",
       "spdxOrName": "proprietary",
       "citationLicence": "proprietary",
-      "countries": ["*"],
-      "domains": ["reference", "guidelines"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "reference",
+        "guidelines"
+      ],
       "url": "https://www.merckmanuals.com/",
-      "hosts": ["merckmanuals.com", "msdmanuals.com", "medscape.com", "amboss.com", "uptodate.com", "dynamed.com", "bestpractice.bmj.com", "cochranelibrary.com", "gideononline.com"],
+      "hosts": [
+        "merckmanuals.com",
+        "msdmanuals.com",
+        "medscape.com",
+        "amboss.com",
+        "uptodate.com",
+        "dynamed.com",
+        "bestpractice.bmj.com",
+        "cochranelibrary.com",
+        "gideononline.com"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Free to read and/or commercial products but NOT openly licensed/redistributable. Do not embed."
     },
@@ -332,10 +496,17 @@
       "format": "bulk",
       "spdxOrName": "Affiliate Licence (Kenya non-member → fees)",
       "citationLicence": "proprietary",
-      "countries": ["*"],
-      "domains": ["terminology"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "terminology"
+      ],
       "url": "https://www.snomed.org/",
-      "hosts": ["snomed.org", "browser.ihtsdotools.org"],
+      "hosts": [
+        "snomed.org",
+        "browser.ihtsdotools.org"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Kenya is not a member country → commercial use needs a paid Affiliate Licence. Prefer LOINC + RxNorm + ICD-11 + CIEL to defer SNOMED cost."
     },
@@ -348,10 +519,17 @@
       "format": "bulk",
       "spdxOrName": "copyright; paid commercial licence",
       "citationLicence": "proprietary",
-      "countries": ["*"],
-      "domains": ["drugs", "terminology"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "drugs",
+        "terminology"
+      ],
       "url": "https://www.whocc.no/",
-      "hosts": ["whocc.no"],
+      "hosts": [
+        "whocc.no"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Viewable free but commercial embedding requires a paid licence/data files."
     },
@@ -364,10 +542,17 @@
       "format": "bulk",
       "spdxOrName": "CC BY-NC (academic) / paid commercial",
       "citationLicence": "proprietary",
-      "countries": ["*"],
-      "domains": ["drugs", "drug-interactions"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "drugs",
+        "drug-interactions"
+      ],
       "url": "https://go.drugbank.com/",
-      "hosts": ["go.drugbank.com"],
+      "hosts": [
+        "go.drugbank.com"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Full DB is academic-only NC; commercial needs paid DrugBank licence. Use drugbank-open instead."
     },
@@ -380,10 +565,23 @@
       "format": "pdf",
       "spdxOrName": "Government of Kenya copyright (no open licence)",
       "citationLicence": "moh-restricted",
-      "countries": ["KE"],
-      "domains": ["guidelines", "essential-medicines", "hiv", "malaria", "tb", "amr", "paediatrics"],
+      "countries": [
+        "KE"
+      ],
+      "domains": [
+        "guidelines",
+        "essential-medicines",
+        "hiv",
+        "malaria",
+        "tb",
+        "amr",
+        "paediatrics"
+      ],
       "url": "https://www.health.go.ke/",
-      "hosts": ["health.go.ke", "nascop.or.ke"],
+      "hosts": [
+        "health.go.ke",
+        "nascop.or.ke"
+      ],
       "lastChecked": "2026-06-10",
       "notes": "Freely downloaded but embedding legally requires written MoH/programme permission (MoU). Author original logic from clinical facts; cite the guideline."
     },
@@ -396,10 +594,17 @@
       "format": "pdf",
       "spdxOrName": "Government of Uganda copyright",
       "citationLicence": "moh-restricted",
-      "countries": ["UG"],
-      "domains": ["guidelines", "essential-medicines"],
+      "countries": [
+        "UG"
+      ],
+      "domains": [
+        "guidelines",
+        "essential-medicines"
+      ],
       "url": "https://www.health.go.ug/",
-      "hosts": ["health.go.ug"],
+      "hosts": [
+        "health.go.ug"
+      ],
       "lastChecked": "2026-06-10"
     },
     {
@@ -411,10 +616,17 @@
       "format": "pdf",
       "spdxOrName": "Government of Tanzania copyright",
       "citationLicence": "moh-restricted",
-      "countries": ["TZ"],
-      "domains": ["guidelines", "essential-medicines"],
+      "countries": [
+        "TZ"
+      ],
+      "domains": [
+        "guidelines",
+        "essential-medicines"
+      ],
       "url": "https://www.moh.go.tz/",
-      "hosts": ["moh.go.tz"],
+      "hosts": [
+        "moh.go.tz"
+      ],
       "lastChecked": "2026-06-10"
     },
     {
@@ -426,10 +638,16 @@
       "format": "pdf",
       "spdxOrName": "Government of Rwanda copyright",
       "citationLicence": "moh-restricted",
-      "countries": ["RW"],
-      "domains": ["guidelines"],
+      "countries": [
+        "RW"
+      ],
+      "domains": [
+        "guidelines"
+      ],
       "url": "https://www.moh.gov.rw/",
-      "hosts": ["moh.gov.rw"],
+      "hosts": [
+        "moh.gov.rw"
+      ],
       "lastChecked": "2026-06-10"
     },
     {
@@ -441,10 +659,18 @@
       "format": "pdf",
       "spdxOrName": "Government of Ethiopia copyright",
       "citationLicence": "moh-restricted",
-      "countries": ["ET"],
-      "domains": ["guidelines", "essential-medicines"],
+      "countries": [
+        "ET"
+      ],
+      "domains": [
+        "guidelines",
+        "essential-medicines"
+      ],
       "url": "https://www.moh.gov.et/",
-      "hosts": ["moh.gov.et", "efda.gov.et"],
+      "hosts": [
+        "moh.gov.et",
+        "efda.gov.et"
+      ],
       "lastChecked": "2026-06-10"
     },
     {
@@ -456,10 +682,17 @@
       "format": "pdf",
       "spdxOrName": "Government of Nigeria copyright",
       "citationLicence": "moh-restricted",
-      "countries": ["NG"],
-      "domains": ["guidelines", "essential-medicines"],
+      "countries": [
+        "NG"
+      ],
+      "domains": [
+        "guidelines",
+        "essential-medicines"
+      ],
       "url": "https://www.health.gov.ng/",
-      "hosts": ["health.gov.ng"],
+      "hosts": [
+        "health.gov.ng"
+      ],
       "lastChecked": "2026-06-10"
     },
     {
@@ -471,10 +704,18 @@
       "format": "pdf",
       "spdxOrName": "Government of Ghana copyright",
       "citationLicence": "moh-restricted",
-      "countries": ["GH"],
-      "domains": ["guidelines", "essential-medicines"],
+      "countries": [
+        "GH"
+      ],
+      "domains": [
+        "guidelines",
+        "essential-medicines"
+      ],
       "url": "https://www.moh.gov.gh/",
-      "hosts": ["moh.gov.gh", "ghanahealthservice.org"],
+      "hosts": [
+        "moh.gov.gh",
+        "ghanahealthservice.org"
+      ],
       "lastChecked": "2026-06-10"
     },
     {
@@ -486,10 +727,18 @@
       "format": "pdf",
       "spdxOrName": "Government of South Africa copyright",
       "citationLicence": "moh-restricted",
-      "countries": ["ZA"],
-      "domains": ["guidelines", "essential-medicines"],
+      "countries": [
+        "ZA"
+      ],
+      "domains": [
+        "guidelines",
+        "essential-medicines"
+      ],
       "url": "https://www.health.gov.za/",
-      "hosts": ["health.gov.za", "knowledgehub.health.gov.za"],
+      "hosts": [
+        "health.gov.za",
+        "knowledgehub.health.gov.za"
+      ],
       "lastChecked": "2026-06-10"
     },
     {
@@ -501,10 +750,17 @@
       "format": "pdf",
       "spdxOrName": "Government of Zambia copyright",
       "citationLicence": "moh-restricted",
-      "countries": ["ZM"],
-      "domains": ["guidelines", "essential-medicines"],
+      "countries": [
+        "ZM"
+      ],
+      "domains": [
+        "guidelines",
+        "essential-medicines"
+      ],
       "url": "https://www.moh.gov.zm/",
-      "hosts": ["moh.gov.zm"],
+      "hosts": [
+        "moh.gov.zm"
+      ],
       "lastChecked": "2026-06-10"
     },
     {
@@ -516,10 +772,17 @@
       "format": "pdf",
       "spdxOrName": "Government of Malawi copyright",
       "citationLicence": "moh-restricted",
-      "countries": ["MW"],
-      "domains": ["guidelines", "essential-medicines"],
+      "countries": [
+        "MW"
+      ],
+      "domains": [
+        "guidelines",
+        "essential-medicines"
+      ],
       "url": "https://www.health.gov.mw/",
-      "hosts": ["health.gov.mw"],
+      "hosts": [
+        "health.gov.mw"
+      ],
       "lastChecked": "2026-06-10"
     },
     {
@@ -531,20 +794,58 @@
       "format": "html",
       "spdxOrName": "publisher copyright (mostly paywalled)",
       "citationLicence": "proprietary",
-      "countries": ["*"],
-      "domains": ["journal", "reference"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "journal",
+        "reference"
+      ],
       "url": "https://www.nejm.org/",
       "hosts": [
-        "nejm.org", "thelancet.com", "bmj.com", "jamanetwork.com", "academic.oup.com",
-        "link.springer.com", "onlinelibrary.wiley.com", "nature.com", "sciencedirect.com",
-        "journals.lww.com", "journals.sagepub.com", "karger.com", "liebertpub.com",
-        "frontiersin.org", "cmaj.ca", "ahajournals.org", "jacc.org", "diabetesjournals.org",
-        "ashpublications.org", "atsjournals.org", "ascopubs.org", "annalsofoncology.org",
-        "amjmed.com", "amjtransplant.org", "journal-of-hepatology.eu", "ejves.com",
-        "clinicalmicrobiologyandinfection.com", "resuscitationjournal.com", "journals.asm.org",
-        "publications.aap.org", "pubs.asha.org", "ghspjournal.org", "psychiatryonline.org",
-        "tctmd.com", "pharmaceutical-journal.com", "tandfonline.com", "jacr.org", "pubs.rsna.org",
-        "wjes.biomedcentral.com", "jahonline.org", "jaci-inpractice.org", "ard.bmj.com", "gut.bmj.com"
+        "nejm.org",
+        "thelancet.com",
+        "bmj.com",
+        "jamanetwork.com",
+        "academic.oup.com",
+        "link.springer.com",
+        "onlinelibrary.wiley.com",
+        "nature.com",
+        "sciencedirect.com",
+        "journals.lww.com",
+        "journals.sagepub.com",
+        "karger.com",
+        "liebertpub.com",
+        "frontiersin.org",
+        "cmaj.ca",
+        "ahajournals.org",
+        "jacc.org",
+        "diabetesjournals.org",
+        "ashpublications.org",
+        "atsjournals.org",
+        "ascopubs.org",
+        "annalsofoncology.org",
+        "amjmed.com",
+        "amjtransplant.org",
+        "journal-of-hepatology.eu",
+        "ejves.com",
+        "clinicalmicrobiologyandinfection.com",
+        "resuscitationjournal.com",
+        "journals.asm.org",
+        "publications.aap.org",
+        "pubs.asha.org",
+        "ghspjournal.org",
+        "psychiatryonline.org",
+        "tctmd.com",
+        "pharmaceutical-journal.com",
+        "tandfonline.com",
+        "jacr.org",
+        "pubs.rsna.org",
+        "wjes.biomedcentral.com",
+        "jahonline.org",
+        "jaci-inpractice.org",
+        "ard.bmj.com",
+        "gut.bmj.com"
       ],
       "lastChecked": "2026-06-15",
       "notes": "Authoritative peer-reviewed sources — cite/link only (paywalled, not redistributable)."
@@ -558,27 +859,112 @@
       "format": "html",
       "spdxOrName": "society copyright",
       "citationLicence": "proprietary",
-      "countries": ["*"],
-      "domains": ["guideline"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "guideline"
+      ],
       "url": "https://www.escardio.org/",
       "hosts": [
-        "escardio.org", "idsociety.org", "kdigo.org", "ginasthma.org", "goldcopd.org",
-        "brit-thoracic.org.uk", "fsrh.org", "sccm.org", "easl.eu", "eular.org", "rheumatology.org",
-        "rheumatology.org.uk", "bashh.org", "uroweb.org", "baus.org.uk", "boa.ac.uk", "entuk.org",
-        "rcem.ac.uk", "rcr.ac.uk", "rcog.org.uk", "rcophth.ac.uk", "rcp.ac.uk", "rcn.org.uk",
-        "resus.org.uk", "cprguidelines.eu", "cpr.heart.org", "heart.org", "erc.edu",
-        "world-heart-federation.org", "ispad.org", "ukkidney.org", "endocrinology.org", "thyroid.org",
-        "b-s-h.org.uk", "aao.org", "acog.org", "acep.org", "acc.org", "aafp.org", "facs.org",
-        "thoracic.org", "bad.org.uk", "eugs.org", "gi.org", "aasld.org", "iwgdfguidelines.org",
-        "hematology.org", "aagbi.org", "anaesthetists.org", "ficm.ac.uk", "mypcnow.org", "sign.ac.uk",
-        "ihi.org", "tracheostomy.org.uk", "ascnuk.com", "antt.org", "iasp-pain.org", "ichd-3.org",
-        "ameriburn.org", "ilae.org", "worldgastroenterology.org", "eso-stroke.org", "scai.org",
-        "theabn.org", "bapras.org.uk", "bfmed.org", "eshre.eu", "thebms.org.uk", "nogg.org.uk",
-        "aasm.org", "eaaci.org", "wms.org", "mhaus.org", "auanet.org", "diabetes.org.uk", "lung.org",
-        "epilepsy.com", "epilepsy.org.uk", "dacas.org.au", "figo.org", "worldallergy.org", "das.uk.com",
-        "braintrauma.org", "esmo.org", "dam.esmo.org", "ecco-ibd.eu", "abcd.care", "movementdisorders.org",
-        "geriatricpain.org", "cff.org", "mchatscreen.com", "aap.org", "nccn.org",
-        "cpicpgx.org", "pharmgkb.org", "bhiva.org", "rcseng.ac.uk", "isth.org"
+        "escardio.org",
+        "idsociety.org",
+        "kdigo.org",
+        "ginasthma.org",
+        "goldcopd.org",
+        "brit-thoracic.org.uk",
+        "fsrh.org",
+        "sccm.org",
+        "easl.eu",
+        "eular.org",
+        "rheumatology.org",
+        "rheumatology.org.uk",
+        "bashh.org",
+        "uroweb.org",
+        "baus.org.uk",
+        "boa.ac.uk",
+        "entuk.org",
+        "rcem.ac.uk",
+        "rcr.ac.uk",
+        "rcog.org.uk",
+        "rcophth.ac.uk",
+        "rcp.ac.uk",
+        "rcn.org.uk",
+        "resus.org.uk",
+        "cprguidelines.eu",
+        "cpr.heart.org",
+        "heart.org",
+        "erc.edu",
+        "world-heart-federation.org",
+        "ispad.org",
+        "ukkidney.org",
+        "endocrinology.org",
+        "thyroid.org",
+        "b-s-h.org.uk",
+        "aao.org",
+        "acog.org",
+        "acep.org",
+        "acc.org",
+        "aafp.org",
+        "facs.org",
+        "thoracic.org",
+        "bad.org.uk",
+        "eugs.org",
+        "gi.org",
+        "aasld.org",
+        "iwgdfguidelines.org",
+        "hematology.org",
+        "aagbi.org",
+        "anaesthetists.org",
+        "ficm.ac.uk",
+        "mypcnow.org",
+        "sign.ac.uk",
+        "ihi.org",
+        "tracheostomy.org.uk",
+        "ascnuk.com",
+        "antt.org",
+        "iasp-pain.org",
+        "ichd-3.org",
+        "ameriburn.org",
+        "ilae.org",
+        "worldgastroenterology.org",
+        "eso-stroke.org",
+        "scai.org",
+        "theabn.org",
+        "bapras.org.uk",
+        "bfmed.org",
+        "eshre.eu",
+        "thebms.org.uk",
+        "nogg.org.uk",
+        "aasm.org",
+        "eaaci.org",
+        "wms.org",
+        "mhaus.org",
+        "auanet.org",
+        "diabetes.org.uk",
+        "lung.org",
+        "epilepsy.com",
+        "epilepsy.org.uk",
+        "dacas.org.au",
+        "figo.org",
+        "worldallergy.org",
+        "das.uk.com",
+        "braintrauma.org",
+        "esmo.org",
+        "dam.esmo.org",
+        "ecco-ibd.eu",
+        "abcd.care",
+        "movementdisorders.org",
+        "geriatricpain.org",
+        "cff.org",
+        "mchatscreen.com",
+        "aap.org",
+        "nccn.org",
+        "cpicpgx.org",
+        "pharmgkb.org",
+        "bhiva.org",
+        "rcseng.ac.uk",
+        "isth.org"
       ],
       "lastChecked": "2026-06-15",
       "notes": "International/national specialty guidelines — authoritative; cite/link only."
@@ -592,12 +978,22 @@
       "format": "html",
       "spdxOrName": "US-Public-Domain",
       "citationLicence": "public-domain",
-      "countries": ["*"],
-      "domains": ["guideline", "reference"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "guideline",
+        "reference"
+      ],
       "url": "https://www.cdc.gov/",
       "hosts": [
-        "cdc.gov", "stacks.cdc.gov", "wwwnc.cdc.gov", "fda.gov", "nhlbi.nih.gov",
-        "clinicalinfo.hiv.gov", "uspreventiveservicestaskforce.org"
+        "cdc.gov",
+        "stacks.cdc.gov",
+        "wwwnc.cdc.gov",
+        "fda.gov",
+        "nhlbi.nih.gov",
+        "clinicalinfo.hiv.gov",
+        "uspreventiveservicestaskforce.org"
       ],
       "lastChecked": "2026-06-15",
       "notes": "US government works are public domain; cite without implying endorsement."
@@ -611,13 +1007,26 @@
       "format": "html",
       "spdxOrName": "Open Government Licence / EMA terms",
       "citationLicence": "open-gov",
-      "countries": ["*"],
-      "domains": ["guideline", "reference"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "guideline",
+        "reference"
+      ],
       "url": "https://www.gov.uk/",
       "hosts": [
-        "gov.uk", "nhs.uk", "england.nhs.uk", "sps.nhs.uk", "nbt.nhs.uk", "hse.gov.uk",
-        "rightdecisions.scot.nhs.uk", "palliativecareguidelines.scot.nhs.uk",
-        "transformationpartners.nhs.uk", "handbook.ggcmedicines.org.uk", "ema.europa.eu",
+        "gov.uk",
+        "nhs.uk",
+        "england.nhs.uk",
+        "sps.nhs.uk",
+        "nbt.nhs.uk",
+        "hse.gov.uk",
+        "rightdecisions.scot.nhs.uk",
+        "palliativecareguidelines.scot.nhs.uk",
+        "transformationpartners.nhs.uk",
+        "handbook.ggcmedicines.org.uk",
+        "ema.europa.eu",
         "ecdc.europa.eu"
       ],
       "lastChecked": "2026-06-15"
@@ -631,12 +1040,22 @@
       "format": "html",
       "spdxOrName": "proprietary / licensed",
       "citationLicence": "proprietary",
-      "countries": ["*"],
-      "domains": ["formulary", "drug-interactions", "reference"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "formulary",
+        "drug-interactions",
+        "reference"
+      ],
       "url": "https://www.medicines.org.uk/",
       "hosts": [
-        "medicines.org.uk", "crediblemeds.org", "hiv-druginteractions.org", "toxbase.org",
-        "mdcalc.com", "pfizermedical.com"
+        "medicines.org.uk",
+        "crediblemeds.org",
+        "hiv-druginteractions.org",
+        "toxbase.org",
+        "mdcalc.com",
+        "pfizermedical.com"
       ],
       "lastChecked": "2026-06-15"
     },
@@ -649,10 +1068,20 @@
       "format": "html",
       "spdxOrName": "CC BY-NC-SA 3.0 IGO (PAHO/WHO) / org terms",
       "citationLicence": "cc-by-nc-sa",
-      "countries": ["*"],
-      "domains": ["guideline", "surveillance"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "guideline",
+        "surveillance"
+      ],
       "url": "https://iris.paho.org/",
-      "hosts": ["iris.paho.org", "rr-africa.woah.org", "srhr.org", "postpartumfp.srhr.org"],
+      "hosts": [
+        "iris.paho.org",
+        "rr-africa.woah.org",
+        "srhr.org",
+        "postpartumfp.srhr.org"
+      ],
       "lastChecked": "2026-06-15"
     },
     {
@@ -664,10 +1093,19 @@
       "format": "html",
       "spdxOrName": "Government of Kenya copyright",
       "citationLicence": "moh-restricted",
-      "countries": ["KE"],
-      "domains": ["guideline", "tb", "nutrition"],
+      "countries": [
+        "KE"
+      ],
+      "domains": [
+        "guideline",
+        "tb",
+        "nutrition"
+      ],
       "url": "https://www.health.go.ke/",
-      "hosts": ["nltp.co.ke", "nutritionhealth.or.ke"],
+      "hosts": [
+        "nltp.co.ke",
+        "nutritionhealth.or.ke"
+      ],
       "lastChecked": "2026-06-15"
     },
     {
@@ -679,14 +1117,69 @@
       "format": "html",
       "spdxOrName": "institutional copyright",
       "citationLicence": "proprietary",
-      "countries": ["*"],
-      "domains": ["reference", "radiology"],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "reference",
+        "radiology"
+      ],
       "url": "https://www.acr.org/",
       "hosts": [
-        "acr.org", "acsearch.acr.org", "healthcare.uiowa.edu", "uihc.org", "fresno.ucsf.edu",
-        "monash.edu", "medinfogalway.ie"
+        "acr.org",
+        "acsearch.acr.org",
+        "healthcare.uiowa.edu",
+        "uihc.org",
+        "fresno.ucsf.edu",
+        "monash.edu",
+        "medinfogalway.ie"
       ],
       "lastChecked": "2026-06-15"
+    },
+    {
+      "id": "uktis",
+      "publisher": "UK Teratology Information Service (UKTIS)",
+      "title": "UKTIS / bumps monographs — medicines in pregnancy",
+      "tier": 2,
+      "embeddable": "cite-only",
+      "format": "html",
+      "spdxOrName": "Proprietary (UKTIS)",
+      "citationLicence": "proprietary",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "pregnancy-lactation"
+      ],
+      "url": "https://uktis.org/",
+      "hosts": [
+        "uktis.org",
+        "medicinesinpregnancy.org"
+      ],
+      "lastChecked": "2026-06-19",
+      "notes": "Authoritative UK teratology monographs. Reference/link only; do not copy text."
+    },
+    {
+      "id": "fda-rems-mycophenolate",
+      "publisher": "Mycophenolate REMS (FDA-mandated)",
+      "title": "Mycophenolate REMS — pregnancy-prevention safety program",
+      "tier": 1,
+      "embeddable": "cite-only",
+      "format": "html",
+      "spdxOrName": "US Government / manufacturer REMS",
+      "citationLicence": "open-gov",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "pregnancy-lactation"
+      ],
+      "url": "https://www.mycophenolaterems.com/",
+      "hosts": [
+        "mycophenolaterems.com"
+      ],
+      "lastChecked": "2026-06-19",
+      "notes": "FDA Risk Evaluation and Mitigation Strategy site for mycophenolate. Reference/link only."
     }
   ]
 }

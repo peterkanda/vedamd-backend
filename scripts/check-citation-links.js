@@ -29,7 +29,7 @@ const REGISTRY = path.resolve(ROOT, 'content/sources/registry.json');
 const strict = process.argv.includes('--strict');
 
 // Ratchet ceilings (current state). Only ever lower these.
-const MAX_RECORDS_WITHOUT_LINK = 5086; // legacy bundle records citing by label only
+const MAX_RECORDS_WITHOUT_LINK = 1490; // post-enrichment; was 5086 (label-only legacy)
 const MAX_UNKNOWN_HOST = 0; // every cited URL host is registry-recognised
 
 const reg = JSON.parse(fs.readFileSync(REGISTRY, 'utf8'));
