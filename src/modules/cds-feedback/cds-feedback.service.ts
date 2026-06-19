@@ -1,6 +1,6 @@
 import { Inject, Injectable, Logger, Optional } from '@nestjs/common';
 import { randomUUID } from 'node:crypto';
-import { and, desc, eq, gte, sql } from 'drizzle-orm';
+import { desc, eq } from 'drizzle-orm';
 import { DRIZZLE, type MaybeDrizzle } from '../../db/database.module';
 import { cdsCardFeedback } from '../../db/schema';
 import { CdsService } from '../cds/cds.service';

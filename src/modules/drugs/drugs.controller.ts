@@ -23,6 +23,22 @@ class InteractionsRequestDto {
   slugs!: string[];
 }
 
+class SafetyReviewRequestDto extends InteractionsRequestDto {
+  /** Optional estimated creatinine clearance (mL/min) to drive renal flags. */
+  @IsOptional()
+  @IsNumber()
+  @Min(0)
+  @Max(200)
+  crClMlMin?: number;
+
+  /** Optional patient weight (kg) to drive paediatric weight-based dosing. */
+  @IsOptional()
+  @IsNumber()
+  @Min(0.5)
+  @Max(300)
+  weightKg?: number;
+}
+
 class DosingRequestDto {
   @IsNumber()
   @Min(0.5)
@@ -102,6 +118,23 @@ export class DrugsController {
   })
   interactions(@Body() body: InteractionsRequestDto) {
     return this.drugs.checkInteractions(body.slugs);
+  }
+
+  @Post('safety-review')
+  @RequireScope('drug-info:read')
+  @ApiOperation({
+    summary: 'Holistic medication safety review for a med list',
+    description:
+      'Body: { slugs: [...], crClMlMin?, weightKg? }. One point-of-care panel: pairwise ' +
+      'drug-drug interactions, antimicrobial-stewardship flags (WHO AWaRe Watch/Reserve), ' +
+      'duplicate-therapy (same drug class), pregnancy-contraindicated drugs, hepatic ' +
+      'guidance, and — when crClMlMin is supplied — renal dose-adjustment / ' +
+      'contraindication flags, and — when a paediatric weightKg is supplied — ' +
+      'weight-based dosing with overdose-cap warnings. Returns unresolved slugs and a ' +
+      'severity summary. Deterministic; no LLM.',
+  })
+  safetyReview(@Body() body: SafetyReviewRequestDto) {
+    return this.drugs.safetyReview(body.slugs, body.crClMlMin, body.weightKg);
   }
 
   @Post(':slug/dosing')

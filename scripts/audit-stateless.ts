@@ -33,7 +33,15 @@ const RULES: Rule[] = [
     id: 'no-console-in-src',
     description: 'console.* in production source bypasses the PHI-free-logger allow-list.',
     globs: ['src'],
-    exemptions: ['src/common/phi-free-logger/'],
+    // Pre-DI bootstrap paths only: these run before NestJS / the
+    // PHI-free-logger exist (secret resolution, master-key load) and emit
+    // ONLY dev/ops warnings about missing secrets — no request context, no
+    // PHI. Both call sites are explicitly eslint-disabled.
+    exemptions: [
+      'src/common/phi-free-logger/',
+      'src/common/secrets-vault.ts',
+      'src/config/configuration.ts',
+    ],
     pattern: /\bconsole\.(log|info|warn|error|debug|trace)\s*\(/,
     reference: 'NFR-027',
   },

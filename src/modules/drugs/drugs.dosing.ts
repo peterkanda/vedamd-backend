@@ -89,13 +89,20 @@ function paediatricResult(
     };
   }
 
-  // Weight-banded protocol (no mg/kg) — surface the narrative.
-  if (paed.mgPerKgPerDose === undefined) {
+  // Weight-banded protocol (no usable mg/kg figure) — surface the narrative.
+  // A non-positive mgPerKgPerDose is a sentinel for "not mg/kg-dosed" (ORS,
+  // insulin, IV fluids, topicals, vitamins): computing weight × 0 would
+  // otherwise emit a dangerous 0 mg dose, so route these to the narrative.
+  if (paed.mgPerKgPerDose === undefined || paed.mgPerKgPerDose <= 0) {
+    // The real regimen for these lives in route/frequency (e.g. "20 mL/kg
+    // bolus", "0.05–0.1 U/kg/h"); fall back to it when there's no free-text
+    // note, so the narrative is never empty.
+    const detail = paed.notes ?? [paed.route, paed.frequency].filter(Boolean).join(' — ').trim();
     return {
       ...base,
       protocol: 'weight-banded',
       narrative:
-        (paed.notes ?? '') +
+        (detail || `${drug.inn}: see paediatric protocol.`) +
         (paed.minWeightKg !== undefined ? ` Minimum weight ${paed.minWeightKg} kg.` : ''),
       warnings:
         paed.minWeightKg !== undefined && inputs.weightKg < paed.minWeightKg
@@ -194,7 +201,7 @@ function adultResult(
   };
 }
 
-function matchRenal(
+export function matchRenal(
   bands: RenalAdjustment[] | undefined,
   crClMlMin: number | undefined,
 ): RenalAdjustment | null {

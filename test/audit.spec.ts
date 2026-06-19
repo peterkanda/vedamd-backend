@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { ConfigService } from '@nestjs/config';
-import { AuditService, type AuditEvent } from '../src/modules/audit/audit.service';
+import { AuditService } from '../src/modules/audit/audit.service';
 import { PhiFreeLogger } from '../src/common/phi-free-logger';
 import type { AppConfig } from '../src/config/configuration';
 
