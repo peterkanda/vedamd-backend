@@ -88,10 +88,38 @@ const interactions = [
   { slugA: 'ciprofloxacin', slugB: 'ceftriaxone', severity: 'major' },
 ] as unknown as DrugInteraction[];
 
+const drugDisease = [
+  {
+    slug: 'nitrofurantoin--chronic-kidney-disease',
+    drugSlug: 'nitrofurantoin',
+    drug: 'Nitrofurantoin',
+    condition: 'Chronic kidney disease',
+    conditionSlug: 'chronic-kidney-disease',
+    severity: 'contraindicated',
+    mechanism: 'Ineffective and toxic metabolites accumulate when CrCl is low.',
+    recommendation: 'Avoid in CKD with eGFR < 45.',
+    references: [{ label: 'BNF', strength: 'A' }],
+  },
+  {
+    // Class-level match: any Fluoroquinolone in this condition.
+    slug: 'fluoroquinolone--myasthenia-gravis',
+    drugSlug: 'ciprofloxacin',
+    drug: 'Fluoroquinolones',
+    condition: 'Myasthenia gravis',
+    conditionSlug: 'myasthenia-gravis',
+    severity: 'caution',
+    mechanism: 'May exacerbate muscle weakness.',
+    recommendation: 'Avoid where alternatives exist.',
+    references: [],
+    drugClass: 'Fluoroquinolone',
+  },
+];
+
 function makeService(): DrugsService {
   const knowledge = {
     getDrugs: () => drugs,
     getInteractions: () => interactions,
+    getDrugDiseaseInteractions: () => drugDisease,
   } as unknown as KnowledgeService;
   const svc = new DrugsService(knowledge);
   svc.onModuleInit();
@@ -184,6 +212,34 @@ describe('DrugsService.safetyReview', () => {
     // 70 kg → adult path, no paediatric dosing.
     expect(
       svc.safetyReview(['paracetamol', 'gentamicin'], undefined, 70).paediatricDosing,
+    ).toHaveLength(0);
+  });
+
+  it('flags drug-disease contraindications only when patient conditions are supplied', () => {
+    // No conditions → no flags.
+    expect(svc.safetyReview(['nitrofurantoin', 'ciprofloxacin']).drugDiseaseFlags).toHaveLength(0);
+
+    // CKD → nitrofurantoin contraindicated (matched by drug slug).
+    const ckd = svc.safetyReview(['nitrofurantoin', 'ciprofloxacin'], undefined, undefined, [
+      'chronic-kidney-disease',
+    ]);
+    expect(ckd.drugDiseaseFlags).toHaveLength(1);
+    expect(ckd.drugDiseaseFlags[0].drugSlug).toBe('nitrofurantoin');
+    expect(ckd.drugDiseaseFlags[0].severity).toBe('contraindicated');
+    expect(ckd.summary.drugDiseaseContraindicated).toBe(1);
+
+    // Myasthenia → ciprofloxacin caution (matched by drug class).
+    const mg = svc.safetyReview(['nitrofurantoin', 'ciprofloxacin'], undefined, undefined, [
+      'myasthenia-gravis',
+    ]);
+    expect(mg.drugDiseaseFlags.map((f) => f.condition)).toEqual(['Myasthenia gravis']);
+    expect(mg.drugDiseaseFlags[0].severity).toBe('caution');
+    expect(mg.summary.drugDiseaseContraindicated).toBe(0);
+
+    // A condition no listed drug interacts with → no flags.
+    expect(
+      svc.safetyReview(['nitrofurantoin', 'ciprofloxacin'], undefined, undefined, ['asthma'])
+        .drugDiseaseFlags,
     ).toHaveLength(0);
   });
 });

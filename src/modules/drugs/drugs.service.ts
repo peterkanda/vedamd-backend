@@ -1,6 +1,8 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { calculateDose, matchRenal } from './drugs.dosing';
 import { KnowledgeService } from '../knowledge/knowledge.service';
+import type { DrugDiseaseInteraction } from '../drug-disease/drug-disease.types';
+import type { Citation } from '../../common/citation';
 import type {
   AwareCategory,
   DosingInput,
@@ -21,6 +23,7 @@ export interface ListFilters {
 export class DrugsService implements OnModuleInit {
   private bySlug = new Map<string, DrugRecord>();
   private interactionsByPair = new Map<string, DrugInteraction>();
+  private drugDiseaseInteractions: DrugDiseaseInteraction[] = [];
 
   constructor(private readonly knowledge: KnowledgeService) {}
 
@@ -29,6 +32,7 @@ export class DrugsService implements OnModuleInit {
     this.interactionsByPair = new Map(
       this.knowledge.getInteractions().map((i) => [pairKey(i.slugA, i.slugB), i]),
     );
+    this.drugDiseaseInteractions = this.knowledge.getDrugDiseaseInteractions() ?? [];
   }
 
   list(filters: ListFilters = {}): DrugSummary[] {
@@ -103,6 +107,7 @@ export class DrugsService implements OnModuleInit {
     slugs: string[],
     crClMlMin?: number,
     weightKg?: number,
+    conditions?: string[],
   ): {
     interactions: DrugInteraction[];
     stewardship: Array<{ slug: string; inn: string; awareCategory: AwareCategory }>;
@@ -131,6 +136,16 @@ export class DrugsService implements OnModuleInit {
       uncapped: boolean;
       belowMinWeight: boolean;
     }>;
+    drugDiseaseFlags: Array<{
+      drugSlug: string;
+      drug: string;
+      conditionSlug: string | null;
+      condition: string;
+      severity: 'contraindicated' | 'caution';
+      mechanism: string;
+      recommendation: string;
+      references: Citation[];
+    }>;
     unknownSlugs: string[];
     summary: {
       drugs: number;
@@ -141,6 +156,7 @@ export class DrugsService implements OnModuleInit {
       pregnancyContraindicated: number;
       renalProhibited: number;
       paediatricUncapped: number;
+      drugDiseaseContraindicated: number;
     };
   } {
     const { interactions, unknownSlugs } = this.checkInteractions(slugs);
@@ -228,6 +244,39 @@ export class DrugsService implements OnModuleInit {
             })
             .filter((x): x is NonNullable<typeof x> => !!x);
 
+    // Drug-disease contraindications — only when the patient's conditions are
+    // supplied. A record fires when its conditionSlug is among the patient's
+    // conditions AND it targets a drug on the list (by slug) or that drug's
+    // class. Deterministic; pulled straight from the signed drug-disease set.
+    const conditionSet = new Set(
+      (conditions ?? []).map((c) => c.trim().toLowerCase()).filter(Boolean),
+    );
+    const medClasses = new Set(
+      resolved.map((d) => d.drugClass?.toLowerCase()).filter((c): c is string => !!c),
+    );
+    const drugDiseaseFlags =
+      conditionSet.size === 0
+        ? []
+        : this.drugDiseaseInteractions
+            .filter((r) => {
+              if (!r.conditionSlug || !conditionSet.has(r.conditionSlug.toLowerCase())) {
+                return false;
+              }
+              const drugMatch = unique.includes(r.drugSlug?.toLowerCase());
+              const classMatch = !!r.drugClass && medClasses.has(r.drugClass.toLowerCase());
+              return drugMatch || classMatch;
+            })
+            .map((r) => ({
+              drugSlug: r.drugSlug,
+              drug: r.drug,
+              conditionSlug: r.conditionSlug ?? null,
+              condition: r.condition,
+              severity: r.severity,
+              mechanism: r.mechanism,
+              recommendation: r.recommendation,
+              references: r.references,
+            }));
+
     return {
       interactions,
       stewardship,
@@ -236,6 +285,7 @@ export class DrugsService implements OnModuleInit {
       renalFlags,
       hepaticGuidance,
       paediatricDosing,
+      drugDiseaseFlags,
       unknownSlugs,
       summary: {
         drugs: unique.length,
@@ -248,6 +298,8 @@ export class DrugsService implements OnModuleInit {
         pregnancyContraindicated: pregnancyContraindications.length,
         renalProhibited: renalFlags.filter((r) => r.prohibited).length,
         paediatricUncapped: paediatricDosing.filter((p) => p.uncapped).length,
+        drugDiseaseContraindicated: drugDiseaseFlags.filter((f) => f.severity === 'contraindicated')
+          .length,
       },
     };
   }
