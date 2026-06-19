@@ -39,6 +39,21 @@ describe('DrugsService.calculateDose — paediatric mg/kg', () => {
   });
 });
 
+describe('DrugsService.calculateDose — non-mg/kg paediatric safety', () => {
+  // Regression: drugs that carry mgPerKgPerDose = 0 as a "not mg/kg-dosed"
+  // sentinel (insulin, IV fluids, topicals, vitamins) must NEVER yield a
+  // computed 0 mg dose — that would be a dangerous, meaningless figure.
+  for (const slug of ['insulin-regular', 'sodium-chloride-0-9']) {
+    it(`${slug} for a child does not return a 0 mg calculated dose`, () => {
+      const r = svc.calculateDose(slug, { weightKg: 10, ageYears: 2 })!;
+      expect(r.protocol).not.toBe('paediatric');
+      expect(r.calculatedDose).toBeUndefined();
+      // The real regimen lives in the narrative, not a mg figure.
+      expect(r.narrative.length).toBeGreaterThan(0);
+    });
+  }
+});
+
 describe('DrugsService.calculateDose — adult regimens', () => {
   it('paracetamol for 60 kg / 30 yo → adult protocol with regimen narrative', () => {
     const r = svc.calculateDose('paracetamol', { weightKg: 60, ageYears: 30 })!;

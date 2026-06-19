@@ -209,7 +209,7 @@ export class DrugsService implements OnModuleInit {
       weightKg === undefined || weightKg <= 0 || weightKg >= PAEDIATRIC_MAX_WEIGHT_KG
         ? []
         : resolved
-            .filter((d) => d.dosing?.paediatric?.mgPerKgPerDose !== undefined)
+            .filter((d) => (d.dosing?.paediatric?.mgPerKgPerDose ?? 0) > 0)
             .map((d) => {
               const result = calculateDose(d, { weightKg });
               const cd = result.calculatedDose;
