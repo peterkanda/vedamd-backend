@@ -12,7 +12,7 @@
  * the request as in-memory only and discards on response (FR-088).
  */
 
-import type { CdsCard, VedaMdRecommendationMeta } from '../cds/cds.types';
+import type { CdsCard } from '../cds/cds.types';
 
 /**
  * Inbound clinical context to the agentic engine. Either a free-form

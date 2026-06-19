@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { ConfigService } from '@nestjs/config';
 import { OpenRouterProvider } from '../src/modules/agentic/providers/openrouter.provider';
 import { ProviderRouter } from '../src/modules/agentic/providers/provider-router';
