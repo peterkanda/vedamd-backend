@@ -6,6 +6,7 @@ import type { CdsCard, CdsHookRequest, CdsIndicator } from '../cds.types';
 import type { CdsRuleStrategy } from './types';
 
 const SEVERITY_TO_INDICATOR: Record<InteractionSeverity, CdsIndicator> = {
+  contraindicated: 'critical',
   severe: 'critical',
   major: 'critical',
   moderate: 'warning',

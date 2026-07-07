@@ -151,6 +151,7 @@ export class DrugsService implements OnModuleInit {
       drugs: number;
       interactions: number;
       majorInteractions: number;
+      contraindicatedInteractions: number;
       watchReserve: number;
       duplicateClasses: number;
       pregnancyContraindicated: number;
@@ -291,8 +292,11 @@ export class DrugsService implements OnModuleInit {
         drugs: unique.length,
         interactions: interactions.length,
         majorInteractions: interactions.filter(
-          (i) => i.severity === 'severe' || i.severity === 'major',
+          (i) =>
+            i.severity === 'contraindicated' || i.severity === 'severe' || i.severity === 'major',
         ).length,
+        contraindicatedInteractions: interactions.filter((i) => i.severity === 'contraindicated')
+          .length,
         watchReserve: stewardship.length,
         duplicateClasses: duplicateTherapy.length,
         pregnancyContraindicated: pregnancyContraindications.length,

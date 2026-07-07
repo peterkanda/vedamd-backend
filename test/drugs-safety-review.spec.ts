@@ -86,6 +86,7 @@ const drugs: DrugRecord[] = [
 ];
 const interactions = [
   { slugA: 'ciprofloxacin', slugB: 'ceftriaxone', severity: 'major' },
+  { slugA: 'warfarin', slugB: 'nitrofurantoin', severity: 'contraindicated' },
 ] as unknown as DrugInteraction[];
 
 const drugDisease = [
@@ -241,5 +242,15 @@ describe('DrugsService.safetyReview', () => {
       svc.safetyReview(['nitrofurantoin', 'ciprofloxacin'], undefined, undefined, ['asthma'])
         .drugDiseaseFlags,
     ).toHaveLength(0);
+  });
+
+  it('counts a contraindicated interaction as both major and contraindicated', () => {
+    const r = svc.safetyReview(['warfarin', 'nitrofurantoin']);
+    expect(r.interactions).toHaveLength(1);
+    expect(r.interactions[0].severity).toBe('contraindicated');
+    // contraindicated is the most severe grade — it must count as major
+    // (never silently excluded) and also in its own bucket.
+    expect(r.summary.majorInteractions).toBe(1);
+    expect(r.summary.contraindicatedInteractions).toBe(1);
   });
 });

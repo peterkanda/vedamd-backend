@@ -13,7 +13,7 @@ import type {
 
 export type AwareCategory = 'Access' | 'Watch' | 'Reserve' | 'Not-classified';
 export type AdverseEffectFrequency = 'common' | 'uncommon' | 'rare' | 'serious';
-export type InteractionSeverity = 'severe' | 'major' | 'moderate' | 'minor';
+export type InteractionSeverity = 'contraindicated' | 'severe' | 'major' | 'moderate' | 'minor';
 
 export type { EvidenceLevel, ReviewStatus };
 
