@@ -2,6 +2,7 @@ import { Injectable, OnModuleInit } from '@nestjs/common';
 import { calculateDose, matchRenal } from './drugs.dosing';
 import { KnowledgeService } from '../knowledge/knowledge.service';
 import type { DrugDiseaseInteraction } from '../drug-disease/drug-disease.types';
+import type { AllergyCrossReactivity, CrossReactivityRisk } from '../allergy/allergy.types';
 import type { Citation } from '../../common/citation';
 import type {
   AwareCategory,
@@ -24,6 +25,7 @@ export class DrugsService implements OnModuleInit {
   private bySlug = new Map<string, DrugRecord>();
   private interactionsByPair = new Map<string, DrugInteraction>();
   private drugDiseaseInteractions: DrugDiseaseInteraction[] = [];
+  private allergyCrossReactivity: AllergyCrossReactivity[] = [];
 
   constructor(private readonly knowledge: KnowledgeService) {}
 
@@ -33,6 +35,7 @@ export class DrugsService implements OnModuleInit {
       this.knowledge.getInteractions().map((i) => [pairKey(i.slugA, i.slugB), i]),
     );
     this.drugDiseaseInteractions = this.knowledge.getDrugDiseaseInteractions() ?? [];
+    this.allergyCrossReactivity = this.knowledge.getAllergyCrossReactivity() ?? [];
   }
 
   list(filters: ListFilters = {}): DrugSummary[] {
@@ -108,6 +111,7 @@ export class DrugsService implements OnModuleInit {
     crClMlMin?: number,
     weightKg?: number,
     conditions?: string[],
+    allergies?: string[],
   ): {
     interactions: DrugInteraction[];
     stewardship: Array<{ slug: string; inn: string; awareCategory: AwareCategory }>;
@@ -146,6 +150,18 @@ export class DrugsService implements OnModuleInit {
       recommendation: string;
       references: Citation[];
     }>;
+    allergyFlags: Array<{
+      allergy: string;
+      drugSlug: string;
+      drug: string;
+      direct: boolean;
+      allergen: string;
+      crossReactsWith?: string;
+      risk: CrossReactivityRisk;
+      mechanism?: string;
+      recommendation: string;
+      references: Citation[];
+    }>;
     unknownSlugs: string[];
     summary: {
       drugs: number;
@@ -158,6 +174,7 @@ export class DrugsService implements OnModuleInit {
       renalProhibited: number;
       paediatricUncapped: number;
       drugDiseaseContraindicated: number;
+      allergyHighRisk: number;
     };
   } {
     const { interactions, unknownSlugs } = this.checkInteractions(slugs);
@@ -278,6 +295,78 @@ export class DrugsService implements OnModuleInit {
               references: r.references,
             }));
 
+    // Allergy safety — only when the patient's allergies are supplied. Two
+    // kinds of flag: (a) a DIRECT allergy — a listed drug is itself the
+    // allergen class the patient reacts to; (b) CROSS-REACTIVITY — a listed
+    // drug is a known cross-reactant of something the patient is allergic to.
+    // The cross-reactant match uses the record's `crossReactsWith` text so we
+    // don't misattribute an allergen-side member (flat drugSlugs mixes both).
+    const allergyTokens = [...new Set((allergies ?? []).map(normAllergy).filter(Boolean))];
+    const allergyFlags: Array<{
+      allergy: string;
+      drugSlug: string;
+      drug: string;
+      direct: boolean;
+      allergen: string;
+      crossReactsWith?: string;
+      risk: CrossReactivityRisk;
+      mechanism?: string;
+      recommendation: string;
+      references: Citation[];
+    }> = [];
+    if (allergyTokens.length > 0) {
+      const seen = new Set<string>();
+      const push = (f: (typeof allergyFlags)[number]) => {
+        const key = `${f.allergy}|${f.drugSlug}|${f.crossReactsWith ?? 'direct'}`;
+        if (seen.has(key)) return;
+        seen.add(key);
+        allergyFlags.push(f);
+      };
+      for (const token of allergyTokens) {
+        for (const d of resolved) {
+          const identifiers = [d.slug, d.inn, d.drugClass].map(normAllergy);
+          // (a) direct allergy: the drug itself matches the allergy token.
+          if (identifiers.some((id) => id && (id.includes(token) || token.includes(id)))) {
+            push({
+              allergy: token,
+              drugSlug: d.slug,
+              drug: d.inn,
+              direct: true,
+              allergen: d.drugClass || d.inn,
+              risk: 'high',
+              recommendation: `Reported allergy matches ${d.inn} directly — do not administer without allergy verification.`,
+              references: [],
+            });
+          }
+          // (b) cross-reactivity via the curated records.
+          for (const r of this.allergyCrossReactivity) {
+            const allergenMatch =
+              tokenMatchesText(token, r.allergen) || r.drugSlugs?.includes(token);
+            if (!allergenMatch) continue;
+            const crossText = normAllergy(r.crossReactsWith);
+            const dClass = normAllergy(d.drugClass);
+            const dInn = normAllergy(d.inn);
+            const medIsCrossReactant =
+              (!!dClass && crossText.includes(dClass)) || (!!dInn && crossText.includes(dInn));
+            if (!medIsCrossReactant) continue;
+            push({
+              allergy: token,
+              drugSlug: d.slug,
+              drug: d.inn,
+              direct: false,
+              allergen: r.allergen,
+              crossReactsWith: r.crossReactsWith,
+              risk: r.risk,
+              mechanism: r.mechanism,
+              recommendation: r.recommendation,
+              references: r.references,
+            });
+          }
+        }
+      }
+      allergyFlags.sort((a, b) => ALLERGY_RISK_RANK[a.risk] - ALLERGY_RISK_RANK[b.risk]);
+    }
+
     return {
       interactions,
       stewardship,
@@ -287,6 +376,7 @@ export class DrugsService implements OnModuleInit {
       hepaticGuidance,
       paediatricDosing,
       drugDiseaseFlags,
+      allergyFlags,
       unknownSlugs,
       summary: {
         drugs: unique.length,
@@ -304,6 +394,7 @@ export class DrugsService implements OnModuleInit {
         paediatricUncapped: paediatricDosing.filter((p) => p.uncapped).length,
         drugDiseaseContraindicated: drugDiseaseFlags.filter((f) => f.severity === 'contraindicated')
           .length,
+        allergyHighRisk: allergyFlags.filter((f) => f.direct || f.risk === 'high').length,
       },
     };
   }
@@ -320,6 +411,35 @@ export class DrugsService implements OnModuleInit {
 
 /** Weight at/above which the dosing calculator treats a patient as an adult. */
 const PAEDIATRIC_MAX_WEIGHT_KG = 50;
+
+const ALLERGY_RISK_RANK: Record<CrossReactivityRisk, number> = {
+  high: 0,
+  moderate: 1,
+  low: 2,
+  negligible: 3,
+};
+
+/** Normalise an allergy / drug identifier for loose matching. */
+function normAllergy(s: string | undefined): string {
+  return (s ?? '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
+/**
+ * True when an allergy token and a free-text class label share a meaningful
+ * word (≥ 4 chars) — e.g. "penicillin" ↔ "Penicillins". Avoids matching on
+ * short/common fragments.
+ */
+function tokenMatchesText(token: string, text: string): boolean {
+  const t = normAllergy(text);
+  if (!t || !token) return false;
+  if (t.includes(token) || token.includes(t)) return true;
+  const words = t.split(' ').filter((w) => w.length >= 4);
+  const tokenWords = token.split(' ').filter((w) => w.length >= 4);
+  return tokenWords.some((tw) => words.some((w) => w.includes(tw) || tw.includes(w)));
+}
 
 function pairKey(a: string, b: string): string {
   return [a.toLowerCase(), b.toLowerCase()].sort().join('::');

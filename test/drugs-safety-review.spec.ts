@@ -116,11 +116,26 @@ const drugDisease = [
   },
 ];
 
+const allergyCrossReactivity = [
+  {
+    slug: 'penicillin-cephalosporin',
+    allergen: 'Penicillins',
+    crossReactsWith: 'Cephalosporins',
+    risk: 'low',
+    mechanism: 'Shared beta-lactam / R1 side chain.',
+    recommendation: 'Choose a cephalosporin with a dissimilar side chain.',
+    drugSlugs: ['amoxicillin', 'ceftriaxone'],
+    references: [{ label: 'BNF', strength: 'A' }],
+    domains: ['allergy'],
+  },
+];
+
 function makeService(): DrugsService {
   const knowledge = {
     getDrugs: () => drugs,
     getInteractions: () => interactions,
     getDrugDiseaseInteractions: () => drugDisease,
+    getAllergyCrossReactivity: () => allergyCrossReactivity,
   } as unknown as KnowledgeService;
   const svc = new DrugsService(knowledge);
   svc.onModuleInit();
@@ -242,6 +257,28 @@ describe('DrugsService.safetyReview', () => {
       svc.safetyReview(['nitrofurantoin', 'ciprofloxacin'], undefined, undefined, ['asthma'])
         .drugDiseaseFlags,
     ).toHaveLength(0);
+  });
+
+  it('flags direct allergy and cross-reactivity only when allergies are supplied', () => {
+    // No allergies → no flags.
+    expect(svc.safetyReview(['amoxicillin', 'ceftriaxone']).allergyFlags).toHaveLength(0);
+
+    const r = svc.safetyReview(['amoxicillin', 'ceftriaxone'], undefined, undefined, undefined, [
+      'penicillin',
+    ]);
+    const bySlug = new Map(r.allergyFlags.map((f) => [f.drugSlug, f]));
+
+    // amoxicillin IS a penicillin → direct allergy (high risk).
+    expect(bySlug.get('amoxicillin')?.direct).toBe(true);
+    expect(bySlug.get('amoxicillin')?.risk).toBe('high');
+
+    // ceftriaxone cross-reacts with the penicillin allergy → cross-reactivity.
+    expect(bySlug.get('ceftriaxone')?.direct).toBe(false);
+    expect(bySlug.get('ceftriaxone')?.crossReactsWith).toBe('Cephalosporins');
+    expect(bySlug.get('ceftriaxone')?.risk).toBe('low');
+
+    // Only the direct penicillin match is high-risk.
+    expect(r.summary.allergyHighRisk).toBe(1);
   });
 
   it('counts a contraindicated interaction as both major and contraindicated', () => {
