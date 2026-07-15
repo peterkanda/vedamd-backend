@@ -37,6 +37,16 @@ export class IdentityService implements OnModuleInit {
   }
 
   /**
+   * Whether OIDC verification is actually wired (JWKS + issuer present).
+   * When true, callers must NOT fall back to accepting unverified tokens —
+   * a verification failure means the token is bad, not that identity is
+   * unconfigured.
+   */
+  isConfigured(): boolean {
+    return !!this.jwks;
+  }
+
+  /**
    * Verify a bearer token. Returns the claims on success, null on failure.
    * Caller is responsible for any role/scope authorization.
    */

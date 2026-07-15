@@ -46,6 +46,20 @@ describe('assertHostAllowedLiteral', () => {
     }
   });
 
+  it('blocks obfuscated loopback encodings (H4 bypass vectors)', () => {
+    for (const url of [
+      'http://2130706433/',            // 127.0.0.1 as a decimal integer
+      'http://0x7f000001/',            // hex integer
+      'http://017700000001/',          // octal integer
+      'http://0x7f.0.0.1/',            // hex first octet
+      'http://0177.0.0.1/',            // octal first octet
+      'postgresql://[::ffff:7f00:1]/app', // hex IPv4-mapped IPv6 loopback
+      'http://[::ffff:a9fe:a9fe]/',    // hex-mapped 169.254.169.254 metadata
+    ]) {
+      expect(() => assertHostAllowedLiteral(url), url).toThrow(SsrfBlockedError);
+    }
+  });
+
   it('permits private hosts when blockPrivate is false', () => {
     expect(() =>
       assertHostAllowedLiteral('postgresql://10.0.0.5/app', { blockPrivate: false }),

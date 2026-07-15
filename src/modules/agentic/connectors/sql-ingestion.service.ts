@@ -90,11 +90,18 @@ export class SqlIngestionService {
    * the raw query + mapping but their own row-walking strategy.
    * Returns null if either id is unregistered.
    */
-  getRegisteredQuery(queryId: string): NamedQuery | null {
-    return this.queries.get(queryId) ?? null;
+  getRegisteredQuery(queryId: string, requesterIntegratorId?: string): NamedQuery | null {
+    const q = this.queries.get(queryId);
+    if (!q || !ownsOrShared(q.integratorId, requesterIntegratorId)) return null;
+    return q;
   }
-  getRegisteredConnection(connectionId: string): SqlConnectionConfig | null {
-    return this.connections.get(connectionId) ?? null;
+  getRegisteredConnection(
+    connectionId: string,
+    requesterIntegratorId?: string,
+  ): SqlConnectionConfig | null {
+    const c = this.connections.get(connectionId);
+    if (!c || !ownsOrShared(c.integratorId, requesterIntegratorId)) return null;
+    return c;
   }
 
   /**
@@ -104,15 +111,38 @@ export class SqlIngestionService {
    * context, which is right for CDS but wrong for audit sweeps).
    * Still subject to the connector's read-only guard.
    */
+  /**
+   * Resolve a connection + query, enforcing per-tenant ownership.
+   *
+   * A tenant-owned entry (integratorId set, hydrated from the DB) is only
+   * visible to its owner; anyone else gets "unknown id" — identical to a
+   * non-existent id, so a caller cannot enumerate another tenant's ids or
+   * confirm they exist. Deployment-level (env) entries have no owner and are
+   * shared. This is the primary defence against cross-tenant EHR access.
+   */
+  private resolveOwned(
+    connectionId: string,
+    queryId: string,
+    requesterIntegratorId: string | undefined,
+  ): { connection: SqlConnectionConfig; query: NamedQuery } {
+    const connection = this.connections.get(connectionId);
+    if (!connection || !ownsOrShared(connection.integratorId, requesterIntegratorId)) {
+      throw new Error(`Unknown connectionId: ${connectionId}`);
+    }
+    const query = this.queries.get(queryId);
+    if (!query || !ownsOrShared(query.integratorId, requesterIntegratorId)) {
+      throw new Error(`Unknown queryId: ${queryId}`);
+    }
+    return { connection, query };
+  }
+
   async fetchRows(
     connectionId: string,
     queryId: string,
     params: Record<string, string | number>,
+    requesterIntegratorId?: string,
   ): Promise<{ rows: Array<Record<string, unknown>>; mapping: QueryMapping }> {
-    const connection = this.connections.get(connectionId);
-    if (!connection) throw new Error(`Unknown connectionId: ${connectionId}`);
-    const query = this.queries.get(queryId);
-    if (!query) throw new Error(`Unknown queryId: ${queryId}`);
+    const { connection, query } = this.resolveOwned(connectionId, queryId, requesterIntegratorId);
     // DNS-aware SSRF re-check immediately before we open the socket —
     // closes the rebinding window between registration and connect.
     await assertHostAllowedResolved(connection.url, ssrfOptionsFromEnv());
@@ -133,11 +163,9 @@ export class SqlIngestionService {
     params: Record<string, string | number>,
     hook?: string,
     question?: string,
+    requesterIntegratorId?: string,
   ): Promise<AgenticClinicalContext> {
-    const connection = this.connections.get(connectionId);
-    if (!connection) throw new Error(`Unknown connectionId: ${connectionId}`);
-    const query = this.queries.get(queryId);
-    if (!query) throw new Error(`Unknown queryId: ${queryId}`);
+    const { connection, query } = this.resolveOwned(connectionId, queryId, requesterIntegratorId);
 
     const connector = this.connectors[connection.dialect];
     if (!connector.isAvailable()) {
@@ -154,6 +182,16 @@ export class SqlIngestionService {
     });
     return mapRows(rows, query.mapping, hook, question);
   }
+}
+
+/**
+ * True when a registry entry may be used by the requester: either the entry
+ * is unowned (deployment-level env config, shared) or its owner matches the
+ * requester. An owned entry with no requester identity is never shared.
+ */
+function ownsOrShared(ownerId: string | undefined, requesterId: string | undefined): boolean {
+  if (ownerId === undefined) return true;
+  return ownerId === requesterId;
 }
 
 /** Map result rows to AgenticClinicalContext per the declarative mapping. */

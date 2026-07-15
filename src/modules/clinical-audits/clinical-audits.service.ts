@@ -112,12 +112,12 @@ export class ClinicalAuditsService implements OnModuleInit {
     // time rather than silently at "Run now".
     const connectionId = dto.connectionId.trim();
     const namedQueryId = dto.namedQueryId.trim();
-    if (!this.sql.getRegisteredConnection(connectionId)) {
+    if (!this.sql.getRegisteredConnection(connectionId, integratorId)) {
       throw new NotFoundException(
         `Connection "${connectionId}" is not registered. Add it under Data sources first.`,
       );
     }
-    if (!this.sql.getRegisteredQuery(namedQueryId)) {
+    if (!this.sql.getRegisteredQuery(namedQueryId, integratorId)) {
       throw new NotFoundException(
         `Named query "${namedQueryId}" is not registered. Add it under Data sources first.`,
       );
@@ -243,6 +243,9 @@ export class ClinicalAuditsService implements OnModuleInit {
         audit.connectionId,
         audit.namedQueryId,
         audit.queryParams,
+        // Scope to the audit's owner so a run can only read that tenant's
+        // own connection/query, never another integrator's.
+        integratorId,
       );
       rows = fetched.rows;
       mapping = fetched.mapping;

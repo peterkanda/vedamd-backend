@@ -127,6 +127,9 @@ export class AgenticController {
         dto.params ?? {},
         dto.hook,
         dto.question,
+        // Enforce per-tenant ownership: a caller can only use its own
+        // registered connection/query, never another integrator's.
+        req.apiKey?.integratorId,
       );
       ctx.mode = dto.mode;
       ctx.minConfidence = dto.minConfidence;

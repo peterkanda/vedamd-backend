@@ -23,6 +23,12 @@ export interface SqlConnectionConfig {
   ssl?: boolean;
   /** Max rows a query may return (hard cap to bound memory). */
   maxRows?: number;
+  /**
+   * Owning integrator. Set for per-tenant connections hydrated from the DB;
+   * undefined for deployment-level connections from env config (shared).
+   * A tenant-owned connection is only usable by its owner.
+   */
+  integratorId?: string;
 }
 
 export interface NamedQuery {
@@ -31,6 +37,8 @@ export interface NamedQuery {
   sql: string;
   /** Maps the result row(s) to AgenticClinicalContext fields. */
   mapping: QueryMapping;
+  /** Owning integrator (see SqlConnectionConfig.integratorId). */
+  integratorId?: string;
 }
 
 /**

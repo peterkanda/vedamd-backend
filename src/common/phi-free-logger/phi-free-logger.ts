@@ -111,6 +111,20 @@ const IDENTIFIER_FIELDS = new Set<string>([
 
 const IDENTIFIER_HASH_SUFFIX = '_hash';
 
+/**
+ * Heuristic for nested keys (inside allow-listed containers) that carry an
+ * identifier and must be hashed. Deliberately broad — over-hashing a nested
+ * debug field is harmless; leaking PHI is not. Matches patientName,
+ * patient_mrn, givenName, national_id, dob, phone, email, address, etc.,
+ * while sparing plain content fields (title, detail, indicator, url, code).
+ */
+function looksLikeNestedIdentifier(key: string): boolean {
+  return (
+    /(?:^|[_A-Za-z])(?:name|mrn|dob|ssn|phone|email|address)(?:$|[_A-Z0-9])/i.test(key) ||
+    /patient|practitioner|national[_-]?id|nhif|given|family|surname|birth/i.test(key)
+  );
+}
+
 export interface PhiFreeLoggerOptions {
   service: string;
   /** Per-tenant secret used to HMAC identifiers. Required in production. */
@@ -126,18 +140,21 @@ export class PhiFreeLogger {
   private readonly strict: boolean;
   private readonly service: string;
 
-  constructor(opts: PhiFreeLoggerOptions) {
+  constructor(opts: PhiFreeLoggerOptions, destination?: pino.DestinationStream) {
     this.service = opts.service;
     this.hashSecret = opts.hashSecret;
     this.strict = opts.strict ?? process.env.NODE_ENV !== 'production';
-    this.logger = pino({
+    const pinoOptions: pino.LoggerOptions = {
       level: opts.level ?? process.env.LOG_LEVEL ?? 'info',
       base: { service: opts.service },
       timestamp: pino.stdTimeFunctions.isoTime,
       formatters: {
         level: (label) => ({ level: label }),
       },
-    });
+    };
+    // Optional custom sink (tests capture emitted lines here); defaults to
+    // pino's standard stdout destination when omitted.
+    this.logger = destination ? pino(pinoOptions, destination) : pino(pinoOptions);
   }
 
   trace(event: string, fields: Record<string, unknown> = {}) {
@@ -187,7 +204,32 @@ export class PhiFreeLogger {
         );
         continue;
       }
-      out[key] = value;
+      // Recurse into the VALUE of an allowed field. Allow-listed containers
+      // (card_summaries, citations, message objects) can still nest PHI, and
+      // the previous top-level-only pass wrote it verbatim (NFR-027/029 hole).
+      out[key] = this.sanitizeValue(value);
+    }
+    return out;
+  }
+
+  /**
+   * Recursively sanitise a value nested inside an allow-listed field.
+   * Any nested key that names an identifier (exact match in
+   * IDENTIFIER_FIELDS or a PHI-shaped pattern like `patientName`,
+   * `patient_mrn`) is HMAC-hashed; other nested keys are kept but their
+   * values are walked so deeper identifiers are still caught.
+   */
+  private sanitizeValue(value: unknown): unknown {
+    if (Array.isArray(value)) return value.map((v) => this.sanitizeValue(v));
+    if (value === null || typeof value !== 'object') return value;
+    const out: Record<string, unknown> = {};
+    for (const [key, v] of Object.entries(value as Record<string, unknown>)) {
+      if (IDENTIFIER_FIELDS.has(key) || looksLikeNestedIdentifier(key)) {
+        out[`${key}${IDENTIFIER_HASH_SUFFIX}`] =
+          typeof v === 'string' ? this.hashIdentifier(v) : this.hashIdentifier(JSON.stringify(v));
+        continue;
+      }
+      out[key] = this.sanitizeValue(v);
     }
     return out;
   }

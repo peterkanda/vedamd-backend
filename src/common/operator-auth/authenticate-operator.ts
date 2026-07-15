@@ -58,10 +58,12 @@ export async function authenticateOperator(
   if (token) {
     let claims = await identity.verifyAccessToken(token);
 
-    if (!claims && !isProd) {
-      // Non-production fallback only: accept a structurally-valid JWT
-      // without signature verification so local/staging work before
-      // OIDC is wired. Production refuses this path.
+    if (!claims && !isProd && !identity.isConfigured()) {
+      // Non-production fallback, ONLY when OIDC is not wired at all: accept a
+      // structurally-valid JWT without signature verification so local/staging
+      // work before an IdP is chosen. Once OIDC IS configured, a null result
+      // means the token failed verification and must be rejected — never
+      // silently downgraded to unverified. Production always refuses this path.
       const decoded = decodeJwtPayload(token);
       if (decoded) {
         claims = decoded;
