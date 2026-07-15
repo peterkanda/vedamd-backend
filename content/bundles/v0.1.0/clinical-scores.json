@@ -7647,7 +7647,7 @@
     ],
     "scoring": {
       "method": "formula",
-      "notes": "MELD 3.0 = 1.33·female + 4.56·ln(bili) + 0.82·(137 − Na) − 0.24·(137 − Na)·ln(bili) + 9.09·ln(INR) + 11.14·ln(creatinine) + 1.85·(3.5 − alb) − 1.83·(3.5 − alb)·ln(alb) + 6. See Kim 2021."
+      "notes": "MELD 3.0 = 1.33·female + 4.56·ln(bili) + 0.82·(137 − Na) − 0.24·(137 − Na)·ln(bili) + 9.09·ln(INR) + 11.14·ln(creatinine) + 1.85·(3.5 − alb) − 1.83·(3.5 − alb)·ln(creatinine) + 6. See Kim 2021."
     },
     "interpretation": [
       {
@@ -8099,7 +8099,7 @@
     ],
     "scoring": {
       "method": "formula",
-      "notes": "Use total body weight in non-obese; ideal/adjusted body weight in obese. For SI creatinine (µmol/L): multiply denominator by ~88.4 to convert."
+      "notes": "Use total body weight in non-obese; ideal/adjusted body weight in obese. For SI creatinine (µmol/L): divide the creatinine by 88.4 to convert to mg/dL before applying the formula. Equivalent SI form: CrCl = (140 − age) × weight(kg) × (1.04 if female else 1.23) / creatinine(µmol/L)."
     },
     "interpretation": [
       {

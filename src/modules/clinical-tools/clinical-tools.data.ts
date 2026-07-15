@@ -1011,7 +1011,9 @@ const EQUIANALGESIC_OPIOIDS: EquianalgesicOpioid[] = [
     id: 'fentanyl-iv',
     name: 'Fentanyl IV',
     route: 'IV',
-    doseEquivalentTo30mgOralMorphine: 0.3,
+    // 30 mg oral morphine ≈ 10 mg IV morphine ≈ 100 mcg (0.1 mg) IV fentanyl.
+    // Was 0.3 — a ~3× value that produced a fentanyl overdose on rotation.
+    doseEquivalentTo30mgOralMorphine: 0.1,
     defaultDurationHours: 1,
     notes:
       'Onset 1–2 min; duration 30–60 min. Preferred in renal failure (no active metabolites) and end-of-life dyspnoea. Short half-life means PCA / infusion, not q4h dosing.',

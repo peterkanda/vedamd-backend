@@ -13,6 +13,15 @@ describe('DoseProtocolsService', () => {
     expect(list).toEqual(sorted);
   });
 
+  it('never encodes a per-kg dose as 0 (H8: 0 rendered "0 mg" for fixed-dose emergency drugs)', () => {
+    // A per-kg field is either a real positive rate or null ("not
+    // weight-dosed — see absoluteMax/remarks"). A literal 0 makes the
+    // frontend compute weight × 0 = 0 mg for status-epilepticus and
+    // anaphylaxis drugs. This invariant guarantees that can't recur.
+    const offenders = svc.list().protocols.filter((p) => p.minPerKg === 0 && p.maxPerKg === 0);
+    expect(offenders).toEqual([]);
+  });
+
   it('list() with no filters returns all protocols + grouped diagnoses', () => {
     const out = svc.list();
     expect(out.protocols.length).toBeGreaterThan(100);

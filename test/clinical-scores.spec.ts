@@ -68,6 +68,22 @@ describe('ClinicalScoresService', () => {
     }
   });
 
+  it('MELD 3.0 albumin interaction term uses ln(creatinine), not ln(alb) (H7)', () => {
+    const meld = svc.get('meld-3');
+    expect(meld).not.toBeNull();
+    const notes = meld!.scoring.notes ?? '';
+    expect(notes).toContain('1.83·(3.5 − alb)·ln(creatinine)');
+    expect(notes).not.toContain('ln(alb)');
+  });
+
+  it('Cockcroft-Gault SI note divides creatinine by 88.4 (H7: was "multiply denominator")', () => {
+    const cg = svc.get('cockcroft-gault');
+    expect(cg).not.toBeNull();
+    const notes = cg!.scoring.notes ?? '';
+    expect(notes.toLowerCase()).toContain('divide the creatinine by 88.4');
+    expect(notes).not.toContain('multiply denominator by');
+  });
+
   it('exposes formula-method scores (ASCVD, QRISK3, APACHE-II) without inventing point values', () => {
     // Formula-based scores must declare method "formula" — manual summation
     // is wrong and dangerous; the test fence-posts against silent re-coding.

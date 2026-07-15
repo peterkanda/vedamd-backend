@@ -39,6 +39,75 @@ describe('DrugsService.calculateDose — paediatric mg/kg', () => {
   });
 });
 
+describe('DrugsService.calculateDose — sub-milligram precision (regression: 0 mg / 2× rounding)', () => {
+  // Rounding to whole mg previously returned "0 mg" for adrenaline and
+  // naloxone in a small child, and doubled morphine. These assert the
+  // exact clinical numbers so the bug can never regress silently.
+  it('adrenaline 5 kg → 0.05 mg (never 0 mg) for anaphylaxis', () => {
+    const r = svc.calculateDose('adrenaline', { weightKg: 5, ageYears: 1 })!;
+    expect(r.protocol).toBe('paediatric');
+    expect(r.calculatedDose?.mgPerDose).toBe(0.05);
+    expect(r.calculatedDose?.mgPerDose).toBeGreaterThan(0);
+    expect(r.narrative).not.toMatch(/\b0 mg\b/);
+  });
+
+  it('adrenaline 10 kg → 0.1 mg', () => {
+    const r = svc.calculateDose('adrenaline', { weightKg: 10, ageYears: 2 })!;
+    expect(r.calculatedDose?.mgPerDose).toBe(0.1);
+  });
+
+  it('naloxone 5 kg → 0.05 mg (never 0 mg)', () => {
+    const r = svc.calculateDose('naloxone', { weightKg: 5, ageYears: 1 })!;
+    expect(r.protocol).toBe('paediatric');
+    expect(r.calculatedDose?.mgPerDose).toBe(0.05);
+    expect(r.calculatedDose?.mgPerDose).toBeGreaterThan(0);
+  });
+
+  it('morphine 5 kg → 0.5 mg (NOT 1 mg — old code doubled it)', () => {
+    const r = svc.calculateDose('morphine', { weightKg: 5, ageYears: 1 })!;
+    expect(r.protocol).toBe('paediatric');
+    expect(r.calculatedDose?.mgPerDose).toBe(0.5);
+  });
+
+  it('morphine 4 kg neonate → 0.4 mg (NOT 0 mg)', () => {
+    const r = svc.calculateDose('morphine', { weightKg: 4, ageYears: 0 })!;
+    expect(r.calculatedDose?.mgPerDose).toBe(0.4);
+  });
+
+  it('large doses stay whole (paracetamol 14 kg → 210 mg, no spurious decimals)', () => {
+    const r = svc.calculateDose('paracetamol', { weightKg: 14, ageYears: 4 })!;
+    expect(r.calculatedDose?.mgPerDose).toBe(210);
+    expect(Number.isInteger(r.calculatedDose!.mgPerDose)).toBe(true);
+  });
+});
+
+describe('DrugsService.calculateDose — age vs weight routing', () => {
+  // Age is authoritative when supplied: a large child stays on the
+  // paediatric path (capped by maxMgPerDose), never handed an adult regimen.
+  it('55 kg 10-year-old is dosed paediatric, not adult (age wins over 50 kg weight)', () => {
+    const r = svc.calculateDose('paracetamol', { weightKg: 55, ageYears: 10 })!;
+    expect(r.protocol).toBe('paediatric');
+    // 55 × 15 = 825, under the 1000 mg cap.
+    expect(r.calculatedDose?.mgPerDose).toBe(825);
+  });
+
+  it('13-year-old is dosed adult regardless of a sub-50 kg weight', () => {
+    const r = svc.calculateDose('paracetamol', { weightKg: 45, ageYears: 13 })!;
+    expect(r.protocol).toBe('adult');
+  });
+
+  it('omitting age adds an explicit weight-inference warning', () => {
+    const r = svc.calculateDose('paracetamol', { weightKg: 45 })!;
+    expect(r.warnings.some((w) => w.toLowerCase().includes('age not supplied'))).toBe(true);
+  });
+
+  it('omitting age still routes ≥50 kg to the adult path (with the warning)', () => {
+    const r = svc.calculateDose('paracetamol', { weightKg: 60 })!;
+    expect(r.protocol).toBe('adult');
+    expect(r.warnings.some((w) => w.toLowerCase().includes('age not supplied'))).toBe(true);
+  });
+});
+
 describe('DrugsService.calculateDose — non-mg/kg paediatric safety', () => {
   // Regression: drugs that carry mgPerKgPerDose = 0 as a "not mg/kg-dosed"
   // sentinel (insulin, IV fluids, topicals, vitamins) must NEVER yield a
