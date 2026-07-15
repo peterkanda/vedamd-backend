@@ -158,7 +158,10 @@ export class AgenticService {
         const extracted = extractCards(
           result.text,
           new Date().toISOString(),
-          ctx.minConfidence ?? 0,
+          // Pass undefined (not 0) when the caller didn't specify a floor, so
+          // extractCards applies its 0.6 anti-hallucination default instead of
+          // rendering low-confidence LLM cards as actionable CDS.
+          ctx.minConfidence,
           this.retriever.resolveCitationStrength,
         );
         agenticCards = extracted.cards;

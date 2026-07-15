@@ -1,3 +1,4 @@
+import { fetchLlm } from './llm-fetch';
 import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import type { AppConfig } from '../../../config/configuration';
@@ -85,11 +86,15 @@ export class GeminiProvider implements LlmProvider {
     const url =
       `${this.baseUrl}/models/${encodeURIComponent(this.model)}:generateContent` +
       `?key=${encodeURIComponent(this.apiKey)}`;
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(body),
-    });
+    const res = await fetchLlm(
+      url,
+      {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(body),
+      },
+      'gemini',
+    );
 
     if (!res.ok) {
       this.log.warn('agentic_llm_error', {
@@ -130,14 +135,18 @@ export class GeminiProvider implements LlmProvider {
         { role: 'user', content: req.user },
       ],
     };
-    const res = await fetch(`${this.baseUrl}/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        authorization: `Bearer ${this.apiKey}`,
+    const res = await fetchLlm(
+      `${this.baseUrl}/chat/completions`,
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          authorization: `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify(body),
       },
-      body: JSON.stringify(body),
-    });
+      'gemini',
+    );
 
     if (!res.ok) {
       this.log.warn('agentic_llm_error', {

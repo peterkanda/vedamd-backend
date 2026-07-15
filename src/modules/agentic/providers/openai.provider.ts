@@ -1,3 +1,4 @@
+import { fetchLlm } from './llm-fetch';
 import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import type { AppConfig } from '../../../config/configuration';
@@ -57,14 +58,18 @@ export class OpenAiProvider implements LlmProvider {
     const MAX_ATTEMPTS = 3;
     let res: Response | null = null;
     for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
-      res = await fetch(`${this.baseUrl}/chat/completions`, {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-          authorization: `Bearer ${this.apiKey}`,
+      res = await fetchLlm(
+        `${this.baseUrl}/chat/completions`,
+        {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+            authorization: `Bearer ${this.apiKey}`,
+          },
+          body: JSON.stringify(body),
         },
-        body: JSON.stringify(body),
-      });
+        'openai',
+      );
       if (res.ok) break;
 
       const status = res.status;

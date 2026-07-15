@@ -99,6 +99,19 @@ describe('Agentic — card extractor', () => {
     expect(extractCards('not json at all', now).cards).toHaveLength(0);
   });
 
+  it('applies the 0.6 confidence floor when no minConfidence is passed (G7 anti-hallucination default)', () => {
+    // The service calls extractCards WITHOUT a floor for the common case;
+    // the default must drop low-confidence cards, not render them.
+    const text = JSON.stringify({
+      cards: [
+        { summary: 'Low', indicator: 'info', confidence: 0.3, citations: [{ kind: 'drug', id: 'x', label: 'X' }] },
+        { summary: 'High', indicator: 'warning', confidence: 0.9, citations: [{ kind: 'drug', id: 'y', label: 'Y' }] },
+      ],
+    });
+    const { cards } = extractCards(text, now); // no minConfidence → default 0.6
+    expect(cards.map((c) => c.summary)).toEqual(['High']);
+  });
+
   it('parses + clamps confidence into the card extension', () => {
     const text = JSON.stringify({
       cards: [

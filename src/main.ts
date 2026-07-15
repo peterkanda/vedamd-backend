@@ -10,6 +10,7 @@ import compress from '@fastify/compress';
 import { AppModule } from './app.module';
 import { applyApiPrefix, swaggerConfig } from './openapi.config';
 import { REDIS, type MaybeRedis } from './common/cache';
+import { collapseQueryArrays } from './common/query-normalize';
 import type { AppConfig } from './config/configuration';
 
 async function bootstrap() {
@@ -76,6 +77,17 @@ async function bootstrap() {
       forbidUnknownValues: true,
     }),
   );
+
+  // Collapse repeated query params (?q=a&q=b) to a single value before any
+  // handler runs, so list endpoints that call string methods on `q` return a
+  // clean result instead of a 500. No GET route consumes array query params.
+  app
+    .getHttpAdapter()
+    .getInstance()
+    .addHook('preValidation', (req: { query?: unknown }, _reply: unknown, done: () => void) => {
+      collapseQueryArrays(req.query);
+      done();
+    });
 
   applyApiPrefix(app);
 

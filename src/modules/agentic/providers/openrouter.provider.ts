@@ -1,3 +1,4 @@
+import { fetchLlm } from './llm-fetch';
 import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import type { AppConfig } from '../../../config/configuration';
@@ -74,17 +75,21 @@ export class OpenRouterProvider implements LlmProvider {
       ],
     };
 
-    const res = await fetch(`${this.baseUrl}/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        authorization: `Bearer ${this.apiKey}`,
-        // Optional OpenRouter attribution headers (ignored by other endpoints).
-        'HTTP-Referer': this.siteUrl,
-        'X-Title': 'VedaMD',
+    const res = await fetchLlm(
+      `${this.baseUrl}/chat/completions`,
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          authorization: `Bearer ${this.apiKey}`,
+          // Optional OpenRouter attribution headers (ignored by other endpoints).
+          'HTTP-Referer': this.siteUrl,
+          'X-Title': 'VedaMD',
+        },
+        body: JSON.stringify(body),
       },
-      body: JSON.stringify(body),
-    });
+      'openrouter',
+    );
 
     if (!res.ok) {
       this.log.warn('agentic_llm_error', {
