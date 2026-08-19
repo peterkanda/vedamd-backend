@@ -66,8 +66,8 @@ services:
 
   # --- operator identity: Supabase Auth (public URLs, not secret) ---
   # Without these the OperatorAuthGuard accepts UNVERIFIED JWTs.
-  - { key: OIDC_ISSUER, value: "https://dtaoztfmksdktdrlifoo.supabase.co/auth/v1", scope: RUN_TIME }
-  - { key: OIDC_JWKS_URL, value: "https://dtaoztfmksdktdrlifoo.supabase.co/auth/v1/.well-known/jwks.json", scope: RUN_TIME }
+  - { key: OIDC_ISSUER, value: "https://odxbevycpxufffjyrkld.supabase.co/auth/v1", scope: RUN_TIME }
+  - { key: OIDC_JWKS_URL, value: "https://odxbevycpxufffjyrkld.supabase.co/auth/v1/.well-known/jwks.json", scope: RUN_TIME }
   - { key: OIDC_AUDIENCE, value: authenticated, scope: RUN_TIME }
   - { key: OIDC_INTEGRATOR_ID_CLAIM, value: sub, scope: RUN_TIME }
 
