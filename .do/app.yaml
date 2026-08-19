@@ -77,7 +77,7 @@ services:
   # --- CORS allowlist (in-app; comma-separated). The app sets CORS
   #     headers itself, so do NOT add a DO platform-level `cors:` block
   #     too — that would emit duplicate headers and browsers reject them.
-  - { key: CORS_ORIGINS, value: "https://vedamd.io,https://www.vedamd.io,https://app.vedamd.io,https://sea-turtle-app-9s2oj.ondigitalocean.app,https://seashell-app-2fbsw.ondigitalocean.app", scope: RUN_TIME }
+  - { key: CORS_ORIGINS, value: "https://vedamd.io,https://www.vedamd.io,https://app.vedamd.io,https://stingray-app-fuwdi.ondigitalocean.app,https://goldfish-app-lcv7s.ondigitalocean.app", scope: RUN_TIME }
 
   # --- SECRETS: values entered in the DO dashboard, never in this file ---
   - { key: DATABASE_URL, scope: RUN_TIME, type: SECRET } # Supabase session pooler (port 5432)
