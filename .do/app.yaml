@@ -59,10 +59,21 @@ services:
   - { key: DATABASE_POOL_MAX, value: "10", scope: RUN_TIME }
 
   # --- redis: Redis Cloud (non-secret tuning) ---
+  # REDIS_URL intentionally NOT declared below: the last instance
+  # (bubbly-sneeze-cars-67574.db.redis.io) was deleted/expired, and
+  # @fastify/rate-limit (main.ts) wires this client into per-IP rate
+  # limiting with no fallback — an unreachable host there 500s EVERY
+  # request, unlike CacheService which degrades safely. Leave unset
+  # (falls back to in-memory cache + rate limit) until a fresh Redis
+  # Cloud instance is provisioned and its host is verified to resolve.
   - { key: REDIS_CDS_TTL_SECONDS, value: "60", scope: RUN_TIME }
 
-  # --- agentic LLM (non-secret) ---
-  - { key: AGENTIC_PROVIDER, value: openai, scope: RUN_TIME }
+  # --- agentic LLM (non-secret) --- Gemini first, OpenAI then Anthropic
+  # as fallback (ProviderRouter retries the next configured provider on
+  # failure). AGENTIC_ANTHROPIC_MODEL pins a valid model id.
+  - { key: AGENTIC_PROVIDER, value: gemini, scope: RUN_TIME }
+  - { key: AGENTIC_GEMINI_MODEL, value: "gemini-2.5-flash", scope: RUN_TIME }
+  - { key: AGENTIC_ANTHROPIC_MODEL, value: "claude-sonnet-5", scope: RUN_TIME }
 
   # --- operator identity: Supabase Auth (public URLs, not secret) ---
   # Without these the OperatorAuthGuard accepts UNVERIFIED JWTs.
@@ -81,9 +92,9 @@ services:
 
   # --- SECRETS: values entered in the DO dashboard, never in this file ---
   - { key: DATABASE_URL, scope: RUN_TIME, type: SECRET } # Supabase session pooler (port 5432)
-  - { key: REDIS_URL, scope: RUN_TIME, type: SECRET } # Redis Cloud connection string
-  - { key: OPENAI_API_KEY, scope: RUN_TIME, type: SECRET } # enables agentic reasoning
-  - { key: ANTHROPIC_API_KEY, scope: RUN_TIME, type: SECRET } # optional fallback provider
+  - { key: GEMINI_API_KEY, scope: RUN_TIME, type: SECRET } # primary agentic provider
+  - { key: OPENAI_API_KEY, scope: RUN_TIME, type: SECRET } # fallback provider
+  - { key: ANTHROPIC_API_KEY, scope: RUN_TIME, type: SECRET } # last-resort fallback provider
   - { key: AUDIT_HASH_SECRET, scope: RUN_TIME, type: SECRET } # MUST be a stable random value in prod
   - { key: API_KEY_FINGERPRINT_SECRET, scope: RUN_TIME, type: SECRET } # MUST be stable or issued API keys break on restart
 

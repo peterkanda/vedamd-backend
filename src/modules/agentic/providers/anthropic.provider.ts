@@ -13,7 +13,7 @@ import type {
  *
  * Uses the native fetch API (Node ≥ 18) against the Anthropic Messages
  * API. No SDK dependency. The model is configurable via
- * AGENTIC_ANTHROPIC_MODEL (default: claude-sonnet-4-6, a strong
+ * AGENTIC_ANTHROPIC_MODEL (default: claude-sonnet-5, a strong
  * clinical reasoner with fast latency).
  *
  * PHI posture: the request body is sent to Anthropic for evaluation
@@ -34,7 +34,7 @@ export class AnthropicProvider implements LlmProvider {
     @Inject(PHI_FREE_LOGGER) private readonly log: PhiFreeLogger,
   ) {
     this.apiKey = this.config.get('llm.anthropicApiKey', { infer: true }) ?? '';
-    this.model = process.env.AGENTIC_ANTHROPIC_MODEL ?? 'claude-sonnet-4-6';
+    this.model = process.env.AGENTIC_ANTHROPIC_MODEL ?? 'claude-sonnet-5';
   }
 
   isConfigured(): boolean {
