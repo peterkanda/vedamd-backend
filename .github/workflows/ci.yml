@@ -13,7 +13,7 @@ jobs:
     name: build / typecheck / unit tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -32,7 +32,7 @@ jobs:
     name: content bundle — signature + governance
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -74,7 +74,7 @@ jobs:
       API_KEY_FINGERPRINT_SECRET: ci-only-fp
       AUDIT_HASH_SECRET: ci-only-hmac
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
