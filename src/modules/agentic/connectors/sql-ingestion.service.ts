@@ -55,10 +55,14 @@ export class SqlIngestionService {
       for (const p of SCHEMA_PRESETS) this.queries.set(p.query.id, p.query);
     }
     try {
-      const conns = JSON.parse(process.env.AGENTIC_SQL_CONNECTIONS ?? '[]') as SqlConnectionConfig[];
+      const conns = JSON.parse(
+        process.env.AGENTIC_SQL_CONNECTIONS ?? '[]',
+      ) as SqlConnectionConfig[];
       for (const c of conns) this.connections.set(c.id, c);
     } catch {
-      this.nestLogger.warn('AGENTIC_SQL_CONNECTIONS is not valid JSON — pull-mode connections disabled.');
+      this.nestLogger.warn(
+        'AGENTIC_SQL_CONNECTIONS is not valid JSON — pull-mode connections disabled.',
+      );
     }
     try {
       const queries = JSON.parse(process.env.AGENTIC_SQL_QUERIES ?? '[]') as NamedQuery[];
@@ -176,7 +180,8 @@ function mapRows(
         const s = String(v).toLowerCase();
         if (s === 'male' || s === 'female' || s === 'other') p.sex = s;
       } else if (field === 'pregnant') {
-        p.pregnant = v === true || v === 1 || String(v).toLowerCase() === 'true' || String(v) === 'yes';
+        p.pregnant =
+          v === true || v === 1 || String(v).toLowerCase() === 'true' || String(v) === 'yes';
       } else {
         const n = typeof v === 'number' ? v : Number(v);
         if (!Number.isNaN(n)) (p as Record<string, number>)[field] = n;

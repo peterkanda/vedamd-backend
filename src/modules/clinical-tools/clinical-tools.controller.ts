@@ -25,7 +25,8 @@ export class ClinicalToolsController {
   @RequireScope('content:read')
   @ApiOperation({
     summary: 'Get one scoring system by id',
-    description: 'Sub-resource — returns just the axes + citation for the requested scoring system (news2, qsofa, wells-pe, cha2ds2-vasc).',
+    description:
+      'Sub-resource — returns just the axes + citation for the requested scoring system (news2, qsofa, wells-pe, cha2ds2-vasc).',
   })
   scoring(@Param('id') id: string) {
     const found = this.tools.scoringSystem(id);

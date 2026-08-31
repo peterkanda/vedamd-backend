@@ -125,7 +125,9 @@ export class MhgapPsychosisScreenStrategy implements CdsRuleStrategy {
 
     const labels = features.map((c) => PSYCHOTIC_LABELS[c]).join(', ');
     const acuteOnset =
-      typeof ctx.onsetWeeks === 'number' && ctx.onsetWeeks >= 0 && ctx.onsetWeeks <= ACUTE_ONSET_WEEKS;
+      typeof ctx.onsetWeeks === 'number' &&
+      ctx.onsetWeeks >= 0 &&
+      ctx.onsetWeeks <= ACUTE_ONSET_WEEKS;
     const onsetLine =
       typeof ctx.onsetWeeks === 'number'
         ? `Onset ${ctx.onsetWeeks} weeks — ${acuteOnset ? 'acute / first-episode pattern' : 'chronic pattern, suspect schizophrenia or schizoaffective spectrum'}.`

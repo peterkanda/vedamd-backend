@@ -76,12 +76,14 @@ export class AncPphRiskScreenStrategy implements CdsRuleStrategy {
   async evaluate(rule: CdsRule, req: CdsHookRequest): Promise<CdsCard[]> {
     const ctx = (req.context ?? {}) as PphContext;
     if (ctx.pregnant !== true) return [];
-    if (typeof ctx.gestationalAgeWeeks !== 'number' || ctx.gestationalAgeWeeks < MIN_GA_WEEKS) return [];
+    if (typeof ctx.gestationalAgeWeeks !== 'number' || ctx.gestationalAgeWeeks < MIN_GA_WEEKS)
+      return [];
 
     const parts: Array<{ label: string; pts: number }> = [];
     if (ctx.previousPph === true) parts.push({ label: 'previous PPH', pts: 2 });
     if (ctx.antepartumHaemorrhage === true) parts.push({ label: 'antepartum haemorrhage', pts: 2 });
-    if (ctx.placentaPraeviaOrAccreta === true) parts.push({ label: 'placenta praevia / accreta', pts: 2 });
+    if (ctx.placentaPraeviaOrAccreta === true)
+      parts.push({ label: 'placenta praevia / accreta', pts: 2 });
     if (ctx.severeAnaemia === true) parts.push({ label: 'severe anaemia (Hb < 7)', pts: 1 });
     if (typeof ctx.parity === 'number' && ctx.parity >= 5) {
       parts.push({ label: `grand multiparity (parity ${ctx.parity})`, pts: 1 });
@@ -98,9 +100,10 @@ export class AncPphRiskScreenStrategy implements CdsRuleStrategy {
     }
 
     const score = parts.reduce((s, p) => s + p.pts, 0);
-    const partsLabel = parts.length > 0
-      ? parts.map((p) => `${p.label} (+${p.pts})`).join('; ')
-      : 'no risk factors recorded';
+    const partsLabel =
+      parts.length > 0
+        ? parts.map((p) => `${p.label} (+${p.pts})`).join('; ')
+        : 'no risk factors recorded';
 
     let indicator: CdsIndicator;
     let summary: string;

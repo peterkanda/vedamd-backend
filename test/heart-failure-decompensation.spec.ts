@@ -29,10 +29,7 @@ describe('HeartFailureDecompensationStrategy', () => {
 
   it('silent in children', async () => {
     expect(
-      await s.evaluate(
-        RULE,
-        req({ ageYears: 10, suspectedHeartFailureDecompensation: true }),
-      ),
+      await s.evaluate(RULE, req({ ageYears: 10, suspectedHeartFailureDecompensation: true })),
     ).toEqual([]);
   });
 

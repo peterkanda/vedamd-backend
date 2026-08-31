@@ -83,15 +83,60 @@ interface NeonatalContext {
 }
 
 const CODINGS_JAUNDICE: CodedReference[] = [
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'P59', display: 'Neonatal jaundice from other and unspecified causes', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'P57', display: 'Kernicterus', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'P55', display: 'Haemolytic disease of newborn', kind: 'diagnosis' },
-  { system: 'http://id.who.int/icd/release/11/mms', code: 'KA86', display: 'Neonatal jaundice', kind: 'diagnosis' },
-  { system: 'http://id.who.int/icd/release/11/mms', code: 'KA64', display: 'Kernicterus', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '387731001', display: 'Neonatal jaundice (disorder)', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '234468005', display: 'Severe hyperbilirubinaemia of newborn (disorder)', kind: 'diagnosis' },
-  { system: 'http://loinc.org', code: '1975-2', display: 'Bilirubin.total [Mass/volume] in Serum (neonatal)', kind: 'lab' },
-  { system: 'http://loinc.org', code: '6082-2', display: 'Direct (conjugated) bilirubin [Mass/volume] in Serum', kind: 'lab' },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'P59',
+    display: 'Neonatal jaundice from other and unspecified causes',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'P57',
+    display: 'Kernicterus',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'P55',
+    display: 'Haemolytic disease of newborn',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://id.who.int/icd/release/11/mms',
+    code: 'KA86',
+    display: 'Neonatal jaundice',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://id.who.int/icd/release/11/mms',
+    code: 'KA64',
+    display: 'Kernicterus',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '387731001',
+    display: 'Neonatal jaundice (disorder)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '234468005',
+    display: 'Severe hyperbilirubinaemia of newborn (disorder)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://loinc.org',
+    code: '1975-2',
+    display: 'Bilirubin.total [Mass/volume] in Serum (neonatal)',
+    kind: 'lab',
+  },
+  {
+    system: 'http://loinc.org',
+    code: '6082-2',
+    display: 'Direct (conjugated) bilirubin [Mass/volume] in Serum',
+    kind: 'lab',
+  },
 ];
 
 function tsbMgDl(ctx: NeonatalContext): number | undefined {
@@ -140,8 +185,7 @@ export class NeonatalJaundiceStrategy implements CdsRuleStrategy {
   async evaluate(rule: CdsRule, req: CdsHookRequest): Promise<CdsCard[]> {
     const ctx = (req.context ?? {}) as NeonatalContext;
     if (typeof ctx.ageHours !== 'number' && typeof ctx.ageDays !== 'number') return [];
-    const ageHours =
-      typeof ctx.ageHours === 'number' ? ctx.ageHours : (ctx.ageDays ?? 0) * 24;
+    const ageHours = typeof ctx.ageHours === 'number' ? ctx.ageHours : (ctx.ageDays ?? 0) * 24;
     if (ageHours < 0 || ageHours > 28 * 24) return [];
 
     const tsb = tsbMgDl(ctx);
@@ -189,7 +233,7 @@ export class NeonatalJaundiceStrategy implements CdsRuleStrategy {
             'critical',
             'Jaundice in the first 24 h of life — pathological until proven otherwise',
             'Jaundice within the first 24 hours of life is NEVER physiological. Admit the infant. Measure total serum bilirubin and ' +
-              'direct bilirubin immediately. Obtain blood group and direct antiglobulin test (DAT) for the infant and the mother\'s ' +
+              "direct bilirubin immediately. Obtain blood group and direct antiglobulin test (DAT) for the infant and the mother's " +
               'group / antibody screen. Full blood count, reticulocytes, peripheral film for spherocytes / fragments, G6PD screen ' +
               '(common cause in sub-Saharan Africa boys), sepsis screen, urine and blood culture. Start phototherapy immediately ' +
               'while investigations are pending — do not wait. Counsel the family on possible kernicterus and follow-up; arrange ' +
@@ -276,8 +320,8 @@ export class NeonatalJaundiceStrategy implements CdsRuleStrategy {
     // 5. Prolonged jaundice.
     if (
       (typeof ctx.ageDays === 'number' &&
-        ((typeof ctx.gestationalAgeWeeks !== 'number' || ctx.gestationalAgeWeeks >= 37) &&
-          ctx.ageDays > 14)) ||
+        (typeof ctx.gestationalAgeWeeks !== 'number' || ctx.gestationalAgeWeeks >= 37) &&
+        ctx.ageDays > 14) ||
       (typeof ctx.ageDays === 'number' && ctx.ageDays > 21)
     ) {
       const directLine =
@@ -314,7 +358,7 @@ export class NeonatalJaundiceStrategy implements CdsRuleStrategy {
           'Visible jaundice extending below the umbilicus — measure TSB urgently',
           'Visual estimation is unreliable, but jaundice extending below the umbilicus suggests TSB ≥ 12 mg/dL and warrants ' +
             'measurement. Obtain total + direct bilirubin (transcutaneous bilirubinometer is acceptable for screening but use ' +
-            'serum total bilirubin for any decision near the threshold). Reassess against the AAP nomogram at the infant\'s ' +
+            "serum total bilirubin for any decision near the threshold). Reassess against the AAP nomogram at the infant's " +
             'postnatal age + risk profile.',
           {},
           CODINGS_JAUNDICE,
@@ -347,7 +391,8 @@ export class NeonatalJaundiceStrategy implements CdsRuleStrategy {
     codings: CodedReference[],
   ): CdsCard {
     const ref = rule.references[0] ?? {
-      label: 'AAP — Clinical Practice Guideline Revision: Management of Hyperbilirubinaemia in the Newborn ≥ 35 weeks (2022)',
+      label:
+        'AAP — Clinical Practice Guideline Revision: Management of Hyperbilirubinaemia in the Newborn ≥ 35 weeks (2022)',
       url: 'https://publications.aap.org/pediatrics/article/150/3/e2022058859/188726',
     };
     const { summary, detail } = resolveCardCopy(

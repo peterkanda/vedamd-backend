@@ -109,7 +109,9 @@ export class ImciYoungInfantStrategy implements CdsRuleStrategy {
       severeReasons.push(`temperature ${ctx.bodyTempC.toFixed(1)} °C (fever)`);
     }
     if (typeof ctx.bodyTempC === 'number' && ctx.bodyTempC < LOW_TEMP_C) {
-      severeReasons.push(`temperature ${ctx.bodyTempC.toFixed(1)} °C (hypothermia < ${LOW_TEMP_C})`);
+      severeReasons.push(
+        `temperature ${ctx.bodyTempC.toFixed(1)} °C (hypothermia < ${LOW_TEMP_C})`,
+      );
     }
     if (ctx.severeJaundice === true) severeReasons.push('severe jaundice (palms / soles)');
     if (ctx.bulgingFontanelle === true) severeReasons.push('bulging fontanelle');
@@ -131,7 +133,10 @@ export class ImciYoungInfantStrategy implements CdsRuleStrategy {
             'Continue antibiotics every 6 h (ampicillin) and 24 h (gentamicin) during transfer where feasible.',
           {
             reasons: severeReasons.join('; '),
-            ampDose: ampMg !== null ? `${ampMg} mg (50 mg/kg × ${wkg} kg)` : 'weight-banded ampicillin 50 mg/kg',
+            ampDose:
+              ampMg !== null
+                ? `${ampMg} mg (50 mg/kg × ${wkg} kg)`
+                : 'weight-banded ampicillin 50 mg/kg',
             gentDose:
               gentMg !== null
                 ? `${gentMg} mg (${gentMgPerKg} mg/kg × ${wkg} kg)`

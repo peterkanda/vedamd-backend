@@ -70,7 +70,9 @@ export class UsageService {
   ) {
     this.hashSecret = this.config.get('audit.hashSecret', { infer: true });
     if (!this.db) {
-      this.logger.warn('UsageService running without DATABASE_URL — usage events are not recorded.');
+      this.logger.warn(
+        'UsageService running without DATABASE_URL — usage events are not recorded.',
+      );
     }
   }
 
@@ -92,9 +94,7 @@ export class UsageService {
         environment: input.environment ?? null,
       })
       .then(undefined, (err: unknown) => {
-        this.logger.warn(
-          `usage_record_failed: ${err instanceof Error ? err.name : 'unknown'}`,
-        );
+        this.logger.warn(`usage_record_failed: ${err instanceof Error ? err.name : 'unknown'}`);
       });
   }
 
@@ -190,10 +190,7 @@ export class UsageService {
     const since = new Date(now - windowDays * 24 * 3600 * 1000);
 
     const [totalRow, usersRow, orgsRow, cdsRow] = await Promise.all([
-      this.db
-        .select({ c: count() })
-        .from(usageEvents)
-        .where(gte(usageEvents.occurredAt, since)),
+      this.db.select({ c: count() }).from(usageEvents).where(gte(usageEvents.occurredAt, since)),
       this.db
         .select({ c: sql<number>`count(distinct ${usageEvents.actorHash})` })
         .from(usageEvents)

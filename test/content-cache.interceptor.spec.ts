@@ -8,10 +8,16 @@ function makeCtx(opts: {
   method?: string;
   url?: string;
   ifNoneMatch?: string;
-  reply: { header: ReturnType<typeof vi.fn>; code: ReturnType<typeof vi.fn>; send: ReturnType<typeof vi.fn> };
+  reply: {
+    header: ReturnType<typeof vi.fn>;
+    code: ReturnType<typeof vi.fn>;
+    send: ReturnType<typeof vi.fn>;
+  };
 }) {
   const reflector = {
-    getAllAndOverride: vi.fn((key: string) => (key === IMMUTABLE_CONTENT ? opts.metadata : undefined)),
+    getAllAndOverride: vi.fn((key: string) =>
+      key === IMMUTABLE_CONTENT ? opts.metadata : undefined,
+    ),
   } as never;
   const knowledge = { getInfo: () => ({ version: '0.1.0' }) } as never;
   const req = {
@@ -64,7 +70,11 @@ describe('ContentCacheInterceptor', () => {
   it('returns 304 (and skips the handler) when If-None-Match matches', async () => {
     // First compute the ETag the interceptor would emit for this URL.
     const probe = makeReply();
-    const c1 = makeCtx({ metadata: { maxAgeSeconds: 3600 }, url: '/api/v1/conditions', reply: probe });
+    const c1 = makeCtx({
+      metadata: { maxAgeSeconds: 3600 },
+      url: '/api/v1/conditions',
+      reply: probe,
+    });
     const i1 = new ContentCacheInterceptor(c1.reflector, c1.knowledge);
     await lastValueFrom(i1.intercept(c1.context, { handle: () => of({}) }));
     const etag = Object.fromEntries(probe.header.mock.calls)['etag'] as string;
@@ -96,7 +106,9 @@ describe('ContentCacheInterceptor', () => {
       reply,
     });
     const interceptor = new ContentCacheInterceptor(reflector, knowledge);
-    const result = await lastValueFrom(interceptor.intercept(context, { handle: () => of({ ok: true }) }));
+    const result = await lastValueFrom(
+      interceptor.intercept(context, { handle: () => of({ ok: true }) }),
+    );
     expect(result).toEqual({ ok: true });
     expect(reply.header).not.toHaveBeenCalled();
   });

@@ -23,17 +23,12 @@ describe('SevereAsthmaExacerbationStrategy', () => {
   const s = new SevereAsthmaExacerbationStrategy();
 
   it('silent without knownAsthma', async () => {
-    expect(
-      await s.evaluate(RULE, req({ ageYears: 30, oxygenSatPercent: 80 })),
-    ).toEqual([]);
+    expect(await s.evaluate(RULE, req({ ageYears: 30, oxygenSatPercent: 80 }))).toEqual([]);
   });
 
   it('silent for under-5 (uses paediatric pathway)', async () => {
     expect(
-      await s.evaluate(
-        RULE,
-        req({ ageYears: 4, knownAsthma: true, oxygenSatPercent: 85 }),
-      ),
+      await s.evaluate(RULE, req({ ageYears: 4, knownAsthma: true, oxygenSatPercent: 85 })),
     ).toEqual([]);
   });
 

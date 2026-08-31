@@ -122,9 +122,7 @@ describe('DataSourcesService — named queries', () => {
       mapping: { medicationColumn: 'med_name' },
     });
     expect(created.id).toBe('polypharmacy');
-    expect(registerQuery).toHaveBeenCalledWith(
-      expect.objectContaining({ id: 'polypharmacy' }),
-    );
+    expect(registerQuery).toHaveBeenCalledWith(expect.objectContaining({ id: 'polypharmacy' }));
   });
 
   it('rejects a non-SELECT query', async () => {

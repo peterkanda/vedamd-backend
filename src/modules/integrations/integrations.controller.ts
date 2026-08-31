@@ -49,10 +49,7 @@ export class IntegrationsController {
   @Get('postman-collection')
   @RequireScope('content:read')
   @Header('content-type', 'application/json')
-  @Header(
-    'content-disposition',
-    'attachment; filename="vedamd-postman-collection.json"',
-  )
+  @Header('content-disposition', 'attachment; filename="vedamd-postman-collection.json"')
   @ApiOperation({
     summary: 'Download a Postman v2.1 collection for the API',
     description:
@@ -60,7 +57,10 @@ export class IntegrationsController {
   })
   postmanCollection(@Req() req: FastifyRequest) {
     const proto = (req.headers['x-forwarded-proto'] as string | undefined) ?? 'https';
-    const host = (req.headers['x-forwarded-host'] as string | undefined) ?? req.headers.host ?? 'api.vedamd.io';
+    const host =
+      (req.headers['x-forwarded-host'] as string | undefined) ??
+      req.headers.host ??
+      'api.vedamd.io';
     const baseUrl = `${proto}://${host}`;
     return this.postman.build({ baseUrl, services: this.cds.listServices() });
   }

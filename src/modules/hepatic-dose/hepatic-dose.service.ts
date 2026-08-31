@@ -34,16 +34,14 @@ export class HepaticDoseService implements OnModuleInit {
       }
       return true;
     });
-    return filtered.map(
-      ({ slug, drugSlug, drug, oneLiner, worstClassDecision, domains }) => ({
-        slug,
-        drugSlug,
-        drug,
-        oneLiner,
-        worstClassDecision,
-        domains,
-      }),
-    );
+    return filtered.map(({ slug, drugSlug, drug, oneLiner, worstClassDecision, domains }) => ({
+      slug,
+      drugSlug,
+      drug,
+      oneLiner,
+      worstClassDecision,
+      domains,
+    }));
   }
 
   get(slug: string): HepaticDoseRecord | null {

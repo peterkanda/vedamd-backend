@@ -44,7 +44,9 @@ export class HypothyroidismInitStrategy implements CdsRuleStrategy {
     const tsh = ctx.tsh;
     const overt = tsh > 10;
     const subclinicalTreat =
-      tsh >= 4 && tsh <= 10 && (ctx.symptomatic === true || ctx.pregnant === true || ctx.fertilityPlanning === true);
+      tsh >= 4 &&
+      tsh <= 10 &&
+      (ctx.symptomatic === true || ctx.pregnant === true || ctx.fertilityPlanning === true);
 
     if (!overt && !subclinicalTreat) {
       return [
@@ -60,7 +62,8 @@ export class HypothyroidismInitStrategy implements CdsRuleStrategy {
       ];
     }
 
-    const elderlyOrIhd = (typeof ctx.ageYears === 'number' && ctx.ageYears >= 65) || ctx.ihd === true;
+    const elderlyOrIhd =
+      (typeof ctx.ageYears === 'number' && ctx.ageYears >= 65) || ctx.ihd === true;
     let indicator: CdsIndicator = 'info';
     let summary: string;
     let recommendation: string;
@@ -68,7 +71,10 @@ export class HypothyroidismInitStrategy implements CdsRuleStrategy {
     if (ctx.pregnant === true) {
       indicator = 'warning';
       summary = 'Hypothyroidism in pregnancy — start/optimise levothyroxine, tight TSH target';
-      const startDose = typeof ctx.weightKg === 'number' ? `~${Math.round(ctx.weightKg * 2)} µg/day (≈2 µg/kg)` : '~2 µg/kg/day';
+      const startDose =
+        typeof ctx.weightKg === 'number'
+          ? `~${Math.round(ctx.weightKg * 2)} µg/day (≈2 µg/kg)`
+          : '~2 µg/kg/day';
       recommendation =
         `Pregnancy → treat promptly and aim TSH < 2.5 mU/L. If newly diagnosed, start levothyroxine ${startDose}. If already on ` +
         'levothyroxine and pregnancy is confirmed, INCREASE the dose by ~30% immediately (e.g. two extra tablets per week). Recheck TSH ' +
@@ -83,7 +89,10 @@ export class HypothyroidismInitStrategy implements CdsRuleStrategy {
     } else {
       indicator = 'info';
       summary = 'Hypothyroidism — start full-dose levothyroxine';
-      const startDose = typeof ctx.weightKg === 'number' ? `${Math.round(ctx.weightKg * 1.6)} µg/day (1.6 µg/kg)` : '1.6 µg/kg/day';
+      const startDose =
+        typeof ctx.weightKg === 'number'
+          ? `${Math.round(ctx.weightKg * 1.6)} µg/day (1.6 µg/kg)`
+          : '1.6 µg/kg/day';
       recommendation =
         `Young, no cardiac disease → start levothyroxine at near-full replacement ${startDose}, once daily on an empty stomach ` +
         '(separate from calcium/iron/PPIs). Recheck TSH at 6–8 weeks and titrate to the reference range. Counsel on lifelong adherence.';
@@ -92,12 +101,21 @@ export class HypothyroidismInitStrategy implements CdsRuleStrategy {
     return [this.card(rule, req, indicator, summary, recommendation)];
   }
 
-  private card(rule: CdsRule, req: CdsHookRequest, indicator: CdsIndicator, summary: string, detail: string): CdsCard {
+  private card(
+    rule: CdsRule,
+    req: CdsHookRequest,
+    indicator: CdsIndicator,
+    summary: string,
+    detail: string,
+  ): CdsCard {
     const ref = rule.references[0] ?? {
       label: 'ATA Guidelines for the Treatment of Hypothyroidism (2014)',
       url: 'https://www.thyroid.org/professionals/ata-professional-guidelines/',
     };
-    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, { summary, detail });
+    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, {
+      summary,
+      detail,
+    });
     return {
       summary: outSummary,
       indicator,

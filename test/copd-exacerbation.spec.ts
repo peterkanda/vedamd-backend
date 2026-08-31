@@ -23,9 +23,7 @@ describe('CopdExacerbationStrategy', () => {
   const s = new CopdExacerbationStrategy();
 
   it('silent without knownCopd', async () => {
-    expect(
-      await s.evaluate(RULE, req({ ageYears: 60, increasedDyspnoea: true })),
-    ).toEqual([]);
+    expect(await s.evaluate(RULE, req({ ageYears: 60, increasedDyspnoea: true }))).toEqual([]);
   });
 
   it('mild symptoms → info', async () => {

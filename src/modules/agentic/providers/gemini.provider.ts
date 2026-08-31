@@ -64,9 +64,7 @@ export class GeminiProvider implements LlmProvider {
     if (!this.isConfigured()) {
       throw new Error('Gemini provider not configured (GEMINI_API_KEY missing).');
     }
-    return this.useOpenAiCompatible
-      ? this.completeOpenAiCompat(req)
-      : this.completeNative(req);
+    return this.useOpenAiCompatible ? this.completeOpenAiCompat(req) : this.completeNative(req);
   }
 
   /** Native generativelanguage REST schema (Google AI Studio). */
@@ -105,8 +103,7 @@ export class GeminiProvider implements LlmProvider {
       usageMetadata?: { promptTokenCount?: number; candidatesTokenCount?: number };
     };
 
-    const text =
-      json.candidates?.[0]?.content?.parts?.map((p) => p.text ?? '').join('') ?? '';
+    const text = json.candidates?.[0]?.content?.parts?.map((p) => p.text ?? '').join('') ?? '';
 
     return {
       text,

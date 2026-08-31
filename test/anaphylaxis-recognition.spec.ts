@@ -23,9 +23,9 @@ describe('AnaphylaxisRecognitionStrategy', () => {
   const s = new AnaphylaxisRecognitionStrategy();
 
   it('silent without sentinel', async () => {
-    expect(
-      await s.evaluate(RULE, req({ ageYears: 30, skinOrMucosalInvolvement: true })),
-    ).toEqual([]);
+    expect(await s.evaluate(RULE, req({ ageYears: 30, skinOrMucosalInvolvement: true }))).toEqual(
+      [],
+    );
   });
 
   it('skin + respiratory → critical adult dose', async () => {

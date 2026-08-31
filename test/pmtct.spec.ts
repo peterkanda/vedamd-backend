@@ -33,10 +33,7 @@ describe('PmtctStrategy', () => {
   });
 
   it('pregnant + status unknown → critical PITC', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ pregnant: true, maternalHivStatus: 'unknown' }),
-    );
+    const cards = await s.evaluate(RULE, req({ pregnant: true, maternalHivStatus: 'unknown' }));
     expect(cards[0].indicator).toBe('critical');
     expect(cards[0].summary).toMatch(/PITC today/);
   });

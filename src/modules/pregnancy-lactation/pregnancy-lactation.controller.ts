@@ -49,8 +49,7 @@ export class PregnancyLactationController {
   })
   getByDrug(@Param('drugSlug') drugSlug: string) {
     const found = this.svc.getByDrugSlug(drugSlug);
-    if (!found)
-      throw new NotFoundException(`No PLLR record for drug slug: ${drugSlug}`);
+    if (!found) throw new NotFoundException(`No PLLR record for drug slug: ${drugSlug}`);
     return found;
   }
 }

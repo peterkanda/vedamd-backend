@@ -53,16 +53,16 @@ describe('ClinicalScoresService', () => {
     // If a content edit accidentally drops one of these the test fails
     // loudly — these are the scores clinicians use daily.
     for (const required of [
-      'pews',               // paediatric early warning
-      'psofa',              // paediatric organ-failure score
-      'ascvd-pce',          // US 10-year CVD risk (Pooled Cohort)
-      'qrisk3',             // UK 10-year CVD risk
+      'pews', // paediatric early warning
+      'psofa', // paediatric organ-failure score
+      'ascvd-pce', // US 10-year CVD risk (Pooled Cohort)
+      'qrisk3', // UK 10-year CVD risk
       'glasgow-blatchford', // upper GI bleed risk
-      'spesi',              // simplified PE severity
-      'apache-ii',          // ICU mortality
-      'sirs-criteria',      // sepsis screen (legacy but still in EHRs)
-      'nihss',              // stroke severity
-      'mascc',              // febrile neutropenia risk
+      'spesi', // simplified PE severity
+      'apache-ii', // ICU mortality
+      'sirs-criteria', // sepsis screen (legacy but still in EHRs)
+      'nihss', // stroke severity
+      'mascc', // febrile neutropenia risk
     ]) {
       expect(slugs).toContain(required);
     }

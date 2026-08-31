@@ -93,7 +93,9 @@ export class PostmanCollectionService {
             simpleGet('Drug — get one', '/api/v1/drugs/amoxicillin'),
             simpleGet('Clinical scores — list', '/api/v1/clinical-scores'),
             simpleGet('Antidotes — list', '/api/v1/antidotes'),
-            simpleGet('Drug-disease interactions', '/api/v1/drug-disease', { severity: 'contraindicated' }),
+            simpleGet('Drug-disease interactions', '/api/v1/drug-disease', {
+              severity: 'contraindicated',
+            }),
             simpleGet('Immunisation schedule', '/api/v1/immunization-schedule'),
             simpleGet('Allergy cross-reactivity', '/api/v1/allergy-cross-reactivity'),
             simpleGet('Notifiable diseases', '/api/v1/notifiable-diseases'),
@@ -182,7 +184,9 @@ function simpleGet(name: string, path: string, query: Record<string, string> = {
 function qs(q: Record<string, string>): string {
   const entries = Object.entries(q);
   if (entries.length === 0) return '';
-  return '?' + entries.map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('&');
+  return (
+    '?' + entries.map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('&')
+  );
 }
 
 function sampleHookBody(s: CdsServiceDescriptor): unknown {

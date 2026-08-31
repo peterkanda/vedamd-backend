@@ -24,10 +24,7 @@ describe('SepsisQSofaStrategy', () => {
 
   it('silent without suspectedInfection', async () => {
     expect(
-      await s.evaluate(
-        RULE,
-        req({ ageYears: 60, respiratoryRatePerMin: 28, systolicMmHg: 90 }),
-      ),
+      await s.evaluate(RULE, req({ ageYears: 60, respiratoryRatePerMin: 28, systolicMmHg: 90 })),
     ).toEqual([]);
   });
 

@@ -87,15 +87,60 @@ interface ScdContext {
 }
 
 const CODINGS_SCD: CodedReference[] = [
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'D57', display: 'Sickle-cell disorders', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'D57.0', display: 'Sickle-cell anaemia with crisis', kind: 'diagnosis' },
-  { system: 'http://id.who.int/icd/release/11/mms', code: '3A51', display: 'Sickle-cell disease', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '237364002', display: 'Sickle-cell disease (disorder)', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '417847000', display: 'Vaso-occlusive crisis in sickle-cell disease (disorder)', kind: 'diagnosis' },
-  { system: 'http://loinc.org', code: '718-7', display: 'Hemoglobin [Mass/volume] in Blood', kind: 'lab' },
-  { system: 'http://loinc.org', code: '67881-8', display: 'Hemoglobin S/Hemoglobin.total in Blood by Electrophoresis', kind: 'lab' },
-  { system: 'http://whocc.no/atc', code: 'L01XX05', display: 'Hydroxycarbamide (hydroxyurea)', kind: 'drug' },
-  { system: 'http://whocc.no/atc', code: 'J01CE02', display: 'Phenoxymethylpenicillin (penicillin V) — prophylaxis', kind: 'drug' },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'D57',
+    display: 'Sickle-cell disorders',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'D57.0',
+    display: 'Sickle-cell anaemia with crisis',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://id.who.int/icd/release/11/mms',
+    code: '3A51',
+    display: 'Sickle-cell disease',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '237364002',
+    display: 'Sickle-cell disease (disorder)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '417847000',
+    display: 'Vaso-occlusive crisis in sickle-cell disease (disorder)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://loinc.org',
+    code: '718-7',
+    display: 'Hemoglobin [Mass/volume] in Blood',
+    kind: 'lab',
+  },
+  {
+    system: 'http://loinc.org',
+    code: '67881-8',
+    display: 'Hemoglobin S/Hemoglobin.total in Blood by Electrophoresis',
+    kind: 'lab',
+  },
+  {
+    system: 'http://whocc.no/atc',
+    code: 'L01XX05',
+    display: 'Hydroxycarbamide (hydroxyurea)',
+    kind: 'drug',
+  },
+  {
+    system: 'http://whocc.no/atc',
+    code: 'J01CE02',
+    display: 'Phenoxymethylpenicillin (penicillin V) — prophylaxis',
+    kind: 'drug',
+  },
 ];
 
 @Injectable()
@@ -109,11 +154,13 @@ export class SickleCellCrisisStrategy implements CdsRuleStrategy {
     const cards: CdsCard[] = [];
 
     const emergencyReasons: string[] = [];
-    const hypoxic = typeof ctx.spO2Percent === 'number' && ctx.spO2Percent > 0 && ctx.spO2Percent < 92;
+    const hypoxic =
+      typeof ctx.spO2Percent === 'number' && ctx.spO2Percent > 0 && ctx.spO2Percent < 92;
     if (ctx.newPulmonaryInfiltrate === true || hypoxic) {
       emergencyReasons.push('acute chest syndrome features');
     }
-    if (ctx.acuteFocalNeurology === true) emergencyReasons.push('acute focal neurology (suspected stroke)');
+    if (ctx.acuteFocalNeurology === true)
+      emergencyReasons.push('acute focal neurology (suspected stroke)');
     if (typeof ctx.priapismHours === 'number' && ctx.priapismHours >= 4) {
       emergencyReasons.push(`priapism ${ctx.priapismHours} h (≥ 4)`);
     }
@@ -122,7 +169,9 @@ export class SickleCellCrisisStrategy implements CdsRuleStrategy {
       typeof ctx.haemoglobinGdl === 'number' &&
       ctx.haemoglobinGdl < 6
     ) {
-      emergencyReasons.push(`splenic sequestration (splenomegaly with Hb ${ctx.haemoglobinGdl.toFixed(1)} g/dL)`);
+      emergencyReasons.push(
+        `splenic sequestration (splenomegaly with Hb ${ctx.haemoglobinGdl.toFixed(1)} g/dL)`,
+      );
     }
     if (
       typeof ctx.haemoglobinGdl === 'number' &&
@@ -130,7 +179,9 @@ export class SickleCellCrisisStrategy implements CdsRuleStrategy {
       typeof ctx.reticulocytePercent === 'number' &&
       ctx.reticulocytePercent < 1
     ) {
-      emergencyReasons.push(`aplastic crisis (Hb ${ctx.haemoglobinGdl.toFixed(1)}, retics ${ctx.reticulocytePercent}%)`);
+      emergencyReasons.push(
+        `aplastic crisis (Hb ${ctx.haemoglobinGdl.toFixed(1)}, retics ${ctx.reticulocytePercent}%)`,
+      );
     }
     if (typeof ctx.feverC === 'number' && ctx.feverC >= 38.5) {
       emergencyReasons.push(`fever ${ctx.feverC.toFixed(1)} °C — treat as septic until ruled out`);
@@ -143,8 +194,7 @@ export class SickleCellCrisisStrategy implements CdsRuleStrategy {
       cards.push(this.emergencyCard(rule, req, ctx, emergencyReasons));
     }
 
-    const painCrisis =
-      typeof ctx.painSeverity === 'number' && ctx.painSeverity >= 4;
+    const painCrisis = typeof ctx.painSeverity === 'number' && ctx.painSeverity >= 4;
     if (painCrisis && emergencyReasons.length === 0) {
       cards.push(this.painCrisisCard(rule, req, ctx));
     }
@@ -169,11 +219,7 @@ export class SickleCellCrisisStrategy implements CdsRuleStrategy {
     ) {
       gaps.push('annual transcranial Doppler missing (2–16 years)');
     }
-    if (
-      typeof ctx.ageYears === 'number' &&
-      ctx.ageYears >= 10 &&
-      ctx.retinalScreenDone !== true
-    ) {
+    if (typeof ctx.ageYears === 'number' && ctx.ageYears >= 10 && ctx.retinalScreenDone !== true) {
       gaps.push('retinal screening missing (≥ 10 years)');
     }
     if (ctx.folicAcidSupplementation !== true) gaps.push('folic acid 5 mg daily not documented');
@@ -188,7 +234,12 @@ export class SickleCellCrisisStrategy implements CdsRuleStrategy {
     return cards;
   }
 
-  private emergencyCard(rule: CdsRule, req: CdsHookRequest, ctx: ScdContext, reasons: string[]): CdsCard {
+  private emergencyCard(
+    rule: CdsRule,
+    req: CdsHookRequest,
+    ctx: ScdContext,
+    reasons: string[],
+  ): CdsCard {
     const wt = ctx.weightKg;
     const morphineLine =
       typeof wt === 'number'

@@ -572,6 +572,37 @@
         ]
       }
     },
+    "/api/v1/drugs/safety-review": {
+      "post": {
+        "description": "Body: { slugs: [...], crClMlMin?, weightKg?, conditions? }. One point-of-care panel: pairwise drug-drug interactions, antimicrobial-stewardship flags (WHO AWaRe Watch/Reserve), duplicate-therapy (same drug class), pregnancy-contraindicated drugs, hepatic guidance, and — when crClMlMin is supplied — renal dose-adjustment / contraindication flags, when a paediatric weightKg is supplied — weight-based dosing with overdose-cap warnings, and when condition slugs are supplied — drug-disease contraindication / caution flags. Returns unresolved slugs and a severity summary. Deterministic; no LLM.",
+        "operationId": "DrugsController_safetyReview",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SafetyReviewRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Holistic medication safety review for a med list",
+        "tags": [
+          "drugs"
+        ]
+      }
+    },
     "/api/v1/drugs/{slug}/dosing": {
       "post": {
         "description": "Deterministic algorithm over the structured drug record. Refuses to return a mg dose for individualised regimens (e.g. warfarin) or when CrCl falls in a contraindicated band. Always returns a narrative.",
@@ -609,6 +640,104 @@
         "summary": "Calculate a dose for the drug given weight / age / renal function",
         "tags": [
           "drugs"
+        ]
+      }
+    },
+    "/api/v1/hepatic-dose": {
+      "get": {
+        "description": "Structured-axis hepatic dose adjustment, mirroring the renal adjustment pattern. Each record carries per-Child-Pugh-class guidance (A=mild, B=moderate, C=severe), mechanism, monitoring, acute-failure considerations, and practical alternatives. Filters: q (free text), decision (use-with-caution|reduce-dose|avoid|contraindicated).",
+        "operationId": "HepaticDoseController_list",
+        "parameters": [
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "decision",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List hepatic dose adjustment records (Child-Pugh-banded)",
+        "tags": [
+          "hepatic-dose"
+        ]
+      }
+    },
+    "/api/v1/hepatic-dose/{slug}": {
+      "get": {
+        "description": "Returns full Child-Pugh A/B/C guidance, mechanism, monitoring, acute-failure considerations and alternatives.",
+        "operationId": "HepaticDoseController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get a hepatic dose adjustment record by slug",
+        "tags": [
+          "hepatic-dose"
+        ]
+      }
+    },
+    "/api/v1/hepatic-dose/by-drug/{drugSlug}": {
+      "get": {
+        "description": "For an integrator with the drug slug (e.g. from a prescription) — returns the hepatic dose record directly. 404 if no record exists for that drug.",
+        "operationId": "HepaticDoseController_getByDrug",
+        "parameters": [
+          {
+            "name": "drugSlug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Reverse lookup by drug slug",
+        "tags": [
+          "hepatic-dose"
         ]
       }
     },
@@ -1966,104 +2095,6 @@
         ]
       }
     },
-    "/api/v1/hepatic-dose": {
-      "get": {
-        "description": "Structured-axis hepatic dose adjustment, mirroring the renal adjustment pattern. Each record carries per-Child-Pugh-class guidance (A=mild, B=moderate, C=severe), mechanism, monitoring, acute-failure considerations, and practical alternatives. Filters: q (free text), decision (use-with-caution|reduce-dose|avoid|contraindicated).",
-        "operationId": "HepaticDoseController_list",
-        "parameters": [
-          {
-            "name": "q",
-            "required": true,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "decision",
-            "required": true,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "List hepatic dose adjustment records (Child-Pugh-banded)",
-        "tags": [
-          "hepatic-dose"
-        ]
-      }
-    },
-    "/api/v1/hepatic-dose/{slug}": {
-      "get": {
-        "description": "Returns full Child-Pugh A/B/C guidance, mechanism, monitoring, acute-failure considerations and alternatives.",
-        "operationId": "HepaticDoseController_get",
-        "parameters": [
-          {
-            "name": "slug",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "Get a hepatic dose adjustment record by slug",
-        "tags": [
-          "hepatic-dose"
-        ]
-      }
-    },
-    "/api/v1/hepatic-dose/by-drug/{drugSlug}": {
-      "get": {
-        "description": "For an integrator with the drug slug (e.g. from a prescription) — returns the hepatic dose record directly. 404 if no record exists for that drug.",
-        "operationId": "HepaticDoseController_getByDrug",
-        "parameters": [
-          {
-            "name": "drugSlug",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "Reverse lookup by drug slug",
-        "tags": [
-          "hepatic-dose"
-        ]
-      }
-    },
     "/api/v1/renal-dose": {
       "get": {
         "description": "Structured-axis renal dose adjustment, mirroring the hepatic adjustment pattern. Each record carries per-eGFR-band guidance (normal ≥90, mild 60-89, moderate 30-59, severe 15-29, esrd <15 mL/min/1.73m²), mechanism, monitoring, AKI considerations, dialyzability, dialysis dosing, and practical alternatives. Filters: q (free text), decision (use-with-caution|reduce-dose|avoid|contraindicated).",
@@ -3015,6 +3046,163 @@
         "summary": "Delete a custom rule by id",
         "tags": [
           "custom-rules"
+        ]
+      }
+    },
+    "/api/v1/assistant/chat": {
+      "post": {
+        "operationId": "AssistantController_chat",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssistantChatDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Grounded clinical chat for the mobile app (cloud model).",
+        "tags": [
+          "assistant"
+        ]
+      }
+    },
+    "/api/v1/models": {
+      "get": {
+        "description": "FR-148 — manifests for downloadable offline assistant models.",
+        "operationId": "ModelsController_list",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Catalog of on-device models VedaMD distributes",
+        "tags": [
+          "models"
+        ]
+      }
+    },
+    "/api/v1/models/medgemma/current": {
+      "get": {
+        "description": "The \"always-current\" manifest the mobile app downloads + verifies, then runs offline. Update the build by changing MEDGEMMA_* env on vedamd.io; clients pick it up on next sync.",
+        "operationId": "ModelsController_medgemmaCurrent",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Current MedGemma 4B multimodal build for mobile",
+        "tags": [
+          "models"
+        ]
+      }
+    },
+    "/api/v1/models/{id}/current": {
+      "get": {
+        "operationId": "ModelsController_byId",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Current build manifest for a model family by id",
+        "tags": [
+          "models"
+        ]
+      }
+    },
+    "/api/v1/content/manifest": {
+      "get": {
+        "description": "Version + per-file SHA-256 + sizes for offline sync.",
+        "operationId": "ContentDistributionController_manifest",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Signed content bundle manifest",
+        "tags": [
+          "content"
+        ]
+      }
+    },
+    "/api/v1/content/signature": {
+      "get": {
+        "operationId": "ContentDistributionController_signature",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Ed25519 signature over the manifest",
+        "tags": [
+          "content"
+        ]
+      }
+    },
+    "/api/v1/content/public-key": {
+      "get": {
+        "operationId": "ContentDistributionController_publicKey",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Ed25519 public key (PEM) for signature verification",
+        "tags": [
+          "content"
+        ]
+      }
+    },
+    "/api/v1/content/bundles/{file}": {
+      "get": {
+        "description": "Exact signed bytes — the app verifies SHA-256 against the manifest.",
+        "operationId": "ContentDistributionController_bundle",
+        "parameters": [
+          {
+            "name": "file",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Raw bytes of one bundle file",
+        "tags": [
+          "content"
         ]
       }
     },
@@ -4081,11 +4269,27 @@
           "metrics"
         ]
       }
+    },
+    "/api/v1/localization": {
+      "get": {
+        "description": "Drives the client country picker. Lists selectable countries, which are localized to national guidelines, the default country (Kenya), and the global baseline authority (WHO). Countries that are not yet localized are still selectable and served default reference content with a \"not yet localized\" label. Public, no PHI.",
+        "operationId": "LocalizationController_directory",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Supported countries + localization status",
+        "tags": [
+          "localization"
+        ]
+      }
     }
   },
   "info": {
     "title": "VedaMD API",
-    "description": "Open-source, stateless Clinical Decision Support API. CDS Hooks + REST/JSON. VedaMD never stores patient data — records remain with your EMR.",
+    "description": "Source-available, stateless Clinical Decision Support API. CDS Hooks + REST/JSON. VedaMD never stores patient data — records remain with your EMR.",
     "version": "0.1.0",
     "contact": {}
   },
@@ -4301,6 +4505,10 @@
         ]
       },
       "InteractionsRequestDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "SafetyReviewRequestDto": {
         "type": "object",
         "properties": {}
       },
@@ -4853,6 +5061,44 @@
             "$ref": "#/components/schemas/CustomRuleCardDto"
           }
         }
+      },
+      "ChatTurnDto": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "user",
+              "assistant"
+            ]
+          },
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "role",
+          "content"
+        ]
+      },
+      "AssistantChatDto": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string",
+            "description": "The clinician’s clinical question."
+          },
+          "conversation": {
+            "description": "Prior turns, oldest first (no patient identity).",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChatTurnDto"
+            }
+          }
+        },
+        "required": [
+          "question"
+        ]
       },
       "InteractionNetworkDto": {
         "type": "object",

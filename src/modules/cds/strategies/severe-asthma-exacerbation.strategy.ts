@@ -133,10 +133,7 @@ export class SevereAsthmaExacerbationStrategy implements CdsRuleStrategy {
     if (ctx.unableToCompleteSentence === true) {
       severeReasons.push('cannot complete sentences in one breath');
     }
-    if (
-      typeof ctx.respiratoryRatePerMin === 'number' &&
-      ctx.respiratoryRatePerMin >= SEVERE_RR
-    ) {
+    if (typeof ctx.respiratoryRatePerMin === 'number' && ctx.respiratoryRatePerMin >= SEVERE_RR) {
       severeReasons.push(`RR ${ctx.respiratoryRatePerMin}/min (≥ ${SEVERE_RR})`);
     }
     if (typeof ctx.heartRatePerMin === 'number' && ctx.heartRatePerMin >= SEVERE_HR) {

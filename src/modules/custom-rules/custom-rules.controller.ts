@@ -246,11 +246,7 @@ export class CustomRulesController {
   @ApiCreatedResponse()
   async create(@Req() req: OperatorRequest, @Body() dto: CreateCustomRuleDto) {
     try {
-      return await this.rules.create(
-        req.operator!.integratorId,
-        dto,
-        req.operator!.userId,
-      );
+      return await this.rules.create(req.operator!.integratorId, dto, req.operator!.userId);
     } catch (err) {
       throw new BadRequestException((err as Error).message);
     }

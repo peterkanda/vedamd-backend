@@ -95,9 +95,7 @@ export interface PregnancyLactationSummary {
   legacyFdaCategory?: 'A' | 'B' | 'C' | 'D' | 'X';
 }
 
-export interface PregnancyLactationRecord
-  extends PregnancyLactationSummary,
-    ContentReviewMetadata {
+export interface PregnancyLactationRecord extends PregnancyLactationSummary, ContentReviewMetadata {
   pregnancy: PregnancyNarrative;
   lactation: LactationNarrative;
   reproductive?: ReproductiveNarrative;

@@ -27,10 +27,7 @@ describe('StrokeFastRecognitionStrategy', () => {
   });
 
   it('no features → info reassess', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ ageYears: 60, suspectedStroke: true }),
-    );
+    const cards = await s.evaluate(RULE, req({ ageYears: 60, suspectedStroke: true }));
     expect(cards[0].indicator).toBe('info');
   });
 

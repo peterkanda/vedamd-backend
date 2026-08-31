@@ -42,7 +42,8 @@ export class AsthmaStepUpStrategy implements CdsRuleStrategy {
     if (!hasAsthma) return [];
 
     const gina = ctx.gina ?? {};
-    const step = typeof gina.currentStep === 'number' ? Math.max(1, Math.min(5, gina.currentStep)) : 1;
+    const step =
+      typeof gina.currentStep === 'number' ? Math.max(1, Math.min(5, gina.currentStep)) : 1;
     const sabaPerWeek = gina.SABAUsePerWeek;
     const control = ctx.symptomControl?.toLowerCase();
     const poorlyControlled =
@@ -92,7 +93,10 @@ export class AsthmaStepUpStrategy implements CdsRuleStrategy {
     };
     const detail = `${typeof sabaPerWeek === 'number' ? `Reliever use ${sabaPerWeek} day(s)/week. ` : ''}${recommendation}`;
 
-    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, { summary, detail });
+    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, {
+      summary,
+      detail,
+    });
 
     return [
       {

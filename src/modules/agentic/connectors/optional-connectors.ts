@@ -1,9 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import {
-  assertReadOnly,
-  type SqlConnectionConfig,
-  type SqlConnector,
-} from './sql-connector.types';
+import { assertReadOnly, type SqlConnectionConfig, type SqlConnector } from './sql-connector.types';
 
 /**
  * Optional SQL connectors — MySQL, MSSQL, Oracle.
@@ -41,9 +37,9 @@ export class MysqlConnector implements SqlConnector {
   ): Promise<Array<Record<string, unknown>>> {
     assertReadOnly(sql);
     if (!this.isAvailable()) {
-      throw new Error("MySQL connector requires the optional driver: npm install mysql2");
+      throw new Error('MySQL connector requires the optional driver: npm install mysql2');
     }
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
+
     const mysql = require('mysql2/promise') as {
       createConnection: (opts: unknown) => Promise<{
         execute: (q: string, p: unknown[]) => Promise<[Array<Record<string, unknown>>, unknown]>;
@@ -76,9 +72,9 @@ export class MssqlConnector implements SqlConnector {
   ): Promise<Array<Record<string, unknown>>> {
     assertReadOnly(sql);
     if (!this.isAvailable()) {
-      throw new Error("MSSQL connector requires the optional driver: npm install mssql");
+      throw new Error('MSSQL connector requires the optional driver: npm install mssql');
     }
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
+
     const sqlPkg = require('mssql') as {
       connect: (url: string) => Promise<{
         request: () => {
@@ -115,9 +111,9 @@ export class OracleConnector implements SqlConnector {
   ): Promise<Array<Record<string, unknown>>> {
     assertReadOnly(sql);
     if (!this.isAvailable()) {
-      throw new Error("Oracle connector requires the optional driver: npm install oracledb");
+      throw new Error('Oracle connector requires the optional driver: npm install oracledb');
     }
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
+
     const oracledb = require('oracledb') as {
       OBJECT: number;
       getConnection: (opts: unknown) => Promise<{

@@ -40,11 +40,16 @@ export class ProviderRouter {
 
   private byName(name: LlmProviderName): LlmProvider {
     switch (name) {
-      case 'openrouter': return this.openrouter;
-      case 'openai': return this.openai;
-      case 'anthropic': return this.anthropic;
-      case 'deepseek': return this.deepseek;
-      case 'gemini': return this.gemini;
+      case 'openrouter':
+        return this.openrouter;
+      case 'openai':
+        return this.openai;
+      case 'anthropic':
+        return this.anthropic;
+      case 'deepseek':
+        return this.deepseek;
+      case 'gemini':
+        return this.gemini;
     }
   }
 
@@ -63,16 +68,26 @@ export class ProviderRouter {
     }
     const pref = process.env.AGENTIC_PROVIDER?.toLowerCase();
     switch (pref) {
-      case 'openrouter':   return [this.openrouter, this.openai, this.anthropic, this.deepseek, this.gemini];
-      case 'openai':       return [this.openai, this.openrouter, this.anthropic, this.deepseek, this.gemini];
-      case 'anthropic':    return [this.anthropic, this.openrouter, this.openai, this.deepseek, this.gemini];
-      case 'deepseek':     return [this.deepseek, this.openrouter, this.openai, this.anthropic, this.gemini];
-      case 'gemini':       return [this.gemini, this.openrouter, this.openai, this.anthropic, this.deepseek];
-      case 'openrouter-only': return [this.openrouter];
-      case 'openai-only':  return [this.openai];
-      case 'anthropic-only': return [this.anthropic];
-      case 'deepseek-only': return [this.deepseek];
-      case 'gemini-only':  return [this.gemini];
+      case 'openrouter':
+        return [this.openrouter, this.openai, this.anthropic, this.deepseek, this.gemini];
+      case 'openai':
+        return [this.openai, this.openrouter, this.anthropic, this.deepseek, this.gemini];
+      case 'anthropic':
+        return [this.anthropic, this.openrouter, this.openai, this.deepseek, this.gemini];
+      case 'deepseek':
+        return [this.deepseek, this.openrouter, this.openai, this.anthropic, this.gemini];
+      case 'gemini':
+        return [this.gemini, this.openrouter, this.openai, this.anthropic, this.deepseek];
+      case 'openrouter-only':
+        return [this.openrouter];
+      case 'openai-only':
+        return [this.openai];
+      case 'anthropic-only':
+        return [this.anthropic];
+      case 'deepseek-only':
+        return [this.deepseek];
+      case 'gemini-only':
+        return [this.gemini];
       default: {
         // Auto: prefer OpenRouter (MedGemma) when configured, otherwise the
         // first configured provider in the default fallback order.

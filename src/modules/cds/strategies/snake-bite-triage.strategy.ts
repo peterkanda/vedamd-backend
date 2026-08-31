@@ -92,7 +92,8 @@ export class SnakeBiteTriageStrategy implements CdsRuleStrategy {
 
     const neuro: string[] = [];
     if (ctx.ptosisOrBulbarPalsy === true) neuro.push('ptosis / bulbar palsy');
-    if (ctx.generalisedWeakness === true) neuro.push('generalised weakness / respiratory muscle paralysis');
+    if (ctx.generalisedWeakness === true)
+      neuro.push('generalised weakness / respiratory muscle paralysis');
 
     const systemic: string[] = [];
     if (ctx.shockOrArrhythmia === true) systemic.push('shock / arrhythmia');

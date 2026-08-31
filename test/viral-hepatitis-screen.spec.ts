@@ -44,10 +44,7 @@ describe('ViralHepatitisScreenStrategy', () => {
   });
 
   it('HCV-RNA positive → critical, DAA linkage', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ ageYears: 45, hcvRnaStatus: 'positive' }),
-    );
+    const cards = await s.evaluate(RULE, req({ ageYears: 45, hcvRnaStatus: 'positive' }));
     const hcv = cards.find((c) => /HCV active/.test(c.summary));
     expect(hcv).toBeTruthy();
     expect(hcv!.detail).toMatch(/sofosbuvir/i);
@@ -62,10 +59,7 @@ describe('ViralHepatitisScreenStrategy', () => {
   });
 
   it('PWID never tested → warning', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ ageYears: 30, keyPopulation: 'pwid' }),
-    );
+    const cards = await s.evaluate(RULE, req({ ageYears: 30, keyPopulation: 'pwid' }));
     const warn = cards.find((c) => c.indicator === 'warning');
     expect(warn).toBeTruthy();
     expect(warn!.detail).toMatch(/inject/);

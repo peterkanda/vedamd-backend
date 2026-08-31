@@ -37,9 +37,7 @@ export class PregnancyLactationService implements OnModuleInit {
       if (filters?.lactation && r.lactationCompatibility !== filters.lactation) return false;
       if (filters?.q) {
         const q = filters.q.toLowerCase();
-        const hay = [r.drug, r.drugSlug, r.slug, r.oneLiner, ...r.domains]
-          .join(' ')
-          .toLowerCase();
+        const hay = [r.drug, r.drugSlug, r.slug, r.oneLiner, ...r.domains].join(' ').toLowerCase();
         if (!hay.includes(q)) return false;
       }
       return true;

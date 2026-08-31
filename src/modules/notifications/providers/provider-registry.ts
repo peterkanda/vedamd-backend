@@ -42,12 +42,6 @@ export class NotificationProviderRegistry {
 
   /** All provider identifiers the platform supports — for the UI picker. */
   list(): NotificationProvider[] {
-    return [
-      'twilio-sms',
-      'twilio-whatsapp',
-      'africastalking-sms',
-      'smtp',
-      'whatsapp-business',
-    ];
+    return ['twilio-sms', 'twilio-whatsapp', 'africastalking-sms', 'smtp', 'whatsapp-business'];
   }
 }

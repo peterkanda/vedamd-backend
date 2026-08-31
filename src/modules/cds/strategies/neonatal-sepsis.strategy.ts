@@ -106,17 +106,38 @@ interface NeonatalSepsisContext {
 }
 
 const CODINGS_PSBI: CodedReference[] = [
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'P36', display: 'Bacterial sepsis of newborn', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'P39', display: 'Other infections specific to the perinatal period', kind: 'diagnosis' },
-  { system: 'http://id.who.int/icd/release/11/mms', code: 'KA60', display: 'Bacterial sepsis of the newborn', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '206378007', display: 'Sepsis of the newborn (disorder)', kind: 'diagnosis' },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'P36',
+    display: 'Bacterial sepsis of newborn',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'P39',
+    display: 'Other infections specific to the perinatal period',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://id.who.int/icd/release/11/mms',
+    code: 'KA60',
+    display: 'Bacterial sepsis of the newborn',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '206378007',
+    display: 'Sepsis of the newborn (disorder)',
+    kind: 'diagnosis',
+  },
   { system: 'http://whocc.no/atc', code: 'J01CA01', display: 'Ampicillin', kind: 'drug' },
   { system: 'http://whocc.no/atc', code: 'J01GB03', display: 'Gentamicin', kind: 'drug' },
   { system: 'http://whocc.no/atc', code: 'J01DD04', display: 'Ceftriaxone', kind: 'drug' },
 ];
 
 function ampDoseMg(wt?: number): string {
-  if (typeof wt !== 'number') return 'ampicillin 50 mg/kg IV / IM every 12 h (week 1) or every 8 h (week 2+)';
+  if (typeof wt !== 'number')
+    return 'ampicillin 50 mg/kg IV / IM every 12 h (week 1) or every 8 h (week 2+)';
   return `ampicillin ${(50 * wt).toFixed(0)} mg IV / IM every 12 h (week 1) or every 8 h (week 2+)`;
 }
 
@@ -129,7 +150,8 @@ function gentDoseMg(wt?: number, ageHours?: number): string {
 }
 
 function ceftriaxoneDose(wt?: number): string {
-  if (typeof wt !== 'number') return 'ceftriaxone 50 mg/kg IV / IM once daily (caution in jaundiced or premature neonates — use cefotaxime 50 mg/kg every 8 h instead)';
+  if (typeof wt !== 'number')
+    return 'ceftriaxone 50 mg/kg IV / IM once daily (caution in jaundiced or premature neonates — use cefotaxime 50 mg/kg every 8 h instead)';
   return `ceftriaxone ${(50 * wt).toFixed(0)} mg IV / IM once daily; if jaundiced / premature → cefotaxime ${(50 * wt).toFixed(0)} mg IV every 8 h instead`;
 }
 
@@ -154,14 +176,21 @@ export class NeonatalSepsisStrategy implements CdsRuleStrategy {
     }
     if (ctx.severeChestIndrawing === true) criticalFeatures.push('severe chest indrawing');
     if (ctx.grunting === true) criticalFeatures.push('grunting');
-    if (typeof ctx.respiratoryRatePerMin === 'number' && ctx.respiratoryRatePerMin >= NEONATAL_TACHYPNOEA_RR) {
+    if (
+      typeof ctx.respiratoryRatePerMin === 'number' &&
+      ctx.respiratoryRatePerMin >= NEONATAL_TACHYPNOEA_RR
+    ) {
       criticalFeatures.push(`RR ${ctx.respiratoryRatePerMin}/min (≥ ${NEONATAL_TACHYPNOEA_RR})`);
     }
     if (typeof ctx.temperatureC === 'number' && ctx.temperatureC >= NEONATAL_FEVER_C) {
-      criticalFeatures.push(`temperature ${ctx.temperatureC.toFixed(1)} °C (≥ ${NEONATAL_FEVER_C})`);
+      criticalFeatures.push(
+        `temperature ${ctx.temperatureC.toFixed(1)} °C (≥ ${NEONATAL_FEVER_C})`,
+      );
     }
     if (typeof ctx.temperatureC === 'number' && ctx.temperatureC < NEONATAL_HYPOTHERMIA_C) {
-      criticalFeatures.push(`hypothermia ${ctx.temperatureC.toFixed(1)} °C (< ${NEONATAL_HYPOTHERMIA_C})`);
+      criticalFeatures.push(
+        `hypothermia ${ctx.temperatureC.toFixed(1)} °C (< ${NEONATAL_HYPOTHERMIA_C})`,
+      );
     }
     if (ctx.bulgingFontanelle === true) criticalFeatures.push('bulging fontanelle');
     if (ctx.neckStiffness === true) criticalFeatures.push('neck stiffness');
@@ -177,7 +206,8 @@ export class NeonatalSepsisStrategy implements CdsRuleStrategy {
       riskFactors.push(`prolonged ROM ${ctx.prolongedRomHours} h (> 18)`);
     }
     if (ctx.intrapartumFever === true) riskFactors.push('intrapartum fever');
-    if (ctx.gbsPositiveNoIap === true) riskFactors.push('maternal GBS positive without intrapartum prophylaxis');
+    if (ctx.gbsPositiveNoIap === true)
+      riskFactors.push('maternal GBS positive without intrapartum prophylaxis');
     if (ctx.prematurity === true) riskFactors.push('prematurity < 35 weeks');
 
     if (riskFactors.length > 0) {
@@ -201,10 +231,18 @@ export class NeonatalSepsisStrategy implements CdsRuleStrategy {
     ];
   }
 
-  private criticalCard(rule: CdsRule, req: CdsHookRequest, ctx: NeonatalSepsisContext, features: string[]): CdsCard {
+  private criticalCard(
+    rule: CdsRule,
+    req: CdsHookRequest,
+    ctx: NeonatalSepsisContext,
+    features: string[],
+  ): CdsCard {
     const earlyOnset = (ctx.ageHours ?? 0) < EARLY_ONSET_THRESHOLD_HOURS;
     const lpRequired =
-      ctx.bulgingFontanelle === true || ctx.convulsions === true || ctx.neckStiffness === true || ctx.movementOnlyWhenStimulated === true;
+      ctx.bulgingFontanelle === true ||
+      ctx.convulsions === true ||
+      ctx.neckStiffness === true ||
+      ctx.movementOnlyWhenStimulated === true;
     const meningitisLine = lpRequired
       ? ` Suspected meningitis — ADD ${ceftriaxoneDose(ctx.weightKg)} (or cefotaxime in the jaundiced / premature infant). Perform lumbar puncture WHEN the infant is haemodynamically stable; if unstable, do not delay antibiotics — culture-confirmed meningitis is treated for 14–21 days depending on organism.`
       : '';
@@ -237,7 +275,12 @@ export class NeonatalSepsisStrategy implements CdsRuleStrategy {
     );
   }
 
-  private riskWatchCard(rule: CdsRule, req: CdsHookRequest, _ctx: NeonatalSepsisContext, riskFactors: string[]): CdsCard {
+  private riskWatchCard(
+    rule: CdsRule,
+    req: CdsHookRequest,
+    _ctx: NeonatalSepsisContext,
+    riskFactors: string[],
+  ): CdsCard {
     return this.buildCard(
       rule,
       req,
@@ -263,7 +306,8 @@ export class NeonatalSepsisStrategy implements CdsRuleStrategy {
     codings: CodedReference[],
   ): CdsCard {
     const ref = rule.references[0] ?? {
-      label: 'WHO — Managing possible serious bacterial infection in young infants when referral is not feasible (2015)',
+      label:
+        'WHO — Managing possible serious bacterial infection in young infants when referral is not feasible (2015)',
       url: 'https://www.who.int/publications/i/item/9789241509268',
     };
     const { summary, detail } = resolveCardCopy(

@@ -67,16 +67,21 @@ export class MdrTbRegimenStrategy implements CdsRuleStrategy {
     const linezolid =
       'Linezolid carries dose-dependent myelosuppression, peripheral + optic neuropathy → weekly FBC, weekly visual (colour/acuity) ' +
       'and neurological screen; reduce/interrupt linezolid for toxicity.';
-    const monitoring = 'Also: baseline + monthly LFTs (pretomanid/bedaquiline hepatotoxicity), pregnancy test, and DST-guided review.';
+    const monitoring =
+      'Also: baseline + monthly LFTs (pretomanid/bedaquiline hepatotoxicity), pregnancy test, and DST-guided review.';
 
     const ref = rule.references[0] ?? {
       label: 'WHO Operational Handbook on Tuberculosis — MDR-TB (2022)',
       url: 'https://www.who.int/publications/i/item/9789240065116',
     };
-    const detail = `Resistance pattern: ${resistance.join(', ') || 'RIF-resistant'}. ${regimen} ${qtNote} ${linezolid} ${monitoring} ` +
+    const detail =
+      `Resistance pattern: ${resistance.join(', ') || 'RIF-resistant'}. ${regimen} ${qtNote} ${linezolid} ${monitoring} ` +
       'Confirm eligibility (age, pregnancy, prior exposure) against the WHO handbook and register with the NTP.';
 
-    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, { summary, detail });
+    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, {
+      summary,
+      detail,
+    });
 
     return [
       {

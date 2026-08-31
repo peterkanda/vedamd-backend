@@ -54,7 +54,7 @@ export function extractCards(
   if (!json) return { cards: [], citedRecords: [] };
 
   const rawCards = Array.isArray((json as { cards?: unknown }).cards)
-    ? ((json as { cards: RawCard[] }).cards)
+    ? (json as { cards: RawCard[] }).cards
     : [];
 
   const citedRecords: Array<{ kind: string; id: string }> = [];
@@ -205,7 +205,11 @@ function parseCitations(
     const id = obj.id;
     if (typeof id !== 'string' || !id) continue;
     const validKind =
-      kind === 'drug' || kind === 'ddi' || kind === 'condition' || kind === 'procedure' || kind === 'rule'
+      kind === 'drug' ||
+      kind === 'ddi' ||
+      kind === 'condition' ||
+      kind === 'procedure' ||
+      kind === 'rule'
         ? kind
         : 'rule';
     out.push({

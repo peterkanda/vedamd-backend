@@ -56,7 +56,7 @@ export class HivArtFirstLineStrategy implements CdsRuleStrategy {
       summary = 'HIV ART — patient < 30 kg: use weight-band paediatric regimen, not adult TLD';
       notes.push(
         'Weight < 30 kg → adult TLD is NOT appropriate; use the WHO weight-band paediatric DTG-based regimen (pDTG dispersible) ' +
-        'and dose by weight band.',
+          'and dose by weight band.',
       );
     }
 
@@ -64,7 +64,7 @@ export class HivArtFirstLineStrategy implements CdsRuleStrategy {
       indicator = 'warning';
       notes.push(
         'Rifampicin co-treatment (TB) induces dolutegravir → give an EXTRA dolutegravir 50 mg approximately 12 h after the TLD ' +
-        'dose for the duration of rifampicin and for ~2 weeks after stopping it.',
+          'dose for the duration of rifampicin and for ~2 weeks after stopping it.',
       );
     }
 
@@ -72,7 +72,7 @@ export class HivArtFirstLineStrategy implements CdsRuleStrategy {
       if (indicator === 'info') indicator = 'warning';
       notes.push(
         'HBsAg-positive (HBV co-infection) → a tenofovir-containing backbone is essential; do NOT use a regimen without tenofovir ' +
-        'and do not interrupt it abruptly (hepatitis flare risk). Monitor LFTs.',
+          'and do not interrupt it abruptly (hepatitis flare risk). Monitor LFTs.',
       );
     }
 
@@ -82,7 +82,10 @@ export class HivArtFirstLineStrategy implements CdsRuleStrategy {
     };
     const detail = `${recommendation}${notes.length ? ' ' + notes.join(' ') : ''}`;
 
-    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, { summary, detail });
+    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, {
+      summary,
+      detail,
+    });
 
     return [
       {

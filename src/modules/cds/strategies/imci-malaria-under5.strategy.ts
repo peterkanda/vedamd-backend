@@ -90,7 +90,8 @@ export class ImciMalariaUnder5Strategy implements CdsRuleStrategy {
           (s): s is string => typeof s === 'string' && GENERAL_DANGER_SIGNS.has(s),
         )
       : [];
-    if (validDanger.length > 0) severeReasons.push(`IMCI danger sign(s): ${validDanger.join(', ')}`);
+    if (validDanger.length > 0)
+      severeReasons.push(`IMCI danger sign(s): ${validDanger.join(', ')}`);
     if (ctx.severeAnaemiaSign === true) severeReasons.push('severe anaemia sign');
     if (ctx.impairedConsciousness === true) severeReasons.push('impaired consciousness');
     if (ctx.prostration === true) severeReasons.push('prostration');

@@ -145,7 +145,9 @@ export class ApiKeysController {
   async rotate(@Req() req: FastifyRequest, @Param('id') id: string) {
     const result = await this.keys.rotate(req.operator!.integratorId, id);
     if (!result) {
-      throw new NotFoundException('Key not found, already revoked, or owned by another integrator.');
+      throw new NotFoundException(
+        'Key not found, already revoked, or owned by another integrator.',
+      );
     }
     return result;
   }

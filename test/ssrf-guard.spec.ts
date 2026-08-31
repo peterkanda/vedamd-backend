@@ -69,8 +69,8 @@ describe('assertHostAllowedResolved', () => {
   });
 
   it('rejects a host that cannot be resolved', async () => {
-    await expect(
-      assertHostAllowedResolved('postgresql://nonexistent.invalid/app'),
-    ).rejects.toThrow(SsrfBlockedError);
+    await expect(assertHostAllowedResolved('postgresql://nonexistent.invalid/app')).rejects.toThrow(
+      SsrfBlockedError,
+    );
   });
 });

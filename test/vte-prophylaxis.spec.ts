@@ -16,7 +16,11 @@ const rule = {
 } as unknown as CdsRule;
 
 const strat = new VteProphylaxisStrategy();
-const req = (context: Record<string, unknown>): CdsHookRequest => ({ hook: 'patient-view', hookInstance: 't', context });
+const req = (context: Record<string, unknown>): CdsHookRequest => ({
+  hook: 'patient-view',
+  hookInstance: 't',
+  context,
+});
 
 describe('VTE prophylaxis — Padua Prediction Score', () => {
   it('does not fire unless a medical inpatient', async () => {
@@ -24,7 +28,10 @@ describe('VTE prophylaxis — Padua Prediction Score', () => {
   });
 
   it('low risk (score < 4) → info, not indicated', async () => {
-    const cards = await strat.evaluate(rule, req({ medicalInpatient: true, ageYears: 72, acuteInfectionOrRheum: true }));
+    const cards = await strat.evaluate(
+      rule,
+      req({ medicalInpatient: true, ageYears: 72, acuteInfectionOrRheum: true }),
+    );
     // age≥70 (1) + infection (1) = 2
     expect(cards[0].summary).toContain('Padua 2');
     expect(cards[0].indicator).toBe('info');
@@ -38,7 +45,10 @@ describe('VTE prophylaxis — Padua Prediction Score', () => {
 
   it('high risk (≥4) without bleeding → critical, offer pharmacological prophylaxis', async () => {
     // active cancer 3 + reduced mobility 3 = 6
-    const cards = await strat.evaluate(rule, req({ medicalInpatient: true, activeCancer: true, reducedMobility: true }));
+    const cards = await strat.evaluate(
+      rule,
+      req({ medicalInpatient: true, activeCancer: true, reducedMobility: true }),
+    );
     expect(cards[0].summary).toContain('Padua 6');
     expect(cards[0].indicator).toBe('critical');
     expect(cards[0].detail).toMatch(/enoxaparin|fondaparinux/i);
@@ -47,7 +57,12 @@ describe('VTE prophylaxis — Padua Prediction Score', () => {
   it('high risk WITH bleeding risk → warning, mechanical prophylaxis only', async () => {
     const cards = await strat.evaluate(
       rule,
-      req({ medicalInpatient: true, previousVte: true, reducedMobility: true, highBleedingRisk: true }),
+      req({
+        medicalInpatient: true,
+        previousVte: true,
+        reducedMobility: true,
+        highBleedingRisk: true,
+      }),
     );
     expect(cards[0].indicator).toBe('warning');
     expect(cards[0].detail).toMatch(/mechanical/i);
@@ -55,7 +70,10 @@ describe('VTE prophylaxis — Padua Prediction Score', () => {
   });
 
   it('renal dose note present for severe renal impairment guidance', async () => {
-    const cards = await strat.evaluate(rule, req({ medicalInpatient: true, activeCancer: true, previousVte: true }));
+    const cards = await strat.evaluate(
+      rule,
+      req({ medicalInpatient: true, activeCancer: true, previousVte: true }),
+    );
     expect(cards[0].detail).toMatch(/eGFR <30/);
   });
 
@@ -63,7 +81,13 @@ describe('VTE prophylaxis — Padua Prediction Score', () => {
     // bmi≥30 (1) + age≥70 (1) + cardiac/resp failure (1) + acute MI/stroke (1) = 4 → high
     const cards = await strat.evaluate(
       rule,
-      req({ medicalInpatient: true, bmi: 32, ageYears: 75, cardiacOrRespFailure: true, acuteMiOrStroke: true }),
+      req({
+        medicalInpatient: true,
+        bmi: 32,
+        ageYears: 75,
+        cardiacOrRespFailure: true,
+        acuteMiOrStroke: true,
+      }),
     );
     expect(cards[0].summary).toContain('Padua 4');
     expect(cards[0].indicator).toBe('critical');

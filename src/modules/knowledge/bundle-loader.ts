@@ -157,21 +157,17 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
     toxidromes: (parsed['toxidromes.json'] as Toxidrome[] | undefined) ?? [],
     anticoagulantReversal:
       (parsed['anticoagulant-reversal.json'] as AnticoagulantReversal[] | undefined) ?? [],
-    ivCompatibility:
-      (parsed['iv-compatibility.json'] as IvCompatibility[] | undefined) ?? [],
+    ivCompatibility: (parsed['iv-compatibility.json'] as IvCompatibility[] | undefined) ?? [],
     pregnancyLactation:
       (parsed['pregnancy-lactation.json'] as PregnancyLactationRecord[] | undefined) ?? [],
     hepaticDose: (parsed['hepatic-dose.json'] as HepaticDoseRecord[] | undefined) ?? [],
     renalDose: (parsed['renal-dose.json'] as RenalDoseRecord[] | undefined) ?? [],
-    symptomTriage:
-      (parsed['symptom-triage.json'] as SymptomTriageRecord[] | undefined) ?? [],
-    clinicalProcedures:
-      (parsed['clinical-procedures.json'] as ReferenceCard[] | undefined) ?? [],
+    symptomTriage: (parsed['symptom-triage.json'] as SymptomTriageRecord[] | undefined) ?? [],
+    clinicalProcedures: (parsed['clinical-procedures.json'] as ReferenceCard[] | undefined) ?? [],
     bedsideInterpretation:
       (parsed['bedside-interpretation.json'] as ReferenceCard[] | undefined) ?? [],
     preventiveCare: (parsed['preventive-care.json'] as ReferenceCard[] | undefined) ?? [],
-    growthDevelopment:
-      (parsed['growth-development.json'] as ReferenceCard[] | undefined) ?? [],
+    growthDevelopment: (parsed['growth-development.json'] as ReferenceCard[] | undefined) ?? [],
     terminology:
       (parsed['terminology.json'] as TerminologyBundle | undefined) ??
       ({ version: '0.0.0-absent', codeSystems: [], valueSets: [] } as TerminologyBundle),

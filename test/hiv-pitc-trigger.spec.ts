@@ -28,9 +28,7 @@ describe('HivPitcTriggerStrategy', () => {
   const s = new HivPitcTriggerStrategy();
 
   it('stays silent without hivStatusUnknown sentinel', async () => {
-    expect(
-      await s.evaluate(RULE, req({ ageYears: 28, pregnant: true })),
-    ).toEqual([]);
+    expect(await s.evaluate(RULE, req({ ageYears: 28, pregnant: true }))).toEqual([]);
   });
 
   it('pregnant + unknown status → critical mandatory offer', async () => {

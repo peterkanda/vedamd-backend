@@ -182,7 +182,10 @@ export class CustomRulesService implements OnModuleInit {
    * Always returns — never throws — so a bad rule cannot break agentic
    * evaluation. A malformed rule is silently skipped + warn-logged.
    */
-  async evaluate(integratorId: string, signals: EvaluationSignals): Promise<CustomRuleEvaluation[]> {
+  async evaluate(
+    integratorId: string,
+    signals: EvaluationSignals,
+  ): Promise<CustomRuleEvaluation[]> {
     if (!integratorId) return [];
     let rules: CustomRule[];
     try {
@@ -191,7 +194,10 @@ export class CustomRulesService implements OnModuleInit {
           .select()
           .from(customRulesTable)
           .where(
-            and(eq(customRulesTable.integratorId, integratorId), eq(customRulesTable.enabled, true)),
+            and(
+              eq(customRulesTable.integratorId, integratorId),
+              eq(customRulesTable.enabled, true),
+            ),
           );
         rules = rows.map(rowToRecord);
       } else {
@@ -218,7 +224,8 @@ export class CustomRulesService implements OnModuleInit {
 
 function matches(match: CustomRule['match'], signals: EvaluationSignals): boolean {
   if (match.hooks?.length && !match.hooks.includes(signals.hook ?? '')) return false;
-  if (match.medications?.length && !anyTokenHit(match.medications, signals.medications)) return false;
+  if (match.medications?.length && !anyTokenHit(match.medications, signals.medications))
+    return false;
   if (match.diagnoses?.length && !anyTokenHit(match.diagnoses, signals.diagnoses)) return false;
   if (match.allergies?.length && !anyTokenHit(match.allergies, signals.allergies)) return false;
 

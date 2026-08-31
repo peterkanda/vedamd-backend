@@ -22,7 +22,7 @@ export function applyApiPrefix(app: INestApplication): void {
 export const swaggerConfig = new DocumentBuilder()
   .setTitle('VedaMD API')
   .setDescription(
-    'Open-source, stateless Clinical Decision Support API. CDS Hooks + REST/JSON. ' +
+    'Source-available, stateless Clinical Decision Support API. CDS Hooks + REST/JSON. ' +
       'VedaMD never stores patient data — records remain with your EMR.',
   )
   .setVersion('0.1.0')

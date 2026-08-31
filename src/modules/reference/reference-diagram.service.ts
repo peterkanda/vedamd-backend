@@ -47,7 +47,10 @@ export class ReferenceDiagramService {
     if (c.redFlags?.length) {
       lines.push(`  rf{Any red flag?}`);
       lines.push(`  start --> rf`);
-      const rfText = c.redFlags.slice(0, 6).map((r) => '• ' + r).join('<br/>');
+      const rfText = c.redFlags
+        .slice(0, 6)
+        .map((r) => '• ' + r)
+        .join('<br/>');
       lines.push(`  rfyes[["⚠ ESCALATE / URGENT<br/>${q(rfText)}"]]`);
       lines.push(`  rf -- yes --> rfyes`);
       lines.push(`  rf -- no --> m0`);
@@ -61,7 +64,9 @@ export class ReferenceDiagramService {
     } else {
       steps.forEach((s, i) => {
         const id = `m${i}`;
-        lines.push(`  ${id}["${i + 1}. ${q(s.step)}<br/><small>${q(trunc(s.detail, 140))}</small>"]`);
+        lines.push(
+          `  ${id}["${i + 1}. ${q(s.step)}<br/><small>${q(trunc(s.detail, 140))}</small>"]`,
+        );
         if (i > 0) lines.push(`  m${i - 1} --> ${id}`);
       });
       lines.push(`  m${steps.length - 1} --> done([Reassess / follow-up])`);
@@ -89,7 +94,13 @@ export class ReferenceDiagramService {
     format: 'mermaid';
     diagram: string;
     drugs: string[];
-    interactions: Array<{ a: string; b: string; severity: string; mechanism: string; management: string }>;
+    interactions: Array<{
+      a: string;
+      b: string;
+      severity: string;
+      mechanism: string;
+      management: string;
+    }>;
     severeCount: number;
   } {
     const norm = [...new Set(slugs.map((s) => s.toLowerCase().trim()).filter(Boolean))];
@@ -97,7 +108,11 @@ export class ReferenceDiagramService {
     const innOf = (slug: string) => known.find((d) => d.slug === slug)?.inn ?? slug;
 
     const all = this.knowledge.getInteractions() as Array<{
-      slugA: string; slugB: string; severity: string; mechanism: string; management: string;
+      slugA: string;
+      slugB: string;
+      severity: string;
+      mechanism: string;
+      management: string;
     }>;
     const edges = all.filter((i) => norm.includes(i.slugA) && norm.includes(i.slugB));
 
@@ -111,7 +126,9 @@ export class ReferenceDiagramService {
     edges.forEach((e, i) => {
       const sev = e.severity.toUpperCase();
       lines.push(`  ${idx(e.slugA)} -- "${sev}" --> ${idx(e.slugB)}`);
-      lines.push(`  linkStyle ${i} stroke:${severityColour(e.severity)},stroke-width:${severityWidth(e.severity)}px`);
+      lines.push(
+        `  linkStyle ${i} stroke:${severityColour(e.severity)},stroke-width:${severityWidth(e.severity)}px`,
+      );
     });
     if (edges.length === 0) {
       lines.push('  note[No known interactions among these drugs in VedaMD]');
@@ -122,7 +139,11 @@ export class ReferenceDiagramService {
       diagram: lines.join('\n'),
       drugs: norm,
       interactions: edges.map((e) => ({
-        a: e.slugA, b: e.slugB, severity: e.severity, mechanism: e.mechanism, management: e.management,
+        a: e.slugA,
+        b: e.slugB,
+        severity: e.severity,
+        mechanism: e.mechanism,
+        management: e.management,
       })),
       severeCount: edges.filter((e) => e.severity === 'severe' || e.severity === 'major').length,
     };
@@ -146,7 +167,9 @@ export class ReferenceDiagramService {
     const innOf = (s: string) => known.find((d) => d.slug === s)?.inn ?? s;
 
     const all = this.knowledge.getInteractions() as Array<{
-      slugA: string; slugB: string; severity: string;
+      slugA: string;
+      slugB: string;
+      severity: string;
     }>;
     const partners = all
       .filter((i) => i.slugA === slug || i.slugB === slug)
@@ -156,7 +179,9 @@ export class ReferenceDiagramService {
     partners.forEach((p, i) => {
       lines.push(`  p${i}["${q(titleCase(innOf(p.slug)))}"]`);
       lines.push(`  c -- "${p.severity.toUpperCase()}" --> p${i}`);
-      lines.push(`  linkStyle ${i} stroke:${severityColour(p.severity)},stroke-width:${severityWidth(p.severity)}px`);
+      lines.push(
+        `  linkStyle ${i} stroke:${severityColour(p.severity)},stroke-width:${severityWidth(p.severity)}px`,
+      );
     });
     if (partners.length === 0) lines.push('  none[No interactions recorded in VedaMD]');
 
@@ -182,9 +207,13 @@ export class ReferenceDiagramService {
       const id = `s${i}`;
       // Safety-check steps render as decision gates to emphasise the stop point.
       if (s.safetyCheck) {
-        lines.push(`  ${id}{{"🛑 SAFETY CHECK<br/>${q(s.step)}<br/><small>${q(trunc(s.detail, 120))}</small>"}}`);
+        lines.push(
+          `  ${id}{{"🛑 SAFETY CHECK<br/>${q(s.step)}<br/><small>${q(trunc(s.detail, 120))}</small>"}}`,
+        );
       } else {
-        lines.push(`  ${id}["${i + 1}. ${q(s.step)}<br/><small>${q(trunc(s.detail, 120))}</small>"]`);
+        lines.push(
+          `  ${id}["${i + 1}. ${q(s.step)}<br/><small>${q(trunc(s.detail, 120))}</small>"]`,
+        );
       }
       if (i === 0) lines.push(`  start --> ${id}`);
       else lines.push(`  s${i - 1} --> ${id}`);
@@ -222,18 +251,26 @@ function titleCase(s: string): string {
 /** Mermaid edge colour by interaction severity (UI legend: red→amber→grey). */
 function severityColour(sev: string): string {
   switch (sev) {
-    case 'severe': return '#b00020';
-    case 'major': return '#d32f2f';
-    case 'moderate': return '#f57c00';
-    default: return '#9e9e9e';
+    case 'severe':
+      return '#b00020';
+    case 'major':
+      return '#d32f2f';
+    case 'moderate':
+      return '#f57c00';
+    default:
+      return '#9e9e9e';
   }
 }
 
 function severityWidth(sev: string): number {
   switch (sev) {
-    case 'severe': return 4;
-    case 'major': return 3;
-    case 'moderate': return 2;
-    default: return 1;
+    case 'severe':
+      return 4;
+    case 'major':
+      return 3;
+    case 'moderate':
+      return 2;
+    default:
+      return 1;
   }
 }

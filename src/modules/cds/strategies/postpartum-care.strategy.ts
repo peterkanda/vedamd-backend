@@ -140,7 +140,8 @@ export class PostpartumCareStrategy implements CdsRuleStrategy {
     }
     if (ctx.calfPainOrSwelling === true) redFlags.push('unilateral calf pain or swelling (DVT)');
     if (ctx.dyspnoea === true) redFlags.push('shortness of breath (PE / cardiac decompensation)');
-    if (ctx.breastAbscess === true) redFlags.push('breast abscess or mastitis with systemic features');
+    if (ctx.breastAbscess === true)
+      redFlags.push('breast abscess or mastitis with systemic features');
     if (ctx.suicidalThoughts === true || ctx.epdsItem10SelfHarm === true) {
       redFlags.push('suicidal thoughts (perinatal mental-health emergency)');
     }
@@ -192,7 +193,7 @@ export class PostpartumCareStrategy implements CdsRuleStrategy {
           'warning',
           'Day-3 postnatal contact overdue — bring forward',
           'Day-3 (48–72 h) contact is the second of four mandatory postnatal visits per WHO. Repeat the postpartum checklist; check ' +
-            'baby weight (acceptable loss up to 7–10 % of birth weight), jaundice, feeding adequacy, mother\'s mental state and ' +
+            "baby weight (acceptable loss up to 7–10 % of birth weight), jaundice, feeding adequacy, mother's mental state and " +
             'lochia trend. Reinforce family-planning options and immunisation dates.',
           {},
         ),
@@ -280,7 +281,8 @@ export class PostpartumCareStrategy implements CdsRuleStrategy {
     vars: Record<string, string | number | boolean | null | undefined>,
   ): CdsCard {
     const ref = rule.references[0] ?? {
-      label: 'WHO Recommendations on maternal and newborn care for a positive postnatal experience (2022)',
+      label:
+        'WHO Recommendations on maternal and newborn care for a positive postnatal experience (2022)',
       url: 'https://www.who.int/publications/i/item/9789240045989',
     };
     const { summary, detail } = resolveCardCopy(

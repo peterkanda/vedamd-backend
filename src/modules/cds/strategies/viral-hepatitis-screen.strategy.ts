@@ -123,10 +123,7 @@ export class ViralHepatitisScreenStrategy implements CdsRuleStrategy {
     }
 
     // B. Pregnant + HBsAg unknown — universal antenatal offer.
-    if (
-      ctx.pregnant === true &&
-      (ctx.hbsAgStatus === 'unknown' || ctx.hbsAgStatus == null)
-    ) {
+    if (ctx.pregnant === true && (ctx.hbsAgStatus === 'unknown' || ctx.hbsAgStatus == null)) {
       cards.push(
         this.buildCard(
           rule,
@@ -228,7 +225,11 @@ export class ViralHepatitisScreenStrategy implements CdsRuleStrategy {
         `HBV DNA ${dna.toLocaleString('en-US')} IU/mL with ALT ${alt} IU/L (> ULN) meets WHO treatment criteria. Start ` +
         'tenofovir disoproxil fumarate 300 mg orally once daily; reassess ALT, HBV DNA, eGFR at 3 and 6 months. Counsel ' +
         'lifelong therapy and household HBV testing + vaccination of non-immune contacts.';
-    } else if (ctx.pregnant === true && typeof dna === 'number' && dna > HBV_PREGNANCY_DNA_THRESHOLD) {
+    } else if (
+      ctx.pregnant === true &&
+      typeof dna === 'number' &&
+      dna > HBV_PREGNANCY_DNA_THRESHOLD
+    ) {
       summary = 'HBsAg-positive in pregnancy with high viral load — start tenofovir at 28 weeks';
       regimen =
         `Maternal HBV DNA ${dna.toLocaleString('en-US')} IU/mL exceeds the WHO threshold (${HBV_PREGNANCY_DNA_THRESHOLD.toLocaleString('en-US')} IU/mL) for prevention of vertical transmission. Start tenofovir disoproxil fumarate 300 mg from week 28 and continue to delivery (or per local protocol). Ensure the infant ` +

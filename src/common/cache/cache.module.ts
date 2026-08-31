@@ -46,13 +46,10 @@ const redisProvider: Provider = {
 
     let IORedis: IORedisCtor;
     try {
-      // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
       const mod = require('ioredis');
       IORedis = (mod.default ?? mod) as IORedisCtor;
     } catch {
-      logger.warn(
-        'REDIS_URL set but ioredis is not installed — falling back to in-memory cache.',
-      );
+      logger.warn('REDIS_URL set but ioredis is not installed — falling back to in-memory cache.');
       return null;
     }
 

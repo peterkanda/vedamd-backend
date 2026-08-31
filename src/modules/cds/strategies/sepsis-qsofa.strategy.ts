@@ -95,10 +95,8 @@ export class SepsisQSofaStrategy implements CdsRuleStrategy {
       typeof ctx.oxygenSatPercent === 'number' &&
       ctx.oxygenSatPercent > 0 &&
       ctx.oxygenSatPercent < SPO2_ORGAN_DYSFN;
-    const highLactate =
-      typeof ctx.lactateMmolL === 'number' && ctx.lactateMmolL >= SEPSIS_LACTATE;
-    const shockLactate =
-      typeof ctx.lactateMmolL === 'number' && ctx.lactateMmolL > SHOCK_LACTATE;
+    const highLactate = typeof ctx.lactateMmolL === 'number' && ctx.lactateMmolL >= SEPSIS_LACTATE;
+    const shockLactate = typeof ctx.lactateMmolL === 'number' && ctx.lactateMmolL > SHOCK_LACTATE;
     const lowUrine =
       typeof ctx.urineOutputMlPerKgPerHr === 'number' &&
       ctx.urineOutputMlPerKgPerHr < LOW_URINE_OUTPUT;

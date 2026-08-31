@@ -132,9 +132,7 @@ export class AdultAcsRecognitionStrategy implements CdsRuleStrategy {
       );
     }
     if (instability) {
-      criticalReasons.push(
-        'haemodynamic instability (shock, SBP < 90, or HR > 110)',
-      );
+      criticalReasons.push('haemodynamic instability (shock, SBP < 90, or HR > 110)');
     }
     if (stemiPattern) criticalReasons.push('reported ST-segment elevation on ECG');
     if (priorMi && ongoingPain) {

@@ -57,19 +57,13 @@ describe('PostpartumCareStrategy', () => {
   });
 
   it('first 24 h with no contact done → warning', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ postpartumHours: 12, firstPncDone: false }),
-    );
+    const cards = await s.evaluate(RULE, req({ postpartumHours: 12, firstPncDone: false }));
     expect(cards[0].indicator).toBe('warning');
     expect(cards[0].summary).toMatch(/First postnatal contact/);
   });
 
   it('Hb < 9 at week 5 → warning anaemia workup', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ postpartumDays: 35, haemoglobinGdl: 7.5 }),
-    );
+    const cards = await s.evaluate(RULE, req({ postpartumDays: 35, haemoglobinGdl: 7.5 }));
     const anaemia = cards.find((c) => /anaemia/i.test(c.summary));
     expect(anaemia).toBeTruthy();
     expect(anaemia!.detail).toMatch(/ferrous sulphate/i);

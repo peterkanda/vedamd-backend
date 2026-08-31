@@ -60,11 +60,7 @@ export class UsageController {
   @UseGuards(OperatorAuthGuard)
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Recent usage events (newest first) for the calling integrator' })
-  list(
-    @Req() req: FastifyRequest,
-    @Query('limit') limit?: string,
-    @Query('since') since?: string,
-  ) {
+  list(@Req() req: FastifyRequest, @Query('limit') limit?: string, @Query('since') since?: string) {
     return this.usage.query(req.operator!.integratorId, {
       limit: limit ? Number(limit) : undefined,
       sinceMs: parseSince(since),
@@ -74,7 +70,9 @@ export class UsageController {
   @Get('summary')
   @UseGuards(OperatorAuthGuard)
   @ApiBearerAuth()
-  @ApiOperation({ summary: 'Usage rollup (by category, endpoint, day, actor type) for the dashboard' })
+  @ApiOperation({
+    summary: 'Usage rollup (by category, endpoint, day, actor type) for the dashboard',
+  })
   summary(@Req() req: FastifyRequest, @Query('since') since?: string) {
     return this.usage.summary(req.operator!.integratorId, { sinceMs: parseSince(since) });
   }

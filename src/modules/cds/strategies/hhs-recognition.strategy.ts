@@ -43,7 +43,7 @@ const HHS_GLUCOSE = 30;
 const HHS_OSMOL = 320;
 const HHS_OSMOL_SEVERE = 350;
 const HHS_KETONE_MAX = 3.0;
-const HHS_PH_MIN = 7.30;
+const HHS_PH_MIN = 7.3;
 const HHS_BICARB_MIN = 15;
 const SEVERE_NA = 160;
 const SEVERE_K_LOW = 3.5;
@@ -72,10 +72,7 @@ interface HhsContext {
 
 function osmolality(ctx: HhsContext): number | undefined {
   if (typeof ctx.calculatedOsmolMosmKg === 'number') return ctx.calculatedOsmolMosmKg;
-  if (
-    typeof ctx.sodiumMmolL === 'number' &&
-    typeof ctx.plasmaGlucoseMmolL === 'number'
-  ) {
+  if (typeof ctx.sodiumMmolL === 'number' && typeof ctx.plasmaGlucoseMmolL === 'number') {
     // 2(Na+) + glucose + urea — urea is small in HHS; default to 5 if not given.
     return 2 * ctx.sodiumMmolL + ctx.plasmaGlucoseMmolL + 5;
   }
@@ -83,12 +80,42 @@ function osmolality(ctx: HhsContext): number | undefined {
 }
 
 const CODINGS_BASE: CodedReference[] = [
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'E14.0', display: 'Diabetes mellitus with coma (HHS / hyperosmolar)', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'E11.0', display: 'Type 2 diabetes mellitus with hyperosmolarity', kind: 'diagnosis' },
-  { system: 'http://id.who.int/icd/release/11/mms', code: '5A21', display: 'Hyperosmolar hyperglycaemic state', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '421750000', display: 'Hyperosmolar hyperglycaemic non-ketotic syndrome (disorder)', kind: 'diagnosis' },
-  { system: 'http://loinc.org', code: '2345-7', display: 'Glucose [Mass/volume] in Serum or Plasma', kind: 'lab' },
-  { system: 'http://loinc.org', code: '2951-2', display: 'Sodium [Moles/volume] in Serum or Plasma', kind: 'lab' },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'E14.0',
+    display: 'Diabetes mellitus with coma (HHS / hyperosmolar)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'E11.0',
+    display: 'Type 2 diabetes mellitus with hyperosmolarity',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://id.who.int/icd/release/11/mms',
+    code: '5A21',
+    display: 'Hyperosmolar hyperglycaemic state',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '421750000',
+    display: 'Hyperosmolar hyperglycaemic non-ketotic syndrome (disorder)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://loinc.org',
+    code: '2345-7',
+    display: 'Glucose [Mass/volume] in Serum or Plasma',
+    kind: 'lab',
+  },
+  {
+    system: 'http://loinc.org',
+    code: '2951-2',
+    display: 'Sodium [Moles/volume] in Serum or Plasma',
+    kind: 'lab',
+  },
 ];
 
 @Injectable()
@@ -144,7 +171,12 @@ export class HhsRecognitionStrategy implements CdsRuleStrategy {
     }
 
     // Partial picture (e.g., ketones present but high glucose) — flag as DKA-overlap.
-    if (typeof glu === 'number' && glu >= HHS_GLUCOSE && typeof ket === 'number' && ket >= HHS_KETONE_MAX) {
+    if (
+      typeof glu === 'number' &&
+      glu >= HHS_GLUCOSE &&
+      typeof ket === 'number' &&
+      ket >= HHS_KETONE_MAX
+    ) {
       return [
         this.buildCard(
           rule,
@@ -163,7 +195,12 @@ export class HhsRecognitionStrategy implements CdsRuleStrategy {
     return [];
   }
 
-  private bundleCard(rule: CdsRule, req: CdsHookRequest, ctx: HhsContext, osm: number | undefined): CdsCard {
+  private bundleCard(
+    rule: CdsRule,
+    req: CdsHookRequest,
+    ctx: HhsContext,
+    osm: number | undefined,
+  ): CdsCard {
     const wt = ctx.weightKg;
     const firstHourBolus = typeof wt === 'number' ? `${(15 * wt).toFixed(0)} mL` : '500–1000 mL';
     const insulinStart =
@@ -222,7 +259,8 @@ export class HhsRecognitionStrategy implements CdsRuleStrategy {
     codings: CodedReference[],
   ): CdsCard {
     const ref = rule.references[0] ?? {
-      label: 'JBDS-IP — The management of the hyperosmolar hyperglycaemic state in adults with diabetes (2022)',
+      label:
+        'JBDS-IP — The management of the hyperosmolar hyperglycaemic state in adults with diabetes (2022)',
       url: 'https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_06_The_Management_of_the_Hyperosmolar_Hyperglycaemic_State_HHS_in_Adults_with_Diabetes_FINAL_28032022.pdf',
     };
     const { summary, detail } = resolveCardCopy(

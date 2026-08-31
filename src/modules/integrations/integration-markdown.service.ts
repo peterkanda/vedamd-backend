@@ -75,9 +75,7 @@ export class IntegrationMarkdownService {
     }
 
     lines.push('---');
-    lines.push(
-      `_Generated from VedaMD integration catalogue — slug \`${i.slug}\`._`,
-    );
+    lines.push(`_Generated from VedaMD integration catalogue — slug \`${i.slug}\`._`);
     lines.push('');
 
     return lines.join('\n');

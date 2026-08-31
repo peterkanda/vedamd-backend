@@ -1,9 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import {
-  assertReadOnly,
-  type SqlConnectionConfig,
-  type SqlConnector,
-} from './sql-connector.types';
+import { assertReadOnly, type SqlConnectionConfig, type SqlConnector } from './sql-connector.types';
 
 /**
  * Postgres connector — uses the `postgres` driver already in the
@@ -31,8 +27,11 @@ export class PostgresConnector implements SqlConnector {
     params: Record<string, string | number>,
   ): Promise<Array<Record<string, unknown>>> {
     assertReadOnly(sql);
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const postgres = require('postgres') as (url: string, opts?: unknown) => {
+
+    const postgres = require('postgres') as (
+      url: string,
+      opts?: unknown,
+    ) => {
       unsafe: (q: string, p: unknown[]) => Promise<Array<Record<string, unknown>>>;
       end: () => Promise<void>;
     };

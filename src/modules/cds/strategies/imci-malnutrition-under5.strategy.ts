@@ -133,7 +133,8 @@ export class ImciMalnutritionUnder5Strategy implements CdsRuleStrategy {
         )
       : [];
     const complications: string[] = [];
-    if (validDanger.length > 0) complications.push(`IMCI danger sign(s): ${validDanger.join(', ')}`);
+    if (validDanger.length > 0)
+      complications.push(`IMCI danger sign(s): ${validDanger.join(', ')}`);
     if (ctx.refusesToFeed === true) complications.push('refuses to feed');
     if (ctx.vomitsEverything === true) complications.push('vomits everything');
     const appetiteFailed = ctx.appetiteTestPass === false;

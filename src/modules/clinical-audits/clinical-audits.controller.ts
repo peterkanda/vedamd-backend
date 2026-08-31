@@ -60,11 +60,7 @@ export class ClinicalAuditsController {
 
   @Patch(':id')
   @ApiOperation({ summary: 'Update audit name / rules / policies / threshold / channels' })
-  async update(
-    @Param('id') id: string,
-    @Body() dto: AuditUpdateDto,
-    @Req() req: OperatorRequest,
-  ) {
+  async update(@Param('id') id: string, @Body() dto: AuditUpdateDto, @Req() req: OperatorRequest) {
     return this.svc.update(req.operator!.integratorId, id, dto);
   }
 

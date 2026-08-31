@@ -104,9 +104,7 @@ export class ReferenceDoseService {
       slug: drug.slug,
       drug: drug.inn,
       computed,
-      refusedReason: computed
-        ? undefined
-        : (result.contraindications[0] ?? result.narrative),
+      refusedReason: computed ? undefined : (result.contraindications[0] ?? result.narrative),
       protocol: result.protocol,
       calculatedDose: result.calculatedDose,
       narrative: result.narrative,

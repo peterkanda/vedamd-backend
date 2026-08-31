@@ -73,10 +73,7 @@ export class CopdExacerbationStrategy implements CdsRuleStrategy {
 
     const severeReasons: string[] = [];
     if (ctx.confusionOrDrowsiness === true) severeReasons.push('new confusion / drowsiness');
-    if (
-      typeof ctx.respiratoryRatePerMin === 'number' &&
-      ctx.respiratoryRatePerMin >= SEVERE_RR
-    ) {
+    if (typeof ctx.respiratoryRatePerMin === 'number' && ctx.respiratoryRatePerMin >= SEVERE_RR) {
       severeReasons.push(`RR ${ctx.respiratoryRatePerMin}/min (≥ ${SEVERE_RR})`);
     }
     if (
@@ -86,7 +83,8 @@ export class CopdExacerbationStrategy implements CdsRuleStrategy {
     ) {
       severeReasons.push(`SpO₂ ${ctx.oxygenSatPercent}% (< ${SEVERE_SPO2})`);
     }
-    if (ctx.accessoryMuscleUse === true) severeReasons.push('accessory-muscle use / paradoxical chest movement');
+    if (ctx.accessoryMuscleUse === true)
+      severeReasons.push('accessory-muscle use / paradoxical chest movement');
     if (typeof ctx.systolicMmHg === 'number' && ctx.systolicMmHg < SHOCK_SBP) {
       severeReasons.push(`SBP ${ctx.systolicMmHg} mmHg (< ${SHOCK_SBP})`);
     }

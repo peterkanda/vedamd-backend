@@ -164,8 +164,7 @@ export class KnowledgeService implements OnModuleInit {
       // DDIs are keyed as "slugA|slugB"; allow either order.
       const [a, b] = id.split('|');
       const rec = this.bundle.interactions.find(
-        (d) =>
-          (d.slugA === a && d.slugB === b) || (d.slugA === b && d.slugB === a),
+        (d) => (d.slugA === a && d.slugB === b) || (d.slugA === b && d.slugB === a),
       );
       return rec?.references;
     }

@@ -24,9 +24,7 @@ describe('ImciEarInfectionStrategy', () => {
   const s = new ImciEarInfectionStrategy();
 
   it('silent for child ≥ 60 months', async () => {
-    expect(
-      await s.evaluate(RULE, req({ ageMonths: 84, suspectedEarProblem: true })),
-    ).toEqual([]);
+    expect(await s.evaluate(RULE, req({ ageMonths: 84, suspectedEarProblem: true }))).toEqual([]);
   });
 
   it('mastoiditis → critical, ceftriaxone weight-banded', async () => {
@@ -89,10 +87,7 @@ describe('ImciEarInfectionStrategy', () => {
   });
 
   it('no infection → info', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ ageMonths: 18, suspectedEarProblem: true }),
-    );
+    const cards = await s.evaluate(RULE, req({ ageMonths: 18, suspectedEarProblem: true }));
     expect(cards[0].indicator).toBe('info');
   });
 });

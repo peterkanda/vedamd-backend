@@ -4,7 +4,11 @@ import { extractCards } from '../src/modules/agentic/card-extractor';
 import { fhirToContext } from '../src/modules/agentic/fhir/fhir-adapter';
 import { assertReadOnly } from '../src/modules/agentic/connectors/sql-connector.types';
 import { buildUserMessage } from '../src/modules/agentic/prompts/clinical-reasoner.prompt';
-import { SCHEMA_PRESETS, listPresets, getPreset } from '../src/modules/agentic/connectors/schema-presets';
+import {
+  SCHEMA_PRESETS,
+  listPresets,
+  getPreset,
+} from '../src/modules/agentic/connectors/schema-presets';
 import { makeKnowledgeService } from './helpers/knowledge';
 
 describe('Agentic — knowledge retriever', () => {
@@ -55,7 +59,10 @@ describe('Agentic — knowledge retriever', () => {
   });
 
   it('caps retrieval to bounded sizes', () => {
-    const k = retriever.retrieve({ medications: ['a', 'b', 'c'] }, { drugs: 2, ddis: 2, conditions: 2, procedures: 2, rules: 2 });
+    const k = retriever.retrieve(
+      { medications: ['a', 'b', 'c'] },
+      { drugs: 2, ddis: 2, conditions: 2, procedures: 2, rules: 2 },
+    );
     expect(k.drugs.length).toBeLessThanOrEqual(2);
     expect(k.interactions.length).toBeLessThanOrEqual(2);
   });
@@ -78,18 +85,23 @@ describe('Agentic — card extractor', () => {
     const { cards, citedRecords } = extractCards(text, now, 0);
     expect(cards).toHaveLength(1);
     expect(cards[0].indicator).toBe('critical');
-    expect(cards[0].extension?.['http://vedamd.io/Card/recommendation'].ruleId).toBe('agentic-reasoner');
+    expect(cards[0].extension?.['http://vedamd.io/Card/recommendation'].ruleId).toBe(
+      'agentic-reasoner',
+    );
     expect(citedRecords[0]).toEqual({ kind: 'ddi', id: 'naproxen+warfarin' });
   });
 
   it('drops cards with no citation (anti-hallucination guard)', () => {
-    const text = JSON.stringify({ cards: [{ summary: 'Some claim', indicator: 'warning', citations: [] }] });
+    const text = JSON.stringify({
+      cards: [{ summary: 'Some claim', indicator: 'warning', citations: [] }],
+    });
     const { cards } = extractCards(text, now, 0);
     expect(cards).toHaveLength(0);
   });
 
   it('extracts JSON from prose + code fences', () => {
-    const text = 'Here is my analysis:\n```json\n{"cards":[{"summary":"X","indicator":"info","citations":[{"kind":"drug","id":"warfarin","label":"W"}]}]}\n```\nDone.';
+    const text =
+      'Here is my analysis:\n```json\n{"cards":[{"summary":"X","indicator":"info","citations":[{"kind":"drug","id":"warfarin","label":"W"}]}]}\n```\nDone.';
     const { cards } = extractCards(text, now, 0);
     expect(cards).toHaveLength(1);
     expect(cards[0].summary).toBe('X');
@@ -102,8 +114,18 @@ describe('Agentic — card extractor', () => {
   it('parses + clamps confidence into the card extension', () => {
     const text = JSON.stringify({
       cards: [
-        { summary: 'A', indicator: 'warning', confidence: 0.92, citations: [{ kind: 'ddi', id: 'a+b', label: 'AB' }] },
-        { summary: 'B', indicator: 'info', confidence: 1.7, citations: [{ kind: 'drug', id: 'x', label: 'X' }] },
+        {
+          summary: 'A',
+          indicator: 'warning',
+          confidence: 0.92,
+          citations: [{ kind: 'ddi', id: 'a+b', label: 'AB' }],
+        },
+        {
+          summary: 'B',
+          indicator: 'info',
+          confidence: 1.7,
+          citations: [{ kind: 'drug', id: 'x', label: 'X' }],
+        },
       ],
     });
     const { cards } = extractCards(text, now, 0);
@@ -116,23 +138,47 @@ describe('Agentic — card extractor', () => {
     const text = JSON.stringify({
       cards: [
         // model says 0.95 but the only source is C-tier → capped to 0.7
-        { summary: 'weakly-sourced', indicator: 'warning', confidence: 0.95, citations: [{ kind: 'drug', id: 'x', label: 'X' }] },
+        {
+          summary: 'weakly-sourced',
+          indicator: 'warning',
+          confidence: 0.95,
+          citations: [{ kind: 'drug', id: 'x', label: 'X' }],
+        },
         // model says 0.95 and an A-tier source backs it → stays high
-        { summary: 'well-sourced', indicator: 'warning', confidence: 0.95, citations: [{ kind: 'rule', id: 'y', label: 'Y' }] },
+        {
+          summary: 'well-sourced',
+          indicator: 'warning',
+          confidence: 0.95,
+          citations: [{ kind: 'rule', id: 'y', label: 'Y' }],
+        },
       ],
     });
     const resolve = (_kind: string, id: string) => (id === 'y' ? ('A' as const) : ('C' as const));
     const { cards } = extractCards(text, now, 0, resolve);
     const byId = (s: string) => cards.find((c) => c.summary === s)!;
-    expect(byId('weakly-sourced').extension?.['http://vedamd.io/Card/agentic-confidence']).toBeCloseTo(0.7);
-    expect(byId('well-sourced').extension?.['http://vedamd.io/Card/agentic-confidence']).toBeCloseTo(0.95);
+    expect(
+      byId('weakly-sourced').extension?.['http://vedamd.io/Card/agentic-confidence'],
+    ).toBeCloseTo(0.7);
+    expect(
+      byId('well-sourced').extension?.['http://vedamd.io/Card/agentic-confidence'],
+    ).toBeCloseTo(0.95);
   });
 
   it('drops cards below the confidence floor', () => {
     const text = JSON.stringify({
       cards: [
-        { summary: 'low', indicator: 'info', confidence: 0.3, citations: [{ kind: 'drug', id: 'x', label: 'X' }] },
-        { summary: 'high', indicator: 'critical', confidence: 0.95, citations: [{ kind: 'drug', id: 'y', label: 'Y' }] },
+        {
+          summary: 'low',
+          indicator: 'info',
+          confidence: 0.3,
+          citations: [{ kind: 'drug', id: 'x', label: 'X' }],
+        },
+        {
+          summary: 'high',
+          indicator: 'critical',
+          confidence: 0.95,
+          citations: [{ kind: 'drug', id: 'y', label: 'Y' }],
+        },
       ],
     });
     const { cards } = extractCards(text, now, 0.6);
@@ -146,9 +192,23 @@ describe('Agentic — card extractor', () => {
     // below 0.6 → dropped; the 0.92 card is kept.
     const text = JSON.stringify({
       cards: [
-        { summary: 'omitted-confidence', indicator: 'info', citations: [{ kind: 'drug', id: 'a', label: 'A' }] },
-        { summary: 'just-below', indicator: 'warning', confidence: 0.45, citations: [{ kind: 'drug', id: 'b', label: 'B' }] },
-        { summary: 'safe', indicator: 'warning', confidence: 0.92, citations: [{ kind: 'drug', id: 'c', label: 'C' }] },
+        {
+          summary: 'omitted-confidence',
+          indicator: 'info',
+          citations: [{ kind: 'drug', id: 'a', label: 'A' }],
+        },
+        {
+          summary: 'just-below',
+          indicator: 'warning',
+          confidence: 0.45,
+          citations: [{ kind: 'drug', id: 'b', label: 'B' }],
+        },
+        {
+          summary: 'safe',
+          indicator: 'warning',
+          confidence: 0.92,
+          citations: [{ kind: 'drug', id: 'c', label: 'C' }],
+        },
       ],
     });
     const { cards } = extractCards(text, now);
@@ -157,14 +217,27 @@ describe('Agentic — card extractor', () => {
 
   it('agentic cards carry reviewStatus="review" so the UI flags LLM provenance', () => {
     const text = JSON.stringify({
-      cards: [{ summary: 'A', indicator: 'warning', confidence: 0.9, citations: [{ kind: 'drug', id: 'x', label: 'X' }] }],
+      cards: [
+        {
+          summary: 'A',
+          indicator: 'warning',
+          confidence: 0.9,
+          citations: [{ kind: 'drug', id: 'x', label: 'X' }],
+        },
+      ],
     });
     const { cards } = extractCards(text, now, 0);
-    expect(cards[0].extension?.['http://vedamd.io/Card/recommendation'].reviewStatus).toBe('review');
+    expect(cards[0].extension?.['http://vedamd.io/Card/recommendation'].reviewStatus).toBe(
+      'review',
+    );
   });
 
   it('defaults confidence to 0.5 when the model omits it', () => {
-    const text = JSON.stringify({ cards: [{ summary: 'A', indicator: 'info', citations: [{ kind: 'drug', id: 'x', label: 'X' }] }] });
+    const text = JSON.stringify({
+      cards: [
+        { summary: 'A', indicator: 'info', citations: [{ kind: 'drug', id: 'x', label: 'X' }] },
+      ],
+    });
     const { cards } = extractCards(text, now, 0);
     expect(cards[0].extension?.['http://vedamd.io/Card/agentic-confidence']).toBe(0.5);
   });
@@ -229,10 +302,21 @@ describe('Agentic — FHIR R4 adapter', () => {
       resourceType: 'Bundle',
       entry: [
         { resource: { resourceType: 'Patient', gender: 'female', birthDate: '1990-01-01' } },
-        { resource: { resourceType: 'MedicationRequest', medicationCodeableConcept: { text: 'warfarin' } } },
+        {
+          resource: {
+            resourceType: 'MedicationRequest',
+            medicationCodeableConcept: { text: 'warfarin' },
+          },
+        },
         { resource: { resourceType: 'Condition', code: { text: 'atrial fibrillation' } } },
         { resource: { resourceType: 'AllergyIntolerance', code: { text: 'penicillin' } } },
-        { resource: { resourceType: 'Observation', code: { text: 'INR', coding: [{ system: 'http://loinc.org', code: '6301-6' }] }, valueQuantity: { value: 3.5 } } },
+        {
+          resource: {
+            resourceType: 'Observation',
+            code: { text: 'INR', coding: [{ system: 'http://loinc.org', code: '6301-6' }] },
+            valueQuantity: { value: 3.5 },
+          },
+        },
       ],
     };
     const ctx = fhirToContext(bundle, 'medication-prescribe');
@@ -245,12 +329,20 @@ describe('Agentic — FHIR R4 adapter', () => {
   });
 
   it('handles a single resource (not a bundle)', () => {
-    const ctx = fhirToContext({ resourceType: 'MedicationStatement', medicationCodeableConcept: { coding: [{ display: 'metformin' }] } });
+    const ctx = fhirToContext({
+      resourceType: 'MedicationStatement',
+      medicationCodeableConcept: { coding: [{ display: 'metformin' }] },
+    });
     expect(ctx.medications).toContain('metformin');
   });
 
   it('does not extract patient identifiers', () => {
-    const ctx = fhirToContext({ resourceType: 'Patient', name: [{ family: 'Smith' }], identifier: [{ value: 'MRN123' }], gender: 'male' });
+    const ctx = fhirToContext({
+      resourceType: 'Patient',
+      name: [{ family: 'Smith' }],
+      identifier: [{ value: 'MRN123' }],
+      gender: 'male',
+    });
     const serialized = JSON.stringify(ctx).toLowerCase();
     expect(serialized.includes('smith')).toBe(false);
     expect(serialized.includes('mrn123')).toBe(false);
@@ -354,10 +446,23 @@ describe('Agentic — batch evaluation', () => {
 describe('Agentic — prompt builder', () => {
   it('embeds knowledge + context + task and never invents structure', () => {
     const msg = buildUserMessage(
-      { medications: ['warfarin'], diagnoses: ['af'], patient: { ageYears: 70, sex: 'male' }, question: 'safe to add naproxen?' },
+      {
+        medications: ['warfarin'],
+        diagnoses: ['af'],
+        patient: { ageYears: 70, sex: 'male' },
+        question: 'safe to add naproxen?',
+      },
       {
         drugs: [{ slug: 'warfarin', inn: 'Warfarin', summary: 'class=anticoagulant' }],
-        interactions: [{ slugA: 'naproxen', slugB: 'warfarin', severity: 'major', mechanism: 'bleeding', management: 'avoid' }],
+        interactions: [
+          {
+            slugA: 'naproxen',
+            slugB: 'warfarin',
+            severity: 'major',
+            mechanism: 'bleeding',
+            management: 'avoid',
+          },
+        ],
         conditions: [],
         procedures: [],
         rules: [],

@@ -114,10 +114,7 @@ export class HeartFailureDecompensationStrategy implements CdsRuleStrategy {
     ) {
       shockReasons.push(`SpO₂ ${ctx.oxygenSatPercent}% (< ${SEVERE_SPO2})`);
     }
-    if (
-      typeof ctx.respiratoryRatePerMin === 'number' &&
-      ctx.respiratoryRatePerMin >= SEVERE_RR
-    ) {
+    if (typeof ctx.respiratoryRatePerMin === 'number' && ctx.respiratoryRatePerMin >= SEVERE_RR) {
       shockReasons.push(`RR ${ctx.respiratoryRatePerMin}/min (≥ ${SEVERE_RR})`);
     }
     if (ctx.pulmonaryOedemaPinkFrothy === true) shockReasons.push('pink frothy sputum');
@@ -147,9 +144,13 @@ export class HeartFailureDecompensationStrategy implements CdsRuleStrategy {
     }
 
     const decompReasons: string[] = [];
-    if (ctx.orthopnoeaOrPnd === true) decompReasons.push('orthopnoea / paroxysmal nocturnal dyspnoea');
+    if (ctx.orthopnoeaOrPnd === true)
+      decompReasons.push('orthopnoea / paroxysmal nocturnal dyspnoea');
     if (ctx.bilateralBasalCrackles === true) decompReasons.push('bilateral basal crackles');
-    if (typeof ctx.recentWeightGainKg === 'number' && ctx.recentWeightGainKg >= ACUTE_WEIGHT_GAIN_KG) {
+    if (
+      typeof ctx.recentWeightGainKg === 'number' &&
+      ctx.recentWeightGainKg >= ACUTE_WEIGHT_GAIN_KG
+    ) {
       decompReasons.push(`weight gain ${ctx.recentWeightGainKg.toFixed(1)} kg in 3 days`);
     }
     if (ctx.jvpRaised === true) decompReasons.push('raised JVP');
@@ -171,8 +172,10 @@ export class HeartFailureDecompensationStrategy implements CdsRuleStrategy {
       ];
     }
 
-    if (ctx.peripheralOedema === true ||
-      (typeof ctx.recentWeightGainKg === 'number' && ctx.recentWeightGainKg > 0)) {
+    if (
+      ctx.peripheralOedema === true ||
+      (typeof ctx.recentWeightGainKg === 'number' && ctx.recentWeightGainKg > 0)
+    ) {
       return [
         this.buildCard(
           rule,
@@ -238,8 +241,7 @@ export class HeartFailureDecompensationStrategy implements CdsRuleStrategy {
 
 function gdmtRecommendation(ctx: HfContext): string {
   const ef = ctx.knownEjectionFractionPercent;
-  const hyperK =
-    typeof ctx.potassiumMmolL === 'number' && ctx.potassiumMmolL >= HIGH_K_MMOLL;
+  const hyperK = typeof ctx.potassiumMmolL === 'number' && ctx.potassiumMmolL >= HIGH_K_MMOLL;
   if (typeof ef === 'number' && ef < 40) {
     const kLine = hyperK
       ? ` Potassium ${ctx.potassiumMmolL!.toFixed(1)} mmol/L — withhold ACE inhibitor / ARB / MRA until corrected.`
@@ -248,7 +250,8 @@ function gdmtRecommendation(ctx: HfContext): string {
       `Reduced-EF (LVEF ${ef}%): start or up-titrate all four pillars when haemodynamically stable — ` +
       'ACE inhibitor / ARB (or ARNI sacubitril-valsartan), beta-blocker (carvedilol / bisoprolol / metoprolol succinate), ' +
       'MRA (spironolactone 25 mg or eplerenone), SGLT2 inhibitor (dapagliflozin 10 mg or empagliflozin 10 mg). Up-titrate ' +
-      'over 2–4 weeks targeting heart rate 60–70 / SBP > 90.' + kLine
+      'over 2–4 weeks targeting heart rate 60–70 / SBP > 90.' +
+      kLine
     );
   }
   if (typeof ef === 'number' && ef >= 40) {

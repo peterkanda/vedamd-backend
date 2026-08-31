@@ -70,14 +70,15 @@ export class AdultCapCrb65Strategy implements CdsRuleStrategy {
       score += 1;
       components.push('C: confusion');
     }
-    if (typeof ctx.respiratoryRatePerMin === 'number' && ctx.respiratoryRatePerMin >= RR_THRESHOLD) {
+    if (
+      typeof ctx.respiratoryRatePerMin === 'number' &&
+      ctx.respiratoryRatePerMin >= RR_THRESHOLD
+    ) {
       score += 1;
       components.push(`R: RR ${ctx.respiratoryRatePerMin}/min (≥ ${RR_THRESHOLD})`);
     }
-    const sbpHit =
-      typeof ctx.systolicMmHg === 'number' && ctx.systolicMmHg < SBP_THRESHOLD;
-    const dbpHit =
-      typeof ctx.diastolicMmHg === 'number' && ctx.diastolicMmHg <= DBP_THRESHOLD;
+    const sbpHit = typeof ctx.systolicMmHg === 'number' && ctx.systolicMmHg < SBP_THRESHOLD;
+    const dbpHit = typeof ctx.diastolicMmHg === 'number' && ctx.diastolicMmHg <= DBP_THRESHOLD;
     if (sbpHit || dbpHit) {
       score += 1;
       components.push(
@@ -125,7 +126,9 @@ export class AdultCapCrb65Strategy implements CdsRuleStrategy {
       label: 'BTS / WHO Adult CAP Management',
       url: 'https://www.who.int/publications/i/item/9789241549349',
     };
-    const detailParts = [`CRB-65 score ${score} (${components.join(' | ') || 'no components present'}).`];
+    const detailParts = [
+      `CRB-65 score ${score} (${components.join(' | ') || 'no components present'}).`,
+    ];
     if (lowSpo2) {
       detailParts.push(
         `Pulse oximetry: ${ctx.oxygenSatPercent}% — below the 92% admission flag; treat as moderate risk regardless of CRB-65.`,

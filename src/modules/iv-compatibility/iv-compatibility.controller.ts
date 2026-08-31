@@ -19,11 +19,7 @@ export class IvCompatibilityController {
     description:
       'Curated subset of inpatient IV co-administration pairs — high-mortality / high-volume scenarios from King Guide, ASHP, FDA labelling. Includes the documented-deaths cases (ceftriaxone + calcium in neonates), common ICU mistakes (vasopressor + bicarbonate, vancomycin + pip-tazo) and the permissive defaults (norepinephrine Y-site, dexmedetomidine, metronidazole). Filters: q (free text), drug (name or slug), status (compatible|conditional|incompatible|no-data).',
   })
-  list(
-    @Query('q') q?: string,
-    @Query('drug') drug?: string,
-    @Query('status') status?: string,
-  ) {
+  list(@Query('q') q?: string, @Query('drug') drug?: string, @Query('status') status?: string) {
     return { pairs: this.compat.list({ q, drug, status }) };
   }
 

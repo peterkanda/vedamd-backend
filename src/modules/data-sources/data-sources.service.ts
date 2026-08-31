@@ -1,11 +1,22 @@
-import { Inject, Injectable, Logger, NotFoundException, OnModuleInit, Optional } from '@nestjs/common';
+import {
+  Inject,
+  Injectable,
+  Logger,
+  NotFoundException,
+  OnModuleInit,
+  Optional,
+} from '@nestjs/common';
 import { and, desc, eq } from 'drizzle-orm';
 import { DRIZZLE, type MaybeDrizzle } from '../../db/database.module';
 import { sqlConnections as connsTable, sqlNamedQueries as queriesTable } from '../../db/schema';
 import { decryptSecret, encryptSecret } from '../../common/secrets-vault';
 import { assertHostAllowedLiteral, ssrfOptionsFromEnv } from '../../common/ssrf-guard';
 import { SqlIngestionService } from '../agentic/connectors/sql-ingestion.service';
-import { assertReadOnly, type QueryMapping, type SqlDialect } from '../agentic/connectors/sql-connector.types';
+import {
+  assertReadOnly,
+  type QueryMapping,
+  type SqlDialect,
+} from '../agentic/connectors/sql-connector.types';
 import type {
   ConnectionCreateDto,
   ConnectionSummary,
@@ -208,7 +219,9 @@ export class DataSourcesService implements OnModuleInit {
     const existing = await this.findConnInternal(integratorId, id);
     if (!existing) throw new NotFoundException(`Connection not found: ${id}`);
     if (dto.url?.trim()) assertHostAllowedLiteral(dto.url.trim(), ssrfOptionsFromEnv());
-    const encryptedUrl = dto.url ? encryptSecret(dto.url.trim(), integratorId) : existing.encryptedUrl;
+    const encryptedUrl = dto.url
+      ? encryptSecret(dto.url.trim(), integratorId)
+      : existing.encryptedUrl;
     const merged: ConnectionMem = {
       ...existing,
       name: dto.name?.trim() ?? existing.name,
@@ -299,10 +312,7 @@ export class DataSourcesService implements OnModuleInit {
     }
   }
 
-  private async findConnInternal(
-    integratorId: string,
-    id: string,
-  ): Promise<ConnectionMem | null> {
+  private async findConnInternal(integratorId: string, id: string): Promise<ConnectionMem | null> {
     if (this.db) {
       const rows = await this.db
         .select()
@@ -426,9 +436,10 @@ export class DataSourcesService implements OnModuleInit {
     const merged: QueryMem = {
       ...existing,
       name: dto.name?.trim() ?? existing.name,
-      description: dto.description === null ? null : dto.description?.trim() ?? existing.description,
+      description:
+        dto.description === null ? null : (dto.description?.trim() ?? existing.description),
       connectionId:
-        dto.connectionId === null ? null : dto.connectionId?.trim() ?? existing.connectionId,
+        dto.connectionId === null ? null : (dto.connectionId?.trim() ?? existing.connectionId),
       sql: dto.sql ?? existing.sql,
       mapping: dto.mapping ?? existing.mapping,
       updatedAt: new Date().toISOString(),

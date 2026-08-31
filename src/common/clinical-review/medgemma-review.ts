@@ -85,10 +85,17 @@ const ALLOWED: ReviewVerdict[] = ['ok', 'concern', 'error', 'unknown'];
 export function parseReviewVerdict(text: string): ReviewResult {
   const json = extractJsonObject(text);
   if (!json || typeof json !== 'object') {
-    return { verdict: 'unknown', dosingConcern: false, issues: ['Unparseable reviewer response'], confidence: 0 };
+    return {
+      verdict: 'unknown',
+      dosingConcern: false,
+      issues: ['Unparseable reviewer response'],
+      confidence: 0,
+    };
   }
   const o = json as Record<string, unknown>;
-  const verdict = ALLOWED.includes(o.verdict as ReviewVerdict) ? (o.verdict as ReviewVerdict) : 'unknown';
+  const verdict = ALLOWED.includes(o.verdict as ReviewVerdict)
+    ? (o.verdict as ReviewVerdict)
+    : 'unknown';
   const issues = Array.isArray(o.issues)
     ? o.issues.filter((i): i is string => typeof i === 'string').map((s) => s.slice(0, 300))
     : [];
@@ -98,14 +105,19 @@ export function parseReviewVerdict(text: string): ReviewResult {
     verdict,
     dosingConcern: o.dosingConcern === true,
     issues,
-    suggestion: typeof o.suggestion === 'string' && o.suggestion.trim() ? o.suggestion.trim().slice(0, 500) : undefined,
+    suggestion:
+      typeof o.suggestion === 'string' && o.suggestion.trim()
+        ? o.suggestion.trim().slice(0, 500)
+        : undefined,
     confidence,
   };
 }
 
 /** True when a verdict warrants human attention (flag for review). */
 export function isFlagged(r: ReviewResult): boolean {
-  return r.verdict === 'error' || r.verdict === 'concern' || r.verdict === 'unknown' || r.dosingConcern;
+  return (
+    r.verdict === 'error' || r.verdict === 'concern' || r.verdict === 'unknown' || r.dosingConcern
+  );
 }
 
 /** Extract the first balanced JSON object from arbitrary model text. */

@@ -132,7 +132,8 @@ function parseObservation(
       date: typeof r.effectiveDateTime === 'string' ? r.effectiveDateTime : undefined,
     };
   }
-  const vs = (r.valueString as string | undefined) ?? codeableText(r.valueCodeableConcept as FhirCodeable);
+  const vs =
+    (r.valueString as string | undefined) ?? codeableText(r.valueCodeableConcept as FhirCodeable);
   if (vs != null) {
     return { code: loinc, name, value: vs };
   }

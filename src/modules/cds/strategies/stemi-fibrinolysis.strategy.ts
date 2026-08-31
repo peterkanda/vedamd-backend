@@ -65,8 +65,10 @@ export class StemiFibrinolysisStrategy implements CdsRuleStrategy {
     if (ctx.recentStroke === true) contraindications.push('recent stroke / intracranial event');
     if (ctx.recentSurgeryOrTrauma === true) contraindications.push('recent major surgery/trauma');
     if (ctx.bleedingRisk === true) contraindications.push('high bleeding risk');
-    if (typeof ctx.systolicMmHg === 'number' && ctx.systolicMmHg > 180) contraindications.push(`uncontrolled SBP ${ctx.systolicMmHg}`);
-    if (typeof ctx.diastolicMmHg === 'number' && ctx.diastolicMmHg > 110) contraindications.push(`uncontrolled DBP ${ctx.diastolicMmHg}`);
+    if (typeof ctx.systolicMmHg === 'number' && ctx.systolicMmHg > 180)
+      contraindications.push(`uncontrolled SBP ${ctx.systolicMmHg}`);
+    if (typeof ctx.diastolicMmHg === 'number' && ctx.diastolicMmHg > 110)
+      contraindications.push(`uncontrolled DBP ${ctx.diastolicMmHg}`);
 
     const indicator: CdsIndicator = 'critical';
     let summary: string;
@@ -78,8 +80,7 @@ export class StemiFibrinolysisStrategy implements CdsRuleStrategy {
 
     if (pciInWindow) {
       summary = 'STEMI — primary PCI pathway: PCI-capable centre reachable within 120 min';
-      recommendation =
-        `PCI-capable transfer in ~${toPci} min (≤120) → PRIMARY PCI is preferred. Activate the cath lab now and transfer immediately. ${dapt}`;
+      recommendation = `PCI-capable transfer in ~${toPci} min (≤120) → PRIMARY PCI is preferred. Activate the cath lab now and transfer immediately. ${dapt}`;
     } else if (lateOnset) {
       summary = 'STEMI — symptom onset > 12 h: fibrinolysis not routinely beneficial';
       recommendation =
@@ -105,7 +106,10 @@ export class StemiFibrinolysisStrategy implements CdsRuleStrategy {
     };
     const detail = `ECG-confirmed STEMI. ${recommendation}`;
 
-    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, { summary, detail });
+    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, {
+      summary,
+      detail,
+    });
 
     return [
       {

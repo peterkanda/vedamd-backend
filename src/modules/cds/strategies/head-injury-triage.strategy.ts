@@ -130,9 +130,12 @@ export class HeadInjuryTriageStrategy implements CdsRuleStrategy {
       highRisk.push(`${ctx.vomitingEpisodes} vomiting episodes (> 1)`);
     }
     if (ctx.postTraumaticSeizure === true) highRisk.push('post-traumatic seizure');
-    if (ctx.suspectedSkullFracture === true) highRisk.push('suspected open or depressed skull fracture');
+    if (ctx.suspectedSkullFracture === true)
+      highRisk.push('suspected open or depressed skull fracture');
     if (ctx.basalSkullFractureSigns === true) {
-      highRisk.push('signs of basal skull fracture (CSF leak / Battle\'s sign / racoon eyes / haemotympanum)');
+      highRisk.push(
+        "signs of basal skull fracture (CSF leak / Battle's sign / racoon eyes / haemotympanum)",
+      );
     }
     if (
       typeof ctx.ageYears === 'number' &&
@@ -141,7 +144,10 @@ export class HeadInjuryTriageStrategy implements CdsRuleStrategy {
     ) {
       highRisk.push(`age ${ctx.ageYears} y (≥ 65) with LOC / amnesia`);
     }
-    if (ctx.anticoagulantUse === true && (ctx.lossOfConsciousness === true || ctx.amnesia === true)) {
+    if (
+      ctx.anticoagulantUse === true &&
+      (ctx.lossOfConsciousness === true || ctx.amnesia === true)
+    ) {
       highRisk.push('anticoagulant use with LOC / amnesia');
     }
     if (
@@ -218,11 +224,10 @@ export class HeadInjuryTriageStrategy implements CdsRuleStrategy {
       typeof ctx.minutesSinceInjury !== 'number' || ctx.minutesSinceInjury <= TXA_WINDOW_MIN
         ? ' Tranexamic acid 1 g IV bolus over 10 min then 1 g infusion over 8 h (CRASH-3 — give within 3 hours of injury for adults with GCS ≤ 12; ineffective in those with bilateral fixed pupils).'
         : ` Tranexamic acid window has passed (${ctx.minutesSinceInjury} min since injury — > ${TXA_WINDOW_MIN}). Do not give TXA.`;
-    const hypertonicLine =
-      herniation
-        ? ' Herniation features — give 3 % hypertonic saline 250 mL IV over 5–10 min (or mannitol 1 g/kg IV) NOW; brief controlled ' +
-          'hyperventilation (PaCO₂ 30–35 mmHg) is acceptable as a temporising measure pending neurosurgical decompression.'
-        : ' Avoid prophylactic hyperventilation; target PaCO₂ 35–40 mmHg.';
+    const hypertonicLine = herniation
+      ? ' Herniation features — give 3 % hypertonic saline 250 mL IV over 5–10 min (or mannitol 1 g/kg IV) NOW; brief controlled ' +
+        'hyperventilation (PaCO₂ 30–35 mmHg) is acceptable as a temporising measure pending neurosurgical decompression.'
+      : ' Avoid prophylactic hyperventilation; target PaCO₂ 35–40 mmHg.';
     return this.buildCard(
       rule,
       req,

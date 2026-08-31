@@ -7,9 +7,7 @@ describe('DoseProtocolsService', () => {
   it('exposes the full diagnosis catalogue alphabetically', () => {
     const list = svc.diagnoses();
     expect(list.length).toBeGreaterThan(50);
-    const sorted = [...list].sort((a, b) =>
-      a.localeCompare(b, undefined, { sensitivity: 'base' }),
-    );
+    const sorted = [...list].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
     expect(list).toEqual(sorted);
   });
 

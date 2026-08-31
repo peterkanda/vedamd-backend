@@ -22,7 +22,18 @@ export interface IntegrationSnippet {
   /** Short human label for the snippet — eg. "Add to OpenEMR globals" */
   label: string;
   /** Programming/config language for syntax highlighting */
-  language: 'bash' | 'json' | 'yaml' | 'php' | 'javascript' | 'typescript' | 'python' | 'xml' | 'sql' | 'ini' | 'text';
+  language:
+    | 'bash'
+    | 'json'
+    | 'yaml'
+    | 'php'
+    | 'javascript'
+    | 'typescript'
+    | 'python'
+    | 'xml'
+    | 'sql'
+    | 'ini'
+    | 'text';
   /** The snippet body — copy-pasteable */
   code: string;
 }
@@ -117,7 +128,11 @@ systemctl restart tomcat`,
     ],
     links: [
       { label: 'OpenMRS documentation', url: 'https://wiki.openmrs.org', kind: 'docs' },
-      { label: 'OpenMRS FHIR2 module', url: 'https://github.com/openmrs/openmrs-module-fhir2', kind: 'github' },
+      {
+        label: 'OpenMRS FHIR2 module',
+        url: 'https://github.com/openmrs/openmrs-module-fhir2',
+        kind: 'github',
+      },
       { label: 'OpenMRS REST Web Services', url: 'https://rest.openmrs.org/', kind: 'docs' },
       { label: 'KenyaEMR distribution', url: 'https://github.com/palladiumkenya', kind: 'github' },
     ],
@@ -131,14 +146,21 @@ systemctl restart tomcat`,
     slug: 'openemr',
     name: 'OpenEMR',
     category: 'open-source',
-    tagline: 'Globally deployed open-source ambulatory EHR with native FHIR R4 + SMART on FHIR + CDS Hooks support.',
+    tagline:
+      'Globally deployed open-source ambulatory EHR with native FHIR R4 + SMART on FHIR + CDS Hooks support.',
     description:
       'OpenEMR is the most-deployed open-source ambulatory EMR. Recent versions (7.0+) ship with a FHIR R4 endpoint, SMART on FHIR launch context, and a built-in CDS Hooks consumer. Globals → Connectors → CDS Hooks lets administrators paste a discovery URL to register VedaMD services.',
     homepage: 'https://www.open-emr.org',
     primaryMethod: 'cds-hooks',
     methods: ['cds-hooks', 'smart-on-fhir', 'fhir-rest'],
     tags: ['ambulatory', 'global', 'ssa'],
-    supportedHooks: ['patient-view', 'medication-prescribe', 'order-select', 'order-sign', 'encounter-discharge'],
+    supportedHooks: [
+      'patient-view',
+      'medication-prescribe',
+      'order-select',
+      'order-sign',
+      'encounter-discharge',
+    ],
     snippets: [
       {
         label: 'Register VedaMD discovery in OpenEMR Admin → Globals → Connectors',
@@ -178,7 +200,11 @@ Bearer vmd_test_...`,
     ],
     links: [
       { label: 'OpenEMR documentation', url: 'https://www.open-emr.org/wiki/', kind: 'docs' },
-      { label: 'OpenEMR FHIR API guide', url: 'https://github.com/openemr/openemr/blob/master/API_README.md', kind: 'docs' },
+      {
+        label: 'OpenEMR FHIR API guide',
+        url: 'https://github.com/openemr/openemr/blob/master/API_README.md',
+        kind: 'docs',
+      },
       { label: 'OpenEMR GitHub', url: 'https://github.com/openemr/openemr', kind: 'github' },
     ],
     notes: [
@@ -217,7 +243,11 @@ docker compose restart openmrs proxy`,
       },
     ],
     links: [
-      { label: 'Bahmni documentation', url: 'https://bahmni.atlassian.net/wiki/spaces/BAH/overview', kind: 'docs' },
+      {
+        label: 'Bahmni documentation',
+        url: 'https://bahmni.atlassian.net/wiki/spaces/BAH/overview',
+        kind: 'docs',
+      },
       { label: 'Bahmni GitHub', url: 'https://github.com/Bahmni', kind: 'github' },
       { label: 'Bahmni Docker', url: 'https://github.com/Bahmni/bahmni-docker', kind: 'github' },
     ],
@@ -230,7 +260,8 @@ docker compose restart openmrs proxy`,
     slug: 'erpnext-frappe-healthcare',
     name: 'ERPNext / Frappe Healthcare',
     category: 'open-source',
-    tagline: 'Frappe Healthcare ships ERPNext clinical workflows + REST + webhook hooks — popular in India and emerging in SSA.',
+    tagline:
+      'Frappe Healthcare ships ERPNext clinical workflows + REST + webhook hooks — popular in India and emerging in SSA.',
     description:
       'Frappe Healthcare layers patient, encounter, lab, vaccination and clinical-procedure DocTypes on top of ERPNext. Server Scripts and Webhooks can call VedaMD CDS Hooks endpoints when an encounter or prescription is saved.',
     homepage: 'https://frappe.io/health',
@@ -282,8 +313,16 @@ def call_vedamd(doc, method):
     ],
     links: [
       { label: 'Frappe Healthcare docs', url: 'https://docs.frappe.io/healthcare', kind: 'docs' },
-      { label: 'ERPNext Server Scripts', url: 'https://docs.erpnext.com/docs/user/manual/en/server-script', kind: 'docs' },
-      { label: 'Frappe Healthcare GitHub', url: 'https://github.com/frappe/health', kind: 'github' },
+      {
+        label: 'ERPNext Server Scripts',
+        url: 'https://docs.erpnext.com/docs/user/manual/en/server-script',
+        kind: 'docs',
+      },
+      {
+        label: 'Frappe Healthcare GitHub',
+        url: 'https://github.com/frappe/health',
+        kind: 'github',
+      },
     ],
     notes: [
       'Use Server Scripts for synchronous decision support; Webhooks for fire-and-forget audit/logging.',
@@ -294,7 +333,8 @@ def call_vedamd(doc, method):
     slug: 'gnu-health',
     name: 'GNU Health',
     category: 'open-source',
-    tagline: 'GNU Project hospital information system — strong in LATAM, growing in SSA — exposes XML-RPC + REST + FHIR.',
+    tagline:
+      'GNU Project hospital information system — strong in LATAM, growing in SSA — exposes XML-RPC + REST + FHIR.',
     description:
       'GNU Health is a hospital + lab + public health information system built on the Tryton ERP. It exposes XML-RPC, REST and (recently) FHIR. VedaMD integrates via webhooks fired from Tryton workflow events or via FHIR R4 PUSH.',
     homepage: 'https://www.gnuhealth.org',
@@ -329,7 +369,11 @@ class PrescriptionOrder(metaclass=PoolMeta):
     ],
     links: [
       { label: 'GNU Health documentation', url: 'https://docs.gnuhealth.org', kind: 'docs' },
-      { label: 'GNU Health Savannah', url: 'https://savannah.gnu.org/projects/health/', kind: 'github' },
+      {
+        label: 'GNU Health Savannah',
+        url: 'https://savannah.gnu.org/projects/health/',
+        kind: 'github',
+      },
     ],
     notes: [
       'GNU Health 4.4+ supports FHIR R4 via the health_fhir module.',
@@ -383,7 +427,11 @@ WS.post(
     ],
     links: [
       { label: 'DHIS2 documentation', url: 'https://docs.dhis2.org', kind: 'docs' },
-      { label: 'DHIS2 Web API', url: 'https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html', kind: 'docs' },
+      {
+        label: 'DHIS2 Web API',
+        url: 'https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html',
+        kind: 'docs',
+      },
       { label: 'Kenya KHIS', url: 'https://hiskenya.org', kind: 'docs' },
     ],
     notes: [
@@ -395,7 +443,8 @@ WS.post(
     slug: 'openhim',
     name: 'OpenHIM',
     category: 'open-source',
-    tagline: 'Open Health Information Mediator — the OpenHIE backbone routing between facility EMRs and national registries.',
+    tagline:
+      'Open Health Information Mediator — the OpenHIE backbone routing between facility EMRs and national registries.',
     description:
       'OpenHIM is a request mediator that sits between point-of-care systems (OpenMRS, OpenEMR, Bahmni) and shared services (SHR, CR, FR, PLR, terminology). VedaMD can be added as a routing channel — any HL7v2 / FHIR / REST traffic matching a route is mediated to the VedaMD CDS endpoint and the response is funnelled back.',
     homepage: 'https://openhim.org',
@@ -425,7 +474,11 @@ WS.post(
       },
     ],
     links: [
-      { label: 'OpenHIM documentation', url: 'https://openhim.org/docs/introduction/about', kind: 'docs' },
+      {
+        label: 'OpenHIM documentation',
+        url: 'https://openhim.org/docs/introduction/about',
+        kind: 'docs',
+      },
       { label: 'OpenHIE Architecture', url: 'https://wiki.ohie.org', kind: 'docs' },
     ],
     notes: [
@@ -437,7 +490,8 @@ WS.post(
     slug: 'commcare',
     name: 'CommCare',
     category: 'open-source',
-    tagline: "Dimagi's open-source mobile platform for community health workers — widely used in SSA and South Asia.",
+    tagline:
+      "Dimagi's open-source mobile platform for community health workers — widely used in SSA and South Asia.",
     description:
       "CommCare apps can call external services from forms via Form Submission Triggers. VedaMD CDS Hooks endpoints return cards usable inline in CommCare's display modules.",
     homepage: 'https://www.commcarehq.org',
@@ -464,7 +518,11 @@ WS.post(
     ],
     links: [
       { label: 'CommCare HQ documentation', url: 'https://confluence.dimagi.com', kind: 'docs' },
-      { label: 'CommCare Data Forwarding', url: 'https://confluence.dimagi.com/display/commcarepublic/Data+Forwarding', kind: 'docs' },
+      {
+        label: 'CommCare Data Forwarding',
+        url: 'https://confluence.dimagi.com/display/commcarepublic/Data+Forwarding',
+        kind: 'docs',
+      },
     ],
     notes: [
       'CommCare Supply / CommCare Reports can be combined with VedaMD recommendations for CHW workflows.',
@@ -476,7 +534,8 @@ WS.post(
     slug: 'epic',
     name: 'Epic',
     category: 'proprietary',
-    tagline: 'Largest enterprise EMR — SMART on FHIR + CDS Hooks supported via App Orchard / Showroom.',
+    tagline:
+      'Largest enterprise EMR — SMART on FHIR + CDS Hooks supported via App Orchard / Showroom.',
     description:
       "Epic supports CDS Hooks 1.0 and SMART on FHIR launch context. Vendors register through Epic's App Orchard / Showroom programme. VedaMD's CDS Hooks discovery endpoint is the integration entry point.",
     homepage: 'https://www.epic.com',
@@ -505,15 +564,16 @@ Scopes: cds:evaluate`,
       { label: 'Epic on FHIR', url: 'https://fhir.epic.com', kind: 'sandbox' },
     ],
     notes: [
-      "VedaMD listing on Epic Showroom is a separate vendor-onboarding process — contact your Epic account manager.",
-      "Sandbox testing at https://fhir.epic.com requires Epic developer registration.",
+      'VedaMD listing on Epic Showroom is a separate vendor-onboarding process — contact your Epic account manager.',
+      'Sandbox testing at https://fhir.epic.com requires Epic developer registration.',
     ],
   },
   {
     slug: 'cerner-oracle-health',
     name: 'Cerner / Oracle Health',
     category: 'proprietary',
-    tagline: 'Cerner Millennium (now Oracle Health) — CDS Hooks + SMART on FHIR via code (formerly Cerner Open Developer Experience).',
+    tagline:
+      'Cerner Millennium (now Oracle Health) — CDS Hooks + SMART on FHIR via code (formerly Cerner Open Developer Experience).',
     description:
       'Oracle Health (formerly Cerner) supports CDS Hooks 1.0 and SMART on FHIR through its code developer platform. VedaMD integrates via the same CDS Hooks discovery endpoint as Epic; production deployment requires Oracle code registration.',
     homepage: 'https://www.oracle.com/health/',
@@ -544,7 +604,8 @@ Scopes: cds:evaluate`,
     slug: 'allscripts-veradigm',
     name: 'Allscripts / Veradigm',
     category: 'proprietary',
-    tagline: 'Allscripts (now Veradigm) supports FHIR R4 + the Allscripts Developer Program for CDS Hooks.',
+    tagline:
+      'Allscripts (now Veradigm) supports FHIR R4 + the Allscripts Developer Program for CDS Hooks.',
     description:
       'Veradigm exposes FHIR R4 for Patient, Encounter, MedicationRequest, Observation, AllergyIntolerance. CDS Hooks support is available via the Allscripts Developer Program.',
     homepage: 'https://veradigm.com',
@@ -567,14 +628,19 @@ curl -X POST "${VEDAMD_BASE_URL_PLACEHOLDER}/cds-services/vedamd-patient-view" \
       },
     ],
     links: [
-      { label: 'Allscripts Developer Program', url: 'https://developer.veradigm.com', kind: 'docs' },
+      {
+        label: 'Allscripts Developer Program',
+        url: 'https://developer.veradigm.com',
+        kind: 'docs',
+      },
     ],
   },
   {
     slug: 'athenahealth',
     name: 'Athenahealth',
     category: 'proprietary',
-    tagline: 'Athenahealth — FHIR R4 + CDS Hooks via the More Disruption Please (MDP) developer programme.',
+    tagline:
+      'Athenahealth — FHIR R4 + CDS Hooks via the More Disruption Please (MDP) developer programme.',
     description:
       'Athenahealth exposes FHIR R4 and CDS Hooks through the MDP developer programme. SMART on FHIR is supported.',
     homepage: 'https://www.athenahealth.com',
@@ -592,7 +658,11 @@ curl -X POST "${VEDAMD_BASE_URL_PLACEHOLDER}/cds-services/vedamd-patient-view" \
       },
     ],
     links: [
-      { label: 'athenahealth Developer Portal', url: 'https://developerportal.athenahealth.com', kind: 'docs' },
+      {
+        label: 'athenahealth Developer Portal',
+        url: 'https://developerportal.athenahealth.com',
+        kind: 'docs',
+      },
     ],
   },
 
@@ -601,9 +671,10 @@ curl -X POST "${VEDAMD_BASE_URL_PLACEHOLDER}/cds-services/vedamd-patient-view" \
     slug: 'hl7v2',
     name: 'HL7 v2',
     category: 'standard',
-    tagline: 'Legacy but ubiquitous — ADT, ORU, ORM, MDM, SIU messages still drive most hospital interfaces.',
+    tagline:
+      'Legacy but ubiquitous — ADT, ORU, ORM, MDM, SIU messages still drive most hospital interfaces.',
     description:
-      "HL7 v2 remains the workhorse interface standard. VedaMD does not natively parse HL7 v2 — it speaks FHIR and CDS Hooks — but the OpenHIM mediator (or Mirth Connect / Iguana / Rhapsody) can transform incoming HL7 v2 messages to FHIR resources and call VedaMD.",
+      'HL7 v2 remains the workhorse interface standard. VedaMD does not natively parse HL7 v2 — it speaks FHIR and CDS Hooks — but the OpenHIM mediator (or Mirth Connect / Iguana / Rhapsody) can transform incoming HL7 v2 messages to FHIR resources and call VedaMD.',
     homepage: 'https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185',
     primaryMethod: 'hl7v2',
     methods: ['hl7v2'],
@@ -636,9 +707,21 @@ $('vedamd_payload', JSON.stringify({
       },
     ],
     links: [
-      { label: 'HL7 v2 specifications', url: 'https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185', kind: 'docs' },
-      { label: 'Mirth Connect (NextGen Connect)', url: 'https://www.nextgen.com/products-and-services/integration-engine', kind: 'docs' },
-      { label: 'HAPI HL7 v2 (Java)', url: 'https://hapifhir.github.io/hapi-hl7v2/', kind: 'github' },
+      {
+        label: 'HL7 v2 specifications',
+        url: 'https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185',
+        kind: 'docs',
+      },
+      {
+        label: 'Mirth Connect (NextGen Connect)',
+        url: 'https://www.nextgen.com/products-and-services/integration-engine',
+        kind: 'docs',
+      },
+      {
+        label: 'HAPI HL7 v2 (Java)',
+        url: 'https://hapifhir.github.io/hapi-hl7v2/',
+        kind: 'github',
+      },
     ],
     notes: [
       'For Kenya KePMs / facility deployments still on HL7 v2, place Mirth Connect or OpenHIM between the legacy EMR and VedaMD.',
@@ -648,7 +731,8 @@ $('vedamd_payload', JSON.stringify({
     slug: 'fhir-r4',
     name: 'FHIR R4',
     category: 'standard',
-    tagline: 'Native — VedaMD speaks FHIR R4 directly for Patient, MedicationRequest, Condition, Observation, AllergyIntolerance.',
+    tagline:
+      'Native — VedaMD speaks FHIR R4 directly for Patient, MedicationRequest, Condition, Observation, AllergyIntolerance.',
     description:
       "FHIR R4 is the modern interoperability standard and what VedaMD speaks natively. Send a FHIR Bundle in the CDS Hooks context.prefetch or context.medications field and we'll evaluate without further translation.",
     homepage: 'https://www.hl7.org/fhir/R4',
@@ -691,7 +775,14 @@ $('vedamd_payload', JSON.stringify({
     primaryMethod: 'cds-hooks',
     methods: ['cds-hooks'],
     tags: ['standard', 'global'],
-    supportedHooks: ['patient-view', 'medication-prescribe', 'order-select', 'order-sign', 'encounter-discharge', 'appointment-book'],
+    supportedHooks: [
+      'patient-view',
+      'medication-prescribe',
+      'order-select',
+      'order-sign',
+      'encounter-discharge',
+      'appointment-book',
+    ],
     snippets: [
       {
         label: 'Discover available VedaMD CDS services',
@@ -709,7 +800,11 @@ $('vedamd_payload', JSON.stringify({
       },
     ],
     links: [
-      { label: 'CDS Hooks 1.0 specification', url: 'https://cds-hooks.org/specification/1.0/', kind: 'docs' },
+      {
+        label: 'CDS Hooks 1.0 specification',
+        url: 'https://cds-hooks.org/specification/1.0/',
+        kind: 'docs',
+      },
       { label: 'CDS Hooks sandbox', url: 'https://sandbox.cds-hooks.org', kind: 'sandbox' },
     ],
   },
@@ -719,7 +814,7 @@ $('vedamd_payload', JSON.stringify({
     category: 'standard',
     tagline: 'Launch VedaMD as an embedded app inside an EMR using SMART on FHIR OAuth2.',
     description:
-      "SMART on FHIR provides the OAuth2 + FHIR context standard for embedded apps. VedaMD supports both EHR-launch (the EMR sends a launch context) and standalone-launch.",
+      'SMART on FHIR provides the OAuth2 + FHIR context standard for embedded apps. VedaMD supports both EHR-launch (the EMR sends a launch context) and standalone-launch.',
     homepage: 'https://hl7.org/fhir/smart-app-launch/',
     primaryMethod: 'smart-on-fhir',
     methods: ['smart-on-fhir'],
@@ -756,8 +851,16 @@ FHIR.oauth2.ready().then(client => {
     ],
     links: [
       { label: 'SMART App Launch IG', url: 'https://hl7.org/fhir/smart-app-launch/', kind: 'docs' },
-      { label: 'fhirclient (JS)', url: 'https://github.com/smart-on-fhir/client-js', kind: 'github' },
-      { label: 'SMART Health IT sandbox', url: 'https://launch.smarthealthit.org', kind: 'sandbox' },
+      {
+        label: 'fhirclient (JS)',
+        url: 'https://github.com/smart-on-fhir/client-js',
+        kind: 'github',
+      },
+      {
+        label: 'SMART Health IT sandbox',
+        url: 'https://launch.smarthealthit.org',
+        kind: 'sandbox',
+      },
     ],
   },
 ];

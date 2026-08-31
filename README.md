@@ -311,4 +311,18 @@ Then visit:
 
 ## License
 
-Apache 2.0.
+Source-available: Apache License 2.0 + [Commons Clause](https://commonsclause.com/) — see [`LICENSE`](./LICENSE).
+
+You're free to use, run, modify, and redistribute this code — including modified
+versions — for any purpose, commercial included. The one thing you can't do is
+**sell** it: resell the software, sell a modified version of it, or offer it
+(original or modified) as a paid hosted product/service to third parties. This
+is not an OSI-approved "open source" license (the OSI's Open Source Definition
+requires permitting unrestricted commercial resale) — we call it
+**source-available** to describe it accurately.
+
+This covers the code only. The signed clinical content bundle under
+`content/` draws on third-party sources with their own licence tiers
+(public-domain/permissive, verify-before-embed, and cite-only) — see
+[`content/sources/README.md`](./content/sources/README.md) for the registry
+that tracks and enforces those per-source terms.

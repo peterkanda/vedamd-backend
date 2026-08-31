@@ -32,7 +32,14 @@ interface TbContext {
   tbConfirmed?: boolean;
   ageYears?: number;
   weightKg?: number;
-  tbCategory?: 'pulmonary-ds' | 'extrapulmonary-ds' | 'rifampicin-resistant' | 'mdr' | 'xdr' | 'pre-xdr' | null;
+  tbCategory?:
+    | 'pulmonary-ds'
+    | 'extrapulmonary-ds'
+    | 'rifampicin-resistant'
+    | 'mdr'
+    | 'xdr'
+    | 'pre-xdr'
+    | null;
   priorTbTreatment?: boolean;
   hivStatus?: 'positive' | 'negative' | 'unknown' | null;
   pregnant?: boolean;
@@ -43,11 +50,36 @@ interface TbContext {
 }
 
 const CODINGS_DS_TB: CodedReference[] = [
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'A15', display: 'Pulmonary tuberculosis', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'A16', display: 'Tuberculosis of other organs', kind: 'diagnosis' },
-  { system: 'http://id.who.int/icd/release/11/mms', code: '1B10', display: 'Tuberculosis (active)', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '56717001', display: 'Tuberculosis (disorder)', kind: 'diagnosis' },
-  { system: 'http://whocc.no/atc', code: 'J04AM06', display: 'Rifampicin + isoniazid + pyrazinamide + ethambutol (HRZE)', kind: 'drug' },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'A15',
+    display: 'Pulmonary tuberculosis',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'A16',
+    display: 'Tuberculosis of other organs',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://id.who.int/icd/release/11/mms',
+    code: '1B10',
+    display: 'Tuberculosis (active)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '56717001',
+    display: 'Tuberculosis (disorder)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://whocc.no/atc',
+    code: 'J04AM06',
+    display: 'Rifampicin + isoniazid + pyrazinamide + ethambutol (HRZE)',
+    kind: 'drug',
+  },
   { system: 'http://whocc.no/atc', code: 'J04AC01', display: 'Isoniazid', kind: 'drug' },
   { system: 'http://whocc.no/atc', code: 'J04AB02', display: 'Rifampicin', kind: 'drug' },
   { system: 'http://whocc.no/atc', code: 'J04AK01', display: 'Pyrazinamide', kind: 'drug' },
@@ -55,17 +87,35 @@ const CODINGS_DS_TB: CodedReference[] = [
 ];
 
 const CODINGS_DR_TB: CodedReference[] = [
-  { system: 'http://id.who.int/icd/release/11/mms', code: '1B14', display: 'Drug-resistant tuberculosis', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '85729005', display: 'Drug-resistant tuberculosis (disorder)', kind: 'diagnosis' },
+  {
+    system: 'http://id.who.int/icd/release/11/mms',
+    code: '1B14',
+    display: 'Drug-resistant tuberculosis',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '85729005',
+    display: 'Drug-resistant tuberculosis (disorder)',
+    kind: 'diagnosis',
+  },
   { system: 'http://whocc.no/atc', code: 'J04AK05', display: 'Bedaquiline', kind: 'drug' },
   { system: 'http://whocc.no/atc', code: 'J04AK08', display: 'Pretomanid', kind: 'drug' },
-  { system: 'http://whocc.no/atc', code: 'N03AX14', display: 'Levetiracetam — not used in TB (placeholder)', kind: 'drug' },
+  {
+    system: 'http://whocc.no/atc',
+    code: 'N03AX14',
+    display: 'Levetiracetam — not used in TB (placeholder)',
+    kind: 'drug',
+  },
 ];
 
 function hrzeWeightBand(wt?: number): string {
-  if (typeof wt !== 'number') return 'Use the WHO weight-banded fixed-dose combination tables (HRZE 4FDC) per local NTP chart.';
-  if (wt < 25) return `Weight ${wt} kg — use paediatric child-friendly dispersible RHZ 75/50/150 + E 100 tablets per WHO/Kenya NTP weight bands.`;
-  if (wt < 38) return `Weight ${wt} kg (25–37 kg band) — HRZE 4FDC ×2 tablets daily (R150 H75 Z400 E275).`;
+  if (typeof wt !== 'number')
+    return 'Use the WHO weight-banded fixed-dose combination tables (HRZE 4FDC) per local NTP chart.';
+  if (wt < 25)
+    return `Weight ${wt} kg — use paediatric child-friendly dispersible RHZ 75/50/150 + E 100 tablets per WHO/Kenya NTP weight bands.`;
+  if (wt < 38)
+    return `Weight ${wt} kg (25–37 kg band) — HRZE 4FDC ×2 tablets daily (R150 H75 Z400 E275).`;
   if (wt < 55) return `Weight ${wt} kg (38–54 kg band) — HRZE 4FDC ×3 tablets daily.`;
   if (wt < 71) return `Weight ${wt} kg (55–70 kg band) — HRZE 4FDC ×4 tablets daily.`;
   return `Weight ${wt} kg (≥ 71 kg band) — HRZE 4FDC ×5 tablets daily.`;
@@ -122,7 +172,12 @@ export class TbTreatmentStrategy implements CdsRuleStrategy {
     return null;
   }
 
-  private dsTbCard(rule: CdsRule, req: CdsHookRequest, ctx: TbContext, category: 'pulmonary-ds' | 'extrapulmonary-ds'): CdsCard {
+  private dsTbCard(
+    rule: CdsRule,
+    req: CdsHookRequest,
+    ctx: TbContext,
+    category: 'pulmonary-ds' | 'extrapulmonary-ds',
+  ): CdsCard {
     const band = hrzeWeightBand(ctx.weightKg);
     const durationLine =
       category === 'extrapulmonary-ds'
@@ -154,7 +209,14 @@ export class TbTreatmentStrategy implements CdsRuleStrategy {
         'and Xpert MTB/RIF at month 2 and month 5 to confirm conversion.{{hiv}}{{preg}}{{hepato}} Notify the District TB Coordinator ' +
         'within 24 h; contact-trace household members and offer TB-preventive therapy to eligible contacts (children < 5, PLHIV) and ' +
         'BCG vaccination check.',
-      { cat: category, band, duration: durationLine, hiv: hivLine, preg: pregLine, hepato: hepatoLine },
+      {
+        cat: category,
+        band,
+        duration: durationLine,
+        hiv: hivLine,
+        preg: pregLine,
+        hepato: hepatoLine,
+      },
       CODINGS_DS_TB,
     );
   }
@@ -210,7 +272,8 @@ export class TbTreatmentStrategy implements CdsRuleStrategy {
     codings: CodedReference[],
   ): CdsCard {
     const ref = rule.references[0] ?? {
-      label: 'WHO Consolidated Guidelines on Tuberculosis — Module 4: Treatment (2022 + 2024 update)',
+      label:
+        'WHO Consolidated Guidelines on Tuberculosis — Module 4: Treatment (2022 + 2024 update)',
       url: 'https://www.who.int/publications/i/item/9789240063129',
     };
     const { summary, detail } = resolveCardCopy(

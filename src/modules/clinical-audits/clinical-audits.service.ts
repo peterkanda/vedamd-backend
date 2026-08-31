@@ -1,4 +1,11 @@
-import { Inject, Injectable, Logger, NotFoundException, OnModuleInit, Optional } from '@nestjs/common';
+import {
+  Inject,
+  Injectable,
+  Logger,
+  NotFoundException,
+  OnModuleInit,
+  Optional,
+} from '@nestjs/common';
 import { randomUUID } from 'node:crypto';
 import { and, desc, eq } from 'drizzle-orm';
 import { DRIZZLE, type MaybeDrizzle } from '../../db/database.module';
@@ -175,7 +182,7 @@ export class ClinicalAuditsService implements OnModuleInit {
       ...existing,
       name: dto.name?.trim() ?? existing.name,
       description:
-        dto.description === null ? null : dto.description?.trim() ?? existing.description,
+        dto.description === null ? null : (dto.description?.trim() ?? existing.description),
       queryParams: dto.queryParams ?? existing.queryParams,
       customRuleIds: dto.customRuleIds ?? existing.customRuleIds,
       policyIds: dto.policyIds ?? existing.policyIds,
@@ -425,9 +432,10 @@ function renderAlertBody(
   // Aggregate the breached rule IDs so the alert body explains WHY the
   // threshold tripped, without disclosing any patient-level content.
   const ruleCounts = new Map<string, number>();
-  for (const v of verdicts) for (const r of v.breachedRuleIds) {
-    ruleCounts.set(r, (ruleCounts.get(r) ?? 0) + 1);
-  }
+  for (const v of verdicts)
+    for (const r of v.breachedRuleIds) {
+      ruleCounts.set(r, (ruleCounts.get(r) ?? 0) + 1);
+    }
   const topRules = [...ruleCounts.entries()]
     .sort((a, b) => b[1] - a[1])
     .slice(0, 5)
@@ -435,9 +443,7 @@ function renderAlertBody(
     .join('\n');
   const policyHits = new Set<string>();
   for (const v of verdicts) for (const c of v.policyCitations) policyHits.add(c.policyId);
-  const policyLine = policyHits.size
-    ? `\nCited policies: ${[...policyHits].join(', ')}`
-    : '';
+  const policyLine = policyHits.size ? `\nCited policies: ${[...policyHits].join(', ')}` : '';
   return (
     `Subject: VedaMD audit alert — ${audit.name}\n\n` +
     `Audit "${audit.name}" tripped its threshold.\n` +

@@ -10,6 +10,9 @@ on:
     - cron: '0 4 * * *' # 04:00 UTC daily
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   audit-urls:
     name: probe every URL in the bundle

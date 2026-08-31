@@ -103,7 +103,8 @@ describe('bundle referential integrity', () => {
       for (const [key, value] of Object.entries(r)) {
         if (typeof value !== 'string' || value === '') continue;
         const isDrugRef =
-          DRUG_REF_FIELDS.has(key) || (PAIR_DOMAINS.has(domain) && (key === 'slugA' || key === 'slugB'));
+          DRUG_REF_FIELDS.has(key) ||
+          (PAIR_DOMAINS.has(domain) && (key === 'slugA' || key === 'slugB'));
         if (isDrugRef && !drugSlugs.has(value)) brokenDrugRefs.add(value);
         else if (CONDITION_REF_FIELDS.has(key) && !conditionSlugs.has(value))
           brokenConditionRefs.add(value);

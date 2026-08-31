@@ -1,4 +1,11 @@
-import { Inject, Injectable, Logger, NotFoundException, OnModuleInit, Optional } from '@nestjs/common';
+import {
+  Inject,
+  Injectable,
+  Logger,
+  NotFoundException,
+  OnModuleInit,
+  Optional,
+} from '@nestjs/common';
 import { randomUUID } from 'node:crypto';
 import { and, desc, eq } from 'drizzle-orm';
 import { DRIZZLE, type MaybeDrizzle } from '../../db/database.module';
@@ -85,9 +92,9 @@ export class NotificationsService implements OnModuleInit {
       if (!rows.length) return null;
       return rowToSummary(rows[0]);
     }
-    return (this.memByIntegrator.get(integratorId) ?? []).find((r) => r.id === id) ?
-      memToSummary((this.memByIntegrator.get(integratorId) ?? []).find((r) => r.id === id)!) :
-      null;
+    return (this.memByIntegrator.get(integratorId) ?? []).find((r) => r.id === id)
+      ? memToSummary((this.memByIntegrator.get(integratorId) ?? []).find((r) => r.id === id)!)
+      : null;
   }
 
   async create(
@@ -136,11 +143,7 @@ export class NotificationsService implements OnModuleInit {
     return memToSummary(row);
   }
 
-  async update(
-    integratorId: string,
-    id: string,
-    dto: ChannelUpdateDto,
-  ): Promise<ChannelSummary> {
+  async update(integratorId: string, id: string, dto: ChannelUpdateDto): Promise<ChannelSummary> {
     const existing = await this.getInternal(integratorId, id);
     if (!existing) throw new NotFoundException(`Channel not found: ${id}`);
 
@@ -157,11 +160,9 @@ export class NotificationsService implements OnModuleInit {
       defaultRecipient:
         dto.defaultRecipient === null
           ? null
-          : dto.defaultRecipient?.trim() ?? existing.defaultRecipient,
+          : (dto.defaultRecipient?.trim() ?? existing.defaultRecipient),
       senderLabel:
-        dto.senderLabel === null
-          ? null
-          : dto.senderLabel?.trim() ?? existing.senderLabel,
+        dto.senderLabel === null ? null : (dto.senderLabel?.trim() ?? existing.senderLabel),
       enabled: dto.enabled ?? existing.enabled,
       encryptedCreds,
       updatedAt: now,

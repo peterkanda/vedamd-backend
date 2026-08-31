@@ -86,7 +86,14 @@ interface DkaContext {
   systolicMmHg?: number;
   heartRatePerMin?: number;
   potassiumMmolL?: number;
-  precipitantSuspected?: 'infection' | 'omission' | 'mi' | 'new-onset' | 'pregnancy' | 'other' | null;
+  precipitantSuspected?:
+    | 'infection'
+    | 'omission'
+    | 'mi'
+    | 'new-onset'
+    | 'pregnancy'
+    | 'other'
+    | null;
 }
 
 @Injectable()
@@ -168,7 +175,9 @@ export class DkaRecognitionStrategy implements CdsRuleStrategy {
       severeReasons.push(`HCO₃⁻ ${ctx.bicarbonateMmolL.toFixed(1)} mmol/L (< ${HCO3_SEVERE})`);
     }
     if (typeof ctx.bloodKetonesMmolL === 'number' && ctx.bloodKetonesMmolL > KETONES_BLOOD_SEVERE) {
-      severeReasons.push(`blood ketones ${ctx.bloodKetonesMmolL.toFixed(1)} mmol/L (> ${KETONES_BLOOD_SEVERE})`);
+      severeReasons.push(
+        `blood ketones ${ctx.bloodKetonesMmolL.toFixed(1)} mmol/L (> ${KETONES_BLOOD_SEVERE})`,
+      );
     }
     if (typeof ctx.glasgowComaScale === 'number' && ctx.glasgowComaScale <= GCS_SEVERE) {
       severeReasons.push(`GCS ${ctx.glasgowComaScale}`);
@@ -181,14 +190,17 @@ export class DkaRecognitionStrategy implements CdsRuleStrategy {
       severeReasons.push(`HR ${ctx.heartRatePerMin}/min (> ${HR_SHOCK})`);
     }
     if (typeof ctx.potassiumMmolL === 'number' && ctx.potassiumMmolL < K_LOW) {
-      severeReasons.push(`potassium ${ctx.potassiumMmolL.toFixed(1)} mmol/L (hold insulin until corrected)`);
+      severeReasons.push(
+        `potassium ${ctx.potassiumMmolL.toFixed(1)} mmol/L (hold insulin until corrected)`,
+      );
     }
 
     const wkg = typeof ctx.weightKg === 'number' && ctx.weightKg > 0 ? ctx.weightKg : null;
     const insulinPerHrU = wkg ? Number((wkg * INSULIN_U_PER_KG_PER_HR).toFixed(1)) : null;
-    const insulinLine = insulinPerHrU !== null
-      ? `Fixed-rate intravenous insulin infusion at ${insulinPerHrU} U/h (${INSULIN_U_PER_KG_PER_HR} U/kg/h × ${wkg} kg)`
-      : `Fixed-rate intravenous insulin infusion at ${INSULIN_U_PER_KG_PER_HR} U/kg/h (supply context.weightKg to compute the absolute rate)`;
+    const insulinLine =
+      insulinPerHrU !== null
+        ? `Fixed-rate intravenous insulin infusion at ${insulinPerHrU} U/h (${INSULIN_U_PER_KG_PER_HR} U/kg/h × ${wkg} kg)`
+        : `Fixed-rate intravenous insulin infusion at ${INSULIN_U_PER_KG_PER_HR} U/kg/h (supply context.weightKg to compute the absolute rate)`;
 
     const precipitantLine = ctx.precipitantSuspected
       ? ` Suspected precipitant: ${ctx.precipitantSuspected.replace('-', ' ')} — investigate and treat in parallel.`

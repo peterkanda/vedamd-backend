@@ -52,17 +52,19 @@ interface VhfContext {
 export class VhfSuspectedIsolationStrategy implements CdsRuleStrategy {
   readonly type = 'vhf-suspected-isolation';
 
-  // eslint-disable-next-line @typescript-eslint/require-await
   async evaluate(rule: CdsRule, req: CdsHookRequest): Promise<CdsCard[]> {
     const ctx = (req.context ?? {}) as VhfContext;
 
     const epiLinks: string[] = [];
-    if (ctx.vhfEndemicTravel21d === true) epiLinks.push('travel/residence in a VHF-affected area (≤21 d)');
-    if (ctx.vhfCaseContact21d === true) epiLinks.push('contact with a suspected/confirmed VHF case (≤21 d)');
+    if (ctx.vhfEndemicTravel21d === true)
+      epiLinks.push('travel/residence in a VHF-affected area (≤21 d)');
+    if (ctx.vhfCaseContact21d === true)
+      epiLinks.push('contact with a suspected/confirmed VHF case (≤21 d)');
     if (ctx.funeralBodyContact21d === true) epiLinks.push('funeral/body contact (≤21 d)');
     if (ctx.healthcareExposureNoPpe === true) epiLinks.push('healthcare exposure without PPE');
     if (ctx.batPrimateBushmeatContact === true) epiLinks.push('bat/primate/bushmeat contact');
-    if (ctx.tickBiteOrLivestock === true) epiLinks.push('tick bite / livestock slaughter (CCHF/RVF)');
+    if (ctx.tickBiteOrLivestock === true)
+      epiLinks.push('tick bite / livestock slaughter (CCHF/RVF)');
 
     const fever = ctx.feverPresent === true;
     const meetsCaseDef =

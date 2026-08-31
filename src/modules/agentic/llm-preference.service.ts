@@ -43,12 +43,9 @@ export class LlmPreferenceService {
     integratorId: string,
     dto: { provider?: string | null; model?: string | null },
   ): LlmPreference {
-    const provider =
-      dto.provider == null || dto.provider === '' ? null : (dto.provider as string);
+    const provider = dto.provider == null || dto.provider === '' ? null : (dto.provider as string);
     if (provider !== null && !VALID_PROVIDERS.includes(provider as LlmProviderName)) {
-      throw new Error(
-        `Invalid provider "${provider}". Valid: ${VALID_PROVIDERS.join(', ')}.`,
-      );
+      throw new Error(`Invalid provider "${provider}". Valid: ${VALID_PROVIDERS.join(', ')}.`);
     }
     const next: LlmPreference = {
       provider: provider as LlmProviderName | null,

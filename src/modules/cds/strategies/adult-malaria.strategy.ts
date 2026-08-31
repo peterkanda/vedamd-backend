@@ -111,17 +111,16 @@ export class AdultMalariaStrategy implements CdsRuleStrategy {
     }
     if (ctx.shock === true) severeReasons.push('shock');
     if (ctx.hyperparasitaemia === true) severeReasons.push('hyperparasitaemia reported');
-    if (
-      typeof ctx.bloodGlucoseMmolL === 'number' &&
-      ctx.bloodGlucoseMmolL < HYPOGLYCAEMIA_MMOLL
-    ) {
+    if (typeof ctx.bloodGlucoseMmolL === 'number' && ctx.bloodGlucoseMmolL < HYPOGLYCAEMIA_MMOLL) {
       severeReasons.push(`hypoglycaemia (${ctx.bloodGlucoseMmolL.toFixed(1)} mmol/L)`);
     }
     if (typeof ctx.haemoglobinGdl === 'number' && ctx.haemoglobinGdl < SEVERE_HB) {
       severeReasons.push(`severe anaemia (Hb ${ctx.haemoglobinGdl.toFixed(1)} g/dL)`);
     }
     if (typeof ctx.creatinineUmolL === 'number' && ctx.creatinineUmolL >= SEVERE_CREATININE) {
-      severeReasons.push(`acute kidney injury (creatinine ${Math.round(ctx.creatinineUmolL)} µmol/L)`);
+      severeReasons.push(
+        `acute kidney injury (creatinine ${Math.round(ctx.creatinineUmolL)} µmol/L)`,
+      );
     }
     if (ctx.blackwaterUrine === true) severeReasons.push('black-water urine');
     if (ctx.pulmonaryOedema === true) severeReasons.push('pulmonary oedema');
@@ -143,7 +142,10 @@ export class AdultMalariaStrategy implements CdsRuleStrategy {
             'lumefantrine course once tolerating orally and clinically improved. {{overlay}}',
           {
             reasons: severeReasons.join('; '),
-            dose: artesMg !== null ? `${artesMg} mg (2.4 mg/kg × ${wkg} kg)` : '2.4 mg/kg artesunate (weight-banded)',
+            dose:
+              artesMg !== null
+                ? `${artesMg} mg (2.4 mg/kg × ${wkg} kg)`
+                : '2.4 mg/kg artesunate (weight-banded)',
             overlay,
           },
         ),
@@ -229,7 +231,9 @@ function buildPopulationOverlay(
           : 'Pregnancy 1st trimester: artemether-lumefantrine is acceptable per WHO 2022 update when quinine is unavailable or not tolerated; document risk-benefit discussion.',
       );
     } else {
-      lines.push('Pregnancy 2nd/3rd trimester: standard artemether-lumefantrine course is recommended.');
+      lines.push(
+        'Pregnancy 2nd/3rd trimester: standard artemether-lumefantrine course is recommended.',
+      );
     }
     lines.push('Primaquine is contraindicated in pregnancy.');
   }

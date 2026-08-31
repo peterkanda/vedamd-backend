@@ -35,7 +35,11 @@ interface InjectResponse {
   json: () => any;
 }
 
-const inject = (opts: { method: string; url: string; payload?: unknown }): Promise<InjectResponse> =>
+const inject = (opts: {
+  method: string;
+  url: string;
+  payload?: unknown;
+}): Promise<InjectResponse> =>
   (
     app.getHttpAdapter().getInstance() as unknown as {
       inject: (o: unknown) => Promise<InjectResponse>;

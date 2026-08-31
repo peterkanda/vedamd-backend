@@ -140,7 +140,7 @@ export class AgenticService {
         // failure (matches the env-default behaviour).
         const preferred =
           ctx.integratorId && this.llmPrefs
-            ? this.llmPrefs.get(ctx.integratorId).provider ?? undefined
+            ? (this.llmPrefs.get(ctx.integratorId).provider ?? undefined)
             : undefined;
         const result = await this.router.complete(
           {
@@ -262,9 +262,9 @@ export class AgenticService {
    * Build a flat, UI-friendly summary of records the retriever surfaced
    * as relevant. Capped at 12 entries to keep responses bounded.
    */
-  private buildRelatedRecords(knowledge: import('./agentic.types').RetrievedKnowledge): NonNullable<
-    import('./agentic.types').AgenticEvaluationResponse['meta']['relatedRecords']
-  > {
+  private buildRelatedRecords(
+    knowledge: import('./agentic.types').RetrievedKnowledge,
+  ): NonNullable<import('./agentic.types').AgenticEvaluationResponse['meta']['relatedRecords']> {
     const out: NonNullable<
       import('./agentic.types').AgenticEvaluationResponse['meta']['relatedRecords']
     > = [];
@@ -493,7 +493,6 @@ function summaryOverlap(a: string, b: string): number {
   return common / Math.min(ta.size, tb.size);
 }
 
-
 /**
  * Cull JSON code-fences / structured-card blob from LLM output so the
  * narrative-panel rendering does not echo raw JSON to the clinician.
@@ -503,9 +502,9 @@ function summaryOverlap(a: string, b: string): number {
 function stripJsonFromNarrative(text: string): string {
   if (!text) return text;
   // Strip ```json fenced blocks first.
-  let s = text.replace(/```(?:json)?\s*[\s\S]*?```/g, "").trim();
+  let s = text.replace(/```(?:json)?\s*[\s\S]*?```/g, '').trim();
   // Strip a bare top-level JSON object.
-  s = s.replace(/^\{[\s\S]*?\n\}\s*/m, "").trim();
+  s = s.replace(/^\{[\s\S]*?\n\}\s*/m, '').trim();
   if (!s) return text; // Fall back if removal stripped everything.
   return s;
 }
@@ -524,11 +523,7 @@ function stripJsonFromNarrative(text: string): string {
  */
 function sanitiseErrorMessage(err: unknown): string {
   const raw =
-    err instanceof Error
-      ? err.message || err.name
-      : typeof err === 'string'
-        ? err
-        : 'unknown';
+    err instanceof Error ? err.message || err.name : typeof err === 'string' ? err : 'unknown';
   // Redact common secret patterns so we don't leak keys via the chat UI.
   const scrubbed = raw
     .replace(/\b(sk|vmd|Bearer)[-_]\w+/gi, '$1 [REDACTED]')

@@ -16,7 +16,11 @@ const rule = {
 } as unknown as CdsRule;
 
 const strat = new UgibBlatchfordStrategy();
-const req = (context: Record<string, unknown>): CdsHookRequest => ({ hook: 'patient-view', hookInstance: 't', context });
+const req = (context: Record<string, unknown>): CdsHookRequest => ({
+  hook: 'patient-view',
+  hookInstance: 't',
+  context,
+});
 
 describe('UGIB — Glasgow-Blatchford Score', () => {
   it('does not fire without GI-bleed sentinel', async () => {
@@ -31,7 +35,14 @@ describe('UGIB — Glasgow-Blatchford Score', () => {
   it('GBS 0 (all normal) → very low risk / info', async () => {
     const cards = await strat.evaluate(
       rule,
-      req({ suspectedUpperGiBleed: true, ureaMmolL: 5, hbGramsPerLitre: 150, sex: 'male', systolicMmHg: 130, pulsePerMin: 70 }),
+      req({
+        suspectedUpperGiBleed: true,
+        ureaMmolL: 5,
+        hbGramsPerLitre: 150,
+        sex: 'male',
+        systolicMmHg: 130,
+        pulsePerMin: 70,
+      }),
     );
     expect(cards[0].summary).toContain('Glasgow-Blatchford 0');
     expect(cards[0].indicator).toBe('info');
@@ -58,15 +69,24 @@ describe('UGIB — Glasgow-Blatchford Score', () => {
   });
 
   it('sex-specific Hb: 110 g/L scores 3 (man) but 1 (woman)', async () => {
-    const man = await strat.evaluate(rule, req({ suspectedUpperGiBleed: true, hbGramsPerLitre: 110, sex: 'male' }));
-    const woman = await strat.evaluate(rule, req({ suspectedUpperGiBleed: true, hbGramsPerLitre: 110, sex: 'female' }));
+    const man = await strat.evaluate(
+      rule,
+      req({ suspectedUpperGiBleed: true, hbGramsPerLitre: 110, sex: 'male' }),
+    );
+    const woman = await strat.evaluate(
+      rule,
+      req({ suspectedUpperGiBleed: true, hbGramsPerLitre: 110, sex: 'female' }),
+    );
     expect(man[0].summary).toContain('Glasgow-Blatchford 3');
     expect(woman[0].summary).toContain('Glasgow-Blatchford 1');
   });
 
   it('auto-detects g/dL haemoglobin (value < 25)', async () => {
     // Hb 7 g/dL → 70 g/L → +6 (man)
-    const cards = await strat.evaluate(rule, req({ suspectedUpperGiBleed: true, hbGramsPerLitre: 7, sex: 'male' }));
+    const cards = await strat.evaluate(
+      rule,
+      req({ suspectedUpperGiBleed: true, hbGramsPerLitre: 7, sex: 'male' }),
+    );
     expect(cards[0].summary).toContain('Glasgow-Blatchford 6');
     expect(cards[0].detail).toMatch(/Hb 70 g\/L/);
   });
@@ -78,7 +98,16 @@ describe('UGIB — Glasgow-Blatchford Score', () => {
   });
 
   it('score 1-5 → admit (warning), do not discharge', async () => {
-    const cards = await strat.evaluate(rule, req({ suspectedUpperGiBleed: true, ureaMmolL: 9, hbGramsPerLitre: 140, sex: 'male', systolicMmHg: 130 }));
+    const cards = await strat.evaluate(
+      rule,
+      req({
+        suspectedUpperGiBleed: true,
+        ureaMmolL: 9,
+        hbGramsPerLitre: 140,
+        sex: 'male',
+        systolicMmHg: 130,
+      }),
+    );
     expect(cards[0].indicator).toBe('warning');
     expect(cards[0].detail).toMatch(/do not discharge/i);
   });

@@ -77,16 +77,11 @@ describe('GdmScreenStrategy', () => {
   });
 
   it('no risk + 24–28 weeks → routine info', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ pregnant: true, gestationalAgeWeeks: 25 }),
-    );
+    const cards = await s.evaluate(RULE, req({ pregnant: true, gestationalAgeWeeks: 25 }));
     expect(cards[0].indicator).toBe('info');
   });
 
   it('early pregnancy with no overt diabetes → silent', async () => {
-    expect(
-      await s.evaluate(RULE, req({ pregnant: true, gestationalAgeWeeks: 12 })),
-    ).toEqual([]);
+    expect(await s.evaluate(RULE, req({ pregnant: true, gestationalAgeWeeks: 12 }))).toEqual([]);
   });
 });

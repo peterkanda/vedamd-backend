@@ -111,21 +111,66 @@ interface ArbovirContext {
 }
 
 const CODINGS_DENGUE: CodedReference[] = [
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'A90', display: 'Dengue fever (classical dengue)', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'A91', display: 'Dengue haemorrhagic fever', kind: 'diagnosis' },
-  { system: 'http://id.who.int/icd/release/11/mms', code: '1D2Z', display: 'Dengue, unspecified', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '38362002', display: 'Dengue fever (disorder)', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '409708006', display: 'Severe dengue (disorder)', kind: 'diagnosis' },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'A90',
+    display: 'Dengue fever (classical dengue)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'A91',
+    display: 'Dengue haemorrhagic fever',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://id.who.int/icd/release/11/mms',
+    code: '1D2Z',
+    display: 'Dengue, unspecified',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '38362002',
+    display: 'Dengue fever (disorder)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '409708006',
+    display: 'Severe dengue (disorder)',
+    kind: 'diagnosis',
+  },
 ];
 
 const CODINGS_CHIK: CodedReference[] = [
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'A92.0', display: 'Chikungunya virus disease', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '111872004', display: 'Chikungunya fever (disorder)', kind: 'diagnosis' },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'A92.0',
+    display: 'Chikungunya virus disease',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '111872004',
+    display: 'Chikungunya fever (disorder)',
+    kind: 'diagnosis',
+  },
 ];
 
 const CODINGS_ZIKA: CodedReference[] = [
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'A92.5', display: 'Zika virus disease', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '3928002', display: 'Zika virus disease (disorder)', kind: 'diagnosis' },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'A92.5',
+    display: 'Zika virus disease',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '3928002',
+    display: 'Zika virus disease (disorder)',
+    kind: 'diagnosis',
+  },
 ];
 
 function codingsForCtx(ctx: ArbovirContext): CodedReference[] {
@@ -195,7 +240,9 @@ export class DengueArboviralStrategy implements CdsRuleStrategy {
       ctx.plateletCount < ctx.priorPlateletCount - 50 &&
       ctx.plateletCount < PLATELET_LOW
     ) {
-      warningSigns.push(`rapid platelet fall (${ctx.priorPlateletCount} → ${ctx.plateletCount} × 10⁹/L)`);
+      warningSigns.push(
+        `rapid platelet fall (${ctx.priorPlateletCount} → ${ctx.plateletCount} × 10⁹/L)`,
+      );
     }
     if (
       typeof ctx.haematocritPercent === 'number' &&
@@ -218,7 +265,12 @@ export class DengueArboviralStrategy implements CdsRuleStrategy {
     return [this.groupACard(rule, req, ctx)];
   }
 
-  private severeCard(rule: CdsRule, req: CdsHookRequest, ctx: ArbovirContext, reasons: string[]): CdsCard {
+  private severeCard(
+    rule: CdsRule,
+    req: CdsHookRequest,
+    ctx: ArbovirContext,
+    reasons: string[],
+  ): CdsCard {
     const wt = ctx.weightKg ?? 60;
     const bolus = `${(20 * wt).toFixed(0)} mL`;
     return this.buildCard(
@@ -227,7 +279,7 @@ export class DengueArboviralStrategy implements CdsRuleStrategy {
       'critical',
       'Severe dengue (Group C) — admit, isotonic resuscitation, NO NSAIDs',
       'Severe feature(s): {{reasons}}. Bundle (WHO 2009 + 2024 update + PAHO 2022): (1) Admit to HDU / ICU. (2) Compensated shock — ' +
-        'IV crystalloid (0.9 % NaCl or Ringer\'s lactate) {{bolus}} (10–20 mL/kg over 1 hour); reassess, taper to 7 mL/kg/h, then ' +
+        "IV crystalloid (0.9 % NaCl or Ringer's lactate) {{bolus}} (10–20 mL/kg over 1 hour); reassess, taper to 7 mL/kg/h, then " +
         '5 mL/kg/h, then 3 mL/kg/h as condition allows. Hypotensive shock — 20 mL/kg crystalloid in 15 minutes, repeat once; if no ' +
         'response add a colloid bolus 10 mL/kg over 30 minutes; if Hct rises despite fluid → ongoing leakage, give colloid; if Hct ' +
         'falls → occult bleeding, transfuse packed cells. (3) Strictly avoid NSAIDs and aspirin — bleeding risk. (4) Paracetamol ' +
@@ -241,7 +293,12 @@ export class DengueArboviralStrategy implements CdsRuleStrategy {
     );
   }
 
-  private warningGroupBCard(rule: CdsRule, req: CdsHookRequest, ctx: ArbovirContext, signs: string[]): CdsCard {
+  private warningGroupBCard(
+    rule: CdsRule,
+    req: CdsHookRequest,
+    ctx: ArbovirContext,
+    signs: string[],
+  ): CdsCard {
     const isCriticalPhase =
       typeof ctx.daysOfFever === 'number' && ctx.daysOfFever >= 3 && ctx.daysOfFever <= 7;
     const phaseLine = isCriticalPhase

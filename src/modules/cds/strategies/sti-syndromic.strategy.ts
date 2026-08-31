@@ -129,7 +129,8 @@ export class StiSyndromicStrategy implements CdsRuleStrategy {
       ctx.penicillinAllergy === true
         ? 'Penicillin allergy: doxycycline 100 mg orally twice daily for 14 days (early disease) — desensitisation required in pregnancy.'
         : 'Benzathine penicillin G 2.4 MU IM single dose for primary syphilis.';
-    const hsvLine = 'Aciclovir 400 mg orally three times daily for 7 days (first episode) or 5 days (recurrence).';
+    const hsvLine =
+      'Aciclovir 400 mg orally three times daily for 7 days (first episode) or 5 days (recurrence).';
     const chancroidLine =
       ctx.macrolideAllergy === true
         ? 'Chancroid: ceftriaxone 250 mg IM single dose.'

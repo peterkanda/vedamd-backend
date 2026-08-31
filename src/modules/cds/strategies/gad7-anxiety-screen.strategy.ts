@@ -51,8 +51,7 @@ export class Gad7AnxietyScreenStrategy implements CdsRuleStrategy {
     }
     if (
       !responses.every(
-        (r): r is number =>
-          Number.isInteger(r) && (r as number) >= 0 && (r as number) <= 3,
+        (r): r is number => Number.isInteger(r) && (r as number) >= 0 && (r as number) <= 3,
       )
     ) {
       return [
@@ -69,7 +68,8 @@ export class Gad7AnxietyScreenStrategy implements CdsRuleStrategy {
     }
 
     const total = (responses as number[]).reduce((a, b) => a + b, 0);
-    const band: Gad7Band = total <= 4 ? 'minimal' : total <= 9 ? 'mild' : total <= 14 ? 'moderate' : 'severe';
+    const band: Gad7Band =
+      total <= 4 ? 'minimal' : total <= 9 ? 'mild' : total <= 14 ? 'moderate' : 'severe';
 
     let indicator: CdsIndicator;
     let summary: string;

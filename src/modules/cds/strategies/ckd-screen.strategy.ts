@@ -207,7 +207,9 @@ export class CkdScreenStrategy implements CdsRuleStrategy {
   private severeCard(rule: CdsRule, req: CdsHookRequest, ctx: CkdContext): CdsCard {
     const reasons: string[] = [];
     if (typeof ctx.egfrMlMin === 'number') {
-      reasons.push(`eGFR ${ctx.egfrMlMin.toFixed(0)} mL/min/1.73 m² (KDIGO G${ctx.egfrMlMin < KDIGO_G5 ? '5' : '4'})`);
+      reasons.push(
+        `eGFR ${ctx.egfrMlMin.toFixed(0)} mL/min/1.73 m² (KDIGO G${ctx.egfrMlMin < KDIGO_G5 ? '5' : '4'})`,
+      );
     }
     if (ctx.acuteFeatures === true) reasons.push('acute features (AKI / uraemia / fluid overload)');
     if (typeof ctx.potassiumMmolL === 'number' && ctx.potassiumMmolL >= 6.0) {

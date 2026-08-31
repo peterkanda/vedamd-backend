@@ -23,7 +23,11 @@ function makeService(opts: {
   }));
 
   const sql = {
-    getRegisteredConnection: vi.fn(() => ({ id: 'conn', dialect: 'postgres', url: 'postgresql://db.example.com/app' })),
+    getRegisteredConnection: vi.fn(() => ({
+      id: 'conn',
+      dialect: 'postgres',
+      url: 'postgresql://db.example.com/app',
+    })),
     getRegisteredQuery: vi.fn(() => ({ id: 'q', sql: 'SELECT 1', mapping: {} })),
     fetchRows: vi.fn(async () => ({
       rows: opts.rows,
@@ -190,7 +194,11 @@ describe('ClinicalAuditsService — on-demand run', () => {
 
   it('returns the error inline when the named-query fetch fails', async () => {
     const failingSql = {
-      getRegisteredConnection: vi.fn(() => ({ id: 'bad-conn', dialect: 'postgres', url: 'postgresql://db.example.com/app' })),
+      getRegisteredConnection: vi.fn(() => ({
+        id: 'bad-conn',
+        dialect: 'postgres',
+        url: 'postgresql://db.example.com/app',
+      })),
       getRegisteredQuery: vi.fn(() => ({ id: 'q', sql: 'SELECT 1', mapping: {} })),
       fetchRows: vi.fn(async () => {
         throw new Error('Unknown connectionId: bad-conn');

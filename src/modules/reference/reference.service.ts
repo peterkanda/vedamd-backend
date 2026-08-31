@@ -83,12 +83,24 @@ export class ReferenceService {
   }
 
   /** Counts for the reference home screen. */
-  summary(): { drugs: number; conditions: number; procedures: number; interactions: number; total: number } {
+  summary(): {
+    drugs: number;
+    conditions: number;
+    procedures: number;
+    interactions: number;
+    total: number;
+  } {
     const drugs = this.knowledge.getDrugs().length;
     const conditions = this.knowledge.getConditions().length;
     const procedures = this.knowledge.getProcedures().length;
     const interactions = this.knowledge.getInteractions().length;
-    return { drugs, conditions, procedures, interactions, total: drugs + conditions + procedures + interactions + this.knowledge.getCdsRules().length };
+    return {
+      drugs,
+      conditions,
+      procedures,
+      interactions,
+      total: drugs + conditions + procedures + interactions + this.knowledge.getCdsRules().length,
+    };
   }
 
   /** A–Z index. Optionally filter by kind(s). */
@@ -121,7 +133,8 @@ export class ReferenceService {
       if (kind === 'drug') {
         const d = this.knowledge.getDrugs().find((x) => x.slug === item.slug);
         if (!d) return ['Unclassified'];
-        if (dimension === 'aware') return [d.awareCategory ? `AWaRe: ${d.awareCategory}` : 'Not antimicrobial'];
+        if (dimension === 'aware')
+          return [d.awareCategory ? `AWaRe: ${d.awareCategory}` : 'Not antimicrobial'];
         if (dimension === 'keml') return [d.kemlLevel ? `KEML Level ${d.kemlLevel}` : 'Unlisted'];
         return [d.drugClass || 'Unclassified'];
       }
@@ -177,7 +190,12 @@ function titleCase(s: string): string {
 function searchScore(item: RefItem, terms: string[]): number {
   const title = item.title.toLowerCase();
   const slug = item.slug.toLowerCase();
-  const hay = [title, slug, item.subtitle?.toLowerCase() ?? '', ...item.tags.map((t) => t.toLowerCase())].join(' ');
+  const hay = [
+    title,
+    slug,
+    item.subtitle?.toLowerCase() ?? '',
+    ...item.tags.map((t) => t.toLowerCase()),
+  ].join(' ');
   let score = 0;
   for (const t of terms) {
     if (title === t || slug === t) score += 10;

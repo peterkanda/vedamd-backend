@@ -58,35 +58,77 @@ interface EarContext {
 }
 
 const CODINGS_AOM: CodedReference[] = [
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'H66.0', display: 'Acute suppurative otitis media', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'H66.9', display: 'Otitis media, unspecified', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '3110003', display: 'Acute suppurative otitis media (disorder)', kind: 'diagnosis' },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'H66.0',
+    display: 'Acute suppurative otitis media',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'H66.9',
+    display: 'Otitis media, unspecified',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '3110003',
+    display: 'Acute suppurative otitis media (disorder)',
+    kind: 'diagnosis',
+  },
   { system: 'http://whocc.no/atc', code: 'J01CA04', display: 'Amoxicillin', kind: 'drug' },
 ];
 
 const CODINGS_CSOM: CodedReference[] = [
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'H66.1', display: 'Chronic tubotympanic suppurative otitis media', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'H66.3', display: 'Other chronic suppurative otitis media', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '46070000', display: 'Chronic suppurative otitis media (disorder)', kind: 'diagnosis' },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'H66.1',
+    display: 'Chronic tubotympanic suppurative otitis media',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'H66.3',
+    display: 'Other chronic suppurative otitis media',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '46070000',
+    display: 'Chronic suppurative otitis media (disorder)',
+    kind: 'diagnosis',
+  },
   { system: 'http://whocc.no/atc', code: 'S02AA15', display: 'Ciprofloxacin (otic)', kind: 'drug' },
 ];
 
 const CODINGS_MASTOID: CodedReference[] = [
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'H70', display: 'Mastoiditis and related conditions', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '13658006', display: 'Mastoiditis (disorder)', kind: 'diagnosis' },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'H70',
+    display: 'Mastoiditis and related conditions',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '13658006',
+    display: 'Mastoiditis (disorder)',
+    kind: 'diagnosis',
+  },
   { system: 'http://whocc.no/atc', code: 'J01DD04', display: 'Ceftriaxone (IM/IV)', kind: 'drug' },
 ];
 
 const MAX_IMCI_AGE_MONTHS = 60;
 
 function amoxicillinDose(wt?: number): string {
-  if (typeof wt !== 'number') return 'amoxicillin 80–90 mg/kg/day divided into 2 doses for 5 days (10 days if < 2 years or severe — bulging membrane / bilateral / pus draining)';
+  if (typeof wt !== 'number')
+    return 'amoxicillin 80–90 mg/kg/day divided into 2 doses for 5 days (10 days if < 2 years or severe — bulging membrane / bilateral / pus draining)';
   const totalDaily = Math.round(85 * wt);
   return `amoxicillin ${Math.round(totalDaily / 2)} mg twice daily (85 mg/kg/day × ${wt} kg) for 5–10 days`;
 }
 
 function coAmoxiclavDose(wt?: number): string {
-  if (typeof wt !== 'number') return 'amoxicillin-clavulanate 90 mg/kg/day of amoxicillin component, twice daily for 10 days';
+  if (typeof wt !== 'number')
+    return 'amoxicillin-clavulanate 90 mg/kg/day of amoxicillin component, twice daily for 10 days';
   const total = Math.round(90 * wt);
   return `amoxicillin-clavulanate (7:1 ratio) ${Math.round(total / 2)} mg amoxicillin component twice daily for 10 days`;
 }
@@ -98,7 +140,11 @@ export class ImciEarInfectionStrategy implements CdsRuleStrategy {
   async evaluate(rule: CdsRule, req: CdsHookRequest): Promise<CdsCard[]> {
     const ctx = (req.context ?? {}) as EarContext;
     if (ctx.suspectedEarProblem !== true) return [];
-    if (typeof ctx.ageMonths !== 'number' || ctx.ageMonths < 0 || ctx.ageMonths >= MAX_IMCI_AGE_MONTHS) {
+    if (
+      typeof ctx.ageMonths !== 'number' ||
+      ctx.ageMonths < 0 ||
+      ctx.ageMonths >= MAX_IMCI_AGE_MONTHS
+    ) {
       return [];
     }
 

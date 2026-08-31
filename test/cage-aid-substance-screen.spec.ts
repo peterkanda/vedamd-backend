@@ -29,10 +29,7 @@ describe('CageAidSubstanceScreenStrategy', () => {
   });
 
   it('info when wrong-length array', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ ageYears: 30, cageAidResponses: [true, true] }),
-    );
+    const cards = await s.evaluate(RULE, req({ ageYears: 30, cageAidResponses: [true, true] }));
     expect(cards[0].summary).toMatch(/four CAGE-AID/i);
   });
 

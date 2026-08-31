@@ -106,7 +106,11 @@ export class ImciMeaslesStrategy implements CdsRuleStrategy {
   async evaluate(rule: CdsRule, req: CdsHookRequest): Promise<CdsCard[]> {
     const ctx = (req.context ?? {}) as MeaslesContext;
     if (ctx.suspectedMeasles !== true) return [];
-    if (typeof ctx.ageMonths !== 'number' || ctx.ageMonths < 0 || ctx.ageMonths >= MAX_IMCI_AGE_MONTHS) {
+    if (
+      typeof ctx.ageMonths !== 'number' ||
+      ctx.ageMonths < 0 ||
+      ctx.ageMonths >= MAX_IMCI_AGE_MONTHS
+    ) {
       return [];
     }
 
@@ -123,7 +127,8 @@ export class ImciMeaslesStrategy implements CdsRuleStrategy {
     if (ctx.deepExtensiveMouthUlcers === true) severeReasons.push('deep or extensive mouth ulcers');
     if (ctx.pneumoniaSevere === true) severeReasons.push('severe pneumonia');
     if (ctx.severeDehydration === true) severeReasons.push('severe dehydration');
-    if (ctx.encephalitisSigns === true) severeReasons.push('encephalitis (seizures or altered mental state)');
+    if (ctx.encephalitisSigns === true)
+      severeReasons.push('encephalitis (seizures or altered mental state)');
     if (ctx.stridorInCalmChild === true) severeReasons.push('stridor in calm child');
 
     if (severeReasons.length > 0) {

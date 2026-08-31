@@ -16,7 +16,11 @@ const rule = {
 } as unknown as CdsRule;
 
 const strat = new CiwaArStrategy();
-const req = (context: Record<string, unknown>): CdsHookRequest => ({ hook: 'patient-view', hookInstance: 't', context });
+const req = (context: Record<string, unknown>): CdsHookRequest => ({
+  hook: 'patient-view',
+  hookInstance: 't',
+  context,
+});
 
 describe('Alcohol withdrawal — CIWA-Ar', () => {
   it('does not fire without sentinel or supplied score', async () => {
@@ -30,7 +34,10 @@ describe('Alcohol withdrawal — CIWA-Ar', () => {
   });
 
   it('minimal (< 8) → info, supportive care', async () => {
-    const cards = await strat.evaluate(rule, req({ suspectedAlcoholWithdrawal: true, tremor: 2, anxiety: 1 }));
+    const cards = await strat.evaluate(
+      rule,
+      req({ suspectedAlcoholWithdrawal: true, tremor: 2, anxiety: 1 }),
+    );
     expect(cards[0].summary).toContain('CIWA-Ar 3');
     expect(cards[0].indicator).toBe('info');
   });
@@ -50,7 +57,13 @@ describe('Alcohol withdrawal — CIWA-Ar', () => {
   it('severe (> 15) → critical, delirium-tremens vigilance', async () => {
     const cards = await strat.evaluate(
       rule,
-      req({ suspectedAlcoholWithdrawal: true, tremor: 7, paroxysmalSweats: 6, anxiety: 5, agitation: 4 }),
+      req({
+        suspectedAlcoholWithdrawal: true,
+        tremor: 7,
+        paroxysmalSweats: 6,
+        anxiety: 5,
+        agitation: 4,
+      }),
     );
     expect(cards[0].summary).toContain('CIWA-Ar 22');
     expect(cards[0].indicator).toBe('critical');

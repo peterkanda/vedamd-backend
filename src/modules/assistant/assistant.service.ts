@@ -25,11 +25,42 @@ export interface AssistantChatResponse {
 
 // Fields worth keeping when summarising a record into grounding text.
 const KEEP_FIELDS = [
-  'title', 'inn', 'name', 'chiefComplaint', 'analyte', 'gene', 'drug', 'disease', 'poison',
-  'antidote', 'vaccine', 'oneLiner', 'purpose', 'abbrev', 'drugClass', 'category', 'indications',
-  'presentation', 'redFlags', 'management', 'dosing', 'diagnostics', 'differential', 'disposition',
-  'interpretation', 'contraindications', 'warnings', 'monitoring', 'pregnancy', 'lactation',
-  'guidance', 'effect', 'severity', 'mechanism', 'items', 'scoring',
+  'title',
+  'inn',
+  'name',
+  'chiefComplaint',
+  'analyte',
+  'gene',
+  'drug',
+  'disease',
+  'poison',
+  'antidote',
+  'vaccine',
+  'oneLiner',
+  'purpose',
+  'abbrev',
+  'drugClass',
+  'category',
+  'indications',
+  'presentation',
+  'redFlags',
+  'management',
+  'dosing',
+  'diagnostics',
+  'differential',
+  'disposition',
+  'interpretation',
+  'contraindications',
+  'warnings',
+  'monitoring',
+  'pregnancy',
+  'lactation',
+  'guidance',
+  'effect',
+  'severity',
+  'mechanism',
+  'items',
+  'scoring',
 ];
 
 const PER_RECORD_CHARS = 700;
@@ -55,7 +86,13 @@ export class AssistantService {
   async chat(req: AssistantChatRequest): Promise<AssistantChatResponse> {
     const question = (req.question ?? '').trim();
     if (!question) {
-      return { answer: 'Please enter a clinical question.', sources: [], provider: 'none', model: 'none', grounded: false };
+      return {
+        answer: 'Please enter a clinical question.',
+        sources: [],
+        provider: 'none',
+        model: 'none',
+        grounded: false,
+      };
     }
 
     // Retrieve relevant records and build a grounding block.
@@ -65,7 +102,7 @@ export class AssistantService {
     let used = 0;
     for (const hit of hits) {
       const rec = hit.slug ? this.search.getRecord(hit.domain, hit.slug) : null;
-      const text = rec ? this.summarize(rec) : hit.snippet ?? '';
+      const text = rec ? this.summarize(rec) : (hit.snippet ?? '');
       const entry = `[${hit.domain}/${hit.slug}] ${hit.title}\n${text}`;
       if (used + entry.length > TOTAL_GROUNDING_CHARS) break;
       blocks.push(entry);
@@ -83,6 +120,12 @@ export class AssistantService {
       maxTokens: 1024,
     });
 
-    return { answer: result.text.trim(), sources, provider: result.provider, model: result.model, grounded };
+    return {
+      answer: result.text.trim(),
+      sources,
+      provider: result.provider,
+      model: result.model,
+      grounded,
+    };
   }
 }

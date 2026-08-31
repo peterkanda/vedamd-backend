@@ -34,27 +34,40 @@ export function buildReferenceUserMessage(question: string, knowledge: Retrieved
   if (knowledge.interactions.length) {
     k.push('\n### Drug-drug interactions');
     for (const i of knowledge.interactions)
-      k.push(`- [ddi:${i.slugA}+${i.slugB}] ${i.severity.toUpperCase()}: ${i.mechanism} | management: ${i.management}`);
+      k.push(
+        `- [ddi:${i.slugA}+${i.slugB}] ${i.severity.toUpperCase()}: ${i.mechanism} | management: ${i.management}`,
+      );
   }
   if (knowledge.conditions.length) {
     k.push('\n### Conditions');
-    for (const c of knowledge.conditions) k.push(`- [condition:${c.slug}] ${c.title} — ${c.summary}`);
+    for (const c of knowledge.conditions)
+      k.push(`- [condition:${c.slug}] ${c.title} — ${c.summary}`);
   }
   if (knowledge.procedures.length) {
     k.push('\n### Procedures');
-    for (const p of knowledge.procedures) k.push(`- [procedure:${p.slug}] ${p.title} — ${p.summary}`);
+    for (const p of knowledge.procedures)
+      k.push(`- [procedure:${p.slug}] ${p.title} — ${p.summary}`);
   }
   if (knowledge.rules.length) {
     k.push('\n### CDS rules');
     for (const r of knowledge.rules) k.push(`- [rule:${r.id}] ${r.title} — ${r.description}`);
   }
 
-  if (knowledge.drugs.length + knowledge.interactions.length + knowledge.conditions.length + knowledge.procedures.length + knowledge.rules.length === 0) {
+  if (
+    knowledge.drugs.length +
+      knowledge.interactions.length +
+      knowledge.conditions.length +
+      knowledge.procedures.length +
+      knowledge.rules.length ===
+    0
+  ) {
     k.push('\n(No matching VedaMD references were found for this question.)');
   }
 
   k.push('\n## CLINICIAN QUESTION');
   k.push(question);
-  k.push('\nAnswer ONLY from the references above, citing every claim, or state it is not covered.');
+  k.push(
+    '\nAnswer ONLY from the references above, citing every claim, or state it is not covered.',
+  );
   return k.join('\n');
 }

@@ -22,3 +22,12 @@ dev-keys/private-key.pem
 # Python artifacts (from content tooling scripts)
 __pycache__/
 *.pyc
+
+# Defense-in-depth: catch-all for key/credential material added anywhere
+*.pem
+*.key
+*.p12
+*.keystore
+credentials*.json
+serviceAccountKey*.json
+*serviceaccount*.json

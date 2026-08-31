@@ -69,7 +69,10 @@ export class SnakeEnvenomationTreatmentStrategy implements CdsRuleStrategy {
     };
     const detail = `${features.length ? `Features: ${features.join(', ')}. ` : ''}${incoagulable ? '20-min WBCT: incoagulable. ' : ''}${recommendation}`;
 
-    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, { summary, detail });
+    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, {
+      summary,
+      detail,
+    });
 
     return [
       {

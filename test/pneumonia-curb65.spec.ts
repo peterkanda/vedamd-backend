@@ -16,7 +16,11 @@ const rule = {
 } as unknown as CdsRule;
 
 const strat = new PneumoniaCurb65Strategy();
-const req = (context: Record<string, unknown>): CdsHookRequest => ({ hook: 'patient-view', hookInstance: 't', context });
+const req = (context: Record<string, unknown>): CdsHookRequest => ({
+  hook: 'patient-view',
+  hookInstance: 't',
+  context,
+});
 
 describe('CAP — CURB-65 + antibiotic choice', () => {
   it('does not fire without the pneumonia sentinel', async () => {
@@ -24,13 +28,23 @@ describe('CAP — CURB-65 + antibiotic choice', () => {
   });
 
   it('does not fire for children', async () => {
-    expect(await strat.evaluate(rule, req({ suspectedPneumonia: true, ageYears: 4 }))).toHaveLength(0);
+    expect(await strat.evaluate(rule, req({ suspectedPneumonia: true, ageYears: 4 }))).toHaveLength(
+      0,
+    );
   });
 
   it('low risk (0–1) → info, outpatient amoxicillin', async () => {
     const cards = await strat.evaluate(
       rule,
-      req({ suspectedPneumonia: true, ageYears: 40, confusion: false, urea: 4, respiratoryRate: 18, systolicBp: 120, diastolicBp: 80 }),
+      req({
+        suspectedPneumonia: true,
+        ageYears: 40,
+        confusion: false,
+        urea: 4,
+        respiratoryRate: 18,
+        systolicBp: 120,
+        diastolicBp: 80,
+      }),
     );
     expect(cards[0].summary).toContain('CURB-65 0');
     expect(cards[0].indicator).toBe('info');
@@ -41,7 +55,15 @@ describe('CAP — CURB-65 + antibiotic choice', () => {
     // age≥65 (1) + urea>7 (1) = 2
     const cards = await strat.evaluate(
       rule,
-      req({ suspectedPneumonia: true, ageYears: 72, confusion: false, urea: 9, respiratoryRate: 18, systolicBp: 130, diastolicBp: 80 }),
+      req({
+        suspectedPneumonia: true,
+        ageYears: 72,
+        confusion: false,
+        urea: 9,
+        respiratoryRate: 18,
+        systolicBp: 130,
+        diastolicBp: 80,
+      }),
     );
     expect(cards[0].summary).toContain('CURB-65 2');
     expect(cards[0].indicator).toBe('warning');
@@ -52,7 +74,15 @@ describe('CAP — CURB-65 + antibiotic choice', () => {
     // confusion (1) + urea>7 (1) + RR≥30 (1) + age≥65 (1) = 4
     const cards = await strat.evaluate(
       rule,
-      req({ suspectedPneumonia: true, ageYears: 78, confusion: true, urea: 15, respiratoryRate: 32, systolicBp: 110, diastolicBp: 70 }),
+      req({
+        suspectedPneumonia: true,
+        ageYears: 78,
+        confusion: true,
+        urea: 15,
+        respiratoryRate: 32,
+        systolicBp: 110,
+        diastolicBp: 70,
+      }),
     );
     expect(cards[0].summary).toContain('CURB-65 4');
     expect(cards[0].indicator).toBe('critical');
@@ -63,7 +93,15 @@ describe('CAP — CURB-65 + antibiotic choice', () => {
   it('accepts the ureaMmolL / systolicMmHg aliases', async () => {
     const cards = await strat.evaluate(
       rule,
-      req({ suspectedPneumonia: true, ageYears: 50, confusion: false, ureaMmolL: 9, respiratoryRatePerMin: 18, systolicMmHg: 120, diastolicMmHg: 80 }),
+      req({
+        suspectedPneumonia: true,
+        ageYears: 50,
+        confusion: false,
+        ureaMmolL: 9,
+        respiratoryRatePerMin: 18,
+        systolicMmHg: 120,
+        diastolicMmHg: 80,
+      }),
     );
     expect(cards[0].summary).toContain('CURB-65 1');
     expect(cards[0].detail).toMatch(/urea 9 mmol\/L/);
@@ -78,7 +116,16 @@ describe('CAP — CURB-65 + antibiotic choice', () => {
   it('low SpO₂ escalates a low score to warning', async () => {
     const cards = await strat.evaluate(
       rule,
-      req({ suspectedPneumonia: true, ageYears: 40, confusion: false, urea: 4, respiratoryRate: 18, systolicBp: 120, diastolicBp: 80, oxygenSatPercent: 88 }),
+      req({
+        suspectedPneumonia: true,
+        ageYears: 40,
+        confusion: false,
+        urea: 4,
+        respiratoryRate: 18,
+        systolicBp: 120,
+        diastolicBp: 80,
+        oxygenSatPercent: 88,
+      }),
     );
     expect(cards[0].indicator).toBe('warning');
     expect(cards[0].detail).toMatch(/SpO₂ 88%/);

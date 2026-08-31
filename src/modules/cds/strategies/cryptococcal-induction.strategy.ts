@@ -64,8 +64,14 @@ export class CryptococcalInductionStrategy implements CdsRuleStrategy {
     };
     const detail = `CrAg-positive HIV patient with meningitis. ${regimen} ${pressureNote} ${monitoring}`;
 
-    const { summary, detail: outDetailDefault } = { summary: 'Cryptococcal meningitis — start induction antifungal therapy now', detail };
-    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, { summary, detail: outDetailDefault });
+    const { summary, detail: outDetailDefault } = {
+      summary: 'Cryptococcal meningitis — start induction antifungal therapy now',
+      detail,
+    };
+    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, {
+      summary,
+      detail: outDetailDefault,
+    });
 
     return [
       {

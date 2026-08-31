@@ -15,9 +15,7 @@ interface ListFilters {
 
 @Injectable()
 export class IntegrationsService {
-  private readonly bySlug = new Map<string, Integration>(
-    INTEGRATIONS.map((i) => [i.slug, i]),
-  );
+  private readonly bySlug = new Map<string, Integration>(INTEGRATIONS.map((i) => [i.slug, i]));
 
   list(filters: ListFilters = {}): IntegrationSummary[] {
     return INTEGRATIONS.filter((i) => {
@@ -41,7 +39,7 @@ export class IntegrationsService {
       return true;
     }).map(
       ({ slug, name, category, tagline, primaryMethod, methods, tags }) =>
-        ({ slug, name, category, tagline, primaryMethod, methods, tags } as IntegrationSummary),
+        ({ slug, name, category, tagline, primaryMethod, methods, tags }) as IntegrationSummary,
     );
   }
 

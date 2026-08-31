@@ -74,30 +74,77 @@ export class AfibAnticoagulationStrategy implements CdsRuleStrategy {
     // --- CHA₂DS₂-VASc ---
     const cha: string[] = [];
     let chads = 0;
-    if (ctx.chf === true) { chads += 1; cha.push('C: CHF/LV dysfunction'); }
-    if (ctx.hypertension === true) { chads += 1; cha.push('H: hypertension'); }
-    if (typeof ctx.ageYears === 'number' && ctx.ageYears >= 75) {
-      chads += 2; cha.push('A₂: age ≥75 (2)');
-    } else if (typeof ctx.ageYears === 'number' && ctx.ageYears >= 65) {
-      chads += 1; cha.push('A: age 65–74');
+    if (ctx.chf === true) {
+      chads += 1;
+      cha.push('C: CHF/LV dysfunction');
     }
-    if (ctx.diabetes === true) { chads += 1; cha.push('D: diabetes'); }
-    if (ctx.priorStroke === true) { chads += 2; cha.push('S₂: prior stroke/TIA/TE (2)'); }
-    if (ctx.vascularDisease === true) { chads += 1; cha.push('V: vascular disease'); }
-    if (female) { chads += 1; cha.push('Sc: female'); }
+    if (ctx.hypertension === true) {
+      chads += 1;
+      cha.push('H: hypertension');
+    }
+    if (typeof ctx.ageYears === 'number' && ctx.ageYears >= 75) {
+      chads += 2;
+      cha.push('A₂: age ≥75 (2)');
+    } else if (typeof ctx.ageYears === 'number' && ctx.ageYears >= 65) {
+      chads += 1;
+      cha.push('A: age 65–74');
+    }
+    if (ctx.diabetes === true) {
+      chads += 1;
+      cha.push('D: diabetes');
+    }
+    if (ctx.priorStroke === true) {
+      chads += 2;
+      cha.push('S₂: prior stroke/TIA/TE (2)');
+    }
+    if (ctx.vascularDisease === true) {
+      chads += 1;
+      cha.push('V: vascular disease');
+    }
+    if (female) {
+      chads += 1;
+      cha.push('Sc: female');
+    }
 
     // --- HAS-BLED ---
     const hb: string[] = [];
     let hasbled = 0;
-    if (ctx.uncontrolledHypertension === true) { hasbled += 1; hb.push('H: uncontrolled HTN'); }
-    if (ctx.abnormalRenal === true) { hasbled += 1; hb.push('A: abnormal renal'); }
-    if (ctx.abnormalLiver === true) { hasbled += 1; hb.push('A: abnormal liver'); }
-    if (ctx.priorStroke === true) { hasbled += 1; hb.push('S: stroke'); }
-    if (ctx.bleedingHistory === true) { hasbled += 1; hb.push('B: bleeding history'); }
-    if (ctx.labileInr === true) { hasbled += 1; hb.push('L: labile INR'); }
-    if (typeof ctx.ageYears === 'number' && ctx.ageYears > 65) { hasbled += 1; hb.push('E: elderly >65'); }
-    if (ctx.antiplateletOrNsaid === true) { hasbled += 1; hb.push('D: antiplatelet/NSAID'); }
-    if (ctx.alcoholExcess === true) { hasbled += 1; hb.push('D: alcohol excess'); }
+    if (ctx.uncontrolledHypertension === true) {
+      hasbled += 1;
+      hb.push('H: uncontrolled HTN');
+    }
+    if (ctx.abnormalRenal === true) {
+      hasbled += 1;
+      hb.push('A: abnormal renal');
+    }
+    if (ctx.abnormalLiver === true) {
+      hasbled += 1;
+      hb.push('A: abnormal liver');
+    }
+    if (ctx.priorStroke === true) {
+      hasbled += 1;
+      hb.push('S: stroke');
+    }
+    if (ctx.bleedingHistory === true) {
+      hasbled += 1;
+      hb.push('B: bleeding history');
+    }
+    if (ctx.labileInr === true) {
+      hasbled += 1;
+      hb.push('L: labile INR');
+    }
+    if (typeof ctx.ageYears === 'number' && ctx.ageYears > 65) {
+      hasbled += 1;
+      hb.push('E: elderly >65');
+    }
+    if (ctx.antiplateletOrNsaid === true) {
+      hasbled += 1;
+      hb.push('D: antiplatelet/NSAID');
+    }
+    if (ctx.alcoholExcess === true) {
+      hasbled += 1;
+      hb.push('D: alcohol excess');
+    }
 
     // --- Decision ---
     const recommendAnticoag = (!female && chads >= 2) || (female && chads >= 3);
@@ -107,9 +154,10 @@ export class AfibAnticoagulationStrategy implements CdsRuleStrategy {
     let summary: string;
     let recommendation: string;
 
-    const agent = ctx.valvularAf === true
-      ? 'Valvular AF (mechanical valve / moderate–severe mitral stenosis) → use a vitamin-K antagonist (warfarin, target INR 2.5); DOACs are contraindicated.'
-      : 'Use a DOAC first-line (e.g. apixaban 5 mg BD; reduce to 2.5 mg BD if ≥2 of: age ≥80, weight ≤60 kg, creatinine ≥133 µmol/L). Warfarin is an alternative.';
+    const agent =
+      ctx.valvularAf === true
+        ? 'Valvular AF (mechanical valve / moderate–severe mitral stenosis) → use a vitamin-K antagonist (warfarin, target INR 2.5); DOACs are contraindicated.'
+        : 'Use a DOAC first-line (e.g. apixaban 5 mg BD; reduce to 2.5 mg BD if ≥2 of: age ≥80, weight ≤60 kg, creatinine ≥133 µmol/L). Warfarin is an alternative.';
 
     if (recommendAnticoag) {
       indicator = 'critical';

@@ -23,10 +23,7 @@ export class AnticoagulantReversalService implements OnModuleInit {
     }
   }
 
-  list(filters?: {
-    q?: string;
-    drugClass?: string;
-  }): AnticoagulantReversalSummary[] {
+  list(filters?: { q?: string; drugClass?: string }): AnticoagulantReversalSummary[] {
     const all = [...this.bySlug.values()];
     const filtered = all.filter((r) => {
       if (filters?.drugClass) {

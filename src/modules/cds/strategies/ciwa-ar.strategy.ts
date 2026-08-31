@@ -93,7 +93,8 @@ export class CiwaArStrategy implements CdsRuleStrategy {
     const redFlags: string[] = [];
     if (ctx.seizureHistory === true) redFlags.push('prior withdrawal seizures');
     if (ctx.hallucinations === true) redFlags.push('hallucinations');
-    if (typeof ctx.heartRate === 'number' && ctx.heartRate >= 120) redFlags.push(`tachycardia ${ctx.heartRate}/min`);
+    if (typeof ctx.heartRate === 'number' && ctx.heartRate >= 120)
+      redFlags.push(`tachycardia ${ctx.heartRate}/min`);
 
     const severe = score > 15 || (score >= 8 && redFlags.length > 0);
     const moderate = !severe && score >= 8;

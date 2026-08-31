@@ -23,15 +23,11 @@ describe('AdultAcsRecognitionStrategy', () => {
   const s = new AdultAcsRecognitionStrategy();
 
   it('silent without suspectedAcs', async () => {
-    expect(
-      await s.evaluate(RULE, req({ ageYears: 60, painOngoingMin: 30 })),
-    ).toEqual([]);
+    expect(await s.evaluate(RULE, req({ ageYears: 60, painOngoingMin: 30 }))).toEqual([]);
   });
 
   it('does not fire for paediatric patients', async () => {
-    expect(
-      await s.evaluate(RULE, req({ ageYears: 12, suspectedAcs: true })),
-    ).toEqual([]);
+    expect(await s.evaluate(RULE, req({ ageYears: 12, suspectedAcs: true }))).toEqual([]);
   });
 
   it('STEMI pattern → critical bundle', async () => {

@@ -1,13 +1,4 @@
-import {
-  Body,
-  Controller,
-  Get,
-  HttpCode,
-  Param,
-  Query,
-  Req,
-  UseGuards,
-} from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Param, Query, Req, UseGuards } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import type { FastifyRequest } from 'fastify';
 import { Post } from '@nestjs/common';
@@ -90,11 +81,7 @@ export class CdsFeedbackOperatorController {
   ) {
     const n = limit ? Math.max(1, Math.min(parseInt(limit, 10) || 50, 200)) : 50;
     return {
-      feedback: await this.svc.listByRule(
-        req.operator!.integratorId,
-        ruleId ?? null,
-        n,
-      ),
+      feedback: await this.svc.listByRule(req.operator!.integratorId, ruleId ?? null, n),
     };
   }
 }

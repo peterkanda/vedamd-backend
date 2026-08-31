@@ -21,11 +21,7 @@ export class IvCompatibilityService implements OnModuleInit {
     }
   }
 
-  list(filters?: {
-    q?: string;
-    drug?: string;
-    status?: string;
-  }): IvCompatibilitySummary[] {
+  list(filters?: { q?: string; drug?: string; status?: string }): IvCompatibilitySummary[] {
     const all = [...this.bySlug.values()];
     const filtered = all.filter((c) => {
       if (filters?.status && c.status !== filters.status) return false;
@@ -38,14 +34,7 @@ export class IvCompatibilityService implements OnModuleInit {
       }
       if (filters?.q) {
         const q = filters.q.toLowerCase();
-        const hay = [
-          c.drugA,
-          c.drugB,
-          c.slug,
-          c.oneLiner,
-          c.status,
-          ...c.domains,
-        ]
+        const hay = [c.drugA, c.drugB, c.slug, c.oneLiner, c.status, ...c.domains]
           .join(' ')
           .toLowerCase();
         if (!hay.includes(q)) return false;

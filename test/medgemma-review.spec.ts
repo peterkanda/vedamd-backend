@@ -21,7 +21,9 @@ describe('medgemma-review core', () => {
   });
 
   it('parses a clean JSON verdict', () => {
-    const r = parseReviewVerdict('{"verdict":"ok","dosingConcern":false,"issues":[],"confidence":0.9}');
+    const r = parseReviewVerdict(
+      '{"verdict":"ok","dosingConcern":false,"issues":[],"confidence":0.9}',
+    );
     expect(r.verdict).toBe('ok');
     expect(r.confidence).toBeCloseTo(0.9);
     expect(isFlagged(r)).toBe(false);

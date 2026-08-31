@@ -176,8 +176,7 @@ export class ImciFeverUnder5Strategy implements CdsRuleStrategy {
 
     if (isVerySevere) {
       const reasons: string[] = [];
-      if (hasGeneralDanger)
-        reasons.push(`IMCI danger sign(s): ${dangerSigns.join(', ')}`);
+      if (hasGeneralDanger) reasons.push(`IMCI danger sign(s): ${dangerSigns.join(', ')}`);
       if (ctx.stiffNeck) reasons.push('stiff neck');
       if (ctx.bulgingFontanelle) reasons.push('bulging fontanelle');
       if (ctx.petechialRash) reasons.push('non-blanching purpuric rash');
@@ -254,7 +253,11 @@ export class ImciFeverUnder5Strategy implements CdsRuleStrategy {
             rule,
             'SEVERE COMPLICATED MEASLES — refer urgently after first dose',
             `Measles (or measles in the last 3 months) with ${
-              ctx.corneaClouding ? 'clouding of the cornea' : ctx.deepMouthUlcers ? 'deep mouth ulcers' : 'a general danger sign'
+              ctx.corneaClouding
+                ? 'clouding of the cornea'
+                : ctx.deepMouthUlcers
+                  ? 'deep mouth ulcers'
+                  : 'a general danger sign'
             }. Give vitamin A 200,000 IU PO (100,000 IU if 6-12 mo, 50,000 IU if < 6 mo). Apply tetracycline eye ointment if corneal involvement. First-dose IM/IV antibiotic. Refer URGENTLY.`,
             'critical',
           ),
@@ -272,7 +275,9 @@ export class ImciFeverUnder5Strategy implements CdsRuleStrategy {
         cards.push(
           makeCard(
             rule,
-            hasRecentMeasles ? 'Recent measles (within 3 months) — heightened vigilance' : 'MEASLES',
+            hasRecentMeasles
+              ? 'Recent measles (within 3 months) — heightened vigilance'
+              : 'MEASLES',
             `Measles${hasRecentMeasles ? ' in the last 3 months' : ' currently'}. Give vitamin A 200,000 IU PO (age-banded). Counsel on rehydration + feeding. Watch for complications (pneumonia, diarrhoea, ear infection, blindness from vitamin A deficiency).`,
             'info',
           ),
@@ -282,15 +287,14 @@ export class ImciFeverUnder5Strategy implements CdsRuleStrategy {
 
     // ── 4. Dengue warning signs ─────────────────────────────────────
     const dengueRisk = Boolean(ctx.dengueRiskArea);
-    const dengueWarning =
-      Boolean(
-        ctx.bleedingSigns ||
-          ctx.mucosalBleeding ||
-          ctx.persistentVomiting ||
-          ctx.persistentAbdominalPain ||
-          ctx.liverEnlarged ||
-          ctx.lethargyRestlessness,
-      );
+    const dengueWarning = Boolean(
+      ctx.bleedingSigns ||
+      ctx.mucosalBleeding ||
+      ctx.persistentVomiting ||
+      ctx.persistentAbdominalPain ||
+      ctx.liverEnlarged ||
+      ctx.lethargyRestlessness,
+    );
     if (dengueRisk && dengueWarning) {
       const reasons: string[] = [];
       if (ctx.bleedingSigns) reasons.push('bleeding');
@@ -312,7 +316,9 @@ export class ImciFeverUnder5Strategy implements CdsRuleStrategy {
     // ── 5. Accompanying — pneumonia ─────────────────────────────────
     const rrCutoff = fastBreathingCutoff(ageMonths);
     const fastBreathing =
-      typeof ctx.respiratoryRate === 'number' && rrCutoff !== null && ctx.respiratoryRate >= rrCutoff;
+      typeof ctx.respiratoryRate === 'number' &&
+      rrCutoff !== null &&
+      ctx.respiratoryRate >= rrCutoff;
     if (ctx.cough && (fastBreathing || ctx.chestIndrawing || ctx.stridor)) {
       if (ctx.chestIndrawing || ctx.stridor || hasGeneralDanger) {
         cards.push(
@@ -384,7 +390,9 @@ export class ImciFeverUnder5Strategy implements CdsRuleStrategy {
       cards.push(
         makeCard(
           rule,
-          chronic ? 'CHRONIC EAR INFECTION — wicking + topical drops' : 'ACUTE EAR INFECTION — oral amoxicillin',
+          chronic
+            ? 'CHRONIC EAR INFECTION — wicking + topical drops'
+            : 'ACUTE EAR INFECTION — oral amoxicillin',
           chronic
             ? `Pus draining ≥ 14 days. Dry the ear by wicking; topical ciprofloxacin / quinolone drops × 2 weeks; review in 5 days. Refer if mastoid swelling.`
             : `Oral amoxicillin 25 mg/kg BD × 5 days for AOM. Paracetamol for pain. Review in 5 days.`,
@@ -449,10 +457,7 @@ export class ImciFeverUnder5Strategy implements CdsRuleStrategy {
     const gaps: string[] = [];
     if (ctx.immunisationsUpToDate === false) gaps.push('immunisations not up to date');
     if (ctx.vitaminAInLast6Months === false && ageMonths >= 6) gaps.push('vitamin A overdue');
-    if (
-      ctx.dewormingInLast6Months === false &&
-      ageMonths >= 12
-    )
+    if (ctx.dewormingInLast6Months === false && ageMonths >= 12)
       gaps.push('deworming overdue (≥ 12 months)');
     if (gaps.length) {
       cards.push(

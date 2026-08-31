@@ -35,8 +35,13 @@ export class ClinicalReferenceController {
     description:
       'domain ∈ clinical-procedures | bedside-interpretation | preventive-care | growth-development. Filters: category, q. Returns summaries; fetch full sections by slug.',
   })
-  list(@Param('domain') domain: string, @Query('category') category?: string, @Query('q') q?: string) {
-    if (!this.svc.isDomain(domain)) throw new BadRequestException(`Unknown reference domain: ${domain}`);
+  list(
+    @Param('domain') domain: string,
+    @Query('category') category?: string,
+    @Query('q') q?: string,
+  ) {
+    if (!this.svc.isDomain(domain))
+      throw new BadRequestException(`Unknown reference domain: ${domain}`);
     return { domain, cards: this.svc.list(domain, { category, q }) };
   }
 
@@ -49,7 +54,8 @@ export class ClinicalReferenceController {
       'Returns the full card: summary, titled sections (bullets or ordered steps), red flags and citations. Reference content only — no patient identity is processed.',
   })
   get(@Param('domain') domain: string, @Param('slug') slug: string) {
-    if (!this.svc.isDomain(domain)) throw new BadRequestException(`Unknown reference domain: ${domain}`);
+    if (!this.svc.isDomain(domain))
+      throw new BadRequestException(`Unknown reference domain: ${domain}`);
     const found = this.svc.get(domain, slug);
     if (!found) throw new NotFoundException(`Unknown ${domain} card: ${slug}`);
     return found;

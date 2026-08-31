@@ -40,8 +40,7 @@ const DOSE_DRUGS: DoseDrug[] = [
     maxMgPerKgPerDay: 90,
     frequency: 'every 8 h',
     route: 'PO',
-    notes:
-      'WHO IMCI / BNFc: standard 25 mg/kg/dose tds; up to 30 mg/kg/dose in severe pneumonia.',
+    notes: 'WHO IMCI / BNFc: standard 25 mg/kg/dose tds; up to 30 mg/kg/dose in severe pneumonia.',
   },
   {
     id: 'cotrimoxazole',
@@ -177,8 +176,7 @@ const DOSE_DRUGS: DoseDrug[] = [
     maxMgPerDose: 2000,
     frequency: 'every 8 h (40 mg/kg/dose for meningitis)',
     route: 'IV',
-    notes:
-      'BNFc: 20 mg/kg/dose q8h for sepsis; 40 mg/kg/dose q8h for meningitis. Max 2 g/dose.',
+    notes: 'BNFc: 20 mg/kg/dose q8h for sepsis; 40 mg/kg/dose q8h for meningitis. Max 2 g/dose.',
   },
   {
     id: 'gentamicin-paeds',
@@ -463,7 +461,13 @@ const DOSE_DRUGS: DoseDrug[] = [
 ];
 
 const VITALS: VitalsBand[] = [
-  { band: 'Preterm (<37 wk PMA)', hr: '120–170', rr: '40–70', sysBp: '50–70', spo2: '90–95 (per PMA target)' },
+  {
+    band: 'Preterm (<37 wk PMA)',
+    hr: '120–170',
+    rr: '40–70',
+    sysBp: '50–70',
+    spo2: '90–95 (per PMA target)',
+  },
   { band: 'Neonate (0–28 d)', hr: '120–160', rr: '30–60', sysBp: '60–80', spo2: '≥ 95' },
   { band: 'Infant 1–3 mo', hr: '110–160', rr: '30–55', sysBp: '70–90', spo2: '≥ 95' },
   { band: 'Infant 3–12 mo', hr: '100–150', rr: '25–45', sysBp: '75–95', spo2: '≥ 95' },
@@ -798,8 +802,16 @@ const SCORING: ScoringSystem[] = [
     type: 'toggle',
     axes: [
       { id: 'htn', label: 'Hypertension (uncontrolled, SBP > 160 mmHg)', points: 1 },
-      { id: 'abnRenal', label: 'Abnormal renal function (Cr > 200 µmol/L or dialysis / transplant)', points: 1 },
-      { id: 'abnLiver', label: 'Abnormal liver function (cirrhosis or bilirubin > 2× ULN with ALT > 3× ULN)', points: 1 },
+      {
+        id: 'abnRenal',
+        label: 'Abnormal renal function (Cr > 200 µmol/L or dialysis / transplant)',
+        points: 1,
+      },
+      {
+        id: 'abnLiver',
+        label: 'Abnormal liver function (cirrhosis or bilirubin > 2× ULN with ALT > 3× ULN)',
+        points: 1,
+      },
       { id: 'stroke', label: 'Prior stroke', points: 1 },
       { id: 'bleed', label: 'Bleeding history or predisposition', points: 1 },
       { id: 'labileInr', label: 'Labile INR (< 60% TTR on warfarin)', points: 1 },
@@ -828,7 +840,11 @@ const SCORING: ScoringSystem[] = [
         label: 'Timing of platelet fall from heparin exposure',
         options: [
           { label: 'Fall < 4 days, no prior heparin', score: 0 },
-          { label: 'Consistent with day 5–10 but unclear OR fall ≤ 1 day with heparin in last 30–100 d', score: 1 },
+          {
+            label:
+              'Consistent with day 5–10 but unclear OR fall ≤ 1 day with heparin in last 30–100 d',
+            score: 1,
+          },
           { label: 'Clear onset days 5–10, OR ≤ 1 day with heparin in last 30 d', score: 2 },
         ],
       },
@@ -837,8 +853,15 @@ const SCORING: ScoringSystem[] = [
         label: 'Thrombosis or other sequelae',
         options: [
           { label: 'None', score: 0 },
-          { label: 'Progressive/recurrent thrombosis OR erythematous skin lesions OR suspected but not proven', score: 1 },
-          { label: 'New thrombosis, skin necrosis, OR post-bolus acute systemic reaction', score: 2 },
+          {
+            label:
+              'Progressive/recurrent thrombosis OR erythematous skin lesions OR suspected but not proven',
+            score: 1,
+          },
+          {
+            label: 'New thrombosis, skin necrosis, OR post-bolus acute systemic reaction',
+            score: 2,
+          },
         ],
       },
       {
@@ -855,7 +878,8 @@ const SCORING: ScoringSystem[] = [
   {
     id: 'perc',
     name: 'PERC rule (PE rule-out)',
-    citation: 'Kline JA et al, J Thromb Haemost 2008. Use only when clinical gestalt is low pre-test probability.',
+    citation:
+      'Kline JA et al, J Thromb Haemost 2008. Use only when clinical gestalt is low pre-test probability.',
     type: 'toggle',
     axes: [
       { id: 'age50', label: 'Age ≥ 50', points: 1 },
@@ -871,7 +895,8 @@ const SCORING: ScoringSystem[] = [
   {
     id: 'sofa',
     name: 'SOFA (Sequential Organ Failure Assessment)',
-    citation: 'Vincent JL et al, Intensive Care Med 1996. ICU organ-failure score; rise ≥ 2 = sepsis per Sepsis-3.',
+    citation:
+      'Vincent JL et al, Intensive Care Med 1996. ICU organ-failure score; rise ≥ 2 = sepsis per Sepsis-3.',
     type: 'band',
     axes: [
       {

@@ -1,9 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import type {
-  DeliveryResult,
-  OutboundMessage,
-  TwilioCreds,
-} from '../notifications.types';
+import type { DeliveryResult, OutboundMessage, TwilioCreds } from '../notifications.types';
 import type { NotificationProviderAdapter } from './notification-provider.interface';
 
 /**
@@ -35,9 +31,7 @@ export class TwilioProvider implements NotificationProviderAdapter {
       throw new Error('Twilio credentials must include a non-empty authToken.');
     }
     if (!c.fromNumber || typeof c.fromNumber !== 'string') {
-      throw new Error(
-        'Twilio credentials must include fromNumber (E.164, e.g. +14155551234).',
-      );
+      throw new Error('Twilio credentials must include fromNumber (E.164, e.g. +14155551234).');
     }
     if (!c.fromNumber.startsWith('+')) {
       throw new Error('Twilio fromNumber must be in E.164 format (start with "+").');
@@ -78,10 +72,7 @@ export class TwilioProvider implements NotificationProviderAdapter {
           ok: false,
           to: finalTo,
           status: String(res.status),
-          error:
-            typeof json.message === 'string'
-              ? json.message
-              : `Twilio HTTP ${res.status}`,
+          error: typeof json.message === 'string' ? json.message : `Twilio HTTP ${res.status}`,
         };
       }
       return {

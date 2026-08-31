@@ -20,11 +20,7 @@ export class SymptomTriageService implements OnModuleInit {
     }
   }
 
-  list(filters?: {
-    q?: string;
-    population?: string;
-    domain?: string;
-  }): SymptomTriageSummary[] {
+  list(filters?: { q?: string; population?: string; domain?: string }): SymptomTriageSummary[] {
     const all = [...this.bySlug.values()];
     const filtered = all.filter((r) => {
       if (filters?.population && r.populationScope !== filters.population) return false;

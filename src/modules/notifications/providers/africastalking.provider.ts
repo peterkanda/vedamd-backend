@@ -1,9 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import type {
-  AfricasTalkingCreds,
-  DeliveryResult,
-  OutboundMessage,
-} from '../notifications.types';
+import type { AfricasTalkingCreds, DeliveryResult, OutboundMessage } from '../notifications.types';
 import type { NotificationProviderAdapter } from './notification-provider.interface';
 
 /**
@@ -25,7 +21,9 @@ export class AfricasTalkingProvider implements NotificationProviderAdapter {
       throw new Error("Africa's Talking credentials must include apiKey.");
     }
     if (!c.username || typeof c.username !== 'string') {
-      throw new Error("Africa's Talking credentials must include username (use 'sandbox' for testing).");
+      throw new Error(
+        "Africa's Talking credentials must include username (use 'sandbox' for testing).",
+      );
     }
   }
 
@@ -69,7 +67,7 @@ export class AfricasTalkingProvider implements NotificationProviderAdapter {
         return {
           ok: false,
           to,
-          error: 'Africa\'s Talking returned no recipient outcome.',
+          error: "Africa's Talking returned no recipient outcome.",
         };
       }
       // Status values: "Success" | "InvalidPhoneNumber" | "InsufficientBalance" | ...

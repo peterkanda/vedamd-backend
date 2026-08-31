@@ -25,7 +25,6 @@ export class BundleOutcomeStrategy {
   /** Sentinel — not resolved by type. CdsService invokes it as a fallback. */
   readonly type = '__bundle-outcome__';
 
-  // eslint-disable-next-line @typescript-eslint/require-await
   async evaluate(rule: CdsRule, _req: CdsHookRequest): Promise<CdsCard[]> {
     const outcomes = rule.outcomes ?? [];
     if (outcomes.length === 0) return [];

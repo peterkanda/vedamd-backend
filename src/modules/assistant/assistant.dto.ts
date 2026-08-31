@@ -1,5 +1,13 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ArrayMaxSize, IsArray, IsIn, IsOptional, IsString, MaxLength, ValidateNested } from 'class-validator';
+import {
+  ArrayMaxSize,
+  IsArray,
+  IsIn,
+  IsOptional,
+  IsString,
+  MaxLength,
+  ValidateNested,
+} from 'class-validator';
 import { Type } from 'class-transformer';
 
 class ChatTurnDto {
@@ -20,7 +28,10 @@ export class AssistantChatDto {
   @MaxLength(4000)
   question!: string;
 
-  @ApiPropertyOptional({ type: [ChatTurnDto], description: 'Prior turns, oldest first (no patient identity).' })
+  @ApiPropertyOptional({
+    type: [ChatTurnDto],
+    description: 'Prior turns, oldest first (no patient identity).',
+  })
   @IsOptional()
   @IsArray()
   @ArrayMaxSize(40)

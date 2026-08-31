@@ -33,7 +33,10 @@ describe('OpenRouterProvider', () => {
     delete process.env.AGENTIC_OPENROUTER_BASE_URL;
     const fetchMock = vi.fn(async () => ({
       ok: true,
-      json: async () => ({ choices: [{ message: { content: 'ok' } }], model: 'google/medgemma-27b-text-it' }),
+      json: async () => ({
+        choices: [{ message: { content: 'ok' } }],
+        model: 'google/medgemma-27b-text-it',
+      }),
     }));
     vi.stubGlobal('fetch', fetchMock as never);
 
@@ -48,7 +51,9 @@ describe('OpenRouterProvider', () => {
 
   it('throws on a non-OK response so the router can fall back', async () => {
     vi.stubGlobal('fetch', vi.fn(async () => ({ ok: false, status: 404 })) as never);
-    await expect(provider('sk-or-123').complete({ system: 's', user: 'u' })).rejects.toThrow(/HTTP 404/);
+    await expect(provider('sk-or-123').complete({ system: 's', user: 'u' })).rejects.toThrow(
+      /HTTP 404/,
+    );
   });
 });
 

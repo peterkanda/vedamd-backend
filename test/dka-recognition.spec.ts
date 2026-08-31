@@ -23,9 +23,7 @@ describe('DkaRecognitionStrategy', () => {
   const s = new DkaRecognitionStrategy();
 
   it('silent without suspectedDka', async () => {
-    expect(
-      await s.evaluate(RULE, req({ ageYears: 25, plasmaGlucoseMmolL: 28 })),
-    ).toEqual([]);
+    expect(await s.evaluate(RULE, req({ ageYears: 25, plasmaGlucoseMmolL: 28 }))).toEqual([]);
   });
 
   it('full triad → critical with bundle + weighted insulin', async () => {

@@ -64,7 +64,11 @@ export class Phq9DepressionScreenStrategy implements CdsRuleStrategy {
         ),
       ];
     }
-    if (!responses.every((r): r is number => Number.isInteger(r) && (r as number) >= 0 && (r as number) <= 3)) {
+    if (
+      !responses.every(
+        (r): r is number => Number.isInteger(r) && (r as number) >= 0 && (r as number) <= 3,
+      )
+    ) {
       return [
         this.buildCard(
           rule,

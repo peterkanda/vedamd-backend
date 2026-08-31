@@ -72,8 +72,7 @@ export class GovernanceService {
       bundleVersion: this.knowledge.getInfo().version ?? 'unknown',
       totals: {
         ...totals,
-        approvedPct:
-          totals.records === 0 ? 0 : round1((totals.approved / totals.records) * 100),
+        approvedPct: totals.records === 0 ? 0 : round1((totals.approved / totals.records) * 100),
       },
       byDomain,
       fr024Violations,
@@ -84,7 +83,11 @@ export class GovernanceService {
     const id = r.slug ?? r.id ?? '(unknown)';
     const reviewers = r.reviewers ?? [];
     if (reviewers.length < 2) {
-      return { domain, id, reason: `approved record has ${reviewers.length} reviewer(s); FR-024 requires ≥ 2` };
+      return {
+        domain,
+        id,
+        reason: `approved record has ${reviewers.length} reviewer(s); FR-024 requires ≥ 2`,
+      };
     }
     if (!r.approvedAt) {
       return { domain, id, reason: 'approved record is missing approvedAt timestamp (FR-024)' };

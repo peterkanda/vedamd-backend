@@ -68,7 +68,10 @@ export class PneumoniaCurb65Strategy implements CdsRuleStrategy {
     if (typeof ctx.ageYears !== 'number' || ctx.ageYears < ADULT_AGE_YEARS) return [];
 
     const urea = typeof ctx.ureaMmolL === 'number' ? ctx.ureaMmolL : ctx.urea;
-    const rr = typeof ctx.respiratoryRatePerMin === 'number' ? ctx.respiratoryRatePerMin : ctx.respiratoryRate;
+    const rr =
+      typeof ctx.respiratoryRatePerMin === 'number'
+        ? ctx.respiratoryRatePerMin
+        : ctx.respiratoryRate;
     const sbp = typeof ctx.systolicMmHg === 'number' ? ctx.systolicMmHg : ctx.systolicBp;
     const dbp = typeof ctx.diastolicMmHg === 'number' ? ctx.diastolicMmHg : ctx.diastolicBp;
 
@@ -76,17 +79,25 @@ export class PneumoniaCurb65Strategy implements CdsRuleStrategy {
     const missing: string[] = [];
     let score = 0;
 
-    if (ctx.confusion === true) { score += 1; components.push('C: confusion'); }
-    else if (ctx.confusion === undefined) missing.push('confusion');
+    if (ctx.confusion === true) {
+      score += 1;
+      components.push('C: confusion');
+    } else if (ctx.confusion === undefined) missing.push('confusion');
 
     if (typeof urea === 'number') {
-      if (urea > UREA_THRESHOLD) { score += 1; components.push(`U: urea ${urea} mmol/L (> ${UREA_THRESHOLD})`); }
+      if (urea > UREA_THRESHOLD) {
+        score += 1;
+        components.push(`U: urea ${urea} mmol/L (> ${UREA_THRESHOLD})`);
+      }
     } else {
       missing.push('urea');
     }
 
     if (typeof rr === 'number') {
-      if (rr >= RR_THRESHOLD) { score += 1; components.push(`R: RR ${rr}/min (≥ ${RR_THRESHOLD})`); }
+      if (rr >= RR_THRESHOLD) {
+        score += 1;
+        components.push(`R: RR ${rr}/min (≥ ${RR_THRESHOLD})`);
+      }
     } else {
       missing.push('respiratory rate');
     }
@@ -95,16 +106,23 @@ export class PneumoniaCurb65Strategy implements CdsRuleStrategy {
     const dbpHit = typeof dbp === 'number' && dbp <= DBP_THRESHOLD;
     if (sbpHit || dbpHit) {
       score += 1;
-      components.push(`B: BP ${typeof sbp === 'number' ? sbp : '?'}/${typeof dbp === 'number' ? dbp : '?'} mmHg`);
+      components.push(
+        `B: BP ${typeof sbp === 'number' ? sbp : '?'}/${typeof dbp === 'number' ? dbp : '?'} mmHg`,
+      );
     } else if (typeof sbp !== 'number' && typeof dbp !== 'number') {
       missing.push('blood pressure');
     }
 
-    if (ctx.ageYears >= AGE_THRESHOLD) { score += 1; components.push(`65: age ${ctx.ageYears}`); }
+    if (ctx.ageYears >= AGE_THRESHOLD) {
+      score += 1;
+      components.push(`65: age ${ctx.ageYears}`);
+    }
 
     const incomplete = missing.length > 0;
     const lowSpo2 =
-      typeof ctx.oxygenSatPercent === 'number' && ctx.oxygenSatPercent > 0 && ctx.oxygenSatPercent < SPO2_ADMIT_THRESHOLD;
+      typeof ctx.oxygenSatPercent === 'number' &&
+      ctx.oxygenSatPercent > 0 &&
+      ctx.oxygenSatPercent < SPO2_ADMIT_THRESHOLD;
 
     let indicator: CdsIndicator;
     let summary: string;

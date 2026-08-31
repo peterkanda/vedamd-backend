@@ -224,7 +224,13 @@ export interface AgenticCitation {
  */
 export interface RetrievedKnowledge {
   drugs: Array<{ slug: string; inn: string; summary: string }>;
-  interactions: Array<{ slugA: string; slugB: string; severity: string; mechanism: string; management: string }>;
+  interactions: Array<{
+    slugA: string;
+    slugB: string;
+    severity: string;
+    mechanism: string;
+    management: string;
+  }>;
   conditions: Array<{ slug: string; title: string; summary: string }>;
   procedures: Array<{ slug: string; title: string; summary: string }>;
   rules: Array<{ id: string; title: string; description: string }>;

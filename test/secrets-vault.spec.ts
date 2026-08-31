@@ -1,5 +1,10 @@
 import { describe, expect, it, beforeEach } from 'vitest';
-import { decryptJson, decryptSecret, encryptJson, encryptSecret } from '../src/common/secrets-vault';
+import {
+  decryptJson,
+  decryptSecret,
+  encryptJson,
+  encryptSecret,
+} from '../src/common/secrets-vault';
 
 describe('secrets-vault (AES-256-GCM envelope)', () => {
   beforeEach(() => {

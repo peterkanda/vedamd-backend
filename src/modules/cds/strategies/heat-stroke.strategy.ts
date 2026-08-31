@@ -105,14 +105,54 @@ interface HeatContext {
 }
 
 const CODINGS_HEAT: CodedReference[] = [
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'T67.0', display: 'Heatstroke and sunstroke', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'T67.5', display: 'Heat exhaustion, unspecified', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'T67.4', display: 'Heat exhaustion due to salt depletion', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'T67.9', display: 'Effect of heat and light, unspecified', kind: 'diagnosis' },
-  { system: 'http://id.who.int/icd/release/11/mms', code: 'NF01.0', display: 'Heatstroke and sunstroke', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '20262006', display: 'Heatstroke (disorder)', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '410022004', display: 'Exertional heat stroke (disorder)', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '237886009', display: 'Heat exhaustion (disorder)', kind: 'diagnosis' },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'T67.0',
+    display: 'Heatstroke and sunstroke',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'T67.5',
+    display: 'Heat exhaustion, unspecified',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'T67.4',
+    display: 'Heat exhaustion due to salt depletion',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'T67.9',
+    display: 'Effect of heat and light, unspecified',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://id.who.int/icd/release/11/mms',
+    code: 'NF01.0',
+    display: 'Heatstroke and sunstroke',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '20262006',
+    display: 'Heatstroke (disorder)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '410022004',
+    display: 'Exertional heat stroke (disorder)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '237886009',
+    display: 'Heat exhaustion (disorder)',
+    kind: 'diagnosis',
+  },
   { system: 'http://loinc.org', code: '8310-5', display: 'Body temperature', kind: 'lab' },
 ];
 
@@ -153,9 +193,11 @@ export class HeatStrokeStrategy implements CdsRuleStrategy {
       return [this.severeExhaustionCard(rule, req, ctx, severeReasons)];
     }
 
-    if (ctx.ambientHeatExposure === true ||
+    if (
+      ctx.ambientHeatExposure === true ||
       (typeof temp === 'number' && temp >= 37.5) ||
-      typeof ctx.systolicMmHg === 'number') {
+      typeof ctx.systolicMmHg === 'number'
+    ) {
       return [this.exhaustionCard(rule, req, ctx)];
     }
 
@@ -164,9 +206,10 @@ export class HeatStrokeStrategy implements CdsRuleStrategy {
 
   private heatStrokeCard(rule: CdsRule, req: CdsHookRequest, ctx: HeatContext): CdsCard {
     const wt = ctx.weightKg;
-    const fluidLine = typeof wt === 'number'
-      ? `IV 0.9 % NaCl ${(20 * wt).toFixed(0)} mL bolus, reassess and titrate to maintain SBP ≥ 90 and urine output ≥ 0.5–1 mL/kg/h`
-      : 'IV 0.9 % NaCl 20 mL/kg bolus, reassess and titrate to maintain SBP ≥ 90 and urine output ≥ 0.5–1 mL/kg/h';
+    const fluidLine =
+      typeof wt === 'number'
+        ? `IV 0.9 % NaCl ${(20 * wt).toFixed(0)} mL bolus, reassess and titrate to maintain SBP ≥ 90 and urine output ≥ 0.5–1 mL/kg/h`
+        : 'IV 0.9 % NaCl 20 mL/kg bolus, reassess and titrate to maintain SBP ≥ 90 and urine output ≥ 0.5–1 mL/kg/h';
     const exertionalLine =
       ctx.exertional === true
         ? ' Exertional heat stroke — COLD-WATER IMMERSION (head out of water, monitored) is the first-line cooling method when ' +
@@ -176,7 +219,8 @@ export class HeatStrokeStrategy implements CdsRuleStrategy {
           'monitoring). Cold-water immersion is also effective; ice packs to neck, axillae, groin help. Avoid antipyretics ' +
           '(paracetamol / aspirin) — they do NOT lower hyperthermic body temperature and may worsen liver / kidney injury.';
     const rhabdoLine =
-      ctx.darkUrine === true || (typeof ctx.creatineKinaseIuL === 'number' && ctx.creatineKinaseIuL > 1000)
+      ctx.darkUrine === true ||
+      (typeof ctx.creatineKinaseIuL === 'number' && ctx.creatineKinaseIuL > 1000)
         ? ' Rhabdomyolysis flag — aggressive IV fluids (target urine output 2 mL/kg/h, ~200 mL/h adult); avoid potassium-containing ' +
           'fluids in oliguria; consider urinary alkalinisation (sodium bicarbonate IV) for severe rhabdomyolysis; recheck CK / K⁺ / ' +
           'creatinine every 6 hours. Risk of DIC and acute hepatic failure — anticipate.'
@@ -201,11 +245,17 @@ export class HeatStrokeStrategy implements CdsRuleStrategy {
     );
   }
 
-  private severeExhaustionCard(rule: CdsRule, req: CdsHookRequest, ctx: HeatContext, reasons: string[]): CdsCard {
+  private severeExhaustionCard(
+    rule: CdsRule,
+    req: CdsHookRequest,
+    ctx: HeatContext,
+    reasons: string[],
+  ): CdsCard {
     const wt = ctx.weightKg;
-    const fluidLine = typeof wt === 'number'
-      ? `IV 0.9 % NaCl ${(20 * wt).toFixed(0)} mL bolus (20 mL/kg) then maintenance, target urine output ≥ 0.5–1 mL/kg/h.`
-      : 'IV 0.9 % NaCl 20 mL/kg bolus then maintenance, target urine output ≥ 0.5–1 mL/kg/h.';
+    const fluidLine =
+      typeof wt === 'number'
+        ? `IV 0.9 % NaCl ${(20 * wt).toFixed(0)} mL bolus (20 mL/kg) then maintenance, target urine output ≥ 0.5–1 mL/kg/h.`
+        : 'IV 0.9 % NaCl 20 mL/kg bolus then maintenance, target urine output ≥ 0.5–1 mL/kg/h.';
     return this.buildCard(
       rule,
       req,
@@ -272,7 +322,8 @@ export class HeatStrokeStrategy implements CdsRuleStrategy {
     codings: CodedReference[],
   ): CdsCard {
     const ref = rule.references[0] ?? {
-      label: 'CDC NIOSH — Heat-related illness clinical guidance + WHO Heat and Health technical brief',
+      label:
+        'CDC NIOSH — Heat-related illness clinical guidance + WHO Heat and Health technical brief',
       url: 'https://www.cdc.gov/niosh/topics/heatstress/heatrelillness.html',
     };
     const { summary, detail } = resolveCardCopy(

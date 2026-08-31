@@ -84,7 +84,8 @@ export class OpenAiProvider implements LlmProvider {
       }
       // Respect Retry-After when present, else exponential backoff.
       const retryAfter = Number(res.headers.get('retry-after'));
-      const waitMs = Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : 500 * 2 ** attempt;
+      const waitMs =
+        Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : 500 * 2 ** attempt;
       await new Promise((r) => setTimeout(r, waitMs));
     }
     if (!res || !res.ok) {

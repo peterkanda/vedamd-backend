@@ -1,4 +1,13 @@
-import { Body, Controller, Get, NotFoundException, Param, Post, Query, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  NotFoundException,
+  Param,
+  Post,
+  Query,
+  UseGuards,
+} from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ReferenceService, type RefKind } from './reference.service';
 import { ReferenceDoseService } from './reference-dose.service';
@@ -40,7 +49,9 @@ export class ReferenceController {
 
   @Get('index')
   @RequireScope('content:read')
-  @ApiOperation({ summary: 'A–Z index across drugs, conditions + procedures (optionally filter by kind)' })
+  @ApiOperation({
+    summary: 'A–Z index across drugs, conditions + procedures (optionally filter by kind)',
+  })
   index(@Query('kind') kind?: RefKind) {
     return { groups: this.reference.alphabetical(kind ? [kind] : undefined) };
   }
@@ -64,7 +75,9 @@ export class ReferenceController {
 
   @Get('diagram/condition/:slug')
   @RequireScope('content:read')
-  @ApiOperation({ summary: 'Mermaid management flowchart for a condition (deterministic, from signed content)' })
+  @ApiOperation({
+    summary: 'Mermaid management flowchart for a condition (deterministic, from signed content)',
+  })
   conditionDiagram(@Param('slug') slug: string) {
     const d = this.diagram.conditionFlowchart(slug);
     if (!d) throw new NotFoundException(`Unknown condition: ${slug}`);
@@ -73,7 +86,9 @@ export class ReferenceController {
 
   @Get('diagram/procedure/:slug')
   @RequireScope('content:read')
-  @ApiOperation({ summary: 'Mermaid step flowchart for a procedure (safety-check gates highlighted)' })
+  @ApiOperation({
+    summary: 'Mermaid step flowchart for a procedure (safety-check gates highlighted)',
+  })
   procedureDiagram(@Param('slug') slug: string) {
     const d = this.diagram.procedureFlowchart(slug);
     if (!d) throw new NotFoundException(`Unknown procedure: ${slug}`);
@@ -92,7 +107,10 @@ export class ReferenceController {
 
   @Get('diagram/drug-interactions/:slug')
   @RequireScope('content:read')
-  @ApiOperation({ summary: 'Single-drug interaction map — the drug + all its interaction partners, severity-coded' })
+  @ApiOperation({
+    summary:
+      'Single-drug interaction map — the drug + all its interaction partners, severity-coded',
+  })
   drugInteractionMap(@Param('slug') slug: string) {
     const d = this.diagram.drugInteractionMap(slug);
     if (!d) throw new NotFoundException(`Unknown drug: ${slug}`);

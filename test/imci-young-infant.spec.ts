@@ -33,10 +33,7 @@ describe('ImciYoungInfantStrategy', () => {
   });
 
   it('not feeding well → critical PSBI + weighted abx dose', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ ageDays: 10, notFeedingWell: true, weightKg: 3 }),
-    );
+    const cards = await s.evaluate(RULE, req({ ageDays: 10, notFeedingWell: true, weightKg: 3 }));
     expect(cards[0].indicator).toBe('critical');
     // 50 × 3 = 150 mg ampicillin; 7.5 × 3 = 22.5 → rounds to 23 gentamicin (age 10d uses 7.5 mg/kg)
     expect(cards[0].detail).toMatch(/150 mg/);

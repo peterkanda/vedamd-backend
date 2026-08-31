@@ -77,7 +77,10 @@ export class UtiTreatmentStrategy implements CdsRuleStrategy {
     };
     const detail = recommendation;
 
-    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, { summary, detail });
+    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, {
+      summary,
+      detail,
+    });
 
     return [
       {

@@ -2,7 +2,9 @@ import { describe, expect, it, beforeEach } from 'vitest';
 import { CdsFeedbackService } from '../src/modules/cds-feedback/cds-feedback.service';
 import type { CdsService } from '../src/modules/cds/cds.service';
 
-function fakeCdsService(mapping: Record<string, { ruleId: string; serviceId: string; hook: string }>): CdsService {
+function fakeCdsService(
+  mapping: Record<string, { ruleId: string; serviceId: string; hook: string }>,
+): CdsService {
   return {
     lookupCard: (uuid: string) =>
       mapping[uuid] ? { ...mapping[uuid], createdAt: Date.now() } : null,
@@ -15,7 +17,11 @@ describe('CdsFeedbackService — ingest', () => {
     svc = new CdsFeedbackService(
       null,
       fakeCdsService({
-        'card-1': { ruleId: 'ddi-check', serviceId: 'vedamd-medication-prescribe', hook: 'medication-prescribe' },
+        'card-1': {
+          ruleId: 'ddi-check',
+          serviceId: 'vedamd-medication-prescribe',
+          hook: 'medication-prescribe',
+        },
         'card-2': { ruleId: 'renal-safety', serviceId: 'vedamd-order-sign', hook: 'order-sign' },
       }),
     );
@@ -113,17 +119,45 @@ describe('CdsFeedbackService — summary aggregation', () => {
     const svc = new CdsFeedbackService(
       null,
       fakeCdsService({
-        'a-1': { ruleId: 'ddi-check', serviceId: 'vedamd-medication-prescribe', hook: 'medication-prescribe' },
-        'a-2': { ruleId: 'ddi-check', serviceId: 'vedamd-medication-prescribe', hook: 'medication-prescribe' },
-        'a-3': { ruleId: 'ddi-check', serviceId: 'vedamd-medication-prescribe', hook: 'medication-prescribe' },
-        'a-4': { ruleId: 'ddi-check', serviceId: 'vedamd-medication-prescribe', hook: 'medication-prescribe' },
+        'a-1': {
+          ruleId: 'ddi-check',
+          serviceId: 'vedamd-medication-prescribe',
+          hook: 'medication-prescribe',
+        },
+        'a-2': {
+          ruleId: 'ddi-check',
+          serviceId: 'vedamd-medication-prescribe',
+          hook: 'medication-prescribe',
+        },
+        'a-3': {
+          ruleId: 'ddi-check',
+          serviceId: 'vedamd-medication-prescribe',
+          hook: 'medication-prescribe',
+        },
+        'a-4': {
+          ruleId: 'ddi-check',
+          serviceId: 'vedamd-medication-prescribe',
+          hook: 'medication-prescribe',
+        },
       }),
     );
     await svc.ingest('tenant-A', 'vedamd-medication-prescribe', {
       feedback: [
-        { card: 'a-1', outcome: 'overridden', overrideReason: { reason: { code: 'no-clinical-concern' } } },
-        { card: 'a-2', outcome: 'overridden', overrideReason: { reason: { code: 'no-clinical-concern' } } },
-        { card: 'a-3', outcome: 'overridden', overrideReason: { reason: { code: 'already-considered' } } },
+        {
+          card: 'a-1',
+          outcome: 'overridden',
+          overrideReason: { reason: { code: 'no-clinical-concern' } },
+        },
+        {
+          card: 'a-2',
+          outcome: 'overridden',
+          overrideReason: { reason: { code: 'no-clinical-concern' } },
+        },
+        {
+          card: 'a-3',
+          outcome: 'overridden',
+          overrideReason: { reason: { code: 'already-considered' } },
+        },
         { card: 'a-4', outcome: 'accepted' },
       ],
     });

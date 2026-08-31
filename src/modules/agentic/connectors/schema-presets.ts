@@ -113,7 +113,9 @@ const BAHMNI: SchemaPreset[] = [
               AND obs.voided = 0
               AND obs.obs_datetime > (NOW() - INTERVAL 180 DAY)
               AND cn.locale = 'en' AND cn.concept_name_type = 'FULLY_SPECIFIED'`,
-      mapping: { lab: { nameColumn: 'lab_name', valueColumn: 'lab_value', unitColumn: 'lab_unit' } },
+      mapping: {
+        lab: { nameColumn: 'lab_name', valueColumn: 'lab_value', unitColumn: 'lab_unit' },
+      },
     },
   },
 ];

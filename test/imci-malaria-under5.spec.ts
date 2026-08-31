@@ -77,7 +77,12 @@ describe('ImciMalariaUnder5Strategy', () => {
   it('severe anaemia sign alone → critical', async () => {
     const cards = await s.evaluate(
       RULE,
-      req({ ageMonths: 30, malariaContextProvided: true, rdtPositive: false, severeAnaemiaSign: true }),
+      req({
+        ageMonths: 30,
+        malariaContextProvided: true,
+        rdtPositive: false,
+        severeAnaemiaSign: true,
+      }),
     );
     expect(cards[0].indicator).toBe('critical');
   });

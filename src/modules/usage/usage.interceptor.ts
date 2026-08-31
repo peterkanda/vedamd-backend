@@ -39,7 +39,11 @@ export class UsageInterceptor implements NestInterceptor {
           const headerIntegrator = headerStr(req.headers['x-integrator-id']);
           const integratorId =
             apiKey?.integratorId ?? operator?.integratorId ?? headerIntegrator ?? null;
-          const actorType: UsageActorType = apiKey ? 'api_key' : operator ? 'operator' : 'anonymous';
+          const actorType: UsageActorType = apiKey
+            ? 'api_key'
+            : operator
+              ? 'operator'
+              : 'anonymous';
 
           this.usage.record({
             integratorId,
@@ -63,7 +67,11 @@ export class UsageInterceptor implements NestInterceptor {
 
 /** Fastify route pattern (no params, no query). Falls back to the raw path. */
 function routeTemplate(req: FastifyRequest): string {
-  const r = req as unknown as { routeOptions?: { url?: string }; routerPath?: string; url?: string };
+  const r = req as unknown as {
+    routeOptions?: { url?: string };
+    routerPath?: string;
+    url?: string;
+  };
   const fromOptions = r.routeOptions?.url ?? r.routerPath;
   if (fromOptions) return fromOptions;
   return (r.url ?? '').split('?')[0] || 'unknown';

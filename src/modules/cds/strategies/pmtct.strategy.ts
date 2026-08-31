@@ -227,7 +227,8 @@ export class PmtctStrategy implements CdsRuleStrategy {
 
   private infantProphylaxisCard(rule: CdsRule, req: CdsHookRequest, ctx: PmtctContext): CdsCard {
     const age = ctx.infantAgeWeeks;
-    const window = typeof age === 'number' && age <= 6 ? 'within the 6-week window' : 'late but still indicated';
+    const window =
+      typeof age === 'number' && age <= 6 ? 'within the 6-week window' : 'late but still indicated';
     return this.buildCard(
       rule,
       req,
@@ -251,7 +252,8 @@ export class PmtctStrategy implements CdsRuleStrategy {
     vars: Record<string, string | number | boolean | null | undefined>,
   ): CdsCard {
     const ref = rule.references[0] ?? {
-      label: 'WHO — Consolidated guidelines on HIV prevention, testing, treatment, service delivery and monitoring (2021)',
+      label:
+        'WHO — Consolidated guidelines on HIV prevention, testing, treatment, service delivery and monitoring (2021)',
       url: 'https://www.who.int/publications/i/item/9789240031593',
     };
     const { summary, detail } = resolveCardCopy(

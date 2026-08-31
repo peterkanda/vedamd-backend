@@ -99,8 +99,7 @@ export class StrokeFastRecognitionStrategy implements CdsRuleStrategy {
     const inWindow = minutesKnown && ctx.minutesSinceOnset! <= THROMBOLYSIS_WINDOW_MIN;
 
     const hypoglycaemic =
-      typeof ctx.bloodGlucoseMmolL === 'number' &&
-      ctx.bloodGlucoseMmolL < HYPOGLYCAEMIA_MMOLL;
+      typeof ctx.bloodGlucoseMmolL === 'number' && ctx.bloodGlucoseMmolL < HYPOGLYCAEMIA_MMOLL;
 
     const detailParts: string[] = [];
     detailParts.push(`Features: ${features.join('; ')}.`);
@@ -116,7 +115,9 @@ export class StrokeFastRecognitionStrategy implements CdsRuleStrategy {
         `Capillary glucose ${ctx.bloodGlucoseMmolL!.toFixed(1)} mmol/L — treat hypoglycaemia immediately with 10 % dextrose 50 mL IV bolus before any other decision (stroke mimic).`,
       );
     } else if (typeof ctx.bloodGlucoseMmolL === 'number') {
-      detailParts.push(`Capillary glucose ${ctx.bloodGlucoseMmolL.toFixed(1)} mmol/L (above hypoglycaemia threshold).`);
+      detailParts.push(
+        `Capillary glucose ${ctx.bloodGlucoseMmolL.toFixed(1)} mmol/L (above hypoglycaemia threshold).`,
+      );
     } else {
       detailParts.push('Check capillary glucose immediately — hypoglycaemia mimics stroke.');
     }

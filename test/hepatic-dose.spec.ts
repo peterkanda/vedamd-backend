@@ -20,18 +20,18 @@ describe('HepaticDoseService', () => {
     const slugs = list.map((r) => r.slug);
     // Anti-hallucination guard: the highest-stakes drugs in liver disease.
     for (const required of [
-      'paracetamol-hepatic',     // common, max 2 g/day in cirrhosis
-      'ibuprofen-hepatic',       // HRS / variceal risk
-      'morphine-hepatic',        // accumulation -> encephalopathy
+      'paracetamol-hepatic', // common, max 2 g/day in cirrhosis
+      'ibuprofen-hepatic', // HRS / variceal risk
+      'morphine-hepatic', // accumulation -> encephalopathy
       'benzodiazepines-hepatic', // glucuronidated vs CYP3A distinction
-      'doacs-hepatic',           // C-P C contraindicated
-      'metformin-hepatic',       // lactic acidosis in decompensated
-      'rifampicin-hepatic',      // intrinsic hepatotoxicity
-      'spironolactone-hepatic',  // first-line in ascites
-      'propranolol-hepatic',     // variceal prophylaxis
-      'phenytoin-hepatic',       // free vs total levels in cirrhosis
-      'tacrolimus-hepatic',      // post-transplant
-      'tramadol-hepatic',        // seizure + serotonin syndrome
+      'doacs-hepatic', // C-P C contraindicated
+      'metformin-hepatic', // lactic acidosis in decompensated
+      'rifampicin-hepatic', // intrinsic hepatotoxicity
+      'spironolactone-hepatic', // first-line in ascites
+      'propranolol-hepatic', // variceal prophylaxis
+      'phenytoin-hepatic', // free vs total levels in cirrhosis
+      'tacrolimus-hepatic', // post-transplant
+      'tramadol-hepatic', // seizure + serotonin syndrome
     ]) {
       expect(slugs).toContain(required);
     }

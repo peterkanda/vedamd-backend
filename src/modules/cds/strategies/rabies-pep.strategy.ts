@@ -54,7 +54,14 @@ import type { CdsRuleStrategy } from './types';
 interface RabiesContext {
   suspectedRabiesExposure?: boolean;
   exposureCategory?: 'I' | 'II' | 'III' | null;
-  bitingSpecies?: 'dog' | 'cat' | 'bat' | 'wild-carnivore' | 'livestock' | 'rodent-lagomorph' | null;
+  bitingSpecies?:
+    | 'dog'
+    | 'cat'
+    | 'bat'
+    | 'wild-carnivore'
+    | 'livestock'
+    | 'rodent-lagomorph'
+    | null;
   bittenInRabiesEndemicArea?: boolean;
   animalProvoked?: boolean;
   animalAvailableForObservation?: boolean;
@@ -69,15 +76,60 @@ interface RabiesContext {
 }
 
 const CODINGS_PEP: CodedReference[] = [
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'Z20.3', display: 'Contact with and (suspected) exposure to rabies', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'Z29.2', display: 'Anti-rabies prophylactic immunisation', kind: 'procedure' },
-  { system: 'http://id.who.int/icd/release/11/mms', code: '1G40', display: 'Rabies', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '14168008', display: 'Rabies (disorder)', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '417165001', display: 'Animal bite (disorder)', kind: 'finding' },
-  { system: 'http://snomed.info/sct', code: '313160007', display: 'Rabies vaccination (procedure)', kind: 'procedure' },
-  { system: 'http://snomed.info/sct', code: '417303002', display: 'Rabies immunoglobulin administration (procedure)', kind: 'procedure' },
-  { system: 'http://whocc.no/atc', code: 'J07BG01', display: 'Rabies vaccine (purified Vero cell)', kind: 'drug' },
-  { system: 'http://whocc.no/atc', code: 'J06BB05', display: 'Rabies immunoglobulin (human)', kind: 'drug' },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'Z20.3',
+    display: 'Contact with and (suspected) exposure to rabies',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'Z29.2',
+    display: 'Anti-rabies prophylactic immunisation',
+    kind: 'procedure',
+  },
+  {
+    system: 'http://id.who.int/icd/release/11/mms',
+    code: '1G40',
+    display: 'Rabies',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '14168008',
+    display: 'Rabies (disorder)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '417165001',
+    display: 'Animal bite (disorder)',
+    kind: 'finding',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '313160007',
+    display: 'Rabies vaccination (procedure)',
+    kind: 'procedure',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '417303002',
+    display: 'Rabies immunoglobulin administration (procedure)',
+    kind: 'procedure',
+  },
+  {
+    system: 'http://whocc.no/atc',
+    code: 'J07BG01',
+    display: 'Rabies vaccine (purified Vero cell)',
+    kind: 'drug',
+  },
+  {
+    system: 'http://whocc.no/atc',
+    code: 'J06BB05',
+    display: 'Rabies immunoglobulin (human)',
+    kind: 'drug',
+  },
 ];
 
 @Injectable()
@@ -112,7 +164,7 @@ export class RabiesPepStrategy implements CdsRuleStrategy {
         'Insufficient information to classify exposure. Per WHO 2018 categories: I = touching / feeding intact-skin licks (no PEP); ' +
           'II = nibbling on uncovered skin, minor scratch without bleeding (wound care + vaccine); III = transdermal bite or scratch, ' +
           'mucous-membrane / broken-skin contamination, or any bat exposure (wound care + vaccine + RIG). Document species, location ' +
-          'of injury, whether the animal was provoked, whether it can be observed for 10 days, and the patient\'s tetanus status.',
+          "of injury, whether the animal was provoked, whether it can be observed for 10 days, and the patient's tetanus status.",
         {},
         CODINGS_PEP,
       ),
@@ -216,7 +268,7 @@ export class RabiesPepStrategy implements CdsRuleStrategy {
       'Re-exposure after prior full PEP / pre-exposure — abbreviated booster (NO RIG)',
       'Previous full WHO-compliant PEP course or pre-exposure vaccination. The booster regimen is 2 doses of rabies vaccine 0.5 mL ' +
         'IM (or 0.1 mL ID at one site) on days 0 and 3. RIG is NOT indicated. Wound care as for any exposure: wash with soap and ' +
-        'running water for ≥ 15 minutes + virucidal. Document the new exposure and update the patient\'s immunisation record. ' +
+        "running water for ≥ 15 minutes + virucidal. Document the new exposure and update the patient's immunisation record. " +
         'Counsel return-immediately signs of rabies.',
       {},
       CODINGS_PEP,

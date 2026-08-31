@@ -110,7 +110,9 @@ export class GdmScreenStrategy implements CdsRuleStrategy {
       overtReasons.push(`FPG ${ctx.fastingGlucoseMmolL.toFixed(1)} mmol/L (≥ ${OVERT_FPG})`);
     }
     if (typeof ctx.randomGlucoseMmolL === 'number' && ctx.randomGlucoseMmolL >= OVERT_RANDOM) {
-      overtReasons.push(`random glucose ${ctx.randomGlucoseMmolL.toFixed(1)} mmol/L (≥ ${OVERT_RANDOM})`);
+      overtReasons.push(
+        `random glucose ${ctx.randomGlucoseMmolL.toFixed(1)} mmol/L (≥ ${OVERT_RANDOM})`,
+      );
     }
     if (typeof ctx.hba1cPercent === 'number' && ctx.hba1cPercent >= OVERT_HBA1C) {
       overtReasons.push(`HbA1c ${ctx.hba1cPercent.toFixed(1)}% (≥ ${OVERT_HBA1C}%)`);
@@ -168,8 +170,7 @@ export class GdmScreenStrategy implements CdsRuleStrategy {
 
     // C. High-risk + screening window + OGTT not done.
     const ga = ctx.gestationalAgeWeeks;
-    const inWindow =
-      typeof ga === 'number' && ga >= SCREEN_WINDOW_START && ga <= SCREEN_WINDOW_END;
+    const inWindow = typeof ga === 'number' && ga >= SCREEN_WINDOW_START && ga <= SCREEN_WINDOW_END;
     const haveOgtt =
       typeof ctx.ogtt75gFasting === 'number' ||
       typeof ctx.ogtt75g1h === 'number' ||
@@ -182,7 +183,8 @@ export class GdmScreenStrategy implements CdsRuleStrategy {
       if (typeof ctx.bmi === 'number' && ctx.bmi >= ELEVATED_BMI) {
         riskFactors.push(`BMI ${ctx.bmi.toFixed(1)} (≥ ${ELEVATED_BMI})`);
       }
-      if (ctx.familyHistoryDiabetes === true) riskFactors.push('first-degree relative with diabetes');
+      if (ctx.familyHistoryDiabetes === true)
+        riskFactors.push('first-degree relative with diabetes');
       if (typeof ctx.ageYears === 'number' && ctx.ageYears >= ELEVATED_AGE) {
         riskFactors.push(`maternal age ${ctx.ageYears} y (≥ ${ELEVATED_AGE})`);
       }

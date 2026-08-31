@@ -163,7 +163,8 @@ export class StatusEpilepticusStrategy implements CdsRuleStrategy {
       if (typeof ctx.ageYears === 'number' && ctx.ageYears > 40) {
         ctReasons.push(`age ${ctx.ageYears} y > 40`);
       }
-      if (ctx.hivStatus === 'positive') ctReasons.push('HIV-positive (risk of opportunistic CNS infection)');
+      if (ctx.hivStatus === 'positive')
+        ctReasons.push('HIV-positive (risk of opportunistic CNS infection)');
       if (ctx.recentHeadInjury === true) ctReasons.push('recent head injury');
       const imagingLine =
         ctReasons.length > 0
@@ -216,12 +217,11 @@ export class StatusEpilepticusStrategy implements CdsRuleStrategy {
       typeof wt === 'number'
         ? `lorazepam ${Math.min(4, Number((0.1 * wt).toFixed(1)))} mg IV (0.1 mg/kg × ${wt} kg, max 4 mg)`
         : 'lorazepam 0.1 mg/kg IV (max 4 mg)';
-    const midazolamDose =
-      isChild
-        ? typeof wt === 'number' && wt >= 13 && wt <= 40
-          ? `buccal / IM midazolam 5 mg (weight ${wt} kg in 13–40 kg band)`
-          : 'buccal / IM midazolam 10 mg (weight ≥ 40 kg) or 5 mg (13–40 kg)'
-        : 'IM midazolam 10 mg (single dose)';
+    const midazolamDose = isChild
+      ? typeof wt === 'number' && wt >= 13 && wt <= 40
+        ? `buccal / IM midazolam 5 mg (weight ${wt} kg in 13–40 kg band)`
+        : 'buccal / IM midazolam 10 mg (weight ≥ 40 kg) or 5 mg (13–40 kg)'
+      : 'IM midazolam 10 mg (single dose)';
     const phenytoinDose =
       typeof wt === 'number'
         ? `phenytoin ${(20 * wt).toFixed(0)} mg IV (20 mg/kg) in normal saline at ≤ 50 mg/min (≤ 1 mg/kg/min in children)`

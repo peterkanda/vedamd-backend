@@ -65,7 +65,10 @@ export class VteProphylaxisStrategy implements CdsRuleStrategy {
     const parts: string[] = [];
     let score = 0;
     const add = (cond: boolean | undefined, pts: number, label: string) => {
-      if (cond === true) { score += pts; parts.push(`${label} (+${pts})`); }
+      if (cond === true) {
+        score += pts;
+        parts.push(`${label} (+${pts})`);
+      }
     };
 
     add(ctx.activeCancer, 3, 'active cancer');
@@ -73,11 +76,17 @@ export class VteProphylaxisStrategy implements CdsRuleStrategy {
     add(ctx.reducedMobility, 3, 'reduced mobility ≥3 days');
     add(ctx.thrombophilia, 3, 'thrombophilia');
     add(ctx.recentTraumaOrSurgery, 2, 'recent trauma/surgery');
-    if (typeof ctx.ageYears === 'number' && ctx.ageYears >= 70) { score += 1; parts.push('age ≥70 (+1)'); }
+    if (typeof ctx.ageYears === 'number' && ctx.ageYears >= 70) {
+      score += 1;
+      parts.push('age ≥70 (+1)');
+    }
     add(ctx.cardiacOrRespFailure, 1, 'cardiac/respiratory failure');
     add(ctx.acuteMiOrStroke, 1, 'acute MI/ischaemic stroke');
     add(ctx.acuteInfectionOrRheum, 1, 'acute infection/rheumatological');
-    if (typeof ctx.bmi === 'number' && ctx.bmi >= 30) { score += 1; parts.push('obesity BMI ≥30 (+1)'); }
+    if (typeof ctx.bmi === 'number' && ctx.bmi >= 30) {
+      score += 1;
+      parts.push('obesity BMI ≥30 (+1)');
+    }
     add(ctx.ongoingHormonal, 1, 'ongoing hormonal treatment');
 
     const highRisk = score >= 4;

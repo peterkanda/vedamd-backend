@@ -28,9 +28,7 @@ describe('ImciMeaslesStrategy', () => {
   });
 
   it('silent for child ≥ 60 months (out of IMCI band)', async () => {
-    expect(
-      await s.evaluate(RULE, req({ ageMonths: 72, suspectedMeasles: true })),
-    ).toEqual([]);
+    expect(await s.evaluate(RULE, req({ ageMonths: 72, suspectedMeasles: true }))).toEqual([]);
   });
 
   it('severe complicated → critical with age-banded vitamin A', async () => {

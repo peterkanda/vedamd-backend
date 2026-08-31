@@ -77,7 +77,10 @@ export class HivPepStrategy implements CdsRuleStrategy {
     };
     const detail = `Exposure type: ${ctx.exposureType ?? 'unspecified'}${typeof hours === 'number' ? `, ${hours} h ago` : ''}. ${recommendation}`;
 
-    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, { summary, detail });
+    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, {
+      summary,
+      detail,
+    });
 
     return [
       {

@@ -1,5 +1,8 @@
 import { describe, expect, it, beforeAll } from 'vitest';
-import { ClinicalReferenceService, REFERENCE_DOMAINS } from '../src/modules/clinical-reference/clinical-reference.service';
+import {
+  ClinicalReferenceService,
+  REFERENCE_DOMAINS,
+} from '../src/modules/clinical-reference/clinical-reference.service';
 import { makeKnowledgeService } from './helpers/knowledge';
 
 function makeService(): ClinicalReferenceService {
@@ -27,7 +30,12 @@ describe('ClinicalReferenceService', () => {
   });
 
   it('clinical-procedures uses only the four allowed categories', () => {
-    const allowed = new Set(['nursing-care-plan', 'procedure', 'infection-prevention', 'fluid-electrolyte']);
+    const allowed = new Set([
+      'nursing-care-plan',
+      'procedure',
+      'infection-prevention',
+      'fluid-electrolyte',
+    ]);
     for (const c of svc.list('clinical-procedures')) {
       expect(allowed.has(c.category)).toBe(true);
     }

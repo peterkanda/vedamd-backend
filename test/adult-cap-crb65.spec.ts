@@ -25,17 +25,12 @@ describe('AdultCapCrb65Strategy', () => {
 
   it('stays silent without suspectedPneumonia sentinel', async () => {
     expect(
-      await s.evaluate(
-        RULE,
-        req({ ageYears: 70, respiratoryRatePerMin: 40, systolicMmHg: 80 }),
-      ),
+      await s.evaluate(RULE, req({ ageYears: 70, respiratoryRatePerMin: 40, systolicMmHg: 80 })),
     ).toEqual([]);
   });
 
   it('does not fire for paediatric patients', async () => {
-    expect(
-      await s.evaluate(RULE, req({ ageYears: 12, suspectedPneumonia: true })),
-    ).toEqual([]);
+    expect(await s.evaluate(RULE, req({ ageYears: 12, suspectedPneumonia: true }))).toEqual([]);
   });
 
   it('CRB-65 score 0 → low risk info', async () => {

@@ -1,11 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { connect as tlsConnect, type TLSSocket } from 'node:tls';
 import { connect as netConnect, type Socket } from 'node:net';
-import type {
-  DeliveryResult,
-  OutboundMessage,
-  SmtpCreds,
-} from '../notifications.types';
+import type { DeliveryResult, OutboundMessage, SmtpCreds } from '../notifications.types';
 import type { NotificationProviderAdapter } from './notification-provider.interface';
 import {
   assertHostAllowedLiteral,

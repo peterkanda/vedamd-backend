@@ -357,7 +357,7 @@ export class CdsService {
       hook: 'patient-view',
       title: 'Severe head injury / TBI triage',
       description:
-        'NICE NG232 (2023) + Brain Trauma Foundation 4th edn + WHO Acute Care + CRASH-3. Sentinel-gated by suspectedHeadInjury. Critical for severe TBI (GCS <=8) or herniation features (fixed pupil, motor posturing, Cushing\'s triad) — RSI + neuroprotective bundle + hypertonic saline / mannitol + TXA within 3 h + urgent neurosurgery referral. Critical for moderate TBI (GCS 9–12) or any NICE high-risk feature (focal deficit, >1 vomit, post-traumatic seizure, suspected open / depressed / basal skull fracture, age >=65 + LOC, anticoagulant + LOC, dangerous mechanism + LOC) — urgent CT within 1 hour + admit for neuro-obs. Warning for mild TBI with intermediate features (single LOC / amnesia / vomit, intoxication, persistent headache, suspected non-accidental injury in child) — 4 h facility observation. Info for low-risk mild TBI — discharge with written head-injury card.',
+        "NICE NG232 (2023) + Brain Trauma Foundation 4th edn + WHO Acute Care + CRASH-3. Sentinel-gated by suspectedHeadInjury. Critical for severe TBI (GCS <=8) or herniation features (fixed pupil, motor posturing, Cushing's triad) — RSI + neuroprotective bundle + hypertonic saline / mannitol + TXA within 3 h + urgent neurosurgery referral. Critical for moderate TBI (GCS 9–12) or any NICE high-risk feature (focal deficit, >1 vomit, post-traumatic seizure, suspected open / depressed / basal skull fracture, age >=65 + LOC, anticoagulant + LOC, dangerous mechanism + LOC) — urgent CT within 1 hour + admit for neuro-obs. Warning for mild TBI with intermediate features (single LOC / amnesia / vomit, intoxication, persistent headache, suspected non-accidental injury in child) — 4 h facility observation. Info for low-risk mild TBI — discharge with written head-injury card.",
     },
     {
       id: 'vedamd-hhs-recognition',
@@ -615,9 +615,7 @@ export class CdsService {
       const applicableRules = this.knowledge.getCdsRules().filter((rule) => {
         if (isContentLibrary) {
           // Content library: only the explicitly requested outcome rules.
-          return (
-            requestedIds!.has(rule.id) && (rule.outcomes?.length ?? 0) > 0
-          );
+          return requestedIds!.has(rule.id) && (rule.outcomes?.length ?? 0) > 0;
         }
         return (
           hookMatches(rule.hook) &&
@@ -730,4 +728,6 @@ function mergeRuleCodings(card: CdsCard, ruleCodings: CdsRuleCodingArray): void 
   ext.codings = merged;
 }
 
-type CdsRuleCodingArray = NonNullable<CdsCard['extension']>['http://vedamd.io/Card/recommendation']['codings'];
+type CdsRuleCodingArray = NonNullable<
+  CdsCard['extension']
+>['http://vedamd.io/Card/recommendation']['codings'];

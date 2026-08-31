@@ -31,16 +31,19 @@ export class LlmPreferenceController {
   }
 
   @Get()
-  @ApiOperation({ summary: 'Get this integrator\'s LLM preference.' })
+  @ApiOperation({ summary: "Get this integrator's LLM preference." })
   get(@Req() req: FastifyRequest) {
     return this.prefs.get(req.operator!.integratorId);
   }
 
   @Put()
   @ApiOperation({
-    summary: 'Set this integrator\'s LLM provider and optional model override.',
+    summary: "Set this integrator's LLM provider and optional model override.",
   })
-  set(@Req() req: FastifyRequest, @Body() body: { provider?: string | null; model?: string | null }) {
+  set(
+    @Req() req: FastifyRequest,
+    @Body() body: { provider?: string | null; model?: string | null },
+  ) {
     try {
       return this.prefs.set(req.operator!.integratorId, body);
     } catch (e) {

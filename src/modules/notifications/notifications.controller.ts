@@ -14,11 +14,7 @@ import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import type { FastifyRequest } from 'fastify';
 import { OperatorAuthGuard } from '../../common/operator-auth';
 import { NotificationsService } from './notifications.service';
-import type {
-  ChannelCreateDto,
-  ChannelTestDto,
-  ChannelUpdateDto,
-} from './notifications.types';
+import type { ChannelCreateDto, ChannelTestDto, ChannelUpdateDto } from './notifications.types';
 
 type OperatorRequest = FastifyRequest & {
   operator?: { integratorId: string; userId?: string };
@@ -96,11 +92,7 @@ export class NotificationsController {
     description:
       'Uses the channel default recipient unless `to` is provided. Sends a short canned message unless `body` is provided. Returns the provider delivery result.',
   })
-  async test(
-    @Param('id') id: string,
-    @Body() dto: ChannelTestDto,
-    @Req() req: OperatorRequest,
-  ) {
+  async test(@Param('id') id: string, @Body() dto: ChannelTestDto, @Req() req: OperatorRequest) {
     return this.svc.send(req.operator!.integratorId, {
       channelId: id,
       to: dto.to,

@@ -94,7 +94,7 @@ describe('HhsRecognitionStrategy', () => {
         plasmaGlucoseMmolL: 35,
         bloodKetonesMmolL: 5,
         sodiumMmolL: 145,
-        venousPh: 7.10,
+        venousPh: 7.1,
       }),
     );
     expect(cards[0].indicator).toBe('warning');

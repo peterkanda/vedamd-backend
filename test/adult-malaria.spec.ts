@@ -28,10 +28,7 @@ describe('AdultMalariaStrategy', () => {
 
   it('does not fire under age 12', async () => {
     expect(
-      await s.evaluate(
-        RULE,
-        req({ ageYears: 8, malariaContextProvided: true, rdtPositive: true }),
-      ),
+      await s.evaluate(RULE, req({ ageYears: 8, malariaContextProvided: true, rdtPositive: true })),
     ).toEqual([]);
   });
 

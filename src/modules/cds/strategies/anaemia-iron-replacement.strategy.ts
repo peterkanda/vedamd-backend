@@ -45,7 +45,8 @@ export class AnaemiaIronReplacementStrategy implements CdsRuleStrategy {
     const hb = ctx.hb < 25 ? ctx.hb * 10 : ctx.hb; // auto g/dL → g/L
     const lowFerritin = typeof ctx.ferritin === 'number' && ctx.ferritin < 30;
     const lowTsat = typeof ctx.tsat === 'number' && ctx.tsat < 20;
-    const ironDeficient = lowFerritin || lowTsat || (typeof ctx.ferritin !== 'number' && typeof ctx.tsat !== 'number');
+    const ironDeficient =
+      lowFerritin || lowTsat || (typeof ctx.ferritin !== 'number' && typeof ctx.tsat !== 'number');
 
     if (!ironDeficient) {
       return [
@@ -61,7 +62,10 @@ export class AnaemiaIronReplacementStrategy implements CdsRuleStrategy {
       ];
     }
 
-    const pregnantOk = ctx.pregnant === true && typeof ctx.gestationWeeks === 'number' ? ctx.gestationWeeks >= 14 : ctx.pregnant === true;
+    const pregnantOk =
+      ctx.pregnant === true && typeof ctx.gestationWeeks === 'number'
+        ? ctx.gestationWeeks >= 14
+        : ctx.pregnant === true;
     const severe = hb < 70;
     const ivTrigger =
       ctx.oralIntolerant === true ||
@@ -116,12 +120,21 @@ export class AnaemiaIronReplacementStrategy implements CdsRuleStrategy {
     return [this.card(rule, req, indicator, summary, context + recommendation)];
   }
 
-  private card(rule: CdsRule, req: CdsHookRequest, indicator: CdsIndicator, summary: string, detail: string): CdsCard {
+  private card(
+    rule: CdsRule,
+    req: CdsHookRequest,
+    indicator: CdsIndicator,
+    summary: string,
+    detail: string,
+  ): CdsCard {
     const ref = rule.references[0] ?? {
       label: 'BSH Guideline for the laboratory diagnosis of iron deficiency (2021)',
       url: 'https://onlinelibrary.wiley.com/doi/10.1111/bjh.16221',
     };
-    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, { summary, detail });
+    const { summary: outSummary, detail: outDetail } = resolveCardCopy(rule, req, {
+      summary,
+      detail,
+    });
     return {
       summary: outSummary,
       indicator,

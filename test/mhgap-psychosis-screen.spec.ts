@@ -23,12 +23,9 @@ describe('MhgapPsychosisScreenStrategy', () => {
   const s = new MhgapPsychosisScreenStrategy();
 
   it('does not fire under 12', async () => {
-    expect(
-      await s.evaluate(
-        RULE,
-        req({ ageYears: 10, psychoticFeatures: ['delusions'] }),
-      ),
-    ).toEqual([]);
+    expect(await s.evaluate(RULE, req({ ageYears: 10, psychoticFeatures: ['delusions'] }))).toEqual(
+      [],
+    );
   });
 
   it('no features and no markers → no card', async () => {
@@ -36,10 +33,7 @@ describe('MhgapPsychosisScreenStrategy', () => {
   });
 
   it('no features but escalation flag → behavioural-change warning', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ ageYears: 30, severeAgitation: true }),
-    );
+    const cards = await s.evaluate(RULE, req({ ageYears: 30, severeAgitation: true }));
     expect(cards[0].indicator).toBe('warning');
     expect(cards[0].summary).toMatch(/medical mimic/i);
   });

@@ -75,7 +75,14 @@ interface SchistoContext {
   pregnant?: boolean;
   gestationalAgeWeeks?: number;
   freshwaterContactWeeksAgo?: number;
-  speciesSuspected?: 'mansoni' | 'haematobium' | 'japonicum' | 'mekongi' | 'intercalatum' | 'guineensis' | null;
+  speciesSuspected?:
+    | 'mansoni'
+    | 'haematobium'
+    | 'japonicum'
+    | 'mekongi'
+    | 'intercalatum'
+    | 'guineensis'
+    | null;
   diagnosticConfirmed?: boolean;
   katayamaFeatures?: boolean;
   eosinophilCount?: number;
@@ -88,18 +95,61 @@ interface SchistoContext {
 }
 
 const CODINGS_SCHISTO: CodedReference[] = [
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'B65', display: 'Schistosomiasis (bilharziasis)', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'B65.0', display: 'Schistosomiasis due to Schistosoma haematobium (urinary)', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'B65.1', display: 'Schistosomiasis due to Schistosoma mansoni (intestinal)', kind: 'diagnosis' },
-  { system: 'http://hl7.org/fhir/sid/icd-10', code: 'B65.2', display: 'Schistosomiasis due to Schistosoma japonicum', kind: 'diagnosis' },
-  { system: 'http://id.who.int/icd/release/11/mms', code: '1F86', display: 'Schistosomiasis', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '32517009', display: 'Schistosomiasis (disorder)', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '76271006', display: 'Schistosomiasis haematobium (disorder)', kind: 'diagnosis' },
-  { system: 'http://snomed.info/sct', code: '24378007', display: 'Schistosomiasis mansoni (disorder)', kind: 'diagnosis' },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'B65',
+    display: 'Schistosomiasis (bilharziasis)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'B65.0',
+    display: 'Schistosomiasis due to Schistosoma haematobium (urinary)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'B65.1',
+    display: 'Schistosomiasis due to Schistosoma mansoni (intestinal)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://hl7.org/fhir/sid/icd-10',
+    code: 'B65.2',
+    display: 'Schistosomiasis due to Schistosoma japonicum',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://id.who.int/icd/release/11/mms',
+    code: '1F86',
+    display: 'Schistosomiasis',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '32517009',
+    display: 'Schistosomiasis (disorder)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '76271006',
+    display: 'Schistosomiasis haematobium (disorder)',
+    kind: 'diagnosis',
+  },
+  {
+    system: 'http://snomed.info/sct',
+    code: '24378007',
+    display: 'Schistosomiasis mansoni (disorder)',
+    kind: 'diagnosis',
+  },
   { system: 'http://whocc.no/atc', code: 'P02BA01', display: 'Praziquantel', kind: 'drug' },
 ];
 
-function praziDose(species: SchistoContext['speciesSuspected'], wt?: number): { total: string; pattern: string } {
+function praziDose(
+  species: SchistoContext['speciesSuspected'],
+  wt?: number,
+): { total: string; pattern: string } {
   const isJaponicumOrMekongi = species === 'japonicum' || species === 'mekongi';
   const mgPerKg = isJaponicumOrMekongi ? 60 : 40;
   if (typeof wt !== 'number') {
@@ -129,8 +179,10 @@ export class SchistosomiasisTreatmentStrategy implements CdsRuleStrategy {
 
     // 2. Severe complicated.
     const severeReasons: string[] = [];
-    if (ctx.neuroSchistoSuspected === true) severeReasons.push('neuroschistosomiasis (myelitis / seizures / focal neurology)');
-    if (ctx.portalHypertensionVariceal === true) severeReasons.push('portal hypertension with variceal bleeding');
+    if (ctx.neuroSchistoSuspected === true)
+      severeReasons.push('neuroschistosomiasis (myelitis / seizures / focal neurology)');
+    if (ctx.portalHypertensionVariceal === true)
+      severeReasons.push('portal hypertension with variceal bleeding');
     if (ctx.massiveHaematuriaShock === true) severeReasons.push('massive haematuria with shock');
     if (ctx.obstructiveUropathy === true) severeReasons.push('obstructive uropathy');
     if (severeReasons.length > 0) {
@@ -138,11 +190,14 @@ export class SchistosomiasisTreatmentStrategy implements CdsRuleStrategy {
     }
 
     // 1. Katayama fever.
-    if (ctx.katayamaFeatures === true ||
+    if (
+      ctx.katayamaFeatures === true ||
       (typeof ctx.freshwaterContactWeeksAgo === 'number' &&
         ctx.freshwaterContactWeeksAgo >= 3 &&
         ctx.freshwaterContactWeeksAgo <= 10 &&
-        (typeof ctx.eosinophilCount === 'number' && ctx.eosinophilCount >= 1.0))) {
+        typeof ctx.eosinophilCount === 'number' &&
+        ctx.eosinophilCount >= 1.0)
+    ) {
       return [this.katayamaCard(rule, req, ctx)];
     }
 
@@ -164,7 +219,12 @@ export class SchistosomiasisTreatmentStrategy implements CdsRuleStrategy {
     return [];
   }
 
-  private complicatedCard(rule: CdsRule, req: CdsHookRequest, ctx: SchistoContext, reasons: string[]): CdsCard {
+  private complicatedCard(
+    rule: CdsRule,
+    req: CdsHookRequest,
+    ctx: SchistoContext,
+    reasons: string[],
+  ): CdsCard {
     const dose = praziDose(ctx.speciesSuspected, ctx.weightKg);
     return this.buildCard(
       rule,
@@ -207,9 +267,9 @@ export class SchistosomiasisTreatmentStrategy implements CdsRuleStrategy {
     const dose = praziDose(ctx.speciesSuspected, ctx.weightKg);
     const pregLine =
       ctx.pregnant === true
-        ? (typeof ctx.gestationalAgeWeeks === 'number' && ctx.gestationalAgeWeeks < 14
+        ? typeof ctx.gestationalAgeWeeks === 'number' && ctx.gestationalAgeWeeks < 14
           ? ' Pregnancy ≤ 14 weeks: defer praziquantel until the second trimester unless severe schistosomiasis warrants immediate treatment. (Pregnancy is no longer a contraindication per WHO 2006 / 2022; safety data are extensive.)'
-          : ' Pregnancy ≥ 14 weeks: praziquantel is safe and recommended. Same standard dose applies.')
+          : ' Pregnancy ≥ 14 weeks: praziquantel is safe and recommended. Same standard dose applies.'
         : '';
     const speciesLine = ctx.speciesSuspected
       ? `Species: ${ctx.speciesSuspected}.`

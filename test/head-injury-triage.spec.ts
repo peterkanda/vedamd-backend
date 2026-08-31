@@ -64,10 +64,7 @@ describe('HeadInjuryTriageStrategy', () => {
   });
 
   it('moderate GCS 11 → critical urgent CT', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ ageYears: 35, suspectedHeadInjury: true, gcs: 11 }),
-    );
+    const cards = await s.evaluate(RULE, req({ ageYears: 35, suspectedHeadInjury: true, gcs: 11 }));
     expect(cards[0].summary).toMatch(/urgent CT/i);
   });
 
@@ -99,10 +96,7 @@ describe('HeadInjuryTriageStrategy', () => {
   });
 
   it('low-risk → info discharge with card', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ ageYears: 30, suspectedHeadInjury: true, gcs: 15 }),
-    );
+    const cards = await s.evaluate(RULE, req({ ageYears: 30, suspectedHeadInjury: true, gcs: 15 }));
     expect(cards[0].indicator).toBe('info');
   });
 });

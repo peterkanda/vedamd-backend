@@ -35,7 +35,9 @@ describe('Reference — organisation/browse', () => {
   it('groups drugs by AWaRe category', () => {
     const groups = ref.grouped('drug', 'aware');
     const names = groups.map((g) => g.group);
-    expect(names.some((n) => n.includes('Watch') || n.includes('Access') || n.includes('Reserve'))).toBe(true);
+    expect(
+      names.some((n) => n.includes('Watch') || n.includes('Access') || n.includes('Reserve')),
+    ).toBe(true);
   });
 
   it('groups conditions by clinical domain (multi-membership)', () => {

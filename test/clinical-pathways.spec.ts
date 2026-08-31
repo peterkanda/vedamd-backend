@@ -25,7 +25,11 @@ const mkRule = (type: string): CdsRule =>
     evidenceLevel: 'A',
   }) as unknown as CdsRule;
 
-const req = (context: Record<string, unknown>): CdsHookRequest => ({ hook: 'patient-view', hookInstance: 't', context });
+const req = (context: Record<string, unknown>): CdsHookRequest => ({
+  hook: 'patient-view',
+  hookInstance: 't',
+  context,
+});
 
 describe('STEMI fibrinolysis pathway', () => {
   const s = new StemiFibrinolysisStrategy();
@@ -34,21 +38,38 @@ describe('STEMI fibrinolysis pathway', () => {
     expect(await s.evaluate(rule, req({ symptomOnsetMin: 60 }))).toHaveLength(0);
   });
   it('PCI within 120 min → primary PCI', async () => {
-    const c = await s.evaluate(rule, req({ stEcgFinding: 'stemi', transferToPciMin: 60, symptomOnsetMin: 90 }));
+    const c = await s.evaluate(
+      rule,
+      req({ stEcgFinding: 'stemi', transferToPciMin: 60, symptomOnsetMin: 90 }),
+    );
     expect(c[0].indicator).toBe('critical');
     expect(c[0].summary).toMatch(/primary PCI/i);
   });
   it('no PCI access + no contraindication → fibrinolysis now', async () => {
-    const c = await s.evaluate(rule, req({ stEcgFinding: 'stemi', transferToPciMin: 240, symptomOnsetMin: 120 }));
+    const c = await s.evaluate(
+      rule,
+      req({ stEcgFinding: 'stemi', transferToPciMin: 240, symptomOnsetMin: 120 }),
+    );
     expect(c[0].detail).toMatch(/tenecteplase|streptokinase/i);
   });
   it('contraindication diverts to emergency PCI transfer', async () => {
-    const c = await s.evaluate(rule, req({ suspectedStemi: true, transferToPciMin: 240, symptomOnsetMin: 120, recentStroke: true }));
+    const c = await s.evaluate(
+      rule,
+      req({
+        suspectedStemi: true,
+        transferToPciMin: 240,
+        symptomOnsetMin: 120,
+        recentStroke: true,
+      }),
+    );
     expect(c[0].summary).toMatch(/contraindicated/i);
     expect(c[0].detail).toMatch(/do NOT lyse/i);
   });
   it('onset > 12 h → fibrinolysis not beneficial', async () => {
-    const c = await s.evaluate(rule, req({ stEcgFinding: 'stemi', transferToPciMin: 240, symptomOnsetMin: 800 }));
+    const c = await s.evaluate(
+      rule,
+      req({ stEcgFinding: 'stemi', transferToPciMin: 240, symptomOnsetMin: 800 }),
+    );
     expect(c[0].summary).toMatch(/not routinely beneficial/i);
   });
 });
@@ -60,12 +81,23 @@ describe('HIV PEP', () => {
     expect(await s.evaluate(rule, req({ hoursSinceExposure: 2 }))).toHaveLength(0);
   });
   it('within 72 h → start PEP (critical)', async () => {
-    const c = await s.evaluate(rule, req({ exposureType: 'occupational', hoursSinceExposure: 6, sourceHivStatus: 'unknown' }));
+    const c = await s.evaluate(
+      rule,
+      req({ exposureType: 'occupational', hoursSinceExposure: 6, sourceHivStatus: 'unknown' }),
+    );
     expect(c[0].indicator).toBe('critical');
     expect(c[0].detail).toMatch(/dolutegravir/i);
   });
   it('renal impairment avoids TDF', async () => {
-    const c = await s.evaluate(rule, req({ exposureType: 'sexual', hoursSinceExposure: 10, sourceHivStatus: 'positive', eGFR: 30 }));
+    const c = await s.evaluate(
+      rule,
+      req({
+        exposureType: 'sexual',
+        hoursSinceExposure: 10,
+        sourceHivStatus: 'positive',
+        eGFR: 30,
+      }),
+    );
     expect(c[0].detail).toMatch(/avoid TDF/i);
   });
   it('> 72 h → outside window (warning)', async () => {
@@ -74,7 +106,10 @@ describe('HIV PEP', () => {
     expect(c[0].summary).toMatch(/outside the PEP window/i);
   });
   it('source negative → not indicated (info)', async () => {
-    const c = await s.evaluate(rule, req({ exposureType: 'occupational', hoursSinceExposure: 4, sourceHivStatus: 'negative' }));
+    const c = await s.evaluate(
+      rule,
+      req({ exposureType: 'occupational', hoursSinceExposure: 4, sourceHivStatus: 'negative' }),
+    );
     expect(c[0].indicator).toBe('info');
   });
 });
@@ -88,7 +123,10 @@ describe('HIV first-line ART', () => {
     expect(c[0].indicator).toBe('info');
   });
   it('rifampicin overlap adds supplementary DTG', async () => {
-    const c = await s.evaluate(rule, req({ hivStatus: 'positive', coMedications: ['rifampicin', 'isoniazid'] }));
+    const c = await s.evaluate(
+      rule,
+      req({ hivStatus: 'positive', coMedications: ['rifampicin', 'isoniazid'] }),
+    );
     expect(c[0].indicator).toBe('warning');
     expect(c[0].detail).toMatch(/EXTRA dolutegravir/i);
   });
@@ -113,7 +151,10 @@ describe('MDR-TB regimen builder', () => {
     expect(c[0].summary).toMatch(/BPaLM/);
   });
   it('FQ resistance → BPaL', async () => {
-    const c = await s.evaluate(rule, req({ drugResistance: ['RIF-resistant', 'fluoroquinolone-resistant'] }));
+    const c = await s.evaluate(
+      rule,
+      req({ drugResistance: ['RIF-resistant', 'fluoroquinolone-resistant'] }),
+    );
     expect(c[0].summary).toMatch(/BPaL\b/);
   });
   it('QTcF > 500 → critical hold', async () => {
@@ -182,7 +223,10 @@ describe('UTI treatment', () => {
     expect(c[0].detail).toMatch(/contraindicated/i);
   });
   it('third-trimester pregnancy → cefalexin', async () => {
-    const c = await s.evaluate(rule, req({ suspectedUti: true, sex: 'female', pregnant: true, gestationWeeks: 34 }));
+    const c = await s.evaluate(
+      rule,
+      req({ suspectedUti: true, sex: 'female', pregnant: true, gestationWeeks: 34 }),
+    );
     expect(c[0].indicator).toBe('warning');
     expect(c[0].detail).toMatch(/cefalexin/i);
   });
@@ -200,17 +244,30 @@ describe('Asthma step-up (GINA)', () => {
     expect(await s.evaluate(rule, req({ diagnoses: ['copd'] }))).toHaveLength(0);
   });
   it('well-controlled → maintain', async () => {
-    const c = await s.evaluate(rule, req({ diagnoses: ['asthma'], gina: { currentStep: 2, SABAUsePerWeek: 0 }, symptomControl: 'controlled' }));
+    const c = await s.evaluate(
+      rule,
+      req({
+        diagnoses: ['asthma'],
+        gina: { currentStep: 2, SABAUsePerWeek: 0 },
+        symptomControl: 'controlled',
+      }),
+    );
     expect(c[0].indicator).toBe('info');
     expect(c[0].summary).toMatch(/maintain GINA Step 2/);
   });
   it('reliever overuse → step up', async () => {
-    const c = await s.evaluate(rule, req({ diagnoses: ['asthma'], gina: { currentStep: 2, SABAUsePerWeek: 4 } }));
+    const c = await s.evaluate(
+      rule,
+      req({ diagnoses: ['asthma'], gina: { currentStep: 2, SABAUsePerWeek: 4 } }),
+    );
     expect(c[0].indicator).toBe('warning');
     expect(c[0].summary).toMatch(/step up GINA 2 . 3|step up GINA 2/);
   });
   it('step 5 → severe-asthma referral', async () => {
-    const c = await s.evaluate(rule, req({ diagnoses: ['asthma'], gina: { currentStep: 5, SABAUsePerWeek: 5 } }));
+    const c = await s.evaluate(
+      rule,
+      req({ diagnoses: ['asthma'], gina: { currentStep: 5, SABAUsePerWeek: 5 } }),
+    );
     expect(c[0].summary).toMatch(/Step 5/);
     expect(c[0].detail).toMatch(/severe-asthma/i);
   });

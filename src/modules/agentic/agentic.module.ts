@@ -14,11 +14,7 @@ import { GeminiProvider } from './providers/gemini.provider';
 import { OpenRouterProvider } from './providers/openrouter.provider';
 import { SqlIngestionService } from './connectors/sql-ingestion.service';
 import { PostgresConnector } from './connectors/postgres.connector';
-import {
-  MysqlConnector,
-  MssqlConnector,
-  OracleConnector,
-} from './connectors/optional-connectors';
+import { MysqlConnector, MssqlConnector, OracleConnector } from './connectors/optional-connectors';
 import { CdsModule } from '../cds/cds.module';
 import { KnowledgeModule } from '../knowledge/knowledge.module';
 import { DeveloperModule } from '../developer/developer.module';
@@ -32,7 +28,14 @@ import { CustomRulesModule } from '../custom-rules/custom-rules.module';
  * (API-key guard).
  */
 @Module({
-  imports: [CdsModule, KnowledgeModule, DeveloperModule, PoliciesModule, CustomRulesModule, IdentityModule],
+  imports: [
+    CdsModule,
+    KnowledgeModule,
+    DeveloperModule,
+    PoliciesModule,
+    CustomRulesModule,
+    IdentityModule,
+  ],
   controllers: [AgenticController, LlmPreferenceController],
   providers: [
     AgenticService,
@@ -51,6 +54,12 @@ import { CustomRulesModule } from '../custom-rules/custom-rules.module';
     MssqlConnector,
     OracleConnector,
   ],
-  exports: [AgenticService, ProviderRouter, KnowledgeRetrieverService, SqlIngestionService, LlmPreferenceService],
+  exports: [
+    AgenticService,
+    ProviderRouter,
+    KnowledgeRetrieverService,
+    SqlIngestionService,
+    LlmPreferenceService,
+  ],
 })
 export class AgenticModule {}

@@ -119,10 +119,7 @@ describe('HeatStrokeStrategy', () => {
   });
 
   it('exposure only → info', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ suspectedHeatIllness: true, ageYears: 30 }),
-    );
+    const cards = await s.evaluate(RULE, req({ suspectedHeatIllness: true, ageYears: 30 }));
     expect(cards[0].indicator).toBe('info');
   });
 });

@@ -40,7 +40,19 @@ export interface NamedQuery {
  */
 export interface QueryMapping {
   /** Column → patient.ageYears etc. Single-row patient fields. */
-  patient?: Partial<Record<'ageYears' | 'ageMonths' | 'weightKg' | 'sex' | 'pregnant' | 'gestationWeeks' | 'eGFR' | 'creatinineUmolL', string>>;
+  patient?: Partial<
+    Record<
+      | 'ageYears'
+      | 'ageMonths'
+      | 'weightKg'
+      | 'sex'
+      | 'pregnant'
+      | 'gestationWeeks'
+      | 'eGFR'
+      | 'creatinineUmolL',
+      string
+    >
+  >;
   /** Column that holds a medication name/slug (rows aggregated). */
   medicationColumn?: string;
   /** Column that holds a diagnosis name/slug/ICD code. */
@@ -70,11 +82,20 @@ export function assertReadOnly(sql: string): void {
     throw new Error('Only read-only SELECT/WITH queries are permitted in pull-mode connectors.');
   }
   // Block stacked statements + obvious mutations.
-  const forbidden = /\b(insert|update|delete|drop|alter|truncate|create|grant|revoke|merge|exec|execute|call)\b/i;
+  const forbidden =
+    /\b(insert|update|delete|drop|alter|truncate|create|grant|revoke|merge|exec|execute|call)\b/i;
   if (forbidden.test(sql)) {
-    throw new Error('Mutation / DDL / procedure keywords are not permitted in pull-mode connectors.');
+    throw new Error(
+      'Mutation / DDL / procedure keywords are not permitted in pull-mode connectors.',
+    );
   }
-  if (sql.includes(';') && sql.trim().replace(/;+\s*$/, '').includes(';')) {
+  if (
+    sql.includes(';') &&
+    sql
+      .trim()
+      .replace(/;+\s*$/, '')
+      .includes(';')
+  ) {
     throw new Error('Stacked statements are not permitted in pull-mode connectors.');
   }
 }

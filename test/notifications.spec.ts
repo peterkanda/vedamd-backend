@@ -57,7 +57,7 @@ describe('NotificationsService — channel CRUD', () => {
     ).rejects.toThrow(/AC/);
   });
 
-  it("rejects an SMTP channel missing the fromAddress", async () => {
+  it('rejects an SMTP channel missing the fromAddress', async () => {
     await expect(
       svc.create('tenant-A', {
         name: 'SMTP without sender',

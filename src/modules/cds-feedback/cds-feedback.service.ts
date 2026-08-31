@@ -125,9 +125,7 @@ export class CdsFeedbackService {
         overridden,
         overrideRatePct: totalFeedback === 0 ? 0 : (overridden / totalFeedback) * 100,
         topOverrideReasons,
-        lastFeedbackAt: new Date(
-          Math.max(...list.map((r) => r.createdAt.getTime())),
-        ).toISOString(),
+        lastFeedbackAt: new Date(Math.max(...list.map((r) => r.createdAt.getTime()))).toISOString(),
       });
     }
     return out.sort((a, b) => b.totalFeedback - a.totalFeedback);
@@ -243,11 +241,13 @@ export class CdsFeedbackService {
  */
 function scrubComment(raw: string): string {
   const trimmed = raw.slice(0, 280);
-  return trimmed
-    // 7+ consecutive digits (MRN, NHS/SSN-like, phone) → [digits]
-    .replace(/\d{7,}/g, '[digits]')
-    // ISO-ish date 1900-2100 → [date]
-    .replace(/\b(19|20)\d{2}[-/.](0?[1-9]|1[0-2])[-/.](0?[1-9]|[12]\d|3[01])\b/g, '[date]')
-    // Bare 8-digit DDMMYYYY/YYYYMMDD → [date]
-    .replace(/\b\d{8}\b/g, '[date]');
+  return (
+    trimmed
+      // 7+ consecutive digits (MRN, NHS/SSN-like, phone) → [digits]
+      .replace(/\d{7,}/g, '[digits]')
+      // ISO-ish date 1900-2100 → [date]
+      .replace(/\b(19|20)\d{2}[-/.](0?[1-9]|1[0-2])[-/.](0?[1-9]|[12]\d|3[01])\b/g, '[date]')
+      // Bare 8-digit DDMMYYYY/YYYYMMDD → [date]
+      .replace(/\b\d{8}\b/g, '[date]')
+  );
 }

@@ -74,7 +74,10 @@ export class UgibBlatchfordStrategy implements CdsRuleStrategy {
       else if (u >= 10) pts = 4;
       else if (u >= 8) pts = 3;
       else if (u >= 6.5) pts = 2;
-      if (pts) { score += pts; parts.push(`urea ${u} (+${pts})`); }
+      if (pts) {
+        score += pts;
+        parts.push(`urea ${u} (+${pts})`);
+      }
     } else missing.push('urea');
 
     // Haemoglobin (sex-specific). Auto-detect g/dL (value < 25) → ×10.
@@ -83,9 +86,22 @@ export class UgibBlatchfordStrategy implements CdsRuleStrategy {
       const female = String(ctx.sex).toLowerCase() === 'female';
       // Men: <100 →6, 100–119 →3, 120–129 →1. Women: <100 →6, 100–119 →1.
       const pts = female
-        ? hb < 100 ? 6 : hb < 120 ? 1 : 0
-        : hb < 100 ? 6 : hb < 120 ? 3 : hb < 130 ? 1 : 0;
-      if (pts) { score += pts; parts.push(`Hb ${hb} g/L (+${pts})`); }
+        ? hb < 100
+          ? 6
+          : hb < 120
+            ? 1
+            : 0
+        : hb < 100
+          ? 6
+          : hb < 120
+            ? 3
+            : hb < 130
+              ? 1
+              : 0;
+      if (pts) {
+        score += pts;
+        parts.push(`Hb ${hb} g/L (+${pts})`);
+      }
     } else missing.push('haemoglobin');
 
     // Systolic BP
@@ -95,14 +111,32 @@ export class UgibBlatchfordStrategy implements CdsRuleStrategy {
       if (s < 90) pts = 3;
       else if (s < 100) pts = 2;
       else if (s < 110) pts = 1;
-      if (pts) { score += pts; parts.push(`SBP ${s} (+${pts})`); }
+      if (pts) {
+        score += pts;
+        parts.push(`SBP ${s} (+${pts})`);
+      }
     } else missing.push('systolic BP');
 
-    if (typeof ctx.pulsePerMin === 'number' && ctx.pulsePerMin >= 100) { score += 1; parts.push('pulse ≥100 (+1)'); }
-    if (ctx.melaena === true) { score += 1; parts.push('melaena (+1)'); }
-    if (ctx.syncope === true) { score += 2; parts.push('syncope (+2)'); }
-    if (ctx.hepaticDisease === true) { score += 2; parts.push('hepatic disease (+2)'); }
-    if (ctx.cardiacFailure === true) { score += 2; parts.push('cardiac failure (+2)'); }
+    if (typeof ctx.pulsePerMin === 'number' && ctx.pulsePerMin >= 100) {
+      score += 1;
+      parts.push('pulse ≥100 (+1)');
+    }
+    if (ctx.melaena === true) {
+      score += 1;
+      parts.push('melaena (+1)');
+    }
+    if (ctx.syncope === true) {
+      score += 2;
+      parts.push('syncope (+2)');
+    }
+    if (ctx.hepaticDisease === true) {
+      score += 2;
+      parts.push('hepatic disease (+2)');
+    }
+    if (ctx.cardiacFailure === true) {
+      score += 2;
+      parts.push('cardiac failure (+2)');
+    }
 
     let indicator: CdsIndicator;
     let summary: string;
@@ -130,8 +164,7 @@ export class UgibBlatchfordStrategy implements CdsRuleStrategy {
     }
 
     if (missing.length) {
-      recommendation +=
-        ` NOTE: ${missing.join(', ')} not supplied — the score is a MINIMUM; obtain these to complete risk assessment.`;
+      recommendation += ` NOTE: ${missing.join(', ')} not supplied — the score is a MINIMUM; obtain these to complete risk assessment.`;
     }
 
     const ref = rule.references[0] ?? {

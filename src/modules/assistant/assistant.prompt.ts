@@ -39,7 +39,9 @@ export function buildAssistantUserMessage(
       .slice(-12)
       .map((t) => `${t.role === 'user' ? 'Clinician' : 'VedaMD'}: ${t.content}`)
       .join('\n');
-    parts.push(`CONVERSATION SO FAR (resolve follow-ups against this; do not switch patient/drug/disease):\n${thread}`);
+    parts.push(
+      `CONVERSATION SO FAR (resolve follow-ups against this; do not switch patient/drug/disease):\n${thread}`,
+    );
   }
   parts.push(`CLINICAL QUESTION:\n${question}`);
   return parts.join('\n\n');

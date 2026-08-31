@@ -10,6 +10,9 @@ on:
     - cron: '0 3 * * *' # nightly 03:00 UTC
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     name: MedGemma review of country overlays

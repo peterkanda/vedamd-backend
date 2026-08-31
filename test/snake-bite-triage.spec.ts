@@ -23,9 +23,7 @@ describe('SnakeBiteTriageStrategy', () => {
   const s = new SnakeBiteTriageStrategy();
 
   it('silent without confirmedBite', async () => {
-    expect(
-      await s.evaluate(RULE, req({ ageYears: 40, systemicBleeding: true })),
-    ).toEqual([]);
+    expect(await s.evaluate(RULE, req({ ageYears: 40, systemicBleeding: true }))).toEqual([]);
   });
 
   it('failed clotting test → critical antivenom + no-NSAID', async () => {
@@ -64,10 +62,7 @@ describe('SnakeBiteTriageStrategy', () => {
   });
 
   it('definite bite without envenomation → warning 24-h observation', async () => {
-    const cards = await s.evaluate(
-      RULE,
-      req({ ageYears: 35, confirmedBite: true }),
-    );
+    const cards = await s.evaluate(RULE, req({ ageYears: 35, confirmedBite: true }));
     expect(cards[0].indicator).toBe('warning');
     expect(cards[0].detail).toMatch(/24 hours/);
     expect(cards[0].detail).toMatch(/AVOID incision/i);
