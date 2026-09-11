@@ -1,13 +1,12 @@
 name: bundle url liveness
 
 # Probes every URL in the signed content bundle and reports dead links
-# (404, ENOTFOUND, etc.). Runs nightly + on demand. Does NOT block PRs —
-# many publisher CDNs rate-limit bursts and a 429 is not a real failure;
-# we keep this advisory and review the report when it's red.
+# (404, ENOTFOUND, etc.). On demand only — the nightly cron was removed
+# 2026-09-11 to stop failure emails, since this is advisory and goes red on
+# routine CDN rate-limiting. Run it manually and review the report.
+# Does NOT block PRs — a 429 from a publisher CDN is not a real failure.
 
 on:
-  schedule:
-    - cron: '0 4 * * *' # 04:00 UTC daily
   workflow_dispatch:
 
 permissions:
