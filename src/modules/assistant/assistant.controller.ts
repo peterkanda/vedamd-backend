@@ -37,7 +37,11 @@ export class AssistantController {
       llmModel: res.model !== 'none' ? res.model : undefined,
       cardsReturned: 0,
       citations: res.sources.map((s) => ({ kind: s.domain, id: s.slug })),
-      refusedReason: res.provider === 'none' ? 'no_clinical_grade_model' : undefined,
+      refusedReason: res.refused
+        ? 'ungrounded_clinical_claim'
+        : res.provider === 'none'
+          ? 'no_clinical_grade_model'
+          : undefined,
       actorId: req.supabaseUser?.id,
     });
     return res;

@@ -4,6 +4,8 @@ import { CdsService } from '../src/modules/cds/cds.service';
 import { DrugsService } from '../src/modules/drugs/drugs.service';
 import { CdsStrategyRegistry } from '../src/modules/cds/strategies/registry';
 import { DrugDrugInteractionStrategy } from '../src/modules/cds/strategies/ddi.strategy';
+import { DrugAllergyCrossReactivityStrategy } from '../src/modules/cds/strategies/drug-allergy-cross-reactivity.strategy';
+import { AllergyService } from '../src/modules/allergy/allergy.service';
 import { RenalSafetyStrategy } from '../src/modules/cds/strategies/renal-safety.strategy';
 import { HepaticSafetyStrategy } from '../src/modules/cds/strategies/hepatic-safety.strategy';
 import { HepaticDoseService } from '../src/modules/hepatic-dose/hepatic-dose.service';
@@ -93,12 +95,15 @@ function makeService(): CdsService {
   } as unknown as ConfigService<AppConfig, true>;
   const log = new PhiFreeLogger({ service: 'test', hashSecret: 'test-secret', strict: true });
   const knowledge = makeKnowledgeService();
-  const drugs = new DrugsService(knowledge);
+  const allergy = new AllergyService(knowledge);
+  allergy.onModuleInit();
+  const drugs = new DrugsService(knowledge, allergy);
   drugs.onModuleInit();
   const hepatic = new HepaticDoseService(knowledge);
   hepatic.onModuleInit();
   const registry = new CdsStrategyRegistry(
     new DrugDrugInteractionStrategy(drugs),
+    new DrugAllergyCrossReactivityStrategy(drugs, allergy),
     new RenalSafetyStrategy(drugs),
     new HepaticSafetyStrategy(hepatic),
     new PregnancySafetyStrategy(drugs),

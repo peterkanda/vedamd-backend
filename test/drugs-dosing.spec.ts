@@ -37,6 +37,25 @@ describe('DrugsService.calculateDose — paediatric mg/kg', () => {
     expect(r.calculatedDose?.frequency).toContain('12');
     expect(r.narrative).toContain('Renal adjustment');
   });
+
+  it('amoxicillin (has a maxMgPerDose on file) → calculatedDose.uncapped is false', () => {
+    const r = svc.calculateDose('amoxicillin', { weightKg: 20, ageYears: 5 })!;
+    expect(r.calculatedDose?.uncapped).toBe(false);
+  });
+});
+
+describe('DrugsService.calculateDose — uncapped paediatric doses', () => {
+  // Regression: a paediatric mg/kg drug with no maxMgPerDose on file must not
+  // silently return an unbounded number — the clinician needs an explicit
+  // signal that this dose was not checked against any ceiling.
+  it('paromomycin (no maxMgPerDose on file) → uncapped true + explicit warning', () => {
+    const r = svc.calculateDose('paromomycin', { weightKg: 20, ageYears: 5 })!;
+    expect(r.protocol).toBe('paediatric');
+    expect(r.calculatedDose?.mgPerDose).toBe(200);
+    expect(r.calculatedDose?.uncapped).toBe(true);
+    expect(r.calculatedDose?.capsApplied).toEqual([]);
+    expect(r.warnings.some((w) => w.toLowerCase().includes('ceiling'))).toBe(true);
+  });
 });
 
 describe('DrugsService.calculateDose — non-mg/kg paediatric safety', () => {

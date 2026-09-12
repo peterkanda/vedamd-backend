@@ -2,9 +2,17 @@ name: medgemma content validation
 
 # Automated medical second-opinion over the authored overlay content.
 # Manual trigger only. The nightly schedule was removed 2026-09-11 because the
-# run was failing every night; the cause was never diagnosed. Check the run logs
-# before re-adding the cron — note that with a reviewer configured, a failure
-# here is the gate working (a record was flagged 'error'), not a broken job.
+# run was failing every night. Confirmed locally (2026-09-12): `npm run
+# validate:medgemma:ci` exits 0 and skips cleanly when no reviewer secret is
+# configured — so a genuinely unconfigured reviewer would show green nightly
+# runs, not failures. That rules out "no secret configured" as the cause. If a
+# reviewer secret WAS configured for the nightly runs, the remaining
+# possibilities are: (a) the gate working as designed (a record was flagged
+# 'error' — check the uploaded medgemma-review artifact, not a bug) or (b) the
+# reviewer call itself erroring (API quota/rate-limit/outage at the configured
+# endpoint). Neither can be distinguished without the actual run logs from
+# when the cron was live — check those, or trigger a manual run with the
+# secrets configured, before re-adding a schedule.
 # It is a SCREEN, not approval: it fails the run
 # only when MedGemma flags a likely ERROR. It SKIPS cleanly (no failure) when no
 # MedGemma endpoint is configured, so it is safe to enable before the endpoint

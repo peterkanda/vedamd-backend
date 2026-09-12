@@ -1,6 +1,8 @@
 import { describe, expect, it, beforeEach } from 'vitest';
 import { DrugsService } from '../src/modules/drugs/drugs.service';
 import type { KnowledgeService } from '../src/modules/knowledge/knowledge.service';
+import type { AllergyService } from '../src/modules/allergy/allergy.service';
+import type { AllergyCrossReactivity } from '../src/modules/allergy/allergy.types';
 import type { DrugInteraction, DrugRecord } from '../src/modules/drugs/drugs.types';
 
 /**
@@ -115,13 +117,30 @@ const drugDisease = [
   },
 ];
 
+const allergyCrossReactivity: AllergyCrossReactivity[] = [
+  {
+    slug: 'penicillin-cephalosporin',
+    allergen: 'Penicillins',
+    crossReactsWith: 'Cephalosporins',
+    risk: 'moderate',
+    mechanism: 'Shared beta-lactam ring.',
+    recommendation: 'Avoid agents sharing an R1 side chain.',
+    drugSlugs: ['amoxicillin', 'flucloxacillin', 'ceftriaxone'],
+    domains: ['allergy'],
+    references: [],
+  } as unknown as AllergyCrossReactivity,
+];
+
 function makeService(): DrugsService {
   const knowledge = {
     getDrugs: () => drugs,
     getInteractions: () => interactions,
     getDrugDiseaseInteractions: () => drugDisease,
   } as unknown as KnowledgeService;
-  const svc = new DrugsService(knowledge);
+  const allergy = {
+    allFull: () => allergyCrossReactivity,
+  } as unknown as AllergyService;
+  const svc = new DrugsService(knowledge, allergy);
   svc.onModuleInit();
   return svc;
 }
@@ -163,13 +182,14 @@ describe('DrugsService.safetyReview', () => {
     expect(r.summary.drugs).toBe(6);
   });
 
-  it('clean list → no flags', () => {
+  it('clean list → no flags, but the interaction-check caveat is still present', () => {
     const r = svc.safetyReview(['amoxicillin', 'ciprofloxacin']);
     expect(r.duplicateTherapy).toHaveLength(0);
     expect(r.interactions).toHaveLength(0);
     expect(r.pregnancyContraindications).toHaveLength(0);
     expect(r.renalFlags).toHaveLength(0);
     expect(r.stewardship.map((s) => s.slug)).toEqual(['ciprofloxacin']);
+    expect(r.caveat).toBeTruthy();
   });
 
   it('flags a renal contraindication only when a CrCl is supplied', () => {
@@ -241,5 +261,63 @@ describe('DrugsService.safetyReview', () => {
       svc.safetyReview(['nitrofurantoin', 'ciprofloxacin'], undefined, undefined, ['asthma'])
         .drugDiseaseFlags,
     ).toHaveLength(0);
+  });
+
+  it('flags a direct drug-name allergy match even with no cross-reactivity record', () => {
+    const r = svc.safetyReview(['warfarin'], undefined, undefined, undefined, ['warfarin']);
+    expect(r.allergyFlags).toHaveLength(1);
+    expect(r.allergyFlags[0].matchType).toBe('direct-drug-match');
+    expect(r.allergyFlags[0].drugSlug).toBe('warfarin');
+    expect(r.summary.allergyContraindicated).toBe(1);
+  });
+
+  it('flags amoxicillin as a cross-reactivity risk when the patient is penicillin-allergic', () => {
+    const r = svc.safetyReview(['amoxicillin', 'ciprofloxacin'], undefined, undefined, undefined, [
+      'penicillins',
+    ]);
+    expect(r.allergyFlags).toHaveLength(1);
+    expect(r.allergyFlags[0].matchType).toBe('cross-reactive');
+    expect(r.allergyFlags[0].drugSlug).toBe('amoxicillin');
+    expect(r.allergyFlags[0].risk).toBe('moderate');
+    expect(r.summary.allergyContraindicated).toBe(1);
+  });
+
+  it('omits allergyFlags when no allergies are supplied', () => {
+    const r = svc.safetyReview(['amoxicillin', 'ciprofloxacin']);
+    expect(r.allergyFlags).toHaveLength(0);
+    expect(r.summary.allergyContraindicated).toBe(0);
+  });
+
+  // Regression: matching used naive substring containment, so a one- or
+  // two-character allergen matched 112 of the 120 cross-reactivity records
+  // (84 distinct drugs). A flood of spurious critical allergy cards is its
+  // own safety hazard — it trains clinicians to dismiss real alerts.
+  it('does not match on a one- or two-character allergen fragment', () => {
+    for (const junk of ['e', 'a', 'x', 'z']) {
+      const r = svc.safetyReview(['amoxicillin', 'ceftriaxone'], undefined, undefined, undefined, [
+        junk,
+      ]);
+      expect(r.allergyFlags).toHaveLength(0);
+    }
+  });
+
+  // Regression: "ace" matched "NSAID-exacerbated" and "pen" matched
+  // "thrombocytopenia" under substring containment — alerts on drugs the
+  // patient has no declared allergy to. Matching is whole-word now.
+  it('does not match an allergen against a word that merely contains it', () => {
+    const r = svc.safetyReview(['amoxicillin'], undefined, undefined, undefined, ['ace']);
+    expect(r.allergyFlags).toHaveLength(0);
+  });
+
+  it('still matches a declared allergen written in the singular against a plural registry entry', () => {
+    const r = svc.safetyReview(['amoxicillin'], undefined, undefined, undefined, ['penicillin']);
+    expect(r.allergyFlags).toHaveLength(1);
+    expect(r.allergyFlags[0].matchType).toBe('cross-reactive');
+  });
+
+  it('matches a drug named inside a free-text allergen entry', () => {
+    const r = svc.safetyReview(['warfarin'], undefined, undefined, undefined, ['warfarin rash']);
+    expect(r.allergyFlags).toHaveLength(1);
+    expect(r.allergyFlags[0].matchType).toBe('direct-drug-match');
   });
 });

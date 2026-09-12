@@ -12,10 +12,35 @@ export type ValidationCode =
   | 'approved-without-reviewers'
   | 'approved-without-two-reviewers'
   | 'approved-without-approved-at'
+  | 'approved-without-clinical-reviewer'
   | 'unknown-review-status'
   | 'reviewer-without-name'
   | 'reviewer-without-role'
+  | 'reviewer-invalid-role'
   | 'reviewer-without-timestamp';
+
+/** Mirrors conditions.types.ts's ReviewerRole union — kept as a runtime
+ *  array here because content is loaded from untyped JSON, so the
+ *  compile-time type alone never actually constrains what ships. */
+const KNOWN_REVIEWER_ROLES = [
+  'clinical-lead',
+  'physician',
+  'clinical-pharmacist',
+  'public-health-specialist',
+  'peer-reviewer',
+  'governance-committee',
+  'guideline-author',
+] as const;
+
+/** Roles that count as clinically-credentialed for FR-024 purposes — an
+ *  approved record's ≥2 reviewers must include at least one of these, so
+ *  two non-clinical governance/peer sign-offs alone can't approve content. */
+const CLINICAL_REVIEWER_ROLES = new Set([
+  'clinical-lead',
+  'physician',
+  'clinical-pharmacist',
+  'public-health-specialist',
+]);
 
 export interface ValidationViolation {
   code: ValidationCode;
@@ -196,6 +221,13 @@ function pushViolations(
           recordId,
           message: 'Reviewer missing role.',
         });
+      } else if (!(KNOWN_REVIEWER_ROLES as readonly string[]).includes(r.role)) {
+        out.push({
+          code: 'reviewer-invalid-role',
+          domain,
+          recordId,
+          message: `Reviewer role '${r.role}' is not a recognised role (${KNOWN_REVIEWER_ROLES.join(', ')}).`,
+        });
       }
       if (!r.reviewedAt) {
         out.push({
@@ -230,6 +262,20 @@ function pushViolations(
         domain,
         recordId,
         message: 'Approved records require an approvedAt timestamp.',
+      });
+    }
+    if (
+      record.reviewers?.length &&
+      !record.reviewers.some((r) => CLINICAL_REVIEWER_ROLES.has(r.role))
+    ) {
+      out.push({
+        code: 'approved-without-clinical-reviewer',
+        domain,
+        recordId,
+        message:
+          'Approved records require at least one clinically-credentialed reviewer ' +
+          '(clinical-lead, physician, clinical-pharmacist, or public-health-specialist) — ' +
+          'non-clinical roles alone (peer-reviewer, governance-committee, guideline-author) are not sufficient.',
       });
     }
   }

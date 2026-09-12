@@ -101,8 +101,15 @@ The sign script refuses to sign a bundle that contains any
 `draft` / `review` / `deprecated` record unless invoked with
 `--allow-draft` (for dev sandboxes). The runtime refuses to boot
 when `CONTENT_REQUIRE_APPROVED=true` and the loaded bundle contains
-any non-approved record. Production sets `CONTENT_REQUIRE_APPROVED=true`
-by default.
+any non-approved record. **This defaults to `false` in every
+environment, including production** — there is no `NODE_ENV`
+branching on this flag — because the v0.1 bundle shipped in this
+repo is entirely draft content; setting it to `true` today would
+refuse to boot. Set `CONTENT_REQUIRE_APPROVED=true` explicitly once
+the bundle's editorial review status has been promoted from draft to
+approved. Until then, `GET /api/v1/knowledge/bundle` (below) is the
+actual source of truth for what review state the loaded content is
+in — do not infer it from this env var alone.
 
 `GET /api/v1/knowledge/bundle` (public) returns the live tally of
 records by review status and domain so auditors can see what's

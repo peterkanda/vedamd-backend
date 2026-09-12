@@ -94,11 +94,60 @@ describe('validateBundle', () => {
       ],
     });
     const r = validateBundle({ ...emptyBundle(), conditions: [c as never] });
+    // Neither reviewer carries a clinical role here (one is blank, the other
+    // is peer-reviewer), so this also trips the clinical-reviewer check.
     expect(r.violations.map((v) => v.code).sort()).toEqual([
+      'approved-without-clinical-reviewer',
       'reviewer-without-name',
       'reviewer-without-role',
       'reviewer-without-timestamp',
     ]);
+  });
+
+  it('rejects an unrecognised reviewer role', () => {
+    const c = approvedCondition({
+      reviewers: [
+        { name: 'Dr A', role: 'office-manager' as never, reviewedAt: '2026-01-01' },
+        { name: 'Dr B', role: 'peer-reviewer', reviewedAt: '2026-01-02' },
+      ],
+    });
+    const r = validateBundle({ ...emptyBundle(), conditions: [c as never] });
+    expect(r.ok).toBe(false);
+    expect(r.violations.some((v) => v.code === 'reviewer-invalid-role')).toBe(true);
+  });
+
+  it('accepts every known reviewer role', () => {
+    const roles = [
+      'clinical-lead',
+      'physician',
+      'clinical-pharmacist',
+      'public-health-specialist',
+      'peer-reviewer',
+      'governance-committee',
+      'guideline-author',
+    ] as const;
+    for (const role of roles) {
+      const c = approvedCondition({
+        reviewers: [
+          { name: 'Dr A', role, reviewedAt: '2026-01-01' },
+          { name: 'Dr B', role: 'clinical-lead' as const, reviewedAt: '2026-01-02' },
+        ],
+      });
+      const r = validateBundle({ ...emptyBundle(), conditions: [c as never] });
+      expect(r.violations.some((v) => v.code === 'reviewer-invalid-role')).toBe(false);
+    }
+  });
+
+  it('rejects an approved record whose reviewers are all non-clinical roles', () => {
+    const c = approvedCondition({
+      reviewers: [
+        { name: 'Dr A', role: 'governance-committee' as const, reviewedAt: '2026-01-01' },
+        { name: 'Dr B', role: 'peer-reviewer' as const, reviewedAt: '2026-01-02' },
+      ],
+    });
+    const r = validateBundle({ ...emptyBundle(), conditions: [c as never] });
+    expect(r.ok).toBe(false);
+    expect(r.violations.some((v) => v.code === 'approved-without-clinical-reviewer')).toBe(true);
   });
 
   it('tallies the v0.1 dev bundle as all-draft', () => {

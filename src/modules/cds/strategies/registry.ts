@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { AwareStewardshipStrategy } from './aware-stewardship.strategy';
 import { DrugDrugInteractionStrategy } from './ddi.strategy';
+import { DrugAllergyCrossReactivityStrategy } from './drug-allergy-cross-reactivity.strategy';
 import { AdultAcsRecognitionStrategy } from './adult-acs-recognition.strategy';
 import { AdultCapCrb65Strategy } from './adult-cap-crb65.strategy';
 import { AdultMalariaStrategy } from './adult-malaria.strategy';
@@ -85,6 +86,7 @@ export class CdsStrategyRegistry {
 
   constructor(
     ddi: DrugDrugInteractionStrategy,
+    drugAllergy: DrugAllergyCrossReactivityStrategy,
     renal: RenalSafetyStrategy,
     hepatic: HepaticSafetyStrategy,
     pregnancy: PregnancySafetyStrategy,
@@ -159,6 +161,7 @@ export class CdsStrategyRegistry {
     private readonly bundleOutcome: BundleOutcomeStrategy,
   ) {
     this.register(ddi);
+    this.register(drugAllergy);
     this.register(renal);
     this.register(hepatic);
     this.register(pregnancy);

@@ -118,6 +118,15 @@ function paediatricResult(
   return computePaediatricMgPerKg(drug, inputs, base, paed, renalHit);
 }
 
+/**
+ * True when a paediatric record has no absolute single-dose ceiling on file.
+ * Shared by the single-drug calculator and the multi-drug safety-review panel
+ * so the two can never disagree about which doses are unbounded.
+ */
+export function isUncappedPaediatricDose(paed: PaediatricDosing): boolean {
+  return paed.maxMgPerDose === undefined;
+}
+
 function computePaediatricMgPerKg(
   drug: DrugRecord,
   inputs: DosingInput,
@@ -127,6 +136,7 @@ function computePaediatricMgPerKg(
 ): DosingResult {
   const raw = inputs.weightKg * (paed.mgPerKgPerDose as number);
   const caps: string[] = [];
+  const uncapped = isUncappedPaediatricDose(paed);
 
   let mgPerDose = raw;
   if (paed.maxMgPerDose !== undefined && mgPerDose > paed.maxMgPerDose) {
@@ -144,11 +154,26 @@ function computePaediatricMgPerKg(
     frequency: renalHit?.adjustment ?? paed.frequency,
     maxMgPerDay,
     capsApplied: caps,
+    uncapped,
   };
 
   const indicationNote = matchIndicationNote(drug, inputs.indication);
   const renalNote =
     renalHit && !renalHit.prohibited ? ` Renal adjustment applied: ${renalHit.adjustment}` : '';
+
+  const warnings = [...base.warnings];
+  if (paed.minWeightKg !== undefined && inputs.weightKg < paed.minWeightKg) {
+    warnings.push(
+      `Weight ${inputs.weightKg} kg is below the minimum ${paed.minWeightKg} kg for this regimen.`,
+    );
+  }
+  if (uncapped) {
+    warnings.push(
+      `No absolute single-dose ceiling is on file for ${drug.inn} in this content version — ` +
+        `this calculated dose is NOT capped. Verify against a current formulary before administering, ` +
+        `especially at higher weights.`,
+    );
+  }
 
   return {
     ...base,
@@ -160,13 +185,7 @@ function computePaediatricMgPerKg(
       (maxMgPerDay ? `; do not exceed ${maxMgPerDay} mg in 24 h.` : '.') +
       (indicationNote ? ` ${indicationNote}` : '') +
       renalNote,
-    warnings:
-      paed.minWeightKg !== undefined && inputs.weightKg < paed.minWeightKg
-        ? [
-            ...base.warnings,
-            `Weight ${inputs.weightKg} kg is below the minimum ${paed.minWeightKg} kg for this regimen.`,
-          ]
-        : base.warnings,
+    warnings,
   };
 }
 

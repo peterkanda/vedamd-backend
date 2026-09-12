@@ -83,6 +83,17 @@ describe('DrugsService', () => {
     expect(res.interactions).toEqual([]);
   });
 
+  it('always includes a non-exhaustiveness caveat, whether or not an interaction is found', () => {
+    const clean = svc.checkInteractions(['paracetamol', 'amlodipine']);
+    expect(clean.interactions).toEqual([]);
+    expect(clean.caveat).toBeTruthy();
+
+    const hit = svc.checkInteractions(['warfarin', 'amiodarone']);
+    expect(hit.interactions.length).toBeGreaterThanOrEqual(1);
+    expect(hit.caveat).toBeTruthy();
+    expect(hit.caveat).toBe(clean.caveat);
+  });
+
   it('seed records never contain patient-identifier fields', () => {
     const all = svc.list().map((s) => svc.get(s.slug)!);
     const forbidden = ['patient_id', 'patientId', 'mrn', 'dob', 'phone'];

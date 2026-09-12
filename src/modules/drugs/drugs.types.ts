@@ -119,6 +119,11 @@ export interface CalculatedDose {
   maxMgPerDay?: number;
   /** Human-readable list of any safety caps that bound the calculated dose. */
   capsApplied: string[];
+  /** True when the paediatric record carries no absolute single-dose ceiling
+   *  (maxMgPerDose) — mgPerDose is a raw weight-based figure with no upper
+   *  bound applied, an overdose risk at higher weights that should not be
+   *  presented as fully bounded. */
+  uncapped: boolean;
 }
 
 export interface DosingResult {

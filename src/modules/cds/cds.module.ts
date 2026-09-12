@@ -5,6 +5,7 @@ import { CdsCapabilityController } from './cds-capability.controller';
 import { CdsService } from './cds.service';
 import { CdsStrategyRegistry } from './strategies/registry';
 import { DrugDrugInteractionStrategy } from './strategies/ddi.strategy';
+import { DrugAllergyCrossReactivityStrategy } from './strategies/drug-allergy-cross-reactivity.strategy';
 import { RenalSafetyStrategy } from './strategies/renal-safety.strategy';
 import { HepaticSafetyStrategy } from './strategies/hepatic-safety.strategy';
 import { PregnancySafetyStrategy } from './strategies/pregnancy-safety.strategy';
@@ -80,14 +81,16 @@ import { BundleOutcomeStrategy } from './strategies/bundle-outcome.strategy';
 import { DeveloperModule } from '../developer/developer.module';
 import { DrugsModule } from '../drugs/drugs.module';
 import { HepaticDoseModule } from '../hepatic-dose/hepatic-dose.module';
+import { AllergyModule } from '../allergy/allergy.module';
 
 @Module({
-  imports: [DeveloperModule, DrugsModule, HepaticDoseModule],
+  imports: [DeveloperModule, DrugsModule, HepaticDoseModule, AllergyModule],
   controllers: [CdsHooksController, CdsEvaluateController, CdsCapabilityController],
   providers: [
     CdsService,
     CdsStrategyRegistry,
     DrugDrugInteractionStrategy,
+    DrugAllergyCrossReactivityStrategy,
     RenalSafetyStrategy,
     HepaticSafetyStrategy,
     PregnancySafetyStrategy,

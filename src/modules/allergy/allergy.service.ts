@@ -46,4 +46,10 @@ export class AllergyService implements OnModuleInit {
   get(slug: string): AllergyCrossReactivity | null {
     return this.bySlug.get(slug) ?? null;
   }
+
+  /** Every record, full shape (drugSlugs/mechanism/recommendation included) —
+   *  for deterministic matching, not for API responses (use list()/get()). */
+  allFull(): AllergyCrossReactivity[] {
+    return [...this.bySlug.values()];
+  }
 }

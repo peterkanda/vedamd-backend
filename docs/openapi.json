@@ -574,7 +574,7 @@
     },
     "/api/v1/drugs/safety-review": {
       "post": {
-        "description": "Body: { slugs: [...], crClMlMin?, weightKg?, conditions? }. One point-of-care panel: pairwise drug-drug interactions, antimicrobial-stewardship flags (WHO AWaRe Watch/Reserve), duplicate-therapy (same drug class), pregnancy-contraindicated drugs, hepatic guidance, and — when crClMlMin is supplied — renal dose-adjustment / contraindication flags, when a paediatric weightKg is supplied — weight-based dosing with overdose-cap warnings, and when condition slugs are supplied — drug-disease contraindication / caution flags. Returns unresolved slugs and a severity summary. Deterministic; no LLM.",
+        "description": "Body: { slugs: [...], crClMlMin?, weightKg?, conditions? }. One point-of-care panel: pairwise drug-drug interactions, antimicrobial-stewardship flags (WHO AWaRe Watch/Reserve), duplicate-therapy (same drug class), pregnancy-contraindicated drugs, hepatic guidance, and — when crClMlMin is supplied — renal dose-adjustment / contraindication flags, when a paediatric weightKg is supplied — weight-based dosing with overdose-cap warnings, and when condition slugs are supplied — drug-disease contraindication / caution flags, and when allergies (patient-declared allergen strings) are supplied — direct-match and cross-reactivity allergy flags. Returns unresolved slugs and a severity summary. Deterministic; no LLM.",
         "operationId": "DrugsController_safetyReview",
         "parameters": [],
         "requestBody": {
@@ -640,6 +640,82 @@
         "summary": "Calculate a dose for the drug given weight / age / renal function",
         "tags": [
           "drugs"
+        ]
+      }
+    },
+    "/api/v1/allergy-cross-reactivity": {
+      "get": {
+        "description": "Open catalogue of drug allergy cross-reactivity, including common myths to dispel (e.g. penicillin-cephalosporin, sulfonamide antibiotic vs diuretics, contrast vs shellfish). Filters: drug (slug or name), risk (high|moderate|low|negligible), q. Returns summaries; fetch full guidance by slug.",
+        "operationId": "AllergyController_list",
+        "parameters": [
+          {
+            "name": "drug",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "risk",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List drug allergy cross-reactivity entries",
+        "tags": [
+          "allergy-cross-reactivity"
+        ]
+      }
+    },
+    "/api/v1/allergy-cross-reactivity/{slug}": {
+      "get": {
+        "description": "Returns the allergen, what it does (or does not) cross-react with, the risk level, mechanism, recommendation, related drug slugs and citations. Reference content only — no patient identity is processed.",
+        "operationId": "AllergyController_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get an allergy cross-reactivity entry by slug",
+        "tags": [
+          "allergy-cross-reactivity"
         ]
       }
     },
@@ -1486,82 +1562,6 @@
         "summary": "Get an immunization schedule entry by slug",
         "tags": [
           "immunization"
-        ]
-      }
-    },
-    "/api/v1/allergy-cross-reactivity": {
-      "get": {
-        "description": "Open catalogue of drug allergy cross-reactivity, including common myths to dispel (e.g. penicillin-cephalosporin, sulfonamide antibiotic vs diuretics, contrast vs shellfish). Filters: drug (slug or name), risk (high|moderate|low|negligible), q. Returns summaries; fetch full guidance by slug.",
-        "operationId": "AllergyController_list",
-        "parameters": [
-          {
-            "name": "drug",
-            "required": true,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "risk",
-            "required": true,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "q",
-            "required": true,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "List drug allergy cross-reactivity entries",
-        "tags": [
-          "allergy-cross-reactivity"
-        ]
-      }
-    },
-    "/api/v1/allergy-cross-reactivity/{slug}": {
-      "get": {
-        "description": "Returns the allergen, what it does (or does not) cross-react with, the risk level, mechanism, recommendation, related drug slugs and citations. Reference content only — no patient identity is processed.",
-        "operationId": "AllergyController_get",
-        "parameters": [
-          {
-            "name": "slug",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "Get an allergy cross-reactivity entry by slug",
-        "tags": [
-          "allergy-cross-reactivity"
         ]
       }
     },

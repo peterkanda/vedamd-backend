@@ -1,6 +1,8 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
-import { calculateDose, matchRenal } from './drugs.dosing';
+import { calculateDose, isUncappedPaediatricDose, matchRenal } from './drugs.dosing';
+import { matchDrugAllergies, type DrugAllergyFlag } from './allergy-matching';
 import { KnowledgeService } from '../knowledge/knowledge.service';
+import { AllergyService } from '../allergy/allergy.service';
 import type { DrugDiseaseInteraction } from '../drug-disease/drug-disease.types';
 import type { Citation } from '../../common/citation';
 import type {
@@ -11,6 +13,13 @@ import type {
   DrugRecord,
   DrugSummary,
 } from './drugs.types';
+
+/** Non-exhaustiveness caveat attached to every interaction-check response —
+ *  a database check against the current registry, not a clinical guarantee. */
+const INTERACTION_CAVEAT =
+  'This reflects the current VedaMD drug-interaction registry, not an exhaustive clinical ' +
+  'check — the absence of a listed interaction is not a guarantee that no interaction exists. ' +
+  'Verify against a current formulary for any agent not covered here.';
 
 export interface ListFilters {
   q?: string;
@@ -25,7 +34,10 @@ export class DrugsService implements OnModuleInit {
   private interactionsByPair = new Map<string, DrugInteraction>();
   private drugDiseaseInteractions: DrugDiseaseInteraction[] = [];
 
-  constructor(private readonly knowledge: KnowledgeService) {}
+  constructor(
+    private readonly knowledge: KnowledgeService,
+    private readonly allergy?: AllergyService,
+  ) {}
 
   onModuleInit(): void {
     this.bySlug = new Map(this.knowledge.getDrugs().map((d) => [d.slug, d]));
@@ -76,6 +88,10 @@ export class DrugsService implements OnModuleInit {
   checkInteractions(slugs: string[]): {
     interactions: DrugInteraction[];
     unknownSlugs: string[];
+    /** Always present: an empty `interactions` array reflects the current
+     *  registry content, not a guarantee that no interaction exists — this
+     *  is a bounded database check, not exhaustive clinical verification. */
+    caveat: string;
   } {
     const unique = [...new Set(slugs.map((s) => s.trim().toLowerCase()).filter(Boolean))];
     // `unknownSlugs` flags slugs with no monograph AND no interaction record,
@@ -93,7 +109,7 @@ export class DrugsService implements OnModuleInit {
       }
     }
 
-    return { interactions: found, unknownSlugs: unknown };
+    return { interactions: found, unknownSlugs: unknown, caveat: INTERACTION_CAVEAT };
   }
 
   /**
@@ -108,6 +124,7 @@ export class DrugsService implements OnModuleInit {
     crClMlMin?: number,
     weightKg?: number,
     conditions?: string[],
+    patientAllergies?: string[],
   ): {
     interactions: DrugInteraction[];
     stewardship: Array<{ slug: string; inn: string; awareCategory: AwareCategory }>;
@@ -146,7 +163,10 @@ export class DrugsService implements OnModuleInit {
       recommendation: string;
       references: Citation[];
     }>;
+    allergyFlags: DrugAllergyFlag[];
     unknownSlugs: string[];
+    /** Same non-exhaustiveness caveat as checkInteractions(). */
+    caveat: string;
     summary: {
       drugs: number;
       interactions: number;
@@ -157,9 +177,10 @@ export class DrugsService implements OnModuleInit {
       renalProhibited: number;
       paediatricUncapped: number;
       drugDiseaseContraindicated: number;
+      allergyContraindicated: number;
     };
   } {
-    const { interactions, unknownSlugs } = this.checkInteractions(slugs);
+    const { interactions, unknownSlugs, caveat } = this.checkInteractions(slugs);
     const unique = [...new Set(slugs.map((s) => s.trim().toLowerCase()).filter(Boolean))];
     const resolved = unique.map((s) => this.bySlug.get(s)).filter((d): d is DrugRecord => !!d);
 
@@ -238,7 +259,7 @@ export class DrugsService implements OnModuleInit {
                 maxMgPerDay: cd.maxMgPerDay,
                 route: cd.route,
                 frequency: cd.frequency,
-                uncapped: paed.maxMgPerDose === undefined,
+                uncapped: isUncappedPaediatricDose(paed),
                 belowMinWeight: paed.minWeightKg !== undefined && weightKg < paed.minWeightKg,
               };
             })
@@ -277,6 +298,14 @@ export class DrugsService implements OnModuleInit {
               references: r.references,
             }));
 
+    // Allergy / cross-reactivity — only when the patient's declared allergens
+    // are supplied. Reuses the same matcher the CDS medication-prescribe
+    // strategy calls, so the REST panel and the hook can never disagree.
+    const allergyFlags =
+      patientAllergies?.length && this.allergy
+        ? matchDrugAllergies(resolved, patientAllergies, this.allergy.allFull())
+        : [];
+
     return {
       interactions,
       stewardship,
@@ -286,7 +315,9 @@ export class DrugsService implements OnModuleInit {
       hepaticGuidance,
       paediatricDosing,
       drugDiseaseFlags,
+      allergyFlags,
       unknownSlugs,
+      caveat,
       summary: {
         drugs: unique.length,
         interactions: interactions.length,
@@ -300,6 +331,9 @@ export class DrugsService implements OnModuleInit {
         paediatricUncapped: paediatricDosing.filter((p) => p.uncapped).length,
         drugDiseaseContraindicated: drugDiseaseFlags.filter((f) => f.severity === 'contraindicated')
           .length,
+        allergyContraindicated: allergyFlags.filter(
+          (f) => f.risk === 'high' || f.risk === 'moderate',
+        ).length,
       },
     };
   }

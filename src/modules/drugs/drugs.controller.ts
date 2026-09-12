@@ -43,6 +43,12 @@ class SafetyReviewRequestDto extends InteractionsRequestDto {
   @IsArray()
   @IsString({ each: true })
   conditions?: string[];
+
+  /** Optional patient-declared allergens to drive direct-match / cross-reactivity flags. */
+  @IsOptional()
+  @IsArray()
+  @IsString({ each: true })
+  allergies?: string[];
 }
 
 class DosingRequestDto {
@@ -137,11 +143,18 @@ export class DrugsController {
       'drugs, hepatic guidance, and — when crClMlMin is supplied — renal dose-adjustment / ' +
       'contraindication flags, when a paediatric weightKg is supplied — weight-based ' +
       'dosing with overdose-cap warnings, and when condition slugs are supplied — ' +
-      'drug-disease contraindication / caution flags. Returns unresolved slugs and a ' +
-      'severity summary. Deterministic; no LLM.',
+      'drug-disease contraindication / caution flags, and when allergies (patient-declared ' +
+      'allergen strings) are supplied — direct-match and cross-reactivity allergy flags. ' +
+      'Returns unresolved slugs and a severity summary. Deterministic; no LLM.',
   })
   safetyReview(@Body() body: SafetyReviewRequestDto) {
-    return this.drugs.safetyReview(body.slugs, body.crClMlMin, body.weightKg, body.conditions);
+    return this.drugs.safetyReview(
+      body.slugs,
+      body.crClMlMin,
+      body.weightKg,
+      body.conditions,
+      body.allergies,
+    );
   }
 
   @Post(':slug/dosing')

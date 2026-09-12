@@ -5,6 +5,26 @@ name: bundle url liveness
 # 2026-09-11 to stop failure emails, since this is advisory and goes red on
 # routine CDN rate-limiting. Run it manually and review the report.
 # Does NOT block PRs — a 429 from a publisher CDN is not a real failure.
+#
+# Diagnosed 2026-09-12 (a real run against the current bundle, 1185 URLs):
+# summary was {ok: 519, blocked: 443, dead: 107, net: 116}. The job's own
+# exit logic fails on `dead.length > 0 || net.length > 0`, so this workflow
+# would fail today on both counts:
+#   - 107 confirmed 404s — genuine content-citation rot; a real, fixable
+#     content-maintenance backlog (see the uploaded url-audit-report
+#     artifact from a manual run for the exact list).
+#   - 116 `net` errors (mostly UND_ERR_CONNECT_TIMEOUT), overwhelmingly
+#     concentrated on major, obviously-still-live publisher domains
+#     (onlinelibrary.wiley.com, bnf.nice.org.uk, nice.org.uk, jamanetwork.com,
+#     ahajournals.org, rcog.org.uk, cpicpgx.org). These read as network-level
+#     bot/IP blocking of the CI runner, not real dead links — but the script
+#     currently has no "blocked" classification for connection-level errors
+#     the way it already does for HTTP-level 401/403/429, so they count as
+#     hard failures today. Restoring any schedule before this is addressed
+#     (either by fixing the 107 dead citations, by adding a
+#     connect-timeout-to-known-domain "advisory" bucket alongside the
+#     existing blocked-status one, or both) will reproduce the exact alert
+#     fatigue this cron was removed for.
 
 on:
   workflow_dispatch:

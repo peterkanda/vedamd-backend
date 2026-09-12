@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { DrugsController } from './drugs.controller';
 import { DrugsService } from './drugs.service';
 import { DeveloperModule } from '../developer/developer.module';
+import { AllergyModule } from '../allergy/allergy.module';
 
 /**
  * SRS §6.3.4 — Drug Information Service.
@@ -12,7 +13,7 @@ import { DeveloperModule } from '../developer/developer.module';
  * required or accepted at any endpoint in this module.
  */
 @Module({
-  imports: [DeveloperModule],
+  imports: [DeveloperModule, AllergyModule],
   controllers: [DrugsController],
   providers: [DrugsService],
   exports: [DrugsService],

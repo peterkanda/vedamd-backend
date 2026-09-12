@@ -15,8 +15,19 @@ export type EvidenceLevel = 'A' | 'B' | 'C' | 'D' | 'expert-consensus';
 
 export type ReviewStatus = 'draft' | 'review' | 'approved' | 'deprecated';
 
+/**
+ * `clinical-lead`, `physician`, `clinical-pharmacist` and
+ * `public-health-specialist` are clinically-credentialed roles; an
+ * `approved` record's reviewers must include at least one of them
+ * (bundle-validator.ts `CLINICAL_REVIEWER_ROLES`) — `peer-reviewer` /
+ * `governance-committee` / `guideline-author` alone are not sufficient,
+ * so two non-clinical sign-offs can't satisfy FR-024 for clinical content.
+ */
 export type ReviewerRole =
   | 'clinical-lead'
+  | 'physician'
+  | 'clinical-pharmacist'
+  | 'public-health-specialist'
   | 'peer-reviewer'
   | 'governance-committee'
   | 'guideline-author';
@@ -58,6 +69,7 @@ export interface ContentReviewMetadata {
  */
 export type CdsRuleType =
   | 'drug-drug-interaction'
+  | 'drug-allergy-cross-reactivity'
   | 'renal-safety'
   | 'hepatic-safety'
   | 'pregnancy-safety'
