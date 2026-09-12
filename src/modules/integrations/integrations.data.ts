@@ -85,7 +85,7 @@ export const INTEGRATIONS: Integration[] = [
     tagline:
       'Open-source EMR platform used by Kenya MOH (KenyaEMR), Mozambique, Rwanda, Uganda and many SSA programmes for HIV / TB / MCH.',
     description:
-      'OpenMRS is the most widely deployed open-source EMR in sub-Saharan Africa. The FHIR2 module exposes patient context as FHIR R4 resources, which can be forwarded to VedaMD CDS Hooks endpoints. The REST Web Services module gives direct API access for custom integrations.',
+      'OpenMRS is the most widely deployed open-source EMR in sub-Saharan Africa. Integration uses the Bahmni CDSS module (openmrs-module-cdss), a generic CDS Hooks client whose protocol VedaMD implements exactly — no VedaMD-specific .omod is required. The module posts a FHIR prefetch bundle (patient, conditions, draftMedicationRequests) and renders the returned cards. Because it sends no Authorization header, deploy the VedaMD CDS bridge alongside it to inject your API key.',
     homepage: 'https://openmrs.org',
     primaryMethod: 'cds-hooks',
     methods: ['cds-hooks', 'fhir-rest', 'rest'],
@@ -93,41 +93,60 @@ export const INTEGRATIONS: Integration[] = [
     supportedHooks: ['patient-view', 'medication-prescribe', 'order-select', 'order-sign'],
     snippets: [
       {
-        label: 'Install the OpenMRS CDS Hooks module',
+        label: 'Install the Bahmni CDSS module',
         language: 'bash',
-        code: `# Drop the cdshooks-omod into the OpenMRS modules directory
-cp openmrs-module-cdshooks-1.0.0.omod /opt/openmrs/modules/
+        code: `# Build the generic CDS Hooks client module
+git clone https://github.com/Bahmni/openmrs-module-cdss.git
+cd openmrs-module-cdss && mvn clean install
 
-# Restart the OpenMRS server (Tomcat)
+cp omod/target/cdss-*.omod /opt/openmrs/modules/
 systemctl restart tomcat`,
       },
       {
-        label: 'Register VedaMD service in OpenMRS Administration → CDS Hooks',
-        language: 'json',
-        code: `{
-  "hook": "patient-view",
-  "title": "VedaMD safety checks",
-  "id": "vedamd-patient-view",
-  "url": "${VEDAMD_BASE_URL_PLACEHOLDER}/cds-services/vedamd-patient-view",
-  "authToken": "vmd_test_..."
-}`,
+        label: 'Run the VedaMD CDS bridge (the module cannot send an API key)',
+        language: 'bash',
+        code: `docker run -d --name vedamd-bridge --restart unless-stopped \\
+  -e VEDAMD_API_KEY=vmd_live_xxxxxxxx \\
+  -e VEDAMD_BASE_URL=${VEDAMD_BASE_URL_PLACEHOLDER} \\
+  -p 127.0.0.1:8088:8088 \\
+  vedamd/cds-bridge:0.1.0`,
       },
       {
-        label: 'Or invoke from the OpenMRS FHIR2 module via fhir.r4',
+        label: 'Point OpenMRS at the bridge (global property cdss.fhir.baseurl)',
         language: 'bash',
-        code: `curl -X POST "${VEDAMD_BASE_URL_PLACEHOLDER}/cds-services/vedamd-patient-view" \\
-  -H "Authorization: Bearer vmd_test_..." \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "hook": "patient-view",
-    "hookInstance": "uuid-here",
-    "fhirServer": "https://your-openmrs/ws/fhir2/R4",
-    "context": { "patientId": "FHIR-patient-uuid" }
-  }'`,
+        code: `# Must be the DISCOVERY url — the module appends /{serviceId} itself
+curl -u admin:Admin123 -X POST \\
+  "https://your-openmrs/openmrs/ws/rest/v1/systemsetting/cdss.fhir.baseurl" \\
+  -H 'Content-Type: application/json' \\
+  -d '{"value": "http://vedamd-bridge:8088/cds-services"}'
+
+# Then grant the "Execute CDSS" privilege to the prescribing role.`,
+      },
+      {
+        label: 'Payload the module sends (for reference)',
+        language: 'json',
+        code: `{
+  "hook": "vedamd-order-select",
+  "prefetch": {
+    "patient": { "resourceType": "Patient", "gender": "female", "birthDate": "1958-06-01" },
+    "conditions": { "resourceType": "Bundle", "entry": [] },
+    "draftMedicationRequests": { "resourceType": "Bundle", "entry": [] }
+  }
+}`,
       },
     ],
     links: [
       { label: 'OpenMRS documentation', url: 'https://wiki.openmrs.org', kind: 'docs' },
+      {
+        label: 'Bahmni CDSS module (the CDS Hooks client)',
+        url: 'https://github.com/Bahmni/openmrs-module-cdss',
+        kind: 'plugin',
+      },
+      {
+        label: 'VedaMD OpenMRS/Bahmni setup guide',
+        url: 'https://github.com/vedamd/plugins/tree/main/openmrs-bahmni',
+        kind: 'plugin',
+      },
       {
         label: 'OpenMRS FHIR2 module',
         url: 'https://github.com/openmrs/openmrs-module-fhir2',
@@ -137,8 +156,11 @@ systemctl restart tomcat`,
       { label: 'KenyaEMR distribution', url: 'https://github.com/palladiumkenya', kind: 'github' },
     ],
     notes: [
-      'The FHIR2 module ships with OpenMRS Reference Application 2.10+',
-      'For KenyaEMR / IQCare distributions, confirm the FHIR2 module version supports the resources you need (Patient, MedicationRequest, Encounter, Observation).',
+      'There is no VedaMD-specific OpenMRS module and none is needed — openmrs-module-cdss is a generic CDS Hooks client and VedaMD speaks its protocol.',
+      'cdss.fhir.baseurl must be the DISCOVERY url (…/cds-services). The module GETs it to validate the service id, then POSTs to …/cds-services/{serviceId}.',
+      'The module sends no Authorization header, so VedaMD cannot be called directly — route it through the VedaMD CDS bridge, an nginx header injection, or OpenHIM.',
+      'draftMedicationRequests contains the patient\u2019s ACTIVE medications as well as the new draft; VedaMD separates them by each resource\u2019s FHIR status.',
+      'Requires the "Execute CDSS" privilege on the prescribing role, and the FHIR2 module (ships with Reference Application 2.10+).',
       'Use a per-environment sandbox key (vmd_test_...) for staging; production keys (vmd_live_...) require your tenant to be approved.',
     ],
   },
@@ -147,55 +169,53 @@ systemctl restart tomcat`,
     name: 'OpenEMR',
     category: 'open-source',
     tagline:
-      'Globally deployed open-source ambulatory EHR with native FHIR R4 + SMART on FHIR + CDS Hooks support.',
+      'Globally deployed open-source ambulatory EHR with FHIR R4 + SMART on FHIR. Integrates via the VedaMD PHP module.',
     description:
-      'OpenEMR is the most-deployed open-source ambulatory EMR. Recent versions (7.0+) ship with a FHIR R4 endpoint, SMART on FHIR launch context, and a built-in CDS Hooks consumer. Globals → Connectors → CDS Hooks lets administrators paste a discovery URL to register VedaMD services.',
+      'OpenEMR is the most-deployed open-source ambulatory EMR. It has no CDS Hooks client — its Clinical Decision Rules (CDR) engine evaluates local database rules, not remote services — so VedaMD ships a PHP module that reads the chart, calls VedaMD, and renders safety cards on the patient summary. OpenEMR 7.0+ also exposes FHIR R4 and SMART on FHIR for outbound data.',
     homepage: 'https://www.open-emr.org',
-    primaryMethod: 'cds-hooks',
-    methods: ['cds-hooks', 'smart-on-fhir', 'fhir-rest'],
+    primaryMethod: 'rest',
+    methods: ['rest', 'smart-on-fhir', 'fhir-rest'],
     tags: ['ambulatory', 'global', 'ssa'],
-    supportedHooks: [
-      'patient-view',
-      'medication-prescribe',
-      'order-select',
-      'order-sign',
-      'encounter-discharge',
-    ],
     snippets: [
       {
-        label: 'Register VedaMD discovery in OpenEMR Admin → Globals → Connectors',
-        language: 'text',
-        code: `CDS Hooks discovery endpoint:
-${VEDAMD_HOOK_DISCOVERY}
+        label: 'Install the VedaMD module',
+        language: 'bash',
+        code: `cd /var/www/openemr/interface/modules/custom_modules
+git clone https://github.com/vedamd/oe-module-vedamd-cds.git
 
-Authorization header:
-Bearer vmd_test_...`,
+# Then: Administration → Modules → Manage Modules
+#       → Register → Install → Enable`,
       },
       {
-        label: 'OpenEMR SMART app registration (Admin → System → API Clients)',
+        label: 'Configure (environment variables take precedence over globals)',
+        language: 'bash',
+        code: `VEDAMD_API_KEY=vmd_live_xxxxxxxx
+VEDAMD_BASE_URL=${VEDAMD_BASE_URL_PLACEHOLDER}
+VEDAMD_SERVICE_ID=vedamd-patient-view
+VEDAMD_TIMEOUT_SECONDS=4`,
+      },
+      {
+        label: 'Optional — OpenEMR FHIR access for a separate SMART client',
+        language: 'text',
+        code: `The VedaMD module does not use SMART on FHIR; it reads the chart
+directly. Register an API client under Admin → System → API Clients
+only if you are building your own SMART app against OpenEMR's FHIR
+endpoint (/apis/default/fhir).`,
+      },
+      {
+        label: 'What the module sends (verified OpenEMR schema)',
         language: 'json',
         code: `{
-  "client_name": "VedaMD Decision Support",
-  "redirect_uri": "${VEDAMD_BASE_URL_PLACEHOLDER}/smart/callback",
-  "scope": "launch openid fhirUser patient/*.read"
+  "hook": "patient-view",
+  "hookInstance": "01HVZ...",
+  "context": {
+    "ageYears": 58, "sex": "female",
+    "medications": ["Warfarin 5mg", {"code": "5640", "system": "rxnorm", "name": "Ibuprofen"}],
+    "diagnoses": ["atrial fibrillation", "ICD10:I48.0"],
+    "allergies": ["Penicillin"],
+    "systolicMmHg": 168, "weightKg": 71.2, "bodyTempC": 37.1
+  }
 }`,
-      },
-      {
-        label: 'Call CDS Hooks from OpenEMR via cURL (test)',
-        language: 'bash',
-        code: `curl -X POST "${VEDAMD_BASE_URL_PLACEHOLDER}/cds-services/vedamd-medication-prescribe" \\
-  -H "Authorization: Bearer vmd_test_..." \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "hookInstance": "01HVZ...",
-    "hook": "medication-prescribe",
-    "fhirServer": "https://your-openemr/apis/default/fhir",
-    "context": {
-      "patientId": "1",
-      "encounterId": "5",
-      "medications": { "resourceType": "Bundle", "entry": [] }
-    }
-  }'`,
       },
     ],
     links: [
@@ -206,10 +226,17 @@ Bearer vmd_test_...`,
         kind: 'docs',
       },
       { label: 'OpenEMR GitHub', url: 'https://github.com/openemr/openemr', kind: 'github' },
+      {
+        label: 'VedaMD OpenEMR module',
+        url: 'https://github.com/vedamd/plugins/tree/main/openemr/oe-module-vedamd-cds',
+        kind: 'plugin',
+      },
     ],
     notes: [
-      'OpenEMR ≥ 7.0 ships with FHIR R4 + SMART. Older versions need the API module enabled in Admin → Globals.',
-      'CDS Hooks responses render as cards in the OpenEMR encounter sidebar; override-reason capture is supported.',
+      'OpenEMR has NO CDS Hooks client. Its CDR engine (library/clinical_rules.php, src/ClinicalDecisionRules/) evaluates local database rules only — there is no Globals → Connectors screen for registering a remote CDS service.',
+      'OpenEMR stores vitals in US customary units (pounds, inches, Fahrenheit) regardless of the units_of_measurement display setting; the module converts to metric before sending. Do not remove those conversions.',
+      'OpenEMR ≥ 7.0 is required for the module event system and Twig card rendering.',
+      'If VedaMD is unreachable the module renders nothing and the chart loads normally — decision support never blocks the record.',
     ],
   },
   {
@@ -219,24 +246,35 @@ Bearer vmd_test_...`,
     tagline:
       'Distribution combining OpenMRS (clinical) + ERPNext (admin/billing) + OpenELIS (lab) + OpenImaging — widely deployed across SSA + India.',
     description:
-      'Bahmni stitches OpenMRS, ERPNext and OpenELIS into a single deployment. VedaMD integrates via the underlying OpenMRS REST + FHIR2 module — see the OpenMRS integration for details — and can additionally consume ERPNext webhooks for billing-side events.',
+      'Bahmni stitches OpenMRS, ERPNext and OpenELIS into a single deployment. Bahmni authors the CDSS module (openmrs-module-cdss) that VedaMD integrates through, so the setup is identical to OpenMRS: install the module, set the cdss.fhir.baseurl global property to a VedaMD CDS bridge, and grant the Execute CDSS privilege.',
     homepage: 'https://www.bahmni.org',
     primaryMethod: 'cds-hooks',
     methods: ['cds-hooks', 'fhir-rest', 'rest', 'webhook'],
     tags: ['ssa', 'india', 'hospital'],
     snippets: [
       {
-        label: 'Bahmni docker stack — add VedaMD CDS Hooks endpoint to OpenMRS config',
-        language: 'yaml',
-        code: `# bahmni_docker/openmrs/config/cds_hooks_services.json
-services:
-  - id: vedamd-patient-view
-    hook: patient-view
-    url: ${VEDAMD_BASE_URL_PLACEHOLDER}/cds-services/vedamd-patient-view
-    auth_token: vmd_test_...`,
+        label: 'Check whether the CDSS module is already installed',
+        language: 'bash',
+        code: `# Administration → Manage Modules → look for "CDSS"
+# Recent Bahmni distributions bundle it; otherwise build from source:
+git clone https://github.com/Bahmni/openmrs-module-cdss.git
+cd openmrs-module-cdss && mvn clean install
+cp omod/target/cdss-*.omod /opt/openmrs/modules/`,
       },
       {
-        label: 'Restart Bahmni stack after config change',
+        label: 'Point the module at a VedaMD CDS bridge',
+        language: 'bash',
+        code: `# The module sends no Authorization header, so the bridge holds the key.
+docker run -d --name vedamd-bridge --restart unless-stopped \\
+  -e VEDAMD_API_KEY=vmd_live_xxxxxxxx \\
+  -e VEDAMD_BASE_URL=${VEDAMD_BASE_URL_PLACEHOLDER} \\
+  -p 127.0.0.1:8088:8088 vedamd/cds-bridge:0.1.0
+
+# Global property (discovery URL — the module appends /{serviceId}):
+#   cdss.fhir.baseurl = http://vedamd-bridge:8088/cds-services`,
+      },
+      {
+        label: 'Restart the Bahmni stack after the config change',
         language: 'bash',
         code: `cd bahmni_docker
 docker compose restart openmrs proxy`,
@@ -249,11 +287,18 @@ docker compose restart openmrs proxy`,
         kind: 'docs',
       },
       { label: 'Bahmni GitHub', url: 'https://github.com/Bahmni', kind: 'github' },
+      {
+        label: 'Bahmni CDSS module',
+        url: 'https://github.com/Bahmni/openmrs-module-cdss',
+        kind: 'plugin',
+      },
       { label: 'Bahmni Docker', url: 'https://github.com/Bahmni/bahmni-docker', kind: 'github' },
     ],
     notes: [
-      'Bahmni 0.93+ supports OpenMRS FHIR2 — use it for VedaMD CDS Hooks integration.',
-      'For lab-derived rules (creatinine → renal dosing) consume OpenELIS results through the OpenMRS observation pipeline.',
+      'There is no cds_hooks_services.json in a Bahmni deployment — configuration is the single OpenMRS global property cdss.fhir.baseurl.',
+      'Bahmni calls POST /openmrs/ws/rest/v1/cdss?service={serviceId}; set that service id to a VedaMD service (e.g. vedamd-order-select) in the Bahmni app config.',
+      'Bahmni 0.93+ supports OpenMRS FHIR2, which the CDSS module uses to build the prefetch bundle.',
+      'For lab-derived rules (creatinine → renal dosing) consume OpenELIS results through the OpenMRS observation pipeline — without a creatinine those rules stay silent.',
     ],
   },
   {
@@ -270,44 +315,51 @@ docker compose restart openmrs proxy`,
     tags: ['ambulatory', 'hospital', 'india', 'ssa'],
     snippets: [
       {
-        label: 'Frappe Server Script — call VedaMD on Patient Encounter save',
-        language: 'python',
-        code: `# DocType: Patient Encounter, Event: After Save
-import frappe, requests
+        label: 'Install the VedaMD Frappe app (recommended)',
+        language: 'bash',
+        code: `cd ~/frappe-bench
+bench get-app https://github.com/vedamd/vedamd_cds.git
+bench --site your-site.local install-app vedamd_cds
 
-def call_vedamd(doc, method):
-    payload = {
-        "hookInstance": frappe.generate_hash(length=20),
-        "hook": "patient-view",
-        "context": {
-            "patientId": doc.patient,
-            "encounterId": doc.name,
-        },
-    }
-    r = requests.post(
-        "${VEDAMD_BASE_URL_PLACEHOLDER}/cds-services/vedamd-patient-view",
-        json=payload,
-        headers={"Authorization": "Bearer vmd_test_..."},
-        timeout=4,
-    )
-    if r.ok:
-        cards = r.json().get("cards", [])
-        for c in cards:
-            frappe.publish_realtime("vedamd_card", {"summary": c.get("summary"), "detail": c.get("detail")})`,
+# Key goes in site_config.json, so it stays out of database backups:
+bench --site your-site.local set-config vedamd_api_key "vmd_live_xxxxxxxx"
+bench --site your-site.local set-config vedamd_base_url "${VEDAMD_BASE_URL_PLACEHOLDER}"`,
       },
       {
-        label: 'Or add a Frappe Webhook (no code)',
+        label: 'Or a Server Script — note: `import requests` is BLOCKED',
+        language: 'python',
+        code: `# Server Script → DocType Event → Patient Encounter → Before Save
+#
+# Server Scripts run under RestrictedPython. \`import requests\` fails;
+# frappe.integrations.utils.make_post_request is whitelisted. Code runs
+# inline with \`doc\` in scope — defining a function nobody calls is a
+# common way to make a script that silently never fires.
+
+meds = [d.drug_name for d in (doc.drug_prescription or []) if d.drug_name]
+
+if meds:
+    response = make_post_request(
+        "${VEDAMD_BASE_URL_PLACEHOLDER}/cds-services/vedamd-order-select",
+        headers={"Authorization": "Bearer vmd_live_xxxxxxxx",
+                 "Content-Type": "application/json"},
+        json={"hook": "order-select",
+              "hookInstance": frappe.generate_hash(length=20),
+              "context": {"medications": meds,
+                          "ageYears": frappe.utils.cint((doc.patient_age or "0").split()[0])}},
+        timeout=4,
+    )
+    for card in (response or {}).get("cards", []):
+        frappe.msgprint(card.get("summary"), title="VedaMD",
+                        indicator="red" if card.get("indicator") == "critical" else "blue")`,
+      },
+      {
+        label: 'Webhook (fire-and-forget — no cards reach the clinician)',
         language: 'json',
         code: `{
-  "doctype": "Patient Encounter",
-  "webhook_url": "${VEDAMD_BASE_URL_PLACEHOLDER}/integrations/erpnext/patient-encounter",
-  "webhook_headers": [
-    { "key": "Authorization", "value": "Bearer vmd_test_..." }
-  ],
-  "webhook_data": [
-    { "fieldname": "patient", "key": "patient_id" },
-    { "fieldname": "name", "key": "encounter_id" }
-  ]
+  "webhook_doctype": "Patient Encounter",
+  "webhook_docevent": "on_submit",
+  "request_url": "${VEDAMD_BASE_URL_PLACEHOLDER}/cds-services/vedamd-order-select",
+  "webhook_headers": [{ "key": "Authorization", "value": "Bearer vmd_live_..." }]
 }`,
       },
     ],
@@ -323,10 +375,17 @@ def call_vedamd(doc, method):
         url: 'https://github.com/frappe/health',
         kind: 'github',
       },
+      {
+        label: 'VedaMD Frappe app',
+        url: 'https://github.com/vedamd/plugins/tree/main/frappe/vedamd_cds',
+        kind: 'plugin',
+      },
     ],
     notes: [
-      'Use Server Scripts for synchronous decision support; Webhooks for fire-and-forget audit/logging.',
-      'Frappe Health 14+ supports the FHIR DocType for round-trip exchange.',
+      'Server Scripts run under RestrictedPython: `import requests` is blocked. Use frappe.integrations.utils.make_post_request, which is whitelisted.',
+      'A Webhook cannot deliver decision support — it is fire-and-forget, so the response never returns to the form and the clinician sees nothing. Use it for audit only.',
+      'The VedaMD app reads verified Frappe Health fields: Patient Encounter (patient_age, patient_sex, drug_prescription, codification_table) and Patient (dob, sex, allergies, medication).',
+      'Saving is never blocked — cards are msgprint notices, not validation errors.',
     ],
   },
   {
@@ -336,35 +395,32 @@ def call_vedamd(doc, method):
     tagline:
       'GNU Project hospital information system — strong in LATAM, growing in SSA — exposes XML-RPC + REST + FHIR.',
     description:
-      'GNU Health is a hospital + lab + public health information system built on the Tryton ERP. It exposes XML-RPC, REST and (recently) FHIR. VedaMD integrates via webhooks fired from Tryton workflow events or via FHIR R4 PUSH.',
+      'GNU Health is a hospital + lab + public health information system built on the Tryton ERP. VedaMD ships a Tryton module that hooks the prescription workflow and calls VedaMD directly through the ORM. GNU Health\u2019s FHIR interface is a separate, read-only Flask server maintained outside core and is not used.',
     homepage: 'https://www.gnuhealth.org',
-    primaryMethod: 'fhir-rest',
-    methods: ['fhir-rest', 'rest', 'webhook'],
+    primaryMethod: 'rest',
+    methods: ['rest', 'webhook'],
     tags: ['latam', 'public-health', 'ssa'],
     snippets: [
       {
-        label: 'Tryton model rule — POST to VedaMD on prescription create',
-        language: 'python',
-        code: `# trytond_module_vedamd_bridge/prescription.py
-from trytond.model import ModelView
-from trytond.transaction import Transaction
-import requests, json
+        label: 'Install the VedaMD Tryton module',
+        language: 'bash',
+        code: `git clone https://github.com/vedamd/plugins.git
+cp -r plugins/gnu-health/trytond_vedamd_cds /path/to/trytond/modules/vedamd_cds
 
-class PrescriptionOrder(metaclass=PoolMeta):
-    __name__ = 'gnuhealth.prescription.order'
+trytond-admin -d <database> -u vedamd_cds --activate-dependencies
+systemctl restart trytond`,
+      },
+      {
+        label: 'Configure',
+        language: 'text',
+        code: `Health → Configuration → VedaMD Configuration
+  (restricted to health administrators)
 
-    @classmethod
-    def create(cls, vlist):
-        records = super().create(vlist)
-        for r in records:
-            requests.post(
-                '${VEDAMD_BASE_URL_PLACEHOLDER}/cds-services/vedamd-medication-prescribe',
-                json={'hook': 'medication-prescribe',
-                      'hookInstance': str(r.id),
-                      'context': {'patientId': r.patient.id, 'medications': [m.medicament.name for m in r.prescription_line]}},
-                headers={'Authorization': 'Bearer vmd_test_...'},
-                timeout=4)
-        return records`,
+  Enabled          yes
+  VedaMD base URL  ${VEDAMD_BASE_URL_PLACEHOLDER}
+  API key          vmd_live_xxxxxxxx
+  CDS service id   vedamd-order-select
+  Timeout          4 seconds`,
       },
     ],
     links: [
@@ -376,8 +432,9 @@ class PrescriptionOrder(metaclass=PoolMeta):
       },
     ],
     notes: [
-      'GNU Health 4.4+ supports FHIR R4 via the health_fhir module.',
-      'Bridge modules can be packaged as Tryton modules and installed alongside core.',
+      'GNU Health\u2019s FHIR server (gnuhealth-fhir-server) is a separate, read-only Flask application maintained outside GNU Health core and has not tracked recent FHIR releases — the Tryton module reads the ORM instead.',
+      'Prescribing is never blocked: a failed or slow VedaMD call logs its failure class and returns no cards.',
+      'Verify patient.weight and patient.diseases against your GNU Health version — those fields have moved between releases.',
     ],
   },
   {
@@ -387,31 +444,43 @@ class PrescriptionOrder(metaclass=PoolMeta):
     tagline:
       'District Health Information System — backbone of national HMIS in Kenya (KHIS), Uganda, Tanzania, Rwanda and 80+ countries.',
     description:
-      'DHIS2 is the largest health information system in the world, used as national HMIS by 80+ countries including Kenya (KHIS), Tanzania (HMIS), Uganda (HMIS2). VedaMD integrates via the Tracker API for individual-level workflows and via Web App + iframe embed for analytics dashboards.',
+      'DHIS2 is the largest health information system in the world, used as national HMIS by 80+ countries including Kenya (KHIS), Tanzania (HMIS), Uganda (HMIS2). DHIS2 program rules cannot call an external service — no action type performs an HTTP request — so real-time decision support runs as a DHIS2 app alongside the Tracker form, reading the enrolment through the Tracker API.',
     homepage: 'https://dhis2.org',
     primaryMethod: 'rest',
     methods: ['rest', 'webhook', 'iframe-embed'],
     tags: ['national-hmis', 'ssa', 'kenya', 'public-health'],
     snippets: [
       {
-        label: 'Call VedaMD from a DHIS2 Tracker program rule',
-        language: 'javascript',
-        code: `// DHIS2 → Programs → Program rules → "VedaMD safety check"
-// Action: "Send message to URL"
-var payload = {
-  hook: 'patient-view',
-  hookInstance: V{event_uid},
-  context: {
-    patientId: V{tracked_entity_instance},
-    medications: A{drug_regimen}
-  }
-};
+        label: 'Install the VedaMD DHIS2 Tracker app',
+        language: 'bash',
+        code: `git clone https://github.com/vedamd/plugins.git
+cd plugins/dhis2/vedamd-dhis2-app
+yarn install && yarn build
 
-WS.post(
-  '${VEDAMD_BASE_URL_PLACEHOLDER}/cds-services/vedamd-patient-view',
-  payload,
-  { 'Authorization': 'Bearer vmd_test_...' }
-);`,
+# Upload build/bundle/*.zip via App Management → Install app.
+# The app is configured with a BRIDGE url, not an API key: a DHIS2 app
+# runs in the browser, where no secret can be kept.`,
+      },
+      {
+        label: 'Map your data elements to VedaMD context fields',
+        language: 'javascript',
+        code: `// src/mapping.js — every DHIS2 deployment names its own metadata,
+// so the mapping is configuration. Unmapped uids are never sent.
+export const defaultMapping = [
+  { uid: 'YOUR_SEX_UID', field: 'sex', coerce: 'text',
+    values: { Male: 'male', Female: 'female' } },
+  { uid: 'YOUR_AGE_UID', field: 'ageYears', coerce: 'number', min: 0, max: 130 },
+  { uid: 'YOUR_SBP_UID', field: 'systolicMmHg', coerce: 'number', min: 40, max: 300 },
+];`,
+      },
+      {
+        label: 'Webhook program notification (audit only — not decision support)',
+        language: 'text',
+        code: `Programs → Program notifications → recipient type "Web hook"
+
+Fire-and-forget: the response never returns to the Tracker form, so a
+clinician sees nothing. Use it to record that a check was requested —
+never as the mechanism for showing a safety alert.`,
       },
       {
         label: 'Embed VedaMD Catalogue inside a DHIS2 dashboard',
@@ -433,9 +502,16 @@ WS.post(
         kind: 'docs',
       },
       { label: 'Kenya KHIS', url: 'https://hiskenya.org', kind: 'docs' },
+      {
+        label: 'VedaMD DHIS2 app',
+        url: 'https://github.com/vedamd/plugins/tree/main/dhis2/vedamd-dhis2-app',
+        kind: 'plugin',
+      },
     ],
     notes: [
-      'Kenya KHIS / KePMs is a DHIS2 deployment — county-level integration follows the same pattern.',
+      'DHIS2 program rules have no HTTP action. The available action types are assign value, display text, display key/value pair, error on complete, hide field, hide section, prevent adding events, make field mandatory, show error, show warning, warning on complete, send message, schedule message — none reaches the network.',
+      'There is no WS.post() and no "send message to URL" action; any snippet claiming otherwise will not run.',
+      'Kenya KHIS / KePMs is a DHIS2 deployment — county-level integration follows the same pattern, but the metadata uids differ and the mapping must be re-pointed.',
       'For aggregate analytics, push pre-computed indicators to DHIS2 data sets; for individual decisions, use Tracker.',
     ],
   },
@@ -505,7 +581,7 @@ WS.post(
         code: `{
   "name": "VedaMD safety check",
   "form_xmlns": "http://commcarehq.org/forms/anc_visit",
-  "trigger_url": "${VEDAMD_BASE_URL_PLACEHOLDER}/integrations/commcare/form-submit",
+  "trigger_url": "${VEDAMD_BASE_URL_PLACEHOLDER}/cds-services/vedamd-patient-view",
   "headers": {
     "Authorization": "Bearer vmd_test_..."
   },
@@ -548,15 +624,22 @@ WS.post(
         label: 'Register VedaMD in Epic CDS Hooks Configuration (Hyperspace → Chart Review)',
         language: 'text',
         code: `Discovery URL: ${VEDAMD_HOOK_DISCOVERY}
-Authentication: OAuth2 Client Credentials
-Token URL: ${VEDAMD_BASE_URL_PLACEHOLDER}/oauth2/token
-Client ID: <your epic-issued client id>
-Scopes: cds:evaluate`,
+Authentication: Bearer API key — Authorization: Bearer vmd_live_...
+
+VedaMD does NOT currently expose an OAuth2 client-credentials token
+endpoint. If your Epic configuration requires OAuth2 for outbound CDS
+Hooks calls, raise it with VedaMD before scheduling the integration.`,
       },
       {
-        label: 'Epic SMART on FHIR app launch URL',
-        language: 'text',
-        code: `https://app.vedamd.io/smart/launch?iss=https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4&launch={launch-token}`,
+        label: 'Prefetch templates to request from Epic',
+        language: 'json',
+        code: `{
+  "patient": "Patient/{{context.patientId}}",
+  "conditions": "Condition?patient={{context.patientId}}&clinical-status=active",
+  "medications": "MedicationRequest?patient={{context.patientId}}&status=active",
+  "allergies": "AllergyIntolerance?patient={{context.patientId}}",
+  "labs": "Observation?patient={{context.patientId}}&category=laboratory&_count=50&_sort=-date"
+}`,
       },
     ],
     links: [
@@ -564,7 +647,9 @@ Scopes: cds:evaluate`,
       { label: 'Epic on FHIR', url: 'https://fhir.epic.com', kind: 'sandbox' },
     ],
     notes: [
-      'VedaMD listing on Epic Showroom is a separate vendor-onboarding process — contact your Epic account manager.',
+      'The gating step is vendor onboarding, not engineering — Showroom listing and health-system enablement cannot be shortcut with code.',
+      'VedaMD accepts Epic’s CDS Hooks payload unmodified: FHIR resources in context.draftOrders and in prefetch are read directly.',
+      'The `labs` prefetch template matters most — without a creatinine the renal and hepatic dosing rules stay silent, which reads as a broken integration when it is merely an uninformed one.',
       'Sandbox testing at https://fhir.epic.com requires Epic developer registration.',
     ],
   },
@@ -588,8 +673,10 @@ Scopes: cds:evaluate`,
         code: `1. Sign in to https://code.cerner.com
 2. Create a new "CDS Hooks Service" entry
 3. Discovery URL: ${VEDAMD_HOOK_DISCOVERY}
-4. Authentication: OAuth2 Client Credentials
-5. Token URL: ${VEDAMD_BASE_URL_PLACEHOLDER}/oauth2/token`,
+4. Authentication: Bearer API key (Authorization: Bearer vmd_live_...)
+
+   VedaMD has no OAuth2 token endpoint — raise this with VedaMD if your
+   configuration requires client-credentials.`,
       },
     ],
     links: [
@@ -812,18 +899,21 @@ $('vedamd_payload', JSON.stringify({
     slug: 'smart-on-fhir',
     name: 'SMART on FHIR',
     category: 'standard',
-    tagline: 'Launch VedaMD as an embedded app inside an EMR using SMART on FHIR OAuth2.',
+    tagline:
+      'The OAuth2 + FHIR context standard for embedded EMR apps. Not yet implemented by VedaMD.',
     description:
-      'SMART on FHIR provides the OAuth2 + FHIR context standard for embedded apps. VedaMD supports both EHR-launch (the EMR sends a launch context) and standalone-launch.',
+      'SMART on FHIR provides the OAuth2 + FHIR context standard for embedded apps. VedaMD does NOT currently ship a SMART app — there is no launch or callback endpoint to register. Integrations today use CDS Hooks (VedaMD returns cards into the EMR workflow) or a platform plugin. This entry documents the planned shape; the snippet below is the pattern a SMART app would follow, not a URL that resolves today.',
     homepage: 'https://hl7.org/fhir/smart-app-launch/',
     primaryMethod: 'smart-on-fhir',
     methods: ['smart-on-fhir'],
     tags: ['standard', 'embed', 'oauth2'],
     snippets: [
       {
-        label: 'SMART app launch URL pattern',
+        label: 'SMART app launch URL pattern (PLANNED — not live)',
         language: 'text',
-        code: `Launch:    https://app.vedamd.io/smart/launch?iss={fhir-server-url}&launch={launch-token}
+        code: `These endpoints are not yet deployed. Use CDS Hooks today.
+
+Launch:    https://app.vedamd.io/smart/launch?iss={fhir-server-url}&launch={launch-token}
 Redirect:  https://app.vedamd.io/smart/callback
 Scopes:    launch openid fhirUser patient/*.read`,
       },

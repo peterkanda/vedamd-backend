@@ -3,6 +3,7 @@ import { CdsHooksController } from './cds-hooks.controller';
 import { CdsEvaluateController } from './cds-evaluate.controller';
 import { CdsCapabilityController } from './cds-capability.controller';
 import { CdsService } from './cds.service';
+import { CdsNormalizerService } from './normalize/cds-normalizer.service';
 import { CdsStrategyRegistry } from './strategies/registry';
 import { DrugDrugInteractionStrategy } from './strategies/ddi.strategy';
 import { DrugAllergyCrossReactivityStrategy } from './strategies/drug-allergy-cross-reactivity.strategy';
@@ -88,6 +89,7 @@ import { AllergyModule } from '../allergy/allergy.module';
   controllers: [CdsHooksController, CdsEvaluateController, CdsCapabilityController],
   providers: [
     CdsService,
+    CdsNormalizerService,
     CdsStrategyRegistry,
     DrugDrugInteractionStrategy,
     DrugAllergyCrossReactivityStrategy,
@@ -164,6 +166,6 @@ import { AllergyModule } from '../allergy/allergy.module';
     VhfSuspectedIsolationStrategy,
     BundleOutcomeStrategy,
   ],
-  exports: [CdsService],
+  exports: [CdsService, CdsNormalizerService],
 })
 export class CdsModule {}

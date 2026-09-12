@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { ConfigService } from '@nestjs/config';
 import { CdsService } from '../src/modules/cds/cds.service';
+import { CdsNormalizerService } from '../src/modules/cds/normalize/cds-normalizer.service';
 import { DrugsService } from '../src/modules/drugs/drugs.service';
 import { CdsStrategyRegistry } from '../src/modules/cds/strategies/registry';
 import { DrugDrugInteractionStrategy } from '../src/modules/cds/strategies/ddi.strategy';
@@ -176,7 +177,9 @@ function makeService(): CdsService {
     new VhfSuspectedIsolationStrategy(),
     new BundleOutcomeStrategy(),
   );
-  return new CdsService(config, log, knowledge, registry);
+  const normalizer = new CdsNormalizerService(knowledge, drugs);
+  normalizer.rebuildIndex();
+  return new CdsService(config, log, knowledge, registry, normalizer);
 }
 
 describe('CdsService.evaluateHook — rule-level codings merge', () => {

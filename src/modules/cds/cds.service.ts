@@ -9,6 +9,7 @@ import type {
   StatelessCapability,
 } from './cds.types';
 import { CdsStrategyRegistry } from './strategies/registry';
+import { CdsNormalizerService } from './normalize/cds-normalizer.service';
 import { KnowledgeService } from '../knowledge/knowledge.service';
 import { PHI_FREE_LOGGER, type PhiFreeLogger } from '../../common/phi-free-logger';
 import type { AppConfig } from '../../config/configuration';
@@ -544,6 +545,7 @@ export class CdsService {
     @Inject(PHI_FREE_LOGGER) private readonly log: PhiFreeLogger,
     private readonly knowledge: KnowledgeService,
     private readonly registry: CdsStrategyRegistry,
+    private readonly normalizer: CdsNormalizerService,
   ) {}
 
   /** Resolve a card UUID back to its rule for feedback ingest. Null if expired / unknown. */
@@ -570,9 +572,16 @@ export class CdsService {
     };
   }
 
-  async evaluateHook(serviceId: string, req: CdsHookRequest): Promise<CdsHookResponse> {
+  async evaluateHook(serviceId: string, request: CdsHookRequest): Promise<CdsHookResponse> {
     const start = process.hrtime.bigint();
     const known = this.services.find((s) => s.id === serviceId);
+
+    // Adapt whatever the EMR actually sent (FHIR prefetch bundles from
+    // OpenMRS/Bahmni, draftOrders from Epic/Oracle Health) into the flat
+    // context the strategies read. Caller-supplied flat fields win; a
+    // payload with no FHIR passes through untouched. See
+    // normalize/fhir-normalizer.ts for the contract.
+    const { request: req, report: normalization } = this.normalizer.normalize(request);
 
     const cards: CdsCard[] = [];
     let rulesEvaluated = 0;
@@ -696,6 +705,12 @@ export class CdsService {
       cards_returned_count: cards.length,
       latency_ms: latencyMs,
       status_code: known ? 200 : 404,
+      // Counts and field NAMES only — never values. Lets an integrator
+      // see "VedaMD understood 3 of your 5 medications" without any
+      // patient data reaching the log.
+      fhir_normalized: normalization.applied,
+      fhir_fields_populated: normalization.fieldsPopulated.length,
+      fhir_medications_unresolved: normalization.unresolvedMedications,
     });
     return { cards };
   }

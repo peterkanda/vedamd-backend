@@ -60,6 +60,13 @@ export const ALLOWED_FIELDS = new Set<string>([
   'llm_model',
   'llm_token_input',
   'llm_token_output',
+  // EMR payload normalisation (counts + a boolean — never values).
+  // Lets an integrator see how much of their FHIR we understood
+  // ("3 of 5 medications resolved") without any patient data landing
+  // in a log line. See cds/normalize/fhir-normalizer.ts.
+  'fhir_normalized',
+  'fhir_fields_populated',
+  'fhir_medications_unresolved',
   // agentic engine (counts + config ids only — never PHI)
   'agentic_card_count',
   'deterministic_card_count',

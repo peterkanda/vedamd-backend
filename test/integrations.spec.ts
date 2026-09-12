@@ -36,8 +36,14 @@ describe('IntegrationsService', () => {
 
   it('filters by method', () => {
     const cdsHooks = svc().list({ method: 'cds-hooks' });
-    expect(cdsHooks.map((i) => i.slug)).toContain('openemr');
+    expect(cdsHooks.map((i) => i.slug)).toContain('openmrs');
     expect(cdsHooks.every((i) => i.methods.includes('cds-hooks'))).toBe(true);
+
+    // OpenEMR must NOT appear here. It has no CDS Hooks client — only a
+    // local Clinical Decision Rules engine — so listing it as one sends
+    // integrators looking for a configuration screen that does not
+    // exist. It integrates through the VedaMD PHP module instead.
+    expect(cdsHooks.map((i) => i.slug)).not.toContain('openemr');
 
     const smart = svc().list({ method: 'smart-on-fhir' });
     expect(smart.map((i) => i.slug)).toContain('epic');
