@@ -4,7 +4,7 @@ import type { AppConfig } from '../../../config/configuration';
 import { PHI_FREE_LOGGER, type PhiFreeLogger } from '../../../common/phi-free-logger';
 import type {
   LlmCompletionRequest,
-  LlmCompletionResult,
+  ProviderCompletion,
   LlmProvider,
 } from './llm-provider.interface';
 
@@ -42,7 +42,7 @@ export class DeepseekProvider implements LlmProvider {
     return this.apiKey.length > 0;
   }
 
-  async complete(req: LlmCompletionRequest): Promise<LlmCompletionResult> {
+  async complete(req: LlmCompletionRequest): Promise<ProviderCompletion> {
     if (!this.isConfigured()) {
       throw new Error('DeepSeek provider not configured (DEEPSEEK_API_KEY missing).');
     }

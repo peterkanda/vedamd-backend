@@ -141,4 +141,8 @@ if (strict && failures.length > 0) {
   console.error(`\nFAILED (--strict): ${failures.join('; ')}.`);
   process.exit(1);
 }
-console.log('\n(report mode — pass --strict to enforce: overlay-leakage=0 and the per-kg-dose ratchet)');
+console.log(
+  strict
+    ? '\n(--strict: enforcing overlay-leakage=0 and the per-kg-dose ratchet — both clear)'
+    : '\n(report mode — pass --strict to enforce: overlay-leakage=0 and the per-kg-dose ratchet)',
+);

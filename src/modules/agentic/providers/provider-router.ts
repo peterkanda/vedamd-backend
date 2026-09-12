@@ -1,9 +1,10 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { AnthropicProvider } from './anthropic.provider';
 import { OpenAiProvider } from './openai.provider';
 import { DeepseekProvider } from './deepseek.provider';
 import { GeminiProvider } from './gemini.provider';
 import { OpenRouterProvider } from './openrouter.provider';
+import { NoMedicalProviderError, isMedicalModel } from './llm-provider.interface';
 import type {
   LlmCompletionRequest,
   LlmCompletionResult,
@@ -30,6 +31,8 @@ import type {
  */
 @Injectable()
 export class ProviderRouter {
+  private readonly logger = new Logger(ProviderRouter.name);
+
   constructor(
     private readonly anthropic: AnthropicProvider,
     private readonly openai: OpenAiProvider,
@@ -121,24 +124,63 @@ export class ProviderRouter {
     return this.all().map((p) => ({ name: p.name, configured: p.isConfigured() }));
   }
 
+  /** Providers whose configured model the operator declared clinical-grade. */
+  medicalProviders(): LlmProvider[] {
+    return this.all().filter((p) => p.isConfigured() && isMedicalModel(p.model));
+  }
+
   /** Attempt completion across providers in order; throws if all fail.
    *  Pass `preferredProvider` to steer routing for this single call. */
   async complete(
     req: LlmCompletionRequest,
     opts: { preferredProvider?: LlmProviderName } = {},
   ): Promise<LlmCompletionResult> {
-    const providers = this.order(opts.preferredProvider).filter((p) => p.isConfigured());
+    let providers = this.order(opts.preferredProvider).filter((p) => p.isConfigured());
+
+    if (req.requireMedical) {
+      // Restrict to declared clinical models rather than ordering them first:
+      // a general-purpose model must not be reachable by fallback here.
+      providers = providers.filter((p) => isMedicalModel(p.model));
+      if (providers.length === 0) {
+        throw new NoMedicalProviderError(
+          'No clinical-grade model is configured. Set MEDICAL_MODEL_IDS to the model ids the ' +
+            'operator has approved for clinical reasoning, and configure a provider serving one.',
+        );
+      }
+    }
+
     if (providers.length === 0) {
       throw new Error('No LLM provider configured for agentic evaluation.');
     }
+
+    const intended = providers[0].name;
     let lastErr: unknown;
     for (const provider of providers) {
       try {
-        return await provider.complete(req);
+        const result = await provider.complete(req);
+        return {
+          ...result,
+          medical: isMedicalModel(result.model),
+          fellBackFrom: provider.name === intended ? null : intended,
+        };
       } catch (err) {
         lastErr = err;
-        // Try next provider in the fallback chain.
+        // A silent catch here is how "MedGemma" became GPT-4o without anyone
+        // being able to tell. Record the substitution before trying the next.
+        this.logger.warn(
+          `LLM provider "${provider.name}" (${provider.model}) failed; ` +
+            `${provider.name === providers[providers.length - 1].name ? 'no providers left' : 'falling back'}: ` +
+            `${err instanceof Error ? err.message : String(err)}`,
+        );
       }
+    }
+
+    if (req.requireMedical) {
+      throw new NoMedicalProviderError(
+        `Every clinical-grade provider failed. Last error: ${
+          lastErr instanceof Error ? lastErr.message : String(lastErr)
+        }`,
+      );
     }
     throw lastErr instanceof Error ? lastErr : new Error('All LLM providers failed.');
   }

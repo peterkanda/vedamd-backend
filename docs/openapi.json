@@ -2586,6 +2586,44 @@
         ]
       }
     },
+    "/api/v1/integration-log": {
+      "get": {
+        "description": "FR-336 — newest-first ring-buffer view of recent API calls. Bounded by FR-331 (50k entries) and FR-332 (30-day TTL). Field set per FR-333. Scoped to the calling operator's integratorId.",
+        "operationId": "IntegrationLogController_query",
+        "parameters": [
+          {
+            "name": "limit",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "since",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Query the bounded integration log",
+        "tags": [
+          "integration-log"
+        ]
+      }
+    },
     "/api/v1/bundles": {
       "get": {
         "description": "FR-147 — filter by domain, locale, country applicability.",
@@ -2648,44 +2686,6 @@
         "summary": "Latest bundle metadata for an id",
         "tags": [
           "bundles"
-        ]
-      }
-    },
-    "/api/v1/integration-log": {
-      "get": {
-        "description": "FR-336 — newest-first ring-buffer view of recent API calls. Bounded by FR-331 (50k entries) and FR-332 (30-day TTL). Field set per FR-333. Scoped to the calling operator's integratorId.",
-        "operationId": "IntegrationLogController_query",
-        "parameters": [
-          {
-            "name": "limit",
-            "required": true,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "since",
-            "required": true,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "Query the bounded integration log",
-        "tags": [
-          "integration-log"
         ]
       }
     },
@@ -2891,7 +2891,7 @@
             "bearer": []
           }
         ],
-        "summary": "Set this integrator's LLM provider and optional model override.",
+        "summary": "Set this integrator's LLM provider.",
         "tags": [
           "developer"
         ]
@@ -3074,6 +3074,36 @@
           }
         ],
         "summary": "Grounded clinical chat for the mobile app (cloud model).",
+        "tags": [
+          "assistant"
+        ]
+      }
+    },
+    "/api/v1/device-audit/answers": {
+      "post": {
+        "operationId": "DeviceAuditController_sync",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeviceAnswerSyncDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Sync the on-device assistant answer log (PHI-free: hashed question, cited record ids, model version and flags only).",
         "tags": [
           "assistant"
         ]
@@ -5098,6 +5128,83 @@
         },
         "required": [
           "question"
+        ]
+      },
+      "DeviceAnswerReportDto": {
+        "type": "object",
+        "properties": {
+          "clientEventId": {
+            "type": "string",
+            "description": "Client-generated id; makes a retried sync idempotent."
+          },
+          "occurredAt": {
+            "type": "string",
+            "description": "When the answer was produced, per the device clock."
+          },
+          "questionHash": {
+            "type": "string",
+            "description": "HMAC of the question, computed on the device. Never the text."
+          },
+          "engine": {
+            "type": "string",
+            "description": "'ondevice', a cloud provider name, or 'refused'."
+          },
+          "modelVersion": {
+            "type": "string",
+            "description": "Installed model build that answered."
+          },
+          "contentVersion": {
+            "type": "string",
+            "description": "Content bundle version retrieval ran against."
+          },
+          "grounded": {
+            "type": "boolean",
+            "description": "Whether the answer stood on retrieved VedaMD content."
+          },
+          "refused": {
+            "type": "boolean",
+            "description": "Whether the clinical-claim gate declined to answer."
+          },
+          "complete": {
+            "type": "boolean",
+            "description": "False when generation stopped early."
+          },
+          "sourceIds": {
+            "description": "Cited bundle records as `domain/slug`.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "latencyMs": {
+            "type": "number"
+          },
+          "appVersion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "clientEventId",
+          "occurredAt",
+          "questionHash",
+          "engine",
+          "grounded",
+          "refused",
+          "complete"
+        ]
+      },
+      "DeviceAnswerSyncDto": {
+        "type": "object",
+        "properties": {
+          "reports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeviceAnswerReportDto"
+            }
+          }
+        },
+        "required": [
+          "reports"
         ]
       },
       "InteractionNetworkDto": {

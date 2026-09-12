@@ -38,12 +38,9 @@ export class LlmPreferenceController {
 
   @Put()
   @ApiOperation({
-    summary: "Set this integrator's LLM provider and optional model override.",
+    summary: "Set this integrator's LLM provider.",
   })
-  set(
-    @Req() req: FastifyRequest,
-    @Body() body: { provider?: string | null; model?: string | null },
-  ) {
+  set(@Req() req: FastifyRequest, @Body() body: { provider?: string | null }) {
     try {
       return this.prefs.set(req.operator!.integratorId, body);
     } catch (e) {

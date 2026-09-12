@@ -99,6 +99,62 @@ describe('Agentic — card extractor', () => {
     expect(cards).toHaveLength(0);
   });
 
+  describe('citation verification (anti-hallucination guard)', () => {
+    // Only these were retrieved for the request.
+    const verify = (kind: string, id: string) =>
+      (kind === 'drug' && id === 'warfarin') || (kind === 'ddi' && id === 'naproxen+warfarin');
+
+    it('drops a card whose citation was never retrieved', () => {
+      const text = JSON.stringify({
+        cards: [
+          {
+            summary: 'Invented interaction',
+            indicator: 'critical',
+            confidence: 0.95,
+            citations: [{ kind: 'ddi', id: 'amoxicillin+rifampicin', label: 'Made up' }],
+          },
+        ],
+      });
+      // Without a verifier this card is indistinguishable from a real one, and
+      // its self-reported 0.95 also escapes the evidence cap.
+      expect(extractCards(text, now, 0).cards).toHaveLength(1);
+      expect(extractCards(text, now, 0, undefined, verify).cards).toHaveLength(0);
+    });
+
+    it('keeps a card whose citation was retrieved', () => {
+      const text = JSON.stringify({
+        cards: [
+          {
+            summary: 'Real interaction',
+            indicator: 'critical',
+            confidence: 0.9,
+            citations: [{ kind: 'ddi', id: 'naproxen+warfarin', label: 'Naproxen + Warfarin' }],
+          },
+        ],
+      });
+      expect(extractCards(text, now, 0, undefined, verify).cards).toHaveLength(1);
+    });
+
+    it('keeps only the verifiable citations on a mixed card', () => {
+      const text = JSON.stringify({
+        cards: [
+          {
+            summary: 'Partly grounded',
+            indicator: 'warning',
+            confidence: 0.9,
+            citations: [
+              { kind: 'drug', id: 'warfarin', label: 'Warfarin' },
+              { kind: 'drug', id: 'not-a-real-drug', label: 'Ghost' },
+            ],
+          },
+        ],
+      });
+      const { cards, citedRecords } = extractCards(text, now, 0, undefined, verify);
+      expect(cards).toHaveLength(1);
+      expect(citedRecords).toEqual([{ kind: 'drug', id: 'warfarin' }]);
+    });
+  });
+
   it('extracts JSON from prose + code fences', () => {
     const text =
       'Here is my analysis:\n```json\n{"cards":[{"summary":"X","indicator":"info","citations":[{"kind":"drug","id":"warfarin","label":"W"}]}]}\n```\nDone.';

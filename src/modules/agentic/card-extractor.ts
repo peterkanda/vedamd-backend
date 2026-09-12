@@ -44,11 +44,32 @@ export type CitationStrengthResolver = (
   id: string,
 ) => 'A' | 'B' | 'C' | 'D' | undefined;
 
+/**
+ * Optional check that a cited record was actually among the knowledge retrieved
+ * for THIS request.
+ *
+ * Without it the citation guard only proves the model emitted *a string*. A
+ * fabricated slug passed every check and was then displayed as its own label —
+ * and because `evidenceCeiling()` declines to cap confidence when no strength
+ * resolves, an invented citation also escaped the evidence cap, which is
+ * exactly the case it exists for. Supplying this closes both holes at once:
+ * unknown citations are dropped, and a card left with none fails the existing
+ * citation requirement.
+ *
+ * Optional on purpose — when no verifier is wired (unit tests, deployments
+ * without the knowledge service) behaviour is unchanged.
+ */
+export type CitationVerifier = (
+  kind: 'drug' | 'ddi' | 'condition' | 'procedure' | 'rule',
+  id: string,
+) => boolean;
+
 export function extractCards(
   llmText: string,
   generatedAt: string,
   minConfidence: number = DEFAULT_AGENTIC_CONFIDENCE_FLOOR,
   resolveStrength?: CitationStrengthResolver,
+  verifyCitation?: CitationVerifier,
 ): { cards: CdsCard[]; citedRecords: Array<{ kind: string; id: string }> } {
   const json = extractJsonObject(llmText);
   if (!json) return { cards: [], citedRecords: [] };
@@ -66,7 +87,7 @@ export function extractCards(
       ? (rc.indicator as CdsIndicator)
       : 'info';
     const detail = typeof rc.detail === 'string' ? rc.detail.trim() : undefined;
-    const citations = parseCitations(rc.citations, resolveStrength);
+    const citations = parseCitations(rc.citations, resolveStrength, verifyCitation);
     // Evidence-grounded confidence: the LLM's self-reported number is capped by
     // what the cited sources actually support (source-strength tier), so the
     // displayed score reflects EVIDENCE, not just the model's opinion. Taking
@@ -195,6 +216,7 @@ function evidenceCeiling(citations: AgenticCitation[]): number {
 function parseCitations(
   raw: unknown,
   resolveStrength?: CitationStrengthResolver,
+  verifyCitation?: CitationVerifier,
 ): AgenticCitation[] {
   if (!Array.isArray(raw)) return [];
   const out: AgenticCitation[] = [];
@@ -212,6 +234,9 @@ function parseCitations(
       kind === 'rule'
         ? kind
         : 'rule';
+    // A citation naming a record we didn't retrieve is unverifiable; drop it
+    // rather than render the invented id back to the clinician as its own label.
+    if (verifyCitation && !verifyCitation(validKind, id)) continue;
     out.push({
       kind: validKind,
       id,

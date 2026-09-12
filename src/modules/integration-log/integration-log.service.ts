@@ -76,6 +76,8 @@ export class IntegrationLogService {
           rulesEvaluated: entry.rules_evaluated,
           llmInvoked: entry.llm_invoked,
           llmProvider: entry.llm_provider,
+          llmModel: entry.llm_model ?? null,
+          llmMedical: entry.llm_medical ?? null,
           overrideReported: entry.override_reported,
           overrideReasonCode: entry.override_reason_code,
         })

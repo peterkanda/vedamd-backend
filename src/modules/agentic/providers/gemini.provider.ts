@@ -4,7 +4,7 @@ import type { AppConfig } from '../../../config/configuration';
 import { PHI_FREE_LOGGER, type PhiFreeLogger } from '../../../common/phi-free-logger';
 import type {
   LlmCompletionRequest,
-  LlmCompletionResult,
+  ProviderCompletion,
   LlmProvider,
 } from './llm-provider.interface';
 
@@ -60,7 +60,7 @@ export class GeminiProvider implements LlmProvider {
     return this.apiKey.length > 0;
   }
 
-  async complete(req: LlmCompletionRequest): Promise<LlmCompletionResult> {
+  async complete(req: LlmCompletionRequest): Promise<ProviderCompletion> {
     if (!this.isConfigured()) {
       throw new Error('Gemini provider not configured (GEMINI_API_KEY missing).');
     }
@@ -68,7 +68,7 @@ export class GeminiProvider implements LlmProvider {
   }
 
   /** Native generativelanguage REST schema (Google AI Studio). */
-  private async completeNative(req: LlmCompletionRequest): Promise<LlmCompletionResult> {
+  private async completeNative(req: LlmCompletionRequest): Promise<ProviderCompletion> {
     const body = {
       // The native schema fuses system + user into the first user turn
       // (Gemini supports systemInstruction for newer models — included
@@ -117,7 +117,7 @@ export class GeminiProvider implements LlmProvider {
   }
 
   /** OpenAI-compatible /chat/completions schema (Vertex / vLLM / Ollama). */
-  private async completeOpenAiCompat(req: LlmCompletionRequest): Promise<LlmCompletionResult> {
+  private async completeOpenAiCompat(req: LlmCompletionRequest): Promise<ProviderCompletion> {
     const body = {
       model: this.model,
       max_tokens: req.maxTokens ?? 2048,

@@ -118,4 +118,8 @@ if (strict && failures.length) {
   console.error(`\nFAILED (--strict): ${failures.join('; ')}.`);
   process.exit(1);
 }
-console.log('\n(report mode — pass --strict to enforce the ratchets)');
+console.log(
+  strict
+    ? '\n(--strict: enforcing the ratchets — both clear)'
+    : '\n(report mode — pass --strict to enforce the ratchets)',
+);

@@ -1,15 +1,25 @@
 import { Inject, Injectable, Logger, Optional } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { createHmac } from 'node:crypto';
-import { desc } from 'drizzle-orm';
+import { desc, sql } from 'drizzle-orm';
 import { PHI_FREE_LOGGER, type PhiFreeLogger } from '../../common/phi-free-logger';
 import { DRIZZLE, type MaybeDrizzle } from '../../db/database.module';
 import { auditEvents } from '../../db/schema';
 import type { AppConfig } from '../../config/configuration';
 
+/**
+ * Advisory-lock key serialising audit appends. Any value works as long as it
+ * is stable and unique to this purpose across the deployment.
+ */
+const AUDIT_CHAIN_LOCK = 4_820_260_911;
+
 export type AuditEventType =
   | 'cds.evaluated'
   | 'cds.override_reported'
+  // Clinician-facing chat surfaces. The column is plain text, so extending
+  // this union needs no migration.
+  | 'assistant.chat'
+  | 'reference.chat'
   | 'auth.login'
   | 'auth.token_issued'
   | 'auth.token_revoked'
@@ -60,9 +70,6 @@ export interface AuditEvent {
 export class AuditService {
   private readonly logger = new Logger(AuditService.name);
   private readonly hashSecret: string;
-  /** Cache of the most-recent row's HMAC so we don't round-trip per insert. */
-  private lastHmacCache: string | null = null;
-  private lastHmacLoaded = false;
 
   constructor(
     @Inject(PHI_FREE_LOGGER) private readonly log: PhiFreeLogger,
@@ -104,50 +111,66 @@ export class AuditService {
       const actorHash = event.actorId ? this.hashIdentifier(event.actorId) : null;
       const subjectHash = event.subjectId ? this.hashIdentifier(event.subjectId) : null;
 
-      const prevHmac = await this.getLastHmac();
+      /*
+       * Read the chain tail and append inside one transaction, behind a
+       * Postgres advisory lock.
+       *
+       * The tail used to be cached in-process, which is correct for a single
+       * instance and silently wrong for two: each replica would chain onto its
+       * own last write, producing forks that `verifyChain()` reports as
+       * tampering at the first interleave. An audit ledger that cannot be
+       * verified is not an audit ledger, so this pays one extra query per
+       * append to keep the chain linear. The write is already off the response
+       * path, so the cost is not user-visible.
+       */
+      await this.db.transaction(async (tx) => {
+        await tx.execute(sql`select pg_advisory_xact_lock(${AUDIT_CHAIN_LOCK})`);
 
-      const content = {
-        occurredAt: occurredAt.toISOString(),
-        eventType: event.type,
-        tenantId: event.tenantId ?? null,
-        actorHash,
-        subjectHash,
-        ruleId: event.ruleId ?? null,
-        ruleVersion: event.ruleVersion ?? null,
-        endpoint: event.endpoint ?? null,
-        statusCode: event.statusCode ?? null,
-        latencyMs: event.latencyMs ?? null,
-        overrideReasonCode: event.overrideReasonCode ?? null,
-        requestId: event.requestId ?? null,
-        prevHmac,
-      };
-      const hmac = this.computeHmac(content);
+        const prevRows = await tx
+          .select({ hmac: auditEvents.hmac })
+          .from(auditEvents)
+          .orderBy(desc(auditEvents.id))
+          .limit(1);
+        const prevHmac = prevRows[0]?.hmac ?? null;
 
-      const inserted = await this.db
-        .insert(auditEvents)
-        .values({
-          occurredAt,
+        const content = {
+          occurredAt: occurredAt.toISOString(),
           eventType: event.type,
-          tenantId: event.tenantId,
+          tenantId: event.tenantId ?? null,
           actorHash,
           subjectHash,
-          ruleId: event.ruleId,
-          ruleVersion: event.ruleVersion,
-          endpoint: event.endpoint,
-          statusCode: event.statusCode,
-          latencyMs: event.latencyMs,
-          overrideReasonCode: event.overrideReasonCode,
-          requestId: event.requestId,
+          ruleId: event.ruleId ?? null,
+          ruleVersion: event.ruleVersion ?? null,
+          endpoint: event.endpoint ?? null,
+          statusCode: event.statusCode ?? null,
+          latencyMs: event.latencyMs ?? null,
+          overrideReasonCode: event.overrideReasonCode ?? null,
+          requestId: event.requestId ?? null,
           prevHmac,
-          hmac,
-        })
-        .returning({ hmac: auditEvents.hmac });
-      this.lastHmacCache = inserted[0]?.hmac ?? hmac;
+        };
+
+        await tx
+          .insert(auditEvents)
+          .values({
+            occurredAt,
+            eventType: event.type,
+            tenantId: event.tenantId,
+            actorHash,
+            subjectHash,
+            ruleId: event.ruleId,
+            ruleVersion: event.ruleVersion,
+            endpoint: event.endpoint,
+            statusCode: event.statusCode,
+            latencyMs: event.latencyMs,
+            overrideReasonCode: event.overrideReasonCode,
+            requestId: event.requestId,
+            prevHmac,
+            hmac: this.computeHmac(content),
+          })
+          .returning({ hmac: auditEvents.hmac });
+      });
     } catch (e) {
       this.logger.error(`audit insert failed: ${(e as Error).message}`);
-      // Fail closed for the chain so subsequent rows recompute their tail.
-      this.lastHmacLoaded = false;
-      this.lastHmacCache = null;
     }
   }
 
@@ -184,19 +207,6 @@ export class AuditService {
       prev = r.hmac;
     }
     return { ok: true };
-  }
-
-  private async getLastHmac(): Promise<string | null> {
-    if (this.lastHmacLoaded) return this.lastHmacCache;
-    if (!this.db) return null;
-    const rows = await this.db
-      .select({ hmac: auditEvents.hmac })
-      .from(auditEvents)
-      .orderBy(desc(auditEvents.id))
-      .limit(1);
-    this.lastHmacCache = rows[0]?.hmac ?? null;
-    this.lastHmacLoaded = true;
-    return this.lastHmacCache;
   }
 
   private hashIdentifier(value: string): string {

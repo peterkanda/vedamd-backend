@@ -65,7 +65,19 @@ async function main() {
   console.log(`Wrote ${outPath} (${doc.paths ? Object.keys(doc.paths).length : 0} paths).`);
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+main()
+  .then(() => {
+    /*
+     * Exit explicitly. Booting the Nest app opens handles that `app.close()`
+     * does not all release (cache/DB clients, interval timers), so on the
+     * SUCCESS path this script did its work and then hung forever — while the
+     * failure path exited immediately via process.exit(1). In CI that meant
+     * `npm run openapi:check` never finished on a passing run and the job sat
+     * until its timeout.
+     */
+    process.exit(0);
+  })
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });

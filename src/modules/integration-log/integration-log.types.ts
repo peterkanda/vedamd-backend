@@ -28,7 +28,17 @@ export interface IntegrationLogEntry {
   card_summaries: string[];
   citations: Array<{ label: string; url: string }>;
   llm_invoked: boolean;
-  llm_provider: 'claude' | 'gpt' | 'llama-self-hosted' | 'ulizallama' | null;
+  /**
+   * Provider that answered. These are the names the router actually emits —
+   * the previous union ('claude' | 'gpt' | 'llama-self-hosted' | 'ulizallama')
+   * matched nothing the engine produces, so no LLM call could ever have been
+   * logged without a translation layer that did not exist.
+   */
+  llm_provider: 'anthropic' | 'openai' | 'deepseek' | 'gemini' | 'openrouter' | null;
+  /** The model that actually answered, not just its provider. */
+  llm_model?: string | null;
+  /** Whether that model was operator-declared fit for clinical reasoning. */
+  llm_medical?: boolean | null;
   override_reported: boolean;
   override_reason_code?: string;
 }
@@ -53,6 +63,8 @@ export const INTEGRATION_LOG_ALLOWED_KEYS = [
   'citations',
   'llm_invoked',
   'llm_provider',
+  'llm_model',
+  'llm_medical',
   'override_reported',
   'override_reason_code',
 ] as const satisfies ReadonlyArray<keyof IntegrationLogEntry>;

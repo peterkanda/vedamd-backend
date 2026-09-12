@@ -62,7 +62,7 @@ describe('AuditService (DB-backed HMAC chain)', () => {
       return orderable;
     }
 
-    return {
+    const db: Record<string, unknown> = {
       insert(_table: unknown) {
         return {
           values(v: Record<string, unknown>) {
@@ -79,8 +79,17 @@ describe('AuditService (DB-backed HMAC chain)', () => {
       select(_proj?: unknown) {
         return { from: () => selectFrom() };
       },
+      // The chain tail is now read and appended inside one transaction behind
+      // an advisory lock, so appends stay linear across replicas.
+      transaction(cb: (tx: unknown) => Promise<unknown>) {
+        return cb(db);
+      },
+      execute(_q: unknown) {
+        return Promise.resolve([]);
+      },
       __rows: rows,
-    } as never;
+    };
+    return db as never;
   }
 
   it('writes events with linked HMACs and verifyChain returns ok', async () => {

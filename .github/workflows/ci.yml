@@ -21,6 +21,20 @@ jobs:
       - run: npm install
       - run: npm run typecheck
       - run: npm run build
+      # Lint as a gate, not a fixer: `npm run lint` passes --fix, which would
+      # silently rewrite files in CI and pass regardless.
+      - name: lint
+        run: npx eslint "{src,test}/**/*.ts" --max-warnings=0
+      # The stateless / PHI-free-logger invariants (NFR-027-029): no console in
+      # src, no raw pino, no patient tables. Defence-in-depth over ESLint.
+      - run: npm run audit:stateless
+      - run: npm run bundle:check-licence
+      - run: node scripts/check-clinical-safety.js --strict
+      - run: node scripts/check-citation-links.js --strict
+      # Overlay invariants: jurisdiction tagging, graded citations, and above
+      # all the no-self-approval rule that keeps draft content out of the
+      # approved tier.
+      - run: npm run overlays:validate
       # Unit tests only — integration specs skip themselves when
       # DATABASE_URL is absent.
       - run: npm test -- --run
@@ -46,10 +60,29 @@ jobs:
         # source-quality badge. Run scripts/score-citation-sources.js
         # to auto-fill before opening a PR.
         run: npm run bundle:check-strength
-      - name: require approved-only content (main branch)
-        if: github.ref == 'refs/heads/main'
+      # Approval ratchet — this one actually fails the build.
+      #
+      # The step below it (--require-approved) is the end state we want, but it
+      # cannot be enforced yet: the v0.1 bundle is entirely draft, so turning it
+      # on would block every release. It was therefore left as
+      # continue-on-error AND scoped to main, meaning it never blocked anything
+      # and never ran on a pull request — a gate in name only.
+      #
+      # The ratchet holds the line in the meantime: the existing backlog is
+      # tolerated, but a PR cannot ADD unapproved clinical content. See
+      # MAX_UNAPPROVED in scripts/promote-bundle.ts.
+      - name: content approval ratchet (backlog must not grow)
+        run: npm run bundle:promote -- --check
+
+      - name: approval backlog report
+        run: npm run bundle:promote -- --status
+
+      # The end state. Still advisory, and now it runs on pull requests too so
+      # the remaining backlog is visible on every change rather than only on
+      # main. Drop continue-on-error once the ratchet above reaches 0.
+      - name: require approved-only content (advisory until the backlog clears)
         run: npm run bundle:verify -- --bundle content/bundles/v0.1.0 --require-approved
-        continue-on-error: true # v0.1 is still draft; flip to false once content is promoted.
+        continue-on-error: true
 
   integration-tests:
     name: Drizzle / Postgres integration tests
@@ -85,5 +118,10 @@ jobs:
       # The same suite runs as in `build` above — but with DATABASE_URL
       # set, the .integration.spec.ts files unskip and exercise the
       # real Drizzle code paths against the migrated schema.
+      #
+      # --no-file-parallelism because the DB-backed specs share one database
+      # and truncate tables between cases: run in parallel they race each
+      # other and fail intermittently (reproduced locally against a real
+      # Postgres — 3 of 26 failed in parallel, all 26 passed sequentially).
       - name: run full test suite (unit + integration)
-        run: npm test -- --run
+        run: npm test -- --run --no-file-parallelism

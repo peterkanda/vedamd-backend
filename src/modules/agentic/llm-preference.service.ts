@@ -1,13 +1,23 @@
 import { Injectable, Logger } from '@nestjs/common';
 import type { LlmProviderName } from './providers/llm-provider.interface';
 
-const VALID_PROVIDERS: LlmProviderName[] = ['anthropic', 'openai', 'deepseek', 'gemini'];
+/**
+ * `openrouter` was missing here, which meant an integrator could not select
+ * the provider that serves MedGemma — and because `order()` puts any chosen
+ * provider first and keeps the rest as fallbacks, setting *any* preference
+ * silently demoted the medical model to second place.
+ */
+const VALID_PROVIDERS: LlmProviderName[] = [
+  'openrouter',
+  'anthropic',
+  'openai',
+  'deepseek',
+  'gemini',
+];
 
 export interface LlmPreference {
   /** Integrator-chosen provider, or null to defer to the operator default. */
   provider: LlmProviderName | null;
-  /** Optional model override — providers default sensibly when unset. */
-  model: string | null;
   /** ISO timestamp of the last update. */
   updatedAt: string;
 }
@@ -33,23 +43,26 @@ export class LlmPreferenceService {
     return (
       this.mem.get(integratorId) ?? {
         provider: null,
-        model: null,
         updatedAt: new Date(0).toISOString(),
       }
     );
   }
 
-  set(
-    integratorId: string,
-    dto: { provider?: string | null; model?: string | null },
-  ): LlmPreference {
+  /**
+   * There is deliberately no per-integrator model override. One used to be
+   * accepted, stored and shown in the developer portal, but nothing ever read
+   * it — the agentic engine passes only the provider. Model choice belongs
+   * with the operator, who is the one who can say whether a given model is
+   * fit for clinical reasoning; a free-text per-tenant override would let a
+   * tenant point clinical answers at an arbitrary model.
+   */
+  set(integratorId: string, dto: { provider?: string | null }): LlmPreference {
     const provider = dto.provider == null || dto.provider === '' ? null : (dto.provider as string);
     if (provider !== null && !VALID_PROVIDERS.includes(provider as LlmProviderName)) {
       throw new Error(`Invalid provider "${provider}". Valid: ${VALID_PROVIDERS.join(', ')}.`);
     }
     const next: LlmPreference = {
       provider: provider as LlmProviderName | null,
-      model: dto.model?.trim() || null,
       updatedAt: new Date().toISOString(),
     };
     this.mem.set(integratorId, next);

@@ -60,6 +60,14 @@ export const integrationLog = pgTable(
     rulesEvaluated: jsonb('rules_evaluated').notNull().default([]),
     llmInvoked: boolean('llm_invoked').notNull().default(false),
     llmProvider: text('llm_provider'),
+    /**
+     * The model that actually answered. Without this the log could say
+     * "openrouter" but not whether MedGemma or a fallback produced the advice,
+     * which is the first question an incident review asks.
+     */
+    llmModel: text('llm_model'),
+    /** Whether that model was operator-declared fit for clinical reasoning. */
+    llmMedical: boolean('llm_medical'),
     overrideReported: boolean('override_reported').notNull().default(false),
     overrideReasonCode: text('override_reason_code'),
   },
@@ -107,6 +115,61 @@ export type ApiKeyRow = typeof apiKeys.$inferSelect;
 export type NewApiKeyRow = typeof apiKeys.$inferInsert;
 export type IntegrationLogRow = typeof integrationLog.$inferSelect;
 export type NewIntegrationLogRow = typeof integrationLog.$inferInsert;
+
+/**
+ * Answers produced by the ON-DEVICE model, synced up when the phone next has
+ * connectivity.
+ *
+ * The on-device assistant is the path pilot clinicians actually use and it runs
+ * with no network, so `integration_log` and `audit_events` — both written
+ * server-side per request — can never see it. Without this table the busiest
+ * clinical surface leaves no trace at all and an incident there cannot be
+ * reconstructed.
+ *
+ * PHI-free by construction, and deliberately WITHOUT a jsonb catch-all so no
+ * future caller can smuggle free text in: every column is explicit and holds
+ * either a hash, a bundle record id, a version string, a flag or a duration.
+ * The clinician's question and the model's answer are never sent — the app
+ * promises on-device questions stay on the device, and a hash is enough to see
+ * that the same question recurred without ever reading it.
+ */
+export const deviceAnswerEvents = pgTable(
+  'device_answer_events',
+  {
+    id: bigserial('id', { mode: 'number' }).primaryKey(),
+    /** Client-generated id; makes a retried sync idempotent. */
+    clientEventId: text('client_event_id').notNull().unique(),
+    occurredAt: timestamp('occurred_at', { withTimezone: true }).notNull(),
+    receivedAt: timestamp('received_at', { withTimezone: true }).notNull().defaultNow(),
+    /** HMAC of the clinician's account id. Never the raw id, never an email. */
+    actorHash: text('actor_hash').notNull(),
+    /** HMAC of the question text — correlates repeats without storing it. */
+    questionHash: text('question_hash').notNull(),
+    /** 'ondevice' | a cloud provider name | 'refused'. */
+    engine: text('engine').notNull(),
+    /** Installed model build that answered, e.g. medgemma-4b-it-q4_k_m. */
+    modelVersion: text('model_version'),
+    /** Content bundle the retrieval ran against. */
+    contentVersion: text('content_version'),
+    /** Whether the answer stood on retrieved VedaMD content. */
+    grounded: boolean('grounded').notNull(),
+    /** Whether the clinical-claim gate declined to answer. */
+    refused: boolean('refused').notNull(),
+    /** False when generation stopped early — the answer was a fragment. */
+    complete: boolean('complete').notNull(),
+    /** Bundle records cited, as `domain/slug`. Record ids, not patient data. */
+    sourceIds: text('source_ids').array().notNull().default([]),
+    latencyMs: integer('latency_ms'),
+    appVersion: text('app_version'),
+  },
+  (t) => ({
+    byOccurredAt: index('idx_device_answer_events_occurred_at').on(t.occurredAt),
+    byActor: index('idx_device_answer_events_actor').on(t.actorHash, t.occurredAt),
+  }),
+);
+
+export type DeviceAnswerEventRow = typeof deviceAnswerEvents.$inferSelect;
+export type NewDeviceAnswerEventRow = typeof deviceAnswerEvents.$inferInsert;
 
 /**
  * Per-integrator uploaded clinical policies / standards (JCI, ISO, WHO,

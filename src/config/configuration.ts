@@ -155,10 +155,33 @@ function cap(value: number, limit: number, label: string): number {
  * in plaintext — is preserved either way; only stability across
  * restarts is degraded when the env var is missing.
  */
-function resolveSecret(envName: string, devPlaceholder: string): string {
+function resolveSecret(
+  envName: string,
+  devPlaceholder: string,
+  opts: { requiredWhenPersisting?: boolean } = {},
+): string {
   const fromEnv = process.env[envName];
   if (fromEnv) return fromEnv;
   if (process.env.NODE_ENV !== 'production') return devPlaceholder;
+
+  /*
+   * One exception to the boot-resilience rule above: the secret that chains the
+   * audit ledger, when a database is configured and rows will actually be
+   * written. A per-boot secret there does not merely lose correlation — it
+   * makes `verifyChain()` report the ledger as broken after every restart, so
+   * a clinical audit trail would be permanently unverifiable and
+   * indistinguishable from a tampered one. An unverifiable audit trail is
+   * worse than a failed deploy, so this one fails closed.
+   */
+  if (opts.requiredWhenPersisting && process.env.DATABASE_URL) {
+    throw new Error(
+      `${envName} must be set in production when DATABASE_URL is configured. ` +
+        `Without a persistent secret the audit chain re-keys on every restart and ` +
+        `verifyChain() will report the ledger as tampered. Set ${envName} to a stable ` +
+        `32-byte secret (openssl rand -hex 32) and keep it for the life of the ledger.`,
+    );
+  }
+
   const ephemeral = randomBytes(32).toString('hex');
   // eslint-disable-next-line no-console
   console.error(
@@ -178,7 +201,9 @@ export const configuration = (): AppConfig => ({
     capabilityExtensionUrl: STATELESS_EXTENSION_URL,
   },
   audit: {
-    hashSecret: resolveSecret('AUDIT_HASH_SECRET', 'dev-only-do-not-use-in-prod'),
+    hashSecret: resolveSecret('AUDIT_HASH_SECRET', 'dev-only-do-not-use-in-prod', {
+      requiredWhenPersisting: true,
+    }),
   },
   database: {
     url: process.env.DATABASE_URL ?? '',

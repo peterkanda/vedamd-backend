@@ -1,6 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { KnowledgeRetrieverService } from '../agentic/knowledge-retriever.service';
 import { ProviderRouter } from '../agentic/providers/provider-router';
+import { NoMedicalProviderError } from '../agentic/providers/llm-provider.interface';
 import { PHI_FREE_LOGGER, type PhiFreeLogger } from '../../common/phi-free-logger';
 import { REFERENCE_CHAT_SYSTEM, buildReferenceUserMessage } from './reference-chat.prompt';
 
@@ -48,12 +49,29 @@ export class ReferenceChatService {
     // Retrieve relevant references using the same retriever as the agentic engine.
     const knowledge = this.retriever.retrieve({ question, diagnoses: [question] });
 
-    const result = await this.router.complete({
-      system: REFERENCE_CHAT_SYSTEM,
-      user: buildReferenceUserMessage(question, knowledge),
-      maxTokens: 1500,
-      temperature: 0.0,
-    });
+    let result;
+    try {
+      result = await this.router.complete({
+        system: REFERENCE_CHAT_SYSTEM,
+        user: buildReferenceUserMessage(question, knowledge),
+        maxTokens: 1500,
+        temperature: 0.0,
+        // Reference answers are clinical content, so the same rule applies.
+        requireMedical: true,
+      });
+    } catch (err) {
+      if (err instanceof NoMedicalProviderError) {
+        // Saying nothing is the right answer here: browse and search still
+        // work, and they serve the same reviewed content without a model.
+        return {
+          available: false,
+          answer:
+            'No clinical-grade model is available on this deployment, so the reference chat is off. Browse and search still work and cover the same reviewed content.',
+          citations: [],
+        };
+      }
+      throw err;
+    }
 
     const raw = extractCitations(result.text);
     // Resolve a source-strength tier for every cited bundle record so

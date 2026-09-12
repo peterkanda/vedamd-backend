@@ -12,13 +12,38 @@ import type { PolicyMatch } from '../policies/policies.types';
 import { CustomRulesService } from '../custom-rules/custom-rules.service';
 import type { CustomRuleEvaluation } from '../custom-rules/custom-rules.types';
 import { CLINICAL_REASONER_SYSTEM, buildUserMessage } from './prompts/clinical-reasoner.prompt';
-import { extractCards } from './card-extractor';
+import { extractCards, type CitationVerifier } from './card-extractor';
 import type {
   AgenticClinicalContext,
   AgenticEvaluationResponse,
   AgenticBatchResponse,
+  RetrievedKnowledge,
 } from './agentic.types';
 import type { CdsCard, CdsHookRequest } from '../cds/cds.types';
+
+/**
+ * Accept a citation only if it names a record actually retrieved for this
+ * request. Ids are matched in the exact form the prompt hands the model (see
+ * buildUserMessage): `drug:<slug>`, `ddi:<slugA>+<slugB>`, `rule:<id>`. Without
+ * this the citation requirement proved only that the model emitted a string.
+ */
+function buildCitationVerifier(knowledge: RetrievedKnowledge): CitationVerifier {
+  const norm = (s: string) => s.trim().toLowerCase();
+  const ddi = new Set<string>();
+  for (const i of knowledge.interactions) {
+    // The model may cite the pair in either order.
+    ddi.add(norm(`${i.slugA}+${i.slugB}`));
+    ddi.add(norm(`${i.slugB}+${i.slugA}`));
+  }
+  const known: Record<string, Set<string>> = {
+    drug: new Set(knowledge.drugs.map((d) => norm(d.slug))),
+    condition: new Set(knowledge.conditions.map((c) => norm(c.slug))),
+    procedure: new Set(knowledge.procedures.map((p) => norm(p.slug))),
+    rule: new Set(knowledge.rules.map((r) => norm(r.id))),
+    ddi,
+  };
+  return (kind, id) => known[kind]?.has(norm(id)) ?? false;
+}
 
 /**
  * Agentic CDS service.
@@ -113,6 +138,7 @@ export class AgenticService {
     let llmModel: string | undefined;
     let llmProvider: 'anthropic' | 'openai' | 'deepseek' | 'gemini' | 'openrouter' | 'disabled' =
       'disabled';
+    let llmMedical: boolean | undefined;
     let agenticInvoked = false;
     /**
      * Raw LLM text — captured even when extractCards drops every card
@@ -148,18 +174,25 @@ export class AgenticService {
             user: buildUserMessage(ctx, knowledge, policyMatches),
             maxTokens: 2048,
             temperature: 0.1,
+            // Clinical reasoning may only come from a model the operator has
+            // declared fit for it. If none can answer, the catch below returns
+            // the deterministic cards — which is the safe degradation, unlike
+            // silently substituting a general-purpose model.
+            requireMedical: true,
           },
           { preferredProvider: preferred },
         );
         agenticInvoked = true;
         llmModel = result.model;
         llmProvider = result.provider;
+        llmMedical = result.medical;
         narrative = stripJsonFromNarrative(result.text);
         const extracted = extractCards(
           result.text,
           new Date().toISOString(),
           ctx.minConfidence ?? 0,
           this.retriever.resolveCitationStrength,
+          buildCitationVerifier(knowledge),
         );
         agenticCards = extracted.cards;
         citedRecords = extracted.citedRecords;
@@ -208,6 +241,7 @@ export class AgenticService {
         customRuleCount: customMatches.length,
         llmModel,
         llmProvider,
+        llmMedical,
         agenticInvoked,
         bundleRecordsConsidered,
         citedRecords,

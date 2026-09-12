@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { KnowledgeSearchService } from '../knowledge/knowledge-search.service';
 import { ProviderRouter } from '../agentic/providers/provider-router';
+import { NoMedicalProviderError } from '../agentic/providers/llm-provider.interface';
 import { ASSISTANT_CHAT_SYSTEM, buildAssistantUserMessage } from './assistant.prompt';
 
 export interface AssistantChatRequest {
@@ -113,12 +114,32 @@ export class AssistantService {
     const grounded = blocks.length > 0;
     const grounding = grounded ? blocks.join('\n\n') : 'No matching local content was found.';
 
-    const result = await this.router.complete({
-      system: ASSISTANT_CHAT_SYSTEM,
-      user: buildAssistantUserMessage(question, grounding, grounded, req.conversation ?? []),
-      temperature: 0.1,
-      maxTokens: 1024,
-    });
+    let result;
+    try {
+      result = await this.router.complete({
+        system: ASSISTANT_CHAT_SYSTEM,
+        user: buildAssistantUserMessage(question, grounding, grounded, req.conversation ?? []),
+        temperature: 0.1,
+        maxTokens: 1024,
+        // This answers a clinician's clinical question, so it may only come from
+        // a model the operator has declared clinical-grade.
+        requireMedical: true,
+      });
+    } catch (err) {
+      if (err instanceof NoMedicalProviderError) {
+        // Return the retrieved sources rather than nothing: the clinician can
+        // still read the reviewed content the answer would have been built on.
+        return {
+          answer:
+            'No clinical-grade model is available right now, so I will not answer this from a general-purpose model. The VedaMD content below covers your question, and the on-device assistant works offline.',
+          sources,
+          provider: 'none',
+          model: 'none',
+          grounded: false,
+        };
+      }
+      throw err;
+    }
 
     return {
       answer: result.text.trim(),

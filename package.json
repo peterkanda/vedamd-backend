@@ -44,7 +44,8 @@
     "validate:medgemma:ci": "ts-node --transpile-only scripts/validate-with-medgemma.ts --all --fail-on-error",
     "validate:claude": "ts-node --transpile-only scripts/validate-with-medgemma.ts --reviewer claude --all",
     "check:citation-links": "node scripts/check-citation-links.js",
-    "enrich:citation-links": "node scripts/enrich-citation-links.js"
+    "enrich:citation-links": "node scripts/enrich-citation-links.js",
+    "bundle:promote": "ts-node --transpile-only scripts/promote-bundle.ts"
   },
   "dependencies": {
     "@fastify/compress": "^8.3.1",

@@ -44,6 +44,7 @@ import { IntegrationLogModule } from './modules/integration-log/integration-log.
 import { DeveloperModule } from './modules/developer/developer.module';
 import { AgenticModule } from './modules/agentic/agentic.module';
 import { AssistantModule } from './modules/assistant/assistant.module';
+import { DeviceAuditModule } from './modules/device-audit/device-audit.module';
 import { ModelsModule } from './modules/models/models.module';
 import { ContentDistributionModule } from './modules/content-distribution/content-distribution.module';
 import { CustomRulesModule } from './modules/custom-rules/custom-rules.module';
@@ -106,6 +107,7 @@ import { LocalizationModule } from './modules/localization/localization.module';
     DeveloperModule,
     AgenticModule,
     AssistantModule,
+    DeviceAuditModule,
     ModelsModule,
     ContentDistributionModule,
     CustomRulesModule,

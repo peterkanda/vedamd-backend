@@ -104,6 +104,13 @@ export interface AgenticEvaluationResponse {
     llmModel?: string;
     /** LLM provider used. */
     llmProvider?: 'anthropic' | 'openai' | 'deepseek' | 'gemini' | 'openrouter' | 'disabled';
+    /**
+     * Whether the answering model is one the operator declared fit for clinical
+     * reasoning. Clinical paths refuse a non-medical model outright, so this is
+     * `true` whenever cards were produced — it is on the wire so a client can
+     * assert that rather than infer it from a model name.
+     */
+    llmMedical?: boolean;
     /** Whether the agentic layer ran (false if API keys not configured). */
     agenticInvoked: boolean;
     /** Total bundle records considered. */

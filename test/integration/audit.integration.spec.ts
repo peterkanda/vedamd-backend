@@ -13,14 +13,12 @@ d('AuditService — Postgres integration (HMAC chain)', () => {
     h = makeIntegrationHarness();
   });
 
-  // AuditService caches the previous row's HMAC in memory to avoid a
-  // round-trip per insert. That cache must NOT survive a between-test
-  // TRUNCATE — otherwise the NEXT test's first row will carry a stale
-  // prev_hmac that no longer matches anything in the table, and
-  // verifyChain reports the chain as broken (the cached value !== null
-  // for what is now the first row). Production code never resets
-  // audit_events, so the cache is correct there; for tests we rebuild
-  // the service from scratch.
+  // The service no longer caches the chain tail in memory: it reads it inside
+  // the same transaction as the insert, behind an advisory lock, so two
+  // replicas cannot fork the chain. Rebuilding the service per test is
+  // therefore no longer required for correctness — it is kept only to prove a
+  // fresh instance picks the chain up from the table, which is the same thing
+  // a process restart does.
   beforeEach(async () => {
     await h.resetTables();
     svc = new AuditService(h.log, h.config, h.db);

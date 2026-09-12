@@ -12,7 +12,34 @@ import {
 } from './agentic.dto';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';
 import { listPresets, type SchemaPreset } from './connectors/schema-presets';
+import {
+  stashClinicalAudit,
+  type AuditableRequest,
+  type ClinicalAuditStash,
+} from '../audit/clinical-audit.types';
 import type { AgenticBatchResponse, AgenticEvaluationResponse } from './agentic.types';
+
+/**
+ * Summarize an agentic evaluation for the audit ledger: what answered, on what
+ * evidence, and how many cards came back. PHI-free — card summaries are rule
+ * output and citations are bundle record ids.
+ */
+function auditStash(res: AgenticEvaluationResponse, hook?: string): ClinicalAuditStash {
+  const provider = res.meta.llmProvider;
+  return {
+    kind: 'agentic',
+    hook,
+    llmInvoked: res.meta.agenticInvoked,
+    // 'disabled' is a state, not a provider that answered.
+    llmProvider: provider && provider !== 'disabled' ? provider : undefined,
+    llmModel: res.meta.llmModel,
+    llmMedical: res.meta.llmMedical,
+    cardsReturned: res.cards.length,
+    cardSummaries: res.cards.map((c) => c.summary),
+    citations: res.meta.citedRecords,
+    refusedReason: res.meta.agenticError,
+  };
+}
 
 /**
  * Agentic CDS endpoints. All require an API key with the
@@ -66,10 +93,15 @@ export class AgenticController {
   @ApiOperation({ summary: 'Agentic CDS evaluation from a structured JSON clinical context' })
   async evaluate(
     @Body() dto: AgenticEvaluateDto,
-    @Req() req: { apiKey?: { integratorId?: string } },
+    @Req() req: { apiKey?: { integratorId?: string } } & AuditableRequest,
   ): Promise<AgenticEvaluationResponse> {
     try {
-      return await this.agentic.evaluate({ ...dto, integratorId: req.apiKey?.integratorId });
+      const res = await this.agentic.evaluate({
+        ...dto,
+        integratorId: req.apiKey?.integratorId,
+      });
+      stashClinicalAudit(req, auditStash(res, dto.hook));
+      return res;
     } catch (err) {
       throw mapConfigError(err);
     }
@@ -94,7 +126,7 @@ export class AgenticController {
   @ApiOperation({ summary: 'Agentic CDS evaluation from a FHIR R4 Bundle or resource' })
   async evaluateFhir(
     @Body() dto: AgenticFhirEvaluateDto,
-    @Req() req: { apiKey?: { integratorId?: string } },
+    @Req() req: { apiKey?: { integratorId?: string } } & AuditableRequest,
   ): Promise<AgenticEvaluationResponse> {
     const ctx = fhirToContext(dto.resource, dto.hook, dto.question);
     ctx.mode = dto.mode;
@@ -102,7 +134,9 @@ export class AgenticController {
     ctx.conversation = dto.conversation;
     ctx.integratorId = req.apiKey?.integratorId;
     try {
-      return await this.agentic.evaluate(ctx);
+      const res = await this.agentic.evaluate(ctx);
+      stashClinicalAudit(req, auditStash(res, dto.hook));
+      return res;
     } catch (err) {
       throw mapConfigError(err);
     }
@@ -117,7 +151,7 @@ export class AgenticController {
   })
   async evaluateSql(
     @Body() dto: AgenticSqlEvaluateDto,
-    @Req() req: { apiKey?: { integratorId?: string } },
+    @Req() req: { apiKey?: { integratorId?: string } } & AuditableRequest,
   ): Promise<AgenticEvaluationResponse> {
     let ctx;
     try {
@@ -138,7 +172,9 @@ export class AgenticController {
       throw new BadRequestException(err instanceof Error ? err.message : 'SQL ingestion failed.');
     }
     try {
-      return await this.agentic.evaluate(ctx);
+      const res = await this.agentic.evaluate(ctx);
+      stashClinicalAudit(req, auditStash(res, dto.hook));
+      return res;
     } catch (err) {
       throw mapConfigError(err);
     }
