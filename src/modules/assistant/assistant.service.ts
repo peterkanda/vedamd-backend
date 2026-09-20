@@ -73,6 +73,10 @@ const KEEP_FIELDS = [
   'mechanism',
   'items',
   'scoring',
+  // Renal-dosing specifics. Appended last so they only make the 700-char
+  // cut once the primary guidance above is already in.
+  'akiGuidance',
+  'alternatives',
 ];
 
 const PER_RECORD_CHARS = 700;
