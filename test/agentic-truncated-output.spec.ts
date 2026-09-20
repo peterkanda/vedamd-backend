@@ -1,7 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import { extractCards, extractJsonObject } from '../src/modules/agentic/card-extractor';
 import { stripJsonFromNarrative } from '../src/modules/agentic/agentic.service';
-import { resolveThinkingBudget } from '../src/modules/agentic/providers/gemini.provider';
+import {
+  resolveThinkingConfig,
+  retiredOn,
+  DEFAULT_GEMINI_MODEL,
+} from '../src/modules/agentic/providers/gemini.provider';
 
 /**
  * Regression for the amoxicillin card that reached the clinical UI as raw
@@ -67,14 +71,28 @@ describe('truncated LLM output', () => {
   });
 });
 
-describe('gemini thinking budget', () => {
-  it('zeroes the thinking budget on models that bill it against the output cap', () => {
-    expect(resolveThinkingBudget('gemini-2.5-flash')).toBe(0);
-    expect(resolveThinkingBudget('gemini-3-pro-preview')).toBe(0);
+describe('gemini thinking config', () => {
+  it('disables thinking on 2.5, which bills it against the output cap', () => {
+    expect(resolveThinkingConfig('gemini-2.5-flash')).toEqual({ thinkingBudget: 0 });
+  });
+
+  it('uses thinkingLevel on 3.x, which rejects a token budget', () => {
+    expect(resolveThinkingConfig('gemini-3.5-flash')).toEqual({ thinkingLevel: 'low' });
+    expect(resolveThinkingConfig('gemini-3.1-pro')).toEqual({ thinkingLevel: 'low' });
   });
 
   it('sends no thinkingConfig to models that would reject it', () => {
-    expect(resolveThinkingBudget('gemini-2.0-flash')).toBeNull();
-    expect(resolveThinkingBudget('gemini-1.5-pro')).toBeNull();
+    expect(resolveThinkingConfig('gemini-2.0-flash')).toBeNull();
+    expect(resolveThinkingConfig('gemini-1.5-pro')).toBeNull();
+  });
+});
+
+describe('retired gemini models', () => {
+  it('knows the shut-down date of the old default', () => {
+    expect(retiredOn('gemini-2.0-flash')).toBe('2026-06-01');
+  });
+
+  it('does not ship a default that Google has already retired', () => {
+    expect(retiredOn(DEFAULT_GEMINI_MODEL)).toBeUndefined();
   });
 });
