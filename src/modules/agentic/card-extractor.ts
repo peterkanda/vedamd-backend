@@ -252,11 +252,14 @@ function parseCitations(
  * Extract the first balanced JSON object from arbitrary LLM text.
  * Handles code fences, leading prose, and trailing content.
  */
-function extractJsonObject(text: string): unknown {
+export function extractJsonObject(text: string): unknown {
   if (!text) return null;
-  // Strip markdown code fences.
+  // Strip markdown code fences. A truncated response often has an OPENING
+  // fence and no closing one, so fall back to "everything after ```json"
+  // rather than treating the whole reply as prose.
   const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/);
-  const candidate = fenced ? fenced[1] : text;
+  const unterminated = fenced ? null : text.match(/```(?:json)?\s*([\s\S]*)$/);
+  const candidate = fenced ? fenced[1] : unterminated ? unterminated[1] : text;
   const start = candidate.indexOf('{');
   if (start === -1) return null;
   let depth = 0;
@@ -290,5 +293,68 @@ function extractJsonObject(text: string): unknown {
       }
     }
   }
-  return null;
+  // Never balanced: the model was cut off mid-object. Salvage what it did
+  // finish rather than discarding the whole reply — a card whose `summary`
+  // and `citations` arrived is usable even when a trailing `detail` was
+  // severed. Closing the structure ourselves keeps that recovery here, in
+  // one place, instead of letting a fragment reach the UI.
+  return parseTruncatedJson(candidate.slice(start), inString, escape, depth);
+}
+
+/**
+ * Best-effort parse of a JSON object that was cut off mid-flight: drop any
+ * half-written trailing value, then close the strings, arrays and objects
+ * still open. Returns null when the result still will not parse.
+ */
+function parseTruncatedJson(
+  fragment: string,
+  inString: boolean,
+  escape: boolean,
+  depth: number,
+): unknown {
+  if (depth <= 0) return null;
+  let body = fragment;
+  // A dangling backslash would escape the quote we are about to add.
+  if (escape) body = body.slice(0, -1);
+  if (inString) {
+    body += '"';
+  } else {
+    // Outside a string the tail may be a partial literal ("confiden" or
+    // `0.`) or a comma awaiting its value; cut back to the last delimiter.
+    const lastDelim = Math.max(body.lastIndexOf(','), body.lastIndexOf('{'), body.lastIndexOf('['));
+    const tail = body.slice(lastDelim + 1);
+    if (tail.trim() && !/^\s*(?:"[^"]*"|true|false|null|-?\d+(?:\.\d+)?)\s*$/.test(tail)) {
+      body = body.slice(0, lastDelim + 1);
+    }
+  }
+  // Drop a trailing comma or a key with no value, then close what is open.
+  body = body
+    .replace(/,\s*$/, '')
+    .replace(/[,{[]\s*"[^"]*"\s*:\s*$/, (m) => (m[0] === ',' ? '' : m[0]));
+  const closers: string[] = [];
+  let str = false;
+  let esc = false;
+  for (const ch of body) {
+    if (esc) {
+      esc = false;
+      continue;
+    }
+    if (ch === '\\') {
+      esc = true;
+      continue;
+    }
+    if (ch === '"') {
+      str = !str;
+      continue;
+    }
+    if (str) continue;
+    if (ch === '{') closers.push('}');
+    else if (ch === '[') closers.push(']');
+    else if (ch === '}' || ch === ']') closers.pop();
+  }
+  try {
+    return JSON.parse(body + closers.reverse().join(''));
+  } catch {
+    return null;
+  }
 }
