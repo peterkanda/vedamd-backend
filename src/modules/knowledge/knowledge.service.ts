@@ -250,4 +250,17 @@ export class KnowledgeService implements OnModuleInit {
   getTerminology() {
     return this.bundle.terminology;
   }
+
+  getManufacturerLabels() {
+    return this.bundle.manufacturerLabels;
+  }
+
+  getPpbSmpcLinks() {
+    return this.bundle.ppbSmpcLinks;
+  }
+
+  /** True when the runtime serves approved content only (CONTENT_REQUIRE_APPROVED). */
+  requiresApproved(): boolean {
+    return this.bundle.info.requireApproved === true;
+  }
 }

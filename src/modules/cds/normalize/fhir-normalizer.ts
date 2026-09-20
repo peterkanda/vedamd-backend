@@ -80,6 +80,8 @@ export interface NormalizationReport {
   unresolvedMedications: number;
   /** Observation LOINC codes present that we have no mapping for. */
   unmappedObservationCodes: string[];
+  /** Flat-dialect medication entries rewritten to a canonical VedaMD slug. */
+  medicationsCanonicalised: number;
 }
 
 export interface NormalizerDeps {
@@ -101,7 +103,16 @@ export function normalizeCdsRequest(
     resourcesSeen: {},
     unresolvedMedications: 0,
     unmappedObservationCodes: [],
+    medicationsCanonicalised: 0,
   };
+
+  // Plugins that read an EMR's own tables (OpenEMR, Frappe Health, GNU
+  // Health, DHIS2) send the flat dialect, but with what the EMR actually
+  // stores: dispensing labels ("Warfarin 5mg Tablet"), coded objects
+  // ({ code, system, name }) and coded diagnoses ("ICD10:I48.0"). The
+  // strategies match exact slugs, so without this step those payloads
+  // evaluate cleanly and return zero cards.
+  const flat = canonicaliseFlatContext(original, deps.drugs, report);
 
   // Gather every FHIR resource the payload carries, from both slots.
   const prefetch: Record<string, unknown> = (req.prefetch ?? {}) as Record<string, unknown>;
@@ -125,7 +136,9 @@ export function normalizeCdsRequest(
 
   const all = [...draftResources, ...activeResources, ...generalResources];
   if (all.length === 0) {
-    return { request: req, report };
+    if (!flat.changed) return { request: req, report };
+    report.fieldsPopulated = flat.populated.sort();
+    return { request: { ...req, context: flat.context }, report };
   }
   report.applied = true;
   for (const r of all) {
@@ -154,10 +167,24 @@ export function normalizeCdsRequest(
   // ---- MedicationRequest → VedaMD drug slugs ----
   applyMedications(draftResources, activeResources, generalResources, derived, deps.drugs, report);
 
-  // Merge: caller-supplied flat values always win.
-  const merged: Record<string, unknown> = { ...derived, ...original };
+  // Merge: caller-supplied flat values win for scalars. Medication lists
+  // are the exception and are UNIONED — a caller who sends
+  // `medications: ["warfarin"]` alongside FHIR draftOrders for ibuprofen
+  // means both, and letting one list replace the other would hide
+  // exactly the pair the interaction check exists to catch.
+  const merged: Record<string, unknown> = { ...derived, ...flat.context };
+  for (const key of FLAT_MEDICATION_KEYS) {
+    const fromFhir = derived[key];
+    const fromCaller = flat.context[key];
+    if (Array.isArray(fromFhir) && Array.isArray(fromCaller)) {
+      merged[key] = [...new Set([...fromCaller, ...fromFhir])];
+    }
+  }
   for (const key of Object.keys(derived)) {
     if (!(key in original)) report.fieldsPopulated.push(key);
+  }
+  for (const key of flat.populated) {
+    if (!report.fieldsPopulated.includes(key)) report.fieldsPopulated.push(key);
   }
   report.fieldsPopulated.sort();
 
@@ -360,6 +387,124 @@ function resolveMedication(med: FhirMedicationRequest, index: DrugCodeIndex): st
 
   const display = med.medicationReference?.display;
   return display ? index.resolveName(display) : null;
+}
+
+/** Flat-dialect keys that carry medication lists. */
+const FLAT_MEDICATION_KEYS = [
+  'medications',
+  'proposed',
+  'current',
+  'draftMedications',
+  'currentMedications',
+  'proposedMedications',
+];
+
+/** "ICD10:I48.0", "ICD-10:E11.9", "SNOMED:44054006" as sent by EMR plugins. */
+const CODED_DIAGNOSIS = /^\s*(icd-?10(?:-cm)?|snomed(?:[\s-]?ct)?)\s*:\s*([A-Za-z0-9.]+)\s*$/i;
+
+interface FlatCanonicalisation {
+  context: Record<string, unknown>;
+  changed: boolean;
+  /** Keys this step added that the caller had not set. */
+  populated: string[];
+}
+
+/**
+ * Canonicalises the flat dialect without changing its meaning.
+ *
+ * - Medication strings resolve to a VedaMD slug by name. A string that
+ *   is already a slug resolves to itself, so well-formed callers see no
+ *   change. An unresolvable string is KEPT verbatim: interaction records
+ *   exist for agents with no monograph (ethanol, dipyridamole), and
+ *   dropping those would suppress a real interaction.
+ * - `{ code, system, name }` objects resolve by code, then by name. The
+ *   strategies ignore objects outright, so an unresolved one is dropped
+ *   and counted rather than passed through to be silently ignored.
+ * - Coded diagnoses set boolean sentinels by CODE ONLY. Free-text
+ *   diagnoses never do: "pregnancy test negative" must not set
+ *   `pregnant`.
+ */
+function canonicaliseFlatContext(
+  original: Record<string, unknown>,
+  index: DrugCodeIndex,
+  report: NormalizationReport,
+): FlatCanonicalisation {
+  const context: Record<string, unknown> = { ...original };
+  const populated: string[] = [];
+  let changed = false;
+
+  for (const key of FLAT_MEDICATION_KEYS) {
+    const list = original[key];
+    if (!Array.isArray(list)) continue;
+    // A FHIR Bundle or resource list in this slot is handled by the FHIR path.
+    if (list.some((item) => item && typeof item === 'object' && 'resourceType' in item)) continue;
+
+    const out: string[] = [];
+    for (const item of list) {
+      if (typeof item === 'string') {
+        const trimmed = item.trim();
+        if (!trimmed) continue;
+        const slug = index.resolveName(trimmed);
+        if (slug) {
+          if (slug !== trimmed) report.medicationsCanonicalised += 1;
+          out.push(slug);
+        } else {
+          report.unresolvedMedications += 1;
+          out.push(trimmed);
+        }
+        continue;
+      }
+
+      if (item && typeof item === 'object') {
+        const obj = item as Record<string, unknown>;
+        const name = [obj.name, obj.display, obj.text].find(
+          (v): v is string => typeof v === 'string' && v.trim() !== '',
+        );
+        const code = typeof obj.code === 'string' ? obj.code : undefined;
+        const system = typeof obj.system === 'string' ? obj.system : undefined;
+        const slug = index.resolve({
+          coding: code ? [{ system, code, display: name }] : [],
+          text: name,
+        });
+        if (slug) {
+          report.medicationsCanonicalised += 1;
+          out.push(slug);
+        } else {
+          report.unresolvedMedications += 1;
+        }
+      }
+    }
+
+    const unique = [...new Set(out)];
+    if (unique.length !== list.length || unique.some((v, i) => v !== list[i])) {
+      context[key] = unique;
+      changed = true;
+    }
+  }
+
+  const diagnoses = original.diagnoses;
+  if (Array.isArray(diagnoses)) {
+    const codings: FhirCodeableConcept[] = [];
+    for (const entry of diagnoses) {
+      if (typeof entry !== 'string') continue;
+      const match = CODED_DIAGNOSIS.exec(entry);
+      if (!match) continue;
+      const system = match[1].toLowerCase().startsWith('icd')
+        ? 'http://hl7.org/fhir/sid/icd-10'
+        : 'http://snomed.info/sct';
+      codings.push({ coding: [{ system, code: match[2] }] });
+    }
+    // Codes only: strip any display so the text fallback cannot fire.
+    const sentinels = deriveConditionSentinels(codings.map((concept) => ({ concept })));
+    for (const [field, value] of Object.entries(sentinels)) {
+      if (field in original) continue;
+      context[field] = value;
+      populated.push(field);
+      changed = true;
+    }
+  }
+
+  return { context, changed, populated };
 }
 
 function loincCodes(concept: FhirCodeableConcept | undefined): string[] {

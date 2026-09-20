@@ -149,3 +149,94 @@ export interface DrugInteraction extends ContentReviewMetadata {
   management: string;
   references: Citation[];
 }
+
+/**
+ * Keys of the regulator-label sections kept as reference excerpts. PLR-format
+ * prescription labels and OTC Drug Facts use different section names, so both
+ * vocabularies are listed; a label carries whichever its format defines.
+ */
+export type LabelSectionKey =
+  | 'boxedWarning'
+  | 'indications'
+  | 'dosageAndAdministration'
+  | 'dosageFormsAndStrengths'
+  | 'contraindications'
+  | 'warningsAndPrecautions'
+  | 'drugInteractions'
+  | 'pregnancy'
+  | 'lactation'
+  | 'pediatricUse'
+  | 'geriatricUse'
+  | 'overdosage'
+  | 'doNotUse'
+  | 'askDoctor'
+  | 'stopUse';
+
+export interface LabelSection {
+  text: string;
+  /** True when the excerpt was cut at the length cap — see the full label. */
+  truncated: boolean;
+}
+
+/**
+ * A manufacturer's regulator-approved label (package insert), held as
+ * REFERENCE ONLY next to the VedaMD drug record. It is never merged into
+ * DrugRecord and always carries its jurisdiction: a US label describes US
+ * products, which may differ from what is registered locally.
+ *
+ * Only sources whose registry verdict is `embeddable: yes` may contribute
+ * section text — enforced by scripts/check-licence-compliance.js.
+ */
+export interface ManufacturerLabel {
+  slug: string;
+  inn: string;
+  /** RxNorm ingredient (IN) CUIs the label was matched on. */
+  rxcuiIngredients: string[];
+  jurisdiction: 'US';
+  /** content/sources/registry.json source id. */
+  source: 'openfda';
+  setId: string;
+  splVersion: string;
+  /** ISO date (YYYY-MM-DD) of the label version. */
+  effectiveDate: string;
+  manufacturer: string;
+  brandNames: string[];
+  applicationNumbers: string[];
+  /** NDA / BLA (innovator), ANDA (generic), or other (e.g. OTC monograph). */
+  applicationType: 'NDA' | 'BLA' | 'ANDA' | 'other';
+  productType: string;
+  routes: string[];
+  sections: Partial<Record<LabelSectionKey, LabelSection>>;
+  /** Other current labels for the same drug + route (DailyMed set ids). */
+  alternateSetIds: string[];
+  formulary: {
+    atc: string[];
+    kemlLevel?: number;
+    whoEml?: boolean;
+    awareCategory?: AwareCategory;
+    /**
+     * Where to verify national listing, per country (KE → moh-ke, others from
+     * country-profiles.json). NOT a claim that the drug is listed there — only
+     * `kemlLevel` asserts a (Kenya) listing.
+     */
+    nationalFormularySources: { country: string; sourceId: string }[];
+  };
+  citation: Citation;
+  retrievedAt: string;
+  reviewStatus: ReviewStatus;
+}
+
+/**
+ * Link-only pointer from a VedaMD drug to a Kenya PPB SmPC PDF. No SmPC text
+ * is stored — PPB has not granted reuse (registry `ppb-ke-smpc`).
+ */
+export interface PpbSmpcLink {
+  slug: string;
+  /** Display name as listed in the PPB SmPC index. */
+  title: string;
+  url: string;
+  matchedOn: 'trade-name' | 'inn';
+  confidence: 'high' | 'medium';
+  /** Absent ⇒ draft (automatically matched, not yet checked by a person). */
+  reviewStatus?: ReviewStatus;
+}

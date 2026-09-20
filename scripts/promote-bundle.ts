@@ -34,6 +34,7 @@
  */
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { resolve, join } from 'node:path';
+import { recordContentHash, recordKey } from '../src/modules/governance/record-hash';
 
 type Status = 'draft' | 'review' | 'approved' | 'deprecated';
 const ORDER: Status[] = ['draft', 'review', 'approved'];
@@ -179,7 +180,135 @@ function ratchetCheck(): void {
   }
 }
 
+interface DecisionFile {
+  bundleVersion?: string;
+  approvals?: Array<{
+    domain?: string;
+    recordId?: string;
+    recordHash?: string;
+    reviewers?: Reviewer[];
+  }>;
+}
+
+/**
+ * Batch approval from the review queue's export (GET /v1/governance/reviews/export).
+ *
+ * Every safety rule of the single-record path is re-checked here rather than
+ * trusted from the export — FR-024 (≥ 2 distinct named reviewers with roles),
+ * the D-tier rule — plus one more: the record's content hash must equal the
+ * hash the reviewers approved, so content edited after review is never
+ * approved on the strength of a review of the old text.
+ *
+ * The review queue IS the review state, so records go draft|review → approved
+ * in one step here. All-or-nothing: if any approval is refused, no file is
+ * written. Run it against the NEXT bundle version's directory, then re-sign.
+ */
+function promoteFromDecisions(path: string): void {
+  let parsed: DecisionFile;
+  try {
+    parsed = JSON.parse(readFileSync(resolve(process.cwd(), path), 'utf8')) as DecisionFile;
+  } catch (e) {
+    console.error(`Cannot read decisions file ${path}: ${(e as Error).message}`);
+    process.exit(1);
+    return;
+  }
+  const approvals = Array.isArray(parsed.approvals) ? parsed.approvals : [];
+  if (!approvals.length) {
+    console.log('No approvals in the decisions file — nothing to do.');
+    return;
+  }
+
+  const files = new Map<string, Rec[]>();
+  const refusals: string[] = [];
+  const planned: Array<{ file: string; idx: number; updated: Rec; label: string }> = [];
+  const now = new Date().toISOString();
+
+  for (const a of approvals) {
+    const label = `${a.domain ?? '?'}/${a.recordId ?? '?'}`;
+    if (!a.domain || !a.recordId || !a.recordHash) {
+      refusals.push(`${label}: missing domain, recordId or recordHash`);
+      continue;
+    }
+    const file = `${a.domain}.json`;
+    if (!files.has(file)) {
+      try {
+        files.set(file, readDomain(file));
+      } catch {
+        refusals.push(`${label}: no such domain file ${join(BUNDLE, file)}`);
+        continue;
+      }
+    }
+    const records = files.get(file)!;
+    const idx = records.findIndex((r) => recordKey(r) === a.recordId);
+    if (idx === -1) {
+      refusals.push(`${label}: no such record in ${file}`);
+      continue;
+    }
+    const rec = records[idx];
+    const from = rec.reviewStatus ?? 'draft';
+    if (from !== 'draft' && from !== 'review') {
+      refusals.push(`${label}: status '${from}' cannot be approved`);
+      continue;
+    }
+    if (recordContentHash(rec) !== a.recordHash) {
+      refusals.push(
+        `${label}: content changed since it was reviewed (hash mismatch) — review again`,
+      );
+      continue;
+    }
+    const reviewers = (a.reviewers ?? []).map((r) => ({
+      name: String(r?.name ?? '').trim(),
+      role: String(r?.role ?? '').trim(),
+      reviewedAt: String(r?.reviewedAt ?? now),
+    }));
+    const named = reviewers.filter((r) => r.name && r.role);
+    if (named.length !== reviewers.length) {
+      refusals.push(`${label}: every reviewer needs a name and a role`);
+      continue;
+    }
+    if (new Set(named.map((r) => r.name.toLowerCase())).size < 2) {
+      refusals.push(`${label}: approval requires at least two distinct named reviewers (FR-024)`);
+      continue;
+    }
+    if (soleDTier(rec)) {
+      refusals.push(`${label}: only D-tier or ungraded citations — not approvable`);
+      continue;
+    }
+    planned.push({
+      file,
+      idx,
+      label,
+      updated: { ...rec, reviewStatus: 'approved', reviewers: named, approvedAt: now },
+    });
+  }
+
+  if (refusals.length) {
+    console.error(`Refusing the whole batch — ${refusals.length} approval(s) failed checks:`);
+    for (const r of refusals) console.error(`  - ${r}`);
+    process.exit(2);
+  }
+  if (has('dry-run')) {
+    for (const p of planned) console.log(`[dry-run] ${p.label} → approved`);
+    console.log(`\n[dry-run] ${planned.length} record(s) would be approved in ${BUNDLE}.`);
+    return;
+  }
+  for (const p of planned) files.get(p.file)![p.idx] = p.updated;
+  for (const file of new Set(planned.map((p) => p.file))) {
+    writeFileSync(join(BUNDLE, file), `${JSON.stringify(files.get(file), null, 2)}\n`);
+  }
+  console.log(`Approved ${planned.length} record(s) in ${BUNDLE}.`);
+  console.log(
+    '\nRe-sign the bundle for this to take effect (npm run bundle:sign), and lower ' +
+      'MAX_UNAPPROVED once the backlog has shrunk.',
+  );
+}
+
 function main(): void {
+  const decisionsPath = flag('from-decisions');
+  if (decisionsPath) {
+    promoteFromDecisions(decisionsPath);
+    return;
+  }
   if (has('status')) {
     statusReport();
     return;
@@ -197,9 +326,10 @@ function main(): void {
   if (!to || !domain || !slug) {
     console.error(
       'Usage: bundle:promote -- --to <review|approved> --domain <domain> --slug <slug> ' +
-        '[--reviewer "Name:Role" ...] [--dry-run]\n' +
+        '[--reviewer "Name:Role" ...] [--dry-run]   (--slug also accepts an id, or "a+b" for an interaction pair)\n' +
         '       bundle:promote -- --status   # per-domain backlog\n' +
-        '       bundle:promote -- --check    # CI ratchet: backlog must not grow',
+        '       bundle:promote -- --check    # CI ratchet: backlog must not grow\n' +
+        '       bundle:promote -- --bundle <dir> --from-decisions <file> [--dry-run]  # batch from the review queue',
     );
     process.exit(1);
   }
@@ -218,7 +348,8 @@ function main(): void {
     return;
   }
 
-  const idx = records.findIndex((r) => r.slug === slug);
+  // slug, else id (cds-rules), else "a+b" for drug-interaction pairs.
+  const idx = records.findIndex((r) => recordKey(r) === slug);
   if (idx === -1) {
     console.error(`No record with slug '${slug}' in ${file}.`);
     process.exit(1);

@@ -25,6 +25,13 @@ export interface CdsFeedbackEntry {
   acceptedSuggestions?: Array<{ id: string }>;
   /** Required when outcome === "overridden". */
   overrideReason?: CdsOverrideReason;
+  /**
+   * VedaMD extension (not in CDS Hooks 1.0): why the clinician accepted.
+   * Our UI requires it for critical LLM cards, because clinicians adopt
+   * harmful AI advice far more readily than beneficial advice. Spec-only
+   * clients can omit it.
+   */
+  acceptReason?: CdsOverrideReason;
 }
 
 export interface CdsFeedbackRequest {
@@ -57,5 +64,52 @@ export interface CdsFeedbackPagedRow {
   overrideReasonCode: string | null;
   overrideReasonDisplay: string | null;
   userComment: string | null;
+  modelId: string | null;
+  indicator: string | null;
+  acceptReasonCode: string | null;
+  acceptReasonDisplay: string | null;
   createdAt: string;
+}
+
+/** Adoption of LLM-generated cards for one model. PHI-free. */
+export interface CdsFeedbackModelSummary {
+  /** Model id as reported by the provider; "unknown" when it wasn't captured. */
+  modelId: string;
+  totalFeedback: number;
+  accepted: number;
+  overridden: number;
+  overrideRatePct: number;
+  /** Feedback on critical cards — the ones where blind adoption does the most harm. */
+  criticalFeedback: number;
+  criticalAccepted: number;
+  /** Critical cards accepted with no reason given (spec-only clients, or a bypassed UI). */
+  criticalAcceptedWithoutReason: number;
+  topOverrideReasons: Array<{ code: string; display?: string; count: number }>;
+  topAcceptReasons: Array<{ code: string; display?: string; count: number }>;
+  firstFeedbackAt: string;
+  lastFeedbackAt: string;
+  /** True once the model has enough feedback for its rates to be worth comparing. */
+  sufficientData: boolean;
+}
+
+/**
+ * How the newest model compares with the one before it. Answers "did the
+ * model change shift how clinicians treat AI advice?" — the check to run
+ * after every model bump.
+ */
+export interface CdsFeedbackModelComparison {
+  currentModelId: string;
+  previousModelId: string;
+  /** current − previous, percentage points. */
+  overrideRateDeltaPct: number;
+  /** current − previous acceptance rate on critical cards, percentage points; null if either has none. */
+  criticalAcceptRateDeltaPct: number | null;
+  /** False until both models reach the minimum sample — deltas before then are noise. */
+  comparable: boolean;
+}
+
+export interface CdsFeedbackModelReport {
+  minSample: number;
+  models: CdsFeedbackModelSummary[];
+  comparison: CdsFeedbackModelComparison | null;
 }

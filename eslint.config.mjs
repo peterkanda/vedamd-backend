@@ -44,7 +44,9 @@ const PHI_LOGGER_RULES = {
 
 export default [
   {
-    ignores: ['dist/**', 'node_modules/**', 'coverage/**'],
+    // plugins/ holds EMR plugin sources in their own languages and toolchains
+    // (PHP, Python, plain browser JS); each carries its own tests.
+    ignores: ['dist/**', 'node_modules/**', 'coverage/**', 'plugins/**'],
   },
   {
     files: ['**/*.ts'],

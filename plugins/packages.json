@@ -1,0 +1,129 @@
+{
+  "$comment": "Source of truth for downloadable plugin packages. Regenerate archives with `npm run plugins:package`; test/plugin-packages.spec.ts fails if content/plugins drifts from this file or from the plugin source.",
+  "packages": [
+    {
+      "id": "openmrs-bahmni",
+      "name": "OpenMRS & Bahmni setup pack",
+      "version": "0.2.0",
+      "summary": "Setup guide, verification script and the CDS bridge for the existing openmrs-module-cdss.",
+      "integrations": [
+        "openmrs",
+        "bahmni"
+      ],
+      "install": "Unzip on a host that can reach OpenMRS, start the bridge with docker compose, set cdss.enable and cdss.fhir.baseurl, then run ./verify.sh.",
+      "sources": [
+        {
+          "from": "openmrs-bahmni",
+          "to": "vedamd-openmrs-bahmni"
+        },
+        {
+          "from": "vedamd-cds-bridge",
+          "to": "vedamd-openmrs-bahmni/vedamd-cds-bridge"
+        }
+      ]
+    },
+    {
+      "id": "openemr",
+      "name": "OpenEMR module",
+      "version": "0.2.0",
+      "summary": "PHP module that adds a VedaMD decision-support card to the patient dashboard.",
+      "integrations": [
+        "openemr"
+      ],
+      "install": "Unzip into interface/modules/custom_modules/ (keeps the oe-module-vedamd-cds folder name), then Administration → Modules → Manage Modules → Register, Install, Enable.",
+      "sources": [
+        {
+          "from": "openemr/oe-module-vedamd-cds",
+          "to": "oe-module-vedamd-cds"
+        }
+      ]
+    },
+    {
+      "id": "frappe",
+      "name": "Frappe Health app",
+      "version": "0.2.0",
+      "summary": "Frappe app that checks prescriptions when a Patient Encounter is saved.",
+      "integrations": [
+        "erpnext-frappe-healthcare"
+      ],
+      "install": "Unzip into frappe-bench/apps/, then bench pip install -e apps/vedamd_cds, add vedamd_cds to sites/apps.txt, and bench --site <site> install-app vedamd_cds.",
+      "sources": [
+        {
+          "from": "frappe/vedamd_cds",
+          "to": "vedamd_cds"
+        }
+      ]
+    },
+    {
+      "id": "gnu-health",
+      "name": "GNU Health module",
+      "version": "0.2.0",
+      "summary": "Tryton module that checks GNU Health prescriptions as they are created.",
+      "integrations": [
+        "gnu-health"
+      ],
+      "install": "Unzip into trytond/modules/ (keeps the vedamd_cds folder name), then trytond-admin -d <db> -u vedamd_cds --activate-dependencies.",
+      "sources": [
+        {
+          "from": "gnu-health/vedamd_cds",
+          "to": "vedamd_cds"
+        }
+      ]
+    },
+    {
+      "id": "dhis2",
+      "name": "DHIS2 app",
+      "version": "0.2.0",
+      "summary": "Installable DHIS2 app (no build step) that runs safety checks on Tracker records via the bridge.",
+      "integrations": [
+        "dhis2"
+      ],
+      "install": "Upload this zip unchanged in App Management → Install App. Deploy the CDS bridge with BRIDGE_ALLOWED_ORIGINS set to your DHIS2 URL, then open the app and save Settings.",
+      "sources": [
+        {
+          "from": "dhis2/vedamd-dhis2-app/app",
+          "to": ""
+        },
+        {
+          "from": "dhis2/vedamd-dhis2-app/README.md",
+          "to": "README.md"
+        }
+      ]
+    },
+    {
+      "id": "cds-bridge",
+      "name": "CDS bridge",
+      "version": "0.2.0",
+      "summary": "Dependency-free Node service that injects your API key for EMRs that cannot send one.",
+      "integrations": [
+        "openmrs",
+        "bahmni",
+        "dhis2"
+      ],
+      "install": "Unzip, copy .env.example to .env and set VEDAMD_API_KEY, then docker compose up -d --build.",
+      "sources": [
+        {
+          "from": "vedamd-cds-bridge",
+          "to": "vedamd-cds-bridge"
+        }
+      ]
+    },
+    {
+      "id": "epic-oracle",
+      "name": "Epic & Oracle Health onboarding pack",
+      "version": "0.2.0",
+      "summary": "Prefetch templates, a sample order-select payload and a test script for native CDS Hooks.",
+      "integrations": [
+        "epic",
+        "cerner-oracle-health"
+      ],
+      "install": "Set VEDAMD_API_KEY and run ./test-request.sh to prove the integration, then start vendor onboarding with the prefetch templates.",
+      "sources": [
+        {
+          "from": "epic",
+          "to": "vedamd-epic-oracle"
+        }
+      ]
+    }
+  ]
+}

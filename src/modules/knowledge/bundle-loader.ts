@@ -2,7 +2,12 @@ import { createHash, createPublicKey, verify } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type { CdsRule, ConditionGuidance } from '../conditions/conditions.types';
-import type { DrugInteraction, DrugRecord } from '../drugs/drugs.types';
+import type {
+  DrugInteraction,
+  DrugRecord,
+  ManufacturerLabel,
+  PpbSmpcLink,
+} from '../drugs/drugs.types';
 import type { ProcedureGuidance } from '../procedures/procedures.types';
 import type { ClinicalScore } from '../clinical-scores/clinical-scores.types';
 import type { PgxGuideline } from '../pharmacogenomics/pharmacogenomics.types';
@@ -168,6 +173,9 @@ export function loadBundleFromDisk(dir: string, opts: BundleLoadOptions): Loaded
       (parsed['bedside-interpretation.json'] as ReferenceCard[] | undefined) ?? [],
     preventiveCare: (parsed['preventive-care.json'] as ReferenceCard[] | undefined) ?? [],
     growthDevelopment: (parsed['growth-development.json'] as ReferenceCard[] | undefined) ?? [],
+    manufacturerLabels:
+      (parsed['manufacturer-labels.json'] as ManufacturerLabel[] | undefined) ?? [],
+    ppbSmpcLinks: (parsed['ppb-smpc-links.json'] as PpbSmpcLink[] | undefined) ?? [],
     terminology:
       (parsed['terminology.json'] as TerminologyBundle | undefined) ??
       ({ version: '0.0.0-absent', codeSystems: [], valueSets: [] } as TerminologyBundle),
@@ -254,6 +262,8 @@ export function emptyBundle(reason: BundleInfo['verificationStatus']): LoadedBun
     bedsideInterpretation: [],
     preventiveCare: [],
     growthDevelopment: [],
+    manufacturerLabels: [],
+    ppbSmpcLinks: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }
@@ -307,6 +317,8 @@ function failOrReturn(
     bedsideInterpretation: [],
     preventiveCare: [],
     growthDevelopment: [],
+    manufacturerLabels: [],
+    ppbSmpcLinks: [],
     terminology: { version: '0.0.0-absent', codeSystems: [], valueSets: [] },
   };
 }

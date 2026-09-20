@@ -1,5 +1,8 @@
-import { describe, expect, it, beforeEach } from 'vitest';
-import { CdsFeedbackService } from '../src/modules/cds-feedback/cds-feedback.service';
+import { afterEach, describe, expect, it, beforeEach, vi } from 'vitest';
+import {
+  CdsFeedbackService,
+  MODEL_COMPARISON_MIN_SAMPLE,
+} from '../src/modules/cds-feedback/cds-feedback.service';
 import type { CdsService } from '../src/modules/cds/cds.service';
 
 function fakeCdsService(
@@ -171,5 +174,132 @@ describe('CdsFeedbackService — summary aggregation', () => {
     expect(ddi.overrideRatePct).toBeCloseTo(75, 1);
     expect(ddi.topOverrideReasons[0].code).toBe('no-clinical-concern');
     expect(ddi.topOverrideReasons[0].count).toBe(2);
+  });
+});
+
+describe('CdsFeedbackService — per-model adoption of LLM cards', () => {
+  type Lookup = {
+    ruleId: string;
+    serviceId: string;
+    hook: string;
+    model?: string;
+    indicator?: string;
+  };
+
+  function svcWith(mapping: Record<string, Lookup>): CdsFeedbackService {
+    return new CdsFeedbackService(null, {
+      lookupCard: (uuid: string) =>
+        mapping[uuid] ? { ...mapping[uuid], createdAt: Date.now() } : null,
+    } as unknown as CdsService);
+  }
+
+  const ai = (model: string, indicator = 'warning'): Lookup => ({
+    ruleId: 'agentic-reasoner',
+    serviceId: 'vedamd-agentic',
+    hook: 'agentic',
+    model,
+    indicator,
+  });
+
+  afterEach(() => vi.useRealTimers());
+
+  it('groups LLM feedback by model, ignores rule cards, and counts unexplained critical accepts', async () => {
+    const svc = svcWith({
+      'old-1': ai('medgemma-4b'),
+      'new-1': ai('medgemma-27b', 'critical'),
+      'new-2': ai('medgemma-27b', 'critical'),
+      'rule-1': { ruleId: 'ddi-check', serviceId: 's', hook: 'h' },
+    });
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-09-01T00:00:00Z'));
+    await svc.ingest('t', 'vedamd-agentic', {
+      feedback: [
+        {
+          card: 'old-1',
+          outcome: 'overridden',
+          overrideReason: { reason: { code: 'unavailable-at-facility' } },
+        },
+      ],
+    });
+    vi.setSystemTime(new Date('2026-09-10T00:00:00Z'));
+    await svc.ingest('t', 'vedamd-agentic', {
+      feedback: [
+        {
+          card: 'new-1',
+          outcome: 'accepted',
+          acceptReason: { reason: { code: 'verified-against-guideline' } },
+        },
+        { card: 'new-2', outcome: 'accepted' },
+        { card: 'rule-1', outcome: 'accepted' },
+      ],
+    });
+
+    const report = await svc.summaryByModel('t');
+    expect(report.models.map((m) => m.modelId)).toEqual(['medgemma-27b', 'medgemma-4b']);
+    const [current, previous] = report.models;
+    expect(current).toMatchObject({
+      totalFeedback: 2,
+      criticalFeedback: 2,
+      criticalAccepted: 2,
+      criticalAcceptedWithoutReason: 1,
+      topAcceptReasons: [{ code: 'verified-against-guideline', count: 1 }],
+    });
+    expect(previous.topOverrideReasons).toEqual([{ code: 'unavailable-at-facility', count: 1 }]);
+    expect(report.comparison).toMatchObject({
+      currentModelId: 'medgemma-27b',
+      previousModelId: 'medgemma-4b',
+      overrideRateDeltaPct: -100,
+      criticalAcceptRateDeltaPct: null,
+      comparable: false,
+    });
+  });
+
+  it('marks a comparison comparable only once both models reach the minimum sample', async () => {
+    const mapping: Record<string, Lookup> = {};
+    for (let i = 0; i < MODEL_COMPARISON_MIN_SAMPLE; i++) {
+      mapping[`a${i}`] = ai('model-a');
+      mapping[`b${i}`] = ai('model-b');
+    }
+    const svc = svcWith(mapping);
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-09-01T00:00:00Z'));
+    await svc.ingest('t', 's', {
+      feedback: Object.keys(mapping)
+        .filter((k) => k.startsWith('a'))
+        .map((card) => ({ card, outcome: 'accepted' as const })),
+    });
+    vi.setSystemTime(new Date('2026-09-02T00:00:00Z'));
+    await svc.ingest('t', 's', {
+      feedback: Object.keys(mapping)
+        .filter((k) => k.startsWith('b'))
+        .map((card) => ({ card, outcome: 'overridden' as const })),
+    });
+    const report = await svc.summaryByModel('t');
+    expect(report.comparison).toMatchObject({
+      currentModelId: 'model-b',
+      overrideRateDeltaPct: 100,
+      comparable: true,
+    });
+  });
+
+  it('keeps reason codes on the side of the outcome they belong to', async () => {
+    const svc = svcWith({ c: ai('m') });
+    await svc.ingest('t', 's', {
+      feedback: [
+        {
+          card: 'c',
+          outcome: 'accepted',
+          overrideReason: { reason: { code: 'stray' } },
+          acceptReason: { reason: { code: 'consistent-with-findings' } },
+        },
+      ],
+    });
+    const [row] = await svc.listByRule('t', 'agentic-reasoner');
+    expect(row).toMatchObject({
+      overrideReasonCode: null,
+      acceptReasonCode: 'consistent-with-findings',
+      modelId: 'm',
+      indicator: 'warning',
+    });
   });
 });

@@ -32,6 +32,12 @@ export interface AppConfig {
      *  defaults to false outside production. */
     requireApproved: boolean;
     /**
+     * OIDC subjects allowed to submit clinical content-review decisions
+     * (CLINICAL_REVIEWER_SUBS, comma-separated). Content is global, so an
+     * integrator admin is NOT a reviewer by default. Empty ⇒ nobody may review.
+     */
+    reviewerSubs: string[];
+    /**
      * When true, SNOMED CT codes are surfaced (terminology code system,
      * record `snomed` fields, and SNOMED card codings). Defaults to
      * FALSE: SNOMED CT redistribution requires an affiliate licence, so
@@ -225,6 +231,10 @@ export const configuration = (): AppConfig => ({
     // editorial review status has been promoted from draft → approved.
     requireApproved: process.env.CONTENT_REQUIRE_APPROVED === 'true',
     snomedEnabled: process.env.CONTENT_SNOMED_ENABLED === 'true',
+    reviewerSubs: (process.env.CLINICAL_REVIEWER_SUBS ?? '')
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean),
   },
   apiKeys: {
     fingerprintSecret: resolveSecret('API_KEY_FINGERPRINT_SECRET', 'dev-only-do-not-use-in-prod'),

@@ -111,6 +111,16 @@ describe('API-key auth contract', () => {
     expect(res.statusCode).toBe(401);
   });
 
+  it('plugin downloads without a key → 401', async () => {
+    for (const url of [
+      '/api/v1/integrations/plugins',
+      '/api/v1/integrations/plugins/openemr/download',
+    ]) {
+      const res = await inject({ method: 'GET', url });
+      expect(res.statusCode, url).toBe(401);
+    }
+  });
+
   it('POST /api/v1/agentic/evaluate without a key → 401', async () => {
     const res = await inject({
       method: 'POST',

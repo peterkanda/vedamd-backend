@@ -1,0 +1,7 @@
+{
+  "patient": "Patient/{{context.patientId}}",
+  "conditions": "Condition?patient={{context.patientId}}&clinical-status=active",
+  "medications": "MedicationRequest?patient={{context.patientId}}&status=active",
+  "allergies": "AllergyIntolerance?patient={{context.patientId}}",
+  "labs": "Observation?patient={{context.patientId}}&category=laboratory&_count=50&_sort=-date"
+}

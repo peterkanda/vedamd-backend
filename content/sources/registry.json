@@ -1,7 +1,7 @@
 {
   "$schema": "./registry.schema.md",
   "description": "Machine-readable content-source & licence registry. Operationalises the Kenya/SSA CDS content-sourcing analysis: every upstream source carries a licence tier and an embeddable verdict that the ingestion engine and the licence-compliance CI gate enforce. `citationLicence` maps each source onto the shared CitationLicence enum (src/common/citation.ts) so citation hosts can be checked against it. NOTHING is embedded from a source whose embeddable verdict is not 'yes'.",
-  "updated": "2026-06-19",
+  "updated": "2026-09-17",
   "tiers": {
     "1": "Safe to embed in a commercial product with attribution (public-domain / permissive).",
     "2": "High value but licence-uncertain — verify per source/repo before embedding.",
@@ -49,7 +49,8 @@
       "hosts": [
         "dailymed.nlm.nih.gov"
       ],
-      "lastChecked": "2026-06-10"
+      "lastChecked": "2026-09-17",
+      "notes": "Labels are authored and submitted by manufacturers; NLM publishes without review. openFDA's CC0 dedication excludes 'copyrightable works made available to the FDA by private entities', so storing label text excerpts is pending legal sign-off (docs/manufacturer-label-licensing.md). Excerpts are reference-only, tagged jurisdiction US, and never merged into VedaMD records."
     },
     {
       "id": "openfda",
@@ -74,8 +75,8 @@
         "api.fda.gov",
         "accessdata.fda.gov"
       ],
-      "lastChecked": "2026-06-10",
-      "notes": "Public domain. Do not imply FDA endorsement."
+      "lastChecked": "2026-09-17",
+      "notes": "Public domain (CC0) with a carve-out for copyrightable works supplied by private entities (e.g. manufacturer-authored labels) — see docs/manufacturer-label-licensing.md. Do not imply FDA endorsement."
     },
     {
       "id": "rxnorm",
@@ -1029,7 +1030,8 @@
         "ema.europa.eu",
         "ecdc.europa.eu"
       ],
-      "lastChecked": "2026-06-15"
+      "lastChecked": "2026-09-17",
+      "notes": "EMA content is reusable with attribution, but EPAR product information (SmPC/package leaflet) where copyright vests in the marketing-authorisation holder needs that holder's permission — link only."
     },
     {
       "id": "drug-reference-databases",
@@ -1057,7 +1059,8 @@
         "mdcalc.com",
         "pfizermedical.com"
       ],
-      "lastChecked": "2026-06-15"
+      "lastChecked": "2026-09-17",
+      "notes": "emc (medicines.org.uk, Datapharm) legal notice forbids commercial use and building databases from its content; licence required from Datapharm. Link only, never ingest."
     },
     {
       "id": "global-regional-health",
@@ -1180,6 +1183,100 @@
       ],
       "lastChecked": "2026-06-19",
       "notes": "FDA Risk Evaluation and Mitigation Strategy site for mycophenolate. Reference/link only."
+    },
+    {
+      "id": "ppb-ke-smpc",
+      "publisher": "Pharmacy and Poisons Board (Kenya)",
+      "title": "PPB Summary of Product Characteristics (SmPC) index",
+      "tier": 3,
+      "embeddable": "cite-only",
+      "format": "pdf",
+      "spdxOrName": "© Pharmacy and Poisons Board, All Rights Reserved (manufacturer-authored SmPCs)",
+      "citationLicence": "moh-restricted",
+      "countries": [
+        "KE"
+      ],
+      "domains": [
+        "drugs",
+        "drug-label"
+      ],
+      "url": "https://web.pharmacyboardkenya.org/smpc/",
+      "hosts": [
+        "web.pharmacyboardkenya.org",
+        "pharmacyboardkenya.org"
+      ],
+      "lastChecked": "2026-09-17",
+      "notes": "~3,781 SmPC PDFs indexed by trade-name filename. Link-only (content/labels/ppb-smpc-links.json); no text stored until PPB grants permission (docs/label-permission-requests/ppb-ke.md), then flip embeddable."
+    },
+    {
+      "id": "ppb-ke-register",
+      "publisher": "Pharmacy and Poisons Board (Kenya)",
+      "title": "PPB public register of retained/registered products, suspended/withdrawn and EUA lists",
+      "tier": 3,
+      "embeddable": "cite-only",
+      "format": "html",
+      "spdxOrName": "© Pharmacy and Poisons Board, All Rights Reserved",
+      "citationLicence": "moh-restricted",
+      "countries": [
+        "KE"
+      ],
+      "domains": [
+        "drugs",
+        "essential-medicines",
+        "pharmacovigilance"
+      ],
+      "url": "https://products.pharmacyboardkenya.org/ppb_admin/pages/public_view_retention_products.php",
+      "hosts": [
+        "products.pharmacyboardkenya.org"
+      ],
+      "lastChecked": "2026-09-17",
+      "notes": "~3,250 products (reg no, trade name, INN, form, MAH, dates), 10 rows/page. Public CSV export returns 'Restricted' — do NOT page-scrape. Dataset requested from PPB; scripts/lib/ppb-registered-parser.ts runs only when embeddable is 'yes'."
+    },
+    {
+      "id": "sahpra-pi-pil",
+      "publisher": "South African Health Products Regulatory Authority",
+      "title": "SAHPRA repository of Professional Information and Patient Information Leaflets",
+      "tier": 3,
+      "embeddable": "cite-only",
+      "format": "pdf",
+      "spdxOrName": "No published reuse licence (manufacturer-authored PI/PIL)",
+      "citationLicence": "unknown",
+      "countries": [
+        "ZA"
+      ],
+      "domains": [
+        "drugs",
+        "drug-label"
+      ],
+      "url": "https://pi-pil-repository.sahpra.org.za/",
+      "hosts": [
+        "pi-pil-repository.sahpra.org.za"
+      ],
+      "lastChecked": "2026-09-17",
+      "notes": "No licence found. Page contained an unrelated gambling hyperlink on 2026-09-17 — confirm site integrity. Permission requested (docs/label-permission-requests/sahpra.md)."
+    },
+    {
+      "id": "hc-dpd",
+      "publisher": "Health Canada",
+      "title": "Drug Product Database (DPD) API and product monographs",
+      "tier": 2,
+      "embeddable": "verify",
+      "format": "api",
+      "spdxOrName": "Open Government Licence – Canada (DPD data); monograph copyright unverified",
+      "citationLicence": "open-gov",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "drugs",
+        "drug-label"
+      ],
+      "url": "https://health-products.canada.ca/api/documentation/dpd-documentation-en.html",
+      "hosts": [
+        "health-products.canada.ca"
+      ],
+      "lastChecked": "2026-09-17",
+      "notes": "DPD structured data is OGL-Canada. Whether manufacturer product monograph PDFs are covered is unverified — do not ingest monograph text until confirmed."
     }
   ]
 }

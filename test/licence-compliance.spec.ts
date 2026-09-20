@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { readFileSync, readdirSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { execFileSync } from 'node:child_process';
+import { mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join, resolve } from 'node:path';
 
 /**
  * Licence-compliance guard (copyright register).
@@ -115,5 +117,80 @@ describe('licence compliance', () => {
       return src !== null && c.licence !== src.citationLicence;
     });
     expect(mismatches.length).toBeLessThanOrEqual(MAX_LICENCE_MISMATCH);
+  });
+});
+
+describe('reference-label licence gate (content/labels)', () => {
+  const SCRIPT = resolve(process.cwd(), 'scripts/check-licence-compliance.js');
+
+  function gate(files: Record<string, unknown[]>): { code: number; err: string } {
+    const dir = mkdtempSync(join(tmpdir(), 'labels-'));
+    try {
+      for (const [name, body] of Object.entries(files)) {
+        writeFileSync(join(dir, name), JSON.stringify(body));
+      }
+      execFileSync('node', [SCRIPT, '--labels', dir], { stdio: ['ignore', 'pipe', 'pipe'] });
+      return { code: 0, err: '' };
+    } catch (e) {
+      const x = e as { status?: number; stderr?: Buffer };
+      return { code: x.status ?? 1, err: String(x.stderr ?? '') };
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  }
+
+  const dailymed = 'https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=x';
+  const ppbPdf = 'https://products.pharmacyboardkenya.org/uploads/X.pdf';
+
+  it('the committed labels directory passes', () => {
+    expect(() => execFileSync('node', [SCRIPT], { stdio: 'pipe' })).not.toThrow();
+  });
+
+  it('accepts openFDA label text with a public-domain DailyMed citation', () => {
+    const r = gate({
+      'manufacturer-labels.json': [
+        {
+          slug: 'a',
+          source: 'openfda',
+          sections: { indications: { text: 't', truncated: false } },
+          citation: { label: 'x', url: dailymed, licence: 'public-domain' },
+        },
+      ],
+    });
+    expect(r.code).toBe(0);
+  });
+
+  it('rejects stored text from a non-embeddable source (PPB)', () => {
+    const r = gate({
+      'ppb.json': [
+        {
+          slug: 'a',
+          source: 'ppb-ke-smpc',
+          sections: { x: { text: 't' } },
+          citation: { label: 'x', url: ppbPdf },
+        },
+      ],
+    });
+    expect(r.code).toBe(1);
+    expect(r.err).toContain('embeddable: cite-only');
+  });
+
+  it('rejects a relabelled citation licence', () => {
+    const r = gate({
+      'manufacturer-labels.json': [
+        {
+          slug: 'a',
+          source: 'openfda',
+          sections: {},
+          citation: { label: 'x', url: dailymed, licence: 'proprietary' },
+        },
+      ],
+    });
+    expect(r.code).toBe(1);
+  });
+
+  it('allows link-only records from a cite-only source', () => {
+    const r = gate({ 'ppb-smpc-links.json': [{ slug: 'a', title: 'X', url: ppbPdf }] });
+    expect(r.code).toBe(0);
   });
 });

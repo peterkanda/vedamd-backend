@@ -431,6 +431,13 @@ export const cdsCardFeedback = pgTable(
     overrideReasonDisplay: text('override_reason_display'),
     /** Optional clinician free-text comment. Length-capped + PHI-scrubbed at write time. */
     userComment: text('user_comment'),
+    /** Model that generated the card — set for LLM cards only, so adoption can be tracked per model. */
+    modelId: text('model_id'),
+    /** Card indicator at the time it was shown (info / warning / critical). */
+    indicator: text('indicator'),
+    /** Why the clinician accepted (VedaMD extension; the UI requires it for critical LLM cards). */
+    acceptReasonCode: text('accept_reason_code'),
+    acceptReasonDisplay: text('accept_reason_display'),
     createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => ({
@@ -485,3 +492,45 @@ export const usageEvents = pgTable(
 
 export type UsageEventRow = typeof usageEvents.$inferSelect;
 export type NewUsageEventRow = typeof usageEvents.$inferInsert;
+
+/**
+ * Clinical content-review decisions (FR-024 workflow). One row per reviewer
+ * decision on one bundle record. Content is global, so rows are keyed by
+ * record, not tenant; `integratorId` is kept only for the audit trail.
+ *
+ * `recordHash` pins the exact content reviewed (see
+ * src/modules/governance/record-hash.ts): once a record's content changes,
+ * earlier decisions no longer count. Decisions are append-only — nothing
+ * here edits the signed bundle; approvals are applied to the NEXT bundle
+ * version by scripts/promote-bundle.ts --from-decisions.
+ */
+export const contentReviews = pgTable(
+  'content_reviews',
+  {
+    id: text('id').primaryKey(),
+    bundleVersion: text('bundle_version').notNull(),
+    /** Bundle file domain, e.g. "drugs", "drug-disease-interactions". */
+    domain: text('domain').notNull(),
+    /** Record slug, or id for domains keyed by id (cds-rules). */
+    recordId: text('record_id').notNull(),
+    recordHash: text('record_hash').notNull(),
+    /** "approve" | "request-changes". */
+    decision: text('decision').notNull(),
+    /** OIDC subject of the reviewer — identity comes from the auth token, never the body. */
+    reviewerSub: text('reviewer_sub').notNull(),
+    reviewerName: text('reviewer_name').notNull(),
+    /** Clinical role the reviewer attested, e.g. "Consultant Physician". */
+    reviewerRole: text('reviewer_role').notNull(),
+    integratorId: text('integrator_id'),
+    /** Dev-bypass decisions are kept for testing but never count toward FR-024. */
+    viaDevBypass: boolean('via_dev_bypass').notNull().default(false),
+    notes: text('notes'),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => ({
+    byRecord: index('idx_content_reviews_record').on(t.domain, t.recordId),
+  }),
+);
+
+export type ContentReviewRow = typeof contentReviews.$inferSelect;
+export type NewContentReviewRow = typeof contentReviews.$inferInsert;

@@ -541,6 +541,36 @@
         ]
       }
     },
+    "/api/v1/drugs/{slug}/labels": {
+      "get": {
+        "description": "Reference-only regulator label excerpts (currently US FDA via openFDA/DailyMed, tagged jurisdiction US) plus link-only pointers to Kenya PPB SmPC PDFs. Never merged into the VedaMD drug record. Empty arrays when the bundle carries no labels for the drug.",
+        "operationId": "DrugsController_labels",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Manufacturer labels and Kenya PPB SmPC links for a drug",
+        "tags": [
+          "drugs"
+        ]
+      }
+    },
     "/api/v1/drugs/interactions": {
       "post": {
         "description": "Body: { slugs: [\"paracetamol\",\"warfarin\", …] }. Returns every known interaction across the unordered pairs, plus any slugs that did not resolve to a known drug.",
@@ -2365,6 +2395,66 @@
         ]
       }
     },
+    "/api/v1/integrations/plugins": {
+      "get": {
+        "description": "Installable packages for OpenMRS/Bahmni, OpenEMR, Frappe Health, GNU Health, DHIS2, the CDS bridge and Epic/Oracle Health onboarding. Each entry carries version, size, SHA-256 and install instructions. Filter with ?integration=<catalogue slug>.",
+        "operationId": "PluginDownloadsController_list",
+        "parameters": [
+          {
+            "name": "integration",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List downloadable EMR plugin packages",
+        "tags": [
+          "integrations"
+        ]
+      }
+    },
+    "/api/v1/integrations/plugins/{id}/download": {
+      "get": {
+        "description": "Returns the archive bytes. Verify them against the X-Content-SHA256 header or the sha256 in the package list before installing.",
+        "operationId": "PluginDownloadsController_download",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Download a plugin package (zip)",
+        "tags": [
+          "integrations"
+        ]
+      }
+    },
     "/api/v1/integrations": {
       "get": {
         "description": "Catalogue of plugin / snippet integrations for OpenMRS, OpenEMR, Bahmni, ERPNext, GNU Health, DHIS2, OpenHIM, CommCare, Epic, Cerner / Oracle Health, Allscripts / Veradigm, athenahealth, plus pure-standard targets (HL7 v2, FHIR R4, CDS Hooks 1.0, SMART on FHIR). Filter by category (open-source / proprietary / standard), method (cds-hooks, smart-on-fhir, fhir-rest, rest, hl7v2, webhook, iframe-embed) or free-text query. Returns summaries; fetch detailed snippets + links by slug.",
@@ -3881,6 +3971,27 @@
         ]
       }
     },
+    "/api/v1/cds-feedback/models": {
+      "get": {
+        "description": "Accept / override rates for agentic-reasoner cards grouped by the model that generated them, newest model first, with critical-card acceptance and a comparison of the newest model against the previous one. Review after every model change.",
+        "operationId": "CdsFeedbackOperatorController_models",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Per-model adoption of LLM-generated cards",
+        "tags": [
+          "cds-feedback"
+        ]
+      }
+    },
     "/api/v1/cds-feedback": {
       "get": {
         "operationId": "CdsFeedbackOperatorController_list",
@@ -3917,6 +4028,169 @@
           }
         ],
         "summary": "Per-domain content review-status coverage + FR-024 audit",
+        "tags": [
+          "governance"
+        ]
+      }
+    },
+    "/api/v1/governance/readiness": {
+      "get": {
+        "description": "One pass / warn / block verdict per trust dimension — content approval (tier-1 domains first), FR-024, the approved-only runtime gate, drug-code integrity, citation URLs, uncapped per-kg doses, country-overlay sign-off and manufacturer labels — plus per-domain approval ordered by clinical risk. releaseReady is true only when nothing blocks. Read-only.",
+        "operationId": "GovernanceController_readiness",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Release readiness of the signed bundle for approved-only serving",
+        "tags": [
+          "governance"
+        ]
+      }
+    },
+    "/api/v1/governance/review-queue": {
+      "get": {
+        "description": "Unapproved records ordered by clinical-risk tier (1 = dosing / interactions / CDS rules / antidotes), then KEML level, domain and id. Each item carries its content hash, review state (needs-review, needs-second-review, changes-requested, ready-to-promote), approval count, safety flags and any reason approval would be refused. Filters: tier, domain (bundle file name), state, limit (≤ 500), offset.",
+        "operationId": "GovernanceController_queue",
+        "parameters": [
+          {
+            "name": "tier",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "domain",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Risk-tiered clinical review queue",
+        "tags": [
+          "governance"
+        ]
+      }
+    },
+    "/api/v1/governance/review-queue/{domain}/{recordId}": {
+      "get": {
+        "description": "The full record as it appears in the signed bundle, its current content hash (send it back with your decision), safety flags, approval blockers, and every decision so far — decisions made on earlier content are marked stale and no longer count.",
+        "operationId": "GovernanceController_packet",
+        "parameters": [
+          {
+            "name": "domain",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "recordId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Review packet: one record with its flags and decision history",
+        "tags": [
+          "governance"
+        ]
+      }
+    },
+    "/api/v1/governance/reviews": {
+      "post": {
+        "description": "Body: { domain, recordId, recordHash, decision: \"approve\" | \"request-changes\", role, notes? }. The reviewer identity is taken from the authenticated operator, never the body, and must be listed in CLINICAL_REVIEWER_SUBS. Refused (409) when the hash is stale, the reviewer already approved, or the record cannot be approved yet (known-wrong drug code, D-tier-only citations). Does not change the signed bundle.",
+        "operationId": "GovernanceController_submit",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Record a clinical review decision (FR-024)",
+        "tags": [
+          "governance"
+        ]
+      }
+    },
+    "/api/v1/governance/reviews/export": {
+      "get": {
+        "description": "Records and correction proposals whose current content has ≥ 2 distinct reviewers approving and no outstanding change request (dev-bypass decisions never count). Save the response, then against the next bundle version: npm run corrections:apply -- --from-decisions <file> --bundle <dir> (corrections), then npm run bundle:promote -- --from-decisions <file> --bundle <dir> (approvals), then re-sign.",
+        "operationId": "GovernanceController_exportApprovals",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Approvals and corrections ready to apply to the next bundle version",
         "tags": [
           "governance"
         ]

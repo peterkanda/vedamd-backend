@@ -1,5 +1,10 @@
 import type { CdsRule, ConditionGuidance } from '../conditions/conditions.types';
-import type { DrugInteraction, DrugRecord } from '../drugs/drugs.types';
+import type {
+  DrugInteraction,
+  DrugRecord,
+  ManufacturerLabel,
+  PpbSmpcLink,
+} from '../drugs/drugs.types';
 import type { ProcedureGuidance } from '../procedures/procedures.types';
 import type { ClinicalScore } from '../clinical-scores/clinical-scores.types';
 import type { PgxGuideline } from '../pharmacogenomics/pharmacogenomics.types';
@@ -100,6 +105,15 @@ export interface LoadedBundle {
   bedsideInterpretation: ReferenceCard[];
   preventiveCare: ReferenceCard[];
   growthDevelopment: ReferenceCard[];
+  /**
+   * Optional — manufacturer (regulator) labels held as reference-only excerpts
+   * beside drug records. Bundles without manufacturer-labels.json return [].
+   * Deliberately not run through the clinical content validator: they are
+   * third-party label text, never merged into VedaMD guidance.
+   */
+  manufacturerLabels: ManufacturerLabel[];
+  /** Optional — link-only pointers to Kenya PPB SmPC PDFs. [] when absent. */
+  ppbSmpcLinks: PpbSmpcLink[];
   /** Optional — bundles signed before terminology.json existed return an empty TerminologyBundle. */
   terminology: TerminologyBundle;
 }

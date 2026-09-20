@@ -70,6 +70,16 @@ export class CdsFeedbackOperatorController {
     return { rules: await this.svc.summaryByRule(req.operator!.integratorId) };
   }
 
+  @Get('models')
+  @ApiOperation({
+    summary: 'Per-model adoption of LLM-generated cards',
+    description:
+      'Accept / override rates for agentic-reasoner cards grouped by the model that generated them, newest model first, with critical-card acceptance and a comparison of the newest model against the previous one. Review after every model change.',
+  })
+  async models(@Req() req: OperatorRequest) {
+    return this.svc.summaryByModel(req.operator!.integratorId);
+  }
+
   @Get()
   @ApiOperation({
     summary: 'List feedback entries (latest first) optionally filtered by ruleId',

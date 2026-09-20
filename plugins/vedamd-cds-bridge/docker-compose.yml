@@ -1,0 +1,15 @@
+# Builds and runs the bridge from this directory — no registry image needed.
+#
+#   cp .env.example .env   # then set VEDAMD_API_KEY
+#   docker compose up -d --build
+services:
+  vedamd-bridge:
+    build: .
+    image: vedamd-cds-bridge:local
+    restart: unless-stopped
+    env_file: .env
+    # Bind to localhost by default. The bridge holds a production API key
+    # and must only be reachable from inside the facility network — change
+    # this to a private interface address, never 0.0.0.0 on a public host.
+    ports:
+      - "127.0.0.1:8088:8088"

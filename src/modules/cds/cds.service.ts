@@ -25,6 +25,10 @@ export interface CardLookup {
   ruleId: string | null;
   serviceId: string;
   hook: string;
+  /** Indicator the card was shown with. */
+  indicator?: string;
+  /** Model that generated the card; absent for deterministic rule cards. */
+  model?: string | null;
   createdAt: number;
 }
 const CARD_REGISTRY_MAX = 10_000;
@@ -548,6 +552,35 @@ export class CdsService {
     private readonly normalizer: CdsNormalizerService,
   ) {}
 
+  /**
+   * Give a card a UUID (if it lacks one) and remember which rule produced it,
+   * so /feedback can attribute the clinician's accept / override back to it.
+   * PHI-free: only ids are kept. Public so the agentic engine can register the
+   * LLM cards it returns — without that, feedback on AI output lands as
+   * unattributed and its adoption can't be told apart from the rule cards'.
+   */
+  registerCard(
+    card: CdsCard,
+    ruleId: string,
+    serviceId: string,
+    hook: string,
+    model?: string | null,
+  ): void {
+    if (!card.uuid) card.uuid = randomUUID();
+    this.cardRegistry.set(card.uuid, {
+      ruleId,
+      serviceId,
+      hook,
+      indicator: card.indicator,
+      model: model ?? null,
+      createdAt: Date.now(),
+    });
+    if (this.cardRegistry.size > CARD_REGISTRY_MAX) {
+      const oldest = this.cardRegistry.keys().next().value;
+      if (oldest) this.cardRegistry.delete(oldest);
+    }
+  }
+
   /** Resolve a card UUID back to its rule for feedback ingest. Null if expired / unknown. */
   lookupCard(uuid: string): CardLookup | null {
     return this.cardRegistry.get(uuid) ?? null;
@@ -662,19 +695,7 @@ export class CdsService {
           }
           // Assign a UUID per card and remember the lookup so /feedback
           // can attribute clinician overrides back to this rule. PHI-free.
-          for (const card of ruleCards) {
-            if (!card.uuid) card.uuid = randomUUID();
-            this.cardRegistry.set(card.uuid, {
-              ruleId: rule.id,
-              serviceId,
-              hook: req.hook,
-              createdAt: Date.now(),
-            });
-            if (this.cardRegistry.size > CARD_REGISTRY_MAX) {
-              const oldest = this.cardRegistry.keys().next().value;
-              if (oldest) this.cardRegistry.delete(oldest);
-            }
-          }
+          for (const card of ruleCards) this.registerCard(card, rule.id, serviceId, req.hook);
           cards.push(...ruleCards);
         } catch (e) {
           // A failing rule must never bring down the whole evaluation.

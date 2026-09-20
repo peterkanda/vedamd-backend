@@ -116,6 +116,49 @@ describe('CDS Hooks — real EMR payloads', () => {
     expect(res.cards.length).toBeGreaterThan(0);
   });
 
+  // The payloads the VedaMD platform plugins build from each EMR's own
+  // tables. Every one of these returned zero cards before the flat
+  // dialect was canonicalised — the plugins installed, ran, and never
+  // produced a single alert.
+  const pluginPayloads: [string, Record<string, unknown>][] = [
+    [
+      'OpenEMR module (prescriptions + lists, RxNorm where recorded)',
+      {
+        ageYears: 67,
+        sex: 'female',
+        medications: ['Warfarin 5mg', { code: '5640', system: 'rxnorm', name: 'Ibuprofen 400mg' }],
+        diagnoses: ['atrial fibrillation', 'ICD10:I48.0'],
+      },
+    ],
+    [
+      'Frappe Health app (Drug Prescription.drug_name + Patient.medication)',
+      {
+        ageYears: 58,
+        sex: 'female',
+        medications: ['Warfarin 5mg', 'Ibuprofen 400mg'],
+        draftMedications: ['Ibuprofen 400mg'],
+      },
+    ],
+    [
+      'GNU Health module (medicament.active_component)',
+      { ageYears: 71, sex: 'male', medications: ['Warfarin', 'Ibuprofen'] },
+    ],
+    ['DHIS2 app (multi-value medication data element)', { medications: ['warfarin', 'Ibuprofen'] }],
+  ];
+
+  for (const [label, context] of pluginPayloads) {
+    it(`${label} gets the warfarin + ibuprofen interaction`, async () => {
+      const res = await makeCdsService().evaluateHook('vedamd-order-select', {
+        hook: 'order-select',
+        hookInstance: `plugin-${label}`,
+        context,
+      });
+      const summaries = res.cards.map((c) => c.summary.toLowerCase()).join(' | ');
+      expect(summaries).toContain('warfarin');
+      expect(summaries).toContain('ibuprofen');
+    });
+  }
+
   it('a flat-dialect payload still behaves exactly as before', async () => {
     const cds = makeCdsService();
     const res = await cds.evaluateHook('vedamd-medication-prescribe', {

@@ -63,6 +63,11 @@ function buildCitationVerifier(knowledge: RetrievedKnowledge): CitationVerifier 
  *
  * STATELESS: nothing here is logged with PHI, cached, or persisted.
  */
+/** Rule id the card extractor stamps on every LLM card; feedback rolls up under it. */
+const AGENTIC_RULE_ID = 'agentic-reasoner';
+/** Service id recorded for LLM cards — they are not served by a CDS Hooks service. */
+const AGENTIC_SERVICE_ID = 'vedamd-agentic';
+
 @Injectable()
 export class AgenticService {
   private readonly nestLogger = new Logger(AgenticService.name);
@@ -233,6 +238,24 @@ export class AgenticService {
     // --- 4. Merge (deterministic + custom rules never dropped;
     //          agentic cards deduped against either) ---
     const cards = mergeCards([...deterministicCards, ...customCards], agenticCards);
+
+    // Register the LLM cards that survived the merge so clinician feedback on
+    // them is attributed to the reasoner, not lost as unattributed. Accept vs
+    // override on AI output is the signal to watch: clinicians have been
+    // observed adopting harmful LLM advice far more readily than beneficial
+    // advice (Agweyu et al., Nature Health 2026), so it must be measurable
+    // separately from the deterministic rules.
+    for (const card of agenticCards) {
+      if (cards.includes(card)) {
+        this.cds.registerCard(
+          card,
+          AGENTIC_RULE_ID,
+          AGENTIC_SERVICE_ID,
+          ctx.hook ?? 'agentic',
+          llmModel,
+        );
+      }
+    }
 
     return {
       cards,

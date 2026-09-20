@@ -45,3 +45,40 @@ export interface ReviewableRecord {
   slug?: string;
   id?: string;
 }
+
+export type ReadinessStatus = 'pass' | 'warn' | 'block';
+
+export interface ReadinessCheck {
+  id:
+    | 'content-approval'
+    | 'fr024'
+    | 'approved-only-mode'
+    | 'drug-codes'
+    | 'citation-urls'
+    | 'per-kg-ceilings'
+    | 'country-overlays'
+    | 'manufacturer-labels'
+    | 'corrections';
+  title: string;
+  status: ReadinessStatus;
+  /** One-line measurement, e.g. "0 of 7,651 records approved (0%)". */
+  summary: string;
+  /** What to do next, and where the worklist lives. */
+  action?: string;
+  metrics: Record<string, number>;
+}
+
+/**
+ * Release-readiness of the signed bundle for approved-only serving.
+ * `releaseReady` is true only when no check blocks.
+ */
+export interface ReadinessReport {
+  generatedAt: string;
+  bundleVersion: string;
+  releaseReady: boolean;
+  checks: ReadinessCheck[];
+  /** Summaries of the blocking checks, in check order. */
+  blockers: string[];
+  /** Per-domain approval, highest clinical risk first. */
+  domains: Array<DomainReviewBreakdown & { tier: 1 | 2 | 3 }>;
+}

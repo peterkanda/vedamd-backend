@@ -103,24 +103,26 @@ cp omod/target/cdss-*.omod /opt/openmrs/modules/
 systemctl restart tomcat`,
       },
       {
-        label: 'Run the VedaMD CDS bridge (the module cannot send an API key)',
+        label: 'Download the setup pack and start the bridge (the module cannot send an API key)',
         language: 'bash',
-        code: `docker run -d --name vedamd-bridge --restart unless-stopped \\
-  -e VEDAMD_API_KEY=vmd_live_xxxxxxxx \\
-  -e VEDAMD_BASE_URL=${VEDAMD_BASE_URL_PLACEHOLDER} \\
-  -p 127.0.0.1:8088:8088 \\
-  vedamd/cds-bridge:0.1.0`,
+        code: `# Download from the VedaMD Integrations page, or with your API key:
+curl -fOJ -H "Authorization: Bearer vmd_live_xxxxxxxx" \\
+  ${VEDAMD_BASE_URL_PLACEHOLDER}/api/v1/integrations/plugins/openmrs-bahmni/download
+
+unzip vedamd-openmrs-bahmni-*.zip
+cd vedamd-openmrs-bahmni/vedamd-cds-bridge
+cp .env.example .env          # set VEDAMD_API_KEY
+docker compose up -d --build  # builds from the included source`,
       },
       {
-        label: 'Point OpenMRS at the bridge (global property cdss.fhir.baseurl)',
-        language: 'bash',
-        code: `# Must be the DISCOVERY url — the module appends /{serviceId} itself
-curl -u admin:Admin123 -X POST \\
-  "https://your-openmrs/openmrs/ws/rest/v1/systemsetting/cdss.fhir.baseurl" \\
-  -H 'Content-Type: application/json' \\
-  -d '{"value": "http://vedamd-bridge:8088/cds-services"}'
+        label: 'Set the module\u2019s global properties (Administration → Settings)',
+        language: 'text',
+        code: `cdss.enable        = true      (ships as false — CDSS is never called until this is set)
+cdss.fhir.baseurl  = http://<bridge-host>:8088/cds-services
+                     (the DISCOVERY url — the module appends /{serviceId} itself)
 
-# Then grant the "Execute CDSS" privilege to the prescribing role.`,
+Then grant the "Execute CDSS" privilege to the prescribing role,
+and run ./verify.sh http://<bridge-host>:8088 from the pack.`,
       },
       {
         label: 'Payload the module sends (for reference)',
@@ -140,11 +142,6 @@ curl -u admin:Admin123 -X POST \\
       {
         label: 'Bahmni CDSS module (the CDS Hooks client)',
         url: 'https://github.com/Bahmni/openmrs-module-cdss',
-        kind: 'plugin',
-      },
-      {
-        label: 'VedaMD OpenMRS/Bahmni setup guide',
-        url: 'https://github.com/vedamd/plugins/tree/main/openmrs-bahmni',
         kind: 'plugin',
       },
       {
@@ -180,8 +177,12 @@ curl -u admin:Admin123 -X POST \\
       {
         label: 'Install the VedaMD module',
         language: 'bash',
-        code: `cd /var/www/openemr/interface/modules/custom_modules
-git clone https://github.com/vedamd/oe-module-vedamd-cds.git
+        code: `# Download from the VedaMD Integrations page, or with your API key:
+curl -fOJ -H "Authorization: Bearer vmd_live_xxxxxxxx" \\
+  ${VEDAMD_BASE_URL_PLACEHOLDER}/api/v1/integrations/plugins/openemr/download
+
+cd /var/www/openemr/interface/modules/custom_modules
+unzip /path/to/vedamd-openemr-*.zip     # creates oe-module-vedamd-cds/
 
 # Then: Administration → Modules → Manage Modules
 #       → Register → Install → Enable`,
@@ -191,7 +192,7 @@ git clone https://github.com/vedamd/oe-module-vedamd-cds.git
         language: 'bash',
         code: `VEDAMD_API_KEY=vmd_live_xxxxxxxx
 VEDAMD_BASE_URL=${VEDAMD_BASE_URL_PLACEHOLDER}
-VEDAMD_SERVICE_ID=vedamd-patient-view
+VEDAMD_SERVICE_ID=vedamd-order-select   # patient-view does not return interaction cards
 VEDAMD_TIMEOUT_SECONDS=4`,
       },
       {
@@ -226,11 +227,6 @@ endpoint (/apis/default/fhir).`,
         kind: 'docs',
       },
       { label: 'OpenEMR GitHub', url: 'https://github.com/openemr/openemr', kind: 'github' },
-      {
-        label: 'VedaMD OpenEMR module',
-        url: 'https://github.com/vedamd/plugins/tree/main/openemr/oe-module-vedamd-cds',
-        kind: 'plugin',
-      },
     ],
     notes: [
       'OpenEMR has NO CDS Hooks client. Its CDR engine (library/clinical_rules.php, src/ClinicalDecisionRules/) evaluates local database rules only — there is no Globals → Connectors screen for registering a remote CDS service.',
@@ -265,12 +261,15 @@ cp omod/target/cdss-*.omod /opt/openmrs/modules/`,
         label: 'Point the module at a VedaMD CDS bridge',
         language: 'bash',
         code: `# The module sends no Authorization header, so the bridge holds the key.
-docker run -d --name vedamd-bridge --restart unless-stopped \\
-  -e VEDAMD_API_KEY=vmd_live_xxxxxxxx \\
-  -e VEDAMD_BASE_URL=${VEDAMD_BASE_URL_PLACEHOLDER} \\
-  -p 127.0.0.1:8088:8088 vedamd/cds-bridge:0.1.0
+# Download from the VedaMD Integrations page, or with your API key:
+curl -fOJ -H "Authorization: Bearer vmd_live_xxxxxxxx" \\
+  ${VEDAMD_BASE_URL_PLACEHOLDER}/api/v1/integrations/plugins/openmrs-bahmni/download
+unzip vedamd-openmrs-bahmni-*.zip
+cd vedamd-openmrs-bahmni/vedamd-cds-bridge
+cp .env.example .env && docker compose up -d --build
 
-# Global property (discovery URL — the module appends /{serviceId}):
+# Global properties:
+#   cdss.enable       = true   (defaults to false)
 #   cdss.fhir.baseurl = http://vedamd-bridge:8088/cds-services`,
       },
       {
@@ -317,8 +316,14 @@ docker compose restart openmrs proxy`,
       {
         label: 'Install the VedaMD Frappe app (recommended)',
         language: 'bash',
-        code: `cd ~/frappe-bench
-bench get-app https://github.com/vedamd/vedamd_cds.git
+        code: `# Download from the VedaMD Integrations page, or with your API key:
+curl -fOJ -H "Authorization: Bearer vmd_live_xxxxxxxx" \\
+  ${VEDAMD_BASE_URL_PLACEHOLDER}/api/v1/integrations/plugins/frappe/download
+
+cd ~/frappe-bench/apps && unzip /path/to/vedamd-frappe-*.zip
+cd ~/frappe-bench
+bench pip install -e apps/vedamd_cds
+echo "vedamd_cds" >> sites/apps.txt
 bench --site your-site.local install-app vedamd_cds
 
 # Key goes in site_config.json, so it stays out of database backups:
@@ -375,14 +380,9 @@ if meds:
         url: 'https://github.com/frappe/health',
         kind: 'github',
       },
-      {
-        label: 'VedaMD Frappe app',
-        url: 'https://github.com/vedamd/plugins/tree/main/frappe/vedamd_cds',
-        kind: 'plugin',
-      },
     ],
     notes: [
-      'Server Scripts run under RestrictedPython: `import requests` is blocked. Use frappe.integrations.utils.make_post_request, which is whitelisted.',
+      'Server Scripts run under RestrictedPython: `import requests` is blocked. Use frappe.integrations.utils.make_post_request, which is whitelisted — but note it takes no timeout parameter (v15), so passing timeout= raises TypeError.',
       'A Webhook cannot deliver decision support — it is fire-and-forget, so the response never returns to the form and the clinician sees nothing. Use it for audit only.',
       'The VedaMD app reads verified Frappe Health fields: Patient Encounter (patient_age, patient_sex, drug_prescription, codification_table) and Patient (dob, sex, allergies, medication).',
       'Saving is never blocked — cards are msgprint notices, not validation errors.',
@@ -404,8 +404,12 @@ if meds:
       {
         label: 'Install the VedaMD Tryton module',
         language: 'bash',
-        code: `git clone https://github.com/vedamd/plugins.git
-cp -r plugins/gnu-health/trytond_vedamd_cds /path/to/trytond/modules/vedamd_cds
+        code: `# Download from the VedaMD Integrations page, or with your API key:
+curl -fOJ -H "Authorization: Bearer vmd_live_xxxxxxxx" \\
+  ${VEDAMD_BASE_URL_PLACEHOLDER}/api/v1/integrations/plugins/gnu-health/download
+
+cd /path/to/trytond/modules
+unzip /path/to/vedamd-gnu-health-*.zip   # creates vedamd_cds/
 
 trytond-admin -d <database> -u vedamd_cds --activate-dependencies
 systemctl restart trytond`,
@@ -434,7 +438,7 @@ systemctl restart trytond`,
     notes: [
       'GNU Health\u2019s FHIR server (gnuhealth-fhir-server) is a separate, read-only Flask application maintained outside GNU Health core and has not tracked recent FHIR releases — the Tryton module reads the ORM instead.',
       'Prescribing is never blocked: a failed or slow VedaMD call logs its failure class and returns no cards.',
-      'Verify patient.weight and patient.diseases against your GNU Health version — those fields have moved between releases.',
+      'Written against GNU Health 5.0: reads patient.dob, patient.gender, active patient.medications and active patient.diseases. No weight is sent — gnuhealth.patient has no weight field in 5.0.',
     ],
   },
   {
@@ -451,27 +455,29 @@ systemctl restart trytond`,
     tags: ['national-hmis', 'ssa', 'kenya', 'public-health'],
     snippets: [
       {
-        label: 'Install the VedaMD DHIS2 Tracker app',
+        label: 'Install the VedaMD DHIS2 app (no build step)',
         language: 'bash',
-        code: `git clone https://github.com/vedamd/plugins.git
-cd plugins/dhis2/vedamd-dhis2-app
-yarn install && yarn build
+        code: `# Download from the VedaMD Integrations page, or with your API key:
+curl -fOJ -H "Authorization: Bearer vmd_live_xxxxxxxx" \\
+  ${VEDAMD_BASE_URL_PLACEHOLDER}/api/v1/integrations/plugins/dhis2/download
 
-# Upload build/bundle/*.zip via App Management → Install app.
-# The app is configured with a BRIDGE url, not an API key: a DHIS2 app
-# runs in the browser, where no secret can be kept.`,
+# Upload the zip unchanged: App Management → Install App.
+# Then deploy the CDS bridge (download id: cds-bridge) with
+#   BRIDGE_ALLOWED_ORIGINS=https://your-dhis2-host
+# The app holds a BRIDGE url, never an API key — it runs in the browser.`,
       },
       {
         label: 'Map your data elements to VedaMD context fields',
         language: 'javascript',
-        code: `// src/mapping.js — every DHIS2 deployment names its own metadata,
-// so the mapping is configuration. Unmapped uids are never sent.
-export const defaultMapping = [
-  { uid: 'YOUR_SEX_UID', field: 'sex', coerce: 'text',
-    values: { Male: 'male', Female: 'female' } },
-  { uid: 'YOUR_AGE_UID', field: 'ageYears', coerce: 'number', min: 0, max: 130 },
-  { uid: 'YOUR_SBP_UID', field: 'systolicMmHg', coerce: 'number', min: 40, max: 300 },
-];`,
+        code: `// Saved in the app's Settings (DHIS2 dataStore, namespace "vedamd").
+// There is no default — the app will not run until a mapping is saved.
+// Verified against the DHIS2 Sierra Leone demo; re-point for your instance.
+[
+  { "uid": "cejWyOfXge6", "field": "sex", "coerce": "text",
+    "values": { "Male": "male", "Female": "female" } },
+  { "uid": "qrur9Dvnyt5", "field": "ageYears", "coerce": "number", "min": 0, "max": 130 },
+  { "uid": "M4HEOoEFTAT", "field": "systolicMmHg", "coerce": "number", "min": 40, "max": 300 }
+]`,
       },
       {
         label: 'Webhook program notification (audit only — not decision support)',
@@ -502,11 +508,6 @@ never as the mechanism for showing a safety alert.`,
         kind: 'docs',
       },
       { label: 'Kenya KHIS', url: 'https://hiskenya.org', kind: 'docs' },
-      {
-        label: 'VedaMD DHIS2 app',
-        url: 'https://github.com/vedamd/plugins/tree/main/dhis2/vedamd-dhis2-app',
-        kind: 'plugin',
-      },
     ],
     notes: [
       'DHIS2 program rules have no HTTP action. The available action types are assign value, display text, display key/value pair, error on complete, hide field, hide section, prevent adding events, make field mandatory, show error, show warning, warning on complete, send message, schedule message — none reaches the network.',

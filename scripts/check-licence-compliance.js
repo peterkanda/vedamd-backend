@@ -107,6 +107,64 @@ console.log(
     `  unregistered-host:${census.unregistered}  no-url:${census['no-url']}`,
 );
 
+// ─── Reference labels (content/labels/) ────────────────────────────────────
+// Stored manufacturer-label TEXT may only come from an embeddable source, and
+// link-only files must not carry text. Unlike the citation census this is
+// enforced from day one: the lane is new, so there is no legacy to ratchet.
+const labelsArg = process.argv.indexOf('--labels');
+const LABELS =
+  labelsArg >= 0
+    ? path.resolve(process.cwd(), process.argv[labelsArg + 1])
+    : path.resolve(__dirname, '../content/labels');
+const sourceById = new Map(registry.sources.map((s) => [s.id, s]));
+const labelViolations = [];
+const TEXT_KEYS = ['sections', 'text', 'excerpt', 'body'];
+
+function checkLabelFile(file) {
+  const full = path.join(LABELS, file);
+  if (!fs.existsSync(full)) return 0;
+  const records = JSON.parse(fs.readFileSync(full, 'utf8'));
+  for (const r of records) {
+    const where = `${file}:${r.slug ?? '?'}`;
+    const urls = [r.url, r.citation && r.citation.url].filter(Boolean);
+    const hostSources = urls.map((u) => sourceForUrl(u));
+    if (hostSources.some((s) => !s)) labelViolations.push(`${where} — URL host not in registry`);
+    const hasText = TEXT_KEYS.some((k) => r[k] !== undefined);
+    if (!hasText) continue;
+    const declared = sourceById.get(r.source);
+    if (!declared) {
+      labelViolations.push(`${where} — stores text but source "${r.source}" is not in the registry`);
+      continue;
+    }
+    if (declared.embeddable !== 'yes') {
+      labelViolations.push(`${where} — stores text from "${declared.id}" (embeddable: ${declared.embeddable})`);
+    }
+    for (const s of hostSources) {
+      if (s && s.embeddable !== 'yes') {
+        labelViolations.push(`${where} — cites "${s.id}" (embeddable: ${s.embeddable}) alongside stored text`);
+      }
+    }
+    const citeSource = r.citation && r.citation.url ? sourceForUrl(r.citation.url) : null;
+    if (citeSource && r.citation.licence !== undefined && r.citation.licence !== citeSource.citationLicence) {
+      labelViolations.push(`${where} — citation licence ${r.citation.licence} ≠ registry ${citeSource.citationLicence}`);
+    }
+  }
+  return records.length;
+}
+
+if (fs.existsSync(LABELS)) {
+  const counted = fs
+    .readdirSync(LABELS)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => `${f}:${checkLabelFile(f)}`);
+  console.log(`Reference labels checked: ${counted.join('  ') || 'none'}`);
+  if (labelViolations.length > 0) {
+    console.error(`\nReference-label licence FAILED — ${labelViolations.length} violation(s):`);
+    for (const v of labelViolations.slice(0, 40)) console.error(`  ${v}`);
+    process.exitCode = 1;
+  }
+}
+
 if (mismatches.length > 0) {
   const verb = enforce ? 'FAILED' : 'WARNING';
   console.error(`\nLicence-label ${verb} — ${mismatches.length} citation(s) disagree with registry:`);

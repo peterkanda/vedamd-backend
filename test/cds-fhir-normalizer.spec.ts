@@ -404,3 +404,93 @@ describe('deriveConditionSentinels', () => {
     expect(Object.values(out).every((v) => v === true)).toBe(true);
   });
 });
+
+describe('normalizeCdsRequest — flat dialect from EMR plugins', () => {
+  it('resolves dispensing labels to slugs', () => {
+    const { request, report } = normalize({
+      hook: 'patient-view',
+      hookInstance: 'flat-labels',
+      context: { medications: ['Warfarin 5mg Tablet', 'Amoxil 500mg cap'] },
+    });
+    expect(request.context.medications).toEqual(['warfarin', 'amoxicillin']);
+    expect(report.medicationsCanonicalised).toBe(2);
+  });
+
+  it('resolves { code, system, name } objects by code first', () => {
+    const { request } = normalize({
+      hook: 'patient-view',
+      hookInstance: 'flat-objects',
+      context: {
+        medications: [{ code: '5640', system: 'rxnorm', name: 'Brufen 400' }, 'warfarin'],
+      },
+    });
+    expect(request.context.medications).toEqual(['ibuprofen', 'warfarin']);
+  });
+
+  it('keeps an unresolvable string verbatim but drops an unresolvable object', () => {
+    // Interaction records exist for agents with no monograph (ethanol);
+    // dropping the string would hide them. An object the strategies
+    // cannot read is useless either way, so it is counted and removed.
+    const { request, report } = normalize({
+      hook: 'patient-view',
+      hookInstance: 'flat-unresolved',
+      context: { medications: ['ethanol', { code: '999', system: 'local', name: 'Mystery' }] },
+    });
+    expect(request.context.medications).toEqual(['ethanol']);
+    expect(report.unresolvedMedications).toBe(2);
+  });
+
+  it('leaves an already-canonical payload as the same object', () => {
+    const req: CdsHookRequest = {
+      hook: 'patient-view',
+      hookInstance: 'flat-canonical',
+      context: { medications: ['warfarin', 'ibuprofen'] },
+    };
+    expect(normalize(req).request).toBe(req);
+  });
+
+  it('sets sentinels from coded diagnoses but never from free text', () => {
+    const { request } = normalize({
+      hook: 'patient-view',
+      hookInstance: 'flat-dx',
+      context: { diagnoses: ['ICD10:I48.0', 'ICD-10:E11.9', 'pregnancy test negative'] },
+    });
+    expect(request.context.hasAtrialFibrillation).toBe(true);
+    expect(request.context.knownDiabetes).toBe(true);
+    expect(request.context.pregnant).toBeUndefined();
+  });
+
+  it('does not override a sentinel the caller set explicitly', () => {
+    const { request } = normalize({
+      hook: 'patient-view',
+      hookInstance: 'flat-dx-precedence',
+      context: { diagnoses: ['ICD10:E11.9'], knownDiabetes: false },
+    });
+    expect(request.context.knownDiabetes).toBe(false);
+  });
+
+  it('unions flat and FHIR medication lists instead of replacing one with the other', () => {
+    const { request } = normalize({
+      hook: 'order-select',
+      hookInstance: 'mixed',
+      context: {
+        medications: ['warfarin'],
+        draftOrders: {
+          resourceType: 'Bundle',
+          entry: [
+            {
+              resource: {
+                resourceType: 'MedicationRequest',
+                status: 'draft',
+                medicationCodeableConcept: {
+                  coding: [{ system: 'http://www.nlm.nih.gov/research/umls/rxnorm', code: '5640' }],
+                },
+              },
+            },
+          ],
+        },
+      },
+    });
+    expect(request.context.medications).toEqual(expect.arrayContaining(['warfarin', 'ibuprofen']));
+  });
+});

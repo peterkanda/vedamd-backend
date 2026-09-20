@@ -25,6 +25,7 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "keys:generate": "ts-node --transpile-only scripts/generate-signing-keys.ts",
+    "plugins:package": "ts-node --transpile-only scripts/package-plugins.ts",
     "bundle:sign": "ts-node --transpile-only scripts/sign-bundle.ts",
     "bundle:verify": "ts-node --transpile-only scripts/verify-bundle.ts",
     "bundle:check-strength": "node scripts/check-citation-strength.js",
@@ -42,10 +43,17 @@
     "ci": "npm run typecheck && npm run lint -- --max-warnings=0 && npm run audit:stateless && npm run bundle:check-licence && node scripts/check-clinical-safety.js --strict && node scripts/check-citation-links.js --strict && npm test && npm run test:e2e",
     "validate:medgemma": "ts-node --transpile-only scripts/validate-with-medgemma.ts",
     "validate:medgemma:ci": "ts-node --transpile-only scripts/validate-with-medgemma.ts --all --fail-on-error",
+    "eval:llm-safety": "ts-node --transpile-only scripts/eval-llm-safety.ts",
     "validate:claude": "ts-node --transpile-only scripts/validate-with-medgemma.ts --reviewer claude --all",
     "check:citation-links": "node scripts/check-citation-links.js",
     "enrich:citation-links": "node scripts/enrich-citation-links.js",
-    "bundle:promote": "ts-node --transpile-only scripts/promote-bundle.ts"
+    "bundle:promote": "ts-node --transpile-only scripts/promote-bundle.ts",
+    "labels:ingest": "ts-node --transpile-only scripts/ingest-manufacturer-labels.ts",
+    "labels:ppb-links": "ts-node --transpile-only scripts/ingest-ppb-smpc-links.ts",
+    "audit:drug-rxnorm": "ts-node --transpile-only scripts/audit-drug-rxnorm.ts",
+    "readiness:report": "ts-node --transpile-only scripts/readiness-report.ts",
+    "corrections:propose": "ts-node --transpile-only scripts/propose-corrections.ts",
+    "corrections:apply": "ts-node --transpile-only scripts/apply-corrections.ts"
   },
   "dependencies": {
     "@fastify/compress": "^8.3.1",

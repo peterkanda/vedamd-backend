@@ -1,0 +1,20 @@
+{
+    "name": "vedamd/oe-module-vedamd-cds",
+    "description": "VedaMD clinical decision support for OpenEMR — safety cards on the patient summary.",
+    "type": "openemr-module",
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "VedaMD\\CDS\\": "src/"
+        }
+    },
+    "extra": {
+        "openemr": {
+            "name": "VedaMD Clinical Decision Support",
+            "type": "custom_module"
+        }
+    }
+}

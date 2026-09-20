@@ -1,0 +1,45 @@
+{
+  "hook": "order-select",
+  "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
+  "context": {
+    "userId": "Practitioner/example",
+    "patientId": "example",
+    "selections": ["MedicationRequest/draft-ibuprofen"],
+    "draftOrders": {
+      "resourceType": "Bundle",
+      "type": "collection",
+      "entry": [
+        {
+          "resource": {
+            "resourceType": "MedicationRequest",
+            "id": "draft-ibuprofen",
+            "status": "draft",
+            "intent": "order",
+            "medicationCodeableConcept": {
+              "coding": [{ "system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "5640", "display": "Ibuprofen" }]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "prefetch": {
+    "patient": { "resourceType": "Patient", "gender": "female", "birthDate": "1958-06-01" },
+    "medications": {
+      "resourceType": "Bundle",
+      "type": "searchset",
+      "entry": [
+        {
+          "resource": {
+            "resourceType": "MedicationRequest",
+            "status": "active",
+            "intent": "order",
+            "medicationCodeableConcept": {
+              "coding": [{ "system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "11289", "display": "Warfarin" }]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

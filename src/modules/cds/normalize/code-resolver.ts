@@ -62,8 +62,55 @@ function systemMatches(system: string | undefined, needles: string[]): boolean {
 }
 
 /**
+ * A (code, slug) claim the RxNorm audit found to be wrong — see
+ * content/safety/rxnorm-quarantine.json (npm run audit:drug-rxnorm).
+ */
+export interface QuarantinedCode {
+  code: string;
+  slug: string;
+}
+
+export interface DrugCodeIndexOptions {
+  /**
+   * RxNorm claims to ignore. Deny-only by construction: an entry removes one
+   * record's claim on one code and can never create a mapping, so this list
+   * may live outside the signed bundle without adding clinical behaviour.
+   */
+  quarantine?: QuarantinedCode[];
+}
+
+export interface DrugCodeIndexStats {
+  /** RxNorm claims dropped because the audit found them wrong. */
+  quarantinedRxNorm: number;
+  /** Codes claimed by records for different molecules — not resolved by code. */
+  ambiguous: { rxnorm: number; atc: number; snomed: number };
+}
+
+type CodeSystemKey = keyof DrugCodeIndexStats['ambiguous'];
+
+/** "Aciclovir (intravenous)" and "aciclovir" are the same molecule. */
+function moleculeKey(inn: string): string {
+  let s = inn.toLowerCase();
+  for (let prev = ''; prev !== s; ) {
+    prev = s;
+    s = s.replace(/\([^()]*\)/g, ' ');
+  }
+  return norm(s);
+}
+
+/**
  * Index over the signed drug records, built once at module init.
  * Lookup is O(1) per coding — this sits on the CDS hot path.
+ *
+ * A code maps to a drug only when that mapping is unambiguous:
+ *   - a code shared by records for DIFFERENT molecules (e.g. one RxNorm id on
+ *     cefotaxime, ceftazidime, cefazolin and cefixime) resolves to nothing by
+ *     code — previously the last record indexed won silently;
+ *   - a code shared only by variants of ONE molecule (aciclovir /
+ *     aciclovir-iv) resolves to the shortest slug, the base monograph;
+ *   - quarantined RxNorm claims are ignored before either rule applies, so a
+ *     correct owner of a code is not blocked by a record that misuses it.
+ * Anything not resolved by code falls through to anchored name matching.
  */
 export class DrugCodeIndex {
   private readonly byRxNorm = new Map<string, string>();
@@ -72,13 +119,35 @@ export class DrugCodeIndex {
   private readonly byName = new Map<string, string>();
   /** Name tokens sorted longest-first, for leading-token matching. */
   private readonly names: { name: string; slug: string }[] = [];
+  private readonly indexStats: DrugCodeIndexStats = {
+    quarantinedRxNorm: 0,
+    ambiguous: { rxnorm: 0, atc: 0, snomed: 0 },
+  };
 
-  constructor(entries: DrugIndexEntry[]) {
+  constructor(entries: DrugIndexEntry[], opts: DrugCodeIndexOptions = {}) {
+    const quarantined = new Set(
+      (opts.quarantine ?? []).map((q) => `${q.code.trim()}\u0000${q.slug}`),
+    );
+    const claims: Record<CodeSystemKey, Map<string, DrugIndexEntry[]>> = {
+      rxnorm: new Map(),
+      atc: new Map(),
+      snomed: new Map(),
+    };
+    const claim = (system: CodeSystemKey, code: string, d: DrugIndexEntry) => {
+      const list = claims[system].get(code);
+      if (list) list.push(d);
+      else claims[system].set(code, [d]);
+    };
+
     for (const d of entries) {
-      if (d.rxnorm) this.byRxNorm.set(d.rxnorm.trim(), d.slug);
-      for (const code of toCodes(d.snomed)) this.bySnomed.set(code, d.slug);
+      const rx = d.rxnorm?.trim();
+      if (rx) {
+        if (quarantined.has(`${rx}\u0000${d.slug}`)) this.indexStats.quarantinedRxNorm += 1;
+        else claim('rxnorm', rx, d);
+      }
+      for (const code of toCodes(d.snomed)) claim('snomed', code, d);
       for (const code of d.atc ?? []) {
-        if (code) this.byAtc.set(code.trim().toUpperCase(), d.slug);
+        if (code?.trim()) claim('atc', code.trim().toUpperCase(), d);
       }
       for (const name of [d.slug, d.inn, ...(d.tradeNames ?? [])]) {
         if (!name) continue;
@@ -90,21 +159,74 @@ export class DrugCodeIndex {
         this.names.push({ name: n, slug: d.slug });
       }
     }
+
+    const targets: Record<CodeSystemKey, Map<string, string>> = {
+      rxnorm: this.byRxNorm,
+      atc: this.byAtc,
+      snomed: this.bySnomed,
+    };
+    for (const system of Object.keys(claims) as CodeSystemKey[]) {
+      for (const [code, owners] of claims[system]) {
+        const molecules = new Set(owners.map((o) => moleculeKey(o.inn)));
+        if (molecules.size > 1) {
+          this.indexStats.ambiguous[system] += 1;
+          continue;
+        }
+        const base = [...owners].sort(
+          (a, b) => a.slug.length - b.slug.length || a.slug.localeCompare(b.slug),
+        )[0];
+        targets[system].set(code, base.slug);
+      }
+    }
     // Longest first so "amoxicillin clavulanate" beats "amoxicillin".
     this.names.sort((a, b) => b.name.length - a.name.length);
+  }
+
+  /** What the index refused to map, for startup logging and readiness reporting. */
+  stats(): DrugCodeIndexStats {
+    return {
+      quarantinedRxNorm: this.indexStats.quarantinedRxNorm,
+      ambiguous: { ...this.indexStats.ambiguous },
+    };
   }
 
   /** Resolves one CodeableConcept to a VedaMD drug slug, or null. */
   resolve(concept: FhirCodeableConcept | undefined): string | null {
     if (!concept) return null;
 
+    // Resolve the human-readable label first. It is not merely a fallback:
+    // it is an independent second opinion on what the code claims to be.
+    const byName = this.resolveAnyName([
+      concept.text,
+      ...(concept.coding ?? []).map((c) => c.display),
+    ]);
+
     for (const coding of concept.coding ?? []) {
       const hit = this.resolveCoding(coding);
-      if (hit) return hit;
+      if (!hit) continue;
+
+      // Code and label name different molecules. Nothing here can say which
+      // is right, so trust neither — the alternative is a confident card
+      // about a drug the patient is not on.
+      //
+      // This is not hypothetical. content/safety/rxnorm-code-audit.md found
+      // 66 records whose rxnorm code belongs to a different molecule, and
+      // codes are matched before names, so a correctly-coded prescription
+      // resolved to the wrong drug with its own display text ignored:
+      // apixaban → latanoprost, hydroxyurea → hydroxyzine, cyclosporine →
+      // dapsone. Refusing turns each of those into "no match", which the
+      // strategies already handle. Correcting the codes themselves needs
+      // clinical review and a re-signed bundle; this keeps the wrong drug
+      // out of a card in the meantime, and stays correct afterwards.
+      if (byName && byName !== hit) return null;
+      return hit;
     }
 
-    // Concept text, then any display, as the name-matching fallback.
-    const texts = [concept.text, ...(concept.coding ?? []).map((c) => c.display)];
+    return byName;
+  }
+
+  /** First of these labels that resolves to a drug, or null. */
+  private resolveAnyName(texts: (string | undefined)[]): string | null {
     for (const t of texts) {
       if (!t) continue;
       const hit = this.resolveName(t);

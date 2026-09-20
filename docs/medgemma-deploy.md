@@ -66,3 +66,33 @@ This is the step that lets us clear the dose-safety worklist
 choices with a medical model — the validation we deferred until the endpoint
 exists. Remember it is a **screen, not approval**: a flag means "a human should
 look".
+
+## 4. After every model change
+
+Whenever `AGENTIC_OPENROUTER_MODEL` (or another clinical provider's model)
+changes, check that the new model is at least as safe as the old one, and that
+clinicians aren't trusting it more than it has earned. Clinicians have been
+shown to follow wrong AI advice far more often than right advice (Agweyu et al.,
+*Nature Health* 2026), so a change in how they respond matters as much as a
+change in the model's accuracy.
+
+1. **Before switching**, run the offline safety eval against the current model:
+
+   ```bash
+   VEDAMD_API_KEY=... ANTHROPIC_API_KEY=... npm run eval:llm-safety
+   ```
+
+   It sends the synthetic cases in `content/evals/llm-safety/cases.json` to the
+   running API, applies each case's checks, has Claude score the answers with
+   the study's rubric, and writes a report to `content/evals/llm-safety/results/`.
+2. **After switching**, run it again and compare the two reports. Read every
+   case that fails a check or is scored unsafe; don't rely on the rates alone.
+3. **Once clinicians are using it**, open *CDS card feedback → AI suggestions by
+   model* in the developer console (`GET /v1/cds-feedback/models`). Compare the
+   new model with the previous one once each has 30 feedback responses. A
+   lower override rate or more critical AI cards accepted is flagged; review a
+   sample of those cards before concluding the new model is better.
+
+This covers the server-side model behind `/v1/agentic/evaluate`. The on-device
+MedGemma build in the mobile app is not measured this way: the eval calls the
+API, and the app doesn't yet collect accept/override feedback.

@@ -12,6 +12,8 @@ import type {
   DrugInteraction,
   DrugRecord,
   DrugSummary,
+  ManufacturerLabel,
+  PpbSmpcLink,
 } from './drugs.types';
 
 /** Non-exhaustiveness caveat attached to every interaction-check response —
@@ -20,6 +22,20 @@ const INTERACTION_CAVEAT =
   'This reflects the current VedaMD drug-interaction registry, not an exhaustive clinical ' +
   'check — the absence of a listed interaction is not a guarantee that no interaction exists. ' +
   'Verify against a current formulary for any agent not covered here.';
+
+/** Shown with every manufacturer-label response — labels are references, not VedaMD guidance. */
+const LABEL_NOTICE =
+  'Manufacturer labels are reference-only regulator documents for the stated jurisdiction. ' +
+  'US labels describe US products; strengths, formulations and approved uses can differ from ' +
+  'products registered in Kenya. VedaMD guidance on this drug takes precedence at the point of care.';
+
+export interface DrugLabelsResponse {
+  slug: string;
+  notice: string;
+  labels: ManufacturerLabel[];
+  /** Link-only pointers to Kenya PPB SmPC PDFs (no text is stored). */
+  ppbSmpcLinks: PpbSmpcLink[];
+}
 
 export interface ListFilters {
   q?: string;
@@ -77,6 +93,24 @@ export class DrugsService implements OnModuleInit {
 
   get(slug: string): DrugRecord | null {
     return this.bySlug.get(slug) ?? null;
+  }
+
+  /**
+   * Manufacturer labels + PPB SmPC links for a drug, or null for an unknown
+   * slug. In approved-only mode (CONTENT_REQUIRE_APPROVED) anything not
+   * explicitly approved — labels and PPB links alike — is withheld, matching
+   * the rest of the bundle.
+   */
+  getLabels(slug: string): DrugLabelsResponse | null {
+    if (!this.bySlug.has(slug)) return null;
+    const approvedOnly = this.knowledge.requiresApproved();
+    const labels = (this.knowledge.getManufacturerLabels() ?? []).filter(
+      (l) => l.slug === slug && (!approvedOnly || l.reviewStatus === 'approved'),
+    );
+    const ppbSmpcLinks = (this.knowledge.getPpbSmpcLinks() ?? []).filter(
+      (l) => l.slug === slug && (!approvedOnly || l.reviewStatus === 'approved'),
+    );
+    return { slug, notice: LABEL_NOTICE, labels, ppbSmpcLinks };
   }
 
   calculateDose(slug: string, input: DosingInput): DosingResult | null {

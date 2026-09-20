@@ -121,6 +121,21 @@ export class DrugsController {
     return found;
   }
 
+  @Get(':slug/labels')
+  @RequireScope('drug-info:read')
+  @ApiOperation({
+    summary: 'Manufacturer labels and Kenya PPB SmPC links for a drug',
+    description:
+      'Reference-only regulator label excerpts (currently US FDA via openFDA/DailyMed, tagged ' +
+      'jurisdiction US) plus link-only pointers to Kenya PPB SmPC PDFs. Never merged into the ' +
+      'VedaMD drug record. Empty arrays when the bundle carries no labels for the drug.',
+  })
+  labels(@Param('slug') slug: string) {
+    const found = this.drugs.getLabels(slug);
+    if (!found) throw new NotFoundException(`Unknown drug: ${slug}`);
+    return found;
+  }
+
   @Post('interactions')
   @RequireScope('drug-info:read')
   @ApiOperation({

@@ -1,0 +1,39 @@
+{#
+  VedaMD decision-support card for the OpenEMR patient dashboard.
+
+  OpenEMR constructs its Twig environment with autoescape DISABLED
+  (src/Common/Twig/TwigContainer.php: ['autoescape' => false]). Nothing
+  here is escaped by default, so every value goes through OpenEMR's own
+  |text or |attr filter, and every URL through |safe_href — the same
+  filters the core card templates use. Do not remove them.
+#}
+{% extends "patient/card/card_base.html.twig" %}
+
+{% block content %}
+    {% for card in cards %}
+        <div class="alert {{ card.cssClass|attr }} py-2 px-3 mb-2" role="alert">
+            <strong>{{ card.summary|text }}</strong>
+
+            {% if card.detail %}
+                <div class="small mt-1">{{ card.detail|text|nl2br }}</div>
+            {% endif %}
+
+            {% if card.sourceLabel %}
+                <div class="small text-muted mt-1">
+                    {% if card.sourceUrl %}
+                        <a href="{{ card.sourceUrl|safe_href }}" target="_blank" rel="noopener noreferrer">{{ card.sourceLabel|text }}</a>
+                    {% else %}
+                        {{ card.sourceLabel|text }}
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            {% if card.reviewStatus %}
+                <span class="badge badge-secondary mt-1">{{ card.reviewStatus|text }}</span>
+            {% endif %}
+        </div>
+    {% endfor %}
+    <div class="small text-muted">
+        {{ 'Decision support only — verify against local guidance before acting.'|text }}
+    </div>
+{% endblock %}
