@@ -1,5 +1,6 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { KnowledgeService } from '../knowledge/knowledge.service';
+import { populationNote } from './reference-ranges.types';
 import type { ReferenceRange, ReferenceRangeSummary } from './reference-ranges.types';
 
 @Injectable()
@@ -35,7 +36,11 @@ export class ReferenceRangesService implements OnModuleInit {
     }));
   }
 
-  get(slug: string): ReferenceRange | null {
-    return this.bySlug.get(slug) ?? null;
+  get(slug: string): (ReferenceRange & { appliesTo: string }) | null {
+    const found = this.bySlug.get(slug);
+    if (!found) return null;
+    // Stated on every response, so a consumer cannot mistake an unbanded
+    // adult interval for one that holds at any age.
+    return { ...found, appliesTo: populationNote(found) };
   }
 }
