@@ -21,6 +21,7 @@ import { ImmunizationModule } from './modules/immunization/immunization.module';
 import { AllergyModule } from './modules/allergy/allergy.module';
 import { NotifiableModule } from './modules/notifiable/notifiable.module';
 import { ReferenceRangesModule } from './modules/reference-ranges/reference-ranges.module';
+import { GrowthModule } from './modules/growth/growth.module';
 import { AntidotesModule } from './modules/antidotes/antidotes.module';
 import { ToxidromesModule } from './modules/toxidromes/toxidromes.module';
 import { AnticoagulantReversalModule } from './modules/anticoagulant-reversal/anticoagulant-reversal.module';
@@ -85,6 +86,7 @@ import { LocalizationModule } from './modules/localization/localization.module';
     AllergyModule,
     NotifiableModule,
     ReferenceRangesModule,
+    GrowthModule,
     AntidotesModule,
     ToxidromesModule,
     AnticoagulantReversalModule,

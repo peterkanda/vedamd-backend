@@ -2,7 +2,7 @@
   "name": "vedamd-backend",
   "version": "0.1.0",
   "private": true,
-  "description": "VedaMD — Source-available clinical decision support API (NestJS + Fastify)",
+  "description": "VedaMD \u2014 Source-available clinical decision support API (NestJS + Fastify)",
   "license": "SEE LICENSE IN LICENSE",
   "engines": {
     "node": ">=20.11"
@@ -53,7 +53,8 @@
     "audit:drug-rxnorm": "ts-node --transpile-only scripts/audit-drug-rxnorm.ts",
     "readiness:report": "ts-node --transpile-only scripts/readiness-report.ts",
     "corrections:propose": "ts-node --transpile-only scripts/propose-corrections.ts",
-    "corrections:apply": "ts-node --transpile-only scripts/apply-corrections.ts"
+    "corrections:apply": "ts-node --transpile-only scripts/apply-corrections.ts",
+    "growth:ingest": "ts-node --transpile-only scripts/ingest-growth-standards.ts"
   },
   "dependencies": {
     "@fastify/compress": "^8.3.1",
