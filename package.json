@@ -54,7 +54,8 @@
     "readiness:report": "ts-node --transpile-only scripts/readiness-report.ts",
     "corrections:propose": "ts-node --transpile-only scripts/propose-corrections.ts",
     "corrections:apply": "ts-node --transpile-only scripts/apply-corrections.ts",
-    "growth:ingest": "ts-node --transpile-only scripts/ingest-growth-standards.ts"
+    "growth:ingest": "ts-node --transpile-only scripts/ingest-growth-standards.ts",
+    "guidelines:harvest": "ts-node --transpile-only scripts/harvest-guideline-links.ts"
   },
   "dependencies": {
     "@fastify/compress": "^8.3.1",
