@@ -32,16 +32,44 @@ const registry = JSON.parse(fs.readFileSync(REGISTRY, 'utf8'));
 
 // Host → source index (lower-cased). Longest suffix wins via the strip loop.
 const hostIndex = new Map();
+// Sources that claim only part of a host, via `pathPrefixes`.
+//
+// A host is not a licence. NCBI Bookshelf serves StatPearls (CC BY-NC-ND)
+// from the same hostname as LactMed and LiverTox, which are US government
+// works in the public domain — so matching on host alone filed 172
+// public-domain citations under a cite-only verdict and blocked embedding
+// content we are free to use. A source may therefore narrow its claim to
+// URL path prefixes, and the most specific claim wins.
+const pathScoped = [];
 for (const src of registry.sources) {
-  for (const host of src.hosts || []) hostIndex.set(host.toLowerCase(), src);
+  for (const host of src.hosts || []) {
+    const h = host.toLowerCase();
+    if (src.pathPrefixes && src.pathPrefixes.length) {
+      for (const prefix of src.pathPrefixes) {
+        pathScoped.push({ host: h, prefix: prefix.toLowerCase(), src });
+      }
+    } else {
+      hostIndex.set(h, src);
+    }
+  }
 }
+// Longest prefix first, so a narrower claim beats a broader one.
+pathScoped.sort((a, b) => b.prefix.length - a.prefix.length);
 
 function sourceForUrl(url) {
   let host;
+  let path;
   try {
-    host = new URL(url).hostname.toLowerCase();
+    const u = new URL(url);
+    host = u.hostname.toLowerCase();
+    path = u.pathname.toLowerCase();
   } catch {
     return null;
+  }
+  // A path-scoped claim on this host (or a parent of it) wins outright.
+  for (const entry of pathScoped) {
+    if (host !== entry.host && !host.endsWith('.' + entry.host)) continue;
+    if (path.startsWith(entry.prefix)) return entry.src;
   }
   let candidate = host;
   while (candidate.includes('.')) {

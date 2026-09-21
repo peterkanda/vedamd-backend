@@ -1,7 +1,7 @@
 {
   "$schema": "./registry.schema.md",
   "description": "Machine-readable content-source & licence registry. Operationalises the Kenya/SSA CDS content-sourcing analysis: every upstream source carries a licence tier and an embeddable verdict that the ingestion engine and the licence-compliance CI gate enforce. `citationLicence` maps each source onto the shared CitationLicence enum (src/common/citation.ts) so citation hosts can be checked against it. NOTHING is embedded from a source whose embeddable verdict is not 'yes'.",
-  "updated": "2026-09-17",
+  "updated": "2026-09-20",
   "tiers": {
     "1": "Safe to embed in a commercial product with attribution (public-domain / permissive).",
     "2": "High value but licence-uncertain — verify per source/repo before embedding.",
@@ -290,8 +290,7 @@
       "hosts": [
         "who.int",
         "iris.who.int",
-        "apps.who.int",
-        "aware.essentialmeds.org"
+        "apps.who.int"
       ],
       "lastChecked": "2026-06-10",
       "notes": "NC blocks commercial embedding; SA would force the licence onto derivatives. Reference/link, and rebuild equivalent logic from underlying clinical facts; never copy protected text/figures. Commercial reuse needs written WHO permission (permissions@who.int)."
@@ -341,7 +340,7 @@
         "statpearls.com"
       ],
       "lastChecked": "2026-06-10",
-      "notes": "NC + ND → not embeddable. Cite/link only."
+      "notes": "NC + ND → not embeddable. Cite/link only. Owns ncbi.nlm.nih.gov as the FALLBACK only: LactMed and LiverTox are public-domain works on the same host and claim their own path prefixes ahead of this entry."
     },
     {
       "id": "msf-guidelines",
@@ -1277,6 +1276,223 @@
       ],
       "lastChecked": "2026-09-17",
       "notes": "DPD structured data is OGL-Canada. Whether manufacturer product monograph PDFs are covered is unverified — do not ingest monograph text until confirmed."
+    },
+    {
+      "id": "lactmed",
+      "publisher": "US NLM / HHS",
+      "title": "Drugs and Lactation Database (LactMed)",
+      "tier": 1,
+      "embeddable": "verify",
+      "format": "bulk",
+      "spdxOrName": "US-Public-Domain",
+      "citationLicence": "public-domain",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "pregnancy-lactation",
+        "drugs"
+      ],
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK501922/",
+      "hosts": [
+        "ncbi.nlm.nih.gov"
+      ],
+      "pathPrefixes": [
+        "/books/nbk500573",
+        "/books/nbk500576",
+        "/books/nbk500582",
+        "/books/nbk500586",
+        "/books/nbk500587",
+        "/books/nbk500709",
+        "/books/nbk500980",
+        "/books/nbk500986",
+        "/books/nbk500991",
+        "/books/nbk501105",
+        "/books/nbk501212",
+        "/books/nbk501214",
+        "/books/nbk501215",
+        "/books/nbk501229",
+        "/books/nbk501230",
+        "/books/nbk501259",
+        "/books/nbk501291",
+        "/books/nbk501318",
+        "/books/nbk501341",
+        "/books/nbk501344",
+        "/books/nbk501346",
+        "/books/nbk501348",
+        "/books/nbk501352",
+        "/books/nbk501356",
+        "/books/nbk501371",
+        "/books/nbk501374",
+        "/books/nbk501377",
+        "/books/nbk501404",
+        "/books/nbk501426",
+        "/books/nbk501445",
+        "/books/nbk501447",
+        "/books/nbk501458",
+        "/books/nbk501478",
+        "/books/nbk501535",
+        "/books/nbk501536",
+        "/books/nbk501538",
+        "/books/nbk501548",
+        "/books/nbk501549",
+        "/books/nbk501744",
+        "/books/nbk501885",
+        "/books/nbk501922",
+        "/books/nbk567883",
+        "/books/nbk582797",
+        "/books/nbk621367"
+      ],
+      "lastChecked": "2026-09-20",
+      "notes": "LactMed is a US government work in the public domain, but Bookshelf gives every page its own NBK id, and StatPearls (cite-only, CC BY-NC-ND) ids interleave with them on the same host — so the claim is an EXPLICIT page list, not a prefix pattern. The 44 id(s) here were taken from citation labels in the bundle and have NOT each been confirmed against Bookshelf; verdict stays \"verify\" until they are. Worklist: content/sources/bookshelf-scope-worklist.md. A new LactMed citation must be added here or it falls through to the StatPearls verdict."
+    },
+    {
+      "id": "livertox",
+      "publisher": "US NIDDK",
+      "title": "LiverTox: Clinical and Research Information on Drug-Induced Liver Injury",
+      "tier": 1,
+      "embeddable": "verify",
+      "format": "bulk",
+      "spdxOrName": "US-Public-Domain",
+      "citationLicence": "public-domain",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "hepatic-dose",
+        "drugs"
+      ],
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547852/",
+      "hosts": [
+        "ncbi.nlm.nih.gov"
+      ],
+      "pathPrefixes": [
+        "/books/nbk548327",
+        "/books/nbk548791"
+      ],
+      "lastChecked": "2026-09-20",
+      "notes": "LiverTox is a US government work in the public domain, but Bookshelf gives every page its own NBK id, and StatPearls (cite-only, CC BY-NC-ND) ids interleave with them on the same host — so the claim is an EXPLICIT page list, not a prefix pattern. The 2 id(s) here were taken from citation labels in the bundle and have NOT each been confirmed against Bookshelf; verdict stays \"verify\" until they are. Worklist: content/sources/bookshelf-scope-worklist.md. A new LiverTox citation must be added here or it falls through to the StatPearls verdict."
+    },
+    {
+      "id": "eeml",
+      "publisher": "WHO",
+      "title": "WHO electronic Essential Medicines List (eEML) and AWaRe antibiotic classification",
+      "tier": 2,
+      "embeddable": "verify",
+      "format": "bulk",
+      "spdxOrName": "CC BY 3.0 IGO",
+      "citationLicence": "cc-by",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "essential-medicines",
+        "drugs",
+        "amr"
+      ],
+      "url": "https://list.essentialmeds.org/",
+      "hosts": [
+        "list.essentialmeds.org",
+        "aware.essentialmeds.org"
+      ],
+      "lastChecked": "2026-09-20",
+      "notes": "CC BY 3.0 IGO permits commercial reuse with attribution — materially more permissive than the who-narrative CC BY-NC-SA entry that previously owned aware.essentialmeds.org. No use in advertising or product promotion, no implied WHO endorsement, no WHO logo. Attribute as \"WHO electronic Essential Medicines List (eEML), World Health Organization\". Confirm at list.essentialmeds.org/licencing before embedding."
+    },
+    {
+      "id": "who-prequal",
+      "publisher": "WHO Prequalification of Medical Products",
+      "title": "WHOPAR — WHO-quality-assured SmPC and patient information leaflet",
+      "tier": 2,
+      "embeddable": "verify",
+      "format": "pdf",
+      "spdxOrName": "CC BY-NC-SA 3.0 IGO (verify for prequalification outputs)",
+      "citationLicence": "cc-by-nc-sa",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "drugs",
+        "drug-label"
+      ],
+      "url": "https://extranet.who.int/prequal/",
+      "hosts": [
+        "extranet.who.int"
+      ],
+      "lastChecked": "2026-09-20",
+      "notes": "Jurisdiction-correct product information for the prequalified generics actually dispensed across SSA (ARVs, antimalarials, TB). WHOPAR Part 4 = SmPC, Part 3 = patient leaflet. Link-only until the licence is confirmed; belongs beside the US labels in content/labels/ as the regionally relevant reference."
+    },
+    {
+      "id": "who-child-growth-standards",
+      "publisher": "WHO",
+      "title": "WHO Child Growth Standards (LMS parameter tables)",
+      "tier": 2,
+      "embeddable": "verify",
+      "format": "bulk",
+      "spdxOrName": "CC BY-NC-SA 3.0 IGO (verify — numeric tables may differ)",
+      "citationLicence": "cc-by-nc-sa",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "growth-development",
+        "paediatrics",
+        "nutrition"
+      ],
+      "url": "https://www.who.int/tools/child-growth-standards",
+      "hosts": [
+        "cdn.who.int"
+      ],
+      "lastChecked": "2026-09-20",
+      "notes": "L/M/S parameters by sex and age for weight-for-age, weight-for-length/height and BMI-for-age — what turns the narrative z-score thresholds in growth-development.json into a computable WAZ/WHZ. Facts and parameters are not themselves copyrightable; confirm before embedding the tables verbatim. CDC publishes equivalent LMS files as US public domain if this stalls."
+    },
+    {
+      "id": "cdc-growth-charts",
+      "publisher": "US CDC / NCHS",
+      "title": "CDC growth charts — percentile data files with LMS values",
+      "tier": 1,
+      "embeddable": "yes",
+      "format": "bulk",
+      "spdxOrName": "US-Public-Domain",
+      "citationLicence": "public-domain",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "growth-development",
+        "paediatrics"
+      ],
+      "url": "https://www.cdc.gov/growthcharts/cdc-data-files.htm",
+      "hosts": [
+        "cdc.gov"
+      ],
+      "pathPrefixes": [
+        "/growthcharts"
+      ],
+      "lastChecked": "2026-09-20",
+      "notes": "US public-domain LMS tables, including the CDC-published WHO-standard files. Embeddable without the licence question hanging over the WHO originals — use as the fallback for z-score computation."
+    },
+    {
+      "id": "ema",
+      "publisher": "European Medicines Agency",
+      "title": "EMA EPAR / Summary of Product Characteristics",
+      "tier": 2,
+      "embeddable": "verify",
+      "format": "bulk",
+      "spdxOrName": "EMA-Legal-Notice (attribution; commercial permitted)",
+      "citationLicence": "cc-by",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "drugs",
+        "drug-label"
+      ],
+      "url": "https://www.ema.europa.eu/",
+      "hosts": [
+        "ema.europa.eu"
+      ],
+      "lastChecked": "2026-09-20",
+      "notes": "EMA’s legal notice permits reproduction and distribution for non-commercial AND commercial purposes provided EMA is acknowledged as the source; third-party content inside documents is carved out. Do not conflate with the UK emc (medicines.org.uk), which is proprietary."
     }
   ]
 }

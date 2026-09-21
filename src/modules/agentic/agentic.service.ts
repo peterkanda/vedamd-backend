@@ -179,6 +179,10 @@ export class AgenticService {
             user: buildUserMessage(ctx, knowledge, policyMatches),
             maxTokens: 2048,
             temperature: 0.1,
+            // The reasoner's contract is a single JSON object of cards, so
+            // let providers that can constrain decoding do it at the source
+            // rather than leaving the extractor to unpick a fenced blob.
+            responseFormat: 'json',
             // Clinical reasoning may only come from a model the operator has
             // declared fit for it. If none can answer, the catch below returns
             // the deterministic cards — which is the safe degradation, unlike
@@ -191,7 +195,12 @@ export class AgenticService {
         llmModel = result.model;
         llmProvider = result.provider;
         llmMedical = result.medical;
-        narrative = stripJsonFromNarrative(result.text);
+        // A cut-off reply is a fragment, not an answer. Say so plainly
+        // rather than showing half a sentence as an "AI-assisted overview";
+        // any card the extractor can still salvage is shown as normal.
+        narrative = result.truncated
+          ? 'The AI overview was cut short before it finished. Any recommendations below were recovered from the partial answer; re-ask the question for a complete overview.'
+          : stripJsonFromNarrative(result.text);
         const extracted = extractCards(
           result.text,
           new Date().toISOString(),
@@ -556,14 +565,62 @@ function summaryOverlap(a: string, b: string): number {
  * Returns the prose around / after the JSON, or the original text when
  * no JSON block is present.
  */
-function stripJsonFromNarrative(text: string): string {
+export function stripJsonFromNarrative(text: string): string {
   if (!text) return text;
   // Strip ```json fenced blocks first.
   let s = text.replace(/```(?:json)?\s*[\s\S]*?```/g, '').trim();
-  // Strip a bare top-level JSON object.
-  s = s.replace(/^\{[\s\S]*?\n\}\s*/m, '').trim();
-  if (!s) return text; // Fall back if removal stripped everything.
+  // An UNTERMINATED fence — the model was cut off before closing it — left
+  // the whole blob in place, so `{"cards":[…` rendered verbatim at a
+  // clinician. Everything from an unclosed fence onward is machine output.
+  s = s.replace(/```(?:json)?\s*[\s\S]*$/, '').trim();
+  // Strip a bare top-level JSON object, closed or not. The old pattern
+  // required a `\n}` to match, so a truncated object survived untouched.
+  s = stripLeadingJsonObject(s);
+  // Belt and braces: if anything JSON-shaped is still the whole of what is
+  // left, show nothing rather than raw structure. The caller renders an
+  // empty narrative as "no overview available", which is a far better
+  // clinical failure mode than a half-written card.
+  if (looksLikeJson(s)) return '';
+  if (!s) return looksLikeJson(text.trim()) ? '' : text;
   return s;
+}
+
+/** Remove a leading `{…}` blob whether or not its braces ever balance. */
+function stripLeadingJsonObject(text: string): string {
+  if (!text.startsWith('{')) return text;
+  let depth = 0;
+  let inString = false;
+  let escape = false;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (escape) {
+      escape = false;
+      continue;
+    }
+    if (ch === '\\') {
+      escape = true;
+      continue;
+    }
+    if (ch === '"') {
+      inString = !inString;
+      continue;
+    }
+    if (inString) continue;
+    if (ch === '{') depth++;
+    else if (ch === '}' && --depth === 0) return text.slice(i + 1).trim();
+  }
+  // Never closed — the object runs to the end of the text.
+  return '';
+}
+
+/** Does this read as machine output rather than something to show a clinician? */
+function looksLikeJson(text: string): boolean {
+  const t = text.trim();
+  if (!t) return false;
+  if (t.startsWith('```')) return true;
+  if (!t.startsWith('{') && !t.startsWith('[')) return false;
+  // A prose sentence rarely opens with a brace; a card blob always does.
+  return /^[[{]\s*("|\{|\[|$)/.test(t);
 }
 
 /**

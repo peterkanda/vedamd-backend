@@ -22,6 +22,12 @@ export interface LlmCompletionRequest {
    * meant a clinician could be answered by GPT-4o under a MedGemma badge.
    */
   requireMedical?: boolean;
+  /**
+   * The caller wants a single JSON object back, not prose. Providers that
+   * can constrain decoding (Gemini's `responseMimeType`) should do so;
+   * the rest may ignore it and let the extractor cope with fences.
+   */
+  responseFormat?: 'json';
 }
 
 export interface LlmCompletionResult {
@@ -41,6 +47,16 @@ export interface LlmCompletionResult {
   fellBackFrom?: LlmProviderName | null;
   /** Token usage (best-effort; may be undefined). */
   usage?: { inputTokens?: number; outputTokens?: number };
+  /**
+   * The model stopped because it hit the output-token ceiling, so `text` is
+   * a fragment. Providers set this from their stop/finish reason.
+   *
+   * Without it a cut-off response is indistinguishable from a complete one:
+   * the JSON extractor fails, and the raw fragment — braces, code fence and
+   * all — reaches the narrative panel. Callers use this to say "the answer
+   * was cut short" rather than render half a JSON object at a clinician.
+   */
+  truncated?: boolean;
 }
 
 /** Raised instead of quietly substituting a general-purpose model. */

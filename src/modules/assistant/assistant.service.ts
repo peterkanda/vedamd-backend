@@ -7,6 +7,7 @@ import { ProviderRouter } from '../agentic/providers/provider-router';
 import { NoMedicalProviderError } from '../agentic/providers/llm-provider.interface';
 import { ASSISTANT_CHAT_SYSTEM, buildAssistantUserMessage } from './assistant.prompt';
 import { isClinicalClaim, ungroundedRefusal } from './clinical-claim';
+import { populationNote } from '../reference-ranges/reference-ranges.types';
 
 export interface AssistantChatRequest {
   question: string;
@@ -35,44 +36,111 @@ export interface AssistantChatResponse {
   complete: boolean;
 }
 
-// Fields worth keeping when summarising a record into grounding text.
-const KEEP_FIELDS = [
+/**
+ * Record fields that carry no clinical meaning for a reader — ids, codings
+ * and provenance. Everything NOT listed here is offered to the model.
+ *
+ * This used to be the other way round: an allow-list of fields to keep,
+ * written around `conditions` and `drugs`. Any domain whose answer lived in
+ * a field nobody had added was silently emptied. A reference-range record
+ * reached the model as {"analyte":"Sodium","category":"electrolytes"} — the
+ * interval itself, 135-145 mmol/L, was dropped — and a notifiable-disease
+ * record as {"disease":"Smallpox"}, without the notification level or
+ * timeframe that is the entire point of the record. The model then answered
+ * from its own memory while the UI cited the record as the source, which is
+ * precisely the failure the citation architecture exists to prevent.
+ *
+ * Denying noise instead of permitting signal means a new field, or a new
+ * domain, is grounded by default rather than invisibly discarded.
+ */
+const DROP_FIELDS = new Set([
+  // Identity + provenance
+  'slug',
+  'ruleVersion',
+  'reviewStatus',
+  'reviewers',
+  'approvedAt',
+  'lastReviewed',
+  'evidenceLevel',
+  'references',
+  'citations',
+  'retrievedAt',
+  // Codings — the model reasons over prose, not code systems, and these
+  // crowd out real content inside the per-record budget.
+  'icd10',
+  'icd11',
+  'snomed',
+  'loinc',
+  'rxnorm',
+  'atc',
+  'setId',
+  'splVersion',
+  'rxcuiIngredients',
+  'applicationNumbers',
+  // Internal cross-links; the prose names the drug already.
+  'drugSlug',
+  'drugSlugs',
+  'conditionSlug',
+  'antidoteSlug',
+  'antidoteDrugSlug',
+  'anticoagulantDrugSlug',
+  'vaccineDrugSlug',
+  'drugASlug',
+  'drugBSlug',
+  'domains',
+]);
+
+/**
+ * Fields pulled to the front of a record summary, most decision-bearing
+ * first, because the per-record budget may not fit everything. Anything not
+ * named here still follows in the record's own key order.
+ */
+const PRIORITY_FIELDS = [
+  // What the record is about
   'title',
+  'analyte',
+  'drug',
   'inn',
   'name',
-  'chiefComplaint',
-  'analyte',
-  'gene',
-  'drug',
   'disease',
+  'allergen',
+  'anticoagulant',
   'poison',
   'antidote',
   'vaccine',
-  'oneLiner',
-  'purpose',
+  'gene',
+  'chiefComplaint',
   'abbrev',
-  'drugClass',
-  'category',
-  'indications',
-  'presentation',
-  'redFlags',
-  'management',
+  // The answer itself
+  'oneLiner',
+  'summary',
+  'appliesTo',
+  'low',
+  'high',
+  'unit',
+  'status',
+  'level',
+  'timeframe',
+  'severity',
+  'risk',
+  'recommendation',
+  'pregnancyCompatibility',
+  'lactationCompatibility',
+  'worstClassDecision',
+  'guidance',
   'dosing',
-  'diagnostics',
-  'differential',
-  'disposition',
+  'doses',
+  'management',
+  'protocols',
   'interpretation',
+  'redFlags',
   'contraindications',
   'warnings',
+  'crossReactsWith',
+  'alternatives',
   'monitoring',
-  'pregnancy',
-  'lactation',
-  'guidance',
-  'effect',
-  'severity',
-  'mechanism',
+  'sections',
   'items',
-  'scoring',
 ];
 
 const PER_RECORD_CHARS = 700;
@@ -200,6 +268,22 @@ const NON_EVIDENCE_WORDS = new Set([
   'therapeutic',
 ]);
 
+/**
+ * Add the qualification a record implies but does not state, so the model
+ * cannot answer past it.
+ *
+ * Every reference range in the v0.1 bundle is an adult interval and not one
+ * of the 321 records says so — none carries an age band at all. Grounded on
+ * the bare numbers, a question about a child gets an adult interval quoted
+ * back with a VedaMD citation attached and nothing to signal it does not
+ * apply. The analytes that move most with age are precisely the ones where
+ * an adult figure is plausible, precise and wrong.
+ */
+function annotate(domain: string, rec: Record<string, unknown>): Record<string, unknown> {
+  if (domain !== 'reference-ranges') return rec;
+  return { ...rec, appliesTo: populationNote(rec as Parameters<typeof populationNote>[0]) };
+}
+
 @Injectable()
 export class AssistantService {
   constructor(
@@ -207,13 +291,35 @@ export class AssistantService {
     private readonly router: ProviderRouter,
   ) {}
 
-  /** Compact a record to its clinically useful fields for grounding. */
+  /**
+   * Compact a record to its clinically useful fields for grounding.
+   *
+   * Fields are added highest-priority first and the result is cut at a whole
+   * field, so the block handed to the model is always valid JSON. The old
+   * version sliced the serialized string at a fixed length, which could sever
+   * it mid-token — the same half-written-JSON problem this codebase already
+   * had coming back from the provider.
+   */
   private summarize(rec: Record<string, unknown>): string {
+    const keys = [
+      ...PRIORITY_FIELDS.filter((k) => rec[k] !== undefined),
+      ...Object.keys(rec).filter(
+        (k) => !DROP_FIELDS.has(k) && !PRIORITY_FIELDS.includes(k) && rec[k] !== undefined,
+      ),
+    ];
     const out: Record<string, unknown> = {};
-    for (const k of KEEP_FIELDS) if (rec[k] !== undefined) out[k] = rec[k];
-    let json = JSON.stringify(out);
-    if (json.length > PER_RECORD_CHARS) json = json.slice(0, PER_RECORD_CHARS) + '…';
-    return json;
+    let truncated = false;
+    for (const k of keys) {
+      if (DROP_FIELDS.has(k)) continue;
+      const candidate = { ...out, [k]: rec[k] };
+      if (JSON.stringify(candidate).length > PER_RECORD_CHARS) {
+        truncated = true;
+        continue;
+      }
+      out[k] = rec[k];
+    }
+    const json = JSON.stringify(out);
+    return truncated ? `${json} (truncated)` : json;
   }
 
   /**
@@ -303,7 +409,7 @@ export class AssistantService {
     let used = 0;
     for (const hit of hits) {
       const rec = hit.slug ? this.search.getRecord(hit.domain, hit.slug) : null;
-      const text = rec ? this.summarize(rec) : (hit.snippet ?? '');
+      const text = rec ? this.summarize(annotate(hit.domain, rec)) : (hit.snippet ?? '');
       const entry = `[${hit.domain}/${hit.slug}] ${hit.title}\n${text}`;
       if (used + entry.length > TOTAL_GROUNDING_CHARS) break;
       blocks.push(entry);
