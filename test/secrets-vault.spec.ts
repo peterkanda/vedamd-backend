@@ -40,8 +40,17 @@ describe('secrets-vault (AES-256-GCM envelope)', () => {
   it('throws on a tampered ciphertext', () => {
     const ct = encryptSecret('hello', 'tenant-A');
     const [iv, cipher, tag] = ct.split(':');
-    // Flip one byte in the ciphertext.
-    const tampered = `${iv}:${cipher.slice(0, -2)}00:${tag}`;
+    // Flip the last byte, rather than assigning it a constant.
+    //
+    // This used to set it to "00", which is only a tamper when the byte was
+    // not already zero. AES-GCM is a stream cipher, so the final ciphertext
+    // byte is uniformly random — once every 256 runs the "tampered" value
+    // was byte-identical to the original, decryption correctly succeeded and
+    // the test failed. XOR guarantees a different byte every time.
+    const lastByte = Number.parseInt(cipher.slice(-2), 16);
+    const flipped = (lastByte ^ 0xff).toString(16).padStart(2, '0');
+    const tampered = `${iv}:${cipher.slice(0, -2)}${flipped}:${tag}`;
+    expect(tampered).not.toBe(ct);
     expect(() => decryptSecret(tampered, 'tenant-A')).toThrow();
   });
 });
