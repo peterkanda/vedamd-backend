@@ -3,6 +3,8 @@ import { ApiBearerAuth, ApiOperation, ApiQuery, ApiTags } from '@nestjs/swagger'
 import { KnowledgeService } from './knowledge.service';
 import { KnowledgeSearchService } from './knowledge-search.service';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';
+// Direct import: the http-cache barrel pulls in KnowledgeService (a cycle).
+import { ImmutableContent } from '../../common/http-cache/immutable-content.decorator';
 
 @ApiTags('knowledge')
 @Controller('v1/knowledge')
@@ -23,6 +25,7 @@ export class KnowledgeController {
   }
 
   @Get('search')
+  @ImmutableContent()
   @UseGuards(ApiKeyGuard)
   @RequireScope('content:read')
   @ApiBearerAuth()

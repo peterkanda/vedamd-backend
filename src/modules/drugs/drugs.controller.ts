@@ -112,6 +112,17 @@ export class DrugsController {
     };
   }
 
+  @Get('slugs')
+  @RequireScope('drug-info:read')
+  @ApiOperation({
+    summary: 'Every drug slug',
+    description:
+      'Just the slugs of the drugs list, for clients that only need to know which drug pages exist (e.g. to decide whether to link one).',
+  })
+  slugs() {
+    return { slugs: this.drugs.list().map((d) => d.slug) };
+  }
+
   @Get(':slug')
   @RequireScope('drug-info:read')
   @ApiOperation({ summary: 'Get a full drug record by slug' })

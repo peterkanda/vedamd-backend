@@ -23,6 +23,17 @@ export class ConditionsController {
     return { conditions: this.conditions.list({ domain, q }) };
   }
 
+  @Get('slugs')
+  @RequireScope('content:read')
+  @ApiOperation({
+    summary: 'Every condition slug',
+    description:
+      'Just the slugs of the conditions list, for clients that only need to know which condition pages exist (e.g. to decide whether to link one).',
+  })
+  slugs() {
+    return { slugs: this.conditions.list().map((c) => c.slug) };
+  }
+
   @Get(':slug')
   @RequireScope('content:read')
   @ApiOperation({

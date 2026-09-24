@@ -14,9 +14,11 @@ export interface DoseProtocolsResponse {
 
 const PROTOCOLS: DoseProtocol[] = data as DoseProtocol[];
 
-const DIAGNOSES = [...new Set(PROTOCOLS.map((p) => p.diagnosis))].sort((a, b) =>
-  a.localeCompare(b, undefined, { sensitivity: 'base' }),
-);
+// Same order as `a.localeCompare(b, undefined, { sensitivity: 'base' })`, but
+// built once: localeCompare with options sets up a new collator per call.
+const byName = new Intl.Collator(undefined, { sensitivity: 'base' }).compare;
+
+const DIAGNOSES = [...new Set(PROTOCOLS.map((p) => p.diagnosis))].sort(byName);
 
 @Injectable()
 export class DoseProtocolsService {
@@ -39,9 +41,7 @@ export class DoseProtocolsService {
       }
       return true;
     });
-    const diagnoses = [...new Set(filtered.map((p) => p.diagnosis))].sort((a, b) =>
-      a.localeCompare(b, undefined, { sensitivity: 'base' }),
-    );
+    const diagnoses = [...new Set(filtered.map((p) => p.diagnosis))].sort(byName);
     return { diagnoses, protocols: filtered };
   }
 

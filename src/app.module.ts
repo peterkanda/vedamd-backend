@@ -34,6 +34,7 @@ import { ClinicalReferenceModule } from './modules/clinical-reference/clinical-r
 import { IntegrationsModule } from './modules/integrations/integrations.module';
 import { ContentFreshnessModule } from './modules/content-freshness/content-freshness.module';
 import { DoseProtocolsModule } from './modules/dose-protocols/dose-protocols.module';
+import { CatalogueModule } from './modules/catalogue/catalogue.module';
 import { ClinicalToolsModule } from './modules/clinical-tools/clinical-tools.module';
 import { LlmModule } from './modules/llm/llm.module';
 import { AuditModule } from './modules/audit/audit.module';
@@ -98,6 +99,7 @@ import { LocalizationModule } from './modules/localization/localization.module';
     ClinicalReferenceModule,
     IntegrationsModule,
     DoseProtocolsModule,
+    CatalogueModule,
     ClinicalToolsModule,
     LlmModule,
     AuditModule,

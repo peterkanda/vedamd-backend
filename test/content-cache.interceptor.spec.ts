@@ -8,6 +8,7 @@ function makeCtx(opts: {
   method?: string;
   url?: string;
   ifNoneMatch?: string;
+  authorization?: string;
   reply: {
     header: ReturnType<typeof vi.fn>;
     code: ReturnType<typeof vi.fn>;
@@ -23,7 +24,10 @@ function makeCtx(opts: {
   const req = {
     method: opts.method ?? 'GET',
     url: opts.url ?? '/api/v1/drugs',
-    headers: opts.ifNoneMatch ? { 'if-none-match': opts.ifNoneMatch } : {},
+    headers: {
+      ...(opts.ifNoneMatch ? { 'if-none-match': opts.ifNoneMatch } : {}),
+      ...(opts.authorization ? { authorization: opts.authorization } : {}),
+    },
   };
   const context = {
     getHandler: () => () => undefined,
@@ -65,6 +69,19 @@ describe('ContentCacheInterceptor', () => {
     expect(headerCalls['cache-control']).toBe('public, max-age=3600, immutable');
     expect(headerCalls['etag']).toMatch(/^"0\.1\.0\.[0-9a-f]{16}"$/);
     expect(reply.code).not.toHaveBeenCalledWith(304);
+  });
+
+  it('keeps an authorised response out of shared caches', async () => {
+    const reply = makeReply();
+    const { reflector, knowledge, context } = makeCtx({
+      metadata: { maxAgeSeconds: 3600 },
+      authorization: 'Bearer vmd_test_abc',
+      reply,
+    });
+    const interceptor = new ContentCacheInterceptor(reflector, knowledge);
+    await lastValueFrom(interceptor.intercept(context, { handle: () => of({}) }));
+    const headerCalls = Object.fromEntries(reply.header.mock.calls);
+    expect(headerCalls['cache-control']).toBe('private, max-age=3600, immutable');
   });
 
   it('returns 304 (and skips the handler) when If-None-Match matches', async () => {
