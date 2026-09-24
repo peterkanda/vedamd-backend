@@ -12,9 +12,23 @@ import { applyApiPrefix, swaggerConfig } from './openapi.config';
 import { REDIS, type MaybeRedis } from './common/cache';
 import { collapseQueryArrays } from './common/query-normalize';
 import type { AppConfig } from './config/configuration';
+import { runPendingMigrations } from './db/run-migrations';
 
 async function bootstrap() {
   const bodyLimit = Number(process.env.HTTP_BODY_LIMIT_BYTES ?? 1_048_576);
+
+  // Bring the schema up to date before anything can serve a request; a
+  // failure here aborts startup so the previous deployment keeps serving.
+  await runPendingMigrations({
+    url: process.env.DATABASE_URL,
+    ssl:
+      process.env.DATABASE_SSL !== undefined
+        ? process.env.DATABASE_SSL === 'true'
+        : process.env.NODE_ENV === 'production',
+    flag: process.env.DB_MIGRATE_ON_START,
+    nodeEnv: process.env.NODE_ENV,
+    log: (message) => Logger.log(message, 'Migrations'),
+  });
 
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
