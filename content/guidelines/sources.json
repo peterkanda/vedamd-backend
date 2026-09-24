@@ -1,0 +1,77 @@
+{
+  "description": "Where npm run guidelines:harvest looks for national treatment guidelines and essential-medicines lists, per country. LINKS AND METADATA ONLY — no guideline text is fetched or stored. Every MoH source in content/sources/registry.json is tier 3, embeddable: cite-only, citationLicence: moh-restricted, and content/sources/README.md is explicit: cite and link, author original logic from the underlying clinical facts, and secure MoH permission where logic derives from national guidelines. Storing the text would contradict that policy and fail bundle:check-licence.",
+  "updated": "2026-09-21",
+  "verified": false,
+  "verificationNote": "These entry points have NOT been fetched and confirmed — outbound access to the MoH domains is blocked from the environment this was written in. Ministry sites reorganise often. Run with --dry-run first; the harvester reports what each entry point yielded rather than writing a partial index.",
+  "whatWeCapture": [
+    "Document title as published",
+    "Edition / year where stated",
+    "Canonical URL",
+    "Publisher (ministry or programme)",
+    "Content hash of the PDF bytes, so a silent republication is detectable",
+    "Last-seen timestamp"
+  ],
+  "whatWeNeverCapture": [
+    "Guideline body text",
+    "Tables, figures or algorithms reproduced from the document"
+  ],
+  "countries": [
+    {
+      "cc": "KE",
+      "registrySource": "moh-ke",
+      "entryPoints": [
+        "https://www.health.go.ke/publications",
+        "https://nascop.or.ke/guidelines/",
+        "https://www.nltp.co.ke/guidelines/"
+      ]
+    },
+    {
+      "cc": "UG",
+      "registrySource": "moh-ug",
+      "entryPoints": ["https://www.health.go.ug/publications/"]
+    },
+    {
+      "cc": "TZ",
+      "registrySource": "moh-tz",
+      "entryPoints": ["https://www.moh.go.tz/en/guidelines"]
+    },
+    {
+      "cc": "RW",
+      "registrySource": "moh-rw",
+      "entryPoints": ["https://www.moh.gov.rw/publications"]
+    },
+    {
+      "cc": "ET",
+      "registrySource": "moh-et",
+      "entryPoints": ["https://www.moh.gov.et/publications"]
+    },
+    {
+      "cc": "NG",
+      "registrySource": "moh-ng",
+      "entryPoints": ["https://www.health.gov.ng/index.php?option=com_content&view=article&id=143"]
+    },
+    {
+      "cc": "GH",
+      "registrySource": "moh-gh",
+      "entryPoints": ["https://www.moh.gov.gh/publications/"]
+    },
+    {
+      "cc": "ZA",
+      "registrySource": "moh-za",
+      "entryPoints": [
+        "https://knowledgehub.health.gov.za/elibrary",
+        "https://www.health.gov.za/edp-guidelines/"
+      ]
+    },
+    {
+      "cc": "ZM",
+      "registrySource": "moh-zm",
+      "entryPoints": ["https://www.moh.gov.zm/?page_id=free-downloads"]
+    },
+    {
+      "cc": "MW",
+      "registrySource": "moh-mw",
+      "entryPoints": ["https://www.health.gov.mw/index.php/resource-centre"]
+    }
+  ]
+}

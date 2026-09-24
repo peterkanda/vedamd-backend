@@ -1118,11 +1118,10 @@
         "palliativecareguidelines.scot.nhs.uk",
         "transformationpartners.nhs.uk",
         "handbook.ggcmedicines.org.uk",
-        "ema.europa.eu",
         "ecdc.europa.eu"
       ],
       "lastChecked": "2026-09-17",
-      "notes": "EMA content is reusable with attribution, but EPAR product information (SmPC/package leaflet) where copyright vests in the marketing-authorisation holder needs that holder's permission — link only."
+      "notes": "EMA content is reusable with attribution, but EPAR product information (SmPC/package leaflet) where copyright vests in the marketing-authorisation holder needs that holder's permission — link only. EMA (ema.europa.eu) moved to its own entry, ema."
     },
     {
       "id": "drug-reference-databases",
@@ -1412,7 +1411,7 @@
         "ncbi.nlm.nih.gov/books/nbk501922"
       ],
       "lastChecked": "2026-09-24",
-      "notes": "US-government book on NCBI Bookshelf, public domain. Credit NLM/NICHD; \"LactMed\" is an HHS trademark. Per-drug pages have their own NBK ids and resolve to ncbi-bookshelf — tag them public-domain at ingestion. Licence line seen via search snippet (NCBI captcha); NLM web policy verified."
+      "notes": "US-government book on NCBI Bookshelf, public domain. Credit NLM/NICHD; \"LactMed\" is an HHS trademark. Per-drug pages have their own NBK ids and resolve to ncbi-bookshelf — tag them public-domain at ingestion. Licence line seen via search snippet (NCBI captcha); NLM web policy verified. Per-drug pages have their own NBK ids; the 44 cited in the bundle are listed in content/sources/bookshelf-scope-worklist.md. Until each is confirmed and added to urlPrefixes (as \"ncbi.nlm.nih.gov/books/nbkNNNNNN\") they resolve to ncbi-bookshelf, which is per-item."
     },
     {
       "id": "livertox",
@@ -1439,7 +1438,7 @@
         "ncbi.nlm.nih.gov/books/nbk547852"
       ],
       "lastChecked": "2026-09-24",
-      "notes": "\"Copyright free … public domain\"; acknowledgement requested (search snippet; NCBI captcha). High value for TB and ART hepatotoxicity."
+      "notes": "\"Copyright free … public domain\"; acknowledgement requested (search snippet; NCBI captcha). High value for TB and ART hepatotoxicity. Per-drug pages have their own NBK ids; the 2 cited in the bundle are listed in content/sources/bookshelf-scope-worklist.md. Until each is confirmed and added to urlPrefixes (as \"ncbi.nlm.nih.gov/books/nbkNNNNNN\") they resolve to ncbi-bookshelf, which is per-item."
     },
     {
       "id": "nci-pdq",
@@ -2004,7 +2003,7 @@
         "list.essentialmeds.org"
       ],
       "lastChecked": "2026-09-24",
-      "notes": "list.essentialmeds.org/licencing: CC BY 3.0 IGO, \"including for commercial purposes\", but not \"in conjunction with the advertising or promotion of commercial products\" or implying WHO endorsement. Cite: \"WHO electronic Essential Medicines List (eEML), World Health Organization, 2020. https://list.essentialmeds.org/ (beta version 1.0). Licence: CC BY 3.0 IGO.\" The EML PDF itself is NC-SA (who-narrative)."
+      "notes": "list.essentialmeds.org/licencing: CC BY 3.0 IGO, \"including for commercial purposes\", but not \"in conjunction with the advertising or promotion of commercial products\" or implying WHO endorsement. Cite: \"WHO electronic Essential Medicines List (eEML), World Health Organization, 2020. https://list.essentialmeds.org/ (beta version 1.0). Licence: CC BY 3.0 IGO.\" The EML PDF itself is NC-SA (who-narrative). aware.essentialmeds.org (the AWaRe antibiotic book online) may also fall under this licence, but that is unconfirmed, so it stays with who-narrative (CC BY-NC-SA, per item)."
     },
     {
       "id": "who-data",
@@ -2758,6 +2757,116 @@
       ],
       "lastChecked": "2026-09-24",
       "notes": "Includes a Swahili (Kenya) COVID-19 glossary. Ask CLEAR Global for an explicit licence before embedding."
+    },
+    {
+      "id": "ema",
+      "publisher": "European Medicines Agency",
+      "title": "EMA EPAR / Summary of Product Characteristics",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "bulk",
+      "spdxOrName": "EMA legal notice (reuse with attribution, commercial permitted); EPAR product information may be MAH copyright",
+      "citationLicence": "cc-by",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "cc-by",
+        "proprietary"
+      ],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "drugs",
+        "drug-label"
+      ],
+      "url": "https://www.ema.europa.eu/",
+      "hosts": [
+        "ema.europa.eu"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "EMA’s legal notice permits reproduction and distribution for non-commercial AND commercial purposes provided EMA is acknowledged as the source; third-party content inside documents is carved out. Do not conflate with the UK emc (medicines.org.uk), which is proprietary. EPAR product information (SmPC, package leaflet) is written by the marketing-authorisation holder, whose copyright may apply — check each document before reusing its text. EMA-authored pages are reusable with attribution."
+    },
+    {
+      "id": "who-prequal",
+      "publisher": "WHO Prequalification of Medical Products",
+      "title": "WHOPAR — WHO-quality-assured SmPC and patient information leaflet",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
+      "format": "pdf",
+      "spdxOrName": "CC BY-NC-SA 3.0 IGO (verify for prequalification outputs)",
+      "citationLicence": "cc-by-nc-sa",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "drugs",
+        "drug-label"
+      ],
+      "url": "https://extranet.who.int/prequal/",
+      "hosts": [],
+      "urlPrefixes": [
+        "extranet.who.int/prequal"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Jurisdiction-correct product information for the prequalified generics actually dispensed across SSA (ARVs, antimalarials, TB). WHOPAR Part 4 = SmPC, Part 3 = patient leaflet. Link-only until the licence is confirmed; belongs beside the US labels in content/labels/ as the regionally relevant reference. Scoped to extranet.who.int/prequal: the rest of the WHO extranet hosts unrelated documents."
+    },
+    {
+      "id": "who-child-growth-standards",
+      "publisher": "WHO",
+      "title": "WHO Child Growth Standards (LMS parameter tables)",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "adapt",
+      "commercialUse": false,
+      "format": "bulk",
+      "spdxOrName": "WHO non-commercial terms (CC BY-NC-SA 3.0 IGO for publications; website terms for the tables); tables also in the GPL-3 WHO anthro package",
+      "citationLicence": "cc-by-nc-sa",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "growth-development",
+        "paediatrics",
+        "nutrition"
+      ],
+      "url": "https://www.who.int/tools/child-growth-standards",
+      "hosts": [],
+      "urlPrefixes": [
+        "who.int/tools/child-growth-standards",
+        "cdn.who.int/media/docs/default-source/child-growth"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "L/M/S parameters by sex and age for weight-for-age, weight-for-length/height and BMI-for-age — what turns the narrative z-score thresholds in growth-development.json into a computable WAZ/WHZ. Facts and parameters are not themselves copyrightable; confirm before embedding the tables verbatim. CDC publishes equivalent LMS files as US public domain if this stalls. Checked 2026-09-24: the tables on who.int carry no CC licence, so the website terms apply (\"not for sale or for use in conjunction with commercial purposes\") — compatible with the non-commercial VedaMD content licence. The same LMS tables ship in WHO's GPL-3 `anthro` R package. Scoped to the growth-standards paths; the rest of cdn.who.int stays with who-narrative."
+    },
+    {
+      "id": "cdc-growth-charts",
+      "publisher": "US CDC / NCHS",
+      "title": "CDC growth charts — percentile data files with LMS values",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "bulk",
+      "spdxOrName": "US-Public-Domain",
+      "citationLicence": "public-domain",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "growth-development",
+        "paediatrics"
+      ],
+      "url": "https://www.cdc.gov/growthcharts/cdc-data-files.htm",
+      "hosts": [],
+      "urlPrefixes": [
+        "cdc.gov/growthcharts"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "US public-domain LMS tables, including the CDC-published WHO-standard files. Embeddable without the licence question hanging over the WHO originals — use as the fallback for z-score computation. CDC reuse terms apply: label adapted material as adapted, no CDC logos."
     }
   ]
 }

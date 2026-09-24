@@ -338,15 +338,15 @@ Made 2026-09-24:
 - ICD-11 corrected to CC BY-ND.
 - MSF's "free non-commercial" corrected to all rights reserved.
 
-**Growth:** 47 → 97 sources.
+**Growth:** 47 → 101 sources. Four came from a parallel change merged on 2026-09-24: EMA (per item), WHO prequalification (link only), WHO child growth standards and CDC growth charts. That change also added LactMed, LiverTox and the eEML, which duplicated entries here and were merged into them.
 
 **Citation census** (11,385 citations):
 
 | Class | Before | After |
 |---|---|---|
 | Embeddable | 687 | 897 |
-| Verify | 3 | 3,081 (WHO and Kenya MoH now per-item) |
-| Cite-only | 7,796 | 4,508 |
+| Verify | 3 | 3,145 (WHO, Kenya MoH and EMA now per-item) |
+| Cite-only | 7,796 | 4,444 |
 
 **Tests:** new invariants in
 [`test/licence-compliance.spec.ts`](../test/licence-compliance.spec.ts) check

@@ -1731,6 +1731,81 @@
         ]
       }
     },
+    "/api/v1/growth/standards": {
+      "get": {
+        "description": "Which WHO/CDC LMS tables are available to score against. Empty until `npm run growth:ingest` has been run; the tables are a draft lane outside the signed bundle.",
+        "operationId": "GrowthController_standards",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List the growth standards currently loaded",
+        "tags": [
+          "growth"
+        ]
+      }
+    },
+    "/api/v1/growth/z-score": {
+      "get": {
+        "description": "Computes a z-score, percentile and WHO classification from LMS parameters. `x` is age in MONTHS, except for the weight-for-length/height standards where it is length/height in CM. Anthropometry only: no patient identity is accepted or stored. Returns `unavailable` with a reason rather than a number when the standard is missing or does not cover the child.",
+        "operationId": "GrowthController_zScore",
+        "parameters": [
+          {
+            "name": "indicator",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sex",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "value",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Score a growth measurement against the WHO standards",
+        "tags": [
+          "growth"
+        ]
+      }
+    },
     "/api/v1/antidotes": {
       "get": {
         "description": "Open antidote reference (paracetamol->NAC, opioid->naloxone, organophosphate->atropine/pralidoxime, iron->desferrioxamine, digoxin->Fab, methanol->fomepizole, beta-blocker->glucagon, CCB->calcium, LAST->lipid emulsion, cyanide->hydroxocobalamin, etc.). Filters: poison, antidote (name or drug slug), q. Returns summaries; fetch mechanism and dosing by slug.",

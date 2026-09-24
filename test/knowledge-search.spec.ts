@@ -52,3 +52,40 @@ describe('KnowledgeSearchService', () => {
     expect(svc.search('in', 5).length).toBeLessThanOrEqual(5);
   });
 });
+
+/**
+ * Parity with the on-device retriever (vedamd-mobile SEARCH_DOMAINS): the
+ * cloud assistant must ground a chat answer on the same corpus the phone
+ * does. drug-interactions and renal-dose were absent here, so an
+ * interaction or renal-dosing question grounded offline but not in the
+ * cloud chat.
+ */
+describe('KnowledgeSearchService — interaction + renal coverage', () => {
+  const svc = makeService();
+
+  it('searches the drug-interactions domain', () => {
+    const hits = svc.search('warfarin');
+    const ddi = hits.find((h) => h.domain === 'drug-interactions');
+    expect(ddi).toBeDefined();
+    expect(ddi!.slug).toContain('__');
+    expect(ddi!.route).toBe('/app/drug-interactions');
+  });
+
+  it('round-trips a pair-keyed interaction slug back to its record', () => {
+    const ddi = svc.search('warfarin').find((h) => h.domain === 'drug-interactions')!;
+    const rec = svc.getRecord('drug-interactions', ddi.slug);
+    expect(rec).not.toBeNull();
+    expect(rec!.severity).toBeTruthy();
+    expect(rec!.management).toBeTruthy();
+  });
+
+  it('searches the renal-dose domain and resolves the record', () => {
+    const hits = svc.search('metformin');
+    const renal = hits.find((h) => h.domain === 'renal-dose');
+    expect(renal).toBeDefined();
+    expect(renal!.route).toBe('/app/renal-dose');
+    const rec = svc.getRecord('renal-dose', renal!.slug);
+    expect(rec).not.toBeNull();
+    expect(rec!.guidance).toBeTruthy();
+  });
+});

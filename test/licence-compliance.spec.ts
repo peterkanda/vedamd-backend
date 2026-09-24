@@ -95,8 +95,11 @@ function sourceForUrl(url: string): Source | null {
   } catch {
     return null;
   }
-  for (const [key, src] of hostIndex) {
-    if (key.includes('/') && hostPath.startsWith(key)) return src;
+  const prefixes = [...hostIndex.keys()]
+    .filter((k) => k.includes('/'))
+    .sort((a, b) => b.length - a.length);
+  for (const key of prefixes) {
+    if (hostPath.startsWith(key)) return hostIndex.get(key) ?? null;
   }
   let candidate = host;
   while (candidate.includes('.')) {

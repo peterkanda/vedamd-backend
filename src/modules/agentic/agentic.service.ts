@@ -158,6 +158,10 @@ export class AgenticService {
             user: buildUserMessage(ctx, knowledge, policyMatches),
             maxTokens: 2048,
             temperature: 0.1,
+            // The reasoner's contract is a single JSON object of cards, so
+            // let providers that can constrain decoding do it at the source
+            // rather than leaving the extractor to unpick a fenced blob.
+            responseFormat: 'json',
             // Clinical reasoning may only come from a model the operator has
             // declared fit for it. If none can answer, the catch below returns
             // the deterministic cards — which is the safe degradation, unlike
@@ -196,8 +200,12 @@ export class AgenticService {
         // The prose around the cards, never the cards themselves. When every
         // card the model proposed was withheld, the prose goes too: it tends
         // to restate the same unverified dose.
-        narrative =
-          rejectedCardCount > 0 && agenticCards.length === 0
+        // A cut-off reply is a fragment, not an answer: say so plainly rather
+        // than showing half a sentence as an "AI-assisted overview"; any card
+        // the extractor could still salvage is shown as normal.
+        narrative = result.truncated
+          ? 'The AI overview was cut short before it finished. Any recommendations below were recovered from the partial answer; re-ask the question for a complete overview.'
+          : rejectedCardCount > 0 && agenticCards.length === 0
             ? undefined
             : stripJsonFromNarrative(result.text);
         this.log.info('agentic_evaluated', {

@@ -1,0 +1,72 @@
+{
+  "description": "Where npm run growth:ingest fetches LMS parameter tables from. CDC is listed first for every indicator it publishes: CDC's files are US public domain (registry source cdc-growth-charts, embeddable: yes), including its distributions of the WHO standards, which sidesteps the licence question still open on the WHO originals (registry source who-child-growth-standards, embeddable: verify). Swap `preferred` to \"who\" per indicator once that verdict is settled.",
+  "updated": "2026-09-21",
+  "verified": false,
+  "verificationNote": "URLs have NOT been fetched and confirmed — outbound access to cdc.gov and cdn.who.int is blocked from the environment these were written in. Run the ingest with --dry-run first; it reports every URL that does not resolve to a parseable table instead of writing a partial standard.",
+  "indicators": [
+    {
+      "indicator": "wfa",
+      "title": "Weight-for-age",
+      "xUnit": "months",
+      "xRange": [0, 60],
+      "preferred": "cdc",
+      "sources": {
+        "cdc": {
+          "male": "https://www.cdc.gov/growthcharts/data/who/wtageinf-b-lms.csv",
+          "female": "https://www.cdc.gov/growthcharts/data/who/wtageinf-g-lms.csv"
+        },
+        "who": {
+          "male": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-age/expandable-tables/wfa-boys-zscore-expanded-tables.xlsx",
+          "female": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-age/expandable-tables/wfa-girls-zscore-expanded-tables.xlsx"
+        }
+      }
+    },
+    {
+      "indicator": "lhfa",
+      "title": "Length/height-for-age",
+      "xUnit": "months",
+      "xRange": [0, 60],
+      "preferred": "cdc",
+      "sources": {
+        "cdc": {
+          "male": "https://www.cdc.gov/growthcharts/data/who/lenageinf-b-lms.csv",
+          "female": "https://www.cdc.gov/growthcharts/data/who/lenageinf-g-lms.csv"
+        },
+        "who": {
+          "male": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/length-height-for-age/expandable-tables/lhfa-boys-zscore-expanded-tables.xlsx",
+          "female": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/length-height-for-age/expandable-tables/lhfa-girls-zscore-expanded-tables.xlsx"
+        }
+      }
+    },
+    {
+      "indicator": "wfl",
+      "title": "Weight-for-length",
+      "xUnit": "cm",
+      "xRange": [45, 110],
+      "preferred": "cdc",
+      "sources": {
+        "cdc": {
+          "male": "https://www.cdc.gov/growthcharts/data/who/wtleninf-b-lms.csv",
+          "female": "https://www.cdc.gov/growthcharts/data/who/wtleninf-g-lms.csv"
+        },
+        "who": {
+          "male": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-length-height/expanded-tables/wfl-boys-zscore-expanded-table.xlsx",
+          "female": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/weight-for-length-height/expanded-tables/wfl-girls-zscore-expanded-table.xlsx"
+        }
+      }
+    },
+    {
+      "indicator": "bfa",
+      "title": "BMI-for-age",
+      "xUnit": "months",
+      "xRange": [0, 60],
+      "preferred": "who",
+      "sources": {
+        "who": {
+          "male": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/body-mass-index-for-age/expanded-tables/bfa-boys-zscore-expanded-tables.xlsx",
+          "female": "https://cdn.who.int/media/docs/default-source/child-growth/child-growth-standards/indicators/body-mass-index-for-age/expanded-tables/bfa-girls-zscore-expanded-tables.xlsx"
+        }
+      }
+    }
+  ]
+}

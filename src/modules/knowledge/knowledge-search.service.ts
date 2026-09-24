@@ -38,6 +38,13 @@ export interface KnowledgeSearchHit {
 interface DomainSpec {
   domain: string;
   records: () => unknown[];
+  /**
+   * Stable identifier for a record. Defaults to the record's own `slug`.
+   * Domains whose records carry no `slug` (drug-interactions is keyed by the
+   * pair `slugA`/`slugB`) supply a synthetic one here; `search` and
+   * `getRecord` both go through this accessor so the id round-trips.
+   */
+  slug?: (r: Record<string, unknown>) => string;
   /** Build the frontend route for a record (by slug). */
   route: (slug: string) => string;
   /** Pull the primary title from a record. */
@@ -119,6 +126,25 @@ export class KnowledgeSearchService {
         route: () => `/app/pregnancy-lactation`,
         title: (r) => str(r.drug) || str(r.title),
         snippet: (r) => str(r.oneLiner),
+      },
+      {
+        // Keyed by the drug PAIR, not a slug — the synthetic `slugA__slugB` id
+        // is what getRecord resolves back to the record for grounding.
+        domain: 'drug-interactions',
+        records: () => k.getInteractions() as unknown[],
+        route: () => `/app/drug-interactions`,
+        slug: (r) => `${str(r.slugA)}__${str(r.slugB)}`,
+        title: (r) => `${str(r.slugA)} + ${str(r.slugB)}`,
+        snippet: (r) => str(r.severity),
+        haystack: (r) => [str(r.slugA), str(r.slugB), str(r.severity)],
+      },
+      {
+        domain: 'renal-dose',
+        records: () => k.getRenalDose() as unknown[],
+        route: () => `/app/renal-dose`,
+        title: (r) => str(r.drug) || str(r.title),
+        snippet: (r) => str(r.oneLiner),
+        haystack: (r) => [str(r.drugSlug)],
       },
       {
         domain: 'hepatic-dose',
@@ -279,9 +305,9 @@ export class KnowledgeSearchService {
       return null;
     }
     for (const raw of records) {
-      if (raw && typeof raw === 'object' && (raw as Record<string, unknown>).slug === slug) {
-        return raw as Record<string, unknown>;
-      }
+      if (!raw || typeof raw !== 'object') continue;
+      const r = raw as Record<string, unknown>;
+      if (slugOf(spec, r) === slug) return r;
     }
     return null;
   }
@@ -307,7 +333,7 @@ export class KnowledgeSearchService {
         if (count >= perDomainCap) break;
         if (!raw || typeof raw !== 'object') continue;
         const r = raw as Record<string, unknown>;
-        const slug = typeof r.slug === 'string' ? r.slug : '';
+        const slug = slugOf(spec, r);
         const title = spec.title(r);
         const extra = spec.haystack ? spec.haystack(r) : [];
 
@@ -336,6 +362,12 @@ export class KnowledgeSearchService {
     scored.sort((a, b) => b.score - a.score);
     return scored.slice(0, limit).map((s) => s.hit);
   }
+}
+
+/** A record's stable id: the spec's accessor, else its own `slug`. */
+function slugOf(spec: DomainSpec, r: Record<string, unknown>): string {
+  if (spec.slug) return spec.slug(r);
+  return typeof r.slug === 'string' ? r.slug : '';
 }
 
 /** Lowercased word set from a string (split on non-alphanumeric). */

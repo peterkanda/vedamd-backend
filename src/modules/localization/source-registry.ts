@@ -164,9 +164,12 @@ export function sourceForUrl(
   } catch {
     return null;
   }
-  // A registered path prefix beats any host match.
-  for (const [key, src] of index) {
-    if (key.includes('/') && hostPath.startsWith(key)) return src;
+  // A registered path prefix beats any host match; the longest one wins.
+  const prefixes = [...index.keys()]
+    .filter((k) => k.includes('/'))
+    .sort((a, b) => b.length - a.length);
+  for (const key of prefixes) {
+    if (hostPath.startsWith(key)) return index.get(key) ?? null;
   }
   // Exact, then progressively strip subdomain labels (a.b.c → b.c → c).
   let candidate = host;

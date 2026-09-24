@@ -33,13 +33,21 @@ const enforce = process.argv.includes('--enforce');
 const registry = JSON.parse(fs.readFileSync(REGISTRY, 'utf8'));
 
 // Host → source index (lower-cased). Longest suffix wins via the strip loop.
-// `urlPrefixes` (host + path, keys containing '/') win over any host match.
+//
+// A host is not a licence. NCBI Bookshelf serves StatPearls (CC BY-NC-ND)
+// from the same hostname as LactMed and LiverTox, which are US government
+// works in the public domain, so matching on host alone filed public-domain
+// citations under a cite-only verdict. A source may therefore also claim
+// `urlPrefixes` (host + path, no scheme or `www.`); the longest matching
+// prefix wins over any host match.
 // Mirrors sourceForUrl in src/modules/localization/source-registry.ts.
 const hostIndex = new Map();
+const prefixes = [];
 for (const src of registry.sources) {
   for (const host of src.hosts || []) hostIndex.set(host.toLowerCase(), src);
-  for (const prefix of src.urlPrefixes || []) hostIndex.set(prefix.toLowerCase(), src);
+  for (const prefix of src.urlPrefixes || []) prefixes.push({ prefix: prefix.toLowerCase(), src });
 }
+prefixes.sort((a, b) => b.prefix.length - a.prefix.length);
 
 function sourceForUrl(url) {
   let host;
@@ -51,8 +59,8 @@ function sourceForUrl(url) {
   } catch {
     return null;
   }
-  for (const [key, src] of hostIndex) {
-    if (key.includes('/') && hostPath.startsWith(key)) return src;
+  for (const { prefix, src } of prefixes) {
+    if (hostPath.startsWith(prefix)) return src;
   }
   let candidate = host;
   while (candidate.includes('.')) {

@@ -82,13 +82,46 @@ const DOMAIN_FIELDS: Record<string, FieldSpec> = {
   },
 };
 
+/**
+ * Fields with no clinical meaning for a reader: identity, provenance, codings
+ * and internal cross-links. Codings crowd real content out of the per-record
+ * budget, and the model reasons over prose, not code systems. Everything else
+ * is offered, so a new field or domain is grounded by default.
+ */
 const META = new Set([
+  // Identity + provenance
   'slug',
   'references',
+  'citations',
   'ruleVersion',
   'reviewStatus',
+  'reviewers',
+  'approvedAt',
+  'lastReviewed',
   'evidenceLevel',
+  'retrievedAt',
   'domains',
+  // Codings
+  'icd10',
+  'icd11',
+  'snomed',
+  'loinc',
+  'rxnorm',
+  'atc',
+  'setId',
+  'splVersion',
+  'rxcuiIngredients',
+  'applicationNumbers',
+  // Internal cross-links; the prose names the drug already.
+  'drugSlug',
+  'drugSlugs',
+  'conditionSlug',
+  'antidoteSlug',
+  'antidoteDrugSlug',
+  'anticoagulantDrugSlug',
+  'vaccineDrugSlug',
+  'drugASlug',
+  'drugBSlug',
 ]);
 const ABRIDGED_NOTE = 'in the VedaMD record but not shown here; do not treat as absent';
 

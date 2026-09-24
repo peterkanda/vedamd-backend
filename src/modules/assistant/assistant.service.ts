@@ -14,6 +14,7 @@ import {
   type PlacedRecord,
 } from '../knowledge/grounding/coverage';
 import { summarizeRecord } from '../knowledge/grounding/record-summary';
+import { populationNote } from '../reference-ranges/reference-ranges.types';
 
 export interface AssistantChatRequest {
   question: string;
@@ -172,6 +173,21 @@ const NON_EVIDENCE_WORDS = new Set([
   'therapeutic',
 ]);
 
+/**
+ * Add the qualification a record implies but does not state, so the model
+ * cannot answer past it.
+ *
+ * Every reference range in the v0.1 bundle is an adult interval and not one
+ * of the 321 records says so — none carries an age band at all. Grounded on
+ * the bare numbers, a question about a child gets an adult interval quoted
+ * back with a VedaMD citation attached and nothing to signal it does not
+ * apply. The note goes first so the per-record budget can never drop it.
+ */
+export function annotate(domain: string, rec: Record<string, unknown>): Record<string, unknown> {
+  if (domain !== 'reference-ranges') return rec;
+  return { appliesTo: populationNote(rec as Parameters<typeof populationNote>[0]), ...rec };
+}
+
 @Injectable()
 export class AssistantService {
   constructor(
@@ -302,7 +318,7 @@ export class AssistantService {
       const header = `[${c.domain}/${c.slug}] ${c.title}\n`;
       const budget = Math.min(PER_RECORD_CHARS, TOTAL_GROUNDING_CHARS - used - header.length);
       if (budget < MIN_RECORD_CHARS) break;
-      const summary = summarizeRecord(c.rec, c.domain, { budget, topics });
+      const summary = summarizeRecord(annotate(c.domain, c.rec), c.domain, { budget, topics });
       blocks.push(header + summary.text);
       used += header.length + summary.text.length;
       placed.push({ record: c.rec, text: summary.text });
