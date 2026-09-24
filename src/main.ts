@@ -81,6 +81,9 @@ async function bootstrap() {
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['authorization', 'content-type', 'x-integrator-id', 'x-request-id'],
+    // Let browsers reuse a preflight instead of sending one before every
+    // authenticated call (browsers cap this: Chrome at 2 h, Firefox at 24 h).
+    maxAge: 86_400,
   });
 
   app.useGlobalPipes(

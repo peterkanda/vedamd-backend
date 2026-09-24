@@ -30,6 +30,20 @@ export interface ApiKeyRecord {
   revokedAt?: string;
 }
 
+/**
+ * How long a database lookup of a bearer key is reused. Every API-key request
+ * used to wait on a SELECT against the (cross-region) database. A revoke
+ * through this service drops the cached entry at once; a key revoked some
+ * other way (SQL console, another instance) stops working within this window.
+ */
+const KEY_LOOKUP_TTL_MS = 60_000;
+/** Unknown keys are remembered for less time, so garbage can't pin memory for long. */
+const UNKNOWN_KEY_TTL_MS = 10_000;
+/** Cap on remembered lookups; the oldest is dropped first. */
+const MAX_CACHED_LOOKUPS = 5_000;
+/** `last_used_at` is written at most this often per key. */
+const LAST_USED_WRITE_INTERVAL_MS = 60_000;
+
 export interface ApiKeyCreatedOnce extends ApiKeyRecord {
   /** Shown once at creation; never stored. */
   secret: string;
@@ -51,6 +65,10 @@ export class ApiKeysService {
   private readonly nestLogger = new Logger(ApiKeysService.name);
   private readonly memoryById = new Map<string, ApiKeyRecord>();
   private readonly memoryByFingerprint = new Map<string, ApiKeyRecord>();
+  /** Database lookups by fingerprint (see KEY_LOOKUP_TTL_MS). */
+  private readonly lookups = new Map<string, { record: ApiKeyRecord | null; expires: number }>();
+  /** When `last_used_at` was last written, by key id. */
+  private readonly lastUsedWrites = new Map<string, number>();
 
   constructor(
     private readonly config: ConfigService<AppConfig, true>,
@@ -159,6 +177,7 @@ export class ApiKeysService {
         .set({ revokedAt })
         .where(and(eq(apiKeys.id, id), eq(apiKeys.integratorId, integratorId)))
         .returning();
+      if (rows[0]) this.lookups.delete(rows[0].fingerprint);
       return rows[0] ? rowToRecord(rows[0]) : null;
     }
     const k = this.memoryById.get(id);
@@ -182,12 +201,7 @@ export class ApiKeysService {
 
     let candidate: ApiKeyRecord | undefined;
     if (this.db) {
-      const rows = await this.db
-        .select()
-        .from(apiKeys)
-        .where(and(eq(apiKeys.fingerprint, fingerprint), isNull(apiKeys.revokedAt)))
-        .limit(1);
-      candidate = rows[0] ? rowToRecord(rows[0]) : undefined;
+      candidate = (await this.lookupActive(fingerprint)) ?? undefined;
     } else {
       const k = this.memoryByFingerprint.get(fingerprint);
       candidate = k && !k.revokedAt ? k : undefined;
@@ -200,10 +214,42 @@ export class ApiKeysService {
     return candidate;
   }
 
-  /** Record usage. Best-effort; failure is logged but not surfaced. */
+  /** The active (unrevoked) key with this fingerprint, from cache or the database. */
+  private async lookupActive(fingerprint: string): Promise<ApiKeyRecord | null> {
+    const now = Date.now();
+    const cached = this.lookups.get(fingerprint);
+    if (cached && cached.expires > now) return cached.record;
+
+    const rows = await this.db!.select()
+      .from(apiKeys)
+      .where(and(eq(apiKeys.fingerprint, fingerprint), isNull(apiKeys.revokedAt)))
+      .limit(1);
+    const record = rows[0] ? rowToRecord(rows[0]) : null;
+
+    this.lookups.delete(fingerprint);
+    if (this.lookups.size >= MAX_CACHED_LOOKUPS) {
+      this.lookups.delete(this.lookups.keys().next().value!);
+    }
+    this.lookups.set(fingerprint, {
+      record,
+      expires: now + (record ? KEY_LOOKUP_TTL_MS : UNKNOWN_KEY_TTL_MS),
+    });
+    return record;
+  }
+
+  /**
+   * Record usage. Best-effort; failure is logged but not surfaced. With a
+   * database, writes at most once per LAST_USED_WRITE_INTERVAL_MS per key —
+   * an UPDATE on every request cost a pool connection for a timestamp that
+   * only needs minute precision.
+   */
   async recordUsage(id: string, when: Date = new Date()): Promise<void> {
     try {
       if (this.db) {
+        const last = this.lastUsedWrites.get(id);
+        if (last !== undefined && when.getTime() - last < LAST_USED_WRITE_INTERVAL_MS) return;
+        if (this.lastUsedWrites.size >= MAX_CACHED_LOOKUPS) this.lastUsedWrites.clear();
+        this.lastUsedWrites.set(id, when.getTime());
         await this.db.update(apiKeys).set({ lastUsedAt: when }).where(eq(apiKeys.id, id));
         return;
       }

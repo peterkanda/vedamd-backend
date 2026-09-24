@@ -76,6 +76,11 @@ services:
   # on-device MedGemma. AGENTIC_ANTHROPIC_MODEL pins a valid model id.
   - { key: AGENTIC_PROVIDER, value: openai, scope: RUN_TIME }
   - { key: AGENTIC_OPENAI_MODEL, value: "gpt-6-astra", scope: RUN_TIME }
+  # At the model's default effort a clinical question took over 5 minutes —
+  # past the 90 s LLM timeout, so every answer fell back to deterministic
+  # cards only. Medium took ~11 s. Set on the live app on 2026-09-24; kept
+  # here so re-applying this spec doesn't drop it.
+  - { key: AGENTIC_OPENAI_REASONING_EFFORT, value: medium, scope: RUN_TIME }
   - { key: MEDICAL_MODEL_IDS, value: "gpt-6-astra,google/medgemma-27b-text-it", scope: RUN_TIME }
   - { key: AGENTIC_GEMINI_MODEL, value: "gemini-2.5-flash", scope: RUN_TIME }
   - { key: AGENTIC_ANTHROPIC_MODEL, value: "claude-sonnet-5", scope: RUN_TIME }
