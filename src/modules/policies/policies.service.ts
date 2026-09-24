@@ -3,6 +3,7 @@ import { randomUUID } from 'node:crypto';
 import { and, desc, eq } from 'drizzle-orm';
 import { DRIZZLE, type MaybeDrizzle } from '../../db/database.module';
 import { policies as policiesTable } from '../../db/schema';
+import { CacheService } from '../../common/cache';
 import type {
   Policy,
   PolicyCreateDto,
@@ -17,6 +18,13 @@ interface RelevanceSignals {
   diagnoses?: string[];
   allergies?: string[];
 }
+
+/**
+ * Every agentic evaluation reads the integrator's policies; they change only
+ * through create/remove below, which clear the cache.
+ */
+const POLICY_CACHE_PREFIX = 'policies';
+const POLICY_CACHE_TTL_S = 60;
 
 /**
  * Per-integrator policy store.
@@ -37,7 +45,10 @@ export class PoliciesService implements OnModuleInit {
   private readonly nestLogger = new Logger(PoliciesService.name);
   private readonly memByIntegrator = new Map<string, Policy[]>();
 
-  constructor(@Optional() @Inject(DRIZZLE) private readonly db: MaybeDrizzle = null) {}
+  constructor(
+    @Optional() @Inject(DRIZZLE) private readonly db: MaybeDrizzle = null,
+    @Optional() private readonly cache?: CacheService,
+  ) {}
 
   onModuleInit(): void {
     if (this.db) {
@@ -106,6 +117,7 @@ export class PoliciesService implements OnModuleInit {
         uploadedAt: new Date(uploadedAt),
         uploadedBy: uploadedBy ?? null,
       });
+      await this.forget(integratorId);
     } else {
       const arr = this.memByIntegrator.get(integratorId) ?? [];
       arr.push(policy);
@@ -120,6 +132,7 @@ export class PoliciesService implements OnModuleInit {
         .delete(policiesTable)
         .where(and(eq(policiesTable.integratorId, integratorId), eq(policiesTable.id, id)))
         .returning({ id: policiesTable.id });
+      await this.forget(integratorId);
       return result.length > 0;
     }
     const arr = this.memByIntegrator.get(integratorId) ?? [];
@@ -128,6 +141,11 @@ export class PoliciesService implements OnModuleInit {
     arr.splice(idx, 1);
     this.memByIntegrator.set(integratorId, arr);
     return true;
+  }
+
+  /** Drop the cached policy list after a change, so the next chat sees it. */
+  private async forget(integratorId: string): Promise<void> {
+    await this.cache?.del(this.cache.hashKey(POLICY_CACHE_PREFIX, integratorId));
   }
 
   /**
@@ -147,11 +165,14 @@ export class PoliciesService implements OnModuleInit {
 
     let policies: Policy[] = [];
     if (this.db) {
-      const rows = await this.db
-        .select()
-        .from(policiesTable)
-        .where(eq(policiesTable.integratorId, integratorId));
-      policies = rows.map(rowToPolicy);
+      const db = this.db;
+      const load = async () =>
+        (
+          await db.select().from(policiesTable).where(eq(policiesTable.integratorId, integratorId))
+        ).map(rowToPolicy);
+      policies = this.cache
+        ? await this.cache.memoize(POLICY_CACHE_PREFIX, integratorId, POLICY_CACHE_TTL_S, load)
+        : await load();
     } else {
       policies = this.memByIntegrator.get(integratorId) ?? [];
     }

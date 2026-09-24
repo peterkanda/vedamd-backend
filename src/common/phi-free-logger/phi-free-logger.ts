@@ -70,6 +70,11 @@ export const ALLOWED_FIELDS = new Set<string>([
   // agentic engine (counts + config ids only — never PHI)
   'agentic_card_count',
   'deterministic_card_count',
+  // per-step timings of an agentic evaluation (milliseconds only)
+  'deterministic_ms',
+  'retrieval_ms',
+  'context_lookup_ms',
+  'llm_ms',
   'batch_item_count',
   'batch_evaluated',
   'batch_errored',

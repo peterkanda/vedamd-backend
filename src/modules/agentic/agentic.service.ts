@@ -40,6 +40,32 @@ import { labelUnreviewed } from '../cds/cds.service';
  *
  * STATELESS: nothing here is logged with PHI, cached, or persisted.
  */
+/**
+ * Optional callbacks for a caller that shows an evaluation as it happens
+ * (the streaming chat endpoint). They only ever receive verified content:
+ * the deterministic engine's cards and retrieval counts. LLM output is
+ * delivered only in the final response, after citation checks.
+ */
+export interface EvaluationProgress {
+  onDeterministic?(cards: CdsCard[]): void;
+  onRetrieval?(found: {
+    drugs: number;
+    conditions: number;
+    interactions: number;
+    procedures: number;
+    rules: number;
+  }): void;
+}
+
+/** A progress callback must never break the evaluation it reports on. */
+function notify(fn: () => void): void {
+  try {
+    fn();
+  } catch {
+    // The listener's problem (e.g. a closed stream), not the evaluation's.
+  }
+}
+
 /** Rule id the card extractor stamps on every LLM card; feedback rolls up under it. */
 const AGENTIC_RULE_ID = 'agentic-reasoner';
 /** Service id recorded for LLM cards — they are not served by a CDS Hooks service. */
@@ -61,21 +87,32 @@ export class AgenticService {
     @Optional() private readonly llmPrefs?: LlmPreferenceService,
   ) {}
 
-  async evaluate(ctx: AgenticClinicalContext): Promise<AgenticEvaluationResponse> {
+  async evaluate(
+    ctx: AgenticClinicalContext,
+    progress?: EvaluationProgress,
+  ): Promise<AgenticEvaluationResponse> {
     const started = Date.now();
+    // Milliseconds. `deterministic` and `contextLookup` run from the start of
+    // the request (they overlap); `contextLookup` ends when the deterministic
+    // engine and the policy / custom-rule lookups have all finished.
+    const timings = { deterministic: 0, retrieval: 0, contextLookup: 0, llm: 0 };
+
+    // Steps 1, 2b and 2c don't depend on each other, and 2b/2c are database
+    // round trips: start all three together, and run retrieval (CPU only)
+    // while they are in flight.
 
     // --- 1. Deterministic safety floor ---
-    const { cards: deterministicCards, strategies } = await this.runDeterministic(ctx);
-
-    // --- 2. Retrieval ---
-    const knowledge = this.retriever.retrieve(ctx);
-    const bundleRecordsConsidered = this.retriever.totalRecords();
+    const deterministicRun = this.runDeterministic(ctx).then((result) => {
+      timings.deterministic = Date.now() - started;
+      notify(() => progress?.onDeterministic?.(result.cards));
+      return result;
+    });
 
     // --- 2b. Policy retrieval (per-integrator standards / SOPs) ---
-    let policyMatches: PolicyMatch[] = [];
-    if (this.policies && ctx.integratorId) {
+    const policyLookup = (async (): Promise<PolicyMatch[]> => {
+      if (!this.policies || !ctx.integratorId) return [];
       try {
-        policyMatches = await this.policies.findRelevant(ctx.integratorId, {
+        return await this.policies.findRelevant(ctx.integratorId, {
           question: ctx.question,
           medications: ctx.medications,
           diagnoses: ctx.diagnoses,
@@ -85,14 +122,15 @@ export class AgenticService {
         this.log.warn('policies_lookup_failed', {
           error_category: err instanceof Error ? err.name : 'unknown',
         });
+        return [];
       }
-    }
+    })();
 
     // --- 2c. Custom CDS rules (per-integrator, developer-defined) ---
-    let customMatches: CustomRuleEvaluation[] = [];
-    if (this.customRules && ctx.integratorId) {
+    const customRuleLookup = (async (): Promise<CustomRuleEvaluation[]> => {
+      if (!this.customRules || !ctx.integratorId) return [];
       try {
-        customMatches = await this.customRules.evaluate(ctx.integratorId, {
+        return await this.customRules.evaluate(ctx.integratorId, {
           hook: ctx.hook,
           medications: ctx.medications,
           diagnoses: ctx.diagnoses,
@@ -110,8 +148,28 @@ export class AgenticService {
         this.log.warn('custom_rules_lookup_failed', {
           error_category: err instanceof Error ? err.name : 'unknown',
         });
+        return [];
       }
-    }
+    })();
+
+    // --- 2. Retrieval ---
+    const retrievalStarted = Date.now();
+    const knowledge = this.retriever.retrieve(ctx);
+    const bundleRecordsConsidered = this.retriever.totalRecords();
+    timings.retrieval = Date.now() - retrievalStarted;
+    notify(() =>
+      progress?.onRetrieval?.({
+        drugs: knowledge.drugs.length,
+        conditions: knowledge.conditions.length,
+        interactions: knowledge.interactions.length,
+        procedures: knowledge.procedures.length,
+        rules: knowledge.rules.length,
+      }),
+    );
+
+    const [{ cards: deterministicCards, strategies }, policyMatches, customMatches] =
+      await Promise.all([deterministicRun, policyLookup, customRuleLookup]);
+    timings.contextLookup = Date.now() - started;
     const customCards = customMatches.map((m) => m.card);
 
     // --- 3. Agentic layer (graceful degrade if unconfigured) ---
@@ -152,6 +210,7 @@ export class AgenticService {
           ctx.integratorId && this.llmPrefs
             ? (this.llmPrefs.get(ctx.integratorId).provider ?? undefined)
             : undefined;
+        const llmStarted = Date.now();
         const result = await this.router.complete(
           {
             system: CLINICAL_REASONER_SYSTEM,
@@ -170,6 +229,7 @@ export class AgenticService {
           },
           { preferredProvider: preferred },
         );
+        timings.llm = Date.now() - llmStarted;
         agenticInvoked = true;
         llmModel = result.model;
         llmProvider = result.provider;
@@ -241,6 +301,14 @@ export class AgenticService {
         );
       }
     }
+
+    this.log.info('agentic_timings', {
+      deterministic_ms: timings.deterministic,
+      retrieval_ms: timings.retrieval,
+      context_lookup_ms: timings.contextLookup,
+      llm_ms: timings.llm,
+      latency_ms: Date.now() - started,
+    });
 
     // --- 4. Merge (deterministic + custom rules never dropped;
     //          agentic cards deduped against either) ---

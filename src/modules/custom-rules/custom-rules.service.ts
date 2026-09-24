@@ -3,6 +3,7 @@ import { randomUUID } from 'node:crypto';
 import { and, desc, eq } from 'drizzle-orm';
 import { DRIZZLE, type MaybeDrizzle } from '../../db/database.module';
 import { customRules as customRulesTable } from '../../db/schema';
+import { CacheService } from '../../common/cache';
 import type {
   CustomRule,
   CustomRuleCreateDto,
@@ -26,6 +27,13 @@ interface EvaluationSignals {
 }
 
 /**
+ * Every agentic evaluation reads the integrator's enabled rules; they change
+ * only through create/update/remove below, which clear the cache.
+ */
+const RULE_CACHE_PREFIX = 'custom-rules:enabled';
+const RULE_CACHE_TTL_S = 60;
+
+/**
  * Per-integrator custom CDS rule store + matcher.
  *
  * Storage backend:
@@ -41,7 +49,10 @@ export class CustomRulesService implements OnModuleInit {
   private readonly nestLogger = new Logger(CustomRulesService.name);
   private readonly memByIntegrator = new Map<string, CustomRule[]>();
 
-  constructor(@Optional() @Inject(DRIZZLE) private readonly db: MaybeDrizzle = null) {}
+  constructor(
+    @Optional() @Inject(DRIZZLE) private readonly db: MaybeDrizzle = null,
+    @Optional() private readonly cache?: CacheService,
+  ) {}
 
   onModuleInit(): void {
     if (this.db) {
@@ -114,6 +125,7 @@ export class CustomRulesService implements OnModuleInit {
         updatedAt: now,
         createdBy: createdBy ?? null,
       });
+      await this.forget(integratorId);
     } else {
       const arr = this.memByIntegrator.get(integratorId) ?? [];
       arr.push(record);
@@ -153,6 +165,7 @@ export class CustomRulesService implements OnModuleInit {
           updatedAt: new Date(merged.updatedAt),
         })
         .where(and(eq(customRulesTable.integratorId, integratorId), eq(customRulesTable.id, id)));
+      await this.forget(integratorId);
     } else {
       const arr = this.memByIntegrator.get(integratorId) ?? [];
       const idx = arr.findIndex((r) => r.id === id);
@@ -167,6 +180,7 @@ export class CustomRulesService implements OnModuleInit {
         .delete(customRulesTable)
         .where(and(eq(customRulesTable.integratorId, integratorId), eq(customRulesTable.id, id)))
         .returning();
+      await this.forget(integratorId);
       return rows.length > 0;
     }
     const arr = this.memByIntegrator.get(integratorId) ?? [];
@@ -174,6 +188,11 @@ export class CustomRulesService implements OnModuleInit {
     if (idx < 0) return false;
     arr.splice(idx, 1);
     return true;
+  }
+
+  /** Drop the cached enabled-rule list after a change, so the next evaluation sees it. */
+  private async forget(integratorId: string): Promise<void> {
+    await this.cache?.del(this.cache.hashKey(RULE_CACHE_PREFIX, integratorId));
   }
 
   /**
@@ -190,16 +209,22 @@ export class CustomRulesService implements OnModuleInit {
     let rules: CustomRule[];
     try {
       if (this.db) {
-        const rows = await this.db
-          .select()
-          .from(customRulesTable)
-          .where(
-            and(
-              eq(customRulesTable.integratorId, integratorId),
-              eq(customRulesTable.enabled, true),
-            ),
-          );
-        rules = rows.map(rowToRecord);
+        const db = this.db;
+        const load = async () =>
+          (
+            await db
+              .select()
+              .from(customRulesTable)
+              .where(
+                and(
+                  eq(customRulesTable.integratorId, integratorId),
+                  eq(customRulesTable.enabled, true),
+                ),
+              )
+          ).map(rowToRecord);
+        rules = this.cache
+          ? await this.cache.memoize(RULE_CACHE_PREFIX, integratorId, RULE_CACHE_TTL_S, load)
+          : await load();
       } else {
         rules = (this.memByIntegrator.get(integratorId) ?? []).filter((r) => r.enabled);
       }
