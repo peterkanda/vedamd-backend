@@ -1,4 +1,16 @@
-import { BadRequestException, Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
+import {
+  BadRequestException,
+  Body,
+  Controller,
+  Get,
+  HttpException,
+  Logger,
+  Post,
+  Req,
+  Res,
+  UseGuards,
+} from '@nestjs/common';
+import type { FastifyReply } from 'fastify';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AgenticService } from './agentic.service';
 import { SqlIngestionService } from './connectors/sql-ingestion.service';
@@ -57,6 +69,8 @@ function auditStash(res: AgenticEvaluationResponse, hook?: string): ClinicalAudi
 @ApiTags('agentic')
 @Controller('v1/agentic')
 export class AgenticController {
+  private readonly nestLogger = new Logger(AgenticController.name);
+
   constructor(
     private readonly agentic: AgenticService,
     private readonly sql: SqlIngestionService,
@@ -105,6 +119,70 @@ export class AgenticController {
       return res;
     } catch (err) {
       throw mapConfigError(err);
+    }
+  }
+
+  @Post('evaluate/stream')
+  @UseGuards(ApiKeyGuard)
+  @RequireScope('cds:evaluate')
+  @ApiBearerAuth()
+  @ApiOperation({
+    summary: 'Agentic CDS evaluation, streamed as it progresses (Server-Sent Events)',
+    description:
+      'Same input and final result as POST /evaluate, delivered as text/event-stream so a client can show verified content while the model is still working. Events: `deterministic` ({ cards } from the rule engine) and `retrieval` (counts of records found), in either order as each finishes, then last `final` (the full AgenticEvaluationResponse, after citation checks) or `error` ({ status, message }). LLM output only ever arrives in `final`. Comment lines (": ping") keep the connection open.',
+  })
+  async evaluateStream(
+    @Body() dto: AgenticEvaluateDto,
+    @Req() req: { apiKey?: { integratorId?: string } } & AuditableRequest,
+    @Res() reply: FastifyReply,
+  ): Promise<void> {
+    // Headers other hooks set on the reply (CORS, security, rate limit) live
+    // on `reply`, not on the raw response we write to directly.
+    reply.hijack();
+    const raw = reply.raw;
+    raw.writeHead(200, {
+      ...(reply.getHeaders() as Record<string, string>),
+      'content-type': 'text/event-stream; charset=utf-8',
+      'cache-control': 'no-cache, no-transform',
+      // Ask proxies not to hold events back until the response ends.
+      'x-accel-buffering': 'no',
+    });
+
+    // A client that goes away stops the writes, not the evaluation: it runs
+    // to the end so the audit trail still records what was answered.
+    let open = true;
+    raw.on('close', () => {
+      open = false;
+    });
+    const send = (event: string, data: unknown) => {
+      if (open) raw.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
+    };
+    const ping = setInterval(() => open && raw.write(': ping\n\n'), 15_000);
+
+    try {
+      const res = await this.agentic.evaluate(
+        { ...dto, integratorId: req.apiKey?.integratorId },
+        {
+          onDeterministic: (cards) => send('deterministic', { cards }),
+          onRetrieval: (found) => send('retrieval', found),
+        },
+      );
+      stashClinicalAudit(req, auditStash(res, dto.hook));
+      send('final', res);
+    } catch (err) {
+      const mapped = mapConfigError(err);
+      const status = mapped instanceof HttpException ? mapped.getStatus() : 500;
+      // What Nest's exception handler would log for /evaluate.
+      if (status >= 500) this.nestLogger.error(err instanceof Error ? err.stack : String(err));
+      // Recorded by the usage log; the client already has a 200 status line.
+      raw.statusCode = status;
+      send('error', {
+        status,
+        message: status < 500 ? (mapped as Error).message : 'The evaluation failed.',
+      });
+    } finally {
+      clearInterval(ping);
+      raw.end();
     }
   }
 

@@ -512,6 +512,27 @@
         ]
       }
     },
+    "/api/v1/drugs/slugs": {
+      "get": {
+        "description": "Just the slugs of the drugs list, for clients that only need to know which drug pages exist (e.g. to decide whether to link one).",
+        "operationId": "DrugsController_slugs",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Every drug slug",
+        "tags": [
+          "drugs"
+        ]
+      }
+    },
     "/api/v1/drugs/{slug}": {
       "get": {
         "operationId": "DrugsController_get",
@@ -1059,6 +1080,27 @@
           }
         ],
         "summary": "List condition slugs and titles",
+        "tags": [
+          "conditions"
+        ]
+      }
+    },
+    "/api/v1/conditions/slugs": {
+      "get": {
+        "description": "Just the slugs of the conditions list, for clients that only need to know which condition pages exist (e.g. to decide whether to link one).",
+        "operationId": "ConditionsController_slugs",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Every condition slug",
         "tags": [
           "conditions"
         ]
@@ -2700,6 +2742,27 @@
         ]
       }
     },
+    "/api/v1/catalogue/counts": {
+      "get": {
+        "description": "The number of records each unfiltered list endpoint returns (conditions, drugs, scores, antidotes, …), in one small response.",
+        "operationId": "CatalogueController_counts",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Record count per catalogue domain",
+        "tags": [
+          "catalogue"
+        ]
+      }
+    },
     "/api/v1/clinical-tools": {
       "get": {
         "description": "Single payload powering the /app/tools calculators. Returns paediatric mg/kg dose drugs (paracetamol, ibuprofen, amoxicillin, ceftriaxone, salbutamol, prednisolone, zinc, ORS, cotrimoxazole), the IMCI/APLS vital-sign reference table, and validated scoring systems (NEWS2, qSOFA, Wells PE, CHA₂DS₂-VASc). Calculator math runs client-side; this endpoint ships only the normative reference data.",
@@ -2909,6 +2972,37 @@
           }
         ],
         "summary": "Agentic CDS evaluation from a structured JSON clinical context",
+        "tags": [
+          "agentic"
+        ]
+      }
+    },
+    "/api/v1/agentic/evaluate/stream": {
+      "post": {
+        "description": "Same input and final result as POST /evaluate, delivered as text/event-stream so a client can show verified content while the model is still working. Events: `deterministic` ({ cards } from the rule engine) and `retrieval` (counts of records found), in either order as each finishes, then last `final` (the full AgenticEvaluationResponse, after citation checks) or `error` ({ status, message }). LLM output only ever arrives in `final`. Comment lines (\": ping\") keep the connection open.",
+        "operationId": "AgenticController_evaluateStream",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenticEvaluateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Agentic CDS evaluation, streamed as it progresses (Server-Sent Events)",
         "tags": [
           "agentic"
         ]
