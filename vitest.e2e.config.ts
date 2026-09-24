@@ -19,6 +19,20 @@ export default defineConfig({
     include: ['test/e2e/**/*.e2e-spec.ts'],
     testTimeout: 60_000,
     hookTimeout: 60_000,
+    // These suites run with no external services. ConfigModule loads .env,
+    // which fills in any variable that is *unset* — and a local .env points
+    // at the production database and holds live LLM and email keys. Set them
+    // empty so it can't: an empty URL means in-memory storage, an empty key
+    // means that provider is off.
+    env: {
+      DATABASE_URL: '',
+      REDIS_URL: '',
+      AGENTIC_PROVIDER: '',
+      OPENAI_API_KEY: '',
+      ANTHROPIC_API_KEY: '',
+      GEMINI_API_KEY: '',
+      RESEND_API_KEY: '',
+    },
   },
   plugins: [swc.vite({ module: { type: 'es6' } })],
 });
