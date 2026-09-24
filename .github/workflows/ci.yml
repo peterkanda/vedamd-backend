@@ -42,6 +42,29 @@ jobs:
       # is out of date with the live API surface.
       - run: npm run openapi:check
 
+  secret-scan:
+    # This repository is public. An OpenAI key was committed to .env.example
+    # in May 2026 and sat in history until it was found in a review; this job
+    # fails any push or PR that adds a key, token or private key anywhere in
+    # history. Exceptions live in .gitleaks.toml, each with its reason.
+    name: secret scan (gitleaks)
+    runs-on: ubuntu-latest
+    env:
+      GITLEAKS_VERSION: 8.30.1
+      GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: install gitleaks (pinned + checksum-verified)
+        run: |
+          curl -sSfL -o gitleaks.tgz \
+            "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          echo "${GITLEAKS_SHA256}  gitleaks.tgz" | sha256sum -c -
+          tar -xzf gitleaks.tgz gitleaks
+      - name: scan full history
+        run: ./gitleaks git --config .gitleaks.toml --redact --verbose .
+
   bundle-verify:
     name: content bundle — signature + governance
     runs-on: ubuntu-latest

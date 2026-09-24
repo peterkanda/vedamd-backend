@@ -34,6 +34,8 @@ export interface FhirPatient {
   resourceType?: 'Patient';
   gender?: string;
   birthDate?: string;
+  /** Primitive-element extensions on birthDate (e.g. patient-birthTime). */
+  _birthDate?: { extension?: { url?: string; valueDateTime?: string }[] };
   deceasedBoolean?: boolean;
   extension?: { url?: string; valueCode?: string }[];
 }

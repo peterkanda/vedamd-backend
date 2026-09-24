@@ -3,6 +3,7 @@ import type { CdsRule } from '../../conditions/conditions.types';
 import { DrugsService } from '../../drugs/drugs.service';
 import type { CdsCard, CdsHookRequest } from '../cds.types';
 import type { CdsRuleStrategy } from './types';
+import { extractMedicationSlugs } from './medication-slugs';
 
 /**
  * Pregnancy-safety strategy.
@@ -60,18 +61,4 @@ export class PregnancySafetyStrategy implements CdsRuleStrategy {
 function readPregnant(context: Record<string, unknown>): boolean {
   const v = context.pregnant;
   return v === true;
-}
-
-function extractMedicationSlugs(context: Record<string, unknown>): string[] {
-  const fields = ['medications', 'proposed', 'current', 'draftMedications', 'currentMedications'];
-  const out: string[] = [];
-  for (const f of fields) {
-    const v = context[f];
-    if (Array.isArray(v)) {
-      for (const item of v) {
-        if (typeof item === 'string') out.push(item);
-      }
-    }
-  }
-  return out;
 }

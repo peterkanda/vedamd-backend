@@ -37,18 +37,26 @@ export type CitationSourceType =
 
 /**
  * Reuse/licence status of the cited source. Supports the copyright
- * register: content may freely REPRODUCE `public-domain` / `cc-by`
- * sources, but only CITE (never reproduce/adapt) proprietary or
- * non-commercial-licensed sources. Kenyan government works are
- * copyright-protected with no open licence — `moh-restricted`.
+ * register. VedaMD clinical content is licensed CC BY-NC-SA 4.0
+ * (content/LICENSE), so it may reproduce and adapt `public-domain`, `cc0`,
+ * `cc-by`, `cc-by-nc` and `cc-by-nc-sa` sources; reproduce ND sources only
+ * verbatim; keep share-alike-incompatible sources (`cc-by-sa`, `odbl`) as
+ * separately licensed items; and only CITE proprietary or restricted ones.
+ * The per-source reuse mode lives in content/sources/registry.json.
  * Facts/dosages themselves are not copyrightable; this flags the
  * provenance of the *expression*.
  */
 export type CitationLicence =
-  | 'public-domain' // e.g. US FDA labels (CC0)
-  | 'cc-by' // reproduce + adapt with attribution (e.g. STOPP/START v3)
-  | 'cc-by-nc-sa' // non-commercial + share-alike (e.g. WHO) — cite, don't reproduce commercially
-  | 'cc-by-nc-nd' // non-commercial + no-derivatives (e.g. KDIGO)
+  | 'public-domain' // e.g. US government works
+  | 'cc0' // public-domain dedication (e.g. CPIC, Wikidata, OpenAlex)
+  | 'cc-by' // reproduce + adapt with attribution (e.g. PLOS, WHO eEML)
+  | 'cc-by-sa' // share-alike, commercial allowed (e.g. Wikipedia) — not mergeable into NC-SA
+  | 'cc-by-nc' // non-commercial (e.g. SAMJ)
+  | 'cc-by-nc-sa' // non-commercial + share-alike (e.g. WHO, OpenStax)
+  | 'cc-by-nd' // no-derivatives, commercial allowed (e.g. ICD-11) — verbatim only
+  | 'cc-by-nc-nd' // non-commercial + no-derivatives (e.g. StatPearls) — verbatim only
+  | 'odbl' // Open Database Licence (e.g. OpenStreetMap, healthsites.io)
+  | 'nc-reproduce' // custom "free / not for profit" reproduction terms (some MoH, NGO works)
   | 'open-gov' // open government licence (e.g. NICE UK)
   | 'proprietary' // licence/permission required (BNF, NCCN, ESC, ADA, Merck, UpToDate)
   | 'moh-restricted' // Kenya MoH government work — copyright-protected, no open licence

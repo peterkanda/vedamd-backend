@@ -431,7 +431,7 @@
     },
     "/api/v1/cds/evaluate": {
       "post": {
-        "description": "Accepts a structured patient context and returns recommendations. See FR-007. Requires the cds:evaluate scope.",
+        "description": "Not implemented: returns 501. Use the CDS Hooks services (POST /cds-services/{id}) or POST /api/v1/agentic/evaluate. Requires the cds:evaluate scope.",
         "operationId": "CdsEvaluateController_evaluate",
         "parameters": [],
         "responses": {
@@ -444,7 +444,7 @@
             "bearer": []
           }
         ],
-        "summary": "Non-CDS-Hooks evaluation endpoint",
+        "summary": "Non-CDS-Hooks evaluation endpoint (not implemented)",
         "tags": [
           "cds"
         ]
@@ -4953,7 +4953,9 @@
           "minConfidence": {
             "type": "number",
             "description": "Drop agentic cards with confidence below this threshold (0..1).",
-            "example": 0.6
+            "example": 0.6,
+            "minimum": 0,
+            "maximum": 1
           },
           "patient": {
             "$ref": "#/components/schemas/PatientDto"
@@ -5039,7 +5041,9 @@
           "minConfidence": {
             "type": "number",
             "description": "Drop agentic cards with confidence below this threshold (0..1).",
-            "example": 0.6
+            "example": 0.6,
+            "minimum": 0,
+            "maximum": 1
           },
           "patient": {
             "$ref": "#/components/schemas/PatientDto"
@@ -5146,7 +5150,9 @@
           },
           "minConfidence": {
             "type": "number",
-            "example": 0.6
+            "example": 0.6,
+            "minimum": 0,
+            "maximum": 1
           }
         },
         "required": [
@@ -5190,7 +5196,9 @@
           },
           "minConfidence": {
             "type": "number",
-            "example": 0.6
+            "example": 0.6,
+            "minimum": 0,
+            "maximum": 1
           }
         },
         "required": [

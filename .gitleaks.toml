@@ -1,0 +1,22 @@
+# Secret scanning for this repository (run in CI by the `secret-scan` job).
+# Starts from gitleaks' default rules; the allowlists below are the only
+# exceptions and each one says why.
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = """
+An OpenAI key was committed to .env.example in 9226fab (2026-05-28) and removed \
+in 89f8bbb. OpenAI rejects it (HTTP 401), so it is dead; the history was kept \
+rather than rewritten. Any NEW key anywhere still fails the scan."""
+commits = ["9226fabb524220a15011a0dff3cb80d1a6fd1f25"]
+
+[[allowlists]]
+description = "Placeholder credentials in the integration how-to snippets."
+paths = ['''src/modules/integrations/integrations\.data\.ts''']
+regexes = [
+  '''vmd_(test|live)_(\.{3}|x+)''',  # vmd_test_... / vmd_live_xxxxxxxx
+  '''^\$\{?[A-Z_]+\}?$''',           # $VERADIGM_TOKEN, ${VEDAMD_HOOK_DISCOVERY}
+  '''^admin:Admin123$''',             # OpenMRS reference-application demo login
+]

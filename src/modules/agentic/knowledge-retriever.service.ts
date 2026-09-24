@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { KnowledgeService } from '../knowledge/knowledge.service';
 import type { AgenticClinicalContext, RetrievedKnowledge } from './agentic.types';
+import { questionTopics, type PlacedRecord } from '../knowledge/grounding/coverage';
+import { summarizeRecord } from '../knowledge/grounding/record-summary';
 
 /**
  * Knowledge retriever — selects the records from the 974-record signed
@@ -17,6 +19,10 @@ import type { AgenticClinicalContext, RetrievedKnowledge } from './agentic.types
  * The retrieved set is capped so the prompt stays bounded; the most
  * specific matches (exact slug) are always included first.
  */
+
+/** Per-record grounding budgets for the agentic and reference prompts. */
+const DRUG_GROUNDING_CHARS = 1100;
+const CONDITION_GROUNDING_CHARS = 900;
 @Injectable()
 export class KnowledgeRetrieverService {
   constructor(private readonly knowledge: KnowledgeService) {}
@@ -27,6 +33,15 @@ export class KnowledgeRetrieverService {
    * source-strength tier for each LLM-emitted citation without taking
    * their own dependency on KnowledgeService.
    */
+  /** Bundle label and review status for a verified citation. */
+  describeCitation = (
+    kind: 'drug' | 'ddi' | 'condition' | 'procedure' | 'rule',
+    id: string,
+  ): { label: string; reviewStatus?: string } | undefined => {
+    const rec = this.knowledge.resolveCitedRecord(kind, id);
+    return rec && { label: rec.label, reviewStatus: rec.reviewStatus };
+  };
+
   resolveCitationStrength = (
     kind: 'drug' | 'ddi' | 'condition' | 'procedure' | 'rule',
     id: string,
@@ -50,6 +65,43 @@ export class KnowledgeRetrieverService {
     );
   }
 
+  /**
+   * Each retrieved item as the grounding gate sees it: the full bundle record
+   * (to test which question terms it covers) and the text the model is given.
+   */
+  placedRecords(knowledge: RetrievedKnowledge): PlacedRecord[] {
+    const out: PlacedRecord[] = [];
+    const bySlug = <T extends { slug: string }>(xs: T[], slug: string) =>
+      xs.find((x) => x.slug === slug);
+    for (const d of knowledge.drugs) {
+      const rec = bySlug(this.knowledge.getDrugs(), d.slug);
+      if (rec)
+        out.push({
+          record: rec as unknown as Record<string, unknown>,
+          text: d.grounding ?? d.summary,
+        });
+    }
+    for (const c of knowledge.conditions) {
+      const rec = bySlug(this.knowledge.getConditions(), c.slug);
+      if (rec)
+        out.push({
+          record: rec as unknown as Record<string, unknown>,
+          text: c.grounding ?? c.summary,
+        });
+    }
+    for (const i of knowledge.interactions) {
+      out.push({ record: i as unknown as Record<string, unknown>, text: JSON.stringify(i) });
+    }
+    for (const p of knowledge.procedures) {
+      const rec = bySlug(this.knowledge.getProcedures(), p.slug);
+      if (rec) out.push({ record: rec as unknown as Record<string, unknown>, text: p.summary });
+    }
+    for (const r of knowledge.rules) {
+      out.push({ record: r as unknown as Record<string, unknown>, text: JSON.stringify(r) });
+    }
+    return out;
+  }
+
   retrieve(
     ctx: AgenticClinicalContext,
     caps = { drugs: 25, ddis: 40, conditions: 20, procedures: 10, rules: 15 },
@@ -70,6 +122,16 @@ export class KnowledgeRetrieverService {
     );
     // Lowercased haystack for whole-name drug mentions anywhere in the thread.
     const textHay = `${ctx.question ?? ''} ${conversationText}`.toLowerCase();
+    // Grounding text for the model: whole fields, the ones the question asks
+    // about first. The old one-line summaries cut adult dosing at 320
+    // characters and pregnancy at 120, and left out contraindications,
+    // lactation and renal values entirely.
+    const topics = questionTopics(textHay);
+    const ground = (rec: object, domain: 'drugs' | 'conditions') =>
+      summarizeRecord(rec as Record<string, unknown>, domain, {
+        budget: domain === 'drugs' ? DRUG_GROUNDING_CHARS : CONDITION_GROUNDING_CHARS,
+        topics,
+      }).text;
 
     // --- Conditions: match by slug / title / codings + token overlap.
     //     Computed FIRST so a disease-phrased query can also pull in the
@@ -100,7 +162,7 @@ export class KnowledgeRetrieverService {
 
     // --- Drugs ---
     const matchedDrugSlugs = new Set<string>();
-    const drugs: Array<{ slug: string; inn: string; summary: string }> = [];
+    const drugs: RetrievedKnowledge['drugs'] = [];
     const allDrugs = this.knowledge.getDrugs();
 
     // Pass 1 — EXPLICIT hits: structured med/allergy terms, or a drug name
@@ -115,14 +177,21 @@ export class KnowledgeRetrieverService {
       );
       // Only the specific names (slug/inn/trade) are matched against free
       // text — NOT drugClass, which is too broad and would over-retrieve.
+      // Whole words only: substring matching found "revia" (naltrexone) in
+      // "abbreviation" and "cipro" in "reciprocal".
       const namedHit =
         !structuredHit &&
         [d.slug, d.inn, ...(d.tradeNames ?? [])]
           .map((s) => s?.toLowerCase())
-          .some((h) => h && h.length > 3 && textHay.includes(h));
+          .some((h) => h && h.length > 3 && containsWord(textHay, h));
       if (!structuredHit && !namedHit) continue;
       matchedDrugSlugs.add(d.slug);
-      drugs.push({ slug: d.slug, inn: d.inn, summary: drugSummary(d) });
+      drugs.push({
+        slug: d.slug,
+        inn: d.inn,
+        summary: drugSummary(d),
+        grounding: ground(d, 'drugs'),
+      });
     }
 
     // Pass 2 — INDICATION linkage: pull the drugs that treat a disease the
@@ -142,7 +211,12 @@ export class KnowledgeRetrieverService {
         });
         if (!indicationHit) continue;
         matchedDrugSlugs.add(d.slug);
-        drugs.push({ slug: d.slug, inn: d.inn, summary: drugSummary(d) });
+        drugs.push({
+          slug: d.slug,
+          inn: d.inn,
+          summary: drugSummary(d),
+          grounding: ground(d, 'drugs'),
+        });
       }
     }
 
@@ -169,6 +243,7 @@ export class KnowledgeRetrieverService {
       slug: x.rec.slug,
       title: x.rec.title,
       summary: conditionSummary(x.rec),
+      grounding: ground(x.rec, 'conditions'),
     }));
 
     // --- Procedures: token overlap with question + diagnoses ---
@@ -362,6 +437,12 @@ function procedureSummary(p: { domains?: string[]; redFlags?: string[] }): strin
   if (p.domains?.length) parts.push(`domains: ${p.domains.join(',')}`);
   if (p.redFlags?.length) parts.push(`red flags: ${truncate(p.redFlags.join('; '), 200)}`);
   return parts.join(' | ');
+}
+
+/** Whole-word (or whole-phrase) occurrence of `needle` in lowercased text. */
+function containsWord(haystack: string, needle: string): boolean {
+  const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`(^|[^a-z0-9])${escaped}($|[^a-z0-9])`).test(haystack);
 }
 
 function truncate(s: string, n: number): string {

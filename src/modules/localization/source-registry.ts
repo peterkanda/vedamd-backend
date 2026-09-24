@@ -22,13 +22,27 @@ import { BASE_JURISDICTION, type Jurisdiction } from '../../common/jurisdiction'
  * gate (Node) and the app (Nest) read identical data.
  */
 
-/** How a source may be reused in the product. */
+/**
+ * Whether a source may be embedded under VedaMD's content licence
+ * (CC BY-NC-SA 4.0, content/LICENSE).
+ */
 export type EmbedVerdict =
-  /** Tier 1: public-domain / permissive — embed with attribution. */
+  /** Tier 1: licence verified compatible — embed as `reuseMode` allows. */
   | 'yes'
-  /** Tier 2: licence-uncertain — embed only after per-source verification. */
+  /** Licence unverified, or varies per item — check before embedding. */
   | 'verify'
-  /** Tier 3: NC/ND/proprietary/government — cite only, author original logic. */
+  /** Not reusable even non-commercially — cite only, author original logic. */
+  | 'cite-only';
+
+/** What embedding may do with the source's expression. */
+export type ReuseMode =
+  /** Reproduce and adapt; adaptations are released CC BY-NC-SA 4.0. */
+  | 'adapt'
+  /** No-derivatives terms: reproduce unaltered excerpts only, never summarise. */
+  | 'verbatim'
+  /** Share-alike incompatible with NC-SA: ship as a separately licensed item. */
+  | 'separate'
+  /** Link and cite only. */
   | 'cite-only';
 
 export interface ContentSource {
@@ -37,17 +51,33 @@ export interface ContentSource {
   title: string;
   tier: 1 | 2 | 3;
   embeddable: EmbedVerdict;
-  format: 'spec' | 'api' | 'bulk' | 'fhir-ig' | 'pdf' | 'html' | 'video';
+  reuseMode: ReuseMode;
+  /** True if the licence also allows commercial use (serves a commercial-safe subset). */
+  commercialUse: boolean;
+  format: 'spec' | 'api' | 'bulk' | 'fhir-ig' | 'pdf' | 'html' | 'video' | 'dataset';
   /** Human-readable licence (SPDX id or descriptive name). */
   spdxOrName: string;
-  /** Nearest value on the shared CitationLicence enum, for the gate. */
+  /**
+   * Nearest value on the shared CitationLicence enum, for the gate. For a
+   * `per-item` source this is the usual item licence.
+   */
   citationLicence: CitationLicence;
+  /** `per-item`: each article/document carries its own licence (PMC, WHO IRIS). */
+  licenceScope?: 'source' | 'per-item';
+  /** For `per-item` sources, every licence an item may legitimately carry. */
+  itemLicences?: CitationLicence[];
   /** ISO 3166-1 alpha-2 codes this source applies to, or ['*'] for global. */
   countries: string[];
   domains: string[];
   url: string;
   /** Citation hostnames that map back to this source. */
   hosts: string[];
+  /**
+   * Host + path prefixes (no scheme, no `www.`) that map to this source
+   * ahead of host matching, for sources that share a host with another
+   * (e.g. LactMed on ncbi.nlm.nih.gov/books).
+   */
+  urlPrefixes?: string[];
   /** ISO date the licence/availability was last verified. */
   lastChecked: string;
   notes?: string;
@@ -55,6 +85,8 @@ export interface ContentSource {
 
 export interface SourceRegistry {
   updated: string;
+  /** SPDX id of the licence VedaMD content is released under. */
+  contentLicence: string;
   tiers: Record<string, string>;
   sources: ContentSource[];
 }
@@ -94,8 +126,18 @@ export function lanesForCountry(
 }
 
 /**
+ * Whether a citation's declared licence agrees with its registered source:
+ * the source licence, or for a `per-item` source any of its item licences.
+ */
+export function licenceAgrees(src: ContentSource, declared: CitationLicence): boolean {
+  if (src.licenceScope === 'per-item') return (src.itemLicences ?? []).includes(declared);
+  return declared === src.citationLicence;
+}
+
+/**
  * Index citation hosts → source. Longest host wins on suffix match so that
  * e.g. `bnf.nice.org.uk` maps to NICE rather than a bare `org.uk`.
+ * `urlPrefixes` are indexed too (keys containing '/') and win over hosts.
  */
 export function buildHostIndex(
   registry: SourceRegistry = loadSourceRegistry(),
@@ -103,20 +145,28 @@ export function buildHostIndex(
   const index = new Map<string, ContentSource>();
   for (const src of registry.sources) {
     for (const host of src.hosts) index.set(host.toLowerCase(), src);
+    for (const prefix of src.urlPrefixes ?? []) index.set(prefix.toLowerCase(), src);
   }
   return index;
 }
 
-/** Resolve a citation URL's host to its registered source, if any. */
+/** Resolve a citation URL to its registered source, if any. */
 export function sourceForUrl(
   url: string,
   index: Map<string, ContentSource> = buildHostIndex(),
 ): ContentSource | null {
   let host: string;
+  let hostPath: string;
   try {
-    host = new URL(url).hostname.toLowerCase();
+    const parsed = new URL(url);
+    host = parsed.hostname.toLowerCase();
+    hostPath = host.replace(/^www\./, '') + parsed.pathname.toLowerCase();
   } catch {
     return null;
+  }
+  // A registered path prefix beats any host match.
+  for (const [key, src] of index) {
+    if (key.includes('/') && hostPath.startsWith(key)) return src;
   }
   // Exact, then progressively strip subdomain labels (a.b.c → b.c → c).
   let candidate = host;

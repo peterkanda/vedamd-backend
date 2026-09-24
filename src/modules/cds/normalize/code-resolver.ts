@@ -112,6 +112,26 @@ function moleculeKey(inn: string): string {
  *     correct owner of a code is not blocked by a record that misuses it.
  * Anything not resolved by code falls through to anchored name matching.
  */
+/** [synonym, name already in the index]. */
+const DRUG_NAME_SYNONYMS: Array<[string, string]> = [
+  ['frusemide', 'furosemide'],
+  ['rifampin', 'rifampicin'],
+  ['magnesium sulfate', 'magnesium sulphate'],
+  ['acetaminophen', 'paracetamol'],
+  ['albuterol', 'salbutamol'],
+  ['epinephrine', 'adrenaline'],
+  ['norepinephrine', 'noradrenaline'],
+  ['cyclosporine', 'ciclosporin'],
+  ['amoxycillin', 'amoxicillin'],
+  ['lignocaine', 'lidocaine'],
+  ['acyclovir', 'aciclovir'],
+  ['cephalexin', 'cefalexin'],
+  ['sulfamethoxazole trimethoprim', 'co-trimoxazole'],
+  ['glibenclamide', 'glyburide'],
+  ['glyburide', 'glibenclamide'],
+  ['isoprenaline', 'isoproterenol'],
+];
+
 export class DrugCodeIndex {
   private readonly byRxNorm = new Map<string, string>();
   private readonly byAtc = new Map<string, string>();
@@ -160,6 +180,17 @@ export class DrugCodeIndex {
       }
     }
 
+    // International / older names clinicians and EHRs still send. Only added
+    // where the molecule's own record exists and the synonym is not already a
+    // name of something else.
+    for (const [synonym, target] of DRUG_NAME_SYNONYMS) {
+      const n = norm(synonym);
+      const slug = this.byName.get(norm(target));
+      if (!n || !slug || this.byName.has(n)) continue;
+      this.byName.set(n, slug);
+      this.names.push({ name: n, slug });
+    }
+
     const targets: Record<CodeSystemKey, Map<string, string>> = {
       rxnorm: this.byRxNorm,
       atc: this.byAtc,
@@ -191,6 +222,28 @@ export class DrugCodeIndex {
   }
 
   /** Resolves one CodeableConcept to a VedaMD drug slug, or null. */
+  /**
+   * Components of a combination product named in free text
+   * ("Tenofovir/Lamivudine/Dolutegravir 300/300/50 mg"). Only when at least
+   * two parts resolve; otherwise []. The combination used to resolve to its
+   * first component alone, so interactions of the others (dolutegravir +
+   * rifampicin) were never checked.
+   */
+  resolveComponents(texts: Array<string | undefined>): string[] {
+    for (const text of texts) {
+      if (!text || !/[/+]|\band\b/i.test(text)) continue;
+      const parts = text
+        .split(/\s*(?:\/|\+|,|\band\b)\s*/i)
+        .map((p) => p.replace(/\d.*$/, '').trim())
+        .filter((p) => p.length >= 3);
+      const slugs = [
+        ...new Set(parts.map((p) => this.resolveName(p)).filter((x): x is string => !!x)),
+      ];
+      if (slugs.length >= 2) return slugs;
+    }
+    return [];
+  }
+
   resolve(concept: FhirCodeableConcept | undefined): string | null {
     if (!concept) return null;
 
@@ -375,6 +428,26 @@ export const CONDITION_SENTINELS: ConditionSentinel[] = [
 const ICD10_SYSTEMS = ['icd-10', 'icd10', 'hl7.org/fhir/sid/icd-10'];
 
 /**
+ * Whether a display text fails to establish a condition on its own (a code
+ * still can). Negations always fail. Hedges and screening wording fail unless
+ * the text also says the result was positive ("HIV test positive" counts).
+ * Bare "not" is deliberately absent: "hypertension, not otherwise specified"
+ * is a diagnosis.
+ */
+function isNonAffirmingText(text: string): boolean {
+  if (NEGATION.test(text)) return true;
+  return HEDGE.test(text) && !/\bpositive\b/.test(text);
+}
+const NEGATION =
+  /\b(negative|ruled out|rule out|r o|excluded|no evidence of|not pregnant|non pregnant|denies|denied|unlikely)\b/;
+const HEDGE =
+  /\b(screening|screen|test|testing|tested|history of|family history|suspected|possible|probable|query|risk of|at risk|exposure|exposed|contact|counselling|counseling|prophylaxis)\b/;
+
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
  * Derives boolean sentinels from a patient's condition list.
  * Only ever sets a sentinel to `true` — absence of a coded condition is
  * not evidence of absence of the disease, so we never write `false`.
@@ -406,8 +479,18 @@ export function deriveConditionSentinels(
         return false;
       });
 
+      // Free text is weaker evidence than a code: match whole words only
+      // ("hiv" inside another word must not count), and never when the text
+      // negates or merely raises the condition — "Pregnancy test negative"
+      // and "Encounter for screening for HIV" used to set pregnant /
+      // knownHivPositive, sending a seizing non-pregnant woman down the
+      // eclampsia branch.
       const textHit =
-        !codeHit && (sentinel.text ?? []).some((needle) => displayText.includes(norm(needle)));
+        !codeHit &&
+        !isNonAffirmingText(displayText) &&
+        (sentinel.text ?? []).some((needle) =>
+          new RegExp(`(^|\\s)${escapeRegExp(norm(needle))}($|\\s)`).test(displayText),
+        );
 
       if (codeHit || textHit) out[sentinel.field] = true;
     }

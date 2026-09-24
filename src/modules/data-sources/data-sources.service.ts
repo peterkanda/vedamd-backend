@@ -110,6 +110,8 @@ export class DataSourcesService implements OnModuleInit {
           url,
           ssl: c.ssl,
           maxRows: c.maxRows,
+          // Tag ownership so the ingestion service refuses cross-tenant use.
+          integratorId: c.integratorId,
         });
       }
       const queries = await this.db.select().from(queriesTable);
@@ -118,6 +120,7 @@ export class DataSourcesService implements OnModuleInit {
           id: q.queryKey,
           sql: q.sql,
           mapping: q.mapping as QueryMapping,
+          integratorId: q.integratorId,
         });
       }
       this.nestLogger.log(

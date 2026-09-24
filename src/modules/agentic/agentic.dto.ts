@@ -4,15 +4,35 @@ import {
   ArrayMinSize,
   IsArray,
   IsBoolean,
+  IsDefined,
   IsIn,
   IsNumber,
   IsObject,
   IsOptional,
   IsString,
+  Max,
   MaxLength,
+  Min,
+  Validate,
   ValidateNested,
+  ValidatorConstraint,
+  ValidatorConstraintInterface,
 } from 'class-validator';
 import { Type } from 'class-transformer';
+
+/** A lab value may be numeric (88) or textual ("positive", "<0.5"). */
+@ValidatorConstraint({ name: 'isNumberOrString', async: false })
+class IsNumberOrString implements ValidatorConstraintInterface {
+  validate(value: unknown): boolean {
+    return (
+      (typeof value === 'number' && Number.isFinite(value)) ||
+      (typeof value === 'string' && value.trim() !== '')
+    );
+  }
+  defaultMessage(): string {
+    return 'value must be a finite number or a non-empty string';
+  }
+}
 
 /**
  * One prior turn in a multi-turn clinical conversation. Lets the
@@ -86,7 +106,11 @@ class LabDto {
   @IsString()
   name?: string;
 
+  // Without a validator decorator the global whitelist pipe treated `value`
+  // as an unknown property and rejected every lab sent with a result (400).
   @ApiProperty({ description: 'Numeric or string lab value.', example: 88 })
+  @IsDefined()
+  @Validate(IsNumberOrString)
   value!: number | string;
 
   @ApiPropertyOptional({ description: 'Unit (UCUM preferred).', example: 'umol/L' })
@@ -145,9 +169,13 @@ export class AgenticEvaluateDto {
   @ApiPropertyOptional({
     description: 'Drop agentic cards with confidence below this threshold (0..1).',
     example: 0.6,
+    minimum: 0,
+    maximum: 1,
   })
   @IsOptional()
   @IsNumber()
+  @Min(0)
+  @Max(1)
   minConfidence?: number;
 
   @ApiPropertyOptional({ type: PatientDto })
@@ -269,9 +297,12 @@ export class AgenticFhirEvaluateDto {
   @IsIn(['deterministic', 'agentic', 'auto'])
   mode?: 'deterministic' | 'agentic' | 'auto';
 
-  @ApiPropertyOptional({ example: 0.6 })
+  // A value above 1 (e.g. 60 meant as a percentage) dropped every AI card.
+  @ApiPropertyOptional({ example: 0.6, minimum: 0, maximum: 1 })
   @IsOptional()
   @IsNumber()
+  @Min(0)
+  @Max(1)
   minConfidence?: number;
 }
 
@@ -314,8 +345,11 @@ export class AgenticSqlEvaluateDto {
   @IsIn(['deterministic', 'agentic', 'auto'])
   mode?: 'deterministic' | 'agentic' | 'auto';
 
-  @ApiPropertyOptional({ example: 0.6 })
+  // A value above 1 (e.g. 60 meant as a percentage) dropped every AI card.
+  @ApiPropertyOptional({ example: 0.6, minimum: 0, maximum: 1 })
   @IsOptional()
   @IsNumber()
+  @Min(0)
+  @Max(1)
   minConfidence?: number;
 }

@@ -111,6 +111,16 @@ export class ImciPneumoniaUnder5Strategy implements CdsRuleStrategy {
         'months. Treat with oral amoxicillin dispersible tablet 40 mg/kg twice daily for 5 days. ' +
         'Counsel on home care and return-immediately signs (difficult breathing, unable to drink, ' +
         'becomes sicker). Follow up in 3 days.';
+    } else if (rr === undefined) {
+      // Without a count, "no fast breathing" is unknown, not absent — this
+      // branch used to say "No pneumonia … no antibiotic" for a child whose
+      // breathing was never counted.
+      indicator = 'warning';
+      summary = 'Respiratory rate not recorded — count before classifying';
+      detail =
+        'No severe signs were reported, but no respiratory rate was recorded, so pneumonia cannot ' +
+        'be ruled out. Count breaths for a full minute with the child calm (fast breathing is ' +
+        '≥ {{fbThreshold}}/min at {{ageMonths}} months) and re-run this check.';
     } else {
       indicator = 'info';
       summary = 'No pneumonia — cough or cold';

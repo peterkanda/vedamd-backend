@@ -40,9 +40,15 @@ const ALLOWED_SOURCE_TYPE = new Set([
 ]);
 const ALLOWED_LICENCE = new Set([
   'public-domain',
+  'cc0',
   'cc-by',
+  'cc-by-sa',
+  'cc-by-nc',
   'cc-by-nc-sa',
+  'cc-by-nd',
   'cc-by-nc-nd',
+  'odbl',
+  'nc-reproduce',
   'open-gov',
   'proprietary',
   'moh-restricted',

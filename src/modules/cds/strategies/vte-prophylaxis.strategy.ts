@@ -90,6 +90,13 @@ export class VteProphylaxisStrategy implements CdsRuleStrategy {
     add(ctx.ongoingHormonal, 1, 'ongoing hormonal treatment');
 
     const highRisk = score >= 4;
+    // Age ≥70 and BMI ≥30 each add a point. When either is missing the score
+    // is a floor, not a result — "low risk" was asserted for patients whose
+    // age or BMI was simply never recorded.
+    const missing = [
+      typeof ctx.ageYears !== 'number' ? 'age' : null,
+      typeof ctx.bmi !== 'number' ? 'BMI' : null,
+    ].filter((m): m is string => m !== null);
     const bleedingConcern = ctx.activeBleeding === true || ctx.highBleedingRisk === true;
 
     let indicator: CdsIndicator;
@@ -110,12 +117,21 @@ export class VteProphylaxisStrategy implements CdsRuleStrategy {
         'High VTE risk BUT active/high bleeding risk → pharmacological prophylaxis is contraindicated for now. Use ' +
         'MECHANICAL prophylaxis (intermittent pneumatic compression). Reassess bleeding risk daily + switch to ' +
         'pharmacological prophylaxis once it resolves.';
+    } else if (score + missing.length >= 4) {
+      indicator = 'warning';
+      summary = `VTE risk incomplete — Padua ${score} without ${missing.join(' and ')}: may be high risk`;
+      recommendation =
+        `Record ${missing.join(' and ')}: each can add a point, which would make this high risk (≥4). ` +
+        'Do not treat as low risk until then.';
     } else {
       indicator = 'info';
       summary = `VTE prophylaxis — Padua ${score} (low risk): pharmacological prophylaxis not routinely indicated`;
       recommendation =
         'Low VTE risk — routine pharmacological thromboprophylaxis not indicated. Encourage early mobilisation + adequate ' +
-        'hydration. Reassess if clinical status changes.';
+        'hydration. Reassess if clinical status changes.' +
+        (missing.length
+          ? ` (${missing.join(' and ')} not recorded; cannot change this result.)`
+          : '');
     }
 
     const ref = rule.references[0] ?? {

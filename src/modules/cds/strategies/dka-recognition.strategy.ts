@@ -77,6 +77,10 @@ interface DkaContext {
   weightKg?: number;
   suspectedDka?: boolean;
   plasmaGlucoseMmolL?: number;
+  /** Bedside / capillary glucose — the value most DKA triage actually has. */
+  bloodGlucoseMmolL?: number;
+  fingerStickGlucoseMmolL?: number;
+  randomGlucoseMmolL?: number;
   venousPh?: number;
   bicarbonateMmolL?: number;
   bloodKetonesMmolL?: number;
@@ -104,8 +108,21 @@ export class DkaRecognitionStrategy implements CdsRuleStrategy {
     const ctx = (req.context ?? {}) as DkaContext;
     if (ctx.suspectedDka !== true) return [];
 
-    const hyperglycaemia =
-      typeof ctx.plasmaGlucoseMmolL === 'number' && ctx.plasmaGlucoseMmolL >= HYPERGLYCAEMIA_MMOLL;
+    // Any recorded glucose counts; only plasma glucose was read, so a bedside
+    // reading of 30 mmol/L left "hyperglycaemia" false.
+    const glucose = [
+      ctx.plasmaGlucoseMmolL,
+      ctx.bloodGlucoseMmolL,
+      ctx.fingerStickGlucoseMmolL,
+      ctx.randomGlucoseMmolL,
+    ].find((v): v is number => typeof v === 'number' && Number.isFinite(v));
+    const hyperglycaemia = glucose !== undefined && glucose >= HYPERGLYCAEMIA_MMOLL;
+    const measured =
+      glucose !== undefined ||
+      typeof ctx.venousPh === 'number' ||
+      typeof ctx.bicarbonateMmolL === 'number' ||
+      typeof ctx.bloodKetonesMmolL === 'number' ||
+      ctx.urineKetones !== undefined;
     const acidosis =
       (typeof ctx.venousPh === 'number' && ctx.venousPh < PH_DKA) ||
       (typeof ctx.bicarbonateMmolL === 'number' && ctx.bicarbonateMmolL < HCO3_DKA);
@@ -122,6 +139,20 @@ export class DkaRecognitionStrategy implements CdsRuleStrategy {
       if (acidosis) partialReasons.push('acidosis');
       if (ketones) partialReasons.push('ketonaemia / ketonuria');
 
+      if (partialReasons.length === 0 && !measured) {
+        // Nothing measured is not "no DKA features".
+        return [
+          this.buildCard(
+            rule,
+            req,
+            'warning',
+            'DKA suspected — glucose, ketones and acid-base not recorded',
+            'DKA was suspected but no glucose, ketone, pH or bicarbonate result was supplied, so it cannot be ' +
+              'excluded. Check capillary glucose and blood (or urine) ketones now; send venous gas if available.',
+            {},
+          ),
+        ];
+      }
       if (partialReasons.length === 0) {
         return [
           this.buildCard(

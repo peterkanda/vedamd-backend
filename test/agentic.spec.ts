@@ -1,4 +1,5 @@
 import { describe, expect, it, beforeEach } from 'vitest';
+import { stripJsonFromNarrative } from '../src/modules/agentic/agentic.service';
 import { KnowledgeRetrieverService } from '../src/modules/agentic/knowledge-retriever.service';
 import { extractCards } from '../src/modules/agentic/card-extractor';
 import { fhirToContext } from '../src/modules/agentic/fhir/fhir-adapter';
@@ -167,6 +168,29 @@ describe('Agentic — card extractor', () => {
     expect(extractCards('not json at all', now).cards).toHaveLength(0);
   });
 
+  it('applies the 0.6 confidence floor when no minConfidence is passed (G7 anti-hallucination default)', () => {
+    // The service calls extractCards WITHOUT a floor for the common case;
+    // the default must drop low-confidence cards, not render them.
+    const text = JSON.stringify({
+      cards: [
+        {
+          summary: 'Low',
+          indicator: 'info',
+          confidence: 0.3,
+          citations: [{ kind: 'drug', id: 'x', label: 'X' }],
+        },
+        {
+          summary: 'High',
+          indicator: 'warning',
+          confidence: 0.9,
+          citations: [{ kind: 'drug', id: 'y', label: 'Y' }],
+        },
+      ],
+    });
+    const { cards } = extractCards(text, now); // no minConfidence → default 0.6
+    expect(cards.map((c) => c.summary)).toEqual(['High']);
+  });
+
   it('parses + clamps confidence into the card extension', () => {
     const text = JSON.stringify({
       cards: [
@@ -271,7 +295,7 @@ describe('Agentic — card extractor', () => {
     expect(cards.map((c) => c.summary)).toEqual(['safe']);
   });
 
-  it('agentic cards carry reviewStatus="review" so the UI flags LLM provenance', () => {
+  it('agentic cards carry the least-reviewed status of their citations (draft when unknown)', () => {
     const text = JSON.stringify({
       cards: [
         {
@@ -283,19 +307,29 @@ describe('Agentic — card extractor', () => {
       ],
     });
     const { cards } = extractCards(text, now, 0);
-    expect(cards[0].extension?.['http://vedamd.io/Card/recommendation'].reviewStatus).toBe(
-      'review',
-    );
+    expect(cards[0].extension?.['http://vedamd.io/Card/recommendation'].reviewStatus).toBe('draft');
+    // …and from the bundle when the citation resolves.
+    const described = extractCards(text, now, 0, undefined, undefined, () => ({
+      label: 'Drug X',
+      reviewStatus: 'approved',
+    }));
+    const ext = described.cards[0].extension;
+    expect(ext?.['http://vedamd.io/Card/recommendation'].reviewStatus).toBe('approved');
+    // The label is the bundle's, not the model's.
+    expect(ext?.['http://vedamd.io/Card/citations']?.[0].label).toBe('Drug X');
   });
 
-  it('defaults confidence to 0.5 when the model omits it', () => {
+  // A missing confidence used to become a middling 0.5; it is now 0, so the
+  // default floor drops a card whose model gave no confidence at all.
+  it('treats a missing confidence as 0', () => {
     const text = JSON.stringify({
       cards: [
         { summary: 'A', indicator: 'info', citations: [{ kind: 'drug', id: 'x', label: 'X' }] },
       ],
     });
     const { cards } = extractCards(text, now, 0);
-    expect(cards[0].extension?.['http://vedamd.io/Card/agentic-confidence']).toBe(0.5);
+    expect(cards[0].extension?.['http://vedamd.io/Card/agentic-confidence']).toBe(0);
+    expect(extractCards(text, now).cards).toEqual([]);
   });
 
   it('parses a structured suggestion into CDS Hooks suggestions', () => {
@@ -528,5 +562,99 @@ describe('Agentic — prompt builder', () => {
     expect(msg).toContain('[ddi:naproxen+warfarin]');
     expect(msg).toContain('PATIENT CONTEXT');
     expect(msg).toContain('safe to add naproxen?');
+  });
+});
+
+describe('Agentic — extractor and narrative safety', () => {
+  const now = new Date().toISOString();
+  const cite = [{ kind: 'drug', id: 'x' }];
+
+  it('reads "Critical" / "CRITICAL" as critical, and an unknown severity as warning', () => {
+    const text = JSON.stringify({
+      cards: [
+        { summary: 'A', indicator: 'Critical', confidence: 0.9, citations: cite },
+        { summary: 'B', indicator: 'nonsense', confidence: 0.9, citations: cite },
+      ],
+    });
+    const { cards } = extractCards(text, now, 0);
+    expect(cards.map((c) => c.indicator)).toEqual(['critical', 'warning']);
+  });
+
+  it('keeps "stop" as a remove action and drops unknown action types', () => {
+    const text = JSON.stringify({
+      cards: [
+        {
+          summary: 'A',
+          indicator: 'warning',
+          confidence: 0.9,
+          citations: cite,
+          suggestion: {
+            label: 'Stop it',
+            actions: [
+              { type: 'stop', description: 'Stop warfarin' },
+              { type: 'frobnicate', description: 'x' },
+            ],
+          },
+        },
+      ],
+    });
+    const { cards } = extractCards(text, now, 0);
+    expect((cards[0].suggestions as Array<{ actions: unknown }> | undefined)?.[0].actions).toEqual([
+      { type: 'remove', description: 'Stop warfarin' },
+    ]);
+  });
+
+  it('reads a percentage confidence as a fraction', () => {
+    const text = JSON.stringify({
+      cards: [{ summary: 'A', indicator: 'info', confidence: 85, citations: cite }],
+    });
+    const { cards } = extractCards(text, now, 0);
+    expect(cards[0].extension?.['http://vedamd.io/Card/agentic-confidence']).toBe(0.85);
+  });
+
+  it('cuts a long summary at a word, and keeps the whole of it in detail', () => {
+    const long =
+      'Give gentamicin 7.5 mg/kg IV once daily for neonatal sepsis together with ampicillin 50 mg/kg every 12 hours, and reassess renal function and hearing daily while on it';
+    const text = JSON.stringify({
+      cards: [{ summary: long, indicator: 'warning', confidence: 0.9, citations: cite }],
+    });
+    const { cards } = extractCards(text, now, 0);
+    expect(cards[0].summary.length).toBeLessThanOrEqual(140);
+    expect(cards[0].summary.endsWith('…')).toBe(true);
+    expect(cards[0].detail).toContain(long);
+  });
+
+  it('finds the card block after a stray brace in the prose', () => {
+    const text = `Consider {renal function}. ${JSON.stringify({
+      cards: [{ summary: 'A', indicator: 'info', confidence: 0.9, citations: cite }],
+    })}`;
+    expect(extractCards(text, now, 0).cards).toHaveLength(1);
+  });
+
+  it('counts withheld cards', () => {
+    const text = JSON.stringify({
+      cards: [
+        { summary: 'A', indicator: 'info', confidence: 0.9, citations: [] },
+        { summary: 'B', indicator: 'info', confidence: 0.2, citations: cite },
+      ],
+    });
+    expect(extractCards(text, now).rejected).toBe(2);
+  });
+
+  // When the output was only JSON, the old stripper returned it whole, so
+  // cards the verifier had rejected reached the clinician as "narrative".
+  it.each([
+    JSON.stringify({ cards: [{ summary: 'Give 50 mg', citations: [] }] }),
+    '```json\n{"cards":[{"summary":"Give 50 mg"}]}\n```',
+    'Here: {"cards":[{"summary":"Give 50 mg"',
+  ])('never returns a card block as narrative (%#)', (text) => {
+    expect(stripJsonFromNarrative(text)).toBeUndefined();
+  });
+
+  it('keeps the prose around the card block', () => {
+    const text = `This child needs review for sepsis and should be admitted.\n${JSON.stringify({ cards: [] })}`;
+    expect(stripJsonFromNarrative(text)).toBe(
+      'This child needs review for sepsis and should be admitted.',
+    );
   });
 });

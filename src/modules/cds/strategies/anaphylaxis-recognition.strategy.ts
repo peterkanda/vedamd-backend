@@ -50,6 +50,7 @@ const ADULT_DOSE_MG = 0.5;
 
 interface AnaphylaxisContext {
   ageYears?: number;
+  ageMonths?: number;
   suspectedAllergicReaction?: boolean;
   weightKg?: number;
   allergenExposureDocumented?: boolean;
@@ -72,7 +73,12 @@ export class AnaphylaxisRecognitionStrategy implements CdsRuleStrategy {
     const systems: string[] = [];
     if (ctx.skinOrMucosalInvolvement === true) systems.push('skin / mucosal');
     if (ctx.respiratoryInvolvement === true) systems.push('respiratory');
-    if (ctx.cardiovascularInvolvement === true) systems.push('cardiovascular');
+    // Hypotension / shock is cardiovascular involvement (WAO criterion 1);
+    // it was left out of the organ count, so skin + shock without a
+    // documented exposure fired nothing.
+    if (ctx.cardiovascularInvolvement === true || ctx.hypotensionOrShock === true) {
+      systems.push('cardiovascular');
+    }
     if (ctx.giInvolvement === true) systems.push('gastrointestinal');
     const cvs = ctx.cardiovascularInvolvement === true || ctx.hypotensionOrShock === true;
 
@@ -169,6 +175,34 @@ function adrenalineDose(ctx: AnaphylaxisContext): { line: string } {
     const mLOfStandard = Number(mg.toFixed(2));
     return {
       line: `IM adrenaline ${mg} mg (${mLOfStandard} mL of 1:1000) — paediatric dose 0.01 mg/kg × ${ctx.weightKg} kg, capped at 0.5 mg — into the antero-lateral mid-thigh.`,
+    };
+  }
+  // No usable weight. The adult 0.5 mg used to go to every such patient,
+  // including a 1-year-old; fall back to the age bands (Resuscitation Council
+  // UK 2021) when the age says child, and name them when age is unknown too.
+  const ageYears =
+    typeof ctx.ageYears === 'number'
+      ? ctx.ageYears
+      : typeof ctx.ageMonths === 'number'
+        ? ctx.ageMonths / 12
+        : undefined;
+  if (ageYears !== undefined && ageYears < 12) {
+    const band =
+      ageYears < 0.5
+        ? '0.1–0.15 mg (0.1–0.15 mL of 1:1000)'
+        : ageYears < 6
+          ? '0.15 mg (0.15 mL of 1:1000)'
+          : '0.3 mg (0.3 mL of 1:1000)';
+    return {
+      line: `IM adrenaline ${band} — age-banded dose, as no weight was recorded (0.01 mg/kg if the child can be weighed) — into the antero-lateral mid-thigh.`,
+    };
+  }
+  if (ageYears === undefined) {
+    return {
+      line:
+        'IM adrenaline 0.5 mg (0.5 mL of 1:1000) for an adult or child over 12 into the antero-lateral mid-thigh. ' +
+        'Age and weight were not recorded: for a child use 0.01 mg/kg, or by age 6–12 y 0.3 mg, 6 mo–6 y 0.15 mg, ' +
+        'under 6 mo 0.1–0.15 mg.',
     };
   }
   return {

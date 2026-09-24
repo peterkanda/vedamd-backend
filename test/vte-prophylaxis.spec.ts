@@ -38,9 +38,19 @@ describe('VTE prophylaxis — Padua Prediction Score', () => {
   });
 
   it('active cancer alone scores 3 → still low (< 4)', async () => {
-    const cards = await strat.evaluate(rule, req({ medicalInpatient: true, activeCancer: true }));
+    const cards = await strat.evaluate(
+      rule,
+      req({ medicalInpatient: true, activeCancer: true, ageYears: 45, bmi: 24 }),
+    );
     expect(cards[0].summary).toContain('Padua 3');
     expect(cards[0].indicator).toBe('info');
+  });
+
+  it('does not call it low risk when missing age/BMI could reach 4', async () => {
+    // Cancer 3 + (age ≥70 or BMI ≥30) would be 4 — unknown is not low.
+    const cards = await strat.evaluate(rule, req({ medicalInpatient: true, activeCancer: true }));
+    expect(cards[0].indicator).toBe('warning');
+    expect(cards[0].summary).toMatch(/may be high risk/);
   });
 
   it('high risk (≥4) without bleeding → critical, offer pharmacological prophylaxis', async () => {

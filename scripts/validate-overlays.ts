@@ -25,7 +25,13 @@
  */
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { buildHostIndex, sourceForUrl, loadSourceRegistry } from '../src/modules/localization/source-registry';
+import {
+  buildHostIndex,
+  licenceAgrees,
+  loadSourceRegistry,
+  sourceForUrl,
+} from '../src/modules/localization/source-registry';
+import type { CitationLicence } from '../src/common/citation';
 
 const OVERLAYS = resolve(process.cwd(), 'content/overlays');
 const VALID_STRENGTH = new Set(['A', 'B', 'C', 'D']);
@@ -97,7 +103,7 @@ for (const file of overlayContentFiles()) {
           violations.push(`${id}: citation missing A–D strength`);
         if (ref.url && ref.licence !== undefined) {
           const src = sourceForUrl(ref.url, hostIndex);
-          if (src && ref.licence !== src.citationLicence)
+          if (src && !licenceAgrees(src, ref.licence as CitationLicence))
             violations.push(
               `${id}: citation licence '${ref.licence}' ≠ registry '${src.citationLicence}' (${src.id})`,
             );

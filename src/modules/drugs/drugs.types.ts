@@ -13,7 +13,7 @@ import type {
 
 export type AwareCategory = 'Access' | 'Watch' | 'Reserve' | 'Not-classified';
 export type AdverseEffectFrequency = 'common' | 'uncommon' | 'rare' | 'serious';
-export type InteractionSeverity = 'severe' | 'major' | 'moderate' | 'minor';
+export type InteractionSeverity = 'contraindicated' | 'severe' | 'major' | 'moderate' | 'minor';
 
 export type { EvidenceLevel, ReviewStatus };
 
@@ -32,14 +32,20 @@ export interface PaediatricDosing {
 }
 
 export interface RenalAdjustment {
-  /** Inclusive lower / upper bounds in mL/min/1.73 m². */
+  /** Lower / upper bounds in mL/min/1.73 m², as authored. */
   crClMinMlMin?: number;
   crClMaxMlMin?: number;
+  /** Exclusive upper bound actually used for matching, set at load by
+   *  normalizeDrugRecords from the drug's authoring convention. */
+  crClMaxExclusive?: number;
   adjustment: string;
   /** If true, dosing in this CrCl range is contraindicated. The dosing
    *  calculator refuses to return a calculated dose and surfaces the
    *  adjustment text as a contraindication. */
   prohibited?: boolean;
+  /** Qualified avoidance ("avoid where possible", "avoid unless …"): the
+   *  renal rule warns, and the dosing calculator adds a warning. */
+  caution?: boolean;
 }
 
 export interface DrugSummary {

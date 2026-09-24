@@ -1,5 +1,26 @@
 import { Injectable } from '@nestjs/common';
 import { KnowledgeService } from './knowledge.service';
+import type { BundleInfo } from './knowledge.types';
+import { BundleTermStats, type CorpusRecord } from './grounding/term-stats';
+import { tokenize } from './grounding/terms';
+
+const FORMULATION_WORDS = new Set([
+  'combined',
+  'oral',
+  'tablet',
+  'capsule',
+  'injection',
+  'injectable',
+  'extended',
+  'release',
+  'modified',
+  'emergency',
+  'depot',
+  'topical',
+  'cream',
+  'syrup',
+  'suspension',
+]);
 
 export interface KnowledgeSearchHit {
   /** Content domain the hit came from. */
@@ -38,6 +59,8 @@ interface DomainSpec {
  */
 @Injectable()
 export class KnowledgeSearchService {
+  private stats: { info: BundleInfo; value: BundleTermStats } | null = null;
+
   constructor(private readonly knowledge: KnowledgeService) {}
 
   private specs(): DomainSpec[] {
@@ -192,6 +215,57 @@ export class KnowledgeSearchService {
         snippet: (r) => str(r.category),
       },
     ];
+  }
+
+  /**
+   * Term statistics over every searchable record plus the interaction
+   * registry, for the chat grounding gate. Built once per loaded bundle.
+   */
+  termStats(): BundleTermStats {
+    const info = this.knowledge.getInfo();
+    if (this.stats?.info !== info) {
+      const records: CorpusRecord[] = [];
+      for (const spec of this.specs()) {
+        let rs: unknown[];
+        try {
+          rs = spec.records();
+        } catch {
+          continue;
+        }
+        for (const r of rs)
+          if (r && typeof r === 'object') records.push({ record: r as Record<string, unknown> });
+      }
+      for (const i of this.knowledge.getInteractions()) {
+        records.push({ record: i as unknown as Record<string, unknown> });
+      }
+      this.stats = { info, value: new BundleTermStats(records) };
+    }
+    return this.stats.value;
+  }
+
+  /**
+   * Interaction records between drugs the text names. Search has no
+   * interaction domain, so an interaction question used to be grounded on the
+   * two drugs' own records — which do not describe the interaction — and the
+   * model answered it from memory.
+   */
+  interactionsMentioning(text: string): Record<string, unknown>[] {
+    const words = new Set(tokenize(text));
+    const names = (slug: string) => {
+      const drug = this.knowledge.getDrugs().find((d) => d.slug === slug);
+      return [slug, drug?.inn ?? '', ...(drug?.tradeNames ?? [])].filter(Boolean);
+    };
+    // Formulation words do not name the drug: "oral contraceptive" must meet
+    // the combined-oral-contraceptive record.
+    const named = (slug: string) =>
+      names(slug).some((n) => {
+        const t = tokenize(n).filter((w) => w.length >= 3 && !FORMULATION_WORDS.has(w));
+        return t.length > 0 && t.every((w) => words.has(w));
+      });
+    return this.knowledge
+      .getInteractions()
+      .filter((i) => named(i.slugA) && named(i.slugB))
+      .map((i) => i as unknown as Record<string, unknown>);
   }
 
   /** Fetch the raw record for a domain+slug (for building grounding text). */

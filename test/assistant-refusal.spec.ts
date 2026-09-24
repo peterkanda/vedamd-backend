@@ -8,6 +8,7 @@ import type {
   ProviderCompletion,
 } from '../src/modules/agentic/providers/llm-provider.interface';
 import type { KnowledgeSearchService } from '../src/modules/knowledge/knowledge-search.service';
+import { BundleTermStats } from '../src/modules/knowledge/grounding/term-stats';
 
 /**
  * The backend cloud assistant used to have no hard gate for an ungrounded
@@ -44,13 +45,30 @@ function makeRouter(openrouter: FakeProvider): ProviderRouter {
 }
 
 function makeEmptySearch(): KnowledgeSearchService {
-  return { search: () => [], getRecord: () => null } as unknown as KnowledgeSearchService;
+  return {
+    search: () => [],
+    getRecord: () => null,
+    termStats: () => new BundleTermStats([]),
+    interactionsMentioning: () => [],
+  } as unknown as KnowledgeSearchService;
 }
+
+// "Grounded" now means the placed record covers what was asked, so the stub
+// record has to actually carry amoxicillin dosing for pneumonia.
+const AMOXICILLIN = {
+  slug: 'amoxicillin',
+  inn: 'Amoxicillin',
+  dosing: {
+    adult: [{ indication: 'Community-acquired pneumonia', regimen: '500 mg three times daily' }],
+  },
+};
 
 function makeGroundedSearch(): KnowledgeSearchService {
   return {
     search: () => [{ domain: 'drugs', slug: 'amoxicillin', title: 'Amoxicillin', snippet: 's' }],
-    getRecord: () => ({ inn: 'Amoxicillin', dosing: {} }),
+    getRecord: () => AMOXICILLIN,
+    termStats: () => new BundleTermStats([{ record: AMOXICILLIN }]),
+    interactionsMentioning: () => [],
   } as unknown as KnowledgeSearchService;
 }
 

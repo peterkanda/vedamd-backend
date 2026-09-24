@@ -12,38 +12,15 @@ import type { PolicyMatch } from '../policies/policies.types';
 import { CustomRulesService } from '../custom-rules/custom-rules.service';
 import type { CustomRuleEvaluation } from '../custom-rules/custom-rules.types';
 import { CLINICAL_REASONER_SYSTEM, buildUserMessage } from './prompts/clinical-reasoner.prompt';
-import { extractCards, type CitationVerifier } from './card-extractor';
+import { extractCards, findJsonSpans } from './card-extractor';
 import type {
   AgenticClinicalContext,
   AgenticEvaluationResponse,
   AgenticBatchResponse,
-  RetrievedKnowledge,
 } from './agentic.types';
 import type { CdsCard, CdsHookRequest } from '../cds/cds.types';
-
-/**
- * Accept a citation only if it names a record actually retrieved for this
- * request. Ids are matched in the exact form the prompt hands the model (see
- * buildUserMessage): `drug:<slug>`, `ddi:<slugA>+<slugB>`, `rule:<id>`. Without
- * this the citation requirement proved only that the model emitted a string.
- */
-function buildCitationVerifier(knowledge: RetrievedKnowledge): CitationVerifier {
-  const norm = (s: string) => s.trim().toLowerCase();
-  const ddi = new Set<string>();
-  for (const i of knowledge.interactions) {
-    // The model may cite the pair in either order.
-    ddi.add(norm(`${i.slugA}+${i.slugB}`));
-    ddi.add(norm(`${i.slugB}+${i.slugA}`));
-  }
-  const known: Record<string, Set<string>> = {
-    drug: new Set(knowledge.drugs.map((d) => norm(d.slug))),
-    condition: new Set(knowledge.conditions.map((c) => norm(c.slug))),
-    procedure: new Set(knowledge.procedures.map((p) => norm(p.slug))),
-    rule: new Set(knowledge.rules.map((r) => norm(r.id))),
-    ddi,
-  };
-  return (kind, id) => known[kind]?.has(norm(id)) ?? false;
-}
+import { buildCitationVerifier } from './citation-verifier';
+import { labelUnreviewed } from '../cds/cds.service';
 
 /**
  * Agentic CDS service.
@@ -144,6 +121,7 @@ export class AgenticService {
     let llmProvider: 'anthropic' | 'openai' | 'deepseek' | 'gemini' | 'openrouter' | 'disabled' =
       'disabled';
     let llmMedical: boolean | undefined;
+    let llmFellBackFrom: AgenticEvaluationResponse['meta']['llmFellBackFrom'];
     let agenticInvoked = false;
     /**
      * Raw LLM text — captured even when extractCards drops every card
@@ -155,6 +133,7 @@ export class AgenticService {
      * rather than gatekeep it.
      */
     let narrative: string | undefined;
+    let rejectedCardCount = 0;
     /** Captured if the LLM call threw (timeout, provider error). */
     let agenticError: string | undefined;
 
@@ -191,16 +170,36 @@ export class AgenticService {
         llmModel = result.model;
         llmProvider = result.provider;
         llmMedical = result.medical;
-        narrative = stripJsonFromNarrative(result.text);
+        llmFellBackFrom = result.fellBackFrom ?? null;
         const extracted = extractCards(
           result.text,
           new Date().toISOString(),
-          ctx.minConfidence ?? 0,
+          // Pass undefined (not 0) when the caller didn't specify a floor, so
+          // extractCards applies its 0.6 anti-hallucination default instead of
+          // rendering low-confidence LLM cards as actionable CDS.
+          ctx.minConfidence,
           this.retriever.resolveCitationStrength,
           buildCitationVerifier(knowledge),
+          this.retriever.describeCitation,
         );
         agenticCards = extracted.cards;
         citedRecords = extracted.citedRecords;
+        rejectedCardCount = extracted.rejected + (extracted.unparseable ? 1 : 0);
+        // AI cards are labelled like deterministic ones: in the text an EHR
+        // shows, not only in an extension it ignores.
+        for (const card of agenticCards) {
+          labelUnreviewed(
+            card,
+            card.extension?.['http://vedamd.io/Card/recommendation']?.reviewStatus,
+          );
+        }
+        // The prose around the cards, never the cards themselves. When every
+        // card the model proposed was withheld, the prose goes too: it tends
+        // to restate the same unverified dose.
+        narrative =
+          rejectedCardCount > 0 && agenticCards.length === 0
+            ? undefined
+            : stripJsonFromNarrative(result.text);
         this.log.info('agentic_evaluated', {
           llm_provider: result.provider,
           llm_model: result.model,
@@ -265,6 +264,7 @@ export class AgenticService {
         llmModel,
         llmProvider,
         llmMedical,
+        llmFellBackFrom,
         agenticInvoked,
         bundleRecordsConsidered,
         citedRecords,
@@ -300,6 +300,9 @@ export class AgenticService {
         // so the clinician sees the LLM's answer with a clear trust
         // signal — strictly better than a silent empty box.
         narrative: cards.length === 0 ? narrative : undefined,
+        // AI cards withheld because a citation or the confidence check failed,
+        // so the UI can say so instead of showing nothing.
+        rejectedCardCount,
         // Error class when the LLM call itself threw. Lets the UI
         // surface "AI provider returned an error" instead of pretending
         // the deterministic engine "had nothing to say".
@@ -307,13 +310,6 @@ export class AgenticService {
       },
     };
   }
-
-  /**
-   * Cull any leading JSON code-fence / object from the LLM output so the
-   * narrative panel doesn't render `{"cards":[…]}` verbatim. Falls back
-   * to the original text when there's no JSON to remove.
-   */
-  // (helper defined at module bottom)
 
   /**
    * Build a flat, UI-friendly summary of records the retriever surfaced
@@ -551,18 +547,28 @@ function summaryOverlap(a: string, b: string): number {
 }
 
 /**
- * Cull JSON code-fences / structured-card blob from LLM output so the
- * narrative-panel rendering does not echo raw JSON to the clinician.
- * Returns the prose around / after the JSON, or the original text when
- * no JSON block is present.
+ * The prose around the model's card block, for the "AI-assisted overview"
+ * panel. Removes fenced blocks and every balanced {…} / […] span (one-line
+ * ones too), and cuts from any unbalanced remainder. It never returns the
+ * input: when nothing but JSON was produced, the old version fell back to
+ * the raw text, so cards the citation verifier had just rejected reached the
+ * clinician verbatim.
  */
-function stripJsonFromNarrative(text: string): string {
-  if (!text) return text;
-  // Strip ```json fenced blocks first.
-  let s = text.replace(/```(?:json)?\s*[\s\S]*?```/g, '').trim();
-  // Strip a bare top-level JSON object.
-  s = s.replace(/^\{[\s\S]*?\n\}\s*/m, '').trim();
-  if (!s) return text; // Fall back if removal stripped everything.
+export function stripJsonFromNarrative(text: string): string | undefined {
+  if (!text) return undefined;
+  let s = text.replace(/```[\s\S]*?```/g, ' ');
+  const spans = findJsonSpans(s);
+  for (let i = spans.length - 1; i >= 0; i--) {
+    const [a, b] = spans[i];
+    s = s.slice(0, a) + ' ' + s.slice(b);
+  }
+  const open = s.search(/```|\{\s*"/);
+  if (open !== -1) s = s.slice(0, open);
+  s = s
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+  if (s.replace(/\s/g, '').length < 20 || !/[a-z]/i.test(s)) return undefined;
   return s;
 }
 

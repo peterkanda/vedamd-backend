@@ -1,3 +1,4 @@
+import { fetchLlm } from './llm-fetch';
 import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import type { AppConfig } from '../../../config/configuration';
@@ -7,6 +8,7 @@ import type {
   ProviderCompletion,
   LlmProvider,
 } from './llm-provider.interface';
+import { incompleteAnswer } from './incomplete-answer';
 
 /**
  * Anthropic Claude provider — primary agentic reasoner.
@@ -22,6 +24,9 @@ import type {
  * an Anthropic enterprise / zero-retention agreement (documented in
  * the integration guide).
  */
+/** Stop reasons meaning the answer was cut off or withheld rather than finished. */
+const ANTHROPIC_INCOMPLETE = new Set(['max_tokens', 'refusal', 'pause_turn']);
+
 @Injectable()
 export class AnthropicProvider implements LlmProvider {
   readonly name = 'anthropic' as const;
@@ -54,15 +59,19 @@ export class AnthropicProvider implements LlmProvider {
       messages: [{ role: 'user', content: req.user }],
     };
 
-    const res = await fetch(this.endpoint, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'x-api-key': this.apiKey,
-        'anthropic-version': '2023-06-01',
+    const res = await fetchLlm(
+      this.endpoint,
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-api-key': this.apiKey,
+          'anthropic-version': '2023-06-01',
+        },
+        body: JSON.stringify(body),
       },
-      body: JSON.stringify(body),
-    });
+      'anthropic',
+    );
 
     if (!res.ok) {
       const status = res.status;
@@ -74,6 +83,7 @@ export class AnthropicProvider implements LlmProvider {
     const json = (await res.json()) as {
       content?: Array<{ type: string; text?: string }>;
       model?: string;
+      stop_reason?: string | null;
       usage?: { input_tokens?: number; output_tokens?: number };
     };
 
@@ -82,6 +92,16 @@ export class AnthropicProvider implements LlmProvider {
         ?.filter((c) => c.type === 'text')
         .map((c) => c.text ?? '')
         .join('') ?? '';
+    const stopReason = json.stop_reason ?? 'none';
+    if (ANTHROPIC_INCOMPLETE.has(stopReason) || !text) {
+      throw incompleteAnswer(
+        this.log,
+        'anthropic',
+        'Anthropic',
+        this.model,
+        ANTHROPIC_INCOMPLETE.has(stopReason) ? stopReason : 'empty',
+      );
+    }
 
     return {
       text,

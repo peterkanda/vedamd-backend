@@ -32,6 +32,72 @@ const MIN_WORD_LEN = 3;
  */
 const MIN_PREFIX_LEN = 4;
 
+/**
+ * Salt, form and packaging words that name no molecule. Matching on them
+ * made a "morphine sulphate" allergy raise a critical "do not give magnesium
+ * sulphate" and "sodium valproate" flag normal saline.
+ */
+const NON_MOLECULE_WORDS = new Set([
+  'sulphate',
+  'sulfate',
+  'hydrochloride',
+  'hcl',
+  'sodium',
+  'potassium',
+  'calcium',
+  'magnesium',
+  'phosphate',
+  'acetate',
+  'citrate',
+  'maleate',
+  'tartrate',
+  'succinate',
+  'fumarate',
+  'mesylate',
+  'besylate',
+  'bromide',
+  'chloride',
+  'nitrate',
+  'lactate',
+  'gluconate',
+  'carbonate',
+  'hydrate',
+  'monohydrate',
+  'dihydrate',
+  'trihydrate',
+  'salt',
+  'tablet',
+  'tablets',
+  'tab',
+  'tabs',
+  'capsule',
+  'capsules',
+  'cap',
+  'caps',
+  'injection',
+  'syrup',
+  'suspension',
+  'solution',
+  'cream',
+  'ointment',
+  'oral',
+  'drops',
+  'mg',
+  'mcg',
+  'dose',
+  'doses',
+  'allergy',
+  'allergic',
+  'reaction',
+  'intolerance',
+]);
+
+function moleculeWords(allergen: string): string[] {
+  const all = words(allergen).filter((w) => w.length >= MIN_WORD_LEN);
+  const specific = all.filter((w) => !NON_MOLECULE_WORDS.has(w));
+  return specific.length > 0 ? specific : all;
+}
+
 function words(value: string): string[] {
   return value
     .toLowerCase()
@@ -96,7 +162,9 @@ export function matchDrugAllergies(
   // Pre-tokenize once: each declared allergen with its significant words.
   const parsed = normalized.map((allergen) => ({
     allergen,
-    words: words(allergen).filter((w) => w.length >= MIN_WORD_LEN),
+    // A declared allergen that is *only* a salt word ("magnesium") still has
+    // to match something, so fall back to its full word list in that case.
+    words: moleculeWords(allergen),
   }));
 
   const flags: DrugAllergyFlag[] = [];

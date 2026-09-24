@@ -4,8 +4,10 @@ import { DrugsService } from '../../drugs/drugs.service';
 import type { InteractionSeverity } from '../../drugs/drugs.types';
 import type { CdsCard, CdsHookRequest, CdsIndicator } from '../cds.types';
 import type { CdsRuleStrategy } from './types';
+import { extractMedicationSlugs } from './medication-slugs';
 
 const SEVERITY_TO_INDICATOR: Record<InteractionSeverity, CdsIndicator> = {
+  contraindicated: 'critical',
   severe: 'critical',
   major: 'critical',
   moderate: 'warning',
@@ -44,7 +46,10 @@ export class DrugDrugInteractionStrategy implements CdsRuleStrategy {
     if (interactions.length === 0) return [];
 
     return interactions.map((i): CdsCard => {
-      const indicator = SEVERITY_TO_INDICATOR[i.severity];
+      // An unmapped severity used to leave the card with no indicator at all,
+      // which CDS Hooks clients drop or show as routine. Unknown means "check",
+      // never "fine".
+      const indicator = SEVERITY_TO_INDICATOR[i.severity] ?? 'warning';
       return {
         summary: `${i.severity.toUpperCase()} interaction: ${i.slugA} ↔ ${i.slugB}`,
         detail: `**Mechanism.** ${i.mechanism}\n\n**Management.** ${i.management}`,
@@ -64,18 +69,4 @@ export class DrugDrugInteractionStrategy implements CdsRuleStrategy {
       };
     });
   }
-}
-
-function extractMedicationSlugs(context: Record<string, unknown>): string[] {
-  const fields = ['medications', 'proposed', 'current', 'draftMedications', 'currentMedications'];
-  const out: string[] = [];
-  for (const f of fields) {
-    const v = context[f];
-    if (Array.isArray(v)) {
-      for (const item of v) {
-        if (typeof item === 'string') out.push(item);
-      }
-    }
-  }
-  return out;
 }

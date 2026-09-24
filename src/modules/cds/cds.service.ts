@@ -13,6 +13,7 @@ import { CdsNormalizerService } from './normalize/cds-normalizer.service';
 import { KnowledgeService } from '../knowledge/knowledge.service';
 import { PHI_FREE_LOGGER, type PhiFreeLogger } from '../../common/phi-free-logger';
 import type { AppConfig } from '../../config/configuration';
+import type { CdsRule } from '../conditions/conditions.types';
 
 /**
  * Bounded in-memory mapping of card UUID → (rule, service, hook) so the
@@ -692,25 +693,29 @@ export class CdsService {
             if (ext && !ext.reviewStatus) {
               ext.reviewStatus = rule.reviewStatus;
             }
+            // The extension alone is invisible in stock EHR clients (Epic,
+            // OpenMRS render summary / detail / source only), so unreviewed
+            // guidance reached clinicians unlabelled. Say it in the text.
+            labelUnreviewed(card, ext?.reviewStatus ?? rule.reviewStatus);
           }
           // Assign a UUID per card and remember the lookup so /feedback
           // can attribute clinician overrides back to this rule. PHI-free.
           for (const card of ruleCards) this.registerCard(card, rule.id, serviceId, req.hook);
           cards.push(...ruleCards);
-        } catch (e) {
-          // A failing rule must never bring down the whole evaluation.
-          // Log PHI-free and continue.
-          this.log.info('cds_hook_evaluated', {
+        } catch {
+          // A failing rule must not bring down the whole evaluation — but it
+          // must not read as "all clear" either. It used to vanish with a 200,
+          // so a crashed renal or pregnancy check looked exactly like a
+          // patient with nothing to flag. Say that the check did not run.
+          // (The error message is not logged: it can echo request content.)
+          this.log.error('cds_rule_failed', {
             endpoint: `POST /cds-services/${serviceId}`,
             hook: req.hook,
             rule_id: rule.id,
             rule_version: rule.ruleVersion,
             error_category: 'internal',
-            cards_returned_count: 0,
-            latency_ms: 0,
-            status_code: 500,
-            message: (e as Error).message,
           });
+          cards.push(ruleFailedCard(rule));
         }
       }
     }
@@ -735,10 +740,49 @@ export class CdsService {
     });
     return { cards };
   }
+}
 
-  async evaluateGeneric(_payload: unknown): Promise<{ recommendations: unknown[] }> {
-    return { recommendations: [] };
+/**
+ * Mark a card built on content that has not passed clinical review, in the
+ * fields every CDS Hooks client displays. `summary` is left alone (the 140-
+ * character limit), the source label and the top of the detail carry it.
+ */
+export function labelUnreviewed(card: CdsCard, status: string | undefined): void {
+  if (!status || status === 'approved') return;
+  const note = status === 'deprecated' ? 'Deprecated guidance' : 'Draft — under clinical review';
+  if (!card.source.label.includes(note)) {
+    card.source = { ...card.source, label: `${card.source.label} — ${note}` };
   }
+  const banner = `**${note}.** This VedaMD guidance has not completed clinical review; check it against local protocols.`;
+  if (!card.detail?.startsWith(`**${note}.**`)) {
+    card.detail = card.detail ? `${banner}\n\n${card.detail}` : banner;
+  }
+}
+
+/**
+ * Card shown when a rule threw instead of evaluating. Warning, not info: the
+ * clinician has to know that this check was not applied, and must not read
+ * the missing alert as reassurance.
+ */
+function ruleFailedCard(rule: CdsRule): CdsCard {
+  const summary = `Safety check could not run: ${rule.title}`;
+  return {
+    summary: summary.length > 140 ? `${summary.slice(0, 139)}…` : summary,
+    detail:
+      'VedaMD hit an internal error while evaluating this check, so it has NOT been applied ' +
+      'to this patient. Check it manually — the absence of an alert from it means nothing.',
+    indicator: 'warning',
+    source: { label: 'VedaMD' },
+    extension: {
+      'http://vedamd.io/Card/recommendation': {
+        ruleId: rule.id,
+        ruleVersion: rule.ruleVersion,
+        evidenceLevel: rule.evidenceLevel,
+        generatedAt: new Date().toISOString(),
+        reviewStatus: rule.reviewStatus,
+      },
+    },
+  };
 }
 
 /**

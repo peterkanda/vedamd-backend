@@ -1,3 +1,4 @@
+import { fetchLlm } from './llm-fetch';
 import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import type { AppConfig } from '../../../config/configuration';
@@ -7,6 +8,7 @@ import type {
   ProviderCompletion,
   LlmProvider,
 } from './llm-provider.interface';
+import { incompleteAnswer, OPENAI_COMPAT_INCOMPLETE } from './incomplete-answer';
 
 /**
  * OpenRouter provider — the default agentic backend, configured to run
@@ -74,17 +76,21 @@ export class OpenRouterProvider implements LlmProvider {
       ],
     };
 
-    const res = await fetch(`${this.baseUrl}/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        authorization: `Bearer ${this.apiKey}`,
-        // Optional OpenRouter attribution headers (ignored by other endpoints).
-        'HTTP-Referer': this.siteUrl,
-        'X-Title': 'VedaMD',
+    const res = await fetchLlm(
+      `${this.baseUrl}/chat/completions`,
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          authorization: `Bearer ${this.apiKey}`,
+          // Optional OpenRouter attribution headers (ignored by other endpoints).
+          'HTTP-Referer': this.siteUrl,
+          'X-Title': 'VedaMD',
+        },
+        body: JSON.stringify(body),
       },
-      body: JSON.stringify(body),
-    });
+      'openrouter',
+    );
 
     if (!res.ok) {
       this.log.warn('agentic_llm_error', {
@@ -95,13 +101,26 @@ export class OpenRouterProvider implements LlmProvider {
     }
 
     const json = (await res.json()) as {
-      choices?: Array<{ message?: { content?: string } }>;
+      choices?: Array<{ message?: { content?: string | null }; finish_reason?: string }>;
       model?: string;
       usage?: { prompt_tokens?: number; completion_tokens?: number };
     };
 
+    const choice = json.choices?.[0];
+    const text = choice?.message?.content ?? '';
+    const finishReason = choice?.finish_reason ?? 'none';
+    if (OPENAI_COMPAT_INCOMPLETE.has(finishReason) || !text) {
+      throw incompleteAnswer(
+        this.log,
+        'openrouter',
+        'OpenRouter',
+        this.model,
+        OPENAI_COMPAT_INCOMPLETE.has(finishReason) ? finishReason : 'empty',
+      );
+    }
+
     return {
-      text: json.choices?.[0]?.message?.content ?? '',
+      text,
       model: json.model ?? this.model,
       provider: 'openrouter',
       usage: {

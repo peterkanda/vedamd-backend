@@ -5,8 +5,8 @@ import { ProviderRouter } from '../src/modules/agentic/providers/provider-router
 import type { LlmProvider } from '../src/modules/agentic/providers/llm-provider.interface';
 
 /**
- * OpenRouter is the default agentic provider (MedGemma), with automatic
- * fallback to the other providers when it is not configured or errors.
+ * OpenRouter serves MedGemma. OpenAI leads the default routing order, with
+ * OpenRouter next and the rest as fallbacks.
  */
 
 const noopLog = { warn: () => undefined, info: () => undefined, error: () => undefined } as never;
@@ -63,29 +63,34 @@ describe('ProviderRouter default routing', () => {
   const origEnv = { ...process.env };
   afterEach(() => (process.env = { ...origEnv }));
 
-  it('leads with OpenRouter when configured, keeping others as fallback', () => {
-    delete process.env.AGENTIC_PROVIDER;
-    const openrouter = make('openrouter', true);
-    const router = new ProviderRouter(
-      make('anthropic', true) as never,
-      make('openai', true) as never,
-      make('deepseek', false) as never,
-      make('gemini', false) as never,
-      openrouter as never,
-    );
-    expect(router.advertisedProvider()).toBe('openrouter');
-    expect(router.list().map((p) => p.name)).toContain('openrouter');
-  });
-
-  it('falls back to the next configured provider when OpenRouter is absent', () => {
+  it('leads with OpenAI when configured, keeping others as fallback', () => {
     delete process.env.AGENTIC_PROVIDER;
     const router = new ProviderRouter(
       make('anthropic', true) as never,
       make('openai', true) as never,
       make('deepseek', false) as never,
       make('gemini', false) as never,
-      make('openrouter', false) as never,
+      make('openrouter', true) as never,
     );
     expect(router.advertisedProvider()).toBe('openai');
+    expect(router.list().map((p) => p.name)).toEqual([
+      'openai',
+      'openrouter',
+      'anthropic',
+      'deepseek',
+      'gemini',
+    ]);
+  });
+
+  it('falls back to OpenRouter next when OpenAI is absent', () => {
+    delete process.env.AGENTIC_PROVIDER;
+    const router = new ProviderRouter(
+      make('anthropic', true) as never,
+      make('openai', false) as never,
+      make('deepseek', false) as never,
+      make('gemini', false) as never,
+      make('openrouter', true) as never,
+    );
+    expect(router.advertisedProvider()).toBe('openrouter');
   });
 });

@@ -4,6 +4,13 @@ import { ClinicalToolsService } from '../src/modules/clinical-tools/clinical-too
 describe('ClinicalToolsService', () => {
   const svc = new ClinicalToolsService();
 
+  it('IV fentanyl equianalgesia is 0.1 mg ≡ 30 mg oral morphine (H6: was 0.3, a 3× overdose)', () => {
+    const fent = svc.all().equianalgesicOpioids.find((o) => o.id === 'fentanyl-iv');
+    expect(fent).toBeDefined();
+    // 30 mg PO morphine ≈ 10 mg IV morphine ≈ 100 mcg (0.1 mg) IV fentanyl.
+    expect(fent!.doseEquivalentTo30mgOralMorphine).toBe(0.1);
+  });
+
   it('exposes the full reference payload (doseDrugs + vitals + scoringSystems)', () => {
     const out = svc.all();
     expect(out).toHaveProperty('doseDrugs');

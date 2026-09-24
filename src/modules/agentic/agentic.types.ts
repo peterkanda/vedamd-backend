@@ -105,6 +105,11 @@ export interface AgenticEvaluationResponse {
     /** LLM provider used. */
     llmProvider?: 'anthropic' | 'openai' | 'deepseek' | 'gemini' | 'openrouter' | 'disabled';
     /**
+     * Provider the router tried first, when it failed and another approved
+     * model answered instead. Null or absent on a first-choice answer.
+     */
+    llmFellBackFrom?: 'anthropic' | 'openai' | 'deepseek' | 'gemini' | 'openrouter' | null;
+    /**
      * Whether the answering model is one the operator declared fit for clinical
      * reasoning. Clinical paths refuse a non-medical model outright, so this is
      * `true` whenever cards were produced — it is on the wire so a client can
@@ -166,6 +171,9 @@ export interface AgenticEvaluationResponse {
      * badges alongside.
      */
     narrative?: string;
+    /** AI cards the model proposed that were withheld (unverifiable citation,
+     *  low confidence, or unparseable output). */
+    rejectedCardCount?: number;
     /**
      * Error class when the LLM call itself threw (provider down,
      * timeout, missing key). Surfaced so the UI can show "AI provider
@@ -230,7 +238,12 @@ export interface AgenticCitation {
  * The retriever picks records relevant to the inbound context.
  */
 export interface RetrievedKnowledge {
-  drugs: Array<{ slug: string; inn: string; summary: string }>;
+  /**
+   * `summary` is a short human-readable line (shown in the UI's related
+   * records); `grounding` is the complete, field-aware text the model is given
+   * (see summarizeRecord) — never cut inside a value.
+   */
+  drugs: Array<{ slug: string; inn: string; summary: string; grounding?: string }>;
   interactions: Array<{
     slugA: string;
     slugB: string;
@@ -238,7 +251,7 @@ export interface RetrievedKnowledge {
     mechanism: string;
     management: string;
   }>;
-  conditions: Array<{ slug: string; title: string; summary: string }>;
+  conditions: Array<{ slug: string; title: string; summary: string; grounding?: string }>;
   procedures: Array<{ slug: string; title: string; summary: string }>;
   rules: Array<{ id: string; title: string; description: string }>;
 }

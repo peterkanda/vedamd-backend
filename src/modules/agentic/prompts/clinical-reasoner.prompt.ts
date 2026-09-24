@@ -92,7 +92,8 @@ export function buildUserMessage(
 
   if (knowledge.drugs.length) {
     k.push('\n### Drugs');
-    for (const d of knowledge.drugs) k.push(`- [drug:${d.slug}] ${d.inn} — ${d.summary}`);
+    for (const d of knowledge.drugs)
+      k.push(`- [drug:${d.slug}] ${d.inn} — ${d.grounding ?? d.summary}`);
   }
   if (knowledge.interactions.length) {
     k.push('\n### Drug-drug interactions');
@@ -104,7 +105,7 @@ export function buildUserMessage(
   if (knowledge.conditions.length) {
     k.push('\n### Conditions');
     for (const c of knowledge.conditions)
-      k.push(`- [condition:${c.slug}] ${c.title} — ${c.summary}`);
+      k.push(`- [condition:${c.slug}] ${c.title} — ${c.grounding ?? c.summary}`);
   }
   if (knowledge.procedures.length) {
     k.push('\n### Procedures');

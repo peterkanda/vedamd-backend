@@ -34,6 +34,7 @@ function auditStash(res: AgenticEvaluationResponse, hook?: string): ClinicalAudi
     llmProvider: provider && provider !== 'disabled' ? provider : undefined,
     llmModel: res.meta.llmModel,
     llmMedical: res.meta.llmMedical,
+    fellBackFrom: res.meta.llmFellBackFrom,
     cardsReturned: res.cards.length,
     cardSummaries: res.cards.map((c) => c.summary),
     citations: res.meta.citedRecords,
@@ -161,6 +162,9 @@ export class AgenticController {
         dto.params ?? {},
         dto.hook,
         dto.question,
+        // Enforce per-tenant ownership: a caller can only use its own
+        // registered connection/query, never another integrator's.
+        req.apiKey?.integratorId,
       );
       ctx.mode = dto.mode;
       ctx.minConfidence = dto.minConfidence;

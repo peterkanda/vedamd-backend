@@ -144,29 +144,60 @@ export class KnowledgeService implements OnModuleInit {
     kind: 'drug' | 'ddi' | 'condition' | 'procedure' | 'rule',
     id: string,
   ): Array<{ strength?: string }> | undefined {
+    return this.resolveCitedRecord(kind, id)?.references;
+  }
+
+  /**
+   * The bundle record a citation names, in the id form the prompts use
+   * (`drug:<slug>`, `ddi:<slugA>+<slugB>`, `rule:<id>` …).
+   */
+  resolveCitedRecord(
+    kind: 'drug' | 'ddi' | 'condition' | 'procedure' | 'rule',
+    id: string,
+  ):
+    | {
+        references?: Array<{ strength?: string }>;
+        reviewStatus?: string;
+        label: string;
+      }
+    | undefined {
     if (kind === 'drug') {
       const rec = this.bundle.drugs.find((d) => d.slug === id);
-      return rec?.references;
+      return rec && { references: rec.references, reviewStatus: rec.reviewStatus, label: rec.inn };
     }
     if (kind === 'condition') {
       const rec = this.bundle.conditions.find((c) => c.slug === id);
-      return rec?.references;
+      return (
+        rec && { references: rec.references, reviewStatus: rec.reviewStatus, label: rec.title }
+      );
     }
     if (kind === 'procedure') {
       const rec = this.bundle.procedures.find((p) => p.slug === id);
-      return rec?.references;
+      return (
+        rec && { references: rec.references, reviewStatus: rec.reviewStatus, label: rec.title }
+      );
     }
     if (kind === 'rule') {
       const rec = this.bundle.cdsRules.find((r) => r.id === id);
-      return rec?.references;
+      return (
+        rec && { references: rec.references, reviewStatus: rec.reviewStatus, label: rec.title }
+      );
     }
     if (kind === 'ddi') {
-      // DDIs are keyed as "slugA|slugB"; allow either order.
-      const [a, b] = id.split('|');
+      // The prompts and the citation verifier write "slugA+slugB"; "|" is
+      // accepted too. Splitting on "|" alone meant no DDI citation ever
+      // resolved, so interaction cards were never evidence-capped.
+      const [a, b] = id.split(/[+|]/);
       const rec = this.bundle.interactions.find(
         (d) => (d.slugA === a && d.slugB === b) || (d.slugA === b && d.slugB === a),
       );
-      return rec?.references;
+      return (
+        rec && {
+          references: rec.references,
+          reviewStatus: rec.reviewStatus,
+          label: `${rec.slugA} + ${rec.slugB} interaction`,
+        }
+      );
     }
     return undefined;
   }

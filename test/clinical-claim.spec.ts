@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { isClinicalClaim, ungroundedRefusal } from '../src/modules/assistant/clinical-claim';
+import phrasings from './fixtures/clinical-claim-phrasings.json';
 
 /**
  * Mirrors vedamd-mobile/src/llm/__tests__/prompt.test.ts's word lists exactly
@@ -44,5 +45,17 @@ describe('clinical-claim gate (backend)', () => {
     expect(refusal.length).toBeGreaterThan(80);
     expect(refusal.toLowerCase()).toContain('formulary');
     expect(refusal).not.toMatch(/\b\d+\s*(mg|mcg|ml|g)\b/i);
+  });
+});
+
+// Shared with vedamd-mobile (src/llm/__tests__/fixtures/): both gates must
+// agree on every phrasing, including the digit-glued, reverse-order, drug-choice
+// and Swahili forms the original patterns let through.
+describe('clinical-claim gate — shared phrasing fixture', () => {
+  it.each(phrasings.mustFlag)('flags "%s"', (q) => {
+    expect(isClinicalClaim(q)).toBe(true);
+  });
+  it.each(phrasings.mayAnswer)('does not flag "%s"', (q) => {
+    expect(isClinicalClaim(q)).toBe(false);
   });
 });

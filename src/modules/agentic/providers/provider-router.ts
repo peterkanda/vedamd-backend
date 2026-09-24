@@ -23,7 +23,7 @@ import type {
  *  2. `AGENTIC_PROVIDER` env var — operator-wide override, e.g.
  *     "openai", "anthropic", "deepseek", "gemini", "openai-only" etc.
  *  3. Auto-select — prefer OpenAI when configured, otherwise the first
- *     configured provider in [openai, anthropic, deepseek, gemini].
+ *     configured provider in [openrouter, anthropic, deepseek, gemini].
  *
  * Whichever provider is selected, the router falls back to the next
  * configured provider on failure (unless an "*-only" preference is
@@ -56,10 +56,10 @@ export class ProviderRouter {
     }
   }
 
-  /** All providers, in default fallback order. OpenRouter (MedGemma) leads, so
-   *  it is the default and every other provider is a fallback behind it. */
+  /** All providers, in default fallback order. OpenAI leads, so it is the
+   *  default and every other provider is a fallback behind it. */
   private all(): LlmProvider[] {
-    return [this.openrouter, this.openai, this.anthropic, this.deepseek, this.gemini];
+    return [this.openai, this.openrouter, this.anthropic, this.deepseek, this.gemini];
   }
 
   /** Returns the ordered list of providers to attempt for this request. */
@@ -92,7 +92,7 @@ export class ProviderRouter {
       case 'gemini-only':
         return [this.gemini];
       default: {
-        // Auto: prefer OpenRouter (MedGemma) when configured, otherwise the
+        // Auto: prefer OpenAI when configured, otherwise the
         // first configured provider in the default fallback order.
         const ordered = this.all();
         const idx = ordered.findIndex((p) => p.isConfigured());
@@ -160,7 +160,10 @@ export class ProviderRouter {
         const result = await provider.complete(req);
         return {
           ...result,
-          medical: isMedicalModel(result.model),
+          // The operator approves the id they configure. Providers may answer
+          // under a dated snapshot of it (gpt-4o → gpt-4o-2024-08-06), which
+          // the approval list would not match, so the configured id counts too.
+          medical: isMedicalModel(provider.model) || isMedicalModel(result.model),
           fellBackFrom: provider.name === intended ? null : intended,
         };
       } catch (err) {

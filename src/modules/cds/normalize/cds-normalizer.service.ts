@@ -36,14 +36,26 @@ export class CdsNormalizerService implements OnModuleInit {
   /** Rebuilds the code index — call after a content bundle swap. */
   rebuildIndex(): void {
     const quarantine = loadRxNormQuarantine();
-    if (quarantine.warning) this.logger.warn(`RxNorm quarantine: ${quarantine.warning}`);
+    // The bundle's RxNorm codes are mostly wrong (content/safety/
+    // rxnorm-code-audit.md); the quarantine is what stops them resolving to
+    // the wrong drug. Without it, do not match by RxNorm at all — names and
+    // ATC still resolve — rather than trust every known-bad code.
+    const rxnormTrusted = quarantine.entries.length > 0;
+    if (!rxnormTrusted) {
+      this.logger.error(
+        `RxNorm quarantine unavailable (${quarantine.warning ?? 'empty'}); RxNorm codes are ignored ` +
+          'for drug resolution until it is restored.',
+      );
+    } else if (quarantine.warning) {
+      this.logger.warn(`RxNorm quarantine: ${quarantine.warning}`);
+    }
     this.index = new DrugCodeIndex(
       this.knowledge.getDrugs().map((d) => ({
         slug: d.slug,
         inn: d.inn,
         tradeNames: d.tradeNames ?? [],
         atc: d.atc ?? [],
-        rxnorm: d.rxnorm,
+        rxnorm: rxnormTrusted ? d.rxnorm : undefined,
         snomed: d.snomed as string | string[] | undefined,
       })),
       { quarantine: quarantine.entries },

@@ -211,17 +211,22 @@ export class StatusEpilepticusStrategy implements CdsRuleStrategy {
   }
 
   private statusCard(rule: CdsRule, req: CdsHookRequest, ctx: SeizureContext): CdsCard {
-    const wt = ctx.weightKg;
-    const isChild = typeof ctx.ageYears === 'number' && ctx.ageYears < 12;
+    const wt = typeof ctx.weightKg === 'number' && ctx.weightKg > 0 ? ctx.weightKg : undefined;
+    const ageKnown = typeof ctx.ageYears === 'number';
+    const isChild = ageKnown && (ctx.ageYears as number) < 12;
     const lorazepamDose =
       typeof wt === 'number'
         ? `lorazepam ${Math.min(4, Number((0.1 * wt).toFixed(1)))} mg IV (0.1 mg/kg × ${wt} kg, max 4 mg)`
         : 'lorazepam 0.1 mg/kg IV (max 4 mg)';
-    const midazolamDose = isChild
-      ? typeof wt === 'number' && wt >= 13 && wt <= 40
-        ? `buccal / IM midazolam 5 mg (weight ${wt} kg in 13–40 kg band)`
-        : 'buccal / IM midazolam 10 mg (weight ≥ 40 kg) or 5 mg (13–40 kg)'
-      : 'IM midazolam 10 mg (single dose)';
+    const midazolamDose = midazolamLine(wt, ageKnown, isChild);
+    // 50 mL of 50 % dextrose is an adult dose; children get 10 % at 5 mL/kg.
+    const glucoseDose = isChild
+      ? typeof wt === 'number'
+        ? `${Math.round(5 * wt)} mL of 10 % dextrose (5 mL/kg × ${wt} kg)`
+        : '10 % dextrose 5 mL/kg'
+      : ageKnown
+        ? '50 mL of 50 % dextrose'
+        : '50 mL of 50 % dextrose for an adult; a child gets 10 % dextrose 5 mL/kg — never 50 %';
     const phenytoinDose =
       typeof wt === 'number'
         ? `phenytoin ${(20 * wt).toFixed(0)} mg IV (20 mg/kg) in normal saline at ≤ 50 mg/min (≤ 1 mg/kg/min in children)`
@@ -233,7 +238,7 @@ export class StatusEpilepticusStrategy implements CdsRuleStrategy {
       'critical',
       'Status epilepticus — activate emergency bundle now',
       'ABCDE: airway protection (recovery position; suction; oxygen 15 L via non-rebreather; jaw thrust — do not force ' +
-        'anything between teeth), IV access × 2 large-bore, finger-stick glucose (give 50 mL of 50 % dextrose if < 3 mmol/L; ' +
+        'anything between teeth), IV access × 2 large-bore, finger-stick glucose (give {{glucose}} if < 3 mmol/L; ' +
         'in alcohol use add thiamine 100 mg IV first). Stage 1 (0–5 min) — first-line benzodiazepine: {{bzd1}}. If no IV ' +
         'access: {{bzd2}}. Repeat ONCE after 10 min if still convulsing. Stage 2 (10–30 min, still convulsing) — second-line ' +
         'anti-epileptic: {{phenytoin}} with continuous cardiac monitoring (risk of hypotension, bradycardia, asystole), OR ' +
@@ -242,7 +247,7 @@ export class StatusEpilepticusStrategy implements CdsRuleStrategy {
         '0.05–0.4 mg/kg/h OR thiopentone induction with EEG monitoring. Investigate precipitant: full glucose / U&E / Ca / Mg, ' +
         'malaria smear, lactate, ABG, ECG, CT brain, lumbar puncture if febrile / immunocompromised once imaging clear. ' +
         'Refer to higher-level care.',
-      { bzd1: lorazepamDose, bzd2: midazolamDose, phenytoin: phenytoinDose },
+      { bzd1: lorazepamDose, bzd2: midazolamDose, phenytoin: phenytoinDose, glucose: glucoseDose },
     );
   }
 
@@ -279,4 +284,27 @@ export class StatusEpilepticusStrategy implements CdsRuleStrategy {
       },
     };
   }
+}
+
+/**
+ * Non-IV benzodiazepine. The 13–40 kg / ≥ 40 kg bands left no dose below
+ * 13 kg (an 8 kg infant was offered "10 mg or 5 mg"), and a missing age sent
+ * everyone to the adult 10 mg. Below 13 kg the dose is per kg (0.2 mg/kg IM,
+ * 0.3 mg/kg buccal, max 10 mg); weight alone is enough to pick a band.
+ */
+function midazolamLine(wt: number | undefined, ageKnown: boolean, isChild: boolean): string {
+  if (typeof wt === 'number' && (isChild || !ageKnown)) {
+    if (wt < 13) {
+      const im = Math.min(10, Number((0.2 * wt).toFixed(1)));
+      const buccal = Math.min(10, Number((0.3 * wt).toFixed(1)));
+      return `IM midazolam ${im} mg (0.2 mg/kg × ${wt} kg) or buccal ${buccal} mg (0.3 mg/kg)`;
+    }
+    if (wt <= 40) return `buccal / IM midazolam 5 mg (weight ${wt} kg in 13–40 kg band)`;
+    return `buccal / IM midazolam 10 mg (weight ${wt} kg, ≥ 40 kg)`;
+  }
+  if (isChild) {
+    return 'buccal / IM midazolam by weight — under 13 kg 0.2 mg/kg IM or 0.3 mg/kg buccal; 13–40 kg 5 mg; ≥ 40 kg 10 mg (weigh the child)';
+  }
+  if (ageKnown) return 'IM midazolam 10 mg (single dose)';
+  return 'IM midazolam 10 mg for an adult; if a child, dose by weight (under 13 kg 0.2 mg/kg IM, 13–40 kg 5 mg)';
 }

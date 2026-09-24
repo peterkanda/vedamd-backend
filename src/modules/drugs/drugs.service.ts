@@ -1,5 +1,6 @@
-import { Injectable, OnModuleInit } from '@nestjs/common';
+import { Injectable, OnModuleInit, Logger } from '@nestjs/common';
 import { calculateDose, isUncappedPaediatricDose, matchRenal } from './drugs.dosing';
+import { normalizeDrugRecords } from './drug-record-normalize';
 import { matchDrugAllergies, type DrugAllergyFlag } from './allergy-matching';
 import { KnowledgeService } from '../knowledge/knowledge.service';
 import { AllergyService } from '../allergy/allergy.service';
@@ -46,7 +47,9 @@ export interface ListFilters {
 
 @Injectable()
 export class DrugsService implements OnModuleInit {
+  private readonly logger = new Logger(DrugsService.name);
   private bySlug = new Map<string, DrugRecord>();
+  private aliasGroups = new Map<string, string[]>();
   private interactionsByPair = new Map<string, DrugInteraction>();
   private drugDiseaseInteractions: DrugDiseaseInteraction[] = [];
 
@@ -56,7 +59,22 @@ export class DrugsService implements OnModuleInit {
   ) {}
 
   onModuleInit(): void {
-    this.bySlug = new Map(this.knowledge.getDrugs().map((d) => [d.slug, d]));
+    // Clinical consumers (dosing, renal / pregnancy rules, safety review) read
+    // normalised copies; the knowledge service keeps the records exactly as
+    // signed, because governance hashes them (see normalizeDrugRecords).
+    const drugs = this.knowledge.getDrugs().map((d) => structuredClone(d));
+    const issues = normalizeDrugRecords(drugs);
+    if (issues.length) {
+      this.logger.warn(
+        `Normalised ${issues.length} drug record shape(s) that would have disabled safety rules; ` +
+          `fix in content: ${issues.slice(0, 10).join('; ')}${issues.length > 10 ? '; …' : ''}`,
+      );
+    }
+    this.bySlug = new Map(drugs.map((d) => [d.slug, d]));
+    this.aliasGroups = buildAliasGroups([
+      ...drugs.map((d) => d.slug),
+      ...this.knowledge.getInteractions().flatMap((i) => [i.slugA, i.slugB]),
+    ]);
     this.interactionsByPair = new Map(
       this.knowledge.getInteractions().map((i) => [pairKey(i.slugA, i.slugB), i]),
     );
@@ -119,6 +137,12 @@ export class DrugsService implements OnModuleInit {
     return calculateDose(drug, input);
   }
 
+  /** Every slug the bundle files this molecule under (including itself). */
+  aliasesOf(slug: string): string[] {
+    const s = slug.trim().toLowerCase();
+    return this.aliasGroups.get(s) ?? [s];
+  }
+
   checkInteractions(slugs: string[]): {
     interactions: DrugInteraction[];
     unknownSlugs: string[];
@@ -135,11 +159,26 @@ export class DrugsService implements OnModuleInit {
     // interactions — a false "no known interactions" on a flagged combination.
     const unknown = unique.filter((s) => !this.bySlug.has(s) && !this.slugHasInteractions(s));
 
+    // Each slug stands for its whole molecule group: the bundle holds
+    // duplicate records for 59 molecules (co-trimoxazole / cotrimoxazole,
+    // X / X-detail …) with interactions filed under only one of them, so
+    // warfarin + "co-trimoxazole" used to find nothing.
     const found: DrugInteraction[] = [];
+    const seen = new Set<DrugInteraction>();
     for (let i = 0; i < unique.length; i++) {
       for (let j = i + 1; j < unique.length; j++) {
-        const hit = this.interactionsByPair.get(pairKey(unique[i], unique[j]));
-        if (hit) found.push(hit);
+        const groupA = this.aliasesOf(unique[i]);
+        const groupB = this.aliasesOf(unique[j]);
+        if (groupA.some((a) => groupB.includes(a))) continue; // same molecule
+        for (const a of groupA) {
+          for (const b of groupB) {
+            const hit = this.interactionsByPair.get(pairKey(a, b));
+            if (hit && !seen.has(hit)) {
+              seen.add(hit);
+              found.push(hit);
+            }
+          }
+        }
       }
     }
 
@@ -174,6 +213,7 @@ export class DrugsService implements OnModuleInit {
       inn: string;
       crClMlMin: number;
       prohibited: boolean;
+      caution: boolean;
       adjustment: string;
     }>;
     hepaticGuidance: Array<{ slug: string; inn: string; guidance: string }>;
@@ -261,6 +301,7 @@ export class DrugsService implements OnModuleInit {
               inn: d.inn,
               crClMlMin,
               prohibited: !!band.prohibited,
+              caution: !!band.caution,
               adjustment: band.adjustment,
             }));
 
@@ -356,7 +397,8 @@ export class DrugsService implements OnModuleInit {
         drugs: unique.length,
         interactions: interactions.length,
         majorInteractions: interactions.filter(
-          (i) => i.severity === 'severe' || i.severity === 'major',
+          (i) =>
+            i.severity === 'contraindicated' || i.severity === 'severe' || i.severity === 'major',
         ).length,
         watchReserve: stewardship.length,
         duplicateClasses: duplicateTherapy.length,
@@ -384,6 +426,47 @@ export class DrugsService implements OnModuleInit {
 
 /** Weight at/above which the dosing calculator treats a patient as an adult. */
 const PAEDIATRIC_MAX_WEIGHT_KG = 50;
+
+/**
+ * Records that are the same molecule under different slugs. Grouped by the
+ * slug's letters (so "co-trimoxazole" meets "cotrimoxazole") with a "-detail"
+ * suffix dropped, plus pairs whose slugs share nothing. Not by INN: one
+ * record's INN field is wrong (a noradrenaline combination lists "esmolol").
+ */
+const SAME_MOLECULE: string[][] = [
+  ['amoxicillin-clavulanate', 'co-amoxiclav'],
+  ['glyceryl-trinitrate', 'gtn'],
+  ['aciclovir', 'acyclovir'],
+  ['tenofovir-disoproxil', 'tenofovir-disoproxil-fumarate'],
+  ['timolol-eye-drops', 'timolol-ophthalmic'],
+  ['furosemide', 'frusemide'],
+  ['rifampicin', 'rifampin'],
+  ['magnesium-sulphate', 'magnesium-sulfate'],
+];
+
+function buildAliasGroups(slugs: string[]): Map<string, string[]> {
+  const byKey = new Map<string, Set<string>>();
+  const keyOf = (slug: string) =>
+    slug
+      .toLowerCase()
+      .replace(/-detail$/, '')
+      .replace(/[^a-z0-9]/g, '');
+  for (const slug of new Set(slugs.map((s) => s.toLowerCase()))) {
+    const k = keyOf(slug);
+    if (!byKey.has(k)) byKey.set(k, new Set());
+    byKey.get(k)!.add(slug);
+  }
+  for (const pair of SAME_MOLECULE) {
+    const merged = new Set(pair.flatMap((s) => [...(byKey.get(keyOf(s)) ?? [s])]));
+    for (const s of pair) byKey.set(keyOf(s), merged);
+  }
+  const out = new Map<string, string[]>();
+  for (const group of byKey.values()) {
+    const list = [...group];
+    for (const s of list) out.set(s, list);
+  }
+  return out;
+}
 
 function pairKey(a: string, b: string): string {
   return [a.toLowerCase(), b.toLowerCase()].sort().join('::');

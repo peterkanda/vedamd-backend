@@ -74,16 +74,62 @@ function isPrivateIpv4(ip: string): boolean {
   return false;
 }
 
+/**
+ * Canonicalise the many non-dotted encodings of an IPv4 address to the
+ * dotted-quad form so the private-range check can't be bypassed:
+ *   2130706433        (decimal integer)      → 127.0.0.1
+ *   0x7f000001        (hex integer)          → 127.0.0.1
+ *   017700000001      (octal integer)        → 127.0.0.1
+ *   0x7f.0.0.1        (hex octet)            → 127.0.0.1
+ *   0177.0.0.1        (octal octet)          → 127.0.0.1
+ * Returns the original string unchanged when it is not one of these forms.
+ */
+export function canonicalizeIpv4(host: string): string {
+  if (isIP(host) === 4) return host;
+  const parseOctet = (p: string): number | null => {
+    if (/^0x[0-9a-f]+$/i.test(p)) return parseInt(p, 16);
+    if (/^0[0-7]+$/.test(p)) return parseInt(p, 8);
+    if (/^\d+$/.test(p)) return parseInt(p, 10);
+    return null;
+  };
+  // Single-integer form (decimal / hex / octal).
+  if (/^(0x[0-9a-f]+|0[0-7]+|\d+)$/i.test(host)) {
+    const n = parseOctet(host);
+    if (n !== null && n >= 0 && n <= 0xffffffff) {
+      return `${(n >>> 24) & 255}.${(n >>> 16) & 255}.${(n >>> 8) & 255}.${n & 255}`;
+    }
+  }
+  // Dotted form with hex/octal octets.
+  const parts = host.split('.');
+  if (parts.length === 4) {
+    const nums = parts.map(parseOctet);
+    if (nums.every((n) => n !== null && n >= 0 && n <= 255)) {
+      return (nums as number[]).join('.');
+    }
+  }
+  return host;
+}
+
 function isPrivateIp(ip: string): boolean {
-  const kind = isIP(ip);
-  if (kind === 4) return isPrivateIpv4(ip);
+  const canon = canonicalizeIpv4(ip);
+  const kind = isIP(canon);
+  if (kind === 4) return isPrivateIpv4(canon);
   if (kind === 6) {
-    const lower = ip.toLowerCase();
+    const lower = canon.toLowerCase();
     if (lower === '::1' || lower === '::') return true;
     if (lower.startsWith('fe80')) return true; // link-local
     if (lower.startsWith('fc') || lower.startsWith('fd')) return true; // unique-local
-    const mapped = lower.match(/::ffff:(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})$/);
-    if (mapped) return isPrivateIpv4(mapped[1]);
+    // IPv4-mapped, dotted form: ::ffff:127.0.0.1
+    const dotted = lower.match(/::ffff:(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})$/);
+    if (dotted) return isPrivateIpv4(dotted[1]);
+    // IPv4-mapped/compatible, hex form: ::ffff:7f00:1 or ::7f00:1
+    const hex = lower.match(/::(?:ffff:)?([0-9a-f]{1,4}):([0-9a-f]{1,4})$/);
+    if (hex) {
+      const hi = parseInt(hex[1], 16);
+      const lo = parseInt(hex[2], 16);
+      const v4 = `${(hi >> 8) & 255}.${hi & 255}.${(lo >> 8) & 255}.${lo & 255}`;
+      return isPrivateIpv4(v4);
+    }
     return false;
   }
   return false;
@@ -125,7 +171,11 @@ export function assertHostAllowedLiteral(urlOrHost: string, opts: SsrfOptions = 
     if (BLOCKED_SUFFIXES.some((suf) => lower.endsWith(suf))) {
       throw new SsrfBlockedError(`Host "${host}" is not permitted (internal domain).`);
     }
-    if (isIP(host) && isPrivateIp(host)) {
+    // isPrivateIp canonicalises integer/octal/hex forms, so this also blocks
+    // 2130706433, 0x7f000001, 0177.0.0.1 and ::ffff:7f00:1 — not just dotted
+    // quads. A bare hostname (isPrivateIp returns false) falls through to the
+    // DNS-aware resolved check.
+    if (isPrivateIp(host)) {
       throw new SsrfBlockedError(`Host "${host}" is a private/reserved address.`);
     }
   }

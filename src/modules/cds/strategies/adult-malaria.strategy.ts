@@ -160,11 +160,28 @@ export class AdultMalariaStrategy implements CdsRuleStrategy {
           req,
           'warning',
           'Uncomplicated adult malaria — start AL with food',
-          'RDT positive, no severe features. Adult artemether-lumefantrine: 4 tablets twice daily for 3 days WITH FOOD (a ' +
+          'RDT positive, no severe features. Artemether-lumefantrine 20/120 mg: {{alDose}} twice daily for 3 days WITH FOOD (a ' +
             'fat-containing snack improves lumefantrine absorption). Add paracetamol 1 g every 6 h for fever. Counsel return-' +
             'immediately signs (drowsiness, convulsions, dark urine, repeated vomiting, breathlessness, jaundice). Follow up at ' +
             'day 3 and day 28. {{overlay}}',
-          { overlay },
+          { overlay, alDose: alTabletsText(ctx.weightKg) },
+        ),
+      ];
+    }
+
+    // Only an explicit negative result earns the negative-RDT advice (see the
+    // IMCI under-5 strategy).
+    if (ctx.rdtPositive !== false) {
+      return [
+        this.buildCard(
+          rule,
+          req,
+          'warning',
+          'Malaria test result not recorded — test before treating',
+          'No malaria RDT or microscopy result was supplied, so this fever cannot be classified. Test before giving — or ' +
+            'withholding — an antimalarial. If testing is not possible, follow national guidance on presumptive treatment. ' +
+            'Re-run this check once the result is recorded.',
+          {},
         ),
       ];
     }
@@ -248,4 +265,18 @@ function buildPopulationOverlay(
     );
   }
   return lines.join(' ');
+}
+
+/**
+ * Artemether-lumefantrine 20/120 mg is dosed by weight band (WHO malaria
+ * guidelines), not by age: "4 tablets" was given to everyone aged 12+, which
+ * is wrong below 35 kg. With no weight, give the bands and ask for one.
+ */
+function alTabletsText(weightKg: unknown): string {
+  const w = typeof weightKg === 'number' && weightKg > 0 ? weightKg : null;
+  if (w === null) {
+    return '4 tablets if ≥ 35 kg (3 if 25–<35 kg, 2 if 15–<25 kg, 1 if 5–<15 kg — weigh the patient)';
+  }
+  const tablets = w >= 35 ? 4 : w >= 25 ? 3 : w >= 15 ? 2 : 1;
+  return `${tablets} tablet${tablets > 1 ? 's' : ''} (weight ${w} kg)`;
 }

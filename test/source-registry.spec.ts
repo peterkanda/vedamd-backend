@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   buildHostIndex,
   lanesForCountry,
+  licenceAgrees,
   loadSourceRegistry,
   sourceAppliesToCountry,
   sourceForUrl,
@@ -15,7 +16,12 @@ describe('source registry', () => {
   it('loads the catalogue', () => {
     expect(registry.sources.length).toBeGreaterThan(10);
     expect(registry.sources.find((s) => s.id === 'dailymed')?.embeddable).toBe('yes');
-    expect(registry.sources.find((s) => s.id === 'who-narrative')?.embeddable).toBe('cite-only');
+    // WHO licences vary per document (post-2016 NC-SA, older titles all rights
+    // reserved), so WHO is checked item by item rather than embedded wholesale.
+    const who = registry.sources.find((s) => s.id === 'who-narrative');
+    expect(who?.embeddable).toBe('verify');
+    expect(who?.licenceScope).toBe('per-item');
+    expect(registry.contentLicence).toBe('CC-BY-NC-SA-4.0');
   });
 
   it('global sources apply to any country; national sources only to theirs', () => {
@@ -40,8 +46,51 @@ describe('source registry', () => {
     expect(sourceForUrl('https://dailymed.nlm.nih.gov/dailymed/x', index)?.id).toBe('dailymed');
     expect(sourceForUrl('https://bnf.nice.org.uk/drugs/x', index)?.id).toBe('nice');
     expect(sourceForUrl('https://www.who.int/publications/x', index)?.id).toBe('who-narrative');
+    expect(sourceForUrl('https://list.essentialmeds.org/medicines/1', index)?.id).toBe('who-eeml');
     expect(sourceForUrl('https://example.invalid/x', index)).toBeNull();
     expect(sourceForUrl('not a url', index)).toBeNull();
+  });
+});
+
+describe('source registry URL prefixes', () => {
+  const index = buildHostIndex();
+
+  it('NCBI URLs resolve to the right source, not all to StatPearls', () => {
+    expect(sourceForUrl('https://www.ncbi.nlm.nih.gov/books/NBK501922/', index)?.id).toBe(
+      'lactmed',
+    );
+    expect(sourceForUrl('https://www.ncbi.nlm.nih.gov/books/NBK547852/', index)?.id).toBe(
+      'livertox',
+    );
+    expect(sourceForUrl('https://www.ncbi.nlm.nih.gov/books/NBK430685/', index)?.id).toBe(
+      'statpearls',
+    );
+    expect(sourceForUrl('https://www.ncbi.nlm.nih.gov/books/NBK500991/', index)?.id).toBe(
+      'ncbi-bookshelf',
+    );
+    expect(sourceForUrl('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1/', index)?.id).toBe(
+      'pmc-oa',
+    );
+    expect(sourceForUrl('https://pmc.ncbi.nlm.nih.gov/articles/PMC1/', index)?.id).toBe('pmc-oa');
+    expect(sourceForUrl('https://pubmed.ncbi.nlm.nih.gov/1/', index)?.id).toBe('pubmed');
+  });
+
+  it('a path prefix beats the host it lives on', () => {
+    expect(sourceForUrl('https://www.ajol.info/index.php/ahs/article/view/1', index)?.id).toBe(
+      'african-health-sciences',
+    );
+    expect(sourceForUrl('https://www.ajol.info/index.php/other/article/view/1', index)?.id).toBe(
+      'ajol',
+    );
+  });
+
+  it('per-item sources accept any listed item licence', () => {
+    const pmc = loadSourceRegistry().sources.find((s) => s.id === 'pmc-oa')!;
+    expect(licenceAgrees(pmc, 'cc-by-nc-nd')).toBe(true);
+    expect(licenceAgrees(pmc, 'moh-restricted')).toBe(false);
+    const cpic = loadSourceRegistry().sources.find((s) => s.id === 'cpic')!;
+    expect(licenceAgrees(cpic, 'cc0')).toBe(true);
+    expect(licenceAgrees(cpic, 'cc-by')).toBe(false);
   });
 });
 

@@ -36,6 +36,15 @@ function loadMasterKey(): Buffer {
   if (cachedKey) return cachedKey;
   const raw = process.env.SECRETS_VAULT_MASTER_KEY?.trim();
   if (!raw) {
+    // Fail closed in production: without a real master key, every tenant's
+    // credentials would be encrypted under a key reproducible from this
+    // source tree, so AES-GCM would provide zero confidentiality. Refuse to
+    // boot rather than silently ship that.
+    if (process.env.NODE_ENV === 'production') {
+      throw new Error(
+        'SECRETS_VAULT_MASTER_KEY must be set in production — refusing to start with the dev fallback key.',
+      );
+    }
     if (!cachedWarned) {
       // eslint-disable-next-line no-console
       console.warn(

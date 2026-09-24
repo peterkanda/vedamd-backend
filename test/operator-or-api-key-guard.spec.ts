@@ -26,7 +26,10 @@ function makeGuard(apiKeys: Partial<ApiKeysService>) {
   const reflector = {
     getAllAndMerge: () => ['clinical-audit:run'],
   } as unknown as Reflector;
-  const identity = { verifyAccessToken: async () => null } as unknown as IdentityService;
+  const identity = {
+    verifyAccessToken: async () => null,
+    isConfigured: () => false,
+  } as unknown as IdentityService;
   return new OperatorOrApiKeyGuard(identity, config, apiKeys as ApiKeysService, reflector);
 }
 

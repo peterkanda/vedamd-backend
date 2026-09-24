@@ -108,10 +108,15 @@ function parsePatient(r: FhirResource): NonNullable<AgenticClinicalContext['pati
   if (gender === 'male' || gender === 'female' || gender === 'other') p.sex = gender;
   const birthDate = typeof r.birthDate === 'string' ? r.birthDate : undefined;
   if (birthDate) {
-    const ageMs = Date.now() - new Date(birthDate).getTime();
-    const years = ageMs / (365.25 * 24 * 3600 * 1000);
-    if (years >= 2) p.ageYears = Math.floor(years);
-    else p.ageMonths = Math.floor(years * 12);
+    // An unparseable date gave "age NaNmo" and a future one a negative age,
+    // both passed on to the model and the rule engine. Leave age out instead.
+    const born = new Date(birthDate).getTime();
+    const ageMs = Date.now() - born;
+    if (Number.isFinite(born) && ageMs >= 0) {
+      const years = ageMs / (365.25 * 24 * 3600 * 1000);
+      if (years >= 2) p.ageYears = Math.floor(years);
+      else p.ageMonths = Math.floor(years * 12);
+    }
   }
   return p;
 }

@@ -166,6 +166,7 @@ export function normalizeCdsRequest(
 
   // ---- MedicationRequest → VedaMD drug slugs ----
   applyMedications(draftResources, activeResources, generalResources, derived, deps.drugs, report);
+  aliasStrategyFields(derived);
 
   // Merge: caller-supplied flat values win for scalars. Medication lists
   // are the exception and are UNIONED — a caller who sends
@@ -202,13 +203,15 @@ function applyPatient(patient: FhirPatient, out: Record<string, unknown>, now: D
   if (!Number.isFinite(y)) return;
   const dob = new Date(Date.UTC(y, (m || 1) - 1, d || 1));
   if (Number.isNaN(dob.getTime())) return;
+  if (now.getTime() < dob.getTime()) return;
 
-  const ms = now.getTime() - dob.getTime();
-  if (ms < 0) return;
-
-  const days = Math.floor(ms / 86_400_000);
-  const years = Math.floor(days / 365.25);
-  const months = Math.floor(days / 30.4375);
+  // Calendar arithmetic: dividing days by 365.25 made a patient 17 on their
+  // 18th birthday.
+  let years = now.getUTCFullYear() - dob.getUTCFullYear();
+  let months = years * 12 + (now.getUTCMonth() - dob.getUTCMonth());
+  if (now.getUTCDate() < dob.getUTCDate()) months -= 1;
+  years = Math.floor(months / 12);
+  const days = Math.floor((now.getTime() - dob.getTime()) / 86_400_000);
 
   out.ageYears = years;
   // Paediatric strategies branch on the finest unit supplied, so only
@@ -216,7 +219,46 @@ function applyPatient(patient: FhirPatient, out: Record<string, unknown>, now: D
   // ageMonths on a 40-year-old would just be noise.
   if (years < 5) out.ageMonths = months;
   if (months < 2) out.ageDays = days;
-  if (days < 3) out.ageHours = Math.floor(ms / 3_600_000);
+  if (days < 3) {
+    // Hours need a birth time. With only a date, midnight UTC overstated a
+    // newborn's age by up to a day (21 h for a Nairobi evening birth), which
+    // could skip the first-24-hours jaundice branch. Without the FHIR
+    // birthTime extension, count from the END of the birth date instead:
+    // it can only understate the age, which applies the lower, more
+    // sensitive thresholds.
+    const birthTime = patient._birthDate?.extension?.find((e) =>
+      e.url?.endsWith('/patient-birthTime'),
+    )?.valueDateTime;
+    const exact = birthTime ? new Date(birthTime) : null;
+    const born =
+      exact && !Number.isNaN(exact.getTime()) && exact.getTime() <= now.getTime()
+        ? exact
+        : new Date(dob.getTime() + 86_400_000);
+    out.ageHours = Math.max(0, Math.floor((now.getTime() - born.getTime()) / 3_600_000));
+  }
+}
+
+/**
+ * Several strategies read condition and weight fields under different names
+ * from the ones the normaliser writes (paediatric dosing reads
+ * `childWeightKg`, AF/PEN read `hypertension`/`diabetes`, HIV ART reads
+ * `hivStatus`), so FHIR input never reached them. Mirror the derived values
+ * onto those names. Caller-supplied values still win at the merge.
+ */
+function aliasStrategyFields(out: Record<string, unknown>): void {
+  if (out.knownHtn === true && out.hypertension === undefined) out.hypertension = true;
+  if (out.knownDiabetes === true && out.diabetes === undefined) out.diabetes = true;
+  if (out.knownHivPositive === true && out.hivStatus === undefined) out.hivStatus = 'positive';
+  // Only for a child: an adult weight must not trigger paediatric mg/kg dosing.
+  const age = out.ageYears;
+  if (
+    typeof out.weightKg === 'number' &&
+    out.childWeightKg === undefined &&
+    typeof age === 'number' &&
+    age < 12
+  ) {
+    out.childWeightKg = out.weightKg;
+  }
 }
 
 function applyObservations(
@@ -280,6 +322,11 @@ function applyConditions(conditions: FhirCondition[], out: Record<string, unknow
     const status = c.clinicalStatus?.coding?.[0]?.code ?? c.clinicalStatus?.text;
     // No status means "unknown", which OpenMRS and OpenEMR both send —
     // treating that as inactive would drop most real problem lists.
+    // A refuted or erroneous diagnosis is not one the patient has.
+    const verification = (
+      c.verificationStatus?.coding?.[0]?.code ?? c.verificationStatus?.text
+    )?.toLowerCase();
+    if (verification === 'refuted' || verification === 'entered-in-error') return false;
     if (!status) return true;
     return !['inactive', 'resolved', 'remission'].includes(status.toLowerCase());
   });
@@ -330,12 +377,15 @@ function applyMedications(
         continue;
       }
       const med = r as FhirMedicationRequest;
-      const slug = resolveMedication(med, index);
-      if (!slug) {
+      // A stopped, cancelled, completed or erroneous order is not a drug the
+      // patient is on; counting it raised interaction alerts against it.
+      if (INACTIVE_MED_STATUSES.has(med.status?.toLowerCase() ?? '')) continue;
+      const slugs = resolveMedication(med, index);
+      if (slugs.length === 0) {
         report.unresolvedMedications += 1;
         continue;
       }
-      (isDraftOrder(med, slot) ? draftSlugs : activeSlugs).push(slug);
+      (isDraftOrder(med, slot) ? draftSlugs : activeSlugs).push(...slugs);
     }
   };
 
@@ -357,6 +407,14 @@ function applyMedications(
   if (all.length > 0) out.medications = all;
 }
 
+const INACTIVE_MED_STATUSES = new Set([
+  'stopped',
+  'cancelled',
+  'completed',
+  'entered-in-error',
+  'not-taken',
+]);
+
 /**
  * An explicit FHIR status or intent decides; the slot only breaks ties.
  * `draft`/`proposal`/`plan` mean the clinician has not committed yet —
@@ -373,20 +431,37 @@ function isDraftOrder(med: FhirMedicationRequest, slot: 'draft' | 'active' | 'ge
   return slot === 'draft';
 }
 
-function resolveMedication(med: FhirMedicationRequest, index: DrugCodeIndex): string | null {
+function resolveMedication(med: FhirMedicationRequest, index: DrugCodeIndex): string[] {
+  const containedCodes = (med.contained ?? [])
+    .filter((c) => c.resourceType === 'Medication')
+    .map((c) => (c as { code?: FhirCodeableConcept }).code);
+  // A combination product counts as each of its components.
+  const components = index.resolveComponents([
+    med.medicationCodeableConcept?.text,
+    ...(med.medicationCodeableConcept?.coding ?? []).map((c) => c.display),
+    ...containedCodes.flatMap((c) => [c?.text, ...(c?.coding ?? []).map((x) => x.display)]),
+    med.medicationReference?.display,
+  ]);
+  return [...new Set([...resolveSingle(med, containedCodes, index), ...components])];
+}
+
+function resolveSingle(
+  med: FhirMedicationRequest,
+  containedCodes: Array<FhirCodeableConcept | undefined>,
+  index: DrugCodeIndex,
+): string[] {
   const direct = index.resolve(med.medicationCodeableConcept);
-  if (direct) return direct;
+  if (direct) return [direct];
 
   // medicationReference with a contained Medication resource.
-  for (const contained of med.contained ?? []) {
-    if (contained.resourceType !== 'Medication') continue;
-    const code = (contained as { code?: FhirCodeableConcept }).code;
+  for (const code of containedCodes) {
     const hit = index.resolve(code);
-    if (hit) return hit;
+    if (hit) return [hit];
   }
 
   const display = med.medicationReference?.display;
-  return display ? index.resolveName(display) : null;
+  const byName = display ? index.resolveName(display) : null;
+  return byName ? [byName] : [];
 }
 
 /** Flat-dialect keys that carry medication lists. */

@@ -139,6 +139,24 @@ export class ImciMalariaUnder5Strategy implements CdsRuleStrategy {
       ];
     }
 
+    // Only an explicit negative result earns the negative-RDT advice. A
+    // missing result used to fall through to it — "Do NOT give empirical
+    // antimalarial" for a child who was never tested.
+    if (ctx.rdtPositive !== false) {
+      return [
+        this.buildCard(
+          rule,
+          req,
+          'warning',
+          'Malaria test result not recorded — test before treating',
+          'No malaria RDT or microscopy result was supplied, so this fever cannot be classified. Test before giving — or ' +
+            'withholding — an antimalarial. If testing is not possible, follow national guidance on presumptive treatment. ' +
+            'Re-run this check once the result is recorded.',
+          {},
+        ),
+      ];
+    }
+
     return [
       this.buildCard(
         rule,

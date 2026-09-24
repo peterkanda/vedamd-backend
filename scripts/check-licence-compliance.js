@@ -2,17 +2,19 @@
 /**
  * Licence-compliance gate (copyright register enforcement).
  *
- * The content-sourcing analysis is explicit that the most clinically
- * attractive sources (WHO narrative, MoH guidelines, NICE, StatPearls, MSF,
- * SNOMED, ATC/DDD, DrugBank full) are NOT embeddable — they may be cited but
- * never reproduced. This gate turns that from prose guidance into an enforced
- * invariant by cross-checking every citation against the machine-readable
- * source registry (content/sources/registry.json):
+ * VedaMD content is licensed CC BY-NC-SA 4.0 (content/LICENSE). The registry
+ * (content/sources/registry.json) records, per upstream source, whether it may
+ * be embedded under that licence and how (`reuseMode`: adapt / verbatim /
+ * separate / cite-only). Some attractive sources (MSF, most Kenya MoH
+ * guidelines, NICE, SNOMED, ATC/DDD, DrugBank full) stay cite-only. This gate
+ * turns that from prose guidance into an enforced invariant by cross-checking
+ * every citation against the registry:
  *
- *   1. LABEL INTEGRITY — a citation whose host is a known source must, if it
- *      declares a `licence`, declare the SAME licence the registry assigns.
- *      Stops a `moh-restricted`/`proprietary` source being relabelled
- *      `public-domain` to sneak reproduction past review.
+ *   1. LABEL INTEGRITY — a citation whose URL maps to a known source must, if
+ *      it declares a `licence`, declare the SAME licence the registry assigns
+ *      (or, for a `per-item` source such as PMC or WHO IRIS, one of its
+ *      `itemLicences`). Stops a `moh-restricted`/`proprietary` source being
+ *      relabelled `public-domain` to sneak reproduction past review.
  *   2. CENSUS — tallies citations by embeddable verdict so reviewers can see
  *      how much of the bundle leans on cite-only sources.
  *
@@ -31,17 +33,26 @@ const enforce = process.argv.includes('--enforce');
 const registry = JSON.parse(fs.readFileSync(REGISTRY, 'utf8'));
 
 // Host → source index (lower-cased). Longest suffix wins via the strip loop.
+// `urlPrefixes` (host + path, keys containing '/') win over any host match.
+// Mirrors sourceForUrl in src/modules/localization/source-registry.ts.
 const hostIndex = new Map();
 for (const src of registry.sources) {
   for (const host of src.hosts || []) hostIndex.set(host.toLowerCase(), src);
+  for (const prefix of src.urlPrefixes || []) hostIndex.set(prefix.toLowerCase(), src);
 }
 
 function sourceForUrl(url) {
   let host;
+  let hostPath;
   try {
-    host = new URL(url).hostname.toLowerCase();
+    const parsed = new URL(url);
+    host = parsed.hostname.toLowerCase();
+    hostPath = host.replace(/^www\./, '') + parsed.pathname.toLowerCase();
   } catch {
     return null;
+  }
+  for (const [key, src] of hostIndex) {
+    if (key.includes('/') && hostPath.startsWith(key)) return src;
   }
   let candidate = host;
   while (candidate.includes('.')) {
@@ -74,6 +85,12 @@ function collectCitations() {
   return out;
 }
 
+/** A declared licence agrees with the source's (or, per-item, with one of its item licences). */
+function licenceAgrees(src, declared) {
+  if (src.licenceScope === 'per-item') return (src.itemLicences || []).includes(declared);
+  return declared === src.citationLicence;
+}
+
 const cites = collectCitations();
 
 const census = { yes: 0, verify: 0, 'cite-only': 0, unregistered: 0, 'no-url': 0 };
@@ -90,7 +107,7 @@ for (const c of cites) {
     continue;
   }
   census[src.embeddable] += 1;
-  if (c.licence !== undefined && c.licence !== src.citationLicence) {
+  if (c.licence !== undefined && !licenceAgrees(src, c.licence)) {
     mismatches.push({
       label: String(c.label || '').slice(0, 80),
       url: c.url,
@@ -145,7 +162,7 @@ function checkLabelFile(file) {
       }
     }
     const citeSource = r.citation && r.citation.url ? sourceForUrl(r.citation.url) : null;
-    if (citeSource && r.citation.licence !== undefined && r.citation.licence !== citeSource.citationLicence) {
+    if (citeSource && r.citation.licence !== undefined && !licenceAgrees(citeSource, r.citation.licence)) {
       labelViolations.push(`${where} — citation licence ${r.citation.licence} ≠ registry ${citeSource.citationLicence}`);
     }
   }

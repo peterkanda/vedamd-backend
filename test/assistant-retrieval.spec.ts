@@ -105,3 +105,88 @@ describe('AssistantService grounding against the real bundle', () => {
     expect(provider.calls).toBe(0);
   });
 });
+
+describe('AssistantService coverage gate (real bundle)', () => {
+  const original = process.env.MEDICAL_MODEL_IDS;
+  beforeEach(() => {
+    process.env.MEDICAL_MODEL_IDS = MEDICAL;
+  });
+  afterEach(() => {
+    if (original === undefined) delete process.env.MEDICAL_MODEL_IDS;
+    else process.env.MEDICAL_MODEL_IDS = original;
+  });
+
+  class Recording extends FakeProvider {
+    last: LlmCompletionRequest | null = null;
+    override async complete(req: LlmCompletionRequest): Promise<ProviderCompletion> {
+      this.last = req;
+      return super.complete(req);
+    }
+  }
+  function make() {
+    const knowledge = makeKnowledgeService();
+    const provider = new Recording('openrouter', MEDICAL);
+    const args = [
+      new FakeProvider('anthropic', 'claude-sonnet-5'),
+      new FakeProvider('openai', 'gpt-4o'),
+      new FakeProvider('deepseek', 'deepseek-chat'),
+      new FakeProvider('gemini', 'gemini-2.0-flash'),
+      provider,
+    ] as unknown as ConstructorParameters<typeof ProviderRouter>;
+    const svc = new AssistantService(
+      new KnowledgeSearchService(knowledge),
+      new ProviderRouter(...args),
+    );
+    return { svc, provider };
+  }
+
+  // A migraine record mentions zolmitriptan in its management text but says
+  // nothing about pregnancy; the word "pregnancy" alone used to ground this.
+  it('refuses zolmitriptan-in-pregnancy without calling the model', async () => {
+    const { svc, provider } = make();
+    const res = await svc.chat({ question: 'Is zolmitriptan safe in pregnancy?' });
+    expect(res.refused).toBe(true);
+    expect(res.sources).toEqual([]);
+    expect(provider.calls).toBe(0);
+  });
+
+  // 488 of 855 drug records used to lose their pregnancy field to a
+  // fixed-length cut; the field the question asks about now goes first.
+  it('grounds metformin-in-pregnancy on the pregnancy field itself', async () => {
+    const { svc, provider } = make();
+    const res = await svc.chat({ question: 'Is metformin safe in pregnancy?' });
+    expect(res.grounded).toBe(true);
+    expect(provider.last?.user).toMatch(/"pregnancy"\s*:/);
+  });
+
+  it('reads a bare follow-up with the previous question (dose asked in two turns)', async () => {
+    const { svc, provider } = make();
+    const res = await svc.chat({
+      question: 'and for a 2 year old?',
+      conversation: [
+        { role: 'user', content: 'What is the dose of sotagliflozin?' },
+        { role: 'assistant', content: 'I could not find that.' },
+      ],
+    });
+    expect(res.refused).toBe(true);
+    expect(provider.calls).toBe(0);
+  });
+
+  it('places the interaction record for an interaction question', async () => {
+    const { svc, provider } = make();
+    const res = await svc.chat({ question: 'Rifampicin and oral contraceptive interaction' });
+    expect(res.grounded).toBe(true);
+    expect(provider.last?.user).toMatch(/combined-oral-contraceptive/);
+    expect(provider.last?.user).toMatch(/"severity"\s*:/);
+  });
+
+  it('never cuts a grounding record inside a value', async () => {
+    const { svc, provider } = make();
+    await svc.chat({ question: 'Paracetamol dose for a 15 kg child' });
+    const user = provider.last?.user ?? '';
+    // Every placed record is complete JSON.
+    for (const line of user.split('\n').filter((l) => l.startsWith('{'))) {
+      expect(() => JSON.parse(line)).not.toThrow();
+    }
+  });
+});

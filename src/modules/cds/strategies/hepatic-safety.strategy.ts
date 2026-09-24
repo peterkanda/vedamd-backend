@@ -4,6 +4,7 @@ import { HepaticDoseService } from '../../hepatic-dose/hepatic-dose.service';
 import type { ChildPughClass, HepaticDoseRecord } from '../../hepatic-dose/hepatic-dose.types';
 import type { CdsCard, CdsHookRequest, CdsIndicator } from '../cds.types';
 import type { CdsRuleStrategy } from './types';
+import { extractMedicationSlugs } from './medication-slugs';
 
 /**
  * Hepatic-safety strategy — the liver-disease counterpart to renal-safety.
@@ -131,18 +132,4 @@ function readHepaticFlag(context: Record<string, unknown>): boolean {
     context.hepaticImpairment === true ||
     context.liverDisease === true
   );
-}
-
-function extractMedicationSlugs(context: Record<string, unknown>): string[] {
-  const fields = ['medications', 'proposed', 'current', 'draftMedications', 'currentMedications'];
-  const out: string[] = [];
-  for (const f of fields) {
-    const v = context[f];
-    if (Array.isArray(v)) {
-      for (const item of v) {
-        if (typeof item === 'string') out.push(item);
-      }
-    }
-  }
-  return out;
 }

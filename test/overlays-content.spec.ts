@@ -1,7 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { buildHostIndex, sourceForUrl } from '../src/modules/localization/source-registry';
+import {
+  buildHostIndex,
+  licenceAgrees,
+  sourceForUrl,
+} from '../src/modules/localization/source-registry';
+import type { CitationLicence } from '../src/common/citation';
 
 /**
  * Overlay-content safety invariants (mirror of scripts/validate-overlays.ts).
@@ -64,7 +69,8 @@ describe('overlay content', () => {
         if (!['A', 'B', 'C', 'D'].includes(ref.strength as string)) bad.push(`${r.slug}: strength`);
         if (ref.url && ref.licence) {
           const src = sourceForUrl(ref.url, hostIndex);
-          if (src && ref.licence !== src.citationLicence) bad.push(`${r.slug}: licence mismatch`);
+          if (src && !licenceAgrees(src, ref.licence as CitationLicence))
+            bad.push(`${r.slug}: licence mismatch`);
         }
       }
     }

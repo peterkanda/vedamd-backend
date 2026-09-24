@@ -1,11 +1,12 @@
 {
   "$schema": "./registry.schema.md",
-  "description": "Machine-readable content-source & licence registry. Operationalises the Kenya/SSA CDS content-sourcing analysis: every upstream source carries a licence tier and an embeddable verdict that the ingestion engine and the licence-compliance CI gate enforce. `citationLicence` maps each source onto the shared CitationLicence enum (src/common/citation.ts) so citation hosts can be checked against it. NOTHING is embedded from a source whose embeddable verdict is not 'yes'.",
-  "updated": "2026-09-17",
+  "description": "Machine-readable content-source & licence registry. VedaMD clinical content is released under CC BY-NC-SA 4.0 (content/LICENSE); every upstream source carries a licence tier, an embeddable verdict and a reuseMode (adapt / verbatim / separate / cite-only) that the ingestion engine and the licence-compliance CI gate enforce. `citationLicence` maps each source onto the shared CitationLicence enum (src/common/citation.ts); `per-item` sources list every licence an item may carry in `itemLicences`. `commercialUse` records whether the source licence also permits commercial use, so a commercial-safe subset can be served. NOTHING is embedded from a source whose embeddable verdict is not 'yes'. Evidence: docs/content-sources-and-gaps.md, docs/manufacturer-label-licensing.md.",
+  "updated": "2026-09-24",
+  "contentLicence": "CC-BY-NC-SA-4.0",
   "tiers": {
-    "1": "Safe to embed in a commercial product with attribution (public-domain / permissive).",
-    "2": "High value but licence-uncertain — verify per source/repo before embedding.",
-    "3": "Free to clinicians but NOT embeddable (NC/ND/proprietary/government) — cite only, author original logic."
+    "1": "Licence verified compatible with the VedaMD content licence (CC BY-NC-SA 4.0) — embed as reuseMode allows, with attribution.",
+    "2": "Licence unverified, or set per item (PMC, WHO IRIS, MoH) — verify the source or item before embedding.",
+    "3": "Not reusable even non-commercially (all rights reserved, restrictive terms, no redistribution) — cite only, author original logic."
   },
   "sources": [
     {
@@ -14,6 +15,8 @@
       "title": "HL7 FHIR specification",
       "tier": 1,
       "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
       "format": "spec",
       "spdxOrName": "CC0-1.0",
       "citationLicence": "public-domain",
@@ -35,6 +38,8 @@
       "title": "DailyMed structured product labels",
       "tier": 1,
       "embeddable": "yes",
+      "reuseMode": "verbatim",
+      "commercialUse": true,
       "format": "api",
       "spdxOrName": "US-Public-Domain",
       "citationLicence": "public-domain",
@@ -58,6 +63,8 @@
       "title": "openFDA drug/label/event APIs",
       "tier": 1,
       "embeddable": "yes",
+      "reuseMode": "verbatim",
+      "commercialUse": true,
       "format": "api",
       "spdxOrName": "US-Public-Domain",
       "citationLicence": "public-domain",
@@ -84,6 +91,8 @@
       "title": "RxNorm drug terminology",
       "tier": 1,
       "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
       "format": "api",
       "spdxOrName": "UMLS-RxNorm (no restriction)",
       "citationLicence": "public-domain",
@@ -108,6 +117,8 @@
       "title": "LOINC lab/clinical observation codes",
       "tier": 1,
       "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
       "format": "bulk",
       "spdxOrName": "LOINC-License",
       "citationLicence": "cc-by",
@@ -131,6 +142,8 @@
       "title": "AHRQ CDS Connect computable artifacts (CQL/FHIR)",
       "tier": 1,
       "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
       "format": "fhir-ig",
       "spdxOrName": "US-Public-Domain",
       "citationLicence": "public-domain",
@@ -153,6 +166,8 @@
       "title": "ONC high-priority drug-drug interaction list",
       "tier": 1,
       "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
       "format": "bulk",
       "spdxOrName": "US-Public-Domain",
       "citationLicence": "public-domain",
@@ -174,6 +189,8 @@
       "title": "DrugBank Open Data subset",
       "tier": 1,
       "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
       "format": "bulk",
       "spdxOrName": "CC0-1.0",
       "citationLicence": "public-domain",
@@ -197,9 +214,17 @@
       "title": "WHO SMART Guidelines L2/L3 FHIR Implementation Guides",
       "tier": 2,
       "embeddable": "verify",
+      "reuseMode": "adapt",
+      "commercialUse": false,
       "format": "fhir-ig",
-      "spdxOrName": "mixed (Apache-2.0 tooling / CC BY-NC-SA 3.0 IGO content)",
+      "spdxOrName": "per repo: CC BY-NC-SA 3.0 IGO content + BSD-3 code (smart-hiv, smart-immunizations); CC0 (smart-anc, smart-fp, smart-sti); CC BY 3.0 IGO (smart-base)",
       "citationLicence": "cc-by-nc-sa",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "cc-by-nc-sa",
+        "cc-by",
+        "cc0"
+      ],
       "countries": [
         "*"
       ],
@@ -217,8 +242,11 @@
         "smart.who.int",
         "worldhealthorganization.github.io"
       ],
-      "lastChecked": "2026-06-10",
-      "notes": "HIGHEST-LEVERAGE verify task. Code (Apache-2.0) and clinical content (WHO terms) are licensed separately; open LICENSE/NOTICE per repo (smart-anc, smart-immunizations, smart-family-planning, smart-hiv, smart-tb, smart-base) before embedding. If content is CC BY-NC-SA, rebuild equivalent logic rather than copying."
+      "urlPrefixes": [
+        "github.com/worldhealthorganization/smart-"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Licences contradict each other: smart-hiv sushi-config says CC-BY-SA-3.0 while its licence page says NC-SA; smart-immunizations config says CC0-1.0 while LICENSE.md says NC-SA; smart-anc is CC0 while its source ANC DAK (IRIS 10665/339745) is NC-SA. Treat clinical logic as CC BY-NC-SA 3.0 IGO (adaptable under the VedaMD content licence) and ask WHO to confirm (docs/content-permission-requests/who.md). smart-tb, smart-ips, smart-imci, smart-ncd repos not found on 2026-09-24."
     },
     {
       "id": "ocl-ciel",
@@ -226,6 +254,8 @@
       "title": "OCL platform + CIEL dictionary",
       "tier": 2,
       "embeddable": "verify",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "api",
       "spdxOrName": "platform open-source; hosted content per-source",
       "citationLicence": "unknown",
@@ -247,11 +277,13 @@
       "id": "icd11",
       "publisher": "WHO",
       "title": "ICD-11 classification + coding API",
-      "tier": 2,
-      "embeddable": "verify",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "verbatim",
+      "commercialUse": true,
       "format": "api",
       "spdxOrName": "CC BY-ND 3.0 IGO",
-      "citationLicence": "cc-by-nc-nd",
+      "citationLicence": "cc-by-nd",
       "countries": [
         "*"
       ],
@@ -264,18 +296,26 @@
         "icd.who.int",
         "id.who.int"
       ],
-      "lastChecked": "2026-06-10",
-      "notes": "Actually CC BY-ND (commercial OK, NO derivatives). Unmodified classification embeddable with attribution; distributing a modified classification is forbidden. citationLicence approximated to the nearest ND enum value."
+      "lastChecked": "2026-09-24",
+      "notes": "CC BY-ND 3.0 IGO (icd.who.int/en/docs/icd11-license.pdf): \"WHO does not consider incorporation of the Classifications into a software product to be an adaptation\" if content is unmodified. Embed with code, title and URI; cite \"ICD-11, WHO 2019\"; mark any additions as not from WHO. Translations and mappings need a separate written WHO agreement. The API needs registration; an offline Docker image exists."
     },
     {
       "id": "who-narrative",
       "publisher": "WHO",
-      "title": "WHO narrative publications (EML, IMCI chart booklet, mhGAP-IG, AWaRe book, MEC for contraception)",
-      "tier": 3,
-      "embeddable": "cite-only",
+      "title": "WHO publications on who.int / IRIS (guidelines, EML PDF, AWaRe book, IMCI, mhGAP, MEC)",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "adapt",
+      "commercialUse": false,
       "format": "pdf",
-      "spdxOrName": "CC BY-NC-SA 3.0 IGO",
+      "spdxOrName": "CC BY-NC-SA 3.0 IGO (post-2016 titles); older titles all rights reserved",
       "citationLicence": "cc-by-nc-sa",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "cc-by-nc-sa",
+        "cc-by",
+        "proprietary"
+      ],
       "countries": [
         "*"
       ],
@@ -293,8 +333,8 @@
         "apps.who.int",
         "aware.essentialmeds.org"
       ],
-      "lastChecked": "2026-06-10",
-      "notes": "NC blocks commercial embedding; SA would force the licence onto derivatives. Reference/link, and rebuild equivalent logic from underlying clinical facts; never copy protected text/figures. Commercial reuse needs written WHO permission (permissions@who.int)."
+      "lastChecked": "2026-09-24",
+      "notes": "Licence varies per document: read dc.rights on the IRIS record before embedding. Post-2016 titles are CC BY-NC-SA 3.0 IGO (items added to IRIS on 2026-09-24 still carry it). §4(b) allows adaptations under a later version with the same elements, so VedaMD adaptations are released CC BY-NC-SA 4.0. Obligations: cite WHO, no WHO logo, no suggestion of WHO endorsement, add the adaptation/translation disclaimer (content/NOTICE). Pre-2016 titles are all rights reserved and need permission: Pocket Book of Hospital Care for Children 2013, IMCI chart booklet 2008/2014, WHO Model Formulary 2008 (docs/content-permission-requests/who.md). WHO-funded journal articles are CC BY 4.0; staff-authored articles CC BY 3.0 IGO."
     },
     {
       "id": "nice",
@@ -302,6 +342,8 @@
       "title": "NICE guidelines + CKS",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "html",
       "spdxOrName": "NICE UK Open Content Licence",
       "citationLicence": "open-gov",
@@ -324,10 +366,12 @@
       "id": "statpearls",
       "publisher": "StatPearls / NCBI Bookshelf",
       "title": "StatPearls review articles",
-      "tier": 3,
-      "embeddable": "cite-only",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "verbatim",
+      "commercialUse": false,
       "format": "html",
-      "spdxOrName": "CC BY-NC-ND 4.0 (verify variant)",
+      "spdxOrName": "CC BY-NC-ND 4.0",
       "citationLicence": "cc-by-nc-nd",
       "countries": [
         "*"
@@ -337,11 +381,13 @@
       ],
       "url": "https://www.ncbi.nlm.nih.gov/books/NBK430685/",
       "hosts": [
-        "ncbi.nlm.nih.gov",
         "statpearls.com"
       ],
-      "lastChecked": "2026-06-10",
-      "notes": "NC + ND → not embeddable. Cite/link only."
+      "urlPrefixes": [
+        "ncbi.nlm.nih.gov/books/nbk430685"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "CC BY-NC-ND 4.0 (per the NCBI Bookshelf licence line; the page was behind a captcha on 2026-09-24, so confirm on each article footer at ingestion). Unaltered excerpts only, with attribution and licence link; no summaries or edits. Individual StatPearls articles have their own NBK ids and resolve to ncbi-bookshelf, which is per-item."
     },
     {
       "id": "msf-guidelines",
@@ -349,8 +395,10 @@
       "title": "MSF Medical Guidelines",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "html",
-      "spdxOrName": "free non-commercial; permission for commercial",
+      "spdxOrName": "© Médecins Sans Frontières — all rights reserved (Clinical Guidelines, June 2025 ed.)",
       "citationLicence": "proprietary",
       "countries": [
         "*"
@@ -363,8 +411,8 @@
       "hosts": [
         "medicalguidelines.msf.org"
       ],
-      "lastChecked": "2026-06-10",
-      "notes": "Commercial embedding requires MSF permission."
+      "lastChecked": "2026-09-24",
+      "notes": "\"All rights reserved for all countries. No reproduction, translation and adaptation may be done without the prior permission of the Copyright owner.\" There is no non-commercial exception. Permission request: docs/content-permission-requests/msf.md."
     },
     {
       "id": "hesperian",
@@ -372,9 +420,11 @@
       "title": "Where There Is No Doctor (and related)",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "pdf",
-      "spdxOrName": "CC BY-NC-SA",
-      "citationLicence": "cc-by-nc-sa",
+      "spdxOrName": "Hesperian Open Copyright (free/at-cost print reuse; digital use needs written permission)",
+      "citationLicence": "nc-reproduce",
       "countries": [
         "*"
       ],
@@ -387,15 +437,17 @@
         "hesperian.org",
         "store.hesperian.org"
       ],
-      "lastChecked": "2026-06-10",
-      "notes": "Non-commercial; permission required for commercial use."
+      "lastChecked": "2026-09-24",
+      "notes": "hesperian.org/about/open-copyright: materials may be copied or adapted for free/at-cost, not-for-profit distribution with credit, but \"please contact Hesperian for written permission to use our materials in any digital format\". An app is digital, so cite only until permission arrives (docs/content-permission-requests/hesperian.md)."
     },
     {
       "id": "global-health-media",
       "publisher": "Global Health Media Project",
       "title": "Clinical training videos",
-      "tier": 3,
-      "embeddable": "cite-only",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "verbatim",
+      "commercialUse": false,
       "format": "video",
       "spdxOrName": "CC BY-NC-ND",
       "citationLicence": "cc-by-nc-nd",
@@ -410,8 +462,8 @@
       "hosts": [
         "globalhealthmedia.org"
       ],
-      "lastChecked": "2026-06-10",
-      "notes": "NC + ND; bundling in a paid product needs direct permission."
+      "lastChecked": "2026-09-24",
+      "notes": "Videos are free under a Creative Commons licence; the exact variant (believed CC BY-NC-ND) was not confirmed on 2026-09-24. Once confirmed, embed or link unaltered videos only."
     },
     {
       "id": "radiopaedia",
@@ -419,8 +471,10 @@
       "title": "Radiology reference",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "html",
-      "spdxOrName": "CC BY-NC-SA",
+      "spdxOrName": "CC BY-NC-SA 3.0 + site terms on AI/ML use",
       "citationLicence": "cc-by-nc-sa",
       "countries": [
         "*"
@@ -433,16 +487,19 @@
       "hosts": [
         "radiopaedia.org"
       ],
-      "lastChecked": "2026-06-10"
+      "lastChecked": "2026-09-24",
+      "notes": "Content is CC BY-NC-SA 3.0, but Radiopaedia requires an application and a USD 250 fee for any AI/ML use, even non-commercial research, and offers no bulk download (radiopaedia.org/licence, checked 2026-09-24). Using its text in a retrieval corpus counts as AI use, so cite and link only."
     },
     {
       "id": "litfl",
       "publisher": "Life in the Fast Lane",
       "title": "LITFL critical-care/ECG reference",
-      "tier": 3,
-      "embeddable": "cite-only",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "adapt",
+      "commercialUse": false,
       "format": "html",
-      "spdxOrName": "CC BY-NC-SA",
+      "spdxOrName": "CC BY-NC-SA 4.0 (unverified)",
       "citationLicence": "cc-by-nc-sa",
       "countries": [
         "*"
@@ -455,7 +512,8 @@
       "hosts": [
         "litfl.com"
       ],
-      "lastChecked": "2026-06-10"
+      "lastChecked": "2026-09-24",
+      "notes": "Licence page returned 403 on 2026-09-24. Confirm the CC variant and any AI/scraping terms before embedding; if CC BY-NC-SA it is adaptable under the VedaMD content licence."
     },
     {
       "id": "proprietary-pocs",
@@ -463,6 +521,8 @@
       "title": "Merck Manuals / Medscape / AMBOSS / UpToDate / DynaMed / BMJ Best Practice / Cochrane / GIDEON",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "html",
       "spdxOrName": "proprietary",
       "citationLicence": "proprietary",
@@ -482,10 +542,9 @@
         "uptodate.com",
         "dynamed.com",
         "bestpractice.bmj.com",
-        "cochranelibrary.com",
         "gideononline.com"
       ],
-      "lastChecked": "2026-06-10",
+      "lastChecked": "2026-09-24",
       "notes": "Free to read and/or commercial products but NOT openly licensed/redistributable. Do not embed."
     },
     {
@@ -494,6 +553,8 @@
       "title": "SNOMED CT",
       "tier": 3,
       "embeddable": "verify",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "bulk",
       "spdxOrName": "Affiliate Licence (Kenya non-member → fees)",
       "citationLicence": "proprietary",
@@ -517,6 +578,8 @@
       "title": "ATC/DDD classification",
       "tier": 3,
       "embeddable": "verify",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "bulk",
       "spdxOrName": "copyright; paid commercial licence",
       "citationLicence": "proprietary",
@@ -540,6 +603,8 @@
       "title": "DrugBank full database",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "bulk",
       "spdxOrName": "CC BY-NC (academic) / paid commercial",
       "citationLicence": "proprietary",
@@ -561,11 +626,18 @@
       "id": "moh-ke",
       "publisher": "Kenya Ministry of Health / NASCOP / DNMP / NTLD-P",
       "title": "Kenya national guidelines (EML, Basic Paediatric Protocols, NASCOP HIV/ART, malaria, TB, AMR)",
-      "tier": 3,
-      "embeddable": "cite-only",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "verbatim",
+      "commercialUse": false,
       "format": "pdf",
-      "spdxOrName": "Government of Kenya copyright (no open licence)",
+      "spdxOrName": "Government of Kenya copyright; some documents permit non-commercial reproduction",
       "citationLicence": "moh-restricted",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "moh-restricted",
+        "nc-reproduce"
+      ],
       "countries": [
         "KE"
       ],
@@ -583,8 +655,8 @@
         "health.go.ke",
         "nascop.or.ke"
       ],
-      "lastChecked": "2026-06-10",
-      "notes": "Freely downloaded but embedding legally requires written MoH/programme permission (MoU). Author original logic from clinical facts; cite the guideline."
+      "lastChecked": "2026-09-24",
+      "notes": "Check each document's front matter. Verified 2026-09-24: Basic Obstetric Protocols 1st ed. 2026 (p.2) — \"Any part of this document may be quoted or reproduced, provided the source is acknowledged. It may not be sold or used for any commercial purposes or for profit.\" → nc-reproduce, verbatim only (adaptation not granted). Clinical Guidelines for Management and Referral of Common Conditions Vol 2 (2024) — no reuse statement → moh-restricted. KEML 2023 reportedly says it \"may be freely reviewed, quoted, reproduced, or translated in full or in part, provided that the source is acknowledged\" (seen only in a third-party copy; confirm). Adapting guidelines into decision logic needs an MoU (docs/content-permission-requests/moh-ke.md). Facts may always be restated with a citation."
     },
     {
       "id": "moh-ug",
@@ -592,6 +664,8 @@
       "title": "Uganda Clinical Guidelines + Essential Medicines List (UCG/EMHSLU)",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "pdf",
       "spdxOrName": "Government of Uganda copyright",
       "citationLicence": "moh-restricted",
@@ -606,7 +680,8 @@
       "hosts": [
         "health.go.ug"
       ],
-      "lastChecked": "2026-06-10"
+      "lastChecked": "2026-09-24",
+      "notes": "Uganda Clinical Guidelines 2016 and EMHSLU 2023 reportedly allow reproduction \"provided that this is not for profit\" (search snippets only). UCG 2023 front matter unverified — confirm before re-verdicting to nc-reproduce."
     },
     {
       "id": "moh-tz",
@@ -614,6 +689,8 @@
       "title": "Tanzania Standard Treatment Guidelines + NEMLIT",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "pdf",
       "spdxOrName": "Government of Tanzania copyright",
       "citationLicence": "moh-restricted",
@@ -636,6 +713,8 @@
       "title": "Rwanda clinical treatment guidelines",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "pdf",
       "spdxOrName": "Government of Rwanda copyright",
       "citationLicence": "moh-restricted",
@@ -657,6 +736,8 @@
       "title": "Ethiopia Standard Treatment Guidelines + EML",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "pdf",
       "spdxOrName": "Government of Ethiopia copyright",
       "citationLicence": "moh-restricted",
@@ -680,6 +761,8 @@
       "title": "Nigeria Standard Treatment Guidelines + EML",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "pdf",
       "spdxOrName": "Government of Nigeria copyright",
       "citationLicence": "moh-restricted",
@@ -702,6 +785,8 @@
       "title": "Ghana Standard Treatment Guidelines + EML",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "pdf",
       "spdxOrName": "Government of Ghana copyright",
       "citationLicence": "moh-restricted",
@@ -717,7 +802,8 @@
         "moh.gov.gh",
         "ghanahealthservice.org"
       ],
-      "lastChecked": "2026-06-10"
+      "lastChecked": "2026-09-24",
+      "notes": "Ghana STG 2017: \"All rights reserved. No part … may be reproduced … without prior written permission\" (search snippet). Cite only."
     },
     {
       "id": "moh-za",
@@ -725,6 +811,8 @@
       "title": "South Africa Standard Treatment Guidelines + EML (EDL)",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "pdf",
       "spdxOrName": "Government of South Africa copyright",
       "citationLicence": "moh-restricted",
@@ -748,6 +836,8 @@
       "title": "Zambia Standard Treatment Guidelines + EML",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "pdf",
       "spdxOrName": "Government of Zambia copyright",
       "citationLicence": "moh-restricted",
@@ -770,6 +860,8 @@
       "title": "Malawi Standard Treatment Guidelines + EML",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "pdf",
       "spdxOrName": "Government of Malawi copyright",
       "citationLicence": "moh-restricted",
@@ -792,6 +884,8 @@
       "title": "Peer-reviewed medical journals (NEJM, Lancet, BMJ, JAMA, OUP, Springer, Wiley, society journals)",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "html",
       "spdxOrName": "publisher copyright (mostly paywalled)",
       "citationLicence": "proprietary",
@@ -805,8 +899,6 @@
       "url": "https://www.nejm.org/",
       "hosts": [
         "nejm.org",
-        "thelancet.com",
-        "bmj.com",
         "jamanetwork.com",
         "academic.oup.com",
         "link.springer.com",
@@ -817,7 +909,6 @@
         "journals.sagepub.com",
         "karger.com",
         "liebertpub.com",
-        "frontiersin.org",
         "cmaj.ca",
         "ahajournals.org",
         "jacc.org",
@@ -842,13 +933,10 @@
         "tandfonline.com",
         "jacr.org",
         "pubs.rsna.org",
-        "wjes.biomedcentral.com",
         "jahonline.org",
-        "jaci-inpractice.org",
-        "ard.bmj.com",
-        "gut.bmj.com"
+        "jaci-inpractice.org"
       ],
-      "lastChecked": "2026-06-15",
+      "lastChecked": "2026-09-24",
       "notes": "Authoritative peer-reviewed sources — cite/link only (paywalled, not redistributable)."
     },
     {
@@ -857,6 +945,8 @@
       "title": "Specialty-society & college clinical guidelines (ESC, IDSA, KDIGO, GINA, GOLD, ACOG, RCOG, BTS, AHA, etc.)",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "html",
       "spdxOrName": "society copyright",
       "citationLicence": "proprietary",
@@ -961,13 +1051,11 @@
         "mchatscreen.com",
         "aap.org",
         "nccn.org",
-        "cpicpgx.org",
-        "pharmgkb.org",
         "bhiva.org",
         "rcseng.ac.uk",
         "isth.org"
       ],
-      "lastChecked": "2026-06-15",
+      "lastChecked": "2026-09-24",
       "notes": "International/national specialty guidelines — authoritative; cite/link only."
     },
     {
@@ -976,6 +1064,8 @@
       "title": "US federal health agencies (CDC, FDA, NIH/NHLBI, USPSTF, HIV.gov)",
       "tier": 1,
       "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
       "format": "html",
       "spdxOrName": "US-Public-Domain",
       "citationLicence": "public-domain",
@@ -993,11 +1083,10 @@
         "wwwnc.cdc.gov",
         "fda.gov",
         "nhlbi.nih.gov",
-        "clinicalinfo.hiv.gov",
-        "uspreventiveservicestaskforce.org"
+        "clinicalinfo.hiv.gov"
       ],
-      "lastChecked": "2026-06-15",
-      "notes": "US government works are public domain; cite without implying endorsement."
+      "lastChecked": "2026-09-24",
+      "notes": "US government works are public domain; cite without implying endorsement. CDC (cdc.gov/other/agencymaterials.html): label adapted material as adapted and do not change substantive content; no logos. clinicalinfo.hiv.gov text is public domain but its photographs are not; remove HIV.gov logos from adapted material. The Yellow Book is public domain on cdc.gov only (the OUP print edition is all rights reserved). USPSTF moved to its own entry."
     },
     {
       "id": "uk-eu-gov-health",
@@ -1005,6 +1094,8 @@
       "title": "UK & EU government health (gov.uk, NHS, EMA)",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "html",
       "spdxOrName": "Open Government Licence / EMA terms",
       "citationLicence": "open-gov",
@@ -1039,6 +1130,8 @@
       "title": "Drug/toxicology reference databases (eMC/medicines.org.uk, CredibleMeds, HIV Drug Interactions, TOXBASE, MDCalc)",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "html",
       "spdxOrName": "proprietary / licensed",
       "citationLicence": "proprietary",
@@ -1054,12 +1147,11 @@
       "hosts": [
         "medicines.org.uk",
         "crediblemeds.org",
-        "hiv-druginteractions.org",
         "toxbase.org",
         "mdcalc.com",
         "pfizermedical.com"
       ],
-      "lastChecked": "2026-09-17",
+      "lastChecked": "2026-09-24",
       "notes": "emc (medicines.org.uk, Datapharm) legal notice forbids commercial use and building databases from its content; licence required from Datapharm. Link only, never ingest."
     },
     {
@@ -1068,6 +1160,8 @@
       "title": "WHO regional & global health bodies (PAHO/IRIS, WOAH)",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "html",
       "spdxOrName": "CC BY-NC-SA 3.0 IGO (PAHO/WHO) / org terms",
       "citationLicence": "cc-by-nc-sa",
@@ -1093,6 +1187,8 @@
       "title": "Kenya national programmes (NTLP, Nutrition)",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "html",
       "spdxOrName": "Government of Kenya copyright",
       "citationLicence": "moh-restricted",
@@ -1117,6 +1213,8 @@
       "title": "Academic-centre protocols & imaging references (ACR, university hospitals)",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "html",
       "spdxOrName": "institutional copyright",
       "citationLicence": "proprietary",
@@ -1145,6 +1243,8 @@
       "title": "UKTIS / bumps monographs — medicines in pregnancy",
       "tier": 2,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "html",
       "spdxOrName": "Proprietary (UKTIS)",
       "citationLicence": "proprietary",
@@ -1168,6 +1268,8 @@
       "title": "Mycophenolate REMS — pregnancy-prevention safety program",
       "tier": 1,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "html",
       "spdxOrName": "US Government / manufacturer REMS",
       "citationLicence": "open-gov",
@@ -1190,6 +1292,8 @@
       "title": "PPB Summary of Product Characteristics (SmPC) index",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "pdf",
       "spdxOrName": "© Pharmacy and Poisons Board, All Rights Reserved (manufacturer-authored SmPCs)",
       "citationLicence": "moh-restricted",
@@ -1214,6 +1318,8 @@
       "title": "PPB public register of retained/registered products, suspended/withdrawn and EUA lists",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "html",
       "spdxOrName": "© Pharmacy and Poisons Board, All Rights Reserved",
       "citationLicence": "moh-restricted",
@@ -1238,6 +1344,8 @@
       "title": "SAHPRA repository of Professional Information and Patient Information Leaflets",
       "tier": 3,
       "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
       "format": "pdf",
       "spdxOrName": "No published reuse licence (manufacturer-authored PI/PIL)",
       "citationLicence": "unknown",
@@ -1261,6 +1369,8 @@
       "title": "Drug Product Database (DPD) API and product monographs",
       "tier": 2,
       "embeddable": "verify",
+      "reuseMode": "adapt",
+      "commercialUse": true,
       "format": "api",
       "spdxOrName": "Open Government Licence – Canada (DPD data); monograph copyright unverified",
       "citationLicence": "open-gov",
@@ -1277,6 +1387,1377 @@
       ],
       "lastChecked": "2026-09-17",
       "notes": "DPD structured data is OGL-Canada. Whether manufacturer product monograph PDFs are covered is unverified — do not ingest monograph text until confirmed."
+    },
+    {
+      "id": "lactmed",
+      "publisher": "US NLM / NICHD",
+      "title": "LactMed — drugs and lactation database",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "html",
+      "spdxOrName": "US-Public-Domain",
+      "citationLicence": "public-domain",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "lactation",
+        "drugs"
+      ],
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK501922/",
+      "hosts": [],
+      "urlPrefixes": [
+        "ncbi.nlm.nih.gov/books/nbk501922"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "US-government book on NCBI Bookshelf, public domain. Credit NLM/NICHD; \"LactMed\" is an HHS trademark. Per-drug pages have their own NBK ids and resolve to ncbi-bookshelf — tag them public-domain at ingestion. Licence line seen via search snippet (NCBI captcha); NLM web policy verified."
+    },
+    {
+      "id": "livertox",
+      "publisher": "US NIH / NIDDK",
+      "title": "LiverTox — drug-induced liver injury",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "html",
+      "spdxOrName": "US-Public-Domain",
+      "citationLicence": "public-domain",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "hepatology",
+        "drugs",
+        "hepatic-safety"
+      ],
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK547852/",
+      "hosts": [],
+      "urlPrefixes": [
+        "ncbi.nlm.nih.gov/books/nbk547852"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "\"Copyright free … public domain\"; acknowledgement requested (search snippet; NCBI captcha). High value for TB and ART hepatotoxicity."
+    },
+    {
+      "id": "nci-pdq",
+      "publisher": "US National Cancer Institute",
+      "title": "NCI PDQ cancer information summaries",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "html",
+      "spdxOrName": "US-Public-Domain (NCI reuse policy)",
+      "citationLicence": "public-domain",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "oncology",
+        "palliative",
+        "supportive-care"
+      ],
+      "url": "https://www.cancer.gov/publications/pdq",
+      "hosts": [
+        "cancer.gov"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "cancer.gov/policies/copyright-reuse: \"All text within NCI products is free of copyright and may be reused without our permission.\" Changed versions must say \"adapted from the National Cancer Institute\" and must not carry the NCI logo or PDQ trademark. PDQ images need the owner's permission."
+    },
+    {
+      "id": "medlineplus",
+      "publisher": "US NLM",
+      "title": "MedlinePlus (public-domain parts only)",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "html",
+      "spdxOrName": "US-Public-Domain except A.D.A.M. and ASHP content",
+      "citationLicence": "public-domain",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "public-domain",
+        "proprietary"
+      ],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "patient-education",
+        "drugs"
+      ],
+      "url": "https://medlineplus.gov/",
+      "hosts": [
+        "medlineplus.gov"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "medlineplus.gov/about/using/usingcontent: health-topic summaries, medical tests and genetics summaries are public domain (\"Courtesy of MedlinePlus from the National Library of Medicine\"). The A.D.A.M. encyclopedia and ASHP drug monographs are copyrighted and \"You may not ingest and/or brand the copyrighted content … in an EHR … or other health IT system\". Check each page."
+    },
+    {
+      "id": "uspstf",
+      "publisher": "US Preventive Services Task Force / AHRQ",
+      "title": "USPSTF recommendation statements",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "verbatim",
+      "commercialUse": false,
+      "format": "html",
+      "spdxOrName": "USPSTF copyright notice (unchanged reproduction, not for a fee)",
+      "citationLicence": "nc-reproduce",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "screening",
+        "preventive-care"
+      ],
+      "url": "https://www.uspreventiveservicestaskforce.org/",
+      "hosts": [
+        "uspreventiveservicestaskforce.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Reproduction only \"without any changes\"; \"may not be … redistributed for a fee\"; no profit-making venture without AHRQ permission. Quote unaltered with citation; restate facts in VedaMD's own words otherwise."
+    },
+    {
+      "id": "clinicaltrials-gov",
+      "publisher": "US NLM",
+      "title": "ClinicalTrials.gov registry records",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "api",
+      "spdxOrName": "NLM terms (attribution, currency, state modifications)",
+      "citationLicence": "public-domain",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "trials",
+        "evidence"
+      ],
+      "url": "https://clinicaltrials.gov/",
+      "hosts": [
+        "clinicaltrials.gov"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Terms (search snippet; page is JS-rendered): attribute ClinicalTrials.gov, keep data current, show the processing date, state modifications, claim no proprietary rights."
+    },
+    {
+      "id": "ncbi-bookshelf",
+      "publisher": "US NLM / NCBI",
+      "title": "NCBI Bookshelf (mixed licences)",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
+      "format": "html",
+      "spdxOrName": "per book: US-Public-Domain, CC variants, or publisher copyright",
+      "citationLicence": "proprietary",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "public-domain",
+        "cc-by",
+        "cc-by-nc",
+        "cc-by-nc-sa",
+        "cc-by-nc-nd",
+        "proprietary"
+      ],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "reference",
+        "textbook"
+      ],
+      "url": "https://www.ncbi.nlm.nih.gov/books/",
+      "hosts": [
+        "ncbi.nlm.nih.gov"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Licence is set per book (see each book's footer). US-government books are public domain; StatPearls is CC BY-NC-ND 4.0; others are copyrighted unless a licence is shown. Bulk download only via the LitArch open-access service. Record the item licence at ingestion."
+    },
+    {
+      "id": "pmc-oa",
+      "publisher": "US NLM",
+      "title": "PubMed Central Open Access Subset (via PMC Cloud Service)",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "adapt",
+      "commercialUse": false,
+      "format": "bulk",
+      "spdxOrName": "per article (CC0 / CC BY / CC BY-SA / CC BY-ND / CC BY-NC / -NC-SA / -NC-ND / other)",
+      "citationLicence": "cc-by",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "cc0",
+        "cc-by",
+        "cc-by-sa",
+        "cc-by-nd",
+        "cc-by-nc",
+        "cc-by-nc-sa",
+        "cc-by-nc-nd",
+        "proprietary"
+      ],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "journal",
+        "evidence"
+      ],
+      "url": "https://pmc.ncbi.nlm.nih.gov/tools/cloud/",
+      "hosts": [
+        "pmc.ncbi.nlm.nih.gov"
+      ],
+      "urlPrefixes": [
+        "ncbi.nlm.nih.gov/pmc/"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Legacy PMC FTP files and the OA Web Service API were removed the week of 24 Aug 2026; automated retrieval is now via the PMC Cloud Service (AWS), OAI-PMH, E-utilities or the BioC API. Each article's JSON carries its licence: adapt CC0/BY/BY-NC/BY-NC-SA, verbatim only for ND, keep CC BY-SA as separate items, skip \"other\"."
+    },
+    {
+      "id": "europe-pmc",
+      "publisher": "EMBL-EBI",
+      "title": "Europe PMC open-access subset",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "adapt",
+      "commercialUse": false,
+      "format": "bulk",
+      "spdxOrName": "per article CC licences",
+      "citationLicence": "cc-by",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "cc0",
+        "cc-by",
+        "cc-by-sa",
+        "cc-by-nd",
+        "cc-by-nc",
+        "cc-by-nc-sa",
+        "cc-by-nc-nd",
+        "proprietary"
+      ],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "journal",
+        "evidence"
+      ],
+      "url": "https://europepmc.org/",
+      "hosts": [
+        "europepmc.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "\"License terms are not identical for all articles\" — apply the same per-article rules as pmc-oa. Bulk FTP at ftp.ebi.ac.uk/pub/databases/pmc. Annotation licences unverified."
+    },
+    {
+      "id": "pubmed",
+      "publisher": "US NLM",
+      "title": "PubMed / MEDLINE citations",
+      "tier": 3,
+      "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
+      "format": "api",
+      "spdxOrName": "NLM terms; abstracts are publisher/author copyright",
+      "citationLicence": "proprietary",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "journal",
+        "evidence"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "hosts": [
+        "pubmed.ncbi.nlm.nih.gov"
+      ],
+      "urlPrefixes": [
+        "ncbi.nlm.nih.gov/pubmed"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "\"NLM does not claim the copyright on the abstracts in PubMed; however, journal publishers or authors may.\" Cite and link; never store abstracts. Use openalex/crossref for reusable bibliographic metadata."
+    },
+    {
+      "id": "openalex",
+      "publisher": "OurResearch",
+      "title": "OpenAlex scholarly metadata",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "api",
+      "spdxOrName": "CC0-1.0",
+      "citationLicence": "cc0",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "evidence",
+        "metadata"
+      ],
+      "url": "https://openalex.org/",
+      "hosts": [
+        "openalex.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Data CC0. The API needs a free key; the snapshot is free. The CC0 dedication probably does not cover abstract text (abstract_inverted_index) — do not store abstracts."
+    },
+    {
+      "id": "crossref",
+      "publisher": "Crossref",
+      "title": "Crossref DOI metadata",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "api",
+      "spdxOrName": "Metadata are facts (no copyright); abstracts publisher copyright",
+      "citationLicence": "public-domain",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "evidence",
+        "metadata"
+      ],
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/",
+      "hosts": [
+        "crossref.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Metadata are \"facts, not subject to copyright\"; abstracts are \"copyright held by publisher or author\" — do not store abstracts."
+    },
+    {
+      "id": "oa-journals-cc-by",
+      "publisher": "Various open-access publishers",
+      "title": "Fully CC BY journals (PLOS, eLife, Frontiers, PAMJ, AOSIS, JPHIA, MDPI)",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "html",
+      "spdxOrName": "CC BY 4.0",
+      "citationLicence": "cc-by",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "journal",
+        "evidence"
+      ],
+      "url": "https://journals.plos.org/plosone/s/licenses-and-copyright",
+      "hosts": [
+        "plos.org",
+        "elifesciences.org",
+        "frontiersin.org",
+        "panafrican-med-journal.com",
+        "phcfm.org",
+        "safpj.co.za",
+        "publichealthinafrica.org",
+        "mdpi.com"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Verified CC BY: PLOS, Pan African Medical Journal, AOSIS (African Journal of Primary Health Care & Family Medicine, South African Family Practice), eLife (CC BY/CC0), Frontiers, Journal of Public Health in Africa (DOAJ); MDPI via search snippet. AOSIS site footers reserve text-and-data-mining and AI-training rights for the website itself — take the article text from PMC. Confirm the article licence line at ingestion."
+    },
+    {
+      "id": "african-health-sciences",
+      "publisher": "Makerere University College of Health Sciences",
+      "title": "African Health Sciences",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "html",
+      "spdxOrName": "CC BY 4.0 + \"no substantive errors are introduced\"",
+      "citationLicence": "cc-by",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "journal",
+        "evidence"
+      ],
+      "url": "https://www.ajol.info/index.php/ahs/about",
+      "hosts": [],
+      "urlPrefixes": [
+        "ajol.info/index.php/ahs"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "CC BY 4.0 with an added condition that \"no substantive errors are introduced\" — keep adaptations faithful and reviewed."
+    },
+    {
+      "id": "malawi-medical-journal",
+      "publisher": "Malawi Medical Journal",
+      "title": "Malawi Medical Journal",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "verbatim",
+      "commercialUse": false,
+      "format": "html",
+      "spdxOrName": "CC BY-NC-ND",
+      "citationLicence": "cc-by-nc-nd",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "journal",
+        "evidence"
+      ],
+      "url": "https://www.ajol.info/index.php/mmj",
+      "hosts": [],
+      "urlPrefixes": [
+        "ajol.info/index.php/mmj"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "DOAJ record (updated 2026-09-17) says CC BY-NC-ND; some secondary sources say CC BY 4.0 and the AJOL page states no licence. Treat as CC BY-NC-ND (unaltered excerpts only) unless the article licence line says otherwise."
+    },
+    {
+      "id": "ajol",
+      "publisher": "African Journals Online",
+      "title": "African Journals Online (other journals)",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
+      "format": "html",
+      "spdxOrName": "per journal",
+      "citationLicence": "proprietary",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "cc-by",
+        "cc-by-nc",
+        "cc-by-nc-nd",
+        "proprietary"
+      ],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "journal",
+        "evidence"
+      ],
+      "url": "https://www.ajol.info/",
+      "hosts": [
+        "ajol.info"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "AJOL terms: reuse is \"not … legally permitted unless the journal's … license explicitly permits it\"; no bulk mining. Check each journal's licence."
+    },
+    {
+      "id": "samj",
+      "publisher": "South African Medical Association",
+      "title": "South African Medical Journal (SAMJ)",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": false,
+      "format": "html",
+      "spdxOrName": "CC BY-NC 4.0",
+      "citationLicence": "cc-by-nc",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "journal",
+        "evidence"
+      ],
+      "url": "https://samajournals.co.za/index.php/samj/_licensing",
+      "hosts": [
+        "samj.org.za"
+      ],
+      "urlPrefixes": [
+        "samajournals.co.za/index.php/samj"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "\"CC-BY-NC 4.0\" (CC BY only for mandated funders). Adaptable under the VedaMD content licence."
+    },
+    {
+      "id": "hybrid-journals",
+      "publisher": "The Lancet / BMJ / BioMed Central",
+      "title": "Hybrid journals with per-article licences",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
+      "format": "html",
+      "spdxOrName": "per article: CC BY, CC BY-NC, CC BY-NC-ND, or subscription copyright",
+      "citationLicence": "proprietary",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "cc-by",
+        "cc-by-nc",
+        "cc-by-nc-nd",
+        "proprietary"
+      ],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "journal",
+        "evidence"
+      ],
+      "url": "https://www.thelancet.com/open-access",
+      "hosts": [
+        "thelancet.com",
+        "bmj.com",
+        "biomedcentral.com"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Open-access articles carry CC BY, CC BY-NC or CC BY-NC-ND (Lancet: commercially funded papers are CC BY-NC-ND); the rest are subscription content. Read the article licence; take OA text from PMC."
+    },
+    {
+      "id": "cochrane",
+      "publisher": "Cochrane / Wiley",
+      "title": "Cochrane Library reviews",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
+      "format": "html",
+      "spdxOrName": "Gold OA: CC BY-NC or CC BY-NC-ND (CC BY where a funder requires); otherwise standard publication licence",
+      "citationLicence": "proprietary",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "cc-by",
+        "cc-by-nc",
+        "cc-by-nc-nd",
+        "proprietary"
+      ],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "systematic-review",
+        "evidence"
+      ],
+      "url": "https://www.cochranelibrary.com/about/open-access",
+      "hosts": [
+        "cochranelibrary.com"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Green OA (free to read after 12 months) is not a CC licence. Abstracts and plain-language summaries need permission via RightsLink. Protocols and editorials are CC BY from 2025."
+    },
+    {
+      "id": "preprint-servers",
+      "publisher": "Cold Spring Harbor Laboratory",
+      "title": "medRxiv / bioRxiv preprints",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
+      "format": "html",
+      "spdxOrName": "author's choice per preprint (no reuse / CC variants / CC0)",
+      "citationLicence": "proprietary",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "cc0",
+        "cc-by",
+        "cc-by-sa",
+        "cc-by-nd",
+        "cc-by-nc",
+        "cc-by-nc-sa",
+        "cc-by-nc-nd",
+        "proprietary"
+      ],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "preprint",
+        "evidence"
+      ],
+      "url": "https://www.medrxiv.org/about/FAQ",
+      "hosts": [
+        "medrxiv.org",
+        "biorxiv.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Licence chosen per preprint, including \"no reuse\". Preprints are not peer reviewed — strength C at most."
+    },
+    {
+      "id": "who-eeml",
+      "publisher": "WHO",
+      "title": "WHO electronic Essential Medicines List (eEML)",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "api",
+      "spdxOrName": "CC BY 3.0 IGO",
+      "citationLicence": "cc-by",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "essential-medicines",
+        "drugs"
+      ],
+      "url": "https://list.essentialmeds.org/",
+      "hosts": [
+        "list.essentialmeds.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "list.essentialmeds.org/licencing: CC BY 3.0 IGO, \"including for commercial purposes\", but not \"in conjunction with the advertising or promotion of commercial products\" or implying WHO endorsement. Cite: \"WHO electronic Essential Medicines List (eEML), World Health Organization, 2020. https://list.essentialmeds.org/ (beta version 1.0). Licence: CC BY 3.0 IGO.\" The EML PDF itself is NC-SA (who-narrative)."
+    },
+    {
+      "id": "who-data",
+      "publisher": "WHO",
+      "title": "WHO datasets on data.who.int",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "dataset",
+      "spdxOrName": "CC BY 4.0",
+      "citationLicence": "cc-by",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "epidemiology",
+        "data"
+      ],
+      "url": "https://data.who.int/about/data/terms-and-conditions",
+      "hosts": [
+        "data.who.int"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "\"Unless specifically indicated otherwise, these Datasets are provided … under … CC BY 4.0\". Datasets credited to third parties are excluded. Cite \"World Health Organization {YEAR} data.who.int, {ITEM} [{TYPE}]. {URL} (Accessed on {DATE})\". Do not misrepresent or de-anonymise. GHO data served from who.int may still fall under the older WHO data terms."
+    },
+    {
+      "id": "openstax",
+      "publisher": "OpenStax (Rice University)",
+      "title": "OpenStax textbooks (incl. Pharmacology for Nurses, Maternal-Newborn Nursing)",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": false,
+      "format": "html",
+      "spdxOrName": "CC BY-NC-SA 4.0",
+      "citationLicence": "cc-by-nc-sa",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "textbook",
+        "pharmacology",
+        "nursing"
+      ],
+      "url": "https://help.openstax.org/s/article/Licensing-information-of-OpenStax-textbooks",
+      "hosts": [
+        "openstax.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "All titles now CC BY-NC-SA 4.0 (commercial reuse only via their Content Reuse Request Form). Credit OpenStax, the title and a link. Copies obtained under an earlier CC BY licence may remain CC BY — needs counsel and dated copies."
+    },
+    {
+      "id": "libretexts",
+      "publisher": "LibreTexts",
+      "title": "LibreTexts Medicine",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "adapt",
+      "commercialUse": false,
+      "format": "html",
+      "spdxOrName": "per page (often CC BY-NC-SA 4.0)",
+      "citationLicence": "cc-by-nc-sa",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "cc-by",
+        "cc-by-sa",
+        "cc-by-nc",
+        "cc-by-nc-sa",
+        "proprietary"
+      ],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "textbook"
+      ],
+      "url": "https://med.libretexts.org/",
+      "hosts": [
+        "libretexts.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Licence set page by page. Record the page licence at ingestion."
+    },
+    {
+      "id": "wikipedia-wikidoc",
+      "publisher": "Wikimedia Foundation / WikiDoc",
+      "title": "Wikipedia (incl. WikiProject Medicine) and WikiDoc",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "separate",
+      "commercialUse": true,
+      "format": "html",
+      "spdxOrName": "CC BY-SA 4.0 (Wikipedia) / CC BY-SA 3.0 (WikiDoc)",
+      "citationLicence": "cc-by-sa",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "reference",
+        "consumer"
+      ],
+      "url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+      "hosts": [
+        "wikipedia.org",
+        "wikidoc.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Share-alike without NC: adapted text must stay CC BY-SA, which cannot be merged into CC BY-NC-SA records. Ship only as separately licensed items (link to the article or list authors). Strength D — never the sole reference."
+    },
+    {
+      "id": "wikem",
+      "publisher": "WikEM",
+      "title": "WikEM emergency medicine wiki",
+      "tier": 3,
+      "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
+      "format": "html",
+      "spdxOrName": "CC BY-SA 3.0 + Terms of Use banning AI use and scraping",
+      "citationLicence": "cc-by-sa",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "emergency"
+      ],
+      "url": "https://wikem.org/wiki/Terms_of_Use",
+      "hosts": [
+        "wikem.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Content is CC BY-SA 3.0, but the Terms of Use prohibit using content for \"training, fine-tuning, or evaluating\" AI and scraping \"without prior written permission\". Cite and link only."
+    },
+    {
+      "id": "cpic",
+      "publisher": "Clinical Pharmacogenetics Implementation Consortium",
+      "title": "CPIC pharmacogenomic guidelines",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "html",
+      "spdxOrName": "CC0-1.0",
+      "citationLicence": "cc0",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "pharmacogenomics"
+      ],
+      "url": "https://cpicpgx.org/",
+      "hosts": [
+        "cpicpgx.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "\"Freely available under a Creative Commons public domain license\"; attribution requested. Moved out of specialty-society-guidelines."
+    },
+    {
+      "id": "pharmgkb",
+      "publisher": "PharmGKB / ClinPGx",
+      "title": "PharmGKB / ClinPGx pharmacogenomics knowledge base",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "separate",
+      "commercialUse": false,
+      "format": "dataset",
+      "spdxOrName": "CC BY-SA 4.0 + \"Under no circumstances can PharmGKB data be sold\"",
+      "citationLicence": "cc-by-sa",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "pharmacogenomics"
+      ],
+      "url": "https://blog.clinpgx.org/changes-to-pharmgkb-data-licensing/",
+      "hosts": [
+        "pharmgkb.org",
+        "clinpgx.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "CC BY-SA 4.0 since 3 Aug 2018; share-alike, so keep as separately licensed items. Moved out of specialty-society-guidelines."
+    },
+    {
+      "id": "ddinter",
+      "publisher": "DDInter (Central South University)",
+      "title": "DDInter 2.0 drug–drug interaction database",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": false,
+      "format": "dataset",
+      "spdxOrName": "CC BY-NC-SA 4.0",
+      "citationLicence": "cc-by-nc-sa",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "drug-interactions"
+      ],
+      "url": "https://ddinter2.scbdd.com/terms/",
+      "hosts": [
+        "ddinter.scbdd.com",
+        "ddinter2.scbdd.com"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Adaptable under the VedaMD content licence. Coverage is broad but severity grading varies — every imported pair needs clinical review against the existing interaction records."
+    },
+    {
+      "id": "liverpool-hiv",
+      "publisher": "University of Liverpool",
+      "title": "Liverpool HIV / hepatitis drug interaction checkers",
+      "tier": 3,
+      "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
+      "format": "html",
+      "spdxOrName": "All rights reserved",
+      "citationLicence": "proprietary",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "drug-interactions",
+        "hiv"
+      ],
+      "url": "https://www.hiv-druginteractions.org/terms",
+      "hosts": [
+        "hiv-druginteractions.org",
+        "hep-druginteractions.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "\"No modification, reproduction, re-use … including creation of derivative works, without our prior written consent.\" Link only; use clinicalinfo.hiv.gov (public domain) for ARV interaction facts. Request: docs/content-permission-requests/liverpool-hiv.md."
+    },
+    {
+      "id": "onsides",
+      "publisher": "Tatonetti Lab",
+      "title": "OnSIDES adverse drug events from labels",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "dataset",
+      "spdxOrName": "CC BY 4.0 (data), MIT (code)",
+      "citationLicence": "cc-by",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "adverse-effects",
+        "drugs"
+      ],
+      "url": "https://github.com/tatonetti-lab/onsides",
+      "hosts": [],
+      "urlPrefixes": [
+        "github.com/tatonetti-lab/onsides"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Cite the OnSIDES paper. OFFSIDES/TWOSIDES licences conflict or are missing — not registered."
+    },
+    {
+      "id": "mondo",
+      "publisher": "Monarch Initiative",
+      "title": "MONDO disease ontology",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "bulk",
+      "spdxOrName": "CC BY 4.0",
+      "citationLicence": "cc-by",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "terminology",
+        "diagnosis"
+      ],
+      "url": "https://mondo.monarchinitiative.org/",
+      "hosts": [
+        "mondo.monarchinitiative.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Cross-maps ICD, SNOMED, OMIM, DOID — useful for de-duplicating condition records."
+    },
+    {
+      "id": "disease-ontology",
+      "publisher": "Disease Ontology",
+      "title": "Human Disease Ontology (DOID)",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "bulk",
+      "spdxOrName": "CC0-1.0",
+      "citationLicence": "cc0",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "terminology",
+        "diagnosis"
+      ],
+      "url": "https://disease-ontology.org/",
+      "hosts": [
+        "disease-ontology.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "No obligations."
+    },
+    {
+      "id": "hpo",
+      "publisher": "Monarch Initiative / JAX",
+      "title": "Human Phenotype Ontology",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "verbatim",
+      "commercialUse": true,
+      "format": "bulk",
+      "spdxOrName": "HPO licence (no alteration of content or logical relationships)",
+      "citationLicence": "cc-by-nd",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "terminology",
+        "phenotype"
+      ],
+      "url": "https://human-phenotype-ontology.github.io/license.html",
+      "hosts": [
+        "hpo.jax.org",
+        "human-phenotype-ontology.github.io"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Custom licence: \"Neither the content … nor the logical relationships … be altered in any way\". Cite with version/date; products must display an acknowledgement."
+    },
+    {
+      "id": "mesh",
+      "publisher": "US NLM",
+      "title": "Medical Subject Headings (MeSH)",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "bulk",
+      "spdxOrName": "NLM MeSH Terms and Conditions",
+      "citationLicence": "open-gov",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "terminology"
+      ],
+      "url": "https://www.nlm.nih.gov/databases/download/terms_and_conditions_mesh.html",
+      "hosts": [
+        "meshb.nlm.nih.gov",
+        "id.nlm.nih.gov"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Acknowledge NLM \"clearly and conspicuously\"; say if the copy is not current; no implied endorsement. MeSH translations (MTMS) are excluded."
+    },
+    {
+      "id": "wikidata",
+      "publisher": "Wikimedia Foundation",
+      "title": "Wikidata structured data",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "api",
+      "spdxOrName": "CC0-1.0 (Main, Property, Lexeme, EntitySchema namespaces)",
+      "citationLicence": "cc0",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "terminology",
+        "crosswalk"
+      ],
+      "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "hosts": [
+        "wikidata.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "No obligations for the data. Values are crowd-edited — verify before relying on codes (e.g. RxNorm/ATC crosswalks)."
+    },
+    {
+      "id": "chebi",
+      "publisher": "EMBL-EBI",
+      "title": "ChEBI chemical entities",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "bulk",
+      "spdxOrName": "CC BY 4.0",
+      "citationLicence": "cc-by",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "terminology",
+        "drugs"
+      ],
+      "url": "https://www.ebi.ac.uk/chebi/",
+      "hosts": [],
+      "urlPrefixes": [
+        "ebi.ac.uk/chebi"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Attribution."
+    },
+    {
+      "id": "kmhfl-2020",
+      "publisher": "Kenya MoH via openAFRICA",
+      "title": "Kenya Master Health Facility List (2020 snapshot)",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "dataset",
+      "spdxOrName": "CC BY (openAFRICA)",
+      "citationLicence": "cc-by",
+      "countries": [
+        "KE"
+      ],
+      "domains": [
+        "facilities",
+        "referral"
+      ],
+      "url": "https://open.africa/dataset/kenya-master-health-facility-list-2020",
+      "hosts": [],
+      "urlPrefixes": [
+        "open.africa/dataset/kenya-master-health-facility-list"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Facility names, levels and locations for referral directories. Live KMHFR API terms are unverified."
+    },
+    {
+      "id": "healthsites-osm",
+      "publisher": "Healthsites.io / OpenStreetMap",
+      "title": "Healthsites.io and OpenStreetMap health facilities",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "separate",
+      "commercialUse": true,
+      "format": "dataset",
+      "spdxOrName": "ODbL-1.0",
+      "citationLicence": "odbl",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "facilities",
+        "referral"
+      ],
+      "url": "https://www.openstreetmap.org/copyright",
+      "hosts": [
+        "healthsites.io",
+        "openstreetmap.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Database share-alike: a derived facility database must be ODbL and \"credit OpenStreetMap and its contributors\". Keep as a separate ODbL data file."
+    },
+    {
+      "id": "za-stg",
+      "publisher": "South Africa National Department of Health",
+      "title": "South African PHC Standard Treatment Guidelines and EML",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": false,
+      "format": "pdf",
+      "spdxOrName": "Free, not-for-profit reproduction and adaptation",
+      "citationLicence": "nc-reproduce",
+      "countries": [
+        "ZA"
+      ],
+      "domains": [
+        "primary-care",
+        "essential-medicines"
+      ],
+      "url": "https://knowledgehub.health.gov.za/content/standard-treatment-guidelines-and-essential-medicines-list",
+      "hosts": [],
+      "urlPrefixes": [
+        "knowledgehub.health.gov.za/elibrary/primary-healthcare-phc-standard-treatment-guidelines",
+        "health.gov.za/wp-content/uploads/2025/07/primary-healthcare-standard-treatment-guidelines"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "PHC STGs and EML 8th ed (2024), verified from the PDF on 2026-09-24: \"Any part of this material may be reproduced, copied or adapted to meet local needs, without permission from the Committee or the Department of Health, provided that the parts reproduced are distributed free of charge or at no cost – not for profit.\" The 7th ed (2020) carries the same wording. Hospital-level STGs are likely the same but unverified. Other NDoH documents stay under moh-za."
+    },
+    {
+      "id": "owid",
+      "publisher": "Our World in Data",
+      "title": "Our World in Data (own charts, data and text)",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "dataset",
+      "spdxOrName": "CC BY 4.0",
+      "citationLicence": "cc-by",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "epidemiology",
+        "data"
+      ],
+      "url": "https://ourworldindata.org/faqs",
+      "hosts": [
+        "ourworldindata.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "OWID's own work is CC BY 4.0; third-party data keeps its source licence (e.g. IHME data on OWID stays non-commercial and non-redistributable)."
+    },
+    {
+      "id": "ihme-gbd",
+      "publisher": "IHME",
+      "title": "Global Burden of Disease data",
+      "tier": 3,
+      "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
+      "format": "dataset",
+      "spdxOrName": "IHME Free-of-Charge Non-Commercial User Agreement (no redistribution); visualisations CC BY-NC-ND 4.0",
+      "citationLicence": "proprietary",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "epidemiology"
+      ],
+      "url": "https://www.healthdata.org/",
+      "hosts": [
+        "healthdata.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "No redistribution and no derivative works under the free agreement. Cite figures; do not embed data."
+    },
+    {
+      "id": "dhs-program",
+      "publisher": "The DHS Program (ICF)",
+      "title": "Demographic and Health Surveys data",
+      "tier": 3,
+      "embeddable": "cite-only",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
+      "format": "dataset",
+      "spdxOrName": "DHS registration terms (no sharing without written consent)",
+      "citationLicence": "proprietary",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "epidemiology"
+      ],
+      "url": "https://dhsprogram.com/",
+      "hosts": [
+        "dhsprogram.com"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Registration required; data \"will not be shared … without the written consent\" of DHS. Cite published indicators only."
+    },
+    {
+      "id": "scin",
+      "publisher": "Google Research",
+      "title": "SCIN dermatology image dataset",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": false,
+      "format": "dataset",
+      "spdxOrName": "SCIN Data Use License",
+      "citationLicence": "cc-by",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "dermatology",
+        "images"
+      ],
+      "url": "https://github.com/google-research-datasets/scin",
+      "hosts": [],
+      "urlPrefixes": [
+        "github.com/google-research-datasets/scin"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Custom licence allowing reproduce, share and adapt (no non-commercial clause found; commercialUse left false pending counsel). Re-identification is prohibited. Contributors are US internet users — limited skin-of-colour coverage for SSA."
+    },
+    {
+      "id": "wikimedia-commons",
+      "publisher": "Wikimedia Foundation",
+      "title": "Wikimedia Commons media",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "separate",
+      "commercialUse": true,
+      "format": "bulk",
+      "spdxOrName": "per file (public domain, CC0, CC BY, CC BY-SA)",
+      "citationLicence": "cc-by-sa",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "public-domain",
+        "cc0",
+        "cc-by",
+        "cc-by-sa"
+      ],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "images"
+      ],
+      "url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+      "hosts": [
+        "wikimedia.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Commons only accepts files allowing commercial use and derivatives. Attribute per file; CC BY-SA files stay separate items."
+    },
+    {
+      "id": "mind-the-gap",
+      "publisher": "St George's, University of London",
+      "title": "Mind the Gap — clinical signs in Black and Brown skin",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "separate",
+      "commercialUse": true,
+      "format": "pdf",
+      "spdxOrName": "CC BY-SA 4.0 (search snippet)",
+      "citationLicence": "cc-by-sa",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "dermatology",
+        "images"
+      ],
+      "url": "https://sgul.figshare.com/articles/online_resource/Mind_the_Gap_A_handbook_of_clinical_signs_in_Black_and_Brown_skin/12769988",
+      "hosts": [],
+      "urlPrefixes": [
+        "sgul.figshare.com/articles/online_resource/mind_the_gap"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Licence seen via search snippet only; some images inside may be third-party. Confirm per image."
+    },
+    {
+      "id": "dermnet",
+      "publisher": "DermNet",
+      "title": "DermNet skin images",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "verbatim",
+      "commercialUse": false,
+      "format": "html",
+      "spdxOrName": "Watermarked images: non-commercial, no derivatives; paid licence otherwise",
+      "citationLicence": "cc-by-nc-nd",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "dermatology",
+        "images"
+      ],
+      "url": "https://dermnetnz.org/image-licence",
+      "hosts": [
+        "dermnetnz.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Free use keeps the watermark, no edits, credit plus link; DermNet counts print runs over 500 as commercial — confirm whether app distribution at scale qualifies before embedding."
+    },
+    {
+      "id": "tico-19",
+      "publisher": "TICO-19 consortium",
+      "title": "TICO-19 translation benchmark and terminologies (incl. Swahili)",
+      "tier": 1,
+      "embeddable": "yes",
+      "reuseMode": "adapt",
+      "commercialUse": true,
+      "format": "dataset",
+      "spdxOrName": "CC0-1.0",
+      "citationLicence": "cc0",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "translation",
+        "swahili"
+      ],
+      "url": "https://tico-19.github.io/",
+      "hosts": [
+        "tico-19.github.io"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "\"All content is made publicly available through a Creative Commons CC0 license.\" Includes Swahili and Congolese Swahili health terminology — seed for a Swahili glossary."
+    },
+    {
+      "id": "masakhane",
+      "publisher": "Masakhane",
+      "title": "Masakhane African-language datasets",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "adapt",
+      "commercialUse": false,
+      "format": "dataset",
+      "spdxOrName": "per dataset (MasakhaNER / MAFAND-MT CC BY-NC 4.0; AfriSenti CC BY 4.0)",
+      "citationLicence": "cc-by-nc",
+      "licenceScope": "per-item",
+      "itemLicences": [
+        "cc-by",
+        "cc-by-nc"
+      ],
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "translation",
+        "swahili"
+      ],
+      "url": "https://github.com/masakhane-io",
+      "hosts": [],
+      "urlPrefixes": [
+        "github.com/masakhane-io",
+        "huggingface.co/datasets/masakhane"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Licence set per dataset. Useful for evaluating Swahili handling, not as clinical content."
+    },
+    {
+      "id": "clear-global",
+      "publisher": "CLEAR Global (Translators without Borders)",
+      "title": "CLEAR Global humanitarian glossaries",
+      "tier": 2,
+      "embeddable": "verify",
+      "reuseMode": "cite-only",
+      "commercialUse": false,
+      "format": "html",
+      "spdxOrName": "No licence stated (\"open for use by the entire humanitarian community\")",
+      "citationLicence": "unknown",
+      "countries": [
+        "*"
+      ],
+      "domains": [
+        "translation",
+        "swahili"
+      ],
+      "url": "https://clearglobal.org/",
+      "hosts": [
+        "clearglobal.org"
+      ],
+      "lastChecked": "2026-09-24",
+      "notes": "Includes a Swahili (Kenya) COVID-19 glossary. Ask CLEAR Global for an explicit licence before embedding."
     }
   ]
 }

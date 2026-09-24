@@ -25,37 +25,78 @@ const MAX_LICENCE_MISMATCH = 0;
 
 const ALLOWED_LICENCE = new Set([
   'public-domain',
+  'cc0',
   'cc-by',
+  'cc-by-sa',
+  'cc-by-nc',
   'cc-by-nc-sa',
+  'cc-by-nd',
   'cc-by-nc-nd',
+  'odbl',
+  'nc-reproduce',
   'open-gov',
   'proprietary',
   'moh-restricted',
   'unknown',
 ]);
 const ALLOWED_VERDICT = new Set(['yes', 'verify', 'cite-only']);
+const ALLOWED_MODE = new Set(['adapt', 'verbatim', 'separate', 'cite-only']);
+
+/**
+ * Licences that permit each reuse mode under the VedaMD content licence
+ * (CC BY-NC-SA 4.0). Adaptations must be relicensable CC BY-NC-SA, so only
+ * licences without their own share-alike or no-derivatives terms qualify.
+ */
+const ADAPTABLE = new Set([
+  'public-domain',
+  'cc0',
+  'cc-by',
+  'cc-by-nc',
+  'cc-by-nc-sa',
+  'nc-reproduce',
+  'open-gov',
+]);
+const PERMITS: Record<string, Set<string>> = {
+  adapt: ADAPTABLE,
+  verbatim: new Set([...ADAPTABLE, 'cc-by-nd', 'cc-by-nc-nd']),
+  separate: new Set(['cc-by-sa', 'odbl']),
+};
 
 interface Source {
   id: string;
   tier: number;
   embeddable: string;
+  reuseMode: string;
+  commercialUse: boolean;
   citationLicence: string;
+  licenceScope?: string;
+  itemLicences?: string[];
   countries: string[];
   hosts: string[];
+  urlPrefixes?: string[];
   lastChecked: string;
 }
 
 const registry = JSON.parse(readFileSync(REGISTRY, 'utf8')) as { sources: Source[] };
 
 const hostIndex = new Map<string, Source>();
-for (const s of registry.sources) for (const h of s.hosts) hostIndex.set(h.toLowerCase(), s);
+for (const s of registry.sources) {
+  for (const h of s.hosts) hostIndex.set(h.toLowerCase(), s);
+  for (const p of s.urlPrefixes ?? []) hostIndex.set(p.toLowerCase(), s);
+}
 
 function sourceForUrl(url: string): Source | null {
   let host: string;
+  let hostPath: string;
   try {
-    host = new URL(url).hostname.toLowerCase();
+    const parsed = new URL(url);
+    host = parsed.hostname.toLowerCase();
+    hostPath = host.replace(/^www\./, '') + parsed.pathname.toLowerCase();
   } catch {
     return null;
+  }
+  for (const [key, src] of hostIndex) {
+    if (key.includes('/') && hostPath.startsWith(key)) return src;
   }
   let candidate = host;
   while (candidate.includes('.')) {
@@ -95,7 +136,11 @@ describe('source registry', () => {
       if (!ALLOWED_VERDICT.has(s.embeddable)) bad.push(`${s.id}: verdict ${s.embeddable}`);
       if (!ALLOWED_LICENCE.has(s.citationLicence))
         bad.push(`${s.id}: licence ${s.citationLicence}`);
-      if (!Array.isArray(s.hosts) || s.hosts.length === 0) bad.push(`${s.id}: no hosts`);
+      if (!ALLOWED_MODE.has(s.reuseMode)) bad.push(`${s.id}: reuseMode ${s.reuseMode}`);
+      if (typeof s.commercialUse !== 'boolean') bad.push(`${s.id}: commercialUse`);
+      if (!Array.isArray(s.hosts)) bad.push(`${s.id}: hosts`);
+      if (s.hosts.length === 0 && !(s.urlPrefixes ?? []).length)
+        bad.push(`${s.id}: no hosts or urlPrefixes`);
       if (!/^\d{4}-\d{2}-\d{2}$/.test(s.lastChecked)) bad.push(`${s.id}: lastChecked`);
     }
     expect(bad).toEqual([]);
@@ -103,6 +148,69 @@ describe('source registry', () => {
 
   it('only tier-1 sources are ever embeddable=yes', () => {
     const wrong = registry.sources.filter((s) => s.embeddable === 'yes' && s.tier !== 1);
+    expect(wrong.map((s) => s.id)).toEqual([]);
+  });
+
+  it('embeddable sources say how to embed; cite-only sources are cite-only', () => {
+    const wrong = registry.sources.filter(
+      (s) =>
+        (s.embeddable === 'yes' && s.reuseMode === 'cite-only') ||
+        (s.embeddable === 'cite-only' && s.reuseMode !== 'cite-only'),
+    );
+    expect(wrong.map((s) => `${s.id}: ${s.embeddable}/${s.reuseMode}`)).toEqual([]);
+  });
+
+  it('every reuse mode is permitted by the source licence', () => {
+    const wrong = registry.sources.filter(
+      (s) =>
+        s.licenceScope !== 'per-item' &&
+        s.reuseMode !== 'cite-only' &&
+        !PERMITS[s.reuseMode].has(s.citationLicence),
+    );
+    expect(wrong.map((s) => `${s.id}: ${s.reuseMode} with ${s.citationLicence}`)).toEqual([]);
+  });
+
+  it('per-item sources list their item licences and are never embeddable wholesale', () => {
+    const bad: string[] = [];
+    for (const s of registry.sources.filter((x) => x.licenceScope === 'per-item')) {
+      const items = s.itemLicences ?? [];
+      if (items.length === 0) bad.push(`${s.id}: no itemLicences`);
+      if (!items.includes(s.citationLicence))
+        bad.push(`${s.id}: citationLicence not in itemLicences`);
+      if (items.some((l) => !ALLOWED_LICENCE.has(l))) bad.push(`${s.id}: unknown item licence`);
+      if (s.embeddable === 'yes') bad.push(`${s.id}: per-item source marked embeddable=yes`);
+    }
+    expect(bad).toEqual([]);
+  });
+
+  it('no host or URL prefix is claimed by two sources (except the known DrugBank overlap)', () => {
+    const seen = new Map<string, string>();
+    const dupes: string[] = [];
+    for (const s of registry.sources) {
+      for (const key of [...s.hosts, ...(s.urlPrefixes ?? [])].map((k) => k.toLowerCase())) {
+        if (seen.has(key) && key !== 'go.drugbank.com')
+          dupes.push(`${key}: ${seen.get(key)} + ${s.id}`);
+        seen.set(key, s.id);
+      }
+    }
+    expect(dupes).toEqual([]);
+  });
+
+  it('share-alike and restricted licences are never adapted', () => {
+    const wrong = registry.sources.filter(
+      (s) =>
+        s.reuseMode === 'adapt' &&
+        s.licenceScope !== 'per-item' &&
+        [
+          'cc-by-sa',
+          'odbl',
+          'cc-by-nd',
+          'cc-by-nc-nd',
+          'proprietary',
+          'moh-restricted',
+          'unknown',
+        ].includes(s.citationLicence),
+    );
     expect(wrong.map((s) => s.id)).toEqual([]);
   });
 });
@@ -114,7 +222,10 @@ describe('licence compliance', () => {
     const mismatches = cites.filter((c) => {
       if (!c.url || c.licence === undefined) return false;
       const src = sourceForUrl(c.url);
-      return src !== null && c.licence !== src.citationLicence;
+      if (src === null) return false;
+      return src.licenceScope === 'per-item'
+        ? !(src.itemLicences ?? []).includes(c.licence)
+        : c.licence !== src.citationLicence;
     });
     expect(mismatches.length).toBeLessThanOrEqual(MAX_LICENCE_MISMATCH);
   });

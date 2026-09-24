@@ -494,3 +494,124 @@ describe('normalizeCdsRequest — flat dialect from EMR plugins', () => {
     expect(request.context.medications).toEqual(expect.arrayContaining(['warfarin', 'ibuprofen']));
   });
 });
+
+describe('clinical-safety fixes in FHIR normalisation', () => {
+  const condition = (text: string, extra: Record<string, unknown> = {}) => ({
+    resourceType: 'Condition',
+    code: { text },
+    ...extra,
+  });
+  const run = (entries: unknown[], context: Record<string, unknown> = {}) =>
+    normalize({
+      hook: 'patient-view',
+      hookInstance: 't',
+      context,
+      prefetch: {
+        conditions: { resourceType: 'Bundle', entry: entries.map((resource) => ({ resource })) },
+      },
+    } as CdsHookRequest).request.context;
+
+  it.each(['Pregnancy test negative', 'Pregnancy ruled out', 'Screening for pregnancy'])(
+    'does not set pregnant from "%s"',
+    (text) => {
+      expect(run([condition(text)]).pregnant).toBeUndefined();
+    },
+  );
+
+  it('does not set HIV positive from a screening encounter', () => {
+    expect(run([condition('Encounter for screening for HIV')]).knownHivPositive).toBeUndefined();
+  });
+
+  it('still reads an affirmative diagnosis, including NOS wording', () => {
+    const ctx = run([condition('Essential hypertension, not otherwise specified')]);
+    expect(ctx.knownHtn).toBe(true);
+    // …and mirrors it onto the name the AF / PEN strategies read.
+    expect(ctx.hypertension).toBe(true);
+  });
+
+  it('ignores a refuted diagnosis', () => {
+    const ctx = run([
+      condition('Type 2 diabetes mellitus', {
+        verificationStatus: { coding: [{ code: 'refuted' }] },
+      }),
+    ]);
+    expect(ctx.knownDiabetes).toBeUndefined();
+  });
+
+  it('maps HIV-positive onto hivStatus for the ART strategy', () => {
+    expect(run([condition('HIV disease')]).hivStatus).toBe('positive');
+  });
+});
+
+describe('FHIR medications and age', () => {
+  const medReq = (status: string, text: string) => ({
+    resourceType: 'MedicationRequest',
+    status,
+    intent: 'order',
+    medicationCodeableConcept: { text },
+  });
+  const ctxOf = (resources: unknown[], birthDate?: string, birthTime?: string) =>
+    normalize({
+      hook: 'medication-prescribe',
+      hookInstance: 't',
+      context: {},
+      prefetch: {
+        patient: birthDate
+          ? {
+              resourceType: 'Patient',
+              birthDate,
+              ...(birthTime
+                ? {
+                    _birthDate: {
+                      extension: [
+                        {
+                          url: 'http://hl7.org/fhir/StructureDefinition/patient-birthTime',
+                          valueDateTime: birthTime,
+                        },
+                      ],
+                    },
+                  }
+                : {}),
+            }
+          : undefined,
+        meds: { resourceType: 'Bundle', entry: resources.map((resource) => ({ resource })) },
+      },
+    } as CdsHookRequest).request.context;
+
+  it('drops stopped / cancelled / entered-in-error orders', () => {
+    const ctx = ctxOf([
+      medReq('stopped', 'Warfarin'),
+      medReq('entered-in-error', 'Ibuprofen'),
+      medReq('active', 'Amoxicillin'),
+    ]);
+    const all = JSON.stringify(ctx);
+    expect(all).not.toMatch(/warfarin|ibuprofen/);
+    expect(all).toMatch(/amoxicillin/);
+  });
+
+  it('computes age by the calendar (18th birthday is 18)', () => {
+    // now() is 2026-09-12 in this suite.
+    expect(ctxOf([], '2008-09-12').ageYears).toBe(18);
+    expect(ctxOf([], '2008-09-13').ageYears).toBe(17);
+  });
+
+  it("never overstates a newborn's hours from a date-only birthDate", () => {
+    // Born sometime on 2026-09-11; now is 2026-09-12T00:00Z. At most 24 h old.
+    expect(ctxOf([], '2026-09-11').ageHours).toBe(0);
+  });
+
+  it('uses the FHIR birthTime extension when present', () => {
+    expect(ctxOf([], '2026-09-11', '2026-09-11T12:00:00Z').ageHours).toBe(12);
+  });
+
+  it('copies weight to childWeightKg for a child only', () => {
+    const obs = (kg: number) => ({
+      resourceType: 'Observation',
+      status: 'final',
+      code: { coding: [{ system: 'http://loinc.org', code: '29463-7' }] },
+      valueQuantity: { value: kg, unit: 'kg' },
+    });
+    expect(ctxOf([obs(14)], '2023-01-01').childWeightKg).toBe(14);
+    expect(ctxOf([obs(45)], '1990-01-01').childWeightKg).toBeUndefined();
+  });
+});

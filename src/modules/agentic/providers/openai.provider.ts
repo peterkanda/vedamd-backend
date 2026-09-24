@@ -1,3 +1,4 @@
+import { fetchLlm } from './llm-fetch';
 import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import type { AppConfig } from '../../../config/configuration';
@@ -7,14 +8,23 @@ import type {
   ProviderCompletion,
   LlmProvider,
 } from './llm-provider.interface';
+import { incompleteAnswer, OPENAI_COMPAT_INCOMPLETE } from './incomplete-answer';
+
+const OPENAI_BASE_URL = 'https://api.openai.com/v1';
 
 /**
- * OpenAI provider — configurable fallback for the agentic engine.
+ * OpenAI provider — the default provider for the backend's clinical chat
+ * and agentic API.
  *
  * Uses the native fetch API against the Chat Completions endpoint.
  * Works with OpenAI directly OR any OpenAI-compatible endpoint
  * (Azure OpenAI, local vLLM / Ollama OpenAI shim) via
- * AGENTIC_OPENAI_BASE_URL. Model via AGENTIC_OPENAI_MODEL.
+ * AGENTIC_OPENAI_BASE_URL. Configure with:
+ *   AGENTIC_OPENAI_MODEL              — model id
+ *   AGENTIC_OPENAI_REASONING_EFFORT   — optional (low | medium | high …);
+ *                                       unset = the model's own default
+ *   AGENTIC_OPENAI_REASONING_HEADROOM — tokens allowed for hidden reasoning
+ *                                       on top of the answer (default 24000)
  */
 @Injectable()
 export class OpenAiProvider implements LlmProvider {
@@ -22,6 +32,8 @@ export class OpenAiProvider implements LlmProvider {
   private readonly apiKey: string;
   readonly model: string;
   private readonly baseUrl: string;
+  private readonly reasoningEffort: string | undefined;
+  private readonly reasoningHeadroom: number;
 
   constructor(
     private readonly config: ConfigService<AppConfig, true>,
@@ -29,7 +41,38 @@ export class OpenAiProvider implements LlmProvider {
   ) {
     this.apiKey = this.config.get('llm.openaiApiKey', { infer: true }) ?? '';
     this.model = process.env.AGENTIC_OPENAI_MODEL ?? 'gpt-4o';
-    this.baseUrl = process.env.AGENTIC_OPENAI_BASE_URL ?? 'https://api.openai.com/v1';
+    this.baseUrl = process.env.AGENTIC_OPENAI_BASE_URL ?? OPENAI_BASE_URL;
+    this.reasoningEffort = process.env.AGENTIC_OPENAI_REASONING_EFFORT || undefined;
+    this.reasoningHeadroom = Number(process.env.AGENTIC_OPENAI_REASONING_HEADROOM ?? 24_000);
+  }
+
+  /**
+   * Current OpenAI models (GPT-5.x, GPT-6) are reasoning models: they accept
+   * only the default temperature, and their hidden reasoning tokens count
+   * against max_completion_tokens — OpenAI advises reserving at least 25,000
+   * tokens for reasoning plus output, or the answer can come back cut short or
+   * empty. OpenAI-compatible endpoints (vLLM, Ollama) serving ordinary models
+   * keep the classic max_tokens + temperature parameters.
+   */
+  private requestBody(req: LlmCompletionRequest): Record<string, unknown> {
+    const messages = [
+      { role: 'system', content: req.system },
+      { role: 'user', content: req.user },
+    ];
+    if (this.baseUrl !== OPENAI_BASE_URL) {
+      return {
+        model: this.model,
+        max_tokens: req.maxTokens ?? 2048,
+        temperature: req.temperature ?? 0.1,
+        messages,
+      };
+    }
+    return {
+      model: this.model,
+      max_completion_tokens: (req.maxTokens ?? 2048) + this.reasoningHeadroom,
+      ...(this.reasoningEffort ? { reasoning_effort: this.reasoningEffort } : {}),
+      messages,
+    };
   }
 
   isConfigured(): boolean {
@@ -41,15 +84,7 @@ export class OpenAiProvider implements LlmProvider {
       throw new Error('OpenAI provider not configured (OPENAI_API_KEY missing).');
     }
 
-    const body = {
-      model: this.model,
-      max_tokens: req.maxTokens ?? 2048,
-      temperature: req.temperature ?? 0.1,
-      messages: [
-        { role: 'system', content: req.system },
-        { role: 'user', content: req.user },
-      ],
-    };
+    const body = this.requestBody(req);
 
     // Retry transient rate-limits (429) and 5xx with backoff. A 429 that is
     // actually "insufficient_quota" is permanent, so we stop and let the
@@ -57,26 +92,30 @@ export class OpenAiProvider implements LlmProvider {
     const MAX_ATTEMPTS = 3;
     let res: Response | null = null;
     for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
-      res = await fetch(`${this.baseUrl}/chat/completions`, {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-          authorization: `Bearer ${this.apiKey}`,
+      res = await fetchLlm(
+        `${this.baseUrl}/chat/completions`,
+        {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+            authorization: `Bearer ${this.apiKey}`,
+          },
+          body: JSON.stringify(body),
         },
-        body: JSON.stringify(body),
-      });
+        'openai',
+      );
       if (res.ok) break;
 
       const status = res.status;
       const detail = await res.text().catch(() => '');
       const isQuota = /insufficient_quota|exceeded your current quota/i.test(detail);
       const retryable = (status === 429 && !isQuota) || (status >= 500 && status < 600);
+      // Allow-listed fields only: an unlisted one makes the PHI-free logger
+      // throw outside production, which skipped these retries entirely.
       this.log.warn('agentic_llm_error', {
         llm_provider: 'openai',
         status_code: status,
-        attempt,
-        retryable,
-        quota_exhausted: isQuota,
+        error_category: isQuota ? 'quota_exhausted' : retryable ? 'retryable' : 'non_retryable',
       });
       if (!retryable || attempt === MAX_ATTEMPTS) {
         const reason = isQuota ? ' (insufficient_quota)' : '';
@@ -93,12 +132,23 @@ export class OpenAiProvider implements LlmProvider {
     }
 
     const json = (await res.json()) as {
-      choices?: Array<{ message?: { content?: string } }>;
+      choices?: Array<{ message?: { content?: string | null }; finish_reason?: string }>;
       model?: string;
       usage?: { prompt_tokens?: number; completion_tokens?: number };
     };
 
-    const text = json.choices?.[0]?.message?.content ?? '';
+    const choice = json.choices?.[0];
+    const text = choice?.message?.content ?? '';
+    const finishReason = choice?.finish_reason ?? 'none';
+    if (OPENAI_COMPAT_INCOMPLETE.has(finishReason) || !text) {
+      throw incompleteAnswer(
+        this.log,
+        'openai',
+        'OpenAI',
+        this.model,
+        OPENAI_COMPAT_INCOMPLETE.has(finishReason) ? finishReason : 'empty',
+      );
+    }
 
     return {
       text,

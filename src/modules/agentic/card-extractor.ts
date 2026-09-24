@@ -64,30 +64,55 @@ export type CitationVerifier = (
   id: string,
 ) => boolean;
 
+/** Looks up what a verified citation names in the bundle. */
+export type CitationDescriber = (
+  kind: 'drug' | 'ddi' | 'condition' | 'procedure' | 'rule',
+  id: string,
+) => { label: string; reviewStatus?: string } | undefined;
+
+export interface ExtractedCards {
+  cards: CdsCard[];
+  citedRecords: Array<{ kind: string; id: string }>;
+  /** Cards the model proposed that failed a check and were withheld. */
+  rejected: number;
+  /** The output looked like a card block but could not be parsed. */
+  unparseable: boolean;
+}
+
 export function extractCards(
   llmText: string,
   generatedAt: string,
   minConfidence: number = DEFAULT_AGENTIC_CONFIDENCE_FLOOR,
   resolveStrength?: CitationStrengthResolver,
   verifyCitation?: CitationVerifier,
-): { cards: CdsCard[]; citedRecords: Array<{ kind: string; id: string }> } {
+  describeCitation?: CitationDescriber,
+): ExtractedCards {
   const json = extractJsonObject(llmText);
-  if (!json) return { cards: [], citedRecords: [] };
+  if (!json) {
+    return {
+      cards: [],
+      citedRecords: [],
+      rejected: 0,
+      unparseable: /"cards"\s*:/.test(llmText ?? ''),
+    };
+  }
 
   const rawCards = Array.isArray((json as { cards?: unknown }).cards)
     ? (json as { cards: RawCard[] }).cards
     : [];
 
-  const citedRecords: Array<{ kind: string; id: string }> = [];
   const cards: CdsCard[] = [];
+  let rejected = 0;
 
   for (const rc of rawCards) {
-    const summary = typeof rc.summary === 'string' ? rc.summary.trim() : '';
-    const indicator = VALID_INDICATORS.includes(rc.indicator as CdsIndicator)
-      ? (rc.indicator as CdsIndicator)
-      : 'info';
-    const detail = typeof rc.detail === 'string' ? rc.detail.trim() : undefined;
-    const citations = parseCitations(rc.citations, resolveStrength, verifyCitation);
+    const fullSummary = typeof rc.summary === 'string' ? rc.summary.trim() : '';
+    const indicator = parseIndicator(rc.indicator);
+    const citations = parseCitations(
+      rc.citations,
+      resolveStrength,
+      verifyCitation,
+      describeCitation,
+    );
     // Evidence-grounded confidence: the LLM's self-reported number is capped by
     // what the cited sources actually support (source-strength tier), so the
     // displayed score reflects EVIDENCE, not just the model's opinion. Taking
@@ -99,15 +124,22 @@ export function extractCards(
     const suggestions = parseSuggestion(rc.suggestion);
 
     // Invalid card guards: must have a summary AND at least one citation.
-    if (!summary) continue;
-    if (citations.length === 0) continue;
     // Confidence floor — drop low-confidence cards (alert-fatigue control).
-    if (confidence < minConfidence) continue;
+    if (!fullSummary || citations.length === 0 || confidence < minConfidence) {
+      rejected += 1;
+      continue;
+    }
 
-    for (const cit of citations) citedRecords.push({ kind: cit.kind, id: cit.id });
+    // CDS Hooks caps the summary at 140 characters. Cut at a word boundary
+    // and keep the whole sentence in the detail: a bare slice could end
+    // mid-dose ("give 7.5 mg/kg of genta").
+    const summary = shortSummary(fullSummary);
+    const rawDetail = typeof rc.detail === 'string' ? rc.detail.trim() : undefined;
+    const detail =
+      summary === fullSummary ? rawDetail : [fullSummary, rawDetail].filter(Boolean).join('\n\n');
 
     const card: CdsCard = {
-      summary: summary.slice(0, 140),
+      summary,
       indicator,
       detail,
       source: {
@@ -120,12 +152,10 @@ export function extractCards(
           ruleId: 'agentic-reasoner',
           ruleVersion: '0.1.0',
           evidenceLevel: 'expert-consensus',
-          // Agentic cards always carry 'review' status — they're LLM
-          // synthesis over reviewed bundle records, but the synthesis
-          // itself is not human-reviewed. The UI surfaces this with a
-          // dedicated "AI-assisted" badge so clinicians can calibrate
-          // trust (HIGH-4 in the anti-hallucination audit).
-          reviewStatus: 'review',
+          // LLM synthesis is never better reviewed than the least-reviewed
+          // record it cites. A hard-coded 'review' hid that every record in
+          // today's bundle is still a draft.
+          reviewStatus: leastReviewed(citations.map((c) => c.reviewStatus)),
           generatedAt,
           codings: citations.map((cit) => ({
             system: 'http://vedamd.io/codesystem/bundle-record',
@@ -147,7 +177,48 @@ export function extractCards(
   }
 
   cards.sort((a, b) => INDICATOR_RANK[a.indicator] - INDICATOR_RANK[b.indicator]);
-  return { cards: cards.slice(0, 6), citedRecords };
+  const kept = cards.slice(0, 6);
+  // Audit only what was returned (this used to list the citations of cards
+  // cut by the six-card limit too).
+  const citedRecords = kept.flatMap(
+    (c) =>
+      c.extension?.['http://vedamd.io/Card/citations']?.map((cit) => ({
+        kind: cit.kind,
+        id: cit.id,
+      })) ?? [],
+  );
+  return { cards: kept, citedRecords, rejected, unparseable: false };
+}
+
+const REVIEW_ORDER = ['deprecated', 'draft', 'review', 'approved'] as const;
+type ReviewStatus = (typeof REVIEW_ORDER)[number];
+
+function leastReviewed(statuses: Array<string | undefined>): ReviewStatus {
+  const known = statuses.filter((s): s is ReviewStatus =>
+    (REVIEW_ORDER as readonly string[]).includes(s ?? ''),
+  );
+  if (known.length === 0) return 'draft';
+  return known.reduce((a, b) => (REVIEW_ORDER.indexOf(a) <= REVIEW_ORDER.indexOf(b) ? a : b));
+}
+
+function shortSummary(s: string): string {
+  if (s.length <= 140) return s;
+  const cut = s.slice(0, 139);
+  const space = cut.lastIndexOf(' ');
+  return `${(space > 80 ? cut.slice(0, space) : cut).replace(/[\s,;:–-]+$/, '')}…`;
+}
+
+/**
+ * Severity from the model. Matching was case-sensitive, so "Critical" became
+ * info. Anything unrecognised is a warning: an unreadable severity must not
+ * become the quietest one.
+ */
+function parseIndicator(raw: unknown): CdsIndicator {
+  const v = typeof raw === 'string' ? raw.trim().toLowerCase() : '';
+  if (VALID_INDICATORS.includes(v as CdsIndicator)) return v as CdsIndicator;
+  if (/^(urgent|emergency|severe|high|danger|red)$/.test(v)) return 'critical';
+  if (/^(low|information|informational|note)$/.test(v)) return 'info';
+  return 'warning';
 }
 
 /**
@@ -170,12 +241,28 @@ function parseSuggestion(raw: unknown): Array<{
   for (const a of rawActions) {
     if (typeof a !== 'object' || a === null) continue;
     const ao = a as Record<string, unknown>;
-    const type = VALID_ACTION_TYPES.has(ao.type as string) ? (ao.type as string) : 'monitor';
+    const type = parseActionType(ao.type);
     const description = typeof ao.description === 'string' ? ao.description.trim() : '';
-    if (description) actions.push({ type, description });
+    // An unknown action type is dropped, not relabelled: "stop warfarin"
+    // used to arrive as a "monitor" action.
+    if (type && description) actions.push({ type, description });
   }
   if (actions.length === 0) return [];
   return [{ label, uuid: randomUuid(), actions }];
+}
+
+const ACTION_SYNONYMS: Array<[RegExp, string]> = [
+  [/^(stop|discontinue|hold|withhold|avoid|cease|cancel|remove|deprescribe)$/, 'remove'],
+  [/^(change|adjust|reduce|increase|decrease|switch|titrate|modify|substitute)$/, 'modify'],
+  [/^(start|begin|initiate|prescribe|give|add|administer)$/, 'add'],
+  [/^(order|test|check|investigate|order-test|measure)$/, 'order-test'],
+  [/^(monitor|observe|watch|review|follow-up|recheck)$/, 'monitor'],
+];
+
+function parseActionType(raw: unknown): string | null {
+  const v = typeof raw === 'string' ? raw.trim().toLowerCase() : '';
+  if (VALID_ACTION_TYPES.has(v)) return v;
+  return ACTION_SYNONYMS.find(([re]) => re.test(v))?.[1] ?? null;
 }
 
 function randomUuid(): string {
@@ -183,11 +270,23 @@ function randomUuid(): string {
   return 'sg-' + Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
 }
 
-/** Parse + clamp the LLM-reported confidence to [0,1]; default 0.5 if absent/invalid. */
+/**
+ * The model's self-reported confidence, in [0,1]. A percentage (85) is read
+ * as 0.85 rather than clamped to certainty; anything missing or unreadable is
+ * 0 — below any floor — rather than a middling 0.5.
+ */
 function clampConfidence(raw: unknown): number {
-  const n = typeof raw === 'number' ? raw : Number(raw);
-  if (Number.isNaN(n)) return 0.5;
-  return Math.max(0, Math.min(1, n));
+  const n =
+    typeof raw === 'number'
+      ? raw
+      : typeof raw === 'string' && raw.trim() !== ''
+        ? Number(raw.trim().replace(/%$/, ''))
+        : NaN;
+  if (!Number.isFinite(n)) return 0;
+  // 5–100 is a percentage; a slightly-over-1 value (1.7) is an over-eager
+  // probability and clamps to 1.
+  const v = n >= 5 && n <= 100 ? n / 100 : n;
+  return Math.max(0, Math.min(1, v));
 }
 
 /**
@@ -217,9 +316,10 @@ function parseCitations(
   raw: unknown,
   resolveStrength?: CitationStrengthResolver,
   verifyCitation?: CitationVerifier,
-): AgenticCitation[] {
+  describeCitation?: CitationDescriber,
+): Array<AgenticCitation & { reviewStatus?: string }> {
   if (!Array.isArray(raw)) return [];
-  const out: AgenticCitation[] = [];
+  const out: Array<AgenticCitation & { reviewStatus?: string }> = [];
   for (const c of raw) {
     if (typeof c !== 'object' || c === null) continue;
     const obj = c as Record<string, unknown>;
@@ -237,12 +337,16 @@ function parseCitations(
     // A citation naming a record we didn't retrieve is unverifiable; drop it
     // rather than render the invented id back to the clinician as its own label.
     if (verifyCitation && !verifyCitation(validKind, id)) continue;
+    // The label and link come from the bundle, never the model: the id was
+    // verified, but a model-written label or URL could attach an invented
+    // guideline name to a real record.
+    const described = describeCitation?.(validKind, id);
     out.push({
       kind: validKind,
       id,
-      label: typeof obj.label === 'string' ? obj.label : id,
-      url: typeof obj.url === 'string' ? obj.url : undefined,
+      label: described?.label ?? id,
       strength: resolveStrength?.(validKind, id),
+      reviewStatus: described?.reviewStatus,
     });
   }
   return out;
@@ -252,43 +356,62 @@ function parseCitations(
  * Extract the first balanced JSON object from arbitrary LLM text.
  * Handles code fences, leading prose, and trailing content.
  */
-function extractJsonObject(text: string): unknown {
-  if (!text) return null;
-  // Strip markdown code fences.
-  const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/);
-  const candidate = fenced ? fenced[1] : text;
-  const start = candidate.indexOf('{');
-  if (start === -1) return null;
+/**
+ * Every balanced top-level {…} or […] span in `text` (string-aware), as
+ * [start, end) offsets. Shared by card extraction and the narrative stripper.
+ */
+export function findJsonSpans(text: string): Array<[number, number]> {
+  const spans: Array<[number, number]> = [];
   let depth = 0;
+  let start = -1;
   let inString = false;
   let escape = false;
-  for (let i = start; i < candidate.length; i++) {
-    const ch = candidate[i];
-    if (escape) {
-      escape = false;
-      continue;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (depth > 0) {
+      if (escape) {
+        escape = false;
+        continue;
+      }
+      if (ch === '\\') {
+        escape = true;
+        continue;
+      }
+      if (ch === '"') {
+        inString = !inString;
+        continue;
+      }
+      if (inString) continue;
     }
-    if (ch === '\\') {
-      escape = true;
-      continue;
-    }
-    if (ch === '"') {
-      inString = !inString;
-      continue;
-    }
-    if (inString) continue;
-    if (ch === '{') depth++;
-    else if (ch === '}') {
+    if (ch === '{' || ch === '[') {
+      if (depth === 0) start = i;
+      depth++;
+    } else if ((ch === '}' || ch === ']') && depth > 0) {
       depth--;
-      if (depth === 0) {
-        const slice = candidate.slice(start, i + 1);
-        try {
-          return JSON.parse(slice);
-        } catch {
-          return null;
-        }
+      if (depth === 0) spans.push([start, i + 1]);
+    }
+  }
+  return spans;
+}
+
+function extractJsonObject(text: string): unknown {
+  if (!text) return null;
+  // A fenced block wins; otherwise try each balanced span in turn, so a stray
+  // "{" in the prose before the JSON no longer sinks the whole answer.
+  const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+  const sources = fenced ? [fenced[1], text] : [text];
+  let fallback: unknown = null;
+  for (const src of sources) {
+    for (const [a, b] of findJsonSpans(src)) {
+      if (src[a] !== '{') continue;
+      try {
+        const parsed = JSON.parse(src.slice(a, b)) as unknown;
+        if (Array.isArray((parsed as { cards?: unknown })?.cards)) return parsed;
+        fallback ??= parsed;
+      } catch {
+        /* not JSON — keep looking */
       }
     }
   }
-  return null;
+  return fallback;
 }

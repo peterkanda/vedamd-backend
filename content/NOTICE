@@ -1,0 +1,121 @@
+VedaMD clinical content — third-party notices
+
+VedaMD content is licensed CC BY-NC-SA 4.0 (see content/LICENSE). It
+contains or refers to the third-party material below, which keeps its own
+licence. When content is ingested from a new source, add that source's
+required notice here and record it in content/sources/registry.json.
+
+Working position, not legal advice. Last checked 2026-09-24.
+
+=======================================================================
+1. Terminology codes in the bundle (terminology.json and records)
+=======================================================================
+
+ICD-11 (WHO) — 517 concepts
+  ICD-11, World Health Organization, 2019. Licence: CC BY-ND 3.0 IGO.
+  Codes and titles are reproduced unmodified. Any VedaMD additions are
+  not part of ICD-11 and are not endorsed by WHO. Translations and
+  mappings need a separate written agreement with WHO.
+
+ICD-10 (WHO) — 716 concepts
+  International Statistical Classification of Diseases and Related Health
+  Problems, 10th Revision. © World Health Organization. Codes are used for
+  interoperability. OPEN ITEM: confirm WHO's current terms for ICD-10 in
+  distributed software.
+
+LOINC (Regenstrief Institute) — 366 concepts
+  This material contains content from LOINC (https://loinc.org). LOINC is
+  copyright © Regenstrief Institute, Inc. and the Logical Observation
+  Identifiers Names and Codes (LOINC) Committee and is available at no
+  cost under the licence at https://loinc.org/license. LOINC® is a
+  registered United States trademark of Regenstrief Institute, Inc.
+
+RxNorm (US National Library of Medicine) — 386 concepts
+  This product uses publicly available data from the U.S. National
+  Library of Medicine (NLM), National Institutes of Health, Department of
+  Health and Human Services; NLM is not responsible for the product and
+  does not endorse or recommend this or any other product.
+
+WHO ATC classification — 449 codes
+  © WHO Collaborating Centre for Drug Statistics Methodology. OPEN ITEM:
+  confirm the WHOCC terms for distributing ATC codes in a free,
+  non-commercial product.
+
+WHO AWaRe antibiotic classification (2023)
+  World Health Organization. Licence: CC BY-NC-SA 3.0 IGO.
+
+SNOMED CT — 716 concepts
+  SNOMED CT® is © SNOMED International. Kenya is not a SNOMED member
+  country, and neither the VedaMD content licence nor this notice grants
+  any right to use SNOMED CT. Codes are included for interoperability
+  only and are switched off at runtime (CONTENT_SNOMED_ENABLED). OPEN
+  ITEM: an Affiliate Licence is needed, or the codes should be removed
+  from distributed bundles.
+
+=======================================================================
+2. Manufacturer label excerpts (content/labels/)
+=======================================================================
+
+US drug label excerpts come from openFDA / DailyMed (U.S. Food and Drug
+Administration, U.S. National Library of Medicine). The label text is
+written by manufacturers. It is a draft lane and is not part of any
+signed bundle until legal review is complete
+(docs/manufacturer-label-licensing.md). Kenya PPB and SAHPRA documents are
+linked only; no text is stored.
+
+=======================================================================
+3. Wording that ingested or adapted material must carry
+=======================================================================
+
+A record that reproduces or adapts third-party material must name the
+source in its references[] and carry the source's licence. Use the
+wording below for the sources that require it.
+
+World Health Organization publications (CC BY-NC-SA 3.0 IGO)
+  This is an adaptation of an original work: <Title>. Geneva: World
+  Health Organization; <year>. Licence: CC BY-NC-SA 3.0 IGO. This
+  adaptation was not created by WHO. WHO is not responsible for the
+  content or accuracy of this adaptation. The original edition shall be
+  the binding and authentic edition.
+  For a translation, replace "adaptation" with "translation". Do not use
+  the WHO logo or suggest that WHO endorses VedaMD. VedaMD adaptations
+  are licensed CC BY-NC-SA 4.0, as §4(b) of CC BY-NC-SA 3.0 IGO allows.
+
+WHO electronic Essential Medicines List (CC BY 3.0 IGO)
+  WHO electronic Essential Medicines List (eEML), World Health
+  Organization, 2020. https://list.essentialmeds.org/ (beta version 1.0).
+  Licence: CC BY 3.0 IGO.
+  Not to be used with the advertising or promotion of commercial products.
+
+WHO datasets (data.who.int, CC BY 4.0)
+  World Health Organization <year> data.who.int, <item name> [<item
+  type>]. <URL> (Accessed on <date>)
+
+US National Library of Medicine (LactMed, LiverTox, MedlinePlus, MeSH)
+  Courtesy of the U.S. National Library of Medicine. For MedlinePlus:
+  "Courtesy of MedlinePlus from the National Library of Medicine". Only
+  public-domain MedlinePlus pages may be used; A.D.A.M. and ASHP content
+  may not. Say if a copy is not current. No NLM/NIH endorsement is implied.
+
+US Centers for Disease Control and Prevention
+  Adapted from <title>, Centers for Disease Control and Prevention. This
+  material is available free of charge at cdc.gov. Use does not imply
+  endorsement by CDC, HHS or the U.S. Government. No CDC logos.
+
+US National Cancer Institute (PDQ)
+  Adapted from the National Cancer Institute's PDQ® <summary title>. No
+  NCI logo or PDQ trademark on adapted text.
+
+clinicalinfo.hiv.gov
+  Text is public domain. Photographs are not and must not be reused.
+  Remove HIV.gov logos and citations from adapted material.
+
+Creative Commons sources (PLOS, OpenStax, DDInter, StatPearls, …)
+  <Title>, <author/publisher>, <URL>, licensed <licence name + link>.
+  State "adapted" where the material was changed. ND-licensed material
+  (e.g. StatPearls CC BY-NC-ND 4.0) is reproduced unaltered only.
+
+Share-alike sources that are not NC (Wikipedia, PharmGKB, OpenStreetMap)
+  These are shipped only as separately licensed items under their own
+  licence (CC BY-SA or ODbL) and are never merged into CC BY-NC-SA
+  records. OpenStreetMap data: "© OpenStreetMap contributors".

@@ -29,19 +29,29 @@ glance.
 
 ## Copyright posture
 
-The strength tier does not change copyright behaviour:
+The strength tier does not change copyright behaviour. Strength says how
+much to trust a source; its licence says what we may do with its text.
 
-- VedaMD never reproduces source text. We link to sources and paraphrase
-  facts (which are not copyrightable). Wikipedia content is CC BY-SA;
-  the licence permits unlimited linking and citation.
-- Where a record is materially derived from a single open-access source,
-  the source is named in the `references[]` array. Closed-access source
-  text (publisher PDFs, FDA labels) is never copied into the bundle —
-  only the citation pointer.
-- The bundle JSON itself is owned by VedaMD; the per-domain content is
-  copyrighted by VedaMD and licensed under the platform's commercial
-  terms. Citations point readers to upstream sources for the underlying
-  evidence.
+- **VedaMD content is licensed CC BY-NC-SA 4.0** ([`content/LICENSE`](../content/LICENSE),
+  decided 2026-09-24). It is free and non-commercial, which lets it build on
+  WHO guidance (CC BY-NC-SA 3.0 IGO) and other non-commercial open sources.
+  The code is licensed separately (Apache-2.0 + Commons Clause).
+- **Facts are not copyrightable.** Any source may be cited and its facts
+  restated in VedaMD's own words.
+- **Reusing a source's wording** depends on its `reuseMode` in
+  [`content/sources/registry.json`](../content/sources/registry.json):
+  `adapt` (reproduce or adapt; the result is CC BY-NC-SA 4.0),
+  `verbatim` (no-derivatives licences: quote unaltered only), `separate`
+  (share-alike licences such as Wikipedia's CC BY-SA: keep as a separately
+  licensed item, never merged into a record), or `cite-only` (link only).
+  For `per-item` sources (PMC, WHO IRIS, Kenya MoH) check the individual
+  document's licence first.
+- Any record that reproduces or adapts third-party material names it in
+  `references[]` and carries the notice listed in
+  [`content/NOTICE`](../content/NOTICE). `npm run bundle:check-licence`
+  enforces that declared licences match the registry.
+- Evidence behind each verdict: [`content-sources-and-gaps.md`](./content-sources-and-gaps.md)
+  and [`manufacturer-label-licensing.md`](./manufacturer-label-licensing.md).
 
 ## How a reference is scored
 

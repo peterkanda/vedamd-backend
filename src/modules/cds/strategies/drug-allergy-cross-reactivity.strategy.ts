@@ -7,6 +7,7 @@ import type { DrugRecord } from '../../drugs/drugs.types';
 import type { CrossReactivityRisk } from '../../allergy/allergy.types';
 import type { CdsCard, CdsHookRequest, CdsIndicator } from '../cds.types';
 import type { CdsRuleStrategy } from './types';
+import { extractMedicationSlugs } from './medication-slugs';
 
 const RISK_TO_INDICATOR: Record<CrossReactivityRisk, CdsIndicator> = {
   high: 'critical',
@@ -79,18 +80,4 @@ function extractAllergens(context: Record<string, unknown>): string[] {
   const v = context.allergies;
   if (!Array.isArray(v)) return [];
   return v.filter((x): x is string => typeof x === 'string');
-}
-
-function extractMedicationSlugs(context: Record<string, unknown>): string[] {
-  const fields = ['medications', 'proposed', 'current', 'draftMedications', 'currentMedications'];
-  const out: string[] = [];
-  for (const f of fields) {
-    const v = context[f];
-    if (Array.isArray(v)) {
-      for (const item of v) {
-        if (typeof item === 'string') out.push(item);
-      }
-    }
-  }
-  return out;
 }

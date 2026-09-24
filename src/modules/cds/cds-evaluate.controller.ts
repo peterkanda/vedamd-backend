@@ -1,4 +1,4 @@
-import { Body, Controller, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Post, UseGuards, NotImplementedException } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CdsService } from './cds.service';
 import { ApiKeyGuard, RequireScope } from '../../common/api-key-auth';
@@ -13,11 +13,15 @@ export class CdsEvaluateController {
   @Post('evaluate')
   @RequireScope('cds:evaluate')
   @ApiOperation({
-    summary: 'Non-CDS-Hooks evaluation endpoint',
+    summary: 'Non-CDS-Hooks evaluation endpoint (not implemented)',
     description:
-      'Accepts a structured patient context and returns recommendations. See FR-007. Requires the cds:evaluate scope.',
+      'Not implemented: returns 501. Use the CDS Hooks services (POST /cds-services/{id}) or POST /api/v1/agentic/evaluate. Requires the cds:evaluate scope.',
   })
-  evaluate(@Body() payload: unknown) {
-    return this.cds.evaluateGeneric(payload);
+  evaluate(@Body() _payload: unknown) {
+    // This used to answer every request with an empty list and a 200 —
+    // indistinguishable from "evaluated, nothing to flag". Say it plainly.
+    throw new NotImplementedException(
+      'POST /v1/cds/evaluate is not implemented. Use the CDS Hooks services (POST /cds-services/{id}) or POST /api/v1/agentic/evaluate.',
+    );
   }
 }

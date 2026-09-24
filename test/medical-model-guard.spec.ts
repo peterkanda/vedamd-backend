@@ -25,6 +25,8 @@ class FakeProvider implements LlmProvider {
     readonly model: string,
     private readonly behaviour: 'ok' | 'throw' = 'ok',
     private readonly configured = true,
+    /** Model id the API reports back, when it differs from the configured one. */
+    private readonly reportedModel = model,
   ) {}
   isConfigured(): boolean {
     return this.configured;
@@ -32,7 +34,7 @@ class FakeProvider implements LlmProvider {
   async complete(_req: LlmCompletionRequest): Promise<ProviderCompletion> {
     this.calls++;
     if (this.behaviour === 'throw') throw new Error(`${this.name} is unavailable`);
-    return { text: 'answer', model: this.model, provider: this.name };
+    return { text: 'answer', model: this.reportedModel, provider: this.name };
   }
 }
 
@@ -80,6 +82,15 @@ describe('medical-model enforcement', () => {
     expect(oa.calls).toBe(0);
   });
 
+  it('counts an approved model as medical when the API reports a dated snapshot of it', async () => {
+    process.env.MEDICAL_MODEL_IDS = GENERAL;
+    const oa = new FakeProvider('openai', GENERAL, 'ok', true, `${GENERAL}-2024-08-06`);
+    const or = new FakeProvider('openrouter', MEDICAL, 'ok', false);
+    const result = await makeRouter(or, oa).complete(clinical);
+    expect(result.model).toBe(`${GENERAL}-2024-08-06`);
+    expect(result.medical).toBe(true);
+  });
+
   it('refuses rather than falling back to a general-purpose model', async () => {
     const or = new FakeProvider('openrouter', MEDICAL, 'throw');
     const oa = new FakeProvider('openai', GENERAL);
@@ -101,6 +112,7 @@ describe('medical-model enforcement', () => {
   });
 
   it('still falls back for non-clinical requests, and says it fell back', async () => {
+    process.env.AGENTIC_PROVIDER = 'openrouter';
     const or = new FakeProvider('openrouter', MEDICAL, 'throw');
     const oa = new FakeProvider('openai', GENERAL);
     const result = await makeRouter(or, oa).complete(general);

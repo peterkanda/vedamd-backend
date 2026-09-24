@@ -1,3 +1,4 @@
+import { fetchLlm } from './llm-fetch';
 import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import type { AppConfig } from '../../../config/configuration';
@@ -7,31 +8,37 @@ import type {
   ProviderCompletion,
   LlmProvider,
 } from './llm-provider.interface';
+import { incompleteAnswer, OPENAI_COMPAT_INCOMPLETE } from './incomplete-answer';
 
 /**
- * Gemini provider — covers Google's public Gemini models (gemini-2.0-
- * flash, gemini-1.5-pro) and, via the OpenAI-compatible base-URL
- * override, MedGemma when self-hosted (vLLM / Ollama / Vertex AI
- * Model Garden endpoint that speaks the OpenAI chat-completions
+ * Gemini provider — covers Google's public Gemini models (gemini-3.5-
+ * flash, gemini-3.1-pro-preview, …) and, via the OpenAI-compatible
+ * base-URL override, MedGemma when self-hosted (vLLM / Ollama / Vertex
+ * AI Model Garden endpoint that speaks the OpenAI chat-completions
  * schema). MedGemma is not served by Google AI Studio directly; the
  * default base URL therefore targets the public generativelanguage
  * REST API.
  *
  * Configure with:
- *   GEMINI_API_KEY                — Google AI Studio API key
- *   AGENTIC_GEMINI_MODEL          — default: gemini-2.0-flash
- *                                   (use "medgemma-27b-text-it" etc.
- *                                    when pointing at a self-hosted
- *                                    Vertex / vLLM endpoint)
- *   AGENTIC_GEMINI_BASE_URL       — override for Vertex / self-host;
- *                                   when overridden the provider
- *                                   switches to the OpenAI-compatible
- *                                   /chat/completions wire format.
+ *   GEMINI_API_KEY                  — Google AI Studio API key
+ *   AGENTIC_GEMINI_MODEL            — default: gemini-3.5-flash
+ *                                     (use "medgemma-27b-text-it" etc.
+ *                                      when pointing at a self-hosted
+ *                                      Vertex / vLLM endpoint)
+ *   AGENTIC_GEMINI_THINKING_BUDGET  — default: 1024 tokens of model
+ *                                     "thinking" per request (native
+ *                                     API only; see completeNative)
+ *   AGENTIC_GEMINI_BASE_URL         — override for Vertex / self-host;
+ *                                     when overridden the provider
+ *                                     switches to the OpenAI-compatible
+ *                                     /chat/completions wire format.
  *
  * PHI posture: same as the other cloud providers — body sent to the
  * configured endpoint and never logged here. Use Vertex AI with VPC
  * Service Controls or a self-hosted MedGemma deployment if PHI is in
- * scope.
+ * scope. Google may use prompts sent on the Gemini API's unpaid tier to
+ * improve its products, so a key used with patient data must be on a
+ * billed project.
  */
 @Injectable()
 export class GeminiProvider implements LlmProvider {
@@ -40,13 +47,15 @@ export class GeminiProvider implements LlmProvider {
   readonly model: string;
   private readonly baseUrl: string;
   private readonly useOpenAiCompatible: boolean;
+  private readonly thinkingBudget: number;
 
   constructor(
     private readonly config: ConfigService<AppConfig, true>,
     @Inject(PHI_FREE_LOGGER) private readonly log: PhiFreeLogger,
   ) {
     this.apiKey = this.config.get('llm.geminiApiKey', { infer: true }) ?? '';
-    this.model = process.env.AGENTIC_GEMINI_MODEL ?? 'gemini-2.0-flash';
+    this.model = process.env.AGENTIC_GEMINI_MODEL ?? 'gemini-3.5-flash';
+    this.thinkingBudget = Number(process.env.AGENTIC_GEMINI_THINKING_BUDGET ?? 1024);
     const override = process.env.AGENTIC_GEMINI_BASE_URL;
     this.baseUrl = override ?? 'https://generativelanguage.googleapis.com/v1beta';
     // When the operator points us at a custom endpoint (Vertex AI Model
@@ -70,24 +79,32 @@ export class GeminiProvider implements LlmProvider {
   /** Native generativelanguage REST schema (Google AI Studio). */
   private async completeNative(req: LlmCompletionRequest): Promise<ProviderCompletion> {
     const body = {
-      // The native schema fuses system + user into the first user turn
-      // (Gemini supports systemInstruction for newer models — included
-      // for forward compatibility with 1.5+/2.0).
       systemInstruction: { parts: [{ text: req.system }] },
       contents: [{ role: 'user', parts: [{ text: req.user }] }],
       generationConfig: {
         temperature: req.temperature ?? 0.1,
-        maxOutputTokens: req.maxTokens ?? 2048,
+        // Thinking tokens are drawn from maxOutputTokens. With the caller's
+        // answer budget as the whole cap, gemini-2.5-flash and
+        // gemini-3.8-flash each spent about half of 2048 on thinking and
+        // stopped mid-answer — one inside an ORS volume table. So thinking
+        // gets its own capped budget on top of the answer's. The allowance
+        // is twice the budget because gemini-3.5-flash overran a 1024 budget
+        // (1165 thinking tokens) when tested.
+        maxOutputTokens: (req.maxTokens ?? 2048) + 2 * this.thinkingBudget,
+        thinkingConfig: { thinkingBudget: this.thinkingBudget },
       },
     };
-    const url =
-      `${this.baseUrl}/models/${encodeURIComponent(this.model)}:generateContent` +
-      `?key=${encodeURIComponent(this.apiKey)}`;
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(body),
-    });
+    const res = await fetchLlm(
+      `${this.baseUrl}/models/${encodeURIComponent(this.model)}:generateContent`,
+      {
+        method: 'POST',
+        // Header rather than ?key= so the key never sits in a URL that a
+        // proxy or tracer might record.
+        headers: { 'content-type': 'application/json', 'x-goog-api-key': this.apiKey },
+        body: JSON.stringify(body),
+      },
+      'gemini',
+    );
 
     if (!res.ok) {
       this.log.warn('agentic_llm_error', {
@@ -98,12 +115,30 @@ export class GeminiProvider implements LlmProvider {
     }
 
     const json = (await res.json()) as {
-      candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
+      candidates?: Array<{
+        content?: { parts?: Array<{ text?: string }> };
+        finishReason?: string;
+      }>;
+      promptFeedback?: { blockReason?: string };
       modelVersion?: string;
       usageMetadata?: { promptTokenCount?: number; candidatesTokenCount?: number };
     };
 
-    const text = json.candidates?.[0]?.content?.parts?.map((p) => p.text ?? '').join('') ?? '';
+    const candidate = json.candidates?.[0];
+    const text = candidate?.content?.parts?.map((p) => p.text ?? '').join('') ?? '';
+    const finishReason = candidate?.finishReason ?? json.promptFeedback?.blockReason ?? 'NONE';
+    // Anything but STOP (MAX_TOKENS, SAFETY, a blocked prompt, …) means the
+    // text is partial or absent. A partial clinical answer can end mid-dose,
+    // so throw — the router then tries the next approved model or declines.
+    if (finishReason !== 'STOP' || !text) {
+      throw incompleteAnswer(
+        this.log,
+        'gemini',
+        'Gemini',
+        this.model,
+        finishReason === 'STOP' ? 'empty' : finishReason,
+      );
+    }
 
     return {
       text,
@@ -127,32 +162,49 @@ export class GeminiProvider implements LlmProvider {
         { role: 'user', content: req.user },
       ],
     };
-    const res = await fetch(`${this.baseUrl}/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        authorization: `Bearer ${this.apiKey}`,
+    const res = await fetchLlm(
+      `${this.baseUrl}/chat/completions`,
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          authorization: `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify(body),
       },
-      body: JSON.stringify(body),
-    });
+      'gemini',
+    );
 
     if (!res.ok) {
       this.log.warn('agentic_llm_error', {
         llm_provider: 'gemini',
         status_code: res.status,
-        compat: 'openai',
       });
       throw new Error(`Gemini (OpenAI-compat) API error: HTTP ${res.status}`);
     }
 
     const json = (await res.json()) as {
-      choices?: Array<{ message?: { content?: string } }>;
+      choices?: Array<{ message?: { content?: string }; finish_reason?: string }>;
       model?: string;
       usage?: { prompt_tokens?: number; completion_tokens?: number };
     };
 
+    const choice = json.choices?.[0];
+    const text = choice?.message?.content ?? '';
+    // "length" is this schema's MAX_TOKENS; see completeNative.
+    const compatReason = choice?.finish_reason ?? 'none';
+    if (OPENAI_COMPAT_INCOMPLETE.has(compatReason) || !text) {
+      throw incompleteAnswer(
+        this.log,
+        'gemini',
+        'Gemini',
+        this.model,
+        OPENAI_COMPAT_INCOMPLETE.has(compatReason) ? compatReason : 'empty',
+      );
+    }
+
     return {
-      text: json.choices?.[0]?.message?.content ?? '',
+      text,
       model: json.model ?? this.model,
       provider: 'gemini',
       usage: {

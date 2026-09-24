@@ -145,7 +145,10 @@ export class ReferenceDiagramService {
         mechanism: e.mechanism,
         management: e.management,
       })),
-      severeCount: edges.filter((e) => e.severity === 'severe' || e.severity === 'major').length,
+      severeCount: edges.filter(
+        (e) =>
+          e.severity === 'contraindicated' || e.severity === 'severe' || e.severity === 'major',
+      ).length,
     };
   }
 
@@ -251,6 +254,7 @@ function titleCase(s: string): string {
 /** Mermaid edge colour by interaction severity (UI legend: red→amber→grey). */
 function severityColour(sev: string): string {
   switch (sev) {
+    case 'contraindicated':
     case 'severe':
       return '#b00020';
     case 'major':
@@ -264,6 +268,7 @@ function severityColour(sev: string): string {
 
 function severityWidth(sev: string): number {
   switch (sev) {
+    case 'contraindicated':
     case 'severe':
       return 4;
     case 'major':

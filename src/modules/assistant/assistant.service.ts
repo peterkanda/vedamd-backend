@@ -7,6 +7,13 @@ import { ProviderRouter } from '../agentic/providers/provider-router';
 import { NoMedicalProviderError } from '../agentic/providers/llm-provider.interface';
 import { ASSISTANT_CHAT_SYSTEM, buildAssistantUserMessage } from './assistant.prompt';
 import { isClinicalClaim, ungroundedRefusal } from './clinical-claim';
+import {
+  assessGrounding,
+  questionTopics,
+  subjectTerms,
+  type PlacedRecord,
+} from '../knowledge/grounding/coverage';
+import { summarizeRecord } from '../knowledge/grounding/record-summary';
 
 export interface AssistantChatRequest {
   question: string;
@@ -29,53 +36,18 @@ export interface AssistantChatResponse {
   /** True when we declined to answer rather than guess at an ungrounded
    *  clinical fact — mirrors the on-device mobile gate exactly. */
   refused: boolean;
-  /** False only when generation was cut short. The backend never streams or
-   *  aborts mid-answer today, so this is always true — kept for shape parity
-   *  with the mobile GroundedAnswer type. */
+  /** False only when generation was cut short. Providers throw on a
+   *  truncated completion, so a returned answer is always complete — kept for
+   *  shape parity with the mobile GroundedAnswer type. */
   complete: boolean;
+  /** Provider the router tried first, when another approved model answered. */
+  fellBackFrom?: string | null;
 }
 
-// Fields worth keeping when summarising a record into grounding text.
-const KEEP_FIELDS = [
-  'title',
-  'inn',
-  'name',
-  'chiefComplaint',
-  'analyte',
-  'gene',
-  'drug',
-  'disease',
-  'poison',
-  'antidote',
-  'vaccine',
-  'oneLiner',
-  'purpose',
-  'abbrev',
-  'drugClass',
-  'category',
-  'indications',
-  'presentation',
-  'redFlags',
-  'management',
-  'dosing',
-  'diagnostics',
-  'differential',
-  'disposition',
-  'interpretation',
-  'contraindications',
-  'warnings',
-  'monitoring',
-  'pregnancy',
-  'lactation',
-  'guidance',
-  'effect',
-  'severity',
-  'mechanism',
-  'items',
-  'scoring',
-];
-
-const PER_RECORD_CHARS = 700;
+/** Per-record grounding budget (whole fields only; see summarizeRecord). */
+const PER_RECORD_CHARS = 1500;
+/** Below this there is no room for a useful record. */
+const MIN_RECORD_CHARS = 200;
 const TOTAL_GROUNDING_CHARS = 6000;
 const MAX_SOURCES = 8;
 
@@ -207,15 +179,6 @@ export class AssistantService {
     private readonly router: ProviderRouter,
   ) {}
 
-  /** Compact a record to its clinically useful fields for grounding. */
-  private summarize(rec: Record<string, unknown>): string {
-    const out: Record<string, unknown> = {};
-    for (const k of KEEP_FIELDS) if (rec[k] !== undefined) out[k] = rec[k];
-    let json = JSON.stringify(out);
-    if (json.length > PER_RECORD_CHARS) json = json.slice(0, PER_RECORD_CHARS) + '…';
-    return json;
-  }
-
   /**
    * Find grounding records for a free-text clinical question.
    *
@@ -296,30 +259,69 @@ export class AssistantService {
       };
     }
 
-    // Retrieve relevant records and build a grounding block.
-    const hits = this.retrieve(question);
-    const sources: AssistantSource[] = [];
+    // A bare follow-up ("and for a 2 year old?") names nothing, so read it
+    // with the clinician's previous question — never with a prior assistant
+    // turn, which the client supplies and could be anything. Retrieval and
+    // the refusal gate used to see only the follow-up, so a dose question
+    // asked in two turns slipped past both.
+    const stats = this.search.termStats();
+    const previousUser = [...(req.conversation ?? [])]
+      .reverse()
+      .find((t) => t.role === 'user')?.content;
+    const subject =
+      subjectTerms(question, stats).length === 0 && previousUser
+        ? `${previousUser} ${question}`
+        : question;
+    const topics = questionTopics(subject);
+
+    // Interaction records first — search has no interaction domain — then
+    // the search hits, each summarised field by field within the budget.
+    const candidates: {
+      domain: string;
+      slug: string;
+      title: string;
+      rec: Record<string, unknown>;
+    }[] = [
+      ...this.search.interactionsMentioning(subject).map((rec) => ({
+        domain: 'drug-interactions',
+        slug: `${String(rec.slugA)}+${String(rec.slugB)}`,
+        title: `${String(rec.slugA)} + ${String(rec.slugB)} interaction`,
+        rec,
+      })),
+      ...this.retrieve(subject).flatMap((hit) => {
+        const rec = hit.slug ? this.search.getRecord(hit.domain, hit.slug) : null;
+        return rec ? [{ domain: hit.domain, slug: hit.slug, title: hit.title, rec }] : [];
+      }),
+    ].slice(0, MAX_SOURCES);
+
+    const placed: PlacedRecord[] = [];
     const blocks: string[] = [];
+    const placedSources: AssistantSource[] = [];
     let used = 0;
-    for (const hit of hits) {
-      const rec = hit.slug ? this.search.getRecord(hit.domain, hit.slug) : null;
-      const text = rec ? this.summarize(rec) : (hit.snippet ?? '');
-      const entry = `[${hit.domain}/${hit.slug}] ${hit.title}\n${text}`;
-      if (used + entry.length > TOTAL_GROUNDING_CHARS) break;
-      blocks.push(entry);
-      used += entry.length;
-      sources.push({ domain: hit.domain, slug: hit.slug, title: hit.title });
+    for (const c of candidates) {
+      const header = `[${c.domain}/${c.slug}] ${c.title}\n`;
+      const budget = Math.min(PER_RECORD_CHARS, TOTAL_GROUNDING_CHARS - used - header.length);
+      if (budget < MIN_RECORD_CHARS) break;
+      const summary = summarizeRecord(c.rec, c.domain, { budget, topics });
+      blocks.push(header + summary.text);
+      used += header.length + summary.text.length;
+      placed.push({ record: c.rec, text: summary.text });
+      placedSources.push({ domain: c.domain, slug: c.slug, title: c.title });
     }
 
-    const grounded = blocks.length > 0;
+    // Grounded means the placed content covers what was asked — not that
+    // something was retrieved. When it does not, the unrelated records are
+    // withheld (a "Sources" list would imply they back the answer).
+    const grounded = assessGrounding(subject, placed, stats).grounded;
+    const sources = grounded ? placedSources : [];
 
-    // Nothing verified to stand on, and the question turns on a specific
+    // Nothing covering it to stand on, and the question turns on a specific
     // clinical fact — refuse instead of answering from the model's parametric
     // memory. Zero LLM invocation: fail closed, mirroring the on-device gate.
-    if (!grounded && isClinicalClaim(question)) {
+    if (!grounded && isClinicalClaim(subject)) {
       return {
         answer: ungroundedRefusal(),
-        sources,
+        sources: [],
         provider: 'none',
         model: 'none',
         grounded: false,
@@ -343,16 +345,16 @@ export class AssistantService {
       });
     } catch (err) {
       if (err instanceof NoMedicalProviderError) {
-        // Return the retrieved sources rather than nothing: the clinician can
-        // still read the reviewed content the answer would have been built on.
+        // Declined, not answered: say so in the flags as well as the text, so
+        // the app does not show this as an answer with sources.
         return {
           answer:
-            'No clinical-grade model is available right now, so I will not answer this from a general-purpose model. The VedaMD content below covers your question, and the on-device assistant works offline.',
-          sources,
+            'No clinical-grade model could answer right now, so I will not answer this from a general-purpose model. The on-device assistant works offline, and the VedaMD library is searchable from Browse.',
+          sources: [],
           provider: 'none',
           model: 'none',
           grounded: false,
-          refused: false,
+          refused: true,
           complete: true,
         };
       }
@@ -366,7 +368,10 @@ export class AssistantService {
       model: result.model,
       grounded,
       refused: false,
+      // Providers throw on a truncated or empty completion, so an answer that
+      // reaches here finished.
       complete: true,
+      fellBackFrom: result.fellBackFrom ?? null,
     };
   }
 }

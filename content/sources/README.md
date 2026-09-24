@@ -7,33 +7,57 @@ analysis so that licensing rules are enforced by code, not memory.
 
 ## Why this exists
 
-The most clinically attractive sources are the ones we legally **cannot**
-embed. The registry encodes that distinction and two pieces of tooling enforce
-it:
+VedaMD clinical content is licensed **CC BY-NC-SA 4.0**
+([`content/LICENSE`](../LICENSE), decided 2026-09-24). That decides which
+sources we may embed: non-commercial and share-alike sources such as WHO
+guidance are compatible, while all-rights-reserved or restrictive sources
+are not. The registry encodes those verdicts, and the tooling enforces them:
 
 | Consumer | What it does |
 |---|---|
 | `scripts/ingest-country-content.ts` | Splits sources into an **embed** lane (`embeddable: yes`) and a **worklist** lane (`verify` / `cite-only`). Only the embed lane may be transformed into content; the rest become authoring tasks. |
-| `scripts/check-licence-compliance.js` + `test/licence-compliance.spec.ts` | Maps every citation host back to its source and verifies the declared `licence` matches the registry — a cite-only source can't be relabelled as reusable. Warn-now / enforce-later (ratchet ceiling = 0). |
+| `scripts/check-licence-compliance.js` + `test/licence-compliance.spec.ts` | Maps every citation URL back to its source and verifies the declared `licence` matches the registry — a cite-only source can't be relabelled as reusable. The tests also check each source's `reuseMode` is permitted by its licence. Warn-now / enforce-later (ratchet ceiling = 0). |
 | `src/modules/localization/source-registry.ts` | Typed loader the Nest app shares with the tooling. |
 
-## Tiers (from the analysis)
+## Fields
 
-- **Tier 1 — `embeddable: yes`.** Public-domain / permissive, safe to embed
-  with attribution: HL7 FHIR, DailyMed, openFDA, RxNorm, LOINC, AHRQ CDS
-  Connect, ONC DDI list, DrugBank Open Data.
-- **Tier 2 — `embeddable: verify`.** High value, licence-uncertain — verify
-  per source/repo before embedding: **WHO SMART Guidelines** FHIR IGs (highest
-  leverage — code vs clinical-content licences differ per repo), OCL/CIEL,
-  ICD-11 (CC BY-ND: unmodified-embeddable, no derivatives), SNOMED CT & WHO
-  ATC/DDD (paid).
-- **Tier 3 — `embeddable: cite-only`.** Free to clinicians but NOT embeddable
-  (NC/ND/proprietary/government): WHO narrative publications, NICE, StatPearls,
-  MSF, Hesperian, Global Health Media, Radiopaedia, LITFL, the proprietary
-  point-of-care references, and every **national MoH** guideline set
-  (`moh-restricted`). Cite and link; author original logic from the underlying
-  clinical facts; secure MoH permission where logic derives from national
-  guidelines.
+- **`tier` / `embeddable`** — see below.
+- **`reuseMode`** — what embedding may do with the source's wording:
+  - `adapt`: reproduce or adapt; adaptations are CC BY-NC-SA 4.0.
+  - `verbatim`: no-derivatives terms; unaltered excerpts only.
+  - `separate`: share-alike without NC (CC BY-SA, ODbL); ship only as a
+    separately licensed item, never merged into a record.
+  - `cite-only`: link and cite; restate facts in our own words.
+- **`commercialUse`** — whether the source licence also allows commercial
+  use, so a commercial-safe subset can be served to integrators later.
+- **`licenceScope: per-item` + `itemLicences`** — the licence varies per
+  article or document (PMC, Europe PMC, WHO IRIS, Kenya MoH, hybrid
+  journals). Check the item's own licence before embedding it.
+- **`hosts` / `urlPrefixes`** — how a citation URL maps to the source.
+  A `urlPrefixes` entry (host + path, no scheme or `www.`) wins over any
+  host match, e.g. `ncbi.nlm.nih.gov/books/nbk501922` is LactMed while
+  the rest of `ncbi.nlm.nih.gov` is the per-item NCBI Bookshelf.
+
+## Tiers
+
+- **Tier 1 — `embeddable: yes`.** Licence verified compatible with the
+  VedaMD content licence. Examples: public domain (DailyMed, LactMed,
+  LiverTox, CDC, NCI PDQ), CC0 (CPIC, Wikidata, OpenAlex), CC BY (WHO eEML,
+  data.who.int, PLOS, PAMJ), non-commercial (OpenStax, DDInter, SAMJ,
+  SA STGs), verbatim-only (ICD-11, StatPearls, USPSTF), and separate
+  share-alike items (Wikipedia, PharmGKB, OpenStreetMap).
+- **Tier 2 — `embeddable: verify`.** Licence unverified, or set per item:
+  WHO publications and SMART Guidelines, Kenya MoH, PMC/Europe PMC,
+  hybrid journals, Cochrane, OCL/CIEL, LITFL, Global Health Media.
+- **Tier 3 — `embeddable: cite-only`.** Not reusable even
+  non-commercially: MSF (all rights reserved), Hesperian (digital use needs
+  permission), Liverpool HIV interactions, NICE, Radiopaedia (AI-use terms),
+  WikEM (AI-use ban), IHME, DHS, proprietary point-of-care references, and
+  most national MoH guideline sets. Cite and link; author original logic
+  from the underlying facts; request permission where it matters
+  (`docs/content-permission-requests/`).
+
+Evidence for each verdict: `docs/content-sources-and-gaps.md`.
 
 ## Workflow
 
@@ -63,9 +87,9 @@ itself make a country localized.
 ## Maintaining the registry
 
 - Re-confirm Tier 2/3/gray licences at the source before relying on them
-  (especially WHO SMART per-repo licences, StatPearls' CC variant, SNOMED Kenya
-  membership/cost, ATC/DDD commercial terms, DrugBank Open Data scope) and bump
-  `lastChecked`.
+  (especially WHO SMART per-repo licences, LITFL, Global Health Media, SNOMED
+  Kenya membership/cost, ATC/DDD and ICD-10 distribution terms, DrugBank Open
+  Data scope) and bump `lastChecked`.
 - Add a national source per new country as a `moh-restricted`, `cite-only`
   Tier-3 entry, then run the ingestion engine for that country.
 - Francophone expansion reuses the same pipeline; add the countries to

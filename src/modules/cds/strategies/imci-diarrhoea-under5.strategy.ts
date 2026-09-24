@@ -69,13 +69,23 @@ export class ImciDiarrhoeaUnder5Strategy implements CdsRuleStrategy {
     const ctx = (req.context ?? {}) as DiarrhoeaContext;
     if (typeof ctx.ageMonths !== 'number' || ctx.ageMonths < 0) return [];
     if (ctx.ageMonths >= UNDER_FIVE_MONTHS) return [];
-    if (typeof ctx.daysOfDiarrhoea !== 'number' || ctx.daysOfDiarrhoea < 0) return [];
-
+    const days =
+      typeof ctx.daysOfDiarrhoea === 'number' && ctx.daysOfDiarrhoea >= 0
+        ? ctx.daysOfDiarrhoea
+        : undefined;
     const signs = Array.isArray(ctx.dehydrationSigns)
       ? ctx.dehydrationSigns.filter((s): s is string => typeof s === 'string' && VALID_SIGNS.has(s))
       : [];
+    // Diarrhoea is established by a duration, reported dehydration signs or
+    // blood in stool. The duration alone used to gate the whole rule, so a
+    // child with two severe signs and no duration recorded got no card.
+    if (days === undefined && signs.length === 0 && ctx.bloodInStool !== true) return [];
+
     const severeMatches = signs.filter((s) => SEVERE_SIGNS.has(s));
-    const someMatches = signs.filter((s) => SOME_SIGNS.has(s));
+    // A severe-grade sign is also at least a "some"-grade sign (a very slow
+    // skin pinch is a slow one), so it counts toward Plan B. Otherwise one
+    // severe plus one some sign fell through to Plan A.
+    const someMatches = signs.filter((s) => SOME_SIGNS.has(s) || SEVERE_SIGNS.has(s));
 
     const cards: CdsCard[] = [];
 
@@ -102,7 +112,10 @@ export class ImciDiarrhoeaUnder5Strategy implements CdsRuleStrategy {
       indicator = 'info';
       summary = 'No dehydration — IMCI Plan A (home management)';
       detail =
-        'No dehydration signs reported. Per WHO IMCI Plan A: extra fluids at home (ORS 50–100 mL ' +
+        (signs.length > 0
+          ? 'Reported sign: {{signs}} — one sign is not enough to classify some dehydration (IMCI needs two). '
+          : 'No dehydration signs reported. ') +
+        'Per WHO IMCI Plan A: extra fluids at home (ORS 50–100 mL ' +
         '<2 y; 100–200 mL ≥2 y per loose stool), continue breastfeeding and age-appropriate ' +
         'feeding, give zinc 10–20 mg daily for 10–14 days, counsel on the four return-immediately ' +
         'signs (unable to drink, blood in stool, becomes sicker, fever onset). Follow up in 5 days ' +
@@ -115,7 +128,7 @@ export class ImciDiarrhoeaUnder5Strategy implements CdsRuleStrategy {
     );
 
     // B. Persistent diarrhoea overlay.
-    if (ctx.daysOfDiarrhoea >= PERSISTENT_DIARRHOEA_DAYS) {
+    if (days !== undefined && days >= PERSISTENT_DIARRHOEA_DAYS) {
       cards.push(
         this.buildCard(
           rule,
@@ -125,7 +138,7 @@ export class ImciDiarrhoeaUnder5Strategy implements CdsRuleStrategy {
           'Diarrhoea has lasted {{days}} days. Per WHO IMCI, classify as persistent diarrhoea: ' +
             'screen for HIV and persistent infection, continue zinc, modify feeding (lactose-reduced ' +
             'if needed, frequent small meals), and refer if accompanied by any dehydration.',
-          { days: ctx.daysOfDiarrhoea },
+          { days },
         ),
       );
     }
