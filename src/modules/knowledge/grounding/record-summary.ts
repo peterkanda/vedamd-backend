@@ -136,6 +136,17 @@ export interface RecordSummary {
   coreComplete: boolean;
 }
 
+/** `"key":` as it appears in a record's JSON. Compiled once per key. */
+const keyPatterns = new Map<string, RegExp>();
+function keyPattern(key: string): RegExp {
+  let re = keyPatterns.get(key);
+  if (!re) {
+    re = new RegExp(`"${key}"\\s*:`);
+    keyPatterns.set(key, re);
+  }
+  return re;
+}
+
 /**
  * Summarise a record for a prompt within `budget` characters, field by field.
  *
@@ -156,9 +167,19 @@ export function summarizeRecord(
 
   const topicKeys = new Set([...(opts.topics ?? [])].flatMap((t) => TOPIC_KEYS[t]));
   // A topic can live inside a field (a drug's renal bands are in `dosing`).
-  const holdsTopic = (k: string) =>
-    topicKeys.has(k) ||
-    [...topicKeys].some((t) => new RegExp(`"${t}"\\s*:`).test(JSON.stringify(record[k])));
+  const holdsCache = new Map<string, boolean>();
+  const holdsTopic = (k: string) => {
+    let holds = holdsCache.get(k);
+    if (holds === undefined) {
+      holds = topicKeys.has(k);
+      if (!holds && topicKeys.size > 0) {
+        const json = JSON.stringify(record[k]);
+        holds = [...topicKeys].some((t) => keyPattern(t).test(json));
+      }
+      holdsCache.set(k, holds);
+    }
+    return holds;
+  };
 
   const identity = spec
     ? spec.identity.filter(present)

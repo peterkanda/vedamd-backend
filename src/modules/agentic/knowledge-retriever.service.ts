@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, type OnApplicationBootstrap } from '@nestjs/common';
 import { KnowledgeService } from '../knowledge/knowledge.service';
 import type { AgenticClinicalContext, RetrievedKnowledge } from './agentic.types';
 import { questionTopics, type PlacedRecord } from '../knowledge/grounding/coverage';
@@ -24,8 +24,17 @@ import { summarizeRecord } from '../knowledge/grounding/record-summary';
 const DRUG_GROUNDING_CHARS = 1100;
 const CONDITION_GROUNDING_CHARS = 900;
 @Injectable()
-export class KnowledgeRetrieverService {
+export class KnowledgeRetrieverService implements OnApplicationBootstrap {
   constructor(private readonly knowledge: KnowledgeService) {}
+
+  /** Build the per-bundle match indexes now, not on the first chat. */
+  onApplicationBootstrap(): void {
+    try {
+      this.retrieve({});
+    } catch {
+      // No bundle loaded — the indexes are built on first use instead.
+    }
+  }
 
   /**
    * Pass-through to KnowledgeService.getCitationStrength — exposed here
@@ -71,8 +80,6 @@ export class KnowledgeRetrieverService {
    */
   placedRecords(knowledge: RetrievedKnowledge): PlacedRecord[] {
     const out: PlacedRecord[] = [];
-    const bySlug = <T extends { slug: string }>(xs: T[], slug: string) =>
-      xs.find((x) => x.slug === slug);
     for (const d of knowledge.drugs) {
       const rec = bySlug(this.knowledge.getDrugs(), d.slug);
       if (rec)
@@ -120,8 +127,12 @@ export class KnowledgeRetrieverService {
     const freeTokens = tokenize(
       [ctx.question ?? '', conversationText, ...(ctx.diagnoses ?? [])].join(' '),
     );
+    // Scoring counts every occurrence of a token, so count each distinct
+    // token once and score it with a single index lookup (see substringIndex).
+    const freeTokenCounts = countTokens(freeTokens);
     // Lowercased haystack for whole-name drug mentions anywhere in the thread.
     const textHay = `${ctx.question ?? ''} ${conversationText}`.toLowerCase();
+    const textWords = new Set(textHay.split(NON_ALNUM));
     // Grounding text for the model: whole fields, the ones the question asks
     // about first. The old one-line summaries cut adult dosing at 320
     // characters and pregnancy at 120, and left out contraindications,
@@ -136,9 +147,13 @@ export class KnowledgeRetrieverService {
     // --- Conditions: match by slug / title / codings + token overlap.
     //     Computed FIRST so a disease-phrased query can also pull in the
     //     drugs that TREAT the matched condition (see indication pass). ---
-    const scoredConditions = this.knowledge
-      .getConditions()
-      .map((c) => ({ rec: c, score: conditionScore(c, dxTerms, freeTokens) }))
+    const allConditions = this.knowledge.getConditions();
+    const conditionOverlap = overlapScores(
+      substringIndex(allConditions, (c) => [c.slug, c.title].join(' ')),
+      freeTokenCounts,
+    );
+    const scoredConditions = allConditions
+      .map((c, i) => ({ rec: c, score: conditionScore(c, dxTerms) + conditionOverlap[i] }))
       .filter((x) => x.score > 0)
       .sort((a, b) => b.score - a.score)
       .slice(0, caps.conditions);
@@ -180,10 +195,7 @@ export class KnowledgeRetrieverService {
       // Whole words only: substring matching found "revia" (naltrexone) in
       // "abbreviation" and "cipro" in "reciprocal".
       const namedHit =
-        !structuredHit &&
-        [d.slug, d.inn, ...(d.tradeNames ?? [])]
-          .map((s) => s?.toLowerCase())
-          .some((h) => h && h.length > 3 && containsWord(textHay, h));
+        !structuredHit && drugNameMatchers(d).some((m) => m.matches(textHay, textWords));
       if (!structuredHit && !namedHit) continue;
       matchedDrugSlugs.add(d.slug);
       drugs.push({
@@ -247,25 +259,27 @@ export class KnowledgeRetrieverService {
     }));
 
     // --- Procedures: token overlap with question + diagnoses ---
-    const procedures = this.knowledge
-      .getProcedures()
-      .map((p) => ({
-        rec: p,
-        score: tokenOverlap([p.slug, p.title, ...(p.domains ?? [])].join(' '), freeTokens),
-      }))
+    const allProcedures = this.knowledge.getProcedures();
+    const procedureOverlap = overlapScores(
+      substringIndex(allProcedures, (p) => [p.slug, p.title, ...(p.domains ?? [])].join(' ')),
+      freeTokenCounts,
+    );
+    const procedures = allProcedures
+      .map((p, i) => ({ rec: p, score: procedureOverlap[i] }))
       .filter((x) => x.score > 0)
       .sort((a, b) => b.score - a.score)
       .slice(0, caps.procedures)
       .map((x) => ({ slug: x.rec.slug, title: x.rec.title, summary: procedureSummary(x.rec) }));
 
     // --- Rules: token overlap with hook + question + diagnoses ---
-    const ruleHay = freeTokens.concat(tokenize(ctx.hook ?? ''));
-    const rules = this.knowledge
-      .getCdsRules()
-      .map((r) => ({
-        rec: r,
-        score: tokenOverlap([r.id, r.title, r.description ?? ''].join(' '), ruleHay),
-      }))
+    const ruleHay = countTokens(freeTokens.concat(tokenize(ctx.hook ?? '')));
+    const allRules = this.knowledge.getCdsRules();
+    const ruleOverlap = overlapScores(
+      substringIndex(allRules, (r) => [r.id, r.title, r.description ?? ''].join(' ')),
+      ruleHay,
+    );
+    const rules = allRules
+      .map((r, i) => ({ rec: r, score: ruleOverlap[i] }))
       .filter((x) => x.score > 0)
       .sort((a, b) => b.score - a.score)
       .slice(0, caps.rules)
@@ -335,19 +349,88 @@ function tokenize(s: string): string[] {
     .toLowerCase()
     .replace(/[^a-z0-9 ]/g, ' ')
     .split(/\s+/)
-    .filter((t) => t.length > 3);
+    .filter((t) => t.length >= MIN_TOKEN_LENGTH);
 }
 
-function tokenOverlap(text: string, tokens: string[]): number {
-  if (tokens.length === 0) return 0;
-  const hay = text.toLowerCase();
-  return tokens.reduce((acc, t) => (hay.includes(t) ? acc + 1 : acc), 0);
+/** Each distinct token with the number of times it occurs. */
+function countTokens(tokens: string[]): Map<string, number> {
+  const counts = new Map<string, number>();
+  for (const t of tokens) counts.set(t, (counts.get(t) ?? 0) + 1);
+  return counts;
 }
 
+/**
+ * Every substring of four or more characters of every word in a domain's
+ * match text, mapped to the records whose text contains it. Built once per
+ * bundle (keyed by the records array).
+ *
+ * Free-text tokens are runs of four or more letters and digits, so a token
+ * occurs in a record's lowercased text exactly when it is a substring of
+ * one of that text's alphanumeric words. Scoring is then one lookup per
+ * distinct token, instead of a substring search of every record for every
+ * token — which grew with the length of the conversation.
+ */
+interface SubstringIndex {
+  records: number;
+  postings: Map<string, number[]>;
+}
+const MIN_TOKEN_LENGTH = 4;
+const NON_ALNUM = /[^a-z0-9]+/;
+const substringIndexes = new WeakMap<readonly object[], SubstringIndex>();
+
+function substringIndex<T extends object>(
+  records: readonly T[],
+  text: (rec: T) => string,
+): SubstringIndex {
+  let index = substringIndexes.get(records);
+  if (index) return index;
+  const postings = new Map<string, number[]>();
+  records.forEach((rec, id) => {
+    const subs = new Set<string>();
+    for (const word of text(rec).toLowerCase().split(NON_ALNUM)) {
+      for (let i = 0; i + MIN_TOKEN_LENGTH <= word.length; i++) {
+        for (let j = i + MIN_TOKEN_LENGTH; j <= word.length; j++) subs.add(word.slice(i, j));
+      }
+    }
+    for (const sub of subs) {
+      const ids = postings.get(sub);
+      if (ids) ids.push(id);
+      else postings.set(sub, [id]);
+    }
+  });
+  index = { records: records.length, postings };
+  substringIndexes.set(records, index);
+  return index;
+}
+
+/**
+ * Per record, how many of the tokens (counting repeats) occur in its match
+ * text — what `tokens.filter((t) => text.includes(t)).length` gives.
+ */
+function overlapScores(index: SubstringIndex, tokens: ReadonlyMap<string, number>): number[] {
+  const scores = new Array<number>(index.records).fill(0);
+  for (const [token, n] of tokens) {
+    for (const id of index.postings.get(token) ?? []) scores[id] += n;
+  }
+  return scores;
+}
+
+/** First record per slug, as `Array.find` would return it. */
+const slugIndexes = new WeakMap<readonly { slug: string }[], Map<string, unknown>>();
+function bySlug<T extends { slug: string }>(xs: readonly T[], slug: string): T | undefined {
+  let index = slugIndexes.get(xs);
+  if (!index) {
+    index = new Map();
+    for (const x of xs) if (!index.has(x.slug)) index.set(x.slug, x);
+    slugIndexes.set(xs, index);
+  }
+  return index.get(slug) as T | undefined;
+}
+
+/** Score from the structured diagnosis terms; free-text overlap is added separately. */
 function conditionScore(
   c: { slug: string; title: string; icd10?: string[]; snomed?: string[] },
   dxTerms: string[],
-  freeTokens: string[],
 ): number {
   let score = 0;
   const hay = [c.slug, c.title].map((s) => s.toLowerCase());
@@ -356,7 +439,6 @@ function conditionScore(
     if ((c.icd10 ?? []).some((code) => code.toLowerCase() === t)) score += 5;
     if ((c.snomed ?? []).some((code) => code === t)) score += 5;
   }
-  score += tokenOverlap([c.slug, c.title].join(' '), freeTokens);
   return score;
 }
 
@@ -439,10 +521,54 @@ function procedureSummary(p: { domains?: string[]; redFlags?: string[] }): strin
   return parts.join(' | ');
 }
 
-/** Whole-word (or whole-phrase) occurrence of `needle` in lowercased text. */
+const ALNUM_CHAR = /[a-z0-9]/;
+
+interface NameMatcher {
+  matches(haystack: string, words: ReadonlySet<string>): boolean;
+}
+
+/**
+ * Whole-word (or whole-phrase) occurrence of `needle` in lowercased text:
+ * an occurrence with no letter or digit directly before or after it.
+ *
+ * `words` is the haystack split on runs of non-alphanumerics. Every
+ * alphanumeric run inside the needle must be one of those words at a
+ * matching occurrence, so a name made only of letters and digits is a
+ * set lookup, and any other name is scanned only when all of its runs
+ * are present.
+ */
+function wordMatcher(needle: string): NameMatcher {
+  const runs = needle.split(NON_ALNUM).filter(Boolean);
+  if (runs.length === 1 && runs[0] === needle) {
+    return { matches: (_hay, words) => words.has(needle) };
+  }
+  return {
+    matches: (hay, words) => runs.every((r) => words.has(r)) && containsWord(hay, needle),
+  };
+}
+
 function containsWord(haystack: string, needle: string): boolean {
-  const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return new RegExp(`(^|[^a-z0-9])${escaped}($|[^a-z0-9])`).test(haystack);
+  for (let i = haystack.indexOf(needle); i !== -1; i = haystack.indexOf(needle, i + 1)) {
+    const end = i + needle.length;
+    const before = i > 0 && ALNUM_CHAR.test(haystack[i - 1]);
+    const after = end < haystack.length && ALNUM_CHAR.test(haystack[end]);
+    if (!before && !after) return true;
+  }
+  return false;
+}
+
+/** Name matchers per drug (slug, INN, trade names longer than 3 characters). */
+const drugMatcherCache = new WeakMap<object, NameMatcher[]>();
+function drugNameMatchers(d: { slug: string; inn: string; tradeNames?: string[] }): NameMatcher[] {
+  let matchers = drugMatcherCache.get(d);
+  if (!matchers) {
+    matchers = [d.slug, d.inn, ...(d.tradeNames ?? [])]
+      .map((s) => s?.toLowerCase())
+      .filter((h): h is string => !!h && h.length > 3)
+      .map(wordMatcher);
+    drugMatcherCache.set(d, matchers);
+  }
+  return matchers;
 }
 
 function truncate(s: string, n: number): string {

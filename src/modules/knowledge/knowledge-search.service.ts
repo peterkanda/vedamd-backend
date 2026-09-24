@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, type OnApplicationBootstrap } from '@nestjs/common';
 import { KnowledgeService } from './knowledge.service';
 import type { BundleInfo } from './knowledge.types';
 import { BundleTermStats, type CorpusRecord } from './grounding/term-stats';
@@ -65,10 +65,19 @@ interface DomainSpec {
  * "In VedaMD" group. Anonymous + read-only; no PHI.
  */
 @Injectable()
-export class KnowledgeSearchService {
+export class KnowledgeSearchService implements OnApplicationBootstrap {
   private stats: { info: BundleInfo; value: BundleTermStats } | null = null;
 
   constructor(private readonly knowledge: KnowledgeService) {}
+
+  /** Build the grounding gate's term statistics now, not on the first chat. */
+  onApplicationBootstrap(): void {
+    try {
+      this.termStats();
+    } catch {
+      // No bundle loaded — built on first use instead.
+    }
+  }
 
   private specs(): DomainSpec[] {
     const k = this.knowledge;
